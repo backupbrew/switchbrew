@@ -590,7 +590,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501500
 | 0x04
 |-
-| TSEC_TRNG_04
+| TSEC_TRNG_UNK_04
 | 0x54501504
 | 0x04
 |-
@@ -614,15 +614,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450151C
 | 0x04
 |-
-| TSEC_TRNG_28
+| TSEC_TRNG_UNK_28
 | 0x54501528
 | 0x04
 |-
-| TSEC_TRNG_2C
+| TSEC_TRNG_UNK_2C
 | 0x5450152C
 | 0x04
 |-
-| TSEC_TFBIF_00
+| TSEC_TFBIF_UNK_00
 | 0x54501600
 | 0x04
 |-
@@ -630,15 +630,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501604
 | 0x04
 |-
-| TSEC_TFBIF_08
+| TSEC_TFBIF_UNK_08
 | 0x54501608
 | 0x04
 |-
-| TSEC_TFBIF_0C
+| TSEC_TFBIF_UNK_0C
 | 0x5450160C
 | 0x04
 |-
-| TSEC_TFBIF_30
+| TSEC_TFBIF_UNK_30
 | 0x54501630
 | 0x04
 |-
@@ -646,15 +646,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501634
 | 0x04
 |-
-| TSEC_TFBIF_40
+| TSEC_TFBIF_UNK_40
 | 0x54501640
 | 0x04
 |-
-| [[#TSEC_TFBIF_44|TSEC_TFBIF_44]]
+| [[#TSEC_TFBIF_UNK_44|TSEC_TFBIF_UNK_44]]
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_TFBIF_48|TSEC_TFBIF_48]]
+| [[#TSEC_TFBIF_UNK_48|TSEC_TFBIF_UNK_48]]
 | 0x54501648
 | 0x04
 |-
@@ -678,15 +678,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501800
 | 0x04
 |-
-| TSEC_TEGRA_24
+| TSEC_TEGRA_UNK_24
 | 0x54501824
 | 0x04
 |-
-| TSEC_TEGRA_28
+| TSEC_TEGRA_UNK_28
 | 0x54501828
 | 0x04
 |-
-| TSEC_TEGRA_2C
+| TSEC_TEGRA_UNK_2C
 | 0x5450182C
 | 0x04
 |-

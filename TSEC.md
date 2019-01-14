@@ -169,31 +169,31 @@ interfaces).
 | [TSEC\_SCP\_RES](#TSEC_SCP_RES "wikilink")                              | 0x54501490 | 0x04  |
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
-| TSEC\_TRNG\_04                                                          | 0x54501504 | 0x04  |
+| TSEC\_TRNG\_UNK\_04                                                     | 0x54501504 | 0x04  |
 | TSEC\_TRNG\_TEST\_CTL                                                   | 0x5450150C | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG0                                                  | 0x54501510 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED0                                                 | 0x54501514 | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG1                                                  | 0x54501518 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED1                                                 | 0x5450151C | 0x04  |
-| TSEC\_TRNG\_28                                                          | 0x54501528 | 0x04  |
-| TSEC\_TRNG\_2C                                                          | 0x5450152C | 0x04  |
-| TSEC\_TFBIF\_00                                                         | 0x54501600 | 0x04  |
+| TSEC\_TRNG\_UNK\_28                                                     | 0x54501528 | 0x04  |
+| TSEC\_TRNG\_UNK\_2C                                                     | 0x5450152C | 0x04  |
+| TSEC\_TFBIF\_UNK\_00                                                    | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
-| TSEC\_TFBIF\_08                                                         | 0x54501608 | 0x04  |
-| TSEC\_TFBIF\_0C                                                         | 0x5450160C | 0x04  |
-| TSEC\_TFBIF\_30                                                         | 0x54501630 | 0x04  |
+| TSEC\_TFBIF\_UNK\_08                                                    | 0x54501608 | 0x04  |
+| TSEC\_TFBIF\_UNK\_0C                                                    | 0x5450160C | 0x04  |
+| TSEC\_TFBIF\_UNK\_30                                                    | 0x54501630 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL1](#TSEC_TFBIF_MCCIF_FIFOCTRL1 "wikilink") | 0x54501634 | 0x04  |
-| TSEC\_TFBIF\_40                                                         | 0x54501640 | 0x04  |
-| [TSEC\_TFBIF\_44](#TSEC_TFBIF_44 "wikilink")                            | 0x54501644 | 0x04  |
-| [TSEC\_TFBIF\_48](#TSEC_TFBIF_48 "wikilink")                            | 0x54501648 | 0x04  |
+| TSEC\_TFBIF\_UNK\_40                                                    | 0x54501640 | 0x04  |
+| [TSEC\_TFBIF\_UNK\_44](#TSEC_TFBIF_UNK_44 "wikilink")                   | 0x54501644 | 0x04  |
+| [TSEC\_TFBIF\_UNK\_48](#TSEC_TFBIF_UNK_48 "wikilink")                   | 0x54501648 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
 | [TSEC\_DMA\_CFG](#TSEC_DMA_CFG "wikilink")                              | 0x5450170C | 0x04  |
 | TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
-| TSEC\_TEGRA\_24                                                         | 0x54501824 | 0x04  |
-| TSEC\_TEGRA\_28                                                         | 0x54501828 | 0x04  |
-| TSEC\_TEGRA\_2C                                                         | 0x5450182C | 0x04  |
+| TSEC\_TEGRA\_UNK\_24                                                    | 0x54501824 | 0x04  |
+| TSEC\_TEGRA\_UNK\_28                                                    | 0x54501828 | 0x04  |
+| TSEC\_TEGRA\_UNK\_2C                                                    | 0x5450182C | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
 
 ### TSEC\_THI\_METHOD0
