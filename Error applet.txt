@@ -107,3 +107,5 @@ Performs the same function as ShowError, but also displays the date and time of 
 |}
 
 Unlike ShowError, this is fullscreen and not a dialog.
+
+[[Category:Library Applets]]

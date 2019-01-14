@@ -101,3 +101,5 @@ error.
 | 0x10   | 8 (u64) | 0 (Jan 1, 1970 00:00:00 AM) | POSIX time of the error to be displayed (as seconds since epoch).                                      |
 
 Unlike ShowError, this is fullscreen and not a dialog.
+
+[Category:Library Applets](Category:Library_Applets "wikilink")
