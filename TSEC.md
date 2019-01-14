@@ -73,9 +73,9 @@ interfaces).
 | FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
 | FALCON\_OS                                                              | 0x54501080 | 0x04  |
 | FALCON\_DEBUG0                                                          | 0x54501084 | 0x04  |
-| FALCON\_PM\_TRIGGER                                                     | 0x54501088 | 0x04  |
+| FALCON\_PM\_SIGNAL                                                      | 0x54501088 | 0x04  |
 | FALCON\_PM\_MODE                                                        | 0x5450108C | 0x04  |
-| FALCON\_DEBUG1                                                          | 0x54501090 | 0x04  |
+| [FALCON\_DEBUG1](#FALCON_DEBUG1 "wikilink")                             | 0x54501090 | 0x04  |
 | [FALCON\_DEBUGINFO](#FALCON_DEBUGINFO "wikilink")                       | 0x54501094 | 0x04  |
 | FALCON\_BREAKPOINT0                                                     | 0x54501098 | 0x04  |
 | FALCON\_BREAKPOINT1                                                     | 0x5450109C | 0x04  |
@@ -436,6 +436,12 @@ Used for enabling/disabling Falcon interfaces.
 | 1-15 | FALCON\_IDLESTATE\_EXT\_BUSY    |
 
 Used for detecting if Falcon is busy or not.
+
+### FALCON\_DEBUG1
+
+| Bits | Description                 |
+| ---- | --------------------------- |
+| 16   | FALCON\_DEBUG1\_CTXSW\_MODE |
 
 ### FALCON\_DEBUGINFO
 

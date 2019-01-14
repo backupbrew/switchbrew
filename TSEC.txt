@@ -206,7 +206,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501084
 | 0x04
 |-
-| FALCON_PM_TRIGGER
+| FALCON_PM_SIGNAL
 | 0x54501088
 | 0x04
 |-
@@ -214,7 +214,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450108C
 | 0x04
 |-
-| FALCON_DEBUG1
+| [[#FALCON_DEBUG1|FALCON_DEBUG1]]
 | 0x54501090
 | 0x04
 |-
@@ -1217,6 +1217,15 @@ Used for enabling/disabling Falcon interfaces.
 |}
 
 Used for detecting if Falcon is busy or not.
+
+=== FALCON_DEBUG1 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 16
+| FALCON_DEBUG1_CTXSW_MODE
+|}
 
 === FALCON_DEBUGINFO ===
 Used for UCODE self revocation. This register takes the base address of the GSC carveout shifted right by 8.
