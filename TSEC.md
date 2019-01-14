@@ -55,8 +55,8 @@ interfaces).
 | FALCON\_WDTMR\_TIME                                                     | 0x54501034 | 0x04  |
 | FALCON\_WDTMR\_ENABLE                                                   | 0x54501038 | 0x04  |
 | FALCON\_UNK\_3C                                                         | 0x5450103C | 0x04  |
-| [FALCON\_SCRATCH0](#FALCON_SCRATCH0 "wikilink")                         | 0x54501040 | 0x04  |
-| [FALCON\_SCRATCH1](#FALCON_SCRATCH1 "wikilink")                         | 0x54501044 | 0x04  |
+| [FALCON\_MAILBOX0](#FALCON_MAILBOX0 "wikilink")                         | 0x54501040 | 0x04  |
+| [FALCON\_MAILBOX1](#FALCON_MAILBOX1 "wikilink")                         | 0x54501044 | 0x04  |
 | [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")                               | 0x54501048 | 0x04  |
 | [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")                       | 0x5450104C | 0x04  |
 | FALCON\_CURCTX                                                          | 0x54501050 | 0x04  |
@@ -71,8 +71,8 @@ interfaces).
 | FALCON\_MTHD\_ACK                                                       | 0x54501074 | 0x04  |
 | FALCON\_MTHD\_LIMIT                                                     | 0x54501078 | 0x04  |
 | FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
-| FALCON\_SCRATCH2                                                        | 0x54501080 | 0x04  |
-| FALCON\_SCRATCH3                                                        | 0x54501084 | 0x04  |
+| FALCON\_OS                                                              | 0x54501080 | 0x04  |
+| FALCON\_DEBUG0                                                          | 0x54501084 | 0x04  |
 | FALCON\_PM\_TRIGGER                                                     | 0x54501088 | 0x04  |
 | FALCON\_PM\_MODE                                                        | 0x5450108C | 0x04  |
 | FALCON\_DEBUG1                                                          | 0x54501090 | 0x04  |
@@ -101,13 +101,14 @@ interfaces).
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
 | [FALCON\_HWCFG2](#FALCON_HWCFG2 "wikilink")                             | 0x5450112C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                                   | 0x54501130 | 0x04  |
-| FALCON\_TLB\_CMD                                                        | 0x54501140 | 0x04  |
-| FALCON\_TLB\_CMD\_RES                                                   | 0x54501144 | 0x04  |
-| FALCON\_BRANCH\_HISTORY\_CTRL                                           | 0x54501148 | 0x04  |
-| FALCON\_BRANCH\_HISTORY\_PC                                             | 0x5450114C | 0x04  |
+| [FALCON\_IMCTL](#FALCON_IMCTL "wikilink")                               | 0x54501140 | 0x04  |
+| [FALCON\_IMSTAT](#FALCON_IMSTAT "wikilink")                             | 0x54501144 | 0x04  |
+| [FALCON\_TRACEIDX](#FALCON_TRACEIDX "wikilink")                         | 0x54501148 | 0x04  |
+| [FALCON\_TRACEPC](#FALCON_TRACEPC "wikilink")                           | 0x5450114C | 0x04  |
 | FALCON\_IMFILLRNG0                                                      | 0x54501150 | 0x04  |
 | FALCON\_IMFILLRNG1                                                      | 0x54501154 | 0x04  |
 | FALCON\_IMFILLCTL                                                       | 0x54501158 | 0x04  |
+| FALCON\_IMCTL\_DEBUG                                                    | 0x5450115C | 0x04  |
 | FALCON\_EXTERRWIN                                                       | 0x54501160 | 0x04  |
 | FALCON\_EXTERRCFG                                                       | 0x54501164 | 0x04  |
 | FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
@@ -165,7 +166,7 @@ interfaces).
 | TSEC\_SCP\_UNK\_70                                                      | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
-| TSEC\_SCP\_RES                                                          | 0x54501490 | 0x04  |
+| [TSEC\_SCP\_RES](#TSEC_SCP_RES "wikilink")                              | 0x54501490 | 0x04  |
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
 | TSEC\_TRNG\_04                                                          | 0x54501504 | 0x04  |
@@ -410,11 +411,11 @@ Used for getting the value of the mask for Falcon's IRQs.
 
 Used for routing Falcon's IRQs.
 
-### FALCON\_SCRATCH0
+### FALCON\_MAILBOX0
 
 Scratch register for reading/writing data to Falcon.
 
-### FALCON\_SCRATCH1
+### FALCON\_MAILBOX1
 
 Scratch register for reading/writing data to Falcon.
 
@@ -573,6 +574,51 @@ Used for configuring DMA transfers.
 | 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS     |
 | 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS     |
 | 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2 |
+
+### FALCON\_IMCTL
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-23</p></td>
+<td><p>Address</p></td>
+</tr>
+<tr class="even">
+<td><p>24-26</p></td>
+<td><p>Command</p>
+<p><code>1: ITLB</code><br />
+<code>2: PTLB</code><br />
+<code>3: VTLB</code></p></td>
+</tr>
+</tbody>
+</table>
+
+Controls the Falcon TLB.
+
+### FALCON\_IMSTAT
+
+Returns the result of the last command from
+[FALCON\_IMCTL](#FALCON_IMCTL "wikilink").
+
+### FALCON\_TRACEIDX
+
+| Bits  | Description         |
+| ----- | ------------------- |
+| 0-7   | Index               |
+| 16-23 | Maximum valid index |
+
+Controls the index for tracing with
+[FALCON\_TRACEPC](#FALCON_TRACEPC "wikilink").
+
+### FALCON\_TRACEPC
+
+Returns the PC of the last instruction executed.
 
 ### FALCON\_ICD\_CMD
 
@@ -974,6 +1020,15 @@ Used for getting the status of crypto IRQs.
 | 28   | Unknown                          |
 
 Used for getting the value of the mask for crypto IRQs.
+
+### TSEC\_SCP\_RES
+
+| Bits | Description   |
+| ---- | ------------- |
+| 31   | SCP is halted |
+
+Contains information on the status generated by the
+[TSEC\_SCP\_IRQSTAT\_HALT](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
 
 ### TSEC\_SCP\_ERR
 
