@@ -260,7 +260,7 @@ The above struct is cleared to 0 during initialization, besides the fields speci
 |-
 | 0x45D || 0x1 || || Unknown
 |-
-| 0x45E || 0x1 || 0x8000 || enableBackspace. Added with 5.x in the user-process sdk-nso.
+| 0x45E || 0x1 || 0x8000 || [5.0.0+] enableBackspace
 |-
 | 0x45F || 0x3 || || Unknown
 |-
