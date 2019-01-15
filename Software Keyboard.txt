@@ -268,7 +268,7 @@ The above struct is cleared to 0 during initialization, besides the fields speci
 |-
 | 0x463 || 0x1 || 0x100 || footerScalable
 |-
-| 0x464 || 0x1 || 0x200 || alphaEnabledInInputMode
+| 0x464 || 0x1 || 0x100 || alphaEnabledInInputMode
 |-
 | 0x465 || 0x1 || 0x100 || inputModeFadeType
 |-

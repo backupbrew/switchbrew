@@ -223,7 +223,7 @@ otherwise.
 | 0x45F  | 0x3   |                                | Unknown                                      |
 | 0x462  | 0x1   | 0x200                          | keytopAsFloating                             |
 | 0x463  | 0x1   | 0x100                          | footerScalable                               |
-| 0x464  | 0x1   | 0x200                          | alphaEnabledInInputMode                      |
+| 0x464  | 0x1   | 0x100                          | alphaEnabledInInputMode                      |
 | 0x465  | 0x1   | 0x100                          | inputModeFadeType                            |
 | 0x466  | 0x1   | 0x200                          | disableTouch                                 |
 | 0x467  | 0x1   | 0x800                          | disableUSBKeyboard                           |
