@@ -222,7 +222,7 @@ This doesn't run in the foreground and has completely different input/output [[A
 |-
 | 0x2B || 0x1 || 
 |-
-| 0x2C || 0x4 || 
+| 0x2C || 0x4 || [4.0.0+] [[#CalcArg]] flags bitmask 0x1000. In this field, bitmask 0x10000000 is used for DirectionalButtonAssignEnabled.
 |-
 | 0x30 || 0x1 || Initialized to value 1.
 |-

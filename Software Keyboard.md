@@ -181,23 +181,23 @@ it).
 
 ### AppearArg
 
-| Offset | Size | Notes                                                                     |
-| ------ | ---- | ------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Initialized to value 0x2.                                                 |
-| 0x4    | 0x12 | UTF-16 string okButtonText                                                |
-| 0x16   | 2    | UTF-16 "left optional symbol key"                                         |
-| 0x18   | 2    | UTF-16 "right optional symbol key"                                        |
-| 0x1A   | 0x1  | Enables dictionary usage when non-zero (including the system dictionary). |
-| 0x1B   | 0x1  |                                                                           |
-| 0x1C   | 0x4  | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink")          |
-| 0x20   | 0x4  | s32, Unknown. Initialized to value -1.                                    |
-| 0x24   | 0x4  | s32, Unknown. Initialized to value -1.                                    |
-| 0x28   | 0x1  | Return button flag (0 = disable, non-zero = enable)                       |
-| 0x29   | 0x2  |                                                                           |
-| 0x2B   | 0x1  |                                                                           |
-| 0x2C   | 0x4  |                                                                           |
-| 0x30   | 0x1  | Initialized to value 1.                                                   |
-| 0x31   | 0x17 |                                                                           |
+| Offset | Size | Notes                                                                                                                                           |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Initialized to value 0x2.                                                                                                                       |
+| 0x4    | 0x12 | UTF-16 string okButtonText                                                                                                                      |
+| 0x16   | 2    | UTF-16 "left optional symbol key"                                                                                                               |
+| 0x18   | 2    | UTF-16 "right optional symbol key"                                                                                                              |
+| 0x1A   | 0x1  | Enables dictionary usage when non-zero (including the system dictionary).                                                                       |
+| 0x1B   | 0x1  |                                                                                                                                                 |
+| 0x1C   | 0x4  | [\#Key Set Disable Bitmask](#Key_Set_Disable_Bitmask "wikilink")                                                                                |
+| 0x20   | 0x4  | s32, Unknown. Initialized to value -1.                                                                                                          |
+| 0x24   | 0x4  | s32, Unknown. Initialized to value -1.                                                                                                          |
+| 0x28   | 0x1  | Return button flag (0 = disable, non-zero = enable)                                                                                             |
+| 0x29   | 0x2  |                                                                                                                                                 |
+| 0x2B   | 0x1  |                                                                                                                                                 |
+| 0x2C   | 0x4  | \[4.0.0+\] [\#CalcArg](#CalcArg "wikilink") flags bitmask 0x1000. In this field, bitmask 0x10000000 is used for DirectionalButtonAssignEnabled. |
+| 0x30   | 0x1  | Initialized to value 1.                                                                                                                         |
+| 0x31   | 0x17 |                                                                                                                                                 |
 
 The above struct is cleared to 0 during initialization, besides the
 fields specified
