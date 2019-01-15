@@ -205,41 +205,43 @@ otherwise.
 
 ### CalcArg
 
-| Offset | Size  | Flags bitmask | Notes                                        |
-| ------ | ----- | ------------- | -------------------------------------------- |
-| 0x0    | 0x4   |               | Set to 0x30000.                              |
-| 0x4    | 0x2   |               | Size of this struct.                         |
-| 0x6    | 0x1   |               | Unknown, set to value 0x1.                   |
-| 0x7    | 0x1   |               | Unknown, set to value 0x1.                   |
-| 0x8    | 0x8   |               | Flags                                        |
-| 0x10   | 0x8   | 0x1           | [\#InitializeArg](#InitializeArg "wikilink") |
-| 0x18   | 0x4   | 0x2           | float volume                                 |
-| 0x1C   | 0x4   | 0x10          | s32 cursorPos                                |
-| 0x20   | 0x48  |               | [\#AppearArg](#AppearArg "wikilink")         |
-| 0x68   | 0x3F4 | 0x8           | InputText UTF-16 string                      |
-| 0x45C  | 0x1   | 0x20          | utf8Mode                                     |
-| 0x45D  | 0x1   |               | Unknown                                      |
-| 0x45E  | 0x1   | 0x8000        | \[5.0.0+\] enableBackspace                   |
-| 0x45F  | 0x3   |               | Unknown                                      |
-| 0x462  | 0x1   | 0x200         | keytopAsFloating                             |
-| 0x463  | 0x1   | 0x100         | footerScalable                               |
-| 0x464  | 0x1   | 0x200         | alphaEnabledInInputMode                      |
-| 0x465  | 0x1   | 0x100         | inputModeFadeType                            |
-| 0x466  | 0x1   | 0x200         | disableTouch                                 |
-| 0x467  | 0x1   | 0x800         | disableUSBKeyboard                           |
-| 0x468  | 0x5   |               | Unknown                                      |
-| 0x46D  | 0x2   |               |                                              |
-| 0x46F  | 0x1   |               |                                              |
-| 0x470  | 0x4   | 0x200         | float keytopScale0                           |
-| 0x474  | 0x4   | 0x200         | float keytopScale1                           |
-| 0x478  | 0x4   | 0x200         | float keytopTranslate0                       |
-| 0x47C  | 0x4   | 0x200         | float keytopTranslate1                       |
-| 0x480  | 0x4   | 0x100         | float keytopBgAlpha                          |
-| 0x484  | 0x4   |               | float, unknown                               |
-| 0x488  | 0x4   | 0x200         | float balloonScale                           |
-| 0x48C  | 0x4   |               | float, unknown                               |
-| 0x490  | 0x10  |               |                                              |
-|        |       |               |                                              |
+| Offset | Size  | Flags bitmask                  | Notes                                        |
+| ------ | ----- | ------------------------------ | -------------------------------------------- |
+| 0x0    | 0x4   |                                | Set to 0x30000.                              |
+| 0x4    | 0x2   |                                | Size of this struct.                         |
+| 0x6    | 0x1   |                                | Unknown, set to value 0x1.                   |
+| 0x7    | 0x1   |                                | Unknown, set to value 0x1.                   |
+| 0x8    | 0x8   |                                | Flags                                        |
+| 0x10   | 0x8   | 0x1                            | [\#InitializeArg](#InitializeArg "wikilink") |
+| 0x18   | 0x4   | 0x2                            | float volume                                 |
+| 0x1C   | 0x4   | 0x10                           | s32 cursorPos                                |
+| 0x20   | 0x48  |                                | [\#AppearArg](#AppearArg "wikilink")         |
+| 0x68   | 0x3F4 | 0x8                            | InputText UTF-16 string                      |
+| 0x45C  | 0x1   | 0x20                           | utf8Mode                                     |
+| 0x45D  | 0x1   |                                | Unknown                                      |
+| 0x45E  | 0x1   | 0x8000                         | \[5.0.0+\] enableBackspace                   |
+| 0x45F  | 0x3   |                                | Unknown                                      |
+| 0x462  | 0x1   | 0x200                          | keytopAsFloating                             |
+| 0x463  | 0x1   | 0x100                          | footerScalable                               |
+| 0x464  | 0x1   | 0x200                          | alphaEnabledInInputMode                      |
+| 0x465  | 0x1   | 0x100                          | inputModeFadeType                            |
+| 0x466  | 0x1   | 0x200                          | disableTouch                                 |
+| 0x467  | 0x1   | 0x800                          | disableUSBKeyboard                           |
+| 0x468  | 0x5   |                                | Unknown                                      |
+| 0x46D  | 0x2   |                                |                                              |
+| 0x46F  | 0x1   |                                |                                              |
+| 0x470  | 0x4   | 0x200                          | float keytopScale0                           |
+| 0x474  | 0x4   | 0x200                          | float keytopScale1                           |
+| 0x478  | 0x4   | 0x200                          | float keytopTranslate0                       |
+| 0x47C  | 0x4   | 0x200                          | float keytopTranslate1                       |
+| 0x480  | 0x4   | 0x100                          | float keytopBgAlpha                          |
+| 0x484  | 0x4   |                                | float, unknown                               |
+| 0x488  | 0x4   | 0x200                          | float balloonScale                           |
+| 0x48C  | 0x4   |                                | float, unknown                               |
+| 0x490  | 0xC   |                                |                                              |
+| 0x49C  | 0x1   | Enable=0x2000, disable=0x4000. | \[5.0.0+\] SeGroup (sound effect)            |
+| 0x49D  | 0x3   |                                | Padding                                      |
+|        |       |                                |                                              |
 
 This is 0x4A0-bytes.
 

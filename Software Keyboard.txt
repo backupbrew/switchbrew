@@ -298,7 +298,11 @@ The above struct is cleared to 0 during initialization, besides the fields speci
 |-
 | 0x48C || 0x4 || || float, unknown
 |-
-| 0x490 || 0x10 || || 
+| 0x490 || 0xC || || 
+|-
+| 0x49C || 0x1 || Enable=0x2000, disable=0x4000. || [5.0.0+] SeGroup (sound effect)
+|-
+| 0x49D || 0x3 || || Padding
 |-
 |}
 
