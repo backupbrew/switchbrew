@@ -216,30 +216,30 @@ otherwise.
 | 0x18   | 0x4   | 0x2           | float volume                                                 |
 | 0x1C   | 0x4   | 0x10          | s32 cursorPos                                                |
 | 0x20   | 0x48  |               | [\#AppearArg](#AppearArg "wikilink")                         |
-| 0x68   | 0x3D4 |               | Not known to be set by official sw?                          |
-| 0x43C  | 0x1   | 0x20          | utf8Mode                                                     |
-| 0x43D  | 0x1   |               | Unknown                                                      |
-| 0x43E  | 0x1   | 0x8000        | enableBackspace. Added with 5.x in the user-process sdk-nso. |
-| 0x43F  | 0x3   |               | Unknown                                                      |
-| 0x442  | 0x1   | 0x200         | keytopAsFloating                                             |
-| 0x443  | 0x1   | 0x100         | footerScalable                                               |
-| 0x444  | 0x1   | 0x200         | alphaEnabledInInputMode                                      |
-| 0x445  | 0x1   | 0x100         | inputModeFadeType                                            |
-| 0x446  | 0x1   | 0x200         | disableTouch                                                 |
-| 0x447  | 0x1   | 0x800         | disableUSBKeyboard                                           |
-| 0x448  | 0x5   |               | Unknown                                                      |
-| 0x44D  | 0x2   |               |                                                              |
-| 0x44F  | 0x1   |               |                                                              |
-| 0x450  | 0x4   | 0x200         | float keytopScale0                                           |
-| 0x454  | 0x4   | 0x200         | float keytopScale1                                           |
-| 0x458  | 0x4   | 0x200         | float keytopTranslate0                                       |
-| 0x45C  | 0x4   | 0x200         | float keytopTranslate1                                       |
-| 0x460  | 0x4   | 0x100         | float keytopBgAlpha                                          |
-| 0x464  | 0x4   |               | float, unknown                                               |
-| 0x468  | 0x4   | 0x200         | float balloonScale                                           |
-| 0x46C  | 0x4   |               | float, unknown                                               |
-| 0x470  | 0x20  |               |                                                              |
+| 0x68   | 0x3F4 | 0x8           | InputText UTF-16 string                                      |
+| 0x45C  | 0x1   | 0x20          | utf8Mode                                                     |
+| 0x45D  | 0x1   |               | Unknown                                                      |
+| 0x45E  | 0x1   | 0x8000        | enableBackspace. Added with 5.x in the user-process sdk-nso. |
+| 0x45F  | 0x3   |               | Unknown                                                      |
+| 0x462  | 0x1   | 0x200         | keytopAsFloating                                             |
+| 0x463  | 0x1   | 0x100         | footerScalable                                               |
+| 0x464  | 0x1   | 0x200         | alphaEnabledInInputMode                                      |
+| 0x465  | 0x1   | 0x100         | inputModeFadeType                                            |
+| 0x466  | 0x1   | 0x200         | disableTouch                                                 |
+| 0x467  | 0x1   | 0x800         | disableUSBKeyboard                                           |
+| 0x468  | 0x5   |               | Unknown                                                      |
+| 0x46D  | 0x2   |               |                                                              |
+| 0x46F  | 0x1   |               |                                                              |
+| 0x470  | 0x4   | 0x200         | float keytopScale0                                           |
+| 0x474  | 0x4   | 0x200         | float keytopScale1                                           |
+| 0x478  | 0x4   | 0x200         | float keytopTranslate0                                       |
+| 0x47C  | 0x4   | 0x200         | float keytopTranslate1                                       |
+| 0x480  | 0x4   | 0x100         | float keytopBgAlpha                                          |
+| 0x484  | 0x4   |               | float, unknown                                               |
+| 0x488  | 0x4   | 0x200         | float balloonScale                                           |
+| 0x48C  | 0x4   |               | float, unknown                                               |
 | 0x490  | 0x10  |               |                                                              |
+|        |       |               |                                                              |
 
 This is 0x4A0-bytes.
 
