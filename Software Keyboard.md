@@ -235,7 +235,7 @@ otherwise.
 | 0x478  | 0x4   | 0x200                          | float keytopTranslate0                       |
 | 0x47C  | 0x4   | 0x200                          | float keytopTranslate1                       |
 | 0x480  | 0x4   | 0x100                          | float keytopBgAlpha                          |
-| 0x484  | 0x4   |                                | float, unknown                               |
+| 0x484  | 0x4   | 0x100                          | float footerBgAlpha                          |
 | 0x488  | 0x4   | 0x200                          | float balloonScale                           |
 | 0x48C  | 0x4   |                                | float, unknown                               |
 | 0x490  | 0xC   |                                |                                              |
