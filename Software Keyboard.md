@@ -297,7 +297,7 @@ only uses requests 0x4, 0x7, and
 | 0x7                | 0x7E4     | ChangedStringUtf8    |                                                                                                     |
 | 0x8                | 0x7DC     | MovedCursorUtf8      |                                                                                                     |
 | 0x9                | 0x7D8     | DecidedEnterUtf8     |                                                                                                     |
-| 0xA                | 0x0       |                      | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
+| 0xA                | 0x0       | UnsetCustomizeDic    | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
 | 0xB                | 0x0       | ReleasedUserWordInfo |                                                                                                     |
 |                    |           |                      |                                                                                                     |
 
