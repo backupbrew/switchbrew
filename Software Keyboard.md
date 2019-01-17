@@ -306,6 +306,13 @@ the retval, while the second u32 is the ReplyType. The rest is the
 reply-specific data.
 
 The replies with name "\*Utf8" contain an UTF-8 string in the reply
-data, while the other replies contain an UTF-16 string.
+data, while the other replies contain an UTF-16 string. These are
+identical besides the string encoding.
+
+Reply data format:
+
+  - ChangedString\*: +0 = string. Last 0x10-bytes: 4 u32s, where the
+    first one is the length of the string in characters, including
+    NUL-terminator.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
