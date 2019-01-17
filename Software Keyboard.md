@@ -314,5 +314,7 @@ Reply data format:
   - ChangedString\*: +0 = string. Last 0x10-bytes: 4 u32s, where the
     first one is the length of the string in characters, including
     NUL-terminator.
+  - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
+    one is the stringlen.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
