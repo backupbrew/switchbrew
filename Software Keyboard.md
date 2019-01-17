@@ -302,7 +302,7 @@ only uses requests 0x4, 0x7, and
 |                    |           |                      |                                                                                                     |
 
 See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is
-the retval, while the second u32 is the ReplyType. The rest is the
+the State, while the second u32 is the ReplyType. The rest is the
 reply-specific data.
 
 The replies with name "\*Utf8" contain an UTF-8 string in the reply

@@ -365,7 +365,7 @@ Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x
 |-
 |}
 
-See [[#Runtime]]. In the storage, the first u32 is the retval, while the second u32 is the ReplyType. The rest is the reply-specific data.
+See [[#Runtime]]. In the storage, the first u32 is the State, while the second u32 is the ReplyType. The rest is the reply-specific data.
 
 The replies with name "*Utf8" contain an UTF-8 string in the reply data, while the other replies contain an UTF-16 string. These are identical besides the string encoding.
 
