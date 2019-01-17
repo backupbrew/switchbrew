@@ -316,5 +316,6 @@ Reply data format:
     NUL-terminator.
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
     one is the stringlen.
+  - DecidedEnter\*: +0 = string. The last u32 is the stringlen.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
