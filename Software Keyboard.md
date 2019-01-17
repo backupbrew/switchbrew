@@ -280,16 +280,32 @@ retval.
 Requests are sent via an applet Interactive input IStorage: the u32 at
 offset 0x0 is the RequestCommand, and the rest of the storage is the
 request-specific data. While swkbd supports other requests, official sw
-only uses requests 0x4, 0x7, and 0xA.
+only uses requests 0x4, 0x7, and
+0xA.
 
 ### Reply
 
-| ReplyType | Data Size | Name | Notes |
-| --------- | --------- | ---- | ----- |
-|           |           |      |       |
+| ReplyType          | Data Size | Name                 | Notes                                                                                               |
+| ------------------ | --------- | -------------------- | --------------------------------------------------------------------------------------------------- |
+| 0x0                | 0x1       | FinishedInitialize   | Reply data is ignored by the user-process.                                                          |
+| 0x1 / default case | 0x0       |                      | Official sw has no handling for this besides just closing the storage.                              |
+| 0x2                | 0x3FC     | ChangedString        |                                                                                                     |
+| 0x3                | 0x3F4     | MovedCursor          |                                                                                                     |
+| 0x4                | 0x3F4     | MovedTab             |                                                                                                     |
+| 0x5                | 0x3F0     | DecidedEnter         |                                                                                                     |
+| 0x6                | 0x0       | DecidedCancel        |                                                                                                     |
+| 0x7                | 0x7E4     | ChangedStringUtf8    |                                                                                                     |
+| 0x8                | 0x7DC     | MovedCursorUtf8      |                                                                                                     |
+| 0x9                | 0x7D8     | DecidedEnterUtf8     |                                                                                                     |
+| 0xA                | 0x0       |                      | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
+| 0xB                | 0x0       | ReleasedUserWordInfo |                                                                                                     |
+|                    |           |                      |                                                                                                     |
 
 See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is
 the retval, while the second u32 is the ReplyType. The rest is the
 reply-specific data.
+
+The replies with name "\*Utf8" contain an UTF-8 string in the reply
+data, while the other replies contain an UTF-16 string.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
