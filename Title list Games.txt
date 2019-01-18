@@ -350,7 +350,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01001B10068EC000 || Urban Trial Playground || EUR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
 |-
-| 01001B300B9BE000 || Diablo III: Eternal Collection || EUR USA || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 01001B300B9BE000 || Diablo III: Eternal Collection || EUR USA || 5.0.0 || Digital / Cartridge || 0 0x10000 0x20000 || || Application / Game
 |-
 | 01001B40086E2000 || The Bunker || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -470,7 +470,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010024C001224000 || PAC-MAN™ Championship Edition 2 PLUS || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 010024C0067C4000 || 2064: Read Only Memories INTEGRAL || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
+| 010024C0067C4000 || 2064: Read Only Memories INTEGRAL || EUR USA || 4.0.0 || Digital || 0 0x10000 || || Application / Game
 |-
 | 010024D0032F2000 || PHOTON³（フォトン・キューブ） || EUR JPN USA || 1.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
@@ -578,7 +578,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01002CC0062B8000 || DEEMO || CHN EUR JPN KOR USA || 3.0.1 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
-| 0100833008A9E000 || 不如帰 大乱 || JPN || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 || || Application / Game
+| 0100833008A9E000 || 不如帰 大乱 || JPN || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 || || Application / Game
 |-
 | 01007C000845C000 || キッドトリップ RUN! || JPN || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -746,7 +746,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010039A008E76000 || ChromaGun || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 010039A00BC64000 || Wasteland 2: Director's Cut || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
+| 010039A00BC64000 || Wasteland 2: Director's Cut || EUR USA || 5.0.0 || Digital || 0 0x10000 || || Application / Game
 |-
 | 010039B0060E0000 || 謎解きメール || JPN || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -2396,7 +2396,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100C460040EA000 || Hunting Simulator || EUR USA || 3.0.1 || Digital / Cartridge || 0 || || Application / Game
 |-
-| 0100C4B0034B2000 || Nintendo Labo Toy-Con 01 Variety Kit || EUR JPN USA || 4.0.0 || Cartridge || 0 || || Application / Game
+| 0100C4B0034B2000 || Nintendo Labo Toy-Con 01 Variety Kit || EUR JPN USA || 4.0.0 || Cartridge || 0 0x10000 || || Application / Game
 |-
 | 0100C4E004406000 || Cartoon Network Adventure Time: Pirates of the Enchiridion || EUR USA || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
 |-
@@ -2446,7 +2446,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100C9600ABA8000 || 白衣性愛情依存症 || JPN || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
-| 0100C9800A454000 || GALAK-Z: Variant S || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
+| 0100C9800A454000 || GALAK-Z: Variant S || EUR USA || 4.0.0 || Digital || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100C9800B366000 || ミッドナイトDX || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2841,7 +2841,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E9E00B052000 || Arcade Archives DONKEY KONG || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 0100EA1009022000 || Timberman VS || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
+| 0100EA1009022000 || Timberman VS || EUR USA || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 0100EA6004516000 || MEMBRANE || EUR USA || 3.0.1 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
@@ -3095,6 +3095,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010029D00AFD0000 || ACA NEOGEO KING OF THE MONSTERS 2 || EUR JPN USA || || Digital || 0 0x10000|| || Game
 |-
+| 0100C6300AFE0000 || ACA NEOGEO NINJA MASTER'S || || EUR JPN USA || || Digital || 0 0x10000|| || Game
+|-
 | 010061600BF7E000 || ACA NEOGEO STRIKERS 1945 PLUS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010061900AFAC000 || ACA NEOGEO THRASH RALLY || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3139,7 +3141,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CA400B6D0000 || BQM -BlockQuest Maker- || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100C6800B934000 || Brawlhalla || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+| 0100C6800B934000 || Brawlhalla || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
 | 01008D700AB14000 || The Bug Butcher || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3195,13 +3197,19 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01005FA009370000 || Elemental Knights R || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 010073C00BDB0000 || Elli || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 0100DCF0093EC000 || EVERSPACE™ - Stellar Edition || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100FA800A1F4000 || EXORDER || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100f6D00B8F2000 || Fairy Fencer F Advent Dark Force || EUR || || Digital || 0 0x10000 || || Game
+|-
 | 010072E00B36A000 || Fairy Tale Puzzles ～Magic Objects～ || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010097E00ADC2000 || Feral Fury || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100AA3009738000 || Feudal Alloy || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100F3700C09C000 || Find the Balance || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3211,7 +3219,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010005100AF90000 || FutureGrind || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010072900AFF0000 || Gear.Club Unlimited 2 || EUR USA || || Digital || 0 0x20000 || || Game
+| 010072900AFF0000 || Gear.Club Unlimited 2 || EUR USA || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |-
 | 01009D000AF3A000 || Gelly Break || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3293,6 +3301,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01009A700A538000 || Mark of the Ninja: Remastered || EUR USA || || Digital || 0 0x20000 || || Game
 |-
+| 0100F5700C9A8000 || MIND: Path to Thalamus || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01004A400C320000 || Momodora: Reverie Under the Moonlight || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 01002CC00BC4C000 || Momonga Pinball Adventures || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3311,6 +3321,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100C3E00ACAA000 || Mutant Football League: Dynasty Edition || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 01008C600395A000 || My Little Riding Champion || EUR || || Digital || 0 0x20000 || || Game
+|-
 | 0100A6F00AC70000 || NAIRI: Tower of Shirin || EUR JPN USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
 | 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
@@ -3319,11 +3331,11 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100D6200933C000 || Nickelodeon Kart Racers || USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
-| 0100D870045B6000 || Nintendo Entertainment System – Nintendo Switch Online || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Application
+| 0100D870045B6000 || Nintendo Entertainment System – Nintendo Switch Online || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Application
 |-
 | 0100EF5008FC4000 || Nippon Marathon || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010029F00C876000 || Odium to the Core || EUR USA || || Digital || 0 0x10000 || || Game
+| 010029F00C876000 || Odium to the Core || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01006AB00BD82000 || OkunoKA || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3367,7 +3379,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E8300A67A000 || RISK: The Game of Global Domination || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100A7D008392000 || Rival Megagun || EUR JPN USA || || Digital || 0 0x10000 || || Game
+| 0100A7D008392000 || Rival Megagun || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010053000B986000 || Road Redemption || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3401,7 +3413,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F3C00C400000 || SkyTime || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 01005A600C318000 || SMITE || USA || || Digital || 0 0x10000 || || Game
+| 01005A600C318000 || SMITE || USA || || Digital || 0 0x10000 0x30000 || || Game
 |-
 | 01004AB00AEF8000 || SNK 40th ANNIVERSARY COLLECTION || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
 |-
@@ -3473,6 +3485,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01007A300C856000 || Xenon Valkyrie+ || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100634008266000 || YIIK: A Postmodern RPG || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 010012F00B6F2000 || Yomawari: The Long Night Collection || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01002C9005F36000 || Youtubers Life OMG Edition || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3507,7 +3521,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010033100AC2C000 || 秋葉原クラッシュ！１２３ステージ＋１ || JPN || || Digital || 0 0x10000 0x30000 || || Game
 |-
-| 0100E5500B020000 || ネコネイビー -デイドリーム・エディション- || JPN || || Digital || 0 0x10000 || || Game
+| 0100E5500B020000 || ネコネイビー -デイドリーム・エディション- || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010060300B870000 || ぷよぷよeスポーツ || JPN || || Digital || 0 0x10000 || || Game
 |-
@@ -3515,7 +3529,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010077300A9AC000 || ポータルナイツ || JPN || || Digital || 0 0x10000 || || Game
 |-
-| 0100AA4008210000 || ゲットアンプドモバイル || JPN || || Digital || 0 0x10000 || || Game
+| 0100AA4008210000 || ゲットアンプドモバイル || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010018700A14A000 || レコチョク || JPN || || Digital || 0 0x20000 0x30000 || || Game
 |-
@@ -3553,7 +3567,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01002E0006A50000 || WORKxWORK || JPN || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |-
-| 0100B4E00444C000 || ファミリーコンピュータ Nintendo Switch Online || JPN || || Digital || 0 0x10000 0x20000 0x30000 || || Application
+| 0100B4E00444C000 || ファミリーコンピュータ Nintendo Switch Online || JPN || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Application
 |-
 | 01000F0007D92000 || クロワルール ・シグマ || JPN || || Digital || 0 0x10000 || || Game
 |-
