@@ -83,6 +83,9 @@ interfaces).
 | FALCON\_ENGCTL                                                          | 0x545010A4 | 0x04  |
 | FALCON\_PM\_SEL                                                         | 0x545010A8 | 0x04  |
 | FALCON\_HOST\_IO\_INDEX                                                 | 0x545010AC | 0x04  |
+| FALCON\_UNK\_B0                                                         | 0x545010B0 | 0x04  |
+| FALCON\_UNK\_B4                                                         | 0x545010B4 | 0x04  |
+| FALCON\_UNK\_B8                                                         | 0x545010B8 | 0x04  |
 | [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
 | FALCON\_UNK\_D4                                                         | 0x545010D4 | 0x04  |
 | FALCON\_UNK\_D8                                                         | 0x545010D8 | 0x04  |
@@ -142,6 +145,7 @@ interfaces).
 | FALCON\_UNK\_248                                                        | 0x54501248 | 0x04  |
 | FALCON\_UNK\_24C                                                        | 0x5450124C | 0x04  |
 | FALCON\_UNK\_250                                                        | 0x54501250 | 0x04  |
+| FALCON\_UNK\_260                                                        | 0x54501260 | 0x04  |
 | [FALCON\_SPROT\_IMEM](#FALCON_SPROT_IMEM "wikilink")                    | 0x54501280 | 0x04  |
 | [FALCON\_SPROT\_DMEM](#FALCON_SPROT_DMEM "wikilink")                    | 0x54501284 | 0x04  |
 | [FALCON\_SPROT\_CPUCTL](#FALCON_SPROT_CPUCTL "wikilink")                | 0x54501288 | 0x04  |
@@ -150,26 +154,35 @@ interfaces).
 | [FALCON\_SPROT\_MTHD](#FALCON_SPROT_MTHD "wikilink")                    | 0x54501294 | 0x04  |
 | [FALCON\_SPROT\_SCTL](#FALCON_SPROT_SCTL "wikilink")                    | 0x54501298 | 0x04  |
 | [FALCON\_SPROT\_WDTMR](#FALCON_SPROT_WDTMR "wikilink")                  | 0x5450129C | 0x04  |
+| FALCON\_UNK\_2C0                                                        | 0x545012C0 | 0x04  |
+| FALCON\_UNK\_2C4                                                        | 0x545012C4 | 0x04  |
+| FALCON\_UNK\_2C8                                                        | 0x545012C8 | 0x04  |
+| FALCON\_UNK\_2CC                                                        | 0x545012CC | 0x04  |
 | FALCON\_UNK\_2E0                                                        | 0x545012E0 | 0x04  |
 | [TSEC\_SCP\_CTL0](#TSEC_SCP_CTL0 "wikilink")                            | 0x54501400 | 0x04  |
 | [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink")                            | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                   | 0x54501408 | 0x04  |
 | [TSEC\_SCP\_CTL\_LOCK](#TSEC_SCP_CTL_LOCK "wikilink")                   | 0x5450140C | 0x04  |
 | TSEC\_SCP\_UNK\_10                                                      | 0x54501410 | 0x04  |
+| TSEC\_SCP\_UNK\_14                                                      | 0x54501414 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                   | 0x54501418 | 0x04  |
+| TSEC\_SCP\_UNK\_1C                                                      | 0x5450141C | 0x04  |
 | [TSEC\_SCP\_SEQ\_CTL](#TSEC_SCP_SEQ_CTL "wikilink")                     | 0x54501420 | 0x04  |
 | [TSEC\_SCP\_SEQ\_VAL](#TSEC_SCP_SEQ_VAL "wikilink")                     | 0x54501424 | 0x04  |
 | [TSEC\_SCP\_SEQ\_STAT](#TSEC_SCP_SEQ_STAT "wikilink")                   | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_INSN\_STAT](#TSEC_SCP_INSN_STAT "wikilink")                 | 0x54501430 | 0x04  |
+| TSEC\_SCP\_UNK\_50                                                      | 0x54501450 | 0x04  |
 | [TSEC\_SCP\_AUTH\_STAT](#TSEC_SCP_AUTH_STAT "wikilink")                 | 0x54501454 | 0x04  |
 | [TSEC\_SCP\_AES\_STAT](#TSEC_SCP_AES_STAT "wikilink")                   | 0x54501458 | 0x04  |
 | TSEC\_SCP\_UNK\_70                                                      | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
 | [TSEC\_SCP\_RES](#TSEC_SCP_RES "wikilink")                              | 0x54501490 | 0x04  |
+| TSEC\_SCP\_UNK\_94                                                      | 0x54501494 | 0x04  |
 | [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
 | TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
 | TSEC\_TRNG\_UNK\_04                                                     | 0x54501504 | 0x04  |
+| TSEC\_TRNG\_UNK\_08                                                     | 0x54501508 | 0x04  |
 | TSEC\_TRNG\_TEST\_CTL                                                   | 0x5450150C | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG0                                                  | 0x54501510 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED0                                                 | 0x54501514 | 0x04  |
@@ -191,9 +204,19 @@ interfaces).
 | [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
 | [TSEC\_DMA\_CFG](#TSEC_DMA_CFG "wikilink")                              | 0x5450170C | 0x04  |
 | TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
+| TSEC\_TEGRA\_UNK\_04                                                    | 0x54501804 | 0x04  |
+| TSEC\_TEGRA\_UNK\_08                                                    | 0x54501808 | 0x04  |
+| TSEC\_TEGRA\_UNK\_0C                                                    | 0x5450180C | 0x04  |
+| TSEC\_TEGRA\_UNK\_10                                                    | 0x54501810 | 0x04  |
+| TSEC\_TEGRA\_UNK\_14                                                    | 0x54501814 | 0x04  |
+| TSEC\_TEGRA\_UNK\_18                                                    | 0x54501818 | 0x04  |
+| TSEC\_TEGRA\_UNK\_1C                                                    | 0x5450181C | 0x04  |
+| TSEC\_TEGRA\_UNK\_20                                                    | 0x54501820 | 0x04  |
 | TSEC\_TEGRA\_UNK\_24                                                    | 0x54501824 | 0x04  |
 | TSEC\_TEGRA\_UNK\_28                                                    | 0x54501828 | 0x04  |
 | TSEC\_TEGRA\_UNK\_2C                                                    | 0x5450182C | 0x04  |
+| TSEC\_TEGRA\_UNK\_30                                                    | 0x54501830 | 0x04  |
+| TSEC\_TEGRA\_UNK\_34                                                    | 0x54501830 | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
 
 ### TSEC\_THI\_METHOD0
@@ -1003,7 +1026,7 @@ Contains information on the last AES sequence executed.
 
 | Bits | Description                      |
 | ---- | -------------------------------- |
-| 1    | TSEC\_SCP\_IRQSTAT\_TRNG         |
+| 0    | TSEC\_SCP\_IRQSTAT\_TRNG         |
 | 8    | TSEC\_SCP\_IRQSTAT\_HALT         |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQSTAT\_INSN\_ERROR  |
@@ -1017,7 +1040,7 @@ Used for getting the status of crypto IRQs.
 
 | Bits | Description                      |
 | ---- | -------------------------------- |
-| 1    | TSEC\_SCP\_IRQMASK\_TRNG         |
+| 0    | TSEC\_SCP\_IRQMASK\_TRNG         |
 | 8    | TSEC\_SCP\_IRQMASK\_HALT         |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQMASK\_INSN\_ERROR  |
