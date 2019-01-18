@@ -216,7 +216,7 @@ interfaces).
 | TSEC\_TEGRA\_UNK\_28                                                    | 0x54501828 | 0x04  |
 | TSEC\_TEGRA\_UNK\_2C                                                    | 0x5450182C | 0x04  |
 | TSEC\_TEGRA\_UNK\_30                                                    | 0x54501830 | 0x04  |
-| TSEC\_TEGRA\_UNK\_34                                                    | 0x54501830 | 0x04  |
+| TSEC\_TEGRA\_UNK\_34                                                    | 0x54501834 | 0x04  |
 | [TSEC\_TEGRA\_CTL](#TSEC_TEGRA_CTL "wikilink")                          | 0x54501838 | 0x04  |
 
 ### TSEC\_THI\_METHOD0

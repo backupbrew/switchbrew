@@ -779,7 +779,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x04
 |-
 | TSEC_TEGRA_UNK_34
-| 0x54501830
+| 0x54501834
 | 0x04
 |-
 | [[#TSEC_TEGRA_CTL|TSEC_TEGRA_CTL]]
