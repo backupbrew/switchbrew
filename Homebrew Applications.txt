@@ -218,7 +218,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Nightfox
 | [https://github.com/sacredbanana/lab3d-sdl/releases/latest Here]
 | [https://github.com/sacredbanana/lab3d-sdl Yes]
-| 2018-07-09
+| 2019-01-19
 |-
 | Meritous
 | Top View Dungeon Game
