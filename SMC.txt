@@ -24,7 +24,7 @@ If bit ''n'' is set in the argument type then parameter X''n'' is treated as a p
 SMC arguments are passed using registers X0-X7 with X0 always sending the call sub-id and returning the result of the call.
 
 == ID 0 ==
-Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]].
+Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]]. SMCs should be called from CPUID 3 (where SPL runs).
 
 {| class=wikitable
 ! Sub-ID || Name || In || Out

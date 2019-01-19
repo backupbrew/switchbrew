@@ -25,7 +25,9 @@ the call sub-id and returning the result of the call.
 ## ID 0
 
 Functions exposed to user-mode processes using
-[svcCallSecureMonitor](SVC.md "wikilink").
+[svcCallSecureMonitor](SVC.md "wikilink"). SMCs should be called from
+CPUID 3 (where SPL
+runs).
 
 | Sub-ID                     | Name                                                                       | In | Out |
 | -------------------------- | -------------------------------------------------------------------------- | -- | --- |
