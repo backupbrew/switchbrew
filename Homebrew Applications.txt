@@ -213,6 +213,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/MaesterRowen/InvadersNX Yes]
 | 2018-07-09
 |-
+| Ken's Labyrinth
+| Classic MS-DOS shooter
+| Nightfox
+| [https://github.com/sacredbanana/lab3d-sdl/releases/latest Here]
+| [https://github.com/sacredbanana/lab3d-sdl Yes]
+| 2018-07-09
+|-
 | Meritous
 | Top View Dungeon Game
 | nop90
