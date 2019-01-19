@@ -312,10 +312,11 @@ identical besides the string encoding.
 Reply data format:
 
   - ChangedString\*: +0 = string. Last 0x10-bytes: 4 u32s, where the
-    first one is the length of the string in characters, including
-    NUL-terminator.
+    first one is the length of the string in characters, without
+    NUL-terminator. The last u32 is cursorPos. The other 2 fields are
+    s32s.
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
-    one is the stringlen.
-  - DecidedEnter\*: +0 = string. The last u32 is the stringlen.
+    one is the stringLen, and the second one is cursorPos.
+  - DecidedEnter\*: +0 = string. The last u32 is the stringLen.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
