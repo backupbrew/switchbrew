@@ -176,7 +176,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | lantus/MVG
 | [https://github.com/lantus/cannonball-nx/releases Here]
 | [https://github.com/lantus/cannonball-nx Yes]
-| 2018-05-23
+| 2019-01-19
 |-
 | Chocolate Doom
 | Chocolate Doom port for Switch
