@@ -214,7 +214,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | 2018-07-09
 |-
 | Ken's Labyrinth
-| Classic MS-DOS shooter with ehanced features such as HD textures and 60fps support
+| Classic MS-DOS shooter with enhanced features such as HD textures and 60fps support
 | Nightfox
 | [https://github.com/sacredbanana/lab3d-sdl/releases/latest Here]
 | [https://github.com/sacredbanana/lab3d-sdl Yes]
