@@ -274,6 +274,7 @@ retval.
 | RequestCommand | Data Size | Name            | Notes                                     |
 | -------------- | --------- | --------------- | ----------------------------------------- |
 | 0x4            | 0x0       | Finalize        |                                           |
+| 0x6            | Varies    | SetUserWordInfo |                                           |
 | 0x7            | 0x70      | SetCustomizeDic |                                           |
 | 0xA            | 0x4A0     | Calc            | Data is [\#CalcArg](#CalcArg "wikilink"). |
 
