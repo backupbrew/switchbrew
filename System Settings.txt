@@ -1,3 +1,9913 @@
-=UI menu options=
-==System==
-* "Auto-update Software": This was added with [[2.0.0]]. When set to "OFF" this disables the automatic tagaya domain network requests for checking whether any regular-application updates are available. This does not affect the automatic sysupdate network requests, which were already done with [[1.0.0]].
+__NOTOC__
+
+= account =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |na_license_verification_enabled
+| 5.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |na_required_for_network_service
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |user_qualification_verification_enabled
+| 6.0.0+
+| false
+| rowspan="1" |
+|}
+
+= account.daemon =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |background_awaking_periodicity
+| 2.0.0+
+| 10800 (0x2a30)
+| rowspan="1" |
+|-
+| rowspan="3" |na_info_refresh_interval
+| 2.0.0-5.0.0
+| 46800 (0xb6d0)
+| rowspan="3" |
+|-
+| 5.0.1-5.1.0
+| 72000 (0x11940)
+|-
+| 6.0.0+
+| 46800 (0xb6d0)
+|-
+| rowspan="3" |profile_sync_interval
+| 2.0.0-5.0.0
+| 18000 (0x4650)
+| rowspan="3" |
+|-
+| 5.0.1-5.1.0
+| 172800 (0x2a300)
+|-
+| 6.0.0+
+| 18000 (0x4650)
+|-
+| rowspan="1" |schedule_periodicity
+| 2.0.0+
+| 3600 (0xe10)
+| rowspan="1" |
+|}
+
+= am.display =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |force_immediate_update_caller_applet_capture
+| 5.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="2" |frame_buffer_sharing_level
+| 4.0.0-4.1.0
+| 0 (0x0)
+| rowspan="2" |
+|-
+| 5.0.0+
+| 2 (0x2)
+|-
+| rowspan="1" |transition_layer_enabled
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= am.gpu =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="2" |gpu_scheduling_bg_app_us
+| 1.0.0
+| 4834 (0x12e2)
+| rowspan="2" |
+|-
+| 2.0.0+
+| 104500 (0x19834)
+|-
+| rowspan="1" |gpu_scheduling_bg_la_us
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_scheduling_bg_sa_us
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_scheduling_enabled
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="2" |gpu_scheduling_fg_app_us
+| 1.0.0
+| 16500 (0x4074)
+| rowspan="2" |
+|-
+| 2.0.0+
+| 116166 (0x1c5c6)
+|-
+| rowspan="1" |gpu_scheduling_fg_la_us
+| 1.0.0+
+| 11666 (0x2d92)
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_scheduling_fg_sa_us
+| 1.0.0+
+| 11666 (0x2d92)
+| rowspan="1" |
+|-
+| rowspan="2" |gpu_scheduling_frame_time_us
+| 1.0.0
+| 17000 (0x4268)
+| rowspan="2" |
+|-
+| 2.0.0+
+| 116666 (0x1c7ba)
+|-
+| rowspan="1" |gpu_scheduling_oa_us
+| 1.0.0+
+| 500 (0x1f4)
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_scheduling_partial_fg_la_us
+| 1.0.0+
+| 2000 (0x7d0)
+| rowspan="1" |
+|}
+
+= apm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |battery_draining_enabled
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |performance_mode_policy
+| 1.0.0+
+| "auto"
+| rowspan="1" |
+|-
+| rowspan="1" |sdev_cpu_overclock_enabled
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |sdev_throttling_additional_delay_us
+| 1.0.0+
+| 16000 (0x3e80)
+| rowspan="1" |
+|-
+| rowspan="1" |sdev_throttling_enabled
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= audio =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |adsp_log_enabled
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |audin_log_enabled
+| 1.0.0-5.1.0
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |audout_log_enabled
+| 1.0.0-5.1.0
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |audren_log_enabled
+| 1.0.0-5.1.0
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |hwopus_log_enabled
+| 1.0.0-5.1.0
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |suppress_additional_mic_check
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="2" |suspend_for_debugger_enabled
+| 1.0.0-3.0.2
+| false
+| rowspan="2" |
+|-
+| 4.0.0+
+| true
+|-
+| rowspan="1" |uac_enabled
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |uac_speaker_enabled
+| 3.0.0-3.0.2
+| false
+| rowspan="1" |
+|}
+
+= bcat =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |production_mode
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= bgtc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="2" |battery_threshold_save
+| 2.0.0-2.3.0
+| 30 (0x1e)
+| rowspan="2" |
+|-
+| 3.0.0+
+| 20 (0x14)
+|-
+| rowspan="2" |battery_threshold_stop
+| 2.0.0-2.3.0
+| 15 (0xf)
+| rowspan="2" |
+|-
+| 3.0.0+
+| 20 (0x14)
+|-
+| rowspan="1" |enable_battery_saver
+| 2.0.0+
+| 1 (0x1)
+| rowspan="1" |
+|-
+| rowspan="1" |enable_halfawake
+| 3.0.0+
+| 1 (0x1)
+| rowspan="1" |
+|-
+| rowspan="1" |leaving_halfawake_margin
+| 2.0.0+
+| 3 (0x3)
+| rowspan="1" |
+|-
+| rowspan="1" |minimum_interval_normal
+| 2.0.0+
+| 1800 (0x708)
+| rowspan="1" |
+|-
+| rowspan="1" |minimum_interval_save
+| 2.0.0+
+| 86400 (0x15180)
+| rowspan="1" |
+|}
+
+= bluetooth_debug =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |skip_boot
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= boot =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |boot_devmenuapp_installer
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |force_maintenance
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= bpc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable_quasi_off
+| 2.0.0+
+| true
+| rowspan="1" |
+|}
+
+= bsp0 =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |tm_transport
+| 1.0.0+
+| "USB"
+| rowspan="1" |
+|-
+| rowspan="1" |usb
+| 1.0.0+
+| "UDS"
+| rowspan="1" |
+|}
+
+= capsrv =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |album_directory_path
+| 5.0.0+
+| "d:/Album"
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_directory_change
+| 5.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_movie_file_support
+| 4.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_movie_filehash_verification
+| 4.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_movie_filesign_verification
+| 4.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_screenshot_file_support
+| 4.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_album_screenshot_filedata_verification
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |screenshot_layerstack
+| 1.0.0+
+| "screenshot"
+| rowspan="1" |
+|}
+
+= contents_delivery =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |acceptable_application_delivery_protocol_version
+| 5.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |application_delivery_protocol_version
+| 4.0.0+
+| 1 (0x1)
+| rowspan="1" |
+|-
+| rowspan="1" |enable_debug_api
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |required_system_version_to_deliver_application
+| 4.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |system_delivery_protocol_version
+| 4.0.0+
+| 1 (0x1)
+| rowspan="1" |
+|}
+
+= dauth =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |_dummy
+| 5.0.0+
+| false
+| rowspan="1" |
+|}
+
+= devmenu =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |application_update_requried
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |development_mode
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enable_application_foreground_at_sleep_finish
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enable_application_update
+| 2.0.0-5.1.0
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_exhibition_mode
+| 2.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enable_resume_all
+| 5.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |user_index_at_launch
+| 6.0.0+
+| -1 (0xffffffff)
+| rowspan="1" |
+|}
+
+= eclct =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |analytics_override
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |analytics_pollperiod
+| 1.0.0+
+| 86400 (0x15180)
+| rowspan="1" |
+|}
+
+= erpt =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |production_mode
+| 4.0.0+
+| true
+| rowspan="1" |
+|}
+
+= err =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |applet_auto_close
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= eupld =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |upload_enabled
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= fatal =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |quest_reboot_interval_second
+| 4.1.0+
+| 300 (0x12c)
+| rowspan="1" |
+|-
+| rowspan="1" |show_extra_info
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |transition_to_fatal
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= friends =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |background_processing
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= gpu_core_dump =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |auto_dump
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= hdcp =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |authentication_timeout_ms
+| 4.0.0+
+| 12000 (0x2ee0)
+| rowspan="1" |
+|-
+| rowspan="1" |stub_emulation
+| 4.0.0+
+| false
+| rowspan="1" |
+|}
+
+= hid_debug =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |ble_disabled
+| 5.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="2" |dscale_disabled
+| 6.0.0-6.0.1
+| true
+| rowspan="2" |
+|-
+| 6.1.0+
+| false
+|-
+| rowspan="1" |emulate_firmware_update_failure
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |emulate_future_device
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |emulate_mcu_hardware_error
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enables_debugpad
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |firmware_update_failure_emulation_mode
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |force_handheld
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |manages_devices
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |manages_touch_ic_i2c
+| 6.0.0+
+| true
+| rowspan="1" |
+|}
+
+= htc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |disconnection_emulation
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= idle =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |dim_level_percent_lcd
+| 1.0.0+
+| 10 (0xa)
+| rowspan="1" |
+|-
+| rowspan="1" |dim_level_percent_tv
+| 1.0.0+
+| 70 (0x46)
+| rowspan="1" |
+|}
+
+= jit_debug =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable_jit_debug
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= lbl =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |debug_brightness_mapping_1st_coefficient
+| 4.0.0+
+| 1000 (0x3e8)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_brightness_mapping_2nd_coefficient
+| 4.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_brightness_mapping_3rd_coefficient
+| 4.0.0+
+| 20 (0x14)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_brightness_mapping_enabled
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |force_disable_als
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |vr_brightness_transition_frame
+| 5.0.0+
+| 10 (0xa)
+| rowspan="1" |
+|}
+
+= lm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable_sd_card_logging
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |sd_card_log_output_directory
+| 1.0.0+
+| "NxBinLogs"
+| rowspan="1" |
+|}
+
+= migration =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |ldn_connection_timeout_seconds
+| 4.0.0+
+| 1800 (0x708)
+| rowspan="1" |
+|-
+| rowspan="1" |transfer_large_data_timeout_seconds
+| 4.0.0+
+| 3600 (0xe10)
+| rowspan="1" |
+|-
+| rowspan="1" |transfer_low_speed_timeout_seconds
+| 4.0.0+
+| 300 (0x12c)
+| rowspan="1" |
+|-
+| rowspan="1" |transfer_messaging_timeout_seconds
+| 4.0.0+
+| 100 (0x64)
+| rowspan="1" |
+|-
+| rowspan="1" |transfer_small_data_timeout_seconds
+| 4.0.0+
+| 300 (0x12c)
+| rowspan="1" |
+|-
+| rowspan="1" |ui_acceptance_wait_timeout_seconds
+| 4.0.0+
+| 900 (0x384)
+| rowspan="1" |
+|}
+
+= mii =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |is_db_test_mode_enabled
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |is_img_db_test_mode_enabled
+| 5.0.0+
+| false
+| rowspan="1" |
+|}
+
+= nd =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |development_function_enabled
+| 5.0.0-5.1.0
+| false
+| rowspan="1" |
+|}
+
+= news =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="5" |system_version
+| 2.0.0-2.3.0
+| 1 (0x1)
+| rowspan="5" |
+|-
+| 3.0.0-3.0.2
+| 2 (0x2)
+|-
+| 4.0.0-4.1.0
+| 3 (0x3)
+|-
+| 5.0.0-5.1.0
+| 4 (0x4)
+|-
+| 6.0.0+
+| 5 (0x5)
+|}
+
+= nfp =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |not_locked_tag
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |play_report
+| 2.0.0+
+| false
+| rowspan="1" |
+|}
+
+= nifm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |apply_config_timeout
+| 3.0.0+
+| 30000 (0x7530)
+| rowspan="1" |
+|-
+| rowspan="1" |connection_test_timeout
+| 3.0.0+
+| 45000 (0xafc8)
+| rowspan="1" |
+|-
+| rowspan="1" |ethernet_adapter_standby_time
+| 3.0.0+
+| 10000 (0x2710)
+| rowspan="1" |
+|-
+| rowspan="1" |is_communication_control_enabled_for_test
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= nim.install =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |apply_delta_stress_storage
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_come_back_after
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |debug_come_back_after_second
+| 6.0.0+
+| 300 (0x12c)
+| rowspan="1" |
+|-
+| rowspan="1" |prefer_delta_evenif_inefficient
+| 2.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |simulate_eci_delay_response
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |simulate_eci_still_unavailable_response
+| 4.0.0+
+| false
+| rowspan="1" |
+|}
+
+= npns =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |background_processing
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="2" |logmanager_redirection
+| 1.0.0
+| "false;"
+| rowspan="2" |
+|-
+| 2.0.0+
+| true
+|-
+| rowspan="1" |sleep_max_try_count
+| 3.0.0+
+| 5 (0x5)
+| rowspan="1" |
+|-
+| rowspan="1" |sleep_periodic_interval
+| 2.0.0+
+| 10800 (0x2a30)
+| rowspan="1" |
+|-
+| rowspan="1" |sleep_processing_timeout
+| 2.0.0+
+| 30 (0x1e)
+| rowspan="1" |
+|-
+| rowspan="1" |test_mode
+| 3.0.0+
+| false
+| rowspan="1" |
+|}
+
+= ns.applet =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |overlay_applet_id
+| 1.0.0+
+| "0x010000000000100c"
+| rowspan="1" |
+|-
+| rowspan="1" |shop_applet_id
+| 3.0.0+
+| "0x010000000000100b"
+| rowspan="1" |
+|-
+| rowspan="1" |system_applet_id
+| 1.0.0+
+| "0x0100000000001000"
+| rowspan="1" |
+|}
+
+= ns.application =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |application_id_on_blacklist
+| 5.0.0+
+| "0x0000000000000000"
+| rowspan="1" |
+|-
+| rowspan="1" |application_version_on_blacklist
+| 5.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |assign_all_device_linked_elicenses
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |cleanup_add_on_content_with_no_rights_result_value
+| 4.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |cleanup_cache_storage_enabled
+| 5.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |debug_account_restricted_rights
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |initial_waiting_time_of_assigning_elicenses_for_device
+| 6.0.0+
+| 900 (0x384)
+| rowspan="1" |
+|-
+| rowspan="1" |max_waiting_time_of_assigning_elicenses_for_device
+| 6.0.0+
+| 90000 (0x15f90)
+| rowspan="1" |
+|-
+| rowspan="1" |wait_time_after_signal_for_dynamic_rights_observer
+| 6.0.0+
+| 15 (0xf)
+| rowspan="1" |
+|}
+
+= ns.autoboot =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enabled
+| 3.0.0+
+| true
+| rowspan="1" |
+|}
+
+= ns.gamecard =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |mount_gamecard_result_value
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |try_gamecard_access_result_value
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|}
+
+= ns.notification =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |debug_waiting_limit
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |enable_download_task_list
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_download_ticket
+| 4.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_network_update
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_random_wait
+| 3.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_request_on_cold_boot
+| 3.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_send_rights_usage_status_request
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_sync_elicense_request
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enable_version_list
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |result_value_to_register_nt_for_dynamic_rights
+| 6.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_interval
+| 2.0.0-4.1.0
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_interval_max
+| 5.0.0+
+| 900 (0x384)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_interval_min
+| 5.0.0+
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |version_list_waiting_limit
+| 4.0.0-5.1.0
+| 900 (0x384)
+| rowspan="1" |
+|-
+| rowspan="1" |version_list_waiting_limit_bias
+| 6.0.0+
+| 48 (0x30)
+| rowspan="1" |
+|-
+| rowspan="1" |version_list_waiting_limit_min
+| 6.0.0+
+| 1800 (0x708)
+| rowspan="1" |
+|}
+
+= ns.pseudodeviceid =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |reset_pseudo_device_id
+| 3.0.0+
+| false
+| rowspan="1" |
+|}
+
+= ns.sdcard =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |cleanup_sdcard_result_value
+| 5.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |compare_sdcard
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |mount_sdcard
+| 2.0.0+
+| true
+| rowspan="1" |
+|}
+
+= ns.ticket =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |next_available_time_of_unexpected_error
+| 4.0.0+
+| 300 (0x12c)
+| rowspan="1" |
+|}
+
+= nsd =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |environment_identifier
+| 1.0.0+
+| "lp1"
+| rowspan="1" |
+|-
+| rowspan="1" |test_mode
+| 2.0.0+
+| false
+| rowspan="1" |
+|}
+
+= ntc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="2" |autonomic_correction_failed_retry_interval_seconds
+| 1.0.0-2.3.0
+| 3600 (0xe10)
+| rowspan="2" |
+|-
+| 3.0.0+
+| 1800 (0x708)
+|-
+| rowspan="1" |autonomic_correction_immediate_try_count_max
+| 1.0.0+
+| 4 (0x4)
+| rowspan="1" |
+|-
+| rowspan="1" |autonomic_correction_immediate_try_interval_milliseconds
+| 1.0.0+
+| 5000 (0x1388)
+| rowspan="1" |
+|-
+| rowspan="2" |autonomic_correction_interval_seconds
+| 1.0.0-2.1.0
+| 864000 (0xd2f00)
+| rowspan="2" |
+|-
+| 2.2.0+
+| 432000 (0x69780)
+|-
+| rowspan="1" |is_autonomic_correction_enabled
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= nv =
+
+{| class="wikitable mw-collapsible mw-collapsed" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |00008600
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0007b25e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0083e1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |01621887
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |03134743
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0356afd0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0356afd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0356afd2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0356afd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |094313
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x04dc09
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x111133
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x1aa483
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x1cb1cf
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x1cb1d0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x1e3221
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x300fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x301fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x302fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x3eec59
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x46b3ed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dc6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dd0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x523dd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x5344bb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x555237
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x58a234
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x7b4428
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dc0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dc1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dc2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dc3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x923dd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x9abdc5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0x9abdc6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xaaa36c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb09da5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb0b348
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xb0b349
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xbb558f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xbd10fb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xc32ad3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xce2348
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xcfd81f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xe0036b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xe01f2d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xe17212
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xeae966
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xed4f82
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xf12335
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |0xf12336
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |10261989
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1042d483
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |10572898
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |115631
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |12950094
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1314f311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1314f312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |13279512
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |13813496
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |14507179
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |15694569
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |16936964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |17aa230c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |182054
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |18273275
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |18273276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1854d03b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |18add00d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |19156670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |19286545
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1a298e9f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1acf43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1bda43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |1c3b92
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |21509920
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |215323457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2165ad
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2165ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |21be9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |233264316
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |234557580
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |23cd0e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |24189123
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2443266
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |25025519
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |255e39
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2583364
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2888c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |28ca3e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |29871243
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2a1f64
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2dc432
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2de437
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2f3bb89c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |2fd652
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3001ac
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |31298772
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |313233
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |31f7d603
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |320ce4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |32153248
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |32153249
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |335bca
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |342abb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |34dfe6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |34dfe7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |34dfe8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |34dfe9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |35201578
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |359278
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |37f53a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |38144972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |38542646
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3b74c9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3c136f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3cf72823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3d7af029
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |3ff34782
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4129618
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4189fac3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |420bd4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |42a699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |441369
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4458713e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4554b6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |457425
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4603b207
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |46574957
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |46574958
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |46813529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |46f1e13d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |47534c43
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |48550336
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |48576893
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |48576894
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4889ac02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |49005740
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |49867584
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |49960973
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4a5341
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4f4e48
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |4f8a0a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |50299698
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |50299699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |50361291
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |5242ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |53d30c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |56347a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |563a95f1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |573823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |58027529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |5d2d63
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |5f7e3b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |60461793
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |60d355
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |616627aa
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |62317182
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6253fa2e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |64100768
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |64100769
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |64100770
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |647395
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |66543234
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |67674763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |67739784
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |68fb9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |69801276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6af9fa2f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6af9fa3f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6af9fa4f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6bd8c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6c7691
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6d4296ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6dd7e7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6dd7e8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |6fe11ec1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |716511763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |72504593
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |73304097
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |73314098
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |74095213
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |74095213a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |74095213b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |74095214
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |748f9649
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |75494732
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |78452832
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |784561
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |78e16b9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |79251225
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |7c128b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |7ccd93
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |7df8d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |800c2310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |80546710
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |80772310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |808ee280
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |81131154
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |81274457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8292291f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |83498426
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |84993794
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |84995585
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |84a0a0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |852142
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |85612309
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |85612310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |85612311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |85612312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8623ff27
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |87364952
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |87f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |886748
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |89894423
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8ad8a75
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8ad8ad00
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8bb815
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8bb817
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8bb818
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8bb819
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8e640cd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8f34971a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8f773984
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |8f7a7d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |902486209
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |90482571
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |91214835
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |912848290
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |915e56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92179063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92179064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92179065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92179066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92350358
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92809063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92809064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92809065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92809066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |92920143
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |93a89b12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |93a89c0b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |94812574
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |95282304
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |95394027
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |959b1f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9638af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |96fd59
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275667
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275668
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275669
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f627566a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f627566b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f627566d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f627566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f627566f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f6275671
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |97f727566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |98480775
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |98480776
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |98480777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |992431
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9aa29065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9af32c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9af32d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9af32e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9c108b71
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |9f279065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_00008600
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0007b25e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0083e1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_01621887
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_03134743
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0356afd0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0356afd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0356afd2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0356afd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_094313
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x04dc09
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x111133
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x1aa483
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x1cb1cf
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x1cb1d0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x1e3221
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x300fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x301fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x302fc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x3eec59
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x46b3ed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dc6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dd0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x523dd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x5344bb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x555237
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x58a234
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x7b4428
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dc0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dc1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dc2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dc3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x923dd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x9abdc5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0x9abdc6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xaaa36c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb09da5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb0b348
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xb0b349
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xbb558f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xbd10fb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xc32ad3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xce2348
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xcfd81f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xe0036b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xe01f2d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xe17212
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xeae966
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xed4f82
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xf12335
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_0xf12336
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_10261989
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1042d483
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_10572898
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_115631
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_12950094
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1314f311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1314f312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_13279512
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_13813496
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_14507179
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_15694569
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_16936964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_17aa230c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_182054
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_18273275
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_18273276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1854d03b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_18add00d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_19156670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_19286545
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1a298e9f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1acf43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1bda43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_1c3b92
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_21509920
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_215323457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2165ad
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2165ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_21be9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_233264316
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_234557580
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_23cd0e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_24189123
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2443266
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_25025519
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_255e39
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2583364
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2888c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_28ca3e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_29871243
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2a1f64
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2dc432
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2de437
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2f3bb89c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_2fd652
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3001ac
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_31298772
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_313233
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_31f7d603
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_320ce4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_32153248
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_32153249
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_335bca
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_342abb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_34dfe6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_34dfe7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_34dfe8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_34dfe9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_35201578
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_359278
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_37f53a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_38144972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_38542646
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3b74c9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3c136f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3cf72823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3d7af029
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_3ff34782
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4129618
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4189fac3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_420bd4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_42a699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_441369
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4458713e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4554b6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_457425
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4603b207
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_46574957
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_46574958
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_46813529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_46f1e13d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_47534c43
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_48550336
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_48576893
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_48576894
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4889ac02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_49005740
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_49867584
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_49960973
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4a5341
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4f4e48
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_4f8a0a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_50299698
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_50299699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_50361291
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_5242ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_53d30c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_56347a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_563a95f1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_573823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_58027529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_5d2d63
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_5f7e3b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_60461793
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_60d355
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_616627aa
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_62317182
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6253fa2e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_64100768
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_64100769
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_64100770
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_647395
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_66543234
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_67674763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_67739784
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_68fb9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_69801276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6af9fa2f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6af9fa3f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6af9fa4f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6bd8c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6c7691
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6d4296ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6dd7e7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6dd7e8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_6fe11ec1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_716511763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_72504593
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_73304097
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_73314098
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_74095213
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_74095213a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_74095213b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_74095214
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_748f9649
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_75494732
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_78452832
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_784561
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_78e16b9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_79251225
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_7c128b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_7ccd93
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_7df8d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_800c2310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_80546710
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_80772310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_808ee280
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_81131154
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_81274457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8292291f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_83498426
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_84993794
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_84995585
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_84a0a0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_852142
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_85612309
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_85612310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_85612311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_85612312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8623ff27
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_87364952
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_87f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_886748
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_89894423
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8ad8a75
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8ad8ad00
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8bb815
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8bb817
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8bb818
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8bb819
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8e640cd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8f34971a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8f773984
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_8f7a7d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_902486209
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_90482571
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_91214835
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_912848290
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_915e56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92179063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92179064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92179065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92179066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92350358
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92809063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92809064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92809065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92809066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_92920143
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_93a89b12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_93a89c0b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_94812574
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_95282304
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_95394027
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_959b1f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9638af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_96fd59
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275667
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275668
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275669
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f627566a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f627566b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f627566d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f627566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f627566f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f6275671
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_97f727566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_98480775
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_98480776
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_98480777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_992431
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9aa29065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9af32c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9af32d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9af32e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9c108b71
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_9f279065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a01bc728
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a13b46c80
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a22eb0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a2fb451e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a3456abe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a7044887
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a7149200
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_a766215670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_aalinegamma
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_aalinetweaks
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ab34ee01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ab34ee02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ab34ee03
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ac0274
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_af73c63e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_af73c63f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_af9927
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_afoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_allocdeviceevents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_app_softimage
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_app_supportbits2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_applicationkey
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_appreturnonlybasicglsltype
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_assumetextureismipmappedatcreation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_b1fb0f01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_b3edd5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_b40d9e03d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_b7f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_b812c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ba14ba1a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ba14ba1b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_bd7559
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_bd755a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_bd755c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_bd755d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_be58bb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_be92cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_beefcba3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_beefcba4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c023777f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c09dc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c0d340
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c2ff374c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c5e9d7a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c5e9d7a4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c5e9d7b4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_c618f9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ca345840
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cachedisable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_channelpriorityoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cleardatastorevidmem
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cmdbufmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cmdbufminwords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cmdbufsizewords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_conformantblitframebufferscissor
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_conformantincompletetextures
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_copybuffermethod
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cubemapaniso
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_cubemapfiltering
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d0e9a4d7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d13733f12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d1b399
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d2983c32
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d2983c33
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d2e71b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d377dc
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d377dd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d489f4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d4bce1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518cd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d518d5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d59eda
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d83cbd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_d8e777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_debug_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_debug_options
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_devshmpageableallocations
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_df1f9812
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_df783c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_diagenable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_disallowcemask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_disallowz16
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_dlmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e0bfec
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e433456d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e435563f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e4cd9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e5c972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e639ef
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_e802af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_eae964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_earlytexturehwallocation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_eb92a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ebca56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_expert_detail_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_expert_output_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_expert_report_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_extensionstringnvarch
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_extensionstringversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f00f1938
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f10736
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f1846870
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f33bc370
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f392a874
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_f49ae8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fa345cce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fa35cc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_faa14a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_faf8a723
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fastgs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fbf4ac45
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fbo_blit_ignore_srgb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_fc64c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ff54ec97
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_ff54ec98
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_forceexitprocessdetach
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_forcerequestedesversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_glsynctovblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_gvitimeoutcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_hcctrl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_hwstate_per_ctx
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_machinecachelimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_maxframesallowed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_memmgrcachedalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_memmgrcachedalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_memmgrsysheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_memmgrsysheapalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_memmgrvidheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_mosaic_clip_to_subdev
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_mosaic_clip_to_subdev_h_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_mosaic_clip_to_subdev_v_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_overlaymergeblittimerms
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_perfmon_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_pixbar_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_qualityenhancements
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_r27s18q28
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_r2d7c1d8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_renderer
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_renderqualityflags
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_s3tcquality
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shader_disk_cache_path
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shader_disk_cache_read_only
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shaderatomics
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shadercacheinitsize
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shaderobjects
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shaderportabilitywarnings
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_shaderwarningsaserrors
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_skiptexturehostcopies
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_sli_dli_control
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_sparsetexture
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_spinlooptimeout
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_sync_to_vblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_sysheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_sysmemtexturepromotion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_targetflushcount
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_tearingfreeswappresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_texclampbehavior
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_texlodbias
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_texmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_textureprecache
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_threadcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_threadcontrol2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_usegvievents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_vbomemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_vertexlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_vidheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_vpipe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_vpipeformatbloatlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_wglmessageboxonabort
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_writeinfolog
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_writeprogramobjectassembly
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_writeprogramobjectsource
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_xnvadapterpresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yield
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunction
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunctionfast
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunctionslow
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunctionwaitfordcqueue
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunctionwaitforframe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_yieldfunctionwaitforgpu
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__gl_zbctableaddhysteresis
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_debug_filename
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_debug_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_debug_options
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_version_major_override
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |__glslc_version_minor_override
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a01bc728
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a13b46c80
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a22eb0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a2fb451e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a3456abe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a7044887
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a7149200
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |a766215670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aac_drc_boost
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aac_drc_cut
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aac_drc_enc_target_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aac_drc_heavy
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aac_drc_reference_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aalinegamma
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |aalinetweaks
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ab34ee01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ab34ee02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ab34ee03
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ac0274
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |af73c63e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |af73c63f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |af9927
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |afoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |allocdeviceevents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |app_softimage
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |app_supportbits2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |applicationkey
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |appreturnonlybasicglsltype
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |assumetextureismipmappedatcreation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |b1fb0f01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |b3edd5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |b40d9e03d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |b7f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |b812c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ba14ba1a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ba14ba1b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |bd7559
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |bd755a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |bd755c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |bd755d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |be58bb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |be92cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |beefcba3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |beefcba4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c023777f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c09dc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c0d340
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c2ff374c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c5e9d7a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c5e9d7a4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c5e9d7b4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |c618f9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ca345840
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cachedisable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cast.on
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cde
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |channelpriorityoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cleardatastorevidmem
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cmdbufmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cmdbufminwords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cmdbufsizewords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |conformantblitframebufferscissor
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |conformantincompletetextures
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |copybuffermethod
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cubemapaniso
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cubemapfiltering
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_auto_boost
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_cache_disable
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_cache_maxsize
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_cache_path
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_devcode_path
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_device_max_connections
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_device_order
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_device_waits_on_exception
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_disable_fast_ecc
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_disable_process_error_mode
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_enable_p2p_no_uva
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_force_ptx_jit
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_launch_blocking
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_managed_force_device_alloc
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_set_watchdog
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_va_reservation_chunk_size
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |cuda_visible_devices
+| 4.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d0e9a4d7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d13733f12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d1b399
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d2983c32
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d2983c33
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d2e71b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d377dc
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d377dd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d489f4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d4bce1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518cd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d518d5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d59eda
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d83cbd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |d8e777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |debug_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |debug_options
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |devshmpageableallocations
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |df1f9812
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |df783c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |diagenable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |disallowcemask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |disallowz16
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |dlmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e0bfec
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e433456d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e435563f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e4cd9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e5c972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e639ef
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |e802af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |eae964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |earlytexturehwallocation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |eb92a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ebca56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |enable-noaud
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |enable-noavs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |enable-prof
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |enable-sxesmode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |enable-ulld
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |expert_detail_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |expert_output_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |expert_report_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |extensionstringnvarch
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |extensionstringversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f00f1938
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f10736
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f1846870
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f33bc370
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f392a874
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |f49ae8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fa345cce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fa35cc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |faa14a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |faf8a723
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fastgs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fbf4ac45
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fbo_blit_ignore_srgb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |fc64c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ff54ec97
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ff54ec98
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |forceexitprocessdetach
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |forcerequestedesversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |glsynctovblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_debug_mode
+| 3.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_stay_on
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_timeout_ms_max
+| 3.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |gvitimeoutcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |hcctrl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |hwstate_per_ctx
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |libandroid_enable_log
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |machinecachelimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |maxframesallowed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |media.aac_51_output_enabled
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |memmgrcachedalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |memmgrcachedalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |memmgrsysheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |memmgrsysheapalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |memmgrvidheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |mosaic_clip_to_subdev
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |mosaic_clip_to_subdev_h_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |mosaic_clip_to_subdev_v_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_decompression
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_emc_dvfs_test
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_emc_init_rate_hz
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_gmmu_va_page_split
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_gmmu_va_range
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_graphics_firmware_memory_margin
+| 3.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |nv_memory_profiler
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_pllcx_always_on
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_pllcx_safe_div
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_usb_plls_hw_ctrl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nv_winsys
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvblit.dump
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvblit.profile
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvblit.twod
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvblit.vic
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvddk_vic_prevent_use
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvdisp_bl_ctrl
+| 1.0.0+
+| "0"
+| rowspan="1" |
+|-
+| rowspan="1" |nvdisp_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvdisp_enable_ts
+| 2.0.0+
+| "0"
+| rowspan="1" |
+|-
+| rowspan="2" |nvhdcp_max_retries
+| 3.0.0-3.0.2
+| "5"
+| rowspan="2" |
+|-
+| 4.0.0+
+| ""
+|-
+| rowspan="2" |nvhdcp_timeout_ms
+| 3.0.0-3.0.2
+| "12000"
+| rowspan="2" |
+|-
+| 4.0.0+
+| ""
+|-
+| rowspan="1" |nvhost_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="2" |nvhost_vic_memory_policy
+| 5.0.0-5.1.0
+| "0"
+| rowspan="2" |
+|-
+| 6.0.0+
+| "1"
+|-
+| rowspan="1" |nvidia.hwc.control_modeset
+| 5.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.dump_config
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.dump_layerlist
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.dump_windows
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.enable_disp_trans
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.ftrace_enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.hdcp_enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.hidden_window_mask0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.hidden_window_mask1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.immediate_modeset
+| 3.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.imp_enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.no_egl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.no_scratchblit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.no_vic
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.null_display
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.scan_props
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.swap_interval
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvidia.hwc.war_1515812
+| 1.0.0+
+| "0"
+| rowspan="1" |
+|-
+| rowspan="1" |nvmap_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvn_no_vsync_capability
+| 2.2.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |nvn_through_opengl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_enable_log
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_flip_policy
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_hotplug_autoswitch
+| 1.0.0+
+| "0"
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_prefer_primary_layer
+| 1.0.0+
+| "0"
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_service_priority
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_service_threads
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_swap_interval
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_track_perf
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvnflinger_virtualdisplay_policy
+| 1.0.0+
+| "60hz"
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_36lvajow
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_554expuw
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_59ct6eds
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_6aqelj8y
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_6trs9rwi
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_apapy18r
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_channel_interleave
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_channel_priority
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_channel_timeslice
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_ci4wetrn
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_default_device_index
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_disable_compression
+| 5.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_dm7xllka
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_dummy
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_eepyr4lp
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_gjwknsbf
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_gt1cb8jb
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_help
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_isewvh0s
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_lfkct7ht
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_liy1nc6l
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_m5qebtld
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_maiapsxj
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nbbeyqfm
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_disable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_do_nfa_partial_map
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_ecc_overrides
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_force_immediate_unmap
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_force_scg
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_as_get_va_regions
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_channel_abort
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_cyclestats
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_fixed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_gpu_characteristics
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_ioctl_mutex
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_l3
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_map_buffer_ex
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_probe_dgpu
+| 5.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_probe_igpu
+| 5.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_robustness
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_sparse
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_syncpoints
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_tsg
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_zbc
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_no_zcull
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_nvgpu_wrap_channels_in_tsgs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_omdtirby
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_ometcz6b
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_osawipsf
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_prevent_use
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_trace
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_uzfvtuhi
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_v5tz4s00
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_vgeey2dw
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_xatkicfl
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_xzoebcw9
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_yrghr5g6
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvrm_gpu_zugirozd
+| 6.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvsched_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvsched_force_enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvsched_force_log
+| 3.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvwsi_dump
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |nvwsi_fill
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0356afd0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0356afd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0356afd2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0356afd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dc0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dc1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dc2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dc3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x923dd3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x9abdc5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0x9abdc6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0xbd10fb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_0xce2348
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_10261989
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1042d483
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_10572898
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_115631
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_12950094
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1314f311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1314f312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_13279512
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_13813496
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_14507179
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_15694569
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_16936964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_17aa230c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_182054
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_18273275
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_18273276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1854d03b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_18add00d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_19156670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_19286545
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1a298e9f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1acf43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1bda43fe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_1c3b92
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_21509920
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_215323457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2165ad
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2165ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_21be9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_233264316
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_234557580
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_23cd0e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_24189123
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2443266
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_25025519
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_255e39
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2583364
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2888c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_28ca3e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_29871243
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2a1f64
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2dc432
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2de437
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2f3bb89c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_2fd652
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3001ac
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_31298772
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_313233
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_31f7d603
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_320ce4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_32153248
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_32153249
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_335bca
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_342abb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_34dfe6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_34dfe7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_34dfe8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_34dfe9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_35201578
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_359278
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_37f53a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_38144972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_38542646
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3b74c9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3c136f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3cf72823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3d7af029
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_3ff34782
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4129618
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4189fac3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_420bd4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_42a699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_441369
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4458713e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4554b6
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_457425
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4603b207
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_46574957
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_46574958
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_46813529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_46f1e13d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_47534c43
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_48550336
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_48576893
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_48576894
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4889ac02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_49005740
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_49867584
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_49960973
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4a5341
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4f4e48
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_4f8a0a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_50299698
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_50299699
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_50361291
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_5242ae
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_53d30c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_56347a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_563a95f1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_573823
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_58027529
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_5d2d63
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_5f7e3b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_60461793
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_60d355
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_616627aa
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_62317182
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6253fa2e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_64100768
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_64100769
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_64100770
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_647395
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_66543234
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_67674763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_67739784
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_68fb9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_69801276
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6af9fa2f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6af9fa3f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6af9fa4f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6bd8c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6c7691
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6d4296ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6dd7e7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6dd7e8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_6fe11ec1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_716511763
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_72504593
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_73304097
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_73314098
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_74095213
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_74095213a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_74095213b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_74095214
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_748f9649
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_75494732
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_78452832
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_784561
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_78e16b9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_79251225
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_7c128b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_7ccd93
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_7df8d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_800c2310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_80546710
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_80772310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_808ee280
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_81131154
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_81274457
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8292291f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_83498426
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_84993794
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_84995585
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_84a0a0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_852142
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_85612309
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_85612310
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_85612311
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_85612312
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8623ff27
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_87364952
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_87f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_886748
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_89894423
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8ad8a75
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8ad8ad00
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8bb815
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8bb817
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8bb818
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8bb819
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8e640cd1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8f34971a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8f773984
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_8f7a7d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_902486209
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_90482571
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_91214835
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_912848290
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_915e56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92179063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92179064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92179065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92179066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92350358
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92809063
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92809064
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92809065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92809066
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_92920143
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_93a89b12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_93a89c0b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_94812574
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_95282304
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_95394027
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_959b1f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9638af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_96fd59
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275667
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275668
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275669
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f627566a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f627566b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f627566d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f627566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f627566f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f6275671
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_97f727566e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_98480775
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_98480776
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_98480777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_992431
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9aa29065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9af32c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9af32d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9af32e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9c108b71
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_9f279065
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a01bc728
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a13b46c80
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a22eb0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a2fb451e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a3456abe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a7044887
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a7149200
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_a766215670
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_aalinegamma
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_aalinetweaks
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ab34ee01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ab34ee02
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ab34ee03
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ac0274
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_af73c63e
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_af73c63f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_af9927
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_afoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_allocdeviceevents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_app_softimage
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_app_supportbits2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_applicationkey
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_appreturnonlybasicglsltype
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_assumetextureismipmappedatcreation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_b1fb0f01
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_b3edd5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_b40d9e03d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_b7f6275666
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_b812c1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ba14ba1a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ba14ba1b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_bd7559
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_bd755a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_bd755c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_bd755d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_be58bb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_be92cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_beefcba3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_beefcba4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c023777f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c09dc8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c0d340
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c2ff374c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c5e9d7a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c5e9d7a4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c5e9d7b4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_c618f9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ca345840
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cachedisable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_channelpriorityoverride
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cleardatastorevidmem
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cmdbufmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cmdbufminwords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cmdbufsizewords
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_conformantblitframebufferscissor
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_conformantincompletetextures
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_copybuffermethod
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cubemapaniso
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_cubemapfiltering
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d0e9a4d7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d13733f12
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d1b399
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d2983c32
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d2983c33
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d2e71b
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d377dc
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d377dd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d489f4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d4bce1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518cb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518cd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518ce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d0
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d1
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d518d5
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d59eda
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d83cbd
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_d8e777
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_debug_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_debug_options
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_devshmpageableallocations
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_df1f9812
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_df783c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_diagenable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_disallowcemask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_disallowz16
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_dlmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e0bfec
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e433456d
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e435563f
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e4cd9c
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e5c972
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e639ef
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_e802af
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_eae964
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_earlytexturehwallocation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_eb92a3
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ebca56
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_expert_detail_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_expert_output_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_expert_report_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_extensionstringnvarch
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_extensionstringversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f00f1938
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f10736
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f1846870
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f33bc370
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f392a874
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_f49ae8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fa345cce
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fa35cc4
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_faa14a
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_faf8a723
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fastgs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fbf4ac45
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fbo_blit_ignore_srgb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_fc64c7
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ff54ec97
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_ff54ec98
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_forceexitprocessdetach
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_forcerequestedesversion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_glsynctovblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_gvitimeoutcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_hcctrl
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_hwstate_per_ctx
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_machinecachelimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_maxframesallowed
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_memmgrcachedalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_memmgrcachedalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_memmgrsysheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_memmgrsysheapalloclimitratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_memmgrvidheapalloclimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_mosaic_clip_to_subdev
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_mosaic_clip_to_subdev_h_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_mosaic_clip_to_subdev_v_overlap
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_overlaymergeblittimerms
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_perfmon_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_pixbar_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_qualityenhancements
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_r27s18q28
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_r2d7c1d8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_renderer
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_renderqualityflags
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_s3tcquality
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shader_disk_cache_path
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shader_disk_cache_read_only
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shaderatomics
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shadercacheinitsize
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shaderobjects
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shaderportabilitywarnings
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_shaderwarningsaserrors
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_skiptexturehostcopies
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_sli_dli_control
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_sparsetexture
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_spinlooptimeout
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_sync_to_vblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_sysheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_sysmemtexturepromotion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_targetflushcount
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_tearingfreeswappresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_texclampbehavior
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_texlodbias
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_texmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_textureprecache
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_threadcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_threadcontrol2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_usegvievents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_vbomemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_vertexlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_vidheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_vpipe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_vpipeformatbloatlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_wglmessageboxonabort
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_writeinfolog
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_writeprogramobjectassembly
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_writeprogramobjectsource
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_xnvadapterpresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yield
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunction
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunctionfast
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunctionslow
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunctionwaitfordcqueue
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunctionwaitforframe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_yieldfunctionwaitforgpu
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |ogl_zbctableaddhysteresis
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |overlaymergeblittimerms
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |perfmon_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.sys.display.resolution
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.composite.fallb
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.composite.policy
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.composite.range
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.compositor
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.compositor.virt
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.compression
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.cursor.enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.didim.enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.didim.normal
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.didim.video
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.disp.heads
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.gamma_correction
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.gpu_mapping_cache
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.grlayout
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.2020.10
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.2020.fake
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.2020.force
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.autorotate
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.hdr.fake
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.ignore_ratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.limit.clock
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.only_16_9
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.range
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.resolution
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.underscan
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.yuv.422
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.yuv.444
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.yuv.enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hdmi.yuv.force
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.hwc.nvdc
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.idle.minimum_fps
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.panel.rotation
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.scan_props
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.stb.mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |persist.tegra.zbc_override
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |pixbar_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |qualityenhancements
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |r27s18q28
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |r2d7c1d8
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |renderer
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |renderqualityflags
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |rmos_debug_mask
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |rmos_set_production_mode
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |s3tcquality
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shader_disk_cache_path
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shader_disk_cache_read_only
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shaderatomics
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shadercacheinitsize
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shaderobjects
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shaderportabilitywarnings
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |shaderwarningsaserrors
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |skiptexturehostcopies
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |sli_dli_control
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |sparsetexture
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |spinlooptimeout
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |sync_to_vblank
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |sysheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |sysmemtexturepromotion
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |targetflushcount
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tearingfreeswappresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tegra.refresh
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |texclampbehavior
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |texlodbias
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |texmemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |textureprecache
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |threadcontrol
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |threadcontrol2
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.avp.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.buffer.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.dec.prof
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.deint.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.dfs.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.ffprof.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.game.stream
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.general.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.input.dump
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.seeking.logs
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |tvmr.ts_pulldown
+| 3.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |usegvievents
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vbomemoryspaceenables
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vcc_debug_ip
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vcc_verbose_level
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vertexlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |viccomposer.filter
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |videostats-enable
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vidheapreuseratio
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vpipe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |vpipeformatbloatlimit
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |wglmessageboxonabort
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |writeinfolog
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |writeprogramobjectassembly
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |writeprogramobjectsource
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |xnvadapterpresent
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yield
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunction
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunctionfast
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunctionslow
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunctionwaitfordcqueue
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunctionwaitforframe
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |yieldfunctionwaitforgpu
+| 1.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |zbctableaddhysteresis
+| 1.0.0+
+| ""
+| rowspan="1" |
+|}
+
+= olsc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |autonomy_registration_interval_seconds
+| 6.0.0+
+| 46800 (0xb6d0)
+| rowspan="1" |
+|-
+| rowspan="1" |default_auto_upload_global_setting
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |is_global_transfer_task_autonomy_registration_enabled
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |is_on_event_transfer_task_registration_enabled
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |is_periodic_transfer_task_registration_enabled
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |postponed_transfer_task_processing_interval_seconds
+| 6.0.0+
+| 46800 (0xb6d0)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_backoff_scale
+| 6.0.0+
+| 10 (0xa)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_backoff_unit_seconds
+| 6.0.0+
+| 127 (0x7f)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_lost_connection_interval_seconds
+| 6.0.0+
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |retry_offset_seconds
+| 6.0.0+
+| 600 (0x258)
+| rowspan="1" |
+|}
+
+= omm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |backlight_off_ms_on_handheld_switch
+| 1.0.0+
+| 150 (0x96)
+| rowspan="1" |
+|-
+| rowspan="1" |charging_sign_ms
+| 1.0.0+
+| 3000 (0xbb8)
+| rowspan="1" |
+|-
+| rowspan="1" |hdcp_failed_emulation
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |low_battery_sign_ms
+| 1.0.0+
+| 3000 (0xbb8)
+| rowspan="1" |
+|-
+| rowspan="1" |operation_mode_policy
+| 1.0.0+
+| "auto"
+| rowspan="1" |
+|-
+| rowspan="1" |sign_fade_in_ms
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |sign_fade_out_ms
+| 1.0.0+
+| 400 (0x190)
+| rowspan="1" |
+|-
+| rowspan="1" |sign_wait_layer_visible_ms
+| 1.0.0+
+| 100 (0x64)
+| rowspan="1" |
+|-
+| rowspan="1" |sleep_fade_in_ms
+| 1.0.0+
+| 50 (0x32)
+| rowspan="1" |
+|-
+| rowspan="2" |sleep_fade_out_ms
+| 1.0.0
+| 200 (0xc8)
+| rowspan="2" |
+|-
+| 2.0.0+
+| 100 (0x64)
+|-
+| rowspan="1" |sleep_on_ac_ok_boot
+| 3.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |startup_fade_in_ms
+| 1.0.0+
+| 200 (0xc8)
+| rowspan="1" |
+|-
+| rowspan="1" |startup_fade_out_ms
+| 1.0.0+
+| 400 (0x190)
+| rowspan="1" |
+|}
+
+= pcm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable
+| 2.0.0+
+| true
+| rowspan="1" |
+|}
+
+= pctl =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |intermittent_task_interval_seconds
+| 2.0.0+
+| 21600 (0x5460)
+| rowspan="1" |
+|-
+| rowspan="1" |post_event_interval_seconds
+| 6.0.0+
+| 600 (0x258)
+| rowspan="1" |
+|}
+
+= pdm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |force_migrate_account_database
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |is_production
+| 5.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |save_playlog
+| 1.0.0+
+| true
+| rowspan="1" |
+|}
+
+= prepo =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |background_processing
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |devmenu_prepo_page_view
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |output_save_log
+| 5.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |statistics_post_interval
+| 6.0.0+
+| 86400 (0x15180)
+| rowspan="1" |
+|-
+| rowspan="2" |statistics_save_interval_min
+| 5.0.0-5.1.0
+| 10 (0xa)
+| rowspan="2" |
+|-
+| 6.0.0+
+| 60 (0x3c)
+|-
+| rowspan="1" |transmission_interval_in_sleep
+| 6.0.0+
+| 10800 (0x2a30)
+| rowspan="1" |
+|-
+| rowspan="1" |transmission_interval_min
+| 3.0.0+
+| 10 (0xa)
+| rowspan="1" |
+|-
+| rowspan="1" |transmission_retry_interval
+| 3.0.0-5.1.0
+| 3600 (0xe10)
+| rowspan="1" |
+|-
+| rowspan="1" |transmission_retry_interval_max
+| 6.0.0+
+| 7200 (0x1c20)
+| rowspan="1" |
+|-
+| rowspan="1" |transmission_retry_interval_min
+| 6.0.0+
+| 3600 (0xe10)
+| rowspan="1" |
+|}
+
+= productinfo =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |cec_osd_name
+| 1.0.0+
+| "NintendoSwitch"
+| rowspan="1" |
+|-
+| rowspan="1" |product_name
+| 1.0.0+
+| "Nintendo Switch"
+| rowspan="1" |
+|-
+| rowspan="1" |vendor_name
+| 4.0.0+
+| "Nintendo"
+| rowspan="1" |
+|}
+
+= psm =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |charge_current_limit_milli_ampere
+| 4.0.0+
+| 2048 (0x800)
+| rowspan="1" |
+|-
+| rowspan="1" |evaluation_log_enabled
+| 3.0.0+
+| false
+| rowspan="1" |
+|}
+
+= push_notification =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |nup_notification_topic_id
+| 1.0.0
+| "nx_nup"
+| rowspan="1" |
+|-
+| rowspan="1" |retry_interval
+| 1.0.0
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |subscribe_nup_notification
+| 1.0.0
+| true
+| rowspan="1" |
+|}
+
+= ro =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |ease_nro_restriction
+| 3.0.0+
+| false
+| rowspan="1" |
+|}
+
+= settings_debug =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |is_debug_mode_enabled
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |is_hdmi_cec_suppression_enabled
+| 4.0.0+
+| false
+| rowspan="1" |
+|}
+
+= snap_shot_dump =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |auto_dump
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |full_dump
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |output_all_log
+| 6.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |output_dir
+| 1.0.0+
+| "%USERPROFILE%/Documents/Nintendo/NXDMP"
+| rowspan="1" |
+|}
+
+= systemconfig =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |exhivision
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |field_testing
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
+
+= systempowerstate =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |always_reboot
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |power_state_message_emulation_trigger_time
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |power_state_message_to_emulate
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|}
+
+= systemreport =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enabled
+| 2.0.0+
+| true
+| rowspan="1" |
+|}
+
+= systemsleep =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |disable_auto_sleep
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |disable_tma_sleep
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |dummy_event_auto_wake
+| 2.0.0-3.0.2
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |enter_sc7
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |enter_sleep
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |hush_time_after_brief_power_button_press_ms
+| 1.0.0+
+| 1000 (0x3e8)
+| rowspan="1" |
+|-
+| rowspan="1" |keep_vdd_core
+| 1.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |override_auto_sleep_time
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |sleep_pending_time_ms
+| 1.0.0+
+| 15000 (0x3a98)
+| rowspan="1" |
+|-
+| rowspan="1" |transition_timeout_sec
+| 1.0.0+
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |wake_pin_debug_mode
+| 4.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|}
+
+= systemstartup =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |skip_psc_wait
+| 5.0.0+
+| false
+| rowspan="1" |
+|}
+
+= systemupdate =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |assumed_system_applet_version
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |bgnup_retry_seconds
+| 1.0.0+
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_id
+| 1.0.0+
+| "0x0000000000000000"
+| rowspan="1" |
+|-
+| rowspan="1" |debug_id_for_content_delivery
+| 3.0.0+
+| "0x0000000000000000"
+| rowspan="1" |
+|-
+| rowspan="1" |debug_version
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_version_for_content_delivery
+| 3.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |enable_background_download_stress_testing
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="2" |enable_network_service
+| 1.0.0
+| false
+| rowspan="2" |
+|-
+| 2.0.0-2.3.0
+| true
+|}
+
+= target_manager =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |device_name
+| 2.0.0+
+| ""
+| rowspan="1" |
+|}
+
+= tc =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |iir_filter_gain_pcb
+| 1.0.0+
+| 100 (0x64)
+| rowspan="1" |
+|-
+| rowspan="1" |iir_filter_gain_soc
+| 1.0.0+
+| 100 (0x64)
+| rowspan="1" |
+|-
+| rowspan="1" |log_enabled
+| 1.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |rate_select
+| 1.0.0+
+| "both"
+| rowspan="1" |
+|-
+| rowspan="1" |sleep_enabled
+| 2.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="2" |tskin_pcb_coefficients_console
+| 1.0.0-4.1.0
+| "[6182, 112480]"
+| rowspan="2" |
+|-
+| 5.0.0-5.1.0
+| "[6396, 119440]"
+|-
+| rowspan="1" |tskin_pcb_coefficients_console_on_fwdbg
+| 6.0.0+
+| "[6396, 119440]"
+| rowspan="1" |
+|-
+| rowspan="2" |tskin_pcb_coefficients_handheld
+| 1.0.0-4.1.0
+| "[5464, 174190]"
+| rowspan="2" |
+|-
+| 5.0.0-5.1.0
+| "[5817, 129580]"
+|-
+| rowspan="1" |tskin_pcb_coefficients_handheld_on_fwdbg
+| 6.0.0+
+| "[5817, 129580]"
+| rowspan="1" |
+|-
+| rowspan="2" |tskin_rate_table_console
+| 1.0.0-4.1.0
+| "[[-1000000, 43000, 51, 51], [43000, 53000, 51, 153], [53000, 58000, 153, 255], [58000, 1000000, 255, 255]]"
+| rowspan="2" |
+|-
+| 5.0.0+
+| "[[-1000000, 40000, 0, 0], [36000, 43000, 51, 51], [43000, 53000, 51, 153], [53000, 58000, 153, 255], [58000, 1000000, 255, 255]]"
+|-
+| rowspan="1" |tskin_rate_table_handheld
+| 1.0.0+
+| "[[-1000000, 40000, 0, 0], [36000, 43000, 51, 51], [43000, 48000, 51, 102], [48000, 53000, 102, 153], [53000, 1000000, 153, 153], [48000, 1000000, 153, 153]]"
+| rowspan="1" |
+|-
+| rowspan="1" |tskin_select
+| 1.0.0+
+| "both"
+| rowspan="1" |
+|-
+| rowspan="1" |tskin_soc_coefficients_console
+| 1.0.0-5.1.0
+| "[6182, 112480]"
+| rowspan="1" |
+|-
+| rowspan="1" |tskin_soc_coefficients_console_on_fwdbg
+| 6.0.0+
+| "[6182, 112480]"
+| rowspan="1" |
+|-
+| rowspan="1" |tskin_soc_coefficients_handheld
+| 1.0.0-5.1.0
+| "[5464, 174190]"
+| rowspan="1" |
+|-
+| rowspan="1" |tskin_soc_coefficients_handheld_on_fwdbg
+| 6.0.0+
+| "[5464, 174190]"
+| rowspan="1" |
+|-
+| rowspan="1" |use_configurations_on_fwdbg
+| 6.0.0+
+| false
+| rowspan="1" |
+|}
+
+= tcap =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |continuous_high_skin_temperature_milli_seconds
+| 5.0.0+
+| 28800000 (0x1b77400)
+| rowspan="1" |
+|-
+| rowspan="1" |thermal_burn_prevention_mode_enabled
+| 5.0.0+
+| true
+| rowspan="1" |
+|}
+
+= time =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |notify_time_to_fs_interval_seconds
+| 4.0.0+
+| 600 (0x258)
+| rowspan="1" |
+|-
+| rowspan="1" |standard_network_clock_sufficient_accuracy_minutes
+| 3.0.0+
+| 43200 (0xa8c0)
+| rowspan="1" |
+|-
+| rowspan="1" |standard_steady_clock_rtc_update_interval_minutes
+| 3.0.0+
+| 5 (0x5)
+| rowspan="1" |
+|-
+| rowspan="1" |standard_steady_clock_test_offset_minutes
+| 1.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |standard_user_clock_initial_year
+| 5.0.0+
+| 2018 (0x7e2)
+| rowspan="1" |
+|}
+
+= usb =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |show_pdc_boot_fatal
+| 6.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |usb30_force_enabled
+| 3.0.0+
+| false
+| rowspan="1" |
+|}
+
+= vulnerability =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable_debug
+| 4.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |needs_update_vulnerability_policy
+| 2.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|}
+
+= wlan_debug =
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |skip_wlan_boot
+| 1.0.0+
+| false
+| rowspan="1" |
+|}
