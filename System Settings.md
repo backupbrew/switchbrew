@@ -21,6 +21,15 @@
 | 6.0.0+                           | 18000 (0x4650)   |                |             |
 | schedule\_periodicity            | 2.0.0+           | 3600 (0xe10)   |             |
 
+# am.debug
+
+This class does not exist on retail
+firmware.
+
+| Name          | Versions | Default Values | Description                                                                                                                                    |
+| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| dev\_function |          |                | Not set on retail firmware. Enables a few IPC commands and allows OpenSystem/OverlayAppletProxy when there is already a system/overlay applet. |
+
 # am.display
 
 | Name                                              | Versions    | Default Values | Description |

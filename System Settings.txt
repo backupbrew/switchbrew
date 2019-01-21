@@ -61,6 +61,20 @@ __NOTOC__
 | rowspan="1" |
 |}
 
+= am.debug =
+
+This class does not exist on retail firmware.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |dev_function
+|
+|
+| rowspan="1" |Not set on retail firmware. Enables a few IPC commands and allows OpenSystem/OverlayAppletProxy when there is already a system/overlay applet.
+|}
+
 = am.display =
 
 {| class="wikitable" border="1"
