@@ -1,5 +1,7 @@
 __NOTOC__
 
+Data sourced from 0100000000000818 archive.
+
 = account =
 
 {| class="wikitable" border="1"
