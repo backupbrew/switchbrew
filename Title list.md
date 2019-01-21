@@ -799,7 +799,7 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ErrorMessage</p></td>
-<td><p>Stores the message strings for Support Error Codes. There's &quot;/DatabaseInfo&quot; at FS root, then the rest is stored at &quot;/{first 4 error digits}/{last 4 error digits}/&quot;.</p></td>
+<td><p>Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000802</p></td>
@@ -828,7 +828,7 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>BrowserDll</p></td>
-<td><p>Mounted as &quot;shareddata:/&quot;. Contains various browser data: emojis, OSS NROs, &quot;buildinfo/buildinfo.dat&quot;, ...</p></td>
+<td><p>Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000804</p></td>
@@ -841,8 +841,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>Help</p></td>
-<td><p>HTML resources: Open-source licenses (&quot;Intellectual Property Notices&quot;) and seizure warnings(&quot;Health &amp; Safety Information&quot;). The former is stored at FS &quot;/legallines.htdocs/&quot;<br />
-while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
+<td><p>HTML resources: Open-source licenses ("Intellectual Property Notices") and seizure warnings("Health &amp; Safety Information"). The former is stored at FS "/legallines.htdocs/"<br />
+while the latter is at "/safe.htdocs/".</p></td>
 </tr>
 <tr class="even">
 <td><p>0100000000000805</p></td>
@@ -1079,7 +1079,7 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>FirmwareDebugSettings</p></td>
-<td><p>System config.</p></td>
+<td><p><a href="System Settings.md" title="wikilink">System config</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000000819</p></td>
@@ -1560,13 +1560,13 @@ while the latter is at &quot;/safe.htdocs/&quot;.</p></td>
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>MaintenanceMenu</p></td>
-<td><p>Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above &quot;SystemAppletMenu&quot; title.</p></td>
+<td><p>Initial applet displayed when booting into <a href="Recovery Mode.md" title="wikilink">Recovery_Mode</a>. This title is launched by <a href="NS Services.md" title="wikilink">NS</a> when a state flag is val1 indicating that this title should be launched instead of the above "SystemAppletMenu" title.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001016</p></td>
 <td></td>
 <td></td>
-<td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string &quot;application_install&quot;. This title doesn't seem to exist for retail.</p></td>
+<td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.</p></td>
 </tr>
 <tr class="even">
 <td><p>010000000000101B</p></td>
