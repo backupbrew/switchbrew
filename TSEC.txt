@@ -2333,9 +2333,9 @@ $cauth is a special purpose register in the CPU.
 |-
 | 17 || Region is encrypted
 |-
-| 18 || Unknown
+| 18 || Unknown (set in HS mode)
 |-
-| 19 || Unknown
+| 19 || Unknown (set in HS mode)
 |-
 | 20-23 || Unknown
 |-
