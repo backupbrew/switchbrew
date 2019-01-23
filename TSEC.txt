@@ -1544,16 +1544,19 @@ Returns the result of the last command from [[#FALCON_IMCTL|FALCON_IMCTL]].
 !  Description
 |-
 | 0-7
-| Index
+| Index of where to start tracing from
 |-
 | 16-23
 | Maximum valid index
+|-
+| 24-31
+| Number of trace reads remaining
 |}
 
 Controls the index for tracing with [[#FALCON_TRACEPC|FALCON_TRACEPC]].
 
 === FALCON_TRACEPC ===
-Returns the PC of the last instruction executed.
+Returns the PC of the last call or branch executed.
 
 === FALCON_ICD_CMD ===
 {| class="wikitable" border="1"

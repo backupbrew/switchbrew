@@ -637,17 +637,18 @@ Returns the result of the last command from
 
 ### FALCON\_TRACEIDX
 
-| Bits  | Description         |
-| ----- | ------------------- |
-| 0-7   | Index               |
-| 16-23 | Maximum valid index |
+| Bits  | Description                          |
+| ----- | ------------------------------------ |
+| 0-7   | Index of where to start tracing from |
+| 16-23 | Maximum valid index                  |
+| 24-31 | Number of trace reads remaining      |
 
 Controls the index for tracing with
 [FALCON\_TRACEPC](#FALCON_TRACEPC "wikilink").
 
 ### FALCON\_TRACEPC
 
-Returns the PC of the last instruction executed.
+Returns the PC of the last call or branch executed.
 
 ### FALCON\_ICD\_CMD
 
