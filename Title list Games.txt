@@ -270,7 +270,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010014E004FA8000 || ACA NEOGEO KARNOV'S REVENGE || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Virtual Console
 |-
-| 0100152000022000 || Mario Kart™ 8 Deluxe || CHN EUR JPN KOR USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 458752 || Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 || Application / Game
+| 0100152000022000 || Mario Kart™ 8 Deluxe || CHN EUR JPN KOR USA || 1.0.0 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 || Gamecard Front: LA-H-AABPA-{region} Back: AABPA22A000 || Application / Game
 |-
 | 0100153006300000 || 無双OROCHI２ Ultimate || JPN || 3.0.1 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
@@ -282,7 +282,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010015D003EE4000 || The Jackbox Party Pack 2 || EUR USA || 3.0.0 || Digital || 0 || || Application / Game
 |-
-| 010015E00A1F8000 || ゴルフストーリー || JPN || 4.0.0 || Digital || 0 || || Application / Game
+| 010015E00A1F8000 || ゴルフストーリー || JPN || 4.0.0 || Digital || 0 0x10000 || || Application / Game
 |-
 | 010015F005C8E000 || Tricky Towers || EUR JPN USA || 5.0.0 || Digital || 0 0x10000 0x20000 || || Application / Game
 |-
@@ -806,7 +806,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003CD00BE22000 || Chiki-Chiki Boxy Racers || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 01003D00099EC000 || Raging Justice || EUR USA || 4.0.0 || Digital || 0 131072 || || Application / Game
+| 01003D00099EC000 || Raging Justice || EUR USA || 4.0.0 || Digital || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 01003D3009996000 || Totes the Goat || EUR USA || 3.0.1 || Digital || 0 || || Application / Game
 |-
@@ -1428,7 +1428,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100706005B6A000 || Anima: Gate of Memories || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 010070A00A5F4000 || Armello || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
+| 010070A00A5F4000 || Armello || EUR JPN USA || 5.0.0 || Digital || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100FAF009562000 || Deep Ones || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -3095,7 +3095,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010029D00AFD0000 || ACA NEOGEO KING OF THE MONSTERS 2 || EUR JPN USA || || Digital || 0 0x10000|| || Game
 |-
-| 0100C6300AFE0000 || ACA NEOGEO NINJA MASTER'S || || EUR JPN USA || || Digital || 0 0x10000|| || Game
+| 0100C6300AFE0000 || ACA NEOGEO NINJA MASTER'S || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010061600BF7E000 || ACA NEOGEO STRIKERS 1945 PLUS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3233,7 +3233,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01009D000AF3A000 || Gelly Break || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010000300C79C000 || GensokyoDefenders || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+| 010000300C79C000 || GensokyoDefenders || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
 | 01003830092B8000 || Giana Sisters Twisted Dreams - Owltimate Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3295,7 +3295,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
-| 0100E7500BF84000 || LEGRAND LEGACY: Tale of the Fatebounds || EUR USA || || Digital || 0 0x10000 || || Game
+| 0100E7500BF84000 || LEGRAND LEGACY: Tale of the Fatebounds || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100953009DF8000 || Let's Sing 2019 || EUR || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
@@ -3355,6 +3355,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01006AB00BD82000 || OkunoKA || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100E0200B980000 || OlliOlli: Switch Stance || EUR JPN USA || || Digital || 0 0x20000 || || Game
+|-
 | 010074000BE8E000 || oOo: Ascension || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010038B00BFD4000 || Operation Pig || USA || || Digital || 0 0x10000 || || Game
@@ -3376,6 +3378,10 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01007A500B0B2000 || Pilot Sports || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100F7B00B864000 || Pipe Push Paradise || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100187003A36000 || Pokémon: Let's Go, Eevee! || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 010003F003A34000 || Pokémon: Let's Go, Pikachu! || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100BBD00976C000 || Project Highrise: Architect's Edition || EUR USA || || Digital || 0 || || Game
 |-
@@ -3491,6 +3497,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01003B2009D18000 || Violett || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01000F0002BB6000 || Wargroove || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 010016A00AEC0000 || Warriors Orochi 4 || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
 | 0100FEE00A64E000 || Warframe || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
@@ -3559,7 +3567,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010064900C340000 || セブン・ビリオン・ヒューマンズ || JPN || || Digital || 0 0x10000 || || Game
 |-
-| 01001D800AAA0000 || 2064: Read Only Memories INTEGRAL (リードオンリーメモリーズ インテグラル) || JPN || || Digital || 0 0x10000 || || Game
+| 01001D800AAA0000 || 2064: Read Only Memories INTEGRAL (リードオンリーメモリーズ インテグラル) || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010071C00CBA4000 || デイグラシアの羅針盤 || JPN || || Digital || 0 0x10000 || || Game
 |-
@@ -3612,6 +3620,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01007E500B95E000 || レッドストリート - 悪魔の挑戦デラックス || JPN || || Digital || 0 0x10000 || || Game
 |-
 | 010032F00C04A000 || ディアブロ III エターナルコレクション || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010076700CA18000 || アガルタ　エス || JPN || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
