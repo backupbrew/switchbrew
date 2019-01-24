@@ -567,7 +567,7 @@ The width/height for the "Default" Display is the resolution for 1080p even when
 = DisplayName =
 This is a 0x40-byte block: a NUL-terminated string.
 
-Can be "Default", "External", "Edid", "Internal" or "Null".
+Can be "Default", "External", "[https://en.wikipedia.org/wiki/Extended_Display_Identification_Data Edid]", "Internal" or "Null".
 
 = Parcel =
 {| class="wikitable" border="1"

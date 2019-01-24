@@ -479,7 +479,9 @@ even when in handheld-mode.
 
 This is a 0x40-byte block: a NUL-terminated string.
 
-Can be "Default", "External", "Edid", "Internal" or "Null".
+Can be "Default", "External",
+"[Edid](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data)",
+"Internal" or "Null".
 
 # Parcel
 
