@@ -1,3 +1,6 @@
+  - **28 November 18** [libnx 1.6.0 and
+    switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
+    were released.
   - **19 November 18** Nintendo released system update
     [6.2.0](6.2.0.md "wikilink").
   - **31 October 18** [nx-hbloader
