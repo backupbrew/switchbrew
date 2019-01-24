@@ -1856,7 +1856,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01009440095FE000 || Pode || EUR JPN USA || 4.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
-| 0100944009646000 || Arena of Valor || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
+| 0100944009646000 || Arena of Valor (BETA) || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
 | 0100945003A0E000 || Monster Jam: Crush It! || EUR || 3.0.1 || Digital / Cartridge || 0 131072 || || Application / Game
 |-
