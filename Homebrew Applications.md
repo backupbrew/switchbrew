@@ -47,6 +47,7 @@ available.
 | Gag Order                                                         | SuperNag remover                                                                                   | Adubbz                                       | [Here](https://github.com/Adubbz/Gag-Order/releases)            | [Yes](https://github.com/Adubbz/Gag-Order)             | 2018-05-30   |
 | Switch Reader                                                     | E-Hentai gallery viewer                                                                            | Colin969                                     | [Here](https://github.com/colin969/switch-reader/releases)      | [Yes](https://github.com/colin969/switch-reader)       | 2018-11-21   |
 | Homebrew App Store                                                | Download and manage installed homebrew apps                                                        | VGMoose                                      | [Here](https://github.com/vgmoose/hb-appstore/releases)         | [Yes](https://github.com/vgmoose/hb-appstore)          | 2018-10-02   |
+| In-Home-Switching                                                 | Stream games from PC to the Nintendo Switch                                                        | jakibaki, D-VAmpire                          | [Here](https://github.com/jakibaki/In-Home-Switching/releases)  | [Yes](https://github.com/jakibaki/In-Home-Switching)   | 2018-12-31   |
 
 ### Game Engines
 

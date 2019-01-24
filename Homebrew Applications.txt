@@ -114,6 +114,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/vgmoose/hb-appstore/releases Here]
 | [https://github.com/vgmoose/hb-appstore Yes]
 | 2018-10-02
+|-
+| In-Home-Switching
+| Stream games from PC to the Nintendo Switch
+| jakibaki, D-VAmpire
+| [https://github.com/jakibaki/In-Home-Switching/releases Here]
+| [https://github.com/jakibaki/In-Home-Switching Yes]
+| 2018-12-31
 |}
 
 === Game Engines ===
