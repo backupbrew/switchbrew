@@ -20,6 +20,11 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **24 January 19** [Atmosphère
+    v0.8.3](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.3)
+    and [nx-hbloader
+    v2.1.0](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.1.0)
+    were released.
   - **2 January 19** [libnx 2.0.0, switch-mesa 18.3 and
     switch-examples 20190102](https://devkitpro.org/viewtopic.php?f=13&t=8826)
     were released.
@@ -29,6 +34,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **29 November 18** [nx-hbmenu
     v3.0.1](https://github.com/switchbrew/nx-hbmenu/releases/latest) was
     released.
-  - **28 November 18** [libnx 1.6.0 and
-    switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
-    were released.
