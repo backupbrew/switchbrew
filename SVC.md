@@ -93,7 +93,7 @@
 | 0x61 | svcBreakDebugProcess                                                               | W0=debug\_handle                                                                                                                                                                                                                                                                   | W0=result                                                |
 | 0x62 | svcTerminateDebugProcess                                                           | W0=debug\_handle                                                                                                                                                                                                                                                                   | W0=result                                                |
 | 0x63 | svcGetDebugEvent                                                                   | X0=[\#DebugEventInfo](#DebugEventInfo "wikilink")\*, W1=debug\_handle                                                                                                                                                                                                              | W0=result                                                |
-| 0x64 | svcContinueDebugEvent                                                              | \[1.0.0-2.3.0\] W0=debug\_handle, W1=[\#ContinueDebugFlagsOld](#ContinueDebugFlagsOld "wikilink"), X2=thread\_id \[3.0.0+\] W0=debug\_handle, W1=[\#ContinueDebugFlags](#ContinueDebugFlags "wikilink"), X2=thread\_id\_list(u64 \*), W3=num\_tids (max 64, 0 means "all threads") | W0=result                                                |
+| 0x64 | [\#svcContinueDebugEvent](#svcContinueDebugEvent "wikilink")                       | \[1.0.0-2.3.0\] W0=debug\_handle, W1=[\#ContinueDebugFlagsOld](#ContinueDebugFlagsOld "wikilink"), X2=thread\_id \[3.0.0+\] W0=debug\_handle, W1=[\#ContinueDebugFlags](#ContinueDebugFlags "wikilink"), X2=thread\_id\_list(u64 \*), W3=num\_tids (max 64, 0 means "all threads") | W0=result                                                |
 | 0x65 | svcGetProcessList                                                                  | X1=pids\_out\_ptr, W2=max\_out                                                                                                                                                                                                                                                     | W0=result, W1=num\_out                                   |
 | 0x66 | svcGetThreadList                                                                   | X1=tids\_out\_ptr, W2=max\_out, W3=debug\_handle\_or\_zero                                                                                                                                                                                                                         | W0=result, X1=num\_out                                   |
 | 0x67 | svcGetDebugThreadContext                                                           | X0=ThreadContext\*, X1=debug\_handle, X2=thread\_id, W3=[\#ThreadContextFlags](#ThreadContextFlags "wikilink")                                                                                                                                                                     | W0=result                                                |
@@ -1117,6 +1117,16 @@ bit set instead.
 
 **Description:** Unmaps an attached device address space from an
 userspace address.
+
+## svcContinueDebugEvent
+
+### Result codes
+
+**0x0:** Success. The process has been resumed.
+
+**0xe401:** Invalid debug handle.
+
+**0xf401:** Process has debug events queued.
 
 ## svcGetSystemInfo
 
