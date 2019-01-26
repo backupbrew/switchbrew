@@ -83,9 +83,9 @@ interfaces).
 | FALCON\_ENGCTL                                                          | 0x545010A4 | 0x04  |
 | FALCON\_PM\_SEL                                                         | 0x545010A8 | 0x04  |
 | FALCON\_HOST\_IO\_INDEX                                                 | 0x545010AC | 0x04  |
-| FALCON\_UNK\_B0                                                         | 0x545010B0 | 0x04  |
-| FALCON\_UNK\_B4                                                         | 0x545010B4 | 0x04  |
-| FALCON\_UNK\_B8                                                         | 0x545010B8 | 0x04  |
+| FALCON\_BREAKPOINT2                                                     | 0x545010B0 | 0x04  |
+| FALCON\_BREAKPOINT3                                                     | 0x545010B4 | 0x04  |
+| FALCON\_BREAKPOINT4                                                     | 0x545010B8 | 0x04  |
 | [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
 | FALCON\_UNK\_D4                                                         | 0x545010D4 | 0x04  |
 | FALCON\_UNK\_D8                                                         | 0x545010D8 | 0x04  |
@@ -1294,7 +1294,7 @@ $cauth is a special purpose register in the CPU.
 | 16    | Use secret xfers                                 |
 | 17    | Region is encrypted                              |
 | 18    | Unknown (set in HS mode)                         |
-| 19    | Unknown (set in HS mode)                         |
+| 19    | Block traps and interrupts (set in HS mode)      |
 | 20-23 | Unknown                                          |
 | 24-31 | Size of region to authenticate (in 0x100 pages)  |
 

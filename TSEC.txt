@@ -246,15 +246,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x545010AC
 | 0x04
 |-
-| FALCON_UNK_B0
+| FALCON_BREAKPOINT2
 | 0x545010B0
 | 0x04
 |-
-| FALCON_UNK_B4
+| FALCON_BREAKPOINT3
 | 0x545010B4
 | 0x04
 |-
-| FALCON_UNK_B8
+| FALCON_BREAKPOINT4
 | 0x545010B8
 | 0x04
 |-
@@ -2338,7 +2338,7 @@ $cauth is a special purpose register in the CPU.
 |-
 | 18 || Unknown (set in HS mode)
 |-
-| 19 || Unknown (set in HS mode)
+| 19 || Block traps and interrupts (set in HS mode)
 |-
 | 20-23 || Unknown
 |-
