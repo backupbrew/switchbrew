@@ -595,14 +595,18 @@ Used for configuring DMA transfers.
 
 ### FALCON\_HWCFG2
 
-| Bits  | Description                     |
-| ----- | ------------------------------- |
-| 0-3   | FALCON\_HWCFG2\_VERSION         |
-| 4-5   | FALCON\_HWCFG2\_SCP\_MODE       |
-| 6-7   | FALCON\_HWCFG2\_SUBVERSION      |
-| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS     |
-| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS     |
-| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2 |
+| Bits  | Description                      |
+| ----- | -------------------------------- |
+| 0-3   | FALCON\_HWCFG2\_VERSION          |
+| 4-5   | FALCON\_HWCFG2\_SCP\_MODE        |
+| 6-7   | FALCON\_HWCFG2\_SUBVERSION       |
+| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS      |
+| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS      |
+| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2  |
+| 27    | FALCON\_HWCFG2\_HAS\_PRIV\_DEBUG |
+| 28-29 | FALCON\_HWCFG2\_IO\_ADDR\_TYPE   |
+| 30    | FALCON\_HWCFG2\_HAS\_EXTERR      |
+| 31    | FALCON\_HWCFG2\_HAS\_IMFILL      |
 
 ### FALCON\_IMCTL
 
