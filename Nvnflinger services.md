@@ -44,6 +44,10 @@ Analogous to "onTransact" from "android.os.IServiceManager".
 Takes 3 input s32s: **ID**, **addval**, and **type**. Each word
 immediately follows the previous word. No additional output.
 
+**type** indicates whether the strong reference count or weak reference
+count will be affected. 0 indicates the weak reference count, while 1
+indicates the strong reference count.
+
 | Called by official function          | addval | type |
 | ------------------------------------ | ------ | ---- |
 | "android::BpBinder::onFirstRef"      | 1      | 1    |

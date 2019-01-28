@@ -31,7 +31,10 @@ Takes a s32 ('''ID'''), an u32 ('''code'''), a type-0x5 input buffer ('''parcel_
 Analogous to "onTransact" from "android.os.IServiceManager".
 
 == AdjustRefcount ==
+
 Takes 3 input s32s: '''ID''', '''addval''', and '''type'''.  Each word immediately follows the previous word. No additional output.
+
+'''type''' indicates whether the strong reference count or weak reference count will be affected. 0 indicates the weak reference count, while 1 indicates the strong reference count.
 
 {| class="wikitable" border="1"
 |-
