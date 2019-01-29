@@ -68,6 +68,10 @@ NPDM:
 * glue-sysmodule: now has access to service srepo:u.
 * Various applets now have access to service "banana" (which still doesn't exist on retail).
 
+=== [[USB_services|usb-sysmodule]] ===
+* New services / commands were added.
+* The codebin now has .json data embedded in the codebin for [[USB_services#HidGamepad|HidGamepad]] USB-devices.
+
 <fill this in (manually) later>
 
 ==See Also==
