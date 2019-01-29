@@ -230,6 +230,7 @@ This is
 | 5 (\[1.0.0-4.1.0\] 7) | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
 | 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
 | 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
+| 8                     | \[7.0.0+\] ? (No input/output)                                                            |
 
 ## LaunchProcess
 

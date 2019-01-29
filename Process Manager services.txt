@@ -206,6 +206,8 @@ This is "nn::pm::detail::IShellInterface".
 | 6 ([1.0.0-4.1.0] 8) || [[#GetApplicationPid]]
 |-
 | 7 ([4.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
+|-
+| 8 || [7.0.0+] ? (No input/output)
 |}
 
 == LaunchProcess ==
