@@ -318,4 +318,7 @@ This function can only increase the limit once, on further calls it will
 call svcSetResourceLimitLimitValue with the same value it called the
 first time.
 
+On normal [7.0.0](7.0.0.md "wikilink") retail firmware, this will double
+the limit on system threads from 0x60 to 0xC0.
+
 [Category:Services](Category:Services "wikilink")
