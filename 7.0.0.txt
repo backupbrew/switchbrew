@@ -47,7 +47,7 @@ NPDM:
 * HID-sysmodule now has access to new service usb:qdb.
 * ldn-sysmodule now has access to service psc:m.
 * account-sysmodule: now has access to service npns:s.
-* ns-sysmodule: service access to prepo:s was replaced with srepo:u. FS permissions now have bitmask 0x0000000400000000 set.
+* ns-sysmodule: service access to prepo:s was replaced with srepo:u. FS permissions now have bitmask 0x0000000400000000 set (CanFormatSdCard).
 * nfc-sysmodule: now has access to services: psm, i2c, and gpio.
 * am-sysmodule: now has access to services lm and nvgem:cd.
 * btm-sysmodule: now has access to service srepo:u.
