@@ -992,4 +992,26 @@ Added with
 | 0   |      | No input/output, takes a type-0x5 input buffer.                                      |
 | 1   |      | Takes a total of 6-bytes of input and a type-0x5 input buffer, returns an output u8. |
 
+# HidGamepad
+
+With \[7.0.0+\] usb-sysmodule now has a .json file embedded in the
+codebin.
+
+This contains a list of USB devices' VID/PID, with the following
+structure:
+
+` [`  
+`     {`  
+`         "vid" : "`<VID>`",`  
+`         "pid" : "`<PID>`",`  
+`         "quirks" : [`  
+`             {`  
+`                 "name" : "`<string>`" //The .json has the following for `<string>` for various devices: "HidGamepadWhitelist", "NoClearHaltOnEpInit", and "NoClearHaltOnEpInit".`  
+`             }`  
+`             //There can be multiple entries here.`  
+`         ]`  
+`     },`  
+`     `<more entries>  
+` ]`
+
 [Category:Services](Category:Services "wikilink")
