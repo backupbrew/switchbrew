@@ -282,7 +282,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>[3.0.0+] ldr:ro, ro:dmnt</p></td>
+<td><p>[3.0.0+] ldr:ro, ro:dmnt, [7.0.0+] ro:1</p></td>
 <td><p><a href="Loader services.md" title="wikilink">RO services</a></p></td>
 <td></td>
 </tr>

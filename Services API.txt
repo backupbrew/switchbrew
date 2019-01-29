@@ -228,7 +228,7 @@ Takes a pid.
 | [[PSC services]]
 | 
 |-
-| [3.0.0+] ldr:ro, ro:dmnt
+| [3.0.0+] ldr:ro, ro:dmnt, [7.0.0+] ro:1
 | [[Loader services|RO services]]
 |
 |-
