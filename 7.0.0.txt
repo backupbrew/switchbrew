@@ -36,6 +36,13 @@ RomFS:
 * Both bad-word-list titles were updated.
 * HID-sysmodule RomFS added new file: "/ftmFwUpdate: NTD_4CD_xxxx.fts256".
 
+NPDM:
+* New services were [[Services_API|added]].
+* bluetooth-sysmodule now has access to svcCreateSharedMemory.
+* HID-sysmodule now has access to new service usb:qdb.
+* ldn-sysmodule now has access to service psc:m.
+* Various applets now have access to service "banana" (which still doesn't exist on retail).
+
 <fill this in (manually) later>
 
 ==See Also==
