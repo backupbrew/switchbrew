@@ -42,7 +42,7 @@ All FIRM sysmodules were updated. Specific diffs for a few sysmodules are below:
 =====[[Process Manager services|PM]]=====
 Resource limit initialization was changed:
 * PM now sets the maximum number of threads creatable by sysmodules to 0x60 instead of 0x260.
-** A [[Process Manager services##EnableAdditionalSystemThreads|new command]] was added to pm:shell to increase this limit once, on retail this doubles the number of threads creatable to 0xC0.
+** A [[Process Manager services#EnableAdditionalSystemThreads|new command]] was added to pm:shell to increase this limit once, on retail this doubles the number of threads creatable to 0xC0.
 
 ==System Titles==
 All titles were updated, except: "Chinese and Korean dictionaries", "European English and Japanese dictionaries", EULA, "Blacklist URL", "Dummy file", "Hoag system config", and flog.
