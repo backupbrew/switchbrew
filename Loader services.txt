@@ -171,6 +171,8 @@ Clears the loaded processes waiting queue.
 | 3 || UnloadNrr
 |-
 | 4 || [[#Initialize]]
+|-
+| 10 || [7.0.0+] ? (Takes a total of 0x18-bytes of input, an input handle and PID, no output)
 |}
 
 == LoadNro ==

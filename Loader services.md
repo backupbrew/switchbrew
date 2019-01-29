@@ -103,15 +103,17 @@ Clears the loaded processes waiting queue.
 
 \[1.0.0-2.3.0\] This is "nn::ldr::detail::IRoInterface"
 
-\[3.0.0+\] This is "nn::ro::detail::IRoInterface".
+\[3.0.0+\] This is
+"nn::ro::detail::IRoInterface".
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 0   | [\#LoadNro](#LoadNro "wikilink")       |
-| 1   | UnloadNro                              |
-| 2   | [\#LoadNrr](#LoadNrr "wikilink")       |
-| 3   | UnloadNrr                              |
-| 4   | [\#Initialize](#Initialize "wikilink") |
+| Cmd | Name                                                                                    |
+| --- | --------------------------------------------------------------------------------------- |
+| 0   | [\#LoadNro](#LoadNro "wikilink")                                                        |
+| 1   | UnloadNro                                                                               |
+| 2   | [\#LoadNrr](#LoadNrr "wikilink")                                                        |
+| 3   | UnloadNrr                                                                               |
+| 4   | [\#Initialize](#Initialize "wikilink")                                                  |
+| 10  | \[7.0.0+\] ? (Takes a total of 0x18-bytes of input, an input handle and PID, no output) |
 
 ## LoadNro
 
