@@ -207,7 +207,7 @@ This is "nn::pm::detail::IShellInterface".
 |-
 | 7 ([4.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |-
-| 8 || [7.0.0+] ? (No input/output)
+| 8 || [7.0.0+] [[#EnableAdditionalSystemThreads]]
 |}
 
 == LaunchProcess ==
@@ -266,5 +266,10 @@ Loops through the internal linked-list of processes, looks for mask 0x40 set in 
 Takes an u64 '''mem_size''' as input. If the desired memory size doesn't exceed an internal limit (imposed by PM by looking at the [[SPL_services#MemoryArrange|MemoryArrange]] ConfigItem), PM calls svcSetResourceLimitLimitValue to set the new [[SVC#LimitableResource|LimitableResource_Memory]] value.
 
 This is used directly by [[NS_Services#IApplicationManagerInterface|ns:am2 BoostSystemMemoryResourceLimit]].
+
+== EnableAdditionalSystemThreads==
+Calls svcSetResourceLimitLimitValue to increase the limit on system threads by an amount calculated dynamically during setup.
+
+This function can only increase the limit once, on further calls it will call svcSetResourceLimitLimitValue with the same value it called the first time.
 
 [[Category:Services]]

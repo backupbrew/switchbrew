@@ -230,7 +230,7 @@ This is
 | 5 (\[1.0.0-4.1.0\] 7) | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
 | 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
 | 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
-| 8                     | \[7.0.0+\] ? (No input/output)                                                            |
+| 8                     | \[7.0.0+\] [\#EnableAdditionalSystemThreads](#EnableAdditionalSystemThreads "wikilink")   |
 
 ## LaunchProcess
 
@@ -308,5 +308,14 @@ value.
 
 This is used directly by [ns:am2
 BoostSystemMemoryResourceLimit](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink").
+
+## EnableAdditionalSystemThreads
+
+Calls svcSetResourceLimitLimitValue to increase the limit on system
+threads by an amount calculated dynamically during setup.
+
+This function can only increase the limit once, on further calls it will
+call svcSetResourceLimitLimitValue with the same value it called the
+first time.
 
 [Category:Services](Category:Services "wikilink")
