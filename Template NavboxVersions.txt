@@ -14,5 +14,7 @@
 | align="center" | [[5.0.0]] • [[5.0.1]] • [[5.0.2]] • [[5.1.0]]
 |-
 | align="center" | [[6.0.0]] • [[6.0.1]] • [[6.1.0]] • [[6.2.0]]
+|-
+| align="center" | [[7.0.0]]
 |-|}
 </center><includeonly>[[Category:System versions]]</includeonly>
