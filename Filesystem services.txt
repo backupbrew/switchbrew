@@ -142,7 +142,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 110 || [[#OpenContentStorageFileSystem]]
 |-
-| 120 || [6.0.0+] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an #IFileSystem)
+| 120 || [6.0.0+] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [[#IFileSystem]])
+|-
+| 130 || [7.0.0+] ? (Takes 4-bytes of input, returns an [[#IFileSystem]])
 |-
 | 200 || OpenDataStorageByCurrentProcess
 |-
@@ -151,6 +153,10 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 202 || [[#OpenDataStorageByDataId]]
 |-
 | 203 || OpenPatchDataStorageByCurrentProcess
+|-
+| 204 || [7.0.0+] ? (Takes an input u8, returns an [[#IFileSystem]])
+|-
+| 205 || [7.0.0+] ? (Takes an input u8, returns an [[#IStorage]])
 |-
 | 400 || [[#OpenDeviceOperator]]
 |-

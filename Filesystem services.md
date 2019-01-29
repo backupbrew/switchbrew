@@ -101,11 +101,14 @@ This is
 | 84   | \[6.0.0+\] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)               |
 | 100  | OpenImageDirectoryFileSystem                                                                                                                                      |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                        |
-| 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an \#IFileSystem)                                                                |
+| 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                     |
+| 130  | \[7.0.0+\] ? (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                                                        |
 | 200  | OpenDataStorageByCurrentProcess                                                                                                                                   |
 | 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                                                             |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                  |
 | 203  | OpenPatchDataStorageByCurrentProcess                                                                                                                              |
+| 204  | \[7.0.0+\] ? (Takes an input u8, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                                                             |
+| 205  | \[7.0.0+\] ? (Takes an input u8, returns an [\#IStorage](#IStorage "wikilink"))                                                                                   |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                                                                            |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                                                                                |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                                                                            |
