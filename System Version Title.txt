@@ -147,6 +147,11 @@ The FS for the system-version title(TID 0100000000000809) contains "/file" (and,
 | NintendoSDK Firmware for NX 6.2.0-1.0
 | 921f86701e69af7ac02712e24abf18a666c2b5fb
 | CusHY#00060200#-uAUBEUSc-Se5mvfhJsj3Krr9ayN7IyTX60_XcLsZkQ=
+|-
+| 7.0.0
+| NintendoSDK Firmware for NX 7.0.0-5.0
+| e4b38b15e880d251c182323894077508803abaaf
+| CusHY#00070000#5PRVTLegTfFlaOw3kznosYec9d8BxGj8pN3wqGa80so=
 |}
 
 === Other ===
