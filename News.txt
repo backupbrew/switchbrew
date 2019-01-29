@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''28 January 19''' Nintendo released system update [[7.0.0]].
 *'''24 January 19''' [https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.3 Atmosphère v0.8.3] and [https://github.com/switchbrew/nx-hbloader/releases/tag/v2.1.0 nx-hbloader v2.1.0] were released.
 *'''2 January 19''' [https://devkitpro.org/viewtopic.php?f=13&t=8826 libnx 2.0.0, switch-mesa 18.3 and switch-examples 20190102] were released.
 *'''29 November 18''' [https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.0 Atmosphère v0.8.0] was released.
-*'''29 November 18''' [https://github.com/switchbrew/nx-hbmenu/releases/latest nx-hbmenu v3.0.1] was released.
