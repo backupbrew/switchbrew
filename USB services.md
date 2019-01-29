@@ -1006,7 +1006,7 @@ structure:
 `         "pid" : "`<PID>`",`  
 `         "quirks" : [`  
 `             {`  
-`                 "name" : "`<string>`" //The .json has the following for `<string>` for various devices: "HidGamepadWhitelist", "NoClearHaltOnEpInit", and "NoClearHaltOnEpInit".`  
+`                 "name" : "`<string>`" //The .json has the following for `<string>` for various devices: "HidGamepadWhitelist", "ApplicationBlacklist", and "NoClearHaltOnEpInit".`  
 `             }`  
 `             //There can be multiple entries here.`  
 `         ]`  
