@@ -11,6 +11,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * General system stability improvements to enhance the user's experience
 
 ==FIRM==
+All files under RomFS were updated.
+
 ====NX_BOOTLOADER====
 NX bootloader was updated, and is now stored compressed. Before executing, a small stub now uncompresses the bootloader to 0x40004000, size 0x1C000.
 
@@ -23,6 +25,8 @@ The Secure Monitor was updated, and is now stored compressed. Before executing, 
 [more details to be filled in later].
 
 ==System Titles==
+All titles were updated, except: "Chinese and Korean dictionaries", "European English and Japanese dictionaries", EULA, "Blacklist URL", "Dummy file", "Hoag system config", and flog.
+
 <fill this in (manually) later>
 
 ==See Also==
