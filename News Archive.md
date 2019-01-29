@@ -1,3 +1,6 @@
+  - **29 November 18** [nx-hbmenu
+    v3.0.1](https://github.com/switchbrew/nx-hbmenu/releases/latest) was
+    released.
   - **28 November 18** [libnx 1.6.0 and
     switch-examples 20181128](https://devkitpro.org/viewtopic.php?f=13&t=8813)
     were released.
