@@ -57,6 +57,14 @@ This is "nn::lr::ILocationResolver".
 | 14 || [5.0.0+] [[#DeleteDocHtmlNcaPath]]
 |-
 | 15 || [5.0.0+] [[#DeleteInfoHtmlNcaPath]]
+|-
+| 16 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)
+|-
+| 17 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)
+|-
+| 18 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)
+|-
+| 19 || [7.0.0+] ? (Takes a total of 8-bytes of input, no output)
 |}
 
 If the supplied [[Filesystem_services#StorageId|StorageID]] is 1 (Host), a different set of internal functions is used to handle these commands. In this more restricted set of functions, GetControlNcaPath is stubbed and only returns error 0x608.
@@ -153,6 +161,8 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 | 6 || [2.0.0+] UnregisterHtmlDocumentPath || u64 TitleID || If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop.
 |-
 | 7 || [2.0.0+] RedirectHtmlDocumentPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
+|-
+| 8 || [7.0.0+] ? || No input/output. || 
 |}
 
 === IAddOnContentLocationResolver ===

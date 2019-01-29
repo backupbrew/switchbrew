@@ -43,6 +43,10 @@ This is
 | 13  | \[5.0.0+\] [\#DeleteControlNcaPath](#DeleteControlNcaPath "wikilink")                            |
 | 14  | \[5.0.0+\] [\#DeleteDocHtmlNcaPath](#DeleteDocHtmlNcaPath "wikilink")                            |
 | 15  | \[5.0.0+\] [\#DeleteInfoHtmlNcaPath](#DeleteInfoHtmlNcaPath "wikilink")                          |
+| 16  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)        |
+| 17  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)         |
+| 18  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)         |
+| 19  | \[7.0.0+\] ? (Takes a total of 8-bytes of input, no output)                                      |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -191,6 +195,7 @@ time.
 | 5   | \[2.0.0+\] RegisterHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
 | 6   | \[2.0.0+\] UnregisterHtmlDocumentPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
 | 7   | \[2.0.0+\] RedirectHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
+| 8   | \[7.0.0+\] ?                          | No input/output.                                                                                       |                                                                                                |
 
 ### IAddOnContentLocationResolver
 
