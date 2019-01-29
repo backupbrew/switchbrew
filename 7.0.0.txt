@@ -13,6 +13,8 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==FIRM==
 All files under RomFS were updated.
 
+The only KIPs with IPC changes were [[Filesystem_services|FS]] and [[NCM_services|NCM]].
+
 ====NX_BOOTLOADER====
 NX bootloader was updated, and is now stored compressed. Before executing, a small stub now uncompresses the bootloader to 0x40004000, size 0x1C000.
 
