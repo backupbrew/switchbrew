@@ -159,4 +159,9 @@ Clears the loaded processes waiting queue.
 | 1    | 0x00000004                  |
 | 2    | Always 0.                   |
 
+# ro:1
+
+Added to ro-sysmodule with [7.0.0](7.0.0.md "wikilink"). This doesn't
+seem to have a cmd-handler (?).
+
 [Category:Services](Category:Services "wikilink")
