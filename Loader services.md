@@ -101,9 +101,14 @@ Clears the loaded processes waiting queue.
 
 # ldr:ro
 
+# ro:1
+
 \[1.0.0-2.3.0\] This is "nn::ldr::detail::IRoInterface"
 
 \[3.0.0+\] This is "nn::ro::detail::IRoInterface".
+
+\[7.0.0+\] ro:1 was added, and also creates nn::ro::detail::IRoInterface
+objects.
 
 | Cmd | Name                                            |
 | --- | ----------------------------------------------- |
@@ -175,10 +180,5 @@ process handle instead of the one sent to Initialize.
 When called from an ro:1 session, the field at NRR header + 0x33C must
 be 0x1. When called from ldr:ro session, the field at NRR header + 0x33C
 must be 0x0.
-
-# ro:1
-
-Added to ro-sysmodule with [7.0.0](7.0.0.md "wikilink"). This doesn't
-seem to have a cmd-handler (?).
 
 [Category:Services](Category:Services "wikilink")
