@@ -19,7 +19,7 @@ NX bootloader was updated, and is now stored compressed. Before executing, a sma
 The Secure Monitor was updated, and is now stored compressed. Before executing, a small stub now uncompresses the main TrustZone image to 0x7C010800 size 0xC800, and environment setup code to 0x40032000 size 0xC000.
 
 * The 0x100 region used for NX_BOOTLOADER <-> SecureMonitor communications is now 0x40000000 instead of 0x40002E00.
-* Memory permissions for .rodata have been fixed, it is now correctly mapped R-- instead of R-W.
+* Memory permissions for .rodata have been fixed, it is now correctly mapped R-- instead of RW-.
 [more details to be filled in later].
 
 ==System Titles==
