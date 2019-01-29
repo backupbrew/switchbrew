@@ -392,6 +392,18 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x236E02 || 2 || 4535 || Invalid PartitionFS block hash
 |-
+| 0x244402 || 2 || 4642 || Invalid Partition file hashed region bounds
+|-
+| 0x244602 || 2 || 4643 || Invalid Partition FS hash
+|-
+| 0x244802 || 2 || 4644 || Invalid PFS0 magic
+|-
+| 0x244A02 || 2 || 4645 || Invalid HFS0 magic
+|-
+| 0x244C02 || 2 || 4646 || Invalid name offset for Partition FS file entry
+|-
+| 0x244E02 || 2 || 4647 || Calculated Partition FS header size changed between 2 consecutive reads
+|-
 | 0x249802 || 2 || 4684 || Invalid FAT file number.
 |-
 | 0x249C02 || 2 || 4686 || Invalid FAT format for BIS User partition.
@@ -455,6 +467,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x339602 || 2 || 6603 || Directory not found.
 |-
 | 0x3DCC02 || 2 || 7910 || RomFs directory has no more child directories/files when iterating
+|-
+| 0x3DD402 || 2 || 7914 || RomFs table: Path is file, not directory
 |-
 | 0x803 || 3 || 4 || OS busy
 |-
