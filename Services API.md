@@ -247,7 +247,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>nim, nim:shp, ntc, [5.0.0+] nim:eca</p></td>
+<td><p>nim, nim:shp, ntc, [5.0.0+] nim:eca, [7.0.0+] nim:ecas</p></td>
 <td><p><a href="NIM services.md" title="wikilink">NIM services</a></p></td>
 <td></td>
 </tr>
@@ -317,7 +317,7 @@ Takes a pid.
 <td><p>Applications on [1.0.0] used to have access to this service, but it doesn't appear to be present on retail devices.</p></td>
 </tr>
 <tr class="even">
-<td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, [1.0.0] usb:pd:m, usb:pm</p></td>
+<td><p>usb:ds, usb:hs, usb:pd, usb:pd:c, [1.0.0] usb:pd:m, usb:pm, [7.0.0+] usb:hs:a, [7.0.0+] usb:qdb</p></td>
 <td><p><a href="USB services.md" title="wikilink">USB services</a></p></td>
 <td></td>
 </tr>
