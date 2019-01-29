@@ -683,6 +683,8 @@ Otherwise just return 0.
 | Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                             |
 | Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                             |
 | Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
+| Process     | 21         | 0                     | \[7.0.0+\] MemoryUsageSomething0                                                                            |
+| Process     | 22         | 0                     | \[7.0.0+\] MemoryUsageSomething1                                                                            |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcMapPhysicalMemory
@@ -1518,6 +1520,8 @@ out1
 |        |        | Bit6    | UseSystemMemBlocks                                                            |
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |
 |        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
+|        |        | Bit11   | \[7.0.0+\] Not used? Only allowed in combination with bit6.                   |
+|        |        | Bit12   | \[7.0.0+\] Not used?                                                          |
 | 0x28   | 4      |         | ResourceLimitHandle or zero                                                   |
 | 0x2C   | 4      |         | \[3.0.0+\] PersonalMmHeapNumPages                                             |
 
