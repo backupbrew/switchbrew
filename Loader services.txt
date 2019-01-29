@@ -172,7 +172,7 @@ Clears the loaded processes waiting queue.
 |-
 | 4 || [[#Initialize]]
 |-
-| 10 || [7.0.0+] ? (Takes a total of 0x18-bytes of input, an input handle and PID, no output)
+| 10 || [7.0.0+] [[#LoadNrrEx]]
 |}
 
 == LoadNro ==
@@ -204,6 +204,8 @@ Clears the loaded processes waiting queue.
 |}
 
 == LoadNrr ==
+[7.0.0+] A new 8-bit field at NRR + 0x33C (previously padding) must be 0 for this function to succeed.
+
 {| class="wikitable" border="1"
 |-
 ! Word || Value
@@ -249,6 +251,15 @@ Clears the loaded processes waiting queue.
 |-
 | 2 || Always 0.
 |}
+
+== LoadNrrEx ==
+Takes in a u64 nrr_address, a u64 nrr_size, a pid descriptor, and a process handle. 
+
+First, this validates that the pid descriptor matches the pid for the process handle sent to this->Initialize() earlier.
+
+Then, this calls the same function as LoadNrr, except using the passed process handle instead of the one sent to Initialize. 
+
+When called from an ro:1 session, the field at NRR header + 0x33C must be 0x1. When called from ldr:ro session, the field at NRR header + 0x33C must be 0x0.
 
 = ro:1 =
 Added to ro-sysmodule with [[7.0.0]]. This doesn't seem to have a cmd-handler (?).
