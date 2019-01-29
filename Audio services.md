@@ -609,12 +609,18 @@ and a type-0x46 output buffer (**PcmDataOut**). Decodes the Opus source
 data to PCM and returns output s32 **DecodedDataSize**, s32
 **DecodedSampleCount**, and an u64.
 
+The bool flag indicates whether or not a reset of the decoder context
+has been requested.
+
 ### DecodeInterleavedForMultiStream
 
 Takes an input u8 bool flag, a type-0x5 input buffer (**OpusDataIn**)
 and a type-0x46 output buffer (**PcmDataOut**). Decodes the Opus source
 data to PCM and returns output s32 **DecodedDataSize**, s32
 **DecodedSampleCount**, and an u64.
+
+The bool flag indicates whether or not a reset of the decoder context
+has been requested.
 
 # auddebug
 
