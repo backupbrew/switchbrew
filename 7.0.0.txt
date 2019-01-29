@@ -24,6 +24,9 @@ The Secure Monitor was updated, and is now stored compressed. Before executing, 
 * Memory permissions for .rodata have been fixed, it is now correctly mapped R-- instead of RW-.
 [more details to be filled in later].
 
+====Warmboot====
+* The firmware revision magic was changed from 0xA8 to 0x129.
+
 ==System Titles==
 All titles were updated, except: "Chinese and Korean dictionaries", "European English and Japanese dictionaries", EULA, "Blacklist URL", "Dummy file", "Hoag system config", and flog.
 
@@ -55,3 +58,7 @@ NPDM:
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=01-28-19_07-05-12&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
