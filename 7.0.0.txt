@@ -22,6 +22,7 @@ The Secure Monitor was updated, and is now stored compressed. Before executing, 
 
 * The 0x100 region used for NX_BOOTLOADER <-> SecureMonitor communications is now 0x40000000 instead of 0x40002E00.
 * Memory permissions for .rodata have been fixed, it is now correctly mapped R-- instead of RW-.
+* Sealed old keys are now stored in the auxilliary data page (0x1F01FA000) instead of in .rwdata.
 [more details to be filled in later].
 
 ====Warmboot====
