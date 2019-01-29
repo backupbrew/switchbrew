@@ -994,7 +994,7 @@ Added with
 
 # HidGamepad
 
-With \[7.0.0+\] usb-sysmodule now has a .json file embedded in the
+With \[7.0.0+\] usb-sysmodule now has .json data embedded in the
 codebin.
 
 This contains a list of USB devices' VID/PID, with the following
