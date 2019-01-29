@@ -30,6 +30,8 @@ The Secure Monitor was updated, and is now stored compressed. Before executing, 
 * A function for getting HardwareType based on fuses now returns 0xF whenever it would previously have returned a non-zero value.
 ** This function is called by [[SMC|smcGetConfig]] when ConfigItem_HardwareType is passed in.
 * Warmboot.bin has been moved again, and is now copied from 0x4003E000 size 0x17F0 instead of 0x4003D800 size 0x1FF0
+* Code configuring what peripherals to set secure-world only now assumes that the code is a retail unit.
+** GetRetailType() is still called (though result is discarded), this probably means they now have compile-time switches for retail vs dev.
 [more details to be filled in later].
 
 ====Warmboot====
