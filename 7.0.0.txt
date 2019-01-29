@@ -41,6 +41,13 @@ NPDM:
 * bluetooth-sysmodule now has access to svcCreateSharedMemory.
 * HID-sysmodule now has access to new service usb:qdb.
 * ldn-sysmodule now has access to service psc:m.
+* account-sysmodule: now has access to service npns:s.
+* ns-sysmodule: service access to prepo:s was replaced with srepo:u. FS permissions now have bitmask 0x0000000400000000 set.
+* nfc-sysmodule: now has access to services: psm, i2c, and gpio.
+* am-sysmodule: now has access to services lm and nvgem:cd.
+* btm-sysmodule: now has access to service srepo:u.
+* npns-sysmodule: main thread stack size changed from 0x8000 to 0x4000. Removed service access for acc:aa and acc:u1, added access to pm:bm.
+* glue-sysmodule: now has access to service srepo:u.
 * Various applets now have access to service "banana" (which still doesn't exist on retail).
 
 <fill this in (manually) later>
