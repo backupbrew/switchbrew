@@ -1532,7 +1532,7 @@ On \[2.0.0-4.0.0\] PoolPartition is 1 for built-ins and 0 for rest.
 On \[5.0.0\] PoolPartition is specified in CreateProcessArgs. There are
 now 4 pool partitions.
 
-On \[6.0.0\] (maybe lower?) a zero ResourceLimitHandle defaults to
+On \[5.0.0\] (maybe lower?) a zero ResourceLimitHandle defaults to
 sysmodule limits and 0x12300000 bytes of
 memory.
 
