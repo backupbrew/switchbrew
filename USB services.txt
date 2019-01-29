@@ -317,6 +317,10 @@ This is "nn::usb::ds::IDsEndpoint".
 | 4 || [[#Stall]] || 
 |-
 | 5 || || Takes an input u8, no output.
+|-
+| 6 || [7.0.0+] || No input, returns an output u8.
+|-
+| 7 || [7.0.0+] || No input, returns an output handle.
 |}
 
 ==== PostBufferAsync ====

@@ -369,14 +369,16 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 This is
 "nn::usb::ds::IDsEndpoint".
 
-| Cmd | Name                                                   | Notes                         |
-| --- | ------------------------------------------------------ | ----------------------------- |
-| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink")       |                               |
-| 1   |                                                        | No input/output.              |
-| 2   | [\#GetCompletionEvent](#GetCompletionEvent "wikilink") |                               |
-| 3   | [\#GetReportData](#GetReportData "wikilink")           |                               |
-| 4   | [\#Stall](#Stall "wikilink")                           |                               |
-| 5   |                                                        | Takes an input u8, no output. |
+| Cmd | Name                                                   | Notes                               |
+| --- | ------------------------------------------------------ | ----------------------------------- |
+| 0   | [\#PostBufferAsync](#PostBufferAsync "wikilink")       |                                     |
+| 1   |                                                        | No input/output.                    |
+| 2   | [\#GetCompletionEvent](#GetCompletionEvent "wikilink") |                                     |
+| 3   | [\#GetReportData](#GetReportData "wikilink")           |                                     |
+| 4   | [\#Stall](#Stall "wikilink")                           |                                     |
+| 5   |                                                        | Takes an input u8, no output.       |
+| 6   | \[7.0.0+\]                                             | No input, returns an output u8.     |
+| 7   | \[7.0.0+\]                                             | No input, returns an output handle. |
 
 #### PostBufferAsync
 
