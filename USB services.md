@@ -982,4 +982,14 @@ This is "nn::usb::pm::IPmService".
 USB Port Manager, only system-title using this is
 [ptm](PTM%20services.md "wikilink").
 
+# usb:qdb
+
+Added with
+[7.0.0](7.0.0.md "wikilink").
+
+| Cmd | Name | Notes                                                                                |
+| --- | ---- | ------------------------------------------------------------------------------------ |
+| 0   |      | No input/output, takes a type-0x5 input buffer.                                      |
+| 1   |      | Takes a total of 6-bytes of input and a type-0x5 input buffer, returns an output u8. |
+
 [Category:Services](Category:Services "wikilink")
