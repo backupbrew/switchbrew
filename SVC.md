@@ -683,8 +683,8 @@ Otherwise just return 0.
 | Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                             |
 | Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                             |
 | Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
-| Process     | 21         | 0                     | \[7.0.0+\] MemoryUsageSomething0                                                                            |
-| Process     | 22         | 0                     | \[7.0.0+\] MemoryUsageSomething1                                                                            |
+| Process     | 21         | 0                     | \[6.0.0+\] MemoryUsageSomething0                                                                            |
+| Process     | 22         | 0                     | \[6.0.0+\] MemoryUsageSomething1                                                                            |
 | Thread      | 0xF0000002 | 0                     | Performance counter related.                                                                                |
 
 ## svcMapPhysicalMemory
