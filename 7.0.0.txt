@@ -72,6 +72,12 @@ NPDM:
 * New services / commands were added.
 * The codebin now has .json data embedded in the codebin for [[USB_services#HidGamepad|HidGamepad]] USB-devices.
 
+=== [[Account_services|account-sysmodule]] ===
+* Various .text changes. Besides those:
+* The "v4-<hexstr>" URLs were changed to "v5" URLs.
+* User-agent was changed to "libcurl (nnDauth; <hex>; SDK 7.3.0.0)".
+
+
 <fill this in (manually) later>
 
 ==See Also==
