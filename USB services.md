@@ -987,10 +987,13 @@ USB Port Manager, only system-title using this is
 Added with
 [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                                                |
-| --- | ---- | ------------------------------------------------------------------------------------ |
-| 0   |      | No input/output, takes a type-0x5 input buffer.                                      |
-| 1   |      | Takes a total of 6-bytes of input and a type-0x5 input buffer, returns an output u8. |
+| Cmd | Name | Notes                                                                                             |
+| --- | ---- | ------------------------------------------------------------------------------------------------- |
+| 0   |      | No input/output, takes a type-0x5 input buffer.                                                   |
+| 1   |      | Takes 6-bytes of input and a type-0x5 input buffer, returns an output u8 bool indicating success. |
+
+This service loads data for [\#HidGamepad](#HidGamepad "wikilink"). Cmd0
+loads data from the input .json.
 
 # HidGamepad
 
