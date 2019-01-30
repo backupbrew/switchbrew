@@ -620,7 +620,7 @@ The input buffer is a [[#MultiStreamParameters]] struct.
 |-
 | 0x0
 | 0x4
-| Sample rate
+| Sample rate (Hz)
 |-
 | 0x4
 | 0x4

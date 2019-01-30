@@ -536,7 +536,7 @@ The input buffer is a
 
 | Offset | Size  | Description                  |
 | ------ | ----- | ---------------------------- |
-| 0x0    | 0x4   | Sample rate                  |
+| 0x0    | 0x4   | Sample rate (Hz)             |
 | 0x4    | 0x4   | Number of channels           |
 | 0x8    | 0x4   | Number of streams            |
 | 0xC    | 0x4   | Number of stereo streams     |
