@@ -516,8 +516,9 @@ TransferMemory handle for **WorkBuffer**. Returns an
 [\#IHardwareOpusDecoder](#IHardwareOpusDecoder "wikilink") object. The
 TransferMemory is created by the user-process with permissions=0.
 
-The input buffer is a 0x110-byte struct. The user-process initializes
-this struct the same way as
+The input buffer is a
+[\#MultiStreamParameters](#MultiStreamParameters "wikilink") struct. The
+user-process initializes this struct the same way as
 [\#GetWorkBufferSizeForMultiStream](#GetWorkBufferSizeForMultiStream "wikilink"),
 except that an u8-array specified by the user is copied to +0x10 with
 size **ChannelCount**, when **ChannelCount** above 0.
@@ -528,9 +529,18 @@ Takes a type-0x19 input buffer. Returns the u32 required size for the
 decoder's work buffer. Official user-processes align the output size to
 page-alignment.
 
-The input buffer is a 0x110-byte struct. The first 4 s32s are
-**SampleRate**, **ChannelCount**, **TotalStreamCount**, and
-**StereoStreamCount** while the rest is cleared to zeros.
+The input buffer is a
+[\#MultiStreamParameters](#MultiStreamParameters "wikilink") struct.
+
+## MultiStreamParameters
+
+| Offset | Size  | Description                  |
+| ------ | ----- | ---------------------------- |
+| 0x0    | 0x4   | Sample rate                  |
+| 0x4    | 0x4   | Number of channels           |
+| 0x8    | 0x4   | Number of streams            |
+| 0xC    | 0x4   | Number of stereo streams     |
+| 0x10   | 0x100 | u8 array of channel mappings |
 
 ## IHardwareOpusDecoder
 
