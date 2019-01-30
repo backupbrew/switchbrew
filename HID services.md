@@ -81,6 +81,7 @@ This is
 | 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                        |
 | 209  | \[4.0.0+\] BeginPermitVibrationSession                                                           |
 | 210  | \[4.0.0+\] EndPermitVibrationSession                                                             |
+| 211  | \[7.0.0+\] ? (Takes a total of 0x10-bytes of input and a PID, returns an output u8)              |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |

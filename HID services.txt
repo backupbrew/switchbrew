@@ -153,6 +153,8 @@ This is "nn::hid::IHidServer".
 |-
 | 210 || [4.0.0+] EndPermitVibrationSession
 |-
+| 211 || [7.0.0+] ? (Takes a total of 0x10-bytes of input and a PID, returns an output u8)
+|-
 | 300 || ActivateConsoleSixAxisSensor
 |-
 | 301 || StartConsoleSixAxisSensor
