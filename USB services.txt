@@ -872,7 +872,7 @@ Added with [[7.0.0]].
 | 1 || || Takes 6-bytes of input and a type-0x5 input buffer, returns an output u8 bool indicating success.
 |}
 
-This service loads data for [[#HidGamepad]]. Cmd0 loads data from the input .json.
+This service loads data for [[#HidGamepad]] with the input .json.
 
 = HidGamepad =
 With [7.0.0+] usb-sysmodule now has .json data embedded in the codebin.

@@ -992,8 +992,8 @@ Added with
 | 0   |      | No input/output, takes a type-0x5 input buffer.                                                   |
 | 1   |      | Takes 6-bytes of input and a type-0x5 input buffer, returns an output u8 bool indicating success. |
 
-This service loads data for [\#HidGamepad](#HidGamepad "wikilink"). Cmd0
-loads data from the input .json.
+This service loads data for [\#HidGamepad](#HidGamepad "wikilink") with
+the input .json.
 
 # HidGamepad
 
