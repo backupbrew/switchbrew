@@ -99,9 +99,7 @@ them. The maximum number of waiting processes in this list is 10.
 
 Clears the loaded processes waiting queue.
 
-# ldr:ro
-
-# ro:1
+# ldr:ro, ro:1
 
 \[1.0.0-2.3.0\] This is "nn::ldr::detail::IRoInterface"
 
