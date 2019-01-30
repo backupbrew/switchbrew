@@ -449,8 +449,14 @@ Stops in-progress data-transfer done by
 
 # usb:hs
 
-This is
-"nn::usb::hs::IClientRootSession".
+# usb:hs:a
+
+This is "nn::usb::hs::IClientRootSession".
+
+\[7.0.0+\] usb:hs:a opens an nn::usb::hs::IClientRootSession, but sets
+an "isSystemClient" field in the object (and in interfaces/eps opened by
+the session) to
+false.
 
 | Cmd             | Name                                                                            | Notes                                                   |
 | --------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------- |
