@@ -373,8 +373,7 @@ Calls the same function used by [[#StallCtrl]], except this uses the endpoint as
 
 Stops in-progress data-transfer done by [[#PostBufferAsync]].
 
-= usb:hs =
-= usb:hs:a =
+= usb:hs, usb:hs:a =
 This is "nn::usb::hs::IClientRootSession".
 
 [7.0.0+] usb:hs:a opens an nn::usb::hs::IClientRootSession, but sets an "isSystemClient" field in the object (and in interfaces/eps opened by the session) to false.

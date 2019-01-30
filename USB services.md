@@ -447,9 +447,7 @@ except this uses the endpoint associated with the current session.
 Stops in-progress data-transfer done by
 [\#PostBufferAsync](#PostBufferAsync "wikilink").
 
-# usb:hs
-
-# usb:hs:a
+# usb:hs, usb:hs:a
 
 This is "nn::usb::hs::IClientRootSession".
 
