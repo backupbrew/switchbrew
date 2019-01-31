@@ -1520,8 +1520,7 @@ out1
 |        |        | Bit6    | UseSystemMemBlocks                                                            |
 |        |        | Bit7    | \[4.0.0\] ?                                                                   |
 |        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
-|        |        | Bit11   | \[7.0.0+\] Not used? Only allowed in combination with bit6.                   |
-|        |        | Bit12   | \[7.0.0+\] Not used?                                                          |
+|        |        | Bit11   | \[7.0.0+\] Only allowed in combination with bit6.                             |
 | 0x28   | 4      |         | ResourceLimitHandle or zero                                                   |
 | 0x2C   | 4      |         | \[3.0.0+\] PersonalMmHeapNumPages                                             |
 
