@@ -20,7 +20,7 @@ varies.
 | 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                             |
 | 0xF    | 0x1  | DefaultCpuId                                                                                                                                                                                            |
 | 0x10   | 0x4  | Reserved                                                                                                                                                                                                |
-| 0x14   | 0x4  | System resource size (max size as of 5.x: 534773760). Unknown usage.                                                                                                                                    |
+| 0x14   | 0x4  | \[3.0.0+\] System resource size (max size as of 5.x: 534773760). The size of PersonalMmHeap.                                                                                                            |
 | 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                                                                                                               |
 | 0x1C   | 0x4  | Main entrypoint stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
 | 0x20   | 0x10 | Title name                                                                                                                                                                                              |
