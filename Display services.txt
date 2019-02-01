@@ -421,7 +421,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 |-
 | 2011 || DestroyManagedLayer
 |-
-| 2012 || [7.0.0+] ? (Takes a total of 0x10-bytes of input and a type-0x6 output buffer, returns 0x10-bytes of output)
+| 2012 || [7.0.0+] CreateStrayLayer
 |-
 | 2050 || CreateIndirectLayer
 |-

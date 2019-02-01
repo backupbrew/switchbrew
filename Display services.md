@@ -390,77 +390,76 @@ This is
 
 ## IManagerDisplayService
 
-This is
-"nn::visrv::sf::IManagerDisplayService".
+This is "nn::visrv::sf::IManagerDisplayService".
 
-| Cmd  | Name                                                                                                           |
-| ---- | -------------------------------------------------------------------------------------------------------------- |
-| 200  | \[4.0.0+\] AllocateProcessHeapBlock                                                                            |
-| 201  | \[4.0.0+\] FreeProcessHeapBlock                                                                                |
-| 1102 | GetDisplayResolution                                                                                           |
-| 2010 | CreateManagedLayer                                                                                             |
-| 2011 | DestroyManagedLayer                                                                                            |
-| 2012 | \[7.0.0+\] ? (Takes a total of 0x10-bytes of input and a type-0x6 output buffer, returns 0x10-bytes of output) |
-| 2050 | CreateIndirectLayer                                                                                            |
-| 2051 | DestroyIndirectLayer                                                                                           |
-| 2052 | CreateIndirectProducerEndPoint                                                                                 |
-| 2053 | DestroyIndirectProducerEndPoint                                                                                |
-| 2054 | CreateIndirectConsumerEndPoint                                                                                 |
-| 2055 | DestroyIndirectConsumerEndPoint                                                                                |
-| 2300 | AcquireLayerTexturePresentingEvent                                                                             |
-| 2301 | ReleaseLayerTexturePresentingEvent                                                                             |
-| 2302 | GetDisplayHotplugEvent                                                                                         |
-| 2402 | GetDisplayHotplugState                                                                                         |
-| 2501 | \[4.0.0+\] GetCompositorErrorInfo                                                                              |
-| 2601 | \[4.0.0+\] GetDisplayErrorEvent                                                                                |
-| 4201 | SetDisplayAlpha                                                                                                |
-| 4203 | SetDisplayLayerStack                                                                                           |
-| 4205 | SetDisplayPowerState                                                                                           |
-| 4206 | \[4.0.0+\] SetDefaultDisplay                                                                                   |
-| 6000 | AddToLayerStack                                                                                                |
-| 6001 | RemoveFromLayerStack                                                                                           |
-| 6002 | SetLayerVisibility                                                                                             |
-| 6003 | \[5.0.0+\] SetLayerConfig                                                                                      |
-| 6004 | \[5.0.0+\] AttachLayerPresentationTracer                                                                       |
-| 6005 | \[5.0.0+\] DetachLayerPresentationTracer                                                                       |
-| 6006 | \[5.0.0+\] StartLayerPresentationRecording                                                                     |
-| 6007 | \[5.0.0+\] StopLayerPresentationRecording                                                                      |
-| 6008 | \[5.0.0+\] StartLayerPresentationFenceWait                                                                     |
-| 6009 | \[5.0.0+\] StopLayerPresentationFenceWait                                                                      |
-| 6010 | \[5.0.0+\] GetLayerPresentationAllFencesExpiredEvent                                                           |
-| 7000 | SetContentVisibility                                                                                           |
-| 8000 | SetConductorLayer                                                                                              |
-| 8100 | SetIndirectProducerFlipOffset                                                                                  |
-| 8200 | \[4.0.0+\] CreateSharedBufferStaticStorage                                                                     |
-| 8201 | \[4.0.0+\] CreateSharedBufferTransferMemory                                                                    |
-| 8202 | \[4.0.0+\] DestroySharedBuffer                                                                                 |
-| 8203 | \[4.0.0+\] BindSharedLowLevelLayerToManagedLayer                                                               |
-| 8204 | \[4.0.0+\] BindSharedLowLevelLayerToIndirectLayer                                                              |
-| 8207 | \[4.0.0+\] UnbindSharedLowLevelLayer                                                                           |
-| 8208 | \[4.0.0+\] ConnectSharedLowLevelLayerToSharedBuffer                                                            |
-| 8209 | \[4.0.0+\] DisconnectSharedLowLevelLayerFromSharedBuffer                                                       |
-| 8210 | \[4.0.0+\] CreateSharedLayer                                                                                   |
-| 8211 | \[4.0.0+\] DestroySharedLayer                                                                                  |
-| 8216 | \[4.0.0+\] AttachSharedLayerToLowLevelLayer                                                                    |
-| 8217 | \[4.0.0+\] ForceDetachSharedLayerFromLowLevelLayer                                                             |
-| 8218 | \[4.0.0+\] StartDetachSharedLayerFromLowLevelLayer                                                             |
-| 8219 | \[4.0.0+\] FinishDetachSharedLayerFromLowLevelLayer                                                            |
-| 8220 | \[4.0.0+\] GetSharedLayerDetachReadyEvent                                                                      |
-| 8221 | \[4.0.0+\] GetSharedLowLevelLayerSynchronizedEvent                                                             |
-| 8222 | \[4.0.0+\] CheckSharedLowLevelLayerSynchronized                                                                |
-| 8223 | \[4.0.0+\] RegisterSharedBufferImporterAruid                                                                   |
-| 8224 | \[4.0.0+\] UnregisterSharedBufferImporterAruid                                                                 |
-| 8227 | \[4.0.0+\] CreateSharedBufferProcessHeap                                                                       |
-| 8228 | \[4.0.0+\] GetSharedLayerLayerStacks                                                                           |
-| 8229 | \[4.0.0+\] SetSharedLayerLayerStacks                                                                           |
-| 8291 | \[4.0.0+\] PresentDetachedSharedFrameBufferToLowLevelLayer                                                     |
-| 8292 | \[4.0.0+\] FillDetachedSharedFrameBufferColor                                                                  |
-| 8293 | \[4.0.0+\] GetDetachedSharedFrameBufferImage                                                                   |
-| 8294 | \[4.0.0+\] SetDetachedSharedFrameBufferImage                                                                   |
-| 8295 | \[4.0.0+\] CopyDetachedSharedFrameBufferImage                                                                  |
-| 8296 | \[4.0.0+\] SetDetachedSharedFrameBufferSubImage                                                                |
-| 8297 | \[4.0.0+\] GetSharedFrameBufferContentParameter                                                                |
-| 8298 | \[5.0.0+\] ExpandStartupLogoOnSharedFrameBuffer                                                                |
+| Cmd  | Name                                                       |
+| ---- | ---------------------------------------------------------- |
+| 200  | \[4.0.0+\] AllocateProcessHeapBlock                        |
+| 201  | \[4.0.0+\] FreeProcessHeapBlock                            |
+| 1102 | GetDisplayResolution                                       |
+| 2010 | CreateManagedLayer                                         |
+| 2011 | DestroyManagedLayer                                        |
+| 2012 | \[7.0.0+\] CreateStrayLayer                                |
+| 2050 | CreateIndirectLayer                                        |
+| 2051 | DestroyIndirectLayer                                       |
+| 2052 | CreateIndirectProducerEndPoint                             |
+| 2053 | DestroyIndirectProducerEndPoint                            |
+| 2054 | CreateIndirectConsumerEndPoint                             |
+| 2055 | DestroyIndirectConsumerEndPoint                            |
+| 2300 | AcquireLayerTexturePresentingEvent                         |
+| 2301 | ReleaseLayerTexturePresentingEvent                         |
+| 2302 | GetDisplayHotplugEvent                                     |
+| 2402 | GetDisplayHotplugState                                     |
+| 2501 | \[4.0.0+\] GetCompositorErrorInfo                          |
+| 2601 | \[4.0.0+\] GetDisplayErrorEvent                            |
+| 4201 | SetDisplayAlpha                                            |
+| 4203 | SetDisplayLayerStack                                       |
+| 4205 | SetDisplayPowerState                                       |
+| 4206 | \[4.0.0+\] SetDefaultDisplay                               |
+| 6000 | AddToLayerStack                                            |
+| 6001 | RemoveFromLayerStack                                       |
+| 6002 | SetLayerVisibility                                         |
+| 6003 | \[5.0.0+\] SetLayerConfig                                  |
+| 6004 | \[5.0.0+\] AttachLayerPresentationTracer                   |
+| 6005 | \[5.0.0+\] DetachLayerPresentationTracer                   |
+| 6006 | \[5.0.0+\] StartLayerPresentationRecording                 |
+| 6007 | \[5.0.0+\] StopLayerPresentationRecording                  |
+| 6008 | \[5.0.0+\] StartLayerPresentationFenceWait                 |
+| 6009 | \[5.0.0+\] StopLayerPresentationFenceWait                  |
+| 6010 | \[5.0.0+\] GetLayerPresentationAllFencesExpiredEvent       |
+| 7000 | SetContentVisibility                                       |
+| 8000 | SetConductorLayer                                          |
+| 8100 | SetIndirectProducerFlipOffset                              |
+| 8200 | \[4.0.0+\] CreateSharedBufferStaticStorage                 |
+| 8201 | \[4.0.0+\] CreateSharedBufferTransferMemory                |
+| 8202 | \[4.0.0+\] DestroySharedBuffer                             |
+| 8203 | \[4.0.0+\] BindSharedLowLevelLayerToManagedLayer           |
+| 8204 | \[4.0.0+\] BindSharedLowLevelLayerToIndirectLayer          |
+| 8207 | \[4.0.0+\] UnbindSharedLowLevelLayer                       |
+| 8208 | \[4.0.0+\] ConnectSharedLowLevelLayerToSharedBuffer        |
+| 8209 | \[4.0.0+\] DisconnectSharedLowLevelLayerFromSharedBuffer   |
+| 8210 | \[4.0.0+\] CreateSharedLayer                               |
+| 8211 | \[4.0.0+\] DestroySharedLayer                              |
+| 8216 | \[4.0.0+\] AttachSharedLayerToLowLevelLayer                |
+| 8217 | \[4.0.0+\] ForceDetachSharedLayerFromLowLevelLayer         |
+| 8218 | \[4.0.0+\] StartDetachSharedLayerFromLowLevelLayer         |
+| 8219 | \[4.0.0+\] FinishDetachSharedLayerFromLowLevelLayer        |
+| 8220 | \[4.0.0+\] GetSharedLayerDetachReadyEvent                  |
+| 8221 | \[4.0.0+\] GetSharedLowLevelLayerSynchronizedEvent         |
+| 8222 | \[4.0.0+\] CheckSharedLowLevelLayerSynchronized            |
+| 8223 | \[4.0.0+\] RegisterSharedBufferImporterAruid               |
+| 8224 | \[4.0.0+\] UnregisterSharedBufferImporterAruid             |
+| 8227 | \[4.0.0+\] CreateSharedBufferProcessHeap                   |
+| 8228 | \[4.0.0+\] GetSharedLayerLayerStacks                       |
+| 8229 | \[4.0.0+\] SetSharedLayerLayerStacks                       |
+| 8291 | \[4.0.0+\] PresentDetachedSharedFrameBufferToLowLevelLayer |
+| 8292 | \[4.0.0+\] FillDetachedSharedFrameBufferColor              |
+| 8293 | \[4.0.0+\] GetDetachedSharedFrameBufferImage               |
+| 8294 | \[4.0.0+\] SetDetachedSharedFrameBufferImage               |
+| 8295 | \[4.0.0+\] CopyDetachedSharedFrameBufferImage              |
+| 8296 | \[4.0.0+\] SetDetachedSharedFrameBufferSubImage            |
+| 8297 | \[4.0.0+\] GetSharedFrameBufferContentParameter            |
+| 8298 | \[5.0.0+\] ExpandStartupLogoOnSharedFrameBuffer            |
 
 # DisplayInfo
 
