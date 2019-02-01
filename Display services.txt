@@ -337,7 +337,7 @@ This is "nn::visrv::sf::ISystemDisplayService".
 |-
 | 2209 || SetLayerAlpha
 |-
-| 2312 || CreateStrayLayer
+| [1.0.0-6.2.0] 2312 || CreateStrayLayer
 |-
 | 2400 || OpenIndirectLayer
 |-
@@ -420,6 +420,8 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 2010 || CreateManagedLayer
 |-
 | 2011 || DestroyManagedLayer
+|-
+| 2012 || [7.0.0+] ? (Takes a total of 0x10-bytes of input and a type-0x6 output buffer, returns 0x10-bytes of output)
 |-
 | 2050 || CreateIndirectLayer
 |-
