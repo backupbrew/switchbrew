@@ -13,6 +13,13 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==FIRM==
 All files under RomFS were updated.
 
+====Package1ldr====
+Since [[6.2.0]], the following was changed (besides the usual constant changes for new fuse burnt, incremented version, etc):
+* A function that returns a hardware type now returns 0xF whenever it would previously have returned a non-zero value.
+** Code validating hardware type has been simplified accordingly.
+* The function validating the bootloader version by parsing the BCT no longer hardcodes the BCT address as 0x40000100, and instead adds a relative offset to a BCT address specified via argument.
+* The [[TSEC Firmware#SecureBoot|SecureBoot TSEC firmware]] was updated to prevent SMMU virtualization attacks.
+
 ====NX_BOOTLOADER====
 NX bootloader was updated, and is now stored compressed. Before executing, a small stub now uncompresses the bootloader to 0x40004000, size 0x1C000.
 
