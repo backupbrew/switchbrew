@@ -5,20 +5,22 @@ layers/framebuffers.
 # caps:sc
 
 This is "nn::capsrv::sf::IScreenShotControlService". This is available
-with \[2.0.0+\].
+with
+\[2.0.0+\].
 
-| Cmd  | Name |
-| ---- | ---- |
-| 1    |      |
-| 2    |      |
-| 1001 |      |
-| 1002 |      |
-| 1003 |      |
-| 1011 |      |
-| 1012 |      |
-| 1201 |      |
-| 1202 |      |
-| 1203 |      |
+| Cmd  | Name       | Notes                                                                                                                                  |
+| ---- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    |            |                                                                                                                                        |
+| 2    |            |                                                                                                                                        |
+| 210  | \[6.0.0+\] | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
+| 1001 |            |                                                                                                                                        |
+| 1002 |            |                                                                                                                                        |
+| 1003 |            |                                                                                                                                        |
+| 1011 |            |                                                                                                                                        |
+| 1012 |            |                                                                                                                                        |
+| 1201 |            |                                                                                                                                        |
+| 1202 |            |                                                                                                                                        |
+| 1203 |            |                                                                                                                                        |
 
 ## Cmd1
 

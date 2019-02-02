@@ -5,27 +5,29 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 1 ||
+| 1 || || 
 |-
-| 2 ||
+| 2 || || 
 |-
-| 1001 ||
+| 210 || [6.0.0+] || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output.
 |-
-| 1002 ||
+| 1001 || || 
 |-
-| 1003 ||
+| 1002 || || 
 |-
-| 1011 ||
+| 1003 || || 
 |-
-| 1012 ||
+| 1011 || || 
 |-
-| 1201 ||
+| 1012 || || 
 |-
-| 1202 ||
+| 1201 || || 
 |-
-| 1203 ||
+| 1202 || || 
+|-
+| 1203 || || 
 |}
 
 == Cmd1 ==
