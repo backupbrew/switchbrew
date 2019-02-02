@@ -460,4 +460,14 @@ This is "nn::nfp::detail::ISystem".
 | 106 || ExistsApplicationArea
 |}
 
+= Application IDs =
+Application IDs (also referenced as "access_id" in official software) are game-unique u32s used to access the amiibo 0xd8-big application area.
+
+{| class="wikitable" border="1"
+|-
+! Game || AppID
+|-
+| Super Smash Bros. Ultimate || 0x34f80200
+|}
+
 [[Category:Services]]

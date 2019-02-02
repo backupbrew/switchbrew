@@ -271,4 +271,14 @@ This is "nn::nfp::detail::ISystem".
 | 105 | DeleteApplicationArea         |
 | 106 | ExistsApplicationArea         |
 
+# Application IDs
+
+Application IDs (also referenced as "access\_id" in official software)
+are game-unique u32s used to access the amiibo 0xd8-big application
+area.
+
+| Game                       | AppID      |
+| -------------------------- | ---------- |
+| Super Smash Bros. Ultimate | 0x34f80200 |
+
 [Category:Services](Category:Services "wikilink")
