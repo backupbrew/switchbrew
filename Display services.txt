@@ -17,9 +17,9 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 210 || [6.0.0+] ? || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output.
 |-
-| [2.0.0-4.1.0] 1001 || || 
+| [2.0.0-4.1.0] 1001 || || Takes a total of 0x10-bytes of input, no output.
 |-
-| [2.0.0-4.1.0] 1002 || || 
+| [2.0.0-4.1.0] 1002 || || Takes a total of 0x18-bytes of input, no output.
 |-
 | [3.0.0-4.1.0] 1003 || || Takes a total of 0x58-bytes of input, no output.
 |-
@@ -29,9 +29,9 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 1010 || [5.0.0+] ? || Takes a total of 0x10-bytes of input, no output.
 |-
-| 1011 || || 
+| 1011 || || Takes a total of 8-bytes of input, no output.
 |-
-| 1012 || || 
+| 1012 || || Takes a total of 8-bytes of input, no output.
 |-
 | 1101 || [4.0.0+] ? || Takes a total of 0x28-bytes of input and two type-0x46 output buffers.
 |-

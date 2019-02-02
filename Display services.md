@@ -15,14 +15,14 @@ with
 | 3                    | \[5.0.0+\] ? | Takes a total of 8-bytes of input, no output.                                                                                                                |
 | 5                    | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
 | 210                  | \[6.0.0+\] ? | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output.                       |
-| \[2.0.0-4.1.0\] 1001 |              |                                                                                                                                                              |
-| \[2.0.0-4.1.0\] 1002 |              |                                                                                                                                                              |
+| \[2.0.0-4.1.0\] 1001 |              | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
+| \[2.0.0-4.1.0\] 1002 |              | Takes a total of 0x18-bytes of input, no output.                                                                                                             |
 | \[3.0.0-4.1.0\] 1003 |              | Takes a total of 0x58-bytes of input, no output.                                                                                                             |
 | 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output.                                                                                                             |
 | 1009                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
 | 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
-| 1011                 |              |                                                                                                                                                              |
-| 1012                 |              |                                                                                                                                                              |
+| 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
+| 1012                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
 | 1101                 | \[4.0.0+\] ? | Takes a total of 0x28-bytes of input and two type-0x46 output buffers.                                                                                       |
 | 1106                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 0x18-bytes of output. |
 | 1107                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 0x18-bytes of output.     |
