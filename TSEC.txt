@@ -1339,7 +1339,7 @@ Used for UCODE self revocation. This register takes the base address of the GSC 
  0x02: Trap 2
  0x03: Trap 3
  0x08: Invalid opcode
- 0x09: Authentication failure
+ 0x09: Authentication entry
  0x0A: Page fault (no hit)
  0x0B: Page fault (multi hit)
  0x0F: Breakpoint

@@ -497,7 +497,7 @@ before starting the nvhost\_tsec firmware.
 <code>0x02: Trap 2</code><br />
 <code>0x03: Trap 3</code><br />
 <code>0x08: Invalid opcode</code><br />
-<code>0x09: Authentication failure</code><br />
+<code>0x09: Authentication entry</code><br />
 <code>0x0A: Page fault (no hit)</code><br />
 <code>0x0B: Page fault (multi hit)</code><br />
 <code>0x0F: Breakpoint</code></p></td>
