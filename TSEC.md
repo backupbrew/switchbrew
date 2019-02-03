@@ -667,7 +667,7 @@ Returns the PC of the last call or branch executed.
 | 30   | Secret code upload failure status (read-only)        |
 | 31   | Secret code upload reset scrubber status (read-only) |
 
-Used for configuring access to Falcon's DMEM.
+Used for configuring access to Falcon's IMEM.
 
 ### FALCON\_IMEMD
 

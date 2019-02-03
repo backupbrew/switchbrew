@@ -1600,7 +1600,7 @@ Returns the PC of the last call or branch executed.
 | Secret code upload reset scrubber status (read-only)
 |}
 
-Used for configuring access to Falcon's DMEM.
+Used for configuring access to Falcon's IMEM.
 
 === FALCON_IMEMD ===
 Returns or takes the value for an IMEM read/write operation.
