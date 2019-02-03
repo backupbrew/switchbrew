@@ -315,6 +315,17 @@ Kernel](Package2#Section%200.md##Section_0 "wikilink").
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:Yellows8" title="wikilink">yellows8</a></p></td>
 </tr>
 <tr class="even">
+<td><p>Potential <a href="SVC.md" title="wikilink">svcWaitForAddress</a> thread use-after-free</p></td>
+<td><p>Between <a href="4.0.0.md" title="wikilink">4.0.0</a>, where svcWaitForAddress was introduced, and <a href="7.0.0.md" title="wikilink">7.0.0</a>, there was a second intrusive rbtree node in KThread for the WaitForAddress tree (the key being (address, priority), sorted lexicographically). Unlike the WaitProcessWideKeyAtomic tree, the kernel forgot to reinsert the WaitForAddress node when the thread's priority changed (priority inheritance and/or SetPriority), breaking the rbtree invariants; and since the kernel walks through the entire tree to remove intrusive nodes, you could cause threads to stay in the tree even after their deletion.</p>
+<p><a href="7.0.0.md" title="wikilink">7.0.0</a> fixed the issue by using the same intrusive node for both trees. The thread/node knows which tree it is in, and the latter is correctly updated when thread priority changes.</p></td>
+<td><p>It unluckily didn't look exploitable</p></td>
+<td><p><a href="7.0.0.md" title="wikilink">7.0.0</a></p></td>
+<td><p><a href="7.0.0.md" title="wikilink">7.0.0</a></p></td>
+<td><p>July 2018</p></td>
+<td><p>February 2019</p></td>
+<td><p><a href="User:TuxSH" title="wikilink">TuxSH</a></p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>
