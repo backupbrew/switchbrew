@@ -95,10 +95,10 @@ interfaces).
 | [FALCON\_BOOTVEC](#FALCON_BOOTVEC "wikilink")                           | 0x54501104 | 0x04  |
 | [FALCON\_HWCFG](#FALCON_HWCFG "wikilink")                               | 0x54501108 | 0x04  |
 | [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")                             | 0x5450110C | 0x04  |
-| [FALCON\_DMATRF\_EXTBASE](#FALCON_DMATRF_EXTBASE "wikilink")            | 0x54501110 | 0x04  |
-| [FALCON\_DMATRF\_VOFF](#FALCON_DMATRF_VOFF "wikilink")                  | 0x54501114 | 0x04  |
+| [FALCON\_DMATRFBASE](#FALCON_DMATRFBASE "wikilink")                     | 0x54501110 | 0x04  |
+| [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
-| [FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink")                  | 0x5450111C | 0x04  |
+| [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
 | [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
 | [FALCON\_CRYPTTRFSTAT](#FALCON_CRYPTTRFSTAT "wikilink")                 | 0x54501124 | 0x04  |
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
@@ -117,25 +117,25 @@ interfaces).
 | FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                                      | 0x5450116C | 0x04  |
 | FALCON\_CG2                                                             | 0x5450117C | 0x04  |
-| FALCON\_CODE\_INDEX                                                     | 0x54501180 | 0x04  |
-| FALCON\_CODE                                                            | 0x54501184 | 0x04  |
-| FALCON\_CODE\_VIRT\_ADDR                                                | 0x54501188 | 0x04  |
-| FALCON\_DATA\_INDEX0                                                    | 0x545011C0 | 0x04  |
-| FALCON\_DATA0                                                           | 0x545011C4 | 0x04  |
-| FALCON\_DATA\_INDEX1                                                    | 0x545011C8 | 0x04  |
-| FALCON\_DATA1                                                           | 0x545011CC | 0x04  |
-| FALCON\_DATA\_INDEX2                                                    | 0x545011D0 | 0x04  |
-| FALCON\_DATA2                                                           | 0x545011D4 | 0x04  |
-| FALCON\_DATA\_INDEX3                                                    | 0x545011D8 | 0x04  |
-| FALCON\_DATA3                                                           | 0x545011DC | 0x04  |
-| FALCON\_DATA\_INDEX4                                                    | 0x545011E0 | 0x04  |
-| FALCON\_DATA4                                                           | 0x545011E4 | 0x04  |
-| FALCON\_DATA\_INDEX5                                                    | 0x545011E8 | 0x04  |
-| FALCON\_DATA5                                                           | 0x545011EC | 0x04  |
-| FALCON\_DATA\_INDEX6                                                    | 0x545011F0 | 0x04  |
-| FALCON\_DATA6                                                           | 0x545011F4 | 0x04  |
-| FALCON\_DATA\_INDEX7                                                    | 0x545011F8 | 0x04  |
-| FALCON\_DATA7                                                           | 0x545011FC | 0x04  |
+| [FALCON\_IMEMC](#FALCON_IMEMC "wikilink")                               | 0x54501180 | 0x04  |
+| [FALCON\_IMEMD](#FALCON_IMEMD "wikilink")                               | 0x54501184 | 0x04  |
+| [FALCON\_IMEMT](#FALCON_IMEMT "wikilink")                               | 0x54501188 | 0x04  |
+| [FALCON\_DMEMC0](#FALCON_DMEMC0 "wikilink")                             | 0x545011C0 | 0x04  |
+| [FALCON\_DMEMD0](#FALCON_DMEMD0 "wikilink")                             | 0x545011C4 | 0x04  |
+| FALCON\_DMEMC1                                                          | 0x545011C8 | 0x04  |
+| FALCON\_DMEMD1                                                          | 0x545011CC | 0x04  |
+| FALCON\_DMEMC2                                                          | 0x545011D0 | 0x04  |
+| FALCON\_DMEMD2                                                          | 0x545011D4 | 0x04  |
+| FALCON\_DMEMC3                                                          | 0x545011D8 | 0x04  |
+| FALCON\_DMEMD3                                                          | 0x545011DC | 0x04  |
+| FALCON\_DMEMC4                                                          | 0x545011E0 | 0x04  |
+| FALCON\_DMEMD4                                                          | 0x545011E4 | 0x04  |
+| FALCON\_DMEMC5                                                          | 0x545011E8 | 0x04  |
+| FALCON\_DMEMD5                                                          | 0x545011EC | 0x04  |
+| FALCON\_DMEMC6                                                          | 0x545011F0 | 0x04  |
+| FALCON\_DMEMD6                                                          | 0x545011F4 | 0x04  |
+| FALCON\_DMEMC7                                                          | 0x545011F8 | 0x04  |
+| FALCON\_DMEMD7                                                          | 0x545011FC | 0x04  |
 | [FALCON\_ICD\_CMD](#FALCON_ICD_CMD "wikilink")                          | 0x54501200 | 0x04  |
 | FALCON\_ICD\_ADDR                                                       | 0x54501204 | 0x04  |
 | FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
@@ -509,15 +509,15 @@ Contains information about raised exceptions.
 
 ### FALCON\_CPUCTL
 
-| Bits | Description                      |
-| ---- | -------------------------------- |
-| 0    | FALCON\_CPUCTL\_IINVAL           |
-| 1    | FALCON\_CPUCTL\_STARTCPU         |
-| 2    | FALCON\_CPUCTL\_SRESET           |
-| 3    | FALCON\_CPUCTL\_HRESET           |
-| 4    | FALCON\_CPUCTL\_HALTED           |
-| 5    | FALCON\_CPUCTL\_STOPPED          |
-| 6    | FALCON\_CPUCTL\_STARTCPU\_SECURE |
+| Bits | Description                       |
+| ---- | --------------------------------- |
+| 0    | FALCON\_CPUCTL\_IINVAL            |
+| 1    | FALCON\_CPUCTL\_STARTCPU          |
+| 2    | FALCON\_CPUCTL\_SRESET            |
+| 3    | FALCON\_CPUCTL\_HRESET            |
+| 4    | FALCON\_CPUCTL\_HALTED            |
+| 5    | FALCON\_CPUCTL\_STOPPED           |
+| 6    | FALCON\_CPUCTL\_CPUCTL\_ALIAS\_EN |
 
 Used for signaling the Falcon CPU.
 
@@ -546,21 +546,17 @@ Takes the Falcon's boot vector address.
 
 Used for configuring the Falcon's DMA engine.
 
-### FALCON\_DMATRF\_EXTBASE
+### FALCON\_DMATRFBASE
 
-Base of the external memory buffer.
+Base address of the external memory buffer, shifted right by 8.
 
-The base of the transfer is calculated by adding
-[\#FALCON\_DMATRF\_POFF](#FALCON_DMATRF_POFF "wikilink") to the base.
+The current transfer address is calculated by adding
+[\#FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") to the base.
 
-### FALCON\_DMATRF\_VOFF
+### FALCON\_DMATRFMOFFS
 
 For transfers to DMEM: the destination address. For transfers to IMEM:
 the destination virtual IMEM page.
-
-### FALCON\_DMATRF\_POFF
-
-For transfers to IMEM: the destination physical IMEM page.
 
 ### FALCON\_DMATRFCMD
 
@@ -575,6 +571,10 @@ For transfers to IMEM: the destination physical IMEM page.
 | 12-14 | FALCON\_DMATRFCMD\_CTXDMA |
 
 Used for configuring DMA transfers.
+
+### FALCON\_DMATRFFBOFFS
+
+For transfers to IMEM: the destination physical IMEM page.
 
 ### FALCON\_DMATRFSTAT
 
@@ -595,18 +595,18 @@ Used for configuring DMA transfers.
 
 ### FALCON\_HWCFG2
 
-| Bits  | Description                      |
-| ----- | -------------------------------- |
-| 0-3   | FALCON\_HWCFG2\_VERSION          |
-| 4-5   | FALCON\_HWCFG2\_SCP\_MODE        |
-| 6-7   | FALCON\_HWCFG2\_SUBVERSION       |
-| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS      |
-| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS      |
-| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2  |
-| 27    | FALCON\_HWCFG2\_HAS\_PRIV\_DEBUG |
-| 28-29 | FALCON\_HWCFG2\_IO\_ADDR\_TYPE   |
-| 30    | FALCON\_HWCFG2\_HAS\_EXTERR      |
-| 31    | FALCON\_HWCFG2\_HAS\_IMFILL      |
+| Bits  | Description                       |
+| ----- | --------------------------------- |
+| 0-3   | FALCON\_HWCFG2\_VERSION           |
+| 4-5   | FALCON\_HWCFG2\_SCP\_MODE         |
+| 6-7   | FALCON\_HWCFG2\_SUBVERSION        |
+| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS       |
+| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS       |
+| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2   |
+| 27    | FALCON\_HWCFG2\_HAS\_IMCTL\_DEBUG |
+| 28-29 | FALCON\_HWCFG2\_IO\_ADDR\_TYPE    |
+| 30    | FALCON\_HWCFG2\_HAS\_EXTERR       |
+| 31    | FALCON\_HWCFG2\_HAS\_IMFILL       |
 
 ### FALCON\_IMCTL
 
@@ -653,6 +653,45 @@ Controls the index for tracing with
 ### FALCON\_TRACEPC
 
 Returns the PC of the last call or branch executed.
+
+### FALCON\_IMEMC
+
+| Bits | Description                                          |
+| ---- | ---------------------------------------------------- |
+| 2-7  | Offset in IMEM block to read/write                   |
+| 8-15 | IMEM block to read/write                             |
+| 24   | Write auto-increment                                 |
+| 25   | Read auto-increment                                  |
+| 28   | Mark uploaded code as secret                         |
+| 29   | Secret code upload lockdown status (read-only)       |
+| 30   | Secret code upload failure status (read-only)        |
+| 31   | Secret code upload reset scrubber status (read-only) |
+
+Used for configuring access to Falcon's DMEM.
+
+### FALCON\_IMEMD
+
+Returns or takes the value for an IMEM read/write operation.
+
+### FALCON\_IMEMT
+
+Returns or takes the virtual page index for an IMEM read/write
+operation.
+
+### FALCON\_DMEMC0
+
+| Bits | Description                        |
+| ---- | ---------------------------------- |
+| 2-7  | Offset in DMEM block to read/write |
+| 8-15 | DMEM block to read/write           |
+| 24   | Write auto-increment               |
+| 25   | Read auto-increment                |
+
+Used for configuring access to Falcon's DMEM.
+
+### FALCON\_DMEMD0
+
+Returns or takes the value for a DMEM read/write operation.
 
 ### FALCON\_ICD\_CMD
 
@@ -1073,8 +1112,8 @@ Contains information on the status generated by the
 | 8    | Crypto sequence is too long                                   |
 | 12   | Crypto sequence was not finished                              |
 | 16   | Invalid cauth signature (during csigenc, csigclr or csigauth) |
-| 20   | Wrong access level (during csigauth)                          |
-| 24   | Forbidden instruction                                         |
+| 20   | Wrong access level (during csigauth in HS mode)               |
+| 24   | Forbidden instruction (during cchmod in NS mode)              |
 
 Contains information on crypto errors generated by the
 [TSEC\_SCP\_IRQSTAT\_INSN\_ERROR](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
