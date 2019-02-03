@@ -1813,7 +1813,7 @@ Controls accesses to the following registers:
 * FALCON_MTHD_OCCUPIED
 * FALCON_MTHD_ACK
 * FALCON_MTHD_LIMIT
-* FALCON_DEBUG1
+* [[#FALCON_DEBUG1|FALCON_DEBUG1]]
 
 === FALCON_SPROT_SCTL ===
 {| class="wikitable" border="1"

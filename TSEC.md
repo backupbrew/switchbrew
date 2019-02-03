@@ -870,7 +870,7 @@ Controls accesses to the following registers:
   - FALCON\_MTHD\_OCCUPIED
   - FALCON\_MTHD\_ACK
   - FALCON\_MTHD\_LIMIT
-  - FALCON\_DEBUG1
+  - [FALCON\_DEBUG1](#FALCON_DEBUG1 "wikilink")
 
 ### FALCON\_SPROT\_SCTL
 
