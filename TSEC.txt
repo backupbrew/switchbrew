@@ -1423,7 +1423,7 @@ Used for configuring the Falcon's DMA engine.
 === FALCON_DMATRFBASE ===
 Base address of the external memory buffer, shifted right by 8.
 
-The current transfer address is calculated by adding [[#FALCON_DMATRFFBOFFS]] to the base.
+The current transfer address is calculated by adding [[#FALCON_DMATRFFBOFFS|FALCON_DMATRFFBOFFS]] to the base.
 
 === FALCON_DMATRFMOFFS ===
 For transfers to DMEM: the destination address.

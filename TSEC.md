@@ -551,7 +551,7 @@ Used for configuring the Falcon's DMA engine.
 Base address of the external memory buffer, shifted right by 8.
 
 The current transfer address is calculated by adding
-[\#FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") to the base.
+[FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink") to the base.
 
 ### FALCON\_DMATRFMOFFS
 
