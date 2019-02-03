@@ -622,7 +622,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010030A006F6E000 || Light Fall || EUR JPN USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| 010030D004F34000 || Draw a Stickman: EPIC 2 || USA || 3.0.1 || Digital || 0 || || Application / Game
+| 010030D004F34000 || Draw a Stickman: EPIC 2 || USA || 3.0.1 || Digital || 0 0x10000 || || Application / Game
 |-
 | 0100B3F000BE2000 || Pokkén Tournament™ DX Demo || CHN EUR JPN USA || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 327680 393216 || || Application / Game
 |-
@@ -898,7 +898,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010043D004CF6000 || Just Dance® 2018 Demo || USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 010043E009A2E000 || Draw a Stickman: EPIC 2 || EUR || 3.0.1 || Digital || 0 || || Application / Game
+| 010043E009A2E000 || Draw a Stickman: EPIC 2 || EUR || 3.0.1 || Digital || 0 0x10000 || || Application / Game
 |-
 | 010043F004126000 || リトルインフェルノ || JPN || 1.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1060,7 +1060,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100E5F0000C0000 || 魔界戦記ディスガイア5 体験版 || JPN || 1.0.0 || Digital / Cartridge || 0 65536 131072 196608 || || Application / Game
 |-
-| 01004F8006A78000 || Super Meat Boy || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
+| 01004F8006A78000 || Super Meat Boy || EUR USA || 3.0.1 || Digital || 0 0x10000 0x20000 0x40000 || || Application / Game
 |-
 | 01004FD00382A000 || Moon Hunters || EUR JPN USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -1694,7 +1694,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100876007C2C000 || 마계전기 디스가이아5 || KOR || 3.0.1 || Digital / Cartridge || 0 || || Application / Game
 |-
-| 010087600AD4A000 || Draw a Stickman: EPIC 2 || JPN || 5.0.0 || Digital || 0 || || Application / Game
+| 010087600AD4A000 || Draw a Stickman: EPIC 2 || JPN || 5.0.0 || Digital || 0 0x10000 || || Application / Game
 |-
 | 010087C009246000 || Muddledash || EUR USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -2324,7 +2324,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100BD9004AB6000 || Kingdom: New Lands || EUR JPN USA || 1.0.0 || Digital || 0 131072 || || Application / Game
 |-
-| 0100BDE00862A000 || Mario Tennis™ Aces || CHN EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
+| 0100BDE00862A000 || Mario Tennis™ Aces || CHN EUR JPN KOR USA || 4.0.0 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 || || Application / Game
 |-
 | 0100BE50042F6000 || Yono and the Celestial Elephants || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
@@ -3211,9 +3211,9 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010089700150E000 || Dragon Marked for Death: Frontline Fighters || EUR USA || || Digital || 0 0x20000 || || Game
 |-
-| 010030D004F34000 || Draw a Stickman: EPIC 2 || USA || || Digital || 0 0x10000 || || Game
-|-
 | 010018E00BA22000 || Drift Legends || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010052000A574000 || Drowning || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010016700BCD4000 || Dungeon Village || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3235,7 +3235,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010097E00ADC2000 || Feral Fury || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100AA3009738000 || Feudal Alloy || EUR USA || || Digital || 0 0x10000 || || Game
+| 0100AA3009738000 || Feudal Alloy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100F3700C09C000 || Find the Balance || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3297,7 +3297,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100C80009ABE000 || JackQuest: The Tale of the Sword || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100841008BDE000 || JCB Pioneer: Mars || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+| 0100841008BDE000 || JCB Pioneer: Mars || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01006E400AE2A000 || Jeopardy! || USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3323,7 +3323,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01001F600B3EE000 || The Legend of Evil || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
-| 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+| 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
 | 0100E7500BF84000 || LEGRAND LEGACY: Tale of the Fatebounds || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3403,7 +3403,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010038B00BFD4000 || Operation Pig || USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100D5400BD90000 || Operación Triunfo 2017 || ESP || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+| 0100D5400BD90000 || Operación Triunfo 2017 || ESP || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
 | 010041700A04A000 || Oxyjet || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3433,7 +3433,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100e1B00A46C000 || Rage in Peace || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010047600BF72000 || Rain World || EUR USA || || Digital || 0 0x10000 || || Game
+| 010047600BF72000 || Rain World || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010042A00A9CC000 || Rapala Fishing Pro Series || USA || || Digital || 0 || || Game
 |-
@@ -3457,7 +3457,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01001F100B586000 || Rooms: The Adventure of Anne & George || EUR JPN USA || || Digital || 0 0x20000 || || Game
 |-
-| 0100F6F00B9E8000 || Saboteur! || EUR USA || || Digital || 0 0x10000 || || Game
+| 0100F6F00B9E8000 || Saboteur! || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01000BA00CD2C000 || Santa Tracker || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3472,6 +3472,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100F7300B24E000 || SEGA® Mega Drive Classics™ || EUR || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100F89003BC8000 || The Sexy Brutale || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
+|-
+| 010006C00CC10000 || Shanky: The Vegan's Nightmare || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01001FF00BEE8000 || The Shapeshifting Detective || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3527,6 +3529,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010025000CBEA000 || Swamp Defense 2 || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010019500B69A000 || Swords & Soldiers || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01004BB00421E000 || Syberia 1 & 2 || EUR USA || || Digital || 0 0x30000 || || Game
 |-
 | 0100CBE004E6C000 || Syberia 3 || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3576,6 +3580,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010033600ADE6000 || Wheel of Fortune || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100D360098B6000 || WILL: A Wonderful World || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010048800B638000 || WindJammers || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01005A100B314000 || Windstorm || EUR || || Digital || 0 0x30000 || || Game
 |-
