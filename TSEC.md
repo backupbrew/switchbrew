@@ -827,8 +827,8 @@ Controls accesses to the following registers:
   - FALCON\_SUBENGINE\_RESET
   - FALCON\_HOST\_IO\_INDEX
   - [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")
-  - FALCON\_TLB\_CMD
-  - FALCON\_TLB\_CMD\_RES
+  - [FALCON\_IMCTL](#FALCON_IMCTL "wikilink")
+  - [FALCON\_IMSTAT](#FALCON_IMSTAT "wikilink")
   - FALCON\_UNK\_250
   - FALCON\_UNK\_2E0
 
