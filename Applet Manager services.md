@@ -70,6 +70,7 @@ commands.
 | 20   | GetHomeMenuFunctions        | Returns an [\#IHomeMenuFunctions](#IHomeMenuFunctions "wikilink").               |
 | 21   | GetGlobalStateController    | Returns an [\#IGlobalStateController](#IGlobalStateController "wikilink").       |
 | 22   | GetApplicationCreator       | Returns an [\#IApplicationCreator](#IApplicationCreator "wikilink").             |
+| 23   | \[7.0.0+\]                  | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                       |
 | 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
 
 ### IHomeMenuFunctions
@@ -118,19 +119,20 @@ handle.
 
 ### IGlobalStateController
 
-| Cmd | Name                                                            |
-| --- | --------------------------------------------------------------- |
-| 0   | RequestToEnterSleep                                             |
-| 1   | EnterSleep                                                      |
-| 2   | StartSleepSequence                                              |
-| 3   | StartShutdownSequence                                           |
-| 4   | StartRebootSequence                                             |
-| 10  | LoadAndApplyIdlePolicySettings                                  |
-| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |
-| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |
-| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |
-| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |
-| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |
+| Cmd | Name                                                            | Notes                           |
+| --- | --------------------------------------------------------------- | ------------------------------- |
+| 0   | RequestToEnterSleep                                             |                                 |
+| 1   | EnterSleep                                                      |                                 |
+| 2   | StartSleepSequence                                              |                                 |
+| 3   | StartShutdownSequence                                           |                                 |
+| 4   | StartRebootSequence                                             |                                 |
+| 9   | \[7.0.0+\]                                                      | No input, returns an output u8. |
+| 10  | LoadAndApplyIdlePolicySettings                                  |                                 |
+| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |                                 |
+| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |                                 |
+| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |                                 |
+| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |                                 |
+| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |                                 |
 
 #### ShouldSleepOnBoot
 
@@ -237,8 +239,17 @@ No input/output.
 
 #### GetResult
 
-No
-input/output.
+No input/output.
+
+## IUnknown0
+
+Added with
+[7.0.0](7.0.0.md "wikilink").
+
+| Cmd | Name | Notes                                                                                                  |
+| --- | ---- | ------------------------------------------------------------------------------------------------------ |
+| 10  |      | Takes a total of 8-bytes of input and a type-0x22 output buffer, returns a total of 8-bytes of output. |
+| 11  |      | Takes a total of 8-bytes of input and a type-0x21 input buffer, no output.                             |
 
 ## ILibraryAppletProxy
 
@@ -252,6 +263,7 @@ input/output.
 | 10   | GetProcessWindingController   | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").   |
 | 11   | GetLibraryAppletCreator       | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").           |
 | 20   | OpenLibraryAppletSelfAccessor | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink"). |
+| 21   | \[7.0.0+\]                    | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                         |
 | 1000 | GetDebugFunctions             | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                       |
 
 ### ILibraryAppletSelfAccessor
@@ -371,6 +383,7 @@ Takes an input u64 and handle, returns a GRC
 | 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
 | 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
 | 20   | GetOverlayFunctions         | Returns an [\#IOverlayFunctions](#IOverlayFunctions "wikilink").                 |
+| 21   | \[7.0.0+\]                  | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                       |
 | 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
 
 ### IOverlayFunctions
@@ -386,6 +399,7 @@ Takes an input u64 and handle, returns a GRC
 | 6   | \[2.0.0+\] SetScreenShotPermissionGlobally       |
 | 10  | \[6.0.0+\] StartShutdownSequenceForOverlay       |
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
+| 90  | \[7.0.0+\]                                       |
 | 101 | \[6.0.0+\] BeginToObserveHidInputForDevelop      |
 
 ## IApplicationProxy
@@ -404,49 +418,51 @@ Takes an input u64 and handle, returns a GRC
 
 ### IApplicationFunctions
 
-| Cmd  | Name                                                                                                                            | Notes |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| 1    | [\#PopLaunchParameter](#PopLaunchParameter "wikilink")                                                                          |       |
-| 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                            |       |
-| 11   | \[2.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |       |
-| 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                               |       |
-| 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")               |       |
-| 20   | EnsureSaveData                                                                                                                  |       |
-| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |       |
-| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |       |
-| 23   | GetDisplayVersion                                                                                                               |       |
-| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |       |
-| 25   | \[2.0.0+\] ExtendSaveData                                                                                                       |       |
-| 26   | \[2.0.0+\] GetSaveDataSize                                                                                                      |       |
-| 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |       |
-| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |       |
-| 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                              |       |
-| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                |       |
-| 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                    |       |
-| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |       |
-| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |       |
-| 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                             |       |
-| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |       |
-| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |       |
-| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |       |
-| 68   | \[4.0.0+\] [\#RequestFlushGamePlayingMovieForDebug](#RequestFlushGamePlayingMovieForDebug "wikilink")                           |       |
-| 70   | \[3.0.0+\] [\#RequestToShutdown](#RequestToShutdown "wikilink")                                                                 |       |
-| 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                     |       |
-| 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |       |
-| 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |       |
-| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |       |
-| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |       |
-| 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |       |
-| 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |       |
-| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |       |
-| 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |       |
-| 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |       |
-| 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |       |
-| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                                                              |       |
-| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |       |
-| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |       |
-| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |       |
-| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                         |       |
+| Cmd  | Name                                                                                                                            | Notes                                                                                                       |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 1    | [\#PopLaunchParameter](#PopLaunchParameter "wikilink")                                                                          |                                                                                                             |
+| 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                            |                                                                                                             |
+| 11   | \[2.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |                                                                                                             |
+| 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                               |                                                                                                             |
+| 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")               |                                                                                                             |
+| 14   | \[7.0.0+\]                                                                                                                      | Takes a total of 8-bytes and a type-0x15 input buffer, return an output [\#IStorage](#IStorage "wikilink"). |
+| 15   | \[7.0.0+\]                                                                                                                      | Takes a total of 8-bytes and a type-0x15 input buffer, no output.                                           |
+| 20   | EnsureSaveData                                                                                                                  |                                                                                                             |
+| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |                                                                                                             |
+| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                                                                             |
+| 23   | GetDisplayVersion                                                                                                               |                                                                                                             |
+| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |                                                                                                             |
+| 25   | \[2.0.0+\] ExtendSaveData                                                                                                       |                                                                                                             |
+| 26   | \[2.0.0+\] GetSaveDataSize                                                                                                      |                                                                                                             |
+| 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |                                                                                                             |
+| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |                                                                                                             |
+| 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                              |                                                                                                             |
+| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                |                                                                                                             |
+| 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                    |                                                                                                             |
+| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |                                                                                                             |
+| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |                                                                                                             |
+| 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                             |                                                                                                             |
+| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |                                                                                                             |
+| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |                                                                                                             |
+| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |                                                                                                             |
+| 68   | \[4.0.0+\] [\#RequestFlushGamePlayingMovieForDebug](#RequestFlushGamePlayingMovieForDebug "wikilink")                           |                                                                                                             |
+| 70   | \[3.0.0+\] [\#RequestToShutdown](#RequestToShutdown "wikilink")                                                                 |                                                                                                             |
+| 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                     |                                                                                                             |
+| 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |                                                                                                             |
+| 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |                                                                                                             |
+| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |                                                                                                             |
+| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |                                                                                                             |
+| 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
+| 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
+| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |                                                                                                             |
+| 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |                                                                                                             |
+| 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |                                                                                                             |
+| 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                                                                             |
+| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                                                              |                                                                                                             |
+| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                                                                             |
+| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                                                                             |
+| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |                                                                                                             |
+| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                         |                                                                                                             |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -757,38 +773,44 @@ Official sw uses this during LibraryApplet creation when
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                                                                      | Notes |
-| --- | --------------------------------------------------------------------------------------------------------- | ----- |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
-| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |       |
-| 3   | AllowToEnterSleep                                                                                         |       |
-| 4   | DisallowToEnterSleep                                                                                      |       |
-| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
-| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |       |
-| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
-| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |       |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |       |
-| 10  | RequestToAcquireSleepLock                                                                                 |       |
-| 11  | ReleaseSleepLock                                                                                          |       |
-| 12  | ReleaseSleepLockTransiently                                                                               |       |
-| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |       |
-| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |       |
-| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
-| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |       |
-| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |       |
-| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
-| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
-| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |       |
-| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |       |
-| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |       |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |       |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |       |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |       |
-| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                            |       |
-| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                          |       |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |       |
+| Cmd | Name                                                                                                      | Notes                                                                                              |
+| --- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |                                                                                                    |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |                                                                                                    |
+| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |                                                                                                    |
+| 3   | AllowToEnterSleep                                                                                         |                                                                                                    |
+| 4   | DisallowToEnterSleep                                                                                      |                                                                                                    |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |                                                                                                    |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |                                                                                                    |
+| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |                                                                                                    |
+| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |                                                                                                    |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |                                                                                                    |
+| 10  | RequestToAcquireSleepLock                                                                                 |                                                                                                    |
+| 11  | ReleaseSleepLock                                                                                          |                                                                                                    |
+| 12  | ReleaseSleepLockTransiently                                                                               |                                                                                                    |
+| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |                                                                                                    |
+| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |                                                                                                    |
+| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |                                                                                                    |
+| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |                                                                                                    |
+| 32: | \[7.0.0+\]                                                                                                | Takes a total of 4-bytes of input, returns an output [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |                                                                                                    |
+| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |                                                                                                    |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |                                                                                                    |
+| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |                                                                                                    |
+| 53  | \[7.0.0+\]                                                                                                | No input/output.                                                                                   |
+| 54  | \[7.0.0+\]                                                                                                | No input/output.                                                                                   |
+| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |                                                                                                    |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |                                                                                                    |
+| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |                                                                                                    |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |                                                                                                    |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |                                                                                                    |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |                                                                                                    |
+| 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                            |                                                                                                    |
+| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                          |                                                                                                    |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |                                                                                                    |
+| 90  | \[7.0.0+\]                                                                                                | Takes an input u8, no output.                                                                      |
+| 91  | \[7.0.0+\]                                                                                                | No input, returns a total of 4-bytes of output.                                                    |
+| 200 | \[7.0.0+\]                                                                                                | No input, returns a total of 4-bytes of output.                                                    |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -899,46 +921,48 @@ handle.
 
 ## ISelfController
 
-| Cmd | Name                                                                                         |
-| --- | -------------------------------------------------------------------------------------------- |
-| 0   | [\#Exit](#Exit "wikilink")                                                                   |
-| 1   | [\#LockExit](#LockExit "wikilink")                                                           |
-| 2   | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
-| 3   | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
-| 4   | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
-| 9   | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |
-| 10  | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
-| 11  | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
-| 12  | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
-| 13  | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
-| 14  | SetRestartMessageEnabled                                                                     |
-| 15  | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
-| 16  | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
-| 17  | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
-| 18  | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19  | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
-| 20  | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
-| 40  | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
-| 41  | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
-| 42  | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
-| 43  | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |
-| 50  | SetHandlesRequestToDisplay                                                                   |
-| 51  | ApproveToDisplay                                                                             |
-| 60  | OverrideAutoSleepTimeAndDimmingTime                                                          |
-| 61  | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |
-| 62  | SetIdleTimeDetectionExtension                                                                |
-| 63  | GetIdleTimeDetectionExtension                                                                |
-| 64  | SetInputDetectionSourceSet                                                                   |
-| 65  | \[2.0.0+\] ReportUserIsActive                                                                |
-| 66  | \[3.0.0+\] GetCurrentIlluminance                                                             |
-| 67  | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |
-| 68  | \[4.0.0+\] SetAutoSleepDisabled                                                              |
-| 69  | \[4.0.0+\] IsAutoSleepDisabled                                                               |
-| 70  | \[5.0.0+\] ReportMultimediaError                                                             |
-| 71  | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |
-| 80  | \[5.0.0+\] SetWirelessPriorityMode                                                           |
-| 90  | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |
-| 91  | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |
+| Cmd  | Name                                                                                         | Notes                                                             |
+| ---- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| 0    | [\#Exit](#Exit "wikilink")                                                                   |                                                                   |
+| 1    | [\#LockExit](#LockExit "wikilink")                                                           |                                                                   |
+| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |                                                                   |
+| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |                                                                   |
+| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |                                                                   |
+| 9    | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |                                                                   |
+| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |                                                                   |
+| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |                                                                   |
+| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |                                                                   |
+| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |                                                                   |
+| 14   | SetRestartMessageEnabled                                                                     |                                                                   |
+| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |                                                                   |
+| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |                                                                   |
+| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |                                                                   |
+| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |                                                                   |
+| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |                                                                   |
+| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |                                                                   |
+| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |                                                                   |
+| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |                                                                   |
+| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |                                                                   |
+| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |                                                                   |
+| 50   | SetHandlesRequestToDisplay                                                                   |                                                                   |
+| 51   | ApproveToDisplay                                                                             |                                                                   |
+| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |                                                                   |
+| 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |                                                                   |
+| 62   | SetIdleTimeDetectionExtension                                                                |                                                                   |
+| 63   | GetIdleTimeDetectionExtension                                                                |                                                                   |
+| 64   | SetInputDetectionSourceSet                                                                   |                                                                   |
+| 65   | \[2.0.0+\] ReportUserIsActive                                                                |                                                                   |
+| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |                                                                   |
+| 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |                                                                   |
+| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |                                                                   |
+| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |                                                                   |
+| 70   | \[5.0.0+\] ReportMultimediaError                                                             |                                                                   |
+| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |                                                                   |
+| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |                                                                   |
+| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |                                                                   |
+| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |                                                                   |
+| 100  | \[7.0.0+\]                                                                                   | Takes an input u8, no output.                                     |
+| 1000 | \[7.0.0+\]                                                                                   | No input, returns an output [\#IUnknown1](#IUnknown1 "wikilink"). |
 
 ### Exit
 
@@ -1016,19 +1040,33 @@ Takes an input u8 bool, no output.
 
 ### IsIlluminanceAvailable
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
+
+## IUnknown1
+
+Added with
+[7.0.0](7.0.0.md "wikilink").
+
+| Cmd | Name | Notes                                                           |
+| --- | ---- | --------------------------------------------------------------- |
+| 0   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 1   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 2   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 3   |      | No input, returns an output handle.                             |
+| 4   |      | No input/output.                                                |
 
 ## IWindowController
 
-| Cmd | Name                                                             | Notes |
-| --- | ---------------------------------------------------------------- | ----- |
-| 0   | [\#CreateWindow](#CreateWindow "wikilink")                       |       |
-| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink") |       |
-| 2   | \[6.0.0+\] GetAppletResourceUserIdOfCallerApplet                 |       |
-| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |       |
-| 11  | ReleaseForegroundRights                                          |       |
-| 12  | RejectToChangeIntoBackground                                     |       |
+| Cmd | Name                                                             | Notes                                         |
+| --- | ---------------------------------------------------------------- | --------------------------------------------- |
+| 0   | [\#CreateWindow](#CreateWindow "wikilink")                       |                                               |
+| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink") |                                               |
+| 2   | \[6.0.0+\] GetAppletResourceUserIdOfCallerApplet                 |                                               |
+| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                                               |
+| 11  | ReleaseForegroundRights                                          |                                               |
+| 12  | RejectToChangeIntoBackground                                     |                                               |
+| 20  | \[7.0.0+\]                                                       | Takes an input u8, no output.                 |
+| 21  | \[7.0.0+\]                                                       | Takes a total of 8-bytes of input, no output. |
 
 ### CreateWindow
 
@@ -1103,13 +1141,16 @@ No input, returns an output handle.
 
 ### AcquireCallerAppletCaptureBuffer
 
-No input, returns an output handle.
+No input, returns an output
+handle.
 
 ## ISystemAppletControllerForDebug
 
-| Cmd | Name                             | Notes |
-| --- | -------------------------------- | ----- |
-| 1   | RequestLaunchApplicationForDebug |       |
+| Cmd | Name                             | Notes                                                                             |
+| --- | -------------------------------- | --------------------------------------------------------------------------------- |
+| 1   | RequestLaunchApplicationForDebug |                                                                                   |
+| 2   | \[7.0.0+\]                       | No input, returns an output [\#IUnknown1](#IUnknown1 "wikilink").                 |
+| 3   | \[7.0.0+\]                       | Takes a total of 8-bytes of input, returns an [\#IStorage](#IStorage "wikilink"). |
 
 ## IProcessWindingController
 
@@ -1229,14 +1270,14 @@ called first.
 
 This is "nn::idle::detail::IPolicyManagerSystem"
 
-| Cmd | Name                  |
-| --- | --------------------- |
-| 0   | GetAutoPowerDownEvent |
-| 1   | \[1.0.0-3.0.2\]       |
-| 2   | \[1.0.0-3.0.2\]       |
-| 3   | SetHandlingContext    |
-| 4   | LoadAndApplySettings  |
-| 5   | ReportUserIsActive    |
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | GetAutoPowerDownEvent   |
+| 1   | \[1.0.0-3.0.2, 7.0.0+\] |
+| 2   | \[1.0.0-3.0.2\]         |
+| 3   | SetHandlingContext      |
+| 4   | LoadAndApplySettings    |
+| 5   | ReportUserIsActive      |
 
 # omm
 
@@ -1248,34 +1289,35 @@ the operation changes between docked and handheld modes. Besides
 that interacts with the [Dock](Dock.md "wikilink") through
 [usb:pd\*](USB%20services.md "wikilink").
 
-| Cmd | Name                                                   |
-| --- | ------------------------------------------------------ |
-| 0   | GetOperationMode                                       |
-| 1   | GetOperationModeChangeEvent                            |
-| 2   | EnableAudioVisual                                      |
-| 3   | DisableAudioVisual                                     |
-| 4   | EnterSleepAndWait                                      |
-| 5   | GetCradleStatus                                        |
-| 6   | FadeInDisplay                                          |
-| 7   | FadeOutDisplay                                         |
-| 8   | \[2.0.0+\] GetCradleFwVersion                          |
-| 9   | \[2.0.0+\] NotifyCecSettingsChanged                    |
-| 10  | \[3.0.0+\] SetOperationModePolicy                      |
-| 11  | \[3.0.0+\] GetDefaultDisplayResolution                 |
-| 12  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent      |
-| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution              |
-| 14  | \[3.0.0+\] ShouldSleepOnBoot                           |
-| 15  | \[4.0.0+\] NotifyHdcpApplicationExecutionStarted       |
-| 16  | \[4.0.0+\] NotifyHdcpApplicationExecutionFinished      |
-| 17  | \[4.0.0+\] NotifyHdcpApplicationDrawingStarted         |
-| 18  | \[4.0.0+\] NotifyHdcpApplicationDrawingFinished        |
-| 19  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent            |
-| 20  | \[4.0.0+\] GetHdcpAuthenticationFailedEmulationEnabled |
-| 21  | \[4.0.0+\] SetHdcpAuthenticationFailedEmulation        |
-| 22  | \[4.0.0+\] GetHdcpStateChangeEvent                     |
-| 23  | \[4.0.0+\] GetHdcpState                                |
-| 24  | \[5.0.0+\] ShowCardUpdateProcessing                    |
-| 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged   |
+| Cmd | Name                                                   | Notes                                           |
+| --- | ------------------------------------------------------ | ----------------------------------------------- |
+| 0   | GetOperationMode                                       |                                                 |
+| 1   | GetOperationModeChangeEvent                            |                                                 |
+| 2   | EnableAudioVisual                                      |                                                 |
+| 3   | DisableAudioVisual                                     |                                                 |
+| 4   | EnterSleepAndWait                                      |                                                 |
+| 5   | GetCradleStatus                                        |                                                 |
+| 6   | FadeInDisplay                                          |                                                 |
+| 7   | FadeOutDisplay                                         |                                                 |
+| 8   | \[2.0.0+\] GetCradleFwVersion                          |                                                 |
+| 9   | \[2.0.0+\] NotifyCecSettingsChanged                    |                                                 |
+| 10  | \[3.0.0+\] SetOperationModePolicy                      |                                                 |
+| 11  | \[3.0.0+\] GetDefaultDisplayResolution                 |                                                 |
+| 12  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent      |                                                 |
+| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution              |                                                 |
+| 14  | \[3.0.0+\] ShouldSleepOnBoot                           |                                                 |
+| 15  | \[4.0.0+\] NotifyHdcpApplicationExecutionStarted       |                                                 |
+| 16  | \[4.0.0+\] NotifyHdcpApplicationExecutionFinished      |                                                 |
+| 17  | \[4.0.0+\] NotifyHdcpApplicationDrawingStarted         |                                                 |
+| 18  | \[4.0.0+\] NotifyHdcpApplicationDrawingFinished        |                                                 |
+| 19  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent            |                                                 |
+| 20  | \[4.0.0+\] GetHdcpAuthenticationFailedEmulationEnabled |                                                 |
+| 21  | \[4.0.0+\] SetHdcpAuthenticationFailedEmulation        |                                                 |
+| 22  | \[4.0.0+\] GetHdcpStateChangeEvent                     |                                                 |
+| 23  | \[4.0.0+\] GetHdcpState                                |                                                 |
+| 24  | \[5.0.0+\] ShowCardUpdateProcessing                    |                                                 |
+| 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged   |                                                 |
+| 26  | \[7.0.0+\]                                             | No input, returns a total of 4-bytes of output. |
 
 # spsm
 
