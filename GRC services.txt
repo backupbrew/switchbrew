@@ -91,6 +91,8 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 2 || [[#CreateVideoProxy]]
 |-
+| 9 || [7.0.0+] ? (Takes a total of 8-bytes of input, no output)
+|-
 | 10 || [[#OpenOffscreenLayer]]
 |-
 | 11 || [[#CloseOffscreenLayer]]
@@ -106,6 +108,8 @@ This is "nn::grcsrv::IMovieMaker".
 | 24 || [[#StartOffscreenRecordingEx]]
 |-
 | 25 || [[#CompleteOffscreenRecordingFinishEx0]]
+|-
+| 26 || [7.0.0+] ? (Takes a total of 0x10-bytes of input and two type-0x5 input buffers, returns a total of 0x20-bytes of output)
 |-
 | 30 || [[#GetOffscreenLayerError]]
 |-
