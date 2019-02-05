@@ -1538,7 +1538,7 @@ The PersonalMmHeap are allocated as follows:
 
   - For the application, normal insecure pool is used. Carveout 5 is
     used to provide protection.
-  - For the applet, a pre-allocated secure pool segment of size 0x40000
+  - For the applet, a pre-allocated secure pool segment of size 0x400000
     is used.
   - For sysmodules, secure pool is
 allocated.
