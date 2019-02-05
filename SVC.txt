@@ -1788,6 +1788,11 @@ On [5.0.0] PoolPartition is specified in CreateProcessArgs. There are now 4 pool
 
 On [5.0.0] (maybe lower?) a zero ResourceLimitHandle defaults to sysmodule limits and 0x12300000 bytes of memory.
 
+The PersonalMmHeap are allocated as follows:
+* For the application, normal insecure pool is used. Carveout 5 is used to provide protection.
+* For the applet, a pre-allocated secure pool segment of size 0x40000 is used.
+* For sysmodules, secure pool is allocated.
+
 === AddressSpaceType ===
 {| class=wikitable
 ! Type || Name || Width || Description
