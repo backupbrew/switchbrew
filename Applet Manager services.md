@@ -1348,6 +1348,18 @@ This is "nn::tcap::server::IManager".
 | 1   | SetOperationMode                      |
 | 2   | LoadAndApplySettings                  |
 
+# caps:su
+
+This was added with
+[6.0.0](6.0.0.md "wikilink").
+
+| Cmd | Name       | Notes                                                                                                                                  |
+| --- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 32  | \[7.0.0+\] | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
+| 201 |            | Takes a total of 0x10-bytes of input, a PID, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output.                    |
+| 203 |            | Takes a total of 0x50-bytes of input, a PID, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output.                    |
+| 210 |            | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
+
 # Library Applets
 
 This section documents library applet launching.
