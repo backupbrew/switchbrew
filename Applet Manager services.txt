@@ -1386,7 +1386,9 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 |-
 | 0 || GetAutoPowerDownEvent
 |-
-| 1 || [1.0.0-3.0.2, 7.0.0+]
+|rowspan="2"| 1 || [1.0.0-3.0.2]
+|-
+| [7.0.0+]
 |-
 | 2 || [1.0.0-3.0.2]
 |-

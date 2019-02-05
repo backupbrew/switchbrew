@@ -1270,14 +1270,15 @@ called first.
 
 This is "nn::idle::detail::IPolicyManagerSystem"
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 0   | GetAutoPowerDownEvent   |
-| 1   | \[1.0.0-3.0.2, 7.0.0+\] |
-| 2   | \[1.0.0-3.0.2\]         |
-| 3   | SetHandlingContext      |
-| 4   | LoadAndApplySettings    |
-| 5   | ReportUserIsActive      |
+| Cmd        | Name                  |
+| ---------- | --------------------- |
+| 0          | GetAutoPowerDownEvent |
+| 1          | \[1.0.0-3.0.2\]       |
+| \[7.0.0+\] |                       |
+| 2          | \[1.0.0-3.0.2\]       |
+| 3          | SetHandlingContext    |
+| 4          | LoadAndApplySettings  |
+| 5          | ReportUserIsActive    |
 
 # omm
 
