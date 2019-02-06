@@ -30,6 +30,11 @@ with
 | 1202                 | \[3.0.0+\] ? | No input/output.                                                                                                                                             |
 | 1203                 | \[3.0.0+\] ? | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                                        |
 
+  - cmd210: User-processes use hard-coded size 0x88 for the type-0x15
+    buffer.
+  - cmd1106/1107: User-processes use hard-coded sizes 0x400 and 0x404
+    for the first/second type-0x15 buffers.
+
 ## Cmd1
 
 Takes a type-0x46 output buffer, an input u32, two input u64s
