@@ -33,35 +33,37 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 
 # caps:c
 
-This is "nn::capsrv::sf::IAlbumControlService".
+This is
+"nn::capsrv::sf::IAlbumControlService".
 
-| Cmd  | Name |
-| ---- | ---- |
-| 2001 |      |
-| 2002 |      |
-| 2011 |      |
-| 2012 |      |
-| 2013 |      |
-| 2014 |      |
-| 2101 |      |
-| 2102 |      |
-| 2201 |      |
-| 2301 |      |
-
-  - Cmd2101: Takes an input u8 and u64, returns a 0x18-byte struct.
+| Cmd  | Name       | Notes                                                  |
+| ---- | ---------- | ------------------------------------------------------ |
+| 33   | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.       |
+| 2001 |            |                                                        |
+| 2002 |            |                                                        |
+| 2011 |            |                                                        |
+| 2012 |            |                                                        |
+| 2013 |            |                                                        |
+| 2014 |            |                                                        |
+| 2101 |            | Takes an input u8 and u64, returns a 0x18-byte struct. |
+| 2102 |            |                                                        |
+| 2201 |            |                                                        |
+| 2301 |            |                                                        |
 
 # caps:u
 
-This is "nn::capsrv::sf::IAlbumApplicationService".
+This is
+"nn::capsrv::sf::IAlbumApplicationService".
 
-| Cmd   | Name                                     |
-| ----- | ---------------------------------------- |
-| 102   | GetAlbumFileListByAruid                  |
-| 103   | DeleteAlbumFileByAruid                   |
-| 104   | GetAlbumFileSizeByAruid                  |
-| 110   | LoadAlbumScreenShotImageByAruid          |
-| 120   | LoadAlbumScreenShotThumbnailImageByAruid |
-| 60002 | OpenAccessorSessionForApplication        |
+| Cmd   | Name                                     | Notes                                                      |
+| ----- | ---------------------------------------- | ---------------------------------------------------------- |
+| 32    | \[7.0.0+\]                               | Takes a total of 0x10-bytes of input and a PID, no output. |
+| 102   | GetAlbumFileListByAruid                  |                                                            |
+| 103   | DeleteAlbumFileByAruid                   |                                                            |
+| 104   | GetAlbumFileSizeByAruid                  |                                                            |
+| 110   | LoadAlbumScreenShotImageByAruid          |                                                            |
+| 120   | LoadAlbumScreenShotThumbnailImageByAruid |                                                            |
+| 60002 | OpenAccessorSessionForApplication        |                                                            |
 
 ## IAlbumAccessorApplicationSession
 
