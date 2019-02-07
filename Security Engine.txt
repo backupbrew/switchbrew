@@ -8,10 +8,10 @@ The SE driver is mapped to physical address 0x70012000 with a total size of 0x20
 ! Name
 ! Address
 |-
-| SE_OPERATION_UNK0
+| SE_SECURITY
 | 0x70012000
 |-
-| SE_OPERATION_UNK1
+| SE_TZRAM_SEC
 | 0x70012004
 |-
 | SE_OPERATION
@@ -37,6 +37,9 @@ The SE driver is mapped to physical address 0x70012000 with a total size of 0x20
 |-
 | SE_CONTEXT_SAVE_CONFIG
 | 0x70012070
+|-
+| SE_CONTEXT_SAVE_AUTO
+| 0x70012074
 |-
 | SE_SHA_CONFIG
 | 0x70012200

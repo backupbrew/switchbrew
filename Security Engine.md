@@ -9,8 +9,8 @@ Security Engine.
 
 | Name                        | Address    |
 | --------------------------- | ---------- |
-| SE\_OPERATION\_UNK0         | 0x70012000 |
-| SE\_OPERATION\_UNK1         | 0x70012004 |
+| SE\_SECURITY                | 0x70012000 |
+| SE\_TZRAM\_SEC              | 0x70012004 |
 | SE\_OPERATION               | 0x70012008 |
 | SE\_INT\_ENABLE             | 0x7001200C |
 | SE\_INT\_STATUS             | 0x70012010 |
@@ -19,6 +19,7 @@ Security Engine.
 | SE\_OUT\_LL\_ADDR           | 0x70012024 |
 | SE\_HASH\_RESULT            | 0x70012030 |
 | SE\_CONTEXT\_SAVE\_CONFIG   | 0x70012070 |
+| SE\_CONTEXT\_SAVE\_AUTO     | 0x70012074 |
 | SE\_SHA\_CONFIG             | 0x70012200 |
 | SE\_SHA\_MSG\_LENGTH        | 0x70012204 |
 | SE\_SHA\_MSG\_UNK0          | 0x70012208 |
