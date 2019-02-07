@@ -48,6 +48,8 @@ This is "nn::capsrv::sf::IAlbumControlService".
 | 2201 |      |
 | 2301 |      |
 
+  - Cmd2101: Takes an input u8 and u64, returns a 0x18-byte struct.
+
 # caps:u
 
 This is "nn::capsrv::sf::IAlbumApplicationService".
