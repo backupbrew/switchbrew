@@ -33,7 +33,7 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 1012 || || Takes a total of 8-bytes of input, no output.
 |-
-| 1101 || [4.0.0+] ? || Takes a total of 0x28-bytes of input and two type-0x46 output buffers.
+| 1101 || [4.0.0+] ? || 
 |-
 | 1106 || [4.0.0+] ? || Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 0x18-bytes of output.
 |-
@@ -66,6 +66,11 @@ Stubbed with [5.0.0+], where it now returns error 0x7FECE.
 Calls the same internal func as cmd1, where the last param is an additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 Stubbed with [5.0.0+], where it now returns error 0x7FECE.
+
+== Cmd1101 ==
+Takes two input u64s '''width'''/'''height''', a 0x18-byte input struct, and two type-0x46 output buffers.
+
+For the input struct, [[GRC_services|GRC]] uses the output from [[Capture_services|caps:c]] cmd2101.
 
 = caps:ss =
 This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].

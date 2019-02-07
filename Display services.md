@@ -23,7 +23,7 @@ with
 | 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
 | 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
 | 1012                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
-| 1101                 | \[4.0.0+\] ? | Takes a total of 0x28-bytes of input and two type-0x46 output buffers.                                                                                       |
+| 1101                 | \[4.0.0+\] ? |                                                                                                                                                              |
 | 1106                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 0x18-bytes of output. |
 | 1107                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 0x18-bytes of output.     |
 | 1201                 | \[3.0.0+\] ? | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                                               |
@@ -60,6 +60,14 @@ Calls the same internal func as cmd1, where the last param is an
 additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 Stubbed with \[5.0.0+\], where it now returns error 0x7FECE.
+
+## Cmd1101
+
+Takes two input u64s **width**/**height**, a 0x18-byte input struct, and
+two type-0x46 output buffers.
+
+For the input struct, [GRC](GRC%20services.md "wikilink") uses the
+output from [caps:c](Capture%20services.md "wikilink") cmd2101.
 
 # caps:ss
 
