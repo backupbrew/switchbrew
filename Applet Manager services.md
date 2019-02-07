@@ -1361,6 +1361,9 @@ This was added with
 | 203 |            | Takes a total of 0x50-bytes of input, a PID, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output.                    |
 | 210 |            | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
+Commands 201, 203, and 210 are wrappers for
+[caps:sc](Display%20services.md "wikilink") cmd210.
+
 # Library Applets
 
 This section documents library applet launching.
