@@ -1379,6 +1379,10 @@ Takes two input u32s, an u64 AppletResourceUserId, a PID, and a
 type-0x45 input buffer. Returns a 0x20-byte struct
 **ApplicationAlbumEntry**.
 
+Official user-processes doesn't use this, instead
+[\#SaveScreenShotEx0](#SaveScreenShotEx0 "wikilink") is used:
+ScreenShotAttributeEx0 is all-zero except +0 is set to an input u32.
+
 ## SaveScreenShotEx0
 
 Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
