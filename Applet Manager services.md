@@ -1351,19 +1351,35 @@ This is "nn::tcap::server::IManager".
 
 # caps:su
 
-This was added with
-[6.0.0](6.0.0.md "wikilink").
+This is "nn::capsrv::sf::IScreenShotApplicationService".
 
-| Cmd | Name       | Notes                                                                                                                                  |
-| --- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 32  | \[7.0.0+\] | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
-| 201 |            | Takes a total of 0x10-bytes of input, a PID, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output.                    |
-| 203 |            | Takes a total of 0x50-bytes of input, a PID, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output.                    |
-| 210 |            | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
+This was added with [6.0.0](6.0.0.md "wikilink").
+
+This can be used by applications to save
+screenshots.
+
+| Cmd | Name              | Notes                                                                                                                                  |
+| --- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 32  | \[7.0.0+\]        | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
+| 201 | SaveScreenShot    |                                                                                                                                        |
+| 203 | SaveScreenShotEx0 |                                                                                                                                        |
+| 210 |                   | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
 Cmd32 is a wrapper for [caps:c](Capture%20services.md "wikilink") cmd33.
 Commands 201, 203, and 210 are wrappers for
 [caps:sc](Display%20services.md "wikilink") cmd210.
+
+## SaveScreenShot
+
+Takes two input u32s, an u64 AppletResourceUserId, a PID, and a
+type-0x45 input buffer. Returns a 0x20-byte struct
+**ApplicationAlbumEntry**.
+
+## SaveScreenShotEx0
+
+Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
+u32, an input u64 AppletResourceUserId, a PID, and a type-0x45 input
+buffer. Returns a 0x20-byte struct **ApplicationAlbumEntry**.
 
 # Library Applets
 
