@@ -246,10 +246,14 @@ No input/output.
 Added with
 [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                                                                  |
-| --- | ---- | ------------------------------------------------------------------------------------------------------ |
-| 10  |      | Takes a total of 8-bytes of input and a type-0x22 output buffer, returns a total of 8-bytes of output. |
-| 11  |      | Takes a total of 8-bytes of input and a type-0x21 input buffer, no output.                             |
+| Cmd | Name | Notes                                                                                                          |
+| --- | ---- | -------------------------------------------------------------------------------------------------------------- |
+| 10  |      | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
+| 11  |      | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
+
+These commands copy data from/to a state buffer and the user specified
+buffer. The size of the state buffer is
+0x400-bytes.
 
 ## ILibraryAppletProxy
 
