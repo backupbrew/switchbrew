@@ -1526,7 +1526,7 @@ This was added with [[6.0.0]].
 | 210 || || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer.  Returns a total of 0x20-bytes of output.
 |}
 
-Cmd32 is a wrapper for a [[Capture_services|caps:c]] cmd. Commands 201, 203, and 210 are wrappers for [[Display_services|caps:sc]] cmd210.
+Cmd32 is a wrapper for [[Capture_services|caps:c]] cmd33. Commands 201, 203, and 210 are wrappers for [[Display_services|caps:sc]] cmd210.
 
 = Library Applets =
 This section documents library applet launching.
