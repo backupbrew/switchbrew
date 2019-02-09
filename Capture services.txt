@@ -107,6 +107,10 @@ This is "nn::capsrv::sf::IAlbumApplicationService".
 |-
 | 120 || LoadAlbumScreenShotThumbnailImageByAruid || 
 |-
+| 140 || [6.0.0+] || 
+|-
+| 141 || [6.0.0+] || 
+|-
 | 60002 || OpenAccessorSessionForApplication || 
 |}
 

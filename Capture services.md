@@ -63,6 +63,8 @@ This is
 | 104   | GetAlbumFileSizeByAruid                  |                                                            |
 | 110   | LoadAlbumScreenShotImageByAruid          |                                                            |
 | 120   | LoadAlbumScreenShotThumbnailImageByAruid |                                                            |
+| 140   | \[6.0.0+\]                               |                                                            |
+| 141   | \[6.0.0+\]                               |                                                            |
 | 60002 | OpenAccessorSessionForApplication        |                                                            |
 
 ## IAlbumAccessorApplicationSession
