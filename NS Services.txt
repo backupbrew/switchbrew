@@ -477,7 +477,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 38 || CheckApplicationLaunchVersion
 |-
-| 39 || CheckApplicationLaunchRights
+| [1.0.0-6.2.0] 39 || CheckApplicationLaunchRights
 |-
 | 40 || GetApplicationLogoData
 |-
@@ -545,7 +545,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 82 || DownloadApplication
 |-
-| 83 || CheckApplicationResumeRights
+| [3.0.0-6.2.0] 83 || CheckApplicationResumeRights
 |-
 | 84 || GetDynamicCommitEvent
 |-
