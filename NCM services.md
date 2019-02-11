@@ -25,28 +25,28 @@ access but doesn't use it.
 This is
 "nn::lr::ILocationResolver".
 
-| Cmd | Name                                                                                             |
-| --- | ------------------------------------------------------------------------------------------------ |
-| 0   | [\#ResolveProgramPath](#ResolveProgramPath "wikilink")                                           |
-| 1   | [\#RedirectProgramPath](#RedirectProgramPath "wikilink")                                         |
-| 2   | [\#ResolveApplicationControlPath](#ResolveApplicationControlPath "wikilink")                     |
-| 3   | [\#ResolveApplicationHtmlDocumentPath](#ResolveApplicationHtmlDocumentPath "wikilink")           |
-| 4   | [\#ResolveDataPath](#ResolveDataPath "wikilink")                                                 |
-| 5   | [\#RedirectApplicationControlPath](#RedirectApplicationControlPath "wikilink")                   |
-| 6   | [\#RedirectApplicationHtmlDocumentPath](#RedirectApplicationHtmlDocumentPath "wikilink")         |
-| 7   | [\#ResolveApplicationLegalInformationPath](#ResolveApplicationLegalInformationPath "wikilink")   |
-| 8   | [\#RedirectApplicationLegalInformationPath](#RedirectApplicationLegalInformationPath "wikilink") |
-| 9   | [\#Refresh](#Refresh "wikilink")                                                                 |
-| 10  | \[5.0.0+\] [\#SetProgramNcaPath2](#SetProgramNcaPath2 "wikilink")                                |
-| 11  | \[5.0.0+\] [\#ClearLocationResolver2](#ClearLocationResolver2 "wikilink")                        |
-| 12  | \[5.0.0+\] [\#DeleteProgramNcaPath](#DeleteProgramNcaPath "wikilink")                            |
-| 13  | \[5.0.0+\] [\#DeleteControlNcaPath](#DeleteControlNcaPath "wikilink")                            |
-| 14  | \[5.0.0+\] [\#DeleteDocHtmlNcaPath](#DeleteDocHtmlNcaPath "wikilink")                            |
-| 15  | \[5.0.0+\] [\#DeleteInfoHtmlNcaPath](#DeleteInfoHtmlNcaPath "wikilink")                          |
-| 16  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)        |
-| 17  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)         |
-| 18  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)         |
-| 19  | \[7.0.0+\] ? (Takes a total of 8-bytes of input, no output)                                      |
+| Cmd | Name                                                                                                    |
+| --- | ------------------------------------------------------------------------------------------------------- |
+| 0   | [\#ResolveProgramPath](#ResolveProgramPath "wikilink")                                                  |
+| 1   | [\#RedirectProgramPath](#RedirectProgramPath "wikilink")                                                |
+| 2   | [\#ResolveApplicationControlPath](#ResolveApplicationControlPath "wikilink")                            |
+| 3   | [\#ResolveApplicationHtmlDocumentPath](#ResolveApplicationHtmlDocumentPath "wikilink")                  |
+| 4   | [\#ResolveDataPath](#ResolveDataPath "wikilink")                                                        |
+| 5   | [\#RedirectApplicationControlPath](#RedirectApplicationControlPath "wikilink")                          |
+| 6   | [\#RedirectApplicationHtmlDocumentPath](#RedirectApplicationHtmlDocumentPath "wikilink")                |
+| 7   | [\#ResolveApplicationLegalInformationPath](#ResolveApplicationLegalInformationPath "wikilink")          |
+| 8   | [\#RedirectApplicationLegalInformationPath](#RedirectApplicationLegalInformationPath "wikilink")        |
+| 9   | [\#Refresh](#Refresh "wikilink")                                                                        |
+| 10  | \[5.0.0+\] [\#RedirectProgramPath2](#RedirectProgramPath2 "wikilink")                                   |
+| 11  | \[5.0.0+\] [\#Refresh2](#Refresh2 "wikilink")                                                           |
+| 12  | \[5.0.0+\] [\#DeleteProgramPath](#DeleteProgramPath "wikilink")                                         |
+| 13  | \[5.0.0+\] [\#DeleteApplicationControlPath](#DeleteApplicationControlPath "wikilink")                   |
+| 14  | \[5.0.0+\] [\#DeleteApplicationHtmlDocumentPath](#DeleteApplicationHtmlDocumentPath "wikilink")         |
+| 15  | \[5.0.0+\] [\#DeleteApplicationLegalInformationPath](#DeleteApplicationLegalInformationPath "wikilink") |
+| 16  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)               |
+| 17  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)                |
+| 18  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)                |
+| 19  | \[7.0.0+\] ? (Takes a total of 8-bytes of input, no output)                                             |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -134,17 +134,18 @@ to 1.
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 0.
 
-#### SetProgramNcaPath2
+#### RedirectProgramPath2
 
-Same as [SetProgramNcaPath](#SetProgramNcaPath "wikilink"), but inserts
-a new [entry](#Location_List_Entry "wikilink") with **flag** set to 1.
+Same as [RedirectProgramPath](#RedirectProgramPath "wikilink"), but
+inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
+to 1.
 
-#### ClearLocationResolver2
+#### Refresh2
 
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 1.
 
-#### DeleteProgramNcaPath
+#### DeleteProgramPath
 
 Takes an u64 **TitleID**. Used for
 [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
@@ -152,7 +153,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteControlNcaPath
+#### DeleteApplicationControlPath
 
 Takes an u64 **TitleID**. Used for
 [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
@@ -160,7 +161,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteDocHtmlNcaPath
+#### DeleteApplicationHtmlDocumentPath
 
 Takes an u64 **TitleID**. Used for
 [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
@@ -168,7 +169,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteInfoHtmlNcaPath
+#### DeleteApplicationLegalInformationPath
 
 Takes an u64 **TitleID**. Used for
 [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
