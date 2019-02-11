@@ -8,32 +8,35 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available
 with
 \[2.0.0+\].
 
-| Cmd                  | Name         | Notes                                                                                                                                                        |
-| -------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1                    |              |                                                                                                                                                              |
-| 2                    |              |                                                                                                                                                              |
-| 3                    | \[5.0.0+\] ? | Takes a total of 8-bytes of input, no output.                                                                                                                |
-| 5                    | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
-| 210                  | \[6.0.0+\] ? | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output.                       |
-| \[2.0.0-4.1.0\] 1001 |              | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
-| \[2.0.0-4.1.0\] 1002 |              | Takes a total of 0x18-bytes of input, no output.                                                                                                             |
-| \[3.0.0-4.1.0\] 1003 |              | Takes a total of 0x58-bytes of input, no output.                                                                                                             |
-| 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output.                                                                                                             |
-| 1009                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
-| 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                                             |
-| 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
-| 1012                 |              | Takes a total of 8-bytes of input, no output.                                                                                                                |
-| 1101                 | \[4.0.0+\] ? |                                                                                                                                                              |
-| 1106                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 0x18-bytes of output. |
-| 1107                 | \[4.0.0+\] ? | Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 0x18-bytes of output.     |
-| 1201                 | \[3.0.0+\] ? | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                                               |
-| 1202                 | \[3.0.0+\] ? | No input/output.                                                                                                                                             |
-| 1203                 | \[3.0.0+\] ? | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                                        |
+| Cmd                  | Name         | Notes                                                                                                                                  |
+| -------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1                    |              |                                                                                                                                        |
+| 2                    |              |                                                                                                                                        |
+| 3                    | \[5.0.0+\] ? | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 5                    | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 210                  | \[6.0.0+\] ? | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
+| \[2.0.0-4.1.0\] 1001 |              | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| \[2.0.0-4.1.0\] 1002 |              | Takes a total of 0x18-bytes of input, no output.                                                                                       |
+| \[3.0.0-4.1.0\] 1003 |              | Takes a total of 0x58-bytes of input, no output.                                                                                       |
+| 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output.                                                                                       |
+| 1009                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1012                 |              | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1101                 | \[4.0.0+\] ? |                                                                                                                                        |
+| 1106                 | \[4.0.0+\] ? |                                                                                                                                        |
+| 1107                 | \[4.0.0+\] ? |                                                                                                                                        |
+| 1201                 | \[3.0.0+\] ? | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
+| 1202                 | \[3.0.0+\] ? | No input/output.                                                                                                                       |
+| 1203                 | \[3.0.0+\] ? | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
 
   - cmd210: User-processes use hard-coded size 0x88 for the type-0x15
     buffer.
   - cmd1106/1107: User-processes use hard-coded sizes 0x400 and 0x404
     for the first/second type-0x15 buffers.
+
+The only caps:sc commands used by [GRC](GRC%20services.md "wikilink")
+are: 1101, 1106, and 1107.
 
 ## Cmd1
 
@@ -75,6 +78,18 @@ output from [caps:c](Capture%20services.md "wikilink") cmd2101.
 
 The requirements for the second buffer address/size are the same as the
 first buffer, except the minimum size is (**width**\***height**)/2.
+
+## Cmd1106
+
+Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
+input buffers, a type-0x6 output buffer, and two type-0x46 output
+buffers, returns 3 output u64s.
+
+## Cmd1107
+
+Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
+input buffers, a type-0x6 output buffer, and a type-0x45 input buffer,
+returns 3 output u64s.
 
 # caps:ss
 

@@ -35,9 +35,9 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 1101 || [4.0.0+] ? || 
 |-
-| 1106 || [4.0.0+] ? || Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 0x18-bytes of output.
+| 1106 || [4.0.0+] ? || 
 |-
-| 1107 || [4.0.0+] ? || Takes a total of 0x30-bytes of input, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 0x18-bytes of output.
+| 1107 || [4.0.0+] ? || 
 |-
 | 1201 || [3.0.0+] ? || Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.
 |-
@@ -48,6 +48,8 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 
 * cmd210: User-processes use hard-coded size 0x88 for the type-0x15 buffer.
 * cmd1106/1107: User-processes use hard-coded sizes 0x400 and 0x404 for the first/second type-0x15 buffers.
+
+The only caps:sc commands used by [[GRC_services|GRC]] are: 1101, 1106, and 1107.
 
 == Cmd1 ==
 Takes a type-0x46 output buffer, an input u32, two input u64s '''width'''/'''height''', an input s64 '''buffer_count''', and an input s64 '''buffer_index'''.
@@ -75,6 +77,12 @@ For the input struct, [[GRC_services|GRC]] uses the output from [[Capture_servic
 '''width'''/'''height''' must be 1280x720. The first buffer address must be 0x400-byte aligned. The size of the first buffer must be at least '''width'''*'''height''', and must be aligned to 0x20000-bytes.
 
 The requirements for the second buffer address/size are the same as the first buffer, except the minimum size is ('''width'''*'''height''')/2.
+
+== Cmd1106 ==
+Takes two input u64s '''width'''/'''height''', 4 input u64s, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 3 output u64s.
+
+== Cmd1107 ==
+Takes two input u64s '''width'''/'''height''', 4 input u64s, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 3 output u64s.
 
 = caps:ss =
 This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].
