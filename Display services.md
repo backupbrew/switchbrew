@@ -69,6 +69,13 @@ two type-0x46 output buffers.
 For the input struct, [GRC](GRC%20services.md "wikilink") uses the
 output from [caps:c](Capture%20services.md "wikilink") cmd2101.
 
+**width**/**height** must be 1280x720. The first buffer address must be
+0x400-byte aligned. The size of the first buffer must be at least
+**width**\***height**, and must be aligned to 0x20000-bytes.
+
+The requirements for the second buffer address/size are the same as the
+first buffer, except the minimum size is (**width**\***height**)/2.
+
 # caps:ss
 
 This is "nn::capsrv::sf::IScreenShotService". This is available with
