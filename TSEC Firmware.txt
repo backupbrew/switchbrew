@@ -943,9 +943,8 @@ After the TSEC key has been generated, execution returns to this stage which the
  // Save previous cauth value
  u32 c_old = cauth_old;
  
- // fuc5 crypt cauth instruction
  // Set auth_addr to 0x300 and auth_size to blob1_size
- cauth((blob1_size << 0x10) | (0x300 >> 0x08));
+ $cauth = ((blob1_size << 0x10) | (0x300 >> 0x08));
  
  // fuc5 crypt cxset instruction
  // The next 2 xfer instructions will be overridden
@@ -977,9 +976,8 @@ After the TSEC key has been generated, execution returns to this stage which the
  if (keygenldr_res != 0xB0B0B0B0)
    return keygenldr_res;
  
- // fuc5 crypt cauth instruction
  // Restore previous cauth value
- cauth(c_old);
+ $cauth = c_old;
  
  u8 flcn_hdr_buf[0x18];
  u8 flcn_os_hdr_buf[0x10];
