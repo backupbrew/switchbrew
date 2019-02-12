@@ -85,11 +85,21 @@ Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
 input buffers, a type-0x6 output buffer, and two type-0x46 output
 buffers, returns 3 output u64s.
 
+**width**/**height** have same requirements as
+[\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
+be at least 0x7D000. The requirements for the type-0x46 buffers are the
+same as [\#Cmd1101](#Cmd1101 "wikilink").
+
 ## Cmd1107
 
 Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer,
 returns 3 output u64s.
+
+**width**/**height** have same requirements as
+[\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
+be at least 0x7D000. The size of the type-0x45 buffer must be at least
+0x384000.
 
 # caps:ss
 
