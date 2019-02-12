@@ -74,3 +74,14 @@ Doesn't much matter as far as the application is concerned. Could be some save d
 --[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 00:57, 10 November 2018 (UTC)
 
 Workarounds (which only exist for a debugger) don't belong in the HBABI. --[[User:Yellows8|Yellows8]] ([[User talk:Yellows8|talk]]) 19:17, 12 February 2019 (UTC)
+
+Almost all of HBABI is workarounds to facilitate running homebrew applications in dirty environments:
+  - bad entrypoint arguments (MainThreadHandle)
+  - reusing the same process (OverrideHeap, Argv (can't use loader-args), AllocPages, LockRegion, RandomSeed)
+  - legacy exploits (OverrideService, AppletWorkaround)
+  - working around 0xffff8001 check in SVCs (ProcessHandle)
+
+And although it's not specified in the HBABI, reading back argv[0] for ASET is also a way to work around not being installed as a real application and being able to access romfs like official applications do.
+
+The only thing I'm working around here is the ASET workaround that needlessly ties homebrew to the SD card. Even if this is a workaround for a debugger, I don't think that's grounds for not belonging in the HBABI. It's not like Nintendo doesn't do anything similar ("Redirect*" commands in lr).
+--[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 21:42, 12 February 2019 (UTC)
