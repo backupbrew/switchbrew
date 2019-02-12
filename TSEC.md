@@ -177,19 +177,21 @@ interfaces).
 | TSEC\_SCP\_UNK\_70                                                      | 0x54501470 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                      | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                      | 0x54501484 | 0x04  |
-| [TSEC\_SCP\_RES](#TSEC_SCP_RES "wikilink")                              | 0x54501490 | 0x04  |
+| [TSEC\_SCP\_ACL\_ERR](#TSEC_SCP_ACL_ERR "wikilink")                     | 0x54501490 | 0x04  |
 | TSEC\_SCP\_UNK\_94                                                      | 0x54501494 | 0x04  |
-| [TSEC\_SCP\_ERR](#TSEC_SCP_ERR "wikilink")                              | 0x54501498 | 0x04  |
-| TSEC\_TRNG\_CLKDIV                                                      | 0x54501500 | 0x04  |
-| TSEC\_TRNG\_UNK\_04                                                     | 0x54501504 | 0x04  |
+| [TSEC\_SCP\_INSN\_ERR](#TSEC_SCP_INSN_ERR "wikilink")                   | 0x54501498 | 0x04  |
+| TSEC\_TRNG\_CLK\_LIMIT\_LOW                                             | 0x54501500 | 0x04  |
+| TSEC\_TRNG\_CLK\_LIMIT\_HIGH                                            | 0x54501504 | 0x04  |
 | TSEC\_TRNG\_UNK\_08                                                     | 0x54501508 | 0x04  |
 | TSEC\_TRNG\_TEST\_CTL                                                   | 0x5450150C | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG0                                                  | 0x54501510 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED0                                                 | 0x54501514 | 0x04  |
 | TSEC\_TRNG\_TEST\_CFG1                                                  | 0x54501518 | 0x04  |
 | TSEC\_TRNG\_TEST\_SEED1                                                 | 0x5450151C | 0x04  |
+| TSEC\_TRNG\_UNK\_20                                                     | 0x54501520 | 0x04  |
+| TSEC\_TRNG\_UNK\_24                                                     | 0x54501524 | 0x04  |
 | TSEC\_TRNG\_UNK\_28                                                     | 0x54501528 | 0x04  |
-| TSEC\_TRNG\_UNK\_2C                                                     | 0x5450152C | 0x04  |
+| TSEC\_TRNG\_CTL                                                         | 0x5450152C | 0x04  |
 | TSEC\_TFBIF\_UNK\_00                                                    | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
 | TSEC\_TFBIF\_UNK\_08                                                    | 0x54501608 | 0x04  |
@@ -201,8 +203,8 @@ interfaces).
 | [TSEC\_TFBIF\_UNK\_48](#TSEC_TFBIF_UNK_48 "wikilink")                   | 0x54501648 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
-| [TSEC\_DMA\_VAL](#TSEC_DMA_VAL "wikilink")                              | 0x54501708 | 0x04  |
-| [TSEC\_DMA\_CFG](#TSEC_DMA_CFG "wikilink")                              | 0x5450170C | 0x04  |
+| [TSEC\_DMA\_DATA](#TSEC_DMA_DATA "wikilink")                            | 0x54501708 | 0x04  |
+| [TSEC\_DMA\_TIMEOUT](#TSEC_DMA_TIMEOUT "wikilink")                      | 0x5450170C | 0x04  |
 | TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
 | TSEC\_TEGRA\_UNK\_04                                                    | 0x54501804 | 0x04  |
 | TSEC\_TEGRA\_UNK\_08                                                    | 0x54501808 | 0x04  |
@@ -915,19 +917,19 @@ Controls accesses to the following registers:
 
 ### TSEC\_SCP\_CTL\_LOCK
 
-| Bits | Description                                 |
-| ---- | ------------------------------------------- |
-| 0    | Disable reads for the TRNG register block   |
-| 1    | Disable reads for the TFBIF register block  |
-| 2    | Disable reads for the DMA register block    |
-| 3    | Disable reads for the TEGRA register block  |
-| 4    | Disable writes for the TRNG register block  |
-| 5    | Disable writes for the TFBIF register block |
-| 6    | Disable writes for the DMA register block   |
-| 7    | Disable writes for the TEGRA register block |
+| Bits | Description                                         |
+| ---- | --------------------------------------------------- |
+| 0    | Disable reads for the SCP and TRNG register blocks  |
+| 1    | Disable reads for the TFBIF register block          |
+| 2    | Disable reads for the DMA register block            |
+| 3    | Disable reads for the TEGRA register block          |
+| 4    | Disable writes for the SCP and TRNG register blocks |
+| 5    | Disable writes for the TFBIF register block         |
+| 6    | Disable writes for the DMA register block           |
+| 7    | Disable writes for the TEGRA register block         |
 
-Locks accesses to the other sub-engines and can only be cleared in Heavy
-Secure mode.
+Locks accesses to sub-engines and can only be cleared in Heavy Secure
+mode.
 
 ### TSEC\_SCP\_CTL\_PKEY
 
@@ -1016,11 +1018,11 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 </tr>
 <tr class="even">
 <td><p>28</p></td>
-<td><p>Unknown</p></td>
+<td><p>Set if the instruction is valid</p></td>
 </tr>
 <tr class="odd">
 <td><p>31</p></td>
-<td><p>Set if running in secure mode (cauth)</p></td>
+<td><p>Set if running in HS mode</p></td>
 </tr>
 </tbody>
 </table>
@@ -1071,7 +1073,7 @@ Contains information on the last AES sequence executed.
 | Bits | Description                      |
 | ---- | -------------------------------- |
 | 0    | TSEC\_SCP\_IRQSTAT\_TRNG         |
-| 8    | TSEC\_SCP\_IRQSTAT\_HALT         |
+| 8    | TSEC\_SCP\_IRQSTAT\_ACL\_ERROR   |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQSTAT\_INSN\_ERROR  |
 | 20   | TSEC\_SCP\_IRQSTAT\_SINGLE\_STEP |
@@ -1085,35 +1087,39 @@ Used for getting the status of crypto IRQs.
 | Bits | Description                      |
 | ---- | -------------------------------- |
 | 0    | TSEC\_SCP\_IRQMASK\_TRNG         |
-| 8    | TSEC\_SCP\_IRQMASK\_HALT         |
+| 8    | TSEC\_SCP\_IRQMASK\_ACL\_ERROR   |
 | 12   | Unknown                          |
 | 16   | TSEC\_SCP\_IRQMASK\_INSN\_ERROR  |
 | 20   | TSEC\_SCP\_IRQMASK\_SINGLE\_STEP |
 | 24   | Unknown                          |
 | 28   | Unknown                          |
 
-Used for getting the value of the mask for crypto IRQs.
+Used for getting the value of the mask for crypto
+IRQs.
 
-### TSEC\_SCP\_RES
+### TSEC\_SCP\_ACL\_ERR
 
-| Bits | Description   |
-| ---- | ------------- |
-| 31   | SCP is halted |
+| Bits | Description                                                     |
+| ---- | --------------------------------------------------------------- |
+| 0    | Set when writing to a crypto register without the correct ACL   |
+| 4    | Set when reading from a crypto register without the correct ACL |
+| 8    | Set on an invalid ACL change (cchmod)                           |
+| 31   | An ACL error occurred                                           |
 
 Contains information on the status generated by the
-[TSEC\_SCP\_IRQSTAT\_HALT](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
+[TSEC\_SCP\_IRQSTAT\_ACL\_ERROR](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
 
-### TSEC\_SCP\_ERR
+### TSEC\_SCP\_INSN\_ERR
 
-| Bits | Description                                                   |
-| ---- | ------------------------------------------------------------- |
-| 0    | Invalid instruction                                           |
-| 4    | Empty crypto sequence                                         |
-| 8    | Crypto sequence is too long                                   |
-| 12   | Crypto sequence was not finished                              |
-| 16   | Invalid cauth signature (during csigenc, csigclr or csigauth) |
-| 20   | Wrong access level (during csigauth in HS mode)               |
-| 24   | Forbidden instruction (during cchmod in NS mode)              |
+| Bits | Description                                       |
+| ---- | ------------------------------------------------- |
+| 0    | Invalid instruction                               |
+| 4    | Empty crypto sequence                             |
+| 8    | Crypto sequence is too long                       |
+| 12   | Crypto sequence was not finished                  |
+| 16   | Insecure signature (csigenc, csigclr or csigauth) |
+| 20   | Invalid signature (csigauth in HS mode)           |
+| 24   | Forbidden ACL change (cchmod in NS mode)          |
 
 Contains information on crypto errors generated by the
 [TSEC\_SCP\_IRQSTAT\_INSN\_ERROR](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
@@ -1155,33 +1161,59 @@ before reading memory from the GPU UCODE carveout.
 
 ### TSEC\_DMA\_CMD
 
-| Bits | Description           |
-| ---- | --------------------- |
-| 0    | TSEC\_DMA\_CMD\_READ  |
-| 1    | TSEC\_DMA\_CMD\_WRITE |
-| 4-7  | TSEC\_DMA\_CMD\_UNK   |
-| 12   | TSEC\_DMA\_CMD\_BUSY  |
-| 13   | TSEC\_DMA\_CMD\_ERROR |
-| 31   | TSEC\_DMA\_CMD\_INIT  |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0</p></td>
+<td><p>TSEC_DMA_CMD_READ</p></td>
+</tr>
+<tr class="even">
+<td><p>1</p></td>
+<td><p>TSEC_DMA_CMD_WRITE</p></td>
+</tr>
+<tr class="odd">
+<td><p>4-7</p></td>
+<td><p>TSEC_DMA_CMD_BYTE_MASK</p></td>
+</tr>
+<tr class="even">
+<td><p>12-13</p></td>
+<td><p>TSEC_DMA_CMD_STATUS</p>
+<p><code>0: Idle</code><br />
+<code>1: Busy</code><br />
+<code>2: Error</code><br />
+<code>3: Disabled</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>31</p></td>
+<td><p>TSEC_DMA_CMD_INIT</p></td>
+</tr>
+</tbody>
+</table>
 
 A DMA read/write operation requires bits TSEC\_DMA\_CMD\_INIT and
 TSEC\_DMA\_CMD\_READ/TSEC\_DMA\_CMD\_WRITE to be set in TSEC\_DMA\_CMD.
 
-During the transfer, the TSEC\_DMA\_CMD\_BUSY bit is set.
+During the transfer, TSEC\_DMA\_CMD\_STATUS is set to "Busy".
 
-Accessing an invalid address causes bit TSEC\_DMA\_CMD\_ERROR to be set.
+Accessing an invalid address sets TSEC\_DMA\_CMD\_STATUS to "Error".
 
 ### TSEC\_DMA\_ADDR
 
 Takes the address for DMA transfers between TSEC and HOST1X (master and
 clients).
 
-### TSEC\_DMA\_VAL
+### TSEC\_DMA\_DATA
 
-Takes the value for DMA transfers between TSEC and HOST1X (master and
+Takes the data for DMA transfers between TSEC and HOST1X (master and
 clients).
 
-### TSEC\_DMA\_CFG
+### TSEC\_DMA\_TIMEOUT
 
 Always 0xFFF.
 
@@ -1296,9 +1328,9 @@ This instruction initializes a crypto register with random data.
 Executing this instruction only succeeds if the TRNG is enabled for the
 SCP, which requires taking the following steps:
 
-  - Write 0x7FFF to TSEC\_TRNG\_CLKDIV.
-  - Write 0x3FF0000 to TSEC\_TRNG\_UNK\_00.
-  - Write 0xFF00 to TSEC\_TRNG\_UNK\_2C.
+  - Write 0x7FFF to TSEC\_TRNG\_CLK\_LIMIT\_LOW.
+  - Write 0x3FF0000 to TSEC\_TRNG\_CLK\_LIMIT\_HIGH.
+  - Write 0xFF00 to TSEC\_TRNG\_CTL.
   - Write 0x1000 to [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink").
 
 Otherwise it hangs
