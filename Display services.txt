@@ -105,7 +105,7 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].
 |}
 
 = caps:su =
-This is "nn::capsrv::sf::IScreenShotApplicationService".
+This is "nn::capsrv::sf::IScreenShotApplicationService". This was moved to [[Applet_Manager_services|AM]] with [6.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -114,8 +114,6 @@ This is "nn::capsrv::sf::IScreenShotApplicationService".
 | 201 || SaveScreenShot
 |-
 | 203 || SaveScreenShotEx0
-|-
-| 210 || [6.0.0+] SaveScreenShotEx2
 |}
 
 = cec-mgr =

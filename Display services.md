@@ -115,13 +115,13 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with
 
 # caps:su
 
-This is "nn::capsrv::sf::IScreenShotApplicationService".
+This is "nn::capsrv::sf::IScreenShotApplicationService". This was moved
+to [AM](Applet%20Manager%20services.md "wikilink") with \[6.0.0+\].
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 201 | SaveScreenShot               |
-| 203 | SaveScreenShotEx0            |
-| 210 | \[6.0.0+\] SaveScreenShotEx2 |
+| Cmd | Name              |
+| --- | ----------------- |
+| 201 | SaveScreenShot    |
+| 203 | SaveScreenShotEx0 |
 
 # cec-mgr
 
