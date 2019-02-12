@@ -185,3 +185,8 @@ IFileSystem interface.
 \--[Misson20000](User:Misson20000 "wikilink")
 ([talk](User%20talk:Misson20000.md "wikilink")) 00:57, 10 November 2018
 (UTC)
+
+Workarounds (which only exist for a debugger) don't belong in the HBABI.
+--[Yellows8](User:Yellows8 "wikilink")
+([talk](User%20talk:Yellows8.md "wikilink")) 19:17, 12 February 2019
+(UTC)

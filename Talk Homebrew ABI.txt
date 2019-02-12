@@ -72,3 +72,5 @@ Where does this "IFilesystem" come from? --[[User:Yellows8|Yellows8]] ([[User ta
 Doesn't much matter as far as the application is concerned. Could be some save data that the loader opened from FS, could be some BIS filesystem, or, in my case, a custom IFileSystem implementation that came from a custom service. Just as long as it implements the IFileSystem interface.
 
 --[[User:Misson20000|Misson20000]] ([[User talk:Misson20000|talk]]) 00:57, 10 November 2018 (UTC)
+
+Workarounds (which only exist for a debugger) don't belong in the HBABI. --[[User:Yellows8|Yellows8]] ([[User talk:Yellows8|talk]]) 19:17, 12 February 2019 (UTC)
