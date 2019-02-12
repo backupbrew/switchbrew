@@ -1367,7 +1367,7 @@ screenshots.
 | 32  | \[7.0.0+\]        | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
 | 201 | SaveScreenShot    |                                                                                                                                        |
 | 203 | SaveScreenShotEx0 |                                                                                                                                        |
-| 210 |                   | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
+| 210 | SaveScreenShotEx2 | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
 Cmd32 is a wrapper for [caps:c](Capture%20services.md "wikilink") cmd33.
 Commands 201, 203, and 210 are wrappers for
