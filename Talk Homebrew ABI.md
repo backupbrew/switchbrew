@@ -212,3 +212,19 @@ HBABI. It's not like Nintendo doesn't do anything similar ("Redirect\*"
 commands in lr). --[Misson20000](User:Misson20000 "wikilink")
 ([talk](User%20talk:Misson20000.md "wikilink")) 21:42, 12 February 2019
 (UTC)
+
+Reusing the same process is the approach selected for nx-hbloader which
+is the standard way to load homebrew, and I see no reason why they would
+be labeled as "workarounds". AllocPages and LockRegion were unilaterally
+added by you several months ago and nx-hbloader has no use for them.
+OverrideService and AppletWorkaround are not presently used by anything
+and they were mostly added for future-proofing in case we need to
+support a more restrictive environment where we need to pass stolen
+service handles, they don't exist for "legacy" exploits.
+
+I see no reason to add a romfs override key. If we want to support
+non-SD card paths, we will add other device name prefixes to argv\[0\]
+(such as host:/) and add support for these devices in libnx.
+
+\--[Fincs](User:Fincs "wikilink")
+([talk](User%20talk:Fincs.md "wikilink")) 22:12, 12 February 2019 (UTC)
