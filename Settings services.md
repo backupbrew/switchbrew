@@ -14,6 +14,7 @@ This is
 | 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
 | 8   | \[5.0.0+\] GetQuestFlag                   | Identical to "set:sys" [GetQuestFlag](#set:sys "wikilink").                                                            |
+| 9   | \[6.0.0+\] GetKeyCodeMap2                 |                                                                                                                        |
 
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
@@ -395,6 +396,8 @@ This is
 | 147 | \[5.0.0+\] GetConsoleSixAxisSensorAngularAcceleration                                             |
 | 148 | \[5.0.0+\] SetConsoleSixAxisSensorAngularAcceleration                                             |
 | 149 | \[5.0.0+\] GetRebootlessSystemUpdateVersion                                                       |
+| 150 | \[5.0.0+\] GetDeviceTimeZoneLocationUpdatedTime                                                   |
+| 151 | \[5.0.0+\] SetDeviceTimeZoneLocationUpdatedTime                                                   |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.

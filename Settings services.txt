@@ -22,6 +22,8 @@ This is "nn::settings::ISettingsServer".
 | 7 || [4.0.0+] GetKeyCodeMap || 
 |-
 | 8 || [5.0.0+] GetQuestFlag || Identical to "set:sys" [[#set:sys|GetQuestFlag]].
+|-
+| 9 || [6.0.0+] GetKeyCodeMap2 || 
 |}
 
 [4.0.0+] Official user-processes now use GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of {original commands}.
@@ -81,7 +83,6 @@ This is an u64, which is a NUL-terminated string.
 |}
 
 == RegionCode ==
-
 A region code is a signed 32-bit value representing a particular region. Currently the available regions defined by the system are as follows:
 
 {| class="wikitable" border="1"
@@ -586,6 +587,10 @@ This is "nn::settings::ISystemSettingsServer".
 | 148 || [5.0.0+] SetConsoleSixAxisSensorAngularAcceleration
 |-
 | 149 || [5.0.0+] GetRebootlessSystemUpdateVersion
+|-
+| 150 || [5.0.0+] GetDeviceTimeZoneLocationUpdatedTime
+|-
+| 151 || [5.0.0+] SetDeviceTimeZoneLocationUpdatedTime
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
@@ -634,7 +639,7 @@ Takes a type-0x6 output buffer, returns an output s32. This buffer contains an a
 == GetQuestFlag ==
 Gets a flag determining whether the console is a kiosk unit (codenamed "Quest"). Used by qlaunch to determine whether to launch Retail Interactive Display Menu.
 
-=System Config=
+= System Config =
 There's a common config title (*818), and a config title for each [[SPL_services|HardwareType]].
 
 [5.0.0+] New config fields were added to the HardwareType-specific config:
