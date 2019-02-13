@@ -69,7 +69,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 22 || GetApplicationCreator || Returns an [[#IApplicationCreator]].
 |-
-| 23 || [7.0.0+] || No input, returns an [[#IUnknown0]].
+| 23 || [7.0.0+] GetAppletCommonFunctions || Returns an [[#IAppletCommonFunctions]].
 |-
 | 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |}
@@ -138,7 +138,7 @@ No input, returns an output handle.
 |-
 | 4 || StartRebootSequence || 
 |-
-| 9 || [7.0.0+] || No input, returns an output u8.
+| 9 || [7.0.0+] IsAutoPowerDownRequested ||
 |-
 | 10 || LoadAndApplyIdlePolicySettings || 
 |-
@@ -272,16 +272,16 @@ No input/output.
 ==== GetResult====
 No input/output.
 
-== IUnknown0 ==
+== IAppletCommonFunctions ==
 Added with [[7.0.0]].
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
-| 10 || || Takes an input u64 '''offset''' and a type-0x22 output buffer, returns an output u64 '''actual_transfer_size'''.
+| 10 || ReadThemeStorage || Takes an input u64 '''offset''' and a type-0x22 output buffer, returns an output u64 '''actual_transfer_size'''.
 |-
-| 11 || || Takes an input u64 '''offset''' and a type-0x21 input buffer, no output.
+| 11 || WriteThemeStorage || Takes an input u64 '''offset''' and a type-0x21 input buffer, no output.
 |}
 
 These commands copy data from/to a state buffer and the user specified buffer. The size of the state buffer is 0x400-bytes.
@@ -307,7 +307,7 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 20 || OpenLibraryAppletSelfAccessor || Returns an [[#ILibraryAppletSelfAccessor]].
 |-
-| 21 || [7.0.0+] || No input, returns an [[#IUnknown0]].
+| 21 || [7.0.0+] GetAppletCommonFunctions || No input, returns an [[#IAppletCommonFunctions]].
 |-
 | 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |}
@@ -449,7 +449,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 20 || GetOverlayFunctions || Returns an [[#IOverlayFunctions]].
 |-
-| 21 || [7.0.0+] || No input, returns an [[#IUnknown0]].
+| 21 || [7.0.0+] GetAppletCommonFunctions || No input, returns an [[#IAppletCommonFunctions]].
 |-
 | 1000 || GetDebugFunctions || Returns an [[#IDebugFunctions]].
 |}
@@ -477,7 +477,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 11 || [6.0.0+] StartRebootSequenceForOverlay
 |-
-| 90 || [7.0.0+] || Takes an input u8, no output.
+| 90 || [7.0.0+] SetRequiresGpuResourceUse
 |-
 | 101 || [6.0.0+] BeginToObserveHidInputForDevelop
 |}
@@ -521,9 +521,9 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 13 || [4.0.0+] [[#CreateApplicationAndRequestToStartForQuest]] || 
 |-
-| 14 || [7.0.0+] || Takes a total of 8-bytes and a type-0x15 input buffer, return an output [[#IStorage]].
+| 14 || [7.0.0+] CreateApplicationWithAttributeAndPushAndRequestToStartForQuest || Takes a total of 8-bytes and a type-0x15 input buffer, return an output [[#IStorage]].
 |-
-| 15 || [7.0.0+] || Takes a total of 8-bytes and a type-0x15 input buffer, no output.
+| 15 || [7.0.0+] CreateApplicationWithAttributeAndRequestToStartForQuest || Takes a total of 8-bytes and a type-0x15 input buffer, no output.
 |-
 | 20 || EnsureSaveData ||
 |-
@@ -870,7 +870,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 31 || [2.0.0+] [[#GetReaderLockAccessorEx]] || 
 |-
-| 32: || [7.0.0+] || Takes a total of 4-bytes of input, returns an output [[#ILockAccessor]].
+| 32 || [7.0.0+] GetWriterLockAccessorEx || Takes a total of 4-bytes of input, returns an output [[#ILockAccessor]].
 |-
 | 40 || [2.0.0+] GetCradleFwVersion ||
 |-
@@ -880,9 +880,9 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 52 || [4.0.0+] SetLcdBacklighOffEnabled ||
 |-
-| 53 || [7.0.0+] || No input/output.
+| 53 || [7.0.0+] BeginVrModeEx || No input/output.
 |-
-| 54 || [7.0.0+] || No input/output.
+| 54 || [7.0.0+] EndVrModeEx || No input/output.
 |-
 | 55 || [3.0.0+] [[#IsInControllerFirmwareUpdateSection]] ||
 |-
@@ -898,15 +898,15 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 65 || [6.0.0+] GetApplicationIdByContentActionName ||
 |-
-| 66 || [6.0.0+] SetCpuAndGpuBoostMode ||
+| 66 || [6.0.0+] SetCpuBoostMode ||
 |-
 | 80 || [6.0.0+] PerformSystemButtonPressingIfInFocus ||
 |-
-| 90 || [7.0.0+] || Takes an input u8, no output.
+| 90 || [7.0.0+] SetPerformanceConfigurationChangedNotification || Takes an input u8, no output.
 |-
-| 91 || [7.0.0+] || No input, returns a total of 4-bytes of output.
+| 91 || [7.0.0+] GetCurrentPerformanceConfiguration || No input, returns a total of 4-bytes of output.
 |-
-| 200 || [7.0.0+] || No input, returns a total of 4-bytes of output.
+| 200 || [7.0.0+] GetOperationModeSystemInfo || No input, returns a total of 4-bytes of output.
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
@@ -1053,9 +1053,9 @@ No input, returns an output handle.
 |-
 | 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
 |-
-| 100 || [7.0.0+] || Takes an input u8, no output.
+| 100 || [7.0.0+] SetAlbumImageTakenNotificationEnabled || Takes an input u8, no output.
 |-
-| 1000 || [7.0.0+] || No input, returns an output [[#IUnknown1]].
+| 1000 || [7.0.0+] GetDebugStorageChannel || No input, returns an output [[#IStorageChannel]].
 |}
 
 === Exit ===
@@ -1112,22 +1112,22 @@ Takes an input u8 bool, no output.
 === IsIlluminanceAvailable ===
 No input, returns an output u8 bool.
 
-== IUnknown1 ==
+== IStorageChannel ==
 Added with [[7.0.0]].
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || No input, returns an output [[#IStorage]].
+| 0 || Push || No input, returns an output [[#IStorage]].
 |-
-| 1 || || No input, returns an output [[#IStorage]].
+| 1 || Unpop || No input, returns an output [[#IStorage]].
 |-
-| 2 || || No input, returns an output [[#IStorage]].
+| 2 || Pop || No input, returns an output [[#IStorage]].
 |-
-| 3 || || No input, returns an output handle.
+| 3 || GetPopEventHandle || No input, returns an output handle.
 |-
-| 4 || || No input/output.
+| 4 || Clear || No input/output.
 |}
 
 == IWindowController ==
@@ -1147,9 +1147,9 @@ Added with [[7.0.0]].
 |-
 | 12 || RejectToChangeIntoBackground ||
 |-
-| 20 || [7.0.0+] || Takes an input u8, no output.
+| 20 || [7.0.0+] SetAppletWindowVisibility || Takes an input u8, no output.
 |-
-| 21 || [7.0.0+] || Takes a total of 8-bytes of input, no output.
+| 21 || [7.0.0+] SetAppletGpuTimeSlice || Takes a total of 8-bytes of input, no output.
 |}
 
 === CreateWindow ===
@@ -1257,9 +1257,9 @@ No input, returns an output handle.
 |-
 | 1 || RequestLaunchApplicationForDebug || 
 |-
-| 2 || [7.0.0+] || No input, returns an output [[#IUnknown1]].
+| 2 || [7.0.0+] GetDebugStorageChannel || No input, returns an output [[#IStorageChannel]].
 |-
-| 3 || [7.0.0+] || Takes a total of 8-bytes of input, returns an [[#IStorage]].
+| 3 || [7.0.0+] CreateStorageForDebug || Takes a total of 8-bytes of input, returns an [[#IStorage]].
 |}
 
 == IProcessWindingController ==
@@ -1523,7 +1523,7 @@ This can be used by applications to save screenshots.
 |-
 ! Cmd || Name || Notes
 |-
-| 32 || [7.0.0+] || Takes a total of 0x10-bytes of input and a PID, no output.
+| 32 || [7.0.0+] SetShimLibraryVersion || Takes a total of 0x10-bytes of input and a PID, no output.
 |-
 | 201 || SaveScreenShot || 
 |-

@@ -58,20 +58,20 @@ commands.
 
 ## ISystemAppletProxy
 
-| Cmd  | Name                        | Notes                                                                            |
-| ---- | --------------------------- | -------------------------------------------------------------------------------- |
-| 0    | GetCommonStateGetter        | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
-| 1    | GetSelfController           | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
-| 2    | GetWindowController         | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
-| 3    | GetAudioController          | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
-| 4    | GetDisplayController        | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
-| 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
-| 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
-| 20   | GetHomeMenuFunctions        | Returns an [\#IHomeMenuFunctions](#IHomeMenuFunctions "wikilink").               |
-| 21   | GetGlobalStateController    | Returns an [\#IGlobalStateController](#IGlobalStateController "wikilink").       |
-| 22   | GetApplicationCreator       | Returns an [\#IApplicationCreator](#IApplicationCreator "wikilink").             |
-| 23   | \[7.0.0+\]                  | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                       |
-| 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
+| Cmd  | Name                                | Notes                                                                            |
+| ---- | ----------------------------------- | -------------------------------------------------------------------------------- |
+| 0    | GetCommonStateGetter                | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
+| 1    | GetSelfController                   | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
+| 2    | GetWindowController                 | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
+| 3    | GetAudioController                  | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
+| 4    | GetDisplayController                | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
+| 10   | GetProcessWindingController         | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
+| 11   | GetLibraryAppletCreator             | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
+| 20   | GetHomeMenuFunctions                | Returns an [\#IHomeMenuFunctions](#IHomeMenuFunctions "wikilink").               |
+| 21   | GetGlobalStateController            | Returns an [\#IGlobalStateController](#IGlobalStateController "wikilink").       |
+| 22   | GetApplicationCreator               | Returns an [\#IApplicationCreator](#IApplicationCreator "wikilink").             |
+| 23   | \[7.0.0+\] GetAppletCommonFunctions | Returns an [\#IAppletCommonFunctions](#IAppletCommonFunctions "wikilink").       |
+| 1000 | GetDebugFunctions                   | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
 
 ### IHomeMenuFunctions
 
@@ -119,20 +119,20 @@ handle.
 
 ### IGlobalStateController
 
-| Cmd | Name                                                            | Notes                           |
-| --- | --------------------------------------------------------------- | ------------------------------- |
-| 0   | RequestToEnterSleep                                             |                                 |
-| 1   | EnterSleep                                                      |                                 |
-| 2   | StartSleepSequence                                              |                                 |
-| 3   | StartShutdownSequence                                           |                                 |
-| 4   | StartRebootSequence                                             |                                 |
-| 9   | \[7.0.0+\]                                                      | No input, returns an output u8. |
-| 10  | LoadAndApplyIdlePolicySettings                                  |                                 |
-| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |                                 |
-| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |                                 |
-| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |                                 |
-| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |                                 |
-| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |                                 |
+| Cmd | Name                                                            | Notes |
+| --- | --------------------------------------------------------------- | ----- |
+| 0   | RequestToEnterSleep                                             |       |
+| 1   | EnterSleep                                                      |       |
+| 2   | StartSleepSequence                                              |       |
+| 3   | StartShutdownSequence                                           |       |
+| 4   | StartRebootSequence                                             |       |
+| 9   | \[7.0.0+\] IsAutoPowerDownRequested                             |       |
+| 10  | LoadAndApplyIdlePolicySettings                                  |       |
+| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |       |
+| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |       |
+| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |       |
+| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |       |
+| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |       |
 
 #### ShouldSleepOnBoot
 
@@ -241,15 +241,15 @@ No input/output.
 
 No input/output.
 
-## IUnknown0
+## IAppletCommonFunctions
 
 Added with
 [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                                                                          |
-| --- | ---- | -------------------------------------------------------------------------------------------------------------- |
-| 10  |      | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
-| 11  |      | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
+| Cmd | Name              | Notes                                                                                                          |
+| --- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| 10  | ReadThemeStorage  | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
+| 11  | WriteThemeStorage | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
 
 These commands copy data from/to a state buffer and the user specified
 buffer. The size of the state buffer is
@@ -257,18 +257,18 @@ buffer. The size of the state buffer is
 
 ## ILibraryAppletProxy
 
-| Cmd  | Name                          | Notes                                                                              |
-| ---- | ----------------------------- | ---------------------------------------------------------------------------------- |
-| 0    | GetCommonStateGetter          | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                 |
-| 1    | GetSelfController             | Returns an [\#ISelfController](#ISelfController "wikilink").                       |
-| 2    | GetWindowController           | Returns an [\#IWindowController](#IWindowController "wikilink").                   |
-| 3    | GetAudioController            | Returns an [\#IAudioController](#IAudioController "wikilink").                     |
-| 4    | GetDisplayController          | Returns an [\#IDisplayController](#IDisplayController "wikilink").                 |
-| 10   | GetProcessWindingController   | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").   |
-| 11   | GetLibraryAppletCreator       | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").           |
-| 20   | OpenLibraryAppletSelfAccessor | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink"). |
-| 21   | \[7.0.0+\]                    | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                         |
-| 1000 | GetDebugFunctions             | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                       |
+| Cmd  | Name                                | Notes                                                                                |
+| ---- | ----------------------------------- | ------------------------------------------------------------------------------------ |
+| 0    | GetCommonStateGetter                | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                   |
+| 1    | GetSelfController                   | Returns an [\#ISelfController](#ISelfController "wikilink").                         |
+| 2    | GetWindowController                 | Returns an [\#IWindowController](#IWindowController "wikilink").                     |
+| 3    | GetAudioController                  | Returns an [\#IAudioController](#IAudioController "wikilink").                       |
+| 4    | GetDisplayController                | Returns an [\#IDisplayController](#IDisplayController "wikilink").                   |
+| 10   | GetProcessWindingController         | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").     |
+| 11   | GetLibraryAppletCreator             | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").             |
+| 20   | OpenLibraryAppletSelfAccessor       | Returns an [\#ILibraryAppletSelfAccessor](#ILibraryAppletSelfAccessor "wikilink").   |
+| 21   | \[7.0.0+\] GetAppletCommonFunctions | No input, returns an [\#IAppletCommonFunctions](#IAppletCommonFunctions "wikilink"). |
+| 1000 | GetDebugFunctions                   | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                         |
 
 ### ILibraryAppletSelfAccessor
 
@@ -377,18 +377,18 @@ Takes an input u64 and handle, returns a GRC
 
 ## IOverlayAppletProxy
 
-| Cmd  | Name                        | Notes                                                                            |
-| ---- | --------------------------- | -------------------------------------------------------------------------------- |
-| 0    | GetCommonStateGetter        | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").               |
-| 1    | GetSelfController           | Returns an [\#ISelfController](#ISelfController "wikilink").                     |
-| 2    | GetWindowController         | Returns an [\#IWindowController](#IWindowController "wikilink").                 |
-| 3    | GetAudioController          | Returns an [\#IAudioController](#IAudioController "wikilink").                   |
-| 4    | GetDisplayController        | Returns an [\#IDisplayController](#IDisplayController "wikilink").               |
-| 10   | GetProcessWindingController | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink"). |
-| 11   | GetLibraryAppletCreator     | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").         |
-| 20   | GetOverlayFunctions         | Returns an [\#IOverlayFunctions](#IOverlayFunctions "wikilink").                 |
-| 21   | \[7.0.0+\]                  | No input, returns an [\#IUnknown0](#IUnknown0 "wikilink").                       |
-| 1000 | GetDebugFunctions           | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                     |
+| Cmd  | Name                                | Notes                                                                                |
+| ---- | ----------------------------------- | ------------------------------------------------------------------------------------ |
+| 0    | GetCommonStateGetter                | Returns an [\#ICommonStateGetter](#ICommonStateGetter "wikilink").                   |
+| 1    | GetSelfController                   | Returns an [\#ISelfController](#ISelfController "wikilink").                         |
+| 2    | GetWindowController                 | Returns an [\#IWindowController](#IWindowController "wikilink").                     |
+| 3    | GetAudioController                  | Returns an [\#IAudioController](#IAudioController "wikilink").                       |
+| 4    | GetDisplayController                | Returns an [\#IDisplayController](#IDisplayController "wikilink").                   |
+| 10   | GetProcessWindingController         | Returns an [\#IProcessWindingController](#IProcessWindingController "wikilink").     |
+| 11   | GetLibraryAppletCreator             | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").             |
+| 20   | GetOverlayFunctions                 | Returns an [\#IOverlayFunctions](#IOverlayFunctions "wikilink").                     |
+| 21   | \[7.0.0+\] GetAppletCommonFunctions | No input, returns an [\#IAppletCommonFunctions](#IAppletCommonFunctions "wikilink"). |
+| 1000 | GetDebugFunctions                   | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                         |
 
 ### IOverlayFunctions
 
@@ -403,7 +403,7 @@ Takes an input u64 and handle, returns a GRC
 | 6   | \[2.0.0+\] SetScreenShotPermissionGlobally       |
 | 10  | \[6.0.0+\] StartShutdownSequenceForOverlay       |
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
-| 90  | \[7.0.0+\]                                       |
+| 90  | \[7.0.0+\] SetRequiresGpuResourceUse             |
 | 101 | \[6.0.0+\] BeginToObserveHidInputForDevelop      |
 
 ## IApplicationProxy
@@ -429,8 +429,8 @@ Takes an input u64 and handle, returns a GRC
 | 11   | \[2.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |                                                                                                             |
 | 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                               |                                                                                                             |
 | 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")               |                                                                                                             |
-| 14   | \[7.0.0+\]                                                                                                                      | Takes a total of 8-bytes and a type-0x15 input buffer, return an output [\#IStorage](#IStorage "wikilink"). |
-| 15   | \[7.0.0+\]                                                                                                                      | Takes a total of 8-bytes and a type-0x15 input buffer, no output.                                           |
+| 14   | \[7.0.0+\] CreateApplicationWithAttributeAndPushAndRequestToStartForQuest                                                       | Takes a total of 8-bytes and a type-0x15 input buffer, return an output [\#IStorage](#IStorage "wikilink"). |
+| 15   | \[7.0.0+\] CreateApplicationWithAttributeAndRequestToStartForQuest                                                              | Takes a total of 8-bytes and a type-0x15 input buffer, no output.                                           |
 | 20   | EnsureSaveData                                                                                                                  |                                                                                                             |
 | 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |                                                                                                             |
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                                                                             |
@@ -796,13 +796,13 @@ Official sw uses this during LibraryApplet creation when
 | 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |                                                                                                    |
 | 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |                                                                                                    |
 | 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |                                                                                                    |
-| 32: | \[7.0.0+\]                                                                                                | Takes a total of 4-bytes of input, returns an output [\#ILockAccessor](#ILockAccessor "wikilink"). |
+| 32  | \[7.0.0+\] GetWriterLockAccessorEx                                                                        | Takes a total of 4-bytes of input, returns an output [\#ILockAccessor](#ILockAccessor "wikilink"). |
 | 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |                                                                                                    |
 | 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |                                                                                                    |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |                                                                                                    |
 | 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |                                                                                                    |
-| 53  | \[7.0.0+\]                                                                                                | No input/output.                                                                                   |
-| 54  | \[7.0.0+\]                                                                                                | No input/output.                                                                                   |
+| 53  | \[7.0.0+\] BeginVrModeEx                                                                                  | No input/output.                                                                                   |
+| 54  | \[7.0.0+\] EndVrModeEx                                                                                    | No input/output.                                                                                   |
 | 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |                                                                                                    |
 | 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |                                                                                                    |
 | 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |                                                                                                    |
@@ -810,11 +810,11 @@ Official sw uses this during LibraryApplet creation when
 | 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |                                                                                                    |
 | 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |                                                                                                    |
 | 65  | \[6.0.0+\] GetApplicationIdByContentActionName                                                            |                                                                                                    |
-| 66  | \[6.0.0+\] SetCpuAndGpuBoostMode                                                                          |                                                                                                    |
+| 66  | \[6.0.0+\] SetCpuBoostMode                                                                                |                                                                                                    |
 | 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |                                                                                                    |
-| 90  | \[7.0.0+\]                                                                                                | Takes an input u8, no output.                                                                      |
-| 91  | \[7.0.0+\]                                                                                                | No input, returns a total of 4-bytes of output.                                                    |
-| 200 | \[7.0.0+\]                                                                                                | No input, returns a total of 4-bytes of output.                                                    |
+| 90  | \[7.0.0+\] SetPerformanceConfigurationChangedNotification                                                 | Takes an input u8, no output.                                                                      |
+| 91  | \[7.0.0+\] GetCurrentPerformanceConfiguration                                                             | No input, returns a total of 4-bytes of output.                                                    |
+| 200 | \[7.0.0+\] GetOperationModeSystemInfo                                                                     | No input, returns a total of 4-bytes of output.                                                    |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -925,48 +925,48 @@ handle.
 
 ## ISelfController
 
-| Cmd  | Name                                                                                         | Notes                                                             |
-| ---- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| 0    | [\#Exit](#Exit "wikilink")                                                                   |                                                                   |
-| 1    | [\#LockExit](#LockExit "wikilink")                                                           |                                                                   |
-| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |                                                                   |
-| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |                                                                   |
-| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |                                                                   |
-| 9    | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |                                                                   |
-| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |                                                                   |
-| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |                                                                   |
-| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |                                                                   |
-| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |                                                                   |
-| 14   | SetRestartMessageEnabled                                                                     |                                                                   |
-| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |                                                                   |
-| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |                                                                   |
-| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |                                                                   |
-| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |                                                                   |
-| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |                                                                   |
-| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |                                                                   |
-| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |                                                                   |
-| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |                                                                   |
-| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |                                                                   |
-| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |                                                                   |
-| 50   | SetHandlesRequestToDisplay                                                                   |                                                                   |
-| 51   | ApproveToDisplay                                                                             |                                                                   |
-| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |                                                                   |
-| 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |                                                                   |
-| 62   | SetIdleTimeDetectionExtension                                                                |                                                                   |
-| 63   | GetIdleTimeDetectionExtension                                                                |                                                                   |
-| 64   | SetInputDetectionSourceSet                                                                   |                                                                   |
-| 65   | \[2.0.0+\] ReportUserIsActive                                                                |                                                                   |
-| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |                                                                   |
-| 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |                                                                   |
-| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |                                                                   |
-| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |                                                                   |
-| 70   | \[5.0.0+\] ReportMultimediaError                                                             |                                                                   |
-| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |                                                                   |
-| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |                                                                   |
-| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |                                                                   |
-| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |                                                                   |
-| 100  | \[7.0.0+\]                                                                                   | Takes an input u8, no output.                                     |
-| 1000 | \[7.0.0+\]                                                                                   | No input, returns an output [\#IUnknown1](#IUnknown1 "wikilink"). |
+| Cmd  | Name                                                                                         | Notes                                                                         |
+| ---- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 0    | [\#Exit](#Exit "wikilink")                                                                   |                                                                               |
+| 1    | [\#LockExit](#LockExit "wikilink")                                                           |                                                                               |
+| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |                                                                               |
+| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |                                                                               |
+| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |                                                                               |
+| 9    | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |                                                                               |
+| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |                                                                               |
+| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |                                                                               |
+| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |                                                                               |
+| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |                                                                               |
+| 14   | SetRestartMessageEnabled                                                                     |                                                                               |
+| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |                                                                               |
+| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |                                                                               |
+| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |                                                                               |
+| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |                                                                               |
+| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |                                                                               |
+| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |                                                                               |
+| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |                                                                               |
+| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |                                                                               |
+| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |                                                                               |
+| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |                                                                               |
+| 50   | SetHandlesRequestToDisplay                                                                   |                                                                               |
+| 51   | ApproveToDisplay                                                                             |                                                                               |
+| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |                                                                               |
+| 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |                                                                               |
+| 62   | SetIdleTimeDetectionExtension                                                                |                                                                               |
+| 63   | GetIdleTimeDetectionExtension                                                                |                                                                               |
+| 64   | SetInputDetectionSourceSet                                                                   |                                                                               |
+| 65   | \[2.0.0+\] ReportUserIsActive                                                                |                                                                               |
+| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |                                                                               |
+| 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |                                                                               |
+| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |                                                                               |
+| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |                                                                               |
+| 70   | \[5.0.0+\] ReportMultimediaError                                                             |                                                                               |
+| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |                                                                               |
+| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |                                                                               |
+| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |                                                                               |
+| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |                                                                               |
+| 100  | \[7.0.0+\] SetAlbumImageTakenNotificationEnabled                                             | Takes an input u8, no output.                                                 |
+| 1000 | \[7.0.0+\] GetDebugStorageChannel                                                            | No input, returns an output [\#IStorageChannel](#IStorageChannel "wikilink"). |
 
 ### Exit
 
@@ -1046,18 +1046,18 @@ Takes an input u8 bool, no output.
 
 No input, returns an output u8 bool.
 
-## IUnknown1
+## IStorageChannel
 
 Added with
 [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                           |
-| --- | ---- | --------------------------------------------------------------- |
-| 0   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
-| 1   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
-| 2   |      | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
-| 3   |      | No input, returns an output handle.                             |
-| 4   |      | No input/output.                                                |
+| Cmd | Name              | Notes                                                           |
+| --- | ----------------- | --------------------------------------------------------------- |
+| 0   | Push              | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 1   | Unpop             | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 2   | Pop               | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 3   | GetPopEventHandle | No input, returns an output handle.                             |
+| 4   | Clear             | No input/output.                                                |
 
 ## IWindowController
 
@@ -1069,8 +1069,8 @@ Added with
 | 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                                               |
 | 11  | ReleaseForegroundRights                                          |                                               |
 | 12  | RejectToChangeIntoBackground                                     |                                               |
-| 20  | \[7.0.0+\]                                                       | Takes an input u8, no output.                 |
-| 21  | \[7.0.0+\]                                                       | Takes a total of 8-bytes of input, no output. |
+| 20  | \[7.0.0+\] SetAppletWindowVisibility                             | Takes an input u8, no output.                 |
+| 21  | \[7.0.0+\] SetAppletGpuTimeSlice                                 | Takes a total of 8-bytes of input, no output. |
 
 ### CreateWindow
 
@@ -1150,11 +1150,11 @@ handle.
 
 ## ISystemAppletControllerForDebug
 
-| Cmd | Name                             | Notes                                                                             |
-| --- | -------------------------------- | --------------------------------------------------------------------------------- |
-| 1   | RequestLaunchApplicationForDebug |                                                                                   |
-| 2   | \[7.0.0+\]                       | No input, returns an output [\#IUnknown1](#IUnknown1 "wikilink").                 |
-| 3   | \[7.0.0+\]                       | Takes a total of 8-bytes of input, returns an [\#IStorage](#IStorage "wikilink"). |
+| Cmd | Name                              | Notes                                                                             |
+| --- | --------------------------------- | --------------------------------------------------------------------------------- |
+| 1   | RequestLaunchApplicationForDebug  |                                                                                   |
+| 2   | \[7.0.0+\] GetDebugStorageChannel | No input, returns an output [\#IStorageChannel](#IStorageChannel "wikilink").     |
+| 3   | \[7.0.0+\] CreateStorageForDebug  | Takes a total of 8-bytes of input, returns an [\#IStorage](#IStorage "wikilink"). |
 
 ## IProcessWindingController
 
@@ -1362,12 +1362,12 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 This can be used by applications to save
 screenshots.
 
-| Cmd | Name              | Notes                                                                                                                                  |
-| --- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 32  | \[7.0.0+\]        | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
-| 201 | SaveScreenShot    |                                                                                                                                        |
-| 203 | SaveScreenShotEx0 |                                                                                                                                        |
-| 210 | SaveScreenShotEx2 | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
+| Cmd | Name                             | Notes                                                                                                                                  |
+| --- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 32  | \[7.0.0+\] SetShimLibraryVersion | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
+| 201 | SaveScreenShot                   |                                                                                                                                        |
+| 203 | SaveScreenShotEx0                |                                                                                                                                        |
+| 210 | SaveScreenShotEx2                | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
 Cmd32 is a wrapper for [caps:c](Capture%20services.md "wikilink") cmd33.
 Commands 201, 203, and 210 are wrappers for
