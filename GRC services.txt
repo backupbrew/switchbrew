@@ -71,7 +71,6 @@ Added with [[6.0.0]].
 |}
 
 = IUnknown =
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -79,7 +78,6 @@ Added with [[6.0.0]].
 | 201 || || Takes a total of 0x8-bytes of input, returns a total of 0x8-bytes of output.
 |-
 | 202 || || Takes a total of 0x8-bytes of input, no output.
-|-
 |}
 
 = IMovieMaker =
@@ -91,7 +89,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 2 || [[#CreateVideoProxy]]
 |-
-| 9 || [7.0.0+] ? (Takes a total of 8-bytes of input, no output)
+| 9 || [7.0.0+] SetAlbumShimLibraryVersion
 |-
 | 10 || [[#OpenOffscreenLayer]]
 |-
@@ -109,7 +107,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 25 || [[#CompleteOffscreenRecordingFinishEx0]]
 |-
-| 26 || [7.0.0+] ? (Takes a total of 0x10-bytes of input and two type-0x5 input buffers, returns a total of 0x20-bytes of output)
+| 26 || [7.0.0+] CompleteOffscreenRecordingFinishEx1
 |-
 | 30 || [[#GetOffscreenLayerError]]
 |-

@@ -60,30 +60,29 @@ Added with
 | --- | ---- | ---------------------------------------------------------------------------- |
 | 201 |      | Takes a total of 0x8-bytes of input, returns a total of 0x8-bytes of output. |
 | 202 |      | Takes a total of 0x8-bytes of input, no output.                              |
-|     |      |                                                                              |
 
 # IMovieMaker
 
 This is
 "nn::grcsrv::IMovieMaker".
 
-| Cmd | Name                                                                                                                        |
-| --- | --------------------------------------------------------------------------------------------------------------------------- |
-| 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink")                                                                          |
-| 9   | \[7.0.0+\] ? (Takes a total of 8-bytes of input, no output)                                                                 |
-| 10  | [\#OpenOffscreenLayer](#OpenOffscreenLayer "wikilink")                                                                      |
-| 11  | [\#CloseOffscreenLayer](#CloseOffscreenLayer "wikilink")                                                                    |
-| 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                                                            |
-| 21  | [\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink")                                                            |
-| 22  | [\#RequestOffscreenRecordingFinishReady](#RequestOffscreenRecordingFinishReady "wikilink")                                  |
-| 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")                                          |
-| 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                                                        |
-| 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")                                    |
-| 26  | \[7.0.0+\] ? (Takes a total of 0x10-bytes of input and two type-0x5 input buffers, returns a total of 0x20-bytes of output) |
-| 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                                                              |
-| 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")                                            |
-| 50  | [\#GetOffscreenLayerRecordingFinishReadyEvent](#GetOffscreenLayerRecordingFinishReadyEvent "wikilink")                      |
-| 52  | [\#GetOffscreenLayerAudioEncodeReadyEvent](#GetOffscreenLayerAudioEncodeReadyEvent "wikilink")                              |
+| Cmd | Name                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------------ |
+| 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink")                                                     |
+| 9   | \[7.0.0+\] SetAlbumShimLibraryVersion                                                                  |
+| 10  | [\#OpenOffscreenLayer](#OpenOffscreenLayer "wikilink")                                                 |
+| 11  | [\#CloseOffscreenLayer](#CloseOffscreenLayer "wikilink")                                               |
+| 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                                       |
+| 21  | [\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink")                                       |
+| 22  | [\#RequestOffscreenRecordingFinishReady](#RequestOffscreenRecordingFinishReady "wikilink")             |
+| 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")                     |
+| 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                                   |
+| 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")               |
+| 26  | \[7.0.0+\] CompleteOffscreenRecordingFinishEx1                                                         |
+| 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                                         |
+| 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")                       |
+| 50  | [\#GetOffscreenLayerRecordingFinishReadyEvent](#GetOffscreenLayerRecordingFinishReadyEvent "wikilink") |
+| 52  | [\#GetOffscreenLayerAudioEncodeReadyEvent](#GetOffscreenLayerAudioEncodeReadyEvent "wikilink")         |
 
 ## CreateVideoProxy
 
