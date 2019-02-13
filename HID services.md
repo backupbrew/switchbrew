@@ -81,7 +81,7 @@ This is
 | 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                        |
 | 209  | \[4.0.0+\] BeginPermitVibrationSession                                                           |
 | 210  | \[4.0.0+\] EndPermitVibrationSession                                                             |
-| 211  | \[7.0.0+\] IsVibrationDeviceMounted                                                              |
+| 211  | \[7.0.0+\] [\#IsVibrationDeviceMounted](#IsVibrationDeviceMounted "wikilink")                    |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |
@@ -233,6 +233,11 @@ buffer, and [\#VibrationValue](#VibrationValue "wikilink") for the
 second buffer.
 
 Official sw uses the same entry-count for each array.
+
+## IsVibrationDeviceMounted
+
+Takes a total of 0x10-bytes of input and a PID, returns an output u8
+bool.
 
 ## VibrationDeviceHandle
 

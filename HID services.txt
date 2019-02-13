@@ -153,7 +153,7 @@ This is "nn::hid::IHidServer".
 |-
 | 210 || [4.0.0+] EndPermitVibrationSession
 |-
-| 211 || [7.0.0+] IsVibrationDeviceMounted
+| 211 || [7.0.0+] [[#IsVibrationDeviceMounted]]
 |-
 | 300 || ActivateConsoleSixAxisSensor
 |-
@@ -306,6 +306,9 @@ No input. Returns an output u8 bool.
 Takes an u64 [[AM_services|AppletResourceUserId]], and two type-0x9 input buffers containing an array of: [[#VibrationDeviceHandle]] for first buffer, and [[#VibrationValue]] for the second buffer.
 
 Official sw uses the same entry-count for each array.
+
+== IsVibrationDeviceMounted ==
+Takes a total of 0x10-bytes of input and a PID, returns an output u8 bool.
 
 == VibrationDeviceHandle ==
 This is an u32.
