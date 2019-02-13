@@ -1,35 +1,34 @@
 # npns:u
 
-This is
-"nn::npns::INpnsUser".
+This is "nn::npns::INpnsUser".
 
-| Cmd | Name                                                                 |
-| --- | -------------------------------------------------------------------- |
-| 1   | ListenAll                                                            |
-| 2   | ListenTo                                                             |
-| 3   | Receive                                                              |
-| 4   | ReceiveRaw                                                           |
-| 5   | GetReceiveEvent                                                      |
-| 7   | GetStateChangeEvent                                                  |
-| 21  | CreateToken                                                          |
-| 23  | DestroyToken                                                         |
-| 25  | QueryIsTokenValid                                                    |
-| 26  | \[6.0.0+\] ListenToMyApplicationId                                   |
-| 101 | Suspend                                                              |
-| 102 | Resume                                                               |
-| 103 | GetState                                                             |
-| 104 | GetStatistics                                                        |
-| 111 | GetJid                                                               |
-| 120 | \[7.0.0+\] (No input, returns an [\#IUnknown](#IUnknown "wikilink")) |
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 1   | ListenAll                             |
+| 2   | ListenTo                              |
+| 3   | Receive                               |
+| 4   | ReceiveRaw                            |
+| 5   | GetReceiveEvent                       |
+| 7   | GetStateChangeEvent                   |
+| 21  | CreateToken                           |
+| 23  | DestroyToken                          |
+| 25  | QueryIsTokenValid                     |
+| 26  | \[6.0.0+\] ListenToMyApplicationId    |
+| 101 | Suspend                               |
+| 102 | Resume                                |
+| 103 | GetState                              |
+| 104 | GetStatistics                         |
+| 111 | GetJid                                |
+| 120 | \[7.0.0+\] CreateNotificationReceiver |
 
-## IUnknown
+## INotificationReceiver
 
-| Cmd | Name | Notes                                                           |
-| --- | ---- | --------------------------------------------------------------- |
-| 1   |      | Takes a total of 8-bytes of input, no output.                   |
-| 2   |      | Takes a total of 8-bytes of input and a PID, no output.         |
-| 3   |      | Takes a total of 2-bytes of input and a type-0x6 output buffer. |
-| 4   |      | No input, returns an output handle.                             |
+| Cmd | Name                    | Notes                                                           |
+| --- | ----------------------- | --------------------------------------------------------------- |
+| 1   | ListenTo                | Takes a total of 8-bytes of input, no output.                   |
+| 2   | ListenToMyApplicationId | Takes a total of 8-bytes of input and a PID, no output.         |
+| 3   | Receive                 | Takes a total of 2-bytes of input and a type-0x6 output buffer. |
+| 4   | GetReceiveEvent         | No input, returns an output handle.                             |
 
 # npns:s
 
