@@ -144,7 +144,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 120 || [6.0.0+] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [[#IFileSystem]])
 |-
-| 130 || [7.0.0+] ? (Takes 4-bytes of input, returns an [[#IFileSystem]])
+| 130 || [7.0.0+] OpenCustomStorageFileSystem (Takes 4-bytes of input, returns an [[#IFileSystem]])
 |-
 | 200 || OpenDataStorageByCurrentProcess
 |-

@@ -102,7 +102,7 @@ This is
 | 100  | OpenImageDirectoryFileSystem                                                                                                                                      |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                        |
 | 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                     |
-| 130  | \[7.0.0+\] ? (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                                                        |
+| 130  | \[7.0.0+\] OpenCustomStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                              |
 | 200  | OpenDataStorageByCurrentProcess                                                                                                                                   |
 | 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                                                             |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                  |
