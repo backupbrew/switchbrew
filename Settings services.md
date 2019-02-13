@@ -398,6 +398,28 @@ This is
 | 149 | \[5.0.0+\] GetRebootlessSystemUpdateVersion                                                       |
 | 150 | \[5.0.0+\] GetDeviceTimeZoneLocationUpdatedTime                                                   |
 | 151 | \[5.0.0+\] SetDeviceTimeZoneLocationUpdatedTime                                                   |
+| 152 | \[6.0.0+\] GetUserSystemClockAutomaticCorrectionUpdatedTime                                       |
+| 153 | \[6.0.0+\] SetUserSystemClockAutomaticCorrectionUpdatedTime                                       |
+| 154 | \[6.0.0+\] GetAccountOnlineStorageSettings                                                        |
+| 155 | \[6.0.0+\] SetAccountOnlineStorageSettings                                                        |
+| 156 | \[6.0.0+\] GetPctlReadyFlag                                                                       |
+| 157 | \[6.0.0+\] SetPctlReadyFlag                                                                       |
+| 162 | \[6.0.0+\] GetPtmBatteryVersion                                                                   |
+| 163 | \[6.0.0+\] SetPtmBatteryVersion                                                                   |
+| 164 | \[6.0.0+\] GetUsb30HostEnableFlag                                                                 |
+| 165 | \[6.0.0+\] SetUsb30HostEnableFlag                                                                 |
+| 166 | \[6.0.0+\] GetUsb30DeviceEnableFlag                                                               |
+| 167 | \[6.0.0+\] SetUsb30DeviceEnableFlag                                                               |
+| 168 | \[7.0.0+\] GetThemeId                                                                             |
+| 169 | \[7.0.0+\] SetThemeId                                                                             |
+| 170 | \[7.0.0+\] GetChineseTraditionalInputMethod                                                       |
+| 171 | \[7.0.0+\] SetChineseTraditionalInputMethod                                                       |
+| 172 | \[7.0.0+\] GetPtmCycleCountReliability                                                            |
+| 173 | \[7.0.0+\] SetPtmCycleCountReliability                                                            |
+| 175 | \[7.0.0+\] GetThemeSettings                                                                       |
+| 176 | \[7.0.0+\] SetThemeSettings                                                                       |
+| 177 | \[7.0.0+\] GetThemeKey                                                                            |
+| 178 | \[7.0.0+\] SetThemeKey                                                                            |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
