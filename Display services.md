@@ -34,6 +34,9 @@ with
     buffer.
   - cmd1106/1107: User-processes use hard-coded sizes 0x400 and 0x404
     for the first/second type-0x15 buffers.
+  - cmd1201/1202/1203: These are only usable when the previously loaded
+    value from [set:sys
+    GetDebugModeFlag](Settings%20services.md "wikilink") is set.
 
 The only caps:sc commands used by [GRC](GRC%20services.md "wikilink")
 are: 1101, 1106, and 1107.
