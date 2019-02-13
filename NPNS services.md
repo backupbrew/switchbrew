@@ -21,6 +21,11 @@ This is "nn::npns::INpnsUser".
 | 111 | GetJid                                |
 | 120 | \[7.0.0+\] CreateNotificationReceiver |
 
+## CreateNotificationReceiver
+
+Returns an
+[\#INotificationReceiver](#INotificationReceiver "wikilink").
+
 ## INotificationReceiver
 
 | Cmd | Name                    | Notes                                                           |

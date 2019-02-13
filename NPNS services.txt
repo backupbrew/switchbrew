@@ -38,6 +38,9 @@ This is "nn::npns::INpnsUser".
 | 120 || [7.0.0+] CreateNotificationReceiver
 |}
 
+== CreateNotificationReceiver ==
+Returns an [[#INotificationReceiver]].
+
 == INotificationReceiver ==
 {| class="wikitable" border="1"
 |-
