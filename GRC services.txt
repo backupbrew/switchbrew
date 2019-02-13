@@ -89,7 +89,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 2 || [[#CreateVideoProxy]]
 |-
-| 9 || [7.0.0+] SetAlbumShimLibraryVersion
+| 9 || [7.0.0+] [[#SetAlbumShimLibraryVersion]]
 |-
 | 10 || [[#OpenOffscreenLayer]]
 |-
@@ -107,7 +107,7 @@ This is "nn::grcsrv::IMovieMaker".
 |-
 | 25 || [[#CompleteOffscreenRecordingFinishEx0]]
 |-
-| 26 || [7.0.0+] CompleteOffscreenRecordingFinishEx1
+| 26 || [7.0.0+] [[#CompleteOffscreenRecordingFinishEx1]]
 |-
 | 30 || [[#GetOffscreenLayerError]]
 |-
@@ -120,6 +120,9 @@ This is "nn::grcsrv::IMovieMaker".
 
 == CreateVideoProxy ==
 No input, returns an [[#IHOSBinderDriver]].
+
+== SetAlbumShimLibraryVersion ==
+Takes a total of 8-bytes of input, no output.
 
 == OpenOffscreenLayer ==
 Takes an input u64 '''LayerHandle''', returns an output u32.
@@ -148,6 +151,9 @@ Seems to be unused by official user processes, [[#CompleteOffscreenRecordingFini
 
 == CompleteOffscreenRecordingFinishEx0 ==
 Takes an input u64 '''LayerHandle''' and 2 type-0x5 input buffers, no output.
+
+== CompleteOffscreenRecordingFinishEx1 ==
+Takes a total of 0x10-bytes of input and two type-0x5 input buffers, returns a total of 0x20-bytes of output.
 
 == EncodeOffscreenLayerAudioSample ==
 Takes an input u64 '''LayerHandle''' and a type-0x5 input buffer, returns an output u64.

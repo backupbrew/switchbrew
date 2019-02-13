@@ -69,7 +69,7 @@ This is
 | Cmd | Name                                                                                                   |
 | --- | ------------------------------------------------------------------------------------------------------ |
 | 2   | [\#CreateVideoProxy](#CreateVideoProxy "wikilink")                                                     |
-| 9   | \[7.0.0+\] SetAlbumShimLibraryVersion                                                                  |
+| 9   | \[7.0.0+\] [\#SetAlbumShimLibraryVersion](#SetAlbumShimLibraryVersion "wikilink")                      |
 | 10  | [\#OpenOffscreenLayer](#OpenOffscreenLayer "wikilink")                                                 |
 | 11  | [\#CloseOffscreenLayer](#CloseOffscreenLayer "wikilink")                                               |
 | 20  | [\#StartOffscreenRecording](#StartOffscreenRecording "wikilink")                                       |
@@ -78,7 +78,7 @@ This is
 | 23  | [\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")                     |
 | 24  | [\#StartOffscreenRecordingEx](#StartOffscreenRecordingEx "wikilink")                                   |
 | 25  | [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")               |
-| 26  | \[7.0.0+\] CompleteOffscreenRecordingFinishEx1                                                         |
+| 26  | \[7.0.0+\] [\#CompleteOffscreenRecordingFinishEx1](#CompleteOffscreenRecordingFinishEx1 "wikilink")    |
 | 30  | [\#GetOffscreenLayerError](#GetOffscreenLayerError "wikilink")                                         |
 | 41  | [\#EncodeOffscreenLayerAudioSample](#EncodeOffscreenLayerAudioSample "wikilink")                       |
 | 50  | [\#GetOffscreenLayerRecordingFinishReadyEvent](#GetOffscreenLayerRecordingFinishReadyEvent "wikilink") |
@@ -87,6 +87,10 @@ This is
 ## CreateVideoProxy
 
 No input, returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").
+
+## SetAlbumShimLibraryVersion
+
+Takes a total of 8-bytes of input, no output.
 
 ## OpenOffscreenLayer
 
@@ -130,6 +134,11 @@ is used instead.
 
 Takes an input u64 **LayerHandle** and 2 type-0x5 input buffers, no
 output.
+
+## CompleteOffscreenRecordingFinishEx1
+
+Takes a total of 0x10-bytes of input and two type-0x5 input buffers,
+returns a total of 0x20-bytes of output.
 
 ## EncodeOffscreenLayerAudioSample
 
