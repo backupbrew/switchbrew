@@ -69,7 +69,7 @@ This is
 | 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
 | 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
-| 134  | \[6.1.0+\]                                                                                       |
+| 134  | \[6.1.0+\] SetNpadAnalogStickUseCenterClamp                                                      |
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
@@ -81,7 +81,7 @@ This is
 | 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                        |
 | 209  | \[4.0.0+\] BeginPermitVibrationSession                                                           |
 | 210  | \[4.0.0+\] EndPermitVibrationSession                                                             |
-| 211  | \[7.0.0+\] ? (Takes a total of 0x10-bytes of input and a PID, returns an output u8)              |
+| 211  | \[7.0.0+\] IsVibrationDeviceMounted                                                              |
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |
