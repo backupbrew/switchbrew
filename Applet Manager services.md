@@ -119,20 +119,24 @@ handle.
 
 ### IGlobalStateController
 
-| Cmd | Name                                                            | Notes |
-| --- | --------------------------------------------------------------- | ----- |
-| 0   | RequestToEnterSleep                                             |       |
-| 1   | EnterSleep                                                      |       |
-| 2   | StartSleepSequence                                              |       |
-| 3   | StartShutdownSequence                                           |       |
-| 4   | StartRebootSequence                                             |       |
-| 9   | \[7.0.0+\] IsAutoPowerDownRequested                             |       |
-| 10  | LoadAndApplyIdlePolicySettings                                  |       |
-| 11  | \[2.0.0+\] NotifyCecSettingsChanged                             |       |
-| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                    |       |
-| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                       |       |
-| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink") |       |
-| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                     |       |
+| Cmd | Name                                                                          | Notes |
+| --- | ----------------------------------------------------------------------------- | ----- |
+| 0   | RequestToEnterSleep                                                           |       |
+| 1   | EnterSleep                                                                    |       |
+| 2   | StartSleepSequence                                                            |       |
+| 3   | StartShutdownSequence                                                         |       |
+| 4   | StartRebootSequence                                                           |       |
+| 9   | \[7.0.0+\] [\#IsAutoPowerDownRequested](#IsAutoPowerDownRequested "wikilink") |       |
+| 10  | LoadAndApplyIdlePolicySettings                                                |       |
+| 11  | \[2.0.0+\] NotifyCecSettingsChanged                                           |       |
+| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                                  |       |
+| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                                     |       |
+| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink")               |       |
+| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                                   |       |
+
+#### IsAutoPowerDownRequested
+
+No input, returns an output u8 bool.
 
 #### ShouldSleepOnBoot
 
@@ -405,6 +409,11 @@ Takes an input u64 and handle, returns a GRC
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
 | 90  | \[7.0.0+\] SetRequiresGpuResourceUse             |
 | 101 | \[6.0.0+\] BeginToObserveHidInputForDevelop      |
+
+#### SetRequiresGpuResourceUse
+
+Takes an input u8, no
+output.
 
 ## IApplicationProxy
 
@@ -925,48 +934,48 @@ handle.
 
 ## ISelfController
 
-| Cmd  | Name                                                                                         |
-| ---- | -------------------------------------------------------------------------------------------- |
-| 0    | [\#Exit](#Exit "wikilink")                                                                   |
-| 1    | [\#LockExit](#LockExit "wikilink")                                                           |
-| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                       |
-| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                              |
-| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                              |
-| 9    | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")             |
-| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                             |
-| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")     |
-| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink") |
-| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                   |
-| 14   | SetRestartMessageEnabled                                                                     |
-| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")  |
-| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")    |
-| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                |
-| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                       |
-| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")      |
-| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                        |
-| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                         |
-| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                      |
-| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                        |
-| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                       |
-| 50   | SetHandlesRequestToDisplay                                                                   |
-| 51   | ApproveToDisplay                                                                             |
-| 60   | OverrideAutoSleepTimeAndDimmingTime                                                          |
-| 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                 |
-| 62   | SetIdleTimeDetectionExtension                                                                |
-| 63   | GetIdleTimeDetectionExtension                                                                |
-| 64   | SetInputDetectionSourceSet                                                                   |
-| 65   | \[2.0.0+\] ReportUserIsActive                                                                |
-| 66   | \[3.0.0+\] GetCurrentIlluminance                                                             |
-| 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                    |
-| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                              |
-| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                               |
-| 70   | \[5.0.0+\] ReportMultimediaError                                                             |
-| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                           |
-| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                           |
-| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                  |
-| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                           |
-| 100  | \[7.0.0+\] SetAlbumImageTakenNotificationEnabled                                             |
-| 1000 | \[7.0.0+\] GetDebugStorageChannel                                                            |
+| Cmd  | Name                                                                                                    |
+| ---- | ------------------------------------------------------------------------------------------------------- |
+| 0    | [\#Exit](#Exit "wikilink")                                                                              |
+| 1    | [\#LockExit](#LockExit "wikilink")                                                                      |
+| 2    | [\#UnlockExit](#UnlockExit "wikilink")                                                                  |
+| 3    | \[2.0.0+\] [\#EnterFatalSection](#EnterFatalSection "wikilink")                                         |
+| 4    | \[2.0.0+\] [\#LeaveFatalSection](#LeaveFatalSection "wikilink")                                         |
+| 9    | [\#GetLibraryAppletLaunchableEvent](#GetLibraryAppletLaunchableEvent "wikilink")                        |
+| 10   | [\#SetScreenShotPermission](#SetScreenShotPermission "wikilink")                                        |
+| 11   | [\#SetOperationModeChangedNotification](#SetOperationModeChangedNotification "wikilink")                |
+| 12   | [\#SetPerformanceModeChangedNotification](#SetPerformanceModeChangedNotification "wikilink")            |
+| 13   | [\#SetFocusHandlingMode](#SetFocusHandlingMode "wikilink")                                              |
+| 14   | SetRestartMessageEnabled                                                                                |
+| 15   | \[2.0.0+\] [\#SetScreenShotAppletIdentityInfo](#SetScreenShotAppletIdentityInfo "wikilink")             |
+| 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")               |
+| 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                           |
+| 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                                  |
+| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")                 |
+| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                                   |
+| 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                    |
+| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                 |
+| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                   |
+| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                                  |
+| 50   | SetHandlesRequestToDisplay                                                                              |
+| 51   | ApproveToDisplay                                                                                        |
+| 60   | OverrideAutoSleepTimeAndDimmingTime                                                                     |
+| 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                            |
+| 62   | SetIdleTimeDetectionExtension                                                                           |
+| 63   | GetIdleTimeDetectionExtension                                                                           |
+| 64   | SetInputDetectionSourceSet                                                                              |
+| 65   | \[2.0.0+\] ReportUserIsActive                                                                           |
+| 66   | \[3.0.0+\] GetCurrentIlluminance                                                                        |
+| 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                               |
+| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                                         |
+| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                                          |
+| 70   | \[5.0.0+\] ReportMultimediaError                                                                        |
+| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                                      |
+| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                                      |
+| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
+| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
+| 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink") |
+| 1000 | \[7.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                               |
 
 ### Exit
 
@@ -1045,6 +1054,14 @@ Takes an input u8 bool, no output.
 ### IsIlluminanceAvailable
 
 No input, returns an output u8 bool.
+
+### SetAlbumImageTakenNotificationEnabled
+
+Takes an input u8, no output.
+
+### GetDebugStorageChannel
+
+Returns an output [\#IStorageChannel](#IStorageChannel "wikilink").
 
 ## IStorageChannel
 

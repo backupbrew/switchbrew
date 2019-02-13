@@ -138,7 +138,7 @@ No input, returns an output handle.
 |-
 | 4 || StartRebootSequence || 
 |-
-| 9 || [7.0.0+] IsAutoPowerDownRequested ||
+| 9 || [7.0.0+] [[#IsAutoPowerDownRequested]] ||
 |-
 | 10 || LoadAndApplyIdlePolicySettings || 
 |-
@@ -152,6 +152,9 @@ No input, returns an output handle.
 |-
 | 15 || [4.0.0+] GetHdcpAuthenticationFailedEvent || 
 |}
+
+==== IsAutoPowerDownRequested ====
+No input, returns an output u8 bool.
 
 ==== ShouldSleepOnBoot ====
 No input, returns an output u8 bool.
@@ -481,6 +484,9 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 101 || [6.0.0+] BeginToObserveHidInputForDevelop
 |}
+
+==== SetRequiresGpuResourceUse ====
+Takes an input u8, no output.
 
 == IApplicationProxy ==
 {| class="wikitable" border="1"
@@ -1053,9 +1059,9 @@ No input, returns an output handle.
 |-
 | 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
 |-
-| 100 || [7.0.0+] SetAlbumImageTakenNotificationEnabled
+| 100 || [7.0.0+] [[#SetAlbumImageTakenNotificationEnabled]]
 |-
-| 1000 || [7.0.0+] GetDebugStorageChannel
+| 1000 || [7.0.0+] [[#GetDebugStorageChannel]]
 |}
 
 === Exit ===
@@ -1111,6 +1117,12 @@ Takes an input u8 bool, no output.
 
 === IsIlluminanceAvailable ===
 No input, returns an output u8 bool.
+
+=== SetAlbumImageTakenNotificationEnabled ===
+Takes an input u8, no output.
+
+=== GetDebugStorageChannel ===
+Returns an output [[#IStorageChannel]].
 
 == IStorageChannel ==
 Added with [[7.0.0]].
