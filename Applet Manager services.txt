@@ -1053,9 +1053,9 @@ No input, returns an output handle.
 |-
 | 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
 |-
-| 100 || [7.0.0+] SetAlbumImageTakenNotificationEnabled || Takes an input u8, no output.
+| 100 || [7.0.0+] SetAlbumImageTakenNotificationEnabled
 |-
-| 1000 || [7.0.0+] GetDebugStorageChannel || No input, returns an output [[#IStorageChannel]].
+| 1000 || [7.0.0+] GetDebugStorageChannel
 |}
 
 === Exit ===
