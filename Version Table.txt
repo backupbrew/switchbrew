@@ -1,1 +1,1 @@
-[https://github.com/Atmosphere-NX/Atmosphere Atmosphère] is usable on ''all'' system versions, for all Switch systems with the original hardware revision (via bootromhax).
+[https://github.com/Atmosphere-NX/Atmosphere Atmosphère] is usable on ''all'' system versions, excluding [https://switchbrew.org/wiki/7.0.0 7.0.0], for all Switch systems with the original hardware revision (via bootromhax).
