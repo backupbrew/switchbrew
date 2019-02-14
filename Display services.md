@@ -84,9 +84,9 @@ first buffer, except the minimum size is (**width**\***height**)/2.
 
 ## Cmd1106
 
-Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
-input buffers, a type-0x6 output buffer, and two type-0x46 output
-buffers, returns 3 output u64s.
+Takes a 0x40-byte input struct, two input u64s **width**/**height**, a
+0x18-byte input struct, two type-0x15 input buffers, a type-0x6 output
+buffer, and two type-0x46 output buffers, returns 3 output u64s.
 
 **width**/**height** have same requirements as
 [\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
@@ -95,9 +95,9 @@ same as [\#Cmd1101](#Cmd1101 "wikilink").
 
 ## Cmd1107
 
-Takes two input u64s **width**/**height**, 4 input u64s, two type-0x15
-input buffers, a type-0x6 output buffer, and a type-0x45 input buffer,
-returns 3 output u64s.
+Takes a 0x40-byte input struct, two input u64s **width**/**height**, a
+0x18-byte input struct, two type-0x15 input buffers, a type-0x6 output
+buffer, and a type-0x45 input buffer, returns 3 output u64s.
 
 **width**/**height** have same requirements as
 [\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
