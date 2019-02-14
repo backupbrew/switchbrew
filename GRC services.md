@@ -124,7 +124,8 @@ no output.
 
 ## CompleteOffscreenRecordingFinish
 
-Takes an input u64 and a type-0x5 input buffer, no output.
+Takes an input u64 **LayerHandle** and a type-0x5 input buffer, no
+output.
 
 Seems to be unused by official user processes,
 [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
@@ -132,16 +133,27 @@ is used instead.
 
 ## CompleteOffscreenRecordingFinishEx0
 
-Takes an input u64 **LayerHandle** and 2 type-0x5 input buffers, no
-output.
+Takes two input u32s **width**/**height**, an input u64 **LayerHandle**
+and 2 type-0x5 input buffers, no output.
 
 The input buffers are optional, addr=NULL and size=0 can be used for
 these.
 
+**width**/**height** must be 1280x720, these fields are unused
+afterwards.
+
+Besides **width**/**height**, this is the same as
+[\#CompleteOffscreenRecordingFinish](#CompleteOffscreenRecordingFinish "wikilink")
+except the second buffer is user-specified instead of addr=NULL/size=0.
+
 ## CompleteOffscreenRecordingFinishEx1
 
-Takes a total of 0x10-bytes of input and two type-0x5 input buffers,
-returns a total of 0x20-bytes of output.
+Takes two input u32s **width**/**height**, an input u64 **LayerHandle**
+and two type-0x5 input buffers, returns a 0x20-byte output struct.
+
+Same as
+[\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
+except the output struct is returned in the cmdreply.
 
 ## EncodeOffscreenLayerAudioSample
 
