@@ -135,6 +135,9 @@ is used instead.
 Takes an input u64 **LayerHandle** and 2 type-0x5 input buffers, no
 output.
 
+The input buffers are optional, addr=NULL and size=0 can be used for
+these.
+
 ## CompleteOffscreenRecordingFinishEx1
 
 Takes a total of 0x10-bytes of input and two type-0x5 input buffers,
