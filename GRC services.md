@@ -49,10 +49,10 @@ This is "nn::grcsrv::IRemoteVideoTransfer".
 Added with
 [6.0.0](6.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                                                                    |
-| --- | ---- | -------------------------------------------------------------------------------------------------------- |
-| 1   |      | No input/output.                                                                                         |
-| 2   |      | Takes a total of 4-bytes of input and a type-0x6 output buffer, returns a total of 0x10-bytes of output. |
+| Cmd | Name | Notes                                                                                                         |
+| --- | ---- | ------------------------------------------------------------------------------------------------------------- |
+| 1   |      | No input/output.                                                                                              |
+| 2   |      | Takes an input u32 (must be value 0-1) and a type-0x6 output buffer, returns a total of 0x10-bytes of output. |
 
 # IUnknown
 
