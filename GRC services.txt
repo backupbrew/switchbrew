@@ -13,7 +13,7 @@ This is "nn::grcsrv::IGrcService".
 |-
 | 2 || OpenGameMovieTrimmer || Takes a total of 0x8-bytes of input and a handle, returns an [[#IGameMovieTrimmer]].
 |-
-| 3 || || Takes a total of 0x8-bytes of input and a handle, returns an [[#IUnknown]].
+| 3 || || Takes a total of 0x8-bytes of input and a handle, returns an [[#IOffscreenRecorder]].
 |-
 | 101 || || Takes a total of 0x10-bytes of input, returns an [[#IMovieMaker]].
 |}
@@ -70,7 +70,9 @@ Added with [[6.0.0]].
 | 2 || || Takes an input u32 (must be value 0-1) and a type-0x6 output buffer, returns a total of 0x10-bytes of output.
 |}
 
-= IUnknown =
+= IOffscreenRecorder =
+This is "nn::grcsrv::IOffscreenRecorder".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes

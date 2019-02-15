@@ -14,7 +14,7 @@ This is
 | --- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | 1   | OpenContinuousRecorder | Takes a total of 0x48-bytes of input and a handle, returns an [\#IContinuousRecorder](#IContinuousRecorder "wikilink"). |
 | 2   | OpenGameMovieTrimmer   | Takes a total of 0x8-bytes of input and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").      |
-| 3   |                        | Takes a total of 0x8-bytes of input and a handle, returns an [\#IUnknown](#IUnknown "wikilink").                        |
+| 3   |                        | Takes a total of 0x8-bytes of input and a handle, returns an [\#IOffscreenRecorder](#IOffscreenRecorder "wikilink").    |
 | 101 |                        | Takes a total of 0x10-bytes of input, returns an [\#IMovieMaker](#IMovieMaker "wikilink").                              |
 
 ## IContinuousRecorder
@@ -54,7 +54,10 @@ Added with
 | 1   |      | No input/output.                                                                                              |
 | 2   |      | Takes an input u32 (must be value 0-1) and a type-0x6 output buffer, returns a total of 0x10-bytes of output. |
 
-# IUnknown
+# IOffscreenRecorder
+
+This is
+"nn::grcsrv::IOffscreenRecorder".
 
 | Cmd | Name | Notes                                                                        |
 | --- | ---- | ---------------------------------------------------------------------------- |
