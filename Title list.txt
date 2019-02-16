@@ -276,13 +276,17 @@ Decimal versions use the format:
 |-
 | 0100000000001016 || || || TitleID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |-
-| 010000000000101B || || DummyECApplet (DummyAppletShop) || Currently not present on retail devices.
+| 010000000000101A || || gift (LibraryAppletGift) || Currently not present on retail devices.
 |-
-| 010000000000101D || || encounter || Currently not present on retail devices.
+| 010000000000101B || || DummyECApplet (LibraryAppletDummyShop) || Currently not present on retail devices.
+|-
+| 010000000000101C || || userMigration (LibraryAppletUserMigration) || Currently not present on retail devices.
+|-
+| 010000000000101D || || encounter (LibraryAppletEncounter) || Currently not present on retail devices.
 |-
 | 010000000000101E || || || This title is referenced by [5.0.0+] [[NIM_services|NIM]] when it accesses the [[Network#pearljam|pearljam]] server, but does not exist on retail systems currently.
 |-
-| 0100000000001020 || || story || Currently not present on retail devices.
+| 0100000000001020 || || story (LibraryAppletStory) || Currently not present on retail devices.
 |-
 | 0100000000001FFF || || EndOceanProgramId || Placeholder for the last valid applet ID.
 |}

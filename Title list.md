@@ -1569,15 +1569,27 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.</p></td>
 </tr>
 <tr class="even">
+<td><p>010000000000101A</p></td>
+<td></td>
+<td><p>gift (LibraryAppletGift)</p></td>
+<td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="odd">
 <td><p>010000000000101B</p></td>
 <td></td>
-<td><p>DummyECApplet (DummyAppletShop)</p></td>
+<td><p>DummyECApplet (LibraryAppletDummyShop)</p></td>
+<td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000101C</p></td>
+<td></td>
+<td><p>userMigration (LibraryAppletUserMigration)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000101D</p></td>
 <td></td>
-<td><p>encounter</p></td>
+<td><p>encounter (LibraryAppletEncounter)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
@@ -1589,7 +1601,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <tr class="odd">
 <td><p>0100000000001020</p></td>
 <td></td>
-<td><p>story</p></td>
+<td><p>story (LibraryAppletStory)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
