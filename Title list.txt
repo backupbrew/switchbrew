@@ -391,6 +391,10 @@ Note: No 01000000000020XX titles exist on retail systems.
 |-
 | 01000000000020DA || || RepairAbortMigration ||
 |-
+| 01000000000020DC || || RepairShowDeviceId ||
+|-
+| 01000000000020DD || || RepairSetCycleCountReliability ||
+|-
 | 01000000000020E1 || || AlbumDownloader ||
 |-
 | 01000000000020E3 || || FuelGaugeDumper ||
@@ -454,6 +458,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 0100000000002126 || || PalmaSerialCodeTool ||
 |-
 | 0100000000002127 || || renderdoccmd ||
+|-
+| 0100000000002128 || || HidInspectionToolProd ||
 |}
 
 == System Debug Modules ==

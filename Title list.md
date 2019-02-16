@@ -1657,6 +1657,8 @@ systems.
 | 01000000000020D6 |          | RepairTimeReviser                                                    |                                                          |
 | 01000000000020D7 |          | RepairReinitializeFuelGauge                                          |                                                          |
 | 01000000000020DA |          | RepairAbortMigration                                                 |                                                          |
+| 01000000000020DC |          | RepairShowDeviceId                                                   |                                                          |
+| 01000000000020DD |          | RepairSetCycleCountReliability                                       |                                                          |
 | 01000000000020E1 |          | AlbumDownloader                                                      |                                                          |
 | 01000000000020E3 |          | FuelGaugeDumper                                                      |                                                          |
 | 01000000000020E4 |          | UnsafeExtract                                                        |                                                          |
@@ -1689,6 +1691,7 @@ systems.
 | 0100000000002125 |          | UsbFirmwareUpdater                                                   |                                                          |
 | 0100000000002126 |          | PalmaSerialCodeTool                                                  |                                                          |
 | 0100000000002127 |          | renderdoccmd                                                         |                                                          |
+| 0100000000002128 |          | HidInspectionToolProd                                                |                                                          |
 
 ## System Debug Modules
 
