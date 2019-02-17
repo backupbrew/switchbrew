@@ -108,7 +108,7 @@
 | Nintendo Content Archive
 | 
 |-
-| [[NSP_Format|NSP]]
+| NSP
 | Nintendo Submission Package
 | 
 |-
