@@ -108,6 +108,10 @@
 | Nintendo Content Archive
 | 
 |-
+| [[NSP_Format|NSP]]
+| Nintendo Submission Package
+| 
+|-
 | [[NCM_services|NCM]]
 | Nintendo Content Management services
 |
