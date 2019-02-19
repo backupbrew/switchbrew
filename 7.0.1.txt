@@ -30,3 +30,7 @@ The Secure Monitor was updated.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=02-18-19_07-05-10&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
