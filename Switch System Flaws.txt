@@ -181,7 +181,7 @@ However, the SMC handler enforces that all SMCs must be called from core #3, unl
 | [[2.0.0]]
 | December 2017 (Probably earlier by others)
 | January 18, 2018
-| [[User:SciresM|SciresM]], probably others.
+| [[User:SciresM|SciresM]], probably others (independently).
 |-
 |  jamais vu (non-secure world access to PMC MMIO and pre-deep sleep firmware)
 |  On [[1.0.0]], one could map in the PMC registers in userland. In addition, [[AM_services|am]] ran a little-kernel based firmware on the BPMP at runtime. With code execution under am, one could modify the BPMP's little-kernel firmware to hook deep sleep entry, and modify TrustZone/Security engine state. 
@@ -205,7 +205,7 @@ This was fixed in [[4.0.0]] by writing to the correct registers.
 |  [[4.0.0]]
 |  January, 2018
 |  February 23, 2018
-|  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]], [[User:Naehrwert|naehrwert]], [[User:Hexkyz|hexkyz]], probably others, independently.
+|  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]], [[User:Naehrwert|naehrwert]], [[User:Hexkyz|hexkyz]], probably others (independently).
 |-
 |}
 
@@ -447,7 +447,7 @@ In [[2.0.0]], the commands now return error code 0x1099 if the number of unrelea
 | [[2.0.0]]
 | 
 | November 2, 2018
-| [[User:hexkyz|hexkyz]], probably others.
+| [[User:hexkyz|hexkyz]], probably others (independently).
 |-
 | nvhax (memory corruption in nvservices system module)
 | Prior to [[6.2.0]], the [[NV_services|nvservices]] ioctl [[NV_services#.2Fdev.2Fnvhost-ctrl-gpu|NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE]] would take a single "pwarpstate" argument which would be interpreted by nvservices as a memory pointer for writing 2 "warpstate" structs (one for each Streaming Multiprocessor).
