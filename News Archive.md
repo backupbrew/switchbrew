@@ -1,3 +1,6 @@
+  - **29 November 18** [Atmosphère
+    v0.8.0](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.0)
+    was released.
   - **29 November 18** [nx-hbmenu
     v3.0.1](https://github.com/switchbrew/nx-hbmenu/releases/latest) was
     released.
