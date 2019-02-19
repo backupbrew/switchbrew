@@ -136,7 +136,7 @@ Additionally, since signed Falcon code can't be revoked without an hardware revi
 |  [[5.0.2]]
 |  January 2018
 |  April 29, 2018
-|  [[User:Hexkyz|hexkyz]], Reisyukaku, probably others.
+|  [[User:Hexkyz|hexkyz]], probably others (independently).
 |-
 |  pk1ldrhax
 |  Package1ldr decrypts and verifies the keyblob inside of the current BCT in order to get the package1 key, and then uses the package1 key to decrypt package1. It then validates package1 before jumping to it by checking the PK11 magic number, and that the section sizes sum to the expected size (and are individually less than the expected size). 
