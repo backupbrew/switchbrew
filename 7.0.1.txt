@@ -12,6 +12,11 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+Nothing changed for services IPC.
+
+=== FIRM ===
+Only BCT+package1 were updated.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=02-18-19_07-05-10&sys=hac]
