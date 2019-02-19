@@ -4,7 +4,10 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 
 ==Change-log==
 [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
-* N/A, see the official page for the actual changelog.
+* General system stability improvements to enhance the user's experience, including:
+*     
+*     Resolved an issue where the Pokémon: Let's Go, Pikachu! and Pokémon: Let's Go, Eevee! games cannot reconnect to the Pokémon GO app if the game software was closed after pairing with the app.
+*     
 
 ==System Titles==
 <fill this in (manually) later>
