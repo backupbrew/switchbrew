@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **18 February 19** Nintendo released system update
+    [7.0.1](7.0.1.md "wikilink").
   - **28 January 19** Nintendo released system update
     [7.0.0](7.0.0.md "wikilink").
   - **24 January 19** [Atmosphère
@@ -30,6 +32,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
   - **2 January 19** [libnx 2.0.0, switch-mesa 18.3 and
     switch-examples 20190102](https://devkitpro.org/viewtopic.php?f=13&t=8826)
     were released.
-  - **29 November 18** [Atmosphère
-    v0.8.0](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.0)
-    was released.
