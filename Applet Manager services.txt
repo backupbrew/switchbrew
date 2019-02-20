@@ -521,7 +521,7 @@ Takes an input u8, no output.
 |-
 | 10 || [[#CreateApplicationAndPushAndRequestToStart]] || 
 |-
-| 11 || [2.0.0+] [[#CreateApplicationAndPushAndRequestToStartForQuest]] || 
+| 11 || [3.0.0+] [[#CreateApplicationAndPushAndRequestToStartForQuest]] || 
 |-
 | 12 || [4.0.0+] [[#CreateApplicationAndRequestToStart]] || 
 |-
