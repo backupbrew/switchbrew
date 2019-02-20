@@ -1,1 +1,1 @@
-1.  REDIRECT [CNMT](CNMT.md "wikilink")
+1.  REDIRECT [NCA Format](NCA%20Format.md "wikilink")
