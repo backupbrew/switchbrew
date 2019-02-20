@@ -1,12 +1,3 @@
-For the content of the NCA FS which can be
-[mounted](Filesystem%20services.md "wikilink"), see
-[here](NCA%20Content%20FS.md "wikilink").
-
-For the format of the actual NCA, see
-[here](NCA%20Format.md "wikilink").
-
-# Metadata file
-
 This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`. This
 seems to replace the TMD format.
 
