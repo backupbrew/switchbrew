@@ -1,0 +1,455 @@
+For the content of the NCA FS which can be [[Filesystem_services|mounted]], see [[NCA_Content_FS|here]].
+
+For the format of the actual NCA, see [[NCA_Format|here]].
+
+= Metadata file =
+This is the file that ends in <code>".cnmt{.nca}"</code> or <code>"meta0.ncd"</code>. This seems to replace the TMD format.
+
+There's at least 9 different filenames used for ".cnmt":
+* "Application_{lower-case hex titleID}.cnmt"
+* "Patch_{lower-case hex titleID}.cnmt"
+* "AddOnContent_{lower-case hex titleID}.cnmt"
+* "SystemUpdate_{hex titleID}.cnmt"
+* "SystemData_{lower-case hex titleID}.cnmt"
+* "SystemProgram_{lower-case hex titleID}.cnmt"
+* "BootImagePackage_{lower-case hex titleID}.cnmt"
+* "BootImagePackageSafe_{lower-case hex titleID}.cnmt"
+* "Delta_{lower-case hex titleID}.cnmt"
+
+It starts with a header:
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Title ID
+|-
+| 0x8
+| 4
+| u32 [[Title_list|title-version]]
+|-
+| 0xC
+| 1
+| Type (see [[NCM_services#Title_Types|Title Types]])
+|-
+| 0xD
+| 1
+|
+|-
+| 0xE
+| 2
+| Offset to table relative to the end of this 0x20-byte header.
+|-
+| 0x10
+| 2
+| Number of content entries
+|-
+| 0x12
+| 2
+| Number of meta entries
+|-
+| 0x14
+| 12
+|
+|}
+
+With SystemUpdate, the 4-bytes at offset 0xE are zero, with the entry-count field located at offset 0x12 instead(header size is the same).
+
+An optional header can follow, depending on the title type.
+
+At the end of the file following the entries is a 0x20-byte block, presumably a hash.
+
+With Patch-format, there's additional data after the end of the entries specified in the header and before the ending hash.
+
+== Application header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x20
+| 8
+| Patch Title ID
+|-
+| 0x28
+| 8
+| Minimum system version
+|}
+
+== Patch header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x20
+| 8
+| Original title ID
+|-
+| 0x28
+| 8
+| Minimum system version
+|}
+
+== Add-on content header ==
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x20
+| 8
+| Application title ID
+|-
+| 0x28
+| 8
+| Minimum application version
+|}
+
+== Content records ==
+
+Each entry is 0x38 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 32
+| Hash
+|-
+| 0x20
+| 16
+| NcaId [same as first 16-bytes of hash]
+|-
+| 0x30
+| 6
+| Size, same as the output from [[Content_Manager_services#GetEntrySize]].
+|-
+| 0x36
+| 1
+| Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[[Internet_Browser|HtmlDocument]], 5=[[Internet_Browser|LegalInformation]], 6=[[NCA_Format|DeltaFragment]])
+|-
+| 0x37
+| 1
+|
+|}
+
+== Meta records ==
+
+Each entry is 0x10 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Title ID
+|-
+| 0x8
+| 4
+| Title version
+|-
+| 0xC
+| 1
+| Type (see [[NCM_services#Title_Types|Title Types]])
+|-
+| 0xD
+| 1
+| ? bit0 set = don't install?
+|-
+| 0xE
+| 2
+| Unused?
+|}
+
+This is used for SystemUpdate, see here: [[Content_Manager_services#GetUpdateTitleList]].
+
+== Extended data ==
+
+Patch-type cnmt files include an extended data section. 
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 4
+| Number of previous cnmt entries.
+|-
+| 0x4
+| 4
+| Number of previous delta entries.
+|-
+| 0x8
+| 4
+| Number of delta info entries.
+|-
+| 0xC
+| 4
+| Number of delta application info entries.
+|-
+| 0x10
+| 4
+| Number of previous content entries.
+|-
+| 0x14
+| 4
+| Number of delta content entries.
+|-
+| 0x18
+| 4
+| Unused?
+|-
+| 0x1C
+| 0x38*X
+| Previous cnmt entries
+|-
+| 
+| 0x28*X
+| Previous delta entries
+|-
+| 
+| 0x28*X
+| Delta info entries
+|-
+| 
+| 0x34*X
+| Delta application info entries
+|-
+| 
+| 0x18*X
+| Previous content entries
+|-
+| 
+| 0x38*X
+| Delta content entries. (Standard content records)
+|-
+| 
+| 4
+| Unknown
+|-
+| 
+| 4
+| Unknown
+|-
+| 
+| 4
+| Unknown
+|-
+|}
+
+== Previous cnmt records ==
+
+Each entry is 0x38 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Title ID
+|-
+| 0x8
+| 4
+| Title version
+|-
+| 0xC
+| 1
+| Type (see [[NCM_services#Title_Types|Title Types]])
+|-
+| 0xD
+| 3
+| Unused?
+|-
+| 0x10
+| 32
+| Hash
+|-
+| 0x30
+| 2
+| Unknown
+|-
+| 0x32
+| 2
+| Unused?
+|-
+| 0x34
+| 4
+| Unused?
+|-
+|}
+
+This contains information on previous metadata files.
+
+== Previous delta records ==
+
+Each entry is 0x28 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Old title ID
+|-
+| 0x8
+| 8
+| New title ID
+|-
+| 0x10
+| 4
+| Old title version
+|-
+| 0x14
+| 4
+| New title version
+|-
+| 0x18
+| 8
+| Size
+|-
+| 0x20
+| 8
+| Unused?
+|-
+|}
+
+This contains information on previous delta patches.
+
+== Delta info records ==
+
+Each entry is 0x28 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 8
+| Old title ID
+|-
+| 0x8
+| 8
+| New title ID
+|-
+| 0x10
+| 4
+| Old title version
+|-
+| 0x14
+| 4
+| New title version
+|-
+| 0x18
+| 8
+| Some sort of index?
+|-
+| 0x20
+| 8
+| Some sort of index?
+|-
+|}
+
+This contains information on the current delta patch.
+
+== Delta application info records ==
+
+Each entry is 0x34 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 16
+| Old NcaId
+|-
+| 0x10
+| 16
+| New NcaId
+|-
+| 0x20
+| 6
+| Old size
+|-
+| 0x26
+| 2
+| Upper 2 bytes of the new size
+|-
+| 0x28
+| 4
+| Lower 4 bytes of the new size
+|-
+| 0x2C
+| 2
+| Unknown
+|-
+| 0x2E
+| 1
+| Type (see [[NCM_services#Title_Types|Title Types]])
+|-
+| 0x2F
+| 1
+| ? bit0 set = don't install?
+|-
+| 0x30
+| 4
+| Unused?
+|-
+|}
+
+This contains information on how to apply deltas to the previous patch.
+
+== Previous content records ==
+
+Each entry is 0x18 bytes:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 16
+| NcaId
+|-
+| 0x10
+| 6
+| Size
+|-
+| 0x16
+| 1
+| Type (see [[NCM_services#Title_Types|Title Types]])
+|-
+| 0x17
+| 1
+| 
+|-
+|}
+
+This contains information on previous title content from earlier patches.
