@@ -1,4 +1,4 @@
-This is the file that ends in <code>".cnmt{.nca}"</code> or <code>"meta0.ncd"</code>. This seems to replace the TMD format.
+This is the metadata file that ends in <code>".cnmt{.nca}"</code> or <code>"meta0.ncd"</code>. This seems to replace the TMD format.
 
 There's at least 9 different filenames used for ".cnmt":
 * "Application_{lower-case hex titleID}.cnmt"

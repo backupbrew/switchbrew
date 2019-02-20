@@ -1,5 +1,5 @@
-This is the file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`. This
-seems to replace the TMD format.
+This is the metadata file that ends in `".cnmt{.nca}"` or `"meta0.ncd"`.
+This seems to replace the TMD format.
 
 There's at least 9 different filenames used for ".cnmt":
 
