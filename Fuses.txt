@@ -139,10 +139,10 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_SKU_INFO|FUSE_SKU_INFO]]
 | 0x7000F910
 |-
-| FUSE_CPU_SPEEDO_0
+| FUSE_CPU_SPEEDO_0_CALIB
 | 0x7000F914
 |-
-| FUSE_CPU_IDDQ
+| FUSE_CPU_IDDQ_CALIB
 | 0x7000F918
 |-
 | FUSE_DAC_CRT_CALIB
@@ -154,25 +154,25 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_DAC_SDTV_CALIB
 | 0x7000F924
 |-
-| FUSE_FT_REV
+| FUSE_OPT_FT_REV
 | 0x7000F928
 |-
-| FUSE_CPU_SPEEDO_1
+| FUSE_CPU_SPEEDO_1_CALIB
 | 0x7000F92C
 |-
-| FUSE_CPU_SPEEDO_2
+| FUSE_CPU_SPEEDO_2_CALIB
 | 0x7000F930
 |-
-| FUSE_SOC_SPEEDO_0
+| FUSE_SOC_SPEEDO_0_CALIB
 | 0x7000F934
 |-
-| [[#FUSE_SOC_SPEEDO_1|FUSE_SOC_SPEEDO_1]]
+| [[#FUSE_SOC_SPEEDO_1_CALIB|FUSE_SOC_SPEEDO_1_CALIB]]
 | 0x7000F938
 |-
-| FUSE_SOC_SPEEDO_2
+| FUSE_SOC_SPEEDO_2_CALIB
 | 0x7000F93C
 |-
-| FUSE_SOC_IDDQ
+| FUSE_SOC_IDDQ_CALIB
 | 0x7000F940
 |-
 | FUSE_RESERVED_PRODUCTION_WP
@@ -232,7 +232,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_VSENSOR_CALIB
 | 0x7000F98C
 |-
-| FUSE_CP_REV
+| FUSE_OPT_CP_REV
 | 0x7000F990
 |-
 | FUSE_OPT_PFG
@@ -271,7 +271,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | [[#FUSE_RESERVED_SW|FUSE_RESERVED_SW]]
 | 0x7000F9C0
 |-
-| FUSE_VP9_DISABLE
+| FUSE_OPT_VP9_DISABLE
 | 0x7000F9C4
 |-
 | [[#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]]
@@ -304,7 +304,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_NOR_INFO
 | 0x7000F9EC
 |-
-| FUSE_SKU_USB_CALIB
+| FUSE_USB_CALIB
 | 0x7000F9F0
 |-
 | FUSE_SKU_DIRECT_CONFIG
@@ -316,25 +316,25 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_PACKAGE_INFO
 | 0x7000F9FC
 |-
-| FUSE_VENDOR_CODE
+| FUSE_OPT_VENDOR_CODE
 | 0x7000FA00
 |-
-| FUSE_FAB_CODE
+| FUSE_OPT_FAB_CODE
 | 0x7000FA04
 |-
-| FUSE_LOT_CODE_0
+| FUSE_OPT_LOT_CODE_0
 | 0x7000FA08
 |-
-| FUSE_LOT_CODE_1
+| FUSE_OPT_LOT_CODE_1
 | 0x7000FA0C
 |-
-| FUSE_WAFER_ID
+| FUSE_OPT_WAFER_ID
 | 0x7000FA10
 |-
-| FUSE_X_COORDINATE
+| FUSE_OPT_X_COORDINATE
 | 0x7000FA14
 |-
-| FUSE_Y_COORDINATE
+| FUSE_OPT_Y_COORDINATE
 | 0x7000FA18
 |-
 | FUSE_OPT_SEC_DEBUG_EN
@@ -346,7 +346,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_SATA_CALIB
 | 0x7000FA24
 |-
-| FUSE_GPU_IDDQ
+| FUSE_GPU_IDDQ_CALIB
 | 0x7000FA28
 |-
 | FUSE_TSENSOR3_CALIB
@@ -391,7 +391,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_TSENSOR7_CALIB
 | 0x7000FA60
 |-
-| FUSE_OPT_PRIV_SEC_DIS
+| FUSE_OPT_PRIV_SEC_EN
 | 0x7000FA64
 |-
 | [[#FUSE_PKC_DISABLE|FUSE_PKC_DISABLE]]
@@ -418,7 +418,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_APB2JTAG_DISABLE
 | 0x7000FA98
 |-
-| FUSE_DEBUG_AUTH_OVERRIDE
+| FUSE_ODM_INFO
 | 0x7000FA9C
 |-
 | FUSE_ARM_CRYPT_DE_FEATURE
@@ -466,7 +466,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_ECO_RESERVE_0
 | 0x7000FAF8
 |-
-| FUSE_SPARE_REALIGNMENT_REG
+| FUSE_SPARE_REALIGNMENT_REG_OLD
 | 0x7000FAFC
 |-
 | FUSE_RESERVED_CALIB0
@@ -478,7 +478,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_OPT_GPU_TPC0_DISABLE
 | 0x7000FB0C
 |-
-| FUSE_OPT_GPU_TPC1_DISABLE
+| FUSE_OPT_GPU_TPC0_DISABLE_CP1
 | 0x7000FB10
 |-
 | FUSE_OPT_CPU_DISABLE
@@ -641,7 +641,7 @@ Stores the SKU ID (must be 0x83).
 ==== FUSE_FA ====
 Stores failure analysis mode.
 
-==== FUSE_SOC_SPEEDO_1 ====
+==== FUSE_SOC_SPEEDO_1_CALIB ====
 Stores the bootrom patch version.
 
 ==== FUSE_RESERVED_ODM0 ====
