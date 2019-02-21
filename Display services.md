@@ -43,9 +43,9 @@ are: 1101, 1106, and 1107.
 
 ## Cmd1
 
-Takes a type-0x46 output buffer, an input u32, two input u64s
-**width**/**height**, an input s64 **buffer\_count**, and an input s64
-**buffer\_index**.
+Takes a type-0x46 output buffer, an input u32 **layer\_stack**, two
+input u64s **width**/**height**, an input s64 **buffer\_count**, and an
+input s64 **buffer\_index**.
 
 **width**/**height** must match 1280/720. **buffer\_index** must be \<
 **buffer\_count**. **buffer\_index** and **buffer\_count** must not be
