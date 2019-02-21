@@ -1040,6 +1040,107 @@ from [KeygenLdr](#KeygenLdr "wikilink").
     return;
 ```
 
+#### gen\_tsec\_key
+
+This is the method responsible for generating the final TSEC key. It
+takes **key\_addr** and **key\_type** as
+arguments.
+
+``` 
+    // This will use TSEC DMA to look for 0x34C2E1DA in host1x scratch space
+    u32 host1x_res = check_host1x_magic();
+
+    // Failed to find magic word
+    if (host1x_res != 0)
+        return;
+    
+    u32 crypto_reg_flag = 0x00000000;
+
+    // The next 0x02 xfer instructions will be overridden
+    // and target changes from DMA to crypto register
+    cxset(0x02);
+
+    // Transfer data to crypto register c0
+    xdst(0, (key_addr | crypto_reg_flag));
+   
+    // Wait for all data loads/stores to finish
+    xdwait();
+
+    crypto_reg_flag = 0x00020000;
+
+    if (key_type == 0x01)        // HOVI_EKS_01
+    {
+        // Load selected secret into crypto register c1
+        csecret($c1, 0x3F);
+
+        // Encrypt the auth signature with c1 and store in c1
+        csigenc($c1, $c1);
+        
+        // Load selected secret into crypto register c2
+        csecret($c2, 0x00);
+
+        // Bind c2 register as the key for enc/dec operations
+        ckeyreg($c2);
+
+        // Encrypt the seed from key_addr and store in c2
+        cenc($c2, $c0);
+
+        // Bind c2 register as the key for enc/dec operations
+        ckeyreg($c2);        
+
+        // Encrypt the auth signature with c2 and store in c2
+        csigenc($c2, $c2);
+        
+        // Encrypt c1 and store in c2
+        cenc($c2, $c1);
+        
+        // The next 0x02 xfer instructions will be overridden
+        // and target changes from DMA to crypto register
+        cxset(0x02);
+        
+        // Transfer data from crypto register c2
+        xdld(0, (key_addr | crypto_reg_flag));
+        
+        // Wait for all data loads/stores to finish
+        xdwait();
+    }
+    else if (key == 0x02)        // HOVI_COMMON_01
+    {
+        // Load selected secret into crypto register c2
+        csecret($c2, 0x00);
+
+        // Bind c2 register as the key for enc/dec operations
+        ckeyreg($c2);
+
+        // Encrypt the seed from key_addr and store in c2
+        cenc($c2, $c0);
+
+        // Bind c2 register as the key for enc/dec operations
+        ckeyreg($c2);        
+
+        // Encrypt the auth signature with c2 and store in c2
+        csigenc($c2, $c2);
+        
+        // Encrypt c1 and store in c2
+        cenc($c2, $c1);
+        
+        // The next 0x02 xfer instructions will be overridden
+        // and target changes from DMA to crypto register
+        cxset(0x02);
+        
+        // Transfer data from crypto register c2
+        xdld(0, (key_addr | crypto_reg_flag));
+        
+        // Wait for all data loads/stores to finish
+        xdwait();
+    }
+    
+    // Use TSEC DMA to write the key in SOR1 registers
+    sor1_set_key(key_addr);
+
+    return;
+```
+
 ## SecureBootLdr
 
 \[6.2.0+\] This was introduced to try to recover the secure boot from
