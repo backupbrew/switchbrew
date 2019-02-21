@@ -264,7 +264,8 @@ This indicates the type of web-applet.
 | 0x504  | 0x10  | Account userID, 0 for common.                                                                      |
 | 0x514  | 0x4   | Unknown, this can be 0.                                                                            |
 
-This is the input struct for WifiWebAuthApplet.
+This is the input struct for WifiWebAuthApplet. This is a total of
+0x518-bytes.
 
 ### WebWifiReturnValue
 
@@ -273,7 +274,31 @@ This is the input struct for WifiWebAuthApplet.
 | 0x0    | 0x4  | ?           |
 | 0x4    | 0x8  | Result      |
 
-This is the output struct for WifiWebAuthApplet.
+This is the output struct for WifiWebAuthApplet. This is a total of
+0x8-bytes.
+
+### WebArgHeader
+
+| Offset | Size | Description                                                               |
+| ------ | ---- | ------------------------------------------------------------------------- |
+| 0x0    | 0x2  | Total [\#WebArgTLV](#WebArgTLV "wikilink") entries following this struct. |
+| 0x2    | 0x2  | Padding                                                                   |
+| 0x4    | 0x4  | [\#ShimKind](#ShimKind "wikilink")                                        |
+
+This is the header struct at offset 0 in the input web Arg storage for
+non-WebWifi. This is a total of 0x8-bytes.
+
+### WebArgTLV
+
+| Offset | Size | Description                                 |
+| ------ | ---- | ------------------------------------------- |
+| 0x0    | 0x2  | Type of this arg.                           |
+| 0x2    | 0x2  | Size of the arg data following this struct. |
+| 0x4    | 0x4  | Padding                                     |
+
+Web TLV used in the input web Arg storage, after
+[\#WebArgHeader](#WebArgHeader "wikilink"). This is a total of
+0x8-bytes.
 
 ## Versions
 
