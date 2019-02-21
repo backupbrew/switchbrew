@@ -1288,6 +1288,139 @@ This stage prepares the stack then authenticates, decrypts and executes the Secu
 </pre>
 
 ==== exec_secboot ====
+This is the signed and encrypted portion of the [[#SecureBoot|SecureBoot]] payload.
+<pre>
+    // Recover the transfer base address from the stack
+    u32 xfer_ext_base_addr = *(u32 *)scratch_data_addr;
+
+    // Return the TLB entry that covers the virtual address
+    u32 tlb_entry = vtlb(xfer_ext_base_addr);
+    
+    // Clear Falcon CPU control
+    *(u32 *)FALCON_CPUCTL = 0;
+    
+    // Halt if the external page is marked as secret
+    if ((tlb_entry & 0x4000000) != 0)
+        exit();
+    
+    // Read data segment size from IO space
+    u32 data_seg_size = *(u32 *)FALCON_HWCFG;
+    data_seg_size >>= 0x01;
+    data_seg_size &= 0xFF00;
+ 
+    // Set the stack pointer
+    $sp = data_seg_size;
+    
+    // Fill all DMEM with a pointer to a trap function (just exits 3 times)
+    for (int i = 0; i < data_seg_size; i += 0x04) {
+        *(u32 *)i = (u32)trap_func();
+    }
+
+    // Initialize the TRNG and generate random data in DMEM
+    init_rnd();
+    
+    // Issue a randomized delay and return a random value
+    u32 rnd_val = rnd_delay(0xFF);
+
+    // Load the TSEC key from SOR1 registers into DMEM
+    sor1_get_key();
+
+    // Initialize CAR registers
+    car_init();
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    // Ensure CLK_RST_CONTROLLER_CLK_SOURCE_TSEC_0 is 0x02
+    test_clk_source_tsec();
+
+    // Set FLOW_MODE_WAITEVENT in FLOW_CTLR_HALT_COP_EVENTS_0
+    halt_bpmp();
+
+    // Initialize the CCPLEX
+    ccplex_init();
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    bool is_se_ready = false;
+
+    // Wait for SE to be ready
+    while (!is_se_ready)
+        is_se_ready = check_se_status();
+    
+    // Test MC_IRAM_BOM and MC_IRAM_TOM
+    u32 mc_iram_aperture_res = test_mc_iram_aperture();
+
+    if (mc_iram_aperture_res != 0xAAAAAAAA)
+    {
+        // Clear the entire DMEM region
+        clear_dmem();
+        
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+    
+    // Ensure FUSE_SKU_INFO is 0x83
+    test_fuse_sku_info();
+
+    // Write TSEC key to SE keyslot 0x0C
+    se_set_keyslot_12();
+
+    // Write TSEC root key to SE keyslot 0x0D
+    se_set_keyslot_13();
+
+    // Decrypt Package1
+    decrypt_pk11();
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    // Parse Package1 header and return entry address
+    u32 entry_addr = parse_pk11();
+
+    // Set the exception vectors
+    set_excp_vec(entry_addr);
+
+    // Fill the top 0x500 bytes in DMEM with a pointer to trap function (just exits)
+    for (int i = 0; i < 0x500; i += 0x04) {
+        *(u32 *)i = (u32)trap_func();
+    }
+
+    // Clear all crypto registers
+    cxor($c0, $c0);
+    cxor($c1, $c1);
+    cxor($c2, $c2);
+    cxor($c3, $c3);
+    cxor($c4, $c4);
+    cxor($c5, $c5);
+    cxor($c6, $c6);
+    cxor($c7, $c7);
+    
+    // Take SCP out of lockdown
+    unlock_scp();
+
+    // Clear FLOW_CTLR_HALT_COP_EVENTS_0
+    resume_bpmp();
+
+    // Clear the entire DMEM region
+    clear_dmem();
+        
+    // Halt 5 times for no good reason
+    exit();
+    exit();
+    exit();
+    exit();
+    exit();
+
+    return;
+</pre>
+
+[7.0.0+]
 
 == Key data ==
 Small buffer stored after the [[#Boot|Boot]] blob and used across all stages.
