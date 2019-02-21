@@ -234,6 +234,47 @@ The size used for [svcSetHeapSize](SVC.md "wikilink") by the web-applets
 is 0x15600000. Under ShopN, the largest size that can be passed to this
 without an error being returned, is 0x1B400000.
 
+## Applet Launching
+
+The web-applets are launched using a storage containing the input arg
+data, on exit the output storage contains the "\*ReturnValue" reply data
+struct. The output struct is specific to each applet.
+
+### ShimKind
+
+This enum is "nn::web::common::ShimKind".
+
+This indicates the type of web-applet.
+
+| Value | Name  |
+| ----- | ----- |
+| 2     | Login |
+| 4     | Share |
+| 5     | Web   |
+| 6     | Wifi  |
+| 7     | Lobby |
+
+### WebWifiPageArg
+
+| Offset | Size  | Description                                                                                        |
+| ------ | ----- | -------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4   | Official sw sets this to 0 with appletStorageWrite, separately from the rest of the config struct. |
+| 0x4    | 0x100 | URL used for the connection-test requests.                                                         |
+| 0x104  | 0x400 | Initial URL navigated to by the applet.                                                            |
+| 0x504  | 0x10  | Account userID, 0 for common.                                                                      |
+| 0x514  | 0x4   | Unknown, this can be 0.                                                                            |
+
+This is the input struct for WifiWebAuthApplet.
+
+### WebWifiReturnValue
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x4  | ?           |
+| 0x4    | 0x8  | Result      |
+
+This is the output struct for WifiWebAuthApplet.
+
 ## Versions
 
 ### [1.0.0](1.0.0.md "wikilink")
