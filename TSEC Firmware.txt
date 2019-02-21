@@ -1386,7 +1386,7 @@ This is the signed and encrypted portion of the [[#SecureBoot|SecureBoot]] paylo
     // Set the exception vectors
     set_excp_vec(entry_addr);
 
-    // Fill the top 0x500 bytes in DMEM with a pointer to trap function (just exits)
+    // Fill the top 0x500 bytes in DMEM with a pointer to trap function (just exits 3 times)
     for (int i = 0; i < 0x500; i += 0x04) {
         *(u32 *)i = (u32)trap_func();
     }
@@ -1420,7 +1420,401 @@ This is the signed and encrypted portion of the [[#SecureBoot|SecureBoot]] paylo
     return;
 </pre>
 
-[7.0.0+]
+[7.0.0+] Many changes were introduced to mitigate and prevent attacks.
+<pre>
+    // Recover the transfer base address from the stack
+    u32 xfer_ext_base_addr = *(u32 *)scratch_data_addr;
+
+    // Return the TLB entry that covers the virtual address
+    u32 tlb_entry = vtlb(xfer_ext_base_addr);
+    
+    // Clear Falcon CPU control
+    *(u32 *)FALCON_CPUCTL = 0;
+    
+    // Halt if the external page is marked as secret
+    if ((tlb_entry & 0x4000000) != 0)
+        exit();
+    
+    // Read data segment size from IO space
+    u32 data_seg_size = *(u32 *)FALCON_HWCFG;
+    data_seg_size >>= 0x01;
+    data_seg_size &= 0xFF00;
+ 
+    // Set the stack pointer
+    $sp = data_seg_size;
+    
+    // Fill all DMEM with a pointer to a trap function (just exits 3 times)
+    for (int i = 0; i < data_seg_size; i += 0x04) {
+        *(u32 *)i = (u32)trap_func();
+    }
+
+    // Initialize the TRNG and generate random data in DMEM
+    init_rnd();
+    
+    // Issue a randomized delay and return a random value
+    u32 rnd_val = rnd_delay(0xFF);
+
+    // Enable and test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x01);
+
+    // Issue a randomized delay and return a random value
+    rnd_val = rnd_delay(0xFF);
+
+    // Test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x00);
+
+    // Issue a randomized delay and return a random value
+    rnd_val = rnd_delay(0xFF);
+
+    // Test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x00);
+
+    // Fill SE keyslots 12 and 13 with random data
+    se_set_keyslot_rnd();
+
+    // Test randomized offsets for read/write integrity in MC, FUSE, IRAM and TZRAM
+    u32 test_res = test_mc_fuse_iram_tzram();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Try to detect virtualization by enabling and disabling random CAR devices
+    test_res = test_car();
+    
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Test memory transfer integrity
+    test_res = test_mem_xfer();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Set FLOW_MODE_WAITEVENT in FLOW_CTLR_HALT_COP_EVENTS_0
+    halt_bpmp();
+
+    // Initialize the CCPLEX
+    ccplex_init();
+
+    // Check if SE is ready
+    u32 se_status = check_se_status();
+
+    if (se_status != 0)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Load the TSEC key from SOR1 registers into DMEM
+    sor1_get_key();
+
+    // Initialize CAR registers
+    car_init();
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    // Try to detect virtualization by enabling and disabling random CAR devices
+    test_res = test_car();
+    
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Ensure FUSE_SKU_INFO is 0x83
+    test_fuse_sku_info();
+
+    // Try to detect virtualization using MC_SMMU_AVPC_ASID and FUSE_ECO_RESERVE_0
+    test_smmu_fuse();
+
+    // Test MC_IRAM_BOM and MC_IRAM_TOM
+    test_res = test_mc_iram_aperture();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    // Test memory transfer integrity
+    test_res = test_mem_xfer();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Try to detect virtualization using MC_SMMU_AVPC_ASID and FUSE_ECO_RESERVE_0
+    test_smmu_fuse();
+
+    // Test MC_IRAM_BOM and MC_IRAM_TOM
+    test_res = test_mc_iram_aperture();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x00);
+
+    // Decrypt Package1
+    decrypt_pk11();
+
+    // Write TSEC root key to SE keyslot 0x0D
+    se_set_keyslot_13();
+
+    // Write TSEC key to SE keyslot 0x0C
+    se_set_keyslot_12();
+
+    // Clear the cauth signature
+    csigclr();
+
+    // Check certain CAR, PMC and FUSE registers
+    test_car_pmc_fuse();
+
+    // Test memory transfer integrity
+    test_res = test_mem_xfer();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+    
+    // Try to detect virtualization using MC_SMMU_AVPC_ASID and FUSE_ECO_RESERVE_0
+    test_smmu_fuse();
+
+    // Test randomized offsets for read/write integrity in MC, FUSE, IRAM and TZRAM
+    test_res = test_mc_fuse_iram_tzram();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Test MC_IRAM_BOM and MC_IRAM_TOM
+    test_res = test_mc_iram_aperture();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x00);
+
+    // Parse Package1 header and return entry address
+    u32 entry_addr = parse_pk11();
+
+    // Set the exception vectors
+    set_excp_vec(entry_addr);
+
+    // Fill the top 0x500 bytes in DMEM with a pointer to trap function (just exits)
+    for (int i = 0; i < 0x500; i += 0x04) {
+        *(u32 *)i = (u32)trap_func();
+    }
+
+    // Clear all crypto registers
+    cxor($c0, $c0);
+    cxor($c1, $c1);
+    cxor($c2, $c2);
+    cxor($c3, $c3);
+    cxor($c4, $c4);
+    cxor($c5, $c5);
+    cxor($c6, $c6);
+    cxor($c7, $c7);
+    
+    // Take SCP out of lockdown
+    unlock_scp();
+
+    // Test memory transfer integrity
+    test_res = test_mem_xfer();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Try to detect virtualization using MC_SMMU_AVPC_ASID and FUSE_ECO_RESERVE_0
+    test_smmu_fuse();
+
+    // Test MC_IRAM_BOM and MC_IRAM_TOM
+    test_res = test_mc_iram_aperture();
+
+    if (test_res != 0xAAAAAAAA)
+    {
+        // Fill SE keyslots 12 and 13 with random data
+        se_set_keyslot_rnd();
+
+        // Clear the entire DMEM region and every crypto register
+        clear_dmem_and_crypto();
+
+        // Halt 5 times for no good reason
+        exit();
+        exit();
+        exit();
+        exit();
+        exit();
+    }
+
+    // Test SMMU bypassing in the TFBIF
+    tfbif_smmu_cfg(0x00);
+
+    // Clear FLOW_CTLR_HALT_COP_EVENTS_0
+    resume_bpmp();
+
+    // Clear the entire DMEM region and every crypto register
+    clear_dmem_and_crypto();
+        
+    // Halt 5 times for no good reason
+    exit();
+    exit();
+    exit();
+    exit();
+    exit();
+
+    return;
+</pre>
 
 == Key data ==
 Small buffer stored after the [[#Boot|Boot]] blob and used across all stages.
