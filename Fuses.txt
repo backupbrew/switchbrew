@@ -52,6 +52,12 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | FUSE_PWR_GOOD_SW
 | 0x7000F834
 |-
+| FUSE_PRIV2RESHIFT
+| 0x7000F83C
+|-
+| FUSE_TIME_RD3
+| 0x7000F84C
+|-
 | FUSE_PRIVATE_KEY0_NONZERO
 | 0x7000F880
 |-

@@ -32,6 +32,8 @@ bootloaders.
 | [FUSE\_DIS\_PGM](#FUSE_DIS_PGM "wikilink")           | 0x7000F82C |
 | [FUSE\_WRITE\_ACCESS](#FUSE_WRITE_ACCESS "wikilink") | 0x7000F830 |
 | FUSE\_PWR\_GOOD\_SW                                  | 0x7000F834 |
+| FUSE\_PRIV2RESHIFT                                   | 0x7000F83C |
+| FUSE\_TIME\_RD3                                      | 0x7000F84C |
 | FUSE\_PRIVATE\_KEY0\_NONZERO                         | 0x7000F880 |
 | FUSE\_PRIVATE\_KEY1\_NONZERO                         | 0x7000F884 |
 | FUSE\_PRIVATE\_KEY2\_NONZERO                         | 0x7000F888 |
