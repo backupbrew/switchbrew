@@ -90,6 +90,7 @@ driver registers.
 | FUSE\_PRODUCTION\_MODE                                 | 0x7000F900 |
 | FUSE\_JTAG\_SECUREID\_VALID                            | 0x7000F904 |
 | FUSE\_ODM\_LOCK                                        | 0x7000F908 |
+| FUSE\_OPT\_OPENGL\_EN                                  | 0x7000F90C |
 | [FUSE\_SKU\_INFO](#FUSE_SKU_INFO "wikilink")           | 0x7000F910 |
 | FUSE\_CPU\_SPEEDO\_0                                   | 0x7000F914 |
 | FUSE\_CPU\_IDDQ                                        | 0x7000F918 |
@@ -119,23 +120,23 @@ driver registers.
 | [FUSE\_PUBLIC\_KEY5](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F978 |
 | [FUSE\_PUBLIC\_KEY6](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F97C |
 | [FUSE\_PUBLIC\_KEY7](#FUSE_PUBLIC_KEY "wikilink")      | 0x7000F980 |
-| FUSE\_TSENSOR\_1                                       | 0x7000F984 |
-| FUSE\_TSENSOR\_2                                       | 0x7000F988 |
+| FUSE\_TSENSOR1\_CALIB                                  | 0x7000F984 |
+| FUSE\_TSENSOR2\_CALIB                                  | 0x7000F988 |
 | FUSE\_VSENSOR\_CALIB                                   | 0x7000F98C |
 | FUSE\_CP\_REV                                          | 0x7000F990 |
 | FUSE\_OPT\_PFG                                         | 0x7000F994 |
-| FUSE\_TSENSOR\_0                                       | 0x7000F998 |
-| FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE\_REG                 | 0x7000F99C |
+| FUSE\_TSENSOR0\_CALIB                                  | 0x7000F998 |
+| FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE                      | 0x7000F99C |
 | FUSE\_SECURITY\_MODE                                   | 0x7000F9A0 |
 | [FUSE\_PRIVATE\_KEY0](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A4 |
 | [FUSE\_PRIVATE\_KEY1](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9A8 |
 | [FUSE\_PRIVATE\_KEY2](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9AC |
 | [FUSE\_PRIVATE\_KEY3](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B0 |
 | [FUSE\_PRIVATE\_KEY4](#FUSE_PRIVATE_KEY "wikilink")    | 0x7000F9B4 |
-| FUSE\_ARM\_JTAG\_DISABLE                               | 0x7000F9B8 |
+| FUSE\_ARM\_JTAG\_DIS                                   | 0x7000F9B8 |
 | FUSE\_BOOT\_DEVICE\_INFO                               | 0x7000F9BC |
 | [FUSE\_RESERVED\_SW](#FUSE_RESERVED_SW "wikilink")     | 0x7000F9C0 |
-| FUSE\_VP8\_ENABLE                                      | 0x7000F9C4 |
+| FUSE\_VP9\_DISABLE                                     | 0x7000F9C4 |
 | [FUSE\_RESERVED\_ODM0](#FUSE_RESERVED_ODM0 "wikilink") | 0x7000F9C8 |
 | [FUSE\_RESERVED\_ODM1](#FUSE_RESERVED_ODM1 "wikilink") | 0x7000F9CC |
 | [FUSE\_RESERVED\_ODM2](#FUSE_RESERVED_ODM2 "wikilink") | 0x7000F9D0 |
@@ -157,37 +158,73 @@ driver registers.
 | FUSE\_WAFER\_ID                                        | 0x7000FA10 |
 | FUSE\_X\_COORDINATE                                    | 0x7000FA14 |
 | FUSE\_Y\_COORDINATE                                    | 0x7000FA18 |
-| FUSE\_OPS\_RESERVED                                    | 0x7000FA20 |
+| FUSE\_OPT\_SEC\_DEBUG\_EN                              | 0x7000FA1C |
+| FUSE\_OPT\_OPS\_RESERVED                               | 0x7000FA20 |
 | FUSE\_SATA\_CALIB                                      | 0x7000FA24 |
 | FUSE\_GPU\_IDDQ                                        | 0x7000FA28 |
-| FUSE\_TSENSOR\_3                                       | 0x7000FA2C |
+| FUSE\_TSENSOR3\_CALIB                                  | 0x7000FA2C |
 | FUSE\_SKU\_BOND\_OUT\_L                                | 0x7000FA30 |
 | FUSE\_SKU\_BOND\_OUT\_H                                | 0x7000FA34 |
 | FUSE\_SKU\_BOND\_OUT\_U                                | 0x7000FA38 |
 | FUSE\_SKU\_BOND\_OUT\_V                                | 0x7000FA3C |
 | FUSE\_SKU\_BOND\_OUT\_W                                | 0x7000FA40 |
+| FUSE\_OPT\_SAMPLE\_TYPE                                | 0x7000FA44 |
 | FUSE\_OPT\_SUBREVISION                                 | 0x7000FA48 |
-| FUSE\_TSENSOR\_4                                       | 0x7000FA54 |
-| FUSE\_TSENSOR\_5                                       | 0x7000FA58 |
-| FUSE\_TSENSOR\_6                                       | 0x7000FA5C |
-| FUSE\_TSENSOR\_7                                       | 0x7000FA60 |
+| FUSE\_OPT\_SW\_RESERVED\_0                             | 0x7000FA4C |
+| FUSE\_OPT\_SW\_RESERVED\_1                             | 0x7000FA50 |
+| FUSE\_TSENSOR4\_CALIB                                  | 0x7000FA54 |
+| FUSE\_TSENSOR5\_CALIB                                  | 0x7000FA58 |
+| FUSE\_TSENSOR6\_CALIB                                  | 0x7000FA5C |
+| FUSE\_TSENSOR7\_CALIB                                  | 0x7000FA60 |
 | FUSE\_OPT\_PRIV\_SEC\_DIS                              | 0x7000FA64 |
 | [FUSE\_PKC\_DISABLE](#FUSE_PKC_DISABLE "wikilink")     | 0x7000FA68 |
-| FUSE\_FALCON\_DEBUG\_DISABLE                           | 0x7000FA7C |
+| FUSE\_FUSE2TSEC\_DEBUG\_DISABLE                        | 0x7000FA7C |
 | FUSE\_TSENSOR\_COMMON                                  | 0x7000FA80 |
+| FUSE\_OPT\_CP\_BIN                                     | 0x7000FA84 |
+| FUSE\_OPT\_GPU\_DISABLE                                | 0x7000FA88 |
+| FUSE\_OPT\_FT\_BIN                                     | 0x7000FA8C |
+| FUSE\_OPT\_DONE\_MAP                                   | 0x7000FA90 |
+| FUSE\_APB2JTAG\_DISABLE                                | 0x7000FA98 |
 | FUSE\_DEBUG\_AUTH\_OVERRIDE                            | 0x7000FA9C |
+| FUSE\_ARM\_CRYPT\_DE\_FEATURE                          | 0x7000FAA8 |
+| FUSE\_WOA\_SKU\_FLAG                                   | 0x7000FAC0 |
+| FUSE\_ECO\_RESERVE\_1                                  | 0x7000FAC4 |
 | FUSE\_GCPLEX\_CONFIG\_FUSE                             | 0x7000FAC8 |
-| FUSE\_TSENSOR\_8                                       | 0x7000FAD4 |
+| FUSE\_PRODUCTION\_MONTH                                | 0x7000FACC |
+| FUSE\_RAM\_REPAIR\_INDICATOR                           | 0x7000FAD0 |
+| FUSE\_TSENSOR9\_CALIB                                  | 0x7000FAD4 |
+| FUSE\_VMIN\_CALIBRATION                                | 0x7000FADC |
+| FUSE\_AGING\_SENSOR\_CALIBRATION                       | 0x7000FAE0 |
 | FUSE\_DEBUG\_AUTHENTICATION                            | 0x7000FAE4 |
 | FUSE\_SECURE\_PROVISION\_INDEX                         | 0x7000FAE8 |
-| FUSE\_AID                                              | 0x7000FAF8 |
+| FUSE\_SECURE\_PROVISION\_INFO                          | 0x7000FAEC |
+| FUSE\_OPT\_GPU\_DISABLE\_CP1                           | 0x7000FAF0 |
+| FUSE\_SPARE\_ENDIS                                     | 0x7000FAF4 |
+| FUSE\_ECO\_RESERVE\_0                                  | 0x7000FAF8 |
 | FUSE\_SPARE\_REALIGNMENT\_REG                          | 0x7000FAFC |
 | FUSE\_RESERVED\_CALIB0                                 | 0x7000FB04 |
+| FUSE\_RESERVED\_CALIB1                                 | 0x7000FB08 |
 | FUSE\_OPT\_GPU\_TPC0\_DISABLE                          | 0x7000FB0C |
-| FUSE\_TSENSOR\_9                                       | 0x7000FB1C |
+| FUSE\_OPT\_GPU\_TPC1\_DISABLE                          | 0x7000FB10 |
+| FUSE\_OPT\_CPU\_DISABLE                                | 0x7000FB14 |
+| FUSE\_OPT\_CPU\_DISABLE\_CP1                           | 0x7000FB18 |
+| FUSE\_TSENSOR10\_CALIB                                 | 0x7000FB1C |
+| FUSE\_TSENSOR10\_CALIB\_AUX                            | 0x7000FB20 |
+| FUSE\_OPT\_RAM\_SVOP\_DP                               | 0x7000FB24 |
+| FUSE\_OPT\_RAM\_SVOP\_PDP                              | 0x7000FB28 |
+| FUSE\_OPT\_RAM\_SVOP\_REG                              | 0x7000FB2C |
+| FUSE\_OPT\_RAM\_SVOP\_SP                               | 0x7000FB30 |
+| FUSE\_OPT\_RAM\_SVOP\_SMPDP                            | 0x7000FB34 |
+| FUSE\_OPT\_GPU\_TPC0\_DISABLE\_CP2                     | 0x7000FB38 |
 | FUSE\_OPT\_GPU\_TPC1\_DISABLE                          | 0x7000FB3C |
+| FUSE\_OPT\_GPU\_TPC1\_DISABLE\_CP1                     | 0x7000FB40 |
+| FUSE\_OPT\_GPU\_TPC1\_DISABLE\_CP2                     | 0x7000FB44 |
+| FUSE\_OPT\_CPU\_DISABLE\_CP2                           | 0x7000FB48 |
+| FUSE\_OPT\_GPU\_DISABLE\_CP2                           | 0x7000FB4C |
 | FUSE\_USB\_CALIB\_EXT                                  | 0x7000FB50 |
+| FUSE\_RESERVED\_FIELD                                  | 0x7000FB54 |
 | FUSE\_OPT\_ECC\_EN                                     | 0x7000FB58 |
+| FUSE\_SPARE\_REALIGNMENT\_REG                          | 0x7000FB7C |
 | FUSE\_SPARE\_BIT\_0                                    | 0x7000FB80 |
 | FUSE\_SPARE\_BIT\_1                                    | 0x7000FB84 |
 | [FUSE\_SPARE\_BIT\_2](#FUSE_SPARE_BIT_2 "wikilink")    | 0x7000FB88 |
