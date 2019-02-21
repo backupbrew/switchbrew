@@ -1486,21 +1486,6 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x3 | Unknown, see also [\#GetIndirectLayerConsumerHandle](#GetIndirectLayerConsumerHandle "wikilink"). Only used by swkbd InlineKeyboard. |
 |     |                                                                                                                                      |
 
-### ShimKind
-
-This is from strings and code in the [
-web-applets](Internet%20Browser.md "wikilink").
-
-This indicates the type of web-applet.
-
-| shimKind value | Description       |
-| -------------- | ----------------- |
-| 2              | LoginApplet       |
-| 4              | ShareApplet       |
-| 5              | WebApplet         |
-| 6              | WifiWebAuthApplet |
-| 7              | LobbyApplet       |
-
 ### NotificationMessage
 
 | ID   | Description                                            |
