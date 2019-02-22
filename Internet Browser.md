@@ -242,6 +242,16 @@ The web-applets are launched using a storage containing the input arg
 data, on exit the output storage contains the "\*ReturnValue" reply data
 struct. The output struct is specific to each applet.
 
+### Library Applet Versions
+
+| System Version | Value   |
+| -------------- | ------- |
+| \[1.0.0+\]     | 0x20000 |
+| \[3.0.0+\]     | 0x30000 |
+| \[5.0.0+\]     | 0x50000 |
+
+The above only (?) applies to non-WebWifi. WebWifi uses version 0x0.
+
 ### ShimKind
 
 This enum is "nn::web::common::ShimKind".
