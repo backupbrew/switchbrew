@@ -3161,6 +3161,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010069100B7F0000 || The Caligula Effect: Overdose || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100BF000CB3C000 || Captain StarONE || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
 | 010088C0092FE000 || Carnival Games® || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010004400B28A000 || Cattails || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3753,7 +3755,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010014700C1AA000 || WWA Collection || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
-| 0100AA700B9A2000 || ノラと皇女と野良猫ハート HD || JPN || || Digital || 0 0x10000 || || Game
+| 0100AA700B9A2000 || ノラと皇女と野良猫ハート HD || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010094A00BEF8000 || バトルプリンセス マデリーン || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
