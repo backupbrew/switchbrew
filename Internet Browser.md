@@ -138,6 +138,8 @@ when the specified User-Agent isn't the one for ShareApplet.
 
 ### LobbyApplet
 
+Support for Lobby was added with \[2.0.0+\].
+
 The initial page loaded by this applet is:
 "https://web-lp1.znc.srv.nintendo.net/lobby/".
 
