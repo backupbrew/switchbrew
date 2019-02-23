@@ -1024,7 +1024,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x55B || 347 || 2 || Failed to init FS.
 |-
-| 0x75B || 347 || 3 || Failed to to open NRO file. May also happen when SD card isn't inserted / SD mounting failed earlier.
+| 0x75B || 347 || 3 || Failed to open NRO file. May also happen when SD card isn't inserted / SD mounting failed earlier.
 |-
 | 0x95B || 347 || 4 || Failed to read NRO header.
 |-
