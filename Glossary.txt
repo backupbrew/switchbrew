@@ -68,6 +68,10 @@
 | Homebrew Application Binary Interface
 |
 |-
+| HOVI
+| HOrizon/nVIdia
+| The NVidia/Nintendo team codename that works on the [[TSEC_Firmware|TSEC Firmware]]
+|-
 | [[IMKV|IMKV]]
 | IM Key Value databases found in FS and NCM savedata archives
 |
