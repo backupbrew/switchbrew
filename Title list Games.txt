@@ -3685,7 +3685,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010026800BA16000 || Xenon Racer || EUR || || Digital || 0 0x10000 || || Game
 |-
-| 01007A300C856000 || Xenon Valkyrie+ || EUR USA || || Digital || 0 0x10000 || || Game
+| 010064200C324000 || Xenon Valkyrie+ || EUR USA || || Digital || 0 || || Game
 |-
 | 0100634008266000 || YIIK: A Postmodern RPG || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3981,6 +3981,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010050200D0DA000 || Fitness Boxing || EUR USA || || Digital || 0 0x10000 || || Demo
 |-
 | 010062200CF14000 || Cinderella - An Interactive Fairytale || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 01007A300C856000 || Xenon Valkyrie+ || EUR USA || || Digital || 0 0x10000 || || Demo
 |}
 
 = VersionList =
