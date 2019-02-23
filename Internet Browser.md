@@ -289,6 +289,19 @@ This is the input struct for WifiWebAuthApplet. This is a total of
 This is the output struct for WifiWebAuthApplet. This is a total of
 0x8-bytes.
 
+### WebCommonReturnValue
+
+| Offset | Size   | Description    |
+| ------ | ------ | -------------- |
+| 0x0    | 0x4    | u32 exitReason |
+| 0x4    | 0x4    | Padding        |
+| 0x8    | 0x1000 | lastUrl string |
+| 0x1008 | 0x8    | lastUrlSize    |
+
+This is the 0x1010-byte output storage used by all non-WebWifi applets -
+except for Share which returns a TLV storage (on \[3.0.0+\] at
+least?).
+
 ### WebArgHeader
 
 | Offset | Size | Description                                                               |
@@ -298,7 +311,8 @@ This is the output struct for WifiWebAuthApplet. This is a total of
 | 0x4    | 0x4  | [\#ShimKind](#ShimKind "wikilink")                                        |
 
 This is the header struct at offset 0 in the input web Arg storage for
-non-WebWifi. This is a total of 0x8-bytes.
+non-WebWifi. This is a total of 0x8-bytes. The total storage size used
+for input/output TLVs is 0x2000.
 
 ### WebArgTLV
 
