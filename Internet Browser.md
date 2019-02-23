@@ -326,6 +326,26 @@ Web TLV used in the input web Arg storage, after
 [\#WebArgHeader](#WebArgHeader "wikilink"). This is a total of
 0x8-bytes.
 
+### TLVs
+
+| System Version | Applets | Type | Size | Value                       | Description                                          |
+| -------------- | ------- | ---- | ---- | --------------------------- | ---------------------------------------------------- |
+| \[1.0.0+\]     |         | 0xE  | 0x10 | userID                      | userID                                               |
+| \[1.0.0+\]     |         | 0x11 | 0x1  | u8 bool                     | EcClientCertEnabled                                  |
+| \[1.0.0+\]     |         | 0x12 | 0x1  | u8                          | ?                                                    |
+| \[1.0.0+\]     |         | 0x14 | 0x1  | u8                          | ?                                                    |
+| \[1.0.0+\]     |         | 0x15 | 0x1  | u8                          | ?                                                    |
+| \[1.0.0+\]     |         | 0x17 | 0x4  | u32 enum WebBootDisplayKind | BootDisplayKind                                      |
+| \[1.0.0+\]     |         | 0x18 | 0x4  | u32 enum \*BackgroundKind   | BackgroundKind                                       |
+| \[1.0.0+\]     |         | 0x19 | 0x1  | u8 bool                     | FooterEnabled                                        |
+| \[1.0.0+\]     |         | 0x1A | 0x1  | u8 bool                     | PointerEnabled                                       |
+| \[1.0.0+\]     |         | 0x1B | 0x4  | u32 enum \*LeftStickMode    | LeftStickMode                                        |
+| \[1.0.0+\]     |         | 0x1C | 0x4  | s32                         | KeyRepeatFrame, first param                          |
+| \[1.0.0+\]     |         | 0x1D | 0x4  | s32                         | KeyRepeatFrame, second param                         |
+| \[1.0.0+\]     |         | 0x1E | 0x1  | u8 bool                     | Set after BootAsMediaPlayer with the value inverted. |
+| \[1.0.0+\]     |         | 0x1F | 0x1  | u8                          | ?                                                    |
+| ?              |         | 0x21 | 0x1  | u8 bool                     | BootAsMediaPlayer                                    |
+
 ## Versions
 
 ### [1.0.0](1.0.0.md "wikilink")
