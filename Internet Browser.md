@@ -348,7 +348,8 @@ Web TLV used in the input web Arg storage, after
 | \[1.0.0+\]     |         | 0x1D | 0x4    | s32                           | KeyRepeatFrame, second param                                                                      |
 | \[1.0.0+\]     |         | 0x1E | 0x1    | u8 bool                       | Set after BootAsMediaPlayer with the value inverted.                                              |
 | \[1.0.0+\]     |         | 0x1F | 0x1    | u8                            | ?                                                                                                 |
-| ?              |         | 0x21 | 0x1    | u8 bool                       | BootAsMediaPlayer                                                                                 |
+| \[2.0.0+\]     |         | 0x21 | 0x1    | u8 bool                       | BootAsMediaPlayer                                                                                 |
+| \[2.0.0+\]     |         | 0x23 | 0x1    | u8 bool                       | MediaPlayerUserGestureRestrictionEnabled                                                          |
 | \[5.0.0+\]     |         | 0x2F | 0x1    | u8                            | ?                                                                                                 |
 | \[5.0.0+\]     |         | 0x31 | 0x1    | u8 bool                       | When set, indicates the whitelist for YouTubeVideo should be used (loaded from web-applet RomFS). |
 | \[5.0.0+\]     |         | 0x32 | 0x4    | u32 enum \*WebFooterFixedKind | FooterFixedKind                                                                                   |

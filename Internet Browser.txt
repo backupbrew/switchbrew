@@ -467,12 +467,19 @@ Web TLV used in the input web Arg storage, after [[#WebArgHeader]]. This is a to
 | u8
 | ?
 |-
-| ?
+| [2.0.0+]
 | 
 | 0x21
 | 0x1
 | u8 bool
 | BootAsMediaPlayer
+|-
+| [2.0.0+]
+| 
+| 0x23
+| 0x1
+| u8 bool
+| MediaPlayerUserGestureRestrictionEnabled
 |-
 | [5.0.0+]
 | 
