@@ -354,7 +354,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0x1E | 0x1    | u8 bool                       | Set after BootAsMediaPlayer with the value inverted.                                              |
 | \[1.0.0+\]     |         | 0x1F | 0x1    | u8 bool                       | DisplayUrlKind (`value = (input_enumval==0x1)`)                                                   |
 | \[2.0.0+\]     |         | 0x21 | 0x1    | u8 bool                       | BootAsMediaPlayer                                                                                 |
-| \[2.0.0+\]     |         | 0x22 | 0x1    | u8 bool                       | SetShopJumpEnabled                                                                                |
+| \[2.0.0+\]     |         | 0x22 | 0x1    | u8 bool                       | ShopJumpEnabled                                                                                   |
 | \[2.0.0+\]     |         | 0x23 | 0x1    | u8 bool                       | MediaPlayerUserGestureRestrictionEnabled                                                          |
 | \[2.0.0+\]     |         | 0x24 | 0x100  | string                        | LobbyParameter                                                                                    |
 | \[3.0.0+\]     |         | 0x27 | 0x1    | u8 bool                       | JsExtensionEnabled                                                                                |
@@ -362,6 +362,8 @@ NUL-terminated.
 | \[5.0.0+\]     |         | 0x31 | 0x1    | u8 bool                       | When set, indicates the whitelist for YouTubeVideo should be used (loaded from web-applet RomFS). |
 | \[5.0.0+\]     |         | 0x32 | 0x4    | u32 enum \*WebFooterFixedKind | FooterFixedKind                                                                                   |
 | \[5.0.0+\]     |         | 0x33 | 0x1    | u8 bool                       | PageFadeEnabled                                                                                   |
+| \[5.0.0+\]     | Share   | 0x34 | 0x20   | s8 data\[32\]                 | MediaCreatorApplicationRatingAge                                                                  |
+| \[5.0.0+\]     |         | 0x35 | 0x1    | u8 bool                       | BootLoadingIconEnabled                                                                            |
 | \[5.0.0+\]     |         | 0x36 | 0x1    | u8 bool                       | PageScrollIndicatorEnabled                                                                        |
 
 #### Output TLVs

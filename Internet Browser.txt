@@ -482,7 +482,7 @@ All strings are NUL-terminated.
 | 0x22
 | 0x1
 | u8 bool
-| SetShopJumpEnabled
+| ShopJumpEnabled
 |-
 | [2.0.0+]
 | 
@@ -532,6 +532,20 @@ All strings are NUL-terminated.
 | 0x1
 | u8 bool
 | PageFadeEnabled
+|-
+| [5.0.0+]
+| Share
+| 0x34
+| 0x20
+| s8 data[32]
+| MediaCreatorApplicationRatingAge
+|-
+| [5.0.0+]
+| 
+| 0x35
+| 0x1
+| u8 bool
+| BootLoadingIconEnabled
 |-
 | [5.0.0+]
 | 
