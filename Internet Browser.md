@@ -356,6 +356,7 @@ NUL-terminated.
 | \[2.0.0+\]     |         | 0x21 | 0x1    | u8 bool                       | BootAsMediaPlayer                                                                                 |
 | \[2.0.0+\]     |         | 0x22 | 0x1    | u8 bool                       | SetShopJumpEnabled                                                                                |
 | \[2.0.0+\]     |         | 0x23 | 0x1    | u8 bool                       | MediaPlayerUserGestureRestrictionEnabled                                                          |
+| \[2.0.0+\]     |         | 0x24 | 0x100  | string                        | LobbyParameter                                                                                    |
 | \[5.0.0+\]     |         | 0x2F | 0x1    | u8                            | ?                                                                                                 |
 | \[5.0.0+\]     |         | 0x31 | 0x1    | u8 bool                       | When set, indicates the whitelist for YouTubeVideo should be used (loaded from web-applet RomFS). |
 | \[5.0.0+\]     |         | 0x32 | 0x4    | u32 enum \*WebFooterFixedKind | FooterFixedKind                                                                                   |
