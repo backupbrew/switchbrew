@@ -344,6 +344,7 @@ NUL-terminated.
 |                | Share   | 0xF  | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry                                                                                                         |
 | \[1.0.0+\]     |         | 0x11 | 0x1    | u8 bool                                                   | EcClientCertEnabled                                                                                                |
 | \[1.0.0+\]     |         | 0x12 | 0x1    | u8                                                        | ?                                                                                                                  |
+| \[1.0.0+\]     | Offline | 0x13 | 0x1    | u8 bool                                                   | PlayReportEnabled                                                                                                  |
 | \[1.0.0+\]     |         | 0x14 | 0x1    | u8                                                        | ?                                                                                                                  |
 | \[1.0.0+\]     |         | 0x15 | 0x1    | u8                                                        | ?                                                                                                                  |
 | \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum WebBootDisplayKind                               | BootDisplayKind                                                                                                    |
