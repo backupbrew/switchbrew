@@ -365,6 +365,13 @@ All strings are NUL-terminated.
 | string
 | CallbackableUrl
 |-
+| 
+| Share
+| 0x9
+| 0x4
+| u32 enum ShareStartPage
+| ShareStartPage
+|-
 | [1.0.0+]
 | 
 | 0xA

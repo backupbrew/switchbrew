@@ -338,6 +338,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0x1  | 0xC00  | string                                                    | Initial URL                                                                                                        |
 | \[1.0.0+\]     |         | 0x3  | 0x400  | string                                                    | CallbackUrl                                                                                                        |
 | \[1.0.0+\]     |         | 0x4  | 0x400  | string                                                    | CallbackableUrl                                                                                                    |
+|                | Share   | 0x9  | 0x4    | u32 enum ShareStartPage                                   | ShareStartPage                                                                                                     |
 | \[1.0.0+\]     |         | 0xA  | 0x1000 | string                                                    | Whitelist                                                                                                          |
 | \[1.0.0+\]     |         | 0xE  | 0x10   | userID                                                    | userID                                                                                                             |
 |                | Share   | 0xF  | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry                                                                                                         |
