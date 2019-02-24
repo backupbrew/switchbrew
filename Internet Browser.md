@@ -331,6 +331,8 @@ Web TLV used in the input web Arg storage, after
 | System Version | Applets | Type | Size   | Value                         | Description                                          |
 | -------------- | ------- | ---- | ------ | ----------------------------- | ---------------------------------------------------- |
 | \[1.0.0+\]     |         | 0x1  | 0xC00  | string                        | Initial URL                                          |
+| \[1.0.0+\]     |         | 0x3  | 0x400  | string                        | CallbackUrl                                          |
+| \[1.0.0+\]     |         | 0x4  | 0x400  | string                        | CallbackableUrl                                      |
 | \[1.0.0+\]     |         | 0xA  | 0x1000 | string                        | Whitelist                                            |
 | \[1.0.0+\]     |         | 0xE  | 0x10   | userID                        | userID                                               |
 | \[1.0.0+\]     |         | 0x11 | 0x1    | u8 bool                       | EcClientCertEnabled                                  |
