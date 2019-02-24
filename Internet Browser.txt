@@ -467,8 +467,8 @@ All strings are NUL-terminated.
 | 
 | 0x1F
 | 0x1
-| u8
-| ?
+| u8 bool
+| DisplayUrlKind (<code>value = (input_enumval==0x1)</code>)
 |-
 | [2.0.0+]
 | 
@@ -497,6 +497,13 @@ All strings are NUL-terminated.
 | 0x100
 | string
 | LobbyParameter
+|-
+| [3.0.0+]
+| 
+| 0x27
+| 0x1
+| u8 bool
+| JsExtensionEnabled
 |-
 | [5.0.0+]
 | 
