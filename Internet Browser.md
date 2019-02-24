@@ -328,6 +328,11 @@ Web TLV used in the input web Arg storage, after
 
 ### TLVs
 
+All strings are
+NUL-terminated.
+
+#### Input TLVs
+
 | System Version | Applets | Type | Size   | Value                         | Description                                                                                       |
 | -------------- | ------- | ---- | ------ | ----------------------------- | ------------------------------------------------------------------------------------------------- |
 | \[1.0.0+\]     |         | 0x1  | 0xC00  | string                        | Initial URL                                                                                       |
@@ -357,7 +362,20 @@ Web TLV used in the input web Arg storage, after
 | \[5.0.0+\]     |         | 0x33 | 0x1    | u8 bool                       | PageFadeEnabled                                                                                   |
 | \[5.0.0+\]     |         | 0x36 | 0x1    | u8 bool                       | PageScrollIndicatorEnabled                                                                        |
 
-All strings are NUL-terminated.
+#### Output TLVs
+
+| System Version | Type | Size | Value  | Description         |
+| -------------- | ---- | ---- | ------ | ------------------- |
+| \[3.0.0+\] ?   | 0x1  | 0x4  | u32    | ShareExitReason     |
+| \[3.0.0+\] ?   | 0x2  |      | string | LastUrl             |
+| \[3.0.0+\] ?   | 0x3  | 0x8  | u64    | LastUrlSize         |
+| \[3.0.0+\] ?   | 0x4  | 0x4  | u32    | SharePostResult     |
+| \[3.0.0+\] ?   | 0x5  |      | string | PostServiceName     |
+| \[3.0.0+\] ?   | 0x6  | 0x8  | u64    | PostServiceNameSize |
+| \[3.0.0+\] ?   | 0x7  |      | string | PostId              |
+| \[3.0.0+\] ?   | 0x8  | 0x8  | u64    | PostIdSize          |
+
+These are used for Share-applet.
 
 ## Versions
 
