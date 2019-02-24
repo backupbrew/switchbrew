@@ -477,4 +477,13 @@ The .nss path string in main-codebin was changed from
 
 See [here](3.0.1.md "wikilink") regarding "shareddata:/" buildinfo.
 
+### [5.0.0](5.0.0.md "wikilink")
+
+Support for YouTubeVideo was added, and new [\#TLVs](#TLVs "wikilink")
+etc.
+
+In RomFS "/whitelist/WhitelistYouTubePlayer.txt" was added for the
+YouTubeVideo whitelist, which contains the following:
+"^https://www\\.youtube\\.com/embed/".
+
 [Category:Library Applets](Category:Library_Applets "wikilink")

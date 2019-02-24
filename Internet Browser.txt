@@ -603,4 +603,9 @@ The .nss path string in main-codebin was changed from "Q:\work\LibraryApplet\...
 
 See [[3.0.1|here]] regarding "shareddata:/" buildinfo.
 
+=== [[5.0.0]] ===
+Support for YouTubeVideo was added, and new [[#TLVs]] etc.
+
+In RomFS "/whitelist/WhitelistYouTubePlayer.txt" was added for the YouTubeVideo whitelist, which contains the following: <nowiki>"^https://www\.youtube\.com/embed/"</nowiki>.
+
 [[Category:Library Applets]]
