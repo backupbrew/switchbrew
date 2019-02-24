@@ -483,6 +483,13 @@ Web TLV used in the input web Arg storage, after [[#WebArgHeader]]. This is a to
 |-
 | [5.0.0+]
 | 
+| 0x31
+| 0x1
+| u8 bool
+| When set, indicates the whitelist for YouTubeVideo should be used (loaded from web-applet RomFS).
+|-
+| [5.0.0+]
+| 
 | 0x32
 | 0x4
 | u32 enum *WebFooterFixedKind
