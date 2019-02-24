@@ -343,6 +343,20 @@ Web TLV used in the input web Arg storage, after [[#WebArgHeader]]. This is a to
 |-
 | [1.0.0+]
 | 
+| 0x1
+| 0xC00
+| string
+| Initial URL
+|-
+| [1.0.0+]
+| 
+| 0xA
+| 0x1000
+| string
+| Whitelist
+|-
+| [1.0.0+]
+| 
 | 0xE
 | 0x10
 | userID
@@ -446,6 +460,8 @@ Web TLV used in the input web Arg storage, after [[#WebArgHeader]]. This is a to
 | u8 bool
 | BootAsMediaPlayer
 |}
+
+All strings are NUL-terminated.
 
 == Versions ==
 
