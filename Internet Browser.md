@@ -484,6 +484,7 @@ etc.
 
 In RomFS "/whitelist/WhitelistYouTubePlayer.txt" was added for the
 YouTubeVideo whitelist, which contains the following:
-"^https://www\\.youtube\\.com/embed/".
+"^https://www\\.youtube\\.com/embed/". This file has the same content on
+7.0.x.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
