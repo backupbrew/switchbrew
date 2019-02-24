@@ -328,25 +328,29 @@ Web TLV used in the input web Arg storage, after
 
 ### TLVs
 
-| System Version | Applets | Type | Size   | Value                       | Description                                          |
-| -------------- | ------- | ---- | ------ | --------------------------- | ---------------------------------------------------- |
-| \[1.0.0+\]     |         | 0x1  | 0xC00  | string                      | Initial URL                                          |
-| \[1.0.0+\]     |         | 0xA  | 0x1000 | string                      | Whitelist                                            |
-| \[1.0.0+\]     |         | 0xE  | 0x10   | userID                      | userID                                               |
-| \[1.0.0+\]     |         | 0x11 | 0x1    | u8 bool                     | EcClientCertEnabled                                  |
-| \[1.0.0+\]     |         | 0x12 | 0x1    | u8                          | ?                                                    |
-| \[1.0.0+\]     |         | 0x14 | 0x1    | u8                          | ?                                                    |
-| \[1.0.0+\]     |         | 0x15 | 0x1    | u8                          | ?                                                    |
-| \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum WebBootDisplayKind | BootDisplayKind                                      |
-| \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum \*BackgroundKind   | BackgroundKind                                       |
-| \[1.0.0+\]     |         | 0x19 | 0x1    | u8 bool                     | FooterEnabled                                        |
-| \[1.0.0+\]     |         | 0x1A | 0x1    | u8 bool                     | PointerEnabled                                       |
-| \[1.0.0+\]     |         | 0x1B | 0x4    | u32 enum \*LeftStickMode    | LeftStickMode                                        |
-| \[1.0.0+\]     |         | 0x1C | 0x4    | s32                         | KeyRepeatFrame, first param                          |
-| \[1.0.0+\]     |         | 0x1D | 0x4    | s32                         | KeyRepeatFrame, second param                         |
-| \[1.0.0+\]     |         | 0x1E | 0x1    | u8 bool                     | Set after BootAsMediaPlayer with the value inverted. |
-| \[1.0.0+\]     |         | 0x1F | 0x1    | u8                          | ?                                                    |
-| ?              |         | 0x21 | 0x1    | u8 bool                     | BootAsMediaPlayer                                    |
+| System Version | Applets | Type | Size   | Value                         | Description                                          |
+| -------------- | ------- | ---- | ------ | ----------------------------- | ---------------------------------------------------- |
+| \[1.0.0+\]     |         | 0x1  | 0xC00  | string                        | Initial URL                                          |
+| \[1.0.0+\]     |         | 0xA  | 0x1000 | string                        | Whitelist                                            |
+| \[1.0.0+\]     |         | 0xE  | 0x10   | userID                        | userID                                               |
+| \[1.0.0+\]     |         | 0x11 | 0x1    | u8 bool                       | EcClientCertEnabled                                  |
+| \[1.0.0+\]     |         | 0x12 | 0x1    | u8                            | ?                                                    |
+| \[1.0.0+\]     |         | 0x14 | 0x1    | u8                            | ?                                                    |
+| \[1.0.0+\]     |         | 0x15 | 0x1    | u8                            | ?                                                    |
+| \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum WebBootDisplayKind   | BootDisplayKind                                      |
+| \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum \*BackgroundKind     | BackgroundKind                                       |
+| \[1.0.0+\]     |         | 0x19 | 0x1    | u8 bool                       | FooterEnabled                                        |
+| \[1.0.0+\]     |         | 0x1A | 0x1    | u8 bool                       | PointerEnabled                                       |
+| \[1.0.0+\]     |         | 0x1B | 0x4    | u32 enum \*LeftStickMode      | LeftStickMode                                        |
+| \[1.0.0+\]     |         | 0x1C | 0x4    | s32                           | KeyRepeatFrame, first param                          |
+| \[1.0.0+\]     |         | 0x1D | 0x4    | s32                           | KeyRepeatFrame, second param                         |
+| \[1.0.0+\]     |         | 0x1E | 0x1    | u8 bool                       | Set after BootAsMediaPlayer with the value inverted. |
+| \[1.0.0+\]     |         | 0x1F | 0x1    | u8                            | ?                                                    |
+| ?              |         | 0x21 | 0x1    | u8 bool                       | BootAsMediaPlayer                                    |
+| \[5.0.0+\]     |         | 0x2F | 0x1    | u8                            | ?                                                    |
+| \[5.0.0+\]     |         | 0x32 | 0x4    | u32 enum \*WebFooterFixedKind | FooterFixedKind                                      |
+| \[5.0.0+\]     |         | 0x33 | 0x1    | u8 bool                       | PageFadeEnabled                                      |
+| \[5.0.0+\]     |         | 0x36 | 0x1    | u8 bool                       | PageScrollIndicatorEnabled                           |
 
 All strings are NUL-terminated.
 
