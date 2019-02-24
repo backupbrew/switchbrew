@@ -379,6 +379,13 @@ All strings are NUL-terminated.
 | userID
 | userID
 |-
+| 
+| Share
+| 0xF
+| 0x20
+| [[Capture_services|AlbumEntry]]
+| AlbumEntry
+|-
 | [1.0.0+]
 | 
 | 0x11
@@ -497,6 +504,13 @@ All strings are NUL-terminated.
 | 0x100
 | string
 | LobbyParameter
+|-
+| [3.0.0+]
+| Share
+| 0x26
+| 0x20
+| [[Capture_services|ApplicationAlbumEntry]]
+| ApplicationAlbumEntry
 |-
 | [3.0.0+]
 | 
