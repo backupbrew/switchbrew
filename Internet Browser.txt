@@ -381,6 +381,13 @@ All strings are NUL-terminated.
 |-
 | [1.0.0+]
 | 
+| 0xB
+| 0x1
+| u8 bool
+| News flag
+|-
+| [1.0.0+]
+| 
 | 0xE
 | 0x10
 | userID
