@@ -384,7 +384,7 @@ All strings are NUL-terminated.
 | 0xE
 | 0x10
 | userID
-| userID
+| userID, controls which user-specific savedata to mount.
 |-
 | 
 | Share
