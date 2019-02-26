@@ -1,0 +1,18 @@
+This is the applet presented when a title displays an error message.
+See [[AM_services#Library_Applets]]. The error applet expects three [[AM_services#IStorage|IStorage]] inputs and no output.
+
+== UnknownArg ==
+The first argument is expected to be a u64 with the value 0x21C00000014LL. The purpose of this argument is currently unknown, as is whether or not different values affect the error applet. So far, it seems that it doesn't matter as long as this argument is a u64 and is passed to the applet.
+
+== ErrorConfig ==
+
+This has size 0x1018 and contains the error code, a short description of the error and a more detailed description of the error, displayed when the user clicks on "Details". Typically, all unused values can be set to zero. The first should be set to 1 if a custom error message is to be displayed. Otherwise, a default error message will be shown.
+
+The error code is stored at offsets 0x8, containing the first part of the code, and 0xC, containing the second part of the code. Those values are expected to be u64's.
+
+The short description of the error is stored as a char* at offset 0x18, the long description of the error is stored as a char* at offset 0x818.
+
+== Usage == 
+User-processes should push a common arguments struct as well as the UnknownArgument and the typical ErrorConfig struct. Since the error applet doesn't have any output, user-processes can then directly join the applet and wait for it to finish.
+
+[[Category:Library Applets]]
