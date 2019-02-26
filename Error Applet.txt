@@ -1,6 +1,8 @@
 This is the applet presented when a title displays an error message.
 See [[AM_services#Library_Applets]]. The error applet expects two [[AM_services#IStorage|IStorage]] inputs and no output.
 
+All errors displayed by this applet get logged and can be viewed under 'Settings' > 'Support' > 'Error History'.
+
 == ErrorConfig ==
 
 This has size 0x1018 and contains the error code, a short description of the error and a more detailed description of the error, displayed when the user clicks on "Details". Typically, all unused values can be set to zero. The first byte should be set to 1 if a custom error message is to be displayed. Otherwise, a default error message will be shown.

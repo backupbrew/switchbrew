@@ -4,6 +4,9 @@ The error applet expects two
 [IStorage](AM%20services#IStorage.md##IStorage "wikilink") inputs and no
 output.
 
+All errors displayed by this applet get logged and can be viewed under
+'Settings' \> 'Support' \> 'Error History'.
+
 ## ErrorConfig
 
 This has size 0x1018 and contains the error code, a short description of
