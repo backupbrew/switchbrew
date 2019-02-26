@@ -204,6 +204,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 616 || [6.0.0+] [[#GetSaveDataCommitId]]
 |-
+| 617 || [7.0.0+] UnregisterExternalKey
+|-
 | 620 || [2.0.0+] [[#SetSdCardEncryptionSeed]]
 |-
 | 630 || [4.0.0+] SetSdCardAccessibility
@@ -223,6 +225,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 720 || [5.0.0+] AbandonAccessFailure
 |-
 | 800 || [2.0.0+] GetAndClearFileSystemProxyErrorInfo
+|-
+| 810 || [7.0.0+] RegisterProgramIndexMapInfo
 |-
 | 1000 || SetBisRootForHost
 |-
@@ -244,7 +248,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1009 || [4.0.0+] GetAndClearMemoryReportInfo
 |-
-| 1010 || [5.1.0+] SetDataStorageRedirectTarget
+| 1010 || [5.1.0-6.2.0] SetDataStorageRedirectTarget
+|-
+| 1011 || [7.0.0+] (no input, returns two 32-bit values, second is "program_index")
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-
@@ -883,9 +889,9 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 402 || [6.0.0+] GetSdmmcConnectionStatus (Takes a total of 4-bytes of input, returns a total of 8-bytes of output)
 |-
-| 500 || [6.0.0+] SetGameCardSimulationEvent (Takes a total of 0x14-bytes of input, no output)
+| 500 || [6.0.0+] SetSimulationEvent (Takes a total of 0x14-bytes of input, no output)
 |-
-| 501 || [6.0.0+] ClearGameCardSimulationEvent (Takes a total of 4-bytes of input, no output)
+| 501 || [6.0.0+] ClearSimulationEvent (Takes a total of 4-bytes of input, no output)
 |}
 
 == GetGameCardUpdatePartitionInfo ==

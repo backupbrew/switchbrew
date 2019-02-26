@@ -132,6 +132,7 @@ This is
 | 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                                                                             |
 | 615  | \[5.0.0+\] QuerySaveDataInternalStorageTotalSize                                                                                                                  |
 | 616  | \[6.0.0+\] [\#GetSaveDataCommitId](#GetSaveDataCommitId "wikilink")                                                                                               |
+| 617  | \[7.0.0+\] UnregisterExternalKey                                                                                                                                  |
 | 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                                                       |
 | 630  | \[4.0.0+\] SetSdCardAccessibility                                                                                                                                 |
 | 631  | \[4.0.0+\] IsSdCardAccessible                                                                                                                                     |
@@ -142,6 +143,7 @@ This is
 | 710  | \[5.0.0+\] ResolveAccessFailure                                                                                                                                   |
 | 720  | \[5.0.0+\] AbandonAccessFailure                                                                                                                                   |
 | 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                                                                                                    |
+| 810  | \[7.0.0+\] RegisterProgramIndexMapInfo                                                                                                                            |
 | 1000 | SetBisRootForHost                                                                                                                                                 |
 | 1001 | SetSaveDataSize                                                                                                                                                   |
 | 1002 | SetSaveDataRootPath                                                                                                                                               |
@@ -152,7 +154,8 @@ This is
 | 1007 | \[4.0.0+\] RegisterUpdatePartition                                                                                                                                |
 | 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                                                                                          |
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
-| 1010 | \[5.1.0+\] SetDataStorageRedirectTarget                                                                                                                           |
+| 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                                                      |
+| 1011 | \[7.0.0+\] (no input, returns two 32-bit values, second is "program\_index")                                                                                      |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
 | 1110 | \[6.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId2                                                                                                            |
 | 1200 | \[6.0.0+\] OpenMultiCommitManager (No input, returns an output \#IMultiCommitManager)                                                                             |
@@ -1408,8 +1411,8 @@ This is
 | 400 | \[5.0.0+\] SuspendSdmmcControl                                                                                |
 | 401 | \[5.0.0+\] ResumeSdmmcControl                                                                                 |
 | 402 | \[6.0.0+\] GetSdmmcConnectionStatus (Takes a total of 4-bytes of input, returns a total of 8-bytes of output) |
-| 500 | \[6.0.0+\] SetGameCardSimulationEvent (Takes a total of 0x14-bytes of input, no output)                       |
-| 501 | \[6.0.0+\] ClearGameCardSimulationEvent (Takes a total of 4-bytes of input, no output)                        |
+| 500 | \[6.0.0+\] SetSimulationEvent (Takes a total of 0x14-bytes of input, no output)                               |
+| 501 | \[6.0.0+\] ClearSimulationEvent (Takes a total of 4-bytes of input, no output)                                |
 
 ## GetGameCardUpdatePartitionInfo
 
