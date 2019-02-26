@@ -14,7 +14,7 @@ be displayed. Otherwise, a default error message will be shown.
 
 The error code is stored at offsets 0x8, containing the first part of
 the code, and 0xC, containing the second part of the code. Those values
-are expected to be u64's.
+are expected to be u32's.
 
 The short description of the error is stored as a char\* at offset 0x18,
 the long description of the error is stored as a char\* at offset 0x818.
