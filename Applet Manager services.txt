@@ -1626,7 +1626,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0x0E
 | 0100000000001005
-| "error"
+| [[Error_Applet|Error applet]]
 |-
 | 0x0F
 | 0100000000001006
@@ -1634,11 +1634,11 @@ See also [[:Category:Library Applets]].
 |-
 | 0x10
 | 0100000000001007
-| [[Profile_Selector|"playerSelect"]]
+| [[Profile_Selector|Profile-Selector]]
 |-
 | 0x11
 | 0100000000001008
-| [[Software_Keyboard|"swkbd"]]
+| [[Software_Keyboard|Software-Keyboard]]
 |-
 | 0x12
 | 0100000000001009
