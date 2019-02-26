@@ -4,14 +4,6 @@ The error applet expects three
 [IStorage](AM%20services#IStorage.md##IStorage "wikilink") inputs and no
 output.
 
-## UnknownArg
-
-The first argument is expected to be a u64 with the value
-0x21C00000014LL. The purpose of this argument is currently unknown, as
-is whether or not different values affect the error applet. So far, it
-seems that it doesn't matter as long as this argument is a u64 and is
-passed to the applet.
-
 ## ErrorConfig
 
 This has size 0x1018 and contains the error code, a short description of
@@ -30,8 +22,8 @@ the long description of the error is stored as a char\* at offset 0x818.
 ## Usage
 
 User-processes should push a common arguments struct as well as the
-UnknownArgument and the typical ErrorConfig struct. Since the error
-applet doesn't have any output, user-processes can then directly join
-the applet and wait for it to finish.
+typical ErrorConfig struct. Since the error applet doesn't have any
+output, user-processes can then directly join the applet and wait for it
+to finish.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
