@@ -9,8 +9,8 @@ output.
 This has size 0x1018 and contains the error code, a short description of
 the error and a more detailed description of the error, displayed when
 the user clicks on "Details". Typically, all unused values can be set to
-zero. The first should be set to 1 if a custom error message is to be
-displayed. Otherwise, a default error message will be shown.
+zero. The first byte should be set to 1 if a custom error message is to
+be displayed. Otherwise, a default error message will be shown.
 
 The error code is stored at offsets 0x8, containing the first part of
 the code, and 0xC, containing the second part of the code. Those values
