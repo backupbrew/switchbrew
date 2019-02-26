@@ -1,6 +1,6 @@
 This is the applet presented when a title displays an error message. See
 [AM\_services\#Library\_Applets](AM%20services#Library%20Applets.md##Library_Applets "wikilink").
-The error applet expects three
+The error applet expects two
 [IStorage](AM%20services#IStorage.md##IStorage "wikilink") inputs and no
 output.
 

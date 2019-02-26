@@ -1,5 +1,5 @@
 This is the applet presented when a title displays an error message.
-See [[AM_services#Library_Applets]]. The error applet expects three [[AM_services#IStorage|IStorage]] inputs and no output.
+See [[AM_services#Library_Applets]]. The error applet expects two [[AM_services#IStorage|IStorage]] inputs and no output.
 
 == ErrorConfig ==
 
