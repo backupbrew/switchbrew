@@ -384,7 +384,7 @@ All strings are NUL-terminated.
 | 0xB
 | 0x1
 | u8 bool
-| News flag
+| News flag. When set the domain from the input URL is automatically whitelisted, in addition to any already loaded whitelist.
 |-
 | [1.0.0+]
 | 
