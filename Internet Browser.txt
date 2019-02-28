@@ -559,7 +559,7 @@ All strings are NUL-terminated.
 | 0x2A
 | 0x80
 | string
-| UserAgentAdditionalString
+| UserAgentAdditionalString. " " followed by this string are appended to the normal User-Agent string.
 |-
 | [4.0.0+]
 | Share
