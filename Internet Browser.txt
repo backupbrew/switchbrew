@@ -402,6 +402,13 @@ All strings are NUL-terminated.
 |-
 | [1.0.0+]
 | 
+| 0x10
+| 0x1
+| u8 bool
+| ScreenShotEnabled
+|-
+| [1.0.0+]
+| 
 | 0x11
 | 0x1
 | u8 bool
