@@ -138,9 +138,9 @@ The file at "data:/whitelist/WhitelistLns.txt" for LoginApplet/ShareApplet/Lobby
 [4.0.0+]: Lines 2-4 ("...nintendo\.(co...", "nintendo-europe", and "nintendoservicecentre") now starts with "^https://" instead of "https?://". Hence, plain HTTP for these are no longer allowed.
 
 ===ShareApplet===
-The initial page loaded by this applet depends on a flag. <nowiki>non-val1: "https://web-lp1.share.srv.nintendo.net/" val1: "https://web-lp1.share.srv.nintendo.net/settings/"</nowiki>
+The initial page loaded by this applet is controlled by the [[#ShareStartPage]] TLV.
 
-The server will return a HTTP 302 redirect to <nowiki>"https://nintendo.com/"</nowiki> when the specified User-Agent isn't the one for ShareApplet.
+The "web-lp1.share.srv.nintendo.net" site will return a HTTP 302 redirect to <nowiki>"https://nintendo.com/"</nowiki> when the specified User-Agent isn't the one for ShareApplet.
 
 ===LobbyApplet===
 Support for Lobby was added with [2.0.0+].
@@ -369,7 +369,7 @@ All strings are NUL-terminated.
 | Share
 | 0x9
 | 0x4
-| u32 enum ShareStartPage
+| u32 enum [[#ShareStartPage]]
 | ShareStartPage
 |-
 | [1.0.0+]
@@ -705,6 +705,21 @@ All strings are NUL-terminated.
 |}
 
 These are used for Share-applet.
+
+==== ShareStartPage ====
+{| class="wikitable" border="1"
+|-
+!  Value
+!  URL
+|-
+| 0
+| [[Network|"https://web-%.share.srv.nintendo.net/"]]
+|-
+| 1
+| [[Network|"https://web-%.share.srv.nintendo.net/settings/"]]
+|}
+
+This enum controls the initial page for ShareApplet.
 
 == Versions ==
 

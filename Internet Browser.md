@@ -129,12 +129,12 @@ line was added right after the original google line: "----
 
 ### ShareApplet
 
-The initial page loaded by this applet depends on a flag. non-val1:
-"https://web-lp1.share.srv.nintendo.net/" val1:
-"https://web-lp1.share.srv.nintendo.net/settings/"
+The initial page loaded by this applet is controlled by the
+[\#ShareStartPage](#ShareStartPage "wikilink") TLV.
 
-The server will return a HTTP 302 redirect to "https://nintendo.com/"
-when the specified User-Agent isn't the one for ShareApplet.
+The "web-lp1.share.srv.nintendo.net" site will return a HTTP 302
+redirect to "https://nintendo.com/" when the specified User-Agent isn't
+the one for ShareApplet.
 
 ### LobbyApplet
 
@@ -338,7 +338,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0x1  | 0xC00  | string                                                    | Initial URL                                                                                                                  |
 | \[1.0.0+\]     |         | 0x3  | 0x400  | string                                                    | CallbackUrl                                                                                                                  |
 | \[1.0.0+\]     |         | 0x4  | 0x400  | string                                                    | CallbackableUrl                                                                                                              |
-|                | Share   | 0x9  | 0x4    | u32 enum ShareStartPage                                   | ShareStartPage                                                                                                               |
+|                | Share   | 0x9  | 0x4    | u32 enum [\#ShareStartPage](#ShareStartPage "wikilink")   | ShareStartPage                                                                                                               |
 | \[1.0.0+\]     |         | 0xA  | 0x1000 | string                                                    | Whitelist                                                                                                                    |
 | \[1.0.0+\]     |         | 0xB  | 0x1    | u8 bool                                                   | News flag. When set the domain from the input URL is automatically whitelisted, in addition to any already loaded whitelist. |
 | \[1.0.0+\]     |         | 0xE  | 0x10   | userID                                                    | userID, controls which user-specific savedata to mount.                                                                      |
@@ -392,7 +392,17 @@ NUL-terminated.
 | \[3.0.0+\] ?   | 0x7  |      | string | PostId              |
 | \[3.0.0+\] ?   | 0x8  | 0x8  | u64    | PostIdSize          |
 
-These are used for Share-applet.
+These are used for
+Share-applet.
+
+#### ShareStartPage
+
+| Value | URL                                                                         |
+| ----- | --------------------------------------------------------------------------- |
+| 0     | ["<https://web-%.share.srv.nintendo.net/>"](Network.md "wikilink")          |
+| 1     | ["<https://web-%.share.srv.nintendo.net/settings/>"](Network.md "wikilink") |
+
+This enum controls the initial page for ShareApplet.
 
 ## Versions
 
