@@ -299,8 +299,8 @@ This is the output struct for WifiWebAuthApplet. This is a total of
 | 0x1008 | 0x8    | lastUrlSize    |
 
 This is the 0x1010-byte output storage used by all non-WebWifi applets -
-except for Share which returns a TLV storage (on \[3.0.0+\] at
-least?).
+except for Share which returns a TLV storage on
+\[3.0.0+\].
 
 ### WebArgHeader
 
@@ -383,14 +383,14 @@ NUL-terminated.
 
 | System Version | Type | Size | Value  | Description         |
 | -------------- | ---- | ---- | ------ | ------------------- |
-| \[3.0.0+\] ?   | 0x1  | 0x4  | u32    | ShareExitReason     |
-| \[3.0.0+\] ?   | 0x2  |      | string | LastUrl             |
-| \[3.0.0+\] ?   | 0x3  | 0x8  | u64    | LastUrlSize         |
-| \[3.0.0+\] ?   | 0x4  | 0x4  | u32    | SharePostResult     |
-| \[3.0.0+\] ?   | 0x5  |      | string | PostServiceName     |
-| \[3.0.0+\] ?   | 0x6  | 0x8  | u64    | PostServiceNameSize |
-| \[3.0.0+\] ?   | 0x7  |      | string | PostId              |
-| \[3.0.0+\] ?   | 0x8  | 0x8  | u64    | PostIdSize          |
+| \[3.0.0+\]     | 0x1  | 0x4  | u32    | ShareExitReason     |
+| \[3.0.0+\]     | 0x2  |      | string | LastUrl             |
+| \[3.0.0+\]     | 0x3  | 0x8  | u64    | LastUrlSize         |
+| \[3.0.0+\]     | 0x4  | 0x4  | u32    | SharePostResult     |
+| \[3.0.0+\]     | 0x5  |      | string | PostServiceName     |
+| \[3.0.0+\]     | 0x6  | 0x8  | u64    | PostServiceNameSize |
+| \[3.0.0+\]     | 0x7  |      | string | PostId              |
+| \[3.0.0+\]     | 0x8  | 0x8  | u64    | PostIdSize          |
 
 These are used for
 Share-applet.
