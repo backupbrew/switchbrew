@@ -365,6 +365,34 @@ All strings are NUL-terminated.
 | string
 | CallbackableUrl
 |-
+| [1.0.0+]
+| Offline
+| 0x5
+| 0x8
+| u64 titleID
+| ApplicationId
+|-
+| [1.0.0+]
+| Offline
+| 0x6
+| 0xC00
+| string
+| DocumentPath
+|-
+| [1.0.0+]
+| Offline
+| 0x7
+| 0x4
+| u32 enum OfflineDocumentKind
+| DocumentKind
+|-
+| [1.0.0+]
+| Offline
+| 0x8
+| 0x8
+| u64 titleID
+| SystemDataId
+|-
 | 
 | Share
 | 0x9
