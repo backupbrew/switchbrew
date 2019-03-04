@@ -151,7 +151,7 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | Rinnegatamante & EasyRPG team
 | [https://easyrpg.org/player/downloads/ here]
 | [https://github.com/EasyRPG/Player Yes]
-| 2018-05-15
+| 2019-03-03
 |-
 | Solarus Engine
 | Zelda-like Action-RPG game engine
