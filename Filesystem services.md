@@ -1327,6 +1327,8 @@ This is
 
 # DirectoryEntryType
 
+This is "nn::fs::DirectoryEntryType".
+
 An s8 value indicating a directory entry type. The current values are:
 
 | Value | Description |
