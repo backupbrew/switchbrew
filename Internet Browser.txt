@@ -484,7 +484,7 @@ All strings are NUL-terminated.
 | 
 | 0x18
 | 0x4
-| u32 enum *BackgroundKind
+| u32 enum [[#BackgroundKind]]
 | BackgroundKind
 |-
 | [1.0.0+]
@@ -814,6 +814,28 @@ This enum controls the initial page for ShareApplet.
 |}
 
 Kind values for BootDisplayKind. Controls the background color while displaying the loading screen during applet boot.
+
+==== BackgroundKind ====
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Name
+!  Description
+|-
+| 0
+| 
+| Unknown. Used by Offline default Arg initialization for DocumentKind_ApplicationLegalInformation/DocumentKind_SystemDataPage.
+|-
+| 1
+| 
+| Unknown.
+|-
+| 2
+| 
+| Unknown. Used by Lobby default Arg initialization.
+|}
+
+Kind values for BackgroundKind.
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.

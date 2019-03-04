@@ -356,7 +356,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0x14 | 0x1    | u8                                                        | ?                                                                                                                                                                |
 | \[1.0.0+\]     |         | 0x15 | 0x1    | u8                                                        | ?                                                                                                                                                                |
 | \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum [\#BootDisplayKind](#BootDisplayKind "wikilink") | BootDisplayKind                                                                                                                                                  |
-| \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum \*BackgroundKind                                 | BackgroundKind                                                                                                                                                   |
+| \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum [\#BackgroundKind](#BackgroundKind "wikilink")   | BackgroundKind                                                                                                                                                   |
 | \[1.0.0+\]     |         | 0x19 | 0x1    | u8 bool                                                   | FooterEnabled. Controls whether the UI footer is enabled.                                                                                                        |
 | \[1.0.0+\]     |         | 0x1A | 0x1    | u8 bool                                                   | PointerEnabled                                                                                                                                                   |
 | \[1.0.0+\]     |         | 0x1B | 0x4    | u32 enum \*LeftStickMode                                  | LeftStickMode                                                                                                                                                    |
@@ -450,7 +450,18 @@ ShareApplet.
 | 4     |                        | Unknown. Used by Lobby default default Arg initialization.                                                                      |
 
 Kind values for BootDisplayKind. Controls the background color while
-displaying the loading screen during applet boot.
+displaying the loading screen during applet
+boot.
+
+#### BackgroundKind
+
+| Value | Name | Description                                                                                                                     |
+| ----- | ---- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0     |      | Unknown. Used by Offline default Arg initialization for DocumentKind\_ApplicationLegalInformation/DocumentKind\_SystemDataPage. |
+| 1     |      | Unknown.                                                                                                                        |
+| 2     |      | Unknown. Used by Lobby default Arg initialization.                                                                              |
+
+Kind values for BackgroundKind.
 
 #### LastUrl
 
