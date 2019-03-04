@@ -1444,6 +1444,8 @@ This is "nn::fssrv::sf::IEventNotifier".
 
 # ISaveDataTransferManager
 
+This is "nn::fssrv::sf::ISaveDataTransferManager".
+
 | Cmd | Name                                                       |
 | --- | ---------------------------------------------------------- |
 | 0   | [\#GetChallenge](#GetChallenge "wikilink")                 |
@@ -1473,6 +1475,8 @@ Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
 an [\#ISaveDataImporter](#ISaveDataImporter "wikilink").
 
 # ISaveDataExporter
+
+This is "nn::fssrv::sf::ISaveDataExporter".
 
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
@@ -1507,6 +1511,8 @@ No input/output, takes a type-0x6 output buffer.
 
 # ISaveDataImporter
 
+This is "nn::fssrv::sf::ISaveDataImporter".
+
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
 | 0   | [\#Initialize](#Initialize "wikilink")   |
@@ -1536,10 +1542,12 @@ No input/output, takes a type-0x5 input buffer.
 
 ## Finalize
 
-No
-input/output.
+No input/output.
 
 # ISaveDataTransferManagerWithDivision
+
+This is
+"nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
 
 | Cmd | Name                                                                                            |
 | --- | ----------------------------------------------------------------------------------------------- |
@@ -1617,10 +1625,12 @@ No input/output, takes a type-0x5 input buffer, returns an
 
 ## CancelSuspendingImport
 
-Takes an input u64 and a 0x10-byte struct, no
-output.
+Takes an input u64 and a 0x10-byte struct, no output.
 
 # ISaveDataDivisionExporter
+
+This is
+"nn::fssrv::sf::ISaveDataDivisionExporter".
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1639,10 +1649,12 @@ output.
 | 81  | \[6.0.0+\] SetExportInitialDataAad (Takes an input 0x20-byte struct, no output)                                           |
 | 96  | \[6.0.0+\] GetReportInfo (No input, returns an output 0x20-byte struct)                                                   |
 
-This was added with
-[5.0.0](5.0.0.md "wikilink").
+This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataDivisionImporter
+
+This is
+"nn::fssrv::sf::ISaveDataDivisionImporter".
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1661,16 +1673,20 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkIterator
 
+This is "nn::fssrv::sf::ISaveDataChunkIterator".
+
 | Cmd | Name                                    |
 | --- | --------------------------------------- |
 | 0   | Next (No input/output)                  |
 | 1   | IsEnd (No input, returns an output u8)  |
 | 16  | GetId (No input, returns an output u32) |
 
-This was added with
-[5.0.0](5.0.0.md "wikilink").
+This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkExporter
+
+This is
+"nn::fssrv::sf::ISaveDataChunkExporter".
 
 | Cmd | Name                                                                          |
 | --- | ----------------------------------------------------------------------------- |
@@ -1678,10 +1694,12 @@ This was added with
 | 16  | \[6.0.0+\] GetRestRawDataSize (No input, returns an output u64)               |
 |     |                                                                               |
 
-This was added with
-[5.0.0](5.0.0.md "wikilink").
+This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkImporter
+
+This is
+"nn::fssrv::sf::ISaveDataChunkImporter".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
@@ -1731,6 +1749,8 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 
 # ContentStorageId
 
+This is "nn::fs::ContentStorageId".
+
 | Value | Name   |
 | ----- | ------ |
 | 0     | System |
@@ -1738,6 +1758,8 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 | 2     | SdCard |
 
 # SaveDataSpaceId
+
+This is "nn::fs::SaveDataSpaceId".
 
 | Value | Name                    |
 | ----- | ----------------------- |
@@ -1760,6 +1782,8 @@ Determines the storage where the savedata is stored.
 | 5     | \[3.0.0+\] CacheStorage     |
 
 # ImageDirectoryId
+
+This is "nn::fs::ImageDirectoryId".
 
 | Value | Name   |
 | ----- | ------ |

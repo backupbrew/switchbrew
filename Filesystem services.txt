@@ -916,6 +916,8 @@ This is "nn::fssrv::sf::IEventNotifier".
 |}
 
 = ISaveDataTransferManager =
+This is "nn::fssrv::sf::ISaveDataTransferManager".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -944,6 +946,8 @@ Takes an input u8 [[#SaveDataSpaceId]] and u64, returns an [[#ISaveDataExporter]
 Takes an input u8 [[#SaveDataSpaceId]] and a 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and an [[#ISaveDataImporter]].
 
 = ISaveDataExporter =
+This is "nn::fssrv::sf::ISaveDataExporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -974,6 +978,8 @@ Takes a type-0x6 output buffer, returns an output u64.
 No input/output, takes a type-0x6 output buffer.
 
 = ISaveDataImporter =
+This is "nn::fssrv::sf::ISaveDataImporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1004,6 +1010,8 @@ No input/output, takes a type-0x5 input buffer.
 No input/output.
 
 = ISaveDataTransferManagerWithDivision =
+This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1067,6 +1075,8 @@ No input/output, takes a type-0x5 input buffer, returns an [[#ISaveDataDivisionI
 Takes an input u64 and a 0x10-byte struct, no output.
 
 = ISaveDataDivisionExporter =
+This is "nn::fssrv::sf::ISaveDataDivisionExporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1103,6 +1113,8 @@ Takes an input u64 and a 0x10-byte struct, no output.
 This was added with [[5.0.0]].
 
 = ISaveDataDivisionImporter =
+This is "nn::fssrv::sf::ISaveDataDivisionImporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1131,6 +1143,8 @@ This was added with [[5.0.0]].
 This was added with [[5.0.0]].
 
 = ISaveDataChunkIterator =
+This is "nn::fssrv::sf::ISaveDataChunkIterator".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1145,6 +1159,8 @@ This was added with [[5.0.0]].
 This was added with [[5.0.0]].
 
 = ISaveDataChunkExporter =
+This is "nn::fssrv::sf::ISaveDataChunkExporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1158,6 +1174,8 @@ This was added with [[5.0.0]].
 This was added with [[5.0.0]].
 
 = ISaveDataChunkImporter =
+This is "nn::fssrv::sf::ISaveDataChunkImporter".
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1225,6 +1243,8 @@ This was added with [[6.0.0]].
 |}
 
 = ContentStorageId =
+This is "nn::fs::ContentStorageId".
+
 {| class="wikitable" border="1"
 |-
 ! Value || Name
@@ -1237,6 +1257,8 @@ This was added with [[6.0.0]].
 |}
 
 = SaveDataSpaceId =
+This is "nn::fs::SaveDataSpaceId".
+
 {| class="wikitable" border="1"
 |-
 ! Value || Name
@@ -1271,6 +1293,8 @@ Determines the storage where the savedata is stored.
 |}
 
 = ImageDirectoryId =
+This is "nn::fs::ImageDirectoryId".
+
 {| class="wikitable" border="1"
 |-
 ! Value || Name
