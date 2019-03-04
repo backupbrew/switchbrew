@@ -418,6 +418,19 @@ these.
 
 This enum controls the initial page for ShareApplet.
 
+#### WebBootDisplayKind
+
+| Value | Name                      | Description               |
+| ----- | ------------------------- | ------------------------- |
+| 0     | WebBootDisplayKind\_White | Default white background. |
+| 1     |                           | Unknown.                  |
+| 2     | WebBootDisplayKind\_Black | Black background.         |
+| 3     |                           | Unknown.                  |
+| 4     |                           | Unknown.                  |
+
+Kind values for BootDisplayKind with Web applet. Controls the background
+color while displaying the loading screen during applet boot.
+
 #### LastUrl
 
 When the applet loads a page where the beginning of the URL matches the
