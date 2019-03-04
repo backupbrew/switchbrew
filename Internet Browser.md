@@ -355,7 +355,7 @@ NUL-terminated.
 | \[1.0.0+\]     | Offline | 0x13 | 0x1    | u8 bool                                                   | PlayReportEnabled                                                                                                                                                |
 | \[1.0.0+\]     |         | 0x14 | 0x1    | u8                                                        | ?                                                                                                                                                                |
 | \[1.0.0+\]     |         | 0x15 | 0x1    | u8                                                        | ?                                                                                                                                                                |
-| \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum WebBootDisplayKind                               | BootDisplayKind                                                                                                                                                  |
+| \[1.0.0+\]     |         | 0x17 | 0x4    | u32 enum [\#BootDisplayKind](#BootDisplayKind "wikilink") | BootDisplayKind                                                                                                                                                  |
 | \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum \*BackgroundKind                                 | BackgroundKind                                                                                                                                                   |
 | \[1.0.0+\]     |         | 0x19 | 0x1    | u8 bool                                                   | FooterEnabled. Controls whether the UI footer is enabled.                                                                                                        |
 | \[1.0.0+\]     |         | 0x1A | 0x1    | u8 bool                                                   | PointerEnabled                                                                                                                                                   |
@@ -436,20 +436,21 @@ Offline-applet.
 | 0     | ShareStartPage\_Default  | ["<https://web-%.share.srv.nintendo.net/>"](Network.md "wikilink")          |
 | 1     | ShareStartPage\_Settings | ["<https://web-%.share.srv.nintendo.net/settings/>"](Network.md "wikilink") |
 
-This enum controls the initial page for ShareApplet.
+This enum controls the initial page for
+ShareApplet.
 
-#### WebBootDisplayKind
+#### BootDisplayKind
 
-| Value | Name                      | Description               |
-| ----- | ------------------------- | ------------------------- |
-| 0     | WebBootDisplayKind\_White | Default white background. |
-| 1     |                           | Unknown.                  |
-| 2     | WebBootDisplayKind\_Black | Black background.         |
-| 3     |                           | Unknown.                  |
-| 4     |                           | Unknown.                  |
+| Value | Name                   | Description                                                                                                                     |
+| ----- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | BootDisplayKind\_White | Default white background.                                                                                                       |
+| 1     |                        | Unknown. Used by Offline default Arg initialization for DocumentKind\_ApplicationLegalInformation/DocumentKind\_SystemDataPage. |
+| 2     | BootDisplayKind\_Black | Black background.                                                                                                               |
+| 3     |                        | Unknown. Used by Share default Arg initialization.                                                                              |
+| 4     |                        | Unknown. Used by Lobby default default Arg initialization.                                                                      |
 
-Kind values for BootDisplayKind with Web applet. Controls the background
-color while displaying the loading screen during applet boot.
+Kind values for BootDisplayKind. Controls the background color while
+displaying the loading screen during applet boot.
 
 #### LastUrl
 

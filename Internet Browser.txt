@@ -477,7 +477,7 @@ All strings are NUL-terminated.
 | 
 | 0x17
 | 0x4
-| u32 enum WebBootDisplayKind
+| u32 enum [[#BootDisplayKind]]
 | BootDisplayKind
 |-
 | [1.0.0+]
@@ -785,7 +785,7 @@ This controls the kind of content to mount with Offline-applet.
 
 This enum controls the initial page for ShareApplet.
 
-==== WebBootDisplayKind ====
+==== BootDisplayKind ====
 {| class="wikitable" border="1"
 |-
 !  Value
@@ -793,27 +793,27 @@ This enum controls the initial page for ShareApplet.
 !  Description
 |-
 | 0
-| WebBootDisplayKind_White
+| BootDisplayKind_White
 | Default white background.
 |-
 | 1
 | 
-| Unknown.
+| Unknown. Used by Offline default Arg initialization for DocumentKind_ApplicationLegalInformation/DocumentKind_SystemDataPage.
 |-
 | 2
-| WebBootDisplayKind_Black
+| BootDisplayKind_Black
 | Black background.
 |-
 | 3
 | 
-| Unknown.
+| Unknown. Used by Share default Arg initialization.
 |-
 | 4
 | 
-| Unknown.
+| Unknown. Used by Lobby default default Arg initialization.
 |}
 
-Kind values for BootDisplayKind with Web applet. Controls the background color while displaying the loading screen during applet boot.
+Kind values for BootDisplayKind. Controls the background color while displaying the loading screen during applet boot.
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.
