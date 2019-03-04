@@ -834,7 +834,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100404002F52000 || 銀星将棋 強天怒闘風雷神 || JPN || 1.0.0 || Digital || 0 || || Application / Game
 |-
-| 01004040033CE000 || niconico || JPN || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 393216 || || Application / Game
+| 01004040033CE000 || niconico || JPN || 1.0.0 || Digital || 0 0x10000 0x20000 0x30000 0x50000 0x60000 0x70000 0x80000 || || Application / Game
 |-
 | 01004070022F0000 || Ittle Dew 2+ || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
