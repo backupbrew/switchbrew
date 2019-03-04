@@ -39,7 +39,7 @@ NintendoBrowser/5.<ninver0>.<ninver1>.<ninver2>"
 | WebApplet            | Offline HTML display                                                                |                                                          |                | 010000000000100F |       |
 | LoginApplet          | Nintendo Account linking, and for linking Facebook and Twitter to suggest friends   | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
 | ShareApplet          | Posting screenshots to social media, and (optionally) linking social media accounts | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
-| LobbyApplet          | Related to online-multiplayer lobbies                                               | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
+| LobbyApplet          | "Nintendo Switch Online Lounge"                                                     | Just displays an error-code.                             | Yes            | 0100000000001010 |       |
 | WifiWebAuthApplet    | Captive-portal                                                                      | Displays an error dialog with an option to ignore it.    | No             | 0100000000001011 |       |
 
 When whitelisting is enabled, you can only load page domains included in
@@ -138,7 +138,8 @@ the one for ShareApplet.
 
 ### LobbyApplet
 
-Support for Lobby was added with \[2.0.0+\].
+Support for Lobby was added with \[2.0.0+\]. This applet is for
+"Nintendo Switch Online Lounge"
 
 The initial page loaded by this applet is:
 "https://web-lp1.znc.srv.nintendo.net/lobby/".
@@ -416,6 +417,14 @@ these.
 | 1     | ShareStartPage\_Settings | ["<https://web-%.share.srv.nintendo.net/settings/>"](Network.md "wikilink") |
 
 This enum controls the initial page for ShareApplet.
+
+#### LastUrl
+
+When the applet loads a page where the beginning of the URL matches the
+URL from CallbackUrl, the applet will exit and set LastUrl to that URL
+(exit doesn't occur when CallbackableUrl is set). With Offline-applet
+for CallbackUrl handling, it compares the domain with "localhost"
+instead of using the CallbackUrl TLV.
 
 ## Versions
 

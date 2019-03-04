@@ -82,7 +82,7 @@ The UA is generated with: "Mozilla/5.0 (Nintendo Switch; <appletname>) AppleWebK
 | 
 |-
 | LobbyApplet
-| Related to online-multiplayer lobbies
+| "Nintendo Switch Online Lounge"
 | Just displays an error-code.
 | Yes
 | 0100000000001010
@@ -143,7 +143,7 @@ The initial page loaded by this applet is controlled by the [[#ShareStartPage]] 
 The "web-lp1.share.srv.nintendo.net" site will return a HTTP 302 redirect to <nowiki>"https://nintendo.com/"</nowiki> when the specified User-Agent isn't the one for ShareApplet.
 
 ===LobbyApplet===
-Support for Lobby was added with [2.0.0+].
+Support for Lobby was added with [2.0.0+]. This applet is for "Nintendo Switch Online Lounge"
 
 The initial page loaded by this applet is: <nowiki>"https://web-lp1.znc.srv.nintendo.net/lobby/"</nowiki>.
 
@@ -758,6 +758,9 @@ These are used for Share-applet. Official user-processes doesn't check the TLV s
 |}
 
 This enum controls the initial page for ShareApplet.
+
+==== LastUrl ====
+When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.
 
 == Versions ==
 
