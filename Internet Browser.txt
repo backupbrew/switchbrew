@@ -436,7 +436,7 @@ All strings are NUL-terminated.
 | 0x10
 | 0x1
 | u8 bool
-| ScreenShotEnabled
+| ScreenShotEnabled. Controls whether screen-shot capture is allowed.
 |-
 | [1.0.0+]
 | 
@@ -492,7 +492,7 @@ All strings are NUL-terminated.
 | 0x19
 | 0x1
 | u8 bool
-| FooterEnabled
+| FooterEnabled. Controls whether the UI footer is enabled.
 |-
 | [1.0.0+]
 | 
