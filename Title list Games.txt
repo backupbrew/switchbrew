@@ -3107,6 +3107,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01008FC00C5BC000 || Apocalipsis Wormwood Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010071800BA74000 || Aragami - Shadow Edition || EUR USA || || Digital ||0 || || Game
+|-
 | 01005DD00BE08000 || Arcade Archives ALPHA MISSION || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100DDC00C7A6000 || Arcade Archives DONKEY KONG JR. || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3162,6 +3164,12 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010088100C35E000 || Big Crown: Showdown || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010022B00ACE6000 || BLACK BIRD || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100BB400BF92000 || BLAZBLUE CENTRALFICTION Special Edition || EUR || || Digital || 0 || || Game
+|-
+| 0100EE800C93E000 || BLAZBLUE CENTRALFICTION Special Edition || USA || || Digital || 0 || || Game
+|-
+| 010062500BFC0000 || The Book of Unwritten Tales 2 || EUR USA || || Digital || 0 || || Game
 |-
 | 0100CA400B6D0000 || BQM -BlockQuest Maker- || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3245,6 +3253,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F7300BD8E000 || Double Cross || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 010093D00C726000 || Downwell || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 01001B80099F6000 || Dracula's Legacy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010089700150E000 || Dragon Marked for Death: Frontline Fighters || EUR USA || || Digital || 0 0x20000 0x40000 || || Game
@@ -3260,6 +3270,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010016700BCD4000 || Dungeon Village || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01008EA00C27E000 || DYING: Reborn - Nintendo Switch™ Edition || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100E9A00CB30000 || DYNASTY WARRIORS 8: Xtreme Legends Definitive Edition || EUR USA || || Digital || 0 || || Game
 |-
 | 01005FA009370000 || Elemental Knights R || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
