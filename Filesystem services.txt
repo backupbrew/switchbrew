@@ -741,6 +741,8 @@ The output buffer contains the read array of [[#DirectoryEntry]]. This doesn't i
 Returns an u64 for the total number of readable entries.
 
 = DirectoryEntry =
+This is "nn::fs::DirectoryEntry".
+
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description

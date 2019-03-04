@@ -1310,10 +1310,12 @@ entries for "." and "..".
 
 ## GetEntryCount
 
-Returns an u64 for the total number of readable
-entries.
+Returns an u64 for the total number of readable entries.
 
 # DirectoryEntry
+
+This is
+"nn::fs::DirectoryEntry".
 
 | Offset | Size  | Description                                            |
 | ------ | ----- | ------------------------------------------------------ |
