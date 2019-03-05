@@ -27,8 +27,8 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 6      | Weak GND?      |             |        |            |                         |                                                              |
 | 7      | SDA            | I2C         | 0-1.8V |            |                         |                                                              |
 | 8      | SCL            | I2C         | 0-1.8V |            |                         |                                                              |
-| 9      | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | ~11 Hz                  |                                                              |
-| 10     | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | ~11 Hz                  |                                                              |
+| 9      | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | \~11 Hz                 |                                                              |
+| 10     | USB-PWR-WAVE?  | Square wave | 0-3.3V | K-4, K-5?  | \~11 Hz                 |                                                              |
 
 ### Cluster B
 
@@ -47,8 +47,8 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | Pad \# | Name      | Type | Levels | Continuity | Frequency | Comment                                                                                                     |
 | ------ | --------- | ---- | ------ | ---------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | 1      | ??        |      | 0-1.8V |            |           | No clue. This is definitely important, we just have no idea how. May need to interface with dock for comms. |
-| 2      | UART-A RX |      | 0-1.8V |            |           |                                                                                                             |
-| 3      | UART-A TX |      | 0-1.8V |            |           |                                                                                                             |
+| 2      | UART-A TX |      | 0-1.8V |            |           |                                                                                                             |
+| 3      | UART-A RX |      | 0-1.8V |            |           |                                                                                                             |
 | 4      | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 5      | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 6      | ??        |      | 0-1.8V |            |           |                                                                                                             |
@@ -96,16 +96,16 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 
 ### Cluster J
 
-| Pad \# | Name         | Type       | Levels | Continuity | Frequency | Comment                                                |
-| ------ | ------------ | ---------- | ------ | ---------- | --------- | ------------------------------------------------------ |
-| 1      | ?            | Edge       | 0-1.8V |            |           | Turns on around same time as pad J-3                   |
-| 2      | GND          |            |        |            |           |                                                        |
-| 3      | ?            | Edge       | 0-1.8V |            |           | Turns on around same time as pad J-1, slightly after   |
-| 4      | Power button | Pushbutton | 4V-0V  |            |           | Active low                                             |
-| 5      | ?            | Constant?  | 0V     | Ground?-NT |           |                                                        |
-| 6      | ?            | Edge       | 0-1.8V |            |           | Turns on with pad J-6, ~1s after J-1/J-3               |
-| 7      | ?            | Edge       | 0-1.8V |            |           | Turns on with pad J-5, ~1s after J-1/J-3               |
-| 8      | ?            | Edge?      | 0-1.8V |            |           | Turns on ~1s after J-6/J-7, turns off at unknown point |
+| Pad \# | Name         | Type       | Levels | Continuity | Frequency | Comment                                                 |
+| ------ | ------------ | ---------- | ------ | ---------- | --------- | ------------------------------------------------------- |
+| 1      | ?            | Edge       | 0-1.8V |            |           | Turns on around same time as pad J-3                    |
+| 2      | GND          |            |        |            |           |                                                         |
+| 3      | ?            | Edge       | 0-1.8V |            |           | Turns on around same time as pad J-1, slightly after    |
+| 4      | Power button | Pushbutton | 4V-0V  |            |           | Active low                                              |
+| 5      | ?            | Constant?  | 0V     | Ground?-NT |           |                                                         |
+| 6      | ?            | Edge       | 0-1.8V |            |           | Turns on with pad J-6, \~1s after J-1/J-3               |
+| 7      | ?            | Edge       | 0-1.8V |            |           | Turns on with pad J-5, \~1s after J-1/J-3               |
+| 8      | ?            | Edge?      | 0-1.8V |            |           | Turns on \~1s after J-6/J-7, turns off at unknown point |
 
 ### Cluster K
 
@@ -114,10 +114,10 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 1      | GND           |               |         |            |           |                                                                                                         |
 | 2      | D-            | USB-C         |         |            |           | Cluster B - 3                                                                                           |
 | 3      | D+            | USB-C         |         |            |           | Cluster B - 2                                                                                           |
-| 4      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    |                                                                                                         |
-| 5      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | ~11 Hz    | Appears to mirror K4. Duty cycle 66.67%. Low on screen lock. Off until first interaction.               |
+| 4      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | \~11 Hz   |                                                                                                         |
+| 5      | USB-PWR-WAVE? | Square wave   | 0V-3.3V | A-9, A-10? | \~11 Hz   | Appears to mirror K4. Duty cycle 66.67%. Low on screen lock. Off until first interaction.               |
 | 6      | USB-C V+      | Supply power  |         |            |           | support fast charger : "normal mode = 5V+" "Fast changer = 12V+"                                        |
-| 7      | Unknown       | Power supply? | ~3V-0V  | None known | N/A       | 0 when usb-c not plugged in, falls slowly on first interaction if USB-C plugged in. Power draw related? |
+| 7      | Unknown       | Power supply? | \~3V-0V | None known | N/A       | 0 when usb-c not plugged in, falls slowly on first interaction if USB-C plugged in. Power draw related? |
 
 ### Cluster L
 
@@ -130,5 +130,5 @@ diagram
 | 2      | GND                    |               |             |            |           |                                                          |
 | 3      | Li-Ion Batt Vdd        | Battery Input | Std. Li-Ion |            |           |                                                          |
 | 4      | Mirrored Ground?       |               |             |            |           | Holds steady @ 0, looks like a decoupled isolated ground |
-| 5      | Battery pulse?         |               |             |            | \<1 Hz    | Duty cycle ~0%                                           |
+| 5      | Battery pulse?         |               |             |            | \<1 Hz    | Duty cycle \~0%                                          |
 | 6      | GND                    |               |             |            |           |                                                          |
