@@ -5,57 +5,71 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetAlbumFileCount
 |-
-| 1 ||
+| 1 || GetAlbumFileList
 |-
-| 2 ||
+| 2 || LoadAlbumFile
 |-
-| 3 ||
+| 3 || DeleteAlbumFile
 |-
-| 4 ||
+| 4 || StorageCopyAlbumFile
 |-
-| 5 ||
+| 5 || IsAlbumMounted
 |-
-| 6 ||
+| 6 || GetAlbumUsage
 |-
-| 7 ||
+| 7 || GetAlbumFileSize
 |-
-| 8 ||
+| 8 || LoadAlbumFileThumbnail
 |-
-| 9 ||
+| 9 || [2.0.0+] LoadAlbumScreenShotImage
 |-
-| 10 ||
+| 10 || [2.0.0+] LoadAlbumScreenShotThumbnailImage
 |-
-| 11 ||
+| 11 || [2.0.0+] GetAlbumEntryFromApplicationAlbumEntry
 |-
-| 12 ||
+| 12 || [3.0.0+]
 |-
-| 13 ||
+| 13 || [3.0.0+]
 |-
-| 14 ||
+| 14 || [3.0.0+]
 |-
-| 301 ||
+| 15 || [4.0.0+]
 |-
-| 401 ||
+| 16 || [4.0.0+]
 |-
-| 501 ||
+| 17 || [4.0.0+]
 |-
-| 1001 ||
+| 202 || [1.0.0-2.3.0] SaveEditedScreenShot
 |-
-| 1002 ||
+| 301 || GetLastThumbnail
 |-
-| 8001 ||
+| 401 || GetAutoSavingStorage
 |-
-| 8002 ||
+| 501 || GetRequiredStorageSpaceSizeToCopyAll
 |-
-| 8011 ||
+| 1001 || [3.0.0+]
 |-
-| 8012 ||
+| 1002 || [3.0.0+]
 |-
-| 8021 ||
+| 1003 || [4.0.0+]
 |-
-| 10011 ||
+| 8001 || ForceAlbumUnmounted
+|-
+| 8002 || ResetAlbumMountStatus
+|-
+| 8011 || RefreshAlbumCache
+|-
+| 8012 || GetAlbumCache
+|-
+| 8013 || [4.0.0+]
+|-
+| 8021 || GetAlbumEntryFromApplicationAlbumEntryAruid
+|-
+| 10011 || SetInternalErrorConversionEnabled
+|-
+| 60002 || [4.0.0+]
 |}
 
 = caps:c =

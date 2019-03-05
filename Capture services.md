@@ -2,34 +2,41 @@
 
 This is "nn::capsrv::sf::IAlbumAccessorService".
 
-| Cmd   | Name |
-| ----- | ---- |
-| 0     |      |
-| 1     |      |
-| 2     |      |
-| 3     |      |
-| 4     |      |
-| 5     |      |
-| 6     |      |
-| 7     |      |
-| 8     |      |
-| 9     |      |
-| 10    |      |
-| 11    |      |
-| 12    |      |
-| 13    |      |
-| 14    |      |
-| 301   |      |
-| 401   |      |
-| 501   |      |
-| 1001  |      |
-| 1002  |      |
-| 8001  |      |
-| 8002  |      |
-| 8011  |      |
-| 8012  |      |
-| 8021  |      |
-| 10011 |      |
+| Cmd   | Name                                              |
+| ----- | ------------------------------------------------- |
+| 0     | GetAlbumFileCount                                 |
+| 1     | GetAlbumFileList                                  |
+| 2     | LoadAlbumFile                                     |
+| 3     | DeleteAlbumFile                                   |
+| 4     | StorageCopyAlbumFile                              |
+| 5     | IsAlbumMounted                                    |
+| 6     | GetAlbumUsage                                     |
+| 7     | GetAlbumFileSize                                  |
+| 8     | LoadAlbumFileThumbnail                            |
+| 9     | \[2.0.0+\] LoadAlbumScreenShotImage               |
+| 10    | \[2.0.0+\] LoadAlbumScreenShotThumbnailImage      |
+| 11    | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntry |
+| 12    | \[3.0.0+\]                                        |
+| 13    | \[3.0.0+\]                                        |
+| 14    | \[3.0.0+\]                                        |
+| 15    | \[4.0.0+\]                                        |
+| 16    | \[4.0.0+\]                                        |
+| 17    | \[4.0.0+\]                                        |
+| 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot              |
+| 301   | GetLastThumbnail                                  |
+| 401   | GetAutoSavingStorage                              |
+| 501   | GetRequiredStorageSpaceSizeToCopyAll              |
+| 1001  | \[3.0.0+\]                                        |
+| 1002  | \[3.0.0+\]                                        |
+| 1003  | \[4.0.0+\]                                        |
+| 8001  | ForceAlbumUnmounted                               |
+| 8002  | ResetAlbumMountStatus                             |
+| 8011  | RefreshAlbumCache                                 |
+| 8012  | GetAlbumCache                                     |
+| 8013  | \[4.0.0+\]                                        |
+| 8021  | GetAlbumEntryFromApplicationAlbumEntryAruid       |
+| 10011 | SetInternalErrorConversionEnabled                 |
+| 60002 | \[4.0.0+\]                                        |
 
 # caps:c
 
