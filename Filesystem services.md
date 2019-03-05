@@ -1317,13 +1317,14 @@ Returns an u64 for the total number of readable entries.
 This is
 "nn::fs::DirectoryEntry".
 
-| Offset | Size  | Description                                            |
-| ------ | ----- | ------------------------------------------------------ |
-| 0x0    | 0x301 | Path                                                   |
-| 0x301  | 0x3   | ?                                                      |
-| 0x304  | 0x1   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink") |
-| 0x305  | 0x3   | Padding?                                               |
-| 0x308  | 0x8   | Filesize, 0 for directories.                           |
+| Offset | Size  | Description                                                 |
+| ------ | ----- | ----------------------------------------------------------- |
+| 0x0    | 0x301 | Path                                                        |
+| 0x301  | 0x1   | File attributes (bit 0 = is directory; bit 1 = archive bit) |
+| 0x302  | 0x2   | Padding?                                                    |
+| 0x304  | 0x1   | [\#DirectoryEntryType](#DirectoryEntryType "wikilink")      |
+| 0x305  | 0x3   | Padding?                                                    |
+| 0x308  | 0x8   | Filesize, 0 for directories.                                |
 
 # DirectoryEntryType
 

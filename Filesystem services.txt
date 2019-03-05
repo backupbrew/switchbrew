@@ -749,7 +749,9 @@ This is "nn::fs::DirectoryEntry".
 |-
 | 0x0 || 0x301 || Path
 |-
-| 0x301 || 0x3 || ?
+| 0x301 || 0x1 || File attributes (bit 0 = is directory; bit 1 = archive bit)
+|-
+| 0x302 || 0x2 || Padding?
 |-
 | 0x304 || 0x1 || [[#DirectoryEntryType]]
 |-
