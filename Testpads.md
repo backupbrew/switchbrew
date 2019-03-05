@@ -56,7 +56,7 @@ testpads. <https://github.com/hedgeberg/Switch-Logic-Captures>
 | 8      | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 9      | ??        |      | 0-1.8V |            |           |                                                                                                             |
 | 10     | ??        |      | 0-1.8V |            |           |                                                                                                             |
-| 11     | ??        |      | 0-1.8V |            |           |                                                                                                             |
+| 11     | \+1.8V    |      | 0-1.8V |            |           |                                                                                                             |
 
 ### Cluster D
 

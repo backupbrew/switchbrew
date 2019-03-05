@@ -82,7 +82,7 @@ These are reference materials, taken from poking at I/O on various testpads. htt
 |-
 | 10 || ?? || || 0-1.8V || || || 
 |-
-| 11 || ?? || || 0-1.8V || || || 
+| 11 || +1.8V || || 0-1.8V || || || 
 |}
 
 === Cluster D ===
