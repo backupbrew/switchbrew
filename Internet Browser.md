@@ -450,8 +450,9 @@ ShareApplet.
 | 4     |                        | Unknown. Used by Lobby default default Arg initialization.                                                                      |
 
 Kind values for BootDisplayKind. Controls the background color while
-displaying the loading screen during applet
-boot.
+displaying the loading screen during applet boot. Also controls the
+BackgroundKind when value is
+non-zero.
 
 #### BackgroundKind
 

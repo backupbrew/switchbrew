@@ -813,7 +813,7 @@ This enum controls the initial page for ShareApplet.
 | Unknown. Used by Lobby default default Arg initialization.
 |}
 
-Kind values for BootDisplayKind. Controls the background color while displaying the loading screen during applet boot.
+Kind values for BootDisplayKind. Controls the background color while displaying the loading screen during applet boot. Also controls the BackgroundKind when value is non-zero.
 
 ==== BackgroundKind ====
 {| class="wikitable" border="1"
