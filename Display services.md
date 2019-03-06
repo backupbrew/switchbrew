@@ -405,7 +405,7 @@ This is
 | 1200                 | GetZOrderCountMin                              |
 | 1202                 | GetZOrderCountMax                              |
 | 1203                 | GetDisplayLogicalResolution                    |
-| 1204                 | SetDisplayMagnification                        |
+| 1204                 | \[3.0.0+\] SetDisplayMagnification             |
 | 2201                 | SetLayerPosition                               |
 | 2203                 | SetLayerSize                                   |
 | 2204                 | GetLayerZ                                      |

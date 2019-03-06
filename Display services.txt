@@ -364,7 +364,7 @@ This is "nn::visrv::sf::ISystemDisplayService".
 |-
 | 1203 || GetDisplayLogicalResolution
 |-
-| 1204 || SetDisplayMagnification
+| 1204 || [3.0.0+] SetDisplayMagnification
 |-
 | 2201 || SetLayerPosition
 |-
