@@ -835,11 +835,11 @@ The applet converts this to internal values.
 |-
 | 1
 | 
-| Unknown.
+| Same as [[#BootDisplayKind]] value 3.
 |-
 | 2
 | 
-| Unknown. Used by Lobby default Arg initialization.
+| Same as [[#BootDisplayKind]] value 4. Used by Lobby default Arg initialization.
 |}
 
 Kind values for BackgroundKind. Only used when [[#BootDisplayKind]] is 0.

@@ -468,8 +468,8 @@ The applet converts this to internal values.
 | Value | Name | Description                                                                                                                     |
 | ----- | ---- | ------------------------------------------------------------------------------------------------------------------------------- |
 | 0     |      | Unknown. Used by Offline default Arg initialization for DocumentKind\_ApplicationLegalInformation/DocumentKind\_SystemDataPage. |
-| 1     |      | Unknown.                                                                                                                        |
-| 2     |      | Unknown. Used by Lobby default Arg initialization.                                                                              |
+| 1     |      | Same as [\#BootDisplayKind](#BootDisplayKind "wikilink") value 3.                                                               |
+| 2     |      | Same as [\#BootDisplayKind](#BootDisplayKind "wikilink") value 4. Used by Lobby default Arg initialization.                     |
 
 Kind values for BackgroundKind. Only used when
 [\#BootDisplayKind](#BootDisplayKind "wikilink") is 0.
