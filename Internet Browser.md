@@ -451,8 +451,17 @@ ShareApplet.
 
 Kind values for BootDisplayKind. Controls the background color while
 displaying the loading screen during applet boot. Also controls the
-BackgroundKind when value is
-non-zero.
+BackgroundKind when value is non-zero.
+
+The applet converts this to internal values.
+
+  - BootDisplayKind 0:
+      - If launched by an Application:
+          - If [\#BackgroundKind](#BackgroundKind "wikilink") is 2..1,
+            return 3..2. When 0, run the below, otherwise assert.
+      - return TLV value from BootAsMediaPlayer
+  - BootDisplayKind 1..4: return
+0..3.
 
 #### BackgroundKind
 
@@ -462,7 +471,8 @@ non-zero.
 | 1     |      | Unknown.                                                                                                                        |
 | 2     |      | Unknown. Used by Lobby default Arg initialization.                                                                              |
 
-Kind values for BackgroundKind.
+Kind values for BackgroundKind. Only used when
+[\#BootDisplayKind](#BootDisplayKind "wikilink") is 0.
 
 #### LastUrl
 

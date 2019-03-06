@@ -815,6 +815,13 @@ This enum controls the initial page for ShareApplet.
 
 Kind values for BootDisplayKind. Controls the background color while displaying the loading screen during applet boot. Also controls the BackgroundKind when value is non-zero.
 
+The applet converts this to internal values.
+* BootDisplayKind 0: 
+** If launched by an Application:
+*** If [[#BackgroundKind]] is 2..1, return 3..2. When 0, run the below, otherwise assert.
+** return TLV value from BootAsMediaPlayer
+* BootDisplayKind 1..4: return 0..3.
+
 ==== BackgroundKind ====
 {| class="wikitable" border="1"
 |-
@@ -835,7 +842,7 @@ Kind values for BootDisplayKind. Controls the background color while displaying 
 | Unknown. Used by Lobby default Arg initialization.
 |}
 
-Kind values for BackgroundKind.
+Kind values for BackgroundKind. Only used when [[#BootDisplayKind]] is 0.
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.
