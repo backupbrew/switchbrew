@@ -505,7 +505,7 @@ All strings are NUL-terminated.
 | 
 | 0x1B
 | 0x4
-| u32 enum *LeftStickMode
+| u32 enum [[#LeftStickMode]]
 | LeftStickMode
 |-
 | [1.0.0+]
@@ -843,6 +843,24 @@ The applet converts this to internal values.
 |}
 
 Kind values for BackgroundKind. Only used when [[#BootDisplayKind]] is 0.
+
+==== LeftStickMode ====
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Name
+!  Description
+|-
+| 0
+| 
+| The user can directly control the cursor via the left-stick.
+|-
+| 1
+| 
+| The user can only select elements on the page via the left-stick.
+|}
+
+If the Pointer flag is set to false, only value 1 will be used for LeftStickMode (input value ignored).
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.

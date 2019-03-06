@@ -359,7 +359,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0x18 | 0x4    | u32 enum [\#BackgroundKind](#BackgroundKind "wikilink")   | BackgroundKind                                                                                                                                                   |
 | \[1.0.0+\]     |         | 0x19 | 0x1    | u8 bool                                                   | FooterEnabled. Controls whether the UI footer is enabled.                                                                                                        |
 | \[1.0.0+\]     |         | 0x1A | 0x1    | u8 bool                                                   | PointerEnabled                                                                                                                                                   |
-| \[1.0.0+\]     |         | 0x1B | 0x4    | u32 enum \*LeftStickMode                                  | LeftStickMode                                                                                                                                                    |
+| \[1.0.0+\]     |         | 0x1B | 0x4    | u32 enum [\#LeftStickMode](#LeftStickMode "wikilink")     | LeftStickMode                                                                                                                                                    |
 | \[1.0.0+\]     |         | 0x1C | 0x4    | s32                                                       | KeyRepeatFrame, first param                                                                                                                                      |
 | \[1.0.0+\]     |         | 0x1D | 0x4    | s32                                                       | KeyRepeatFrame, second param                                                                                                                                     |
 | \[1.0.0+\]     |         | 0x1E | 0x1    | u8 bool                                                   | Set after BootAsMediaPlayer with the value inverted.                                                                                                             |
@@ -472,7 +472,18 @@ The applet converts this to internal values.
 | 2     |      | Same as [\#BootDisplayKind](#BootDisplayKind "wikilink") value 4. Used by Lobby default Arg initialization.                     |
 
 Kind values for BackgroundKind. Only used when
-[\#BootDisplayKind](#BootDisplayKind "wikilink") is 0.
+[\#BootDisplayKind](#BootDisplayKind "wikilink") is
+0.
+
+#### LeftStickMode
+
+| Value | Name | Description                                                       |
+| ----- | ---- | ----------------------------------------------------------------- |
+| 0     |      | The user can directly control the cursor via the left-stick.      |
+| 1     |      | The user can only select elements on the page via the left-stick. |
+
+If the Pointer flag is set to false, only value 1 will be used for
+LeftStickMode (input value ignored).
 
 #### LastUrl
 
