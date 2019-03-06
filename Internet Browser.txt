@@ -852,15 +852,15 @@ Kind values for BackgroundKind. Only used when [[#BootDisplayKind]] is 0.
 !  Description
 |-
 | 0
-| 
-| The user can directly control the cursor via the left-stick.
+| LeftStickMode_Pointer
+| The user can directly control the pointer via the left-stick.
 |-
 | 1
-| 
+| LeftStickMode_Cursor
 | The user can only select elements on the page via the left-stick.
 |}
 
-If the Pointer flag is set to false, only value 1 will be used for LeftStickMode (input value ignored).
+Controls the initial mode, this can be toggled by the user via the pressing the left-stick button. If the Pointer flag is set to false, only LeftStickMode_Cursor will be used and mode toggle by the user is disabled (input value ignored).
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.

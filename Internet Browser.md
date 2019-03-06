@@ -477,13 +477,15 @@ Kind values for BackgroundKind. Only used when
 
 #### LeftStickMode
 
-| Value | Name | Description                                                       |
-| ----- | ---- | ----------------------------------------------------------------- |
-| 0     |      | The user can directly control the cursor via the left-stick.      |
-| 1     |      | The user can only select elements on the page via the left-stick. |
+| Value | Name                   | Description                                                       |
+| ----- | ---------------------- | ----------------------------------------------------------------- |
+| 0     | LeftStickMode\_Pointer | The user can directly control the pointer via the left-stick.     |
+| 1     | LeftStickMode\_Cursor  | The user can only select elements on the page via the left-stick. |
 
-If the Pointer flag is set to false, only value 1 will be used for
-LeftStickMode (input value ignored).
+Controls the initial mode, this can be toggled by the user via the
+pressing the left-stick button. If the Pointer flag is set to false,
+only LeftStickMode\_Cursor will be used and mode toggle by the user is
+disabled (input value ignored).
 
 #### LastUrl
 
