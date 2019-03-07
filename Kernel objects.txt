@@ -1044,13 +1044,17 @@ Inherits from: [[#KAutoObject]]
 |}
 
 = KPort =
-Size: 0xA8
+[1.0.0] Size: 0xA8
+
+[7.0.0] Size: 0x110
 
 Inherits from: [[#KAutoObject]]
 
+
+<div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Offset
+! 1.0.0 Offset
 ! Type
 ! Description
 |-
@@ -1066,6 +1070,30 @@ Inherits from: [[#KAutoObject]]
 |-
 | 0xA1 || bool || IsLight
 |}
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! 7.0.0 Offset
+! Type
+! Description
+|-
+| 0 || [[#KAutoObject]] || Inheritance
+|-
+| 0x30 || [[#KServerPort]] || ServerSide
+|-
+| 0xA0 || [[#KClientPort]] || ClientSide
+|-
+| 0xF8 || u64 ||
+|-
+| 0x100 || char* || NamePtr
+|-
+| 0x108 || bool || HasInited
+|-
+| 0x109 || bool || IsLight
+|}
+</div>
 
 == KServerPort ==
 Size: 0x50

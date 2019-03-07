@@ -673,18 +673,39 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 # KPort
 
-Size: 0xA8
+\[1.0.0\] Size: 0xA8
 
-Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
+\[7.0.0\] Size: 0x110
 
-| Offset | Type                                     | Description |
-| ------ | ---------------------------------------- | ----------- |
-| 0      | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance |
-| 0x10   | [\#KServerPort](#KServerPort "wikilink") | ServerSide  |
-| 0x60   | [\#KClientPort](#KClientPort "wikilink") | ClientSide  |
-| 0x98   | u64                                      |             |
-| 0xA0   | bool                                     | HasInited   |
-| 0xA1   | bool                                     | IsLight     |
+Inherits from:
+[\#KAutoObject](#KAutoObject "wikilink")
+
+<div style="display: inline-block;">
+
+| 1.0.0 Offset | Type                                     | Description |
+| ------------ | ---------------------------------------- | ----------- |
+| 0            | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance |
+| 0x10         | [\#KServerPort](#KServerPort "wikilink") | ServerSide  |
+| 0x60         | [\#KClientPort](#KClientPort "wikilink") | ClientSide  |
+| 0x98         | u64                                      |             |
+| 0xA0         | bool                                     | HasInited   |
+| 0xA1         | bool                                     | IsLight     |
+
+</div>
+
+<div style="display: inline-block; vertical-align:top;">
+
+| 7.0.0 Offset | Type                                     | Description |
+| ------------ | ---------------------------------------- | ----------- |
+| 0            | [\#KAutoObject](#KAutoObject "wikilink") | Inheritance |
+| 0x30         | [\#KServerPort](#KServerPort "wikilink") | ServerSide  |
+| 0xA0         | [\#KClientPort](#KClientPort "wikilink") | ClientSide  |
+| 0xF8         | u64                                      |             |
+| 0x100        | char\*                                   | NamePtr     |
+| 0x108        | bool                                     | HasInited   |
+| 0x109        | bool                                     | IsLight     |
+
+</div>
 
 ## KServerPort
 
