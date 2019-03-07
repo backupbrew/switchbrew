@@ -249,6 +249,71 @@ This indicates the type of web-applet.
 | Lobby
 |}
 
+=== WebSession ===
+With [5.0.0+] sdk-nso added <code>nn::web::Session::</code>. WebApplet (Web shim title) doesn't seem to implement this, unknown if other titles do.
+
+This is for sending/receiving [[#SessionMessage]]s via applet Interactive storage.
+
+During state init, max_messages is set to 0xA and max_size is set to 0x5000, with message_count=0 and cur_size=0.
+
+When sending messages, there has to be an available message slot available (<code>max_messages!=message_count</code>), and there has to be enough space avilable (<code>msghdr_contentsize+0x10 + cur_size <= max_size</code>). After pushing the storage, message_count is incremented and cur_size is increased by <code>msghdr_contentsize+0x10</code>.
+
+When receiving messages, it will repeatedly pop Interactive output storage until no more are available. If the ID is not 0x1000/0x0, the message is ignored. Otherwise:
+* Ack: Verifies that message_count is not already 0, then decrements it. Then cur_size is decreased by the u32 loaded from msgcontent+0.
+* 0x0: Does some validation. Copies the first 8-bytes from the header to the user [[#SessionMessage]]. Reads the message content into the user [[#SessionMessage]], when contentsize is non-zero. Then sends an Ack with the storage size.
+
+==== SessionMessage ====
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Description
+|-
+| 0x0
+| 0x10
+| [[#SessionMessageHeader]]
+|-
+| 0x10
+| Size from header
+| Message content
+|}
+
+==== SessionMessageHeader ====
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Description
+|-
+| 0x0
+| 0x4
+| Message ID
+|-
+| 0x4
+| 0x4
+| Content size following the header.
+|-
+| 0x8
+| 0x8
+| Unused
+|}
+
+==== IDs ====
+{| class="wikitable" border="1"
+|-
+!  ID
+!  Content size
+!  Description
+|-
+| 0x0
+| Arbitrary
+| Arbitrary content.
+|-
+| 0x1000
+| 0x8
+| Ack. Content: first u32 is the entire storage size of the message being acked, while the second u32 is 0.
+|}
+
 === WebWifiPageArg ===
 {| class="wikitable" border="1"
 |-

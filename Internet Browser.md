@@ -268,6 +268,59 @@ This indicates the type of web-applet.
 | 6     | Wifi  |
 | 7     | Lobby |
 
+### WebSession
+
+With \[5.0.0+\] sdk-nso added `nn::web::Session::`. WebApplet (Web shim
+title) doesn't seem to implement this, unknown if other titles do.
+
+This is for sending/receiving
+[\#SessionMessages](#SessionMessage "wikilink") via applet Interactive
+storage.
+
+During state init, max\_messages is set to 0xA and max\_size is set to
+0x5000, with message\_count=0 and cur\_size=0.
+
+When sending messages, there has to be an available message slot
+available (`max_messages!=message_count`), and there has to be enough
+space avilable (`msghdr_contentsize+0x10 + cur_size <= max_size`). After
+pushing the storage, message\_count is incremented and cur\_size is
+increased by `msghdr_contentsize+0x10`.
+
+When receiving messages, it will repeatedly pop Interactive output
+storage until no more are available. If the ID is not 0x1000/0x0, the
+message is ignored. Otherwise:
+
+  - Ack: Verifies that message\_count is not already 0, then decrements
+    it. Then cur\_size is decreased by the u32 loaded from msgcontent+0.
+  - 0x0: Does some validation. Copies the first 8-bytes from the header
+    to the user [\#SessionMessage](#SessionMessage "wikilink"). Reads
+    the message content into the user
+    [\#SessionMessage](#SessionMessage "wikilink"), when contentsize is
+    non-zero. Then sends an Ack with the storage
+size.
+
+#### SessionMessage
+
+| Offset | Size             | Description                                                |
+| ------ | ---------------- | ---------------------------------------------------------- |
+| 0x0    | 0x10             | [\#SessionMessageHeader](#SessionMessageHeader "wikilink") |
+| 0x10   | Size from header | Message content                                            |
+
+#### SessionMessageHeader
+
+| Offset | Size | Description                        |
+| ------ | ---- | ---------------------------------- |
+| 0x0    | 0x4  | Message ID                         |
+| 0x4    | 0x4  | Content size following the header. |
+| 0x8    | 0x8  | Unused                             |
+
+#### IDs
+
+| ID     | Content size | Description                                                                                               |
+| ------ | ------------ | --------------------------------------------------------------------------------------------------------- |
+| 0x0    | Arbitrary    | Arbitrary content.                                                                                        |
+| 0x1000 | 0x8          | Ack. Content: first u32 is the entire storage size of the message being acked, while the second u32 is 0. |
+
 ### WebWifiPageArg
 
 | Offset | Size  | Description                                                                                        |
