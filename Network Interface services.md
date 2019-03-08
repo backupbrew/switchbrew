@@ -2,8 +2,10 @@
 
 These are "nn::nifm::detail::IStaticService".
 
-Max sessions: nifm:a = 0x2, nifm:s = 0x10, nifm:u =
-0x5.
+Max sessions: nifm:a = 0x2, nifm:s = 0x10, nifm:u = 0x5.
+
+nifm:u = User, nifm:s = System, and nifm:a =
+Admin.
 
 | Cmd | Name                                                           | Notes                                                        |
 | --- | -------------------------------------------------------------- | ------------------------------------------------------------ |
