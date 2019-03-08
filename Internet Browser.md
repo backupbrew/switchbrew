@@ -334,6 +334,10 @@ size.
 This is the input struct for WifiWebAuthApplet. This is a total of
 0x518-bytes.
 
+An empty conntest URL enables a special code-block which uses NIFM cmds,
+this is also the only time the u32 from WebWifiPageArg offset 0x514 is
+used.
+
 ### WebWifiReturnValue
 
 | Offset | Size | Description |
