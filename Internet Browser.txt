@@ -327,14 +327,14 @@ When receiving messages, it will repeatedly pop Interactive output storage until
 |-
 | 0x104 || 0x400 || Initial URL navigated to by the applet.
 |-
-| 0x504 || 0x10 || Account userID, 0 for common.
+| 0x504 || 0x10 || NIFM Network UUID. Can be value zero. Only used by the applet when conntest_url isn't set.
 |-
-| 0x514 || 0x4 || Unknown, this can be 0.
+| 0x514 || 0x4 || Input value for nifm cmd SetRequirementByRevision. Can be value zero. Only used by the applet when conntest_url isn't set.
 |}
 
 This is the input struct for WifiWebAuthApplet. This is a total of 0x518-bytes.
 
-An empty conntest URL enables a special code-block which uses NIFM cmds, this is also the only time the u32 from WebWifiPageArg offset 0x514 is used.
+An empty conntest URL enables a special code-block which uses various NIFM cmds, which includes using uuid/rev. In that case, the applet will test the connection with nifm and throw an error on failure.
 
 === WebWifiReturnValue ===
 {| class="wikitable" border="1"
