@@ -350,7 +350,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01001B10068EC000 || Urban Trial Playground || EUR USA || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
 |-
-| 01001B300B9BE000 || Diablo III: Eternal Collection || EUR USA || 5.0.0 || Digital / Cartridge || 0 0x10000 0x20000 || || Application / Game
+| 01001B300B9BE000 || Diablo III: Eternal Collection || EUR USA || 5.0.0 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 01001B40086E2000 || The Bunker || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -1230,9 +1230,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01005EC0039E4000 || Poi: Explorer Edition || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 01005ED00AD0C000 || SNKヒロインズ Tag Team Frenzy || JPN || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
+| 01005ED00AD0C000 || SNKヒロインズ Tag Team Frenzy || JPN || 4.0.0 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 || || Application / Game
 |-
-| 01005EE0036EC000 || Rocket League® || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 0xA0000 0xB0000 0xC0000 0xD0000 0xE0000 0xF0000 0100000 || || Application / Game
+| 01005EE0036EC000 || Rocket League® || EUR JPN USA || 3.0.1 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 0xA0000 0xB0000 0xC0000 0xD0000 0xE0000 0xF0000 0100000 0x110000 || || Application / Game
 |-
 | 01005F3006AFE000 || THE 麻雀 || JPN || 4.0.0 || Digital / Cartridge || 0 65536 131072 196608 262144 || || Application / Game
 |-
@@ -1484,7 +1484,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100755004608000 || Arcade Archives Mario Bros. || EUR JPN USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| 0100D9A005ED6000 || 太鼓の達人 Nintendo Switchば～じょん！ || CHN JPN KOR || 4.0.0 || Digital / Cartridge || 0 0x10000 0x30000 0x40000 0x50000 0x70000 0x80000 0x90000 || || Application / Game
+| 0100D9A005ED6000 || 太鼓の達人 Nintendo Switchば～じょん！ || CHN JPN KOR || 4.0.0 || Digital / Cartridge || 0 0x10000 0x30000 0x40000 0x50000 0x70000 0x80000 0x90000 0xA0000 || || Application / Game
 |-
 | 010075E0047F8000 || Neon Chrome || EUR USA || 3.0.1 || Digital || 0 131072 || || Application / Game
 |-
@@ -1656,7 +1656,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 010083800B4E8000 || The Amazing Shinsengumi: Heroes in Love || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| 010083800B6D4000 || 마계전기 디스가이아Refine || KOR || 4.0.0 || Digital / Cartridge || 0 65536 || || Application / Game
+| 010083800B6D4000 || 마계전기 디스가이아Refine || KOR || 4.0.0 || Digital / Cartridge || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | || Darkest Dungeon®: Ancestral Edition (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
@@ -3053,7 +3053,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100FC5009E10000 || Holy Potatoes! A Weapon Shop?! || EUR USA || 4.0.0 || Digital || 0 65536 131072 196608 || || Application / Game
 |-
-| 0100FCF002A58000 || Ultimate Chicken Horse || USA || 5.0.0 || Digital || 0 || || Application / Game
+| 0100FCF002A58000 || Ultimate Chicken Horse || USA || 5.0.0 || Digital || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 0100FD200A45A000 || Spheroids || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -3099,6 +3099,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010053100B0EA000 || Akihabara - Feel the Rhythm Remixed || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01009C400C88C000 || Almost There: The Platformer || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01002BB00C01E000 || Animated Jigsaws: Japanese Women || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010097600C322000 || ANIMUS || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3143,6 +3145,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CE800B94A000 || The Banner Saga Trilogy || EUR USA || || Cartridge || 0 0x10000 || || Game
 |-
+| 01002CD00A51C000 || Baba Is You || EUR USA || || Digital || 0 0x20000 || || Game
+|-
 | 01005BE00BD44000 || Bass Pro Shops: The Strike - Championship Edition || EUR || || Digital || 0 0x20000 || || Game
 |-
 | 0100E3100450E000 || Bass Pro Shops: The Strike - Championship Edition || USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
@@ -3186,6 +3190,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010088C0092FE000 || Carnival Games® || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010004400B28A000 || Cattails || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 01001A100C0E8000 || Caveblazers || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010068500CA7A000 || Chalk Dash Carnival || EUR || || Digital || 0 0x10000 || || Game
 |-
@@ -3251,13 +3257,15 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100D3200AF74000 || Doodle God: Evolution || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010019F00CF92000 || Doom & Destiny || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 0100F7300BD8E000 || Double Cross || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010093D00C726000 || Downwell || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 01001B80099F6000 || Dracula's Legacy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
-| 010089700150E000 || Dragon Marked for Death: Frontline Fighters || EUR USA || || Digital || 0 0x20000 0x40000 || || Game
+| 010089700150E000 || Dragon Marked for Death: Frontline Fighters || EUR USA || || Digital || 0 0x20000 0x40000 0x50000 0x60000 || || Game
 |-
 | 0100ED200B6FC000 || Dragons Dawn of New Riders || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3265,7 +3273,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010018E00BA22000 || Drift Legends || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010052000A574000 || Drowning || EUR USA || || Digital || 0 0x10000 || || Game
+| 010052000A574000 || Drowning || EUR USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
 | 010016700BCD4000 || Dungeon Village || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3277,7 +3285,9 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010073C00BDB0000 || Elli || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100DCF0093EC000 || EVERSPACE™ - Stellar Edition || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+| 01001B700BA7C000 || The Escapists: Complete Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100DCF0093EC000 || EVERSPACE™ - Stellar Edition || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
 | 010031F00B246000 || Everything || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3305,11 +3315,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F3700C09C000 || Find the Balance || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010098800A1E4000 || The First Tree || EUR JPN USA || || Digital || 0 0x10000 || || Game
+| 010069800D292000 || Fishing Universe Simulator || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010098800A1E4000 || The First Tree || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100E7300AAD4000 || Fitness Boxing || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010078500C21A000 || Football Manager 2019 Touch || EUR USA || || 0 0x10000 || || Game
+| 010078500C21A000 || Football Manager 2019 Touch || EUR USA || || 0 0x10000 0x20000 || || Game
 |-
 | 01007CD00BCE2000 || Forever Forest || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3333,11 +3345,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010014A00AC5A000 || The Golf || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 01005EA00A57E000 || Golf Story || USA || || Cartridge || 0 0x10000 || || Game
+|-
 | 0100B7900B024000 || Grim Fandango Remastered || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100459009A2A000 || GRIP || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
-| 0100E1700C31C000 || GRIS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+| 0100E1700C31C000 || GRIS || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 01007E100456C000 || Guacamelee! 2 || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
 |-
@@ -3348,6 +3362,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100E0D00C336000 || Halloween Pinball || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100BB600C096000 || Hardway Party || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100D0500AD30000 || Harvest Life || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010092B00C4F0000 || Hello Neighbor Hide and Seek || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3371,6 +3387,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01005EC00BEEC000 || Iron Crypticle || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100D8E00C874000 || izneo || EUR USA || || Digital || 0 0x10000 || || Application
+|-
 | 0100CC80013D6000 || The Jackbox Party Pack 3 || EUR USA || || Digital || 0 || || Game
 |-
 | 01006FE0096AC000 || The Jackbox Party Pack 5 || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3387,7 +3405,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010011400AF8E000 || Julie's Sweets || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010075600AE96000 || Just Dance® 2019 || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
+| 010075600AE96000 || Just Dance® 2019 || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 || || Game
 |-
 | 0100D7000C2C6000 || Katamari Damacy REROLL || USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3407,7 +3425,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01001F600B3EE000 || The Legend of Evil || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
-| 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
+| 010070D009FEC000 || LEGO® DC Super-Villains || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 || || Game
 |-
 | 0100A4400BE74000 || The LEGO® Movie 2 - Videogame || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3429,7 +3447,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01008E300C88A000 || Mad Age & This Guy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
-| 010099700BF10000 || Madorica Real Estate || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x50000 || || Game
+| 010099700BF10000 || Madorica Real Estate || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x50000 0x60000 || || Game
 |-
 | 0100549008C9C000 || Mages of Mystralia || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3443,7 +3461,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01006D500B0C8000 || Mecho Wars: Desert Ashes || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100C9A00B60A000 || Mercury Race || EUR USA || || Digital || 0 0x10000 || || Game
+| 0100C9A00B60A000 || Mercury Race || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100F5700C9A8000 || MIND: Path to Thalamus || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3475,13 +3493,15 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100A6F00AC70000 || NAIRI: Tower of Shirin || EUR JPN USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
-| 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
+| 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 || || Game
 |-
 | 01003F000C7F8000 || Necrosphere Deluxe || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010012900C782000 || NEKOPARA Vol.2 || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010082900C5FA000 || New Star Manager || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100EDD00D530000 || Nice Slice || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100BD900A3FC000 || Nickelodeon Kart Racers || EUR || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |-
@@ -3523,7 +3543,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010076E009C5E000 || Party Hard || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100CE600B7B4000 || Passpartout: The Starving Artist || EUR USA || || Digital || 0 0x20000 || || Game
+| 0100CE600B7B4000 || Passpartout: The Starving Artist || EUR USA || || Digital || 0 0x20000 0x50000 || || Game
 |-
 | 0100CEC003A4A000 || PAW Patrol: On a Roll || EUR USA || || Digital || 0 || || Game
 |-
@@ -3541,7 +3561,11 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100BBD00976C000 || Project Highrise: Architect's Edition || EUR USA || || Digital || 0 || || Game
 |-
+| 010023600AA34000 || Q.U.B.E. 2 || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 0100E5400BE64000 || R-Type Dimensions EX || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100FCB00BF40000 || R.B.I. Baseball 19 || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010000600CD54000 || Rad Rodgers Radical Edition || EUR USA || || Digital || 0 0x20000 || || Game
 |-
@@ -3563,7 +3587,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01002C700C326000 || Riddled Corpses EX || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010088E00B816000 || RIOT - Civil Unrest || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+| 010088E00B816000 || RIOT - Civil Unrest || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 0100AAA00ACBE000 || Risk of Rain || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3597,7 +3621,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F89003BC8000 || The Sexy Brutale || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
-| 010006C00CC10000 || Shanky: The Vegan's Nightmare || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+| 010006C00CC10000 || Shanky: The Vegan's Nightmare || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 01001FF00BEE8000 || The Shapeshifting Detective || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3611,11 +3635,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F3C00C400000 || SkyTime || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 01005A600C318000 || SMITE || USA || || Digital || 0 0x10000 0x30000 0x40000 0x50000 0x60000 || || Game
+| 01005A600C318000 || SMITE || USA || || Digital || 0 0x10000 0x30000 0x40000 0x50000 0x60000 0x80000 || || Game
 |-
 | 01004AB00AEF8000 || SNK 40th ANNIVERSARY COLLECTION || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
 |-
 | 01007D600D242000 || Solitaire Klondike BLACK || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100DB500B17C000 || Solstice Chronicles: MIA || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100AD000B9AC000 || Son of a Witch || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3657,6 +3683,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010040D00BCF4000 || Storm Boy || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010060600CFDE000 || Strikey Sisters || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01002D3007962000 || Sundered: Eldritch Edition || EUR JPN USA || || Digital || 0 0x20000 0x30000 0x40000 || || Game
 |-
 | 010099F00B374000 || Super Hydorah || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
@@ -3673,11 +3701,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CBE004E6C000 || Syberia 3 || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 01002C000B552000 || Taiko no Tatsujin Drum'n'Fun! || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
+| 01002C000B552000 || Taiko no Tatsujin Drum'n'Fun! || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
-| 01002C0008E52000 || Tales of Vesperia: Definitive Edition || EUR JPN USA || || Digital || 0 0x10000 || || Game
+| 01002C0008E52000 || Tales of Vesperia: Definitive Edition || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010048F007ADE000 || Tangledeep || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010040600C5CE000 || Tetris 99 || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010075900CD1C000 || Thea: The Awakening || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3690,6 +3720,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100B5200BB7C000 || ToeJam & Earl: Back in the Groove! || EUR USA || || Digital || 0 0x20000 || || Game
 |-
 | 0100F3400A432000 || Toki || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100E2E00CB14000 || Tokyo School Life || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100D6700C3E6000 || TORIDAMA: Brave Challenge || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -3711,7 +3743,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010045200A1C2000 || Ultimate Runner || EUR USA || || Digital || 0x10000 || || Game
 |-
-| 010001300CC4A000 || Unruly Heroes || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+| 010001300CC4A000 || Unruly Heroes || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 01001B10068EC000 || Urban Trial Playground || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
@@ -3719,13 +3751,15 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010042100BAA6000 || Valthirian Arc: Hero School Story || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 01009DE00B5CC000 || Varion || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01003B2009D18000 || Violett || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 010037900CB1C000 || Viviette || EUR USA || || Digital || 0 0x10000 || || Game
+| 010037900CB1C000 || Viviette || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010004000AABC000 || VOEZ || USA || || Cartridge || 0 0x10000 0x20000 || || Game
 |-
-| 01000F0002BB6000 || Wargroove || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+| 01000F0002BB6000 || Wargroove || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
 | 010016A00AEC0000 || Warriors Orochi 4 || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Game
 |-
@@ -3741,11 +3775,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010072000BD32000 || World of Final Fantasy Maxima || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100D6a00BE66000 || World Tree Marché || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
 | 010026800BA16000 || Xenon Racer || EUR || || Digital || 0 0x10000 || || Game
 |-
 | 010064200C324000 || Xenon Valkyrie+ || EUR USA || || Digital || 0 || || Game
 |-
-| 0100634008266000 || YIIK: A Postmodern RPG || EUR USA || || Digital || 0 0x10000 || || Game
+| 0100634008266000 || YIIK: A Postmodern RPG || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010012F00B6F2000 || Yomawari: The Long Night Collection || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3853,7 +3889,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01007E500B95E000 || レッドストリート - 悪魔の挑戦デラックス || JPN || || Digital || 0 0x10000 || || Game
 |-
-| 010032F00C04A000 || ディアブロ III エターナルコレクション || JPN || || Digital || 0 0x10000 || || Game
+| 010032F00C04A000 || ディアブロ III エターナルコレクション || JPN || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010076700CA18000 || アガルタ　エス || JPN || || Digital || 0 0x10000 || || Game
 |-
@@ -3894,6 +3930,12 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01007D600CE9C000 || JUDGEMENT 7　俺達の世界わ終っている。 || JPN || || Digital || 0 0x10000 || || Game
 |-
 | 0100DD400C468000 || Stardew Valley || JPN || || Cartridge || 0 0x10000 || || Game
+|-
+| 0100B9B00C6A4000 || この世の果てで恋を唄う少女YU-NO || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 01004A200BE82000 || OPUS Collection: 地球計画+魂の架け橋 || JPN || || Cartridge || 0 0x10000 || || Game
+|-
+| 01009AA00D49E000 || 空のフォークロア || JPN || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
