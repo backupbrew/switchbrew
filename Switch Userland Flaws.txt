@@ -30,4 +30,11 @@ Switch: March 3rd-4th 2017
 | [[6.1.0]]
 | 
 | Everyone
+|-
+| CVE-2018-4441
+| WebKit memory corruption bug. See [https://bugs.chromium.org/p/project-zero/issues/detail?id=1685&desc=2 here].
+| [[7.0.0]]
+| [[7.0.0]]
+| 
+| Everyone
 |}
