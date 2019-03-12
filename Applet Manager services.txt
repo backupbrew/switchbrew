@@ -1690,10 +1690,10 @@ See also [[:Category:Library Applets]].
 | Background
 |-
 | 0x2
-| Unknown
+| No UI
 |-
 | 0x3
-| Unknown, see also [[#GetIndirectLayerConsumerHandle]]. Only used by swkbd InlineKeyboard.
+| Background with indirect display, see also [[#GetIndirectLayerConsumerHandle]]. Only used by swkbd InlineKeyboard.
 |-
 |}
 
