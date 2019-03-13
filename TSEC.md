@@ -19,7 +19,8 @@ TSEC and are subdivided into:
 
   - 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
   - 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
-  - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
+  - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG
+    (Clock Gate).
   - 0x54501700 to 0x54501800: DMA.
   - 0x54501800 to 0x54501900: TEGRA (miscellaneous
 interfaces).
@@ -201,6 +202,7 @@ interfaces).
 | TSEC\_TFBIF\_UNK\_40                                                    | 0x54501640 | 0x04  |
 | [TSEC\_TFBIF\_UNK\_44](#TSEC_TFBIF_UNK_44 "wikilink")                   | 0x54501644 | 0x04  |
 | [TSEC\_TFBIF\_UNK\_48](#TSEC_TFBIF_UNK_48 "wikilink")                   | 0x54501648 | 0x04  |
+| [TSEC\_CG](#TSEC_CG "wikilink")                                         | 0x545016D0 | 0x04  |
 | [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
 | [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
 | [TSEC\_DMA\_DATA](#TSEC_DMA_DATA "wikilink")                            | 0x54501708 | 0x04  |
@@ -1158,6 +1160,15 @@ Used to control accesses to DRAM.
 
 \[6.0.0+\] The nvhost\_tsec firmware sets this register to 0x20 or 0x140
 before reading memory from the GPU UCODE carveout.
+
+### TSEC\_CG
+
+| Bits  | Description                  |
+| ----- | ---------------------------- |
+| 0-5   | TSEC\_CG\_IDLE\_CG\_DLY\_CNT |
+| 6     | TSEC\_CG\_IDLE\_CG\_EN       |
+| 16-18 | TSEC\_CG\_WAKEUP\_DLY\_CNT   |
+| 19    | TSEC\_CG\_WAKEUP\_DLY\_EN    |
 
 ### TSEC\_DMA\_CMD
 

@@ -9,7 +9,7 @@ Registers from 0x54500000 to 0x54501000 are used to configure the host interface
 Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
 * 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
 * 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
-* 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface).
+* 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG (Clock Gate).
 * 0x54501700 to 0x54501800: DMA.
 * 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
 
@@ -716,6 +716,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | [[#TSEC_TFBIF_UNK_48|TSEC_TFBIF_UNK_48]]
 | 0x54501648
+| 0x04
+|-
+| [[#TSEC_CG|TSEC_CG]]
+| 0x545016D0
 | 0x04
 |-
 | [[#TSEC_DMA_CMD|TSEC_DMA_CMD]]
@@ -2219,6 +2223,24 @@ Used to control accesses to DRAM.
 Used to control accesses to DRAM.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x20 or 0x140 before reading memory from the GPU UCODE carveout.
+
+=== TSEC_CG ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-5
+| TSEC_CG_IDLE_CG_DLY_CNT
+|-
+| 6
+| TSEC_CG_IDLE_CG_EN
+|-
+| 16-18
+| TSEC_CG_WAKEUP_DLY_CNT
+|-
+| 19
+| TSEC_CG_WAKEUP_DLY_EN
+|}
 
 === TSEC_DMA_CMD ===
 {| class="wikitable" border="1"
