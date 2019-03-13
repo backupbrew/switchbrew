@@ -690,7 +690,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501604
 | 0x04
 |-
-| TSEC_TFBIF_UNK_08
+| TSEC_TFBIF_THROTTLE
 | 0x54501608
 | 0x04
 |-

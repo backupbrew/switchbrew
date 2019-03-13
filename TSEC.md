@@ -194,7 +194,7 @@ interfaces).
 | TSEC\_TRNG\_CTL                                                         | 0x5450152C | 0x04  |
 | TSEC\_TFBIF\_UNK\_00                                                    | 0x54501600 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL](#TSEC_TFBIF_MCCIF_FIFOCTRL "wikilink")   | 0x54501604 | 0x04  |
-| TSEC\_TFBIF\_UNK\_08                                                    | 0x54501608 | 0x04  |
+| TSEC\_TFBIF\_THROTTLE                                                   | 0x54501608 | 0x04  |
 | TSEC\_TFBIF\_UNK\_0C                                                    | 0x5450160C | 0x04  |
 | TSEC\_TFBIF\_UNK\_30                                                    | 0x54501630 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL1](#TSEC_TFBIF_MCCIF_FIFOCTRL1 "wikilink") | 0x54501634 | 0x04  |
