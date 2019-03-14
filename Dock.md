@@ -14,19 +14,19 @@ system-titles).
 <tbody>
 <tr class="odd">
 <td><p>MyDP -&gt; HDMI Converter</p></td>
-<td><p>MegaChips STDP2550 &quot;Mystique&quot;</p></td>
+<td><p>MegaChips STDP2550 "Mystique"</p></td>
 <td><p>2Mb flash contains firmware<br />
 Based on STMicroelectronics Mystique family of DP converters.</p></td>
 </tr>
 <tr class="even">
 <td><p>USB Hub</p></td>
-<td><p>VIA Labs VL210 USB 3.0 Hub Controller</p></td>
+<td><p>VIA Labs VL210 USB 3.0 Hub Controller / Genesys Logic GL3510</p></td>
 <td><p>512Kb flash is configuration storage</p></td>
 </tr>
 <tr class="odd">
 <td><p>USB Device</p></td>
 <td><p>Cortex-M0 based (STM32F0-ish)<br />
-&quot;32P048&quot;</p></td>
+"32P048"</p></td>
 <td><p>SWD clearly labelled and enabled<br />
 Provides control of the Mystique<br />
 Dumps (fw-1.0.0):<br />
@@ -37,11 +37,11 @@ Dumps (fw-1.0.0):<br />
 </tr>
 <tr class="even">
 <td><p>Flash</p></td>
-<td><p>Macronix MX25L512E 512Kb CMOS</p></td>
+<td><p>Macronix MX25L512E 512Kb CMOS / Nothing</p></td>
 <td><p><a href=":File:Dock.512K.bin.md" title="wikilink">dump (fw-1.0.0)</a></p></td>
 </tr>
 <tr class="odd">
-<td><p>Macronix MX25V2006E 2Mb CMOS</p></td>
+<td><p>Macronix MX25V2006E 2Mb CMOS / Windbond 25X20CLL04</p></td>
 <td><p><a href=":File:Dock.2M.bin.md" title="wikilink">dump (fw-1.0.0)</a></p></td>
 <td></td>
 </tr>
