@@ -1,26 +1,32 @@
 The Dock is internally called "Cradle"(strings/symbols in system-titles).
 
+The original dock was the HAC-CDH-MAIN-01.
+
+There is an updated, costs down version of the dock out in the wild labeled as HAC-CDH-MAIN-10.
+The release date is unknown. The guess is it came along with the patched 4.1 units.
+
 == Components ==
 {| class="wikitable"
-! Function || Component || Notes
+! Function || Component on HAC-CDH-MAIN-01 || on HAC-CDH-MAIN-10 || Notes
 |-
-| MyDP -> HDMI Converter || MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware <br> Based on STMicroelectronics Mystique family of DP converters.
+| MyDP -> HDMI Converter || colspan="2" | MegaChips STDP2550 "Mystique" || 2Mb flash contains firmware <br> Based on STMicroelectronics Mystique family of DP converters.
 |-
-| USB Hub || VIA Labs VL210 USB 3.0 Hub Controller / Genesys Logic GL3510 || 512Kb flash is configuration storage
+| USB Hub || VIA Labs VL210 USB 3.0 Hub Controller || Genesys Logic GL3510 || 512Kb flash is configuration storage
 |-
-| USB Device || Cortex-M0 based (STM32F0-ish)<br>"32P048"
+| USB Device || colspan="2" | Cortex-M0 based (STM32F0-ish)<br>"32P048"
 | SWD clearly labelled and enabled<br>Provides control of the Mystique<br>Dumps (fw-1.0.0):<br>[[:File:Dock.stm.08000000-08008000.bin|flash]]<br>[[:File:Dock.stm.1fffc400-1ffffc00.bin|sysmem]]<br>[[:File:Dock.stm.20000000-20001800.bin|SRAM]]<br>[http://www.st.com/content/ccc/resource/technical/document/reference_manual/c2/f8/8a/f2/18/e6/43/96/DM00031936.pdf/files/DM00031936.pdf/jcr:content/translations/en.DM00031936.pdf Relevant manual]
 |-
 | rowspan="2" | Flash 
-| Macronix MX25L512E 512Kb CMOS / Nothing || [[:File:Dock.512K.bin|dump (fw-1.0.0)]]
+| Macronix MX25L512E 512Kb CMOS || Unpopulated || [[:File:Dock.512K.bin|dump (fw-1.0.0)]]
 |-
-| Macronix MX25V2006E 2Mb CMOS / Windbond 25X20CLL04|| [[:File:Dock.2M.bin|dump (fw-1.0.0)]]
+| Macronix MX25V2006E 2Mb CMOS || Windbond 25X20CLL04 || [[:File:Dock.2M.bin|dump (fw-1.0.0)]]
 |-
 | rowspan="2" | USB-PD
-| ROHM BM92T17 || rowspan="2" | One at i2c addr 0x18, the other at 0x1a<br>[http://www.rohm.com/web/global/datasheet/BM92T10MWV/bm92t10mwv-e bm92t1x datasheet]<br>[http://www.rohm.com/web/global/datasheet/BM92T50MWV/bm92t50mwv-e bm92t5x datasheet]
+| colspan="2" | ROHM BM92T17 || rowspan="2" | One at i2c addr 0x18, the other at 0x1a<br>[http://www.rohm.com/web/global/datasheet/BM92T10MWV/bm92t10mwv-e bm92t1x datasheet]<br>[http://www.rohm.com/web/global/datasheet/BM92T50MWV/bm92t50mwv-e bm92t5x datasheet]
 |-
-| ROHM BM92T55
+| colspan="2" | ROHM BM92T55
 |}
+All 1.0.0 dumps were collected from a HAC-CDH-MAIN-01.
 
 ==Other Resources==
 # [[List of compatible USB devices]]
