@@ -202,7 +202,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501080
 | 0x04
 |-
-| FALCON_DEBUG0
+| FALCON_RM
 | 0x54501084
 | 0x04
 |-

@@ -73,7 +73,7 @@ interfaces).
 | FALCON\_MTHD\_LIMIT                                                     | 0x54501078 | 0x04  |
 | FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
 | FALCON\_OS                                                              | 0x54501080 | 0x04  |
-| FALCON\_DEBUG0                                                          | 0x54501084 | 0x04  |
+| FALCON\_RM                                                              | 0x54501084 | 0x04  |
 | FALCON\_PM\_SIGNAL                                                      | 0x54501088 | 0x04  |
 | FALCON\_PM\_MODE                                                        | 0x5450108C | 0x04  |
 | [FALCON\_DEBUG1](#FALCON_DEBUG1 "wikilink")                             | 0x54501090 | 0x04  |
