@@ -93,7 +93,7 @@ This is
 | 65   | \[5.0.0+\] UpdateSaveDataMacForDebug                                                                                                                              |
 | 66   | \[5.0.0+\] WriteSaveDataFileSystemExtraData2                                                                                                                      |
 | 67   | \[6.0.0+\] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)                                 |
-| 68   | \[6.0.0+\] OpenSaveDataInfoReaderBySaveDataFilter (Unofficial name, takes a total of 0x50-bytes of input, returns an \#ISaveDataInfoReader)                       |
+| 68   | \[6.0.0+\] OpenSaveDataIterator (Takes a total of 0x50-bytes of input, returns an \#ISaveDataInfoReader)                                                          |
 | 80   | OpenSaveDataMetaFile                                                                                                                                              |
 | 81   | \[4.0.0+\] OpenSaveDataTransferManager (No input, returns an [\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink"))                                  |
 | 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
@@ -107,8 +107,8 @@ This is
 | 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                                                             |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                  |
 | 203  | OpenPatchDataStorageByCurrentProcess                                                                                                                              |
-| 204  | \[7.0.0+\] ? (Takes an input u8, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                                                             |
-| 205  | \[7.0.0+\] ? (Takes an input u8, returns an [\#IStorage](#IStorage "wikilink"))                                                                                   |
+| 204  | \[7.0.0+\] OpenDataFileSystemByProgramIndex (Takes an input u8, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                              |
+| 205  | \[7.0.0+\] OpenDataStorageByProgramIndex (Takes an input u8, returns an [\#IStorage](#IStorage "wikilink"))                                                       |
 | 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                                                                            |
 | 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                                                                                |
 | 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                                                                            |
@@ -155,7 +155,7 @@ This is
 | 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                                                                                          |
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
 | 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                                                      |
-| 1011 | \[7.0.0+\] (no input, returns two 32-bit values, second is "program\_index")                                                                                      |
+| 1011 | \[7.0.0+\] OutputAccessLogToSdCard2 (no input, returns two 32-bit values, second is "program\_index")                                                             |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
 | 1110 | \[6.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId2                                                                                                            |
 | 1200 | \[6.0.0+\] OpenMultiCommitManager (No input, returns an output \#IMultiCommitManager)                                                                             |
