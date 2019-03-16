@@ -306,83 +306,6 @@ on DramId.
 <code>11_1600000_02_V9.8.3_V1.6</code></p></td>
 </tr>
 <tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>EristaIcosaSamsung4gb or EristaIcosaMicron4gb</p></td>
-<td><p>0x07</p></td>
-<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>nx-abca2</p></td>
-<td><p>EristaIcosaHynix4gb</p></td>
-<td><p>0x07</p></td>
-<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
-</tr>
-<tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>EristaIcosaSamsung6gb</p></td>
-<td><p>0x07</p></td>
-<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
-<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowax1x2Samsung4gb</p></td>
-<td><p>0x03</p></td>
-<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
-</tr>
-<tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaSamsung4gb or MarikoHoagSamsung4gb</p></td>
-<td><p>0x03</p></td>
-<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaSamsung8gb or MarikoHoagSamsung8gb</p></td>
-<td><p>0x03</p></td>
-<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
-<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
-<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
-</tr>
-<tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaHynix4gb</p></td>
-<td><p>0x03</p></td>
-<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
-<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
-</tr>
-<tr class="odd">
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaSamsung4gb</p></td>
 <td><p>0x07</p></td>
@@ -397,7 +320,7 @@ on DramId.
 <code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
 <code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaMicron4gb</p></td>
 <td><p>0x07</p></td>
@@ -412,7 +335,7 @@ on DramId.
 <code>10_1331200_NoCfgVersion_V9.8.4_V1.6</code><br />
 <code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaHynix4gb</p></td>
 <td><p>0x07</p></td>
@@ -427,6 +350,91 @@ on DramId.
 <code>10_1331200_NoCfgVersion_V9.8.4_V1.6</code><br />
 <code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
 </tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaSamsung4gb or EristaIcosaMicron4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaHynix4gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>EristaIcosaSamsung6gb</p></td>
+<td><p>0x07</p></td>
+<td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_102000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_204000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_408000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_665600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_800000_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1065600_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1331200_NoCfgVersion_V9.8.7_V1.6</code><br />
+<code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowax1x2Samsung4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaSamsung4gb or MarikoHoagSamsung4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaSamsung8gb or MarikoHoagSamsung8gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaHynix4gb or MarikoHoagHynix4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>nx-abca2</p></td>
+<td><p>MarikoIowaHynix8gb or MarikoHoagHynix8gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
 </tbody>
 </table>
 
@@ -435,6 +443,8 @@ extra hardware to support HDMI output.
 
 nx-abca2 (Icosa) hardware types are variations of the retail form
 factor.
+
+Erista memory is LPDDR4, while Mariko memory is LPDDR4X.
 
 #### SecurityEngineIrqNumber
 
