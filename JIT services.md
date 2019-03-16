@@ -18,8 +18,7 @@ This is "nn::jitsrv::IJitEnvironment".
 
 | Cmd  | Name           |
 | ---- | -------------- |
-| 0    | Control        |
-| 1    | GenerateCode   |
+| 0    | GenerateCode   |
+| 1    | Control        |
 | 1000 | LoadPlugin     |
 | 1001 | GetCodeAddress |
-|      |                |
