@@ -115,6 +115,7 @@ match btdrv.
 | 97  | \[5.0.0+\] RegisterBleHidEvent             |
 | 98  | \[5.1.0+\] SetLeScanParameter              |
 | 256 | \[5.0.0+\] GetIsManufacturingMode          |
+| 257 | \[7.0.0+\] EmulateBluetoothCrash           |
 
 # bt
 
