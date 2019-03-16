@@ -80,6 +80,8 @@ This is "nn::ldn::detail::ISystemLocalCommunicationService".
 |-
 | 103 || ScanPrivate
 |-
+| 104 || [5.0.0+] SetWirelessControllerRestriction
+|-
 | 200 || OpenAccessPoint
 |-
 | 201 || CloseAccessPoint
@@ -114,6 +116,9 @@ This is "nn::ldn::detail::ISystemLocalCommunicationService".
 |-
 | 401 || FinalizeSystem
 |-
+| 402 || [4.0.0+] SetOperationMode
+|-
+| 403 || [7.0.0+] InitializeSystem2
 |}
 
 = ldn:u =
@@ -124,7 +129,6 @@ This is "nn::ldn::detail::IUserServiceCreator".
 ! Cmd || Name
 |-
 | 0 || [[#CreateUserLocalCommunicationService]]
-|-
 |}
 
 == CreateUserLocalCommunicationService==
@@ -156,6 +160,8 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 | 102 || Scan
 |-
 | 103 || ScanPrivate
+|-
+| 104 || [5.0.0+] SetWirelessControllerRestriction
 |-
 | 200 || OpenAccessPoint
 |-
@@ -191,6 +197,7 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 |-
 | 401 || Finalize
 |-
+| 402 || [7.0.0+] SetOperationMode
 |}
 
 [[Category:Services]]
