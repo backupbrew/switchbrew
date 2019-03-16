@@ -265,15 +265,17 @@ This is extracted directly from
 | 2     | DramId\_EristaIcosaMicron4gb                                           |
 | 3     | Reserved                                                               |
 | 4     | DramId\_EristaIcosaSamsung6gb                                          |
-| 5     | \[4.0.0+\] Reserved                                                    |
-| 6     | \[4.0.0+\] Reserved                                                    |
+| 5     | \[4.0.0+\] Reserved (DramId\_EristaIcosaHynix6gb)                      |
+| 6     | \[4.0.0+\] Reserved (DramId\_EristaIcosaMicron6gb)                     |
 | 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb (\[4.0.0-4.1.0\] Reserved) |
 | 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb                                |
 | 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb                                |
 | 10    | \[6.0.0+\] DramId\_MarikoIowaHynix4gb (\[5.0.0-5.1.0\] Reserved)       |
-| 11    | \[5.0.0+\] Reserved                                                    |
+| 11    | \[7.0.0+\] DramId\_MarikoIowaHynix8gb (\[5.0.0-6.2.0\] Reserved)       |
 | 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb                                |
 | 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb                                |
+| 14    | \[7.0.0+\] DramId\_MarikoHoagHynix4gb (\[5.0.0-6.2.0\] Reserved)       |
+| 15    | \[7.0.0+\] DramId\_MarikoHoagHynix8gb (\[5.0.0-6.2.0\] Reserved)       |
 
 [PCV](PCV%20services.md "wikilink") selects memory training tables based
 on DramId.

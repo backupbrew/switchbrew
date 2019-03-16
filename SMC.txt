@@ -264,10 +264,10 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  DramId_EristaIcosaSamsung6gb
 |-
 |  5
-|  [4.0.0+] Reserved
+|  [4.0.0+] Reserved (DramId_EristaIcosaHynix6gb)
 |-
 |  6
-|  [4.0.0+] Reserved
+|  [4.0.0+] Reserved (DramId_EristaIcosaMicron6gb)
 |-
 |  7
 |  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb ([4.0.0-4.1.0] Reserved)
@@ -282,13 +282,19 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  [6.0.0+] DramId_MarikoIowaHynix4gb ([5.0.0-5.1.0] Reserved)
 |-
 |  11
-|  [5.0.0+] Reserved
+|  [7.0.0+] DramId_MarikoIowaHynix8gb ([5.0.0-6.2.0] Reserved)
 |-
 |  12
 |  [5.0.0+] DramId_MarikoHoagSamsung4gb
 |-
 |  13
 |  [5.0.0+] DramId_MarikoHoagSamsung8gb
+|-
+|  14
+|  [7.0.0+] DramId_MarikoHoagHynix4gb ([5.0.0-6.2.0] Reserved)
+|-
+|  15
+|  [7.0.0+] DramId_MarikoHoagHynix8gb ([5.0.0-6.2.0] Reserved)
 |}
 
 [[PCV_services|PCV]] selects memory training tables based on DramId.
