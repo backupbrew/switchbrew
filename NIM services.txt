@@ -174,6 +174,46 @@ This is "nn::nim::detail::IShopServiceAccessServerInterface".
 | 3 || RegisterDebugResponse
 |}
 
+== IShopServiceAccessServer ==
+This is "nn::nim::detail::IShopServiceAccessServer".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || CreateAccessorInterface
+|}
+
+=== IShopServiceAccessor ===
+This is "nn::nim::detail::IShopServiceAccessor".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || CreateAsyncInterface
+|}
+
+==== IShopServiceAsync ====
+This is "nn::nim::detail::IShopServiceAsync".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Cancel
+|-
+| 1 || GetSize
+|-
+| 2 || Read
+|-
+| 3 || GetErrorCode
+|-
+| 4 || Request
+|-
+| 5 || Prepare
+|}
+
 = ntc =
 This is "nn::ntc::detail::service::IStaticService".
 

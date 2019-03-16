@@ -104,6 +104,35 @@ This is "nn::nim::detail::IShopServiceAccessServerInterface".
 | 2   | ClearDebugResponse       |
 | 3   | RegisterDebugResponse    |
 
+## IShopServiceAccessServer
+
+This is "nn::nim::detail::IShopServiceAccessServer".
+
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | CreateAccessorInterface |
+
+### IShopServiceAccessor
+
+This is "nn::nim::detail::IShopServiceAccessor".
+
+| Cmd | Name                 |
+| --- | -------------------- |
+| 0   | CreateAsyncInterface |
+
+#### IShopServiceAsync
+
+This is "nn::nim::detail::IShopServiceAsync".
+
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | Cancel       |
+| 1   | GetSize      |
+| 2   | Read         |
+| 3   | GetErrorCode |
+| 4   | Request      |
+| 5   | Prepare      |
+
 # ntc
 
 This is "nn::ntc::detail::<service::IStaticService>".
