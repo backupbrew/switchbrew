@@ -397,54 +397,53 @@ Takes an input u64 DisplayId and returns a handle.
 
 ## ISystemDisplayService
 
-This is
-"nn::visrv::sf::ISystemDisplayService".
+This is "nn::visrv::sf::ISystemDisplayService".
 
-| Cmd                  | Name                                           |
-| -------------------- | ---------------------------------------------- |
-| 1200                 | GetZOrderCountMin                              |
-| 1202                 | GetZOrderCountMax                              |
-| 1203                 | GetDisplayLogicalResolution                    |
-| 1204                 | \[3.0.0+\] SetDisplayMagnification             |
-| 2201                 | SetLayerPosition                               |
-| 2203                 | SetLayerSize                                   |
-| 2204                 | GetLayerZ                                      |
-| 2205                 | SetLayerZ                                      |
-| 2207                 | SetLayerVisibility                             |
-| 2209                 | SetLayerAlpha                                  |
-| \[1.0.0-6.2.0\] 2312 | CreateStrayLayer                               |
-| 2400                 | OpenIndirectLayer                              |
-| 2401                 | CloseIndirectLayer                             |
-| 2402                 | FlipIndirectLayer                              |
-| 3000                 | ListDisplayModes                               |
-| 3001                 | ListDisplayRgbRanges                           |
-| 3002                 | ListDisplayContentTypes                        |
-| 3200                 | GetDisplayMode                                 |
-| 3201                 | SetDisplayMode                                 |
-| 3202                 | GetDisplayUnderscan                            |
-| 3203                 | SetDisplayUnderscan                            |
-| 3204                 | GetDisplayContentType                          |
-| 3205                 | SetDisplayContentType                          |
-| 3206                 | GetDisplayRgbRange                             |
-| 3207                 | SetDisplayRgbRange                             |
-| 3208                 | GetDisplayCmuMode                              |
-| 3209                 | SetDisplayCmuMode                              |
-| 3210                 | GetDisplayContrastRatio                        |
-| 3211                 | SetDisplayContrastRatio                        |
-| 3214                 | GetDisplayGamma                                |
-| 3215                 | SetDisplayGamma                                |
-| 3216                 | GetDisplayCmuLuma                              |
-| 3217                 | SetDisplayCmuLuma                              |
-| 8225                 | \[4.0.0+\] GetSharedBufferMemoryHandleId       |
-| 8250                 | \[4.0.0+\] OpenSharedLayer                     |
-| 8251                 | \[4.0.0+\] CloseSharedLayer                    |
-| 8252                 | \[4.0.0+\] ConnectSharedLayer                  |
-| 8253                 | \[4.0.0+\] DisconnectSharedLayer               |
-| 8254                 | \[4.0.0+\] AcquireSharedFrameBuffer            |
-| 8255                 | \[4.0.0+\] PresentSharedFrameBuffer            |
-| 8256                 | \[4.0.0+\] GetSharedFrameBufferAcquirableEvent |
-| 8257                 | \[4.0.0+\] FillSharedFrameBufferColor          |
-| 8258                 | \[5.0.0+\] CancelSharedFrameBuffer             |
+| Cmd  | Name                                           |
+| ---- | ---------------------------------------------- |
+| 1200 | GetZOrderCountMin                              |
+| 1202 | GetZOrderCountMax                              |
+| 1203 | GetDisplayLogicalResolution                    |
+| 1204 | \[3.0.0+\] SetDisplayMagnification             |
+| 2201 | SetLayerPosition                               |
+| 2203 | SetLayerSize                                   |
+| 2204 | GetLayerZ                                      |
+| 2205 | SetLayerZ                                      |
+| 2207 | SetLayerVisibility                             |
+| 2209 | SetLayerAlpha                                  |
+| 2312 | \[1.0.0-6.2.0\] CreateStrayLayer               |
+| 2400 | OpenIndirectLayer                              |
+| 2401 | CloseIndirectLayer                             |
+| 2402 | FlipIndirectLayer                              |
+| 3000 | ListDisplayModes                               |
+| 3001 | ListDisplayRgbRanges                           |
+| 3002 | ListDisplayContentTypes                        |
+| 3200 | GetDisplayMode                                 |
+| 3201 | SetDisplayMode                                 |
+| 3202 | GetDisplayUnderscan                            |
+| 3203 | SetDisplayUnderscan                            |
+| 3204 | GetDisplayContentType                          |
+| 3205 | SetDisplayContentType                          |
+| 3206 | GetDisplayRgbRange                             |
+| 3207 | SetDisplayRgbRange                             |
+| 3208 | GetDisplayCmuMode                              |
+| 3209 | SetDisplayCmuMode                              |
+| 3210 | GetDisplayContrastRatio                        |
+| 3211 | SetDisplayContrastRatio                        |
+| 3214 | GetDisplayGamma                                |
+| 3215 | SetDisplayGamma                                |
+| 3216 | GetDisplayCmuLuma                              |
+| 3217 | SetDisplayCmuLuma                              |
+| 8225 | \[4.0.0+\] GetSharedBufferMemoryHandleId       |
+| 8250 | \[4.0.0+\] OpenSharedLayer                     |
+| 8251 | \[4.0.0+\] CloseSharedLayer                    |
+| 8252 | \[4.0.0+\] ConnectSharedLayer                  |
+| 8253 | \[4.0.0+\] DisconnectSharedLayer               |
+| 8254 | \[4.0.0+\] AcquireSharedFrameBuffer            |
+| 8255 | \[4.0.0+\] PresentSharedFrameBuffer            |
+| 8256 | \[4.0.0+\] GetSharedFrameBufferAcquirableEvent |
+| 8257 | \[4.0.0+\] FillSharedFrameBufferColor          |
+| 8258 | \[5.0.0+\] CancelSharedFrameBuffer             |
 
 ## IManagerDisplayService
 
