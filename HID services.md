@@ -126,6 +126,7 @@ This is
 | 523  | \[6.0.0+\] SetIsPalmaPairedConnectable                                                           |
 | 524  | \[6.0.0+\] PairPalma                                                                             |
 | 525  | \[6.0.0+\] SetPalmaBoostMode                                                                     |
+| 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                             |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 
@@ -370,12 +371,22 @@ This is "nn::hid::IHidDebugServer".
 | 232 | \[6.0.0+\] EnableShipmentMode                       |
 | 233 | \[6.0.0+\] ClearPairingInfo                         |
 | 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal        |
+| 235 | \[7.0.0+\] EnableAnalogStickPower                   |
 | 301 | \[5.0.0+\] GetAbstractedPadHandles                  |
 | 302 | \[5.0.0+\] GetAbstractedPadState                    |
 | 303 | \[5.0.0+\] GetAbstractedPadsState                   |
 | 321 | \[5.0.0+\] SetAutoPilotVirtualPadState              |
 | 322 | \[5.0.0+\] UnsetAutoPilotVirtualPadState            |
 | 323 | \[5.0.0+\] UnsetAllAutoPilotVirtualPadState         |
+| 324 | \[7.0.0+\] AttachHdlsWorkBuffer                     |
+| 325 | \[7.0.0+\] ReleaseHdlsWorkBuffer                    |
+| 326 | \[7.0.0+\] DumpHdlsNpadAssignmentState              |
+| 327 | \[7.0.0+\] DumpHdlsStates                           |
+| 328 | \[7.0.0+\] ApplyHdlsNpadAssignmentState             |
+| 329 | \[7.0.0+\] ApplyHdlsStateList                       |
+| 330 | \[7.0.0+\] AttachHdlsVirtualDevice                  |
+| 331 | \[7.0.0+\] DetachHdlsVirtualDevice                  |
+| 332 | \[7.0.0+\] SetHdlsState                             |
 | 350 | \[5.0.0+\] AddRegisteredDevice                      |
 | 400 | \[6.0.0+\] DisableExternalMcuOnNxDevice             |
 | 401 | \[6.0.0+\] DisableRailDeviceFiltering               |
@@ -394,6 +405,7 @@ This is
 | 131  | ActivateSleepButton                                                |
 | 141  | AcquireCaptureButtonEventHandle                                    |
 | 151  | ActivateCaptureButton                                              |
+| 161  | \[7.0.0+\] GetPlatformConfig                                       |
 | 210  | AcquireNfcDeviceUpdateEventHandle                                  |
 | 211  | GetNpadsWithNfc                                                    |
 | 212  | AcquireNfcActivateEventHandle                                      |
@@ -463,6 +475,7 @@ This is
 | 827  | \[5.0.0+\] IsAnalogStickButtonPressed                              |
 | 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                          |
 | 829  | \[5.0.0+\] IsAnalogStickInCircumference                            |
+| 830  | \[7.0.0+\] SetNotificationLedPattern                               |
 | 850  | IsUsbFullKeyControllerEnabled                                      |
 | 851  | EnableUsbFullKeyController                                         |
 | 852  | IsUsbConnected                                                     |

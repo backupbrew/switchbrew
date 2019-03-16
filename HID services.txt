@@ -243,6 +243,8 @@ This is "nn::hid::IHidServer".
 |-
 | 525 || [6.0.0+] SetPalmaBoostMode
 |-
+| 526 || [7.0.0+] CancelWritePalmaWaveEntry
+|-
 | 1000 || SetNpadCommunicationMode
 |-
 | 1001 || GetNpadCommunicationMode
@@ -539,6 +541,8 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 234 || [6.0.0+] GetUniquePadDeviceTypeSetInternal
 |-
+| 235 || [7.0.0+] EnableAnalogStickPower
+|-
 | 301 || [5.0.0+] GetAbstractedPadHandles
 |-
 | 302 || [5.0.0+] GetAbstractedPadState
@@ -550,6 +554,24 @@ This is "nn::hid::IHidDebugServer".
 | 322 || [5.0.0+] UnsetAutoPilotVirtualPadState
 |-
 | 323 || [5.0.0+] UnsetAllAutoPilotVirtualPadState
+|-
+| 324 || [7.0.0+] AttachHdlsWorkBuffer
+|-
+| 325 || [7.0.0+] ReleaseHdlsWorkBuffer
+|-
+| 326 || [7.0.0+] DumpHdlsNpadAssignmentState
+|-
+| 327 || [7.0.0+] DumpHdlsStates
+|-
+| 328 || [7.0.0+] ApplyHdlsNpadAssignmentState
+|-
+| 329 || [7.0.0+] ApplyHdlsStateList
+|-
+| 330 || [7.0.0+] AttachHdlsVirtualDevice
+|-
+| 331 || [7.0.0+] DetachHdlsVirtualDevice
+|-
+| 332 || [7.0.0+] SetHdlsState
 |-
 | 350 || [5.0.0+] AddRegisteredDevice
 |-
@@ -578,6 +600,8 @@ This is "nn::hid::IHidSystemServer".
 | 141 || AcquireCaptureButtonEventHandle
 |-
 | 151 || ActivateCaptureButton
+|-
+| 161 || [7.0.0+] GetPlatformConfig
 |-
 | 210 || AcquireNfcDeviceUpdateEventHandle
 |-
@@ -716,6 +740,8 @@ This is "nn::hid::IHidSystemServer".
 | 828 || [5.0.0+] IsAnalogStickInReleasePosition
 |-
 | 829 || [5.0.0+] IsAnalogStickInCircumference
+|-
+| 830 || [7.0.0+] SetNotificationLedPattern
 |-
 | 850 || IsUsbFullKeyControllerEnabled
 |-
