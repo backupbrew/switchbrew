@@ -196,9 +196,9 @@ This is "nn::audio::detail::IAudioRendererManager".
 | Cmd | Name                                                         |
 | --- | ------------------------------------------------------------ |
 | 0   | OpenAudioRenderer                                            |
-| 1   | GetAudioRendererWorkBufferSize                               |
+| 1   | GetWorkBufferSize                                            |
 | 2   | [\#GetAudioDeviceService](#GetAudioDeviceService "wikilink") |
-| 3   | \[3.0.0+\] OpenAudioRendererAuto                             |
+| 3   | \[3.0.0+\] OpenAudioRendererForManualExecution               |
 | 4   | \[4.0.0+\] GetAudioDeviceServiceWithRevisionInfo             |
 
 ### GetAudioDeviceService
