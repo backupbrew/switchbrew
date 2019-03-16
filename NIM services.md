@@ -133,6 +133,15 @@ This is "nn::nim::detail::IShopServiceAsync".
 | 4   | Request      |
 | 5   | Prepare      |
 
+# nim:ecas
+
+This is "nn::nim::detail::IShopServiceAccessSystemInterface".
+
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | RegisterSpecialClient   |
+| 1   | UnregisterSpecialClient |
+
 # ntc
 
 This is "nn::ntc::detail::<service::IStaticService>".

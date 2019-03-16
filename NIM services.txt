@@ -214,6 +214,18 @@ This is "nn::nim::detail::IShopServiceAsync".
 | 5 || Prepare
 |}
 
+= nim:ecas =
+This is "nn::nim::detail::IShopServiceAccessSystemInterface".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RegisterSpecialClient
+|-
+| 1 || UnregisterSpecialClient
+|}
+
 = ntc =
 This is "nn::ntc::detail::service::IStaticService".
 
