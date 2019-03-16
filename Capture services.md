@@ -62,17 +62,25 @@ This is
 This is
 "nn::capsrv::sf::IAlbumApplicationService".
 
-| Cmd   | Name                                     | Notes                                                      |
-| ----- | ---------------------------------------- | ---------------------------------------------------------- |
-| 32    | \[7.0.0+\]                               | Takes a total of 0x10-bytes of input and a PID, no output. |
-| 102   | GetAlbumFileListByAruid                  |                                                            |
-| 103   | DeleteAlbumFileByAruid                   |                                                            |
-| 104   | GetAlbumFileSizeByAruid                  |                                                            |
-| 110   | LoadAlbumScreenShotImageByAruid          |                                                            |
-| 120   | LoadAlbumScreenShotThumbnailImageByAruid |                                                            |
-| 140   | \[6.0.0+\]                               |                                                            |
-| 141   | \[6.0.0+\]                               |                                                            |
-| 60002 | OpenAccessorSessionForApplication        |                                                            |
+| Cmd   | Name                                                                    |
+| ----- | ----------------------------------------------------------------------- |
+| 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink") |
+| 102   | GetAlbumFileList0AafeAruidDeprecated                                    |
+| 103   | DeleteAlbumFileByAruid                                                  |
+| 104   | GetAlbumFileSizeByAruid                                                 |
+| 105   | DeleteAlbumFileByAruidForDebug                                          |
+| 110   | LoadAlbumScreenShotImageByAruid                                         |
+| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                |
+| 130   | PrecheckToCreateContentsByAruid                                         |
+| 140   | \[6.0.0+\] GetAlbumFileList1AafeAruidDeprecated                         |
+| 141   | \[6.0.0+\] GetAlbumFileList2AafeUidAruidDeprecated                      |
+| 142   | \[7.0.0+\] GetAlbumFileList3AaeAruid                                    |
+| 143   | \[7.0.0+\] GetAlbumFileList4AaeUidAruid                                 |
+| 60002 | OpenAccessorSessionForApplication                                       |
+
+## SetShimLibraryVersion
+
+Takes a total of 0x10-bytes of input and a PID, no output.
 
 ## IAlbumAccessorApplicationSession
 

@@ -107,26 +107,37 @@ This is "nn::capsrv::sf::IAlbumApplicationService".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 32 || [7.0.0+] || Takes a total of 0x10-bytes of input and a PID, no output.
+| 32 || [7.0.0+] [[#SetShimLibraryVersion]]
 |-
-| 102 || GetAlbumFileListByAruid || 
+| 102 || GetAlbumFileList0AafeAruidDeprecated
 |-
-| 103 || DeleteAlbumFileByAruid || 
+| 103 || DeleteAlbumFileByAruid
 |-
-| 104 || GetAlbumFileSizeByAruid || 
+| 104 || GetAlbumFileSizeByAruid
 |-
-| 110 || LoadAlbumScreenShotImageByAruid || 
+| 105 || DeleteAlbumFileByAruidForDebug
 |-
-| 120 || LoadAlbumScreenShotThumbnailImageByAruid || 
+| 110 || LoadAlbumScreenShotImageByAruid
 |-
-| 140 || [6.0.0+] || 
+| 120 || LoadAlbumScreenShotThumbnailImageByAruid
 |-
-| 141 || [6.0.0+] || 
+| 130 || PrecheckToCreateContentsByAruid
 |-
-| 60002 || OpenAccessorSessionForApplication || 
+| 140 || [6.0.0+] GetAlbumFileList1AafeAruidDeprecated
+|-
+| 141 || [6.0.0+] GetAlbumFileList2AafeUidAruidDeprecated
+|-
+| 142 || [7.0.0+] GetAlbumFileList3AaeAruid
+|-
+| 143 || [7.0.0+] GetAlbumFileList4AaeUidAruid
+|-
+| 60002 || OpenAccessorSessionForApplication
 |}
+
+== SetShimLibraryVersion ==
+Takes a total of 0x10-bytes of input and a PID, no output.
 
 == IAlbumAccessorApplicationSession ==
 This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
