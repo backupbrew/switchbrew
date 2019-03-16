@@ -68,6 +68,10 @@ All the services commands but the first two return -1 on failure and set errno w
 | 29 || [3.0.0+] RecvMMsg
 |-
 | 30 || [3.0.0+] SendMMsg
+|-
+| 31 || [7.0.0+] EventFd
+|-
+| 32 || [7.0.0+] RegisterResourceStatisticsName
 |}
 
 == Initalize ==

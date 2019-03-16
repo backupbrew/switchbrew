@@ -40,6 +40,8 @@ from Linux (and not from FreeBSD as one would expect\!)**.
 | 28  | GetResourceStatistics                            |
 | 29  | \[3.0.0+\] RecvMMsg                              |
 | 30  | \[3.0.0+\] SendMMsg                              |
+| 31  | \[7.0.0+\] EventFd                               |
+| 32  | \[7.0.0+\] RegisterResourceStatisticsName        |
 
 ## Initalize
 
