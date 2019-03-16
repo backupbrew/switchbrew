@@ -518,6 +518,10 @@ This is "nn::visrv::sf::IManagerDisplayService".
 |-
 | 6010 || [5.0.0+] GetLayerPresentationAllFencesExpiredEvent
 |-
+| 6011 || [7.0.0+] EnableLayerAutoClearTransitionBuffer
+|-
+| 6012 || [7.0.0+] DisableLayerAutoClearTransitionBuffer
+|-
 | 7000 || SetContentVisibility
 |-
 | 8000 || SetConductorLayer

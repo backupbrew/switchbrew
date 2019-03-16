@@ -485,6 +485,8 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 6008 | \[5.0.0+\] StartLayerPresentationFenceWait                 |
 | 6009 | \[5.0.0+\] StopLayerPresentationFenceWait                  |
 | 6010 | \[5.0.0+\] GetLayerPresentationAllFencesExpiredEvent       |
+| 6011 | \[7.0.0+\] EnableLayerAutoClearTransitionBuffer            |
+| 6012 | \[7.0.0+\] DisableLayerAutoClearTransitionBuffer           |
 | 7000 | SetContentVisibility                                       |
 | 8000 | SetConductorLayer                                          |
 | 8100 | SetIndirectProducerFlipOffset                              |
