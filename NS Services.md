@@ -2,17 +2,29 @@
 
 This is "nn::aocsrv::detail::IAddOnContentManager".
 
-| Cmd | Name                                       |
-| --- | ------------------------------------------ |
-| 0   | CountAddOnContentByApplicationId           |
-| 1   | ListAddOnContentByApplicationId            |
-| 2   | CountAddOnContent                          |
-| 3   | ListAddOnContent                           |
-| 4   | GetAddOnContentBaseIdByApplicationId       |
-| 5   | GetAddOnContentBaseId                      |
-| 6   | PrepareAddOnContentByApplicationId         |
-| 7   | PrepareAddOnContent                        |
-| 8   | \[4.0.0+\] GetAddOnContentListChangedEvent |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | \[1.0.0-6.2.0\] CountAddOnContentByApplicationId     |
+| 1   | \[1.0.0-6.2.0\] ListAddOnContentByApplicationId      |
+| 2   | CountAddOnContent                                    |
+| 3   | ListAddOnContent                                     |
+| 4   | \[1.0.0-6.2.0\] GetAddOnContentBaseIdByApplicationId |
+| 5   | GetAddOnContentBaseId                                |
+| 6   | \[1.0.0-6.2.0\] PrepareAddOnContentByApplicationId   |
+| 7   | PrepareAddOnContent                                  |
+| 8   | \[4.0.0+\] GetAddOnContentListChangedEvent           |
+| 100 | \[7.0.0+\] CreateEcPurchasedEventManager             |
+
+## IPurchaseEventManager
+
+This is "nn::ec::IPurchaseEventManager".
+
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 0   | SetDefaultDeliveryTarget        |
+| 1   | SetDeliveryTarget               |
+| 2   | GetPurchasedEventReadableHandle |
+| 3   | PopPurchasedProductInfo         |
 
 # ns:am
 
