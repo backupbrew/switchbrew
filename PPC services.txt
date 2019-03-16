@@ -10,6 +10,8 @@ This is "nn::apm::IManager".
 | 0 || OpenSession || Returns an [[#ISession]].
 |-
 | 1 || GetPerformanceMode || 
+|-
+| 6 || IsCpuOverclockEnabled || 
 |}
 
 = apm:p =
@@ -40,6 +42,10 @@ This is "nn::apm::ISystemManager".
 | 4 || ClearLastThrottlingState || 
 |-
 | 5 || [5.0.0+] LoadAndApplySettings || 
+|-
+| 6 || [7.0.0+] SetCpuBoostMode || 
+|-
+| 7 || [7.0.0+] GetCurrentPerformanceConfiguration || 
 |}
 
 = ISession =
