@@ -36,7 +36,8 @@ interfaces).
 | [TSEC\_THI\_METHOD1](#TSEC_THI_METHOD1 "wikilink")                      | 0x54500044 | 0x04  |
 | [TSEC\_THI\_INT\_STATUS](#TSEC_THI_INT_STATUS "wikilink")               | 0x54500078 | 0x04  |
 | [TSEC\_THI\_INT\_MASK](#TSEC_THI_INT_MASK "wikilink")                   | 0x5450007C | 0x04  |
-| TSEC\_THI\_SLCG\_STATUS                                                 | 0x54500084 | 0x04  |
+| TSEC\_THI\_INT\_CLEAR                                                   | 0x54500080 | 0x04  |
+| TSEC\_THI\_INT\_ENABLE                                                  | 0x54500084 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_HIGH\_A                                      | 0x54500088 | 0x04  |
 | TSEC\_THI\_SLCG\_OVERRIDE\_LOW\_A                                       | 0x5450008C | 0x04  |
 | TSEC\_THI\_CLK\_OVERRIDE                                                | 0x54500E00 | 0x04  |
@@ -103,7 +104,7 @@ interfaces).
 | [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
 | [FALCON\_CRYPTTRFSTAT](#FALCON_CRYPTTRFSTAT "wikilink")                 | 0x54501124 | 0x04  |
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
-| [FALCON\_HWCFG2](#FALCON_HWCFG2 "wikilink")                             | 0x5450112C | 0x04  |
+| [FALCON\_HWCFG1](#FALCON_HWCFG1 "wikilink")                             | 0x5450112C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                                   | 0x54501130 | 0x04  |
 | [FALCON\_IMCTL](#FALCON_IMCTL "wikilink")                               | 0x54501140 | 0x04  |
 | [FALCON\_IMSTAT](#FALCON_IMSTAT "wikilink")                             | 0x54501144 | 0x04  |
@@ -597,20 +598,20 @@ For transfers to IMEM: the destination physical IMEM page.
 | 16-18 | FALCON\_CRYPTTRFSTAT\_NUM\_STORES\_PENDING |
 | 24-26 | FALCON\_CRYPTTRFSTAT\_NUM\_LOADS\_PENDING  |
 
-### FALCON\_HWCFG2
+### FALCON\_HWCFG1
 
-| Bits  | Description                       |
-| ----- | --------------------------------- |
-| 0-3   | FALCON\_HWCFG2\_VERSION           |
-| 4-5   | FALCON\_HWCFG2\_SCP\_MODE         |
-| 6-7   | FALCON\_HWCFG2\_SUBVERSION        |
-| 8-11  | FALCON\_HWCFG2\_IMEM\_PORTS       |
-| 12-15 | FALCON\_HWCFG2\_DMEM\_PORTS       |
-| 16-19 | FALCON\_HWCFG2\_VM\_PAGES\_LOG2   |
-| 27    | FALCON\_HWCFG2\_HAS\_IMCTL\_DEBUG |
-| 28-29 | FALCON\_HWCFG2\_IO\_ADDR\_TYPE    |
-| 30    | FALCON\_HWCFG2\_HAS\_EXTERR       |
-| 31    | FALCON\_HWCFG2\_HAS\_IMFILL       |
+| Bits  | Description                     |
+| ----- | ------------------------------- |
+| 0-3   | FALCON\_HWCFG1\_VERSION         |
+| 4-5   | FALCON\_HWCFG1\_SCP\_MODE       |
+| 6-7   | FALCON\_HWCFG1\_SUBVERSION      |
+| 8-11  | FALCON\_HWCFG1\_IMEM\_PORTS     |
+| 12-15 | FALCON\_HWCFG1\_DMEM\_PORTS     |
+| 16-19 | FALCON\_HWCFG1\_VM\_PAGES\_LOG2 |
+| 27    | FALCON\_HWCFG1\_HAS\_ICD        |
+| 28-29 | FALCON\_HWCFG1\_IO\_ADDR\_TYPE  |
+| 30    | FALCON\_HWCFG1\_HAS\_EXTERR     |
+| 31    | FALCON\_HWCFG1\_HAS\_IMFILL     |
 
 ### FALCON\_IMCTL
 
@@ -1420,10 +1421,10 @@ burned at factory. These keys can be loaded by using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
-All secrets appear to be common across Falcon units of the same version,
-with the exception of secret 0x3F. This secret is effectively empty (all
-zeros), but is configured to be overwritten with the KFUSE private key
-once the KFUSE clock is enabled. The KFUSE private key is
+Secrets are specific to each Falcon unit with the exception of secret
+0x3F. This secret is effectively empty (all zeros), but is configured to
+be overwritten with the KFUSE private key once the KFUSE clock is
+enabled. The KFUSE private key is
 console-unique.
 
 | Index | ACL  | Notes                                                                                                                                                                            |

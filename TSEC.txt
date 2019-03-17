@@ -54,7 +54,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450007C
 | 0x04
 |-
-| TSEC_THI_SLCG_STATUS
+| TSEC_THI_INT_CLEAR
+| 0x54500080
+| 0x04
+|-
+| TSEC_THI_INT_ENABLE
 | 0x54500084
 | 0x04
 |-
@@ -322,7 +326,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501128
 | 0x04
 |-
-| [[#FALCON_HWCFG2|FALCON_HWCFG2]]
+| [[#FALCON_HWCFG1|FALCON_HWCFG1]]
 | 0x5450112C
 | 0x04
 |-
@@ -1506,40 +1510,40 @@ For transfers to IMEM: the destination physical IMEM page.
 | FALCON_CRYPTTRFSTAT_NUM_LOADS_PENDING
 |}
 
-=== FALCON_HWCFG2 ===
+=== FALCON_HWCFG1 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0-3
-| FALCON_HWCFG2_VERSION
+| FALCON_HWCFG1_VERSION
 |-
 | 4-5
-| FALCON_HWCFG2_SCP_MODE
+| FALCON_HWCFG1_SCP_MODE
 |-
 | 6-7
-| FALCON_HWCFG2_SUBVERSION
+| FALCON_HWCFG1_SUBVERSION
 |-
 | 8-11
-| FALCON_HWCFG2_IMEM_PORTS
+| FALCON_HWCFG1_IMEM_PORTS
 |-
 | 12-15
-| FALCON_HWCFG2_DMEM_PORTS
+| FALCON_HWCFG1_DMEM_PORTS
 |-
 | 16-19
-| FALCON_HWCFG2_VM_PAGES_LOG2
+| FALCON_HWCFG1_VM_PAGES_LOG2
 |-
 | 27
-| FALCON_HWCFG2_HAS_IMCTL_DEBUG
+| FALCON_HWCFG1_HAS_ICD
 |-
 | 28-29
-| FALCON_HWCFG2_IO_ADDR_TYPE
+| FALCON_HWCFG1_IO_ADDR_TYPE
 |-
 | 30
-| FALCON_HWCFG2_HAS_EXTERR
+| FALCON_HWCFG1_HAS_EXTERR
 |-
 | 31
-| FALCON_HWCFG2_HAS_IMFILL
+| FALCON_HWCFG1_HAS_IMFILL
 |}
 
 === FALCON_IMCTL ===
@@ -2487,7 +2491,7 @@ For example, if override type=0b000, then the "length" argument to <code>xdst</c
 === Secrets ===
 Falcon's Authenticated Mode has access to 64 128-bit keys which are burned at factory. These keys can be loaded by using the $csecret instruction which takes the target crypto register and the key index as arguments.
 
-All secrets appear to be common across Falcon units of the same version, with the exception of secret 0x3F. This secret is effectively empty (all zeros), but is configured to be overwritten with the KFUSE private key once the KFUSE clock is enabled. The KFUSE private key is console-unique.
+Secrets are specific to each Falcon unit with the exception of secret 0x3F. This secret is effectively empty (all zeros), but is configured to be overwritten with the KFUSE private key once the KFUSE clock is enabled. The KFUSE private key is console-unique.
 
 {| class=wikitable
 ! Index || ACL || Notes 
