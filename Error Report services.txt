@@ -2385,6 +2385,90 @@ This is "nn::erpt::sf::IManager".
 | [6.0.0+] USB3DeviceAvailableFlag
 | 
 |
+|-
+| [7.0.0+] AcpNeighborDetectionClientConfigurationSendDataId
+| 
+|
+|-
+| [7.0.0+] AcpNeighborDetectionClientConfigurationReceivableDataIds
+| 
+|
+|-
+| [7.0.0+] AcpStartupUserAccountOptionFlag
+| 
+|
+|-
+| [7.0.0+] ServerErrorCode
+| 
+|
+|-
+| [7.0.0+] AppletManagerMetaLogTrace
+| 
+|
+|-
+| [7.0.0+] ServerCertificateSerialNumber
+| 
+|
+|-
+| [7.0.0+] ServerCertificatePublicKeyAlgorithm
+| 
+|
+|-
+| [7.0.0+] ServerCertificateSignatureAlgorithm
+| 
+|
+|-
+| [7.0.0+] ServerCertificateNotBefore
+| 
+|
+|-
+| [7.0.0+] ServerCertificateNotAfter
+| 
+|
+|-
+| [7.0.0+] CertificateAlgorithmInfoBits
+| 
+|
+|-
+| [7.0.0+] TlsConnectionPeerIpAddress
+| 
+|
+|-
+| [7.0.0+] TlsConnectionLastHandshakeState
+| 
+|
+|-
+| [7.0.0+] TlsConnectionInfoBits
+| 
+|
+|-
+| [7.0.0+] SslStateBits
+| 
+|
+|-
+| [7.0.0+] SslProcessInfoBits
+| 
+|
+|-
+| [7.0.0+] SslProcessHeapSize
+| 
+|
+|-
+| [7.0.0+] SslBaseErrorCode
+| 
+|
+|-
+| [7.0.0+] GpuCrashDumpSize
+| 
+|
+|-
+| [7.0.0+] GpuCrashDump
+| 
+|
+|-
+| [7.0.0+] RunningApplicationProgramIndex
+| 
+|
 |}
 
 [[Category:Services]]
