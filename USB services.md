@@ -988,16 +988,29 @@ USB Port Manager, only system-title using this is
 
 # usb:qdb
 
-Added with
-[7.0.0](7.0.0.md "wikilink").
+Added with [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name | Notes                                                                                             |
-| --- | ---- | ------------------------------------------------------------------------------------------------- |
-| 0   |      | No input/output, takes a type-0x5 input buffer.                                                   |
-| 1   |      | Takes 6-bytes of input and a type-0x5 input buffer, returns an output u8 bool indicating success. |
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
 
-This service loads data for [\#HidGamepad](#HidGamepad "wikilink") with
-the input .json.
+## Cmd0
+
+No input/output, takes a type-0x5 input buffer.
+
+This loads data for [\#HidGamepad](#HidGamepad "wikilink") with the
+input .json.
+
+## Cmd1
+
+Takes 6-bytes of input (u16s **vid**, **pid**, **bcdDevice**) and a
+type-0x5 input buffer, returns an output u8 bool indicating success.
+
+Locates an entry in the [\#HidGamepad](#HidGamepad "wikilink") state
+with the input u16s, and checks for a **quirks** array entry where
+**name** matches the input buffer string. Returns 1 when found, 0
+otherwise.
 
 # HidGamepad
 

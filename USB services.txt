@@ -867,14 +867,22 @@ Added with [[7.0.0]].
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || || No input/output, takes a type-0x5 input buffer.
+| 0 || 
 |-
-| 1 || || Takes 6-bytes of input and a type-0x5 input buffer, returns an output u8 bool indicating success.
+| 1 || 
 |}
 
-This service loads data for [[#HidGamepad]] with the input .json.
+== Cmd0 ==
+No input/output, takes a type-0x5 input buffer.
+
+This loads data for [[#HidGamepad]] with the input .json.
+
+== Cmd1 ==
+Takes 6-bytes of input (u16s '''vid''', '''pid''', '''bcdDevice''') and a type-0x5 input buffer, returns an output u8 bool indicating success.
+
+Locates an entry in the [[#HidGamepad]] state with the input u16s, and checks for a '''quirks''' array entry where '''name''' matches the input buffer string. Returns 1 when found, 0 otherwise.
 
 = HidGamepad =
 With [7.0.0+] usb-sysmodule now has .json data embedded in the codebin.
