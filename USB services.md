@@ -855,6 +855,16 @@ field in this struct are compared, on mismatch the interface will be
 filtered out. Passing Flags=0 is equivalent to disabling filtering since
 none of these checks will run.
 
+\[7.0.0+\]: The filter struct has to be unique, it can't match any
+existing filter structs used by
+[\#CreateInterfaceAvailableEvent](#CreateInterfaceAvailableEvent "wikilink")
+(including other processes). Hence, Flags has to be non-zero. When
+initialized with usb:hs:a and VID and/or PID filtering is enabled, the
+VID/PID will be checked [\#HidGamepad](#HidGamepad "wikilink"), with an
+error being throw if a matching device is found with quirk
+"ApplicationBlacklist" ([usb:qdb](#usb:qdb "wikilink") cmd1 is used
+internally for this with bcdDevice=0).
+
 Flags bits 0..6 use usb\_device\_descriptor, while 7..9 use
 usb\_interface\_descriptor. Support for bits 2..6 and the associated
 fields was added with \[6.0.0+\].

@@ -698,6 +698,8 @@ This is a 0x10-byte struct (unofficial name).
 
 This is used to filter [[#UsbHsInterface]], the query commands will only return the interface when these checks pass. This is also used for events with [[#CreateInterfaceAvailableEvent]]. When a bit in Flags is set, the associated descriptor field and the field in this struct are compared, on mismatch the interface will be filtered out. Passing Flags=0 is equivalent to disabling filtering since none of these checks will run.
 
+[7.0.0+]: The filter struct has to be unique, it can't match any existing filter structs used by [[#CreateInterfaceAvailableEvent]] (including other processes). Hence, Flags has to be non-zero. When initialized with usb:hs:a and VID and/or PID filtering is enabled, the VID/PID will be checked [[#HidGamepad]], with an error being throw if a matching device is found with quirk "ApplicationBlacklist" ([[#usb:qdb|usb:qdb]] cmd1 is used internally for this with bcdDevice=0).
+
 Flags bits 0..6 use usb_device_descriptor, while 7..9 use usb_interface_descriptor. Support for bits 2..6 and the associated fields was added with [6.0.0+].
 
 Flags bits:
