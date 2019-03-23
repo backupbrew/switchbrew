@@ -14,7 +14,7 @@ archive.
 | Name                              | Versions         | Default Values     | Description |
 | --------------------------------- | ---------------- | ------------------ | ----------- |
 | background\_awaking\_periodicity  | 2.0.0+           | 10800 (0x2a30)     |             |
-| initial\_schedule\_delay          | 7.0.0+           | 60 (0x3C)          |             |
+| initial\_schedule\_delay          | 7.0.0+           | 60 (0x3c)          |             |
 | long\_sleep\_detection\_threshold | 7.0.0+           | 1468800 (0x166980) |             |
 | na\_info\_refresh\_interval       | 2.0.0-5.0.0      | 46800 (0xb6d0)     |             |
 | 5.0.1-5.1.0                       | 72000 (0x11940)  |                    |             |

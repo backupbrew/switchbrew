@@ -34,7 +34,7 @@ Data sourced from 0100000000000818 archive.
 |-
 | rowspan="1" |initial_schedule_delay
 | 7.0.0+
-| 60 (0x3C)
+| 60 (0x3c)
 | rowspan="1" |
 |-
 | rowspan="1" |long_sleep_detection_threshold
