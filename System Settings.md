@@ -1,6 +1,4 @@
-\_\_NOTOC\_\_
-
-Data sourced from 0100000000000818
+\_\_NOTOC\_\_ Data sourced from 0100000000000818
 archive.
 
 # account
@@ -13,16 +11,18 @@ archive.
 
 # account.daemon
 
-| Name                             | Versions         | Default Values | Description |
-| -------------------------------- | ---------------- | -------------- | ----------- |
-| background\_awaking\_periodicity | 2.0.0+           | 10800 (0x2a30) |             |
-| na\_info\_refresh\_interval      | 2.0.0-5.0.0      | 46800 (0xb6d0) |             |
-| 5.0.1-5.1.0                      | 72000 (0x11940)  |                |             |
-| 6.0.0+                           | 46800 (0xb6d0)   |                |             |
-| profile\_sync\_interval          | 2.0.0-5.0.0      | 18000 (0x4650) |             |
-| 5.0.1-5.1.0                      | 172800 (0x2a300) |                |             |
-| 6.0.0+                           | 18000 (0x4650)   |                |             |
-| schedule\_periodicity            | 2.0.0+           | 3600 (0xe10)   |             |
+| Name                              | Versions         | Default Values     | Description |
+| --------------------------------- | ---------------- | ------------------ | ----------- |
+| background\_awaking\_periodicity  | 2.0.0+           | 10800 (0x2a30)     |             |
+| initial\_schedule\_delay          | 7.0.0+           | 60 (0x3C)          |             |
+| long\_sleep\_detection\_threshold | 7.0.0+           | 1468800 (0x166980) |             |
+| na\_info\_refresh\_interval       | 2.0.0-5.0.0      | 46800 (0xb6d0)     |             |
+| 5.0.1-5.1.0                       | 72000 (0x11940)  |                    |             |
+| 6.0.0+                            | 46800 (0xb6d0)   |                    |             |
+| profile\_sync\_interval           | 2.0.0-5.0.0      | 18000 (0x4650)     |             |
+| 5.0.1-5.1.0                       | 172800 (0x2a300) |                    |             |
+| 6.0.0+                            | 18000 (0x4650)   |                    |             |
+| schedule\_periodicity             | 2.0.0+           | 3600 (0xe10)       |             |
 
 # am.debug
 
@@ -57,6 +57,8 @@ firmware.
 | gpu\_scheduling\_fg\_sa\_us          | 1.0.0+           | 11666 (0x2d92) |             |
 | gpu\_scheduling\_frame\_time\_us     | 1.0.0            | 17000 (0x4268) |             |
 | 2.0.0+                               | 116666 (0x1c7ba) |                |             |
+| gpu\_scheduling\_hidden\_fg\_la\_us  | 7.0.0+           | 5000 (0x1388)  |             |
+| gpu\_scheduling\_hidden\_bg\_la\_us  | 7.0.0+           | 0 (0x0)        |             |
 | gpu\_scheduling\_oa\_us              | 1.0.0+           | 500 (0x1f4)    |             |
 | gpu\_scheduling\_partial\_fg\_la\_us | 1.0.0+           | 2000 (0x7d0)   |             |
 
@@ -72,18 +74,19 @@ firmware.
 
 # audio
 
-| Name                             | Versions    | Default Values | Description |
-| -------------------------------- | ----------- | -------------- | ----------- |
-| adsp\_log\_enabled               | 1.0.0+      | false          |             |
-| audin\_log\_enabled              | 1.0.0-5.1.0 | false          |             |
-| audout\_log\_enabled             | 1.0.0-5.1.0 | false          |             |
-| audren\_log\_enabled             | 1.0.0-5.1.0 | false          |             |
-| hwopus\_log\_enabled             | 1.0.0-5.1.0 | false          |             |
-| suppress\_additional\_mic\_check | 6.0.0+      | false          |             |
-| suspend\_for\_debugger\_enabled  | 1.0.0-3.0.2 | false          |             |
-| 4.0.0+                           | true        |                |             |
-| uac\_enabled                     | 6.0.0+      | true           |             |
-| uac\_speaker\_enabled            | 3.0.0-3.0.2 | false          |             |
+| Name                                               | Versions    | Default Values | Description |
+| -------------------------------------------------- | ----------- | -------------- | ----------- |
+| adsp\_log\_enabled                                 | 1.0.0+      | false          |             |
+| audin\_log\_enabled                                | 1.0.0-5.1.0 | false          |             |
+| audout\_log\_enabled                               | 1.0.0-5.1.0 | false          |             |
+| audren\_log\_enabled                               | 1.0.0-5.1.0 | false          |             |
+| dev\_feature\_for\_volume\_mapping\_table\_enabled | 7.0.0+      | false          |             |
+| hwopus\_log\_enabled                               | 1.0.0-5.1.0 | false          |             |
+| suppress\_additional\_mic\_check                   | 6.0.0+      | false          |             |
+| suspend\_for\_debugger\_enabled                    | 1.0.0-3.0.2 | false          |             |
+| 4.0.0+                                             | true        |                |             |
+| uac\_enabled                                       | 6.0.0+      | true           |             |
+| uac\_speaker\_enabled                              | 3.0.0-3.0.2 | false          |             |
 
 # bcat
 
@@ -93,17 +96,18 @@ firmware.
 
 # bgtc
 
-| Name                       | Versions    | Default Values  | Description |
-| -------------------------- | ----------- | --------------- | ----------- |
-| battery\_threshold\_save   | 2.0.0-2.3.0 | 30 (0x1e)       |             |
-| 3.0.0+                     | 20 (0x14)   |                 |             |
-| battery\_threshold\_stop   | 2.0.0-2.3.0 | 15 (0xf)        |             |
-| 3.0.0+                     | 20 (0x14)   |                 |             |
-| enable\_battery\_saver     | 2.0.0+      | 1 (0x1)         |             |
-| enable\_halfawake          | 3.0.0+      | 1 (0x1)         |             |
-| leaving\_halfawake\_margin | 2.0.0+      | 3 (0x3)         |             |
-| minimum\_interval\_normal  | 2.0.0+      | 1800 (0x708)    |             |
-| minimum\_interval\_save    | 2.0.0+      | 86400 (0x15180) |             |
+| Name                       | Versions     | Default Values  | Description |
+| -------------------------- | ------------ | --------------- | ----------- |
+| battery\_threshold\_save   | 2.0.0-2.3.0  | 30 (0x1e)       |             |
+| 3.0.0+                     | 20 (0x14)    |                 |             |
+| battery\_threshold\_stop   | 2.0.0-2.3.0  | 15 (0xf)        |             |
+| 3.0.0+                     | 20 (0x14)    |                 |             |
+| enable\_battery\_saver     | 2.0.0+       | 1 (0x1)         |             |
+| enable\_halfawake          | 3.0.0+       | 1 (0x1)         |             |
+| leaving\_halfawake\_margin | 2.0.0+       | 3 (0x3)         |             |
+| minimum\_interval\_normal  | 2.0.0-6.2.0  | 1800 (0x708)    |             |
+| 7.0.0+                     | 1200 (0x4B0) |                 |             |
+| minimum\_interval\_save    | 2.0.0+       | 86400 (0x15180) |             |
 
 # bluetooth\_debug
 
@@ -190,6 +194,12 @@ firmware.
 | Name                | Versions | Default Values | Description |
 | ------------------- | -------- | -------------- | ----------- |
 | applet\_auto\_close | 1.0.0+   | false          |             |
+
+# es
+
+| Name                       | Versions | Default Values | Description |
+| -------------------------- | -------- | -------------- | ----------- |
+| device\_registration\_type | 7.0.0+   | "ecc"          |             |
 
 # eupld
 
@@ -370,6 +380,7 @@ firmware.
 | debug\_account\_restricted\_rights                            | 6.0.0+   | false                |             |
 | initial\_waiting\_time\_of\_assigning\_elicenses\_for\_device | 6.0.0+   | 900 (0x384)          |             |
 | max\_waiting\_time\_of\_assigning\_elicenses\_for\_device     | 6.0.0+   | 90000 (0x15f90)      |             |
+| redirected\_rom\_storage\_id\_for\_debug                      | 7.0.0+   | 0 (0x0)              |             |
 | wait\_time\_after\_signal\_for\_dynamic\_rights\_observer     | 6.0.0+   | 15 (0xf)             |             |
 
 # ns.autoboot
@@ -2040,6 +2051,9 @@ firmware.
 | is\_global\_transfer\_task\_autonomy\_registration\_enabled | 6.0.0+   | true           |             |
 | is\_on\_event\_transfer\_task\_registration\_enabled        | 6.0.0+   | true           |             |
 | is\_periodic\_transfer\_task\_registration\_enabled         | 6.0.0+   | true           |             |
+| network\_connection\_polling\_interval\_seconds             | 7.0.0+   | 10800 (0x2a30) |             |
+| network\_trouble\_detection\_span\_seconds                  | 7.0.0+   | 60 (0x3c)      |             |
+| network\_trouble\_detection\_threshold                      | 7.0.0+   | 3 (0x3)        |             |
 | postponed\_transfer\_task\_processing\_interval\_seconds    | 6.0.0+   | 46800 (0xb6d0) |             |
 | retry\_backoff\_scale                                       | 6.0.0+   | 10 (0xa)       |             |
 | retry\_backoff\_unit\_seconds                               | 6.0.0+   | 127 (0x7f)     |             |
@@ -2088,19 +2102,22 @@ firmware.
 
 # prepo
 
-| Name                               | Versions    | Default Values  | Description |
-| ---------------------------------- | ----------- | --------------- | ----------- |
-| background\_processing             | 2.0.0+      | true            |             |
-| devmenu\_prepo\_page\_view         | 1.0.0+      | false           |             |
-| output\_save\_log                  | 5.0.0+      | false           |             |
-| statistics\_post\_interval         | 6.0.0+      | 86400 (0x15180) |             |
-| statistics\_save\_interval\_min    | 5.0.0-5.1.0 | 10 (0xa)        |             |
-| 6.0.0+                             | 60 (0x3c)   |                 |             |
-| transmission\_interval\_in\_sleep  | 6.0.0+      | 10800 (0x2a30)  |             |
-| transmission\_interval\_min        | 3.0.0+      | 10 (0xa)        |             |
-| transmission\_retry\_interval      | 3.0.0-5.1.0 | 3600 (0xe10)    |             |
-| transmission\_retry\_interval\_max | 6.0.0+      | 7200 (0x1c20)   |             |
-| transmission\_retry\_interval\_min | 6.0.0+      | 3600 (0xe10)    |             |
+| Name                                   | Versions    | Default Values  | Description |
+| -------------------------------------- | ----------- | --------------- | ----------- |
+| background\_processing                 | 2.0.0+      | true            |             |
+| buffer\_usage\_for\_immediately\_flush | 7.0.0+      | 50 (0x32)       |             |
+| devmenu\_prepo\_page\_view             | 1.0.0+      | false           |             |
+| output\_save\_log                      | 5.0.0+      | false           |             |
+| report\_data\_buffer\_time             | 7.0.0+      | 10 (0xa)        |             |
+| save\_system\_report                   | 7.0.0+      | true            |             |
+| statistics\_post\_interval             | 6.0.0+      | 86400 (0x15180) |             |
+| statistics\_save\_interval\_min        | 5.0.0-5.1.0 | 10 (0xa)        |             |
+| 6.0.0+                                 | 60 (0x3c)   |                 |             |
+| transmission\_interval\_in\_sleep      | 6.0.0+      | 10800 (0x2a30)  |             |
+| transmission\_interval\_min            | 3.0.0+      | 10 (0xa)        |             |
+| transmission\_retry\_interval          | 3.0.0-5.1.0 | 3600 (0xe10)    |             |
+| transmission\_retry\_interval\_max     | 6.0.0+      | 7200 (0x1c20)   |             |
+| transmission\_retry\_interval\_min     | 6.0.0+      | 3600 (0xe10)    |             |
 
 # productinfo
 
@@ -2112,10 +2129,11 @@ firmware.
 
 # psm
 
-| Name                                  | Versions | Default Values | Description |
-| ------------------------------------- | -------- | -------------- | ----------- |
-| charge\_current\_limit\_milli\_ampere | 4.0.0+   | 2048 (0x800)   |             |
-| evaluation\_log\_enabled              | 3.0.0+   | false          |             |
+| Name                                  | Versions         | Default Values | Description |
+| ------------------------------------- | ---------------- | -------------- | ----------- |
+| charge\_current\_limit\_milli\_ampere | 4.0.0-6.2.0      | 2048 (0x800)   |             |
+| 7.0.0+                                | \-1 (0xffffffff) |                |             |
+| evaluation\_log\_enabled              | 3.0.0+           | false          |             |
 
 # push\_notification
 
