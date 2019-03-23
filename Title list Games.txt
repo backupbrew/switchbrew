@@ -3525,6 +3525,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01008C600395A000 || My Little Riding Champion || EUR || || Digital || 0 0x20000 0x30000 || || Game
 |-
+| 0100E25008E68000 || My Time At Portia || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
 | 0100A6F00AC70000 || NAIRI: Tower of Shirin || EUR JPN USA || || Digital || 0 0x20000 0x30000 || || Game
 |-
 | 01001AE00C1B2000 || NBA 2K Playgrounds 2 || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 || || Game
