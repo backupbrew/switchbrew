@@ -448,7 +448,7 @@ ignore this and only load from the user-process title.
 Offline DocumentPath: Initial document path in RomFS, without the
 leading '/'. For DocumentKind\_OfflineHtmlPage, this is relative to
 "html-document/" in RomFS. For the other DocumentKind values, this is
-relative to "/" in RomFS.
+relative to "/" in RomFS. This path must contain ".htdocs/".
 
 Share/Lobby: if a non-zero userID isn't set, the applet will launch the
 profile-selector applet to select an account.
