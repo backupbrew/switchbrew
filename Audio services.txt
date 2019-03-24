@@ -500,6 +500,8 @@ This is "nn::audioctrl::detail::IAudioController".
 | 25 || [4.0.0+] GetAudioVolumeDataForPlayReport
 |-
 | 26 || [4.0.0+] UpdateHeadphoneSettings
+|-
+| 27 || [7.0.0+] 
 |}
 
 = codecctl =
@@ -661,6 +663,10 @@ This is "nn::codec::detail::IHardwareOpusDecoder".
 | 6 || [6.0.0+] [[#DecodeInterleaved]]
 |-
 | 7 || [6.0.0+] [[#DecodeInterleavedForMultiStream]]
+|-
+| 8 || [7.0.0+]
+|-
+| 9 || [7.0.0+]
 |}
 
 === DecodeInterleavedOld ===

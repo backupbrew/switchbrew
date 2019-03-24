@@ -404,6 +404,7 @@ This is "nn::audioctrl::detail::IAudioController".
 | 24  | \[4.0.0+\] GetSystemOutputMasterVolume                      |
 | 25  | \[4.0.0+\] GetAudioVolumeDataForPlayReport                  |
 | 26  | \[4.0.0+\] UpdateHeadphoneSettings                          |
+| 27  | \[7.0.0+\]                                                  |
 
 # codecctl
 
@@ -557,6 +558,8 @@ This is
 | 5   | \[6.0.0+\] [\#DecodeInterleavedForMultiStreamWithPerfOld](#DecodeInterleavedForMultiStreamWithPerfOld "wikilink") (\[4.0.0-5.1.0\] DecodeInterleavedForMultiStreamWithPerf) |
 | 6   | \[6.0.0+\] [\#DecodeInterleaved](#DecodeInterleaved "wikilink")                                                                                                             |
 | 7   | \[6.0.0+\] [\#DecodeInterleavedForMultiStream](#DecodeInterleavedForMultiStream "wikilink")                                                                                 |
+| 8   | \[7.0.0+\]                                                                                                                                                                  |
+| 9   | \[7.0.0+\]                                                                                                                                                                  |
 
 ### DecodeInterleavedOld
 
