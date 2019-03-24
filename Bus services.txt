@@ -11,11 +11,11 @@ This is "nn::gpio::IManager".
 |-
 | 2 || [[#OpenSessionForTest]]
 |-
-| 3 || IsWakeEventActive 
+| 3 || [1.0.0-6.2.0] IsWakeEventActive 
 |-
-| 4 || GetWakeEventActiveFlagSet
+| 4 || [1.0.0-6.2.0] GetWakeEventActiveFlagSet
 |-
-| 5 || SetWakeEventActiveFlagSetForDebug
+| 5 || [1.0.0-6.2.0] SetWakeEventActiveFlagSetForDebug
 |-
 | 6 || SetWakePinDebugMode
 |-
@@ -405,6 +405,10 @@ This is "nn::uart::IManager".
 | 7 || IsSomethingUartValid2
 |-
 | 8 || IsSomethingUartValid2ForTest
+|-
+| 9 || [7.0.0+]
+|-
+| 10 || [7.0.0+]
 |}
 
 == DoesUartExist ==

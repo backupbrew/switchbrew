@@ -7,9 +7,9 @@ This is "nn::gpio::IManager".
 | 0   | [\#OpenSessionForDev](#OpenSessionForDev "wikilink")   |
 | 1   | [\#OpenSession](#OpenSession "wikilink")               |
 | 2   | [\#OpenSessionForTest](#OpenSessionForTest "wikilink") |
-| 3   | IsWakeEventActive                                      |
-| 4   | GetWakeEventActiveFlagSet                              |
-| 5   | SetWakeEventActiveFlagSetForDebug                      |
+| 3   | \[1.0.0-6.2.0\] IsWakeEventActive                      |
+| 4   | \[1.0.0-6.2.0\] GetWakeEventActiveFlagSet              |
+| 5   | \[1.0.0-6.2.0\] SetWakeEventActiveFlagSetForDebug      |
 | 6   | SetWakePinDebugMode                                    |
 | 7   | \[5.0.0+\] [\#OpenSession2](#OpenSession2 "wikilink")  |
 | 8   | \[5.0.0+\] IsWakeEventActive2                          |
@@ -883,6 +883,8 @@ This is "nn::uart::IManager".
 | 6   | [\#GetSession](#GetSession "wikilink")                     |
 | 7   | IsSomethingUartValid2                                      |
 | 8   | IsSomethingUartValid2ForTest                               |
+| 9   | \[7.0.0+\]                                                 |
+| 10  | \[7.0.0+\]                                                 |
 
 ## DoesUartExist
 
