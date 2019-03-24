@@ -115,6 +115,7 @@ This is "nn::nfc::detail::ISystem".
 | 411  | \[4.0.0+\] AttachActivateEvent           |
 | 412  | \[4.0.0+\] AttachDeactivateEvent         |
 | 500  | \[4.0.0+\] SetNfcEnabled                 |
+| 510  | \[7.0.0+\]                               |
 | 1000 | \[4.0.0+\] ReadMifare                    |
 | 1001 | \[4.0.0+\] WriteMifare                   |
 | 1300 | \[4.0.0+\] SendCommandByPassThrough      |
