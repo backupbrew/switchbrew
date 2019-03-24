@@ -5,14 +5,18 @@ transfer system.
 
 This is "nn::migration::user::IService"
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 10  | TryGetLastMigrationInfo |
-| 100 | CreateServer            |
-| 101 | ResumeServer            |
-| 200 | CreateClient            |
-| 201 | ResumeClient            |
-|     |                         |
+| Cmd  | Name                    |
+| ---- | ----------------------- |
+| 10   | TryGetLastMigrationInfo |
+| 100  | CreateServer            |
+| 101  | ResumeServer            |
+| 200  | CreateClient            |
+| 201  | ResumeClient            |
+| 1010 | \[7.0.0+\]              |
+| 1100 | \[7.0.0+\]              |
+| 1101 | \[7.0.0+\]              |
+| 1200 | \[7.0.0+\]              |
+| 1201 | \[7.0.0+\]              |
 
 ## IServer
 
