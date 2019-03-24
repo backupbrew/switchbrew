@@ -45,7 +45,7 @@ This is "nn::es::IETicketService".
 |-
 | 20 || ListLightTicketInfo
 |-
-| 21 || [2.0.0+] SignData
+| 21 || [2.0.0-6.2.0] SignData
 |-
 | 22 || [4.0.0+] GetCommonTicketAndCertificateSize
 |-
@@ -133,7 +133,13 @@ This is "nn::es::IETicketService".
 |-
 | 2000 || [6.0.0+]
 |-
+| 2100 || [7.0.0+]
+|-
 | 2501 || [6.0.0+]
 |-
 | 2502 || [6.0.0+]
+|-
+| 3001 || [7.0.0+]
+|-
+| 3002 || [7.0.0+]
 |}

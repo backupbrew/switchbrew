@@ -25,7 +25,7 @@ This is
 | 18   | OwnTicket                                                                           |
 | 19   | GetTicketInfo                                                                       |
 | 20   | ListLightTicketInfo                                                                 |
-| 21   | \[2.0.0+\] SignData                                                                 |
+| 21   | \[2.0.0-6.2.0\] SignData                                                            |
 | 22   | \[4.0.0+\] GetCommonTicketAndCertificateSize                                        |
 | 23   | \[4.0.0+\] GetCommonTicketAndCertificateData                                        |
 | 24   | \[4.0.0+\] ImportPrepurchaseRecord                                                  |
@@ -69,5 +69,8 @@ This is
 | 1504 | \[6.0.0+\]                                                                          |
 | 1505 | \[6.0.0+\]                                                                          |
 | 2000 | \[6.0.0+\]                                                                          |
+| 2100 | \[7.0.0+\]                                                                          |
 | 2501 | \[6.0.0+\]                                                                          |
 | 2502 | \[6.0.0+\]                                                                          |
+| 3001 | \[7.0.0+\]                                                                          |
+| 3002 | \[7.0.0+\]                                                                          |
