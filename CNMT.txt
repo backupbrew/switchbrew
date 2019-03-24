@@ -127,7 +127,7 @@ Each entry is 0x38 bytes:
 |-
 | 0x30
 | 6
-| Size, same as the output from [[Content_Manager_services#GetEntrySize]].
+| Size, same as the output from [[NCM_services#GetSizeFromContentId]].
 |-
 | 0x36
 | 1

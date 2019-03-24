@@ -69,7 +69,7 @@ bytes:
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0x0    | 32   | Hash                                                                                                                                                                                                   |
 | 0x20   | 16   | NcaId \[same as first 16-bytes of hash\]                                                                                                                                                               |
-| 0x30   | 6    | Size, same as the output from [Content\_Manager\_services\#GetEntrySize](Content%20Manager%20services#GetEntrySize.md##GetEntrySize "wikilink").                                                       |
+| 0x30   | 6    | Size, same as the output from [NCM\_services\#GetSizeFromContentId](NCM%20services#GetSizeFromContentId.md##GetSizeFromContentId "wikilink").                                                          |
 | 0x36   | 1    | Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
 | 0x37   | 1    |                                                                                                                                                                                                        |
 
