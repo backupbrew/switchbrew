@@ -87,7 +87,7 @@ bytes:
 | 0xE    | 2    | Unused?                                                                           |
 
 This is used for SystemUpdate, see here:
-[Content\_Manager\_services\#GetUpdateTitleList](Content%20Manager%20services#GetUpdateTitleList.md##GetUpdateTitleList "wikilink").
+[NCM\_services\#ReadEntryMetaRecords](NCM%20services#ReadEntryMetaRecords.md##ReadEntryMetaRecords "wikilink").
 
 ## Extended data
 

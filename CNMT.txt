@@ -169,7 +169,7 @@ Each entry is 0x10 bytes:
 | Unused?
 |}
 
-This is used for SystemUpdate, see here: [[Content_Manager_services#GetUpdateTitleList]].
+This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 
 == Extended data ==
 
