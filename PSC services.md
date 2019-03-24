@@ -105,6 +105,7 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 20300 | \[6.0.0+\] |
 | 20400 | \[6.0.0+\] |
 | 20401 | \[6.0.0+\] |
+| 20402 | \[7.0.0+\] |
 
 # PSC Module IDs
 
