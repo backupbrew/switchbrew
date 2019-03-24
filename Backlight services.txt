@@ -62,6 +62,8 @@ This is "nn::lbl::detail::ILblController".
 | 27 || [3.0.0+] [[#DisableVrMode]]
 |-
 | 28 || [3.0.0+] [[#IsVrModeEnabled]]
+|-
+| 29 || [7.0.0+]
 |}
 
 == Ambient Light Sensor Notes ==

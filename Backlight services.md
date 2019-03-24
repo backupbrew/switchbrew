@@ -34,6 +34,7 @@ This is
 | 26  | \[3.0.0+\] [\#EnableVrMode](#EnableVrMode "wikilink")                  |
 | 27  | \[3.0.0+\] [\#DisableVrMode](#DisableVrMode "wikilink")                |
 | 28  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")            |
+| 29  | \[7.0.0+\]                                                             |
 
 ## Ambient Light Sensor Notes
 
