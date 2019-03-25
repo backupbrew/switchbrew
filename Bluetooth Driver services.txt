@@ -143,41 +143,41 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 65 || [5.0.0+] LeClientConnect
 |-
-| 66 || [5.0.0+] LeClientCancelConnection
+| 66 || [5.1.0+] ?
 |-
-| 67 || [5.0.0+] LeClientDisconnect
+| 67 ([5.0.0-5.0.2] 66) || LeClientCancelConnection
 |-
-| 68 || [5.0.0+] LeClientGetAttributes
+| 68 ([5.0.0-5.0.2] 67) || [5.0.0+] LeClientDisconnect
 |-
-| 69 || [5.0.0+] LeClientDiscoverService
+| 69 ([5.0.0-5.0.2] 68) || [5.0.0+] LeClientGetAttributes
 |-
-| 70 || [5.0.0+] LeClientConfigureMtu
+| 70 ([5.0.0-5.0.2] 69) || [5.0.0+] LeClientDiscoverService
 |-
-| 71 || [5.0.0+] RegisterLeServer
+| 71 ([5.0.0-5.0.2] 70) || [5.0.0+] LeClientConfigureMtu
 |-
-| 72 || [5.0.0+] UnregisterLeServer
+| 72 ([5.0.0-5.0.2] 71) || [5.0.0+] RegisterLeServer
 |-
-| 73 || [5.0.0+] LeServerConnect
+| 73 ([5.0.0-5.0.2] 72) || [5.0.0+] UnregisterLeServer
 |-
-| 74 || [5.0.0+] LeServerDisconnect
+| 74 ([5.0.0-5.0.2] 73) || [5.0.0+] LeServerConnect
 |-
 | 75 || [5.0.0+] CreateLeService
 |-
-| 76 || [5.0.0+] StartLeService
+| 76 ([5.0.0-5.0.2] 74) || [5.0.0+] LeServerDisconnect
 |-
 | 77 || [5.0.0+] AddLeCharacteristic
 |-
-| 78 || [5.0.0+] AddLeDescriptor
+| 78 ([5.0.0-5.0.2] 76) || [5.0.0+] StartLeService
 |-
-| 79 || [5.0.0+] GetLeCoreEventInfo
+| 79 ([5.0.0-5.0.2] 78) || [5.0.0+] AddLeDescriptor
 |-
-| 80 || [5.0.0+] LeGetFirstCharacteristic
+| 80 ([5.0.0-5.0.2] 79) || [5.0.0+] GetLeCoreEventInfo
 |-
-| 81 || [5.0.0+] LeGetNextCharacteristic
+| 81 ([5.0.0-5.0.2] 80) || [5.0.0+] LeGetFirstCharacteristic
 |-
-| 82 || [5.0.0+] LeGetFirstDescriptor
+| 82 ([5.0.0-5.0.2] 81) || [5.0.0+] LeGetNextCharacteristic
 |-
-| 83 || [5.0.0+] LeGetNextDescriptor
+| 83 ([5.0.0-5.0.2] 82) || [5.0.0+] LeGetFirstDescriptor
 |-
 | 84 || [5.0.0+] RegisterLeCoreDataPath
 |-
@@ -189,23 +189,25 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 88 || [5.0.0+] RegisterLeDataPath
 |-
-| 89 || [5.0.0+] UnregisterLeDataPath
+| 89 ([5.0.0-5.0.2] 83) || [5.0.0+] LeGetNextDescriptor
 |-
-| 90 || [5.0.0+] LeClientReadCharacteristic
+| 90 ([5.0.0-5.0.2] 89) || [5.0.0+] UnregisterLeDataPath
 |-
-| 91 || [5.0.0+] LeClientReadDescriptor
+| 91 ([5.0.0-5.0.2] 90) || [5.0.0+] LeClientReadCharacteristic
 |-
-| 92 || [5.0.0+] LeClientWriteCharacteristic
+| 92 ([5.0.0-5.0.2] 91) || [5.0.0+] LeClientReadDescriptor
 |-
-| 93 || [5.0.0+] LeClientWriteDescriptor
+| 93 ([5.0.0-5.0.2] 92) || [5.0.0+] LeClientWriteCharacteristic
 |-
 | 94 || [5.0.0+] LeClientRegisterNotification
 |-
-| 95 || [5.0.0+] LeClientDeregisterNotification
+| 95 ([5.0.0-5.0.2] 93) || [5.0.0+] LeClientWriteDescriptor
 |-
-| 96 || [5.0.0+] GetLeHidEventInfo
+| 96 ([5.0.0-5.0.2] 95) || [5.0.0+] LeClientDeregisterNotification
 |-
-| 97 || [5.0.0+] RegisterBleHidEvent
+| 97 ([5.0.0-5.0.2] 96) || [5.0.0+] GetLeHidEventInfo
+|-
+| 97 || [5.0.0-5.0.2] RegisterBleHidEvent
 |-
 | 98 || [5.1.0+] SetLeScanParameter
 |-
