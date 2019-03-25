@@ -72,7 +72,7 @@ This is "nn::psc::sf::IPmModule".
 | 1   | GetRequest               |
 | 2   | Acknowledge              |
 | 3   | Finalize                 |
-| 4   | \[6.0.0+\] AcknowledgeEx |
+| 4   | \[5.1.0+\] AcknowledgeEx |
 
 # srepo:u, srepo:a
 
