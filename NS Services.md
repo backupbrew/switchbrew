@@ -268,17 +268,18 @@ field for a command-specific bit and returns an error if not set, this
 is likely a permissions check for
 service+command.
 
-| Cmd  | Name                                                                       |
-| ---- | -------------------------------------------------------------------------- |
-| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                   |
-| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink") |
-| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")             |
-| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")             |
-| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink") |
-| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")             |
-| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")   |
-| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                     |
-|      |                                                                            |
+| Cmd  | Name                                                                                                                  |
+| ---- | --------------------------------------------------------------------------------------------------------------------- |
+| 7989 | Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
+| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                                                              |
+| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                            |
+| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                        |
+| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                        |
+| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                            |
+| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")                                                        |
+| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")                                              |
+| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                                                                |
+|      |                                                                                                                       |
 
 ### IAccountProxyInterface
 
@@ -430,8 +431,8 @@ This is
 | 908                | ListApplicationRecordInstalledContentMeta                                                          |
 | 909                | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
 | 910                | \[6.0.0+\] HasApplicationRecord                                                                    |
-| 911                | \[6.0.0+\] SetPreInstalledApplication                                                              |
-| 912                | \[6.0.0+\] ClearPreInstalledApplicationFlag                                                        |
+| 911                | \[5.1.0+\] SetPreInstalledApplication                                                              |
+| 912                | \[5.1.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000               | RequestVerifyApplicationDeprecated                                                                 |
 | 1001               | CorruptApplicationForDebug                                                                         |
 | 1002               | RequestVerifyAddOnContentsRights                                                                   |
@@ -568,6 +569,19 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 | 708 | DisableAutoCommit                       |
 | 709 | TriggerDynamicCommitEvent               |
 |     |                                         |
+
+### IReadOnlyApplicationControlDataInterface
+
+This is "nn::ns::detail::IReadOnlyApplicationControlDataInterface".
+
+This was added with \[5.1.0+\].
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+| 1   |      |       |
+| 2   |      |       |
+| 3   |      |       |
 
 ### IECommerceInterface
 

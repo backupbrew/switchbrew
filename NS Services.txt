@@ -407,6 +407,8 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |-
 ! Cmd || Name
 |-
+| 7989 || Returns an output [[#IReadOnlyApplicationControlDataInterface]].
+|-
 | 7992 || [[#IECommerceInterface|GetECommerceInterface]]
 |-
 | 7993 || [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
@@ -711,9 +713,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 910 || [6.0.0+] HasApplicationRecord
 |-
-| 911 || [6.0.0+] SetPreInstalledApplication
+| 911 || [5.1.0+] SetPreInstalledApplication
 |-
-| 912 || [6.0.0+] ClearPreInstalledApplicationFlag
+| 912 || [5.1.0+] ClearPreInstalledApplicationFlag
 |-
 | 1000 || RequestVerifyApplicationDeprecated
 |-
@@ -959,6 +961,24 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 | 709 || TriggerDynamicCommitEvent
 |-
+|}
+
+=== IReadOnlyApplicationControlDataInterface ===
+This is "nn::ns::detail::IReadOnlyApplicationControlDataInterface".
+
+This was added with [5.1.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|-
+| 1 || || 
+|-
+| 2 || || 
+|-
+| 3 || || 
 |}
 
 === IECommerceInterface===
