@@ -876,22 +876,22 @@ This is "nn::uart::IManager".
 | --- | ---------------------------------------------------------- |
 | 0   | [\#DoesUartExist](#DoesUartExist "wikilink")               |
 | 1   | DoesUartExistForTest                                       |
-| 2   | [\#SetUartBaudrate](#SetUartBaudrate "wikilink")           |
-| 3   | SetUartBaudrateForTest                                     |
+| 2   | [\#IsUartBaudrateValid](#IsUartBaudrateValid "wikilink")   |
+| 3   | IsUartBaudrateValidForTest                                 |
 | 4   | [\#IsSomethingUartValid](#IsSomethingUartValid "wikilink") |
 | 5   | IsSomethingUartValidForTest                                |
 | 6   | [\#GetSession](#GetSession "wikilink")                     |
 | 7   | IsSomethingUartValid2                                      |
 | 8   | IsSomethingUartValid2ForTest                               |
-| 9   | \[7.0.0+\]                                                 |
-| 10  | \[7.0.0+\]                                                 |
+| 9   | \[7.0.0+\] IsSomethingUartValid3                           |
+| 10  | \[7.0.0+\] IsSomethingUartValid3ForTest                    |
 
 ## DoesUartExist
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and returns boolean
 success value
 
-## SetUartBaudrate
+## IsUartBaudrateValid
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and a u32 baudrate and
 returns boolean success value

@@ -392,9 +392,9 @@ This is "nn::uart::IManager".
 |-
 | 1 || DoesUartExistForTest
 |-
-| 2 || [[#SetUartBaudrate]]
+| 2 || [[#IsUartBaudrateValid]]
 |-
-| 3 || SetUartBaudrateForTest
+| 3 || IsUartBaudrateValidForTest
 |-
 | 4 || [[#IsSomethingUartValid]]
 |-
@@ -406,15 +406,15 @@ This is "nn::uart::IManager".
 |-
 | 8 || IsSomethingUartValid2ForTest
 |-
-| 9 || [7.0.0+]
+| 9 || [7.0.0+] IsSomethingUartValid3
 |-
-| 10 || [7.0.0+]
+| 10 || [7.0.0+] IsSomethingUartValid3ForTest
 |}
 
 == DoesUartExist ==
 Takes a u32 [[#UartPort]] and returns boolean success value
 
-== SetUartBaudrate ==
+== IsUartBaudrateValid ==
 Takes a u32 [[#UartPort]] and a u32 baudrate and returns boolean success value
 
 == IsSomethingUartValid ==
