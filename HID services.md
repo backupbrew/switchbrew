@@ -119,13 +119,13 @@ This is
 | 516  | \[6.0.0+\] SetPalmaDataBaseIdentificationVersion                                                 |
 | 517  | \[6.0.0+\] GetPalmaDataBaseIdentificationVersion                                                 |
 | 518  | \[6.0.0+\] SuspendPalmaFeature                                                                   |
-| 519  | \[6.0.0+\] GetPalmaOperationResult                                                               |
-| 520  | \[6.0.0+\] ReadPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaActivityEntry)                            |
-| 521  | \[6.0.0+\] ResetPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaRgbLedPatternEntry)                      |
-| 522  | \[6.0.0+\] SetIsPalmaAllConnectable                                                              |
-| 523  | \[6.0.0+\] SetIsPalmaPairedConnectable                                                           |
-| 524  | \[6.0.0+\] PairPalma                                                                             |
-| 525  | \[6.0.0+\] SetPalmaBoostMode                                                                     |
+| 519  | \[5.1.0+\] GetPalmaOperationResult                                                               |
+| 520  | \[5.1.0+\] ReadPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaActivityEntry)                            |
+| 521  | \[5.1.0+\] ResetPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaRgbLedPatternEntry)                      |
+| 522  | \[5.1.0+\] SetIsPalmaAllConnectable                                                              |
+| 523  | \[5.1.0+\] SetIsPalmaPairedConnectable                                                           |
+| 524  | \[5.1.0+\] PairPalma                                                                             |
+| 525  | \[5.1.0+\] SetPalmaBoostMode                                                                     |
 | 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                             |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
@@ -479,7 +479,7 @@ This is
 | 850  | IsUsbFullKeyControllerEnabled                                      |
 | 851  | EnableUsbFullKeyController                                         |
 | 852  | IsUsbConnected                                                     |
-| 870  | \[6.0.0+\] IsHandheldButtonPressedOnConsoleMode                    |
+| 870  | \[5.1.0+\] IsHandheldButtonPressedOnConsoleMode                    |
 | 900  | ActivateInputDetector                                              |
 | 901  | [\#NotifyInputDetector](#NotifyInputDetector "wikilink")           |
 | 1000 | InitializeFirmwareUpdate                                           |

@@ -229,19 +229,19 @@ This is "nn::hid::IHidServer".
 |-
 | 518 || [6.0.0+] SuspendPalmaFeature
 |-
-| 519 || [6.0.0+] GetPalmaOperationResult
+| 519 || [5.1.0+] GetPalmaOperationResult
 |-
-| 520 || [6.0.0+] ReadPalmaPlayLog ([5.1.0-6.0.0] WritePalmaActivityEntry)
+| 520 || [5.1.0+] ReadPalmaPlayLog ([5.1.0-6.0.0] WritePalmaActivityEntry)
 |-
-| 521 || [6.0.0+] ResetPalmaPlayLog ([5.1.0-6.0.0] WritePalmaRgbLedPatternEntry)
+| 521 || [5.1.0+] ResetPalmaPlayLog ([5.1.0-6.0.0] WritePalmaRgbLedPatternEntry)
 |-
-| 522 || [6.0.0+] SetIsPalmaAllConnectable
+| 522 || [5.1.0+] SetIsPalmaAllConnectable
 |-
-| 523 || [6.0.0+] SetIsPalmaPairedConnectable
+| 523 || [5.1.0+] SetIsPalmaPairedConnectable
 |-
-| 524 || [6.0.0+] PairPalma
+| 524 || [5.1.0+] PairPalma
 |-
-| 525 || [6.0.0+] SetPalmaBoostMode
+| 525 || [5.1.0+] SetPalmaBoostMode
 |-
 | 526 || [7.0.0+] CancelWritePalmaWaveEntry
 |-
@@ -749,7 +749,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 852 || IsUsbConnected
 |-
-| 870 || [6.0.0+] IsHandheldButtonPressedOnConsoleMode
+| 870 || [5.1.0+] IsHandheldButtonPressedOnConsoleMode
 |-
 | 900 || ActivateInputDetector
 |-
