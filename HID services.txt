@@ -207,33 +207,33 @@ This is "nn::hid::IHidServer".
 |-
 | 507 || [5.0.0+] EnablePalmaStep
 |-
-| 508 || [?+] ResetPalmaStep ([5.0.0-6.0.0] SuspendPalmaStep)
+| 508 || [5.0.0+] ResetPalmaStep
 |-
-| 509 || [?+] ReadPalmaApplicationSection ([5.0.0-6.0.0] ResetPalmaStep)
+| 509 || [5.0.0+] ReadPalmaApplicationSection
 |-
-| 510 || [?+] WritePalmaApplicationSection ([5.0.0-6.0.0] ReadPalmaApplicationSection)
+| 510 || [5.0.0+] WritePalmaApplicationSection
 |-
-| 511 || [?+] ReadPalmaUniqueCode ([5.0.0-6.0.0] WritePalmaApplicationSection)
+| 511 || [5.0.0+] ReadPalmaUniqueCode
 |-
-| 512 || [?+] SetPalmaUniqueCodeInvalid ([5.0.0-6.0.0] ReadPalmaUniqueCode)
+| 512 || [5.0.0+] SetPalmaUniqueCodeInvalid
 |-
-| 513 || [?+] WritePalmaActivityEntry ([5.0.0-6.0.0] SetPalmaUniqueCodeInvalid)
+| 513 || [5.0.0+] WritePalmaActivityEntry
 |-
-| 514 || [?+] WritePalmaRgbLedPatternEntry
+| 514 || [5.0.0+] WritePalmaRgbLedPatternEntry
 |-
-| 515 || [?+] WritePalmaWaveEntry
+| 515 || [5.0.0+] WritePalmaWaveEntry
 |-
-| 516 || [?+] SetPalmaDataBaseIdentificationVersion
+| 516 || [5.0.0+] SetPalmaDataBaseIdentificationVersion
 |-
-| 517 || [?+] GetPalmaDataBaseIdentificationVersion
+| 517 || [5.0.0+] GetPalmaDataBaseIdentificationVersion
 |-
-| 518 || [?+] SuspendPalmaFeature
+| 518 || [5.0.0+] SuspendPalmaFeature
 |-
 | 519 || [5.1.0+] GetPalmaOperationResult
 |-
-| 520 || [5.1.0+] ReadPalmaPlayLog ([5.1.0-6.0.0] WritePalmaActivityEntry)
+| 520 || [5.1.0+] ReadPalmaPlayLog
 |-
-| 521 || [5.1.0+] ResetPalmaPlayLog ([5.1.0-6.0.0] WritePalmaRgbLedPatternEntry)
+| 521 || [5.1.0+] ResetPalmaPlayLog
 |-
 | 522 || [5.1.0+] SetIsPalmaAllConnectable
 |-
