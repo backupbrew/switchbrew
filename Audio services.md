@@ -189,6 +189,18 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 | 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferAuto |
 | 10  | \[6.0.0+\] FlushFinalOutputRecorderBuffers          |
 
+# IAudioSnoopManager
+
+This is "nn::audio::detail::IAudioSnoopManager".
+
+This was added with \[6.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 6   |      |
+
 # audren:u
 
 This is "nn::audio::detail::IAudioRendererManager".
