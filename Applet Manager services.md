@@ -1005,6 +1005,13 @@ No input/output.
 
 No input/output.
 
+[\#EnterFatalSection](#EnterFatalSection "wikilink") must be executed at
+least once before executing this command, otherwise error code 0x40080
+will be returned. EnterFatalSection and LeaveFatalSection work in pairs,
+that is, N calls to EnterFatalSection must be performed first in order
+to perform N executions of LeaveFatalSection. Essentially, these two
+functions operate like how one would lock and unlock a recursive mutex.
+
 ### GetLibraryAppletLaunchableEvent
 
 No input, returns an output event handle with autoclear=false.
