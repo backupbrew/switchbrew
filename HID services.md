@@ -108,17 +108,17 @@ This is
 | 505  | \[5.0.0+\] SetPalmaFrModeType                                                                    |
 | 506  | \[5.0.0+\] ReadPalmaStep                                                                         |
 | 507  | \[5.0.0+\] EnablePalmaStep                                                                       |
-| 508  | \[6.0.0+\] ResetPalmaStep (\[5.0.0-6.0.0\] SuspendPalmaStep)                                     |
-| 509  | \[6.0.0+\] ReadPalmaApplicationSection (\[5.0.0-6.0.0\] ResetPalmaStep)                          |
-| 510  | \[6.0.0+\] WritePalmaApplicationSection (\[5.0.0-6.0.0\] ReadPalmaApplicationSection)            |
-| 511  | \[6.0.0+\] ReadPalmaUniqueCode (\[5.0.0-6.0.0\] WritePalmaApplicationSection)                    |
-| 512  | \[6.0.0+\] SetPalmaUniqueCodeInvalid (\[5.0.0-6.0.0\] ReadPalmaUniqueCode)                       |
-| 513  | \[6.0.0+\] WritePalmaActivityEntry (\[5.0.0-6.0.0\] SetPalmaUniqueCodeInvalid)                   |
-| 514  | \[6.0.0+\] WritePalmaRgbLedPatternEntry                                                          |
-| 515  | \[6.0.0+\] WritePalmaWaveEntry                                                                   |
-| 516  | \[6.0.0+\] SetPalmaDataBaseIdentificationVersion                                                 |
-| 517  | \[6.0.0+\] GetPalmaDataBaseIdentificationVersion                                                 |
-| 518  | \[6.0.0+\] SuspendPalmaFeature                                                                   |
+| 508  | \[?+\] ResetPalmaStep (\[5.0.0-6.0.0\] SuspendPalmaStep)                                         |
+| 509  | \[?+\] ReadPalmaApplicationSection (\[5.0.0-6.0.0\] ResetPalmaStep)                              |
+| 510  | \[?+\] WritePalmaApplicationSection (\[5.0.0-6.0.0\] ReadPalmaApplicationSection)                |
+| 511  | \[?+\] ReadPalmaUniqueCode (\[5.0.0-6.0.0\] WritePalmaApplicationSection)                        |
+| 512  | \[?+\] SetPalmaUniqueCodeInvalid (\[5.0.0-6.0.0\] ReadPalmaUniqueCode)                           |
+| 513  | \[?+\] WritePalmaActivityEntry (\[5.0.0-6.0.0\] SetPalmaUniqueCodeInvalid)                       |
+| 514  | \[?+\] WritePalmaRgbLedPatternEntry                                                              |
+| 515  | \[?+\] WritePalmaWaveEntry                                                                       |
+| 516  | \[?+\] SetPalmaDataBaseIdentificationVersion                                                     |
+| 517  | \[?+\] GetPalmaDataBaseIdentificationVersion                                                     |
+| 518  | \[?+\] SuspendPalmaFeature                                                                       |
 | 519  | \[5.1.0+\] GetPalmaOperationResult                                                               |
 | 520  | \[5.1.0+\] ReadPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaActivityEntry)                            |
 | 521  | \[5.1.0+\] ResetPalmaPlayLog (\[5.1.0-6.0.0\] WritePalmaRgbLedPatternEntry)                      |
