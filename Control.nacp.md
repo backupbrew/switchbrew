@@ -42,14 +42,16 @@ Total size is
 | 0x3100 | 0x41                 | [BcatPassphrase](BCAT%20Content%20Container.md "wikilink"), all-zero when unused. |
 | 0x3141 | 0x1                  | ?                                                                                 |
 | 0x3142 | 0x6                  | ?                                                                                 |
-| 0x3148 | 0x8                  | ?                                                                                 |
-| 0x3150 | 0x8                  | ?                                                                                 |
-| 0x3158 | 0x8                  | ?                                                                                 |
-| 0x3160 | 0x8                  | ?                                                                                 |
-| 0x3168 | 0x8                  | ?                                                                                 |
-| 0x3170 | 0x8                  | ?                                                                                 |
-| 0x3178 | 0x8                  | ?                                                                                 |
-| 0x3180 | 0xE80                | ?                                                                                 |
+| 0x3148 | 0x8                  | UserAccountSaveDataMaxSize                                                        |
+| 0x3150 | 0x8                  | UserAccountSaveDataMaxJournalSize                                                 |
+| 0x3158 | 0x8                  | DeviceSaveDataMaxSize                                                             |
+| 0x3160 | 0x8                  | DeviceSaveDataMaxJournalSize                                                      |
+| 0x3168 | 0x8                  | TemporaryStorageSize                                                              |
+| 0x3170 | 0x8                  | CacheStorageSize                                                                  |
+| 0x3178 | 0x8                  | CacheStorageJournalSize                                                           |
+| 0x3180 | 0x8                  | CacheStorageMaxSizeAndMaxJournalSize                                              |
+| 0x3188 | 0x8                  | CacheStorageMaxIndex                                                              |
+| 0x3190 | 0xE70                | ?                                                                                 |
 
 ## Title Entry
 
