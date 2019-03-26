@@ -363,7 +363,7 @@ This is "nn::hid::IHidDebugServer".
 | 224 | \[5.0.0+\] UpdateDesignInfo                         |
 | 225 | \[5.0.0+\] GetUniquePadDriverState                  |
 | 226 | \[5.0.0+\] GetSixAxisSensorDriverStates             |
-| 227 | \[?+\] GetRxPacketHistory                           |
+| 227 | \[5.0.0+\] GetRxPacketHistory                       |
 | 228 | \[6.0.0+\] AcquireOperationEventHandle              |
 | 229 | \[6.0.0+\] ReadSerialFlash                          |
 | 230 | \[6.0.0+\] WriteSerialFlash                         |
