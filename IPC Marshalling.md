@@ -18,7 +18,7 @@ Storage](Thread%20Local%20Storage.md "wikilink").
 | ...  |       | [Buf X descriptors](#Buffer_descriptor_X_"Pointer" "wikilink"), each one 2 words.                           |
 | ...  |       | [Buf A descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
 | ...  |       | [Buf B descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
-| ...  |       | [Type W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.    |
+| ...  |       | [Buf W descriptors](#Buffer_descriptor_A/B/W_"Send"/"Receive"/"Exchange" "wikilink"), each one 3 words.     |
 | ...  |       | [Raw data section](#Raw_data_section "wikilink") (including padding before and after aligned data section). |
 | ...  |       | [Buf C descriptors](#Buffer_descriptor_C_"ReceiveList" "wikilink"), each one 2 words.                       |
 
@@ -168,9 +168,10 @@ memory in the sysmodule.
 Used to enforce whether or not device mapping is allowed for src and dst
 buffers respectively.
 
-  - Flag0: Device mapping \*not\* allowed for src or dst.
-  - Flag1: Device mapping allowed for src and dst.
-  - Flag3: Device mapping allowed for src but not for dst.
+  - Ipc (flag=0): Device mapping \*not\* allowed for src or dst.
+  - NonSecureIpc (flag=1): Device mapping allowed for src and dst.
+  - NonDeviceIpc (flag=3): Device mapping allowed for src but not for
+    dst.
 
 ### Buffer descriptor C "ReceiveList"
 
@@ -333,26 +334,32 @@ backwards compatibility.
 
 ## Official marshalling code
 
-The official marshalling function takes an array of (buf\_ptr, size)
-pairs and a type-field for each such pair.
+The official marshalling function is called
+"nn::sf::hipc::client::Hipc2ClientCoreProcessorImpl::WriteBufferDataImpl"
+and takes:
 
-Bitmask 0x10 seems to indicate null-terminated
-strings.
+  - A pointer to a "nn::sf::hipc::detail::HipcMessageWriter" context;
+  - The number of (buf\_ptr, size) pairs;
+  - An array of (buf\_ptr, size) pairs (called
+    "nn::sf::detail::PointerAndSize");
+  - A pointer to a type bitfield for each such pair;
+  - The offset of the main IPC command structure;
+  - The size of the IPC command's [raw
+    data](IPC%20Marshalling#Raw%20data%20section.md##Raw_data_section "wikilink").
 
-| Type Mask       | Description                                                                 | Direction |
-| --------------- | --------------------------------------------------------------------------- | --------- |
-| 4 + 1           | Creates a A descriptor with flags=0.                                        | In        |
-| 0x40 + 4 + 1    | Creates a A descriptor with flags=1.                                        | In        |
-| 0x80 + 4 + 1    | Creates a A descriptor with flags=3.                                        | In        |
-| 4 + 2           | Creates a B descriptor with flags=0.                                        | Out       |
-| 0x40 + 4 + 2    | Creates a B descriptor with flags=1.                                        | Out       |
-| 0x80 + 4 + 2    | Creates a B descriptor with flags=3.                                        | Out       |
-| 8 + 1           | Creates an X descriptor                                                     | In        |
-| 8 + 2           | Creates a C descriptor, and writes the u16 size to an offset into raw data. | Out       |
-| 0x10 + 8 + 2    | Creates a C descriptor                                                      | Out       |
-| 0x20 + 1        | Creates both an A and X descriptor                                          | In        |
-| 0x20 + 2        | Creates both an B and C descriptor                                          | Out       |
-| 0x20 + 2 + 0x40 | Same as 0x20 + 2, except a certain value is set to hard-coded 0x1 instead.  | Out       |
+The type of an IPC command is described by a bitfield as
+below:
+
+| Bits | Description                                                         |
+| ---- | ------------------------------------------------------------------- |
+| 0    | Direction is input.                                                 |
+| 1    | Direction is output.                                                |
+| 2    | Use buffer descriptors A ("Send"), B ("Receive") or W ("Exchange"). |
+| 3    | Use buffer descriptors X ("Pointer") or C ("ReceiveList").          |
+| 4    | Skip saving the pointer buffer size in raw data.                    |
+| 5    | Select which buffer descriptor to use automatically.                |
+| 6    | Use [NonSecureIpc flag](Flags.md "wikilink").                       |
+| 7    | Use [NonDeviceIpc flag](Flags.md "wikilink").                       |
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer
 buffer", a buffer in the service process. Its size is a u16, which is
@@ -366,11 +373,9 @@ the expected values. X/C descriptors are used as the non-NULL descriptor
 where possible, but if they don't fit in the pointer buffer, A/B
 descriptors are used instead. The code defers processing of type 0x20
 buffers with sizes that fit in a u16 (and may therefore fit in the
-pointer buffer). This ensures all type 8 buffers get pointer-buffer
-space before any type 0x20.
-
-(The order in which the deferred type 0x20 buffers are processed is
-determined by a convoluted loop.)
+pointer buffer), which ensures all type 8 buffers get pointer-buffer
+space before any type 0x20. The order in which the deferred type 0x20
+buffers are processed is determined by a convoluted loop.
 
 ## Official IPC Cmd Structure
 
