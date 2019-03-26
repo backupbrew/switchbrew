@@ -80,41 +80,107 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
 
 # news:a, news:c, news:m, news:p, news:v
 
-These are "nn::news::detail::ipc::IServiceCreator".
+These are
+"nn::news::detail::ipc::IServiceCreator".
+
+| Cmd | Name | Notes                                                                                    |
+| --- | ---- | ---------------------------------------------------------------------------------------- |
+| 0   |      | No input, returns an [\#INewsService](#INewsService "wikilink").                         |
+| 1   |      | No input, returns an [\#INewlyArrivedEventHolder](#INewlyArrivedEventHolder "wikilink"). |
+| 2   |      | No input, returns an [\#INewsDataService](#INewsDataService "wikilink").                 |
+| 3   |      | No input, returns an [\#INewsDatabaseService](#INewsDatabaseService "wikilink").         |
+| 4   |      | No input, returns an [\#IOverwriteEventHolder](#IOverwriteEventHolder "wikilink").       |
+
+## INewsService
+
+This is "nn::news::detail::ipc::INewsService".
+
+| Cmd   | Name       |
+| ----- | ---------- |
+| 10100 |            |
+| 20100 |            |
+| 30100 |            |
+| 30101 |            |
+| 30110 | \[6.0.0+\] |
+| 30200 |            |
+| 30300 |            |
+| 30400 |            |
+| 40100 |            |
+| 40101 |            |
+| 40200 |            |
+| 40201 |            |
+| 90100 |            |
+
+## INewlyArrivedEventHolder
+
+This is "nn::news::detail::ipc::INewlyArrivedEventHolder".
 
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
+
+## INewsDataService
+
+This is "nn::news::detail::ipc::INewsDataService".
+
+| Cmd  | Name       |
+| ---- | ---------- |
+| 0    |            |
+| 1    |            |
+| 2    |            |
+| 3    |            |
+| 1001 | \[6.0.0+\] |
+
+## INewsDatabaseService
+
+This is "nn::news::detail::ipc::INewsDatabaseService".
+
+| Cmd  | Name       |
+| ---- | ---------- |
+| 0    |            |
+| 1    |            |
+| 2    |            |
+| 3    |            |
+| 4    |            |
+| 5    |            |
+| 1000 | \[6.0.0+\] |
+
+## IOverwriteEventHolder
+
+This is "nn::news::detail::ipc::IOverwriteEventHolder".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
 
 # prepo:a, prepo:a2, prepo:m, prepo:u, prepo:s
 
 These are
 "nn::prepo::detail::ipc::IPrepoService".
 
-| Cmd   | Name                                                            |
-| ----- | --------------------------------------------------------------- |
-| 10100 | SaveReportOld (\[1.0.0-5.1.0\] SaveReport)                      |
-| 10101 | SaveReportWithUserOld (\[1.0.0-5.1.0\] SaveReportWithUser)      |
-| 10102 | \[6.0.0+\] SaveReport                                           |
-| 10103 | \[6.0.0+\] SaveReportWithUser                                   |
-| 10200 | RequestImmediateTransmission                                    |
-| 10300 | GetTransmissionStatus                                           |
-| 20100 | SaveSystemReport                                                |
-| 20101 | SaveSystemReportWithUser                                        |
-| 20200 | \[4.0.0+\] SetOperationMode                                     |
-| 30100 | ClearStorage                                                    |
-| 30200 | \[6.0.0+\] ClearStatistics                                      |
-| 30300 | \[6.0.0+\] GetStorageUsage                                      |
-| 30400 | \[5.0.0+\] GetStatistics                                        |
-| 30401 | \[5.0.0+\] GetThroughputHistory                                 |
-| 30500 | \[5.0.0+\] GetLastUploadError                                   |
-| 40100 | IsUserAgreementCheckEnabled                                     |
-| 40101 | SetUserAgreementCheckEnabled                                    |
-| 90100 | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
+| Cmd               | Name                                                            |
+| ----------------- | --------------------------------------------------------------- |
+| 10100             | SaveReportOld (\[1.0.0-5.1.0\] SaveReport)                      |
+| 10101             | SaveReportWithUserOld (\[1.0.0-5.1.0\] SaveReportWithUser)      |
+| 10102             | \[6.0.0+\] SaveReport                                           |
+| 10103             | \[6.0.0+\] SaveReportWithUser                                   |
+| 10200             | RequestImmediateTransmission                                    |
+| 10300             | GetTransmissionStatus                                           |
+| 20100             | SaveSystemReport                                                |
+| 20101             | SaveSystemReportWithUser                                        |
+| 20200             | \[4.0.0+\] SetOperationMode                                     |
+| 30100             | ClearStorage                                                    |
+| 30200             | \[6.0.0+\] ClearStatistics                                      |
+| 30300             | \[6.0.0+\] GetStorageUsage                                      |
+| 30400             | \[6.0.0+\] GetStatistics                                        |
+| 30401             | \[6.0.0+\] GetThroughputHistory                                 |
+| 30500             | \[6.0.0+\] GetLastUploadError                                   |
+| 40100             | IsUserAgreementCheckEnabled                                     |
+| 40101             | SetUserAgreementCheckEnabled                                    |
+| 90100             | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
+| \[?-5.1.0\] 90200 |                                                                 |
+| \[?-5.1.0\] 90201 |                                                                 |
+| \[?-5.1.0\] 90300 |                                                                 |
 
 ## Data reporting
 

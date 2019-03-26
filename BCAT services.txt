@@ -113,6 +113,86 @@ These are <nowiki>"nn::news::detail::ipc::IServiceCreator"</nowiki>.
 
 {| class="wikitable" border="1"
 |-
+! Cmd || Name || Notes
+|-
+| 0 || || No input, returns an [[#INewsService]].
+|-
+| 1 || || No input, returns an [[#INewlyArrivedEventHolder]].
+|-
+| 2 || || No input, returns an [[#INewsDataService]].
+|-
+| 3 || || No input, returns an [[#INewsDatabaseService]].
+|-
+| 4 || || No input, returns an [[#IOverwriteEventHolder]].
+|}
+
+== INewsService ==
+This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 10100 || 
+|-
+| 20100 || 
+|-
+| 30100 || 
+|-
+| 30101 || 
+|-
+| 30110 || [6.0.0+]
+|-
+| 30200 || 
+|-
+| 30300 || 
+|-
+| 30400 || 
+|-
+| 40100 || 
+|-
+| 40101 || 
+|-
+| 40200 || 
+|-
+| 40201 || 
+|-
+| 90100 || 
+|}
+
+== INewlyArrivedEventHolder ==
+This is <nowiki>"nn::news::detail::ipc::INewlyArrivedEventHolder"</nowiki>.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|}
+
+== INewsDataService ==
+This is <nowiki>"nn::news::detail::ipc::INewsDataService"</nowiki>.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 1001 || [6.0.0+]
+|}
+
+== INewsDatabaseService ==
+This is <nowiki>"nn::news::detail::ipc::INewsDatabaseService"</nowiki>.
+
+{| class="wikitable" border="1"
+|-
 ! Cmd || Name
 |-
 | 0 || 
@@ -124,6 +204,20 @@ These are <nowiki>"nn::news::detail::ipc::IServiceCreator"</nowiki>.
 | 3 || 
 |-
 | 4 || 
+|-
+| 5 || 
+|-
+| 1000 || [6.0.0+]
+|}
+
+== IOverwriteEventHolder ==
+This is <nowiki>"nn::news::detail::ipc::IOverwriteEventHolder"</nowiki>.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
 |}
 
 = prepo:a, prepo:a2, prepo:m, prepo:u, prepo:s =
@@ -157,17 +251,23 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 |-
 | 30300 || [6.0.0+] GetStorageUsage
 |-
-| 30400 || [5.0.0+] GetStatistics
+| 30400 || [6.0.0+] GetStatistics
 |-
-| 30401 || [5.0.0+] GetThroughputHistory
+| 30401 || [6.0.0+] GetThroughputHistory
 |-
-| 30500 || [5.0.0+] GetLastUploadError
+| 30500 || [6.0.0+] GetLastUploadError
 |-
 | 40100 || IsUserAgreementCheckEnabled
 |-
 | 40101 || SetUserAgreementCheckEnabled
 |-
 | 90100 || [6.0.0+] ReadAllReportFiles ([1.0.0-5.1.0] GetStorageUsage)
+|-
+| [?-5.1.0] 90200 || 
+|-
+| [?-5.1.0] 90201 || 
+|-
+| [?-5.1.0] 90300 || 
 |}
 
 == Data reporting ==
