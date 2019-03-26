@@ -87,15 +87,15 @@ Total size is 0x4000-bytes.
 |-
 | 0x3090
 | 0x8
-| ?
+| DeviceSaveDataSize
 |-
 | 0x3098
 | 0x8
-| ?
+| DeviceSaveDataJournalSize
 |-
 | 0x30A0
 | 0x8
-| ?
+| BcatDeliveryCacheStorageSize
 |-
 | 0x30A8
 | 0x8

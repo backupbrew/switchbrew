@@ -27,9 +27,9 @@ Total size is
 | 0x3078 | 0x8                  | SaveDataOwnerId                                                                   |
 | 0x3080 | 0x8                  | UserAccountSaveDataSize                                                           |
 | 0x3088 | 0x8                  | UserAccountSaveDataJournalSize                                                    |
-| 0x3090 | 0x8                  | ?                                                                                 |
-| 0x3098 | 0x8                  | ?                                                                                 |
-| 0x30A0 | 0x8                  | ?                                                                                 |
+| 0x3090 | 0x8                  | DeviceSaveDataSize                                                                |
+| 0x3098 | 0x8                  | DeviceSaveDataJournalSize                                                         |
+| 0x30A0 | 0x8                  | BcatDeliveryCacheStorageSize                                                      |
 | 0x30A8 | 0x8                  | ApplicationErrorCodeCategory                                                      |
 | 0x30B0 | 0x40 (0x8\*0x8)      | LocalCommunicationIds                                                             |
 | 0x30F0 | 0x1                  | LogoType                                                                          |
