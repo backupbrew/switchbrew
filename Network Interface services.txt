@@ -111,7 +111,7 @@ This is "nn::nifm::detail::IScanRequest".
 |-
 | 3 || GetSystemEventReadableHandle
 |-
-| 4 || [6.0.0+]
+| 4 || [6.0.0+] SetChannels
 |}
 
 === IRequest ===
