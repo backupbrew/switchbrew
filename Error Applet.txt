@@ -82,6 +82,16 @@ This struct is 0x1014-bytes.
 == ErrorCode ==
 This is an u64 containing the [[Error_codes|error-code]]: the low u32 is the module portion which is normally set to <code>module + 2000</code>, and the high u32 is the error description.
 
+== ResultBacktrace ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || s32 total entries
+|-
+| 0x4 || 0x4*total_entries || Array of Result
+|}
+
 == Usage == 
 User-processes should push a common arguments struct (version=0) as well as the Arg struct. Once the applet finishes running successfully, it may return an output storage in some cases. An u8 status value is located at +1, where non-zero indicates error.
 

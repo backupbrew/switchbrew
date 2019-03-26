@@ -64,6 +64,13 @@ This is an u64 containing the [error-code](Error%20codes.md "wikilink"):
 the low u32 is the module portion which is normally set to `module
 + 2000`, and the high u32 is the error description.
 
+## ResultBacktrace
+
+| Offset | Size                | Description       |
+| ------ | ------------------- | ----------------- |
+| 0x0    | 0x4                 | s32 total entries |
+| 0x4    | 0x4\*total\_entries | Array of Result   |
+
 ## Usage
 
 User-processes should push a common arguments struct (version=0) as well
