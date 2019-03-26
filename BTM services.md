@@ -65,6 +65,9 @@ This is "nn::btm::IBtm".
 | 58  | \[5.1.0+\]                                     |
 | 59  | \[5.1.0+\]                                     |
 
+With \[5.1.0+\] cmds 24-42 were moved/replaced/etc (input/output
+changed).
+
 # btm:dbg
 
 This is "nn::btm::IBtmDebug".
