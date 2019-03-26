@@ -1833,9 +1833,9 @@ The PersonalMmHeap are allocated as follows:
 |-
 | 0 || IsBorrowed
 |-
-| 1 || IsIpcMapped: when IpcRefCount > 0.
+| 1 || IsIpcLocked (when IpcRefCount > 0)
 |-
-| 2 || IsDeviceMapped: when DeviceRefCount > 0.
+| 2 || IsDeviceShared (when DeviceRefCount > 0)
 |-
 | 3 || IsUncached
 |}
@@ -1850,11 +1850,11 @@ The PersonalMmHeap are allocated as follows:
 |-
 | 9 || ForceReadWritableByDebugSyscalls
 |-
-| 10 || IpcSendAllowed_Type0
+| 10 || IpcSendAllowed
 |-
-| 11 || IpcSendAllowed_Type3
+| 11 || NonDeviceIpcSendAllowed
 |-
-| 12 || IpcSendAllowed_Type1
+| 12 || NonSecureIpcSendAllowed
 |-
 | 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangeAllowed]]
 |-
@@ -1924,7 +1924,7 @@ The PersonalMmHeap are allocated as follows:
 0x03FFBD09
 || MemoryType_ModuleCodeMutable || Transition from 0xDD7E08 performed by [[#svcSetProcessMemoryPermission]].
 |-
-| 0x005C3C0A || [[IPC_Marshalling|MemoryType_IpcBuffer0]] || IPC buffers with descriptor flags=0.
+| 0x005C3C0A || [[IPC_Marshalling|MemoryType_Ipc]] || IPC buffers with descriptor flags=0.
 |-
 | 0x005C3C0B || MemoryType_Stack || Mapped using [[#svcMapMemory]].
 |-
@@ -1938,9 +1938,9 @@ The PersonalMmHeap are allocated as follows:
 |-
 | 0x00000010 || MemoryType_Reserved ||
 |-
-| 0x005C3811 || [[IPC_Marshalling|MemoryType_IpcBuffer1]] || IPC buffers with descriptor flags=1.
+| 0x005C3811 || [[IPC_Marshalling|MemoryType_NonSecureIpc]] || IPC buffers with descriptor flags=1.
 |-
-| 0x004C2812 || [[IPC_Marshalling|MemoryType_IpcBuffer3]] || IPC buffers with descriptor flags=3.
+| 0x004C2812 || [[IPC_Marshalling|MemoryType_NonDeviceIpc]] || IPC buffers with descriptor flags=3.
 |-
 | 0x00002013 || MemoryType_KernelStack || Mapped in kernel during [[#svcCreateThread]].
 |-

@@ -1570,8 +1570,8 @@ allocated.
 | Bits | Description                               |
 | ---- | ----------------------------------------- |
 | 0    | IsBorrowed                                |
-| 1    | IsIpcMapped: when IpcRefCount \> 0.       |
-| 2    | IsDeviceMapped: when DeviceRefCount \> 0. |
+| 1    | IsIpcLocked (when IpcRefCount \> 0)       |
+| 2    | IsDeviceShared (when DeviceRefCount \> 0) |
 | 3    | IsUncached                                |
 
 ## MemoryState
@@ -1581,9 +1581,9 @@ allocated.
 | 7-0  | Type                                                                                                                                                                       |
 | 8    | [PermissionChangeAllowed](#svcSetMemoryPermission "wikilink")                                                                                                              |
 | 9    | ForceReadWritableByDebugSyscalls                                                                                                                                           |
-| 10   | IpcSendAllowed\_Type0                                                                                                                                                      |
-| 11   | IpcSendAllowed\_Type3                                                                                                                                                      |
-| 12   | IpcSendAllowed\_Type1                                                                                                                                                      |
+| 10   | IpcSendAllowed                                                                                                                                                             |
+| 11   | NonDeviceIpcSendAllowed                                                                                                                                                    |
+| 12   | NonSecureIpcSendAllowed                                                                                                                                                    |
 | 14   | [ProcessPermissionChangeAllowed](#svcSetProcessMemoryPermission "wikilink")                                                                                                |
 | 15   | [MapAllowed](#svcMapMemory "wikilink")                                                                                                                                     |
 | 16   | [UnmapProcessCodeMemoryAllowed](#svcUnmapProcessCodeMemory "wikilink")                                                                                                     |
@@ -1666,7 +1666,7 @@ allocated.
 </tr>
 <tr class="odd">
 <td><p>0x005C3C0A</p></td>
-<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer0</a></p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_Ipc</a></p></td>
 <td><p>IPC buffers with descriptor flags=0.</p></td>
 </tr>
 <tr class="even">
@@ -1701,12 +1701,12 @@ allocated.
 </tr>
 <tr class="even">
 <td><p>0x005C3811</p></td>
-<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer1</a></p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_NonSecureIpc</a></p></td>
 <td><p>IPC buffers with descriptor flags=1.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x004C2812</p></td>
-<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_IpcBuffer3</a></p></td>
+<td><p><a href="IPC Marshalling.md" title="wikilink">MemoryType_NonDeviceIpc</a></p></td>
 <td><p>IPC buffers with descriptor flags=3.</p></td>
 </tr>
 <tr class="even">
