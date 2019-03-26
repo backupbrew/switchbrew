@@ -363,7 +363,7 @@ This is "nn::hid::IHidDebugServer".
 | 224 | \[5.0.0+\] UpdateDesignInfo                         |
 | 225 | \[5.0.0+\] GetUniquePadDriverState                  |
 | 226 | \[5.0.0+\] GetSixAxisSensorDriverStates             |
-| 227 | \[6.0.0+\] GetRxPacketHistory                       |
+| 227 | \[?+\] GetRxPacketHistory                           |
 | 228 | \[6.0.0+\] AcquireOperationEventHandle              |
 | 229 | \[6.0.0+\] ReadSerialFlash                          |
 | 230 | \[6.0.0+\] WriteSerialFlash                         |
@@ -774,13 +774,14 @@ This is "nn::ahid::hdr::ISession".
 
 Used internally for USB HID devices.
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   | \[6.0.0+\] |
 
 # xcd:sys
 
@@ -808,26 +809,29 @@ This is "nn::xcd::detail::ISystemServer".
 | 101 | GetAwakeTriggerReasonForLeftRail  |
 | 102 | GetAwakeTriggerReasonForRightRail |
 
+\[6.0.0+\]: The buffer type used by GetNfcInfo is now 0x32 instead of
+0x1A.
+
 # hidbus
 
 This is "nn::hidbus::IHidbusServer".
 
-| Cmd | Name                             |
-| --- | -------------------------------- |
-| 1   | GetBusHandle                     |
-| 2   | IsExternalDeviceConnected        |
-| 3   | Initialize                       |
-| 4   | Finalize                         |
-| 5   | EnableExternalDevice             |
-| 6   | GetExternalDeviceId              |
-| 7   | SendCommandAsync                 |
-| 8   | GetSendCommandAsynceResult       |
-| 9   | SetEventForSendCommandAsycResult |
-| 10  | GetSharedMemoryHandle            |
-| 11  | EnableJoyPollingReceiveMode      |
-| 12  | DisableJoyPollingReceiveMode     |
-| 13  | GetPollingData                   |
-| 14  | \[6.0.0+\] SetStatusManagerType  |
+| Cmd            | Name                             |
+| -------------- | -------------------------------- |
+| 1              | GetBusHandle                     |
+| 2              | IsExternalDeviceConnected        |
+| 3              | Initialize                       |
+| 4              | Finalize                         |
+| 5              | EnableExternalDevice             |
+| 6              | GetExternalDeviceId              |
+| 7              | SendCommandAsync                 |
+| 8              | GetSendCommandAsynceResult       |
+| 9              | SetEventForSendCommandAsycResult |
+| 10             | GetSharedMemoryHandle            |
+| 11             | EnableJoyPollingReceiveMode      |
+| 12             | DisableJoyPollingReceiveMode     |
+| \[?-6.2.0\] 13 | GetPollingData                   |
+| 14             | \[6.0.0+\] SetStatusManagerType  |
 
 # RomFS
 

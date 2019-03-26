@@ -525,7 +525,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 226 || [5.0.0+] GetSixAxisSensorDriverStates
 |-
-| 227 || [6.0.0+] GetRxPacketHistory
+| 227 || [?+] GetRxPacketHistory
 |-
 | 228 || [6.0.0+] AcquireOperationEventHandle
 |-
@@ -1066,6 +1066,8 @@ Used internally for USB HID devices.
 | 3 || 
 |-
 | 4 ||
+|-
+| 5 || [6.0.0+]
 |}
 
 = xcd:sys =
@@ -1114,6 +1116,8 @@ This is "nn::xcd::detail::ISystemServer".
 | 102 || GetAwakeTriggerReasonForRightRail
 |}
 
+[6.0.0+]: The buffer type used by GetNfcInfo is now 0x32 instead of 0x1A.
+
 = hidbus =
 This is "nn::hidbus::IHidbusServer".
 
@@ -1145,7 +1149,7 @@ This is "nn::hidbus::IHidbusServer".
 |-
 | 12 || DisableJoyPollingReceiveMode
 |-
-| 13 || GetPollingData
+| [?-6.2.0] 13 || GetPollingData
 |-
 | 14 || [6.0.0+] SetStatusManagerType
 |}
