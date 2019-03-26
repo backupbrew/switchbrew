@@ -958,7 +958,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x3FE80 || 128 || 511 || IStorage opened as wrong type (data opened as transfermem, transfermem opened as data)
 |-
-| 0x40080 || 128 || 512 || Unbalanced fatal section leave (returned when executing LeaveFatalSection without a preceding, EnterFatalSection call)
+| 0x40080 || 128 || 512 || Unbalanced fatal section leave (returned when executing LeaveFatalSection without a preceding EnterFatalSection call)
 |-
 | 0x4B080 || 128 || 600 || Failed to allocate memory for IStorage
 |-
