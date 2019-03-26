@@ -1149,7 +1149,7 @@ This is "nn::hidbus::IHidbusServer".
 |-
 | 12 || DisableJoyPollingReceiveMode
 |-
-| [?-6.2.0] 13 || GetPollingData
+| [5.0.0-6.2.0] 13 || GetPollingData
 |-
 | 14 || [6.0.0+] SetStatusManagerType
 |}

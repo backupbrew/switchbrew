@@ -816,22 +816,22 @@ This is "nn::xcd::detail::ISystemServer".
 
 This is "nn::hidbus::IHidbusServer".
 
-| Cmd            | Name                             |
-| -------------- | -------------------------------- |
-| 1              | GetBusHandle                     |
-| 2              | IsExternalDeviceConnected        |
-| 3              | Initialize                       |
-| 4              | Finalize                         |
-| 5              | EnableExternalDevice             |
-| 6              | GetExternalDeviceId              |
-| 7              | SendCommandAsync                 |
-| 8              | GetSendCommandAsynceResult       |
-| 9              | SetEventForSendCommandAsycResult |
-| 10             | GetSharedMemoryHandle            |
-| 11             | EnableJoyPollingReceiveMode      |
-| 12             | DisableJoyPollingReceiveMode     |
-| \[?-6.2.0\] 13 | GetPollingData                   |
-| 14             | \[6.0.0+\] SetStatusManagerType  |
+| Cmd                | Name                             |
+| ------------------ | -------------------------------- |
+| 1                  | GetBusHandle                     |
+| 2                  | IsExternalDeviceConnected        |
+| 3                  | Initialize                       |
+| 4                  | Finalize                         |
+| 5                  | EnableExternalDevice             |
+| 6                  | GetExternalDeviceId              |
+| 7                  | SendCommandAsync                 |
+| 8                  | GetSendCommandAsynceResult       |
+| 9                  | SetEventForSendCommandAsycResult |
+| 10                 | GetSharedMemoryHandle            |
+| 11                 | EnableJoyPollingReceiveMode      |
+| 12                 | DisableJoyPollingReceiveMode     |
+| \[5.0.0-6.2.0\] 13 | GetPollingData                   |
+| 14                 | \[6.0.0+\] SetStatusManagerType  |
 
 # RomFS
 
