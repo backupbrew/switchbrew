@@ -152,7 +152,8 @@ This is
 | 30  | \[5.0.0+\] GetAmiiboEcqvBlsCertificate                                        |
 | 31  | \[5.0.0+\] GetAmiiboEcqvBlsRootCertificate                                    |
 | 32  | \[5.0.0+\] GetUsbTypeCPowerSourceCircuitVersion                               |
-| 33  | \[6.0.0+\] GetBatteryVersion                                                  |
+| 33  | \[?+\] GetBatteryVersion                                                      |
+| 41  | \[6.0.0+\]                                                                    |
 
 Used for accessing data calibrated at the factory.
 
