@@ -227,10 +227,8 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 | 10 || [6.0.0+] FlushFinalOutputRecorderBuffers
 |}
 
-= IAudioSnoopManager =
+= auddev =
 This is "nn::audio::detail::IAudioSnoopManager".
-
-This was added with [6.0.0+].
 
 {| class="wikitable" border="1"
 |-
