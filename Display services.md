@@ -466,7 +466,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 2300 | AcquireLayerTexturePresentingEvent                         |
 | 2301 | ReleaseLayerTexturePresentingEvent                         |
 | 2302 | GetDisplayHotplugEvent                                     |
-| 2303 | \[5.1.0+\]                                                 |
+| 2303 | \[5.1.0+\] GetDisplayModeChangedEvent                      |
 | 2402 | GetDisplayHotplugState                                     |
 | 2501 | \[4.0.0+\] GetCompositorErrorInfo                          |
 | 2601 | \[4.0.0+\] GetDisplayErrorEvent                            |

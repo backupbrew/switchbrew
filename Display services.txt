@@ -482,7 +482,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 |-
 | 2302 || GetDisplayHotplugEvent
 |-
-| 2303 || [5.1.0+]
+| 2303 || [5.1.0+] GetDisplayModeChangedEvent
 |-
 | 2402 || GetDisplayHotplugState
 |-
