@@ -67,6 +67,7 @@ This is "nn::nifm::detail::IScanRequest".
 | 1   | IsProcessing                 |
 | 2   | GetResult                    |
 | 3   | GetSystemEventReadableHandle |
+| 4   | \[6.0.0+\]                   |
 
 ### IRequest
 
