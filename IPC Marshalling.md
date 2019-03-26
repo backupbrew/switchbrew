@@ -406,8 +406,9 @@ All offsets are given is in number of u32 words.
 
 ## Control
 
-When type == 5 you are talking to the IPC manager. These are processed
-by the
+When type is
+[Control](IPC%20Marshalling#Request.2C%20Control.md##Request.2C_Control "wikilink"),
+you are talking to the IPC manager. These are processed by the
 sysmodule.
 
 | Cmd | Name                         | Arguments              | Output                 |

@@ -347,7 +347,7 @@ All offsets are given is in number of u32 words.
  }
 
 == Control ==
-When type == 5 you are talking to the IPC manager. These are processed by the sysmodule.
+When type is [[IPC_Marshalling#Request.2C_Control|Control]], you are talking to the IPC manager. These are processed by the sysmodule.
 
 {| class="wikitable" border="1"
 |-
