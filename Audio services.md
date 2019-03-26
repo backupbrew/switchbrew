@@ -193,6 +193,8 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 
 This is "nn::audio::detail::IAudioSnoopManager".
 
+This was added with \[6.0.0+\].
+
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
