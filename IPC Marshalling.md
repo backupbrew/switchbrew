@@ -358,8 +358,8 @@ below:
 | 3    | Use buffer descriptors X ("Pointer") or C ("ReceiveList").          |
 | 4    | Skip saving the pointer buffer size in raw data.                    |
 | 5    | Select which buffer descriptor to use automatically.                |
-| 6    | Use [NonSecureIpc flag](Flags.md "wikilink").                       |
-| 7    | Use [NonDeviceIpc flag](Flags.md "wikilink").                       |
+| 6    | Use [NonSecureIpc flag](#Flags "wikilink").                         |
+| 7    | Use [NonDeviceIpc flag](#Flags "wikilink").                         |
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer
 buffer", a buffer in the service process. Its size is a u16, which is

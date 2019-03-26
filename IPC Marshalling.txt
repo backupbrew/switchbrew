@@ -312,9 +312,9 @@ The type of an IPC command is described by a bitfield as below:
 |-
 | 5 || Select which buffer descriptor to use automatically.
 |-
-| 6 || Use [[Flags|NonSecureIpc flag]].
+| 6 || Use [[#Flags|NonSecureIpc flag]].
 |-
-| 7 || Use [[Flags|NonDeviceIpc flag]].
+| 7 || Use [[#Flags|NonDeviceIpc flag]].
 |}
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer buffer", a buffer in the service process. Its size is a u16, which is retrieved using the "QueryPointerBufferSize" control message. If the client code determines all buffers with flag 8 do not fit in the pointer buffer, it returns error 0x11A0B.
