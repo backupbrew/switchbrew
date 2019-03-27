@@ -58,13 +58,13 @@ This is "nn::lr::ILocationResolver".
 |-
 | 15 || [5.0.0+] [[#DeleteApplicationLegalInformationPath]]
 |-
-| 16 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)
+| 16 || [7.0.0+] [[#ResolveProgramPathForDebug]]
 |-
-| 17 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)
+| 17 || [7.0.0+] [[#RedirectProgramPathForDebug]]
 |-
-| 18 || [7.0.0+] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)
+| 18 || [7.0.0+] [[#RedirectProgramPath2ForDebug]]
 |-
-| 19 || [7.0.0+] ? (Takes a total of 8-bytes of input, no output)
+| 19 || [7.0.0+] [[#DeleteProgramPathForDebug]]
 |}
 
 If the supplied [[Filesystem_services#StorageId|StorageID]] is 1 (Host), a different set of internal functions is used to handle these commands. In this more restricted set of functions, GetControlNcaPath is stubbed and only returns error 0x608.
@@ -137,6 +137,26 @@ Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 
 Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
 
+==== ResolveProgramPathForDebug ====
+Same as [[#ResolveProgramPath|ResolveProgramPath]], but uses a redirection shim on top of the real program path.
+
+[[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
+
+==== RedirectProgramPathForDebug ====
+Same as [[#RedirectProgramPath|RedirectProgramPath]], but uses a redirection shim on top of the real program path.
+
+[[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
+
+==== RedirectProgramPath2ForDebug ====
+Same as [[#RedirectProgramPath2|RedirectProgramPath2]], but uses a redirection shim on top of the real program path.
+
+[[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
+
+==== DeleteProgramPathForDebug ====
+Same as [[#DeleteProgramPath|DeleteProgramPath]], but uses a redirection shim on top of the real program path.
+
+[[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
+
 === IRegisteredLocationResolver ===
 This is "nn::lr::IRegisteredLocationResolver".
 
@@ -162,7 +182,7 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 |-
 | 7 || [2.0.0+] RedirectHtmlDocumentPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
-| 8 || [7.0.0+] ? || No input/output. || 
+| 8 || [7.0.0+] Refresh || No input/output. || 
 |}
 
 === IAddOnContentLocationResolver ===

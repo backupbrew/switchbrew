@@ -43,10 +43,10 @@ This is
 | 13  | \[5.0.0+\] [\#DeleteApplicationControlPath](#DeleteApplicationControlPath "wikilink")                   |
 | 14  | \[5.0.0+\] [\#DeleteApplicationHtmlDocumentPath](#DeleteApplicationHtmlDocumentPath "wikilink")         |
 | 15  | \[5.0.0+\] [\#DeleteApplicationLegalInformationPath](#DeleteApplicationLegalInformationPath "wikilink") |
-| 16  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x1A output buffer, no output)               |
-| 17  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)                |
-| 18  | \[7.0.0+\] ? (Takes a total of 8-bytes of input and a type-0x19 input buffer, no output)                |
-| 19  | \[7.0.0+\] ? (Takes a total of 8-bytes of input, no output)                                             |
+| 16  | \[7.0.0+\] [\#ResolveProgramPathForDebug](#ResolveProgramPathForDebug "wikilink")                       |
+| 17  | \[7.0.0+\] [\#RedirectProgramPathForDebug](#RedirectProgramPathForDebug "wikilink")                     |
+| 18  | \[7.0.0+\] [\#RedirectProgramPath2ForDebug](#RedirectProgramPath2ForDebug "wikilink")                   |
+| 19  | \[7.0.0+\] [\#DeleteProgramPathForDebug](#DeleteProgramPathForDebug "wikilink")                         |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -177,6 +177,42 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
+#### ResolveProgramPathForDebug
+
+Same as [ResolveProgramPath](#ResolveProgramPath "wikilink"), but uses a
+redirection shim on top of the real program path.
+
+[NS](NS%20Services.md "wikilink") uses this command if
+[ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
+is different than 0x00.
+
+#### RedirectProgramPathForDebug
+
+Same as [RedirectProgramPath](#RedirectProgramPath "wikilink"), but uses
+a redirection shim on top of the real program path.
+
+[NS](NS%20Services.md "wikilink") uses this command if
+[ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
+is different than 0x00.
+
+#### RedirectProgramPath2ForDebug
+
+Same as [RedirectProgramPath2](#RedirectProgramPath2 "wikilink"), but
+uses a redirection shim on top of the real program path.
+
+[NS](NS%20Services.md "wikilink") uses this command if
+[ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
+is different than 0x00.
+
+#### DeleteProgramPathForDebug
+
+Same as [DeleteProgramPath](#DeleteProgramPath "wikilink"), but uses a
+redirection shim on top of the real program path.
+
+[NS](NS%20Services.md "wikilink") uses this command if
+[ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
+is different than 0x00.
+
 ### IRegisteredLocationResolver
 
 This is "nn::lr::IRegisteredLocationResolver".
@@ -196,7 +232,7 @@ time.
 | 5   | \[2.0.0+\] RegisterHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") | Sets the Type 1 fallback TID and path to the provided arguments.                               |
 | 6   | \[2.0.0+\] UnregisterHtmlDocumentPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
 | 7   | \[2.0.0+\] RedirectHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
-| 8   | \[7.0.0+\] ?                          | No input/output.                                                                                       |                                                                                                |
+| 8   | \[7.0.0+\] Refresh                    | No input/output.                                                                                       |                                                                                                |
 
 ### IAddOnContentLocationResolver
 
