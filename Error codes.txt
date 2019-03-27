@@ -534,6 +534,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x1208 || 8 || 9 || Legal info HTML location entry not found
 |-
+| 0x1408 || 8 || 10 || Program location for debug entry not found
+|-
 | 0x209 || 9 || 1 || Args too long.
 |-
 | 0x409 || 9 || 2 || Maximum processes loaded.
