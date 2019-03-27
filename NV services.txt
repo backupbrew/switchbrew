@@ -29,9 +29,9 @@ Each service is used by:
 |-
 | 6 || [[#GetStatus]]
 |-
-| 7 || [[#ForceSetClientPID]]
+| 7 || [[#SetAruid]]
 |-
-| 8 || [[#SetClientPID]]
+| 8 || [[#SetAruidByPID]]
 |-
 | 9 || [[#DumpGraphicsMemoryInfo]]
 |-
@@ -83,10 +83,10 @@ Takes a copy-handle ('''transfer_memory''') and two input u32s ('''fd''' and '''
 == GetStatus ==
 Takes no input. Returns 0x10-bytes and an output u32 ('''error_code''').
 
-== ForceSetClientPID ==
+== SetAruid ==
 Takes an input u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
-== SetClientPID ==
+== SetAruidByPID ==
 Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
 == DumpGraphicsMemoryInfo ==

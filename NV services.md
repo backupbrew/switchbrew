@@ -23,8 +23,8 @@ titles
 | 4   | [\#QueryEvent](#QueryEvent "wikilink")                            |
 | 5   | [\#MapSharedMem](#MapSharedMem "wikilink")                        |
 | 6   | [\#GetStatus](#GetStatus "wikilink")                              |
-| 7   | [\#ForceSetClientPID](#ForceSetClientPID "wikilink")              |
-| 8   | [\#SetClientPID](#SetClientPID "wikilink")                        |
+| 7   | [\#SetAruid](#SetAruid "wikilink")                                |
+| 8   | [\#SetAruidByPID](#SetAruidByPID "wikilink")                      |
 | 9   | [\#DumpGraphicsMemoryInfo](#DumpGraphicsMemoryInfo "wikilink")    |
 | 10  | \[3.0.0+\] [\#InitializeDevtools](#InitializeDevtools "wikilink") |
 | 11  | \[3.0.0+\] [\#Ioctl2](#Ioctl2 "wikilink")                         |
@@ -89,14 +89,14 @@ and **nvmap\_handle**). Returns an output u32 (**error\_code**).
 
 Takes no input. Returns 0x10-bytes and an output u32 (**error\_code**).
 
-## ForceSetClientPID
+## SetAruid
 
 Takes an input u64 which must [match](IPC%20Marshalling.md "wikilink")
 the user-process PID
 ([AppletResourceUserId](AM%20services.md "wikilink")). Returns an output
 u32 (**error\_code**).
 
-## SetClientPID
+## SetAruidByPID
 
 Takes a PID-descriptor and an u64 which must
 [match](IPC%20Marshalling.md "wikilink") the user-process PID
