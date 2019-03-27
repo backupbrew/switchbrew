@@ -73,6 +73,7 @@ routine for the program.
 | Value | Name                   |
 | ----- | ---------------------- |
 | 257   | R\_AARCH64\_ABS64      |
+| 258   | R\_AARCH64\_ABS32      |
 | 1025  | R\_AARCH64\_GLOB\_DAT  |
 | 1026  | R\_AARCH64\_JUMP\_SLOT |
 | 1027  | R\_AARCH64\_RELATIVE   |

@@ -44,6 +44,8 @@ Once the above function returns, rtld serves as a general initialization routine
 |-
 | 257   || R_AARCH64_ABS64
 |-
+| 258   || R_AARCH64_ABS32
+|-
 | 1025  || R_AARCH64_GLOB_DAT
 |-
 | 1026  || R_AARCH64_JUMP_SLOT
