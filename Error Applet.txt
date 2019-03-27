@@ -43,6 +43,29 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 | 0x10 || 0x4 || Result res
 |}
 
+== ErrorEulaData ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x20000 || data
+|}
+
+== ErrorEulaArg ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || ErrorCommonHeader. unk_x1 = 1.
+|-
+| 0x8 || 0x4 || [[Settings_services|RegionCode]]
+|}
+
+This struct is 0xC-bytes.
+
+* Eula: ErrorCommonHeader.type = 3. Displays the EULA.
+* SystemUpdateEula: ErrorCommonHeader.type = 8. Displays the system-update EULA. Uses an additional IStorage containing [[#ErrorEulaData]], from [[Applet_Manager_services#CreateTransferMemoryStorage]] with flag=false.
+
 == SystemErrorArg ==
 {| class="wikitable" border="1"
 |-

@@ -33,6 +33,29 @@ LanguageCode is invalid.
 | 0x8    | 0x8  | [\#ErrorCode](#ErrorCode "wikilink") |
 | 0x10   | 0x4  | Result res                           |
 
+## ErrorEulaData
+
+| Offset | Size    | Description |
+| ------ | ------- | ----------- |
+| 0x0    | 0x20000 | data        |
+
+## ErrorEulaArg
+
+| Offset | Size | Description                                     |
+| ------ | ---- | ----------------------------------------------- |
+| 0x0    | 0x8  | ErrorCommonHeader. unk\_x1 = 1.                 |
+| 0x8    | 0x4  | [RegionCode](Settings%20services.md "wikilink") |
+
+This struct is 0xC-bytes.
+
+  - Eula: ErrorCommonHeader.type = 3. Displays the EULA.
+  - SystemUpdateEula: ErrorCommonHeader.type = 8. Displays the
+    system-update EULA. Uses an additional IStorage containing
+    [\#ErrorEulaData](#ErrorEulaData "wikilink"), from
+    [Applet\_Manager\_services\#CreateTransferMemoryStorage](Applet%20Manager%20services#CreateTransferMemoryStorage.md##CreateTransferMemoryStorage "wikilink")
+    with
+flag=false.
+
 ## SystemErrorArg
 
 | Offset | Size  | Description                                                                                                                 |
