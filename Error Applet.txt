@@ -20,7 +20,7 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 | 0x0 || 0x1 || u8 type
 |-
-| 0x1 || 0x1 || u8 unk_x1
+| 0x1 || 0x1 || u8 jumpFlag. When clear, this indicates WithoutJump.
 |-
 | 0x2 || 0x3 || ?
 |-
@@ -28,7 +28,7 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 | 0x6 || 0x1 || u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.
 |-
-| 0x7 || 0x1 || ?
+| 0x7 || 0x1 || u8 contextFlag2. Same as contextFlag except for ErrorCommonArg?
 |}
 
 == ErrorCommonArg ==
@@ -56,7 +56,7 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8 || ErrorCommonHeader. unk_x1 = 1.
+| 0x0 || 0x8 || ErrorCommonHeader. jumpFlag = 1.
 |-
 | 0x8 || 0x4 || [[Settings_services|RegionCode]]
 |}
@@ -65,6 +65,18 @@ This struct is 0xC-bytes.
 
 * Eula: ErrorCommonHeader.type = 3. Displays the EULA.
 * SystemUpdateEula: ErrorCommonHeader.type = 8. Displays the system-update EULA. Uses an additional IStorage containing [[#ErrorEulaData]], from [[Applet_Manager_services#CreateTransferMemoryStorage]] with flag=false.
+
+== ErrorRecordArg ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || ErrorCommonHeader. type=5 and jumpFlag=1.
+|-
+| 0x8 || 0x8 || [[#ErrorCode]]
+|-
+| 0x10 || 0x8 || u64 POSIX timestamp
+|}
 
 == SystemErrorArg ==
 {| class="wikitable" border="1"
@@ -89,7 +101,7 @@ This struct is 0x1018-bytes.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8 || ErrorCommonHeader. type=2 and unk_x1=1.
+| 0x0 || 0x8 || ErrorCommonHeader. type=2 and jumpFlag=1.
 |-
 | 0x8 || 0x4 || u32 errorNumber. Raw decimal error number which is displayed in the dialog.
 |-

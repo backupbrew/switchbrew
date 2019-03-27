@@ -19,11 +19,11 @@ LanguageCode is invalid.
 | Offset | Size | Description                                                                                                                        |
 | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x1  | u8 type                                                                                                                            |
-| 0x1    | 0x1  | u8 unk\_x1                                                                                                                         |
+| 0x1    | 0x1  | u8 jumpFlag. When clear, this indicates WithoutJump.                                                                               |
 | 0x2    | 0x3  | ?                                                                                                                                  |
 | 0x5    | 0x1  | \[4.0.0+\] u8 contextFlag. When set indicates that an additional storage is pushed for [\#ErrorContext](#ErrorContext "wikilink"). |
 | 0x6    | 0x1  | u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.              |
-| 0x7    | 0x1  | ?                                                                                                                                  |
+| 0x7    | 0x1  | u8 contextFlag2. Same as contextFlag except for ErrorCommonArg?                                                                    |
 
 ## ErrorCommonArg
 
@@ -43,7 +43,7 @@ LanguageCode is invalid.
 
 | Offset | Size | Description                                     |
 | ------ | ---- | ----------------------------------------------- |
-| 0x0    | 0x8  | ErrorCommonHeader. unk\_x1 = 1.                 |
+| 0x0    | 0x8  | ErrorCommonHeader. jumpFlag = 1.                |
 | 0x8    | 0x4  | [RegionCode](Settings%20services.md "wikilink") |
 
 This struct is 0xC-bytes.
@@ -53,8 +53,15 @@ This struct is 0xC-bytes.
     system-update EULA. Uses an additional IStorage containing
     [\#ErrorEulaData](#ErrorEulaData "wikilink"), from
     [Applet\_Manager\_services\#CreateTransferMemoryStorage](Applet%20Manager%20services#CreateTransferMemoryStorage.md##CreateTransferMemoryStorage "wikilink")
-    with
-flag=false.
+    with flag=false.
+
+## ErrorRecordArg
+
+| Offset | Size | Description                               |
+| ------ | ---- | ----------------------------------------- |
+| 0x0    | 0x8  | ErrorCommonHeader. type=5 and jumpFlag=1. |
+| 0x8    | 0x8  | [\#ErrorCode](#ErrorCode "wikilink")      |
+| 0x10   | 0x8  | u64 POSIX timestamp                       |
 
 ## SystemErrorArg
 
@@ -73,7 +80,7 @@ This struct is
 
 | Offset | Size  | Description                                                                                                                 |
 | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8   | ErrorCommonHeader. type=2 and unk\_x1=1.                                                                                    |
+| 0x0    | 0x8   | ErrorCommonHeader. type=2 and jumpFlag=1.                                                                                   |
 | 0x8    | 0x4   | u32 errorNumber. Raw decimal error number which is displayed in the dialog.                                                 |
 | 0xC    | 0x8   | [LanguageCode](Settings%20services.md "wikilink")                                                                           |
 | 0x14   | 0x800 | UTF-8 string dialogMessage                                                                                                  |
