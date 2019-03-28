@@ -10,9 +10,10 @@ LanguageCode is invalid.
 
 ## ErrorContext
 
-| Offset | Size  | Description |
-| ------ | ----- | ----------- |
-| 0x0    | 0x200 | ?           |
+| Offset | Size  | Description                       |
+| ------ | ----- | --------------------------------- |
+| 0x0    | 0x1F4 | String, should be NUL-terminated. |
+| 0x1F4  | 0xC   | ?                                 |
 
 ## ErrorCommonHeader
 

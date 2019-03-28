@@ -10,7 +10,9 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x200 || ?
+| 0x0 || 0x1F4 || String, should be NUL-terminated.
+|-
+| 0x1F4 || 0xC || ?
 |}
 
 == ErrorCommonHeader ==
