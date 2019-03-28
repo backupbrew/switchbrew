@@ -26,9 +26,9 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 | 0x5 || 0x1 || u8 contextFlag. When set with type=0, indicates that an additional storage is pushed for [[#ResultBacktrace]]. [4.0.0+]: When set indicates that an additional storage is pushed for [[#ErrorContext]].
 |-
-| 0x6 || 0x1 || u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.
+| 0x6 || 0x1 || u8 resultFlag. [[#ErrorCommonArg]]: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.
 |-
-| 0x7 || 0x1 || u8 contextFlag2. Same as contextFlag except for ErrorCommonArg?
+| 0x7 || 0x1 || u8 contextFlag2. Similar to contextFlag except for [[#ErrorCommonArg]], indicating [[#ErrorContext]] is used.
 |}
 
 == ErrorCommonArg ==
@@ -42,6 +42,18 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 | 0x10 || 0x4 || Result res
 |}
+
+== ErrorPctlArg ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || ErrorCommonHeader. type=4.
+|-
+| 0x8 || 0x4 || Result res
+|}
+
+This struct is 0xC-bytes. Used instead of [[#ErrorCommonArg]] where a Result error would have been displayed with type=0, for module=PCTL errors with desc 100-119. For this the applet will display the following dialog (without report logging): "This software is restricted by Parental Controls".
 
 == ErrorEulaData ==
 {| class="wikitable" border="1"
