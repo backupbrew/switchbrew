@@ -76,6 +76,11 @@ This struct is 0xC-bytes.
 | 0x8    | 0x8  | [\#ErrorCode](#ErrorCode "wikilink")      |
 | 0x10   | 0x8  | u64 POSIX timestamp                       |
 
+The applet does not log an error report for this. Used by
+[qlaunch](Qlaunch.md "wikilink") for viewing previously logged errors
+via the "View the Error"
+button.
+
 ## SystemErrorArg
 
 | Offset | Size  | Description                                                                                                                 |
