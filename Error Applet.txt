@@ -45,6 +45,10 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 | 0x10 || 0x4 || Result res
 |}
 
+ShowError: type=0, jumpFlag={varies}, contextFlag2={set when ErrorContext used}.
+* If the input Result is 0xC8A2, the applet will display a special dialog regarding the current application requiring a software update, with buttons "Later" and "Restart". The official user-process name for this is <code>ShowUnacceptableApplicationVersionError</code>.
+* [3.0.0+] There's also special dialog handling for Result 0xCAA2. The official user-process name for this is <code>ShowUnacceptableAddOnContentVersionError</code>.
+
 == ErrorPctlArg ==
 {| class="wikitable" border="1"
 |-

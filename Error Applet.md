@@ -34,6 +34,18 @@ LanguageCode is invalid.
 | 0x8    | 0x8  | [\#ErrorCode](#ErrorCode "wikilink") |
 | 0x10   | 0x4  | Result res                           |
 
+ShowError: type=0, jumpFlag={varies}, contextFlag2={set when
+ErrorContext used}.
+
+  - If the input Result is 0xC8A2, the applet will display a special
+    dialog regarding the current application requiring a software
+    update, with buttons "Later" and "Restart". The official
+    user-process name for this is
+    `ShowUnacceptableApplicationVersionError`.
+  - \[3.0.0+\] There's also special dialog handling for Result 0xCAA2.
+    The official user-process name for this is
+    `ShowUnacceptableAddOnContentVersionError`.
+
 ## ErrorPctlArg
 
 | Offset | Size | Description                |
