@@ -16,14 +16,14 @@ LanguageCode is invalid.
 
 ## ErrorCommonHeader
 
-| Offset | Size | Description                                                                                                                        |
-| ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | u8 type                                                                                                                            |
-| 0x1    | 0x1  | u8 jumpFlag. When clear, this indicates WithoutJump.                                                                               |
-| 0x2    | 0x3  | ?                                                                                                                                  |
-| 0x5    | 0x1  | \[4.0.0+\] u8 contextFlag. When set indicates that an additional storage is pushed for [\#ErrorContext](#ErrorContext "wikilink"). |
-| 0x6    | 0x1  | u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.              |
-| 0x7    | 0x1  | u8 contextFlag2. Same as contextFlag except for ErrorCommonArg?                                                                    |
+| Offset | Size | Description                                                                                                                                                                                                                                                    |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | u8 type                                                                                                                                                                                                                                                        |
+| 0x1    | 0x1  | u8 jumpFlag. When clear, this indicates WithoutJump.                                                                                                                                                                                                           |
+| 0x2    | 0x3  | ?                                                                                                                                                                                                                                                              |
+| 0x5    | 0x1  | u8 contextFlag. When set with type=0, indicates that an additional storage is pushed for [\#ResultBacktrace](#ResultBacktrace "wikilink"). \[4.0.0+\]: When set indicates that an additional storage is pushed for [\#ErrorContext](#ErrorContext "wikilink"). |
+| 0x6    | 0x1  | u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.                                                                                                                                          |
+| 0x7    | 0x1  | u8 contextFlag2. Same as contextFlag except for ErrorCommonArg?                                                                                                                                                                                                |
 
 ## ErrorCommonArg
 

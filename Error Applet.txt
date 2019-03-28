@@ -24,7 +24,7 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 | 0x2 || 0x3 || ?
 |-
-| 0x5 || 0x1 || [4.0.0+] u8 contextFlag. When set indicates that an additional storage is pushed for [[#ErrorContext]].
+| 0x5 || 0x1 || u8 contextFlag. When set with type=0, indicates that an additional storage is pushed for [[#ResultBacktrace]]. [4.0.0+]: When set indicates that an additional storage is pushed for [[#ErrorContext]].
 |-
 | 0x6 || 0x1 || u8 resultFlag. ErrorCommonArg: When clear, ErrorCode is used, otherwise the applet generates the error-code from res.
 |-
