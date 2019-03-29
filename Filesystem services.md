@@ -145,8 +145,8 @@ This is
 | 800  | \[2.0.0+\] GetAndClearFileSystemProxyErrorInfo                                                                                                                    |
 | 810  | \[7.0.0+\] RegisterProgramIndexMapInfo                                                                                                                            |
 | 1000 | SetBisRootForHost                                                                                                                                                 |
-| 1001 | SetSaveDataSize                                                                                                                                                   |
-| 1002 | SetSaveDataRootPath                                                                                                                                               |
+| 1001 | [\#SetSaveDataSize](#SetSaveDataSize "wikilink")                                                                                                                  |
+| 1002 | [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink")                                                                                                          |
 | 1003 | DisableAutoSaveDataCreation                                                                                                                                       |
 | 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                                                                                                    |
 | 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                                                                                                    |
@@ -1162,6 +1162,31 @@ savedata](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")
 0x10-0x20 from ns\_appman:/private. The rest of this file (0x1F0 bytes
 total) is (usually/always?) all-zero (however in some cases the byte at
 offset 0x20 is value 0x1).
+
+## SetSaveDataSize
+
+Takes two input u64s "size" and "journal\_size", and writes them to
+fsp-srv object member variables.
+
+These variables are normally initialized with 32 MiB (0x2000000) and 16
+MiB (0x1000000), respectively.
+
+These variables don't seem to be actually used anywhere else (?)
+
+## SetSaveDataRootPath
+
+Takes an input path, and does
+snprintf(<fsp-srv object>-\>m\_save\_data\_root\_path, FS\_MAX\_PATH-1,
+"/%s", input\_path);
+
+This path is normally all-zero. When this path is non-zero, the internal
+OpenSaveDataFileSystem function will create a
+DirectorySaveDataFileSystem if the target save is a user-save + a
+directory exists, instead of the normal savedata filesystem object.
+
+## SetGlobalAccessLogMode
+
+Takes an input u32.
 
 ## SetGlobalAccessLogMode
 

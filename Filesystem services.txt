@@ -230,9 +230,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1000 || SetBisRootForHost
 |-
-| 1001 || SetSaveDataSize
+| 1001 || [[#SetSaveDataSize]]
 |-
-| 1002 || SetSaveDataRootPath
+| 1002 || [[#SetSaveDataRootPath]]
 |-
 | 1003 || DisableAutoSaveDataCreation
 |-
@@ -605,6 +605,21 @@ Takes an input u8 and u64, returns an output u64.
 Takes in the 0x10 byte SD card encryption seed, and loads it into FS-module state.
 
 [[NS_Services|NS]]-module reads the 0x10 bytes from SdCard:/Nintendo/Contents/private, and compares them to the first 0x10 bytes of the ns_appman:/private (in [[Flash_Filesystem#System_Savegames|system savedata]] 0x8000000000000043). If they match, NS calls this command using bytes 0x10-0x20 from ns_appman:/private. The rest of this file (0x1F0 bytes total) is (usually/always?) all-zero (however in some cases the byte at offset 0x20 is value 0x1).
+
+== SetSaveDataSize ==
+Takes two input u64s "size" and "journal_size", and writes them to fsp-srv object member variables.
+
+These variables are normally initialized with 32 MiB (0x2000000) and 16 MiB (0x1000000), respectively.
+
+These variables don't seem to be actually used anywhere else (?)
+
+== SetSaveDataRootPath ==
+Takes an input path, and does snprintf(<fsp-srv object>->m_save_data_root_path, FS_MAX_PATH-1, "/%s", input_path);
+
+This path is normally all-zero. When this path is non-zero, the internal OpenSaveDataFileSystem function will create a DirectorySaveDataFileSystem if the target save is a user-save + a directory exists, instead of the normal savedata filesystem object.
+
+== SetGlobalAccessLogMode ==
+Takes an input u32.
 
 == SetGlobalAccessLogMode ==
 Takes an input u32.
