@@ -10,10 +10,23 @@ On pre-5.0.0 the specified LanguageCode has to be valid, otherwise a fatal-error
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x1F4 || String, should be NUL-terminated.
+| 0x0 || 0x1 || Type
 |-
-| 0x1F4 || 0xC || ?
+| 0x1 || 0x7 || Padding
+|-
+| 0x8 || 0x1F4 || Data
+|-
+| 0x1FC || 0x4 || Result
 |}
+
+This 0x200 bytes struct is used to set specific error contexts for [[Error_Report_services#SubmitContext|erpt:c]].
+
+Depending on '''Type''', different error report fields will be attached and sent:
+* Type 0: Invalid (no fields are attached to the report);
+* Type 1: [[Error_Report_services#Fields|ServerFqdn]] and [[Error_Report_services#Fields|ServerIpAddress]];
+* Type 2: [[Error_Report_services#Fields|FileSystemPath]] and [[Error_Report_services#Fields|ResultBacktrace]];
+* Type 3: [[Error_Report_services#Fields|WebMediaPlayerOpenUrl]] and [[Error_Report_services#Fields|WebMediaPlayerLastSocketErrors]];
+* Type 4: [[Error_Report_services#Fields|LcsApplicationId]], [[Error_Report_services#Fields|LcsContentMetaKeyIdList]], [[Error_Report_services#Fields|LcsContentMetaKeyVersionList]], [[Error_Report_services#Fields|LcsContentMetaKeyTypeList]], [[Error_Report_services#Fields|LcsSenderFlag]], [[Error_Report_services#Fields|LcsApplicationRequestFlag]], [[Error_Report_services#Fields|LcsHasExFatDriverFlag]], [[Error_Report_services#Fields|LcsIpAddress]] and  [[Error_Report_services#Fields|ResultBacktrace]].
 
 == ErrorCommonHeader ==
 {| class="wikitable" border="1"

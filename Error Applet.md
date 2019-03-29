@@ -10,10 +10,43 @@ LanguageCode is invalid.
 
 ## ErrorContext
 
-| Offset | Size  | Description                       |
-| ------ | ----- | --------------------------------- |
-| 0x0    | 0x1F4 | String, should be NUL-terminated. |
-| 0x1F4  | 0xC   | ?                                 |
+| Offset | Size  | Description |
+| ------ | ----- | ----------- |
+| 0x0    | 0x1   | Type        |
+| 0x1    | 0x7   | Padding     |
+| 0x8    | 0x1F4 | Data        |
+| 0x1FC  | 0x4   | Result      |
+
+This 0x200 bytes struct is used to set specific error contexts for
+[erpt:c](Error%20Report%20services#SubmitContext.md##SubmitContext "wikilink").
+
+Depending on **Type**, different error report fields will be attached
+and sent:
+
+  - Type 0: Invalid (no fields are attached to the report);
+  - Type 1:
+    [ServerFqdn](Error%20Report%20services#Fields.md##Fields "wikilink")
+    and
+    [ServerIpAddress](Error%20Report%20services#Fields.md##Fields "wikilink");
+  - Type 2:
+    [FileSystemPath](Error%20Report%20services#Fields.md##Fields "wikilink")
+    and
+    [ResultBacktrace](Error%20Report%20services#Fields.md##Fields "wikilink");
+  - Type 3:
+    [WebMediaPlayerOpenUrl](Error%20Report%20services#Fields.md##Fields "wikilink")
+    and
+    [WebMediaPlayerLastSocketErrors](Error%20Report%20services#Fields.md##Fields "wikilink");
+  - Type 4:
+    [LcsApplicationId](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsContentMetaKeyIdList](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsContentMetaKeyVersionList](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsContentMetaKeyTypeList](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsSenderFlag](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsApplicationRequestFlag](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsHasExFatDriverFlag](Error%20Report%20services#Fields.md##Fields "wikilink"),
+    [LcsIpAddress](Error%20Report%20services#Fields.md##Fields "wikilink")
+    and
+    [ResultBacktrace](Error%20Report%20services#Fields.md##Fields "wikilink").
 
 ## ErrorCommonHeader
 
