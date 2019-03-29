@@ -133,7 +133,7 @@ This is "nn::cec::ICecManager".
 | Cmd | Name                            |
 | --- | ------------------------------- |
 | 0   | Initialize                      |
-| 1   |                                 |
+| 1   | Finalize                        |
 | 2   |                                 |
 | 3   | PerformOneTouchPlay             |
 | 4   |                                 |

@@ -126,7 +126,7 @@ This is "nn::cec::ICecManager".
 |-
 | 0 || Initialize
 |-
-| 1 ||
+| 1 || Finalize
 |-
 | 2 ||
 |-
