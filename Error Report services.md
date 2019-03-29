@@ -16,7 +16,7 @@ This is "nn::erpt::sf::IContext".
 
 ## SubmitContext
 
-Takes 2 type-5 input buffers ('ContextStruct' and 'FieldList').
+Takes 2 type-5 input buffers (**ContextStruct** and **FieldList**).
 
 ### ContextStruct
 
