@@ -20,15 +20,16 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **29 March 19** [devkitA64
+    r13](https://devkitpro.org/viewtopic.php?f=13&t=8891) and [libnx
+    v2.1.0](https://github.com/switchbrew/libnx/releases/tag/v2.1.0)
+    released with pthread/std::thread support.
+  - **26 March 19** [Atmosphère
+    v0.8.6](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.6)
+    released with lots of bugfixes, more cheat stuff and web applet
+    homebrew support.
   - **21 February 19** [Atmosphère
     v0.8.4](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.4)
     released with 7.0.x support.
   - **18 February 19** Nintendo released system update
     [7.0.1](7.0.1.md "wikilink").
-  - **28 January 19** Nintendo released system update
-    [7.0.0](7.0.0.md "wikilink").
-  - **24 January 19** [Atmosphère
-    v0.8.3](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.3)
-    and [nx-hbloader
-    v2.1.0](https://github.com/switchbrew/nx-hbloader/releases/tag/v2.1.0)
-    were released.
