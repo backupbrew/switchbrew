@@ -4,8 +4,8 @@ This is "nn::erpt::sf::IContext".
 
 | Cmd | Name                                                |
 | --- | --------------------------------------------------- |
-| 0   | SubmitContext                                       |
-| 1   | CreateReport                                        |
+| 0   | [\#SubmitContext](#SubmitContext "wikilink")        |
+| 1   | [\#CreateReport](#CreateReport "wikilink")          |
 | 2   | \[3.0.0+\] SetInitialLaunchSettingsCompletionTime   |
 | 3   | \[3.0.0+\] ClearInitialLaunchSettingsCompletionTime |
 | 4   | \[3.0.0+\] UpdatePowerOnTime                        |
@@ -13,6 +13,30 @@ This is "nn::erpt::sf::IContext".
 | 6   | \[5.0.0+\] SubmitMultipleCategoryContext            |
 | 7   | \[6.0.0+\] UpdateApplicationLaunchTime              |
 | 8   | \[6.0.0+\] ClearApplicationLaunchTime               |
+
+## SubmitContext
+
+Takes 2 type-5 input buffers ('ContextStruct' and 'FieldList').
+
+### ContextStruct
+
+This is a 0x160 bytes structure used to encapsulate an error report
+context.
+
+| Offset | Size  | Description                   |
+| ------ | ----- | ----------------------------- |
+| 0x0    | 0x4   | Empty                         |
+| 0x4    | 0x4   | Empty                         |
+| 0x8    | 0x4   | CategoryId                    |
+| 0xC    | 0x144 | Empty                         |
+| 0x150  | 0x8   | Pointer to a FieldList object |
+| 0x158  | 0x4   | FieldList free size           |
+| 0x15C  | 0x4   | FieldList total size          |
+
+## CreateReport
+
+Takes a u32 ('ReportType') and 3 type-5 input buffers ('ContextStruct',
+'FieldList' and 'ReportMetaData').
 
 # erpt:r
 
