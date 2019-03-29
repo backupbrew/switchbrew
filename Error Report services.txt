@@ -50,7 +50,7 @@ This is a 0x160 bytes structure used to encapsulate an error report context.
 |}
 
 == CreateReport ==
-Takes a u32 ('ReportType') and 3 type-5 input buffers ('ContextStruct', 'FieldList' and 'ReportMetaData').
+Takes a u32 ('''ReportType''') and 3 type-5 input buffers ('''ContextStruct''', '''FieldList''' and '''ReportMetaData''').
 
 = erpt:r =
 This is "nn::erpt::sf::ISession".

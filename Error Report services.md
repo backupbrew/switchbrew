@@ -35,8 +35,8 @@ context.
 
 ## CreateReport
 
-Takes a u32 ('ReportType') and 3 type-5 input buffers ('ContextStruct',
-'FieldList' and 'ReportMetaData').
+Takes a u32 (**ReportType**) and 3 type-5 input buffers
+(**ContextStruct**, **FieldList** and **ReportMetaData**).
 
 # erpt:r
 
