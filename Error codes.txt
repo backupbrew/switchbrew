@@ -146,6 +146,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 148 || APM
 |-
+| 149 || CEC
+|-
 | 150 || Profiler
 |-
 | 151 || Error Upload

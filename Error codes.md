@@ -86,6 +86,7 @@ fatal-errors, since the Description ends with bit21.
 | 146   | NGC (Bad Words)                              |
 | 147   | Error Report                                 |
 | 148   | APM                                          |
+| 149   | CEC                                          |
 | 150   | Profiler                                     |
 | 151   | Error Upload                                 |
 | 153   | Audio                                        |
