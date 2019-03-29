@@ -130,15 +130,16 @@ to [AM](Applet%20Manager%20services.md "wikilink") with \[6.0.0+\].
 
 This is "nn::cec::ICecManager".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
+| Cmd | Name                            |
+| --- | ------------------------------- |
+| 0   | Initialize                      |
+| 1   |                                 |
+| 2   |                                 |
+| 3   | PerformOneTouchPlay             |
+| 4   |                                 |
+| 5   |                                 |
+| 6   | \[2.0.0+\]                      |
+| 100 | \[4.0.0+\] GetHdcpServiceObject |
 
 # mm:u
 

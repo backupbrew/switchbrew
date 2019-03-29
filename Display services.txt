@@ -124,19 +124,21 @@ This is "nn::cec::ICecManager".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Initialize
 |-
 | 1 ||
 |-
 | 2 ||
 |-
-| 3 ||
+| 3 || PerformOneTouchPlay
 |-
 | 4 ||
 |-
 | 5 ||
 |-
-| 6 ||
+| 6 || [2.0.0+]
+|-
+| 100 || [4.0.0+] GetHdcpServiceObject
 |}
 
 = mm:u =
