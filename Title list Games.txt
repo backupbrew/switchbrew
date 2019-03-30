@@ -3017,7 +3017,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F8900ADC8000 || Beekyr Reloaded || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| || The Binding of Isaac: Afterbirth+ (retail only) || || 5.0.0 || Digital / Cartridge || 0 || || Application / Game
+| 0100F8A004458000 || The Binding of Isaac: Afterbirth+ (retail only) || EUR || 5.0.0 || Digital / Cartridge || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100F8A00853C000 || Wandersong || EUR USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
