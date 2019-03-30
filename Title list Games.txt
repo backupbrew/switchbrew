@@ -4064,6 +4064,22 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100DF500C58A000 || RPGツクールMVプレイヤー || JPN || || Digital || 0 0x10000 || || Game
 |-
 | 010082500350E000 || PEACH BALL 閃乱カグラ || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 010064000CA60000 || DETECTIVE SABURO JINGUJI: PRISM OF EYES || KOR || || Cartridge || 0 0x10000 0x20000 || || Game
+|-
+| 01003B300C99A000 || Fate/EXTELLA LINK || HKG || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 01005FF00C7CC000 || Gear.Club Unlimited 2 || HKG || || Cartridge || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 010085A00420A000 || Let's Sing 10 || ESP || || Digital || 0 0x10000 || || Game
+|-
+| 0100375009F80000 || Let's Sing 11 || ESP || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 010035300B92A000 || 夜廻+深夜廻 for Nintendo Switch || KOR || || Cartridge || 0 0x10000 || || Game
+|-
+| 010043D00BA32000 || 夜廻＆深夜廻 for Nintendo Switch || HKG || || Cartridge || 0 0x10000 || || Game
+|-
+| 010006600D1C0000 || スーパーリアル麻雀PⅤ || JPN || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
