@@ -282,7 +282,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  [6.0.0+] DramId_MarikoIowaHynix4gb ([5.0.0-5.1.0] Reserved)
 |-
 |  11
-|  [7.0.0+] DramId_MarikoIowaHynix8gb ([5.0.0-6.2.0] Reserved)
+|  [7.0.0+] DramId_MarikoIowaMicron4gb ([5.0.0-6.2.0] Reserved)
 |-
 |  12
 |  [5.0.0+] DramId_MarikoHoagSamsung4gb
@@ -294,7 +294,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  [7.0.0+] DramId_MarikoHoagHynix4gb ([5.0.0-6.2.0] Reserved)
 |-
 |  15
-|  [7.0.0+] DramId_MarikoHoagHynix8gb ([5.0.0-6.2.0] Reserved)
+|  [7.0.0+] DramId_MarikoHoagMicron4gb ([5.0.0-6.2.0] Reserved)
 |}
 
 [[PCV_services|PCV]] selects memory training tables based on DramId.
@@ -443,7 +443,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  01_1600000_NoCfgVersion_V0.3.1_V2.0
 |-
 |  nx-abca2
-|  MarikoIowaHynix8gb or MarikoHoagHynix8gb
+|  MarikoIowaMicron4gb or MarikoHoagMicron4gb
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.4.2_V2.0

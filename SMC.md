@@ -271,11 +271,11 @@ This is extracted directly from
 | 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb                                |
 | 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb                                |
 | 10    | \[6.0.0+\] DramId\_MarikoIowaHynix4gb (\[5.0.0-5.1.0\] Reserved)       |
-| 11    | \[7.0.0+\] DramId\_MarikoIowaHynix8gb (\[5.0.0-6.2.0\] Reserved)       |
+| 11    | \[7.0.0+\] DramId\_MarikoIowaMicron4gb (\[5.0.0-6.2.0\] Reserved)      |
 | 12    | \[5.0.0+\] DramId\_MarikoHoagSamsung4gb                                |
 | 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb                                |
 | 14    | \[7.0.0+\] DramId\_MarikoHoagHynix4gb (\[5.0.0-6.2.0\] Reserved)       |
-| 15    | \[7.0.0+\] DramId\_MarikoHoagHynix8gb (\[5.0.0-6.2.0\] Reserved)       |
+| 15    | \[7.0.0+\] DramId\_MarikoHoagMicron4gb (\[5.0.0-6.2.0\] Reserved)      |
 
 [PCV](PCV%20services.md "wikilink") selects memory training tables based
 on DramId.
@@ -429,7 +429,7 @@ on DramId.
 </tr>
 <tr class="even">
 <td><p>nx-abca2</p></td>
-<td><p>MarikoIowaHynix8gb or MarikoHoagHynix8gb</p></td>
+<td><p>MarikoIowaMicron4gb or MarikoHoagMicron4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
