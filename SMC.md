@@ -477,6 +477,11 @@ It can be 0 (Debug), 1 (Retail) or 2 (Invalid).
 
 Used to determine if the system is booting from SafeMode firmware.
 
+Under normal circumstances, this just returns bit 0 of the active
+[bootloader
+info](BCT#bootloader0%20info.md##bootloader0_info "wikilink")'s
+attribute field.
+
 #### DeviceId
 
 [NIM](NIM%20services.md "wikilink") checks if this item matches the

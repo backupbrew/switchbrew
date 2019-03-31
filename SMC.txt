@@ -476,6 +476,8 @@ This item is obtained by checking bits 9 and 0-1 from [[Fuse_registers#FUSE_RESE
 ==== IsRecoveryBoot ====
 Used to determine if the system is booting from SafeMode firmware.
 
+Under normal circumstances, this just returns bit 0 of the active [[BCT#bootloader0_info|bootloader info]]'s attribute field.
+
 ==== DeviceId ====
 [[NIM_services|NIM]] checks if this item matches the [[Settings_services|set:cal]] DeviceId with byte7 cleared. If they don't match, a panic is thrown.
 
