@@ -3,7 +3,7 @@ files are stored as completely unencrypted, plaintext data. Save files
 are not cleared upon creation, resulting in possible garbage data in
 unused portions of the container.
 
-## Main header
+# Main header
 
 The header is 0x4000 bytes long.
 
@@ -32,7 +32,7 @@ The additional storage at the end of the header is used to store any
 extra header data. This data's structure is determined by offsets stored
 in the main part of the header.
 
-### AES CMAC header
+## AES CMAC header
 
 | Image offset | Length | Description                            |
 | ------------ | ------ | -------------------------------------- |
@@ -43,7 +43,7 @@ The final CMAC key used for this is generated using GenerateAesKek with
 a kek source and the device key, along with and LoadAesKey and a set key
 seed.
 
-### DISF
+## DISF
 
 This section contains information about the structure of the save
 file.
@@ -100,7 +100,7 @@ file.
 | 0x188 | 8      | \[5.0.0+\] File allocation table IVFC level 2 size                                               |
 | 0x200 |        | End                                                                                              |
 
-### Integrity verification header
+## Integrity verification header
 
   - Offsets for levels 1-3 come from the metadata remap storage
   - Offsets for level 4 comes from the main data remap storage
@@ -116,7 +116,7 @@ file.
 | 0xA0  | 32      | Salt seed                               |
 |       |         |                                         |
 
-#### Level information
+### Level information
 
   - 0x18 bytes long
   - Block sizes are stored as powers of 2
@@ -129,7 +129,7 @@ file.
 | 0x14  | 4      | Reserved         |
 |       |        |                  |
 
-### Journal header
+## Journal header
 
 | Start | Length | Description                          |
 | ----- | ------ | ------------------------------------ |
@@ -142,7 +142,7 @@ file.
 | 0x200 |        | End                                  |
 |       |        |                                      |
 
-#### Journal map header
+### Journal map header
 
 | Start | Length | Description                                                 |
 | ----- | ------ | ----------------------------------------------------------- |
@@ -152,7 +152,7 @@ file.
 | 0x0C  | 4      | Padding                                                     |
 |       |        |                                                             |
 
-### Extra data
+## Extra data
 
 | Start | Length | Description                                                                   |
 | ----- | ------ | ----------------------------------------------------------------------------- |
@@ -166,7 +166,7 @@ file.
 | 0x68  | 8      | Commit ID                                                                     |
 | 0x200 |        | End                                                                           |
 
-## Remap Storage
+# Remap Storage
 
 Remap Storage is used to remap segments of data from virtual offsets to
 physical offsets. This allows extending the save file without having to
@@ -196,7 +196,7 @@ like this, representing offset 0x100 of segment 3.
 Segment index: 0x3 Offset:
 0x000000000000100
 
-### Remap storage header
+## Remap storage header
 
 | Start | Length | Description                                                      |
 | ----- | ------ | ---------------------------------------------------------------- |
@@ -207,7 +207,7 @@ Segment index: 0x3 Offset:
 | 0x10  | 4      | Number of bits reserved for the segment index in virtual offsets |
 | 0x40  |        | End                                                              |
 
-### Remapping Entry
+## Remapping Entry
 
 | Start | Length | Description     |
 | ----- | ------ | --------------- |
@@ -218,7 +218,7 @@ Segment index: 0x3 Offset:
 | 0x1c  | 4      | Padding?        |
 |       |        |                 |
 
-## Duplex Storage
+# Duplex Storage
 
 A Duplex Storage contains four separate elements: [a
 header](#Duplex_header "wikilink"), a bitmap, and two identically-sized
@@ -228,7 +228,7 @@ As hinted by the name, a Duplex Storage contains two main chunks of
 data. To store X bytes, two chunks of data each with size X are
 required.
 
-### Bitmap
+## Bitmap
 
 This main data storage is split into blocks of the size indicated in the
 duplex header. The bitmap contains as many bits as the main data has
@@ -241,7 +241,7 @@ block 3 of data chunk 1 is inactive. This means that when data from
 block 3 is read, the data from chunk 0 will be returned and the data
 from chunk 1 will be completely ignored.
 
-### Hierarchical Duplex Storage
+## Hierarchical Duplex Storage
 
 Multiple Duplex Storages can be chained together to gain various
 benefits. With a Hierarchical Duplex Storage, the bitmap for the main
@@ -257,7 +257,7 @@ When writing to the storage, data will be written to the inactive blocks
 and inactive bitmaps. When the data is committed the bit in the save
 file header is flipped, changing which master bitmap is active.
 
-### Duplex header
+## Duplex header
 
   - Block sizes are stored as powers of 2
 
@@ -276,9 +276,9 @@ file header is flipped, changing which master bitmap is active.
 | 0x40  | 4      | Level 2 block size power       |
 |       |        |                                |
 
-## Save FS
+# Save FS
 
-### Save FS header
+## Save FS header
 
   - Structure is different than
 3DS.
@@ -292,7 +292,7 @@ file header is flipped, changing which master bitmap is active.
 | 0x18  | 0x30   | FAT header                                                 |
 |       |        |                                                            |
 
-### File allocation table header
+## File allocation table header
 
 | Start | Length | Description                 |
 | ----- | ------ | --------------------------- |
@@ -307,7 +307,7 @@ file header is flipped, changing which master bitmap is active.
 | 0x2C  | 4      | File table block index      |
 |       |        |                             |
 
-### Save File Table
+## Save File Table
 
 The save file table is similar to the RomFS file table, except the save
 file table uses linked lists instead of dictionaries.
@@ -318,7 +318,7 @@ are:
 **SaveFsList\<SaveFileTableEntry<SaveDirectoryInfo>\>**  
 **SaveFsList\<SaveFileTableEntry<SaveFileInfo>\>**
 
-#### Save File Table Entry
+### Save File Table Entry
 
 SaveFileTableEntry<class T>
 
@@ -328,7 +328,7 @@ SaveFileTableEntry<class T>
 | 0x04  | sizeof(T) | Value of type T.                                              |
 |       |           |                                                               |
 
-#### Save File Info
+### Save File Info
 
 Holds the information of a single file.
 
@@ -339,7 +339,7 @@ Holds the information of a single file.
 | 0x0C  | 8      | Reserved.             |
 |       |        |                       |
 
-#### Save Directory Info
+### Save Directory Info
 
 Holds the information of a single directory.
 
@@ -350,7 +350,7 @@ Holds the information of a single directory.
 | 0x08  | 0xC    | Reserved.                               |
 |       |        |                                         |
 
-### Save FS List
+## Save FS List
 
 SaveFsList<class T>
 
@@ -375,7 +375,7 @@ counts.
 | 0x04  | 4      | The current capacity of the list based on the number of bytes allocated.                 |
 |       |        |                                                                                          |
 
-#### Save FS List Key
+### Save FS List Key
 
 | Start | Length | Description       |
 | ----- | ------ | ----------------- |
@@ -383,7 +383,7 @@ counts.
 | 0x04  | 0x40   | 0x40-byte string. |
 |       |        |                   |
 
-#### Save FS List Entry
+### Save FS List Entry
 
 | Start            | Length    | Description                                                        |
 | ---------------- | --------- | ------------------------------------------------------------------ |
