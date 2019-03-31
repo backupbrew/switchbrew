@@ -307,40 +307,87 @@ file header is flipped, changing which master bitmap is active.
 | 0x2C  | 4      | File table block index      |
 |       |        |                             |
 
-### Directory Table Entry
+### Save File Table
 
-  - Index 0 is the start of a linked list that contains all
-    invalid/inactive directories.
-  - Index 1 is the start of a linked list that contains all valid/active
-    directories.
-  - Index 2 is the root
-directory.
+The save file table is similar to the RomFS file table, except the save
+file table uses linked lists instead of dictionaries.
 
-| Start | Length | Description                                                                                                                                                                            |
-| ----- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 4      | Parent directory node index                                                                                                                                                            |
-| 0x04  | 64     | Filename                                                                                                                                                                               |
-| 0x44  | 4      | Next sibling directory node index                                                                                                                                                      |
-| 0x48  | 4      | First child directory node index                                                                                                                                                       |
-| 0x4c  | 8      | First child file node index                                                                                                                                                            |
-| 0x54  | 8      | Unused?                                                                                                                                                                                |
-| 0x5c  | 4      | Next directory node index in the chain of invalid or valid directories. If this is the first block in a list of length 0, this value will contain the total number of directory nodes. |
-|       |        |                                                                                                                                                                                        |
+The table contains a list of directory entries and a list of file
+entries. Their respective types
+are:  
+**SaveFsList\<SaveFileTableEntry<SaveDirectoryInfo>\>**  
+**SaveFsList\<SaveFileTableEntry<SaveFileInfo>\>**
 
-### File Table Entry
+#### Save File Table Entry
 
-  - Index 0 is the start of a linked list that contains all
-    invalid/inactive files.
-  - Index 1 is the start of a linked list that contains all valid/active
-    files.
+SaveFileTableEntry<class T>
 
-| Start | Length | Description                                                                                                                                                            |
-| ----- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x00  | 4      | Parent directory node index                                                                                                                                            |
-| 0x04  | 64     | Filename                                                                                                                                                               |
-| 0x44  | 4      | Next sibling file node index                                                                                                                                           |
-| 0x48  | 4      | Index of the block that the file starts at                                                                                                                             |
-| 0x4c  | 8      | File size in bytes                                                                                                                                                     |
-| 0x54  | 8      | Unused?                                                                                                                                                                |
-| 0x5c  | 4      | Next file node index in the chain of invalid or valid files. If this is the first block in a list of length 0, this value will contain the total number of file nodes. |
-|       |        |                                                                                                                                                                        |
+| Start | Length    | Description                                                   |
+| ----- | --------- | ------------------------------------------------------------- |
+| 0x00  | 4         | Next entry index. A value of 0 indicates the end of the list. |
+| 0x04  | sizeof(T) | Value of type T.                                              |
+|       |           |                                                               |
+
+#### Save File Info
+
+Holds the information of a single file.
+
+| Start | Length | Description           |
+| ----- | ------ | --------------------- |
+| 0x00  | 4      | Starting block index. |
+| 0x04  | 8      | File length in bytes. |
+| 0x0C  | 8      | Reserved.             |
+|       |        |                       |
+
+#### Save Directory Info
+
+Holds the information of a single directory.
+
+| Start | Length | Description                             |
+| ----- | ------ | --------------------------------------- |
+| 0x00  | 4      | First child directory index. 0 if none. |
+| 0x04  | 4      | First child file index. 0 if none.      |
+| 0x08  | 0xC    | Reserved.                               |
+|       |        |                                         |
+
+### Save FS List
+
+SaveFsList<class T>
+
+This is a linked list that is used internally by **Save File Table** as
+a key-value store. Integer/string pairs are used as keys. The list is
+represented as a single array so that it can be easily stored and read
+from a file. Entry indexes 0 and 1 are reserved.
+
+Index 0 is the start of a list containing all free entries. When an item
+in the list is removed, the entry it was using is added to this list for
+future reuse.
+
+Index 1 is the start of a list containing all currently used entries.
+
+The first 8 bytes of the list are used as follows. Indexes 0 and 1 are
+included in these
+counts.
+
+| Start | Length | Description                                                                              |
+| ----- | ------ | ---------------------------------------------------------------------------------------- |
+| 0x00  | 4      | The size of the list. Freed entries that have not been reused are included in the count. |
+| 0x04  | 4      | The current capacity of the list based on the number of bytes allocated.                 |
+|       |        |                                                                                          |
+
+#### Save FS List Key
+
+| Start | Length | Description       |
+| ----- | ------ | ----------------- |
+| 0x00  | 4      | 32-bit integer.   |
+| 0x04  | 0x40   | 0x40-byte string. |
+|       |        |                   |
+
+#### Save FS List Entry
+
+| Start            | Length    | Description                                                        |
+| ---------------- | --------- | ------------------------------------------------------------------ |
+| 0x00             | 0x44      | Key.                                                               |
+| 0x44             | sizeof(T) | Value.                                                             |
+| 0x44 + sizeof(T) | 4         | Next entry node index. A value of 0 indicates the end of the list. |
+|                  |           |                                                                    |
