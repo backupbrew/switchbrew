@@ -1128,7 +1128,7 @@ userspace address.
 
 **0xe401:** Invalid debug handle.
 
-**0xf401:** Process has debug events queued.
+**0xf401:** Process has debug events queued or is already running.
 
 ## svcGetSystemInfo
 
