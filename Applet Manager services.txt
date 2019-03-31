@@ -1612,7 +1612,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0x0A
 | 0100000000001001
-| "auth"
+| [[Auth_Applet|"auth"]]
 |-
 | 0x0B
 | 0100000000001002

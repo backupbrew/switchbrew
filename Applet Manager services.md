@@ -1465,7 +1465,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x02 | 010000000000100C | "overlayDisp"                                                                                                    |
 | 0x03 | 0100000000001000 | "qlaunch"                                                                                                        |
 | 0x04 | 0100000000001012 | "starter"                                                                                                        |
-| 0x0A | 0100000000001001 | "auth"                                                                                                           |
+| 0x0A | 0100000000001001 | ["auth"](Auth%20Applet.md "wikilink")                                                                            |
 | 0x0B | 0100000000001002 | "cabinet"                                                                                                        |
 | 0x0C | 0100000000001003 | "controller"                                                                                                     |
 | 0x0D | 0100000000001004 | "dataErase"                                                                                                      |
