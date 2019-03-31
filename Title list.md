@@ -1302,7 +1302,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
-<td><p>auth (LibraryAppletAuth)</p></td>
+<td><p><a href="Auth Applet.md" title="wikilink">auth</a> (LibraryAppletAuth)</p></td>
 <td></td>
 </tr>
 <tr class="odd">
