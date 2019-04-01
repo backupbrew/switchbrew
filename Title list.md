@@ -151,7 +151,8 @@ Decimal versions use the format:
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p><a href="BCAT services.md" title="wikilink">bcat</a></p></td>
 </tr>
 <tr class="even">
@@ -406,7 +407,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p><a href="Account services.md" title="wikilink">account</a></p></td>
 </tr>
 <tr class="even">
@@ -422,7 +424,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p><a href="NS Services.md" title="wikilink">ns</a></p></td>
 </tr>
 <tr class="odd">
@@ -556,7 +559,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p><a href="BTM services.md" title="wikilink">btm</a></p></td>
 </tr>
 <tr class="even">
@@ -678,7 +682,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p><a href="ETicket services.md" title="wikilink">es</a></p></td>
 </tr>
 <tr class="odd">
@@ -962,7 +967,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.0.1.md" title="wikilink">v402718730</a> (6.0.1.10)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>SystemVersion</p></td>
 <td><p><a href="System Version Title.md" title="wikilink">System Version Title</a>.</p></td>
 </tr>
@@ -1125,7 +1131,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.0.1.md" title="wikilink">v402718730</a> (6.0.1.10)<br />
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>SystemUpdate</p></td>
 <td><p>Contains the title-listing for the associated sysupdate in the <a href="NCA.md" title="wikilink">NCA</a>-type0 .cnmt.</p></td>
 </tr>
@@ -1161,7 +1168,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>BootImagePackage</p></td>
 <td><p>Firmware Package A: Normal Firmware.</p></td>
 </tr>
@@ -1179,7 +1187,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>BootImagePackageSafe</p></td>
 <td><p>Firmware Package B: SafeMode Firmware. See <a href="Boot Modes#Safe Mode.md##Safe_Mode" title="wikilink">Safe Mode</a>.</p></td>
 </tr>
@@ -1197,7 +1206,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>BootImagePackageExFat</p></td>
 <td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
@@ -1209,7 +1219,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
+<a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)</p></td>
 <td><p>BootImagePackageExFatSafe</p></td>
 <td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
