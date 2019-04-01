@@ -292,7 +292,18 @@ file header is flipped, changing which master bitmap is active.
 | 0x18  | 0x30   | FAT header                                                 |
 |       |        |                                                            |
 
-## File allocation table header
+## File allocation table
+
+The savedata FS uses a fairly basic allocation table to keep track of
+block allocation. The FAT contains doubly-linked lists of the blocks
+allocated to each file. Each entry in the FAT is 8 bytes in size.
+
+FAT entry 0 is reserved for the list of free blocks. Because of this,
+the FAT entry for block n is found at FAT index n+1. The indexes stored
+in FAT entries refer the index of the next/previous FAT entry in the
+chain, not the index of the next/previous block.
+
+### File allocation table header
 
 | Start | Length | Description                 |
 | ----- | ------ | --------------------------- |
