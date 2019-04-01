@@ -902,8 +902,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
-<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>SharedFont</p></td>
 <td><p>Chinese and Korean dictionaries.</p></td>
 </tr>
@@ -938,8 +937,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <tr class="odd">
 <td><p>0100000000000808</p></td>
 <td><p><a href="1.0.0.md" title="wikilink">v450</a> (0.0.0.450)<br />
-<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>Dictionary</p></td>
 <td><p>European, English, and Japanese dictionaries.</p></td>
 </tr>
@@ -1006,8 +1004,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="2.0.0.md" title="wikilink">v65796</a> (0.0.1.260)<br />
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
-<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>UrlBlackList</p></td>
 <td></td>
 </tr>
@@ -1237,8 +1234,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
-<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>ControllerIcon</p></td>
 <td><p>Controller gfx/icon data + dummy file.</p></td>
 </tr>
@@ -1275,8 +1271,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="4.0.0.md" title="wikilink">v268435656</a> (4.0.0.200)<br />
 <a href="5.0.0.md" title="wikilink">v335544750</a> (5.0.0.430)<br />
 <a href="5.1.0.md" title="wikilink">v336592976</a> (5.1.0.80)<br />
-<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
-<a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)</p></td>
+<a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)</p></td>
 <td><p>PlatformConfigHoag</p></td>
 <td><p>Hoag system config.</p></td>
 </tr>
