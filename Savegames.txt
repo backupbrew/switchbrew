@@ -707,6 +707,58 @@ FAT entry 0 is reserved for the list of free blocks. Because of this, the FAT en
 |-
 |}
 
+=== File allocation table entry ===
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0
+| 4 (High bit)
+| Set if entry is the first entry in the list.
+|-
+| 0
+| 4 (Lower 31 bits)
+| Previous entry index. First entry in list if 0.
+|-
+| 4
+| 4 (High bit)
+| Set if the allocation segment has multiple blocks.
+|-
+| 4
+| 4 (Lower 31 bits)
+| Next entry index. Last entry in list if 0.
+|-
+|}
+
+If the allocation segment has multiple blocks, the first entry will be followed by a range descriptor entry. The last entry in the segment will contain a duplicate of this entry.
+
+{| class="wikitable"
+|-
+! Start
+! Length
+! Description
+|-
+| 0
+| 4 (High bit)
+| Always set.
+|-
+| 0
+| 4 (Lower 31 bits)
+| First entry in this segment.
+|-
+| 4
+| 4 (High bit)
+| Never set.
+|-
+| 4
+| 4 (Lower 31 bits)
+| Last entry in this segment.
+|-
+|}
+
 == Save File Table ==
 
 The save file table is similar to the RomFS file table, except the save file table uses linked lists instead of dictionaries.

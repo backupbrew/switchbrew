@@ -318,6 +318,28 @@ chain, not the index of the next/previous block.
 | 0x2C  | 4      | File table block index      |
 |       |        |                             |
 
+### File allocation table entry
+
+| Start | Length            | Description                                        |
+| ----- | ----------------- | -------------------------------------------------- |
+| 0     | 4 (High bit)      | Set if entry is the first entry in the list.       |
+| 0     | 4 (Lower 31 bits) | Previous entry index. First entry in list if 0.    |
+| 4     | 4 (High bit)      | Set if the allocation segment has multiple blocks. |
+| 4     | 4 (Lower 31 bits) | Next entry index. Last entry in list if 0.         |
+|       |                   |                                                    |
+
+If the allocation segment has multiple blocks, the first entry will be
+followed by a range descriptor entry. The last entry in the segment will
+contain a duplicate of this entry.
+
+| Start | Length            | Description                  |
+| ----- | ----------------- | ---------------------------- |
+| 0     | 4 (High bit)      | Always set.                  |
+| 0     | 4 (Lower 31 bits) | First entry in this segment. |
+| 4     | 4 (High bit)      | Never set.                   |
+| 4     | 4 (Lower 31 bits) | Last entry in this segment.  |
+|       |                   |                              |
+
 ## Save File Table
 
 The save file table is similar to the RomFS file table, except the save
