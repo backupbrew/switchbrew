@@ -28,10 +28,12 @@ See [[AM_services#Library_Applets]].
 The arg storage is 0xC-bytes.
 
 Types:
-* 0x0 <code>ShowParentalAuthentication</code>: With the <code>(bool)</code> func, arg0 is set to the input bool, with the rest set to zero.
+* 0x0 <code>ShowParentalAuthentication</code>: With the <code>(bool)</code> func, arg0 is set to the input bool, with the rest set to zero. false = temporarily disable Parental Controls. true = validate the input PIN.
 ** With the other func available with [4.0.0+], 3 u8s from the input struct are copied to the u8 arg fields. The <code>ShowAuthenticatorForConfiguration</code> wrapper func for this passes the following arg* values: 1, 0, 1.
-* 0x1 <code>RegisterParentalPasscode</code>: arg* fields are all-zero.
-* 0x2 <code>ChangeParentalPasscode</code>: arg* fields are all-zero.
+* 0x1 <code>RegisterParentalPasscode</code>: arg* fields are all-zero. This is for registering the Parental Controls PIN.
+* 0x2 <code>ChangeParentalPasscode</code>: arg* fields are all-zero. This is for changing the Parental Controls PIN.
+
+If non-Register is used where a PIN is not already registered, the applet will throw a fatalerr once the user finishes entering the PIN (unknown for <code>ShowAuthenticatorForConfiguration</code>).
 
 == Usage == 
 User-processes should push a common arguments struct as well as the [[#Arg]] struct. Once the applet finishes running successfully, it will return an output 4-byte storage containing the Result (an error is thrown if no storage is available / storage size is 0).

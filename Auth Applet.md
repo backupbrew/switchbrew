@@ -22,13 +22,21 @@ The arg storage is 0xC-bytes.
 Types:
 
   - 0x0 `ShowParentalAuthentication`: With the `(bool)` func, arg0 is
-    set to the input bool, with the rest set to zero.
+    set to the input bool, with the rest set to zero. false =
+    temporarily disable Parental Controls. true = validate the input
+    PIN.
       - With the other func available with \[4.0.0+\], 3 u8s from the
         input struct are copied to the u8 arg fields. The
         `ShowAuthenticatorForConfiguration` wrapper func for this passes
         the following arg\* values: 1, 0, 1.
-  - 0x1 `RegisterParentalPasscode`: arg\* fields are all-zero.
-  - 0x2 `ChangeParentalPasscode`: arg\* fields are all-zero.
+  - 0x1 `RegisterParentalPasscode`: arg\* fields are all-zero. This is
+    for registering the Parental Controls PIN.
+  - 0x2 `ChangeParentalPasscode`: arg\* fields are all-zero. This is for
+    changing the Parental Controls PIN.
+
+If non-Register is used where a PIN is not already registered, the
+applet will throw a fatalerr once the user finishes entering the PIN
+(unknown for `ShowAuthenticatorForConfiguration`).
 
 ## Usage
 
