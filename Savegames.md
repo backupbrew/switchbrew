@@ -294,8 +294,8 @@ file header is flipped, changing which master bitmap is active.
 
 ## File allocation table
 
-The savedata FS uses a fairly basic allocation table to keep track of
-block allocation. The FAT contains doubly-linked lists of the blocks
+The savedata FS uses an allocation table to keep track of block
+allocation. This FAT contains doubly-linked lists of the blocks
 allocated to each file. Each entry in the FAT is 8 bytes in size.
 
 FAT entry 0 is reserved for the list of free blocks. Because of this,
