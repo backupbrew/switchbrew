@@ -1,4 +1,4 @@
-This is the Parental Controls authentication applet.
+This is the Parental Controls authentication applet. This applet is used by [[qlaunch]].
 See [[AM_services#Library_Applets]].
 
 == Library Applet Versions ==

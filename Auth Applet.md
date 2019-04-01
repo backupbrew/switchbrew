@@ -1,4 +1,5 @@
-This is the Parental Controls authentication applet. See
+This is the Parental Controls authentication applet. This applet is used
+by [qlaunch](Qlaunch.md "wikilink"). See
 [AM\_services\#Library\_Applets](AM%20services#Library%20Applets.md##Library_Applets "wikilink").
 
 ## Library Applet Versions
