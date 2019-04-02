@@ -303,6 +303,10 @@ the FAT entry for block n is found at FAT index n+1. The indexes stored
 in FAT entries refer the index of the next/previous FAT entry in the
 chain, not the index of the next/previous block.
 
+The FAT header is internally called AllocationTableControlArea. The FAT
+itself is called AllocationTableMeta. The actual save FS data is called
+AllocationTableData.
+
 ### File allocation table header
 
 | Start | Length | Description                 |

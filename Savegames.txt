@@ -661,6 +661,8 @@ The savedata FS uses an allocation table to keep track of block allocation. This
 
 FAT entry 0 is reserved for the list of free blocks. Because of this, the FAT entry for block n is found at FAT index n+1. The indexes stored in FAT entries refer the index of the next/previous FAT entry in the chain, not the index of the next/previous block.
 
+The FAT header is internally called AllocationTableControlArea. The FAT itself is called AllocationTableMeta. The actual save FS data is called AllocationTableData.
+
 === File allocation table header ===
 
 {| class="wikitable"
