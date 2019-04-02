@@ -34,6 +34,8 @@ in the main part of the header.
 
 ## AES CMAC header
 
+This is internally referred to as MasterHeaderMac.
+
 | Image offset | Length | Description                            |
 | ------------ | ------ | -------------------------------------- |
 | 0x00         | 0x10   | AES-CMAC over DISF header (size 0x200) |

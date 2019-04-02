@@ -66,6 +66,9 @@ Decimal versions are separated as Major, Minor, Micro, and Bugfix with each usin
 The additional storage at the end of the header is used to store any extra header data. This data's structure is determined by offsets stored in the main part of the header.
 
 == AES CMAC header ==
+
+This is internally referred to as MasterHeaderMac.
+
 {| class="wikitable"
 |-
 ! Image offset
