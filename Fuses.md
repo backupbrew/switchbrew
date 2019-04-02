@@ -879,10 +879,9 @@ These patches modify the 256-bit Secure Provisioning AES key with index
 
 #### ipatch 11
 
-This patch pertains to the [Security
-Engine](Security%20Engine.md "wikilink") context restore process and
-forces the value of SE\_TZRAM\_SECURITY to be 0x01 instead of restoring
-it from the saved SE context.
+This patch forces the value of
+[SE\_TZRAM\_SECURITY](Security%20Engine.md "wikilink") to be 0x01
+instead of restoring it from the saved SE context.
 
 ## Anti-downgrade
 

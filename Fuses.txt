@@ -1280,7 +1280,7 @@ It sets the correct warmboot binary entrypoint address for RSA signature verific
 These patches modify the 256-bit Secure Provisioning AES key with index 0x3A.
 
 ==== ipatch 11 ====
-This patch pertains to the [[Security_Engine|Security Engine]] context restore process and forces the value of SE_TZRAM_SECURITY to be 0x01 instead of restoring it from the saved SE context.
+This patch forces the value of [[Security_Engine|SE_TZRAM_SECURITY]] to be 0x01 instead of restoring it from the saved SE context.
 
 == Anti-downgrade ==
 The first bootloader verifies [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]] to prevent downgrading.
