@@ -798,10 +798,10 @@ It allows controlling the debug authentication configuration using a
 fuse.
 
 ``` c
- u32 FUSE_DEBUG_AUTH_OVERRIDE = 0x7000FA9C;
+ u32 FUSE_ODM_INFO = 0x7000FA9C;
 
- u32 debug_auth_override_val = *(u32 *)FUSE_DEBUG_AUTH_OVERRIDE;
- debug_auth_override_val = ((debug_auth_override_val >> 0x08) << 0x01);
+ u32 odm_info = *(u32 *)FUSE_ODM_INFO;
+ debug_auth_override_val = ((odm_info >> 0x08) << 0x01);
 
  // Override debug authentication value stored in IRAM
  *(u32 *)0x400028E4 &= ~(debug_auth_override_val);
@@ -881,7 +881,8 @@ These patches modify the 256-bit Secure Provisioning AES key with index
 
 This patch pertains to the [Security
 Engine](Security%20Engine.md "wikilink") context restore process and
-forces SE\_OPERATION\_UNK1 to be 0x01.
+forces the value of SE\_TZRAM\_SECURITY to be 0x01 instead of restoring
+it from the saved SE context.
 
 ## Anti-downgrade
 

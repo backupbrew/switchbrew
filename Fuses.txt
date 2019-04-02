@@ -1207,10 +1207,10 @@ This patch is a factory backdoor.
 It allows controlling the debug authentication configuration using a fuse.
 
 <syntaxhighlight lang="c">
- u32 FUSE_DEBUG_AUTH_OVERRIDE = 0x7000FA9C;
+ u32 FUSE_ODM_INFO = 0x7000FA9C;
 
- u32 debug_auth_override_val = *(u32 *)FUSE_DEBUG_AUTH_OVERRIDE;
- debug_auth_override_val = ((debug_auth_override_val >> 0x08) << 0x01);
+ u32 odm_info = *(u32 *)FUSE_ODM_INFO;
+ debug_auth_override_val = ((odm_info >> 0x08) << 0x01);
 
  // Override debug authentication value stored in IRAM
  *(u32 *)0x400028E4 &= ~(debug_auth_override_val);
@@ -1280,7 +1280,7 @@ It sets the correct warmboot binary entrypoint address for RSA signature verific
 These patches modify the 256-bit Secure Provisioning AES key with index 0x3A.
 
 ==== ipatch 11 ====
-This patch pertains to the [[Security_Engine|Security Engine]] context restore process and forces SE_OPERATION_UNK1 to be 0x01.
+This patch pertains to the [[Security_Engine|Security Engine]] context restore process and forces the value of SE_TZRAM_SECURITY to be 0x01 instead of restoring it from the saved SE context.
 
 == Anti-downgrade ==
 The first bootloader verifies [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]] to prevent downgrading.
