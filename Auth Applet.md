@@ -29,7 +29,8 @@ Types:
       - With the other func available with \[4.0.0+\], 3 u8s from the
         input struct are copied to the u8 arg fields. The
         `ShowAuthenticatorForConfiguration` wrapper func for this passes
-        the following arg\* values: 1, 0, 1.
+        the following arg\* values: 1, 0, 1. This is for checking the
+        PIN, used when changing system-settings.
   - 0x1 `RegisterParentalPasscode`: arg\* fields are all-zero. This is
     for registering the Parental Controls PIN.
   - 0x2 `ChangeParentalPasscode`: arg\* fields are all-zero. This is for

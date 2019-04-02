@@ -29,7 +29,7 @@ The arg storage is 0xC-bytes.
 
 Types:
 * 0x0 <code>ShowParentalAuthentication</code>: With the <code>(bool)</code> func, arg0 is set to the input bool, with the rest set to zero. false = temporarily disable Parental Controls. true = validate the input PIN.
-** With the other func available with [4.0.0+], 3 u8s from the input struct are copied to the u8 arg fields. The <code>ShowAuthenticatorForConfiguration</code> wrapper func for this passes the following arg* values: 1, 0, 1.
+** With the other func available with [4.0.0+], 3 u8s from the input struct are copied to the u8 arg fields. The <code>ShowAuthenticatorForConfiguration</code> wrapper func for this passes the following arg* values: 1, 0, 1. This is for checking the PIN, used when changing system-settings.
 * 0x1 <code>RegisterParentalPasscode</code>: arg* fields are all-zero. This is for registering the Parental Controls PIN.
 * 0x2 <code>ChangeParentalPasscode</code>: arg* fields are all-zero. This is for changing the Parental Controls PIN.
 
