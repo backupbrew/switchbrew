@@ -1152,7 +1152,7 @@ This patch adjusts USB configurations.
 </syntaxhighlight>
 
 ==== ipatch 3 ====
-This patch pertains to XHCI IRQ clearing checks and forces a result code to be 0.
+This patch ensures that waiting on PRC_PENDING from the XUSB_DEV register T_XUSB_DEV_XHCI_PORTSC never fails.
 
 ==== ipatch 4 ====
 This patch allows backing up and restoring strapping options for warmboot.

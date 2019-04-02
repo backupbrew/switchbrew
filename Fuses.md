@@ -737,8 +737,8 @@ This patch adjusts USB configurations.
 
 #### ipatch 3
 
-This patch pertains to XHCI IRQ clearing checks and forces a result code
-to be 0.
+This patch ensures that waiting on PRC\_PENDING from the XUSB\_DEV
+register T\_XUSB\_DEV\_XHCI\_PORTSC never fails.
 
 #### ipatch 4
 
