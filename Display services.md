@@ -18,7 +18,7 @@ with
 | \[2.0.0-4.1.0\] 1001 |              | Takes a total of 0x10-bytes of input, no output.                                                                                       |
 | \[2.0.0-4.1.0\] 1002 |              | Takes a total of 0x18-bytes of input, no output.                                                                                       |
 | \[3.0.0-4.1.0\] 1003 |              | Takes a total of 0x58-bytes of input, no output.                                                                                       |
-| 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output.                                                                                       |
+| 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
 | 1009                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
 | 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
 | 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                          |
