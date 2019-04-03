@@ -15,6 +15,7 @@ This is "nn::bpc::IBoardPowerControlManager".
 | 8   |                           |
 | 9   |                           |
 | 10  |                           |
+| 14  | \[6.0.0+\]                |
 
 # bpc:r
 
@@ -34,36 +35,37 @@ max77620\_rtc0 device.
 
 This is "nn::pcv::detail::IPcvService".
 
-| Cmd | Name                     |
-| --- | ------------------------ |
-| 0   | SetPowerEnabled          |
-| 1   | SetClockEnabled          |
-| 2   | SetClockRate             |
-| 3   | GetClockRate             |
-| 4   | GetState                 |
-| 5   | GetPossibleClockRates    |
-| 6   | SetMinVClockRate         |
-| 7   | SetReset                 |
-| 8   | SetVoltageEnabled        |
-| 9   | GetVoltageEnabled        |
-| 10  | GetVoltageRange          |
-| 11  | SetVoltageValue          |
-| 12  | GetVoltageValue          |
-| 13  | GetTemperatureThresholds |
-| 14  | SetTemperature           |
-| 15  | Initialize               |
-| 16  | IsInitialized            |
-| 17  | Finalize                 |
-| 18  | PowerOn                  |
-| 19  | PowerOff                 |
-| 20  | ChangeVoltage            |
-| 21  | GetPowerClockInfoEvent   |
-| 22  | GetOscillatorClock       |
-| 23  | GetDvfsTable             |
-| 24  | GetModuleStateTable      |
-| 25  | GetPowerDomainStateTable |
-| 26  | GetFuseInfo              |
-|     |                          |
+| Cmd                | Name                     |
+| ------------------ | ------------------------ |
+| 0                  | SetPowerEnabled          |
+| 1                  | SetClockEnabled          |
+| 2                  | SetClockRate             |
+| 3                  | GetClockRate             |
+| 4                  | GetState                 |
+| 5                  | GetPossibleClockRates    |
+| 6                  | SetMinVClockRate         |
+| 7                  | SetReset                 |
+| 8                  | SetVoltageEnabled        |
+| 9                  | GetVoltageEnabled        |
+| 10                 | GetVoltageRange          |
+| 11                 | SetVoltageValue          |
+| 12                 | GetVoltageValue          |
+| 13                 | GetTemperatureThresholds |
+| 14                 | SetTemperature           |
+| \[1.0.0-5.1.0\] 15 | Initialize               |
+| \[1.0.0-5.1.0\] 16 | IsInitialized            |
+| \[1.0.0-5.1.0\] 17 | Finalize                 |
+| 18                 | PowerOn                  |
+| 19                 | PowerOff                 |
+| 20                 | ChangeVoltage            |
+| 21                 | GetPowerClockInfoEvent   |
+| 22                 | GetOscillatorClock       |
+| 23                 | GetDvfsTable             |
+| 24                 | GetModuleStateTable      |
+| 25                 | GetPowerDomainStateTable |
+| 26                 | GetFuseInfo              |
+| 28                 | \[6.0.0+\]               |
+| 29                 | \[6.0.0+\]               |
 
 ## User Name to Block Maps
 
@@ -210,11 +212,15 @@ This is
 | 3   | GetTimeZoneService                                          | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
 | 4   | GetStandardLocalSystemClock                                 | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
 | 5   | \[4.0.0+\] GetEphemeralNetworkSystemClock                   | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 20  | \[6.0.0+\]                                                  |                                                                |
+| 30  | \[6.0.0+\]                                                  |                                                                |
+| 31  | \[6.0.0+\]                                                  |                                                                |
 | 50  | \[4.0.0+\] SetStandardSteadyClockInternalOffset             |                                                                |
 | 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled         |                                                                |
 | 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled        |                                                                |
 | 102 | \[5.0.0+\] GetStandardUserSystemClockInitialYear            |                                                                |
 | 200 | \[3.0.0+\] IsStandardNetworkSystemClockAccuracySufficient   |                                                                |
+| 201 | \[6.0.0+\]                                                  |                                                                |
 | 300 | \[4.0.0+\] CalculateMonotonicSystemClockBaseTimePoint       |                                                                |
 | 400 | \[4.0.0+\] GetClockSnapshot                                 |                                                                |
 | 401 | \[4.0.0+\] GetClockSnapshotFromSystemClockContext           |                                                                |
