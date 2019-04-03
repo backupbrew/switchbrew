@@ -257,11 +257,13 @@ This is "nn::nim::detail::IShopServiceManager".
 |-
 | 400 || GetAccountByVirtualAccount
 |-
+| 401 || [6.0.0+]
+|-
 | 500 || RequestSyncTicket
 |-
 | 501 || RequestDownloadTicket
 |-
-| 502 || [4.0.0+] RequestDownloadTicketForPrepurchasedContents
+| 502 || [4.0.0+] RequestDownloadTicketForPrepurchasedContents. [6.0.0+]: Now takes an additional 4-bytes of input.
 |}
 
 = nim:eca =
@@ -273,11 +275,11 @@ This is "nn::nim::detail::IShopServiceAccessServerInterface".
 |-
 | 0 || CreateServerInterface
 |-
-| 1 || RefreshDebugAvailability
+| 1 || [6.0.0+] RefreshDebugAvailability
 |-
-| 2 || ClearDebugResponse
+| 2 || [6.0.0+] ClearDebugResponse
 |-
-| 3 || RegisterDebugResponse
+| 3 || [6.0.0+] RegisterDebugResponse
 |}
 
 == IShopServiceAccessServer ==

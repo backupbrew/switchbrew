@@ -119,43 +119,45 @@ blocked.
 
 # nim:shp
 
-This is "nn::nim::detail::IShopServiceManager".
+This is
+"nn::nim::detail::IShopServiceManager".
 
-| Cmd | Name                                                    |
-| --- | ------------------------------------------------------- |
-| 0   | RequestDeviceAuthenticationToken                        |
-| 1   | RequestCachedDeviceAuthenticationToken                  |
-| 100 | RequestRegisterDeviceAccount                            |
-| 101 | RequestUnregisterDeviceAccount                          |
-| 102 | RequestDeviceAccountStatus                              |
-| 103 | GetDeviceAccountInfo                                    |
-| 104 | RequestDeviceRegistrationInfo                           |
-| 105 | RequestTransferDeviceAccount                            |
-| 106 | RequestSyncRegistration                                 |
-| 107 | IsOwnDeviceId                                           |
-| 200 | RequestRegisterNotificationToken                        |
-| 300 | RequestUnlinkDevice                                     |
-| 301 | RequestUnlinkDeviceIntegrated                           |
-| 302 | RequestLinkDevice                                       |
-| 303 | HasDeviceLink                                           |
-| 304 | RequestUnlinkDeviceAll                                  |
-| 305 | RequestCreateVirtualAccount                             |
-| 306 | RequestDeviceLinkStatus                                 |
-| 400 | GetAccountByVirtualAccount                              |
-| 500 | RequestSyncTicket                                       |
-| 501 | RequestDownloadTicket                                   |
-| 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents |
+| Cmd | Name                                                                                                           |
+| --- | -------------------------------------------------------------------------------------------------------------- |
+| 0   | RequestDeviceAuthenticationToken                                                                               |
+| 1   | RequestCachedDeviceAuthenticationToken                                                                         |
+| 100 | RequestRegisterDeviceAccount                                                                                   |
+| 101 | RequestUnregisterDeviceAccount                                                                                 |
+| 102 | RequestDeviceAccountStatus                                                                                     |
+| 103 | GetDeviceAccountInfo                                                                                           |
+| 104 | RequestDeviceRegistrationInfo                                                                                  |
+| 105 | RequestTransferDeviceAccount                                                                                   |
+| 106 | RequestSyncRegistration                                                                                        |
+| 107 | IsOwnDeviceId                                                                                                  |
+| 200 | RequestRegisterNotificationToken                                                                               |
+| 300 | RequestUnlinkDevice                                                                                            |
+| 301 | RequestUnlinkDeviceIntegrated                                                                                  |
+| 302 | RequestLinkDevice                                                                                              |
+| 303 | HasDeviceLink                                                                                                  |
+| 304 | RequestUnlinkDeviceAll                                                                                         |
+| 305 | RequestCreateVirtualAccount                                                                                    |
+| 306 | RequestDeviceLinkStatus                                                                                        |
+| 400 | GetAccountByVirtualAccount                                                                                     |
+| 401 | \[6.0.0+\]                                                                                                     |
+| 500 | RequestSyncTicket                                                                                              |
+| 501 | RequestDownloadTicket                                                                                          |
+| 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents. \[6.0.0+\]: Now takes an additional 4-bytes of input. |
 
 # nim:eca
 
 This is "nn::nim::detail::IShopServiceAccessServerInterface".
 
-| Cmd | Name                     |
-| --- | ------------------------ |
-| 0   | CreateServerInterface    |
-| 1   | RefreshDebugAvailability |
-| 2   | ClearDebugResponse       |
-| 3   | RegisterDebugResponse    |
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 0   | CreateServerInterface               |
+| 1   | \[6.0.0+\] RefreshDebugAvailability |
+| 2   | \[6.0.0+\] ClearDebugResponse       |
+| 3   | \[6.0.0+\] RegisterDebugResponse    |
 
 ## IShopServiceAccessServer
 
