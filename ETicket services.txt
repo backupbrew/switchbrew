@@ -33,11 +33,11 @@ This is "nn::es::IETicketService".
 |-
 | 14 || GetCommonTicketSize
 |-
-| 15 || [2.0.0-5.1.0] GetPersonalizedTicketSize
+| 15 || [2.0.0-?] GetPersonalizedTicketSize
 |-
 | 16 || GetCommonTicketData
 |-
-| 17 || [2.0.0-5.1.0] GetPersonalizedTicketData
+| 17 || [2.0.0-?] GetPersonalizedTicketData
 |-
 | 18 || OwnTicket
 |-
@@ -73,7 +73,7 @@ This is "nn::es::IETicketService".
 |-
 | 34 || [5.0.0+] GetEncryptedTicketSize
 |-
-| 35 || [5.0.0+] GetEncryptedTicketData
+| 35 || [5.0.0+] GetEncryptedTicketData. [6.0.0+]: Now returns an additional 8-bytes.
 |-
 | 36 || [6.0.0+] DeleteAllInactiveELicenseRequiredPersonalizedTicket
 |-
@@ -95,7 +95,7 @@ This is "nn::es::IETicketService".
 |-
 | 1002 || [6.0.0+]
 |-
-| 1003 || [6.0.0+]
+| 1003 || [6.0.0+] Returns an [[#EsAsyncValue]].
 |-
 | 1004 || [6.0.0+]
 |-
@@ -131,7 +131,7 @@ This is "nn::es::IETicketService".
 |-
 | 1505 || [6.0.0+]
 |-
-| 2000 || [6.0.0+]
+| 2000 || [6.0.0+] No input, returns an [[#EsSubinterface2000]].
 |-
 | 2100 || [7.0.0+]
 |-
@@ -142,4 +142,71 @@ This is "nn::es::IETicketService".
 | 3001 || [7.0.0+]
 |-
 | 3002 || [7.0.0+]
+|}
+
+== EsAsyncValue ==
+This was added with [6.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|}
+
+== EsSubinterface2000 ==
+This was added with [6.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || 
+|-
+| 6 || 
+|-
+| 7 || 
+|-
+| 8 || 
+|-
+| 9 || 
+|-
+| 10 || 
+|-
+| 100 || 
+|-
+| 101 || 
+|-
+| 102 || 
+|-
+| 200 || 
+|-
+| 201 || 
+|-
+| 202 || 
+|-
+| 203 || 
+|-
+| 210 || 
+|-
+| 211 || 
+|-
+| 900 || 
+|-
+| 901 || 
+|-
+| 1000 || 
+|-
 |}
