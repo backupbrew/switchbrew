@@ -268,18 +268,19 @@ field for a command-specific bit and returns an error if not set, this
 is likely a permissions check for
 service+command.
 
-| Cmd  | Name                                                                                                                  |
-| ---- | --------------------------------------------------------------------------------------------------------------------- |
-| 7989 | Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
-| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                                                              |
-| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                            |
-| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                        |
-| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                        |
-| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                            |
-| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")                                                        |
-| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")                                              |
-| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                                                                |
-|      |                                                                                                                       |
+| Cmd  | Name                                                                                                                             |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 7988 | \[6.0.0+\] Returns an output [\#IDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
+| 7989 | \[5.1.0+\] Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
+| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                                                                         |
+| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                                       |
+| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                                   |
+| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                                   |
+| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                                       |
+| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")                                                                   |
+| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")                                                         |
+| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                                                                           |
+|      |                                                                                                                                  |
 
 ### IAccountProxyInterface
 
@@ -430,7 +431,7 @@ This is
 | 907                | WithdrawApplicationUpdateRequest                                                                   |
 | 908                | ListApplicationRecordInstalledContentMeta                                                          |
 | 909                | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
-| 910                | \[6.0.0+\] HasApplicationRecord                                                                    |
+| 910                | \[?+\] HasApplicationRecord                                                                        |
 | 911                | \[5.1.0+\] SetPreInstalledApplication                                                              |
 | 912                | \[5.1.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000               | RequestVerifyApplicationDeprecated                                                                 |
@@ -447,7 +448,7 @@ This is
 | 1305               | \[?.?.?-5.1.0\] TryDeleteRunningApplicationEntity                                                  |
 | 1306               | \[?.?.?-5.1.0\] TryDeleteRunningApplicationCompletely                                              |
 | 1307               | \[?.?.?-5.1.0\] TryDeleteRunningApplicationContentEntities                                         |
-| 1308               | \[6.0.0+\] DeleteApplicationCompletelyForDebug                                                     |
+| 1308               | \[?+\] DeleteApplicationCompletelyForDebug                                                         |
 | 1309               | \[6.0.0+\] CleanupUnavailableAddOnContents                                                         |
 | 1400               | PrepareShutdown                                                                                    |
 | 1500               | FormatSdCard                                                                                       |
@@ -486,7 +487,7 @@ This is
 | 2015               | CompareSystemDeliveryInfo                                                                          |
 | 2016               | ListNotCommittedContentMeta                                                                        |
 | 2017               | RecoverDownloadTask                                                                                |
-| 2018               | \[6.0.0+\] GetApplicationDeliveryInfoHash                                                          |
+| 2018               | \[?+\] GetApplicationDeliveryInfoHash                                                              |
 | 2050               | \[6.0.0+\] GetApplicationRightsOnClient                                                            |
 | 2100               | \[6.0.0+\] GetApplicationTerminateResult                                                           |
 | 2101               | \[6.0.0+\] GetRawApplicationTerminateResult                                                        |
@@ -495,7 +496,7 @@ This is
 | 2152               | \[6.0.0+\] ActivateRightsEnvironment                                                               |
 | 2153               | \[6.0.0+\] DeactivateRightsEnvironment                                                             |
 | 2154               | \[6.0.0+\] ForceActivateRightsContextForExit                                                       |
-| 2155               | \[6.0.0+\] UpdateRightsEnvironmentStatus                                                           |
+| 2155               | \[?+\] UpdateRightsEnvironmentStatus                                                               |
 | 2160               | \[6.0.0+\] AddTargetApplicationToRightsEnvironment                                                 |
 | 2161               | \[6.0.0+\] SetUsersToRightsEnvironment                                                             |
 | 2170               | \[6.0.0+\] GetRightsEnvironmentStatus                                                              |
@@ -546,12 +547,12 @@ This is "nn::ns::detail::IContentManagementInterface".
 
 This is "nn::ns::detail::IDocumentInterface".
 
-| Cmd | Name                                      |
-| --- | ----------------------------------------- |
-| 21  | GetApplicationContentPath                 |
-| 23  | ResolveApplicationContentPath             |
-| 92  | \[6.0.0+\] GetRunningApplicationProgramId |
-|     |                                           |
+| Cmd | Name                                  |
+| --- | ------------------------------------- |
+| 21  | GetApplicationContentPath             |
+| 23  | ResolveApplicationContentPath         |
+| 92  | \[?+\] GetRunningApplicationProgramId |
+|     |                                       |
 
 ### IDownloadTaskInterface
 
@@ -582,6 +583,23 @@ This was added with \[5.1.0+\].
 | 1   |      |       |
 | 2   |      |       |
 | 3   |      |       |
+
+### IDynamicRightsInterface
+
+This is "nn::ns::detail::IDynamicRightsInterface".
+
+This was added with \[6.0.0+\].
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+| 1   |      |       |
+| 4   |      |       |
+| 5   |      |       |
+| 6   |      |       |
+| 7   |      |       |
+| 8   |      |       |
+|     |      |       |
 
 ### IECommerceInterface
 

@@ -407,7 +407,9 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |-
 ! Cmd || Name
 |-
-| 7989 || Returns an output [[#IReadOnlyApplicationControlDataInterface]].
+| 7988 || [6.0.0+] Returns an output [[#IDynamicRightsInterface]].
+|-
+| 7989 || [5.1.0+] Returns an output [[#IReadOnlyApplicationControlDataInterface]].
 |-
 | 7992 || [[#IECommerceInterface|GetECommerceInterface]]
 |-
@@ -711,7 +713,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 909 || WithdrawCleanupAddOnContentsWithNoRightsRecommendation
 |-
-| 910 || [6.0.0+] HasApplicationRecord
+| 910 || [?+] HasApplicationRecord
 |-
 | 911 || [5.1.0+] SetPreInstalledApplication
 |-
@@ -745,7 +747,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1307 || [?.?.?-5.1.0] TryDeleteRunningApplicationContentEntities
 |-
-| 1308 || [6.0.0+] DeleteApplicationCompletelyForDebug
+| 1308 || [?+] DeleteApplicationCompletelyForDebug
 |-
 | 1309 || [6.0.0+] CleanupUnavailableAddOnContents
 |-
@@ -823,7 +825,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2017 || RecoverDownloadTask
 |-
-| 2018 || [6.0.0+] GetApplicationDeliveryInfoHash
+| 2018 || [?+] GetApplicationDeliveryInfoHash
 |-
 | 2050 || [6.0.0+] GetApplicationRightsOnClient
 |-
@@ -841,7 +843,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2154 || [6.0.0+] ForceActivateRightsContextForExit
 |-
-| 2155 || [6.0.0+] UpdateRightsEnvironmentStatus
+| 2155 || [?+] UpdateRightsEnvironmentStatus
 |-
 | 2160 || [6.0.0+] AddTargetApplicationToRightsEnvironment
 |-
@@ -932,7 +934,7 @@ This is "nn::ns::detail::IDocumentInterface".
 |-
 | 23 || ResolveApplicationContentPath
 |-
-| 92 || [6.0.0+] GetRunningApplicationProgramId
+| 92 || [?+] GetRunningApplicationProgramId
 |-
 |}
 
@@ -979,6 +981,31 @@ This was added with [5.1.0+].
 | 2 || || 
 |-
 | 3 || || 
+|}
+
+=== IDynamicRightsInterface ===
+This is "nn::ns::detail::IDynamicRightsInterface".
+
+This was added with [6.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|-
+| 1 || || 
+|-
+| 4 || || 
+|-
+| 5 || || 
+|-
+| 6 || || 
+|-
+| 7 || || 
+|-
+| 8 || || 
+|-
 |}
 
 === IECommerceInterface===
