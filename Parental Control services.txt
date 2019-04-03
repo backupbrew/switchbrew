@@ -51,6 +51,8 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 |-
 | 1015 || [5.0.0+] ConfirmPlayableApplicationVideo
 |-
+| 1016 || [6.0.0+]
+|-
 | 1031 || IsRestrictionEnabled
 |-
 | 1032 || GetSafetyLevel
@@ -80,6 +82,8 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1046 || DisableFeaturesForReset
 |-
 | 1047 || NotifyApplicationDownloadStarted
+|-
+| 1048 || [6.0.0+]
 |-
 | 1061 || [4.0.0+] ConfirmStereoVisionRestrictionConfigurable
 |-
@@ -116,6 +120,8 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1421 || GetAccountNickname
 |-
 | 1424 || GetAccountState
+|-
+| 1425 || [6.0.0+]
 |-
 | 1432 || GetSynchronizationEvent
 |-
