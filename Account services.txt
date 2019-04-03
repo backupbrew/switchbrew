@@ -23,7 +23,9 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
-| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+| 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
+|-
+| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
 |-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
@@ -45,9 +47,13 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 113 || GetSaveDataThumbnailExistence ||
 |-
+| 130 || [6.0.0+] || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
+|-
+| 140 || [6.0.0+] || 
+|-
 | 190 || GetUserLastOpenedApplication ||
 |-
-| 191 || [5.0.0+] ActivateOpenContextHolder ||
+| 191 || [5.0.0-5.1.0] ActivateOpenContextHolder ||
 |-
 | 200 || BeginUserRegistration ||
 |-
@@ -323,7 +329,7 @@ This is "nn::account::nas::IOAuthProcedureForNintendoAccountLinkage".
 |-
 | 101 || IsNetworkServiceAccountReplaced ||
 |-
-| 199 || GetUrlForIntroductionOfExtraMembership ||
+| [?-5.1.0] 199 || GetUrlForIntroductionOfExtraMembership ||
 |}
 
 == INotifier ==
@@ -443,7 +449,9 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
-| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+| 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
+|-
+| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
 |-
 | 100 || InitializeApplicationInfo ||
 |-
@@ -461,6 +469,13 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 130 || [5.0.0+] LoadOpenContext ||
 |-
+| 131 || [6.0.0+] || 
+|-
+| 140 || [6.0.0+] || 
+|-
+| 141 || [6.0.0+] || 
+|-
+| 150 || [6.0.0+] || 
 |}
 
 == IGuestLoginRequest ==
@@ -504,6 +519,25 @@ This is "nn::account::baas::IManagerForApplication".
 |-
 | 160 || [5.0.0+] StoreOpenContext ||
 |-
+| 170 || [6.0.0+] || No input, returns an [[#IAsyncNetworkServiceLicenseKindContext]].
+|}
+
+== IAsyncNetworkServiceLicenseKindContext ==
+This was added with [6.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|-
+| 1 || || 
+|-
+| 2 || || 
+|-
+| 3 || || 
+|-
+| 100 || || 
 |}
 
 = acc:u1 =
@@ -531,7 +565,9 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 51 || TrySelectUserWithoutInteraction ||
 |-
-| 60 || [5.0.0+] ListOpenContextStoredUsers ||
+| 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
+|-
+| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
 |-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
@@ -553,9 +589,13 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 113 || [5.0.0+] GetSaveDataThumbnailExistence ||
 |-
+| 130 || [6.0.0+] || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
+|-
+| 140 || [6.0.0+] || 
+|-
 | 190 || GetUserLastOpenedApplication ||
 |-
-| 191 || [5.0.0+] ActivateOpenContextHolder ||
+| 191 || [5.0.0-5.1.0] ActivateOpenContextHolder ||
 |-
 | 997 || DebugInvalidateTokenCacheForUser ||
 |-
@@ -589,7 +629,7 @@ This is "nn::dauth::detail::IService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || ? ([5.0.0-5.1.0] ?)
 |-
 | 1 || [6.0.0+]
 |-
@@ -600,6 +640,24 @@ This is "nn::dauth::detail::IService".
 | 11 || [6.0.0+]
 |-
 | 12 || [6.0.0+]
+|}
+
+== IAsyncResult ==
+This is "nn::dauth::detail::IAsyncResult".
+
+This was added with [6.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
 |}
 
 = UserData =
