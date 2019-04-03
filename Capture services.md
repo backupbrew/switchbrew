@@ -22,6 +22,7 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 15    | \[4.0.0+\]                                        |
 | 16    | \[4.0.0+\]                                        |
 | 17    | \[4.0.0+\]                                        |
+| 18    | \[6.0.0+\]                                        |
 | 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot              |
 | 301   | GetLastThumbnail                                  |
 | 401   | GetAutoSavingStorage                              |
@@ -36,6 +37,7 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 8013  | \[4.0.0+\]                                        |
 | 8021  | GetAlbumEntryFromApplicationAlbumEntryAruid       |
 | 10011 | SetInternalErrorConversionEnabled                 |
+| 50000 | \[6.0.0+\]                                        |
 | 60002 | \[4.0.0+\]                                        |
 
 # caps:c
