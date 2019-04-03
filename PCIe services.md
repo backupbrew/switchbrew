@@ -49,4 +49,13 @@ This is "nn::pcie::detail::ISession".
 | 19  | SetIrqEnable           |
 | 20  | SetAspmEnable          |
 
+# pcie:log
+
+This was added with \[6.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+
 [Category:Services](Category:Services "wikilink")
