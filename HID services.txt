@@ -485,7 +485,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 142 || [5.0.0+] DeactivateSevenSixAxisSensor
 |-
-| 143 || [6.0.0+] GetConsoleSixAxisSensorCountStates
+| 143 || [5.0.0+] GetConsoleSixAxisSensorCountStates
 |-
 | 201 || ActivateFirmwareUpdate
 |-

@@ -343,7 +343,7 @@ This is "nn::hid::IHidDebugServer".
 | 140 | DeactivateConsoleSixAxisSensor                      |
 | 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency |
 | 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor             |
-| 143 | \[6.0.0+\] GetConsoleSixAxisSensorCountStates       |
+| 143 | \[5.0.0+\] GetConsoleSixAxisSensorCountStates       |
 | 201 | ActivateFirmwareUpdate                              |
 | 202 | DeactivateFirmwareUpdate                            |
 | 203 | StartFirmwareUpdate                                 |
