@@ -374,9 +374,9 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 100 || [4.0.0+] [[#CreateGameMovieTrimmer]] ||
 |-
-| 101 || [6.0.0+] ReserveResourceForMovieOperation ||
+| 101 || [?+] ReserveResourceForMovieOperation ||
 |-
-| 102 || [6.0.0+] UnreserveResourceForMovieOperation ||
+| 102 || [?+] UnreserveResourceForMovieOperation ||
 |-
 | 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}
@@ -482,7 +482,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 90 || [7.0.0+] SetRequiresGpuResourceUse
 |-
-| 101 || [6.0.0+] BeginToObserveHidInputForDevelop
+| 101 || [?+] BeginToObserveHidInputForDevelop
 |}
 
 ==== SetRequiresGpuResourceUse ====
@@ -593,7 +593,7 @@ Takes an input u8, no output.
 |-
 | 122 || [5.0.0+] UnpopToUserChannel || 
 |-
-| 123 || [6.0.0+] GetPreviousProgramIndex || 
+| 123 || [?+] GetPreviousProgramIndex || 
 |-
 | 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
 |-
@@ -1023,7 +1023,7 @@ No input, returns an output handle.
 |-
 | 42 || [4.0.0+] GetSystemSharedLayerHandle
 |-
-| 43 || [6.0.0+] GetSystemSharedBufferHandle
+| 43 || [?+] GetSystemSharedBufferHandle
 |-
 | 50 || SetHandlesRequestToDisplay
 |-
@@ -1051,7 +1051,7 @@ No input, returns an output handle.
 |-
 | 70 || [5.0.0+] ReportMultimediaError
 |-
-| 71 || [6.0.0+] GetCurrentIlluminanceEx
+| 71 || [?+] GetCurrentIlluminanceEx
 |-
 | 80 || [5.0.0+] SetWirelessPriorityMode
 |-

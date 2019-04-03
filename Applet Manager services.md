@@ -305,8 +305,8 @@ buffer. The size of the state buffer is
 | 80  | \[6.0.0+\] RequestExitToSelf                                                                                |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |       |
-| 101 | \[6.0.0+\] ReserveResourceForMovieOperation                                                                 |       |
-| 102 | \[6.0.0+\] UnreserveResourceForMovieOperation                                                               |       |
+| 101 | \[?+\] ReserveResourceForMovieOperation                                                                     |       |
+| 102 | \[?+\] UnreserveResourceForMovieOperation                                                                   |       |
 | 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |       |
 
 #### PopInData
@@ -408,7 +408,7 @@ Takes an input u64 and handle, returns a GRC
 | 10  | \[6.0.0+\] StartShutdownSequenceForOverlay       |
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
 | 90  | \[7.0.0+\] SetRequiresGpuResourceUse             |
-| 101 | \[6.0.0+\] BeginToObserveHidInputForDevelop      |
+| 101 | \[?+\] BeginToObserveHidInputForDevelop          |
 
 #### SetRequiresGpuResourceUse
 
@@ -471,7 +471,7 @@ output.
 | 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |                                                                                                             |
 | 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |                                                                                                             |
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                                                                             |
-| 123  | \[6.0.0+\] GetPreviousProgramIndex                                                                                              |                                                                                                             |
+| 123  | \[?+\] GetPreviousProgramIndex                                                                                                  |                                                                                                             |
 | 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                                                                             |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                                                                             |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |                                                                                                             |
@@ -956,7 +956,7 @@ handle.
 | 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                    |
 | 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                 |
 | 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                   |
-| 43   | \[6.0.0+\] GetSystemSharedBufferHandle                                                                  |
+| 43   | \[?+\] GetSystemSharedBufferHandle                                                                      |
 | 50   | SetHandlesRequestToDisplay                                                                              |
 | 51   | ApproveToDisplay                                                                                        |
 | 60   | OverrideAutoSleepTimeAndDimmingTime                                                                     |
@@ -970,7 +970,7 @@ handle.
 | 68   | \[4.0.0+\] SetAutoSleepDisabled                                                                         |
 | 69   | \[4.0.0+\] IsAutoSleepDisabled                                                                          |
 | 70   | \[5.0.0+\] ReportMultimediaError                                                                        |
-| 71   | \[6.0.0+\] GetCurrentIlluminanceEx                                                                      |
+| 71   | \[?+\] GetCurrentIlluminanceEx                                                                          |
 | 80   | \[5.0.0+\] SetWirelessPriorityMode                                                                      |
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
