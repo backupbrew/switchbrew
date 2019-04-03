@@ -11,6 +11,8 @@ This is "nn::ssl::sf::ISslService".
 | 4   | DebugIoctl                   |
 | 5   | SetInterfaceVersion          |
 | 6   | \[5.0.0+\] FlushSessionCache |
+| 7   | \[6.0.0+\]                   |
+| 8   | \[6.0.0+\]                   |
 
 ## ISslContext
 
