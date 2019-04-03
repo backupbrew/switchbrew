@@ -24,6 +24,8 @@ This is "nn::gpio::IManager".
 | 8 || [5.0.0+] IsWakeEventActive2
 |-
 | 9 || [5.0.0+] SetWakeEventActiveFlagSetForDebug2
+|-
+| 10 || [6.0.0+]
 |}
 
 == Known Devices ==
@@ -258,6 +260,8 @@ This is "nn::gpio::IPadSession".
 | 15 || GetDebounceTime
 |-
 | 16 || [4.0.0+] SetValueForSleepState
+|-
+| 17 || [6.0.0+]
 |}
 
 = i2c, i2c:pcv =
@@ -271,9 +275,11 @@ This is "nn::i2c::IManager".
 |-
 | 1 || [[#OpenSession_2|OpenSession]]
 |-
-| 2 || [[#HasDevice|HasDevice]]
+| [1.0.0-5.1.0] 2 || [[#HasDevice|HasDevice]]
 |-
-| 3 || [[#HasDeviceForDev|HasDeviceForDev]]
+| [1.0.0-5.1.0] 3 || [[#HasDeviceForDev|HasDeviceForDev]]
+|-
+| 4 || [6.0.0+]
 |}
 
 == Known Devices ==
@@ -355,17 +361,19 @@ This is "nn::i2c::ISession".
 |-
 ! Cmd || Name
 |-
-| 0 || Send
+| [1.0.0-5.1.0] 0 || Send
 |-
-| 1 || Receive
+| [1.0.0-5.1.0] 1 || Receive
 |-
-| 2 || ExecuteCommandList
+| [1.0.0-5.1.0] 2 || ExecuteCommandList
 |-
 | 10 || [[#SendAuto]]
 |-
 | 11 || ReceiveAuto
 |-
 | 12 || [[#ExecuteCommandListAuto]]
+|-
+| 13 || [6.0.0+]
 |}
 
 == SendAuto ==
@@ -474,6 +482,8 @@ This is "nn::pwm::IManager".
 | 0 || OpenSessionForDev
 |-
 | 1 || OpenSession
+|-
+| 2 || [6.0.0+]
 |}
 
 == Known Channels ==
@@ -506,6 +516,10 @@ This is "nn::pwm::IChannelSession".
 | 4 || SetEnabled
 |-
 | 5 || GetEnabled
+|-
+| 6 || [6.0.0+]
+|-
+| 7 || [6.0.0+]
 |}
 
 = pinmux =

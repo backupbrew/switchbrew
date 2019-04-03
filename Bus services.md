@@ -14,6 +14,7 @@ This is "nn::gpio::IManager".
 | 7   | \[5.0.0+\] [\#OpenSession2](#OpenSession2 "wikilink")  |
 | 8   | \[5.0.0+\] IsWakeEventActive2                          |
 | 9   | \[5.0.0+\] SetWakeEventActiveFlagSetForDebug2          |
+| 10  | \[6.0.0+\]                                             |
 
 ## Known Devices
 
@@ -774,17 +775,20 @@ This is "nn::gpio::IPadSession".
 | 14  | SetDebounceTime                  |
 | 15  | GetDebounceTime                  |
 | 16  | \[4.0.0+\] SetValueForSleepState |
+| 17  | \[6.0.0+\]                       |
 
 # i2c, i2c:pcv
 
-This is "nn::i2c::IManager".
+This is
+"nn::i2c::IManager".
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | [OpenSessionForDev](#OpenSessionForDev_2 "wikilink") |
-| 1   | [OpenSession](#OpenSession_2 "wikilink")             |
-| 2   | [HasDevice](#HasDevice "wikilink")                   |
-| 3   | [HasDeviceForDev](#HasDeviceForDev "wikilink")       |
+| Cmd               | Name                                                 |
+| ----------------- | ---------------------------------------------------- |
+| 0                 | [OpenSessionForDev](#OpenSessionForDev_2 "wikilink") |
+| 1                 | [OpenSession](#OpenSession_2 "wikilink")             |
+| \[1.0.0-5.1.0\] 2 | [HasDevice](#HasDevice "wikilink")                   |
+| \[1.0.0-5.1.0\] 3 | [HasDeviceForDev](#HasDeviceForDev "wikilink")       |
+| 4                 | \[6.0.0+\]                                           |
 
 ## Known Devices
 
@@ -842,16 +846,18 @@ true if the device exists or false otherwise.
 
 ## II2cSession
 
-This is "nn::i2c::ISession".
+This is
+"nn::i2c::ISession".
 
-| Cmd | Name                                                           |
-| --- | -------------------------------------------------------------- |
-| 0   | Send                                                           |
-| 1   | Receive                                                        |
-| 2   | ExecuteCommandList                                             |
-| 10  | [\#SendAuto](#SendAuto "wikilink")                             |
-| 11  | ReceiveAuto                                                    |
-| 12  | [\#ExecuteCommandListAuto](#ExecuteCommandListAuto "wikilink") |
+| Cmd               | Name                                                           |
+| ----------------- | -------------------------------------------------------------- |
+| \[1.0.0-5.1.0\] 0 | Send                                                           |
+| \[1.0.0-5.1.0\] 1 | Receive                                                        |
+| \[1.0.0-5.1.0\] 2 | ExecuteCommandList                                             |
+| 10                | [\#SendAuto](#SendAuto "wikilink")                             |
+| 11                | ReceiveAuto                                                    |
+| 12                | [\#ExecuteCommandListAuto](#ExecuteCommandListAuto "wikilink") |
+| 13                | \[6.0.0+\]                                                     |
 
 ## SendAuto
 
@@ -944,6 +950,7 @@ This is "nn::pwm::IManager".
 | --- | ----------------- |
 | 0   | OpenSessionForDev |
 | 1   | OpenSession       |
+| 2   | \[6.0.0+\]        |
 
 ## Known Channels
 
@@ -965,6 +972,8 @@ This is "nn::pwm::IChannelSession".
 | 3   | GetDuty    |
 | 4   | SetEnabled |
 | 5   | GetEnabled |
+| 6   | \[6.0.0+\] |
+| 7   | \[6.0.0+\] |
 
 # pinmux
 
