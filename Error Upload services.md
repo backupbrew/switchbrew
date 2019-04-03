@@ -21,6 +21,7 @@ This is "nn::eupld::sf::IControl".
 | 1   | ImportCrt     |
 | 2   | ImportPki     |
 | 3   | SetAutoUpload |
+| 4   | \[6.0.0+\]    |
 
 # eupld:r
 
