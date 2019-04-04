@@ -204,28 +204,28 @@ This is "nn::pcv::IImmediateManager".
 This is
 "nn::timesrv::detail::<service::IStaticService>".
 
-| Cmd | Name                                                        | Notes                                                          |
-| --- | ----------------------------------------------------------- | -------------------------------------------------------------- |
-| 0   | GetStandardUserSystemClock                                  | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 1   | GetStandardNetworkSystemClock                               | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 2   | GetStandardSteadyClock                                      | Returns an [\#ISteadyClock](#ISteadyClock "wikilink").         |
-| 3   | GetTimeZoneService                                          | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
-| 4   | GetStandardLocalSystemClock                                 | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 5   | \[4.0.0+\] GetEphemeralNetworkSystemClock                   | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
-| 20  | \[6.0.0+\]                                                  |                                                                |
-| 30  | \[6.0.0+\]                                                  |                                                                |
-| 31  | \[6.0.0+\]                                                  |                                                                |
-| 50  | \[4.0.0+\] SetStandardSteadyClockInternalOffset             |                                                                |
-| 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled         |                                                                |
-| 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled        |                                                                |
-| 102 | \[5.0.0+\] GetStandardUserSystemClockInitialYear            |                                                                |
-| 200 | \[3.0.0+\] IsStandardNetworkSystemClockAccuracySufficient   |                                                                |
-| 201 | \[6.0.0+\]                                                  |                                                                |
-| 300 | \[4.0.0+\] CalculateMonotonicSystemClockBaseTimePoint       |                                                                |
-| 400 | \[4.0.0+\] GetClockSnapshot                                 |                                                                |
-| 401 | \[4.0.0+\] GetClockSnapshotFromSystemClockContext           |                                                                |
-| 500 | \[4.0.0+\] CalculateStandardUserSystemClockDifferenceByUser |                                                                |
-| 501 | \[4.0.0+\] CalculateSpanBetween                             |                                                                |
+| Cmd | Name                                                                | Notes                                                          |
+| --- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| 0   | GetStandardUserSystemClock                                          | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 1   | GetStandardNetworkSystemClock                                       | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 2   | GetStandardSteadyClock                                              | Returns an [\#ISteadyClock](#ISteadyClock "wikilink").         |
+| 3   | GetTimeZoneService                                                  | Returns an [\#ITimeZoneService](#ITimeZoneService "wikilink"). |
+| 4   | GetStandardLocalSystemClock                                         | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 5   | \[4.0.0+\] GetEphemeralNetworkSystemClock                           | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
+| 20  | \[6.0.0+\] GetSharedMemoryNativeHandle                              |                                                                |
+| 30  | \[6.0.0+\] GetStandardNetworkClockOperationEventReadableHandle      |                                                                |
+| 31  | \[6.0.0+\] GetEphemeralNetworkClockOperationEventReadableHandle     |                                                                |
+| 50  | \[4.0.0+\] SetStandardSteadyClockInternalOffset                     |                                                                |
+| 100 | IsStandardUserSystemClockAutomaticCorrectionEnabled                 |                                                                |
+| 101 | SetStandardUserSystemClockAutomaticCorrectionEnabled                |                                                                |
+| 102 | \[5.0.0+\] GetStandardUserSystemClockInitialYear                    |                                                                |
+| 200 | \[3.0.0+\] IsStandardNetworkSystemClockAccuracySufficient           |                                                                |
+| 201 | \[6.0.0+\] GetStandardUserSystemClockAutomaticCorrectionUpdatedTime |                                                                |
+| 300 | \[4.0.0+\] CalculateMonotonicSystemClockBaseTimePoint               |                                                                |
+| 400 | \[4.0.0+\] GetClockSnapshot                                         |                                                                |
+| 401 | \[4.0.0+\] GetClockSnapshotFromSystemClockContext                   |                                                                |
+| 500 | \[4.0.0+\] CalculateStandardUserSystemClockDifferenceByUser         |                                                                |
+| 501 | \[4.0.0+\] CalculateSpanBetween                                     |                                                                |
 
 ## ISteadyClock
 

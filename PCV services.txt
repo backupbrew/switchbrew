@@ -369,11 +369,11 @@ This is "nn::timesrv::detail::service::IStaticService".
 |-
 | 5 || [4.0.0+] GetEphemeralNetworkSystemClock || Returns an [[#ISystemClock]].
 |-
-| 20 || [6.0.0+] || 
+| 20 || [6.0.0+] GetSharedMemoryNativeHandle || 
 |-
-| 30 || [6.0.0+] || 
+| 30 || [6.0.0+] GetStandardNetworkClockOperationEventReadableHandle || 
 |-
-| 31 || [6.0.0+] || 
+| 31 || [6.0.0+] GetEphemeralNetworkClockOperationEventReadableHandle || 
 |-
 | 50 || [4.0.0+] SetStandardSteadyClockInternalOffset || 
 |-
@@ -385,7 +385,7 @@ This is "nn::timesrv::detail::service::IStaticService".
 |-
 | 200 || [3.0.0+] IsStandardNetworkSystemClockAccuracySufficient || 
 |-
-| 201 || [6.0.0+] || 
+| 201 || [6.0.0+] GetStandardUserSystemClockAutomaticCorrectionUpdatedTime || 
 |-
 | 300 || [4.0.0+] CalculateMonotonicSystemClockBaseTimePoint || 
 |-
