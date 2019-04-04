@@ -19,9 +19,9 @@ This is "nn::ssl::sf::ISslService".
 |-
 | 6 || [5.0.0+] FlushSessionCache
 |-
-| 7 || [6.0.0+]
+| 7 || [6.0.0+] SetDebugOption
 |-
-| 8 || [6.0.0+]
+| 8 || [6.0.0+] GetDebugOption
 |}
 
 == ISslContext ==
