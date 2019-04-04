@@ -15,7 +15,7 @@ This is
 | 50  | IsUserRegistrationRequestPermitted                       |                                                                                                 |
 | 51  | TrySelectUserWithoutInteraction                          |                                                                                                 |
 | 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers               |                                                                                                 |
-| 99  | \[6.0.0+\]                                               | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                            |
+| 99  | \[6.0.0+\] DebugActivateOpenContextRetention             | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                            |
 | 100 | GetUserRegistrationNotifier                              | Returns an [\#INotifier](#INotifier "wikilink").                                                |
 | 101 | GetUserStateChangeNotifier                               | Returns an [\#INotifier](#INotifier "wikilink").                                                |
 | 102 | GetBaasAccountManagerForSystemService                    | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink").                  |
@@ -26,8 +26,8 @@ This is
 | 111 | ClearSaveDataThumbnail                                   |                                                                                                 |
 | 112 | LoadSaveDataThumbnail                                    |                                                                                                 |
 | 113 | GetSaveDataThumbnailExistence                            |                                                                                                 |
-| 130 | \[6.0.0+\]                                               | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink"). |
-| 140 | \[6.0.0+\]                                               |                                                                                                 |
+| 130 | \[6.0.0+\] ActivateOpenContextRetention                  | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink"). |
+| 140 | \[6.0.0+\] ListQualifiedUsers                            |                                                                                                 |
 | 190 | GetUserLastOpenedApplication                             |                                                                                                 |
 | 191 | \[5.0.0-5.1.0\] ActivateOpenContextHolder                |                                                                                                 |
 | 200 | BeginUserRegistration                                    |                                                                                                 |
@@ -297,7 +297,7 @@ This is
 | 50  | IsUserRegistrationRequestPermitted              |                                                                            |
 | 51  | TrySelectUserWithoutInteraction                 |                                                                            |
 | 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers      |                                                                            |
-| 99  | \[6.0.0+\]                                      | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").       |
+| 99  | \[6.0.0+\] DebugActivateOpenContextRetention    | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").       |
 | 100 | InitializeApplicationInfo                       |                                                                            |
 | 101 | GetBaasAccountManagerForApplication             | Returns an [\#IManagerForApplication](#IManagerForApplication "wikilink"). |
 | 102 | AuthenticateApplicationAsync                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                   |
@@ -306,10 +306,10 @@ This is
 | 111 | ClearSaveDataThumbnail                          |                                                                            |
 | 120 | CreateGuestLoginRequest                         | Returns an [\#IGuestLoginRequest](#IGuestLoginRequest "wikilink").         |
 | 130 | \[5.0.0+\] LoadOpenContext                      |                                                                            |
-| 131 | \[6.0.0+\]                                      |                                                                            |
-| 140 | \[6.0.0+\]                                      |                                                                            |
-| 141 | \[6.0.0+\]                                      |                                                                            |
-| 150 | \[6.0.0+\]                                      |                                                                            |
+| 131 | \[6.0.0+\] ListOpenContextStoredUsers           |                                                                            |
+| 140 | \[6.0.0+\] InitializeApplicationInfo            |                                                                            |
+| 141 | \[6.0.0+\] ListQualifiedUsers                   |                                                                            |
+| 150 | \[6.0.0+\] IsUserAccountSwitchLocked            |                                                                            |
 
 ## IGuestLoginRequest
 
@@ -338,19 +338,21 @@ This is
 | 130 | GetNintendoAccountUserResourceCacheForApplication |                                                                                                                      |
 | 150 | CreateAuthorizationRequest                        | Returns an [\#IAuthorizationRequest](#IAuthorizationRequest "wikilink").                                             |
 | 160 | \[5.0.0+\] StoreOpenContext                       |                                                                                                                      |
-| 170 | \[6.0.0+\]                                        | No input, returns an [\#IAsyncNetworkServiceLicenseKindContext](#IAsyncNetworkServiceLicenseKindContext "wikilink"). |
+| 170 | \[6.0.0+\] LoadNetworkServiceLicenseKindAsync     | No input, returns an [\#IAsyncNetworkServiceLicenseKindContext](#IAsyncNetworkServiceLicenseKindContext "wikilink"). |
 
 ## IAsyncNetworkServiceLicenseKindContext
 
+This is "nn::account::detail::IAsyncNetworkServiceLicenseKindContext".
+
 This was added with \[6.0.0+\].
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-| 1   |      |       |
-| 2   |      |       |
-| 3   |      |       |
-| 100 |      |       |
+| Cmd | Name                         | Notes |
+| --- | ---------------------------- | ----- |
+| 0   | GetSystemEvent               |       |
+| 1   | Cancel                       |       |
+| 2   | HasDone                      |       |
+| 3   | GetResult                    |       |
+| 100 | GetNetworkServiceLicenseKind |       |
 
 # acc:u1
 
@@ -369,7 +371,7 @@ This is
 | 50  | IsUserRegistrationRequestPermitted              |                                                                                                 |
 | 51  | TrySelectUserWithoutInteraction                 |                                                                                                 |
 | 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers      |                                                                                                 |
-| 99  | \[6.0.0+\]                                      | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                            |
+| 99  | \[6.0.0+\] DebugActivateOpenContextRetention    | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                            |
 | 100 | GetUserRegistrationNotifier                     | Returns an [\#INotifier](#INotifier "wikilink").                                                |
 | 101 | GetUserStateChangeNotifier                      | Returns an [\#INotifier](#INotifier "wikilink").                                                |
 | 102 | GetBaasAccountManagerForSystemService           | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink").                  |
@@ -380,8 +382,8 @@ This is
 | 111 | ClearSaveDataThumbnail                          |                                                                                                 |
 | 112 | LoadSaveDataThumbnail                           |                                                                                                 |
 | 113 | \[5.0.0+\] GetSaveDataThumbnailExistence        |                                                                                                 |
-| 130 | \[6.0.0+\]                                      | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink"). |
-| 140 | \[6.0.0+\]                                      |                                                                                                 |
+| 130 | \[6.0.0+\] ActivateOpenContextRetention         | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink"). |
+| 140 | \[6.0.0+\] ListQualifiedUsers                   |                                                                                                 |
 | 190 | GetUserLastOpenedApplication                    |                                                                                                 |
 | 191 | \[5.0.0-5.1.0\] ActivateOpenContextHolder       |                                                                                                 |
 | 997 | DebugInvalidateTokenCacheForUser                |                                                                                                 |

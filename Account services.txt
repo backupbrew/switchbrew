@@ -25,7 +25,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
 |-
-| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
+| 99 || [6.0.0+] DebugActivateOpenContextRetention || No input, returns an [[#ISessionObject]].
 |-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
@@ -47,9 +47,9 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 113 || GetSaveDataThumbnailExistence ||
 |-
-| 130 || [6.0.0+] || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
+| 130 || [6.0.0+] ActivateOpenContextRetention || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
 |-
-| 140 || [6.0.0+] || 
+| 140 || [6.0.0+] ListQualifiedUsers || 
 |-
 | 190 || GetUserLastOpenedApplication ||
 |-
@@ -451,7 +451,7 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
 |-
-| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
+| 99 || [6.0.0+] DebugActivateOpenContextRetention || No input, returns an [[#ISessionObject]].
 |-
 | 100 || InitializeApplicationInfo ||
 |-
@@ -469,13 +469,13 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 130 || [5.0.0+] LoadOpenContext ||
 |-
-| 131 || [6.0.0+] || 
+| 131 || [6.0.0+] ListOpenContextStoredUsers || 
 |-
-| 140 || [6.0.0+] || 
+| 140 || [6.0.0+] InitializeApplicationInfo || 
 |-
-| 141 || [6.0.0+] || 
+| 141 || [6.0.0+] ListQualifiedUsers || 
 |-
-| 150 || [6.0.0+] || 
+| 150 || [6.0.0+] IsUserAccountSwitchLocked || 
 |}
 
 == IGuestLoginRequest ==
@@ -519,25 +519,27 @@ This is "nn::account::baas::IManagerForApplication".
 |-
 | 160 || [5.0.0+] StoreOpenContext ||
 |-
-| 170 || [6.0.0+] || No input, returns an [[#IAsyncNetworkServiceLicenseKindContext]].
+| 170 || [6.0.0+] LoadNetworkServiceLicenseKindAsync || No input, returns an [[#IAsyncNetworkServiceLicenseKindContext]].
 |}
 
 == IAsyncNetworkServiceLicenseKindContext ==
+This is "nn::account::detail::IAsyncNetworkServiceLicenseKindContext".
+
 This was added with [6.0.0+].
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || GetSystemEvent || 
 |-
-| 1 || || 
+| 1 || Cancel || 
 |-
-| 2 || || 
+| 2 || HasDone || 
 |-
-| 3 || || 
+| 3 || GetResult || 
 |-
-| 100 || || 
+| 100 || GetNetworkServiceLicenseKind || 
 |}
 
 = acc:u1 =
@@ -567,7 +569,7 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 60 || [5.0.0-5.1.0] ListOpenContextStoredUsers ||
 |-
-| 99 || [6.0.0+] || No input, returns an [[#ISessionObject]].
+| 99 || [6.0.0+] DebugActivateOpenContextRetention || No input, returns an [[#ISessionObject]].
 |-
 | 100 || GetUserRegistrationNotifier || Returns an [[#INotifier]].
 |-
@@ -589,9 +591,9 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 113 || [5.0.0+] GetSaveDataThumbnailExistence ||
 |-
-| 130 || [6.0.0+] || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
+| 130 || [6.0.0+] ActivateOpenContextRetention || Takes a total of 0x8-bytes of input, returns an [[#ISessionObject]].
 |-
-| 140 || [6.0.0+] || 
+| 140 || [6.0.0+] ListQualifiedUsers || 
 |-
 | 190 || GetUserLastOpenedApplication ||
 |-
