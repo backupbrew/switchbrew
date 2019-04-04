@@ -31,7 +31,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1013 | \[4.0.0+\] ConfirmStereoVisionPermission                 |
 | 1014 | \[5.0.0+\] ConfirmPlayableApplicationVideoOld            |
 | 1015 | \[5.0.0+\] ConfirmPlayableApplicationVideo               |
-| 1016 | \[6.0.0+\]                                               |
+| 1016 | \[6.0.0+\] ConfirmShowNewsPermission                     |
 | 1031 | IsRestrictionEnabled                                     |
 | 1032 | GetSafetyLevel                                           |
 | 1033 | SetSafetyLevel                                           |
@@ -47,7 +47,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1045 | UpdateFreeCommunicationApplicationList                   |
 | 1046 | DisableFeaturesForReset                                  |
 | 1047 | NotifyApplicationDownloadStarted                         |
-| 1048 | \[6.0.0+\]                                               |
+| 1048 | \[6.0.0+\] NotifyNetworkProfileCreated                   |
 | 1061 | \[4.0.0+\] ConfirmStereoVisionRestrictionConfigurable    |
 | 1062 | \[4.0.0+\] GetStereoVisionRestriction                    |
 | 1063 | \[4.0.0+\] SetStereoVisionRestriction                    |
@@ -66,7 +66,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 | 1411 | GetPairingAccountInfo                                    |
 | 1421 | GetAccountNickname                                       |
 | 1424 | GetAccountState                                          |
-| 1425 | \[6.0.0+\]                                               |
+| 1425 | \[6.0.0+\] RequestPostEvents                             |
 | 1432 | GetSynchronizationEvent                                  |
 | 1451 | StartPlayTimer                                           |
 | 1452 | StopPlayTimer                                            |
