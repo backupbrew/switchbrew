@@ -138,4 +138,74 @@ This is "nn::mii::detail::IImageDatabaseService".
 | 103 | ExportFile       |
 | 104 | ForceInitialize  |
 
+# pdm:ntfy
+
+This is "nn::pdm::detail::INotifyService".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   |            |
+| 6   |            |
+| 7   |            |
+| 8   | \[6.0.0+\] |
+
+# pdm:qry
+
+This is "nn::pdm::detail::IQueryService".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   |            |
+| 6   |            |
+| 7   |            |
+| 8   |            |
+| 9   |            |
+| 10  |            |
+| 11  |            |
+| 12  |            |
+| 13  |            |
+| 14  | \[6.0.0+\] |
+| 15  | \[6.0.0+\] |
+| 16  | \[6.0.0+\] |
+
+# avm
+
+This is "nn::avm::srv::IAvmService".
+
+This was added with
+\[6.0.0+\].
+
+| Cmd  | Name                                                                             |
+| ---- | -------------------------------------------------------------------------------- |
+| 100  |                                                                                  |
+| 101  |                                                                                  |
+| 102  |                                                                                  |
+| 103  | No input, returns an [\#IVersionListImporter](#IVersionListImporter "wikilink"). |
+| 200  |                                                                                  |
+| 202  |                                                                                  |
+| 1000 |                                                                                  |
+| 1001 |                                                                                  |
+| 1002 |                                                                                  |
+
+## IVersionListImporter
+
+This is "nn::avm::srv::IVersionListImporter".
+
+This was added with \[6.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+
 [Category:Services](Category:Services "wikilink")
