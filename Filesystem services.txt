@@ -1510,11 +1510,11 @@ The 0x10-byte struct passed to [[#CreateSaveDataFileSystem]] has the first 0x5-b
 | 0x2
 | Save data index
 |-
-| 0x40
+| 0x3A
 | 0x1
 | Save data 'rank' or 'precedence'. 0 if this save data is considered the primary save data. 1 if it's considered the secondary save data.
 |-
-| 0x41
+| 0x3B
 | 0x25
 | Unknown. Usually zeros?
 |}

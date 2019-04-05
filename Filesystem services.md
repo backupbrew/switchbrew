@@ -1912,8 +1912,8 @@ all-zero.
 | 0x28   | 0x8  | Application titleID, for regular SaveData.                                                                                               |
 | 0x30   | 0x8  | Raw saveimage size                                                                                                                       |
 | 0x38   | 0x2  | Save data index                                                                                                                          |
-| 0x40   | 0x1  | Save data 'rank' or 'precedence'. 0 if this save data is considered the primary save data. 1 if it's considered the secondary save data. |
-| 0x41   | 0x25 | Unknown. Usually zeros?                                                                                                                  |
+| 0x3A   | 0x1  | Save data 'rank' or 'precedence'. 0 if this save data is considered the primary save data. 1 if it's considered the secondary save data. |
+| 0x3B   | 0x25 | Unknown. Usually zeros?                                                                                                                  |
 
 This is a 0x60-byte struct.
 
