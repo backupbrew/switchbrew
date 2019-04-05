@@ -980,7 +980,7 @@ output.
 | 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                    |
 | 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                 |
 | 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                   |
-| 43   | \[?+\] GetSystemSharedBufferHandle                                                                      |
+| 43   | \[5.0.0+\] GetSystemSharedBufferHandle                                                                  |
 | 50   | SetHandlesRequestToDisplay                                                                              |
 | 51   | ApproveToDisplay                                                                                        |
 | 60   | OverrideAutoSleepTimeAndDimmingTime                                                                     |
@@ -991,11 +991,11 @@ output.
 | 65   | \[2.0.0+\] ReportUserIsActive                                                                           |
 | 66   | \[3.0.0+\] GetCurrentIlluminance                                                                        |
 | 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                               |
-| 68   | \[4.0.0+\] SetAutoSleepDisabled                                                                         |
-| 69   | \[4.0.0+\] IsAutoSleepDisabled                                                                          |
-| 70   | \[5.0.0+\] ReportMultimediaError                                                                        |
-| 71   | \[?+\] GetCurrentIlluminanceEx                                                                          |
-| 80   | \[5.0.0+\] SetWirelessPriorityMode                                                                      |
+| 68   | \[5.0.0+\] SetAutoSleepDisabled                                                                         |
+| 69   | \[5.0.0+\] IsAutoSleepDisabled                                                                          |
+| 70   | \[4.0.0+\] ReportMultimediaError                                                                        |
+| 71   | \[5.0.0+\] GetCurrentIlluminanceEx                                                                      |
+| 80   | \[4.0.0+\] SetWirelessPriorityMode                                                                      |
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink") |

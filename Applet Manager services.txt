@@ -1038,7 +1038,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 42 || [4.0.0+] GetSystemSharedLayerHandle
 |-
-| 43 || [?+] GetSystemSharedBufferHandle
+| 43 || [5.0.0+] GetSystemSharedBufferHandle
 |-
 | 50 || SetHandlesRequestToDisplay
 |-
@@ -1060,15 +1060,15 @@ No input, returns a total of 4-bytes of output.
 |-
 | 67 || [3.0.0+] [[#IsIlluminanceAvailable]]
 |-
-| 68 || [4.0.0+] SetAutoSleepDisabled
+| 68 || [5.0.0+] SetAutoSleepDisabled
 |-
-| 69 || [4.0.0+] IsAutoSleepDisabled
+| 69 || [5.0.0+] IsAutoSleepDisabled
 |-
-| 70 || [5.0.0+] ReportMultimediaError
+| 70 || [4.0.0+] ReportMultimediaError
 |-
-| 71 || [?+] GetCurrentIlluminanceEx
+| 71 || [5.0.0+] GetCurrentIlluminanceEx
 |-
-| 80 || [5.0.0+] SetWirelessPriorityMode
+| 80 || [4.0.0+] SetWirelessPriorityMode
 |-
 | 90 || [6.0.0+] GetAccumulatedSuspendedTickValue
 |-
