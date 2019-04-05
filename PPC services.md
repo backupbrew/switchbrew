@@ -40,18 +40,31 @@ This is
 | 3   | GetLastThrottlingState                                                                            |
 | 4   | ClearLastThrottlingState                                                                          |
 | 5   | \[5.0.0+\] LoadAndApplySettings                                                                   |
-| 6   | \[7.0.0+\] SetCpuBoostMode                                                                        |
+| 6   | \[7.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                       |
 | 7   | \[7.0.0+\] [\#GetCurrentPerformanceConfiguration](#GetCurrentPerformanceConfiguration "wikilink") |
 
 ## GetPerformanceEvent
 
 Returns an [\#ISession](#ISession "wikilink").
 
+## SetCpuBoostMode
+
+Takes an u32 [\#CpuBoostMode](#CpuBoostMode "wikilink").
+
 ## GetCurrentPerformanceConfiguration
 
 Returns the currently active
 [\#PerformanceConfiguration](#PerformanceConfiguration "wikilink")
-(default value is 0x00020003).
+(default value is
+0x00020003).
+
+### CpuBoostMode
+
+| Mode | Description                                                                                                                     |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------- |
+| 0    | Disabled.                                                                                                                       |
+| 1    | Use [performance configurations](#PerformanceConfiguration "wikilink") 0x92220009 and 0x9222000A, or 0x9222000B and 0x9222000C. |
+| 2    | Use [performance configurations](#PerformanceConfiguration "wikilink") 0x9222000B and 0x9222000C.                               |
 
 # ISession
 
@@ -64,13 +77,13 @@ This is "nn::apm::ISession".
 
 ## SetPerformanceConfiguration
 
-Takes u32 [\#PerformanceMode](#PerformanceMode "wikilink") and u32
+Takes an u32 [\#PerformanceMode](#PerformanceMode "wikilink") and an u32
 [\#PerformanceConfiguration](#PerformanceConfiguration "wikilink").
 
 ## GetPerformanceConfiguration
 
-Takes u32 [\#PerformanceMode](#PerformanceMode "wikilink"), returns
-output u32
+Takes an u32 [\#PerformanceMode](#PerformanceMode "wikilink") and
+returns an output u32
 [\#PerformanceConfiguration](#PerformanceConfiguration "wikilink").
 
 ## PerformanceMode

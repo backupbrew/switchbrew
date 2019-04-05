@@ -49,7 +49,7 @@ This is "nn::apm::ISystemManager".
 |-
 | 5 || [5.0.0+] LoadAndApplySettings
 |-
-| 6 || [7.0.0+] SetCpuBoostMode
+| 6 || [7.0.0+] [[#SetCpuBoostMode]]
 |-
 | 7 || [7.0.0+] [[#GetCurrentPerformanceConfiguration]]
 |}
@@ -57,8 +57,23 @@ This is "nn::apm::ISystemManager".
 == GetPerformanceEvent ==
 Returns an [[#ISession]].
 
+== SetCpuBoostMode ==
+Takes an u32 [[#CpuBoostMode]].
+
 == GetCurrentPerformanceConfiguration ==
 Returns the currently active [[#PerformanceConfiguration]] (default value is 0x00020003).
+
+=== CpuBoostMode ===
+{| class="wikitable" border="1"
+|-
+! Mode || Description
+|-
+| 0 || Disabled.
+|-
+| 1 || Use [[#PerformanceConfiguration|performance configurations]] 0x92220009 and 0x9222000A, or 0x9222000B and 0x9222000C.
+|-
+| 2 || Use [[#PerformanceConfiguration|performance configurations]] 0x9222000B and 0x9222000C.
+|}
 
 = ISession =
 This is "nn::apm::ISession".
@@ -73,10 +88,10 @@ This is "nn::apm::ISession".
 |}
 
 == SetPerformanceConfiguration ==
-Takes u32 [[#PerformanceMode]] and u32 [[#PerformanceConfiguration]].
+Takes an u32 [[#PerformanceMode]] and an u32 [[#PerformanceConfiguration]].
 
 == GetPerformanceConfiguration ==
-Takes u32 [[#PerformanceMode]], returns output u32 [[#PerformanceConfiguration]].
+Takes an u32 [[#PerformanceMode]] and returns an output u32 [[#PerformanceConfiguration]].
 
 == PerformanceMode ==
 {| class="wikitable" border="1"
@@ -117,6 +132,7 @@ Takes u32 [[#PerformanceMode]], returns output u32 [[#PerformanceConfiguration]]
 |-
 | 0x92220008 || 1020 || 460.8 || 1331.2
 |}
+
 Clocks are all in MHz.
 
 Configurations 0x10001 and 0x20000 are only available while docked. Configurations 0x10002 and 0x20002 are only available for SDEV units.
