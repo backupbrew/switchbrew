@@ -593,7 +593,7 @@ Takes an input u8, no output.
 |-
 | 122 || [5.0.0+] UnpopToUserChannel || 
 |-
-| 123 || [?+] GetPreviousProgramIndex || 
+| 123 || [5.0.0+] GetPreviousProgramIndex || 
 |-
 | 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
 |-
