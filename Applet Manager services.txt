@@ -482,7 +482,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 90 || [7.0.0+] SetRequiresGpuResourceUse
 |-
-| 101 || [?+] BeginToObserveHidInputForDevelop
+| 101 || [5.0.0+] BeginToObserveHidInputForDevelop
 |}
 
 ==== SetRequiresGpuResourceUse ====
@@ -876,7 +876,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 31 || [2.0.0+] [[#GetReaderLockAccessorEx]] || 
 |-
-| 32 || [7.0.0+] GetWriterLockAccessorEx || Takes a total of 4-bytes of input, returns an output [[#ILockAccessor]].
+| 32 || [7.0.0+] [[#GetWriterLockAccessorEx]] ||
 |-
 | 40 || [2.0.0+] GetCradleFwVersion ||
 |-
@@ -904,15 +904,15 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 65 || [5.1.0+] GetApplicationIdByContentActionName ||
 |-
-| 66 || [6.0.0+] SetCpuBoostMode ||
+| 66 || [6.0.0+] [[#SetCpuBoostMode]] ||
 |-
 | 80 || [6.0.0+] PerformSystemButtonPressingIfInFocus ||
 |-
-| 90 || [7.0.0+] SetPerformanceConfigurationChangedNotification || Takes an input u8, no output.
+| 90 || [7.0.0+] SetPerformanceConfigurationChangedNotification ||
 |-
-| 91 || [7.0.0+] GetCurrentPerformanceConfiguration || No input, returns a total of 4-bytes of output.
+| 91 || [7.0.0+] GetCurrentPerformanceConfiguration ||
 |-
-| 200 || [7.0.0+] GetOperationModeSystemInfo || No input, returns a total of 4-bytes of output.
+| 200 || [7.0.0+] GetOperationModeSystemInfo ||
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
@@ -962,6 +962,9 @@ No input, returns an output [[#ILockAccessor]].
 === GetReaderLockAccessorEx ===
 Takes an input u32, returns an output [[#ILockAccessor]].
 
+=== GetWriterLockAccessorEx ===
+Takes an input u32, returns an output [[#ILockAccessor]].
+
 === IsVrModeEnabled ===
 No input, returns an output u8 bool.
 
@@ -977,6 +980,18 @@ No input, returns an output u8 bool.
 
 === GetDefaultDisplayResolutionChangeEvent ===
 No input, returns an output handle.
+
+=== SetCpuBoostMode ===
+Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
+
+=== SetPerformanceConfigurationChangedNotification ===
+Takes an input u8, no output.
+
+=== GetCurrentPerformanceConfiguration ===
+No input, returns the result of calling [[PPC_services#apm:sys|GetCurrentPerformanceConfiguration]].
+
+=== GetOperationModeSystemInfo ===
+No input, returns a total of 4-bytes of output.
 
 == ISelfController ==
 {| class="wikitable" border="1"
@@ -1331,10 +1346,15 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 | 30 || [6.0.0+] RequestLaunchApplicationWithUserAndArgumentForDebug ||
 |-
 | 40 || [6.0.0+] GetAppletResourceUsageInfo ||
+|-
+| 100 || [7.0.0+] [[#SetCpuBoostModeForApplet]] ||
 |}
 
 === OpenMainApplication ===
 No input, returns an output [[#IApplicationAccessor]].
+
+=== SetCpuBoostModeForApplet ===
+Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
 
 == IStorage ==
 {| class="wikitable" border="1"
@@ -1389,7 +1409,7 @@ This is used by all regular-applications, including [[flog]] and "Retail Interac
 == OpenApplicationProxy ==
 Returns an [[#IApplicationProxy]]. See [[#appletAE]].
 
-Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-coded value 0), a PID, and a process copy-handle(cur-proc handle alias).
+Takes a [[IPC_Marshalling|reserved]] input u64 (official user-processes use hard-coded value 0), a PID, and a process copy-handle (cur-proc handle alias).
 
 On failure, official user-processes will retry using this command in a loop while the retval is 0x19280, with svcSleepThread(10000000) being called first.
 
