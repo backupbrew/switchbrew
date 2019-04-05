@@ -374,9 +374,9 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 100 || [4.0.0+] [[#CreateGameMovieTrimmer]] ||
 |-
-| 101 || [?+] ReserveResourceForMovieOperation ||
+| 101 || [5.0.0+] ReserveResourceForMovieOperation ||
 |-
-| 102 || [?+] UnreserveResourceForMovieOperation ||
+| 102 || [5.0.0+] UnreserveResourceForMovieOperation ||
 |-
 | 110 || [6.0.0+] GetMainAppletAvailableUsers ||
 |}

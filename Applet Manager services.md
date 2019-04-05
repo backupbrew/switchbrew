@@ -305,8 +305,8 @@ buffer. The size of the state buffer is
 | 80  | \[6.0.0+\] RequestExitToSelf                                                                                |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |       |
-| 101 | \[?+\] ReserveResourceForMovieOperation                                                                     |       |
-| 102 | \[?+\] UnreserveResourceForMovieOperation                                                                   |       |
+| 101 | \[5.0.0+\] ReserveResourceForMovieOperation                                                                 |       |
+| 102 | \[5.0.0+\] UnreserveResourceForMovieOperation                                                               |       |
 | 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |       |
 
 #### PopInData
