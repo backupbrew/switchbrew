@@ -60,9 +60,6 @@ Returns an [[#ISession]].
 == SetCpuBoostMode ==
 Takes an u32 [[#CpuBoostMode]].
 
-== GetCurrentPerformanceConfiguration ==
-Returns the currently active [[#PerformanceConfiguration]] (default value is 0x00020003).
-
 === CpuBoostMode ===
 {| class="wikitable" border="1"
 |-
@@ -74,6 +71,9 @@ Returns the currently active [[#PerformanceConfiguration]] (default value is 0x0
 |-
 | 2 || Use [[#PerformanceConfiguration|performance configurations]] 0x9222000B and 0x9222000C.
 |}
+
+== GetCurrentPerformanceConfiguration ==
+Returns the currently active [[#PerformanceConfiguration]] (default value is 0x00020003).
 
 = ISession =
 This is "nn::apm::ISession".

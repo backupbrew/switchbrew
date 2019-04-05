@@ -49,14 +49,8 @@ Returns an [\#ISession](#ISession "wikilink").
 
 ## SetCpuBoostMode
 
-Takes an u32 [\#CpuBoostMode](#CpuBoostMode "wikilink").
-
-## GetCurrentPerformanceConfiguration
-
-Returns the currently active
-[\#PerformanceConfiguration](#PerformanceConfiguration "wikilink")
-(default value is
-0x00020003).
+Takes an u32
+[\#CpuBoostMode](#CpuBoostMode "wikilink").
 
 ### CpuBoostMode
 
@@ -65,6 +59,12 @@ Returns the currently active
 | 0    | Disabled.                                                                                                                       |
 | 1    | Use [performance configurations](#PerformanceConfiguration "wikilink") 0x92220009 and 0x9222000A, or 0x9222000B and 0x9222000C. |
 | 2    | Use [performance configurations](#PerformanceConfiguration "wikilink") 0x9222000B and 0x9222000C.                               |
+
+## GetCurrentPerformanceConfiguration
+
+Returns the currently active
+[\#PerformanceConfiguration](#PerformanceConfiguration "wikilink")
+(default value is 0x00020003).
 
 # ISession
 
