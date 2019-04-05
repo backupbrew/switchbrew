@@ -58,7 +58,7 @@ This is "nn::apm::ISystemManager".
 Returns an [[#ISession]].
 
 == GetCurrentPerformanceConfiguration ==
-Returns the currently active PerformanceConfiguration (default value is 0x00020003).
+Returns the currently active [[#PerformanceConfiguration]] (default value is 0x00020003).
 
 = ISession =
 This is "nn::apm::ISession".

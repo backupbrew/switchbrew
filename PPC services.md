@@ -49,8 +49,9 @@ Returns an [\#ISession](#ISession "wikilink").
 
 ## GetCurrentPerformanceConfiguration
 
-Returns the currently active PerformanceConfiguration (default value is
-0x00020003).
+Returns the currently active
+[\#PerformanceConfiguration](#PerformanceConfiguration "wikilink")
+(default value is 0x00020003).
 
 # ISession
 
