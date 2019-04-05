@@ -5,60 +5,78 @@ This is "nn::apm::IManager".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || OpenSession || Returns an [[#ISession]].
+| 0 || [[#OpenSession]]
 |-
-| 1 || GetPerformanceMode || 
+| 1 || GetPerformanceMode
 |-
-| 6 || IsCpuOverclockEnabled || 
+| 6 || IsCpuOverclockEnabled
 |}
+
+== OpenSession ==
+Returns an [[#ISession]].
 
 = apm:p =
 This is "nn::apm::IManagerPrivileged".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || OpenSession || Returns an [[#ISession]].
+| 0 || OpenSession
 |}
+
+== OpenSession ==
+Returns an [[#ISession]].
 
 = apm:sys =
 This is "nn::apm::ISystemManager".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || RequestPerformanceMode ||
+| 0 || RequestPerformanceMode
 |-
-| 1 || GetPerformanceEvent || Returns an [[#ISession]].
+| 1 || GetPerformanceEvent
 |-
-| 2 || GetThrottlingState || 
+| 2 || GetThrottlingState
 |-
-| 3 || GetLastThrottlingState || 
+| 3 || GetLastThrottlingState
 |-
-| 4 || ClearLastThrottlingState || 
+| 4 || ClearLastThrottlingState
 |-
-| 5 || [5.0.0+] LoadAndApplySettings || 
+| 5 || [5.0.0+] LoadAndApplySettings
 |-
-| 6 || [7.0.0+] SetCpuBoostMode || 
+| 6 || [7.0.0+] SetCpuBoostMode
 |-
-| 7 || [7.0.0+] GetCurrentPerformanceConfiguration || 
+| 7 || [7.0.0+] [[#GetCurrentPerformanceConfiguration]]
 |}
+
+== GetPerformanceEvent ==
+Returns an [[#ISession]].
+
+== GetCurrentPerformanceConfiguration ==
+Returns the currently active PerformanceConfiguration (default value is 0x00020003).
 
 = ISession =
 This is "nn::apm::ISession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || SetPerformanceConfiguration || Takes u32 PerformanceMode and u32 PerformanceConfiguration.
+| 0 || SetPerformanceConfiguration
 |-
-| 1 || GetPerformanceConfiguration  || Takes u32 PerformanceMode, returns output u32 PerformanceConfiguration.
+| 1 || GetPerformanceConfiguration
 |}
+
+== SetPerformanceConfiguration ==
+Takes u32 [[#PerformanceMode]] and u32 [[#PerformanceConfiguration]].
+
+== GetPerformanceConfiguration ==
+Takes u32 [[#PerformanceMode]], returns output u32 [[#PerformanceConfiguration]].
 
 == PerformanceMode ==
 {| class="wikitable" border="1"

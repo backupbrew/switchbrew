@@ -3,48 +3,74 @@ for CPU, GPU, and memory.
 
 # apm
 
-This is
-"nn::apm::IManager".
+This is "nn::apm::IManager".
 
-| Cmd | Name                  | Notes                                          |
-| --- | --------------------- | ---------------------------------------------- |
-| 0   | OpenSession           | Returns an [\#ISession](#ISession "wikilink"). |
-| 1   | GetPerformanceMode    |                                                |
-| 6   | IsCpuOverclockEnabled |                                                |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | [\#OpenSession](#OpenSession "wikilink") |
+| 1   | GetPerformanceMode                       |
+| 6   | IsCpuOverclockEnabled                    |
+
+## OpenSession
+
+Returns an [\#ISession](#ISession "wikilink").
 
 # apm:p
 
 This is "nn::apm::IManagerPrivileged".
 
-| Cmd | Name        | Notes                                          |
-| --- | ----------- | ---------------------------------------------- |
-| 0   | OpenSession | Returns an [\#ISession](#ISession "wikilink"). |
+| Cmd | Name        |
+| --- | ----------- |
+| 0   | OpenSession |
+
+## OpenSession
+
+Returns an [\#ISession](#ISession "wikilink").
 
 # apm:sys
 
 This is
 "nn::apm::ISystemManager".
 
-| Cmd | Name                                          | Notes                                          |
-| --- | --------------------------------------------- | ---------------------------------------------- |
-| 0   | RequestPerformanceMode                        |                                                |
-| 1   | GetPerformanceEvent                           | Returns an [\#ISession](#ISession "wikilink"). |
-| 2   | GetThrottlingState                            |                                                |
-| 3   | GetLastThrottlingState                        |                                                |
-| 4   | ClearLastThrottlingState                      |                                                |
-| 5   | \[5.0.0+\] LoadAndApplySettings               |                                                |
-| 6   | \[7.0.0+\] SetCpuBoostMode                    |                                                |
-| 7   | \[7.0.0+\] GetCurrentPerformanceConfiguration |                                                |
+| Cmd | Name                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------- |
+| 0   | RequestPerformanceMode                                                                            |
+| 1   | GetPerformanceEvent                                                                               |
+| 2   | GetThrottlingState                                                                                |
+| 3   | GetLastThrottlingState                                                                            |
+| 4   | ClearLastThrottlingState                                                                          |
+| 5   | \[5.0.0+\] LoadAndApplySettings                                                                   |
+| 6   | \[7.0.0+\] SetCpuBoostMode                                                                        |
+| 7   | \[7.0.0+\] [\#GetCurrentPerformanceConfiguration](#GetCurrentPerformanceConfiguration "wikilink") |
+
+## GetPerformanceEvent
+
+Returns an [\#ISession](#ISession "wikilink").
+
+## GetCurrentPerformanceConfiguration
+
+Returns the currently active PerformanceConfiguration (default value is
+0x00020003).
 
 # ISession
 
-This is
-"nn::apm::ISession".
+This is "nn::apm::ISession".
 
-| Cmd | Name                        | Notes                                                                   |
-| --- | --------------------------- | ----------------------------------------------------------------------- |
-| 0   | SetPerformanceConfiguration | Takes u32 PerformanceMode and u32 PerformanceConfiguration.             |
-| 1   | GetPerformanceConfiguration | Takes u32 PerformanceMode, returns output u32 PerformanceConfiguration. |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | SetPerformanceConfiguration |
+| 1   | GetPerformanceConfiguration |
+
+## SetPerformanceConfiguration
+
+Takes u32 [\#PerformanceMode](#PerformanceMode "wikilink") and u32
+[\#PerformanceConfiguration](#PerformanceConfiguration "wikilink").
+
+## GetPerformanceConfiguration
+
+Takes u32 [\#PerformanceMode](#PerformanceMode "wikilink"), returns
+output u32
+[\#PerformanceConfiguration](#PerformanceConfiguration "wikilink").
 
 ## PerformanceMode
 
