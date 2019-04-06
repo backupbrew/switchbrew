@@ -49,13 +49,29 @@ keyboard.
 | 0x3C8  | 4    | 2024          | Offset of user dictionary in work buffer (or 0)                                                                                                    |
 | 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                                                                      |
 | 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                                                                      |
-| 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Not sure why this is included here                                               |
-| 0x3E0  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes. |
 
-This struct is 0x3E0-bytes with version 0x5. Starting with version
-0x30007 this struct is 0x400-bytes.
+Before version
+0x6000B:
 
-The 0x20-bytes at offset 0x3E0 is -1 normally, except for DownloadCodes.
+| Offset | Size | Typical Value | Notes                                                                                                                                                                             |
+| ------ | ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Removed with the struct used by 0x6000B+.                                                                       |
+| 0x3E0  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
+
+Version
+0x6000B+:
+
+| Offset | Size | Typical Value | Notes                                                                                                                                                                             |
+| ------ | ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x3D4  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
+| 0x3F4  | 0xC0 | 0             | CustomizedDictionarySet array data.                                                                                                                                               |
+| 0x4B4  | 0x1  | 0             | Total array entries for CustomizedDictionarySet.                                                                                                                                  |
+
+Struct sizes:
+
+  - Initial version: 0x3E0-bytes.
+  - Version 0x30007+: 0x400-bytes.
+  - Version 0x6000B+: 0x4C8-bytes.
 
 Each entry in the user dictionary is 100 bytes long.
 
