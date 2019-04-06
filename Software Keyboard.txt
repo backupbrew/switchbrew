@@ -2,6 +2,8 @@ The software keyboard (swkbd) expects to be passed three [[AM_services#IStorage|
 
 The below is for normal swkbd usage, see the [[#InlineKeyboard]] section for InlineKeyboard.
 
+With version 0x6000B+ after pushing all other storage: when CustomizedDictionariesSet was setup where buffer addr/size is set and total_entries is non-zero, [[Applet_Manager_services#CreateHandleStorage]] will be used to create TransferMemory storage which is then pushed.
+
 == Library Applet Versions ==
 {| class="wikitable" border="1"
 |-

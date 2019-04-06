@@ -6,6 +6,12 @@ The below is for normal swkbd usage, see the
 [\#InlineKeyboard](#InlineKeyboard "wikilink") section for
 InlineKeyboard.
 
+With version 0x6000B+ after pushing all other storage: when
+CustomizedDictionariesSet was setup where buffer addr/size is set and
+total\_entries is non-zero,
+[Applet\_Manager\_services\#CreateHandleStorage](Applet%20Manager%20services#CreateHandleStorage.md##CreateHandleStorage "wikilink")
+will be used to create TransferMemory storage which is then pushed.
+
 ## Library Applet Versions
 
 | System Version | Value    |
