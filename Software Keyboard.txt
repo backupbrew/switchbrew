@@ -22,6 +22,8 @@ The below is for normal swkbd usage, see the [[#InlineKeyboard]] section for Inl
 | [4.0.0+] || 0x40008
 |-
 | [5.0.0+] || 0x50009
+|-
+| [6.0.0+] || 0x6000B
 |}
 
 == KeyboardConfig ==
