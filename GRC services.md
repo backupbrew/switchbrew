@@ -54,6 +54,18 @@ Added with
 | 1   |      | No input/output.                                                                                              |
 | 2   |      | Takes an input u32 (must be value 0-1) and a type-0x6 output buffer, returns a total of 0x10-bytes of output. |
 
+## Cmd1
+
+Begins video stream. Can only be called once.
+
+## Cmd2
+
+Retrieves video data. Takes u32 "stream" (0: video, 1: audio), returns
+u32 (num\_frames?), u32 data\_size, u64 (start\_timestamp?). Video
+stream writes H.264 NAL units to the output buffer (try `ffplay -f
+h264`). Official code uses buffer size 0x32000 for video, 0x1000 for
+audio, and multiple threads to read out both streams at the same time.
+
 # IOffscreenRecorder
 
 This is
