@@ -254,6 +254,8 @@ This doesn't run in the foreground and has completely different input/output [[A
 
 The above struct is cleared to 0 during initialization, besides the fields specified otherwise.
 
+[6.0.0+] Flags bitmask 0x10000 is set when [[#CalcArg]] trigger is set.
+
 === CalcArg ===
 {| class="wikitable" border="1"
 |-
@@ -325,7 +327,11 @@ The above struct is cleared to 0 during initialization, besides the fields speci
 |-
 | 0x49C || 0x1 || Enable=0x2000, disable=0x4000. || [5.0.0+] SeGroup (sound effect)
 |-
-| 0x49D || 0x3 || || Padding
+| 0x49D || 0x1 || || [6.0.0+] u8 triggerFlag, for [[#AppearArg]]. Enables using the trigger field when set, this is only set when trigger is non-zero.
+|-
+| 0x49E || 0x2 || || [6.0.0+] u8 trigger, for [[#AppearArg]]. Official sw currently only uses value 0.
+|-
+| 0x49F || 0x1 || || Padding
 |-
 |}
 
