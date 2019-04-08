@@ -246,8 +246,13 @@ News and game content:
 
 Connection:
 
-  - "ctest.cdn.nintendo.net" (replaces "conntest.nintendowifi.net")
+  - "ctest.cdn.nintendo.net" (replaces
+    "conntest.nintendowifi.net")
   - "nasc.nintendowifi.net"
+
+[Error\_applet](Error%20applet.md "wikilink"):
+
+  - "https://Service-status-%.cdn.nintendo.net/service\_status\_hac.json"
 
 # User-Agent
 
