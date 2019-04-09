@@ -2,7 +2,7 @@ The software keyboard (swkbd) expects to be passed three [[AM_services#IStorage|
 
 The below is for normal swkbd usage, see the [[#InlineKeyboard]] section for InlineKeyboard.
 
-With version 0x6000B+ after pushing all other storage: when CustomizedDictionariesSet was setup where buffer addr/size is set and total_entries is non-zero, [[Applet_Manager_services#CreateHandleStorage]] will be used to create TransferMemory storage which is then pushed.
+With version 0x6000B+ after pushing all other storage: when [[#CustomizedDictionarySet]] was setup where buffer addr/size is set and total_entries is non-zero, [[Applet_Manager_services#CreateHandleStorage]] will be used to create TransferMemory storage which is then pushed.
 
 == Library Applet Versions ==
 {| class="wikitable" border="1"
@@ -96,9 +96,9 @@ Version 0x6000B+:
 |-
 | 0x3D4 || 0x20 || -1 || When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally.
 |-
-| 0x3F4 || 0xC0 || 0 || CustomizedDictionarySet array data.
+| 0x3F4 || 0xC0 || 0 || [[#CustomizedDictionarySet]] array data.
 |-
-| 0x4B4 || 0x1 || 0 || Total array entries for CustomizedDictionarySet.
+| 0x4B4 || 0x1 || 0 || Total array entries for [[#CustomizedDictionarySet]].
 |}
 
 Struct sizes:
@@ -361,6 +361,10 @@ Once the applet is running, official sw can call a func which does the following
 | 0x7 || 0x70 || SetCustomizeDic || 
 |-
 | 0xA || 0x4A0 || Calc || Data is [[#CalcArg]].
+|-
+| 0xB || 0xD0 || SetCustomizedDictionaries || Data is [[#CustomizedDictionarySet]] with an additional 2-bytes of padding.
+|-
+| 0xC || 0x0 || UnsetCustomizedDictionaries || 
 |}
 
 Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x0 is the RequestCommand, and the rest of the storage is the request-specific data. While swkbd supports other requests, official sw only uses requests 0x4, 0x7, and 0xA.
@@ -394,6 +398,8 @@ Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x
 |-
 | 0xB || 0x0 || ReleasedUserWordInfo || 
 |-
+| 0xC || 0x0 || UnsetCustomizedDictionaries || [6.0.0+] Official sw handles this the same as UnsetCustomizeDic.
+|-
 |}
 
 See [[#Runtime]]. In the storage, the first u32 is the State, while the second u32 is the ReplyType. The rest is the reply-specific data.
@@ -404,5 +410,21 @@ Reply data format:
 * ChangedString*: +0 = string. Last 0x10-bytes: 4 u32s, where the first one is the length of the string in characters, without NUL-terminator. The last u32 is cursorPos. The other 2 fields are s32s.
 * MovedCursor*: +0 = string. Last 0x8-bytes: 2 u32s, where the first one is the stringLen, and the second one is cursorPos.
 * DecidedEnter*: +0 = string. The last u32 is the stringLen.
+
+== CustomizedDictionarySet ==
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || 0x1000-byte aligned buffer address.
+|-
+| 0x8 || 0x4 || 0x1000-byte aligned buffer size.
+|-
+| 0xC || 0x18*4(0xC0) || Array of 0x18 entries, where each entry is 0x8-bytes.
+|-
+| 0xCC || 0x2 || u16 total_entries
+|}
+
+This was added with [6.0.0+]. This struct is 0xCE-bytes.
 
 [[Category:Library Applets]]

@@ -7,8 +7,8 @@ The below is for normal swkbd usage, see the
 InlineKeyboard.
 
 With version 0x6000B+ after pushing all other storage: when
-CustomizedDictionariesSet was setup where buffer addr/size is set and
-total\_entries is non-zero,
+[\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") was
+setup where buffer addr/size is set and total\_entries is non-zero,
 [Applet\_Manager\_services\#CreateHandleStorage](Applet%20Manager%20services#CreateHandleStorage.md##CreateHandleStorage "wikilink")
 will be used to create TransferMemory storage which is then pushed.
 
@@ -70,8 +70,8 @@ Version
 | Offset | Size | Typical Value | Notes                                                                                                                                                                             |
 | ------ | ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x3D4  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
-| 0x3F4  | 0xC0 | 0             | CustomizedDictionarySet array data.                                                                                                                                               |
-| 0x4B4  | 0x1  | 0             | Total array entries for CustomizedDictionarySet.                                                                                                                                  |
+| 0x3F4  | 0xC0 | 0             | [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") array data.                                                                                                      |
+| 0x4B4  | 0x1  | 0             | Total array entries for [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink").                                                                                         |
 
 Struct sizes:
 
@@ -299,12 +299,14 @@ retval.
 
 ### Request
 
-| RequestCommand | Data Size | Name            | Notes                                     |
-| -------------- | --------- | --------------- | ----------------------------------------- |
-| 0x4            | 0x0       | Finalize        |                                           |
-| 0x6            | Varies    | SetUserWordInfo |                                           |
-| 0x7            | 0x70      | SetCustomizeDic |                                           |
-| 0xA            | 0x4A0     | Calc            | Data is [\#CalcArg](#CalcArg "wikilink"). |
+| RequestCommand | Data Size | Name                        | Notes                                                                                                           |
+| -------------- | --------- | --------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 0x4            | 0x0       | Finalize                    |                                                                                                                 |
+| 0x6            | Varies    | SetUserWordInfo             |                                                                                                                 |
+| 0x7            | 0x70      | SetCustomizeDic             |                                                                                                                 |
+| 0xA            | 0x4A0     | Calc                        | Data is [\#CalcArg](#CalcArg "wikilink").                                                                       |
+| 0xB            | 0xD0      | SetCustomizedDictionaries   | Data is [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") with an additional 2-bytes of padding. |
+| 0xC            | 0x0       | UnsetCustomizedDictionaries |                                                                                                                 |
 
 Requests are sent via an applet Interactive input IStorage: the u32 at
 offset 0x0 is the RequestCommand, and the rest of the storage is the
@@ -314,21 +316,22 @@ only uses requests 0x4, 0x7, and
 
 ### Reply
 
-| ReplyType          | Data Size | Name                 | Notes                                                                                               |
-| ------------------ | --------- | -------------------- | --------------------------------------------------------------------------------------------------- |
-| 0x0                | 0x1       | FinishedInitialize   | Reply data is ignored by the user-process.                                                          |
-| 0x1 / default case | 0x0       |                      | Official sw has no handling for this besides just closing the storage.                              |
-| 0x2                | 0x3FC     | ChangedString        |                                                                                                     |
-| 0x3                | 0x3F4     | MovedCursor          |                                                                                                     |
-| 0x4                | 0x3F4     | MovedTab             |                                                                                                     |
-| 0x5                | 0x3F0     | DecidedEnter         |                                                                                                     |
-| 0x6                | 0x0       | DecidedCancel        |                                                                                                     |
-| 0x7                | 0x7E4     | ChangedStringUtf8    |                                                                                                     |
-| 0x8                | 0x7DC     | MovedCursorUtf8      |                                                                                                     |
-| 0x9                | 0x7D8     | DecidedEnterUtf8     |                                                                                                     |
-| 0xA                | 0x0       | UnsetCustomizeDic    | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
-| 0xB                | 0x0       | ReleasedUserWordInfo |                                                                                                     |
-|                    |           |                      |                                                                                                     |
+| ReplyType          | Data Size | Name                        | Notes                                                                                               |
+| ------------------ | --------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
+| 0x0                | 0x1       | FinishedInitialize          | Reply data is ignored by the user-process.                                                          |
+| 0x1 / default case | 0x0       |                             | Official sw has no handling for this besides just closing the storage.                              |
+| 0x2                | 0x3FC     | ChangedString               |                                                                                                     |
+| 0x3                | 0x3F4     | MovedCursor                 |                                                                                                     |
+| 0x4                | 0x3F4     | MovedTab                    |                                                                                                     |
+| 0x5                | 0x3F0     | DecidedEnter                |                                                                                                     |
+| 0x6                | 0x0       | DecidedCancel               |                                                                                                     |
+| 0x7                | 0x7E4     | ChangedStringUtf8           |                                                                                                     |
+| 0x8                | 0x7DC     | MovedCursorUtf8             |                                                                                                     |
+| 0x9                | 0x7D8     | DecidedEnterUtf8            |                                                                                                     |
+| 0xA                | 0x0       | UnsetCustomizeDic           | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
+| 0xB                | 0x0       | ReleasedUserWordInfo        |                                                                                                     |
+| 0xC                | 0x0       | UnsetCustomizedDictionaries | \[6.0.0+\] Official sw handles this the same as UnsetCustomizeDic.                                  |
+|                    |           |                             |                                                                                                     |
 
 See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is
 the State, while the second u32 is the ReplyType. The rest is the
@@ -346,6 +349,18 @@ Reply data format:
     s32s.
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
     one is the stringLen, and the second one is cursorPos.
-  - DecidedEnter\*: +0 = string. The last u32 is the stringLen.
+  - DecidedEnter\*: +0 = string. The last u32 is the
+stringLen.
+
+## CustomizedDictionarySet
+
+| Offset | Size          | Description                                           |
+| ------ | ------------- | ----------------------------------------------------- |
+| 0x0    | 0x8           | 0x1000-byte aligned buffer address.                   |
+| 0x8    | 0x4           | 0x1000-byte aligned buffer size.                      |
+| 0xC    | 0x18\*4(0xC0) | Array of 0x18 entries, where each entry is 0x8-bytes. |
+| 0xCC   | 0x2           | u16 total\_entries                                    |
+
+This was added with \[6.0.0+\]. This struct is 0xCE-bytes.
 
 [Category:Library Applets](Category:Library_Applets "wikilink")
