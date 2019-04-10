@@ -250,6 +250,7 @@ struct. The output struct is specific to each applet.
 | \[1.0.0+\]     | 0x20000 |
 | \[3.0.0+\]     | 0x30000 |
 | \[5.0.0+\]     | 0x50000 |
+| \[6.0.0+\]     | 0x60000 |
 
 The above only (?) applies to non-WebWifi. WebWifi uses version 0x0.
 
@@ -270,8 +271,9 @@ This indicates the type of web-applet.
 
 ### WebSession
 
-With \[5.0.0+\] sdk-nso added `nn::web::Session::`. WebApplet (Web shim
-title) doesn't seem to implement this, unknown if other titles do.
+With \[5.0.0+\] sdk-nso added `nn::web::Session::`, however with
+\[6.0.0+\] this was removed. WebApplet (Web shim title) doesn't seem to
+implement this, unknown if other titles do.
 
 This is for sending/receiving
 [\#SessionMessages](#SessionMessage "wikilink") via applet Interactive

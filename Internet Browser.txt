@@ -216,6 +216,8 @@ The web-applets are launched using a storage containing the input arg data, on e
 | [3.0.0+] || 0x30000
 |-
 | [5.0.0+] || 0x50000
+|-
+| [6.0.0+] || 0x60000
 |}
 
 The above only (?) applies to non-WebWifi. WebWifi uses version 0x0.
@@ -250,7 +252,7 @@ This indicates the type of web-applet.
 |}
 
 === WebSession ===
-With [5.0.0+] sdk-nso added <code>nn::web::Session::</code>. WebApplet (Web shim title) doesn't seem to implement this, unknown if other titles do.
+With [5.0.0+] sdk-nso added <code>nn::web::Session::</code>, however with [6.0.0+] this was removed. WebApplet (Web shim title) doesn't seem to implement this, unknown if other titles do.
 
 This is for sending/receiving [[#SessionMessage]]s via applet Interactive storage.
 
