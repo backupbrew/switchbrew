@@ -624,7 +624,7 @@ All strings are NUL-terminated.
 | 0x23
 | 0x1
 | u8 bool
-| MediaPlayerUserGestureRestrictionEnabled
+| [6.0.0+] MediaAutoPlayEnabled ([2.0.0-5.1.0] MediaPlayerUserGestureRestrictionEnabled)
 |-
 | [2.0.0+]
 | 
@@ -744,6 +744,12 @@ All strings are NUL-terminated.
 | 0x1
 | u8 bool
 | PageScrollIndicatorEnabled
+|-
+| [6.0.0+]
+| 
+| 0x37
+| u8 bool
+| MediaPlayerSpeedControlEnabled
 |}
 
 Offline: title to load the content from is controlled by ApplicationId/SystemDataId. With DocumentKind_OfflineHtmlPage, it will ignore this and only load from the user-process title.
