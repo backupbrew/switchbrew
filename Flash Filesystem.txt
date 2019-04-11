@@ -374,7 +374,7 @@ This is a listing of known System Savedata and what titles they correspond to.
 |-
 | 0x8000000000000044 || ns || <nowiki>ns_sysup:/</nowiki> || Content update context.
 |-
-| 0x8000000000000045 || ns || <nowiki>vmdb:/</nowiki> || Version List/Required Version List storage.
+| 0x8000000000000045 || ns || <nowiki>vmdb:/</nowiki> || Required Version List storage. Also contained Version List storage before 7.0.0.
 |-
 | 0x8000000000000046 || ns || <nowiki>dtlman:/</nowiki> ||
 |-
@@ -467,6 +467,10 @@ This is a listing of known System Savedata and what titles they correspond to.
 | 0x8000000000000131 || migration || <nowiki>context:/</nowiki> || 
 |-
 | 0x8000000000000140 || capsrv || <nowiki>TM:/</nowiki> || 
+|-
+| 0x8000000000000150 || olsc || ? || 
+|-
+| 0x8000000000000180 || sdb || ? || Version list was moved here in 7.0.0 or 7.0.1
 |-
 | 0x8000000000001010 || qlaunch || || Contains "savedata.dat".
 |-
