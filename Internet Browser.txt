@@ -498,7 +498,7 @@ All strings are NUL-terminated.
 | 0xF
 | 0x20
 | [[Capture_services|AlbumEntry]]
-| AlbumEntry
+| AlbumEntry0
 |-
 | [1.0.0+]
 | 
@@ -673,7 +673,7 @@ All strings are NUL-terminated.
 | 0x2B
 | 0x10
 | u8 array
-| AdditionalMediaData (If the user-input size is less than 0x10, the remaining tmp data used for the TLV is cleared)
+| AdditionalMediaData0 (If the user-input size is less than 0x10, the remaining tmp data used for the TLV is cleared)
 |-
 | [4.0.0+]
 | 
@@ -753,6 +753,48 @@ All strings are NUL-terminated.
 | MediaPlayerSpeedControlEnabled
 |-
 | [6.0.0+]
+| Share
+| 0x38
+| 0x20
+| [[Capture_services|AlbumEntry]]
+| AlbumEntry1
+|-
+| [6.0.0+]
+| Share
+| 0x39
+| 0x20
+| [[Capture_services|AlbumEntry]]
+| AlbumEntry2
+|-
+| [6.0.0+]
+| Share
+| 0x3A
+| 0x20
+| [[Capture_services|AlbumEntry]]
+| AlbumEntry3
+|-
+| [6.0.0+]
+| Share
+| 0x3B
+| 0x10
+| u8 array
+| AdditionalMediaData1
+|-
+| [6.0.0+]
+| Share
+| 0x3C
+| 0x10
+| u8 array
+| AdditionalMediaData2
+|-
+| [6.0.0+]
+| Share
+| 0x3D
+| 0x10
+| u8 array
+| AdditionalMediaData3
+|-
+| [6.0.0+]
 | 
 | 0x3F
 | 0x4
@@ -774,6 +816,9 @@ Offline DocumentPath: Initial document path in RomFS, without the leading '/'. F
 Share/Lobby: if a non-zero userID isn't set, the applet will launch the profile-selector applet to select an account.
 
 Share: An error will be displayed if neither AlbumEntry or ApplicationAlbumEntry are set, with [[#ShareStartPage|ShareStartPage_Default]].
+
+[6.0.0+] <code>AddAlbumEntryAndMediaData</code> was added:
+* Looks for AlbumEntry{N} TLVs, when a TLV is not found it is written, then the associated AdditionalMediaData{N} TLV is written the same way as AdditionalMediaData0. If all AlbumEntry{N} TLVs already exist, this returns without writing anything.
 
 ==== Output TLVs ====
 {| class="wikitable" border="1"

@@ -406,7 +406,7 @@ NUL-terminated.
 | \[1.0.0+\]     |         | 0xA  | 0x1000 | string                                                    | Whitelist. If not formatted properly, the applet will exit briefly after the applet is launched. Each line is a regex for each whitelisted URL.                  |
 | \[1.0.0+\]     |         | 0xB  | 0x1    | u8 bool                                                   | News flag. When set the domain from the input URL is automatically whitelisted, in addition to any already loaded whitelist.                                     |
 | \[1.0.0+\]     |         | 0xE  | 0x10   | userID                                                    | userID, controls which user-specific savedata to mount.                                                                                                          |
-|                | Share   | 0xF  | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry                                                                                                                                                       |
+|                | Share   | 0xF  | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry0                                                                                                                                                      |
 | \[1.0.0+\]     |         | 0x10 | 0x1    | u8 bool                                                   | ScreenShotEnabled. Controls whether screen-shot capture is allowed.                                                                                              |
 | \[1.0.0+\]     |         | 0x11 | 0x1    | u8 bool                                                   | EcClientCertEnabled                                                                                                                                              |
 | \[1.0.0+\]     |         | 0x12 | 0x1    | u8                                                        | ?                                                                                                                                                                |
@@ -431,7 +431,7 @@ NUL-terminated.
 | \[4.0.0+\]     | Share   | 0x28 | 0x100  | string                                                    | AdditionalCommentText                                                                                                                                            |
 | \[4.0.0+\]     |         | 0x29 | 0x1    | u8 bool                                                   | TouchEnabledOnContents                                                                                                                                           |
 | \[4.0.0+\]     |         | 0x2A | 0x80   | string                                                    | UserAgentAdditionalString. " " followed by this string are appended to the normal User-Agent string.                                                             |
-| \[4.0.0+\]     | Share   | 0x2B | 0x10   | u8 array                                                  | AdditionalMediaData (If the user-input size is less than 0x10, the remaining tmp data used for the TLV is cleared)                                               |
+| \[4.0.0+\]     | Share   | 0x2B | 0x10   | u8 array                                                  | AdditionalMediaData0 (If the user-input size is less than 0x10, the remaining tmp data used for the TLV is cleared)                                              |
 | \[4.0.0+\]     |         | 0x2C | 0x1    | u8 bool                                                   | MediaPlayerAutoCloseEnabled                                                                                                                                      |
 | \[4.0.0+\]     |         | 0x2D | 0x1    | u8 bool                                                   | PageCacheEnabled                                                                                                                                                 |
 | \[4.0.0+\]     |         | 0x2E | 0x1    | u8 bool                                                   | WebAudioEnabled                                                                                                                                                  |
@@ -443,6 +443,12 @@ NUL-terminated.
 | \[5.0.0+\]     |         | 0x35 | 0x1    | u8 bool                                                   | BootLoadingIconEnabled                                                                                                                                           |
 | \[5.0.0+\]     |         | 0x36 | 0x1    | u8 bool                                                   | PageScrollIndicatorEnabled                                                                                                                                       |
 | \[6.0.0+\]     |         | 0x37 | 0x1    | u8 bool                                                   | MediaPlayerSpeedControlEnabled                                                                                                                                   |
+| \[6.0.0+\]     | Share   | 0x38 | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry1                                                                                                                                                      |
+| \[6.0.0+\]     | Share   | 0x39 | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry2                                                                                                                                                      |
+| \[6.0.0+\]     | Share   | 0x3A | 0x20   | [AlbumEntry](Capture%20services.md "wikilink")            | AlbumEntry3                                                                                                                                                      |
+| \[6.0.0+\]     | Share   | 0x3B | 0x10   | u8 array                                                  | AdditionalMediaData1                                                                                                                                             |
+| \[6.0.0+\]     | Share   | 0x3C | 0x10   | u8 array                                                  | AdditionalMediaData2                                                                                                                                             |
+| \[6.0.0+\]     | Share   | 0x3D | 0x10   | u8 array                                                  | AdditionalMediaData3                                                                                                                                             |
 | \[6.0.0+\]     |         | 0x3F | 0x4    | float                                                     | OverrideWebAudioVolume                                                                                                                                           |
 | \[6.0.0+\]     |         | 0x40 | 0x4    | float                                                     | OverrideMediaAudioVolume                                                                                                                                         |
 
@@ -461,6 +467,13 @@ profile-selector applet to select an account.
 Share: An error will be displayed if neither AlbumEntry or
 ApplicationAlbumEntry are set, with
 [ShareStartPage\_Default](#ShareStartPage "wikilink").
+
+\[6.0.0+\] `AddAlbumEntryAndMediaData` was added:
+
+  - Looks for AlbumEntry{N} TLVs, when a TLV is not found it is written,
+    then the associated AdditionalMediaData{N} TLV is written the same
+    way as AdditionalMediaData0. If all AlbumEntry{N} TLVs already
+    exist, this returns without writing anything.
 
 #### Output TLVs
 
