@@ -1386,7 +1386,7 @@ register](http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way138245556
 
 # Enum/Structures
 
-## ThreadContextRequestFlags
+## ThreadContextFlags
 
 Bitfield of one of more of these:
 

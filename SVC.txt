@@ -1560,7 +1560,7 @@ Note that hardware_breakpoint_id 0 to 4 match only to Virtual Address, while har
 For more documentation for hardware breakpoints, check out the AArch64 documentation for the [http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0488h/way1382455558968.html DBGBCRn_EL1 register] and the [http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way1382455560629.html DBGWCRn_EL1 register]
 
 = Enum/Structures =
-== ThreadContextRequestFlags ==
+== ThreadContextFlags ==
 Bitfield of one of more of these:
 
 {| class=wikitable
