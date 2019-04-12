@@ -327,6 +327,8 @@ This is "nn::nsd::detail::IManager".
 | 61 || [[#WriteSaveDataToFsForTest]]
 |-
 | 62 || [[#DeleteSaveDataOfFsForTest]]
+|-
+| [7.0.0+] 63 || IsChangeEnvironmentIdentifierDisabled
 |}
 
 == GetEnvironmentIdentifier ==

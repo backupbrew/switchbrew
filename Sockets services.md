@@ -254,25 +254,26 @@ Takes no arguments, doesn't return anything, never fails.
 This is
 "nn::nsd::detail::IManager".
 
-| Cmd | Name                                                                 |
-| --- | -------------------------------------------------------------------- |
-| 10  | GetSettingName                                                       |
-| 11  | [\#GetEnvironmentIdentifier](#GetEnvironmentIdentifier "wikilink")   |
-| 12  | GetDeviceId                                                          |
-| 13  | DeleteSettings                                                       |
-| 14  | ImportSettings                                                       |
-| 20  | Resolve                                                              |
-| 21  | ResolveEx                                                            |
-| 30  | GetNasServiceSetting                                                 |
-| 31  | GetNasServiceSettingEx                                               |
-| 40  | GetNasRequestFqdn                                                    |
-| 41  | GetNasRequestFqdnEx                                                  |
-| 42  | GetNasApiFqdn                                                        |
-| 43  | GetNasApiFqdnEx                                                      |
-| 50  | GetCurrentSetting                                                    |
-| 60  | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
-| 61  | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
-| 62  | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
+| Cmd           | Name                                                                 |
+| ------------- | -------------------------------------------------------------------- |
+| 10            | GetSettingName                                                       |
+| 11            | [\#GetEnvironmentIdentifier](#GetEnvironmentIdentifier "wikilink")   |
+| 12            | GetDeviceId                                                          |
+| 13            | DeleteSettings                                                       |
+| 14            | ImportSettings                                                       |
+| 20            | Resolve                                                              |
+| 21            | ResolveEx                                                            |
+| 30            | GetNasServiceSetting                                                 |
+| 31            | GetNasServiceSettingEx                                               |
+| 40            | GetNasRequestFqdn                                                    |
+| 41            | GetNasRequestFqdnEx                                                  |
+| 42            | GetNasApiFqdn                                                        |
+| 43            | GetNasApiFqdnEx                                                      |
+| 50            | GetCurrentSetting                                                    |
+| 60            | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
+| 61            | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
+| 62            | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
+| \[7.0.0+\] 63 | IsChangeEnvironmentIdentifierDisabled                                |
 
 ## GetEnvironmentIdentifier
 
