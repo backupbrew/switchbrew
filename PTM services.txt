@@ -26,13 +26,15 @@ This is "nn::fan::detail::IController".
 |-
 | 4 || GetRotationRate
 |-
-| 5 || EnableFan
+| [1.0.0-6.2.0] 5 || EnableFan
 |-
-| 6 || DisableFan
+| [1.0.0-6.2.0] 6 || DisableFan
 |-
-| 7 || GetActualRotationSpeedLevel
+| [1.0.0-6.2.0] 7 || GetActualRotationSpeedLevel
 |-
 |}
+
+[7.0.0+] SetRotationSpeedLevelByDiff/SetRotationRate no longer takes any input. GetRotationRate no longer returns output. These were presumably replaced with new cmds?
 
 = psm =
 This is "nn::psm::IPsmServer".

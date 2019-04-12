@@ -11,17 +11,21 @@ This is "nn::fan::detail::IManager".
 
 This is "nn::fan::detail::IController".
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | SetRotationSpeedLevel       |
-| 1   | SetRotationSpeedLevelByDiff |
-| 2   | GetRotationSpeedLevel       |
-| 3   | SetRotationRate             |
-| 4   | GetRotationRate             |
-| 5   | EnableFan                   |
-| 6   | DisableFan                  |
-| 7   | GetActualRotationSpeedLevel |
-|     |                             |
+| Cmd               | Name                        |
+| ----------------- | --------------------------- |
+| 0                 | SetRotationSpeedLevel       |
+| 1                 | SetRotationSpeedLevelByDiff |
+| 2                 | GetRotationSpeedLevel       |
+| 3                 | SetRotationRate             |
+| 4                 | GetRotationRate             |
+| \[1.0.0-6.2.0\] 5 | EnableFan                   |
+| \[1.0.0-6.2.0\] 6 | DisableFan                  |
+| \[1.0.0-6.2.0\] 7 | GetActualRotationSpeedLevel |
+|                   |                             |
+
+\[7.0.0+\] SetRotationSpeedLevelByDiff/SetRotationRate no longer takes
+any input. GetRotationRate no longer returns output. These were
+presumably replaced with new cmds?
 
 # psm
 
