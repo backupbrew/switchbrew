@@ -61,7 +61,7 @@ This is "nn::es::IETicketService".
 |-
 | 28 || [6.0.0+] ListPrepurchaseRecordRightsIds ([4.0.0-5.1.0] ListPrepurchaseRecord)
 |-
-| 29 || [4.0.0+] ListPrepurchaseRecordInfo
+| 29 || ListPrepurchaseRecordInfo
 |-
 | 30 || [5.0.0+] CountTicket
 |-
@@ -69,7 +69,7 @@ This is "nn::es::IETicketService".
 |-
 | 32 || [5.0.0+] CountPrepurchaseRecordEx
 |-
-| 33 || [5.0.0+] ListPrepurchaseRecordRightsIdsEx
+| 33 || [5.0.0-6.2.0] ListPrepurchaseRecordRightsIdsEx
 |-
 | 34 || [5.0.0+] GetEncryptedTicketSize
 |-
@@ -144,6 +144,8 @@ This is "nn::es::IETicketService".
 | 3002 || [7.0.0+]
 |}
 
+[7.0.0+] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
+
 == EsAsyncValue ==
 This was added with [6.0.0+].
 
@@ -208,5 +210,7 @@ This was added with [6.0.0+].
 | 901 || 
 |-
 | 1000 || 
+|-
+| 1001 || [7.0.0+]
 |-
 |}

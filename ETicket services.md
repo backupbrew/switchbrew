@@ -33,11 +33,11 @@ This is
 | 26   | \[4.0.0+\] DeleteAllPrepurchaseRecord                                                   |
 | 27   | \[4.0.0+\] CountPrepurchaseRecord                                                       |
 | 28   | \[6.0.0+\] ListPrepurchaseRecordRightsIds (\[4.0.0-5.1.0\] ListPrepurchaseRecord)       |
-| 29   | \[4.0.0+\] ListPrepurchaseRecordInfo                                                    |
+| 29   | ListPrepurchaseRecordInfo                                                               |
 | 30   | \[5.0.0+\] CountTicket                                                                  |
 | 31   | \[5.0.0+\] ListTicketRightsIds                                                          |
 | 32   | \[5.0.0+\] CountPrepurchaseRecordEx                                                     |
-| 33   | \[5.0.0+\] ListPrepurchaseRecordRightsIdsEx                                             |
+| 33   | \[5.0.0-6.2.0\] ListPrepurchaseRecordRightsIdsEx                                        |
 | 34   | \[5.0.0+\] GetEncryptedTicketSize                                                       |
 | 35   | \[5.0.0+\] GetEncryptedTicketData. \[6.0.0+\]: Now returns an additional 8-bytes.       |
 | 36   | \[6.0.0+\] DeleteAllInactiveELicenseRequiredPersonalizedTicket                          |
@@ -75,6 +75,8 @@ This is
 | 3001 | \[7.0.0+\]                                                                              |
 | 3002 | \[7.0.0+\]                                                                              |
 
+\[7.0.0+\] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
+
 ## EsAsyncValue
 
 This was added with \[6.0.0+\].
@@ -89,28 +91,29 @@ This was added with \[6.0.0+\].
 
 This was added with \[6.0.0+\].
 
-| Cmd  | Name |
-| ---- | ---- |
-| 1    |      |
-| 2    |      |
-| 3    |      |
-| 4    |      |
-| 5    |      |
-| 6    |      |
-| 7    |      |
-| 8    |      |
-| 9    |      |
-| 10   |      |
-| 100  |      |
-| 101  |      |
-| 102  |      |
-| 200  |      |
-| 201  |      |
-| 202  |      |
-| 203  |      |
-| 210  |      |
-| 211  |      |
-| 900  |      |
-| 901  |      |
-| 1000 |      |
-|      |      |
+| Cmd  | Name       |
+| ---- | ---------- |
+| 1    |            |
+| 2    |            |
+| 3    |            |
+| 4    |            |
+| 5    |            |
+| 6    |            |
+| 7    |            |
+| 8    |            |
+| 9    |            |
+| 10   |            |
+| 100  |            |
+| 101  |            |
+| 102  |            |
+| 200  |            |
+| 201  |            |
+| 202  |            |
+| 203  |            |
+| 210  |            |
+| 211  |            |
+| 900  |            |
+| 901  |            |
+| 1000 |            |
+| 1001 | \[7.0.0+\] |
+|      |            |
