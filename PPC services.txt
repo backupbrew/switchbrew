@@ -11,7 +11,7 @@ This is "nn::apm::IManager".
 |-
 | 1 || GetPerformanceMode
 |-
-| 6 || IsCpuOverclockEnabled
+| 6 || [7.0.0+] IsCpuOverclockEnabled
 |}
 
 == OpenSession ==

@@ -9,7 +9,7 @@ This is "nn::apm::IManager".
 | --- | ---------------------------------------- |
 | 0   | [\#OpenSession](#OpenSession "wikilink") |
 | 1   | GetPerformanceMode                       |
-| 6   | IsCpuOverclockEnabled                    |
+| 6   | \[7.0.0+\] IsCpuOverclockEnabled         |
 
 ## OpenSession
 
