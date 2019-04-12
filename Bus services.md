@@ -935,6 +935,9 @@ This is "nn::uart::IPortSession".
 | 6   |                    |
 | 7   |                    |
 
+\[7.0.0+\] OpenSession/OpenSessionForTest now takes an additional
+0x8-bytes of input.
+
 ### Port Mapping
 
 OpenSession translates user IDs to to the
