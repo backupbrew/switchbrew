@@ -32,6 +32,11 @@ This is "nn::wlan::detail::IInfraManager".
 | 25  | \[2.0.0+\]      |
 | 26  | \[4.0.0+\]      |
 | 27  | \[4.0.0+\]      |
+| 28  | \[?+\]          |
+| 29  | \[7.0.0+\]      |
+
+\[7.0.0+\] Input/output for cmds 27/28 were swapped, perhaps these cmds
+were swapped?
 
 # wlan:lcl
 
@@ -169,5 +174,7 @@ This was added with \[6.0.0+\].
 | 25  |      |
 | 26  |      |
 | 27  |      |
+
+\[7.0.0+\] Cmd14 now takes an input u8.
 
 [Category:Services](Category:Services "wikilink")
