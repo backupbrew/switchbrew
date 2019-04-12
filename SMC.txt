@@ -464,11 +464,11 @@ SPL uses this for setting up the security engine IRQ.
 The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 
 ==== HardwareType ====
-[1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
+[1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 2 (Hoag) or 3 (Invalid).
 
-[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Mariko) or 4 (Invalid).
 
-A value of 2 (Hoag) is always mapped to 4 (Invalid).
+[7.0.0+] This item no longer depends on fuses and can only be 0 (Icosa) or 0xF (Invalid) in retail units.
 
 ==== IsRetail ====
 This item is obtained by checking bits 9 and 0-1 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Debug), 1 (Retail) or 2 (Invalid).

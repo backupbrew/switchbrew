@@ -459,13 +459,14 @@ Constant](Package2#Versions.md##Versions "wikilink") - 1.
 
 \[1.0.0+\] This item is obtained by checking bits 8 and 2 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
-It can be 0 (Icosa), 1 (Copper) or 3 (Invalid).
+It can be 0 (Icosa), 1 (Copper), 2 (Hoag) or 3 (Invalid).
 
 \[4.0.0+\] This item is obtained by checking bits 8, 2 and 16-19 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
-It can be 0 (Icosa), 1 (Copper), 3 (Mariko) or 4 (Invalid).
+It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Mariko) or 4 (Invalid).
 
-A value of 2 (Hoag) is always mapped to 4 (Invalid).
+\[7.0.0+\] This item no longer depends on fuses and can only be 0
+(Icosa) or 0xF (Invalid) in retail units.
 
 #### IsRetail
 
