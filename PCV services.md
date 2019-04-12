@@ -67,6 +67,11 @@ This is "nn::pcv::detail::IPcvService".
 | 28                 | \[6.0.0+\]               |
 | 29                 | \[6.0.0+\]               |
 
+\[7.0.0+\] The type-0xA output buffers were replaced with type-0x22
+output buffers, for the following: GetDvfsTable, GetModuleStateTable,
+and
+GetPowerDomainStateTable.
+
 ## User Name to Block Maps
 
 ### Power Switch / Clocking / Reset
