@@ -23,7 +23,7 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 |-
 | 8 || [4.0.0+] GetAddOnContentListChangedEvent
 |-
-| 100 || [7.0.0+] CreateEcPurchasedEventManager
+| 100 || [7.0.0+] [[#IPurchaseEventManager|CreateEcPurchasedEventManager]]
 |}
 
 == IPurchaseEventManager ==

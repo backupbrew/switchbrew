@@ -1,19 +1,20 @@
 # aoc:u
 
-This is "nn::aocsrv::detail::IAddOnContentManager".
+This is
+"nn::aocsrv::detail::IAddOnContentManager".
 
-| Cmd | Name                                                 |
-| --- | ---------------------------------------------------- |
-| 0   | \[1.0.0-6.2.0\] CountAddOnContentByApplicationId     |
-| 1   | \[1.0.0-6.2.0\] ListAddOnContentByApplicationId      |
-| 2   | CountAddOnContent                                    |
-| 3   | ListAddOnContent                                     |
-| 4   | \[1.0.0-6.2.0\] GetAddOnContentBaseIdByApplicationId |
-| 5   | GetAddOnContentBaseId                                |
-| 6   | \[1.0.0-6.2.0\] PrepareAddOnContentByApplicationId   |
-| 7   | PrepareAddOnContent                                  |
-| 8   | \[4.0.0+\] GetAddOnContentListChangedEvent           |
-| 100 | \[7.0.0+\] CreateEcPurchasedEventManager             |
+| Cmd | Name                                                                          |
+| --- | ----------------------------------------------------------------------------- |
+| 0   | \[1.0.0-6.2.0\] CountAddOnContentByApplicationId                              |
+| 1   | \[1.0.0-6.2.0\] ListAddOnContentByApplicationId                               |
+| 2   | CountAddOnContent                                                             |
+| 3   | ListAddOnContent                                                              |
+| 4   | \[1.0.0-6.2.0\] GetAddOnContentBaseIdByApplicationId                          |
+| 5   | GetAddOnContentBaseId                                                         |
+| 6   | \[1.0.0-6.2.0\] PrepareAddOnContentByApplicationId                            |
+| 7   | PrepareAddOnContent                                                           |
+| 8   | \[4.0.0+\] GetAddOnContentListChangedEvent                                    |
+| 100 | \[7.0.0+\] [CreateEcPurchasedEventManager](#IPurchaseEventManager "wikilink") |
 
 ## IPurchaseEventManager
 
