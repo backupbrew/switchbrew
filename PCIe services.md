@@ -48,6 +48,11 @@ This is "nn::pcie::detail::ISession".
 | 18  | ReleaseIrq             |
 | 19  | SetIrqEnable           |
 | 20  | SetAspmEnable          |
+| 23  | \[7.0.0+\]             |
+
+\[7.0.0+\] AcquireIrq now takes an additiona 4-bytes of input, and no
+longer returns an output handle. SetAspmEnable now returns an output
+handle.
 
 # pcie:log
 
