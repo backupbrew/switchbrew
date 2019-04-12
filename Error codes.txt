@@ -290,7 +290,11 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x20801 || 1 || 260 || Command buffer too small
 |-
-| 0x40a01 || 1 || 517 || No such process
+| 0x40A01 || 1 || 517 || Invalid process ID.
+|-
+| 0x40C01 || 1 || 518 || Invalid thread ID.
+|-
+| 0x40E01 || 1 || 519 || Invalid thread ID (used in svcGetDebugThreadParam).
 |-
 | 0x41001 || 1 || 520 || Process not being debugged
 |-
