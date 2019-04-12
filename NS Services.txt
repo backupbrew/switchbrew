@@ -843,7 +843,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2154 || [6.0.0+] ForceActivateRightsContextForExit
 |-
-| 2155 || [?+] UpdateRightsEnvironmentStatus
+| 2155 || [7.0.0+] UpdateRightsEnvironmentStatus
 |-
 | 2160 || [6.0.0+] AddTargetApplicationToRightsEnvironment
 |-
@@ -867,9 +867,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2201 || [6.0.0+] GetInstalledApplicationCopyIdentifier
 |-
-| 2250 || [6.0.0+] RequestReportActiveELicence
+| [6.0.0-6.2.0] 2250 || RequestReportActiveELicence
 |-
 | 2300 || [6.0.0+] ListEventLog
+|-
+| 2350 || [7.0.0+] 
 |-
 |}
 
@@ -1005,6 +1007,12 @@ This was added with [6.0.0+].
 | 7 || || 
 |-
 | 8 || || 
+|-
+| 9 || [7.0.0+] || 
+|-
+| 10 || [7.0.0+] || 
+|-
+| 11 || [7.0.0+] || 
 |-
 |}
 
