@@ -87,7 +87,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 37 || RegisterHidReportEvent
 |-
-| 38 || HidGetReportEventInfo
+| 38 || [[#HidGetReportEventInfo]]
 |-
 | 39 || GetLatestPlr
 |-
@@ -215,6 +215,11 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 257 || [7.0.0+] EmulateBluetoothCrash
 |}
+
+== HidGetReportEventInfo ==
+No input, takes a type-0xA output buffer and returns 4-bytes of output.
+
+[7.0.0+] No longer takes a buffer or returns output, now returns an output handle.
 
 = bt =
 This is "nn::bluetooth::IBluetoothUser".
