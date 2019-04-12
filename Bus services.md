@@ -705,6 +705,110 @@ This is "nn::gpio::IManager".
 <td><p>None</p></td>
 </tr>
 <tr class="even">
+<td><p>[6.0.0+] 0x50</p></td>
+<td><p>0x20</p></td>
+<td><p>E, 0</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x51</p></td>
+<td><p>0x21</p></td>
+<td><p>E, 1</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x52</p></td>
+<td><p>0x22</p></td>
+<td><p>E, 2</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x53</p></td>
+<td><p>0x23</p></td>
+<td><p>E, 3</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x54</p></td>
+<td><p>0x4C</p></td>
+<td><p>J, 4</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x55</p></td>
+<td><p>0x57</p></td>
+<td><p>K, 7</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x56</p></td>
+<td><p>0x94</p></td>
+<td><p>S, 4</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x57</p></td>
+<td><p>0x98</p></td>
+<td><p>T, 0</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x58</p></td>
+<td><p>0x99</p></td>
+<td><p>T, 1</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x59</p></td>
+<td><p>0xBB</p></td>
+<td><p>X, 3</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x5A</p></td>
+<td><p>0xE5</p></td>
+<td><p>CC, 5</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
+<td><p>[6.0.0+] 0x5B</p></td>
+<td><p>0xAB</p></td>
+<td><p>V, 3</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="even">
+<td><p>[6.0.0+] 0x5C</p></td>
+<td><p>0x4E</p></td>
+<td><p>J, 6</p></td>
+<td></td>
+<td></td>
+<td><p>None</p></td>
+</tr>
+<tr class="odd">
 <td><p>-</p></td>
 <td><p>0x32</p></td>
 <td><p>G, 2</p></td>
@@ -712,7 +816,7 @@ This is "nn::gpio::IManager".
 <td></td>
 <td><p>None</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>-</p></td>
 <td><p>0x1B</p></td>
 <td><p>D, 3</p></td>
