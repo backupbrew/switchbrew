@@ -192,6 +192,8 @@ This is "nn::nim::detail::IShopServiceAsync".
 
 This is "nn::nim::detail::IShopServiceAccessSystemInterface".
 
+This was added with \[7.0.0+\].
+
 | Cmd | Name                    |
 | --- | ----------------------- |
 | 0   | RegisterSpecialClient   |
