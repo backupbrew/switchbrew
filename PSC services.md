@@ -44,15 +44,15 @@ at .text + 0xB2DB0 in 6.0.0 FS):
 
 This is "nn::psc::sf::IPmControl".
 
-| Cmd | Name                   |
-| --- | ---------------------- |
-| 0   | Initialize             |
-| 1   | DispatchRequest        |
-| 2   | GetResult              |
-| 3   | GetState               |
-| 4   | Cancel                 |
-| 5   | PrintModuleInformation |
-| 6   | GetModuleInformation   |
+| Cmd               | Name                   |
+| ----------------- | ---------------------- |
+| 0                 | Initialize             |
+| 1                 | DispatchRequest        |
+| 2                 | GetResult              |
+| 3                 | GetState               |
+| 4                 | Cancel                 |
+| \[1.0.0-6.2.0\] 5 | PrintModuleInformation |
+| 6                 | GetModuleInformation   |
 
 # psc:m
 

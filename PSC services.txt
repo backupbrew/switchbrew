@@ -43,7 +43,7 @@ This is "nn::psc::sf::IPmControl".
 |-
 | 4 || Cancel
 |-
-| 5 || PrintModuleInformation
+| [1.0.0-6.2.0] 5 || PrintModuleInformation
 |-
 | 6 || GetModuleInformation
 |}
