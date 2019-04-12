@@ -288,6 +288,7 @@ This is "nn::pcv::detail::IPcvService".
 |-
 | 85 || CEC || vdd_soc ||
 |-
+| [6.0.0+] 86 || EXTPERIPH2 || vdd_soc ||
 |}
 
 === Voltage ===
