@@ -142,13 +142,79 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 |-
 ! ID || Module
 |-
+| 0x03 ||
+|-
+| 0x04 || [[USB services|USB]]
+|-
+| 0x05 ||
+|-
+| 0x07 ||
+|-
+| 0x08 ||
+|-
+| 0x09 || [[Bus services|Gpio]]
+|-
+| 0x0A || [[Bus services|Pinmux]]
+|-
+| 0x0B || [[Bus services|Uart]]
+|-
+| 0x0C || [[Bus services|I2c]]
+|-
+| 0x0D || [[Bus services|I2c:Pcv]]
+|-
+| 0x0F || [[Bus services|Pwn]]
+|-
+| 0x10 ||
+|-
 | 0x13 || [[PCIe services|PCIe]]
+|-
+| 0x14 || [[Backlight services|Backlight]]
+|-
+| 0x15 || [[Nvnflinger services|Nvnflinger]]
+|-
+| 0x18 ||
 |-
 | 0x1B ||
 |-
+| 0x1C || [[Audio services|Audio]]
+|-
 | 0x1E ||
 |-
+| 0x1F || [[Bluetooth Driver services|Bluetooth]]
+|-
+| 0x20 ||
+|-
+| 0x21 || [[PTM services|Ptm]]
+|-
+| 0x23 || [[NFC services|nn::psc::PmModuleId_Nfc]]
+|- 
+| 0x24 || [[PPC services|Ppc]]
+|-
+| 0x25 ||
+|-
+| 0x26 || [[Network Interface services|Nifm]]
+|-
+| 0x28 || [[NPNS services|Npns]]
+|-
 | 0x29 || [[Log services|nn::psc::PmModuleId_Lm]]
+|-
+| 0x2A || [[BCAT services|Bcat]]
+|-
+| 0x2C || [[Parental Control services|Pctl]]
+|-
+| 0x2D || [[Error Report services|Erpt]]
+|-
+| 0x2E || [[Error Upload services|Eupld]]
+|-
+| 0x2F || [[Friend services|Friend]]
+|-
+| 0x30 || [[Glue services|Glue]]
+|-
+| 0x31 || [[Account services|Account]]
+|-
+| 0x32 || [[Bus services|SasBus]]
+|-
+| 0x65 || [[NV services|NV]]
 |}
 
 [[Category:Services]]

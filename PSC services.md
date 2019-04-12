@@ -109,12 +109,45 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 
 # PSC Module IDs
 
-| ID   | Module                                                  |
-| ---- | ------------------------------------------------------- |
-| 0x13 | [PCIe](PCIe%20services.md "wikilink")                   |
-| 0x1B |                                                         |
-| 0x1E |                                                         |
-| 0x29 | [nn::psc::PmModuleId\_Lm](Log%20services.md "wikilink") |
+| ID   | Module                                                   |
+| ---- | -------------------------------------------------------- |
+| 0x03 |                                                          |
+| 0x04 | [USB](USB%20services.md "wikilink")                      |
+| 0x05 |                                                          |
+| 0x07 |                                                          |
+| 0x08 |                                                          |
+| 0x09 | [Gpio](Bus%20services.md "wikilink")                     |
+| 0x0A | [Pinmux](Bus%20services.md "wikilink")                   |
+| 0x0B | [Uart](Bus%20services.md "wikilink")                     |
+| 0x0C | [I2c](Bus%20services.md "wikilink")                      |
+| 0x0D | [I2c:Pcv](Bus%20services.md "wikilink")                  |
+| 0x0F | [Pwn](Bus%20services.md "wikilink")                      |
+| 0x10 |                                                          |
+| 0x13 | [PCIe](PCIe%20services.md "wikilink")                    |
+| 0x14 | [Backlight](Backlight%20services.md "wikilink")          |
+| 0x15 | [Nvnflinger](Nvnflinger%20services.md "wikilink")        |
+| 0x18 |                                                          |
+| 0x1B |                                                          |
+| 0x1C | [Audio](Audio%20services.md "wikilink")                  |
+| 0x1E |                                                          |
+| 0x1F | [Bluetooth](Bluetooth%20Driver%20services.md "wikilink") |
+| 0x20 |                                                          |
+| 0x21 | [Ptm](PTM%20services.md "wikilink")                      |
+| 0x23 | [nn::psc::PmModuleId\_Nfc](NFC%20services.md "wikilink") |
+| 0x24 | [Ppc](PPC%20services.md "wikilink")                      |
+| 0x25 |                                                          |
+| 0x26 | [Nifm](Network%20Interface%20services.md "wikilink")     |
+| 0x28 | [Npns](NPNS%20services.md "wikilink")                    |
+| 0x29 | [nn::psc::PmModuleId\_Lm](Log%20services.md "wikilink")  |
+| 0x2A | [Bcat](BCAT%20services.md "wikilink")                    |
+| 0x2C | [Pctl](Parental%20Control%20services.md "wikilink")      |
+| 0x2D | [Erpt](Error%20Report%20services.md "wikilink")          |
+| 0x2E | [Eupld](Error%20Upload%20services.md "wikilink")         |
+| 0x2F | [Friend](Friend%20services.md "wikilink")                |
+| 0x30 | [Glue](Glue%20services.md "wikilink")                    |
+| 0x31 | [Account](Account%20services.md "wikilink")              |
+| 0x32 | [SasBus](Bus%20services.md "wikilink")                   |
+| 0x65 | [NV](NV%20services.md "wikilink")                        |
 
 # Power Management States
 
