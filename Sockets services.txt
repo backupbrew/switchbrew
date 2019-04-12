@@ -63,11 +63,11 @@ All the services commands but the first two return -1 on failure and set errno w
 |-
 | 27 || [[#DuplicateSocket]]
 |-
-| 28 || GetResourceStatistics
+| 28 || [[#GetResourceStatistics]]
 |-
-| 29 || [3.0.0+] RecvMMsg
+| 29 || [3.0.0+] [[#RecvMMsg]]
 |-
-| 30 || [3.0.0+] SendMMsg
+| 30 || [3.0.0+] [[#SendMMsg]]
 |-
 | 31 || [7.0.0+] EventFd
 |-
@@ -135,6 +135,21 @@ FreeBSD's <code>fcntl</code>, limited to <code>F_GETFL</code> and <code>F_SETFL<
 
 == DuplicateSocket ==
 Takes a socket file descriptor and an unused u64. Duplicates the socket (FreeBSD's <code>dup</code>). Reserved to <code>bsd:s</code>.
+
+== GetResourceStatistics ==
+Takes a total of 0x10-bytes of input, a PID, a type-0x22 output buffer, and returns a total of 8-bytes of output.
+
+[7.0.0+] Now takes an additional type-0x21 input buffer.
+
+== RecvMMsg ==
+Takes a total of 0x20-bytes of input, a type-0x22 output buffer, and returns a total of 8-bytes of output.
+
+[7.0.0+] The buffer was replaced with a type-0x6 output buffer.
+
+== SendMMsg ==
+Takes a total of 0xC-bytes of input, two type-0x21 input buffers, and returns a total of 8-bytes of output.
+
+[7.0.0+] The buffers were replaced with a type-0x6 output buffer.
 
 = bsdcfg =
 This is "nn::bsdsocket::cfg::ServerInterface".

@@ -7,41 +7,41 @@ errno when that happens. Although Nintendo has the FreeBSD kernel's to
 socket stack, **the errno macro definitions being in use actually come
 from Linux (and not from FreeBSD as one would expect\!)**.
 
-| Cmd | Name                                             |
-| --- | ------------------------------------------------ |
-| 0   | RegisterClient (Initialize)                      |
-| 1   | StartMonitoring                                  |
-| 2   | [\#Socket](#Socket "wikilink")                   |
-| 3   | [\#SocketExempt](#Socket "wikilink")             |
-| 4   | [\#Open](#Open "wikilink")                       |
-| 5   | Select                                           |
-| 6   | Poll                                             |
-| 7   | [\#Sysctl](#Sysctl "wikilink")                   |
-| 8   | Recv                                             |
-| 9   | RecvFrom                                         |
-| 10  | Send                                             |
-| 11  | SendTo                                           |
-| 12  | Accept                                           |
-| 13  | Bind                                             |
-| 14  | Connect                                          |
-| 15  | GetPeerName                                      |
-| 16  | GetSockName                                      |
-| 17  | GetSockOpt                                       |
-| 18  | Listen                                           |
-| 19  | [\#Ioctl](#Ioctl "wikilink")                     |
-| 20  | [\#Fcntl](#Fcntl "wikilink")                     |
-| 21  | SetSockOpt                                       |
-| 22  | Shutdown                                         |
-| 23  | ShutdownAllSockets                               |
-| 24  | Write                                            |
-| 25  | Read                                             |
-| 26  | Close                                            |
-| 27  | [\#DuplicateSocket](#DuplicateSocket "wikilink") |
-| 28  | GetResourceStatistics                            |
-| 29  | \[3.0.0+\] RecvMMsg                              |
-| 30  | \[3.0.0+\] SendMMsg                              |
-| 31  | \[7.0.0+\] EventFd                               |
-| 32  | \[7.0.0+\] RegisterResourceStatisticsName        |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | RegisterClient (Initialize)                                  |
+| 1   | StartMonitoring                                              |
+| 2   | [\#Socket](#Socket "wikilink")                               |
+| 3   | [\#SocketExempt](#Socket "wikilink")                         |
+| 4   | [\#Open](#Open "wikilink")                                   |
+| 5   | Select                                                       |
+| 6   | Poll                                                         |
+| 7   | [\#Sysctl](#Sysctl "wikilink")                               |
+| 8   | Recv                                                         |
+| 9   | RecvFrom                                                     |
+| 10  | Send                                                         |
+| 11  | SendTo                                                       |
+| 12  | Accept                                                       |
+| 13  | Bind                                                         |
+| 14  | Connect                                                      |
+| 15  | GetPeerName                                                  |
+| 16  | GetSockName                                                  |
+| 17  | GetSockOpt                                                   |
+| 18  | Listen                                                       |
+| 19  | [\#Ioctl](#Ioctl "wikilink")                                 |
+| 20  | [\#Fcntl](#Fcntl "wikilink")                                 |
+| 21  | SetSockOpt                                                   |
+| 22  | Shutdown                                                     |
+| 23  | ShutdownAllSockets                                           |
+| 24  | Write                                                        |
+| 25  | Read                                                         |
+| 26  | Close                                                        |
+| 27  | [\#DuplicateSocket](#DuplicateSocket "wikilink")             |
+| 28  | [\#GetResourceStatistics](#GetResourceStatistics "wikilink") |
+| 29  | \[3.0.0+\] [\#RecvMMsg](#RecvMMsg "wikilink")                |
+| 30  | \[3.0.0+\] [\#SendMMsg](#SendMMsg "wikilink")                |
+| 31  | \[7.0.0+\] EventFd                                           |
+| 32  | \[7.0.0+\] RegisterResourceStatisticsName                    |
 
 ## Initalize
 
@@ -132,6 +132,27 @@ FreeBSD's `fcntl`, limited to `F_GETFL` and `F_SETFL` with `O_NONBLOCK`.
 
 Takes a socket file descriptor and an unused u64. Duplicates the socket
 (FreeBSD's `dup`). Reserved to `bsd:s`.
+
+## GetResourceStatistics
+
+Takes a total of 0x10-bytes of input, a PID, a type-0x22 output buffer,
+and returns a total of 8-bytes of output.
+
+\[7.0.0+\] Now takes an additional type-0x21 input buffer.
+
+## RecvMMsg
+
+Takes a total of 0x20-bytes of input, a type-0x22 output buffer, and
+returns a total of 8-bytes of output.
+
+\[7.0.0+\] The buffer was replaced with a type-0x6 output buffer.
+
+## SendMMsg
+
+Takes a total of 0xC-bytes of input, two type-0x21 input buffers, and
+returns a total of 8-bytes of output.
+
+\[7.0.0+\] The buffers were replaced with a type-0x6 output buffer.
 
 # bsdcfg
 
