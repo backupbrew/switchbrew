@@ -1388,14 +1388,15 @@ register](http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way138245556
 
 ## ThreadContextFlags
 
-Bitfield of one of more of these:
+Bitfield of one of more of
+these:
 
-| Bit | Bitmask | Name          |
-| --- | ------- | ------------- |
-| 0   | 1       | NormalContext |
-| 1   | 2       |               |
-| 2   | 4       |               |
-| 3   | 8       |               |
+| Bit | Bitmask | Name                             | Description                                                                                           |
+| --- | ------- | -------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 0   | 1       | General-purpose registers        | If in 64-bit mode, GPRs 0–28 will be read/written. If in 32-bit mode, GPRs 0–12 will be read/written. |
+| 1   | 2       | Control registers                | Reads/writes the FP, LR, PC, SP, PSTATE, and TPIDR registers.                                         |
+| 2   | 4       | Floating-point registers         | Reads/writes the floating-point vector registers.                                                     |
+| 3   | 8       | Floating-point control registers | Reads/writes the FPCR and FPSR registers.                                                             |
 
 ## DeviceName
 
