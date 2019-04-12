@@ -114,8 +114,8 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 0x03 |                                                          |
 | 0x04 | [USB](USB%20services.md "wikilink")                      |
 | 0x05 |                                                          |
-| 0x07 |                                                          |
-| 0x08 |                                                          |
+| 0x07 | [Pcv](PCV%20services.md "wikilink")                      |
+| 0x08 | [Pcv:Imm](PCV%20services.md "wikilink")                  |
 | 0x09 | [Gpio](Bus%20services.md "wikilink")                     |
 | 0x0A | [Pinmux](Bus%20services.md "wikilink")                   |
 | 0x0B | [Uart](Bus%20services.md "wikilink")                     |
@@ -131,7 +131,7 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 0x1C | [Audio](Audio%20services.md "wikilink")                  |
 | 0x1E |                                                          |
 | 0x1F | [Bluetooth](Bluetooth%20Driver%20services.md "wikilink") |
-| 0x20 |                                                          |
+| 0x20 | [Bpc](PCV%20services.md "wikilink")                      |
 | 0x21 | [Ptm](PTM%20services.md "wikilink")                      |
 | 0x23 | [nn::psc::PmModuleId\_Nfc](NFC%20services.md "wikilink") |
 | 0x24 | [Ppc](PPC%20services.md "wikilink")                      |
@@ -140,6 +140,7 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 0x28 | [Npns](NPNS%20services.md "wikilink")                    |
 | 0x29 | [nn::psc::PmModuleId\_Lm](Log%20services.md "wikilink")  |
 | 0x2A | [Bcat](BCAT%20services.md "wikilink")                    |
+| 0x2B | [Time](PCV%20services.md "wikilink")                     |
 | 0x2C | [Pctl](Parental%20Control%20services.md "wikilink")      |
 | 0x2D | [Erpt](Error%20Report%20services.md "wikilink")          |
 | 0x2E | [Eupld](Error%20Upload%20services.md "wikilink")         |

@@ -148,9 +148,9 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 |-
 | 0x05 ||
 |-
-| 0x07 ||
+| 0x07 || [[PCV services|Pcv]]
 |-
-| 0x08 ||
+| 0x08 || [[PCV services|Pcv:Imm]]
 |-
 | 0x09 || [[Bus services|Gpio]]
 |-
@@ -182,7 +182,7 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 |-
 | 0x1F || [[Bluetooth Driver services|Bluetooth]]
 |-
-| 0x20 ||
+| 0x20 || [[PCV services|Bpc]]
 |-
 | 0x21 || [[PTM services|Ptm]]
 |-
@@ -199,6 +199,8 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 0x29 || [[Log services|nn::psc::PmModuleId_Lm]]
 |-
 | 0x2A || [[BCAT services|Bcat]]
+|-
+| 0x2B || [[PCV services|Time]]
 |-
 | 0x2C || [[Parental Control services|Pctl]]
 |-
