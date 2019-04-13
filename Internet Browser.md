@@ -260,20 +260,21 @@ This enum is "nn::web::common::ShimKind".
 
 This indicates the type of web-applet.
 
-| Value | Name  |
-| ----- | ----- |
-| 1     | Shop  |
-| 2     | Login |
-| 4     | Share |
-| 5     | Web   |
-| 6     | Wifi  |
-| 7     | Lobby |
+| Value | Name    |
+| ----- | ------- |
+| 1     | Shop    |
+| 2     | Login   |
+| 3     | Offline |
+| 4     | Share   |
+| 5     | Web     |
+| 6     | Wifi    |
+| 7     | Lobby   |
 
 ### WebSession
 
-With \[5.0.0+\] sdk-nso added `nn::web::Session::`, however with
-\[6.0.0+\] this was removed. WebApplet (Web shim title) doesn't seem to
-implement this, unknown if other titles do.
+With \[5.0.0+\] sdk-nso added `nn::web::Session::`. With \[6.0.0+\] this
+was removed, however it was reintroduced with \[7.0.0+\] as
+`nn::web::*WebSession` (for ShimKind Offline and Web).
 
 This is for sending/receiving
 [\#SessionMessages](#SessionMessage "wikilink") via applet Interactive
@@ -461,6 +462,7 @@ NUL-terminated.
 | \[6.0.0+\]     | BootFooterButton | 0x3E | 0x80   | Array of [\#WebBootFooterButtonEntry](#WebBootFooterButtonEntry "wikilink") with 0x10 entries. | BootFooterButton                                                                                                                                                 |
 | \[6.0.0+\]     |                  | 0x3F | 0x4    | float                                                                                          | OverrideWebAudioVolume                                                                                                                                           |
 | \[6.0.0+\]     |                  | 0x40 | 0x4    | float                                                                                          | OverrideMediaAudioVolume                                                                                                                                         |
+| \[7.0.0+\]     |                  | 0x41 | 0x4    | u32 enum WebSessionBootMode                                                                    | BootMode                                                                                                                                                         |
 
 Offline: title to load the content from is controlled by
 ApplicationId/SystemDataId. With DocumentKind\_OfflineHtmlPage, it will
