@@ -795,6 +795,13 @@ All strings are NUL-terminated.
 | AdditionalMediaData3
 |-
 | [6.0.0+]
+| BootFooterButton
+| 0x3E
+| 0x80
+| Array of [[#BootFooterButtonEntry]] with 0x10 entries.
+| BootFooterButton
+|-
+| [6.0.0+]
 | 
 | 0x3F
 | 0x4
