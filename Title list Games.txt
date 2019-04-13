@@ -4295,6 +4295,36 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01006BB00D45A000 || Splatoon 2 Special Demo || USA || || Digital || 0 0x10000 || || Demo
 |-
 | 01007E200D45C000 || Splatoon 2 Special Demo || EUR || || Digital || 0 0x10000 || || Demo
+|-
+| 0100974004924000 || Rayman Legends: Definitive Edition || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 0100CB9007DAE000 || Nine Parchments || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Demo
+|-
+| 0100F4F006EB0000 || Heroes of the Monkey Tavern || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 01008D00062C2000 || VOEZ || EUR JPN USA || || Digital || 0 0x10000 || || Demo
+|-
+| 0100BEA0096CE000 || EAT BEAT DEADSPIKE-san || EUR JPN USA || || Digital || 0 0x10000 || || Demo
+|-
+| 010039300A56C000 || Squareboy vs Bullies: Arena Edition || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 0100BB500AAE6000 || Metropolis: Lux Obscura || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 010044200A112000 || Vostok Inc. || EUR JPN USA || || Digital || 0 0x10000 || || Demo
+|-
+| 0100B7B009532000 || Super Chariot || EUR USA || || Digital || 0 0x10000 0x20000 || || Demo
+|-
+| 010009100845A000 || INVERSUS Deluxe || EUR JPN USA || || Digital || 0 0x10000 || || Demo
+|-
+| 010088F00AD80000 || Super One More Jump || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 010003200ABE4000 || 戦場のヴァルキュリア4 序盤体験版 || JPN || || Digital || 0 0x10000 || || Demo
+|-
+| 010087E00B0E6000 || Toki Tori 2+: Nintendo Switch Edition || EUR USA || || Digital || 0 0x10000 || || Demo
+|-
+| 0100E6400B1EA000 || Monster Hunter Generations Ultimate™ || EUR || || Digital || 0 0x10000 || || Demo
+|-
+| 010086100AA54000 || Portal Knights || EUR USA || || Digital || 0 0x10000 || || Demo
 |}
 
 = VersionList =
