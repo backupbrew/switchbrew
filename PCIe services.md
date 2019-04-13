@@ -52,7 +52,7 @@ This is "nn::pcie::detail::ISession".
 | 22  | \[?+\]                 |
 | 23  | \[7.0.0+\]             |
 
-\[7.0.0+\] AcquireIrq now takes an additiona 4-bytes of input, and no
+\[7.0.0+\] AcquireIrq now takes an additional 4-bytes of input, and no
 longer returns an output handle. SetAspmEnable now returns an output
 handle.
 
