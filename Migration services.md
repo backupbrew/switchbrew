@@ -77,4 +77,49 @@ This is "nn::migration::user::IAsyncContext"
 | 3   | GetResult      |
 |     |                |
 
+## IServer
+
+This is "nn::migration::savedata::IServer".
+
+This was added with \[7.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 100 |      |
+| 101 |      |
+| 200 |      |
+| 201 |      |
+| 300 |      |
+| 400 |      |
+| 500 |      |
+|     |      |
+
+## IClient
+
+This is "nn::migration::savedata::IClient".
+
+This was added with \[7.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 100 |      |
+| 200 |      |
+| 201 |      |
+| 210 |      |
+| 300 |      |
+| 301 |      |
+| 302 |      |
+| 303 |      |
+| 310 |      |
+| 320 |      |
+| 350 |      |
+| 400 |      |
+| 500 |      |
+| 999 |      |
+|     |      |
+
 [Category:Services](Category:Services "wikilink")
