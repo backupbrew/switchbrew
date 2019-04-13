@@ -944,7 +944,7 @@ passes it to
 
 ### SetPerformanceConfigurationChangedNotification
 
-Takes an input u8, no output.
+Takes an input u8 bool, no output.
 
 ### GetCurrentPerformanceConfiguration
 

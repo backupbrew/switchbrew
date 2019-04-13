@@ -985,7 +985,7 @@ No input, returns an output handle.
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
 
 === SetPerformanceConfigurationChangedNotification ===
-Takes an input u8, no output.
+Takes an input u8 bool, no output.
 
 === GetCurrentPerformanceConfiguration ===
 No input, returns the result of calling [[PPC_services#apm:sys|GetCurrentPerformanceConfiguration]].
