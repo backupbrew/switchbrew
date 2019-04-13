@@ -837,8 +837,8 @@ message IDs is done in the app itself(see
 \[7.0.0+\] User-processes now use BeginVrModeEx/EndVrModeEx instead of
 [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink"). Prior to using using
 BeginVrModeEx, [pctl](Parental%20Control%20services.md "wikilink")
-IsStereoVisionPermitted is used and an error is thrown if not allowed by
-pctl.
+IsStereoVisionPermitted is used and error 0xD08E is thrown if not
+allowed by pctl.
 
 ### GetEventHandle
 

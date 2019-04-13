@@ -917,7 +917,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
 
-[7.0.0+] User-processes now use BeginVrModeEx/EndVrModeEx instead of [[#SetVrModeEnabled]]. Prior to using using BeginVrModeEx, [[Parental_Control_services|pctl]] IsStereoVisionPermitted is used and an error is thrown if not allowed by pctl.
+[7.0.0+] User-processes now use BeginVrModeEx/EndVrModeEx instead of [[#SetVrModeEnabled]]. Prior to using using BeginVrModeEx, [[Parental_Control_services|pctl]] IsStereoVisionPermitted is used and error 0xD08E is thrown if not allowed by pctl.
 
 === GetEventHandle ===
 No input. Returns an output event handle. This is signalled when a message is available with [[#ReceiveMessage]].
