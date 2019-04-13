@@ -93,7 +93,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 |-
 | 1064 || [5.0.0+] ResetConfirmedStereoVisionPermission
 |-
-| 1065 || [5.0.0+] IsStereoVisionPermitted
+| 1065 || [5.0.0+] [[#IsStereoVisionPermitted]]
 |-
 | 1201 || UnlockRestrictionTemporarily
 |-
@@ -211,6 +211,9 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 |-
 | 2016 || [5.0.0+] RequestUpdateExemptionListAsync
 |}
+
+=== IsStereoVisionPermitted ===
+No input, returns an output u8 bool. True indicates that VrMode is allowed, false otherwise.
 
 == GenerateInquiryCode ==
 This cmd takes no input, and produces 0x20 bytes of raw output containing snprintf("%02d%08llu", 10, [inquiry_rnd]) on <= [[3.0.0]]. This changed on [[3.0.1]] to produce "11(...)" instead of "10(...)".
