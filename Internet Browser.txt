@@ -402,6 +402,21 @@ This is the header struct at offset 0 in the input web Arg storage for non-WebWi
 
 Web TLV used in the input web Arg storage, after [[#WebArgHeader]]. This is a total of 0x8-bytes.
 
+=== WebBootFooterButtonEntry ===
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Description
+|-
+| 0x0 || 0x4 || [[#FooterButtonId]]
+|-
+| 0x4 || 0x1 || u8 bool visible flag
+|-
+| 0x5 || 0x2 || ?
+|-
+| 0x7 || 0x1 || ?
+|}
 
 === TLVs ===
 All strings are NUL-terminated.
@@ -798,7 +813,7 @@ All strings are NUL-terminated.
 | BootFooterButton
 | 0x3E
 | 0x80
-| Array of [[#BootFooterButtonEntry]] with 0x10 entries.
+| Array of [[#WebBootFooterButtonEntry]] with 0x10 entries.
 | BootFooterButton
 |-
 | [6.0.0+]
@@ -1003,6 +1018,47 @@ Kind values for BackgroundKind. Only used when [[#BootDisplayKind]] is 0.
 |}
 
 Controls the initial mode, this can be toggled by the user via the pressing the left-stick button. If the Pointer flag is set to false, only LeftStickMode_Cursor will be used and mode toggle by the user is disabled (input value ignored).
+
+==== FooterButtonId ====
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Name
+!  Description
+|-
+| 0
+| None
+| None, for empty [[#WebBootFooterButtonEntry]]. Invalid for use as an input Id.
+|-
+| 1
+| 
+| 
+|-
+| 2
+| 
+| 
+|-
+| 3
+| 
+| 
+|-
+| 4
+| 
+| 
+|-
+| 5
+| 
+| 
+|-
+| 6
+| 
+| 
+|-
+| 7
+| 
+| Values starting with this are invalid.
+|-
+|}
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.
