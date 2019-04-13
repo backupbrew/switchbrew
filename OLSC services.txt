@@ -27,11 +27,17 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 |-
 | 103 || ||
 |-
+| 104 || [7.0.0+] || Returns an [[#INativeHandleHolder]]
+|-
 | 200 || ||
 |-
 | 201 || ||
 |-
 | 202 || || Returns an [[#IAsyncResult]]
+|-
+| 203 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 204 || [7.0.0+] || 
 |-
 | 900 || ||
 |-
@@ -50,6 +56,28 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 | 908 || ||
 |-
 | 909 || ||
+|-
+| 1000 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1010 || [7.0.0+] || 
+|-
+| 1011 || [7.0.0+] || 
+|-
+| 1012 || [7.0.0+] || 
+|-
+| 1013 || [7.0.0+] || 
+|-
+| 1014 || [7.0.0+] || 
+|-
+| 1020 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1021 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1022 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1023 || [7.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1024 || [7.0.0+] || 
 |}
 
 == ITransferTaskListController ==
@@ -138,8 +166,13 @@ This is "nn::olsc::srv::IRemoteStorageController".
 |-
 | 16 || || Returns an [[#IAsyncResult]]
 |-
+| 17 || [7.0.0+] || 
+|-
+| 18 || [7.0.0+] || 
+|-
+| 19 || [7.0.0+] || Returns an [[#INativeHandleHolder]].
+|-
 |}
-
 
 == IAsyncResult ==
 This is "nn::olsc::srv::IAsyncResult".
