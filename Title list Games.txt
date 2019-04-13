@@ -790,7 +790,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 01003C100445C000 || Castle of Heart || EUR USA || 3.0.1 || Digital || 0 65536 || || Application / Game
 |-
-| || Azure Striker GUNVOLT: STRIKER PACK (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 01003C100655A000 || Azure Striker GUNVOLT: STRIKER PACK (retail only) || EUR USA || 5.0.0 || Cartridge || 0 0x10000 || || Application / Game
 |-
 | 01003C200A232000 || Animated Jigsaws: Beautiful Japanese Scenery || EUR JPN USA || 4.0.0 || Digital || 0 65536 || || Application / Game
 |-
@@ -920,7 +920,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100459000302000 || ドラゴンクエストⅩ　ベータテスト版 || JPN || 1.0.0 || Digital || 0 65536 131072 196608 262144 327680 || || Application / Game
 |-
-| || Yonder: The Cloud Catcher Chronicles (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 010045900ABB0000 || Yonder: The Cloud Catcher Chronicles (retail only) || EUR || 5.0.0 || Cartridge || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100461007BB0000 || Black Hole || EUR USA || 3.0.1 || Digital || 0 0x10000 0x20000 0x30000 0x40000 || || Application / Game
 |-
@@ -2178,7 +2178,9 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | || Thimbleweed Park || || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
-| || Stern Pinball Arcade (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100AF8006AF2000 || Stern Pinball Arcade (retail only) || EUR || 5.0.0 || Cartridge || 0 0x10000 0x20000 || || Application / Game
+|-
+| 0100629006000000 || Stern Pinball Arcade (retail only) || USA || 5.0.0 || Cartridge || 0 0x10000 0x20000 || || Application / Game
 |-
 | 0100AFC00B120000 || FLIP OVER FROG || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2204,7 +2206,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | 0100B1E00AA56000 || Crossing Souls || EUR JPN USA || 5.0.0 || Digital || 0 || || Application / Game
 |-
-| || Axiom Verge || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100B1F00660E000 || Axiom Verge || || 5.0.0 || Cartridge || 0 0x10000 || || Application / Game
 |-
 | 0100B1F0090F2000 || TurtlePop: Journey to Freedom || EUR JPN USA || 4.0.0 || Digital || 0 131072 || || Application / Game
 |-
@@ -2302,7 +2304,7 @@ Note: Game updates have the same titleID as the main application, except with bi
 |-
 | || Slain: Back From Hell (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
 |-
-| || Victor Vran Overkill Edition (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100BB400B276000 || Victor Vran Overkill Edition (retail only) || EUR USA || 5.0.0 || Cartridge || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 0100BB9009FC8000 || Farm Expert 2018 for Nintendo Switch™ || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -2517,7 +2519,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CDC00789E000 || The Final Station || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
-| || 魔界戰記DISGAEA 5 || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100CDD0077D8000 || 魔界戰記DISGAEA 5 || || 5.0.0 || Cartridge || 0 0x10000 || || Application / Game
 |-
 | 0100CE1004E72000 || The Longest Five Minutes || EUR USA || 3.0.1 || Digital / Cartridge || 0 || || Application / Game
 |-
@@ -2777,7 +2779,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E5000AB8A000 || Code of Princess EX || JPN || 4.0.0 || Digital / Cartridge || 0 || || Application / Game
 |-
-| || Owlboy (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100E570094E8000 || Owlboy (retail only) || EUR USA || 5.0.0 || Cartridge || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 0100E5700A3BA000 || Vesta || JPN || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -3005,7 +3007,7 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F7F00AFA2000 || ACA NEOGEO THE SUPER SPY || EUR JPN USA || 4.0.0 || Digital || 0 || || Virtual Console
 |-
-| || Shaq Fu: A Legend Reborn (retail only) || || 5.0.0 || Cartridge || 0 || || Application / Game
+| 0100F8000A310000 || Shaq Fu: A Legend Reborn (retail only) || EUR USA || 5.0.0 || Cartridge || 0 0x10000 0x20000 0x30000 || || Application / Game
 |-
 | 0100F8300A95C000 || Parallel || EUR USA || 4.0.0 || Digital || 0 || || Application / Game
 |-
@@ -3363,6 +3365,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100E7300AAD4000 || Fitness Boxing || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01005650089A0000 || Flipping Death || EUR || || Cartridge || 0 0x10000 || || Game
+|-
 | 010078500C21A000 || Football Manager 2019 Touch || EUR USA || || 0 0x10000 0x20000 || || Game
 |-
 | 01007CD00BCE2000 || Forever Forest || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3689,6 +3693,10 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01001F100B586000 || Rooms: The Adventure of Anne & George || EUR JPN USA || || Digital || 0 0x20000 || || Game
 |-
+| 0100E9B00A014000 || Runbow - Deluxe Edition || EUR || || Cartridge || 0 0x10000 || || Game
+|-
+| 0100D37009B8A000 || Runbow - Deluxe Edition || USA || || Cartridge || 0 0x10000 || || Game
+|-
 | 0100F6F00B9E8000 || Saboteur! || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01000BA00CD2C000 || Santa Tracker || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3864,6 +3872,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010037900CB1C000 || Viviette || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010004000AABC000 || VOEZ || USA || || Cartridge || 0 0x10000 0x20000 || || Game
+|-
+| 0100B4700A47C000 || Vostok Inc. || EUR || || Cartridge || 0 0x10000 || || Game
 |-
 | 010084D00A134000 || War Theatre || EUR USA || || Digital || 0 0x10000 || || Game
 |-
