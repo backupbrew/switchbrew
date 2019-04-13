@@ -73,5 +73,60 @@ This is "nn::arp::detail::IRegistrar".
 | Padding
 |}
 
+= bgtc:t =
+This is "nn::bgtc::ITaskService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 || NotifyTaskStarting
+|-
+| 2 || NotifyTaskFinished
+|-
+| 3 || GetTriggerEvent
+|-
+| 4 || IsInHalfAwake
+|-
+| 5 || NotifyClientName
+|-
+| 6 || IsInFullAwake
+|-
+| 11 || ScheduleTask
+|-
+| 12 || GetScheduledTaskInterval
+|-
+| 13 || UnscheduleTask
+|-
+| 14 || GetScheduleEvent
+|-
+| 15 || SchedulePeriodicTask
+|-
+| 101 || GetOperationMode
+|-
+| 102 || WillDisconnectNetworkWhenEnteringSleep
+|-
+| 103 || WillStayHalfAwakeInsteadSleep
+|-
+|}
+
+= bgtc:sc =
+This is "nn::bgtc::IStateControlService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 1 || GetState
+|-
+| 2 || GetStateChangedEvent
+|-
+| 3 || NotifyEnteringHalfAwake
+|-
+| 4 || NotifyLeavingHalfAwake
+|-
+| 5 || SetIsUsingSleepUnsupportedDevices
+|-
+|}
 
 [[Category:Services]]

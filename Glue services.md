@@ -43,4 +43,39 @@ This is "nn::arp::detail::IRegistrar".
 | 0xD    | 0x1  | Update Storage ID    |
 | 0xE    | 0x2  | Padding              |
 
+# bgtc:t
+
+This is "nn::bgtc::ITaskService".
+
+| Cmd | Name                                   |
+| --- | -------------------------------------- |
+| 1   | NotifyTaskStarting                     |
+| 2   | NotifyTaskFinished                     |
+| 3   | GetTriggerEvent                        |
+| 4   | IsInHalfAwake                          |
+| 5   | NotifyClientName                       |
+| 6   | IsInFullAwake                          |
+| 11  | ScheduleTask                           |
+| 12  | GetScheduledTaskInterval               |
+| 13  | UnscheduleTask                         |
+| 14  | GetScheduleEvent                       |
+| 15  | SchedulePeriodicTask                   |
+| 101 | GetOperationMode                       |
+| 102 | WillDisconnectNetworkWhenEnteringSleep |
+| 103 | WillStayHalfAwakeInsteadSleep          |
+|     |                                        |
+
+# bgtc:sc
+
+This is "nn::bgtc::IStateControlService".
+
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 1   | GetState                          |
+| 2   | GetStateChangedEvent              |
+| 3   | NotifyEnteringHalfAwake           |
+| 4   | NotifyLeavingHalfAwake            |
+| 5   | SetIsUsingSleepUnsupportedDevices |
+|     |                                   |
+
 [Category:Services](Category:Services "wikilink")
