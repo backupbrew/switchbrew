@@ -575,15 +575,16 @@ stores.
 
 This item is currently hardcoded to 0.
 
-\[5.0.0+\] [PCV](PCV%20services.md "wikilink") overrides the value from
-[HardwareType](#HardwareType "wikilink") and configures PMIC devices
-with this item.
+\[5.0.0+\] [PCV](PCV%20services.md "wikilink") uses this value in
+combination with [HardwareType](#HardwareType "wikilink") to configure
+power blocks and memory tables for different
+hardware.
 
-| Value | Devices                                        |
-| ----- | ---------------------------------------------- |
-| 0     | max77620\_sd0, max77621\_cpu and max77621\_gpu |
-| 1     | max77620\_sd0, max77812\_cpu and max77812\_gpu |
-| 2     | max77620\_sd0, max77812\_cpu and max77812\_gpu |
+| Value | SoC  | GPU           | Power Blocks                                   |
+| ----- | ---- | ------------- | ---------------------------------------------- |
+| 0     | T210 | GM20B (0x12B) | max77620\_sd0, max77621\_cpu and max77621\_gpu |
+| 1     | T214 | GM2?? (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
+| 2     | T214 | GM2?? (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
 
 #### Package2Hash
 

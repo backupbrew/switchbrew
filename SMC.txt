@@ -525,19 +525,27 @@ This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]
 ==== NewHardwareType ====
 This item is currently hardcoded to 0.
 
-[5.0.0+] [[PCV_services|PCV]] overrides the value from [[#HardwareType|HardwareType]] and configures PMIC devices with this item.
+[5.0.0+] [[PCV_services|PCV]] uses this value in combination with [[#HardwareType|HardwareType]] to configure power blocks and memory tables for different hardware.
 {| class="wikitable" border="1"
 |-
 !  Value
-!  Devices
+!  SoC
+!  GPU
+!  Power Blocks
 |-
 |  0
+|  T210
+|  GM20B (0x12B)
 |  max77620_sd0, max77621_cpu and max77621_gpu
 |-
 |  1
+|  T214
+|  GM2?? (0x12E)
 |  max77620_sd0, max77812_cpu and max77812_gpu
 |-
 |  2
+|  T214
+|  GM2?? (0x12E)
 |  max77620_sd0, max77812_cpu and max77812_gpu
 |}
 
