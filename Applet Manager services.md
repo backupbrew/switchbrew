@@ -1528,6 +1528,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x1 | Background                                                                                                                                                    |
 | 0x2 | No UI                                                                                                                                                         |
 | 0x3 | Background with indirect display, see also [\#GetIndirectLayerConsumerHandle](#GetIndirectLayerConsumerHandle "wikilink"). Only used by swkbd InlineKeyboard. |
+| 0x4 | AllForegroundInitiallyHidden. Can be used by \[7.0.0+\] [WebSession](Internet%20Browser.md "wikilink").                                                       |
 |     |                                                                                                                                                               |
 
 ### NotificationMessage

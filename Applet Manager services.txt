@@ -1719,6 +1719,9 @@ See also [[:Category:Library Applets]].
 | 0x3
 | Background with indirect display, see also [[#GetIndirectLayerConsumerHandle]]. Only used by swkbd InlineKeyboard.
 |-
+| 0x4
+| AllForegroundInitiallyHidden. Can be used by [7.0.0+] [[Internet_Browser|WebSession]].
+|-
 |}
 
 === NotificationMessage ===
