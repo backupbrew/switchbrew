@@ -441,8 +441,8 @@ on DramId.
 nx-abcb (Copper) is the SDEV unit. Among other differences, this has
 extra hardware to support HDMI output.
 
-nx-abca2 (Icosa) hardware types are variations of the retail form
-factor.
+nx-abca2 (Icosa or Hoag in Erista, Iowa or Hoag in Mariko) hardware
+types are variations of the retail or EDEV form factors.
 
 Erista memory is LPDDR4, while Mariko memory is LPDDR4X.
 
