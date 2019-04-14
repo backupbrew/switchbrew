@@ -837,8 +837,15 @@ All strings are NUL-terminated.
 | 
 | 0x41
 | 0x4
-| u32 enum WebSessionBootMode
+| u32 enum [[#WebSessionBootMode]]
 | BootMode
+|-
+| [7.0.0+]
+| 
+| 0x42
+| 0x1
+| u8 bool
+| Enables using [[#WebSession]] when set.
 |}
 
 Offline: title to load the content from is controlled by ApplicationId/SystemDataId. With DocumentKind_OfflineHtmlPage, it will ignore this and only load from the user-process title.
@@ -1069,6 +1076,24 @@ Controls the initial mode, this can be toggled by the user via the pressing the 
 | Values starting with this are invalid.
 |-
 |}
+
+==== WebSessionBootMode ====
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Name
+!  Description
+|-
+| 0
+| 
+| Normal (AllForeground)
+|-
+| 1
+| 
+| AllForegroundInitiallyHidden
+|}
+
+This controls which [[Applet_Manager_services|LibraryAppletMode]] the applet will be launched with, by the user-process. The TLV for this seems to be ignored by the applet.
 
 ==== LastUrl ====
 When the applet loads a page where the beginning of the URL matches the URL from CallbackUrl, the applet will exit and set LastUrl to that URL (exit doesn't occur when CallbackableUrl is set). With Offline-applet for CallbackUrl handling, it compares the domain with "localhost" instead of using the CallbackUrl TLV.

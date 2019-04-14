@@ -462,7 +462,8 @@ NUL-terminated.
 | \[6.0.0+\]     | BootFooterButton | 0x3E | 0x80   | Array of [\#WebBootFooterButtonEntry](#WebBootFooterButtonEntry "wikilink") with 0x10 entries. | BootFooterButton                                                                                                                                                 |
 | \[6.0.0+\]     |                  | 0x3F | 0x4    | float                                                                                          | OverrideWebAudioVolume                                                                                                                                           |
 | \[6.0.0+\]     |                  | 0x40 | 0x4    | float                                                                                          | OverrideMediaAudioVolume                                                                                                                                         |
-| \[7.0.0+\]     |                  | 0x41 | 0x4    | u32 enum WebSessionBootMode                                                                    | BootMode                                                                                                                                                         |
+| \[7.0.0+\]     |                  | 0x41 | 0x4    | u32 enum [\#WebSessionBootMode](#WebSessionBootMode "wikilink")                                | BootMode                                                                                                                                                         |
+| \[7.0.0+\]     |                  | 0x42 | 0x1    | u8 bool                                                                                        | Enables using [\#WebSession](#WebSession "wikilink") when set.                                                                                                   |
 
 Offline: title to load the content from is controlled by
 ApplicationId/SystemDataId. With DocumentKind\_OfflineHtmlPage, it will
@@ -587,6 +588,18 @@ ignored).
 | 6     |      |                                                                                                                     |
 | 7     |      | Values starting with this are invalid.                                                                              |
 |       |      |                                                                                                                     |
+
+#### WebSessionBootMode
+
+| Value | Name | Description                  |
+| ----- | ---- | ---------------------------- |
+| 0     |      | Normal (AllForeground)       |
+| 1     |      | AllForegroundInitiallyHidden |
+
+This controls which
+[LibraryAppletMode](Applet%20Manager%20services.md "wikilink") the
+applet will be launched with, by the user-process. The TLV for this
+seems to be ignored by the applet.
 
 #### LastUrl
 
