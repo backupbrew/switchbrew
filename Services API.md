@@ -91,7 +91,7 @@ Takes a pid.
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
 <tr class="odd">
-<td><p>apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg, [1.0.0-7.0.1] apm, apm:p, [8.0.0+] apm:am</p></td>
+<td><p>apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0+] apm:am</p></td>
 <td><p><a href="PPC services.md" title="wikilink">PPC services</a></p></td>
 <td><p>fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.</p></td>
 </tr>
@@ -116,7 +116,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>[1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s [2.0.0+] bpc, bpc:r, pcv, time:u, time:a, time:s, [1.0.0-7.0.1] pcv:arb, pcv:imm, [8.0.0+] clkrst, clkrst:a, clkrst:i, rgltr, rtc</p></td>
+<td><p>[1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s [2.0.0+] bpc, bpc:r, pcv, time:u, time:a, time:s, [1.0.0-7.0.1] pcv:arb, pcv:imm, [8.0.0+] clkrst, [8.0.0+] clkrst:a, [8.0.0+] clkrst:i, [8.0.0+] rgltr, [8.0.0+] rtc</p></td>
 <td><p><a href="PCV services.md" title="wikilink">PCV services</a></p></td>
 <td></td>
 </tr>
