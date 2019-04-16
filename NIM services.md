@@ -105,6 +105,8 @@ This is
 | 98  | \[6.0.0+\]                                                       |
 | 99  | \[7.0.0+\]                                                       |
 
+\[8.0.0+\] Cmd76 now takes an additional 0x8-bytes of input.
+
 ## DestroySystemUpdateTask
 
 Takes a 0x10-byte input struct, from the output of ListSystemUpdateTask.
