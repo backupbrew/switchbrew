@@ -635,6 +635,15 @@ This is "nn::settings::ISystemSettingsServer".
 | 177 || [7.0.0+] GetThemeKey
 |-
 | 178 || [7.0.0+] SetThemeKey
+|-
+| 179 || [8.0.0+]
+|-
+| 180 || [8.0.0+]
+|-
+| 181 || [8.0.0+]
+|-
+| 182 || [8.0.0+]
+|-
 |}
 
 Official user-processes get a new service session handle each time a set:sys cmd is used, with the session being closed aftewards.
