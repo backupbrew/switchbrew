@@ -847,6 +847,8 @@ This is the only hid:sys command used by USB-sysmodule (with value 0x40).
 = hid:tmp =
 This is "nn::hid::IHidTemporaryServer".
 
+This service no longer exists in [8.0.0+]. 
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

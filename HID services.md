@@ -538,6 +538,8 @@ This is the only hid:sys command used by USB-sysmodule (with value
 
 This is "nn::hid::IHidTemporaryServer".
 
+This service no longer exists in \[8.0.0+\].
+
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
 | 0   | GetConsoleSixAxisSensorCalibrationValues |
