@@ -1328,6 +1328,10 @@ This is "nv::gemcoredump::INvGemCoreDump".
 | 1 ||
 |-
 | 2 ||
+|-
+| 3 || [8.0.0+]
+|-
+| 4 || [8.0.0+]
 |}
 
 = Errors =

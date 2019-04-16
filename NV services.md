@@ -1273,11 +1273,13 @@ This is "nv::gemcontrol::INvGemControl".
 
 This is "nv::gemcoredump::INvGemCoreDump".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   | \[8.0.0+\] |
+| 4   | \[8.0.0+\] |
 
 # Errors
 
