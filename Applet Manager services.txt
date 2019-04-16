@@ -382,7 +382,7 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
 |-
-| 70 || [8.0.0+] ||
+| 70 || [8.0.0+] GetCurrentApplicationId ||
 |-
 | 80 || [6.0.0+] RequestExitToSelf ||
 |-
