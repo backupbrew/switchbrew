@@ -94,6 +94,8 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 | 31 || [2.0.0+] [[#GetWriterLockAccessorEx]] || 
 |-
 | 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
+|-
+| 200 || [8.0.0+] ||
 |}
 
 ==== PopFromGeneralChannel ====
@@ -229,6 +231,10 @@ No input, returns an [[#IApplicationAccessor]].
 | 140 || [6.0.0+] GetDesirableUids || 
 |-
 | 150 || [6.0.0+] ReportApplicationExitTimeout || 
+|-
+| 160 || [8.0.0+]
+|-
+| 170 || [8.0.0+]
 |}
 
 Commands <=30 are inherited from [[#IAppletAccessor]].
@@ -285,6 +291,14 @@ Added with [[7.0.0]].
 | 10 || ReadThemeStorage || Takes an input u64 '''offset''' and a type-0x22 output buffer, returns an output u64 '''actual_transfer_size'''.
 |-
 | 11 || WriteThemeStorage || Takes an input u64 '''offset''' and a type-0x21 input buffer, no output.
+|-
+| 40 || [8.0.0+] || 
+|-
+| 42 || [8.0.0+] || 
+|-
+| 50 || [8.0.0+] || 
+|-
+| 51 || [8.0.0+] || 
 |}
 
 These commands copy data from/to a state buffer and the user specified buffer. The size of the state buffer is 0x400-bytes.
@@ -367,6 +381,8 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 | 51 || [4.0.0+] ReportVisibleErrorWithErrorContext ||
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
+|-
+| 70 || [8.0.0+] ||
 |-
 | 80 || [6.0.0+] RequestExitToSelf ||
 |-
@@ -479,6 +495,8 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 | 10 || [6.0.0+] StartShutdownSequenceForOverlay
 |-
 | 11 || [6.0.0+] StartRebootSequenceForOverlay
+|-
+| 20 || [8.0.0+]
 |-
 | 90 || [7.0.0+] SetRequiresGpuResourceUse
 |-
@@ -596,6 +614,8 @@ Takes an input u8, no output.
 | 123 || [5.0.0+] GetPreviousProgramIndex || 
 |-
 | 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
+|-
+| 130 || [8.0.0+] || 
 |-
 | 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
 |-
@@ -1077,6 +1097,8 @@ No input, returns a total of 4-bytes of output.
 | 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
 |-
 | 100 || [7.0.0+] [[#SetAlbumImageTakenNotificationEnabled]]
+|-
+| 110 || [8.0.0+]
 |-
 | 1000 || [7.0.0+] [[#GetDebugStorageChannel]]
 |}
@@ -1564,6 +1586,8 @@ This can be used by applications to save screenshots.
 | 201 || SaveScreenShot || 
 |-
 | 203 || SaveScreenShotEx0 || 
+|-
+| 205 || [8.0.0+] || 
 |-
 | 210 || SaveScreenShotEx2 || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer.  Returns a total of 0x20-bytes of output.
 |}

@@ -85,6 +85,7 @@ commands.
 | 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
 | 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")      |       |
 | 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
+| 200 | \[8.0.0+\]                                                                       |       |
 
 #### PopFromGeneralChannel
 
@@ -196,6 +197,8 @@ No input, returns an
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                |       |
 | 140 | \[6.0.0+\] GetDesirableUids                                            |       |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout                                |       |
+| 160 | \[8.0.0+\]                                                             |       |
+| 170 | \[8.0.0+\]                                                             |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -254,6 +257,10 @@ Added with
 | --- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
 | 10  | ReadThemeStorage  | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
 | 11  | WriteThemeStorage | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
+| 40  | \[8.0.0+\]        |                                                                                                                |
+| 42  | \[8.0.0+\]        |                                                                                                                |
+| 50  | \[8.0.0+\]        |                                                                                                                |
+| 51  | \[8.0.0+\]        |                                                                                                                |
 
 These commands copy data from/to a state buffer and the user specified
 buffer. The size of the state buffer is
@@ -302,6 +309,7 @@ buffer. The size of the state buffer is
 | 50  | \[2.0.0+\] ReportVisibleError                                                                               |       |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |       |
+| 70  | \[8.0.0+\]                                                                                                  |       |
 | 80  | \[6.0.0+\] RequestExitToSelf                                                                                |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |       |
@@ -407,6 +415,7 @@ Takes an input u64 and handle, returns a GRC
 | 6   | \[2.0.0+\] SetScreenShotPermissionGlobally       |
 | 10  | \[6.0.0+\] StartShutdownSequenceForOverlay       |
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay         |
+| 20  | \[8.0.0+\]                                       |
 | 90  | \[7.0.0+\] SetRequiresGpuResourceUse             |
 | 101 | \[5.0.0+\] BeginToObserveHidInputForDevelop      |
 
@@ -473,6 +482,7 @@ output.
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                                                                             |
 | 123  | \[5.0.0+\] GetPreviousProgramIndex                                                                                              |                                                                                                             |
 | 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                                                                             |
+| 130  | \[8.0.0+\]                                                                                                                      |                                                                                                             |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                                                                             |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |                                                                                                             |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                         |                                                                                                             |
@@ -1005,6 +1015,7 @@ output.
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink") |
+| 110  | \[8.0.0+\]                                                                                              |
 | 1000 | \[7.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                               |
 
 ### Exit
@@ -1428,6 +1439,7 @@ screenshots.
 | 32  | \[7.0.0+\] SetShimLibraryVersion | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
 | 201 | SaveScreenShot                   |                                                                                                                                        |
 | 203 | SaveScreenShotEx0                |                                                                                                                                        |
+| 205 | \[8.0.0+\]                       |                                                                                                                                        |
 | 210 | SaveScreenShotEx2                | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
 Cmd32 is a wrapper for [caps:c](Capture%20services.md "wikilink") cmd33.
