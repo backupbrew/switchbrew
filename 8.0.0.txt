@@ -14,19 +14,19 @@ Security flaws fixed: Yes.
 * 	
 * 	A View All Available News option is available within News, allowing you to view all news items currently being distributed
 * 		
-* 		Go to News &gt Channel List > View More
+* 		Go to News > Channel List > View More
 * 		
 * 	
 * 	
 * 	Select from 15 new icons from the Splatoon™ 2 and Yoshi’s Crafted World™ games for your user
 * 		
-* 		To edit your user icon, head to your My Page on the top left of the HOME Menu &gt Profile
+* 		To edit your user icon, head to your My Page on the top left of the HOME Menu > Profile
 * 		
 * 	
 * 	
 * 	A feature to Transfer Your Save Data is now available, allowing you to transfer your save data for individual games between your Nintendo Switch systems
 * 		
-* 		Go to System Settings > Data Management &gt Transfer Your Save Data
+* 		Go to System Settings > Data Management > Transfer Your Save Data
 * 		Save data will not remain on your source system after the transfer process completes
 * 		
 * 	
