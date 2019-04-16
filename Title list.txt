@@ -224,6 +224,8 @@ Decimal versions use the format:
 | 0100000000000826 || [[5.0.0|v335544750]] (5.0.0.430)<br/> [[5.1.0|v336592976]] (5.1.0.80)<br/> [[6.0.0|v402653544]] (6.0.0.360)<br/> [[6.1.0|v403701850]] (6.1.0.90)<br/> [[6.2.0|v404750376]] (6.2.0.40)<br/> [[7.0.0|v469762248]] (7.0.0.200) || RebootlessSystemUpdateVersion || Rebootless system update version file.
 |-
 | 0100000000000827 || [[5.1.0|v336592976]] (5.1.0.80)<br/> [[6.0.0|v402653544]] (6.0.0.360)<br/> [[6.2.0|v404750376]] (6.2.0.40)<br/> [[7.0.0|v469762248]] (7.0.0.200) || ContentActionTable || Used by [[AM_services|AM]].
+|-
+| 0100000000000828 || [[8.0.0|v536871442]] (8.0.0.530) || FunctionBlackList || Used for restricting specific features in applications.
 |}
 
 == System Applets ==

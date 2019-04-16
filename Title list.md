@@ -1351,6 +1351,12 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>ContentActionTable</p></td>
 <td><p>Used by <a href="AM services.md" title="wikilink">AM</a>.</p></td>
 </tr>
+<tr class="even">
+<td><p>0100000000000828</p></td>
+<td><p><a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<td><p>FunctionBlackList</p></td>
+<td><p>Used for restricting specific features in applications.</p></td>
+</tr>
 </tbody>
 </table>
 
