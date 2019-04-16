@@ -1,6 +1,6 @@
 The Switch 8.0.0 system update was released on April 15, 2019. This Switch update was released for the following regions: ALL.
 
-Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+Security flaws fixed: Yes.
 
 ==Change-log==
 [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
@@ -14,7 +14,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	
 * 	A View All Available News option is available within News, allowing you to view all news items currently being distributed
 * 		
-* 		Go to News &gt Channel List &gt View More
+* 		Go to News &gt Channel List > View More
 * 		
 * 	
 * 	
@@ -26,21 +26,21 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	
 * 	A feature to Transfer Your Save Data is now available, allowing you to transfer your save data for individual games between your Nintendo Switch systems
 * 		
-* 		Go to System Settings &gt Data Management &gt Transfer Your Save Data
+* 		Go to System Settings > Data Management &gt Transfer Your Save Data
 * 		Save data will not remain on your source system after the transfer process completes
 * 		
 * 	
 * 	
 * 	A Zoom feature can be enabled from within System Settings
 * 		
-* 		Go to System Settings &gt System to turn Zoom ON
+* 		Go to System Settings > System to turn Zoom ON
 * 		Once enabled, you can use the Zoom feature by pressing the HOME Button twice
 * 		
 * 	
 * 	
 * 	An option is available to prevent the system from waking from Sleep Mode when an AC adapter is disconnected
 * 		
-* 		Go to System Settings &gt Sleep Mode &gt Wake When AC Adapter is Disconnected
+* 		Go to System Settings > Sleep Mode &gt Wake When AC Adapter is Disconnected
 * 		This also applies when undocking your console
 * 		
 * 	
@@ -48,20 +48,20 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	A VR Mode (3D Visuals) restriction is available within Parental Controls 
 * 		
 * 		This will also be available in the Nintendo Switch Parental Controls app through a later update
-* 		Go to System Settings &gt Parental Controls
+* 		Go to System Settings > Parental Controls
 * 		These settings can also be changed from within Nintendo Labo Toy-Con 04: VR Kit
 * 		
 * 	
 * 	
 * 	Hong Kong / Taiwan / South Korea is available for selection in Region
 * 		
-* 		Go to System Settings &gt System &gt Region
+* 		Go to System Settings > System &gt Region
 * 		
 * 	
 * 	
 * 	The following names have been changed (functionality remains the same)
 * 		
-* 		Save Data Cloud Backup &gt Save Data Cloud
+* 		Save Data Cloud Backup > Save Data Cloud
 * 		Transfer Your User and Save Data &gt Transfer Your User Data
 * 		
 * 	
@@ -77,3 +77,7 @@ This contains <code>/blacklist.dat</code> which contains 8-bytes of zeros.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=04-15-19_08-05-11&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
