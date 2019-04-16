@@ -69,7 +69,7 @@ Takes a pid.
 |-
 | [1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry
 
-[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd
+[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, [1.0.0-7.0.1] ovln:rcv, ovln:snd
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
@@ -224,7 +224,7 @@ Takes a pid.
 | [[Process Manager services]]
 |
 |-
-| psc:c, psc:m, [5.0.0+] srepo:u, srepo:a
+| psc:c, psc:m, [5.0.0+] srepo:u, srepo:a, [8.0.0+] ovln:rcv, ovln:snd
 | [[PSC services]]
 | 
 |-

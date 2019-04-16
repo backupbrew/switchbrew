@@ -86,7 +86,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>[1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry</p>
-<p>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, ovln:rcv, ovln:snd</p></td>
+<p>[3.0.0+] aoc:u, ns:am2, ns:dev, ns:ec, ns:rid, ns:rt, ns:su, ns:vm, ns:web, [1.0.0-7.0.1] ovln:rcv, ovln:snd</p></td>
 <td><p><a href="NS Services.md" title="wikilink">NS Services</a></p></td>
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
@@ -277,7 +277,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>psc:c, psc:m, [5.0.0+] srepo:u, srepo:a</p></td>
+<td><p>psc:c, psc:m, [5.0.0+] srepo:u, srepo:a, [8.0.0+] ovln:rcv, ovln:snd</p></td>
 <td><p><a href="PSC services.md" title="wikilink">PSC services</a></p></td>
 <td></td>
 </tr>
