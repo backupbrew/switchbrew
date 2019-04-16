@@ -34,6 +34,7 @@ This is "nn::wlan::detail::IInfraManager".
 | 27  | \[4.0.0+\]      |
 | 28  | \[?+\]          |
 | 29  | \[7.0.0+\]      |
+| 30  | \[8.0.0+\]      |
 
 \[7.0.0+\] Input/output for cmds 27/28 were swapped, perhaps these cmds
 were swapped?
@@ -95,6 +96,8 @@ This is "nn::wlan::detail::ILocalManager".
 | 48  | \[4.0.0+\]                    |
 | 49  | \[6.0.0+\]                    |
 | 50  | \[6.0.0+\]                    |
+| 51  | \[8.0.0+\]                    |
+| 52  | \[8.0.0+\]                    |
 
 # wlan:lg
 
