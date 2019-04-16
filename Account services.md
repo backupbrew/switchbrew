@@ -135,7 +135,7 @@ This is
 | 260                 | CreateProcedureToLinkNnidWithNintendoAccount                          | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
 | 261                 | ResumeProcedureToLinkNnidWithNintendoAccount                          | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
 | 280                 | ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount     | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 290                 | \[8.0.0+\]                                                            |                                                                                                                |
+| 290                 | \[8.0.0+\] GetRequestForNintendoAccountUserResourceView               |                                                                                                                |
 | 300                 | \[6.0.0+\] TryRecoverNintendoAccountUserStateAsync                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
 | 400                 | \[6.1.0+\] IsServiceEntryRequirementCacheRefreshRequiredForOnlinePlay | Takes a total of 0x8-bytes of input, returns an output u8.                                                     |
 | 401                 | \[6.1.0+\] RefreshServiceEntryRequirementCacheForOnlinePlayAsync      | Takes a total of 0x8-bytes of input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                  |

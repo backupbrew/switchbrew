@@ -241,7 +241,7 @@ This is "nn::account::baas::IAdministrator".
 |-
 | 280 || ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
-| 290 || [8.0.0+] || 
+| 290 || [8.0.0+] GetRequestForNintendoAccountUserResourceView || 
 |-
 | 300 || [6.0.0+] TryRecoverNintendoAccountUserStateAsync || Returns an [[#IAsyncContext]].
 |-
