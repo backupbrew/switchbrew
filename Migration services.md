@@ -3,20 +3,22 @@ transfer system.
 
 # mig:usr
 
-This is "nn::migration::user::IService"
+This is
+"nn::migration::user::IService"
 
-| Cmd  | Name                    |
-| ---- | ----------------------- |
-| 10   | TryGetLastMigrationInfo |
-| 100  | CreateServer            |
-| 101  | ResumeServer            |
-| 200  | CreateClient            |
-| 201  | ResumeClient            |
-| 1010 | \[7.0.0+\]              |
-| 1100 | \[7.0.0+\]              |
-| 1101 | \[7.0.0+\]              |
-| 1200 | \[7.0.0+\]              |
-| 1201 | \[7.0.0+\]              |
+| Cmd  | Name                                                                                                                                    |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 10   | TryGetLastMigrationInfo                                                                                                                 |
+| 100  | CreateServer                                                                                                                            |
+| 101  | ResumeServer                                                                                                                            |
+| 200  | CreateClient                                                                                                                            |
+| 201  | ResumeClient                                                                                                                            |
+| 1001 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [IAsyncNetworkServiceLicenseKindContext](Account%20services.md "wikilink")) |
+| 1010 | \[7.0.0+\]                                                                                                                              |
+| 1100 | \[7.0.0+\]                                                                                                                              |
+| 1101 | \[7.0.0+\]                                                                                                                              |
+| 1200 | \[7.0.0+\]                                                                                                                              |
+| 1201 | \[7.0.0+\]                                                                                                                              |
 
 ## IServer
 
@@ -32,9 +34,12 @@ This is "nn::migration::user::IServer"
 | 201 | GetClientProfile         |
 | 202 | AcceptConnectionAsync    |
 | 203 | DeclineConnectionAsync   |
+| 210 | \[8.0.0+\]               |
 | 300 | ProcessTransferAsync     |
 | 400 | CompleteAsync            |
 | 500 | Abort                    |
+| 998 | \[8.0.0+\]               |
+| 999 | \[8.0.0+\]               |
 |     |                          |
 
 ## IClient
@@ -53,6 +58,8 @@ This is "nn::migration::user::IClient"
 | 200 | ScanServersAsync                         |
 | 201 | ListServers                              |
 | 210 | ConnectByServerIdAsync                   |
+| 220 | \[8.0.0+\]                               |
+| 221 | \[8.0.0+\]                               |
 | 300 | GetStorageShortfall                      |
 | 301 | GetTotalTransferInfo                     |
 | 302 | GetImmigrantUid                          |
@@ -62,6 +69,9 @@ This is "nn::migration::user::IClient"
 | 350 | SuspendAsync                             |
 | 400 | CompleteAsync                            |
 | 500 | Abort                                    |
+| 996 | \[8.0.0+\]                               |
+| 997 | \[8.0.0+\]                               |
+| 998 | \[8.0.0+\]                               |
 | 999 | DebugSynchronizeStateInFinalizationAsync |
 |     |                                          |
 

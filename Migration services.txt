@@ -17,6 +17,8 @@ This is "nn::migration::user::IService"
 |-
 | 201 || ResumeClient
 |-
+| 1001 || [8.0.0+] ? (Takes a total of 8-bytes of input, returns an [[Account_services|IAsyncNetworkServiceLicenseKindContext]])
+|-
 | 1010 || [7.0.0+]
 |-
 | 1100 || [7.0.0+]
@@ -51,11 +53,17 @@ This is "nn::migration::user::IServer"
 |-
 | 203 || DeclineConnectionAsync
 |-
+| 210 || [8.0.0+]
+|-
 | 300 || ProcessTransferAsync
 |-
 | 400 || CompleteAsync
 |-
 | 500 || Abort
+|-
+| 998 || [8.0.0+]
+|-
+| 999 || [8.0.0+]
 |-
 |}
 
@@ -86,6 +94,10 @@ This is "nn::migration::user::IClient"
 |-
 | 210 || ConnectByServerIdAsync
 |-
+| 220 || [8.0.0+]
+|-
+| 221 || [8.0.0+]
+|-
 | 300 || GetStorageShortfall
 |-
 | 301 || GetTotalTransferInfo
@@ -103,6 +115,12 @@ This is "nn::migration::user::IClient"
 | 400 || CompleteAsync
 |-
 | 500 || Abort
+|-
+| 996 || [8.0.0+]
+|-
+| 997 || [8.0.0+]
+|-
+| 998 || [8.0.0+]
 |-
 | 999 || DebugSynchronizeStateInFinalizationAsync
 |-
