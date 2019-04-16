@@ -6,7 +6,7 @@ for CPU, GPU, and memory.
 This is "nn::apm::IManager".
 
 This was moved to [AM](Applet%20Manager%20services.md "wikilink") with
-\[8.0.0+\].
+\[8.0.0+\] and is now a shim for [apm:am](#apm:am "wikilink").
 
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
@@ -31,6 +31,13 @@ This service no longer exists in \[8.0.0+\].
 ## OpenSession
 
 Returns an [\#ISession](#ISession "wikilink").
+
+# apm:am
+
+This is "nn::apm::IManager".
+
+This was added with \[8.0.0+\] and is the same as the old
+[apm](#apm "wikilink") service.
 
 # apm:sys
 
@@ -75,11 +82,11 @@ Returns the currently active
 
 This is "nn::apm::ISession".
 
-| Cmd | Name                        |
-| --- | --------------------------- |
-| 0   | SetPerformanceConfiguration |
-| 1   | GetPerformanceConfiguration |
-| 2   | \[8.0.0+\]                  |
+| Cmd | Name                              |
+| --- | --------------------------------- |
+| 0   | SetPerformanceConfiguration       |
+| 1   | GetPerformanceConfiguration       |
+| 2   | \[8.0.0+\] SetCpuOverclockEnabled |
 
 ## SetPerformanceConfiguration
 

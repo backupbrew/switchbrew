@@ -3,7 +3,7 @@ APM is utilized for setting system performance profiles including clocks for CPU
 = apm =
 This is "nn::apm::IManager".
 
-This was moved to [[Applet_Manager_services|AM]] with [8.0.0+]. 
+This was moved to [[Applet_Manager_services|AM]] with [8.0.0+] and is now a shim for [[#apm:am|apm:am]].
 
 {| class="wikitable" border="1"
 |-
@@ -33,6 +33,11 @@ This service no longer exists in [8.0.0+].
 
 == OpenSession ==
 Returns an [[#ISession]].
+
+= apm:am =
+This is "nn::apm::IManager".
+
+This was added with [8.0.0+] and is the same as the old [[#apm|apm]] service.
 
 = apm:sys =
 This is "nn::apm::ISystemManager".
@@ -90,7 +95,7 @@ This is "nn::apm::ISession".
 |-
 | 1 || GetPerformanceConfiguration
 |-
-| 2 || [8.0.0+]
+| 2 || [8.0.0+] SetCpuOverclockEnabled
 |}
 
 == SetPerformanceConfiguration ==
