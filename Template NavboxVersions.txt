@@ -16,5 +16,7 @@
 | align="center" | [[6.0.0]] • [[6.0.1]] • [[6.1.0]] • [[6.2.0]]
 |-
 | align="center" | [[7.0.0]] • [[7.0.1]]
+|-
+| align="center" | [[8.0.0]]
 |-|}
 </center><includeonly>[[Category:System versions]]</includeonly>
