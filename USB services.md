@@ -38,6 +38,7 @@ it.
 | 9                 | \[5.0.0+\] SetBinaryObjectStore                          |
 | 10                | \[5.0.0+\] Enable                                        |
 | 11                | \[5.0.0+\] Disable                                       |
+| 12                | \[8.0.0+\]                                               |
 
 Initialization done by [manu](Manu%20Services.md "wikilink"):
 
@@ -1021,6 +1022,15 @@ Locates an entry in the [\#HidGamepad](#HidGamepad "wikilink") state
 with the input u16s, and checks for a **quirks** array entry where
 **name** matches the input buffer string. Returns 1 when found, 0
 otherwise.
+
+# usb:obsv
+
+Added with \[8.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
 
 # HidGamepad
 

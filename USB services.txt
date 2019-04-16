@@ -39,6 +39,8 @@ This service can be used by multiple processes at the same time, with separate i
 | 10 || [5.0.0+] Enable
 |-
 | 11 || [5.0.0+] Disable
+|-
+| 12 || [8.0.0+]
 |}
 
 Initialization done by [[Manu Services|manu]]:
@@ -885,6 +887,18 @@ This loads data for [[#HidGamepad]] with the input .json.
 Takes 6-bytes of input (u16s '''vid''', '''pid''', '''bcdDevice''') and a type-0x5 input buffer, returns an output u8 bool indicating success.
 
 Locates an entry in the [[#HidGamepad]] state with the input u16s, and checks for a '''quirks''' array entry where '''name''' matches the input buffer string. Returns 1 when found, 0 otherwise.
+
+= usb:obsv =
+Added with [8.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|}
 
 = HidGamepad =
 With [7.0.0+] usb-sysmodule now has .json data embedded in the codebin.
