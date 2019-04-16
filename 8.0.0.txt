@@ -69,7 +69,7 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * General system stability improvements to enhance the user's experience.
 
 == System Titles ==
-1 new title was added: [[#FunctionBlackList]].
+1 new title was added: [[#FunctionBlackList|FunctionBlackList]].
 
 === FunctionBlackList ===
 This contains <code>/blacklist.dat</code> which contains 8-bytes of zeros.
