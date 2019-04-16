@@ -95,7 +95,7 @@ Official user-processes use the same retry loop with this as the other Open*Prox
 |-
 | 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
 |-
-| 200 || [8.0.0+] ||
+| 200 || [8.0.0+] LaunchDevMenu ||
 |}
 
 ==== PopFromGeneralChannel ====

@@ -85,7 +85,7 @@ commands.
 | 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
 | 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")      |       |
 | 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
-| 200 | \[8.0.0+\]                                                                       |       |
+| 200 | \[8.0.0+\] LaunchDevMenu                                                         |       |
 
 #### PopFromGeneralChannel
 
