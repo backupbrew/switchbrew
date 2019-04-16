@@ -109,10 +109,10 @@ This is "nn::bcat::detail::ipc::IDeliveryTaskSuspensionService".
 
 Added with \[8.0.0+\].
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-|     |      |       |
+| Cmd | Name     | Notes |
+| --- | -------- | ----- |
+| 0   | GetEvent |       |
+|     |          |       |
 
 # news:a, news:c, news:m, news:p, news:v
 
