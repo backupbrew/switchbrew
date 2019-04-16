@@ -131,6 +131,10 @@ This is "nn::hid::IHidServer".
 |-
 | 134 || [6.1.0+] SetNpadAnalogStickUseCenterClamp
 |-
+| 135 || [8.0.0+]
+|-
+| 136 || [8.0.0+]
+|-
 | 200 || [[#GetVibrationDeviceInfo]]
 |-
 | 201 || [[#SendVibrationValue]]
@@ -244,6 +248,12 @@ This is "nn::hid::IHidServer".
 | 525 || [5.1.0+] SetPalmaBoostMode
 |-
 | 526 || [7.0.0+] CancelWritePalmaWaveEntry
+|-
+| 527 || [8.0.0+]
+|-
+| 528 || [8.0.0+]
+|-
+| 529 || [8.0.0+]
 |-
 | 1000 || SetNpadCommunicationMode
 |-
@@ -487,6 +497,22 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 143 || [5.0.0+] GetConsoleSixAxisSensorCountStates
 |-
+| 144 || [8.0.0+]
+|-
+| 145 || [8.0.0+]
+|-
+| 146 || [8.0.0+]
+|-
+| 147 || [8.0.0+]
+|-
+| 148 || [8.0.0+]
+|-
+| 149 || [8.0.0+]
+|-
+| 150 || [8.0.0+]
+|-
+| 151 || [8.0.0+]
+|-
 | 201 || ActivateFirmwareUpdate
 |-
 | 202 || DeactivateFirmwareUpdate
@@ -578,6 +604,10 @@ This is "nn::hid::IHidDebugServer".
 | 400 || [6.0.0+] DisableExternalMcuOnNxDevice
 |-
 | 401 || [6.0.0+] DisableRailDeviceFiltering
+|-
+| 500 || [8.0.0+]
+|-
+| 501 || [8.0.0+]
 |}
 
 = hid:sys =
@@ -723,6 +753,8 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 811 || [5.0.0+] GetSixAxisSensorUserCalibrationStage
 |-
+| 812 || [8.0.0+]
+|-
 | 821 || StartAnalogStickManualCalibration
 |-
 | 822 || RetryCurrentAnalogStickManualCalibrationStage
@@ -800,6 +832,8 @@ This is "nn::hid::IHidSystemServer".
 | 1133 || [6.0.0+] StartUsbFirmwareUpdate
 |-
 | 1134 || [6.0.0+] GetUsbFirmwareUpdateState
+|-
+| 1150 || [8.0.0+]
 |}
 
 == SetVibrationMasterVolume ==

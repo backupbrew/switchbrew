@@ -70,6 +70,8 @@ This is
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
 | 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
 | 134  | \[6.1.0+\] SetNpadAnalogStickUseCenterClamp                                                      |
+| 135  | \[8.0.0+\]                                                                                       |
+| 136  | \[8.0.0+\]                                                                                       |
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
@@ -127,6 +129,9 @@ This is
 | 524  | \[5.1.0+\] PairPalma                                                                             |
 | 525  | \[5.1.0+\] SetPalmaBoostMode                                                                     |
 | 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                             |
+| 527  | \[8.0.0+\]                                                                                       |
+| 528  | \[8.0.0+\]                                                                                       |
+| 529  | \[8.0.0+\]                                                                                       |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 
@@ -344,6 +349,14 @@ This is "nn::hid::IHidDebugServer".
 | 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency |
 | 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor             |
 | 143 | \[5.0.0+\] GetConsoleSixAxisSensorCountStates       |
+| 144 | \[8.0.0+\]                                          |
+| 145 | \[8.0.0+\]                                          |
+| 146 | \[8.0.0+\]                                          |
+| 147 | \[8.0.0+\]                                          |
+| 148 | \[8.0.0+\]                                          |
+| 149 | \[8.0.0+\]                                          |
+| 150 | \[8.0.0+\]                                          |
+| 151 | \[8.0.0+\]                                          |
 | 201 | ActivateFirmwareUpdate                              |
 | 202 | DeactivateFirmwareUpdate                            |
 | 203 | StartFirmwareUpdate                                 |
@@ -390,6 +403,8 @@ This is "nn::hid::IHidDebugServer".
 | 350 | \[5.0.0+\] AddRegisteredDevice                      |
 | 400 | \[6.0.0+\] DisableExternalMcuOnNxDevice             |
 | 401 | \[6.0.0+\] DisableRailDeviceFiltering               |
+| 500 | \[8.0.0+\]                                          |
+| 501 | \[8.0.0+\]                                          |
 
 # hid:sys
 
@@ -466,6 +481,7 @@ This is
 | 809  | \[5.0.0+\] GetUniquePadSerialNumber                                |
 | 810  | \[5.0.0+\] GetUniquePadControllerNumber                            |
 | 811  | \[5.0.0+\] GetSixAxisSensorUserCalibrationStage                    |
+| 812  | \[8.0.0+\]                                                         |
 | 821  | StartAnalogStickManualCalibration                                  |
 | 822  | RetryCurrentAnalogStickManualCalibrationStage                      |
 | 823  | CancelAnalogStickManualCalibration                                 |
@@ -505,6 +521,7 @@ This is
 | 1132 | \[6.0.0+\] CheckUsbFirmwareUpdateRequired                          |
 | 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                  |
 | 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                               |
+| 1150 | \[8.0.0+\]                                                         |
 
 ## SetVibrationMasterVolume
 
