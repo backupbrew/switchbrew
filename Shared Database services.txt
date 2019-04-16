@@ -17,6 +17,10 @@ This is "nn::pl::detail::ISharedFontManager".
 | 4 || [[#GetSharedMemoryNativeHandle]]
 |-
 | 5 || [[#GetSharedFontInOrderOfPriority]]
+|-
+| 100 || [8.0.0+]
+|-
+| 101 || [8.0.0+]
 |}
 
 == RequestLoad ==
@@ -203,6 +207,8 @@ This is "nn::pdm::detail::INotifyService".
 | 7 || 
 |-
 | 8 || [6.0.0+]
+|-
+| 9 || [8.0.0+]
 |}
 
 = pdm:qry =

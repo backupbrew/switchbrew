@@ -11,6 +11,8 @@ This is
 | 3   | [\#GetSharedMemoryAddressOffset](#GetSharedMemoryAddressOffset "wikilink")     |
 | 4   | [\#GetSharedMemoryNativeHandle](#GetSharedMemoryNativeHandle "wikilink")       |
 | 5   | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink") |
+| 100 | \[8.0.0+\]                                                                     |
+| 101 | \[8.0.0+\]                                                                     |
 
 ## RequestLoad
 
@@ -154,6 +156,7 @@ This is "nn::pdm::detail::INotifyService".
 | 6   |            |
 | 7   |            |
 | 8   | \[6.0.0+\] |
+| 9   | \[8.0.0+\] |
 
 # pdm:qry
 
