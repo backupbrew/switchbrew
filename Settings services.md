@@ -420,11 +420,10 @@ This is
 | 176 | \[7.0.0+\] SetThemeSettings                                                                       |
 | 177 | \[7.0.0+\] GetThemeKey                                                                            |
 | 178 | \[7.0.0+\] SetThemeKey                                                                            |
-| 179 | \[8.0.0+\]                                                                                        |
-| 180 | \[8.0.0+\]                                                                                        |
-| 181 | \[8.0.0+\]                                                                                        |
-| 182 | \[8.0.0+\]                                                                                        |
-|     |                                                                                                   |
+| 179 | \[8.0.0+\] GetZoomFlag                                                                            |
+| 180 | \[8.0.0+\] SetZoomFlag                                                                            |
+| 181 | \[8.0.0+\] GetT                                                                                   |
+| 182 | \[8.0.0+\] SetT                                                                                   |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
