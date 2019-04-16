@@ -241,7 +241,7 @@ This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration, and thus there are 
 |  [[8.0.0]]
 |  [[8.0.0]]
 |  December 2017
-|  January 20, 2018
+|  April 15, 2018
 |  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]] and ktemkin,  [[User:Naehrwert|naehrwert]] (independently), almost certainly others (independently)
 |}
 
