@@ -230,20 +230,20 @@ These were added with \[8.0.0+\].
 
 This is "nn::clkrst::IClkrstSession".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
-| 7   |      |
-| 8   |      |
-| 9   |      |
-| 10  |      |
-| 11  |      |
+| Cmd | Name            |
+| --- | --------------- |
+| 0   | SetClockEnabled |
+| 1   |                 |
+| 2   | SetReset        |
+| 3   |                 |
+| 4   | SetPowerEnabled |
+| 5   |                 |
+| 6   |                 |
+| 7   |                 |
+| 8   |                 |
+| 9   |                 |
+| 10  |                 |
+| 11  |                 |
 
 # clkrst:a
 

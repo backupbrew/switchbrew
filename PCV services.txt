@@ -390,19 +390,19 @@ This is "nn::clkrst::IClkrstSession".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || SetClockEnabled
 |-
 | 1 ||
 |-
-| 2 ||
+| 2 || SetReset
 |-
 | 3 ||
 |-
-| 4 ||
+| 4 || SetPowerEnabled
 |-
 | 5 ||
 |-
-| 6 ||
+| 6 || 
 |-
 | 7 ||
 |-
