@@ -240,7 +240,7 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
 <td><p>2017 (when TrustZone code plaintext was first obtained).</p></td>
-<td><p>April 15, 2018</p></td>
+<td><p>April 15, 2019</p></td>
 <td><p>Everyone</p></td>
 </tr>
 <tr class="odd">
@@ -257,7 +257,7 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
 <td><p>December 2017</p></td>
-<td><p>April 15, 2018</p></td>
+<td><p>April 15, 2019</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:motezazer" title="wikilink">motezazer</a> and ktemkin, <a href="User:Naehrwert" title="wikilink">naehrwert</a> (independently), almost certainly others (independently)</p></td>
 </tr>
 </tbody>

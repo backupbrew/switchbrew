@@ -217,7 +217,7 @@ In [[8.0.0]], this was fixed by removing TSEC access, and adding TSECB access (T
 | [[8.0.0]]
 | [[8.0.0]]
 | 2017 (when TrustZone code plaintext was first obtained).
-| April 15, 2018
+| April 15, 2019
 | Everyone
 |-
 |  deja vu (insufficient system state validation on suspend leads to pre-sleep BPMP code execution)
@@ -241,7 +241,7 @@ This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration, and thus there are 
 |  [[8.0.0]]
 |  [[8.0.0]]
 |  December 2017
-|  April 15, 2018
+|  April 15, 2019
 |  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]] and ktemkin,  [[User:Naehrwert|naehrwert]] (independently), almost certainly others (independently)
 |}
 
