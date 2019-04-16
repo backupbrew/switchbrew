@@ -74,6 +74,7 @@ This is "nn::apm::ISession".
 | --- | --------------------------- |
 | 0   | SetPerformanceConfiguration |
 | 1   | GetPerformanceConfiguration |
+| 2   | \[8.0.0+\]                  |
 
 ## SetPerformanceConfiguration
 
