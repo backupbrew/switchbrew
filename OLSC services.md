@@ -6,44 +6,48 @@ new online savedata cloud backup system.
 This is
 "nn::olsc::srv::IOlscServiceForSystemService".
 
-| Cmd  | Name       | Notes                                                                               |
-| ---- | ---------- | ----------------------------------------------------------------------------------- |
-| 0    |            | Returns an [\#ITransferTaskListController](#ITransferTaskListController "wikilink") |
-| 1    |            | Returns an [\#IRemoteStorageController](#IRemoteStorageController "wikilink")       |
-| 2    |            | Returns an [\#IDaemonController](#IDaemonController "wikilink")                     |
-| 10   |            |                                                                                     |
-| 11   |            |                                                                                     |
-| 12   |            |                                                                                     |
-| 100  |            |                                                                                     |
-| 101  |            |                                                                                     |
-| 102  |            |                                                                                     |
-| 103  |            |                                                                                     |
-| 104  | \[7.0.0+\] | Returns an [\#INativeHandleHolder](#INativeHandleHolder "wikilink")                 |
-| 200  |            |                                                                                     |
-| 201  |            |                                                                                     |
-| 202  |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 203  | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 204  | \[7.0.0+\] |                                                                                     |
-| 900  |            |                                                                                     |
-| 902  |            |                                                                                     |
-| 903  |            |                                                                                     |
-| 904  |            |                                                                                     |
-| 905  |            |                                                                                     |
-| 906  |            |                                                                                     |
-| 907  |            |                                                                                     |
-| 908  |            |                                                                                     |
-| 909  |            |                                                                                     |
-| 1000 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 1010 | \[7.0.0+\] |                                                                                     |
-| 1011 | \[7.0.0+\] |                                                                                     |
-| 1012 | \[7.0.0+\] |                                                                                     |
-| 1013 | \[7.0.0+\] |                                                                                     |
-| 1014 | \[7.0.0+\] |                                                                                     |
-| 1020 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 1021 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 1022 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 1023 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
-| 1024 | \[7.0.0+\] |                                                                                     |
+| Cmd                 | Name       | Notes                                                                               |
+| ------------------- | ---------- | ----------------------------------------------------------------------------------- |
+| 0                   |            | Returns an [\#ITransferTaskListController](#ITransferTaskListController "wikilink") |
+| 1                   |            | Returns an [\#IRemoteStorageController](#IRemoteStorageController "wikilink")       |
+| 2                   |            | Returns an [\#IDaemonController](#IDaemonController "wikilink")                     |
+| 10                  |            |                                                                                     |
+| 11                  |            |                                                                                     |
+| 12                  |            |                                                                                     |
+| 100                 |            |                                                                                     |
+| 101                 |            |                                                                                     |
+| 102                 |            |                                                                                     |
+| 103                 |            |                                                                                     |
+| 104                 | \[7.0.0+\] | Returns an [\#INativeHandleHolder](#INativeHandleHolder "wikilink")                 |
+| 105                 | \[8.0.0+\] |                                                                                     |
+| 200                 |            |                                                                                     |
+| 201                 |            |                                                                                     |
+| \[6.0.0-7.0.1\] 202 |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 203                 | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 204                 | \[7.0.0+\] |                                                                                     |
+| 300                 | \[8.0.0+\] |                                                                                     |
+| 301                 | \[8.0.0+\] |                                                                                     |
+| 900                 |            |                                                                                     |
+| 902                 |            |                                                                                     |
+| 903                 |            |                                                                                     |
+| 904                 |            |                                                                                     |
+| 905                 |            |                                                                                     |
+| 906                 |            |                                                                                     |
+| 907                 |            |                                                                                     |
+| 908                 |            |                                                                                     |
+| 909                 |            |                                                                                     |
+| 910                 | \[8.0.0+\] |                                                                                     |
+| 1000                | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 1010                | \[7.0.0+\] |                                                                                     |
+| 1011                | \[7.0.0+\] |                                                                                     |
+| 1012                | \[7.0.0+\] |                                                                                     |
+| 1013                | \[7.0.0+\] |                                                                                     |
+| 1014                | \[7.0.0+\] |                                                                                     |
+| 1020                | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 1021                | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 1022                | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 1023                | \[7.0.0+\] | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                               |
+| 1024                | \[7.0.0+\] |                                                                                     |
 
 ## ITransferTaskListController
 
@@ -81,28 +85,28 @@ This is "nn::olsc::srv::INativeHandleHolder".
 This is
 "nn::olsc::srv::IRemoteStorageController".
 
-| Cmd | Name       | Notes                                                                |
-| --- | ---------- | -------------------------------------------------------------------- |
-| 0   |            |                                                                      |
-| 1   |            |                                                                      |
-| 2   |            |                                                                      |
-| 3   |            |                                                                      |
-| 4   |            |                                                                      |
-| 6   |            |                                                                      |
-| 7   |            |                                                                      |
-| 8   |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
-| 9   |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
-| 10  |            |                                                                      |
-| 11  |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
-| 12  |            |                                                                      |
-| 13  |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
-| 14  |            |                                                                      |
-| 15  |            |                                                                      |
-| 16  |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
-| 17  | \[7.0.0+\] |                                                                      |
-| 18  | \[7.0.0+\] |                                                                      |
-| 19  | \[7.0.0+\] | Returns an [\#INativeHandleHolder](#INativeHandleHolder "wikilink"). |
-|     |            |                                                                      |
+| Cmd               | Name       | Notes                                                                |
+| ----------------- | ---------- | -------------------------------------------------------------------- |
+| 0                 |            |                                                                      |
+| 1                 |            |                                                                      |
+| \[6.0.0-7.0.1\] 2 |            |                                                                      |
+| 3                 |            |                                                                      |
+| \[6.0.0-7.0.1\] 4 |            |                                                                      |
+| 6                 |            |                                                                      |
+| 7                 |            |                                                                      |
+| 8                 |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
+| 9                 |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
+| 10                |            |                                                                      |
+| 11                |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
+| 12                |            |                                                                      |
+| 13                |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
+| 14                |            |                                                                      |
+| 15                |            |                                                                      |
+| 16                |            | Returns an [\#IAsyncResult](#IAsyncResult "wikilink")                |
+| 17                | \[7.0.0+\] |                                                                      |
+| 18                | \[7.0.0+\] |                                                                      |
+| 19                | \[7.0.0+\] | Returns an [\#INativeHandleHolder](#INativeHandleHolder "wikilink"). |
+|                   |            |                                                                      |
 
 ## IAsyncResult
 

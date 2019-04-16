@@ -29,15 +29,21 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 |-
 | 104 || [7.0.0+] || Returns an [[#INativeHandleHolder]]
 |-
+| 105 || [8.0.0+] || 
+|-
 | 200 || ||
 |-
 | 201 || ||
 |-
-| 202 || || Returns an [[#IAsyncResult]]
+| [6.0.0-7.0.1] 202 || || Returns an [[#IAsyncResult]]
 |-
 | 203 || [7.0.0+] || Returns an [[#IAsyncResult]]
 |-
 | 204 || [7.0.0+] || 
+|-
+| 300 || [8.0.0+] || 
+|-
+| 301 || [8.0.0+] || 
 |-
 | 900 || ||
 |-
@@ -56,6 +62,8 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 | 908 || ||
 |-
 | 909 || ||
+|-
+| 910 || [8.0.0+] || 
 |-
 | 1000 || [7.0.0+] || Returns an [[#IAsyncResult]]
 |-
@@ -138,11 +146,11 @@ This is "nn::olsc::srv::IRemoteStorageController".
 |-
 | 1 || ||
 |-
-| 2 || ||
+| [6.0.0-7.0.1] 2 || ||
 |-
 | 3 || ||
 |-
-| 4 || ||
+| [6.0.0-7.0.1] 4 || ||
 |-
 | 6 || ||
 |-
