@@ -178,7 +178,21 @@ This is "nn::tc::IManager".
 
 # ts
 
-This is "nn::ts::server::IMeasurementServer".
+This is
+"nn::ts::server::IMeasurementServer".
+
+| Cmd | Name                                                                                              |
+| --- | ------------------------------------------------------------------------------------------------- |
+| 0   |                                                                                                   |
+| 1   |                                                                                                   |
+| 2   |                                                                                                   |
+| 3   |                                                                                                   |
+| 4   | \[8.0.0+\] ? (Takes a total of 4-bytes of input, returns an [\#IUnknown0](#IUnknown0 "wikilink")) |
+|     |                                                                                                   |
+
+## IUnknown0
+
+Added with \[8.0.0+\].
 
 | Cmd | Name |
 | --- | ---- |
@@ -186,7 +200,6 @@ This is "nn::ts::server::IMeasurementServer".
 | 1   |      |
 | 2   |      |
 | 3   |      |
-|     |      |
 
 # pcm
 
