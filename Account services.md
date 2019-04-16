@@ -3,51 +3,51 @@
 This is
 "nn::account::IAccountServiceForAdministrator".
 
-| Cmd | Name                                                                                  | Notes                                                                                               |
-| --- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| 0   | GetUserCount                                                                          |                                                                                                     |
-| 1   | GetUserExistence                                                                      |                                                                                                     |
-| 2   | ListAllUsers                                                                          |                                                                                                     |
-| 3   | ListOpenUsers                                                                         |                                                                                                     |
-| 4   | GetLastOpenedUser                                                                     |                                                                                                     |
-| 5   | GetProfile                                                                            | Returns an [\#IProfile](#IProfile "wikilink").                                                      |
-| 6   | GetProfileDigest                                                                      |                                                                                                     |
-| 50  | IsUserRegistrationRequestPermitted                                                    |                                                                                                     |
-| 51  | TrySelectUserWithoutInteraction                                                       |                                                                                                     |
-| 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers                                            |                                                                                                     |
-| 99  | \[6.0.0+\] DebugActivateOpenContextRetention                                          | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                                |
-| 100 | GetUserRegistrationNotifier                                                           | Returns an [\#INotifier](#INotifier "wikilink").                                                    |
-| 101 | GetUserStateChangeNotifier                                                            | Returns an [\#INotifier](#INotifier "wikilink").                                                    |
-| 102 | GetBaasAccountManagerForSystemService                                                 | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink").                      |
-| 103 | GetBaasUserAvailabilityChangeNotifier                                                 | Returns an [\#INotifier](#INotifier "wikilink").                                                    |
-| 104 | GetProfileUpdateNotifier                                                              | Returns an [\#INotifier](#INotifier "wikilink").                                                    |
-| 105 | \[4.0.0+\] CheckNetworkServiceAvailabilityAsync                                       | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                            |
-| 110 | StoreSaveDataThumbnail                                                                |                                                                                                     |
-| 111 | ClearSaveDataThumbnail                                                                |                                                                                                     |
-| 112 | LoadSaveDataThumbnail                                                                 |                                                                                                     |
-| 113 | GetSaveDataThumbnailExistence                                                         |                                                                                                     |
-| 130 | \[6.0.0+\] ActivateOpenContextRetention                                               | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink").     |
-| 140 | \[6.0.0+\] ListQualifiedUsers                                                         |                                                                                                     |
-| 190 | GetUserLastOpenedApplication                                                          |                                                                                                     |
-| 191 | \[7.0.0+\] UpdateNotificationReceiverInfo (\[5.0.0-5.1.0\] ActivateOpenContextHolder) |                                                                                                     |
-| 200 | BeginUserRegistration                                                                 |                                                                                                     |
-| 201 | CompleteUserRegistration                                                              |                                                                                                     |
-| 202 | CancelUserRegistration                                                                |                                                                                                     |
-| 203 | DeleteUser                                                                            |                                                                                                     |
-| 204 | SetUserPosition                                                                       |                                                                                                     |
-| 205 | GetProfileEditor                                                                      | Takes an input userID and returns an [\#IProfileEditor](#IProfileEditor "wikilink").                |
-| 206 | CompleteUserRegistrationForcibly                                                      |                                                                                                     |
-| 210 | CreateFloatingRegistrationRequest                                                     | Returns an [\#IFloatingRegistrationRequest](#IFloatingRegistrationRequest "wikilink").              |
-| 211 | \[8.0.0+\]                                                                            | Takes a total of 0x4-bytes of input and a handle, returns an [\#IUnknown0](#IUnknown0 "wikilink").  |
-| 212 | \[8.0.0+\]                                                                            | Takes a total of 0x14-bytes of input and a handle, returns an [\#IUnknown0](#IUnknown0 "wikilink"). |
-| 230 | AuthenticateServiceAsync                                                              | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                            |
-| 250 | GetBaasAccountAdministrator                                                           | Returns an [\#IAdministrator](#IAdministrator "wikilink").                                          |
-| 290 | ProxyProcedureForGuestLoginWithNintendoAccount                                        | Returns an [\#IOAuthProcedureForExternalNsa](#IOAuthProcedureForExternalNsa "wikilink").            |
-| 291 | ProxyProcedureForFloatingRegistrationWithNintendoAccount                              | Returns an [\#IOAuthProcedureForExternalNsa](#IOAuthProcedureForExternalNsa "wikilink").            |
-| 299 | SuspendBackgroundDaemon                                                               | Returns an [\#ISessionObject](#ISessionObject "wikilink").                                          |
-| 997 | DebugInvalidateTokenCacheForUser                                                      |                                                                                                     |
-| 998 | DebugSetUserStateClose                                                                |                                                                                                     |
-| 999 | DebugSetUserStateOpen                                                                 |                                                                                                     |
+| Cmd | Name                                                                                  | Notes                                                                                                                                                 |
+| --- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetUserCount                                                                          |                                                                                                                                                       |
+| 1   | GetUserExistence                                                                      |                                                                                                                                                       |
+| 2   | ListAllUsers                                                                          |                                                                                                                                                       |
+| 3   | ListOpenUsers                                                                         |                                                                                                                                                       |
+| 4   | GetLastOpenedUser                                                                     |                                                                                                                                                       |
+| 5   | GetProfile                                                                            | Returns an [\#IProfile](#IProfile "wikilink").                                                                                                        |
+| 6   | GetProfileDigest                                                                      |                                                                                                                                                       |
+| 50  | IsUserRegistrationRequestPermitted                                                    |                                                                                                                                                       |
+| 51  | TrySelectUserWithoutInteraction                                                       |                                                                                                                                                       |
+| 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers                                            |                                                                                                                                                       |
+| 99  | \[6.0.0+\] DebugActivateOpenContextRetention                                          | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").                                                                                  |
+| 100 | GetUserRegistrationNotifier                                                           | Returns an [\#INotifier](#INotifier "wikilink").                                                                                                      |
+| 101 | GetUserStateChangeNotifier                                                            | Returns an [\#INotifier](#INotifier "wikilink").                                                                                                      |
+| 102 | GetBaasAccountManagerForSystemService                                                 | Returns an [\#IManagerForSystemService](#IManagerForSystemService "wikilink").                                                                        |
+| 103 | GetBaasUserAvailabilityChangeNotifier                                                 | Returns an [\#INotifier](#INotifier "wikilink").                                                                                                      |
+| 104 | GetProfileUpdateNotifier                                                              | Returns an [\#INotifier](#INotifier "wikilink").                                                                                                      |
+| 105 | \[4.0.0+\] CheckNetworkServiceAvailabilityAsync                                       | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                                                              |
+| 110 | StoreSaveDataThumbnail                                                                |                                                                                                                                                       |
+| 111 | ClearSaveDataThumbnail                                                                |                                                                                                                                                       |
+| 112 | LoadSaveDataThumbnail                                                                 |                                                                                                                                                       |
+| 113 | GetSaveDataThumbnailExistence                                                         |                                                                                                                                                       |
+| 130 | \[6.0.0+\] ActivateOpenContextRetention                                               | Takes a total of 0x8-bytes of input, returns an [\#ISessionObject](#ISessionObject "wikilink").                                                       |
+| 140 | \[6.0.0+\] ListQualifiedUsers                                                         |                                                                                                                                                       |
+| 190 | GetUserLastOpenedApplication                                                          |                                                                                                                                                       |
+| 191 | \[7.0.0+\] UpdateNotificationReceiverInfo (\[5.0.0-5.1.0\] ActivateOpenContextHolder) |                                                                                                                                                       |
+| 200 | BeginUserRegistration                                                                 |                                                                                                                                                       |
+| 201 | CompleteUserRegistration                                                              |                                                                                                                                                       |
+| 202 | CancelUserRegistration                                                                |                                                                                                                                                       |
+| 203 | DeleteUser                                                                            |                                                                                                                                                       |
+| 204 | SetUserPosition                                                                       |                                                                                                                                                       |
+| 205 | GetProfileEditor                                                                      | Takes an input userID and returns an [\#IProfileEditor](#IProfileEditor "wikilink").                                                                  |
+| 206 | CompleteUserRegistrationForcibly                                                      |                                                                                                                                                       |
+| 210 | CreateFloatingRegistrationRequest                                                     | Returns an [\#IFloatingRegistrationRequest](#IFloatingRegistrationRequest "wikilink").                                                                |
+| 211 | \[8.0.0+\]                                                                            | Takes a total of 0x4-bytes of input and a handle, returns an [\#IOAuthProcedureForUserRegistration](#IOAuthProcedureForUserRegistration "wikilink").  |
+| 212 | \[8.0.0+\]                                                                            | Takes a total of 0x14-bytes of input and a handle, returns an [\#IOAuthProcedureForUserRegistration](#IOAuthProcedureForUserRegistration "wikilink"). |
+| 230 | AuthenticateServiceAsync                                                              | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                                                              |
+| 250 | GetBaasAccountAdministrator                                                           | Returns an [\#IAdministrator](#IAdministrator "wikilink").                                                                                            |
+| 290 | ProxyProcedureForGuestLoginWithNintendoAccount                                        | Returns an [\#IOAuthProcedureForExternalNsa](#IOAuthProcedureForExternalNsa "wikilink").                                                              |
+| 291 | ProxyProcedureForFloatingRegistrationWithNintendoAccount                              | Returns an [\#IOAuthProcedureForExternalNsa](#IOAuthProcedureForExternalNsa "wikilink").                                                              |
+| 299 | SuspendBackgroundDaemon                                                               | Returns an [\#ISessionObject](#ISessionObject "wikilink").                                                                                            |
+| 997 | DebugInvalidateTokenCacheForUser                                                      |                                                                                                                                                       |
+| 998 | DebugSetUserStateClose                                                                |                                                                                                                                                       |
+| 999 | DebugSetUserStateOpen                                                                 |                                                                                                                                                       |
 
 ## IManagerForSystemService
 
@@ -395,7 +395,9 @@ This is
 | 998 | DebugSetUserStateClose                                                                |                                                                                                 |
 | 999 | DebugSetUserStateOpen                                                                 |                                                                                                 |
 
-## IUnknown0
+## IOAuthProcedureForUserRegistration
+
+This is "nn::account::nas::IOAuthProcedureForUserRegistration".
 
 This was added with
 \[8.0.0+\].
