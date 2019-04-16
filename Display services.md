@@ -41,6 +41,9 @@ with
 The only caps:sc commands used by [GRC](GRC%20services.md "wikilink")
 are: 1101, 1106, and 1107.
 
+\[8.0.0+\] Cmd210 and cmd1004 now takes an additional type-0x15 input
+buffer.
+
 ## Cmd1
 
 Takes a type-0x46 output buffer, an input u32 **layer\_stack**, two
@@ -490,6 +493,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 6012 | \[7.0.0+\] DisableLayerAutoClearTransitionBuffer           |
 | 7000 | SetContentVisibility                                       |
 | 8000 | SetConductorLayer                                          |
+| 8001 | \[8.0.0+\]                                                 |
 | 8100 | SetIndirectProducerFlipOffset                              |
 | 8200 | \[4.0.0+\] CreateSharedBufferStaticStorage                 |
 | 8201 | \[4.0.0+\] CreateSharedBufferTransferMemory                |

@@ -52,6 +52,8 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 
 The only caps:sc commands used by [[GRC_services|GRC]] are: 1101, 1106, and 1107.
 
+[8.0.0+] Cmd210 and cmd1004 now takes an additional type-0x15 input buffer.
+
 == Cmd1 ==
 Takes a type-0x46 output buffer, an input u32 '''layer_stack''', two input u64s '''width'''/'''height''', an input s64 '''buffer_count''', and an input s64 '''buffer_index'''.
 
@@ -529,6 +531,8 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 7000 || SetContentVisibility
 |-
 | 8000 || SetConductorLayer
+|-
+| 8001 || [8.0.0+]
 |-
 | 8100 || SetIndirectProducerFlipOffset
 |-
