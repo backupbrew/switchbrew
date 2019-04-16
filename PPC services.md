@@ -3,7 +3,8 @@ for CPU, GPU, and memory.
 
 # apm
 
-This is "nn::apm::IManager".
+This is "nn::apm::IManager". This was moved to
+[AM](Applet%20Manager%20services.md "wikilink") with \[8.0.0+\].
 
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
