@@ -31,6 +31,9 @@ This is "nn::grcsrv::IContinuousRecorder".
 | 13  |      |
 | 14  |      |
 
+\[8.0.0+\] Cmd11/cmd14 no longer take any rawdata input, these now take
+a type-0x15 input buffer.
+
 ## IGameMovieTrimmer
 
 This is "nn::grcsrv::IGameMovieTrimmer".
