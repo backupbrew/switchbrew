@@ -103,6 +103,7 @@ This was added with \[6.0.0+\].
 | 8    |            |
 | 9    |            |
 | 10   |            |
+| 11   | \[8.0.0+\] |
 | 100  |            |
 | 101  |            |
 | 102  |            |
@@ -117,3 +118,5 @@ This was added with \[6.0.0+\].
 | 1000 |            |
 | 1001 | \[7.0.0+\] |
 |      |            |
+
+\[8.0.0+\] Cmd201 now returns an additional 0x8-bytes of output.
