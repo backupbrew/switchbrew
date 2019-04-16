@@ -1,7 +1,6 @@
 PSC (Power State Control) provides services related to power state changes in the system.
 
 = Concept =
-
 psc:m allows a process to register a module that depends on power management in some way. A client calls GetPmModule to receive an IPmModule (Power Managed Module), and then calls IPmModule->Initialize(module_id, module_dependency_list) where module_id is the ModuleId enum member for the client, and the dependency list is an array of module IDs for the modules that this depends on. Initialize() returns an event handle that the client can wait on to be notified of a power state change.
 
 psc:c allows a module to the power state controller for the system (in practice, AM is the only client to the controller). IPmControl->DispatchRequest() is used notify all IPmModules of a state change.
@@ -150,8 +149,57 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 20500 || [8.0.0+]
 |}
 
-= PSC Module IDs =
+= ovln:rcv =
+This is "nn::ovln::IReceiverService".
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|}
+
+== IReceiver ==
+This is "nn::ovln::IReceiver".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|-
+| 2 ||
+|-
+| 3 ||
+|-
+| 4 ||
+|}
+
+= ovln:snd =
+This is "nn::ovln::ISenderService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|}
+
+== ISender ==
+This is "nn::ovln::ISender".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|}
+
+= PSC Module IDs =
 {| class="wikitable" border="1"
 |-
 ! ID || Module

@@ -114,6 +114,43 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 | 20402 | \[7.0.0+\] |
 | 20500 | \[8.0.0+\] |
 
+# ovln:rcv
+
+This is "nn::ovln::IReceiverService".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
+## IReceiver
+
+This is "nn::ovln::IReceiver".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+
+# ovln:snd
+
+This is "nn::ovln::ISenderService".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
+## ISender
+
+This is "nn::ovln::ISender".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+
 # PSC Module IDs
 
 | ID   | Module                                                   |
