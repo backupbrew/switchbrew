@@ -252,7 +252,7 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <p>However, Nintendo both forgot to validate the BPMP exception vectors after writing them, and forgot to hold in reset a DMA controller that can write to the BPMP's exception vectors.</p>
 <p>AHB-DMA is not blacklisted by kernel mapping whitelist (Nintendo probably forgot it, because the TX1 TRM does not really document that it's present, although the MMIO works as documented in older (Tegra 3 and before) TRMs).</p>
 <p>Thus, with kernel code execution (or some other way of accessing AHB-DMA, e.g. nspwn on &lt;= 4.1.0, TSEC hax, or other arbitrary mmio access flaws), one can DMA to the BPMP's exception vectors as they are written, causing TrustZone to start the BPMP executing an attacker's firmware at a different location than TrustZone intends/validates.</p>
-<p>This was fixed in <a href="8.0.0.md" title="wikilink">8.0.0</a> by blocking AHB-DMA arbitration, and thus there are no more devices that can write to the relevant MMIO at the right time.</p></td>
+<p>This was fixed in <a href="8.0.0.md" title="wikilink">8.0.0</a> by blocking AHB-DMA arbitration and verifying it is held in reset during suspend, and thus there are no more devices that can write to the relevant MMIO at the right time.</p></td>
 <td><p>Arbitrary TrustZone/BootROM code execution, by using either the original Jamais Vu flaw (prior to <a href="6.0.0.md" title="wikilink">6.0.0</a> or a warmboot bootrom exploit (any firmware where pre-sleep execution can be gained).</p></td>
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
 <td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>

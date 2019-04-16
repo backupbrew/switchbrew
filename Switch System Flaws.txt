@@ -235,7 +235,7 @@ AHB-DMA is not blacklisted by kernel mapping whitelist (Nintendo probably forgot
 
 Thus, with kernel code execution (or some other way of accessing AHB-DMA, e.g. nspwn on <= 4.1.0, TSEC hax, or other arbitrary mmio access flaws), one can DMA to the BPMP's exception vectors as they are written, causing TrustZone to start the BPMP executing an attacker's firmware at a different location than TrustZone intends/validates.
 
-This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration, and thus there are no more devices that can write to the relevant MMIO at the right time.
+This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration and verifying it is held in reset during suspend, and thus there are no more devices that can write to the relevant MMIO at the right time.
 
 |  Arbitrary TrustZone/BootROM code execution, by using either the original Jamais Vu flaw (prior to [[6.0.0]] or a warmboot bootrom exploit (any firmware where pre-sleep execution can be gained).
 |  [[8.0.0]]
