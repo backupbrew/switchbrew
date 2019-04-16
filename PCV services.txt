@@ -622,7 +622,7 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 |-
 | 5 || [2.0.0+] GetTimeZoneRuleVersion ||  No input, returns an output [[#TimeZoneRuleVersion]].
 |-
-| 6 || [5.0.0+] || 
+| 6 || [5.0.0+] GetDeviceLocationNameAndUpdatedTime || 
 |-
 | 100 || ToCalendarTime || Takes an input [[#PosixTime]] and a type-0x15 input buffer for [[#TimeZoneRule]], returns an output [[#CalendarTime]] and [[#CalendarAdditionalInfo]].
 |-
