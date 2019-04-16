@@ -21,22 +21,26 @@ BCAT-content-container.
 This is
 "nn::bcat::detail::ipc::IBcatService".
 
-| Cmd   | Name                                                                 |
-| ----- | -------------------------------------------------------------------- |
-| 10100 | RequestSyncDeliveryCache                                             |
-| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                 |
-| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                            |
-| 20100 | RequestSyncDeliveryCacheWithApplicationId                            |
-| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName |
-| 30100 | SetPassphrase                                                        |
-| 30200 | RegisterBackgroundDeliveryTask                                       |
-| 30201 | UnregisterBackgroundDeliveryTask                                     |
-| 30202 | BlockDeliveryTask                                                    |
-| 30203 | UnblockDeliveryTask                                                  |
-| 90100 | EnumerateBackgroundDeliveryTask                                      |
-| 90200 | GetDeliveryList                                                      |
-| 90201 | ClearDeliveryCacheStorage                                            |
-| 90300 | GetPushNotificationLog                                               |
+| Cmd   | Name                                                                                              |
+| ----- | ------------------------------------------------------------------------------------------------- |
+| 10100 | RequestSyncDeliveryCache                                                                          |
+| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                              |
+| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                         |
+| 20100 | RequestSyncDeliveryCacheWithApplicationId                                                         |
+| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                              |
+| 20300 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#IUnknown0](#IUnknown0 "wikilink")) |
+| 20301 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#IUnknown1](#IUnknown1 "wikilink")) |
+| 30100 | SetPassphrase                                                                                     |
+| 30200 | RegisterBackgroundDeliveryTask                                                                    |
+| 30201 | UnregisterBackgroundDeliveryTask                                                                  |
+| 30202 | BlockDeliveryTask                                                                                 |
+| 30203 | UnblockDeliveryTask                                                                               |
+| 30300 | \[8.0.0+\]                                                                                        |
+| 90100 | EnumerateBackgroundDeliveryTask                                                                   |
+| 90200 | GetDeliveryList                                                                                   |
+| 90201 | ClearDeliveryCacheStorage                                                                         |
+| 90202 | \[8.0.0+\]                                                                                        |
+| 90300 | GetPushNotificationLog                                                                            |
 
 ### IDeliveryCacheProgressService
 
@@ -78,6 +82,24 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
 | 1   | Read     |
 | 2   | GetCount |
 
+### IUnknown0
+
+Added with \[8.0.0+\].
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+|     |      |       |
+
+### IUnknown0
+
+Added with \[8.0.0+\].
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
+|     |      |       |
+
 # news:a, news:c, news:m, news:p, news:v
 
 These are
@@ -93,23 +115,26 @@ These are
 
 ## INewsService
 
-This is "nn::news::detail::ipc::INewsService".
+This is
+"nn::news::detail::ipc::INewsService".
 
-| Cmd   | Name       |
-| ----- | ---------- |
-| 10100 |            |
-| 20100 |            |
-| 30100 |            |
-| 30101 |            |
-| 30110 | \[6.0.0+\] |
-| 30200 |            |
-| 30300 |            |
-| 30400 |            |
-| 40100 |            |
-| 40101 |            |
-| 40200 |            |
-| 40201 |            |
-| 90100 |            |
+| Cmd   | Name                                                                                                                                     |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 10100 |                                                                                                                                          |
+| 20100 |                                                                                                                                          |
+| 30100 |                                                                                                                                          |
+| 30101 |                                                                                                                                          |
+| 30110 | \[6.0.0+\]                                                                                                                               |
+| 30200 |                                                                                                                                          |
+| 30201 | \[8.0.0+\]                                                                                                                               |
+| 30300 |                                                                                                                                          |
+| 30400 |                                                                                                                                          |
+| 30500 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [\#IUnknown2](#IUnknown2 "wikilink")) |
+| 40100 |                                                                                                                                          |
+| 40101 |                                                                                                                                          |
+| 40200 |                                                                                                                                          |
+| 40201 |                                                                                                                                          |
+| 90100 |                                                                                                                                          |
 
 ## INewlyArrivedEventHolder
 
@@ -152,6 +177,17 @@ This is "nn::news::detail::ipc::IOverwriteEventHolder".
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
+
+## IUnknown2
+
+This was added with \[8.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
 
 # prepo:a, prepo:a2, prepo:m, prepo:u, prepo:s
 
