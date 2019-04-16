@@ -13,6 +13,8 @@ This is "nn::erpt::sf::IContext".
 | 6   | \[5.0.0+\] SubmitMultipleCategoryContext            |
 | 7   | \[6.0.0+\] UpdateApplicationLaunchTime              |
 | 8   | \[6.0.0+\] ClearApplicationLaunchTime               |
+| 9   | \[8.0.0+\]                                          |
+| 10  | \[8.0.0+\]                                          |
 
 ## SubmitContext
 
@@ -46,6 +48,7 @@ This is "nn::erpt::sf::ISession".
 | --- | ----------- |
 | 0   | OpenReport  |
 | 1   | OpenManager |
+| 2   | \[8.0.0+\]  |
 
 ## IReport
 
@@ -71,6 +74,7 @@ This is "nn::erpt::sf::IManager".
 | 2   | \[4.0.0+\] CleanupReports            |
 | 3   | \[5.0.0+\] DeleteReport              |
 | 4   | \[5.0.0+\] GetStorageUsageStatistics |
+| 5   | \[8.0.0+\]                           |
 
 # Reports
 
