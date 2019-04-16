@@ -40,7 +40,7 @@ Security flaws fixed: Yes.
 * 	
 * 	An option is available to prevent the system from waking from Sleep Mode when an AC adapter is disconnected
 * 		
-* 		Go to System Settings > Sleep Mode &gt Wake When AC Adapter is Disconnected
+* 		Go to System Settings > Sleep Mode > Wake When AC Adapter is Disconnected
 * 		This also applies when undocking your console
 * 		
 * 	
@@ -55,14 +55,14 @@ Security flaws fixed: Yes.
 * 	
 * 	Hong Kong / Taiwan / South Korea is available for selection in Region
 * 		
-* 		Go to System Settings > System &gt Region
+* 		Go to System Settings > System > Region
 * 		
 * 	
 * 	
 * 	The following names have been changed (functionality remains the same)
 * 		
 * 		Save Data Cloud Backup > Save Data Cloud
-* 		Transfer Your User and Save Data &gt Transfer Your User Data
+* 		Transfer Your User and Save Data > Transfer Your User Data
 * 		
 * 	
 * 	
