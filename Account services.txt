@@ -71,6 +71,10 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 210 || CreateFloatingRegistrationRequest || Returns an [[#IFloatingRegistrationRequest]].
 |-
+| 211 || [8.0.0+] || Takes a total of 0x4-bytes of input and a handle, returns an [[#IUnknown0]].
+|-
+| 212 || [8.0.0+] || Takes a total of 0x14-bytes of input and a handle, returns an [[#IUnknown0]].
+|-
 | 230 || AuthenticateServiceAsync || Returns an [[#IAsyncContext]].
 |-
 | 250 || GetBaasAccountAdministrator || Returns an [[#IAdministrator]].
@@ -236,6 +240,8 @@ This is "nn::account::baas::IAdministrator".
 | 261 || ResumeProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
 | 280 || ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount || Returns an [[#IOAuthProcedure]].
+|-
+| 290 || [8.0.0+] || 
 |-
 | 300 || [6.0.0+] TryRecoverNintendoAccountUserStateAsync || Returns an [[#IAsyncContext]].
 |-
@@ -608,6 +614,36 @@ This is "nn::account::IAccountServiceForSystemService".
 | 998 || DebugSetUserStateClose ||
 |-
 | 999 || DebugSetUserStateOpen ||
+|}
+
+== IUnknown0 ==
+This was added with [8.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || No input, returns an [[#IAsyncContext]].
+|-
+| 1 || || 
+|-
+| 2 || || 
+|-
+| 3 || || Takes a type-0x9 input buffer, returns an [[#IAsyncContext]].
+|-
+| 10 || || 
+|-
+| 100 || || 
+|-
+| 101 || || 
+|-
+| 102 || || 
+|-
+| 103 || || 
+|-
+| 110 || || No input, returns an [[#IAsyncContext]].
+|-
+| 111 || || 
 |}
 
 = acc:aa =
