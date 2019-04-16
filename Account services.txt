@@ -71,9 +71,9 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 210 || CreateFloatingRegistrationRequest || Returns an [[#IFloatingRegistrationRequest]].
 |-
-| 211 || [8.0.0+] || Takes a total of 0x4-bytes of input and a handle, returns an [[#IOAuthProcedureForUserRegistration]].
+| 211 || [8.0.0+] CreateProcedureToRegisterUserWithNintendoAccount || Takes a total of 0x4-bytes of input and a handle, returns an [[#IOAuthProcedureForUserRegistration]].
 |-
-| 212 || [8.0.0+] || Takes a total of 0x14-bytes of input and a handle, returns an [[#IOAuthProcedureForUserRegistration]].
+| 212 || [8.0.0+] ResumeProcedureToRegisterUserWithNintendoAccount || Takes a total of 0x14-bytes of input and a handle, returns an [[#IOAuthProcedureForUserRegistration]].
 |-
 | 230 || AuthenticateServiceAsync || Returns an [[#IAsyncContext]].
 |-
