@@ -197,8 +197,8 @@ No input, returns an
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                |       |
 | 140 | \[6.0.0+\] GetDesirableUids                                            |       |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout                                |       |
-| 160 | \[8.0.0+\]                                                             |       |
-| 170 | \[8.0.0+\]                                                             |       |
+| 160 | \[8.0.0+\] SetApplicationAttribute                                     |       |
+| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                 |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
