@@ -68,11 +68,10 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	
 * General system stability improvements to enhance the user's experience.
 
-==System Titles==
-<fill this in (manually) later>
-1 new title was added, 0100000000000828.
+== System Titles ==
+1 new title was added: [[#FunctionBlackList]].
 
-===0100000000000828===
+=== FunctionBlackList ===
 This contains <code>/blacklist.dat</code> which contains 8-bytes of zeros.
 
 ==See Also==
