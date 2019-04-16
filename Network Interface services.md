@@ -56,6 +56,10 @@ This is
 | 36  | \[4.0.0+\] GetCurrentAccessPoint                                 |                                                              |
 | 37  | \[4.0.0+\] Shutdown                                              |                                                              |
 | 38  | \[6.0.0+\] GetAllowedChannels                                    |                                                              |
+| 39  | \[8.0.0+\]                                                       |                                                              |
+| 40  | \[8.0.0+\]                                                       |                                                              |
+| 41  | \[8.0.0+\]                                                       |                                                              |
+| 42  | \[8.0.0+\]                                                       |                                                              |
 
 ### IScanRequest
 
