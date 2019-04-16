@@ -95,13 +95,13 @@ This is "nn::nifm::detail::IGeneralService".
 |-
 | 38 || [6.0.0+] GetAllowedChannels ||
 |-
-| 39 || [8.0.0+] || 
+| 39 || [8.0.0+] NotifyApplicationSuspended || 
 |-
-| 40 || [8.0.0+] || 
+| 40 || [8.0.0+] SetAcceptableNetworkTypeFlag || 
 |-
-| 41 || [8.0.0+] || 
+| 41 || [8.0.0+] GetAcceptableNetworkTypeFlag || 
 |-
-| 42 || [8.0.0+] || 
+| 42 || [8.0.0+] NotifyConnectionStateChanged || 
 |}
 
 === IScanRequest ===
