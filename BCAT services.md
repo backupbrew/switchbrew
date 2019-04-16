@@ -98,10 +98,9 @@ This is "nn::bcat::detail::ipc::INotifierService".
 
 Added with \[8.0.0+\].
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-|     |      |       |
+| Cmd | Name     | Notes |
+| --- | -------- | ----- |
+| 0   | GetEvent |       |
 
 ### IDeliveryTaskSuspensionService
 
