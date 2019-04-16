@@ -96,6 +96,12 @@ The Secure Monitor was updated.
 ====Warmboot====
 * The firmware revision magic was not changed.
 
+====FIRM Sysmodules====
+All FIRM sysmodules were updated. Specific diffs for a few sysmodules are below <check back later, to be updated>:
+
+=====[[Process Manager services|PM]]=====
+* pm:shell now has a new command (9), which currently just does abort(). However, it looks like in a future update it will return an event handle of some kind.
+
 == System Titles ==
 * 1 new title was added: [[#FunctionBlackList|FunctionBlackList]].
 * All titles were updated, except for the following: dictionaries, UrlBlackList, PlatformConfigHoag, miiEdit, and flog.
