@@ -1,3 +1,5 @@
+  - **18 February 19** Nintendo released system update
+    [7.0.1](7.0.1.md "wikilink").
   - **28 January 19** Nintendo released system update
     [7.0.0](7.0.0.md "wikilink").
   - **24 January 19** [Atmosphère
