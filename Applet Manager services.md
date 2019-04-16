@@ -253,14 +253,14 @@ No input/output.
 Added with
 [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name              | Notes                                                                                                          |
-| --- | ----------------- | -------------------------------------------------------------------------------------------------------------- |
-| 10  | ReadThemeStorage  | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
-| 11  | WriteThemeStorage | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
-| 40  | \[8.0.0+\]        |                                                                                                                |
-| 42  | \[8.0.0+\]        |                                                                                                                |
-| 50  | \[8.0.0+\]        |                                                                                                                |
-| 51  | \[8.0.0+\]        |                                                                                                                |
+| Cmd | Name                                       | Notes                                                                                                          |
+| --- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| 10  | ReadThemeStorage                           | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
+| 11  | WriteThemeStorage                          | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
+| 40  | \[8.0.0+\] GetDisplayLogicalResolution     |                                                                                                                |
+| 42  | \[8.0.0+\] SetDisplayMagnification         |                                                                                                                |
+| 50  | \[8.0.0+\] SetHomeButtonDoubleClickEnabled |                                                                                                                |
+| 51  | \[8.0.0+\] GetHomeButtonDoubleClickEnabled |                                                                                                                |
 
 These commands copy data from/to a state buffer and the user specified
 buffer. The size of the state buffer is
