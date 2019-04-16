@@ -21,9 +21,9 @@ This is
 | 104 | GetStatistics                                                                     |
 | 111 | GetJid                                                                            |
 | 120 | \[7.0.0+\] [\#CreateNotificationReceiver](#CreateNotificationReceiver "wikilink") |
-| 151 | \[8.0.0+\]                                                                        |
-| 152 | \[8.0.0+\]                                                                        |
-| 153 | \[8.0.0+\]                                                                        |
+| 151 | \[8.0.0+\] GetStateWithHandover                                                   |
+| 152 | \[8.0.0+\] GetStateChangeEventWithHandover                                        |
+| 153 | \[8.0.0+\] GetDropEventWithHandover                                               |
 
 ## CreateNotificationReceiver
 
@@ -80,10 +80,10 @@ This is
 | 114 | AttachJid                                                                         |
 | 115 | DetachJid                                                                         |
 | 120 | \[7.0.0+\] [\#CreateNotificationReceiver](#CreateNotificationReceiver "wikilink") |
+| 151 | \[8.0.0+\] GetStateWithHandover                                                   |
+| 152 | \[8.0.0+\] GetStateChangeEventWithHandover                                        |
+| 153 | \[8.0.0+\] GetDropEventWithHandover                                               |
 | 201 | RequestChangeStateForceTimed                                                      |
 | 202 | RequestChangeStateForceAsync                                                      |
-| 151 | \[8.0.0+\]                                                                        |
-| 152 | \[8.0.0+\]                                                                        |
-| 153 | \[8.0.0+\]                                                                        |
 
 [Category:Services](Category:Services "wikilink")
