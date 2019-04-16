@@ -232,14 +232,16 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a>, <a href="User:Naehrwert" title="wikilink">naehrwert</a>, <a href="User:Hexkyz" title="wikilink">hexkyz</a>, probably others (independently).</p></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>TSEC has access to the secure kernel carveout</p></td>
+<td><p>TrustZone is responsible for managing security carveouts to prevent DMA controllers from accessing the carveout which contains the kernel, sysmodules, and other critical operating system data.</p>
+<p>Until <a href="8.0.0.md" title="wikilink">8.0.0</a>, the list of devices that could access the carveout included the TSEC. However, the TSEC can bypass the SMMU when in authenticated mode by writing to a certain register. Thus, pwning nvservices would allow one to take over the TSEC, and use it to write to normally protected mmio/memory.</p>
+<p>In <a href="8.0.0.md" title="wikilink">8.0.0</a>, this was fixed by removing TSEC access, and adding TSECB access (TSECB cannot bypass the SMMU).</p></td>
+<td><p>With access to the TSEC mmio (nvservices ROP) and code execution in TSEC Heavy Secure mode, kernel code execution, probably.</p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p>2017 (when TrustZone code plaintext was first obtained).</p></td>
+<td><p>April 15, 2018</p></td>
+<td><p>Everyone</p></td>
 </tr>
 </tbody>
 </table>

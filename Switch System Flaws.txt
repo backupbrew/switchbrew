@@ -207,6 +207,18 @@ This was fixed in [[4.0.0]] by writing to the correct registers.
 |  February 23, 2018
 |  [[User:SciresM|SciresM]] and [[User:motezazer|motezazer]], [[User:Naehrwert|naehrwert]], [[User:Hexkyz|hexkyz]], probably others (independently).
 |-
+|  TSEC has access to the secure kernel carveout 
+|  TrustZone is responsible for managing security carveouts to prevent DMA controllers from accessing the carveout which contains the kernel, sysmodules, and other critical operating system data.
+
+Until [[8.0.0]], the list of devices that could access the carveout included the TSEC. However, the TSEC can bypass the SMMU when in authenticated mode by writing to a certain register. Thus, pwning nvservices would allow one to take over the TSEC, and use it to write to normally protected mmio/memory.
+
+In [[8.0.0]], this was fixed by removing TSEC access, and adding TSECB access (TSECB cannot bypass the SMMU).
+| With access to the TSEC mmio (nvservices ROP) and code execution in TSEC Heavy Secure mode, kernel code execution, probably.
+| [[8.0.0]]
+| [[8.0.0]]
+| 2017 (when TrustZone code plaintext was first obtained).
+| April 15, 2018
+| Everyone
 |}
 
 === Kernel ===
