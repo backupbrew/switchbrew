@@ -20,6 +20,8 @@ Returns an [[#ISession]].
 = apm:p =
 This is "nn::apm::IManagerPrivileged".
 
+This service no longer exists in [8.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name

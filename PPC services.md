@@ -20,6 +20,8 @@ Returns an [\#ISession](#ISession "wikilink").
 
 This is "nn::apm::IManagerPrivileged".
 
+This service no longer exists in \[8.0.0+\].
+
 | Cmd | Name        |
 | --- | ----------- |
 | 0   | OpenSession |
