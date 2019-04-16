@@ -64,6 +64,8 @@ This is "nn::btm::IBtm".
 | 57  | \[5.1.0+\]                                     |
 | 58  | \[5.1.0+\]                                     |
 | 59  | \[5.1.0+\]                                     |
+| 60  | \[8.0.0+\]                                     |
+| 61  | \[8.0.0+\]                                     |
 
 With \[5.1.0+\] cmds 24-42 were moved/replaced/etc (input/output
 changed).
