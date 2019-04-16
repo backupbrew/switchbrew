@@ -1015,7 +1015,7 @@ output.
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink") |
-| 110  | \[8.0.0+\]                                                                                              |
+| 110  | \[8.0.0+\] SetApplicationAlbumUserData                                                                  |
 | 1000 | \[7.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                               |
 
 ### Exit

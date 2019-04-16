@@ -1098,7 +1098,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 100 || [7.0.0+] [[#SetAlbumImageTakenNotificationEnabled]]
 |-
-| 110 || [8.0.0+]
+| 110 || [8.0.0+] SetApplicationAlbumUserData
 |-
 | 1000 || [7.0.0+] [[#GetDebugStorageChannel]]
 |}
