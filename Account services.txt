@@ -625,27 +625,27 @@ This was added with [8.0.0+].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || No input, returns an [[#IAsyncContext]].
+| 0 || PrepareAsync || No input, returns an [[#IAsyncContext]].
 |-
-| 1 || || 
+| 1 || GetRequest || 
 |-
-| 2 || || 
+| 2 || ApplyResponse || 
 |-
-| 3 || || Takes a type-0x9 input buffer, returns an [[#IAsyncContext]].
+| 3 || ApplyResponseAsync || Takes a type-0x9 input buffer, returns an [[#IAsyncContext]].
 |-
-| 10 || || 
+| 10 || Suspend || 
 |-
-| 100 || || 
+| 100 || GetAccountId || 
 |-
-| 101 || || 
+| 101 || GetLinkedNintendoAccountId || 
 |-
-| 102 || || 
+| 102 || GetNickname || 
 |-
-| 103 || || 
+| 103 || GetProfileImage || 
 |-
-| 110 || || No input, returns an [[#IAsyncContext]].
+| 110 || RegisterUserAsync || No input, returns an [[#IAsyncContext]].
 |-
-| 111 || || 
+| 111 || GetUid || 
 |}
 
 = acc:aa =

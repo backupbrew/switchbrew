@@ -402,19 +402,19 @@ This is "nn::account::nas::IOAuthProcedureForUserRegistration".
 This was added with
 \[8.0.0+\].
 
-| Cmd | Name | Notes                                                                                   |
-| --- | ---- | --------------------------------------------------------------------------------------- |
-| 0   |      | No input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                      |
-| 1   |      |                                                                                         |
-| 2   |      |                                                                                         |
-| 3   |      | Takes a type-0x9 input buffer, returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
-| 10  |      |                                                                                         |
-| 100 |      |                                                                                         |
-| 101 |      |                                                                                         |
-| 102 |      |                                                                                         |
-| 103 |      |                                                                                         |
-| 110 |      | No input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                      |
-| 111 |      |                                                                                         |
+| Cmd | Name                       | Notes                                                                                   |
+| --- | -------------------------- | --------------------------------------------------------------------------------------- |
+| 0   | PrepareAsync               | No input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                      |
+| 1   | GetRequest                 |                                                                                         |
+| 2   | ApplyResponse              |                                                                                         |
+| 3   | ApplyResponseAsync         | Takes a type-0x9 input buffer, returns an [\#IAsyncContext](#IAsyncContext "wikilink"). |
+| 10  | Suspend                    |                                                                                         |
+| 100 | GetAccountId               |                                                                                         |
+| 101 | GetLinkedNintendoAccountId |                                                                                         |
+| 102 | GetNickname                |                                                                                         |
+| 103 | GetProfileImage            |                                                                                         |
+| 110 | RegisterUserAsync          | No input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                      |
+| 111 | GetUid                     |                                                                                         |
 
 # acc:aa
 
