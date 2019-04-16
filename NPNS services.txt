@@ -36,6 +36,12 @@ This is "nn::npns::INpnsUser".
 | 111 || GetJid
 |-
 | 120 || [7.0.0+] [[#CreateNotificationReceiver]]
+|-
+| 151 || [8.0.0+]
+|-
+| 152 || [8.0.0+]
+|-
+| 153 || [8.0.0+]
 |}
 
 == CreateNotificationReceiver ==
@@ -129,6 +135,12 @@ This is "nn::npns::INpnsSystem".
 | 201 || RequestChangeStateForceTimed
 |-
 | 202 || RequestChangeStateForceAsync
+|-
+| 151 || [8.0.0+]
+|-
+| 152 || [8.0.0+]
+|-
+| 153 || [8.0.0+]
 |}
 
 [[Category:Services]]
