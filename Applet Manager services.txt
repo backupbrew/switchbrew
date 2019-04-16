@@ -1587,12 +1587,12 @@ This can be used by applications to save screenshots.
 |-
 | 203 || SaveScreenShotEx0 || 
 |-
-| 205 || [8.0.0+] || 
+| 205 || [8.0.0+] SaveScreenShotEx1 || 
 |-
 | 210 || SaveScreenShotEx2 || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer.  Returns a total of 0x20-bytes of output.
 |}
 
-Cmd32 is a wrapper for [[Capture_services|caps:c]] cmd33. Commands 201, 203, and 210 are wrappers for [[Display_services|caps:sc]] cmd210.
+'''SetShimLibraryVersion''' is a wrapper for [[Capture_services|caps:c]] cmd33. Commands '''SaveScreenShot''', '''SaveScreenShotEx0''', '''SaveScreenShotEx1''' and '''SaveScreenShotEx2''' are wrappers for [[Display_services|caps:sc]] cmd210.
 
 == SaveScreenShot ==
 Takes two input u32s, an u64 AppletResourceUserId, a PID, and a type-0x45 input buffer. Returns a 0x20-byte struct '''ApplicationAlbumEntry'''.

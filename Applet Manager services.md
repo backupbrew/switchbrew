@@ -1439,11 +1439,13 @@ screenshots.
 | 32  | \[7.0.0+\] SetShimLibraryVersion | Takes a total of 0x10-bytes of input and a PID, no output.                                                                             |
 | 201 | SaveScreenShot                   |                                                                                                                                        |
 | 203 | SaveScreenShotEx0                |                                                                                                                                        |
-| 205 | \[8.0.0+\]                       |                                                                                                                                        |
+| 205 | \[8.0.0+\] SaveScreenShotEx1     |                                                                                                                                        |
 | 210 | SaveScreenShotEx2                | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer. Returns a total of 0x20-bytes of output. |
 
-Cmd32 is a wrapper for [caps:c](Capture%20services.md "wikilink") cmd33.
-Commands 201, 203, and 210 are wrappers for
+**SetShimLibraryVersion** is a wrapper for
+[caps:c](Capture%20services.md "wikilink") cmd33. Commands
+**SaveScreenShot**, **SaveScreenShotEx0**, **SaveScreenShotEx1** and
+**SaveScreenShotEx2** are wrappers for
 [caps:sc](Display%20services.md "wikilink") cmd210.
 
 ## SaveScreenShot
