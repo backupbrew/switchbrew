@@ -70,8 +70,8 @@ This is
 | 132  | EnableUnintendedHomeButtonInputProtection                                                        |
 | 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
 | 134  | \[6.1.0+\] SetNpadAnalogStickUseCenterClamp                                                      |
-| 135  | \[8.0.0+\]                                                                                       |
-| 136  | \[8.0.0+\]                                                                                       |
+| 135  | \[8.0.0+\] SetNpadCaptureButtonAssignment                                                        |
+| 136  | \[8.0.0+\] ClearNpadCaptureButtonAssignment                                                      |
 | 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
 | 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
 | 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
@@ -129,9 +129,9 @@ This is
 | 524  | \[5.1.0+\] PairPalma                                                                             |
 | 525  | \[5.1.0+\] SetPalmaBoostMode                                                                     |
 | 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                             |
-| 527  | \[8.0.0+\]                                                                                       |
-| 528  | \[8.0.0+\]                                                                                       |
-| 529  | \[8.0.0+\]                                                                                       |
+| 527  | \[8.0.0+\] EnablePalmaBoostMode                                                                  |
+| 528  | \[8.0.0+\] GetPalmaBluetoothAddress                                                              |
+| 529  | \[8.0.0+\] SetDisallowedPalmaConnection                                                          |
 | 1000 | SetNpadCommunicationMode                                                                         |
 | 1001 | GetNpadCommunicationMode                                                                         |
 

@@ -131,9 +131,9 @@ This is "nn::hid::IHidServer".
 |-
 | 134 || [6.1.0+] SetNpadAnalogStickUseCenterClamp
 |-
-| 135 || [8.0.0+]
+| 135 || [8.0.0+] SetNpadCaptureButtonAssignment
 |-
-| 136 || [8.0.0+]
+| 136 || [8.0.0+] ClearNpadCaptureButtonAssignment
 |-
 | 200 || [[#GetVibrationDeviceInfo]]
 |-
@@ -249,11 +249,11 @@ This is "nn::hid::IHidServer".
 |-
 | 526 || [7.0.0+] CancelWritePalmaWaveEntry
 |-
-| 527 || [8.0.0+]
+| 527 || [8.0.0+] EnablePalmaBoostMode
 |-
-| 528 || [8.0.0+]
+| 528 || [8.0.0+] GetPalmaBluetoothAddress
 |-
-| 529 || [8.0.0+]
+| 529 || [8.0.0+] SetDisallowedPalmaConnection
 |-
 | 1000 || SetNpadCommunicationMode
 |-
