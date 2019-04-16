@@ -231,6 +231,7 @@ This is
 | 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
 | 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
 | 8                     | \[7.0.0+\] [\#EnableAdditionalSystemThreads](#EnableAdditionalSystemThreads "wikilink")   |
+| 9                     | \[8.0.0+\] [\#GetUnimplementedEventHandle](#GetUnimplementedEventHandle "wikilink")       |
 
 ## LaunchProcess
 
@@ -320,5 +321,15 @@ first time.
 
 On normal [7.0.0](7.0.0.md "wikilink") retail firmware, this will double
 the limit on system threads from 0x60 to 0xC0.
+
+## GetUnimplementedEventHandle
+
+This function returns a handle, and in [8.0.0](8.0.0.md "wikilink") code
+was added to the global ProcessManager object constructor to call
+svcCreateEvent to make a new global event.
+
+This command is presumably intended to retrieve this event, however, the
+event is never signaled anywhere, and as of [8.0.0](8.0.0.md "wikilink")
+the implementation for this command just does "abort();".
 
 [Category:Services](Category:Services "wikilink")

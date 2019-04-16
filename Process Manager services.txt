@@ -208,6 +208,8 @@ This is "nn::pm::detail::IShellInterface".
 | 7 ([4.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |-
 | 8 || [7.0.0+] [[#EnableAdditionalSystemThreads]]
+|-
+| 9 || [8.0.0+] [[#GetUnimplementedEventHandle]]
 |}
 
 == LaunchProcess ==
@@ -273,5 +275,10 @@ Calls svcSetResourceLimitLimitValue to increase the limit on system threads by a
 This function can only increase the limit once, on further calls it will call svcSetResourceLimitLimitValue with the same value it called the first time.
 
 On normal [[7.0.0]] retail firmware, this will double the limit on system threads from 0x60 to 0xC0.
+
+== GetUnimplementedEventHandle ==
+This function returns a handle, and in [[8.0.0]] code was added to the global ProcessManager object constructor to call svcCreateEvent to make a new global event. 
+
+This command is presumably intended to retrieve this event, however, the event is never signaled anywhere, and as of [[8.0.0]] the implementation for this command just does "abort();".
 
 [[Category:Services]]
