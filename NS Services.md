@@ -373,6 +373,7 @@ This is
 | 96                   | \[6.0.0+\] AcquireApplicationLaunchInfo                                                            |
 | 97                   | \[6.0.0+\] GetMainApplicationProgramIndexByApplicationLaunchInfo                                   |
 | 98                   | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                   |
+| 99                   | \[8.0.0+\]                                                                                         |
 | 100                  | ResetToFactorySettings                                                                             |
 | 101                  | ResetToFactorySettingsWithoutUserSaveData                                                          |
 | 102                  | ResetToFactorySettingsForRefurbishment                                                             |
@@ -397,6 +398,8 @@ This is
 | 404                  | InvalidateApplicationControlCache                                                                  |
 | 405                  | ListApplicationControlCacheEntryInfo                                                               |
 | 406                  | \[6.0.0+\] GetApplicationControlProperty                                                           |
+| 407                  | \[8.0.0+\]                                                                                         |
+| 408                  | \[8.0.0+\]                                                                                         |
 | 502                  | RequestCheckGameCardRegistration                                                                   |
 | 503                  | RequestGameCardRegistrationGoldPoint                                                               |
 | 504                  | RequestRegisterGameCard                                                                            |
@@ -463,6 +466,7 @@ This is
 | 1701                 | GetApplicationView                                                                                 |
 | 1702                 | GetApplicationDownloadTaskStatus                                                                   |
 | 1703                 | GetApplicationViewDownloadErrorContext                                                             |
+| 1704                 | \[8.0.0+\]                                                                                         |
 | 1800                 | IsNotificationSetupCompleted                                                                       |
 | 1801                 | GetLastNotificationInfoCount                                                                       |
 | 1802                 | ListLastNotificationInfo                                                                           |
@@ -512,6 +516,12 @@ This is
 | \[6.0.0-6.2.0\] 2250 | RequestReportActiveELicence                                                                        |
 | 2300                 | \[6.0.0+\] ListEventLog                                                                            |
 | 2350                 | \[7.0.0+\]                                                                                         |
+| 2400                 | \[8.0.0+\]                                                                                         |
+| 2401                 | \[8.0.0+\]                                                                                         |
+| 2402                 | \[8.0.0+\]                                                                                         |
+| 2403                 | \[8.0.0+\]                                                                                         |
+| 2404                 | \[8.0.0+\]                                                                                         |
+| 2500                 | \[8.0.0+\]                                                                                         |
 |                      |                                                                                                    |
 
 ### IApplicationVersionInterface
@@ -604,6 +614,8 @@ This was added with \[6.0.0+\].
 | 9   | \[7.0.0+\] |       |
 | 10  | \[7.0.0+\] |       |
 | 11  | \[7.0.0+\] |       |
+| 12  | \[8.0.0+\] |       |
+| 13  | \[8.0.0+\] |       |
 |     |            |       |
 
 ### IECommerceInterface

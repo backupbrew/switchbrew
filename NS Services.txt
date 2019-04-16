@@ -595,6 +595,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 98 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash
 |-
+| 99 || [8.0.0+]
+|-
 | 100 || ResetToFactorySettings
 |-
 | 101 || ResetToFactorySettingsWithoutUserSaveData
@@ -642,6 +644,10 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 405 || ListApplicationControlCacheEntryInfo
 |-
 | 406 || [6.0.0+] GetApplicationControlProperty
+|-
+| 407 || [8.0.0+]
+|-
+| 408 || [8.0.0+]
 |-
 | 502 || RequestCheckGameCardRegistration
 |-
@@ -775,6 +781,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1703 || GetApplicationViewDownloadErrorContext
 |-
+| 1704 || [8.0.0+]
+|-
 | 1800 || IsNotificationSetupCompleted
 |-
 | 1801 || GetLastNotificationInfoCount
@@ -872,6 +880,18 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2300 || [6.0.0+] ListEventLog
 |-
 | 2350 || [7.0.0+] 
+|-
+| 2400 || [8.0.0+]
+|-
+| 2401 || [8.0.0+]
+|-
+| 2402 || [8.0.0+]
+|-
+| 2403 || [8.0.0+]
+|-
+| 2404 || [8.0.0+]
+|-
+| 2500 || [8.0.0+]
 |-
 |}
 
@@ -1013,6 +1033,10 @@ This was added with [6.0.0+].
 | 10 || [7.0.0+] || 
 |-
 | 11 || [7.0.0+] || 
+|-
+| 12 || [8.0.0+]
+|-
+| 13 || [8.0.0+]
 |-
 |}
 
