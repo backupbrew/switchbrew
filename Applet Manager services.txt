@@ -496,7 +496,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 11 || [6.0.0+] StartRebootSequenceForOverlay
 |-
-| 20 || [8.0.0+]
+| 20 || [8.0.0+] SetHandlingHomeButtonShortPressedEnabled
 |-
 | 90 || [7.0.0+] SetRequiresGpuResourceUse
 |-
