@@ -33,32 +33,38 @@ This is "nn::bcat::detail::ipc::IBcatService".
 |-
 | 20101 || [5.0.0+] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName
 |-
-| 20300 || [8.0.0+] ? (Takes a total of 8-bytes of input, returns an [[#INotifierService]])
+| 20300 || [8.0.0+] [[#GetDeliveryCacheStorageUpdateNotifier]]
 |-
-| 20301 || [8.0.0+] ? (Takes a total of 8-bytes of input, returns an [[#IDeliveryTaskSuspensionService]])
+| 20301 || [8.0.0+] [[#RequestSuspendDeliveryTask]]
 |-
 | 30100 || SetPassphrase
 |-
-| 30200 || RegisterBackgroundDeliveryTask
+| 30200 || RegisterDeliveryTask
 |-
-| 30201 || UnregisterBackgroundDeliveryTask
+| 30201 || UnregisterDeliveryTask
 |-
 | 30202 || BlockDeliveryTask
 |-
 | 30203 || UnblockDeliveryTask
 |-
-| 30300 || [8.0.0+]
+| 30300 || [8.0.0+] RegisterSystemApplicationDeliveryTasks
 |-
-| 90100 || EnumerateBackgroundDeliveryTask
+| 90100 || GetDeliveryTaskList
 |-
 | 90200 || GetDeliveryList
 |-
 | 90201 || ClearDeliveryCacheStorage
 |-
-| 90202 || [8.0.0+]
+| 90202 || [8.0.0+] ClearDeliveryTaskSubscriptionStatus
 |-
 | 90300 || GetPushNotificationLog
 |}
+
+=== GetDeliveryCacheStorageUpdateNotifier ===
+Takes a total of 8-bytes of input, returns an [[#INotifierService]].
+
+=== RequestSuspendDeliveryTask ===
+Takes a total of 8-bytes of input, returns an [[#IDeliveryTaskSuspensionService]].
 
 === IDeliveryCacheProgressService ===
 This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
