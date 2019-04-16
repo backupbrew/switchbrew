@@ -243,6 +243,23 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <td><p>April 15, 2018</p></td>
 <td><p>Everyone</p></td>
 </tr>
+<tr class="odd">
+<td><p>deja vu (insufficient system state validation on suspend leads to pre-sleep BPMP code execution)</p></td>
+<td><p>Jamais Vu was fixed in <a href="2.0.0.md" title="wikilink">2.0.0</a> by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry, since gaining pre-sleep code execution on the BPMP compromises the system.</p>
+<p>However, the state validation performed by Nintendo's Secure Monitor was insufficient to prevent pre-sleep execution from being obtained.</p>
+<p>Prior to <a href="6.0.0.md" title="wikilink">6.0.0</a>, one could use a DMA controller that had access to IRAM and was not held in reset (there were multiple) to race TrustZone's writes to the BPMP firmware in IRAM, and thus overwrite Nintendo's firmware with an attacker's to gain pre-sleep code execution.</p>
+<p><a href="6.0.0.md" title="wikilink">6.0.0</a> addressed this by performing TrustZone state MAC writes and locking PMC scratch *before* turning on the BPMP, fixing the original Jamais Vu exploit entirely. In addition, the BPMP firmware in TrustZone's .rodata is now memcmp'd to the actual data after it is written to IRAM. This mitigates race attacks that modify the firmware.</p>
+<p>However, Nintendo both forgot to validate the BPMP exception vectors after writing them, and forgot to hold in reset a DMA controller that can write to the BPMP's exception vectors.</p>
+<p>AHB-DMA is not blacklisted by kernel mapping whitelist (Nintendo probably forgot it, because the TX1 TRM does not really document that it's present, although the MMIO works as documented in older (Tegra 3 and before) TRMs).</p>
+<p>Thus, with kernel code execution (or some other way of accessing AHB-DMA, e.g. nspwn on &lt;= 4.1.0, TSEC hax, or other arbitrary mmio access flaws), one can DMA to the BPMP's exception vectors as they are written, causing TrustZone to start the BPMP executing an attacker's firmware at a different location than TrustZone intends/validates.</p>
+<p>This was fixed in <a href="8.0.0.md" title="wikilink">8.0.0</a> by blocking AHB-DMA arbitration, and thus there are no more devices that can write to the relevant MMIO at the right time.</p></td>
+<td><p>Arbitrary TrustZone/BootROM code execution, by using either the original Jamais Vu flaw (prior to <a href="6.0.0.md" title="wikilink">6.0.0</a> or a warmboot bootrom exploit (any firmware where pre-sleep execution can be gained).</p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p>December 2017</p></td>
+<td><p>January 20, 2018</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:motezazer" title="wikilink">motezazer</a> and ktemkin, <a href="User:Naehrwert" title="wikilink">naehrwert</a> (independently), almost certainly others (independently)</p></td>
+</tr>
 </tbody>
 </table>
 

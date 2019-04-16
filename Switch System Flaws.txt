@@ -219,6 +219,30 @@ In [[8.0.0]], this was fixed by removing TSEC access, and adding TSECB access (T
 | 2017 (when TrustZone code plaintext was first obtained).
 | April 15, 2018
 | Everyone
+|-
+|  deja vu (insufficient system state validation on suspend leads to pre-sleep BPMP code execution)
+|  Jamais Vu was fixed in [[2.0.0]] by making the PMC secure-world only, blacklisting the BPMP's exception vectors from being mapped, and thoroughly checking for malicious behavior on deep sleep entry, since gaining pre-sleep code execution on the BPMP compromises the system.
+
+However, the state validation performed by Nintendo's Secure Monitor was insufficient to prevent pre-sleep execution from being obtained.
+
+Prior to [[6.0.0]], one could use a DMA controller that had access to IRAM and was not held in reset (there were multiple) to race TrustZone's writes to the BPMP firmware in IRAM, and thus overwrite Nintendo's firmware with an attacker's to gain pre-sleep code execution.
+
+[[6.0.0]] addressed this by performing TrustZone state MAC writes and locking PMC scratch *before* turning on the BPMP, fixing the original Jamais Vu exploit entirely. In addition, the BPMP firmware in TrustZone's .rodata is now memcmp'd to the actual data after it is written to IRAM. This mitigates race attacks that modify the firmware.
+
+However, Nintendo both forgot to validate the BPMP exception vectors after writing them, and forgot to hold in reset a DMA controller that can write to the BPMP's exception vectors.
+
+AHB-DMA is not blacklisted by kernel mapping whitelist (Nintendo probably forgot it, because the TX1 TRM does not really document that it's present, although the MMIO works as documented in older (Tegra 3 and before) TRMs).
+
+Thus, with kernel code execution (or some other way of accessing AHB-DMA, e.g. nspwn on <= 4.1.0, TSEC hax, or other arbitrary mmio access flaws), one can DMA to the BPMP's exception vectors as they are written, causing TrustZone to start the BPMP executing an attacker's firmware at a different location than TrustZone intends/validates.
+
+This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration, and thus there are no more devices that can write to the relevant MMIO at the right time.
+
+|  Arbitrary TrustZone/BootROM code execution, by using either the original Jamais Vu flaw (prior to [[6.0.0]] or a warmboot bootrom exploit (any firmware where pre-sleep execution can be gained).
+|  [[8.0.0]]
+|  [[8.0.0]]
+|  December 2017
+|  January 20, 2018
+|  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]] and ktemkin,  [[User:Naehrwert|naehrwert]] (independently), almost certainly others (independently)
 |}
 
 === Kernel ===
