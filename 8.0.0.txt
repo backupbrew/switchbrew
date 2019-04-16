@@ -93,6 +93,9 @@ The Secure Monitor was updated.
 * TSEC no longer has access to the kernel carveout, and TSECB now has access to the kernel carveout.
 ** The Read/Write access levels were changed from 1 to 9, to facilitate this.
 
+====Warmboot====
+* The firmware revision magic was not changed.
+
 == System Titles ==
 * 1 new title was added: [[#FunctionBlackList|FunctionBlackList]].
 * All titles were updated, except for the following: dictionaries, UrlBlackList, PlatformConfigHoag, miiEdit, and flog.
