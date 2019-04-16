@@ -615,7 +615,7 @@ Takes an input u8, no output.
 |-
 | 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
 |-
-| 130 || [8.0.0+] || 
+| 130 || [8.0.0+] GetGpuErrorDetectedSystemEvent || 
 |-
 | 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
 |-
