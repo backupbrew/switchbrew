@@ -2,31 +2,35 @@
 
 This is "nn::bpc::IBoardPowerControlManager".
 
-| Cmd | Name                      |
-| --- | ------------------------- |
-| 0   | ShutdownSystem            |
-| 1   | RebootSystem              |
-| 2   | GetWakeupReason           |
-| 3   | GetShutdownReason         |
-| 4   | GetAcOk                   |
-| 5   | GetBoardPowerControlEvent |
-| 6   | GetSleepButtonState       |
-| 7   | GetPowerEvent             |
-| 8   |                           |
-| 9   |                           |
-| 10  |                           |
-| 14  | \[6.0.0+\]                |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | ShutdownSystem                 |
+| 1   | RebootSystem                   |
+| 2   | GetWakeupReason                |
+| 3   | GetShutdownReason              |
+| 4   | GetAcOk                        |
+| 5   | GetBoardPowerControlEvent      |
+| 6   | \[2.0.0+\] GetSleepButtonState |
+| 7   | \[2.0.0+\] GetPowerEvent       |
+| 8   | \[2.0.0+\]                     |
+| 9   | \[2.0.0+\]                     |
+| 10  | \[2.0.0+\]                     |
+| 11  | \[3.0.0+\]                     |
+| 12  | \[3.0.0+\]                     |
+| 13  | \[3.0.0+\]                     |
+| 14  | \[6.0.0+\]                     |
 
 # bpc:r
 
 This is "nn::bpc::IRtcManager".
 
-| Cmd | Name                      |
-| --- | ------------------------- |
-| 0   | GetExternalRtcValue       |
-| 1   | SetExternalRtcValue       |
-| 2   | ReadExternalRtcResetFlag  |
-| 3   | ClearExternalRtcResetFlag |
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | GetExternalRtcValue                  |
+| 1   | SetExternalRtcValue                  |
+| 2   | ReadExternalRtcResetFlag             |
+| 3   | \[2.0.0+\] ClearExternalRtcResetFlag |
+| 4   | \[3.0.0+\]                           |
 
 GetExternalRtcValue / SetExternalRtcValue directly accesses the
 max77620\_rtc0 device.
@@ -37,35 +41,36 @@ This is "nn::pcv::detail::IPcvService".
 
 | Cmd                | Name                     |
 | ------------------ | ------------------------ |
-| 0                  | SetPowerEnabled          |
-| 1                  | SetClockEnabled          |
-| 2                  | SetClockRate             |
-| 3                  | GetClockRate             |
-| 4                  | GetState                 |
-| 5                  | GetPossibleClockRates    |
-| 6                  | SetMinVClockRate         |
-| 7                  | SetReset                 |
-| 8                  | SetVoltageEnabled        |
-| 9                  | GetVoltageEnabled        |
-| 10                 | GetVoltageRange          |
-| 11                 | SetVoltageValue          |
-| 12                 | GetVoltageValue          |
-| 13                 | GetTemperatureThresholds |
-| 14                 | SetTemperature           |
+| \[1.0.0-7.0.1\] 0  | SetPowerEnabled          |
+| \[1.0.0-7.0.1\] 1  | SetClockEnabled          |
+| \[1.0.0-7.0.1\] 2  | SetClockRate             |
+| \[1.0.0-7.0.1\] 3  | GetClockRate             |
+| \[1.0.0-7.0.1\] 4  | GetState                 |
+| \[1.0.0-7.0.1\] 5  | GetPossibleClockRates    |
+| \[1.0.0-7.0.1\] 6  | SetMinVClockRate         |
+| \[1.0.0-7.0.1\] 7  | SetReset                 |
+| \[1.0.0-7.0.1\] 8  | SetVoltageEnabled        |
+| \[1.0.0-7.0.1\] 9  | GetVoltageEnabled        |
+| \[1.0.0-7.0.1\] 10 | GetVoltageRange          |
+| \[1.0.0-7.0.1\] 11 | SetVoltageValue          |
+| \[1.0.0-7.0.1\] 12 | GetVoltageValue          |
+| \[1.0.0-7.0.1\] 13 | GetTemperatureThresholds |
+| \[1.0.0-7.0.1\] 14 | SetTemperature           |
 | \[1.0.0-5.1.0\] 15 | Initialize               |
 | \[1.0.0-5.1.0\] 16 | IsInitialized            |
 | \[1.0.0-5.1.0\] 17 | Finalize                 |
-| 18                 | PowerOn                  |
-| 19                 | PowerOff                 |
-| 20                 | ChangeVoltage            |
-| 21                 | GetPowerClockInfoEvent   |
-| 22                 | GetOscillatorClock       |
-| 23                 | GetDvfsTable             |
-| 24                 | GetModuleStateTable      |
-| 25                 | GetPowerDomainStateTable |
-| 26                 | GetFuseInfo              |
-| 28                 | \[6.0.0+\]               |
-| 29                 | \[6.0.0+\]               |
+| \[3.0.0-7.0.1\] 18 | PowerOn                  |
+| \[3.0.0-7.0.1\] 19 | PowerOff                 |
+| \[3.0.0-7.0.1\] 20 | ChangeVoltage            |
+| \[3.0.0-7.0.1\] 21 | GetPowerClockInfoEvent   |
+| \[3.0.0-7.0.1\] 22 | GetOscillatorClock       |
+| \[3.0.0-7.0.1\] 23 | GetDvfsTable             |
+| \[3.0.0-7.0.1\] 24 | GetModuleStateTable      |
+| \[3.0.0-7.0.1\] 25 | GetPowerDomainStateTable |
+| 26                 | \[3.0.0+\] GetFuseInfo   |
+| 27                 | \[5.0.0+\]               |
+| \[6.0.0-7.0.1\] 28 |                          |
+| \[6.0.0-7.0.1\] 29 |                          |
 
 \[7.0.0+\] The type-0xA output buffers were replaced with type-0x22
 output buffers, for the following: GetDvfsTable, GetModuleStateTable,
@@ -181,7 +186,6 @@ GetPowerDomainStateTable.
 | 12   | max77620\_ldo8 | DisplayPort, 1.05v        |
 | 13   | max77621\_cpu  |                           |
 | 14   | max77621\_gpu  |                           |
-|      |                |                           |
 
 Note: max77620 GPIOs are only used internally by the driver during init,
 and not exposed via an API.
@@ -190,19 +194,105 @@ and not exposed via an API.
 
 This is "nn::pcv::IArbitrationManager".
 
+This service no longer exists in \[8.0.0+\].
+
 | Cmd | Name           |
 | --- | -------------- |
 | 0   | ReleaseControl |
-|     |                |
 
 # pcv:imm
 
 This is "nn::pcv::IImmediateManager".
 
+This service no longer exists in \[8.0.0+\].
+
 | Cmd | Name         |
 | --- | ------------ |
 | 0   | SetClockRate |
-|     |              |
+
+# clkrst, clkrst:i
+
+These are "nn::clkrst::IClkrstManager" and
+"nn::clkrst::IClkrstImmediateManager".
+
+These were added with \[8.0.0+\].
+
+| Cmd | Name        |
+| --- | ----------- |
+| 0   | OpenSession |
+| 1   |             |
+| 2   |             |
+| 3   |             |
+| 4   |             |
+| 5   |             |
+
+## IClkrstSession
+
+This is "nn::clkrst::IClkrstSession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+| 7   |      |
+| 8   |      |
+| 9   |      |
+| 10  |      |
+| 11  |      |
+
+# clkrst:a
+
+This is "nn::clkrst::IClkrstArbitrationManager".
+
+This was added with \[8.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
+# rgltr
+
+This is "nn::regulator::IRegulatorManager".
+
+This was added with \[8.0.0+\].
+
+| Cmd | Name        |
+| --- | ----------- |
+| 0   | OpenSession |
+| 1   |             |
+| 2   |             |
+| 3   |             |
+
+## IRegulatorSession
+
+This is "nn::regulator::IRegulatorSession".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+
+# rtc
+
+This was added with \[8.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
 
 # time:u, time:a, time:s
 
@@ -272,7 +362,6 @@ This is
 | 1   | SetCurrentTime        | Takes an input [\#PosixTime](#PosixTime "wikilink").                      |
 | 2   | GetSystemClockContext | Returns an output [\#SystemClockContext](#SystemClockContext "wikilink"). |
 | 3   | SetSystemClockContext | Takes an input [\#SystemClockContext](#SystemClockContext "wikilink").    |
-|     |                       |                                                                           |
 
 ### PosixTime
 
@@ -301,11 +390,11 @@ This is
 | 3   | LoadLocationNameList              |                                                                                                                                                                                                                                                                   |
 | 4   | LoadTimeZoneRule                  | Takes an input [\#LocationName](#LocationName "wikilink") and a type-0x16 output buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), no output.                                                                                                                |
 | 5   | \[2.0.0+\] GetTimeZoneRuleVersion | No input, returns an output [\#TimeZoneRuleVersion](#TimeZoneRuleVersion "wikilink").                                                                                                                                                                             |
+| 6   | \[5.0.0+\]                        |                                                                                                                                                                                                                                                                   |
 | 100 | ToCalendarTime                    | Takes an input [\#PosixTime](#PosixTime "wikilink") and a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink"). |
 | 101 | ToCalendarTimeWithMyRule          | Takes an input [\#PosixTime](#PosixTime "wikilink"), returns an output [\#CalendarTime](#CalendarTime "wikilink") and [\#CalendarAdditionalInfo](#CalendarAdditionalInfo "wikilink").                                                                             |
 | 201 | ToPosixTime                       | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), a type-0x15 input buffer for [\#TimeZoneRule](#TimeZoneRule "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                          |
 | 202 | ToPosixTimeWithMyRule             | Takes an input [\#CalendarTime](#CalendarTime "wikilink"), an type-0xA output buffer for [\#PosixTime](#PosixTime "wikilink") array, and returns an output s32.                                                                                                   |
-|     |                                   |                                                                                                                                                                                                                                                                   |
 
 ### LoadLocationNameList
 
