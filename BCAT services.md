@@ -21,26 +21,26 @@ BCAT-content-container.
 This is
 "nn::bcat::detail::ipc::IBcatService".
 
-| Cmd   | Name                                                                                              |
-| ----- | ------------------------------------------------------------------------------------------------- |
-| 10100 | RequestSyncDeliveryCache                                                                          |
-| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                              |
-| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                         |
-| 20100 | RequestSyncDeliveryCacheWithApplicationId                                                         |
-| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                              |
-| 20300 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#IUnknown0](#IUnknown0 "wikilink")) |
-| 20301 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#IUnknown1](#IUnknown1 "wikilink")) |
-| 30100 | SetPassphrase                                                                                     |
-| 30200 | RegisterBackgroundDeliveryTask                                                                    |
-| 30201 | UnregisterBackgroundDeliveryTask                                                                  |
-| 30202 | BlockDeliveryTask                                                                                 |
-| 30203 | UnblockDeliveryTask                                                                               |
-| 30300 | \[8.0.0+\]                                                                                        |
-| 90100 | EnumerateBackgroundDeliveryTask                                                                   |
-| 90200 | GetDeliveryList                                                                                   |
-| 90201 | ClearDeliveryCacheStorage                                                                         |
-| 90202 | \[8.0.0+\]                                                                                        |
-| 90300 | GetPushNotificationLog                                                                            |
+| Cmd   | Name                                                                                                                                        |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| 10100 | RequestSyncDeliveryCache                                                                                                                    |
+| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                                                                        |
+| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                                                                   |
+| 20100 | RequestSyncDeliveryCacheWithApplicationId                                                                                                   |
+| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                                                                        |
+| 20300 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#INotifierService](#INotifierService "wikilink"))                             |
+| 20301 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, returns an [\#IDeliveryTaskSuspensionService](#IDeliveryTaskSuspensionService "wikilink")) |
+| 30100 | SetPassphrase                                                                                                                               |
+| 30200 | RegisterBackgroundDeliveryTask                                                                                                              |
+| 30201 | UnregisterBackgroundDeliveryTask                                                                                                            |
+| 30202 | BlockDeliveryTask                                                                                                                           |
+| 30203 | UnblockDeliveryTask                                                                                                                         |
+| 30300 | \[8.0.0+\]                                                                                                                                  |
+| 90100 | EnumerateBackgroundDeliveryTask                                                                                                             |
+| 90200 | GetDeliveryList                                                                                                                             |
+| 90201 | ClearDeliveryCacheStorage                                                                                                                   |
+| 90202 | \[8.0.0+\]                                                                                                                                  |
+| 90300 | GetPushNotificationLog                                                                                                                      |
 
 ### IDeliveryCacheProgressService
 
@@ -82,7 +82,9 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
 | 1   | Read     |
 | 2   | GetCount |
 
-### IUnknown0
+### INotifierService
+
+This is "nn::bcat::detail::ipc::INotifierService".
 
 Added with \[8.0.0+\].
 
@@ -91,7 +93,9 @@ Added with \[8.0.0+\].
 | 0   |      |       |
 |     |      |       |
 
-### IUnknown0
+### IDeliveryTaskSuspensionService
+
+This is "nn::bcat::detail::ipc::IDeliveryTaskSuspensionService".
 
 Added with \[8.0.0+\].
 
