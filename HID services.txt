@@ -753,7 +753,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 811 || [5.0.0+] GetSixAxisSensorUserCalibrationStage
 |-
-| 812 || [8.0.0+]
+| 812 || [8.0.0+] GetConsoleUniqueSixAxisSensorHandle
 |-
 | 821 || StartAnalogStickManualCalibration
 |-
@@ -833,7 +833,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1134 || [6.0.0+] GetUsbFirmwareUpdateState
 |-
-| 1150 || [8.0.0+]
+| 1150 || [8.0.0+] SetTouchScreenMagnification
 |}
 
 == SetVibrationMasterVolume ==

@@ -481,7 +481,7 @@ This is
 | 809  | \[5.0.0+\] GetUniquePadSerialNumber                                |
 | 810  | \[5.0.0+\] GetUniquePadControllerNumber                            |
 | 811  | \[5.0.0+\] GetSixAxisSensorUserCalibrationStage                    |
-| 812  | \[8.0.0+\]                                                         |
+| 812  | \[8.0.0+\] GetConsoleUniqueSixAxisSensorHandle                     |
 | 821  | StartAnalogStickManualCalibration                                  |
 | 822  | RetryCurrentAnalogStickManualCalibrationStage                      |
 | 823  | CancelAnalogStickManualCalibration                                 |
@@ -521,7 +521,7 @@ This is
 | 1132 | \[6.0.0+\] CheckUsbFirmwareUpdateRequired                          |
 | 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                  |
 | 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                               |
-| 1150 | \[8.0.0+\]                                                         |
+| 1150 | \[8.0.0+\] SetTouchScreenMagnification                             |
 
 ## SetVibrationMasterVolume
 
