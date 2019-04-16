@@ -349,14 +349,14 @@ This is "nn::hid::IHidDebugServer".
 | 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency |
 | 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor             |
 | 143 | \[5.0.0+\] GetConsoleSixAxisSensorCountStates       |
-| 144 | \[8.0.0+\]                                          |
-| 145 | \[8.0.0+\]                                          |
-| 146 | \[8.0.0+\]                                          |
-| 147 | \[8.0.0+\]                                          |
-| 148 | \[8.0.0+\]                                          |
-| 149 | \[8.0.0+\]                                          |
-| 150 | \[8.0.0+\]                                          |
-| 151 | \[8.0.0+\]                                          |
+| 144 | \[8.0.0+\] GetAccelerometerFsr                      |
+| 145 | \[8.0.0+\] SetAccelerometerFsr                      |
+| 146 | \[8.0.0+\] GetAccelerometerOdr                      |
+| 147 | \[8.0.0+\] SetAccelerometerOdr                      |
+| 148 | \[8.0.0+\] GetGyroscopeFsr                          |
+| 149 | \[8.0.0+\] SetGyroscopeFsr                          |
+| 150 | \[8.0.0+\] GetGyroscopeOdr                          |
+| 151 | \[8.0.0+\] SetGyroscopeOdr                          |
 | 201 | ActivateFirmwareUpdate                              |
 | 202 | DeactivateFirmwareUpdate                            |
 | 203 | StartFirmwareUpdate                                 |
@@ -403,8 +403,8 @@ This is "nn::hid::IHidDebugServer".
 | 350 | \[5.0.0+\] AddRegisteredDevice                      |
 | 400 | \[6.0.0+\] DisableExternalMcuOnNxDevice             |
 | 401 | \[6.0.0+\] DisableRailDeviceFiltering               |
-| 500 | \[8.0.0+\]                                          |
-| 501 | \[8.0.0+\]                                          |
+| 500 | \[8.0.0+\] SetFactoryInt                            |
+| 501 | \[8.0.0+\] IsFactoryBootEnabled                     |
 
 # hid:sys
 
