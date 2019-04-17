@@ -796,44 +796,44 @@ Official sw uses this during LibraryApplet creation when
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                                                                      | Notes            |
-| --- | --------------------------------------------------------------------------------------------------------- | ---------------- |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |                  |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |                  |
-| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |                  |
-| 3   | AllowToEnterSleep                                                                                         |                  |
-| 4   | DisallowToEnterSleep                                                                                      |                  |
-| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |                  |
-| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |                  |
-| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |                  |
-| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |                  |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |                  |
-| 10  | RequestToAcquireSleepLock                                                                                 |                  |
-| 11  | ReleaseSleepLock                                                                                          |                  |
-| 12  | ReleaseSleepLockTransiently                                                                               |                  |
-| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |                  |
-| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |                  |
-| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |                  |
-| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |                  |
-| 32  | \[7.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                               |                  |
-| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |                  |
-| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |                  |
-| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |                  |
-| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |                  |
-| 53  | \[7.0.0+\] BeginVrModeEx                                                                                  | No input/output. |
-| 54  | \[7.0.0+\] EndVrModeEx                                                                                    | No input/output. |
-| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |                  |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |                  |
-| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |                  |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |                  |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |                  |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |                  |
-| 65  | \[5.1.0+\] GetApplicationIdByContentActionName                                                            |                  |
-| 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                               |                  |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |                  |
-| 90  | \[7.0.0+\] SetPerformanceConfigurationChangedNotification                                                 |                  |
-| 91  | \[7.0.0+\] GetCurrentPerformanceConfiguration                                                             |                  |
-| 200 | \[7.0.0+\] GetOperationModeSystemInfo                                                                     |                  |
+| Cmd | Name                                                                                                      | Notes |
+| --- | --------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
+| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |       |
+| 3   | AllowToEnterSleep                                                                                         |       |
+| 4   | DisallowToEnterSleep                                                                                      |       |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |       |
+| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
+| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |       |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |       |
+| 10  | RequestToAcquireSleepLock                                                                                 |       |
+| 11  | ReleaseSleepLock                                                                                          |       |
+| 12  | ReleaseSleepLockTransiently                                                                               |       |
+| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |       |
+| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |       |
+| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
+| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |       |
+| 32  | \[7.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                               |       |
+| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |       |
+| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
+| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |       |
+| 53  | \[7.0.0+\] [\#BeginVrModeEx](#BeginVrModeEx "wikilink")                                                   |       |
+| 54  | \[7.0.0+\] [\#EndVrModeEx](#EndVrModeEx "wikilink")                                                       |       |
+| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
+| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |       |
+| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |       |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |       |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |       |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |       |
+| 65  | \[5.1.0+\] GetApplicationIdByContentActionName                                                            |       |
+| 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                               |       |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |       |
+| 90  | \[7.0.0+\] SetPerformanceConfigurationChangedNotification                                                 |       |
+| 91  | \[7.0.0+\] GetCurrentPerformanceConfiguration                                                             |       |
+| 200 | \[7.0.0+\] GetOperationModeSystemInfo                                                                     |       |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -943,6 +943,14 @@ flag={disable/enable}.
 When the VrMode is set to true, the console shows a screen rendered like
 vr asking the user to move his face away and hit the 'close' button.
 When this button is pressed, the console resets the vrMode to false.
+
+### BeginVrModeEx
+
+No input/output.
+
+### EndVrModeEx
+
+No input/output.
 
 ### IsInControllerFirmwareUpdateSection
 
