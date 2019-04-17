@@ -11,6 +11,7 @@ This is
 | 3   | [\#GetSharedMemoryAddressOffset](#GetSharedMemoryAddressOffset "wikilink")     |
 | 4   | [\#GetSharedMemoryNativeHandle](#GetSharedMemoryNativeHandle "wikilink")       |
 | 5   | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink") |
+| 6   | \[4.0.0+\] GetSharedFontInOrderOfPriorityForSystem                             |
 | 100 | \[8.0.0+\]                                                                     |
 | 101 | \[8.0.0+\]                                                                     |
 
@@ -92,34 +93,34 @@ This is "nn::mii::detail::IStaticService".
 
 This is "nn::mii::detail::IDatabaseService".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | IsUpdated                      |
-| 1   | IsFullDatabase                 |
-| 2   | GetCount                       |
-| 3   | Get                            |
-| 4   | Get1                           |
-| 5   | UpdateLatest                   |
-| 6   | BuildRandom                    |
-| 7   | BuildDefault                   |
-| 8   | Get2                           |
-| 9   | Get3                           |
-| 10  | UpdateLatest1                  |
-| 11  | FindIndex                      |
-| 12  | Move                           |
-| 13  | AddOrReplace                   |
-| 14  | Delete                         |
-| 15  | DestroyFile                    |
-| 16  | DeleteFile                     |
-| 17  | Format                         |
-| 18  | Import                         |
-| 19  | Export                         |
-| 20  | IsBrokenDatabaseWithClearFlag  |
-| 21  | GetIndex                       |
-| 22  | \[5.0.0+\] SetInterfaceVersion |
-| 23  | \[5.0.0+\] Convert             |
-| 24  | \[7.0.0+\]                     |
-| 25  | \[7.0.0+\]                     |
+| Cmd | Name                                 |
+| --- | ------------------------------------ |
+| 0   | IsUpdated                            |
+| 1   | IsFullDatabase                       |
+| 2   | GetCount                             |
+| 3   | Get                                  |
+| 4   | Get1                                 |
+| 5   | UpdateLatest                         |
+| 6   | BuildRandom                          |
+| 7   | BuildDefault                         |
+| 8   | Get2                                 |
+| 9   | Get3                                 |
+| 10  | UpdateLatest1                        |
+| 11  | FindIndex                            |
+| 12  | Move                                 |
+| 13  | AddOrReplace                         |
+| 14  | Delete                               |
+| 15  | DestroyFile                          |
+| 16  | DeleteFile                           |
+| 17  | Format                               |
+| 18  | Import                               |
+| 19  | Export                               |
+| 20  | IsBrokenDatabaseWithClearFlag        |
+| 21  | GetIndex                             |
+| 22  | \[5.0.0+\] SetInterfaceVersion       |
+| 23  | \[5.0.0+\] Convert                   |
+| 24  | \[7.0.0+\] ConvertCoreDataToCharInfo |
+| 25  | \[7.0.0+\] ConvertCharInfoToCoreData |
 
 # miiimg
 

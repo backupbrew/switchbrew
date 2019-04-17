@@ -18,6 +18,8 @@ This is "nn::pl::detail::ISharedFontManager".
 |-
 | 5 || [[#GetSharedFontInOrderOfPriority]]
 |-
+| 6 || [4.0.0+] GetSharedFontInOrderOfPriorityForSystem
+|-
 | 100 || [8.0.0+]
 |-
 | 101 || [8.0.0+]
@@ -144,9 +146,9 @@ This is "nn::mii::detail::IDatabaseService".
 |-
 | 23 || [5.0.0+] Convert
 |-
-| 24 || [7.0.0+]
+| 24 || [7.0.0+] ConvertCoreDataToCharInfo
 |-
-| 25 || [7.0.0+]
+| 25 || [7.0.0+] ConvertCharInfoToCoreData
 |}
 
 = miiimg =
