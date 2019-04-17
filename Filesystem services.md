@@ -94,6 +94,8 @@ This is
 | 66   | \[5.0.0+\] WriteSaveDataFileSystemExtraData2                                                                                                                      |
 | 67   | \[6.0.0+\] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)                                 |
 | 68   | \[6.0.0+\] OpenSaveDataIterator (Takes a total of 0x50-bytes of input, returns an \#ISaveDataInfoReader)                                                          |
+| 69   | \[8.0.0+\]                                                                                                                                                        |
+| 70   | \[8.0.0+\]                                                                                                                                                        |
 | 80   | OpenSaveDataMetaFile                                                                                                                                              |
 | 81   | \[4.0.0+\] OpenSaveDataTransferManager (No input, returns an [\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink"))                                  |
 | 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
@@ -136,8 +138,8 @@ This is
 | 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                                                       |
 | 630  | \[4.0.0+\] SetSdCardAccessibility                                                                                                                                 |
 | 631  | \[4.0.0+\] IsSdCardAccessible                                                                                                                                     |
-| 640  | \[4.0.0+\] IsSignedSystemPartitionOnSdCardValid                                                                                                                   |
-| 700  | \[5.0.0+\] OpenAccessFailureResolver                                                                                                                              |
+| 640  | \[4.0.0-7.0.1\] IsSignedSystemPartitionOnSdCardValid                                                                                                              |
+| 700  | \[5.0.0+\] [\#OpenAccessFailureResolver](#OpenAccessFailureResolver "wikilink")                                                                                   |
 | 701  | \[5.0.0+\] GetAccessFailureDetectionEvent                                                                                                                         |
 | 702  | \[5.0.0+\] IsAccessFailureDetected                                                                                                                                |
 | 710  | \[5.0.0+\] ResolveAccessFailure                                                                                                                                   |
@@ -1163,6 +1165,13 @@ savedata](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")
 total) is (usually/always?) all-zero (however in some cases the byte at
 offset 0x20 is value 0x1).
 
+## OpenAccessFailureResolver
+
+Takes 8-bytes of input and returns an
+[\#IEventNotifier](#IEventNotifier "wikilink").
+
+\[8.0.0+\] Now takes an additional 8-bytes of input.
+
 ## SetSaveDataSize
 
 Takes two input u64s "size" and "journal\_size", and writes them to
@@ -1436,6 +1445,7 @@ This is
 | 216 | \[2.0.0+\] GetGameCardErrorInfo                                                                               |
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                                                         |
 | 218 | \[3.0.0+\] GetGameCardDeviceId                                                                                |
+| 219 | \[8.0.0+\]                                                                                                    |
 | 300 | SetSpeedEmulationMode                                                                                         |
 | 301 | GetSpeedEmulationMode                                                                                         |
 | 400 | \[5.0.0+\] SuspendSdmmcControl                                                                                |
