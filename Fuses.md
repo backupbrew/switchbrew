@@ -100,7 +100,7 @@ registers.
 | FUSE\_DAC\_CRT\_CALIB                                              | 0x7000F91C |
 | FUSE\_DAC\_HDTV\_CALIB                                             | 0x7000F920 |
 | FUSE\_DAC\_SDTV\_CALIB                                             | 0x7000F924 |
-| FUSE\_OPT\_FT\_REV                                                 | 0x7000F928 |
+| [FUSE\_OPT\_FT\_REV](#FUSE_OPT_FT_REV "wikilink")                  | 0x7000F928 |
 | FUSE\_CPU\_SPEEDO\_1\_CALIB                                        | 0x7000F92C |
 | FUSE\_CPU\_SPEEDO\_2\_CALIB                                        | 0x7000F930 |
 | FUSE\_SOC\_SPEEDO\_0\_CALIB                                        | 0x7000F934 |
@@ -126,7 +126,7 @@ registers.
 | FUSE\_TSENSOR1\_CALIB                                              | 0x7000F984 |
 | FUSE\_TSENSOR2\_CALIB                                              | 0x7000F988 |
 | FUSE\_VSENSOR\_CALIB                                               | 0x7000F98C |
-| FUSE\_OPT\_CP\_REV                                                 | 0x7000F990 |
+| [FUSE\_OPT\_CP\_REV](#FUSE_OPT_CP_REV "wikilink")                  | 0x7000F990 |
 | FUSE\_OPT\_PFG                                                     | 0x7000F994 |
 | FUSE\_TSENSOR0\_CALIB                                              | 0x7000F998 |
 | FUSE\_FIRST\_BOOTROM\_PATCH\_SIZE                                  | 0x7000F99C |
@@ -265,6 +265,13 @@ registers.
 
 Stores the SKU ID (must be 0x83).
 
+#### FUSE\_OPT\_FT\_REV
+
+Stores the FT (Final Test) revision.
+
+Original launch units have this value set to 0xA0 (revision 5.0). The
+first batch of patched units have this value set to 0xC0 (revision 6.0).
+
 #### FUSE\_FA
 
 Stores failure analysis mode.
@@ -275,37 +282,39 @@ Stores the bootrom patch version.
 
 #### FUSE\_RESERVED\_ODM0
 
-This appears to store a hardware ID.
+This stores an hardware ID.
 
 #### FUSE\_RESERVED\_ODM1
 
-This appears to store a hardware ID.
+This stores an hardware ID.
 
 #### FUSE\_RESERVED\_ODM2
 
-| Bits | Description                       |
-| ---- | --------------------------------- |
-| 0-4  | \[5.0.0+\] Used as key generation |
+| Bits | Description                                            |
+| ---- | ------------------------------------------------------ |
+| 0-4  | \[5.0.0+\] Used as key generation (patched units only) |
 
-This appears to store a hardware ID.
+This stores an hardware ID in original launch units, but in patched
+units it stores a single value (key generation).
 
 #### FUSE\_RESERVED\_ODM3
 
-This appears to store a hardware
-ID.
+This stores an hardware ID in original launch units, but in patched
+units it's
+empty.
 
 #### FUSE\_RESERVED\_ODM4
 
-| Bits                               | Description                                   |
-| ---------------------------------- | --------------------------------------------- |
-| 0-1                                | Unit type (3 = debug; 0 = retail)             |
-| 2                                  | Unknown config (must be 1 on retail)          |
-| \[1.0.0-3.0.2\] 3-5 \[4.0.0+\] 3-7 | DRAM id                                       |
-| 8                                  | Unknown config mask (must be 0 on retail)     |
-| 9                                  | Unit type mask (0 = debug; 1 = retail)        |
-| 10                                 | \[3.0.0+\] Kiosk mode (0 = retail; 1 = kiosk) |
-| 11                                 | \[5.0.0+\] SoC variant (0 = T210; 1 = T214)   |
-| 16-19                              | \[4.0.0+\] New unit type                      |
+| Bits                               | Description                                             |
+| ---------------------------------- | ------------------------------------------------------- |
+| 0-1                                | Unit type (3 = debug; 0 = retail)                       |
+| 2                                  | Unknown config (must be 1 on retail)                    |
+| \[1.0.0-3.0.2\] 3-5 \[4.0.0+\] 3-7 | DRAM ID                                                 |
+| 8                                  | Unknown config mask (must be 0 on retail)               |
+| 9                                  | Unit type mask (0 = debug; 1 = retail)                  |
+| 10                                 | \[3.0.0+\] Kiosk mode (0 = retail; 1 = kiosk)           |
+| 11                                 | \[5.0.0+\] Unit patch flag (0 = unpatched; 1 = patched) |
+| 16-19                              | \[4.0.0+\] New unit type                                |
 
 This stores some device configuration parameters.
 
@@ -318,6 +327,46 @@ array.
 
 This register returns the value programmed into index 0x3C of the fuse
 array.
+
+#### FUSE\_PUBLIC\_KEY
+
+This stores the SHA256 hash of the 2048-bit RSA key expected at
+BCT+0x210.
+
+#### FUSE\_OPT\_CP\_REV
+
+Stores the CP (Chip Probing) revision.
+
+Original launch units have this value set to 0xA0 (revision 5.0). The
+first batch of patched units have this value set to 0x103 (revision
+8.3).
+
+#### FUSE\_PRIVATE\_KEY
+
+This stores the 160-bit private key (128 bit SBK + 32-bit device key).
+Reads to these registers after the SBK is locked out produce all-FF
+output.
+
+#### FUSE\_RESERVED\_SW
+
+| Bits | Description                                                             |
+| ---- | ----------------------------------------------------------------------- |
+| 0-2  | Boot device                                                             |
+| 3    | Skip device selection straps (0 = don't skip; 1 = skip)                 |
+| 4    | ENABLE\_CHARGER\_DETECT                                                 |
+| 5    | ENABLE\_WATCHDOG                                                        |
+| 6    | Forced RCM two button mode (0 = Only VOLUME\_UP; 1 = VOLUME\_UP + HOME) |
+| 7    | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)                         |
+
+This caches the value of the sw\_reserved fuse from the hardware array.
+
+Original launch units have the RCM USB controller mode set to USB 2.0,
+while the first batch of patched units have the RCM USB controller mode
+set to XUSB.
+
+#### FUSE\_PKC\_DISABLE
+
+This caches the value of the pkc\_disable fuse from the hardware array.
 
 #### FUSE\_SPARE\_BIT\_2
 
@@ -336,36 +385,10 @@ Stores part of the speedo fusing revision.
 Must be non-zero on retail units, otherwise the first bootloader panics.
 On debug units it can be zero, which tells the bootloader to choose from
 two debug master key seeds. If set to non-zero on a debug unit, it tells
-the bootloader to choose from two retail master key seeds (only the last
-one matches the retail master key seed).
+the bootloader to choose from two master key seeds (with the second one
+being the retail master key seed).
 
-#### FUSE\_PRIVATE\_KEY
-
-This stores the 160-bit private key (128 bit SBK + 32-bit device key).
-Reads to these registers after the SBK is locked out produce all-FF
-output.
-
-#### FUSE\_PUBLIC\_KEY
-
-This stores the SHA256 hash of the 2048-bit RSA key expected at
-BCT+0x210.
-
-#### FUSE\_RESERVED\_SW
-
-| Bits | Description                                                             |
-| ---- | ----------------------------------------------------------------------- |
-| 0-2  | Boot device                                                             |
-| 3    | Skip device selection straps (0 = don't skip; 1 = skip)                 |
-| 4    | ENABLE\_CHARGER\_DETECT                                                 |
-| 5    | ENABLE\_WATCHDOG                                                        |
-| 6    | Forced RCM two button mode (0 = Only VOLUME\_UP; 1 = VOLUME\_UP + HOME) |
-| 7    | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)                         |
-
-This caches the value of the sw\_reserved fuse from the hardware array.
-
-#### FUSE\_PKC\_DISABLE
-
-This caches the value of the pkc\_disable fuse from the hardware array.
+\[4.0.0+\] This value is no longer used during boot.
 
 ## eFuses
 
@@ -412,8 +435,7 @@ specific format (see [shuffle2's ipatch
 decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af)).
 The bootrom reads these fuses in order to initialize the IPATCH
 hardware, which allows overriding data returned for code and data
-fetches done by BPMP. The revision stored in FUSE\_CP\_REV indicates the
-unique set of values stored in ipatch fuses.
+fetches done by BPMP.
 
 The following represents the patch data dumped from a Switch
     console:

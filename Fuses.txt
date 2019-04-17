@@ -160,7 +160,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_DAC_SDTV_CALIB
 | 0x7000F924
 |-
-| FUSE_OPT_FT_REV
+| [[#FUSE_OPT_FT_REV|FUSE_OPT_FT_REV]]
 | 0x7000F928
 |-
 | FUSE_CPU_SPEEDO_1_CALIB
@@ -238,7 +238,7 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 | FUSE_VSENSOR_CALIB
 | 0x7000F98C
 |-
-| FUSE_OPT_CP_REV
+| [[#FUSE_OPT_CP_REV|FUSE_OPT_CP_REV]]
 | 0x7000F990
 |-
 | FUSE_OPT_PFG
@@ -644,6 +644,11 @@ If set to 0x01, this register disables software writes to the fuse driver regist
 ==== FUSE_SKU_INFO ====
 Stores the SKU ID (must be 0x83).
 
+==== FUSE_OPT_FT_REV ====
+Stores the FT (Final Test) revision.
+
+Original launch units have this value set to 0xA0 (revision 5.0). The first batch of patched units have this value set to 0xC0 (revision 6.0).
+
 ==== FUSE_FA ====
 Stores failure analysis mode.
 
@@ -651,10 +656,10 @@ Stores failure analysis mode.
 Stores the bootrom patch version.
 
 ==== FUSE_RESERVED_ODM0 ====
-This appears to store a hardware ID.
+This stores an hardware ID.
 
 ==== FUSE_RESERVED_ODM1 ====
-This appears to store a hardware ID.
+This stores an hardware ID.
 
 ==== FUSE_RESERVED_ODM2 ====
 {| class="wikitable" border="1"
@@ -662,13 +667,13 @@ This appears to store a hardware ID.
 !  Description
 |-
 | 0-4
-| [5.0.0+] Used as key generation
+| [5.0.0+] Used as key generation (patched units only)
 |}
 
-This appears to store a hardware ID.
+This stores an hardware ID in original launch units, but in patched units it stores a single value (key generation).
 
 ==== FUSE_RESERVED_ODM3 ====
-This appears to store a hardware ID.
+This stores an hardware ID in original launch units, but in patched units it's empty.
 
 ==== FUSE_RESERVED_ODM4 ====
 {| class="wikitable" border="1"
@@ -683,7 +688,7 @@ This appears to store a hardware ID.
 |-
 | [1.0.0-3.0.2] 3-5
 [4.0.0+] 3-7
-| DRAM id
+| DRAM ID
 |-
 | 8
 | Unknown config mask (must be 0 on retail)
@@ -695,7 +700,7 @@ This appears to store a hardware ID.
 | [3.0.0+] Kiosk mode (0 = retail; 1 = kiosk)
 |-
 | 11
-| [5.0.0+] SoC variant (0 = T210; 1 = T214)
+| [5.0.0+] Unit patch flag (0 = unpatched; 1 = patched)
 |-
 | 16-19
 | [4.0.0+] New unit type
@@ -709,25 +714,17 @@ This register returns the value programmed into index 0x3A of the fuse array.
 ==== FUSE_RESERVED_ODM7 ====
 This register returns the value programmed into index 0x3C of the fuse array.
 
-==== FUSE_SPARE_BIT_2 ====
-Stores part of the speedo fusing revision.
+==== FUSE_PUBLIC_KEY ====
+This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 
-==== FUSE_SPARE_BIT_3 ====
-Stores part of the speedo fusing revision.
+==== FUSE_OPT_CP_REV ====
+Stores the CP (Chip Probing) revision.
 
-==== FUSE_SPARE_BIT_4 ====
-Stores part of the speedo fusing revision.
-
-==== FUSE_SPARE_BIT_5 ====
-Must be non-zero on retail units, otherwise the first bootloader panics.
-On debug units it can be zero, which tells the bootloader to choose from two debug master key seeds. If set to non-zero on a debug unit, it tells the bootloader to choose from two retail master key seeds (only the last one matches the retail master key seed).
+Original launch units have this value set to 0xA0 (revision 5.0). The first batch of patched units have this value set to 0x103 (revision 8.3).
 
 ==== FUSE_PRIVATE_KEY ====
 This stores the 160-bit private key (128 bit SBK + 32-bit device key).
 Reads to these registers after the SBK is locked out produce all-FF output.
-
-==== FUSE_PUBLIC_KEY ====
-This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 
 ==== FUSE_RESERVED_SW ====
 {| class="wikitable" border="1"
@@ -755,8 +752,25 @@ This stores the SHA256 hash of the 2048-bit RSA key expected at BCT+0x210.
 
 This caches the value of the sw_reserved fuse from the hardware array.
 
+Original launch units have the RCM USB controller mode set to USB 2.0, while the first batch of patched units have the RCM USB controller mode set to XUSB.
+
 ==== FUSE_PKC_DISABLE ====
 This caches the value of the pkc_disable fuse from the hardware array.
+
+==== FUSE_SPARE_BIT_2 ====
+Stores part of the speedo fusing revision.
+
+==== FUSE_SPARE_BIT_3 ====
+Stores part of the speedo fusing revision.
+
+==== FUSE_SPARE_BIT_4 ====
+Stores part of the speedo fusing revision.
+
+==== FUSE_SPARE_BIT_5 ====
+Must be non-zero on retail units, otherwise the first bootloader panics.
+On debug units it can be zero, which tells the bootloader to choose from two debug master key seeds. If set to non-zero on a debug unit, it tells the bootloader to choose from two master key seeds (with the second one being the retail master key seed).
+
+[4.0.0+] This value is no longer used during boot.
 
 == eFuses ==
 The actual hardware fuses can be programmed through the fuse driver after enabling fuse programming.
@@ -835,7 +849,7 @@ The first bootloader only burns fuses in this region.
 Both fuse indexes 0x3A (odm_reserved + 0x0C) and 0x3C (odm_reserved + 0x0E) are used for anti-downgrade control. These fuses will have their values cached into [[#FUSE_RESERVED_ODM6|FUSE_RESERVED_ODM6]] and [[#FUSE_RESERVED_ODM7|FUSE_RESERVED_ODM7]].
 
 === bootrom_ipatch ===
-Tegra210 based hardware such as the Switch provides support for bootrom patches. The patch data is burned to the hardware fuse array using a specific format (see [https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af shuffle2's ipatch decoder]). The bootrom reads these fuses in order to initialize the IPATCH hardware, which allows overriding data returned for code and data fetches done by BPMP. The revision stored in FUSE_CP_REV indicates the unique set of values stored in ipatch fuses.
+Tegra210 based hardware such as the Switch provides support for bootrom patches. The patch data is burned to the hardware fuse array using a specific format (see [https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af shuffle2's ipatch decoder]). The bootrom reads these fuses in order to initialize the IPATCH hardware, which allows overriding data returned for code and data fetches done by BPMP.
 
 The following represents the patch data dumped from a Switch console:
 <syntaxhighlight>
