@@ -1084,7 +1084,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 65 || [2.0.0+] ReportUserIsActive
 |-
-| 66 || [3.0.0+] GetCurrentIlluminance
+| 66 || [3.0.0+] [[#GetCurrentIlluminance]]
 |-
 | 67 || [3.0.0+] [[#IsIlluminanceAvailable]]
 |-
@@ -1094,7 +1094,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 70 || [4.0.0+] ReportMultimediaError
 |-
-| 71 || [5.0.0+] GetCurrentIlluminanceEx
+| 71 || [5.0.0+] [[#GetCurrentIlluminanceEx]]
 |-
 | 80 || [4.0.0+] SetWirelessPriorityMode
 |-
@@ -1162,8 +1162,14 @@ Returns an output u64 LayerId which is then used by the user-process with [[Disp
 === SetMediaPlaybackState ===
 Takes an input u8 bool, no output.
 
+=== GetCurrentIlluminance ===
+No input, returns an output float.
+
 === IsIlluminanceAvailable ===
 No input, returns an output u8 bool.
+
+=== GetCurrentIlluminanceEx ===
+No input, returns an output u8 bool and float.
 
 === SetAlbumImageTakenNotificationEnabled ===
 Takes an input u8, no output.

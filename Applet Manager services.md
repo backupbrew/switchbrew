@@ -1013,12 +1013,12 @@ output.
 | 63   | GetIdleTimeDetectionExtension                                                                           |
 | 64   | SetInputDetectionSourceSet                                                                              |
 | 65   | \[2.0.0+\] ReportUserIsActive                                                                           |
-| 66   | \[3.0.0+\] GetCurrentIlluminance                                                                        |
+| 66   | \[3.0.0+\] [\#GetCurrentIlluminance](#GetCurrentIlluminance "wikilink")                                 |
 | 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                               |
 | 68   | \[5.0.0+\] SetAutoSleepDisabled                                                                         |
 | 69   | \[5.0.0+\] IsAutoSleepDisabled                                                                          |
 | 70   | \[4.0.0+\] ReportMultimediaError                                                                        |
-| 71   | \[5.0.0+\] GetCurrentIlluminanceEx                                                                      |
+| 71   | \[5.0.0+\] [\#GetCurrentIlluminanceEx](#GetCurrentIlluminanceEx "wikilink")                             |
 | 80   | \[4.0.0+\] SetWirelessPriorityMode                                                                      |
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
@@ -1107,9 +1107,17 @@ with
 
 Takes an input u8 bool, no output.
 
+### GetCurrentIlluminance
+
+No input, returns an output float.
+
 ### IsIlluminanceAvailable
 
 No input, returns an output u8 bool.
+
+### GetCurrentIlluminanceEx
+
+No input, returns an output u8 bool and float.
 
 ### SetAlbumImageTakenNotificationEnabled
 
