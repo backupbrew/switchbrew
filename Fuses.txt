@@ -703,7 +703,7 @@ This stores an hardware ID in original launch units, but in patched units it's e
 | [5.0.0+] Unit patch flag (0 = unpatched; 1 = patched)
 |-
 | 16-19
-| [4.0.0+] New unit type
+| [4.0.0+] New unit type (0 = Erista; 1 = Mariko)
 |}
 
 This stores some device configuration parameters.

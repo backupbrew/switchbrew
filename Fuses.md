@@ -314,7 +314,7 @@ empty.
 | 9                                  | Unit type mask (0 = debug; 1 = retail)                  |
 | 10                                 | \[3.0.0+\] Kiosk mode (0 = retail; 1 = kiosk)           |
 | 11                                 | \[5.0.0+\] Unit patch flag (0 = unpatched; 1 = patched) |
-| 16-19                              | \[4.0.0+\] New unit type                                |
+| 16-19                              | \[4.0.0+\] New unit type (0 = Erista; 1 = Mariko)       |
 
 This stores some device configuration parameters.
 
