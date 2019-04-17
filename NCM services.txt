@@ -314,6 +314,8 @@ This is "nn::ncm::IContentStorage".
 | 25 || [4.0.0+] GetSizeFromPlaceHolderId || 
 |-
 | 26 || [4.0.0+] RepairInvalidFileAttribute || 
+|-
+| 27 || [8.0.0+] || 
 |}
 
 ==== GeneratePlaceHolderId ====
