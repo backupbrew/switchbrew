@@ -948,9 +948,15 @@ When this button is pressed, the console resets the vrMode to false.
 
 No input/output.
 
+Identical to [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") except
+with hard-coded flag=1.
+
 ### EndVrModeEx
 
 No input/output.
+
+Identical to [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink") except
+with hard-coded flag=0.
 
 ### IsInControllerFirmwareUpdateSection
 

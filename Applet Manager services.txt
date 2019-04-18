@@ -1000,8 +1000,12 @@ When the VrMode is set to true, the console shows a screen rendered like vr aski
 === BeginVrModeEx ===
 No input/output.
 
+Identical to [[#SetVrModeEnabled]] except with hard-coded flag=1.
+
 === EndVrModeEx ===
 No input/output.
+
+Identical to [[#SetVrModeEnabled]] except with hard-coded flag=0.
 
 === IsInControllerFirmwareUpdateSection ===
 No input, returns an output u8 bool.
