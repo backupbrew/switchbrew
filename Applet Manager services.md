@@ -1111,13 +1111,25 @@ Takes an input u8 bool, no output.
 
 No input, returns an output float.
 
+Uses [lbl](Backlight%20services.md "wikilink") command
+GetAmbientLightSensorValue, where only the output float is used.
+
 ### IsIlluminanceAvailable
 
 No input, returns an output u8 bool.
 
+Uses [lbl](Backlight%20services.md "wikilink") command
+IsAmbientLightSensorAvailable.
+
+User-processes can use this to determine whether to continue with using
+GetCurrentIlluminance(Ex).
+
 ### GetCurrentIlluminanceEx
 
 No input, returns an output u8 bool and float.
+
+Uses [lbl](Backlight%20services.md "wikilink") command
+GetAmbientLightSensorValue.
 
 ### SetAlbumImageTakenNotificationEnabled
 
