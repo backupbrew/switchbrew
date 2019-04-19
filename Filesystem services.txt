@@ -489,7 +489,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [6.0.0+] 0x38 || 0x8000000400000000<br/>([6.0.0-6.2.0] 0x8000000000000000) || || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemByHashSalt
 |-
-| [8.0.0+] 0x39 || 0x8000000000000010 || || 
+| [8.0.0+] 0x39 || 0x8000000000000010 || CanChallengeCardExistence || ChallengeCardExistence
 |}
 
 == OpenFileSystem ==

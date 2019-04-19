@@ -982,8 +982,8 @@ happens.
 <tr class="even">
 <td><p>[8.0.0+] 0x39</p></td>
 <td><p>0x8000000000000010</p></td>
-<td></td>
-<td></td>
+<td><p>CanChallengeCardExistence</p></td>
+<td><p>ChallengeCardExistence</p></td>
 </tr>
 </tbody>
 </table>
