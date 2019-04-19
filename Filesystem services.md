@@ -266,24 +266,28 @@ happens.
 </tr>
 <tr class="odd">
 <td><p>0xA</p></td>
-<td><p>0x8000000000000084<br />
+<td><p>0x8000000000000000<br />
+([7.0.0-7.0.1] 0x4000000000000000)<br />
+([6.0.0-6.2.0] 0x8000000000000084)<br />
 ([1.0.0-5.1.0] 0x8000000000000080)</p></td>
-<td><p>CanMountBisCalibrationFile</p></td>
-<td><p>3</p></td>
-<td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><p>0xB</p></td>
-<td><p>0x8000000000000080<br />
+<td><p>0x8000000000000084<br />
+([6.0.0-6.2.0] 0x8000000000000080)<br />
 ([1.0.0-5.1.0] 0x8000000000008080)</p></td>
-<td><p>CanMountBisSafeMode</p></td>
+<td><p>CanMountBisCalibrationFile</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0xC</p></td>
-<td><p>0x8000000000008080</p></td>
-<td><p>CanMountBisUser</p></td>
+<td><p>0x8000000000000080<br />
+([1.0.0-6.2.0] 0x8000000000008080)</p></td>
+<td><p>CanMountBisSafeMode</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
 </tr>
@@ -291,15 +295,16 @@ happens.
 <td><p>0xD</p></td>
 <td><p>0x8000000000008080<br />
 ([1.0.0-5.1.0] 0x8000000000000080)</p></td>
-<td><p>CanMountBisSystem</p></td>
+<td><p>CanMountBisUser</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0xE</p></td>
-<td><p>0x8000000000000080<br />
+<td><p>0x8000000000008080<br />
+([3.0.0-6.2.0] 0x8000000000000080)<br />
 ([1.0.0-2.3.0] 0xC000000000200000)</p></td>
-<td><p>CanMountBisSystemProperEncryption</p></td>
+<td><p>CanMountBisSystem</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
 </tr>
@@ -308,112 +313,121 @@ happens.
 <td><p>0x8000000000000080<br />
 ([3.0.0-5.1.0] 0xC000000000200000)<br />
 ([1.0.0-2.3.0] 0x8000000000000010)</p></td>
-<td><p>CanMountBisSystemProperPartition</p></td>
+<td><p>CanMountBisSystemProperEncryption</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x10</p></td>
-<td><p>0xC000000000200000<br />
+<td><p>0x8000000000000080<br />
+([6.0.0-6.2.0] 0xC000000000200000<br />
 ([3.0.0-5.1.0] 0x8000000000000010)<br />
 ([1.0.0-2.3.0] 0x8000000000040020)</p></td>
+<td><p>CanMountBisSystemProperPartition</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisFileSystem" title="wikilink">#OpenBisFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>0x11</p></td>
+<td><p>0xC000000000200000<br />
+([6.0.0-6.2.0] 0x8000000000000010)<br />
+([3.0.0-5.1.0] 0x8000000000040020)<br />
+([1.0.0-2.3.0] 0x8000000000000028)</p></td>
 <td><p>CanMountSdCard</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenSdCardFileSystem" title="wikilink">#OpenSdCardFileSystem</a></p></td>
 </tr>
-<tr class="even">
-<td><p>0x11</p></td>
+<tr class="odd">
+<td><p>0x12</p></td>
 <td><p>0x8000000000000010<br />
-([3.0.0-5.1.0] 0x8000000000040020)<br />
-([1.0.0-2.3.0] 0x8000000000000028)</p></td>
+([6.0.0-6.2.0] 0x8000000000040020)<br />
+([3.0.0-5.1.0] 0x8000000000000028)<br />
+([1.0.0-2.3.0] 0x8000000000000020)</p></td>
 <td><p>CanMountGameCard</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenGameCardFileSystem" title="wikilink">#OpenGameCardFileSystem</a></p></td>
 </tr>
-<tr class="odd">
-<td><p>0x12</p></td>
+<tr class="even">
+<td><p>0x13</p></td>
 <td><p>0x8000000000040020<br />
-([3.0.0-5.1.0] 0x8000000000000028)<br />
-([1.0.0-2.3.0] 0x8000000000000020)</p></td>
+([6.0.0-6.2.0] 0x8000000000000028)<br />
+([1.0.0-5.1.0] 0x8000000000000020)</p></td>
 <td><p>CanMountDeviceSaveData</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenSaveDataFileSystem" title="wikilink">#OpenSaveDataFileSystem</a></p></td>
 </tr>
-<tr class="even">
-<td><p>0x13</p></td>
+<tr class="odd">
+<td><p>0x14</p></td>
 <td><p>0x8000000000000028<br />
-([1.0.0-5.1.0] 0x8000000000000020)</p></td>
+([3.0.0-6.2.0] 0x8000000000000020)<br />
+([1.0.0-2.3.0] 0x8000000000010082)</p></td>
 <td><p>CanMountSystemSaveData</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenSaveDataFileSystemBySystemSaveDataId" title="wikilink">#OpenSaveDataFileSystemBySystemSaveDataId</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>0x14</p></td>
-<td><p>0x8000000000000020<br />
-([1.0.0-2.3.0] 0x8000000000010082)</p></td>
-<td><p>CanMountOthersSaveData</p></td>
-<td><p>3</p></td>
-<td><p><a href="#OpenSaveDataFileSystem" title="wikilink">#OpenSaveDataFileSystem</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x15</p></td>
 <td><p>0x8000000000000020<br />
 ([3.0.0-5.1.0] 0x8000000000010082)<br />
 ([1.0.0-2.3.0] 0x8000000000010080)</p></td>
+<td><p>CanMountOthersSaveData</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenSaveDataFileSystem" title="wikilink">#OpenSaveDataFileSystem</a></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x16</p></td>
+<td><p>0x8000000000000020<br />
+([6.0.0-6.2.0] 0x8000000000010082)<br />
+([1.0.0-5.1.0] 0x8000000000010080)</p></td>
 <td><p>CanMountOthersSystemSaveData</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenSaveDataFileSystemBySystemSaveDataId" title="wikilink">#OpenSaveDataFileSystemBySystemSaveDataId</a></p></td>
 </tr>
-<tr class="odd">
-<td><p>0x16</p></td>
-<td><p>0x8000000000010082<br />
-([1.0.0-5.1.0] 0x8000000000010080)</p></td>
-<td><p>CanOpenBisPartitionBootPartition1Root</p></td>
-<td><p>3</p></td>
-<td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
-</tr>
 <tr class="even">
 <td><p>0x17</p></td>
-<td><p>0x8000000000010080<br />
+<td><p>0x8000000000010082<br />
+([6.0.0-6.2.0] 0x8000000000010080)<br />
 ([3.0.0-5.1.0] 0x8000000000000080)<br />
 ([1.0.0-2.3.0] 0x8000000000010080)</p></td>
-<td><p>CanOpenBisPartitionBootPartition2Root</p></td>
+<td><p>CanOpenBisPartitionBootPartition1Root</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x18</p></td>
-<td><p>0x8000000000000080<br />
+<td><p>0x8000000000010080<br />
+([6.0.0-6.2.0] 0x8000000000000080)<br />
 ([1.0.0-5.1.0] 0x8000000000010080)</p></td>
-<td><p>CanOpenBisPartitionUserDataRoot</p></td>
+<td><p>CanOpenBisPartitionBootPartition2Root</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x19</p></td>
-<td><p>0x8000000000010080</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part1</p></td>
+<td><p>0x8000000000000080<br />
+([6.0.0-6.2.0] 0x8000000000010080)</p></td>
+<td><p>CanOpenBisPartitionUserDataRoot</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x1A</p></td>
 <td><p>0x8000000000010080</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part2</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part1</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x1B</p></td>
 <td><p>0x8000000000010080</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part3</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part2</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x1C</p></td>
 <td><p>0x8000000000010080</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part4</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part3</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -421,7 +435,7 @@ happens.
 <td><p>0x1D</p></td>
 <td><p>0x8000000000010080<br />
 ([1.0.0-2.3.0] 0x8000000000000084)</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part5</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part4</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -429,15 +443,16 @@ happens.
 <td><p>0x1E</p></td>
 <td><p>0x8000000000010080<br />
 ([1.0.0-5.1.0] 0x8000000000000084)</p></td>
-<td><p>CanOpenBisPartitionBootConfigAndPackage2Part6</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part5</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x1F</p></td>
-<td><p>0x8000000000000084<br />
+<td><p>0x8000000000010080<br />
+([6.0.0-6.2.0] 0x8000000000000084)<br />
 ([1.0.0-2.3.0] 0x8000000000000080)</p></td>
-<td><p>CanOpenBisPartitionCalibrationBinary</p></td>
+<td><p>CanOpenBisPartitionBootConfigAndPackage2Part6</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -445,21 +460,22 @@ happens.
 <td><p>0x20</p></td>
 <td><p>0x8000000000000084<br />
 ([1.0.0-5.1.0] 0x8000000000000080)</p></td>
-<td><p>CanOpenBisPartitionCalibrationFile</p></td>
+<td><p>CanOpenBisPartitionCalibrationBinary</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="even">
 <td><p>0x21</p></td>
-<td><p>0x8000000000000080</p></td>
-<td><p>CanOpenBisPartitionSafeMode</p></td>
+<td><p>0x8000000000000084<br />
+([6.0.0-6.2.0] 0x8000000000000080)</p></td>
+<td><p>CanOpenBisPartitionCalibrationFile</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x22</p></td>
 <td><p>0x8000000000000080</p></td>
-<td><p>CanOpenBisPartitionUser</p></td>
+<td><p>CanOpenBisPartitionSafeMode</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -467,7 +483,7 @@ happens.
 <td><p>0x23</p></td>
 <td><p>0x8000000000000080<br />
 ([1.0.0-2.3.0] 0xC000000000200000)</p></td>
-<td><p>CanOpenBisPartitionSystem</p></td>
+<td><p>CanOpenBisPartitionUser</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -475,7 +491,7 @@ happens.
 <td><p>0x24</p></td>
 <td><p>0x8000000000000080<br />
 ([1.0.0-2.3.0] 0x8000000000000100)</p></td>
-<td><p>CanOpenBisPartitionSystemProperEncryption</p></td>
+<td><p>CanOpenBisPartitionSystem</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
@@ -484,57 +500,77 @@ happens.
 <td><p>0x8000000000000080<br />
 ([3.0.0-5.1.0] 0xC000000000200000)<br />
 ([1.0.0-2.3.0] 0x8000000000100008)</p></td>
-<td><p>CanOpenBisPartitionSystemProperPartition</p></td>
+<td><p>CanOpenBisPartitionSystemProperEncryption</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x26</p></td>
-<td><p>0xC000000000200000<br />
+<td><p>0x8000000000000080<br />
+([6.0.0-6.2.0] 0xC000000000200000)<br />
 ([3.0.0-5.1.0] 0x8000000000000100)<br />
 ([1.0.0-2.3.0] 0xC000000000400000)</p></td>
+<td><p>CanOpenBisPartitionSystemProperPartition</p></td>
+<td><p>3</p></td>
+<td><p><a href="#OpenBisStorage" title="wikilink">#OpenBisStorage</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[3.0.0+] 0x27</p></td>
+<td><p>0xC000000000200000<br />
+([6.0.0-6.2.0] 0x8000000000000100)<br />
+([1.0.0-5.1.0] 0x8000000000100008)</p></td>
 <td><p>CanOpenSdCardStorage</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
-<td><p>[3.0.0+] 0x27</p></td>
+<tr class="odd">
+<td><p>[3.0.0+] 0x28</p></td>
 <td><p>0x8000000000000100<br />
-([1.0.0-5.1.0] 0x8000000000100008)</p></td>
+([6.0.0-6.2.0] 0x8000000000100008)<br />
+([1.0.0-5.1.0] 0xC000000000400000)</p></td>
 <td><p>CanOpenGameCardStorage</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenGameCardStorage" title="wikilink">#OpenGameCardStorage</a>, <a href="#EraseGameCard" title="wikilink">#EraseGameCard</a> (bit1), <a href="#WriteToGameCard" title="wikilink">#WriteToGameCard</a> (bit1), <a href="#GetGameCardErrorInfo" title="wikilink">#GetGameCardErrorInfo</a> (bit1), <a href="#EraseAndWriteParamDirectly" title="wikilink">#EraseAndWriteParamDirectly</a> (bit1), <a href="#ReadParamDirectly" title="wikilink">#ReadParamDirectly</a> (bit1), <a href="#ForceEraseGameCard" title="wikilink">#ForceEraseGameCard</a> (bit1)</p></td>
 </tr>
-<tr class="odd">
-<td><p>[3.0.0+] 0x28</p></td>
+<tr class="even">
+<td><p>[4.0.0+] 0x29</p></td>
 <td><p>0x8000000000100008<br />
-([1.0.0-5.1.0] 0xC000000000400000)</p></td>
+([6.0.0-6.2.0] 0xC000000000400000)<br />
+([1.0.0-5.1.0] 0x8000000000010000)</p></td>
 <td><p>CanMountSystemDataPrivate</p></td>
 <td><p>1</p></td>
 <td><p><a href="#OpenFileSystem" title="wikilink">#OpenFileSystem</a>, <a href="#OpenDataStorageByDataId" title="wikilink">#OpenDataStorageByDataId</a></p></td>
 </tr>
-<tr class="even">
-<td><p>[4.0.0+] 0x29</p></td>
+<tr class="odd">
+<td><p>[5.0.0+] 0x2A</p></td>
 <td><p>0xC000000000400000<br />
-([1.0.0-5.1.0] 0x8000000000010000)</p></td>
+([6.0.0-6.2.0] 0x8000000000010000)<br />
+([1.0.0-5.1.0] 0x8000000000000000)</p></td>
 <td><p>CanMountHost</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenHostFileSystem" title="wikilink">#OpenHostFileSystem</a></p></td>
 </tr>
-<tr class="odd">
-<td><p>[5.0.0+] 0x2A</p></td>
+<tr class="even">
+<td><p>[6.0.0+] 0x2B</p></td>
 <td><p>0x8000000000010000<br />
-([1.0.0-5.1.0] 0x8000000000000000)</p></td>
+([1.0.0-6.2.0]0x8000000000000000)</p></td>
 <td><p>CanMountRegisteredUpdatePartition</p></td>
 <td><p>1</p></td>
 <td><p><a href="#OpenRegisteredUpdatePartition" title="wikilink">#OpenRegisteredUpdatePartition</a></p></td>
 </tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x2B</p></td>
+<tr class="odd">
+<td><p>[7.0.0+] 0x2C</p></td>
 <td><p>0x8000000000000000</p></td>
 <td><p>CanOpenSaveDataInternalStorage</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenSaveDataInternalStorageFileSystem" title="wikilink">#OpenSaveDataInternalStorageFileSystem</a></p></td>
+</tr>
+<tr class="even">
+<td><p>[7.0.0+] 0x2D</p></td>
+<td><p>0x0000000000000000</p></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
