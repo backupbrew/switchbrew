@@ -109,6 +109,8 @@ __NOTOC__
 | 0x34 || [4.0.0+] svcWaitForAddress || X0=ptr, W1=[[#ArbitrationType]], X2=value X3=timeout ||
 |-
 | 0x35 || [4.0.0+] svcSignalToAddress || X0=ptr, W1=[[#SignalType]], X2=value W3=num_to_signal ||
+|-
+| 0x36 || [8.0.0+] svcSynchronizePreemptionState || None || W0=result
 |- style="border-top: double"
 | 0x3C || [[#svcDumpInfo]] || ||
 |-
