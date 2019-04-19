@@ -860,7 +860,8 @@ happens.
 </tr>
 <tr class="even">
 <td><p>[5.0.0+] 0x27</p></td>
-<td><p>0x8000000200002000<br />
+<td><p>0x8000000240002000<br />
+([6.0.0-7.0.1] 0x8000000200002000)<br />
 ([1.0.0-5.1.0] 0x8000000000100008)</p></td>
 <td><p>CanListApplicationAccessibleSaveDataOwnerId</p></td>
 <td><p>ListApplicationAccessibleSaveDataOwnerId</p></td>
@@ -966,15 +967,23 @@ happens.
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x37</p></td>
-<td><p>0x8000000000080000</p></td>
+<td><p>0x8000000000000000<br />
+([6.0.0-6.2.0] 0x8000000000080000)</p></td>
 <td><p>CanSetDataStorageRedirectTarget</p></td>
 <td><p>SetDataStorageRedirectTarget</p></td>
 </tr>
 <tr class="odd">
 <td><p>[6.0.0+] 0x38</p></td>
-<td><p>0x8000000000000000</p></td>
+<td><p>0x8000000400000000<br />
+([6.0.0-6.2.0] 0x8000000000000000)</p></td>
 <td></td>
 <td><p><a href="#CreateSaveDataFileSystem" title="wikilink">#CreateSaveDataFileSystem</a>, CreateSaveDataFileSystemByHashSalt</p></td>
+</tr>
+<tr class="even">
+<td><p>[8.0.0+] 0x39</p></td>
+<td><p>0x8000000000000010</p></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

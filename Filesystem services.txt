@@ -453,7 +453,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [5.0.0+] 0x26 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000080000110) || CanOpenSaveDataTransferProhibiterForCloudBackUp || [[#OpenSaveDataTransferProhibiterForCloudBackUp]]
 |-
-| [5.0.0+] 0x27 || 0x8000000200002000<br/>([1.0.0-5.1.0] 0x8000000000100008) || CanListApplicationAccessibleSaveDataOwnerId || ListApplicationAccessibleSaveDataOwnerId
+| [5.0.0+] 0x27 || 0x8000000240002000 <br/>([6.0.0-7.0.1] 0x8000000200002000)<br/>([1.0.0-5.1.0] 0x8000000000100008) || CanListApplicationAccessibleSaveDataOwnerId || ListApplicationAccessibleSaveDataOwnerId
 |-
 | [5.0.0+] 0x28 || 0x8000000000000000<br/>([1.0.0-5.1.0] 0x8000000080010000) || CanControlMmcPatrol || [[#SuspendMmcPatrol]], [[#ResumeMmcPatrol]]
 |-
@@ -485,9 +485,11 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [6.0.0+] 0x36 || 0x4000000000000000 || || SimulateGameCardDetectionEvent, SetGameCardSimulationEvent, ClearGameCardSimulationEvent
 |-
-| [6.0.0+] 0x37 || 0x8000000000080000 || CanSetDataStorageRedirectTarget || SetDataStorageRedirectTarget
+| [6.0.0+] 0x37 || 0x8000000000000000<br/>([6.0.0-6.2.0] 0x8000000000080000) || CanSetDataStorageRedirectTarget || SetDataStorageRedirectTarget
 |-
-| [6.0.0+] 0x38 || 0x8000000000000000 || || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemByHashSalt
+| [6.0.0+] 0x38 || 0x8000000400000000<br/>([6.0.0-6.2.0] 0x8000000000000000) || || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemByHashSalt
+|-
+| [8.0.0+] 0x39 || 0x8000000000000010 || || 
 |}
 
 == OpenFileSystem ==
