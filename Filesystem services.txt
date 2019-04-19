@@ -914,7 +914,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 218 || [3.0.0+] GetGameCardDeviceId
 |-
-| 219 || [8.0.0+]
+| 219 || [8.0.0+] ChallengeCardExistence
 |-
 | 300 || SetSpeedEmulationMode
 |-

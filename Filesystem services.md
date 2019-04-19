@@ -1490,7 +1490,7 @@ This is
 | 216 | \[2.0.0+\] GetGameCardErrorInfo                                                                               |
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                                                         |
 | 218 | \[3.0.0+\] GetGameCardDeviceId                                                                                |
-| 219 | \[8.0.0+\]                                                                                                    |
+| 219 | \[8.0.0+\] ChallengeCardExistence                                                                             |
 | 300 | SetSpeedEmulationMode                                                                                         |
 | 301 | GetSpeedEmulationMode                                                                                         |
 | 400 | \[5.0.0+\] SuspendSdmmcControl                                                                                |
