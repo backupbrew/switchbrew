@@ -1338,7 +1338,7 @@ How many fuses are expected to be burnt depends the device's unit type as below.
 | 8
 | 1
 |-
-| 7.0.0-7.0.1
+| 7.0.0-8.0.0
 | 9
 | 1
 |}

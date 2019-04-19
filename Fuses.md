@@ -923,7 +923,7 @@ below.
 | 5.0.0-5.1.0    | 6                                       | 1                                           |
 | 6.0.0-6.1.0    | 7                                       | 1                                           |
 | 6.2.0          | 8                                       | 1                                           |
-| 7.0.0-7.0.1    | 9                                       | 1                                           |
+| 7.0.0-8.0.0    | 9                                       | 1                                           |
 
 If too many fuses are burnt the bootloader will panic immediately.
 
