@@ -297,7 +297,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0x9 || 0x8000000200000000<br/>([1.0.0-5.1.0] 0x8000000000000084) || CanMountCloudBackupWorkStorage || 3 || OpenCloudBackupWorkStorageFileSystem
 |-
-| 0xA || 0x8000000000000000<br/>([7.0.0-7.0.1] 0x4000000000000000)<br/>([6.0.0-6.2.0] 0x8000000000000084)<br/>([1.0.0-5.1.0] 0x8000000000000080) || || ||
+| 0xA || 0x8000000000000000<br/>([7.0.0-7.0.1] 0x4000000000000000)<br/>([6.0.0-6.2.0] 0x8000000000000084)<br/>([1.0.0-5.1.0] 0x8000000000000080) || CanMountCustomStorage || 3 || OpenCustomStorageFileSystem
 |-
 | 0xB || 0x8000000000000084<br/>([6.0.0-6.2.0] 0x8000000000000080)<br/>([1.0.0-5.1.0] 0x8000000000008080) || CanMountBisCalibrationFile || 3 || [[#OpenBisFileSystem]]
 |-
@@ -367,7 +367,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [7.0.0+] 0x2C || 0x8000000000000000 || CanOpenSaveDataInternalStorage || 3 || [[#OpenSaveDataInternalStorageFileSystem]]
 |-
-| [7.0.0+] 0x2D || 0x0000000000000000 || || ||
+| [7.0.0+] 0x2D || 0x0000000000000000 || CanNotMountCustomStorage || 3 || OpenCustomStorageFileSystem
 |}
 
 === BoolPermissions ===

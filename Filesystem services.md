@@ -270,9 +270,9 @@ happens.
 ([7.0.0-7.0.1] 0x4000000000000000)<br />
 ([6.0.0-6.2.0] 0x8000000000000084)<br />
 ([1.0.0-5.1.0] 0x8000000000000080)</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>CanMountCustomStorage</p></td>
+<td><p>3</p></td>
+<td><p>OpenCustomStorageFileSystem</p></td>
 </tr>
 <tr class="even">
 <td><p>0xB</p></td>
@@ -568,9 +568,9 @@ happens.
 <tr class="even">
 <td><p>[7.0.0+] 0x2D</p></td>
 <td><p>0x0000000000000000</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>CanNotMountCustomStorage</p></td>
+<td><p>3</p></td>
+<td><p>OpenCustomStorageFileSystem</p></td>
 </tr>
 </tbody>
 </table>
