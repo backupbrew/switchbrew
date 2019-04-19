@@ -401,7 +401,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | 0xC || 0x8000000000004020 || CanOpenSaveDataInfoReaderForSystem || [[#OpenSaveDataInfoReaderBySaveDataSpaceId]], [[#OpenSaveDataInfoReader]]
 |-
-| 0xD || 0x8000000000000040<br/>([1.0.0-5.1.0] 0x8000000000020000) || || OpenSaveDataInfoReaderBySaveDataFilter
+| 0xD || 0x8000000000000040<br/>([1.0.0-5.1.0] 0x8000000000020000) || CanOpenSaveDataIterator || OpenSaveDataIterator
 |-
 | 0xE || 0x8000000000020000<br/>([1.0.0-5.1.0] 0x8000000000000400) || CanOpenSaveDataMetaFile || [[#OpenSaveDataMetaFile]]
 |-
@@ -483,7 +483,7 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [6.0.0+] 0x35 || 0x8000000000200000 || CanSetSdCardAccessibility || [[#SetSdCardAccessibility]]
 |-
-| [6.0.0+] 0x36 || 0x4000000000000000 || || SimulateGameCardDetectionEvent, SetGameCardSimulationEvent, ClearGameCardSimulationEvent
+| [6.0.0+] 0x36 || 0x4000000000000000 || CanSimulateGameCardDetectionEvent || SimulateGameCardDetectionEvent, SetSimulationEvent, ClearSimulationEvent
 |-
 | [6.0.0+] 0x37 || 0x8000000000000000<br/>([6.0.0-6.2.0] 0x8000000000080000) || CanSetDataStorageRedirectTarget || SetDataStorageRedirectTarget
 |-

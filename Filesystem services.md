@@ -669,8 +669,8 @@ happens.
 <td><p>0xD</p></td>
 <td><p>0x8000000000000040<br />
 ([1.0.0-5.1.0] 0x8000000000020000)</p></td>
-<td></td>
-<td><p>OpenSaveDataInfoReaderBySaveDataFilter</p></td>
+<td><p>CanOpenSaveDataIterator</p></td>
+<td><p>OpenSaveDataIterator</p></td>
 </tr>
 <tr class="odd">
 <td><p>0xE</p></td>
@@ -962,8 +962,8 @@ happens.
 <tr class="odd">
 <td><p>[6.0.0+] 0x36</p></td>
 <td><p>0x4000000000000000</p></td>
-<td></td>
-<td><p>SimulateGameCardDetectionEvent, SetGameCardSimulationEvent, ClearGameCardSimulationEvent</p></td>
+<td><p>CanSimulateGameCardDetectionEvent</p></td>
+<td><p>SimulateGameCardDetectionEvent, SetSimulationEvent, ClearSimulationEvent</p></td>
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x37</p></td>
