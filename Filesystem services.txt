@@ -128,9 +128,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 68 || [6.0.0+] OpenSaveDataIterator (Takes a total of 0x50-bytes of input, returns an #ISaveDataInfoReader)
 |-
-| 69 || [8.0.0+]
+| 69 || [8.0.0+] ReadSaveDataFileSystemExtraDataBySaveDataAttribute
 |-
-| 70 || [8.0.0+]
+| 70 || [8.0.0+] WriteSaveDataFileSystemExtraDataBySaveDataAttribute
 |-
 | 80 || OpenSaveDataMetaFile
 |-

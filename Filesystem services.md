@@ -94,8 +94,8 @@ This is
 | 66   | \[5.0.0+\] WriteSaveDataFileSystemExtraData2                                                                                                                      |
 | 67   | \[6.0.0+\] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)                                 |
 | 68   | \[6.0.0+\] OpenSaveDataIterator (Takes a total of 0x50-bytes of input, returns an \#ISaveDataInfoReader)                                                          |
-| 69   | \[8.0.0+\]                                                                                                                                                        |
-| 70   | \[8.0.0+\]                                                                                                                                                        |
+| 69   | \[8.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataAttribute                                                                                                     |
+| 70   | \[8.0.0+\] WriteSaveDataFileSystemExtraDataBySaveDataAttribute                                                                                                    |
 | 80   | OpenSaveDataMetaFile                                                                                                                                              |
 | 81   | \[4.0.0+\] OpenSaveDataTransferManager (No input, returns an [\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink"))                                  |
 | 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
