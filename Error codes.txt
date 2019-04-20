@@ -186,6 +186,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 181 || Dauth
 |-
+| 192 || Regulator
+|-
 | 202 || HID
 |-
 | 203 || LDN

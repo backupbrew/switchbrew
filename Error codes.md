@@ -106,6 +106,7 @@ fatal-errors, since the Description ends with bit21.
 | 179   | OLSC                                         |
 | 180   | SREPO                                        |
 | 181   | Dauth                                        |
+| 192   | Regulator                                    |
 | 202   | HID                                          |
 | 203   | LDN                                          |
 | 205   | Irsensor                                     |
