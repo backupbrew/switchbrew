@@ -270,17 +270,18 @@ This was added with \[8.0.0+\].
 
 ## IRegulatorSession
 
-This is "nn::regulator::IRegulatorSession".
+This is
+"nn::regulator::IRegulatorSession".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
+| Cmd | Name          | Notes                                                      |
+| --- | ------------- | ---------------------------------------------------------- |
+| 0   | SetLdoEnabled | Takes a bool. Enables the LDO this session was opened for. |
+| 1   |               |                                                            |
+| 2   | GetLdoEnabled | Returns a bool. True if voltage is enabled, false if not.  |
+| 3   |               |                                                            |
+| 4   |               |                                                            |
+| 5   | SetLdoVoltage | Takes in a voltage and sets the LDO to this voltage.       |
+| 6   |               |                                                            |
 
 # rtc
 

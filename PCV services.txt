@@ -450,21 +450,21 @@ This is "nn::regulator::IRegulatorSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 ||
+| 0 || SetLdoEnabled || Takes a bool. Enables the LDO this session was opened for.
 |-
-| 1 ||
+| 1 || ||
 |-
-| 2 ||
+| 2 || GetLdoEnabled || Returns a bool. True if voltage is enabled, false if not.
 |-
-| 3 ||
+| 3 || ||
 |-
-| 4 ||
+| 4 || ||
 |-
-| 5 ||
+| 5 || SetLdoVoltage || Takes in a voltage and sets the LDO to this voltage.
 |-
-| 6 ||
+| 6 || ||
 |}
 
 = rtc =
