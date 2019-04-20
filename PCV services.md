@@ -230,20 +230,20 @@ These were added with \[8.0.0+\].
 
 This is "nn::clkrst::IClkrstSession".
 
-| Cmd | Name            |
-| --- | --------------- |
-| 0   | SetClockEnabled |
-| 1   |                 |
-| 2   | SetReset        |
-| 3   |                 |
-| 4   | SetPowerEnabled |
-| 5   |                 |
-| 6   |                 |
-| 7   |                 |
-| 8   |                 |
-| 9   |                 |
-| 10  |                 |
-| 11  |                 |
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | SetClockEnabled       |
+| 1   | SetClockDisabled      |
+| 2   | SetResetAsserted      |
+| 3   | SetResetDeasserted    |
+| 4   | SetPowerEnabled       |
+| 5   | SetPowerDisabled      |
+| 6   | GetState              |
+| 7   | SetClockRate          |
+| 8   | GetClockRate          |
+| 9   | SetMinVClockRate      |
+| 10  | GetPossibleClockRates |
+| 11  | GetDvfsTable          |
 
 # clkrst:a
 

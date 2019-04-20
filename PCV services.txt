@@ -392,27 +392,27 @@ This is "nn::clkrst::IClkrstSession".
 |-
 | 0 || SetClockEnabled
 |-
-| 1 ||
+| 1 || SetClockDisabled
 |-
-| 2 || SetReset
+| 2 || SetResetAsserted
 |-
-| 3 ||
+| 3 || SetResetDeasserted
 |-
 | 4 || SetPowerEnabled
 |-
-| 5 ||
+| 5 || SetPowerDisabled
 |-
-| 6 || 
+| 6 || GetState
 |-
-| 7 ||
+| 7 || SetClockRate
 |-
-| 8 ||
+| 8 || GetClockRate
 |-
-| 9 ||
+| 9 || SetMinVClockRate
 |-
-| 10 ||
+| 10 || GetPossibleClockRates
 |-
-| 11 ||
+| 11 || GetDvfsTable
 |}
 
 = clkrst:a =
