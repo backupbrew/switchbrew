@@ -450,7 +450,7 @@ This is "nn::regulator::IRegulatorSession".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
 | 0 || [[#SetVoltageEnabled]]
 |-

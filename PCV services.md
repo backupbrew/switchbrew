@@ -272,15 +272,15 @@ This was added with \[8.0.0+\].
 
 This is "nn::regulator::IRegulatorSession".
 
-| Cmd | Name                                                 | Notes |
-| --- | ---------------------------------------------------- | ----- |
-| 0   | [\#SetVoltageEnabled](#SetVoltageEnabled "wikilink") |       |
-| 1   |                                                      |       |
-| 2   | [\#GetVoltageEnabled](#GetVoltageEnabled "wikilink") |       |
-| 3   | GetVoltageRange                                      |       |
-| 4   | GetVoltageValue                                      |       |
-| 5   | [\#SetVoltageValue](#SetVoltageValue "wikilink")     |       |
-| 6   |                                                      |       |
+| Cmd | Name                                                 |
+| --- | ---------------------------------------------------- |
+| 0   | [\#SetVoltageEnabled](#SetVoltageEnabled "wikilink") |
+| 1   |                                                      |
+| 2   | [\#GetVoltageEnabled](#GetVoltageEnabled "wikilink") |
+| 3   | GetVoltageRange                                      |
+| 4   | GetVoltageValue                                      |
+| 5   | [\#SetVoltageValue](#SetVoltageValue "wikilink")     |
+| 6   |                                                      |
 
 ### SetVoltageEnabled
 
