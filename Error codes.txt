@@ -1030,11 +1030,13 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x190B2 || 178 || 200 || File storage failure
 |-
+| 0x58ACA || 202 || 709 || Npad ID is out of range.
+|-
 | 0xF0CD || 205 || 120 || IR image data not available/ready.
 |-
 | 0x1A8CD || 205 || 212 || IR camera handle pointer is null.
 |-
-| 0x58ACA || 205 || 709 || NpadId is out of range.
+| 0x198CD || 205 || 204 || IR camera invalid handle value.
 |-
 | 0x35B || 347 || 1 || Failed to init SM.
 |-
