@@ -1032,6 +1032,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xF0CD || 205 || 120 || IR image data not available/ready.
 |-
+| 0x1A8CD || 205 || 212 || IR camera handle pointer is null.
+|-
+| 0x58ACA || 205 || 709 || NpadId is out of range.
+|-
 | 0x35B || 347 || 1 || Failed to init SM.
 |-
 | 0x55B || 347 || 2 || Failed to init FS.
