@@ -217,14 +217,14 @@ These are "nn::clkrst::IClkrstManager" and
 
 These were added with \[8.0.0+\].
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | OpenSession |
-| 1   |             |
-| 2   |             |
-| 3   |             |
-| 4   |             |
-| 5   |             |
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | OpenSession              |
+| 1   | GetTemperatureThresholds |
+| 2   | SetTemperature           |
+| 3   | GetPossibleClockRates    |
+| 4   | GetPowerClockInfoEvent   |
+| 5   |                          |
 
 ## IClkrstSession
 
@@ -270,18 +270,29 @@ This was added with \[8.0.0+\].
 
 ## IRegulatorSession
 
-This is
-"nn::regulator::IRegulatorSession".
+This is "nn::regulator::IRegulatorSession".
 
-| Cmd | Name          | Notes                                                      |
-| --- | ------------- | ---------------------------------------------------------- |
-| 0   | SetLdoEnabled | Takes a bool. Enables the LDO this session was opened for. |
-| 1   |               |                                                            |
-| 2   | GetLdoEnabled | Returns a bool. True if voltage is enabled, false if not.  |
-| 3   |               |                                                            |
-| 4   |               |                                                            |
-| 5   | SetLdoVoltage | Takes in a voltage and sets the LDO to this voltage.       |
-| 6   |               |                                                            |
+| Cmd | Name                                                 | Notes |
+| --- | ---------------------------------------------------- | ----- |
+| 0   | [\#SetVoltageEnabled](#SetVoltageEnabled "wikilink") |       |
+| 1   |                                                      |       |
+| 2   | [\#GetVoltageEnabled](#GetVoltageEnabled "wikilink") |       |
+| 3   | GetVoltageRange                                      |       |
+| 4   | GetVoltageValue                                      |       |
+| 5   | [\#SetVoltageValue](#SetVoltageValue "wikilink")     |       |
+| 6   |                                                      |       |
+
+### SetVoltageEnabled
+
+Takes a bool. Enables the LDO this session was opened for.
+
+### GetVoltageEnabled
+
+Returns a bool. True if voltage is enabled, false if not.
+
+### SetVoltageValue
+
+Takes in a voltage and sets the LDO to this voltage.
 
 # rtc
 
