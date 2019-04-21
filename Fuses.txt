@@ -1182,7 +1182,7 @@ This patch adjusts USB configurations.
 ==== ipatch 3 ====
 This patch ensures that waiting on PRC_PENDING from the XUSB_DEV register T_XUSB_DEV_XHCI_PORTSC never fails.
 
-In the second batch of patched units ([[#FUSE_OPT_FT_REV|FUSE_OPT_FT_REV]] set to revision 7.0) this patch has been replaced with a fix for CVE-2018-6242 (arbitrary copy when handling USB control requests in RCM). By setting R1 to 0 at address 0x0010769A in the bootrom, the upper 16 bits of the USB control request's wLength field are cleared out, effectively limiting the request's size to a maximum of 255 bytes.
+In the second batch of patched units ([[#FUSE_OPT_FT_REV|FUSE_OPT_FT_REV]] set to revision 7.0) this patch has been replaced with a fix for [[Switch_System_Flaws#Hardware|CVE-2018-6242]] (arbitrary copy when handling USB control requests in RCM). By setting R1 to 0 at address 0x0010769A in the bootrom, the upper 16 bits of the USB control request's wLength field are cleared out, effectively limiting the request's size to a maximum of 255 bytes.
 
 ==== ipatch 4 ====
 This patch allows backing up and restoring strapping options for warmboot.

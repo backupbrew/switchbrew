@@ -779,11 +779,12 @@ register T\_XUSB\_DEV\_XHCI\_PORTSC never fails.
 
 In the second batch of patched units
 ([FUSE\_OPT\_FT\_REV](#FUSE_OPT_FT_REV "wikilink") set to revision 7.0)
-this patch has been replaced with a fix for CVE-2018-6242 (arbitrary
-copy when handling USB control requests in RCM). By setting R1 to 0 at
-address 0x0010769A in the bootrom, the upper 16 bits of the USB control
-request's wLength field are cleared out, effectively limiting the
-request's size to a maximum of 255 bytes.
+this patch has been replaced with a fix for
+[CVE-2018-6242](Switch%20System%20Flaws#Hardware.md##Hardware "wikilink")
+(arbitrary copy when handling USB control requests in RCM). By setting
+R1 to 0 at address 0x0010769A in the bootrom, the upper 16 bits of the
+USB control request's wLength field are cleared out, effectively
+limiting the request's size to a maximum of 255 bytes.
 
 #### ipatch 4
 
