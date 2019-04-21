@@ -271,6 +271,8 @@ Stores the FT (Final Test) revision.
 
 Original launch units have this value set to 0xA0 (revision 5.0). The
 first batch of patched units have this value set to 0xC0 (revision 6.0).
+The second batch of patched units have this value set to 0xE0 (revision
+7.0)
 
 #### FUSE\_FA
 
@@ -337,9 +339,8 @@ BCT+0x210.
 
 Stores the CP (Chip Probing) revision.
 
-Original launch units have this value set to 0xA0 (revision 5.0). The
-first batch of patched units have this value set to 0x103 (revision
-8.3).
+Original launch units have this value set to 0xA0 (revision 5.0).
+Patched units have this value set to 0x103 (revision 8.3).
 
 #### FUSE\_PRIVATE\_KEY
 
@@ -444,7 +445,21 @@ The following represents the patch data dumped from a Switch
     RAM:00000000
     RAM:00000000
     RAM:00000000 irom_svc_dispatch
-    RAM:00000000   STMFD   SP!, {R0-R2}                  ; ipatches:
+    RAM:00000000   STMFD   SP!, {R0-R2}                  ; ipatches (new):
+    RAM:00000000                                         ;  0  b57df00     16ae     df00 : svc #0x00 (offset 0x48)
+    RAM:00000000                                         ;  1 1820df22     3040     df22 : svc #0x22 (offset 0x8c)
+    RAM:00000000                                         ;  2 3797df26     6f2e     df26 : svc #0x26 (offset 0x94)
+    RAM:00000000                                         ;  3 3b4d2100     769a     2100 : movs r1, #0x00
+    RAM:00000000                                         ;  4  42bdf2c      856     df2c : svc #0x2c (offset 0xa0)
+    RAM:00000000                                         ;  5 37aadf42     6f54     df42 : svc #0x42 (offset 0xcc)
+    RAM:00000000                                         ;  6  972df4b     12e4     df4b : svc #0x4b (offset 0xde)
+    RAM:00000000                                         ;  7 2293df54     4526     df54 : svc #0x54 (offset 0xf0)
+    RAM:00000000                                         ;  8 21fadf5d     43f4     df5d : svc #0x5d (offset 0x102)
+    RAM:00000000                                         ;  9 bba2ac57    17744     ac57 : data
+    RAM:00000000                                         ; 10 bbac3d19    17758     3d19 : data
+    RAM:00000000                                         ; 11 1e952001     3d2a     2001 : movs r0, #0x01
+    RAM:00000000                                         ; 
+    RAM:00000000                                         ; ipatches (old):
     RAM:00000000                                         ;  0  b57df00     16ae     df00 : svc #0x00 (offset 0x48)
     RAM:00000000                                         ;  1 1820df22     3040     df22 : svc #0x22 (offset 0x8c)
     RAM:00000000                                         ;  2 3797df26     6f2e     df26 : svc #0x26 (offset 0x94)
@@ -761,6 +776,14 @@ This patch adjusts USB configurations.
 
 This patch ensures that waiting on PRC\_PENDING from the XUSB\_DEV
 register T\_XUSB\_DEV\_XHCI\_PORTSC never fails.
+
+In the second batch of patched units
+([FUSE\_OPT\_FT\_REV](#FUSE_OPT_FT_REV "wikilink") set to revision 7.0)
+this patch has been replaced with a fix for CVE-2018-6242 (arbitrary
+copy when handling USB control requests in RCM). By setting R1 to 0 at
+address 0x0010769A in the bootrom, the upper 16 bits of the USB control
+request's wLength field are cleared out, effectively limiting the
+request's size to a maximum of 255 bytes.
 
 #### ipatch 4
 
