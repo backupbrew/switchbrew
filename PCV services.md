@@ -284,7 +284,7 @@ This is "nn::regulator::IRegulatorSession".
 
 ### SetVoltageEnabled
 
-Takes a bool. Enables the LDO this session was opened for.
+Takes a bool. Enables/disables the LDO this session was opened for.
 
 ### GetVoltageEnabled
 
@@ -292,7 +292,7 @@ Returns a bool. True if voltage is enabled, false if not.
 
 ### SetVoltageValue
 
-Takes in a voltage and sets the LDO to this voltage.
+Takes in a voltage in microvolts and sets the LDO to this voltage.
 
 # rtc
 
