@@ -15,7 +15,7 @@ This is the 0x200-byte TLS (thread local storage). It's base address is loaded v
 | 0x4
 | Preemption State
 |-
-| 0x108
+| 0x104
 | 0xF4
 | Unknown.
 |-
