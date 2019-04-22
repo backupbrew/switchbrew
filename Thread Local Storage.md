@@ -7,11 +7,12 @@ handling.
 
 # Structure
 
-| Offset | Size  | Description                                                                                           |
-| ------ | ----- | ----------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x100 | [IPC](IPC%20Marshalling.md "wikilink") command buffer.                                                |
-| 0x100  | 0xF8  | Unknown.                                                                                              |
-| 0x1F8  | 0x8   | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink"). |
+| Offset           | Size  | Description                                                                                           |
+| ---------------- | ----- | ----------------------------------------------------------------------------------------------------- |
+| 0x0              | 0x100 | [IPC](IPC%20Marshalling.md "wikilink") command buffer.                                                |
+| \[8.0.0+\] 0x100 | 0x4   | Preemption State                                                                                      |
+| 0x108            | 0xF4  | Unknown.                                                                                              |
+| 0x1F8            | 0x8   | Pointer to [thread context](Thread%20Local%20Storage#Thread%20context.md##Thread_context "wikilink"). |
 
 # Userland context
 

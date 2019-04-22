@@ -11,8 +11,12 @@ This is the 0x200-byte TLS (thread local storage). It's base address is loaded v
 | 0x100
 | [[IPC_Marshalling|IPC]] command buffer.
 |-
-| 0x100
-| 0xF8
+| [8.0.0+] 0x100
+| 0x4
+| Preemption State
+|-
+| 0x108
+| 0xF4
 | Unknown.
 |-
 | 0x1F8
