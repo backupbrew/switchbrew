@@ -382,7 +382,7 @@ These were added with [8.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 || OpenSession
+| 0 || [[#OpenSession]]
 |-
 | 1 || GetTemperatureThresholds
 |-
@@ -394,6 +394,9 @@ These were added with [8.0.0+].
 |-
 | 5 ||
 |}
+
+== OpenSession ==
+Takes an u32 '''ModuleID''', an u32 '''ModuleUnk''' and returns an [[#IClkrstSession]].
 
 == IClkrstSession ==
 This is "nn::clkrst::IClkrstSession".

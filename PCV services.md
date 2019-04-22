@@ -226,14 +226,19 @@ These are "nn::clkrst::IClkrstManager" and
 
 These were added with \[8.0.0+\].
 
-| Cmd | Name                     |
-| --- | ------------------------ |
-| 0   | OpenSession              |
-| 1   | GetTemperatureThresholds |
-| 2   | SetTemperature           |
-| 3   | GetPossibleClockRates    |
-| 4   | GetPowerClockInfoEvent   |
-| 5   |                          |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | [\#OpenSession](#OpenSession "wikilink") |
+| 1   | GetTemperatureThresholds                 |
+| 2   | SetTemperature                           |
+| 3   | GetPossibleClockRates                    |
+| 4   | GetPowerClockInfoEvent                   |
+| 5   |                                          |
+
+## OpenSession
+
+Takes an u32 **ModuleID**, an u32 **ModuleUnk** and returns an
+[\#IClkrstSession](#IClkrstSession "wikilink").
 
 ## IClkrstSession
 
