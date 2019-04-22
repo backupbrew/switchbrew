@@ -229,7 +229,7 @@ Takes a pid.
 | 
 |-
 | [3.0.0+] ldr:ro, ro:dmnt, [7.0.0+] ro:1
-| [[Loader services|RO services]]
+| [[RO services]]
 |
 |-
 | set, set:fd, set:cal, set:sys
