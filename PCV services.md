@@ -275,12 +275,17 @@ This is "nn::regulator::IRegulatorManager".
 
 This was added with \[8.0.0+\].
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | OpenSession |
-| 1   |             |
-| 2   |             |
-| 3   |             |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | [\#OpenSession](#OpenSession "wikilink") |
+| 1   |                                          |
+| 2   |                                          |
+| 3   |                                          |
+
+## OpenSession
+
+Takes an u32 **ModuleID** and returns an
+[\#IRegulatorSession](#IRegulatorSession "wikilink").
 
 ## IRegulatorSession
 

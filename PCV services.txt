@@ -451,7 +451,7 @@ This was added with [8.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 || OpenSession
+| 0 || [[#OpenSession]]
 |-
 | 1 ||
 |-
@@ -459,6 +459,9 @@ This was added with [8.0.0+].
 |-
 | 3 ||
 |}
+
+== OpenSession ==
+Takes an u32 '''ModuleID''' and returns an [[#IRegulatorSession]].
 
 == IRegulatorSession ==
 This is "nn::regulator::IRegulatorSession".
