@@ -197,7 +197,7 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 |-
 | 401 || Finalize
 |-
-| 402 || [7.0.0+] SetOperationMode
+| 402 || [7.0.0+] Initialize2
 |}
 
 [[Category:Services]]

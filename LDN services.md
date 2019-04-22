@@ -129,6 +129,6 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 | 304 | Disconnect                                  |
 | 400 | Initialize                                  |
 | 401 | Finalize                                    |
-| 402 | \[7.0.0+\] SetOperationMode                 |
+| 402 | \[7.0.0+\] Initialize2                      |
 
 [Category:Services](Category:Services "wikilink")
