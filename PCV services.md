@@ -74,98 +74,107 @@ This is "nn::pcv::detail::IPcvService".
 
 \[7.0.0+\] The type-0xA output buffers were replaced with type-0x22
 output buffers, for the following: GetDvfsTable, GetModuleStateTable,
-and
-GetPowerDomainStateTable.
+and GetPowerDomainStateTable.
 
-## User Name to Block Maps
+## Modules
+
+These are "nn::pcv::Module\_X" where X is the power, clock and reset
+block name.
+
+\[8.0.0+\] Every module name is now mapped to an
+ID.
 
 ### Power Switch / Clocking / Reset
 
-| Name          | Block                | Rail     | Notes                                       |
-| ------------- | -------------------- | -------- | ------------------------------------------- |
-| 0             | CpuBus               | vdd\_cpu |                                             |
-| 1             | GPU                  | vdd\_gpu |                                             |
-| 2             | I2S1                 | vdd\_soc |                                             |
-| 3             | I2S2                 | vdd\_soc |                                             |
-| 4             | I2S3                 | vdd\_soc |                                             |
-| 5             | PWM                  | vdd\_soc |                                             |
-| 6             | I2C1                 | vdd\_soc |                                             |
-| 7             | I2C2                 | vdd\_soc |                                             |
-| 8             | I2C3                 | vdd\_soc |                                             |
-| 9             | I2C4                 | vdd\_soc |                                             |
-| 10            | I2C5                 | vdd\_soc |                                             |
-| 11            | I2C6                 | vdd\_soc |                                             |
-| 12            | SPI1                 | vdd\_soc |                                             |
-| 13            | SPI2                 | vdd\_soc |                                             |
-| 14            | SPI3                 | vdd\_soc |                                             |
-| 15            | SPI4                 | vdd\_soc |                                             |
-| 16            | DISP1                | vdd\_soc |                                             |
-| 17            | DISP2                | vdd\_soc |                                             |
-| 20            | SDMMC1               | vdd\_soc |                                             |
-| 21            | SDMMC2               | vdd\_soc |                                             |
-| 22            | SDMMC3               | vdd\_soc |                                             |
-| 23            | SDMMC4               | vdd\_soc |                                             |
-| 24            | \-                   | \-       | Not actual block. Used for debug and stuff. |
-| 25            | CSITE                | vdd\_soc |                                             |
-| 26            | TSEC                 | vdd\_soc |                                             |
-| 27            | MSELECT              | vdd\_soc |                                             |
-| 28            | HDA2CODEC\_2X        | vdd\_soc |                                             |
-| 29            | ACTMON               | vdd\_soc |                                             |
-| 30            | I2C\_SLOW            | vdd\_soc |                                             |
-| 31            | SOR1                 | vdd\_soc |                                             |
-| 33            | HDA                  | vdd\_soc |                                             |
-| 34            | XUSB\_CORE\_HOST     | vdd\_soc |                                             |
-| 35            | XUSB\_FALCON         | vdd\_soc |                                             |
-| 36            | XUSB\_FS             | vdd\_soc |                                             |
-| 37            | XUSB\_CORE\_DEV      | vdd\_soc |                                             |
-| 38            | XUSB\_SS\_HOSTDEV    | vdd\_soc |                                             |
-| 39            | UARTA                | vdd\_soc |                                             |
-| 40            | UARTB                | vdd\_soc |                                             |
-| 41            | UARTC                | vdd\_soc |                                             |
-| 42            | UARTD                | vdd\_soc |                                             |
-| 43            | HOST1X               | vdd\_soc |                                             |
-| 44            | ENTROPY              | vdd\_soc |                                             |
-| 45            | SOC\_THERM           | vdd\_soc |                                             |
-| 46            | VIC                  | vdd\_soc |                                             |
-| 47            | NVENC                | vdd\_soc |                                             |
-| 48            | NVJPG                | vdd\_soc |                                             |
-| 49            | NVDEC                | vdd\_soc |                                             |
-| 50            | QSPI                 | vdd\_soc |                                             |
-| 52            | TSECB                | vdd\_soc |                                             |
-| 53            | APE                  | vdd\_soc |                                             |
-| 54            | ACLK                 | vdd\_soc |                                             |
-| 55            | UARTAPE              | vdd\_soc |                                             |
-| 56            | EMC                  | vdd\_soc |                                             |
-| 57            | PLLE0                | vdd\_soc |                                             |
-| 58            | PLLE0                | vdd\_soc |                                             |
-| 59            | DSI                  | vdd\_soc |                                             |
-| 60            | MAUD                 | vdd\_soc |                                             |
-| 61            | DPAUX1               | vdd\_soc |                                             |
-| 62            | MIPI\_CAL            | vdd\_soc |                                             |
-| 63            | UART\_FST\_MIPI\_CAL | vdd\_soc |                                             |
-| 64            | OSC                  | vdd\_soc |                                             |
-| 65            | SCLK                 | vdd\_soc |                                             |
-| 66            | SOR\_SAFE            | vdd\_soc |                                             |
-| 67            | XUSB\_SS             | vdd\_soc |                                             |
-| 68            | XUSB\_HOST           | vdd\_soc |                                             |
-| 69            | XUSB\_DEV            | vdd\_soc |                                             |
-| 70            | EXTPERIPH1           | vdd\_soc |                                             |
-| 71            | AHUB                 | vdd\_soc |                                             |
-| 72            | HDA2HDMICODEC        | vdd\_soc |                                             |
-| 73            | PLLP5                | vdd\_soc |                                             |
-| 74            | USBD                 | vdd\_soc |                                             |
-| 75            | USB2                 | vdd\_soc |                                             |
-| 76            | PCIE                 | vdd\_soc |                                             |
-| 77            | AFI                  | vdd\_soc |                                             |
-| 78            | PCIEXCLK             | vdd\_soc |                                             |
-| 79            | PEX\_USB\_UPHY       | vdd\_soc |                                             |
-| 80            | XUSB\_PADCTL         | vdd\_soc |                                             |
-| 81            | APBDMA               | vdd\_soc |                                             |
-| 82            | USB2\_TRK            | vdd\_soc |                                             |
-| 83            | PLLE0                | vdd\_soc |                                             |
-| 84            | PLLE0                | vdd\_soc |                                             |
-| 85            | CEC                  | vdd\_soc |                                             |
-| \[6.0.0+\] 86 | EXTPERIPH2           | vdd\_soc |                                             |
+| Name          | ID         | Block                | Rail     | Notes                                |
+| ------------- | ---------- | -------------------- | -------- | ------------------------------------ |
+| 0             | 0x40000001 | CpuBus               | vdd\_cpu |                                      |
+| 1             | 0x40000002 | GPU                  | vdd\_gpu |                                      |
+| 2             | 0x40000003 | I2S1                 | vdd\_soc |                                      |
+| 3             | 0x40000004 | I2S2                 | vdd\_soc |                                      |
+| 4             | 0x40000005 | I2S3                 | vdd\_soc |                                      |
+| 5             | 0x40000006 | PWM                  | vdd\_soc |                                      |
+| 6             | 0x02000001 | I2C1                 | vdd\_soc |                                      |
+| 7             | 0x02000002 | I2C2                 | vdd\_soc |                                      |
+| 8             | 0x02000003 | I2C3                 | vdd\_soc |                                      |
+| 9             | 0x02000004 | I2C4                 | vdd\_soc |                                      |
+| 10            | 0x02000005 | I2C5                 | vdd\_soc |                                      |
+| 11            | 0x02000006 | I2C6                 | vdd\_soc |                                      |
+| 12            | 0x07000000 | SPI1                 | vdd\_soc |                                      |
+| 13            | 0x07000001 | SPI2                 | vdd\_soc |                                      |
+| 14            | 0x07000002 | SPI3                 | vdd\_soc |                                      |
+| 15            | 0x07000003 | SPI4                 | vdd\_soc |                                      |
+| 16            | 0x40000011 | DISP1                | vdd\_soc |                                      |
+| 17            | 0x40000012 | DISP2                | vdd\_soc |                                      |
+| 18            | 0x40000013 | \-                   | \-       | Not an actual block. Used for debug. |
+| 19            | 0x40000014 | \-                   | \-       | Not an actual block. Used for debug. |
+| 20            | 0x40000015 | SDMMC1               | vdd\_soc |                                      |
+| 21            | 0x40000016 | SDMMC2               | vdd\_soc |                                      |
+| 22            | 0x40000017 | SDMMC3               | vdd\_soc |                                      |
+| 23            | 0x40000018 | SDMMC4               | vdd\_soc |                                      |
+| 24            | 0x40000019 | \-                   | \-       | Not an actual block. Used for debug. |
+| 25            | 0x4000001A | CSITE                | vdd\_soc |                                      |
+| 26            | 0x4000001B | TSEC                 | vdd\_soc |                                      |
+| 27            | 0x4000001C | MSELECT              | vdd\_soc |                                      |
+| 28            | 0x4000001D | HDA2CODEC\_2X        | vdd\_soc |                                      |
+| 29            | 0x4000001E | ACTMON               | vdd\_soc |                                      |
+| 30            | 0x4000001F | I2C\_SLOW            | vdd\_soc |                                      |
+| 31            | 0x40000020 | SOR1                 | vdd\_soc |                                      |
+| 32            | 0x40000021 | \-                   | \-       | Not an actual block. Used for debug. |
+| 33            | 0x40000022 | HDA                  | vdd\_soc |                                      |
+| 34            | 0x40000023 | XUSB\_CORE\_HOST     | vdd\_soc |                                      |
+| 35            | 0x40000024 | XUSB\_FALCON         | vdd\_soc |                                      |
+| 36            | 0x40000025 | XUSB\_FS             | vdd\_soc |                                      |
+| 37            | 0x40000026 | XUSB\_CORE\_DEV      | vdd\_soc |                                      |
+| 38            | 0x40000027 | XUSB\_SS\_HOSTDEV    | vdd\_soc |                                      |
+| 39            | 0x03000001 | UARTA                | vdd\_soc |                                      |
+| 40            | 0x35000405 | UARTB                | vdd\_soc |                                      |
+| 41            | 0x3500040F | UARTC                | vdd\_soc |                                      |
+| 42            | 0x37000001 | UARTD                | vdd\_soc |                                      |
+| 43            | 0x4000002C | HOST1X               | vdd\_soc |                                      |
+| 44            | 0x4000002D | ENTROPY              | vdd\_soc |                                      |
+| 45            | 0x4000002E | SOC\_THERM           | vdd\_soc |                                      |
+| 46            | 0x4000002F | VIC                  | vdd\_soc |                                      |
+| 47            | 0x40000030 | NVENC                | vdd\_soc |                                      |
+| 48            | 0x40000031 | NVJPG                | vdd\_soc |                                      |
+| 49            | 0x40000032 | NVDEC                | vdd\_soc |                                      |
+| 50            | 0x40000033 | QSPI                 | vdd\_soc |                                      |
+| 51            | 0x40000034 | \-                   | \-       | Not an actual block. Used for debug. |
+| 52            | 0x40000035 | TSECB                | vdd\_soc |                                      |
+| 53            | 0x40000036 | APE                  | vdd\_soc |                                      |
+| 54            | 0x40000037 | ACLK                 | vdd\_soc |                                      |
+| 55            | 0x40000038 | UARTAPE              | vdd\_soc |                                      |
+| 56            | 0x40000039 | EMC                  | vdd\_soc |                                      |
+| 57            | 0x4000003A | PLLE0                | vdd\_soc |                                      |
+| 58            | 0x4000003B | PLLE0                | vdd\_soc |                                      |
+| 59            | 0x4000003C | DSI                  | vdd\_soc |                                      |
+| 60            | 0x4000003D | MAUD                 | vdd\_soc |                                      |
+| 61            | 0x4000003E | DPAUX1               | vdd\_soc |                                      |
+| 62            | 0x4000003F | MIPI\_CAL            | vdd\_soc |                                      |
+| 63            | 0x40000040 | UART\_FST\_MIPI\_CAL | vdd\_soc |                                      |
+| 64            | 0x40000041 | OSC                  | vdd\_soc |                                      |
+| 65            | 0x40000042 | SCLK                 | vdd\_soc |                                      |
+| 66            | 0x40000043 | SOR\_SAFE            | vdd\_soc |                                      |
+| 67            | 0x40000044 | XUSB\_SS             | vdd\_soc |                                      |
+| 68            | 0x40000045 | XUSB\_HOST           | vdd\_soc |                                      |
+| 69            | 0x40000046 | XUSB\_DEV            | vdd\_soc |                                      |
+| 70            | 0x40000047 | EXTPERIPH1           | vdd\_soc |                                      |
+| 71            | 0x40000048 | AHUB                 | vdd\_soc |                                      |
+| 72            | 0x40000049 | HDA2HDMICODEC        | vdd\_soc |                                      |
+| 73            | 0x4000004A | PLLP5                | vdd\_soc |                                      |
+| 74            | 0x4000004B | USBD                 | vdd\_soc |                                      |
+| 75            | 0x4000004C | USB2                 | vdd\_soc |                                      |
+| 76            | 0x4000004D | PCIE                 | vdd\_soc |                                      |
+| 77            | 0x4000004E | AFI                  | vdd\_soc |                                      |
+| 78            | 0x4000004F | PCIEXCLK             | vdd\_soc |                                      |
+| 79            | 0x40000050 | PEX\_USB\_UPHY       | vdd\_soc |                                      |
+| 80            | 0x40000051 | XUSB\_PADCTL         | vdd\_soc |                                      |
+| 81            | 0x40000052 | APBDMA               | vdd\_soc |                                      |
+| 82            | 0x40000053 | USB2\_TRK            | vdd\_soc |                                      |
+| 83            | 0x40000054 | PLLE0                | vdd\_soc |                                      |
+| 84            | 0x40000055 | PLLE0                | vdd\_soc |                                      |
+| 85            | 0x40000056 | CEC                  | vdd\_soc |                                      |
+| \[6.0.0+\] 86 | 0x40000057 | EXTPERIPH2           | vdd\_soc |                                      |
 
 ### Voltage
 
