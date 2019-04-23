@@ -134,33 +134,33 @@ This is "nn::nfp::detail::IUserManager".
 
 This is "nn::nfp::detail::IUser".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   | Initialize                    |
-| 1   | Finalize                      |
-| 2   | ListDevices                   |
-| 3   | StartDetection                |
-| 4   | StopDetection                 |
-| 5   | Mount                         |
-| 6   | Unmount                       |
-| 7   | OpenApplicationArea           |
-| 8   | GetApplicationArea            |
-| 9   | SetApplicationArea            |
-| 10  | Flush                         |
-| 11  | Restore                       |
-| 12  | CreateApplicationArea         |
-| 13  | GetTagInfo                    |
-| 14  | GetRegisterInfo               |
-| 15  | GetCommonInfo                 |
-| 16  | GetModelInfo                  |
-| 17  | AttachActivateEvent           |
-| 18  | AttachDeactivateEvent         |
-| 19  | GetState                      |
-| 20  | GetDeviceState                |
-| 21  | GetNpadId                     |
-| 22  | GetApplicationArea2           |
-| 23  | AttachAvailabilityChangeEvent |
-| 24  | RecreateApplicationArea       |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | Initialize                               |
+| 1   | Finalize                                 |
+| 2   | ListDevices                              |
+| 3   | StartDetection                           |
+| 4   | StopDetection                            |
+| 5   | Mount                                    |
+| 6   | Unmount                                  |
+| 7   | OpenApplicationArea                      |
+| 8   | GetApplicationArea                       |
+| 9   | SetApplicationArea                       |
+| 10  | Flush                                    |
+| 11  | Restore                                  |
+| 12  | CreateApplicationArea                    |
+| 13  | GetTagInfo                               |
+| 14  | GetRegisterInfo                          |
+| 15  | GetCommonInfo                            |
+| 16  | GetModelInfo                             |
+| 17  | AttachActivateEvent                      |
+| 18  | AttachDeactivateEvent                    |
+| 19  | GetState                                 |
+| 20  | GetDeviceState                           |
+| 21  | GetNpadId                                |
+| 22  | GetApplicationArea2                      |
+| 23  | \[3.0.0+\] AttachAvailabilityChangeEvent |
+| 24  | \[3.0.0+\] RecreateApplicationArea       |
 
 # nfp:dbg
 

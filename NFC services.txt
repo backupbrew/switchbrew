@@ -261,9 +261,9 @@ This is "nn::nfp::detail::IUser".
 |-
 | 22 || GetApplicationArea2
 |-
-| 23 || AttachAvailabilityChangeEvent
+| 23 || [3.0.0+] AttachAvailabilityChangeEvent
 |-
-| 24 || RecreateApplicationArea
+| 24 || [3.0.0+] RecreateApplicationArea
 |}
 
 = nfp:dbg =
