@@ -87,14 +87,14 @@ This is
 | 300  | ActivateConsoleSixAxisSensor                                                                     |
 | 301  | StartConsoleSixAxisSensor                                                                        |
 | 302  | StopConsoleSixAxisSensor                                                                         |
-| 303  | \[5.0.0+\] ActivateSevenSixAxisSensor                                                            |
-| 304  | \[5.0.0+\] StartSevenSixAxisSensor                                                               |
-| 305  | \[5.0.0+\] StopSevenSixAxisSensor                                                                |
+| 303  | \[5.0.0+\] [\#ActivateSevenSixAxisSensor](#ActivateSevenSixAxisSensor "wikilink")                |
+| 304  | \[5.0.0+\] [\#StartSevenSixAxisSensor](#StartSevenSixAxisSensor "wikilink")                      |
+| 305  | \[5.0.0+\] [\#StopSevenSixAxisSensor](#StopSevenSixAxisSensor "wikilink")                        |
 | 306  | \[5.0.0+\] [\#InitializeSevenSixAxisSensor](#InitializeSevenSixAxisSensor "wikilink")            |
-| 307  | \[5.0.0+\] FinalizeSevenSixAxisSensor                                                            |
+| 307  | \[5.0.0+\] [\#FinalizeSevenSixAxisSensor](#FinalizeSevenSixAxisSensor "wikilink")                |
 | 308  | \[5.0.0+\] SetSevenSixAxisSensorFusionStrength                                                   |
 | 309  | \[5.0.0+\] GetSevenSixAxisSensorFusionStrength                                                   |
-| 310  | \[6.0.0+\] ResetSevenSixAxisSensorTimestamp                                                      |
+| 310  | \[6.0.0+\] [\#ResetSevenSixAxisSensorTimestamp](#ResetSevenSixAxisSensorTimestamp "wikilink")    |
 | 400  | IsUsbFullKeyControllerEnabled                                                                    |
 | 401  | EnableUsbFullKeyController                                                                       |
 | 402  | IsUsbFullKeyControllerConnected                                                                  |
@@ -245,6 +245,21 @@ Official sw uses the same entry-count for each array.
 Takes a total of 0x10-bytes of input and a PID, returns an output u8
 bool.
 
+## ActivateSevenSixAxisSensor
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
+## StartSevenSixAxisSensor
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
+## StopSevenSixAxisSensor
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
 ## InitializeSevenSixAxisSensor
 
 Takes a PID, an u64 [AppletResourceUserId](AM%20services.md "wikilink"),
@@ -254,6 +269,16 @@ handles. No output.
 The size of the first TransferMemory is 0x1000 with
 MemoryPermission=read-only, while the second one has size 0x7F000 with
 MemoryPermission=none.
+
+## FinalizeSevenSixAxisSensor
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
+## ResetSevenSixAxisSensorTimestamp
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
 
 ## VibrationDeviceHandle
 
