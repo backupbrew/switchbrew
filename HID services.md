@@ -90,7 +90,7 @@ This is
 | 303  | \[5.0.0+\] ActivateSevenSixAxisSensor                                                            |
 | 304  | \[5.0.0+\] StartSevenSixAxisSensor                                                               |
 | 305  | \[5.0.0+\] StopSevenSixAxisSensor                                                                |
-| 306  | \[5.0.0+\] InitializeSevenSixAxisSensor                                                          |
+| 306  | \[5.0.0+\] [\#InitializeSevenSixAxisSensor](#InitializeSevenSixAxisSensor "wikilink")            |
 | 307  | \[5.0.0+\] FinalizeSevenSixAxisSensor                                                            |
 | 308  | \[5.0.0+\] SetSevenSixAxisSensorFusionStrength                                                   |
 | 309  | \[5.0.0+\] GetSevenSixAxisSensorFusionStrength                                                   |
@@ -244,6 +244,16 @@ Official sw uses the same entry-count for each array.
 
 Takes a total of 0x10-bytes of input and a PID, returns an output u8
 bool.
+
+## InitializeSevenSixAxisSensor
+
+Takes a PID, an u64 [AppletResourceUserId](AM%20services.md "wikilink"),
+two u64s for the size of each TransferMemory, and two TransferMemory
+handles. No output.
+
+The size of the first TransferMemory is 0x1000 with
+MemoryPermission=read-only, while the second one has size 0x7F000 with
+MemoryPermission=none.
 
 ## VibrationDeviceHandle
 
