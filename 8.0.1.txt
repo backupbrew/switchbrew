@@ -15,3 +15,7 @@ Nothing changed with IPC new/removed commands, no NPDM changes, and no changes i
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=04-23-19_08-05-10&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
