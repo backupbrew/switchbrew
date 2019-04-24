@@ -186,6 +186,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 181 || Dauth
 |-
+| 191 || RTC
+|-
 | 192 || Regulator
 |-
 | 202 || HID
