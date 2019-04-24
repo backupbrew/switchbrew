@@ -68,7 +68,7 @@ This is "nn::pcv::detail::IPcvService".
 | \[3.0.0-7.0.1\] 24 | GetModuleStateTable      |
 | \[3.0.0-7.0.1\] 25 | GetPowerDomainStateTable |
 | 26                 | \[3.0.0+\] GetFuseInfo   |
-| 27                 | \[5.0.0+\]               |
+| 27                 | \[5.0.0+\] GetDramId     |
 | \[6.0.0-7.0.1\] 28 |                          |
 | \[6.0.0-7.0.1\] 29 |                          |
 
@@ -178,23 +178,26 @@ ID.
 
 ### Voltage
 
-| Name | Block          | Notes                     |
-| ---- | -------------- | ------------------------- |
-| 0    | max77620\_sd0  |                           |
-| 1    | max77620\_sd1  |                           |
-| 2    | max77620\_sd2  |                           |
-| 3    | max77620\_sd3  |                           |
-| 4    | max77620\_ldo0 | 1.2v                      |
-| 5    | max77620\_ldo1 |                           |
-| 6    | max77620\_ldo2 | SDcard power, 1.8v - 3.3v |
-| 7    | max77620\_ldo3 | GC ASIC 3.1v              |
-| 8    | max77620\_ldo4 | RTC power, 0.85v          |
-| 9    | max77620\_ldo5 | GC ASIC 1.8v              |
-| 10   | max77620\_ldo6 | AVDD touchscreen, 2.9v    |
-| 11   | max77620\_ldo7 |                           |
-| 12   | max77620\_ldo8 | DisplayPort, 1.05v        |
-| 13   | max77621\_cpu  |                           |
-| 14   | max77621\_gpu  |                           |
+| Name          | Block          | Notes                     |
+| ------------- | -------------- | ------------------------- |
+| 0             | max77620\_sd0  |                           |
+| 1             | max77620\_sd1  |                           |
+| 2             | max77620\_sd2  |                           |
+| 3             | max77620\_sd3  |                           |
+| 4             | max77620\_ldo0 | 1.2v                      |
+| 5             | max77620\_ldo1 |                           |
+| 6             | max77620\_ldo2 | SDcard power, 1.8v - 3.3v |
+| 7             | max77620\_ldo3 | GC ASIC 3.1v              |
+| 8             | max77620\_ldo4 | RTC power, 0.85v          |
+| 9             | max77620\_ldo5 | GC ASIC 1.8v              |
+| 10            | max77620\_ldo6 | AVDD touchscreen, 2.9v    |
+| 11            | max77620\_ldo7 |                           |
+| 12            | max77620\_ldo8 | DisplayPort, 1.05v        |
+| 13            | max77621\_cpu  |                           |
+| 14            | max77621\_gpu  |                           |
+| \[6.0.0+\] 15 | max77812\_cpu  |                           |
+| \[6.0.0+\] 16 | max77812\_gpu  |                           |
+| \[6.0.0+\] 17 | max77812\_dram |                           |
 
 Note: max77620 GPIOs are only used internally by the driver during init,
 and not exposed via an API.

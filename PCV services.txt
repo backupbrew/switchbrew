@@ -117,7 +117,7 @@ This is "nn::pcv::detail::IPcvService".
 |-
 | 26 || [3.0.0+] GetFuseInfo
 |-
-| 27 || [5.0.0+]
+| 27 || [5.0.0+] GetDramId
 |-
 | [6.0.0-7.0.1] 28 ||
 |-
@@ -345,6 +345,12 @@ These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
 | 13 || max77621_cpu || 
 |-
 | 14 || max77621_gpu || 
+|-
+| [6.0.0+] 15 || max77812_cpu || 
+|-
+| [6.0.0+] 16 || max77812_gpu || 
+|-
+| [6.0.0+] 17 || max77812_dram || 
 |}
 
 Note: max77620 GPIOs are only used internally by the driver during init, and not exposed via an API.
