@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **23 April 19** Nintendo released system update
+    [8.0.1](8.0.1.md "wikilink").
   - **15 April 19** Nintendo released system update
     [8.0.0](8.0.0.md "wikilink").
   - **29 March 19** [devkitA64
@@ -30,6 +32,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     v0.8.6](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.6)
     released with lots of bugfixes, more cheat stuff and web applet
     homebrew support.
-  - **21 February 19** [Atmosphère
-    v0.8.4](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.4)
-    released with 7.0.x support.
