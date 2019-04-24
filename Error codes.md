@@ -108,6 +108,7 @@ fatal-errors, since the Description ends with bit21.
 | 181   | Dauth                                        |
 | 191   | RTC                                          |
 | 192   | Regulator                                    |
+| 197   | Clkrst                                       |
 | 202   | HID                                          |
 | 203   | LDN                                          |
 | 205   | Irsensor                                     |

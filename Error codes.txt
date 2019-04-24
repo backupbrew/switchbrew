@@ -190,6 +190,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 192 || Regulator
 |-
+| 197 || Clkrst
+|-
 | 202 || HID
 |-
 | 203 || LDN
