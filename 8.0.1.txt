@@ -8,7 +8,9 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 *     
 
 ==System Titles==
-<fill this in (manually) later>
+The following titles were updated: [[System Version Title]], [[qlaunch]], bsdsockets-sysmodule, hid-sysmodule, account-sysmodule, nim-sysmodule, and npns-sysmodule.
+
+Nothing changed with IPC new/removed commands, no NPDM changes, and no changes in any RomFS besides [[System Version Title]].
 
 ==See Also==
 System update report(s):
