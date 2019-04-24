@@ -106,13 +106,13 @@ ID.
 | 15            | 0x07000003 | SPI4                 | vdd\_soc |                                      |
 | 16            | 0x40000011 | DISP1                | vdd\_soc |                                      |
 | 17            | 0x40000012 | DISP2                | vdd\_soc |                                      |
-| 18            | 0x40000013 | \-                   | \-       | Not an actual block. Used for debug. |
-| 19            | 0x40000014 | \-                   | \-       | Not an actual block. Used for debug. |
+| 18            | 0x40000013 | ISP                  | \-       | Not an actual block. Used for debug. |
+| 19            | 0x40000014 | VI                   | \-       | Not an actual block. Used for debug. |
 | 20            | 0x40000015 | SDMMC1               | vdd\_soc |                                      |
 | 21            | 0x40000016 | SDMMC2               | vdd\_soc |                                      |
 | 22            | 0x40000017 | SDMMC3               | vdd\_soc |                                      |
 | 23            | 0x40000018 | SDMMC4               | vdd\_soc |                                      |
-| 24            | 0x40000019 | \-                   | \-       | Not an actual block. Used for debug. |
+| 24            | 0x40000019 | OWR                  | \-       | Not an actual block. Used for debug. |
 | 25            | 0x4000001A | CSITE                | vdd\_soc |                                      |
 | 26            | 0x4000001B | TSEC                 | vdd\_soc |                                      |
 | 27            | 0x4000001C | MSELECT              | vdd\_soc |                                      |
@@ -120,7 +120,7 @@ ID.
 | 29            | 0x4000001E | ACTMON               | vdd\_soc |                                      |
 | 30            | 0x4000001F | I2C\_SLOW            | vdd\_soc |                                      |
 | 31            | 0x40000020 | SOR1                 | vdd\_soc |                                      |
-| 32            | 0x40000021 | \-                   | \-       | Not an actual block. Used for debug. |
+| 32            | 0x40000021 | SATA                 | \-       | Not an actual block. Used for debug. |
 | 33            | 0x40000022 | HDA                  | vdd\_soc |                                      |
 | 34            | 0x40000023 | XUSB\_CORE\_HOST     | vdd\_soc |                                      |
 | 35            | 0x40000024 | XUSB\_FALCON         | vdd\_soc |                                      |
@@ -139,7 +139,7 @@ ID.
 | 48            | 0x40000031 | NVJPG                | vdd\_soc |                                      |
 | 49            | 0x40000032 | NVDEC                | vdd\_soc |                                      |
 | 50            | 0x40000033 | QSPI                 | vdd\_soc |                                      |
-| 51            | 0x40000034 | \-                   | \-       | Not an actual block. Used for debug. |
+| 51            | 0x40000034 | VI\_I2C              | \-       | Not an actual block. Used for debug. |
 | 52            | 0x40000035 | TSECB                | vdd\_soc |                                      |
 | 53            | 0x40000036 | APE                  | vdd\_soc |                                      |
 | 54            | 0x40000037 | ACLK                 | vdd\_soc |                                      |

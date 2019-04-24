@@ -172,9 +172,9 @@ These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
 |-
 | 17 || 0x40000012 || DISP2 || vdd_soc ||
 |-
-| 18 || 0x40000013 || - || - || Not an actual block. Used for debug.
+| 18 || 0x40000013 || ISP || - || Not an actual block. Used for debug.
 |-
-| 19 || 0x40000014 || - || - || Not an actual block. Used for debug.
+| 19 || 0x40000014 || VI || - || Not an actual block. Used for debug.
 |-
 | 20 || 0x40000015 || SDMMC1 || vdd_soc ||
 |-
@@ -184,7 +184,7 @@ These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
 |-
 | 23 || 0x40000018 || SDMMC4 || vdd_soc ||
 |-
-| 24 || 0x40000019 || - || - || Not an actual block. Used for debug.
+| 24 || 0x40000019 || OWR || - || Not an actual block. Used for debug.
 |-
 | 25 || 0x4000001A || CSITE || vdd_soc ||
 |-
@@ -200,7 +200,7 @@ These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
 |-
 | 31 || 0x40000020 || SOR1 || vdd_soc ||
 |-
-| 32 || 0x40000021 || - || - || Not an actual block. Used for debug.
+| 32 || 0x40000021 || SATA || - || Not an actual block. Used for debug.
 |-
 | 33 || 0x40000022 || HDA || vdd_soc ||
 |-
@@ -238,7 +238,7 @@ These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
 |-
 | 50 || 0x40000033 || QSPI || vdd_soc ||
 |-
-| 51 || 0x40000034 || - || - || Not an actual block. Used for debug.
+| 51 || 0x40000034 || VI_I2C || - || Not an actual block. Used for debug.
 |-
 | 52 || 0x40000035 || TSECB || vdd_soc ||
 |-
