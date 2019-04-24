@@ -68,6 +68,8 @@ unlocked.
 | 29  | \[5.0.0+\] SecureExpModWithEsKey                                              | spl:es                                           |
 | 30  | \[5.0.0+\] EncryptManuRsaKeyForImport                                         | spl:manu                                         |
 | 31  | \[5.0.0+\] GetPackage2Hash                                                    | spl:fs                                           |
+| 31  | \[6.0.0+\] UnwrapAesWrappedElicenseKey                                        | spl:es                                           |
+| 32  | \[6.0.0+\] [\#LoadTitleKey](#LoadTitleKey "wikilink")                         | spl:es                                           |
 
 ## GetConfig
 

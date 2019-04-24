@@ -85,6 +85,10 @@ These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterfa
 | 30 || [5.0.0+] EncryptManuRsaKeyForImport || spl:manu
 |-
 | 31 || [5.0.0+] GetPackage2Hash || spl:fs
+|-
+| 31 || [6.0.0+] UnwrapAesWrappedElicenseKey || spl:es
+|-
+| 32 || [6.0.0+] [[#LoadTitleKey]] || spl:es
 |}
 
 == GetConfig ==
