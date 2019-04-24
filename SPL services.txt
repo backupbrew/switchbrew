@@ -86,7 +86,7 @@ These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterfa
 |-
 | 31 || [5.0.0+] GetPackage2Hash || spl:fs
 |-
-| 31 || [6.0.0+] UnwrapAesWrappedElicenseKey || spl:es
+| 31 || [6.0.0+] UnwrapRsaWrappedElicenseKey || spl:es
 |-
 | 32 || [6.0.0+] [[#LoadTitleKey]] || spl:es
 |}
