@@ -235,13 +235,17 @@ These were added with \[8.0.0+\].
 | 1   | GetTemperatureThresholds                 |
 | 2   | SetTemperature                           |
 | 3   | GetPossibleClockRates                    |
-| 4   | GetPowerClockInfoEvent                   |
-| 5   |                                          |
+| 4   | GetClockInfoEvent                        |
+| 5   | GetClockModuleNumLimit                   |
 
 ## OpenSession
 
 Takes an u32 **ModuleID**, an u32 **ModuleUnk** and returns an
 [\#IClkrstSession](#IClkrstSession "wikilink").
+
+## GetClockModuleNumLimit
+
+Returns 0x1A.
 
 ## IClkrstSession
 
@@ -285,14 +289,18 @@ This was added with \[8.0.0+\].
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
 | 0   | [\#OpenSession](#OpenSession "wikilink") |
-| 1   |                                          |
-| 2   |                                          |
-| 3   |                                          |
+| 1   | GetPowerDomainStateTable                 |
+| 2   | GetPowerInfoEvent                        |
+| 3   | GetPowerModuleNumLimit                   |
 
 ## OpenSession
 
 Takes an u32 **ModuleID** and returns an
 [\#IRegulatorSession](#IRegulatorSession "wikilink").
+
+## GetPowerModuleNumLimit
+
+Returns 0x3.
 
 ## IRegulatorSession
 
@@ -306,7 +314,7 @@ This is "nn::regulator::IRegulatorSession".
 | 3   | GetVoltageRange                                      |
 | 4   | GetVoltageValue                                      |
 | 5   | [\#SetVoltageValue](#SetVoltageValue "wikilink")     |
-| 6   |                                                      |
+| 6   | ChangeVoltage                                        |
 
 ### SetVoltageEnabled
 

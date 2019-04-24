@@ -396,13 +396,16 @@ These were added with [8.0.0+].
 |-
 | 3 || GetPossibleClockRates
 |-
-| 4 || GetPowerClockInfoEvent
+| 4 || GetClockInfoEvent
 |-
-| 5 ||
+| 5 || GetClockModuleNumLimit
 |}
 
 == OpenSession ==
 Takes an u32 '''ModuleID''', an u32 '''ModuleUnk''' and returns an [[#IClkrstSession]].
+
+== GetClockModuleNumLimit ==
+Returns 0x1A.
 
 == IClkrstSession ==
 This is "nn::clkrst::IClkrstSession".
@@ -462,15 +465,18 @@ This was added with [8.0.0+].
 |-
 | 0 || [[#OpenSession]]
 |-
-| 1 ||
+| 1 || GetPowerDomainStateTable
 |-
-| 2 ||
+| 2 || GetPowerInfoEvent
 |-
-| 3 ||
+| 3 || GetPowerModuleNumLimit
 |}
 
 == OpenSession ==
 Takes an u32 '''ModuleID''' and returns an [[#IRegulatorSession]].
+
+== GetPowerModuleNumLimit ==
+Returns 0x3.
 
 == IRegulatorSession ==
 This is "nn::regulator::IRegulatorSession".
@@ -491,7 +497,7 @@ This is "nn::regulator::IRegulatorSession".
 |-
 | 5 || [[#SetVoltageValue]]
 |-
-| 6 ||
+| 6 || ChangeVoltage
 |}
 
 === SetVoltageEnabled ===
