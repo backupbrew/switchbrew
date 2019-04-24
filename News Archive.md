@@ -1,3 +1,6 @@
+  - **21 February 19** [Atmosphère
+    v0.8.4](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.4)
+    released with 7.0.x support.
   - **18 February 19** Nintendo released system update
     [7.0.1](7.0.1.md "wikilink").
   - **28 January 19** Nintendo released system update
