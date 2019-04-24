@@ -222,7 +222,7 @@ This service no longer exists in \[8.0.0+\].
 # clkrst, clkrst:i
 
 These are "nn::clkrst::IClkrstManager" and
-"nn::clkrst::IClkrstImmediateManager".
+"nn::clkrst::IImmediateManager".
 
 These were added with \[8.0.0+\].
 
@@ -261,13 +261,17 @@ This is "nn::clkrst::IClkrstSession".
 
 # clkrst:a
 
-This is "nn::clkrst::IClkrstArbitrationManager".
+This is "nn::clkrst::IArbitrationManager".
 
 This was added with \[8.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | [\#ReleaseControl](#ReleaseControl "wikilink") |
+
+## ReleaseControl
+
+Takes an u32 **ModuleID**. No output.
 
 # rgltr
 
