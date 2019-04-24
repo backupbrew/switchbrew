@@ -592,9 +592,26 @@ converted to the format used by the
 
 ## NotificationLedPattern
 
+| Offset | Size | Subcommand argdata bytepos | Subcommand argdata nibble | Description |
+| ------ | ---- | -------------------------- | ------------------------- | ----------- |
+| 0x0    | 0x1  | 0x0                        | Low                       |             |
+|        |      |                            |                           |             |
+
 This is "nn::hid::system::NotificationLedPattern".
 
 This is a 0x48-byte struct.
+
+argdata in the subcommand is initialized as follows:
+`((u8*)cmd_argdata)[pos] = u8_in[pos2] | u8_in[pos3]<<4;` Hence, 4bits
+from pairs of 2-bytes of the input struct are combined to write to the
+subcommand. Only the low 4bits of each used byte in the struct is used.
+This is written to stack initially, then copied to the actual
+cmd\_argdata (the data immediately following the subcommandID byte).
+There's a total of 0x1B-bytes of cmd\_argdata initialized from this.
+
+The 0xB-bytes at cmd\_argdata+0x1B is cleared. The u64 at
+cmd\_argdata+0x2B is set to an input value which is hard-coded 0. u16
++0x33 is set to 0. u8 +0x35 is set to 1.
 
 # hid:tmp
 
