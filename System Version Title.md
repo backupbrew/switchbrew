@@ -43,6 +43,7 @@ The FS for the system-version title(TID 0100000000000809) contains
 | 7.0.0    | NintendoSDK Firmware for NX 7.0.0-5.0  | e4b38b15e880d251c182323894077508803abaaf | CusHY\#00070000\#5PRVTLegTfFlaOw3kznosYec9d8BxGj8pN3wqGa80so=   |
 | 7.0.1    | NintendoSDK Firmware for NX 7.0.1-1.0  | b9d2547128fa22760492cf09bffd0a3e43f2132c | CusHY\#00070001\#rBuhja\_901l8V8bKFqeiNBCY-fflYlZVa\_iqvkpEGJI= |
 | 8.0.0    | NintendoSDK Firmware for NX 8.0.0-4.99 | e19a1c3067a96ec3028d53564704e4fb76ef7c59 | CusHY\#00080000\#s7CpDsmxJh1kenRjC5cfTDfbrMFNHxBbzr6XvNTA5RI=   |
+| 8.0.1    | NintendoSDK Firmware for NX 8.0.1-1.0  | c7b483d6d953f515b9b449489dcfd828cb50fd69 | CusHY\#00080001\#fgCfbpEweqCg1S49PsWL\_b9R-C1Vj\_hJ6aTmSRxycSQ= |
 
 ### Other
 
