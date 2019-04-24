@@ -60,8 +60,8 @@ unlocked.
 | 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                       | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
 | 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                   | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
 | 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                   | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 24  | \[3.0.0+\] [\#SetSharedData](#SetSharedData "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 25  | \[3.0.0+\] [\#GetSharedData](#GetSharedData "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 24  | \[3.0.0+\] [\#SetBootReason](#SetBootReason "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 25  | \[3.0.0+\] [\#GetBootReason](#GetBootReason "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
 | 26  | \[5.0.0+\] ImportSslRsaKey                                                    | spl:ssl                                          |
 | 27  | \[5.0.0+\] SecureExpModWithSslKey                                             | spl:ssl                                          |
 | 28  | \[5.0.0+\] ImportEsRsaKey                                                     | spl:es                                           |
@@ -303,17 +303,17 @@ by current session otherwise 0xD21A will be returned.
 
 Returns an event handle for synchronizing with the locked AES engine.
 
-## SetSharedData
+## SetBootReason
 
 Sets a static dword in spl .bss to the user input u32.
 
 \[4.0.0+\] returns 0xD41A if a value has been previously set without
-being [gotten](#GetSharedData "wikilink").
+being [gotten](#GetBootReason "wikilink").
 
-## GetSharedData
+## GetBootReason
 
 Returns the static dword in spl .bss that can be set via
-[\#SetSharedData](#SetSharedData "wikilink").
+[\#SetBootReason](#SetBootReason "wikilink").
 
 \[4.0.0+\] returns 0xD61A if a value has not previously been set, and
 unsets the value after getting it.
