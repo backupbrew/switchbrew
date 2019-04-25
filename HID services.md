@@ -680,9 +680,16 @@ This is written to stack initially, then copied to the actual
 cmd\_argdata (the data immediately following the subcommandID byte).
 There's a total of 0x1B-bytes of cmd\_argdata initialized from this.
 
-The 0xB-bytes at cmd\_argdata+0x1B is cleared. The u64 at
-cmd\_argdata+0x2B is set to an input value which is hard-coded 0. u16
-+0x33 is set to 0. u8 +0x35 is set to 1.
+The layout of cmd\_argdata is as follows:
+
+| Offset | Size | Description                                   |
+| ------ | ---- | --------------------------------------------- |
+| 0x0    | 0x1B | See above.                                    |
+| 0x1B   | 0xB  | Cleared to zero.                              |
+| 0x26   | 0x5  | Unused                                        |
+| 0x2B   | 0x8  | Set to an input value, which is hard-coded 0. |
+| 0x33   | 0x2  | Set to value 0.                               |
+| 0x35   | 0x1  | Set to value 1.                               |
 
 # hid:tmp
 
