@@ -483,7 +483,7 @@ This is
 | 310  | \[6.0.0+\] GetMaskedSupportedNpadStyleSet                                       |
 | 311  | SetNpadPlayerLedBlinkingDevice                                                  |
 | 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                                          |
-| 321  | [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")                    |
+| 321  | \[3.0.0+\] [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")         |
 | 322  | GetIrSensorState                                                                |
 | 323  | GetXcdHandleForNpadWithIrSensor                                                 |
 | 500  | SetAppletResourceUserId                                                         |

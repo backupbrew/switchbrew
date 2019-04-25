@@ -696,7 +696,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 312 || [6.0.0+] SetSupportedNpadStyleSetAll
 |-
-| 321 || [[#GetUniquePadsFromNpad]]
+| 321 || [3.0.0+] [[#GetUniquePadsFromNpad]]
 |-
 | 322 || GetIrSensorState
 |-
