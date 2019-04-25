@@ -510,7 +510,7 @@ This is
 | 549  | \[6.0.0+\] GetConnectableRegisteredDevices                                      |
 | 700  | ActivateUniquePad                                                               |
 | 702  | AcquireUniquePadConnectionEventHandle                                           |
-| 703  | GetUniquePadIds                                                                 |
+| 703  | [\#GetUniquePadIds](#GetUniquePadIds "wikilink")                                |
 | 751  | AcquireJoyDetachOnBluetoothOffEventHandle                                       |
 | 800  | ListSixAxisSensorHandles                                                        |
 | 801  | IsSixAxisSensorUserCalibrationSupported                                         |
@@ -576,6 +576,13 @@ The output buffer contains an array of u64 **UniquePadId**.
 ## SetVibrationMasterVolume
 
 Takes an input 32bit float.
+
+## GetUniquePadIds
+
+Takes a type-0xA output buffer, and returns an output u64 for total
+output entries.
+
+The output buffer contains an array of u64 **UniquePadId**.
 
 ## NotifyInputDetector
 
