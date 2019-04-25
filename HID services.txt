@@ -696,7 +696,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 312 || [6.0.0+] SetSupportedNpadStyleSetAll
 |-
-| 321 || GetUniquePadsFromNpad
+| 321 || [[#GetUniquePadsFromNpad]]
 |-
 | 322 || GetIrSensorState
 |-
@@ -860,6 +860,11 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1150 || [8.0.0+] SetTouchScreenMagnification
 |}
+
+== GetUniquePadsFromNpad ==
+Takes an input u32 [[#NpadIdType]], a type-0xA output buffer, and returns an output u64 for total output entries.
+
+The output buffer contains an array of u64 '''UniquePadId'''.
 
 == SetVibrationMasterVolume ==
 Takes an input 32bit float.

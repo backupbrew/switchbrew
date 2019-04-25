@@ -483,7 +483,7 @@ This is
 | 310  | \[6.0.0+\] GetMaskedSupportedNpadStyleSet                                       |
 | 311  | SetNpadPlayerLedBlinkingDevice                                                  |
 | 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                                          |
-| 321  | GetUniquePadsFromNpad                                                           |
+| 321  | [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")                    |
 | 322  | GetIrSensorState                                                                |
 | 323  | GetXcdHandleForNpadWithIrSensor                                                 |
 | 500  | SetAppletResourceUserId                                                         |
@@ -565,6 +565,13 @@ This is
 | 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                               |
 | 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                                            |
 | 1150 | \[8.0.0+\] SetTouchScreenMagnification                                          |
+
+## GetUniquePadsFromNpad
+
+Takes an input u32 [\#NpadIdType](#NpadIdType "wikilink"), a type-0xA
+output buffer, and returns an output u64 for total output entries.
+
+The output buffer contains an array of u64 **UniquePadId**.
 
 ## SetVibrationMasterVolume
 
