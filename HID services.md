@@ -447,7 +447,9 @@ Takes two input u32s for the colors, an input u64 **UniquePadId**, and
 no output.
 
 Sends the spi-write subcommand to the specified controller, for writing
-the [color data](Joy-Con#Colors.md##Colors "wikilink").
+the [color data](Joy-Con#Colors.md##Colors "wikilink"). This writes to
+offset 0x6050 size 0x6, where the first 3-bytes are from the first u32
+and the remaining 3-bytes are from the second u32.
 
 # hid:sys
 
