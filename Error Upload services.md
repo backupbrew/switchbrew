@@ -15,13 +15,13 @@ The functionality can be disabled from `set:sys` by setting ("eupld",
 
 This is "nn::eupld::sf::IControl".
 
-| Cmd | Name          |
-| --- | ------------- |
-| 0   | SetUrl        |
-| 1   | ImportCrt     |
-| 2   | ImportPki     |
-| 3   | SetAutoUpload |
-| 4   | \[6.0.0+\]    |
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | SetUrl                   |
+| 1   | ImportCrt                |
+| 2   | ImportPki                |
+| 3   | SetAutoUpload            |
+| 4   | \[6.0.0+\] GetAutoUpload |
 
 # eupld:r
 

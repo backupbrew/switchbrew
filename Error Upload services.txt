@@ -23,7 +23,7 @@ This is "nn::eupld::sf::IControl".
 |-
 | 3 || SetAutoUpload
 |-
-| 4 || [6.0.0+]
+| 4 || [6.0.0+] GetAutoUpload
 |}
 
 = eupld:r =
