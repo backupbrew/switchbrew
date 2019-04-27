@@ -903,7 +903,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x5 || 0x1 || 0x3 || High || Fading Transition Steps to Mini Cycle 1 (Uses PWM). Value 0x0: Instant. Each step duration is based on Mini Cycle Step Duration Multiplier.
 |-
-| 0x6 || 0x1 || 0x3 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 1. Value is a Multiplier of Mini Cycle Base Duration. Value 0x0: x1, 0x1 - xF: 1x - 15x.
+| 0x6 || 0x1 || 0x3 || Low || Final Step Duration Multiplier of Mini Cycle 1. Value is a Multiplier of Mini Cycle Base Duration. Value 0x0: 12.5ms, 0x1 - xF: 1x - 15x.
 |-
 | 0x7 || 0x1 || || || Unused
 |-
@@ -911,7 +911,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x9 || 0x1 || 0x4 || High || Fading Transition Steps to Mini Cycle 2 (see above).
 |-
-| 0xA || 0x1 || 0x4 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 2 (see above).
+| 0xA || 0x1 || 0x4 || Low || Final Step Duration Multiplier of Mini Cycle 2 (see above).
 |-
 | 0xB || 0x1 || || || Unused
 |-
@@ -919,7 +919,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0xD || 0x1 || 0x6 || High || Fading Transition Steps to Mini Cycle 3 (see above).
 |-
-| 0xE || 0x1 || 0x6 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 3 (see above).
+| 0xE || 0x1 || 0x6 || Low || Final Step Duration Multiplier of Mini Cycle 3 (see above).
 |-
 | 0xF || 0x1 || || || Unused
 |-
@@ -927,7 +927,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x11 || 0x1 || 0x7 || High || Fading Transition Duration to Mini Cycle 4 (see above).
 |-
-| 0x12 || 0x1 || 0x7 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 4 (see above).
+| 0x12 || 0x1 || 0x7 || Low || Final Step Duration Multiplier of Mini Cycle 4 (see above).
 |-
 | 0x13 || 0x1 || || || Unused
 |-
@@ -935,7 +935,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x15 || 0x1 || 0x9 || High || Fading Transition Steps to Mini Cycle 5 (see above).
 |-
-| 0x16 || 0x1 || 0x9 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 5 (see above).
+| 0x16 || 0x1 || 0x9 || Low || Final Step Duration Multiplier of Mini Cycle 5 (see above).
 |-
 | 0x17 || 0x1 || || || Unused
 |-
@@ -943,7 +943,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x19 || 0x1 || 0xA || High || Fading Transition Steps to Mini Cycle 6 (see above).
 |-
-| 0x1A || 0x1 || 0xA || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 6 (see above).
+| 0x1A || 0x1 || 0xA || Low || Final Step Duration Multiplier of Mini Cycle 6 (see above).
 |-
 | 0x1B || 0x1 || || || Unused
 |-
@@ -951,7 +951,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x1D || 0x1 || 0xC || High || Fading Transition Steps  to Mini Cycle 7 (see above).
 |-
-| 0x1E || 0x1 || 0xC || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 7 (see above).
+| 0x1E || 0x1 || 0xC || Low || Final Step Duration Multiplier of Mini Cycle 7 (see above).
 |-
 | 0x1F || 0x1 || || || Unused
 |-
@@ -959,7 +959,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x21 || 0x1 || 0xD || Low || Fading Transition Steps to Mini Cycle 8 (see above).
 |-
-| 0x22 || 0x1 || 0xD || High || Mini Cycle Step Duration Multiplier of Mini Cycle 8 (see above).
+| 0x22 || 0x1 || 0xD || High || Final Step Duration Multiplier of Mini Cycle 8 (see above).
 |-
 | 0x23 || 0x1 || || || Unused
 |-
@@ -967,7 +967,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x25 || 0x1 || 0xF || High || Fading Transition Steps to Mini Cycle 9 (see above).
 |-
-| 0x26 || 0x1 || 0xF || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 9 (see above).
+| 0x26 || 0x1 || 0xF || Low || Final Step Duration Multiplier of Mini Cycle 9 (see above).
 |-
 | 0x27 || 0x1 || || || Unused
 |-
@@ -975,7 +975,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x29 || 0x1 || 0x10 || High || Fading Transition Steps to Mini Cycle 10 (see above).
 |-
-| 0x2A || 0x1 || 0x10 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 10 (see above).
+| 0x2A || 0x1 || 0x10 || Low || Final Step Duration Multiplier of Mini Cycle 10 (see above).
 |-
 | 0x2B || 0x1 || || || Unused
 |-
@@ -983,7 +983,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x2D || 0x1 || 0x12 || High || Fading Transition Steps to Mini Cycle 11 (see above).
 |-
-| 0x2E || 0x1 || 0x12 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 11 (see above).
+| 0x2E || 0x1 || 0x12 || Low || Final Step Duration Multiplier of Mini Cycle 11 (see above).
 |-
 | 0x2F || 0x1 || || || Unused
 |-
@@ -991,7 +991,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x31 || 0x1 || 0x13 || High || Fading Transition Steps to Mini Cycle 12 (see above).
 |-
-| 0x32 || 0x1 || 0x13 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 12 (see above).
+| 0x32 || 0x1 || 0x13 || Low || Final Step Duration Multiplier of Mini Cycle 12 (see above).
 |-
 | 0x33 || 0x1 || || || Unused
 |-
@@ -999,7 +999,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x35 || 0x1 || 0x15 || High || Fading Transition Steps to Mini Cycle 13 (see above).
 |-
-| 0x36 || 0x1 || 0x15 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 13 (see above).
+| 0x36 || 0x1 || 0x15 || Low || Final Step Duration Multiplier of Mini Cycle 13 (see above).
 |-
 | 0x37 || 0x1 || || || Unused
 |-
@@ -1007,7 +1007,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x39 || 0x1 || 0x16 || High || Fading Transition Steps to Mini Cycle 14 (see above).
 |-
-| 0x3A || 0x1 || 0x16 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 14 (see above).
+| 0x3A || 0x1 || 0x16 || Low || Final Step Duration Multiplier of Mini Cycle 14 (see above).
 |-
 | 0x3B || 0x1 || || || Unused
 |-
@@ -1015,7 +1015,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x3D || 0x1 || 0x18 || High || Fading Transition Steps to Mini Cycle 15 (see above).
 |-
-| 0x3E || 0x1 || 0x18 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 15 (see above).
+| 0x3E || 0x1 || 0x18 || Low || Final Step Duration Multiplier of Mini Cycle 15 (see above).
 |-
 | 0x3F || 0x1 || || || Unused
 |-
@@ -1023,7 +1023,7 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 | 0x41 || 0x1 || 0x19 || High || Fading Transition Steps to Mini Cycle 16 (see above). (Unused in older Joy-Con / Pro-Con FW. Unknown for new.)
 |-
-| 0x42 || 0x1 || 0x19 || Low || Mini Cycle Step Duration Multiplier of Mini Cycle 16 (see above). (Unused in older Joy-Con / Pro-Con FW. Unknown for new.)
+| 0x42 || 0x1 || 0x19 || Low || Final Step Duration Multiplier of Mini Cycle 16 (see above). (Unused in older Joy-Con / Pro-Con FW. Unknown for new.)
 |-
 | 0x43 || 0x1 || || || Unused
 |-
