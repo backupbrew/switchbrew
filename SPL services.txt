@@ -9,18 +9,18 @@ This is "nn::spl::detail::IRandomInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetRandomBytes]]
+| 0 || [[#GenerateRandomBytes]]
 |}
 
-== GetRandomBytes ==
+== GenerateRandomBytes ==
 Takes a type-6 buffer and fills it with random data from [[SMC#GetRandomBytes|GetRandomBytes SMC]]. Same command for "spl:" and "csrng" services.
 
 = spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu =
-These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterface", "nn::spl::detail::IFsInterface", "nn::spl::detail::ISslInterface", "nn::spl::detail::IEsInterface" and "nn::spl::detail::IManuInterface"(?).
+These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterface", "nn::spl::detail::IFsInterface", "nn::spl::detail::ISslInterface", "nn::spl::detail::IEsInterface" and "nn::spl::detail::IManuInterface".
 
-[2.0.0+] Where previously only one AES engine was utilized, there is now support for 4 of them.
+[2.0.0+] Where previously only one AES keyslot was used, there is now support for 4 of them.
 
-[2.0.0+] When the session closes, all AES engines that were locked are automatically unlocked.
+[2.0.0+] When the session closes, all allocated AES keyslots are automatically freed.
 
 {| class="wikitable" border="1"
 |-
@@ -28,7 +28,7 @@ These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterfa
 |-
 | 0 || [[#GetConfig]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 1 || [[#UserExpMod]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
+| 1 || [[#ExpMod]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
 | 2 || [[#GenerateAesKek]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
@@ -38,11 +38,11 @@ These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterfa
 |-
 | 5 || [[#SetConfig]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 7 || [[#GetRandomBytes]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+| 7 || [[#GenerateRandomBytes]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 9 || [[#LoadSecureExpModKey]] || spl:fs
+| 9 || [[#ImportLotusKey]] || spl:fs
 |-
-| 10 || [[#SecureExpMod]] || spl:fs
+| 10 || [[#DecryptLotusMessage]] || spl:fs
 |-
 | 11 || [[#IsDevelopment]] || spl:, spl:mig, spl:fs, spl:ssl spl:es, spl:manu
 |-
@@ -52,43 +52,43 @@ These are "nn::spl::detail::IGeneralInterface", "nn::spl::detail::ICryptoInterfa
 |-
 | 14 || [[#DecryptAesKey]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 15 || [[#DecryptAesCtr]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+| 15 || [[#CryptAesCtr]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
 | 16 || [[#ComputeCmac]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu 
 |-
-| 17 || [[#LoadRsaOaepKey]] || spl:es
+| 17 || [[#ImportEsKey]] || spl:es
 |-
-| 18 || [[#UnwrapRsaOaepWrappedTitleKey]] || spl:es
+| 18 || [[#UnwrapTitleKey]] || spl:es
 |-
 | 19 || [[#LoadTitleKey]] || spl:fs
 |-
-| 20 || [2.0.0+] [[#UnwrapAesWrappedTitleKey ]] || spl:es
+| 20 || [2.0.0+] [[#UnwrapCommonTitleKey]] || spl:es
 |-
-| 21 || [2.0.0+] [[#LockAesEngine]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+| 21 || [2.0.0+] [[#AllocateAesKeyslot]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 22 || [2.0.0+] [[#UnlockAesEngine]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+| 22 || [2.0.0+] [[#FreeAesKeyslot]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 23 || [2.0.0+] [[#GetSplWaitEvent]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
+| 23 || [2.0.0+] [[#GetAesKeyslotAvailableEvent]] || spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
 | 24 || [3.0.0+] [[#SetBootReason]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
 | 25 || [3.0.0+] [[#GetBootReason]] || spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu
 |-
-| 26 || [5.0.0+] ImportSslRsaKey || spl:ssl
+| 26 || [5.0.0+] ImportSslKey || spl:ssl
 |-
-| 27 || [5.0.0+] SecureExpModWithSslKey || spl:ssl
+| 27 || [5.0.0+] SslExpMod || spl:ssl
 |-
-| 28 || [5.0.0+] ImportEsRsaKey || spl:es
+| 28 || [5.0.0+] ImportDrmKey || spl:es
 |-
-| 29 || [5.0.0+] SecureExpModWithEsKey || spl:es
+| 29 || [5.0.0+] DrmExpMod || spl:es
 |-
-| 30 || [5.0.0+] EncryptManuRsaKeyForImport || spl:manu
+| 30 || [5.0.0+] ReEncryptRsaPrivateKey || spl:manu
 |-
 | 31 || [5.0.0+] GetPackage2Hash || spl:fs
 |-
-| 31 || [6.0.0+] UnwrapRsaWrappedElicenseKey || spl:es
+| 31 || [6.0.0+] UnwrapElicenseKey || spl:es
 |-
-| 32 || [6.0.0+] [[#LoadTitleKey]] || spl:es
+| 32 || [6.0.0+] [[#LoadElicenseKey]] || spl:es
 |}
 
 == GetConfig ==
@@ -96,7 +96,7 @@ Wrapper for [[SMC#GetConfig|GetConfig SMC]].
 
 Takes a u32 ('''ConfigItem'''), and returns one or more u64s ('''ConfigVal''').
 
-== UserExpMod ==
+== ExpMod ==
 Wrapper for [[SMC#ExpMod|ExpMod SMC]].
 
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''exp_in_buf''' and '''mod_in_buf''').
@@ -117,14 +117,14 @@ Takes a u32 ('''keyslot''') and two 16-byte keys ('''key_x''' and '''key_y''').
 
 Sets the specified '''keyslot''' with a key generated from '''key_x''' and '''key_y'''.
 
-[2.0.0+] Now verifies that the engine in use (0..3) is locked/owned by the current spl session, otherwise errors with 0xD21A. Previously engine was hardcoded to 0.
+[2.0.0+] Now verifies that the keyslot in use (0..3) is allocated by the current spl session, otherwise errors with 0xD21A. Previously, keyslot was hardcoded to 0.
 
 == GenerateAesKey ==
 Takes a 16-byte KEK ('''key_x''') and a 16-byte encrypted key ('''enc_key''').
 
 Generates a new key by decrypting (AES-ECB) '''enc_key''' with a key generated from the supplied '''key_x''' and a fixed '''key_y''' set with [[SMC#LoadAesKey|LoadAesKey SMC]].
 
-[2.0.0+] Previously, it always used engine 0. Now it tries to allocate an engine to be used and returns 0xD01A if they're all busy. When the command is done, the engine is released.
+[2.0.0+] Previously, it always used keyslot 0. Now it tries to allocate a keyslot to be used and returns 0xD01A if they're all busy. When the command is done, the keyslot is released.
 
 == SetConfig ==
 Wrapper for [[SMC#SetConfig|SetConfig SMC]].
@@ -135,12 +135,12 @@ Takes a u32 ('''ConfigItem''') and a u64 ('''ConfigVal''').
 |-
 ! ConfigItem || Name
 |-
-| 13 || BatteryProfile
+| 13 || IsChargerHiZModeEnabled
 |}
 
 Any other '''ConfigItem''', besides 13, can't be set.
 
-== LoadSecureExpModKey ==
+== ImportLotusKey ==
 Wrapper for [[SMC#LoadSecureExpModKey|LoadSecureExpModKey SMC]].
 
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
@@ -150,10 +150,10 @@ Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key
 
 [5.0.0+] This now calls [[SMC#EncryptRsaKeyForImport|EncryptRsaKeyForImport SMC]] instead.
 
-== SecureExpMod ==
-Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''param0_in_buf''').
+== DecryptLotusMessage ==
+Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
 
-Uses [[SMC#SecureExpMod|SecureExpMod SMC]] to decrypt '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''param0_in_buf'''.
+Uses [[SMC#SecureExpMod|SecureExpMod SMC]] to decrypt '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''label_hash_in_buf'''.
 
 Generates and returns a 16-byte sealed titlekey.
 
@@ -190,12 +190,12 @@ Decrypts (AES-ECB) '''enc_key''' with a key generated from fixed '''key_x''' and
 
 [2.0.0+] Introduced same engine allocation code as for [[#GenerateAesKey]].
 
-== DecryptAesCtr ==
+== CryptAesCtr ==
 Takes a type-0x46 (B descriptor) buffer ('''data_out_buf'''), a u32 ('''keyslot'''), a type-0x45 (A descriptor) buffer ('''data_in_buf''') and a 16-byte CTR ('''aes_ctr''').
 
 Uses [[SMC#CryptAes|CryptAes SMC]] to decrypt '''data_in_buf''' into '''data_out_buf''', using the key set in the specified '''keyslot'''.
 
-[2.0.0+] Verifies the engine is locked by current session.
+[2.0.0+] Verifies the keyslot was allocated by current session.
 
 == ComputeCmac ==
 Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
@@ -206,14 +206,14 @@ Returns a 16-byte CMAC calculated over '''data_in_buf'''.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== LoadRsaOaepKey ==
+== ImportEsKey ==
 Wrapper for [[SMC#LoadRsaOaepKey|LoadRsaOaepKey SMC]].
 
 Takes one type-9 (X descriptor) buffer (enc_privk_in_buf), a 16-byte KEK (key_x), a 16-byte key (key_y) and a u32 (version). version is 0 for normal keys or 1 for extended keys.
 
 Decrypts enc_privk_in_buf with a key generated from key_x and key_y and imports it for later usage.
 
-== UnwrapRsaOaepWrappedTitleKey ==
+== UnwrapTitleKey ==
 Wrapper for [[SMC#UnwrapRsaOaepWrappedTitleKey|UnwrapRsaOaepWrappedTitleKey SMC]].
 
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
@@ -231,30 +231,33 @@ Sets the specified '''keyslot''' with the titlekey.
 
 [2.0.0+] Verifies the engine is locked by current session.
 
-== UnwrapAesWrappedTitleKey ==
+== UnwrapCommonTitleKey ==
 Wrapper for [[SMC#UnwrapAesWrappedTitleKey|UnwrapAesWrappedTitleKey SMC]].
 
 Takes a 16-byte EKS ('''Encryption Key Source''').
 
 Returns a sealed titlekey.
 
-== LockAesEngine ==
-Returns the id of the engine that was locked, or 0xD01A if all engines are busy. You need to lock an engine before using AES functions.
+== AllocateAesKeyslot ==
+Returns an allocated keyslot, or 0xD01A if all keyslots are taken. You need to allocate a keyslot before using AES functions.
 
-== UnlockAesEngine ==
-Takes a single u32 and unlocks the engine with that id. It must be owned by current session otherwise 0xD21A will be returned.
+== FreeAesKeyslot ==
+Takes a single u32 and frees the keyslot. The keyslot must have been allocated by current session otherwise 0xD21A will be returned.
 
-== GetSplWaitEvent ==
-Returns an event handle for synchronizing with the locked AES engine.
+== GetAesKeyslotAvailableEvent ==
+Returns an event handle for synchronizing with the AES keyslots.
 
 == SetBootReason ==
-Sets a static dword in spl .bss to the user input u32.
+Sets a static dword in spl .bss to the input u32 '''BootReason'''.
 
 [4.0.0+] returns 0xD41A if a value has been previously set without being [[#GetBootReason|gotten]].
 
 == GetBootReason ==
-Returns the static dword in spl .bss that can be set via [[#SetBootReason]].
+Returns the static dword '''BootReason''' in spl .bss that can be set via [[#SetBootReason]].
 
 [4.0.0+] returns 0xD61A if a value has not previously been set, and unsets the value after getting it.
+
+== LoadElicenseKey ==
+Same as [[#LoadTitleKey|LoadTitleKey]].
 
 [[Category:Services]]

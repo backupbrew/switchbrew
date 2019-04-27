@@ -12,11 +12,11 @@ cryptographic operations to take place in the wrong context.
 
 This is "nn::spl::detail::IRandomInterface".
 
-| Cmd | Name                                           |
-| --- | ---------------------------------------------- |
-| 0   | [\#GetRandomBytes](#GetRandomBytes "wikilink") |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 0   | [\#GenerateRandomBytes](#GenerateRandomBytes "wikilink") |
 
-## GetRandomBytes
+## GenerateRandomBytes
 
 Takes a type-6 buffer and fills it with random data from [GetRandomBytes
 SMC](SMC#GetRandomBytes.md##GetRandomBytes "wikilink"). Same command for
@@ -27,49 +27,49 @@ SMC](SMC#GetRandomBytes.md##GetRandomBytes "wikilink"). Same command for
 These are "nn::spl::detail::IGeneralInterface",
 "nn::spl::detail::ICryptoInterface", "nn::spl::detail::IFsInterface",
 "nn::spl::detail::ISslInterface", "nn::spl::detail::IEsInterface" and
-"nn::spl::detail::IManuInterface"(?).
+"nn::spl::detail::IManuInterface".
 
-\[2.0.0+\] Where previously only one AES engine was utilized, there is
-now support for 4 of them.
+\[2.0.0+\] Where previously only one AES keyslot was used, there is now
+support for 4 of them.
 
-\[2.0.0+\] When the session closes, all AES engines that were locked are
+\[2.0.0+\] When the session closes, all allocated AES keyslots are
 automatically
-unlocked.
+freed.
 
-| Cmd | Name                                                                          | Permissions                                      |
-| --- | ----------------------------------------------------------------------------- | ------------------------------------------------ |
-| 0   | [\#GetConfig](#GetConfig "wikilink")                                          | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 1   | [\#UserExpMod](#UserExpMod "wikilink")                                        | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                                | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                                        | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                                | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 5   | [\#SetConfig](#SetConfig "wikilink")                                          | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 7   | [\#GetRandomBytes](#GetRandomBytes "wikilink")                                | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 9   | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                      | spl:fs                                           |
-| 10  | [\#SecureExpMod](#SecureExpMod "wikilink")                                    | spl:fs                                           |
-| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                                  | spl:, spl:mig, spl:fs, spl:ssl spl:es, spl:manu  |
-| 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")                | spl:fs                                           |
-| 13  | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                    | spl:ssl, spl:es, spl:manu                        |
-| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                                  | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 15  | [\#DecryptAesCtr](#DecryptAesCtr "wikilink")                                  | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                                      | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 17  | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                                | spl:es                                           |
-| 18  | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink")    | spl:es                                           |
-| 19  | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                    | spl:fs                                           |
-| 20  | \[2.0.0+\] [\#UnwrapAesWrappedTitleKey](#UnwrapAesWrappedTitleKey "wikilink") | spl:es                                           |
-| 21  | \[2.0.0+\] [\#LockAesEngine](#LockAesEngine "wikilink")                       | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 22  | \[2.0.0+\] [\#UnlockAesEngine](#UnlockAesEngine "wikilink")                   | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 23  | \[2.0.0+\] [\#GetSplWaitEvent](#GetSplWaitEvent "wikilink")                   | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
-| 24  | \[3.0.0+\] [\#SetBootReason](#SetBootReason "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 25  | \[3.0.0+\] [\#GetBootReason](#GetBootReason "wikilink")                       | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
-| 26  | \[5.0.0+\] ImportSslRsaKey                                                    | spl:ssl                                          |
-| 27  | \[5.0.0+\] SecureExpModWithSslKey                                             | spl:ssl                                          |
-| 28  | \[5.0.0+\] ImportEsRsaKey                                                     | spl:es                                           |
-| 29  | \[5.0.0+\] SecureExpModWithEsKey                                              | spl:es                                           |
-| 30  | \[5.0.0+\] EncryptManuRsaKeyForImport                                         | spl:manu                                         |
-| 31  | \[5.0.0+\] GetPackage2Hash                                                    | spl:fs                                           |
-| 31  | \[6.0.0+\] UnwrapRsaWrappedElicenseKey                                        | spl:es                                           |
-| 32  | \[6.0.0+\] [\#LoadTitleKey](#LoadTitleKey "wikilink")                         | spl:es                                           |
+| Cmd | Name                                                                                | Permissions                                      |
+| --- | ----------------------------------------------------------------------------------- | ------------------------------------------------ |
+| 0   | [\#GetConfig](#GetConfig "wikilink")                                                | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 1   | [\#ExpMod](#ExpMod "wikilink")                                                      | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 2   | [\#GenerateAesKek](#GenerateAesKek "wikilink")                                      | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 3   | [\#LoadAesKey](#LoadAesKey "wikilink")                                              | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 4   | [\#GenerateAesKey](#GenerateAesKey "wikilink")                                      | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 5   | [\#SetConfig](#SetConfig "wikilink")                                                | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 7   | [\#GenerateRandomBytes](#GenerateRandomBytes "wikilink")                            | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 9   | [\#ImportLotusKey](#ImportLotusKey "wikilink")                                      | spl:fs                                           |
+| 10  | [\#DecryptLotusMessage](#DecryptLotusMessage "wikilink")                            | spl:fs                                           |
+| 11  | [\#IsDevelopment](#IsDevelopment "wikilink")                                        | spl:, spl:mig, spl:fs, spl:ssl spl:es, spl:manu  |
+| 12  | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")                      | spl:fs                                           |
+| 13  | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                          | spl:ssl, spl:es, spl:manu                        |
+| 14  | [\#DecryptAesKey](#DecryptAesKey "wikilink")                                        | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 15  | [\#CryptAesCtr](#CryptAesCtr "wikilink")                                            | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 16  | [\#ComputeCmac](#ComputeCmac "wikilink")                                            | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 17  | [\#ImportEsKey](#ImportEsKey "wikilink")                                            | spl:es                                           |
+| 18  | [\#UnwrapTitleKey](#UnwrapTitleKey "wikilink")                                      | spl:es                                           |
+| 19  | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                          | spl:fs                                           |
+| 20  | \[2.0.0+\] [\#UnwrapCommonTitleKey](#UnwrapCommonTitleKey "wikilink")               | spl:es                                           |
+| 21  | \[2.0.0+\] [\#AllocateAesKeyslot](#AllocateAesKeyslot "wikilink")                   | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 22  | \[2.0.0+\] [\#FreeAesKeyslot](#FreeAesKeyslot "wikilink")                           | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 23  | \[2.0.0+\] [\#GetAesKeyslotAvailableEvent](#GetAesKeyslotAvailableEvent "wikilink") | spl:mig, spl:fs, spl:ssl, spl:es, spl:manu       |
+| 24  | \[3.0.0+\] [\#SetBootReason](#SetBootReason "wikilink")                             | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 25  | \[3.0.0+\] [\#GetBootReason](#GetBootReason "wikilink")                             | spl:, spl:mig, spl:fs, spl:ssl, spl:es, spl:manu |
+| 26  | \[5.0.0+\] ImportSslKey                                                             | spl:ssl                                          |
+| 27  | \[5.0.0+\] SslExpMod                                                                | spl:ssl                                          |
+| 28  | \[5.0.0+\] ImportDrmKey                                                             | spl:es                                           |
+| 29  | \[5.0.0+\] DrmExpMod                                                                | spl:es                                           |
+| 30  | \[5.0.0+\] ReEncryptRsaPrivateKey                                                   | spl:manu                                         |
+| 31  | \[5.0.0+\] GetPackage2Hash                                                          | spl:fs                                           |
+| 31  | \[6.0.0+\] UnwrapElicenseKey                                                        | spl:es                                           |
+| 32  | \[6.0.0+\] [\#LoadElicenseKey](#LoadElicenseKey "wikilink")                         | spl:es                                           |
 
 ## GetConfig
 
@@ -78,7 +78,7 @@ Wrapper for [GetConfig SMC](SMC#GetConfig.md##GetConfig "wikilink").
 Takes a u32 (**ConfigItem**), and returns one or more u64s
 (**ConfigVal**).
 
-## UserExpMod
+## ExpMod
 
 Wrapper for [ExpMod SMC](SMC#ExpMod.md##ExpMod "wikilink").
 
@@ -109,9 +109,9 @@ Takes a u32 (**keyslot**) and two 16-byte keys (**key\_x** and
 Sets the specified **keyslot** with a key generated from **key\_x** and
 **key\_y**.
 
-\[2.0.0+\] Now verifies that the engine in use (0..3) is locked/owned by
-the current spl session, otherwise errors with 0xD21A. Previously engine
-was hardcoded to 0.
+\[2.0.0+\] Now verifies that the keyslot in use (0..3) is allocated by
+the current spl session, otherwise errors with 0xD21A. Previously,
+keyslot was hardcoded to 0.
 
 ## GenerateAesKey
 
@@ -122,9 +122,9 @@ Generates a new key by decrypting (AES-ECB) **enc\_key** with a key
 generated from the supplied **key\_x** and a fixed **key\_y** set with
 [LoadAesKey SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink").
 
-\[2.0.0+\] Previously, it always used engine 0. Now it tries to allocate
-an engine to be used and returns 0xD01A if they're all busy. When the
-command is done, the engine is released.
+\[2.0.0+\] Previously, it always used keyslot 0. Now it tries to
+allocate a keyslot to be used and returns 0xD01A if they're all busy.
+When the command is done, the keyslot is released.
 
 ## SetConfig
 
@@ -132,13 +132,13 @@ Wrapper for [SetConfig SMC](SMC#SetConfig.md##SetConfig "wikilink").
 
 Takes a u32 (**ConfigItem**) and a u64 (**ConfigVal**).
 
-| ConfigItem | Name           |
-| ---------- | -------------- |
-| 13         | BatteryProfile |
+| ConfigItem | Name                    |
+| ---------- | ----------------------- |
+| 13         | IsChargerHiZModeEnabled |
 
 Any other **ConfigItem**, besides 13, can't be set.
 
-## LoadSecureExpModKey
+## ImportLotusKey
 
 Wrapper for [LoadSecureExpModKey
 SMC](SMC#LoadSecureExpModKey.md##LoadSecureExpModKey "wikilink").
@@ -154,15 +154,15 @@ and **key\_y** and imports it for later usage.
 SMC](SMC#EncryptRsaKeyForImport.md##EncryptRsaKeyForImport "wikilink")
 instead.
 
-## SecureExpMod
+## DecryptLotusMessage
 
 Takes 3 type-9 (X descriptor) buffers (**data\_in\_buf**,
-**mod\_in\_buf** and **param0\_in\_buf**).
+**mod\_in\_buf** and **label\_hash\_in\_buf**).
 
 Uses [SecureExpMod SMC](SMC#SecureExpMod.md##SecureExpMod "wikilink") to
 decrypt **data\_in\_buf** using the private key imported with
 [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink") and the
-supplied **mod\_in\_buf** and **param0\_in\_buf**.
+supplied **mod\_in\_buf** and **label\_hash\_in\_buf**.
 
 Generates and returns a 16-byte sealed titlekey.
 
@@ -219,7 +219,7 @@ decrypted key (**dec\_key**).
 \[2.0.0+\] Introduced same engine allocation code as for
 [\#GenerateAesKey](#GenerateAesKey "wikilink").
 
-## DecryptAesCtr
+## CryptAesCtr
 
 Takes a type-0x46 (B descriptor) buffer (**data\_out\_buf**), a u32
 (**keyslot**), a type-0x45 (A descriptor) buffer (**data\_in\_buf**) and
@@ -229,7 +229,7 @@ Uses [CryptAes SMC](SMC#CryptAes.md##CryptAes "wikilink") to decrypt
 **data\_in\_buf** into **data\_out\_buf**, using the key set in the
 specified **keyslot**.
 
-\[2.0.0+\] Verifies the engine is locked by current session.
+\[2.0.0+\] Verifies the keyslot was allocated by current session.
 
 ## ComputeCmac
 
@@ -243,7 +243,7 @@ Returns a 16-byte CMAC calculated over **data\_in\_buf**.
 
 \[2.0.0+\] Verifies the engine is locked by current session.
 
-## LoadRsaOaepKey
+## ImportEsKey
 
 Wrapper for [LoadRsaOaepKey
 SMC](SMC#LoadRsaOaepKey.md##LoadRsaOaepKey "wikilink").
@@ -255,7 +255,7 @@ for normal keys or 1 for extended keys.
 Decrypts enc\_privk\_in\_buf with a key generated from key\_x and key\_y
 and imports it for later usage.
 
-## UnwrapRsaOaepWrappedTitleKey
+## UnwrapTitleKey
 
 Wrapper for [UnwrapRsaOaepWrappedTitleKey
 SMC](SMC#UnwrapRsaOaepWrappedTitleKey.md##UnwrapRsaOaepWrappedTitleKey "wikilink").
@@ -282,7 +282,7 @@ Sets the specified **keyslot** with the titlekey.
 
 \[2.0.0+\] Verifies the engine is locked by current session.
 
-## UnwrapAesWrappedTitleKey
+## UnwrapCommonTitleKey
 
 Wrapper for [UnwrapAesWrappedTitleKey
 SMC](SMC#UnwrapAesWrappedTitleKey.md##UnwrapAesWrappedTitleKey "wikilink").
@@ -291,33 +291,37 @@ Takes a 16-byte EKS (**Encryption Key Source**).
 
 Returns a sealed titlekey.
 
-## LockAesEngine
+## AllocateAesKeyslot
 
-Returns the id of the engine that was locked, or 0xD01A if all engines
-are busy. You need to lock an engine before using AES functions.
+Returns an allocated keyslot, or 0xD01A if all keyslots are taken. You
+need to allocate a keyslot before using AES functions.
 
-## UnlockAesEngine
+## FreeAesKeyslot
 
-Takes a single u32 and unlocks the engine with that id. It must be owned
-by current session otherwise 0xD21A will be returned.
+Takes a single u32 and frees the keyslot. The keyslot must have been
+allocated by current session otherwise 0xD21A will be returned.
 
-## GetSplWaitEvent
+## GetAesKeyslotAvailableEvent
 
-Returns an event handle for synchronizing with the locked AES engine.
+Returns an event handle for synchronizing with the AES keyslots.
 
 ## SetBootReason
 
-Sets a static dword in spl .bss to the user input u32.
+Sets a static dword in spl .bss to the input u32 **BootReason**.
 
 \[4.0.0+\] returns 0xD41A if a value has been previously set without
 being [gotten](#GetBootReason "wikilink").
 
 ## GetBootReason
 
-Returns the static dword in spl .bss that can be set via
+Returns the static dword **BootReason** in spl .bss that can be set via
 [\#SetBootReason](#SetBootReason "wikilink").
 
 \[4.0.0+\] returns 0xD61A if a value has not previously been set, and
 unsets the value after getting it.
+
+## LoadElicenseKey
+
+Same as [LoadTitleKey](#LoadTitleKey "wikilink").
 
 [Category:Services](Category:Services "wikilink")
