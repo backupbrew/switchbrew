@@ -87,7 +87,8 @@ The session kek must have been created with
 
 ### ComputeAes
 
-Encrypts/decrypts using Aes (CTR and CBC).
+Encrypts/decrypts using AES (CTR and CBC). Takes an
+[\#enum\_CipherMode](#enum_CipherMode "wikilink").
 
 Key must be set prior using one of the
 [\#LoadAesKey](#LoadAesKey "wikilink") or
@@ -145,7 +146,8 @@ funcptr.
 
 This function replaced
 [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink") in
-[5.0.0](5.0.0.md "wikilink"), adding an additional enum member argument.
+[5.0.0](5.0.0.md "wikilink"), adding an additional
+[\#enum\_DecryptOrImportMode](#enum_DecryptOrImportMode "wikilink").
 
 This SMC extends DecryptRsaPrivateKey's original functionality to enable
 importing private keys into the security engine instead of decrypting
@@ -159,8 +161,7 @@ Takes a session kek created with
 The session kek must have been created with
 [CryptoUsecase\_RsaSecureExpMod](#enum_CryptoUsecase "wikilink").
 
-\[5.0.0\] This function was removed and replaced with
-[\#ReEncryptRsaPrivateKey](#ReEncryptRsaPrivateKey "wikilink").
+\[5.0.0\] This function was removed.
 
 ### SecureExpMod
 
@@ -168,7 +169,9 @@ Performs an ExpMod operation using an exponent previously loaded with
 the [\#ImportLotusKey](#ImportLotusKey "wikilink") command.
 
 \[5.0.0+\] This now uses any exponent previously loaded with
-[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink").
+[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink")
+and takes an
+[\#enum\_SecureExpModMode](#enum_SecureExpModMode "wikilink").
 
 ### UnwrapTitleKey
 
@@ -206,21 +209,47 @@ Takes an AES-wrapped TitleKey and returns a sealed AES key.
 Note: The [CryptoUsecase\_TitleKey](#enum_CryptoUsecase "wikilink")
 represents a RSA wrapped AES key.
 
+### enum CipherMode
+
+| Value | Name                   |
+| ----- | ---------------------- |
+| 0     | CipherMode\_CbcEncrypt |
+| 1     | CipherMode\_CbcDecrypt |
+| 2     | CipherMode\_Ctr        |
+
+### enum DecryptOrImportMode
+
+| Value | Name                                      |
+| ----- | ----------------------------------------- |
+| 0     | DecryptOrImportMode\_DecryptRsaPrivateKey |
+| 1     | DecryptOrImportMode\_ImportLotusKey       |
+| 2     | DecryptOrImportMode\_ImportEsKey          |
+| 3     | DecryptOrImportMode\_ImportSslKey         |
+| 4     | DecryptOrImportMode\_ImportDrmKey         |
+
+### enum SecureExpModMode
+
+| Value | Name                    |
+| ----- | ----------------------- |
+| 0     | SecureExpModMode\_Lotus |
+| 1     | SecureExpModMode\_Ssl   |
+| 2     | SecureExpModMode\_Drm   |
+
 ## ID 1
 
 Functions exposed to the kernel
 internally.
 
-| Sub-ID     | Name                                                                    | In                                                                        | Out                                         |
-| ---------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------- |
-| 0xC4000001 | [\#CpuSuspend](#CpuSuspend "wikilink")                                  | X1=power\_state, X2=entrypoint\_addr, X3=context\_id                      | None                                        |
-| 0x84000002 | [\#CpuOff](#CpuOff "wikilink")                                          | None                                                                      | None                                        |
-| 0xC4000003 | [\#CpuOn](#CpuOn "wikilink")                                            | X1=target\_cpu, X2=entrypoint\_addr, X3=context\_id, X4,X5,X6,X7=0        | X0=result                                   |
-| 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)           | W1=config\_item, X2,X3,X4,X5,X6,X7=0                                      | X0=result, X1,X2,X3,X4=config\_val          |
-| 0xC3000005 | [\#GetRandomBytes](#GetRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                              | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
-| 0xC3000006 | [\#Panic](#Panic "wikilink")                                            | W1=panic\_color, X2,X3,X4,X5,X6,X7=0                                      | X0=result                                   |
-| 0xC3000007 | \[2.0.0+\] [\#ConfigureCarveout](#ConfigureCarveout "wikilink")         | X1=carveout\_index, X2=region\_phys\_addr, X3=region\_size, X4,X5,X6,X7=0 | X0=result                                   |
-| 0xC3000008 | \[2.0.0+\] [\#ReadWriteRegister](#ReadWriteRegister "wikilink")         | X1=reg\_addr, W2=rw\_mask, W3=in\_val, X4,X5,X6,X7=0                      | X0=result, W1=out\_val                      |
+| Sub-ID     | Name                                                                              | In                                                                        | Out                                         |
+| ---------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------- |
+| 0xC4000001 | [\#CpuSuspend](#CpuSuspend "wikilink")                                            | X1=power\_state, X2=entrypoint\_addr, X3=context\_id                      | None                                        |
+| 0x84000002 | [\#CpuOff](#CpuOff "wikilink")                                                    | None                                                                      | None                                        |
+| 0xC4000003 | [\#CpuOn](#CpuOn "wikilink")                                                      | X1=target\_cpu, X2=entrypoint\_addr, X3=context\_id, X4,X5,X6,X7=0        | X0=result                                   |
+| 0xC3000004 | [\#GetConfig](#GetConfig "wikilink") (Same as ID 0, Sub-ID 2)                     | W1=config\_item, X2,X3,X4,X5,X6,X7=0                                      | X0=result, X1,X2,X3,X4=config\_val          |
+| 0xC3000005 | [\#GenerateRandomBytes](#GenerateRandomBytes "wikilink") (Same as ID 0, Sub-ID 6) | X1=size, X2,X3,X4,X5,X6,X7=0                                              | X0=result, X1,X2,X3,X4,X5,X6,X7=rand\_bytes |
+| 0xC3000006 | [\#Panic](#Panic "wikilink")                                                      | W1=panic\_color, X2,X3,X4,X5,X6,X7=0                                      | X0=result                                   |
+| 0xC3000007 | \[2.0.0+\] [\#ConfigureCarveout](#ConfigureCarveout "wikilink")                   | X1=carveout\_index, X2=region\_phys\_addr, X3=region\_size, X4,X5,X6,X7=0 | X0=result                                   |
+| 0xC3000008 | \[2.0.0+\] [\#ReadWriteRegister](#ReadWriteRegister "wikilink")                   | X1=reg\_addr, W2=rw\_mask, W3=in\_val, X4,X5,X6,X7=0                      | X0=result, W1=out\_val                      |
 
 ### CpuSuspend
 
@@ -259,8 +288,8 @@ Takes a **config\_item** and returns an associated
 | 12         | [\#KernelConfiguration](#KernelConfiguration "wikilink")               |
 | 13         | [\#IsChargerHiZModeEnabled](#IsChargerHiZModeEnabled "wikilink")       |
 | 14         | \[4.0.0+\] [\#IsKiosk](#IsKiosk "wikilink")                            |
-| 15         | \[5.0.0+\] [\#NewHardwareType](#NewHardwareType "wikilink")            |
-| 16         | \[5.0.0+\] [\#NewKeyGeneration](#NewKeyGeneration "wikilink")          |
+| 15         | \[5.0.0+\] [\#RegulatorType](#RegulatorType "wikilink")                |
+| 16         | \[5.0.0+\] [\#KeyGeneration](#KeyGeneration "wikilink")                |
 | 17         | \[5.0.0+\] [\#Package2Hash](#Package2Hash "wikilink")                  |
 
 #### DisableProgramVerification
@@ -559,7 +588,7 @@ GB, 02 = 8 GB.
 
 This tells if the TI Charger (bq24192) is active.
 
-#### NewKeyGeneration
+#### KeyGeneration
 
 This item is obtained from
 [FUSE\_RESERVED\_ODM2](Fuse%20registers#FUSE%20RESERVED%20ODM2.md##FUSE_RESERVED_ODM2 "wikilink")
@@ -587,7 +616,7 @@ to overwrite the quest flag from
 is used to detect if a Switch is a kiosk unit for display at retail
 stores.
 
-#### NewHardwareType
+#### RegulatorType
 
 This item is currently hardcoded to 0.
 
@@ -609,7 +638,7 @@ This is a SHA-256 hash calculated over the
 an optional step in pkg2ldr, this item is only valid in recovery mode.
 Otherwise, an error is returned instead.
 
-### GetRandomBytes
+### GenerateRandomBytes
 
 Takes a **size** and returns **rand\_bytes**.
 

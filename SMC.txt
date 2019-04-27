@@ -91,7 +91,7 @@ Takes a session kek created with [[#GenerateAesKek]], and a wrapped AES key.
 The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_Aes]].
 
 === ComputeAes ===
-Encrypts/decrypts using Aes (CTR and CBC).
+Encrypts/decrypts using AES (CTR and CBC). Takes an [[#enum_CipherMode]].
 
 Key must be set prior using one of the [[#LoadAesKey]] or [[#GenerateSpecificAesKey]] commands.
 
@@ -125,7 +125,7 @@ The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_
 [5.0.0+] This function was replaced by [[#DecryptOrImportRsaPrivateKey]].
 
 === DecryptOrImportRsaPrivateKey ===
-This function replaced [[#DecryptRsaPrivateKey]] in [[5.0.0]], adding an additional enum member argument.
+This function replaced [[#DecryptRsaPrivateKey]] in [[5.0.0]], adding an additional [[#enum_DecryptOrImportMode]].
 
 This SMC extends DecryptRsaPrivateKey's original functionality to enable importing private keys into the security engine instead of decrypting them, when certain enum members are passed.
 
@@ -134,12 +134,12 @@ Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
 
 The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaSecureExpMod]].
 
-[5.0.0] This function was removed and replaced with [[#ReEncryptRsaPrivateKey]].
+[5.0.0] This function was removed.
 
 === SecureExpMod ===
 Performs an ExpMod operation using an exponent previously loaded with the [[#ImportLotusKey]] command.
 
-[5.0.0+] This now uses any exponent previously loaded with [[#DecryptOrImportRsaPrivateKey]].
+[5.0.0+] This now uses any exponent previously loaded with [[#DecryptOrImportRsaPrivateKey]] and takes an [[#enum_SecureExpModMode]].
 
 === UnwrapTitleKey ===
 Takes an Rsa-Oaep-wrapped TitleKey, an RSA Public Key, and a label hash.
@@ -172,6 +172,43 @@ Takes an AES-wrapped TitleKey and returns a sealed AES key.
 Note:
 The [[#enum_CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
 
+=== enum CipherMode ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || CipherMode_CbcEncrypt
+|-
+| 1 || CipherMode_CbcDecrypt
+|-
+| 2 || CipherMode_Ctr
+|}
+
+=== enum DecryptOrImportMode ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || DecryptOrImportMode_DecryptRsaPrivateKey
+|-
+| 1 || DecryptOrImportMode_ImportLotusKey
+|-
+| 2 || DecryptOrImportMode_ImportEsKey
+|-
+| 3 || DecryptOrImportMode_ImportSslKey
+|-
+| 4 || DecryptOrImportMode_ImportDrmKey
+|}
+
+=== enum SecureExpModMode ===
+{| class=wikitable
+! Value || Name
+|-
+| 0 || SecureExpModMode_Lotus
+|-
+| 1 || SecureExpModMode_Ssl
+|-
+| 2 || SecureExpModMode_Drm
+|}
+
 == ID 1 ==
 Functions exposed to the kernel internally.
 
@@ -186,7 +223,7 @@ Functions exposed to the kernel internally.
 |-
 | 0xC3000004 || [[#GetConfig]] (Same as ID 0, Sub-ID 2) || W1=config_item, X2,X3,X4,X5,X6,X7=0 || X0=result, X1,X2,X3,X4=config_val
 |-
-| 0xC3000005 || [[#GetRandomBytes]] (Same as ID 0, Sub-ID 6) || X1=size, X2,X3,X4,X5,X6,X7=0 || X0=result, X1,X2,X3,X4,X5,X6,X7=rand_bytes
+| 0xC3000005 || [[#GenerateRandomBytes]] (Same as ID 0, Sub-ID 6) || X1=size, X2,X3,X4,X5,X6,X7=0 || X0=result, X1,X2,X3,X4,X5,X6,X7=rand_bytes
 |-
 | 0xC3000006 || [[#Panic]] || W1=panic_color, X2,X3,X4,X5,X6,X7=0 || X0=result
 |-
@@ -241,9 +278,9 @@ Takes a '''config_item''' and returns an associated '''config_val'''.
 |-
 | 14 || [4.0.0+] [[#IsKiosk]]
 |-
-| 15 || [5.0.0+] [[#NewHardwareType]]
+| 15 || [5.0.0+] [[#RegulatorType]]
 |-
-| 16 || [5.0.0+] [[#NewKeyGeneration]]
+| 16 || [5.0.0+] [[#KeyGeneration]]
 |-
 | 17 || [5.0.0+] [[#Package2Hash]]
 |}
@@ -523,7 +560,7 @@ Bits 16-17 determine how much memory is available. 00/03 = 4 GB, 01 = 6 GB, 02 =
 ==== IsChargerHiZModeEnabled ====
 This tells if the TI Charger (bq24192) is active.
 
-==== NewKeyGeneration ====
+==== KeyGeneration ====
 This item is obtained from [[Fuse_registers#FUSE_RESERVED_ODM2|FUSE_RESERVED_ODM2]] if bit 11 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]] is set, [[Fuse_registers#FUSE_RESERVED_ODM0|FUSE_RESERVED_ODM0]] matches 0x8E61ECAE and [[Fuse_registers#FUSE_RESERVED_ODM1|FUSE_RESERVED_ODM1]] matches 0xF2BA3BB2.
 
 [5.0.0+] [[Filesystem services|FS]] can now use this value for the '''KeyGeneration''' parameter when calling [[#GenerateAesKek|GenerateAesKek]] during "GetBisEncryptionKey".
@@ -533,7 +570,7 @@ This item is bit 10 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]
 
 [4.0.0+] [[Settings_services|Settings]] uses this value to overwrite the quest flag from [[Settings_services#set:sys|GetQuestFlag]]. This is used to detect if a Switch is a kiosk unit for display at retail stores.
 
-==== NewHardwareType ====
+==== RegulatorType ====
 This item is currently hardcoded to 0.
 
 [5.0.0+] [[PCV_services|PCV]] uses this value in combination with [[#HardwareType|HardwareType]] to configure power blocks and memory tables for different hardware.
@@ -563,7 +600,7 @@ This item is currently hardcoded to 0.
 ==== Package2Hash ====
 This is a SHA-256 hash calculated over the [[Package2|package2]] image. Since the hash calculation is an optional step in pkg2ldr, this item is only valid in recovery mode. Otherwise, an error is returned instead.
 
-=== GetRandomBytes ===
+=== GenerateRandomBytes ===
 Takes a '''size''' and returns '''rand_bytes'''.
 
 The kernel limits '''size''' to 0x38 (for fitting in return registers).
