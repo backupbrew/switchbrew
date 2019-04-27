@@ -141,21 +141,19 @@ Takes a u32 ('''ConfigItem''') and a u64 ('''ConfigVal''').
 Any other '''ConfigItem''', besides 13, can't be set.
 
 == ImportLotusKey ==
-Wrapper for [[SMC#LoadSecureExpModKey|LoadSecureExpModKey SMC]].
+Wrapper for [[SMC#ImportLotusKey|ImportLotusKey SMC]].
 
 Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK ('''key_x'''), a 16-byte key ('''key_y''') and a u32 ('''version''').
 '''version''' is 0 for normal keys or 1 for extended keys.
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-[5.0.0+] This now calls [[SMC#EncryptRsaKeyForImport|EncryptRsaKeyForImport SMC]] instead.
+[5.0.0+] This now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
 
 == DecryptLotusMessage ==
 Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
 
-Uses [[SMC#SecureExpMod|SecureExpMod SMC]] to decrypt '''data_in_buf''' using the private key imported with [[#LoadSecureExpModKey]] and the supplied '''mod_in_buf''' and '''label_hash_in_buf'''.
-
-Generates and returns a 16-byte sealed titlekey.
+Uses [[SMC#SecureExpMod|SecureExpMod SMC]] to decrypt '''data_in_buf''' using the private key imported with [[#ImportLotusKey]] and the supplied '''mod_in_buf''' and '''label_hash_in_buf'''.
 
 == IsDevelopment ==
 No input params.
@@ -181,21 +179,21 @@ Decrypts '''enc_privk_in_buf''' into '''dec_privk_out_buf''' with a key generate
 
 Used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
 
-[5.0.0+] This now calls [[SMC#DecryptOrImportRsaKey|DecryptOrImportRsaKey SMC]] instead.
+[5.0.0+] This now calls [[SMC#DecryptOrImportRsaPrivateKey|DecryptOrImportRsaPrivateKey SMC]] instead.
 
 == DecryptAesKey ==
 Takes a 16-byte encrypted key ('''enc_key''') and two words ('''KeyGeneration''' and '''option''') as input.
 
 Decrypts (AES-ECB) '''enc_key''' with a key generated from fixed '''key_x''' and '''key_y''' set with [[SMC#LoadAesKey|LoadAesKey SMC]] and returns a 16-byte decrypted key ('''dec_key''').
 
-[2.0.0+] Introduced same engine allocation code as for [[#GenerateAesKey]].
+[2.0.0+] Introduced same keyslot allocation code as for [[#GenerateAesKey]].
 
 == CryptAesCtr ==
 Takes a type-0x46 (B descriptor) buffer ('''data_out_buf'''), a u32 ('''keyslot'''), a type-0x45 (A descriptor) buffer ('''data_in_buf''') and a 16-byte CTR ('''aes_ctr''').
 
-Uses [[SMC#CryptAes|CryptAes SMC]] to decrypt '''data_in_buf''' into '''data_out_buf''', using the key set in the specified '''keyslot'''.
+Uses [[SMC#ComputeAes|ComputeAes SMC]] to decrypt '''data_in_buf''' into '''data_out_buf''', using the key set in the specified '''keyslot'''.
 
-[2.0.0+] Verifies the keyslot was allocated by current session.
+[2.0.0+] Verifies the keyslot was allocated in the current session.
 
 == ComputeCmac ==
 Wrapper for [[SMC#ComputeCmac|ComputeCmac SMC]].
@@ -204,21 +202,23 @@ Takes one type-9 (X descriptor) buffer ('''data_in_buf''') and a u32 ('''type?''
 
 Returns a 16-byte CMAC calculated over '''data_in_buf'''.
 
-[2.0.0+] Verifies the engine is locked by current session.
+[2.0.0+] Verifies the keyslot was allocated in the current session.
 
 == ImportEsKey ==
-Wrapper for [[SMC#LoadRsaOaepKey|LoadRsaOaepKey SMC]].
+Wrapper for [[SMC#ImportEsKey|ImportEsKey SMC]].
 
 Takes one type-9 (X descriptor) buffer (enc_privk_in_buf), a 16-byte KEK (key_x), a 16-byte key (key_y) and a u32 (version). version is 0 for normal keys or 1 for extended keys.
 
 Decrypts enc_privk_in_buf with a key generated from key_x and key_y and imports it for later usage.
 
+[5.0.0+] This now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
+
 == UnwrapTitleKey ==
-Wrapper for [[SMC#UnwrapRsaOaepWrappedTitleKey|UnwrapRsaOaepWrappedTitleKey SMC]].
+Wrapper for [[SMC#UnwrapTitleKey|UnwrapTitleKey SMC]].
 
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
 
-Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#LoadRsaOaepKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
+Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#ImportEsKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
 
 Returns an u32 ('''dec_data_size''').
 
@@ -229,10 +229,10 @@ Takes a u32 ('''keyslot''') and a 16-byte sealed titlekey.
 
 Sets the specified '''keyslot''' with the titlekey.
 
-[2.0.0+] Verifies the engine is locked by current session.
+[2.0.0+] Verifies the keyslot was allocated in the current session.
 
 == UnwrapCommonTitleKey ==
-Wrapper for [[SMC#UnwrapAesWrappedTitleKey|UnwrapAesWrappedTitleKey SMC]].
+Wrapper for [[SMC#UnwrapCommonTitleKey|UnwrapCommonTitleKey SMC]].
 
 Takes a 16-byte EKS ('''Encryption Key Source''').
 

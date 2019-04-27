@@ -140,8 +140,8 @@ Any other **ConfigItem**, besides 13, can't be set.
 
 ## ImportLotusKey
 
-Wrapper for [LoadSecureExpModKey
-SMC](SMC#LoadSecureExpModKey.md##LoadSecureExpModKey "wikilink").
+Wrapper for [ImportLotusKey
+SMC](SMC#ImportLotusKey.md##ImportLotusKey "wikilink").
 
 Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 16-byte KEK (**key\_x**), a 16-byte key (**key\_y**) and a u32
@@ -150,8 +150,8 @@ Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
 
-\[5.0.0+\] This now calls [EncryptRsaKeyForImport
-SMC](SMC#EncryptRsaKeyForImport.md##EncryptRsaKeyForImport "wikilink")
+\[5.0.0+\] This now calls [ReEncryptRsaPrivateKey
+SMC](SMC#ReEncryptRsaPrivateKey.md##ReEncryptRsaPrivateKey "wikilink")
 instead.
 
 ## DecryptLotusMessage
@@ -161,10 +161,8 @@ Takes 3 type-9 (X descriptor) buffers (**data\_in\_buf**,
 
 Uses [SecureExpMod SMC](SMC#SecureExpMod.md##SecureExpMod "wikilink") to
 decrypt **data\_in\_buf** using the private key imported with
-[\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink") and the
-supplied **mod\_in\_buf** and **label\_hash\_in\_buf**.
-
-Generates and returns a 16-byte sealed titlekey.
+[\#ImportLotusKey](#ImportLotusKey "wikilink") and the supplied
+**mod\_in\_buf** and **label\_hash\_in\_buf**.
 
 ## IsDevelopment
 
@@ -202,8 +200,8 @@ key generated from **key\_x** and **key\_y**.
 Used by [SSL](SSL%20services.md "wikilink")-sysmodule for TLS
 client-privk.
 
-\[5.0.0+\] This now calls [DecryptOrImportRsaKey
-SMC](SMC#DecryptOrImportRsaKey.md##DecryptOrImportRsaKey "wikilink")
+\[5.0.0+\] This now calls [DecryptOrImportRsaPrivateKey
+SMC](SMC#DecryptOrImportRsaPrivateKey.md##DecryptOrImportRsaPrivateKey "wikilink")
 instead.
 
 ## DecryptAesKey
@@ -216,7 +214,7 @@ Decrypts (AES-ECB) **enc\_key** with a key generated from fixed
 SMC](SMC#LoadAesKey.md##LoadAesKey "wikilink") and returns a 16-byte
 decrypted key (**dec\_key**).
 
-\[2.0.0+\] Introduced same engine allocation code as for
+\[2.0.0+\] Introduced same keyslot allocation code as for
 [\#GenerateAesKey](#GenerateAesKey "wikilink").
 
 ## CryptAesCtr
@@ -225,11 +223,11 @@ Takes a type-0x46 (B descriptor) buffer (**data\_out\_buf**), a u32
 (**keyslot**), a type-0x45 (A descriptor) buffer (**data\_in\_buf**) and
 a 16-byte CTR (**aes\_ctr**).
 
-Uses [CryptAes SMC](SMC#CryptAes.md##CryptAes "wikilink") to decrypt
-**data\_in\_buf** into **data\_out\_buf**, using the key set in the
-specified **keyslot**.
+Uses [ComputeAes SMC](SMC#ComputeAes.md##ComputeAes "wikilink") to
+decrypt **data\_in\_buf** into **data\_out\_buf**, using the key set in
+the specified **keyslot**.
 
-\[2.0.0+\] Verifies the keyslot was allocated by current session.
+\[2.0.0+\] Verifies the keyslot was allocated in the current session.
 
 ## ComputeCmac
 
@@ -241,12 +239,12 @@ Takes one type-9 (X descriptor) buffer (**data\_in\_buf**) and a u32
 
 Returns a 16-byte CMAC calculated over **data\_in\_buf**.
 
-\[2.0.0+\] Verifies the engine is locked by current session.
+\[2.0.0+\] Verifies the keyslot was allocated in the current session.
 
 ## ImportEsKey
 
-Wrapper for [LoadRsaOaepKey
-SMC](SMC#LoadRsaOaepKey.md##LoadRsaOaepKey "wikilink").
+Wrapper for [ImportEsKey
+SMC](SMC#ImportEsKey.md##ImportEsKey "wikilink").
 
 Takes one type-9 (X descriptor) buffer (enc\_privk\_in\_buf), a 16-byte
 KEK (key\_x), a 16-byte key (key\_y) and a u32 (version). version is 0
@@ -255,18 +253,22 @@ for normal keys or 1 for extended keys.
 Decrypts enc\_privk\_in\_buf with a key generated from key\_x and key\_y
 and imports it for later usage.
 
+\[5.0.0+\] This now calls [ReEncryptRsaPrivateKey
+SMC](SMC#ReEncryptRsaPrivateKey.md##ReEncryptRsaPrivateKey "wikilink")
+instead.
+
 ## UnwrapTitleKey
 
-Wrapper for [UnwrapRsaOaepWrappedTitleKey
-SMC](SMC#UnwrapRsaOaepWrappedTitleKey.md##UnwrapRsaOaepWrappedTitleKey "wikilink").
+Wrapper for [UnwrapTitleKey
+SMC](SMC#UnwrapTitleKey.md##UnwrapTitleKey "wikilink").
 
 Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
 type-9 (X descriptor) buffers (**data\_in\_buf**, **mod\_in\_buf** and
 **label\_hash\_in\_buf**).
 
 Decrypts **data\_in\_buf** into **data\_out\_buf** using the private key
-imported with [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink") and the
-supplied **mod\_in\_buf**. Afterwards, verifies RSA-OAEP encoding using
+imported with [\#ImportEsKey](#ImportEsKey "wikilink") and the supplied
+**mod\_in\_buf**. Afterwards, verifies RSA-OAEP encoding using
 **label\_hash\_in\_buf**.
 
 Returns an u32 (**dec\_data\_size**).
@@ -280,12 +282,12 @@ Takes a u32 (**keyslot**) and a 16-byte sealed titlekey.
 
 Sets the specified **keyslot** with the titlekey.
 
-\[2.0.0+\] Verifies the engine is locked by current session.
+\[2.0.0+\] Verifies the keyslot was allocated in the current session.
 
 ## UnwrapCommonTitleKey
 
-Wrapper for [UnwrapAesWrappedTitleKey
-SMC](SMC#UnwrapAesWrappedTitleKey.md##UnwrapAesWrappedTitleKey "wikilink").
+Wrapper for [UnwrapCommonTitleKey
+SMC](SMC#UnwrapCommonTitleKey.md##UnwrapCommonTitleKey "wikilink").
 
 Takes a 16-byte EKS (**Encryption Key Source**).
 
