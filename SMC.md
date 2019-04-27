@@ -33,24 +33,24 @@ runs).
 | -------------------------- | -------------------------------------------------------------------------- | -- | --- |
 | 0xC3000401                 | SetConfig                                                                  |    |     |
 | 0xC3000002                 | GetConfig (Same as ID 1, Sub-ID 4)                                         |    |     |
-| 0xC3000003                 | CheckStatus                                                                |    |     |
-| 0xC3000404                 | GetResult                                                                  |    |     |
+| 0xC3000003                 | GetResult                                                                  |    |     |
+| 0xC3000404                 | GetResultData                                                              |    |     |
 | 0xC3000E05                 | ExpMod                                                                     |    |     |
-| 0xC3000006                 | GetRandomBytes (Same as ID 1, Sub-ID 5)                                    |    |     |
+| 0xC3000006                 | GenerateRandomBytes (Same as ID 1, Sub-ID 5)                               |    |     |
 | 0xC3000007                 | [\#GenerateAesKek](#GenerateAesKek "wikilink")                             |    |     |
 | 0xC3000008                 | [\#LoadAesKey](#LoadAesKey "wikilink")                                     |    |     |
-| 0xC3000009                 | [\#CryptAes](#CryptAes "wikilink")                                         |    |     |
+| 0xC3000009                 | [\#ComputeAes](#ComputeAes "wikilink")                                     |    |     |
 | 0xC300000A                 | [\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink")             |    |     |
 | 0xC300040B                 | [\#ComputeCmac](#ComputeCmac "wikilink")                                   |    |     |
-| \[1.0.0-4.1.0\] 0xC300100C | [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink")                             |    |     |
-| \[5.0.0+\] 0xC300D60C      | [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink")             |    |     |
+| \[1.0.0-4.1.0\] 0xC300100C | [\#ImportEsKey](#ImportEsKey "wikilink")                                   |    |     |
+| \[5.0.0+\] 0xC300D60C      | [\#ReEncryptRsaPrivateKey](#ReEncryptRsaPrivateKey "wikilink")             |    |     |
 | \[1.0.0-4.1.0\] 0xC300100D | [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink")                 |    |     |
-| \[5.0.0\] 0xC300100D       | [\#DecryptOrImportRsaKey](#DecryptOrImportRsaKey "wikilink")               |    |     |
-| \[1.0.0-4.1.0\] 0xC300100E | [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink")                   |    |     |
-| 0xC300060F                 | [\#SecureExpMod](#SecureExpMod "wikilink")                                 |    |     |
-| 0xC3000610                 | [\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink") |    |     |
+| \[5.0.0+\] 0xC300100D      | [\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink") |    |     |
+| \[1.0.0-4.1.0\] 0xC300100E | [\#ImportLotusKey](#ImportLotusKey "wikilink")                             |    |     |
+| 0xC300060F                 | [\#StorageExpMod](#StorageExpMod "wikilink")                               |    |     |
+| 0xC3000610                 | [\#UnwrapTitleKey](#UnwrapTitleKey "wikilink")                             |    |     |
 | 0xC3000011                 | [\#LoadTitleKey](#LoadTitleKey "wikilink")                                 |    |     |
-| 0xC3000012                 | \[2.0.0+\] UnwrapAesWrappedTitleKey                                        |    |     |
+| 0xC3000012                 | \[2.0.0+\] [\#UnwrapCommonTitleKey](#UnwrapCommonTitleKey "wikilink")      |    |     |
 
 The overall concept here is the following:
 
@@ -70,9 +70,6 @@ The overall concept here is the following:
       - This means: Plaintext kek keys never leave TrustZone.
       - Further, this means: Actual AES/RSA keys never leave TrustZone.
 
-Note: The [CryptoUsecase\_TitleKey](#enum_CryptoUsecase "wikilink")
-represents a RSA wrapped AES key.
-
 ### GenerateAesKek
 
 Takes an "access key" as input, an
@@ -88,33 +85,35 @@ Takes a session kek created with
 The session kek must have been created with
 [CryptoUsecase\_Aes](#enum_CryptoUsecase "wikilink").
 
-### CryptAes
+### ComputeAes
 
 Encrypts/decrypts using Aes (CTR and CBC).
 
 Key must be set prior using one of the
-[\#LoadAesKey](#LoadAesKey "wikilink"),
-[\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") or
-[\#LoadRsaWrappedAesKey](#LoadRsaWrappedAesKey "wikilink") commands.
+[\#LoadAesKey](#LoadAesKey "wikilink") or
+[\#GenerateSpecificAesKey](#GenerateSpecificAesKey "wikilink") commands.
 
 ### GenerateSpecificAesKey
 
-Todo: This one seems unrelated to
-[\#enum\_CryptoUsecase](#enum_CryptoUsecase "wikilink").
+Takes a wrapped AES key and decrypts it using static data.
 
-### LoadRsaOaepKey
+### ComputeCmac
+
+Calculates CMAC over input data.
+
+### ImportEsKey
 
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), a wrapped AES key, and a
 wrapped RSA private key.
 
 The session kek must have been created with
-[CryptoUsecase\_RsaOaep](#enum_CryptoUsecase "wikilink").
+[CryptoUsecase\_TitleKey](#enum_CryptoUsecase "wikilink").
 
-This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
-with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
+\[5.0.0\] This function was removed and replaced with
+[\#ReEncryptRsaPrivateKey](#ReEncryptRsaPrivateKey "wikilink").
 
-### EncryptRsaKeyForImport
+### ReEncryptRsaPrivateKey
 
 Takes in two session keks created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), two wrapped AES keys, an
@@ -124,7 +123,7 @@ Decrypts and validates the wrapped RSA private key with the first
 kek/wrapped key, and re-encrypts it with the second if valid.
 
 The re-encrypted key is then passed to the user, for use with
-[\#DecryptOrImportRsaKey](#DecryptOrImportRsaKey "wikilink").
+[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink").
 
 ### DecryptRsaPrivateKey
 
@@ -139,7 +138,10 @@ The session kek must have been created with
 SMC\_ID==0xC300100D now returns error 0x6 instead of calling the handler
 funcptr.
 
-### DecryptOrImportRsaKey
+\[5.0.0+\] This function was replaced by
+[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink").
+
+### DecryptOrImportRsaPrivateKey
 
 This function replaced
 [\#DecryptRsaPrivateKey](#DecryptRsaPrivateKey "wikilink") in
@@ -149,7 +151,7 @@ This SMC extends DecryptRsaPrivateKey's original functionality to enable
 importing private keys into the security engine instead of decrypting
 them, when certain enum members are passed.
 
-### LoadSecureExpModKey
+### ImportLotusKey
 
 Takes a session kek created with
 [\#GenerateAesKek](#GenerateAesKek "wikilink"), and a wrapped RSA key.
@@ -157,30 +159,40 @@ Takes a session kek created with
 The session kek must have been created with
 [CryptoUsecase\_RsaSecureExpMod](#enum_CryptoUsecase "wikilink").
 
-This function was removed in [5.0.0](5.0.0.md "wikilink"), and replaced
-with [\#EncryptRsaKeyForImport](#EncryptRsaKeyForImport "wikilink").
+\[5.0.0\] This function was removed and replaced with
+[\#ReEncryptRsaPrivateKey](#ReEncryptRsaPrivateKey "wikilink").
 
 ### SecureExpMod
 
-Performs an Exp Mod operation using an exponent previously loaded with
-the [\#LoadSecureExpModKey](#LoadSecureExpModKey "wikilink") command.
+Performs an ExpMod operation using an exponent previously loaded with
+the [\#ImportLotusKey](#ImportLotusKey "wikilink") command.
 
-### UnwrapRsaOaepWrappedTitleKey
+\[5.0.0+\] This now uses any exponent previously loaded with
+[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink").
+
+### UnwrapTitleKey
 
 Takes an Rsa-Oaep-wrapped TitleKey, an RSA Public Key, and a label hash.
 
-Performs an Exp Mod operation using an exponent previously loaded with
-the [\#LoadRsaOaepKey](#LoadRsaOaepKey "wikilink") command, and then
+Performs an ExpMod operation using an exponent previously loaded with
+the [\#ImportEsKey](#ImportEsKey "wikilink") command, and then
 validates/extracts a Titlekey from the resulting message.
 
 Returns a session-unique AES key especially for use in
 [\#LoadTitleKey](#LoadTitleKey "wikilink").
 
+\[5.0.0+\] This now uses any exponent previously loaded with
+[\#DecryptOrImportRsaPrivateKey](#DecryptOrImportRsaPrivateKey "wikilink").
+
 ### LoadTitleKey
 
 Takes a session-unique AES key from
-[\#UnwrapAesWrappedTitleKey](#UnwrapAesWrappedTitleKey "wikilink") or
-[\#UnwrapRsaOaepWrappedTitleKey](#UnwrapRsaOaepWrappedTitleKey "wikilink").
+[\#UnwrapCommonTitleKey](#UnwrapCommonTitleKey "wikilink") or
+[\#UnwrapTitleKey](#UnwrapTitleKey "wikilink").
+
+### UnwrapCommonTitleKey
+
+Takes an AES-wrapped TitleKey and returns a sealed AES key.
 
 ### enum CryptoUsecase
 
@@ -189,7 +201,10 @@ Takes a session-unique AES key from
 | 0     | CryptoUsecase\_Aes             |
 | 1     | CryptoUsecase\_RsaPrivate      |
 | 2     | CryptoUsecase\_RsaSecureExpMod |
-| 3     | CryptoUsecase\_RsaOaep         |
+| 3     | CryptoUsecase\_TitleKey        |
+
+Note: The [CryptoUsecase\_TitleKey](#enum_CryptoUsecase "wikilink")
+represents a RSA wrapped AES key.
 
 ## ID 1
 

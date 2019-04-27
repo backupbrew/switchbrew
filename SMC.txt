@@ -33,41 +33,41 @@ Functions exposed to user-mode processes using [[SVC|svcCallSecureMonitor]]. SMC
 |-
 | 0xC3000002 || GetConfig (Same as ID 1, Sub-ID 4) || ||
 |-
-| 0xC3000003 || CheckStatus || ||
+| 0xC3000003 || GetResult || ||
 |-
-| 0xC3000404 || GetResult || ||
+| 0xC3000404 || GetResultData || ||
 |-
 | 0xC3000E05 || ExpMod || ||
 |-
-| 0xC3000006 || GetRandomBytes (Same as ID 1, Sub-ID 5) || ||
+| 0xC3000006 || GenerateRandomBytes (Same as ID 1, Sub-ID 5) || ||
 |-
 | 0xC3000007 || [[#GenerateAesKek]] || ||
 |-
 | 0xC3000008 || [[#LoadAesKey]] || ||
 |-
-| 0xC3000009 || [[#CryptAes]] || ||
+| 0xC3000009 || [[#ComputeAes]] || ||
 |-
 | 0xC300000A || [[#GenerateSpecificAesKey]] || ||
 |-
 | 0xC300040B || [[#ComputeCmac]] || ||
 |-
-| [1.0.0-4.1.0] 0xC300100C || [[#LoadRsaOaepKey]] || ||
+| [1.0.0-4.1.0] 0xC300100C || [[#ImportEsKey]] || ||
 |-
-| [5.0.0+] 0xC300D60C || [[#EncryptRsaKeyForImport]] || ||
+| [5.0.0+] 0xC300D60C || [[#ReEncryptRsaPrivateKey]] || ||
 |-
 | [1.0.0-4.1.0] 0xC300100D || [[#DecryptRsaPrivateKey]] || ||
 |-
-| [5.0.0] 0xC300100D || [[#DecryptOrImportRsaKey]] || ||
+| [5.0.0+] 0xC300100D || [[#DecryptOrImportRsaPrivateKey]] || ||
 |-
-| [1.0.0-4.1.0] 0xC300100E || [[#LoadSecureExpModKey]] || ||
+| [1.0.0-4.1.0] 0xC300100E || [[#ImportLotusKey]] || ||
 |-
-| 0xC300060F || [[#SecureExpMod]] || ||
+| 0xC300060F || [[#StorageExpMod]] || ||
 |-
-| 0xC3000610 || [[#UnwrapRsaOaepWrappedTitleKey]] || ||
+| 0xC3000610 || [[#UnwrapTitleKey]] || ||
 |-
 | 0xC3000011 || [[#LoadTitleKey]] || ||
 |-
-| 0xC3000012 || [2.0.0+] UnwrapAesWrappedTitleKey || ||
+| 0xC3000012 || [2.0.0+] [[#UnwrapCommonTitleKey]] || ||
 |}
 
 The overall concept here is the following:
@@ -80,9 +80,6 @@ The overall concept here is the following:
 ** This means: Plaintext kek keys never leave TrustZone.
 ** Further, this means: Actual AES/RSA keys never leave TrustZone.
 
-Note:
-The [[#enum_CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
-
 === GenerateAesKek ===
 Takes an "access key" as input, an [[#enum_CryptoUsecase]].
 
@@ -93,27 +90,30 @@ Takes a session kek created with [[#GenerateAesKek]], and a wrapped AES key.
 
 The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_Aes]].
 
-=== CryptAes ===
+=== ComputeAes ===
 Encrypts/decrypts using Aes (CTR and CBC).
 
-Key must be set prior using one of the [[#LoadAesKey]], [[#GenerateSpecificAesKey]] or [[#LoadRsaWrappedAesKey]] commands.
+Key must be set prior using one of the [[#LoadAesKey]] or [[#GenerateSpecificAesKey]] commands.
 
 === GenerateSpecificAesKey ===
-Todo: This one seems unrelated to [[#enum_CryptoUsecase]].
+Takes a wrapped AES key and decrypts it using static data.
 
-=== LoadRsaOaepKey ===
+=== ComputeCmac ===
+Calculates CMAC over input data.
+
+=== ImportEsKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, and a wrapped RSA private key.
 
-The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaOaep]].
+The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_TitleKey]].
 
-This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
+[5.0.0] This function was removed and replaced with [[#ReEncryptRsaPrivateKey]].
 
-=== EncryptRsaKeyForImport ===
+=== ReEncryptRsaPrivateKey ===
 Takes in two session keks created with [[#GenerateAesKek]], two wrapped AES keys, an enum member, and a wrapped RSA private key.
 
 Decrypts and validates the wrapped RSA private key with the first kek/wrapped key, and re-encrypts it with the second if valid.
 
-The re-encrypted key is then passed to the user, for use with [[#DecryptOrImportRsaKey]].
+The re-encrypted key is then passed to the user, for use with [[#DecryptOrImportRsaPrivateKey]].
 
 === DecryptRsaPrivateKey ===
 Takes a session kek created with [[#GenerateAesKek]], a wrapped AES key, an enum member, and a wrapped RSA private key.
@@ -122,31 +122,39 @@ The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_
 
 [4.0.0+] The SMC handler when certain conditions pass and SMC_ID==0xC300100D now returns error 0x6 instead of calling the handler funcptr.
 
-=== DecryptOrImportRsaKey ===
+[5.0.0+] This function was replaced by [[#DecryptOrImportRsaPrivateKey]].
 
+=== DecryptOrImportRsaPrivateKey ===
 This function replaced [[#DecryptRsaPrivateKey]] in [[5.0.0]], adding an additional enum member argument.
 
 This SMC extends DecryptRsaPrivateKey's original functionality to enable importing private keys into the security engine instead of decrypting them, when certain enum members are passed.
 
-=== LoadSecureExpModKey ===
+=== ImportLotusKey ===
 Takes a session kek created with [[#GenerateAesKek]], and a wrapped RSA key.
 
 The session kek must have been created with [[#enum_CryptoUsecase|CryptoUsecase_RsaSecureExpMod]].
 
-This function was removed in [[5.0.0]], and replaced with [[#EncryptRsaKeyForImport]].
+[5.0.0] This function was removed and replaced with [[#ReEncryptRsaPrivateKey]].
 
 === SecureExpMod ===
-Performs an Exp Mod operation using an exponent previously loaded with the [[#LoadSecureExpModKey]] command.
+Performs an ExpMod operation using an exponent previously loaded with the [[#ImportLotusKey]] command.
 
-=== UnwrapRsaOaepWrappedTitleKey ===
+[5.0.0+] This now uses any exponent previously loaded with [[#DecryptOrImportRsaPrivateKey]].
+
+=== UnwrapTitleKey ===
 Takes an Rsa-Oaep-wrapped TitleKey, an RSA Public Key, and a label hash.
 
-Performs an Exp Mod operation using an exponent previously loaded with the [[#LoadRsaOaepKey]] command, and then validates/extracts a Titlekey from the resulting message.
+Performs an ExpMod operation using an exponent previously loaded with the [[#ImportEsKey]] command, and then validates/extracts a Titlekey from the resulting message.
 
 Returns a session-unique AES key especially for use in [[#LoadTitleKey]].
 
+[5.0.0+] This now uses any exponent previously loaded with [[#DecryptOrImportRsaPrivateKey]].
+
 === LoadTitleKey ===
-Takes a session-unique AES key from [[#UnwrapAesWrappedTitleKey]] or [[#UnwrapRsaOaepWrappedTitleKey]].
+Takes a session-unique AES key from [[#UnwrapCommonTitleKey]] or [[#UnwrapTitleKey]].
+
+=== UnwrapCommonTitleKey ===
+Takes an AES-wrapped TitleKey and returns a sealed AES key.
 
 === enum CryptoUsecase ===
 {| class=wikitable
@@ -158,8 +166,11 @@ Takes a session-unique AES key from [[#UnwrapAesWrappedTitleKey]] or [[#UnwrapRs
 |-
 | 2 || CryptoUsecase_RsaSecureExpMod
 |-
-| 3 || CryptoUsecase_RsaOaep
+| 3 || CryptoUsecase_TitleKey
 |}
+
+Note:
+The [[#enum_CryptoUsecase|CryptoUsecase_TitleKey]] represents a RSA wrapped AES key.
 
 == ID 1 ==
 Functions exposed to the kernel internally.
