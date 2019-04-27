@@ -44,11 +44,11 @@ Takes a u32 (**ReportType**) and 3 type-5 input buffers
 
 This is "nn::erpt::sf::ISession".
 
-| Cmd | Name        |
-| --- | ----------- |
-| 0   | OpenReport  |
-| 1   | OpenManager |
-| 2   | \[8.0.0+\]  |
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | OpenReport                |
+| 1   | OpenManager               |
+| 2   | \[8.0.0+\] OpenAttachment |
 
 ## IReport
 
@@ -75,6 +75,19 @@ This is "nn::erpt::sf::IManager".
 | 3   | \[5.0.0+\] DeleteReport              |
 | 4   | \[5.0.0+\] GetStorageUsageStatistics |
 | 5   | \[8.0.0+\]                           |
+
+## IAttachment
+
+This is "nn::erpt::sf::IAttachment".
+
+| Cmd | Name     |
+| --- | -------- |
+| 0   | Open     |
+| 1   | Read     |
+| 2   | SetFlags |
+| 3   | GetFlags |
+| 4   | Close    |
+| 5   | GetSize  |
 
 # Reports
 

@@ -67,7 +67,7 @@ This is "nn::erpt::sf::ISession".
 |-
 | 1 || OpenManager
 |-
-| 2 || [8.0.0+]
+| 2 || [8.0.0+] OpenAttachment
 |}
 
 == IReport ==
@@ -108,6 +108,26 @@ This is "nn::erpt::sf::IManager".
 | 4 || [5.0.0+] GetStorageUsageStatistics
 |-
 | 5 || [8.0.0+]
+|}
+
+== IAttachment ==
+This is "nn::erpt::sf::IAttachment".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Open
+|-
+| 1 || Read
+|-
+| 2 || SetFlags
+|-
+| 3 || GetFlags
+|-
+| 4 || Close
+|-
+| 5 || GetSize
 |}
 
 = Reports =
