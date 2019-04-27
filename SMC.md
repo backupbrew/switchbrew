@@ -644,7 +644,12 @@ to the Secure Monitor.
 
 # Errors
 
-| Value | Description   |
-| ----- | ------------- |
-| 2     | Invalid input |
-| 3     | Busy          |
+| Value        | Description             |
+| ------------ | ----------------------- |
+| 0            | Success                 |
+| 1            | Not implemented         |
+| 2            | Invalid argument        |
+| 3            | In progress             |
+| 4            | No async operation      |
+| 5            | Invalid async operation |
+| \[8.0.0+\] 6 | Blacklisted             |

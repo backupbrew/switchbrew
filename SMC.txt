@@ -589,7 +589,17 @@ Relays [[SVC#svcReadWriteRegister|svcReadWriteRegister]] to the Secure Monitor.
 {| class=wikitable
 ! Value || Description
 |-
-| 2 || Invalid input
+| 0 || Success
 |-
-| 3 || Busy
+| 1 || Not implemented
+|-
+| 2 || Invalid argument
+|-
+| 3 || In progress
+|-
+| 4 || No async operation
+|-
+| 5 || Invalid async operation
+|-
+| [8.0.0+] 6 || Blacklisted
 |}
