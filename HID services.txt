@@ -891,145 +891,145 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 |-
 ! Offset || Size || Subcommand argdata bytepos || Subcommand argdata nibble || Description
 |-
-| 0x0 || 0x1 || 0x0 || Low || 
+| 0x0 || 0x1 || 0x0 || Low || Global Mini Cycle Duration. 8ms - 175ms. Value 0x0 = 0ms/OFF.
 |-
-| 0x1 || 0x1 || 0x0 || High || 
+| 0x1 || 0x1 || 0x0 || High || Number of Mini Cycles. 1-15. If number of cycles is > 0 then x0 = x1
 |-
-| 0x2 || 0x1 || 0x1 || Low || 
+| 0x2 || 0x1 || 0x1 || Low || Number of Full Cycles. 1-15. Value 0x0 is repeat forever, but if Global Mini Cycle Duration is set to 0x0, it does the 1st Mini Cycle and then the LED stays on with LED Start Intensity.
 |-
-| 0x3 || 0x1 || 0x1 || High || 
+| 0x3 || 0x1 || 0x1 || High || LED Start Intensity. Value 0x0=0% - 0xF=100%.
 |-
-| 0x4 || 0x1 || 0x2 || High || 
+| 0x4 || 0x1 || 0x2 || High || Mini Cycle 1 LED Intensity.
 |-
-| 0x5 || 0x1 || 0x3 || High || 
+| 0x5 || 0x1 || 0x3 || High || Fading Transition Duration to Mini Cycle 1 (Uses PWM). Value is a Multiplier of Global Mini Cycle Duration.
 |-
-| 0x6 || 0x1 || 0x3 || Low || 
+| 0x6 || 0x1 || 0x3 || Low || LED Duration Multiplier of Mini Cycle 1. x0 = x1 = x1
 |-
 | 0x7 || 0x1 || || || Unused
 |-
-| 0x8 || 0x1 || 0x2 || Low || 
+| 0x8 || 0x1 || 0x2 || Low || Mini Cycle 2 LED Intensity.
 |-
-| 0x9 || 0x1 || 0x4 || High || 
+| 0x9 || 0x1 || 0x4 || High || Fading Transition Duration to Mini Cycle 2 (see above).
 |-
-| 0xA || 0x1 || 0x4 || Low || 
+| 0xA || 0x1 || 0x4 || Low || LED Duration Multiplier of Mini Cycle 2 (see above).
 |-
 | 0xB || 0x1 || || || Unused
 |-
-| 0xC || 0x1 || 0x5 || High || 
+| 0xC || 0x1 || 0x5 || High || Mini Cycle 3 LED Intensity.
 |-
-| 0xD || 0x1 || 0x6 || High || 
+| 0xD || 0x1 || 0x6 || High || Fading Transition Duration to Mini Cycle 3 (see above).
 |-
-| 0xE || 0x1 || 0x6 || Low || 
+| 0xE || 0x1 || 0x6 || Low || LED Duration Multiplier of Mini Cycle 3 (see above).
 |-
 | 0xF || 0x1 || || || Unused
 |-
-| 0x10 || 0x1 || 0x5 || Low || 
+| 0x10 || 0x1 || 0x5 || Low || Mini Cycle 4 LED Intensity.
 |-
-| 0x11 || 0x1 || 0x7 || High || 
+| 0x11 || 0x1 || 0x7 || High || Fading Transition Duration to Mini Cycle 4 (see above).
 |-
-| 0x12 || 0x1 || 0x7 || Low || 
+| 0x12 || 0x1 || 0x7 || Low || LED Duration Multiplier of Mini Cycle 4 (see above).
 |-
 | 0x13 || 0x1 || || || Unused
 |-
-| 0x14 || 0x1 || 0x8 || High || 
+| 0x14 || 0x1 || 0x8 || High || Mini Cycle 5 LED Intensity.
 |-
-| 0x15 || 0x1 || 0x9 || High || 
+| 0x15 || 0x1 || 0x9 || High || Fading Transition Duration to Mini Cycle 5 (see above).
 |-
-| 0x16 || 0x1 || 0x9 || Low || 
+| 0x16 || 0x1 || 0x9 || Low || LED Duration Multiplier of Mini Cycle 5 (see above).
 |-
 | 0x17 || 0x1 || || || Unused
 |-
-| 0x18 || 0x1 || 0x8 || Low || 
+| 0x18 || 0x1 || 0x8 || Low || Mini Cycle 6 LED Intensity.
 |-
-| 0x19 || 0x1 || 0xA || High || 
+| 0x19 || 0x1 || 0xA || High || Fading Transition Duration to Mini Cycle 6 (see above).
 |-
-| 0x1A || 0x1 || 0xA || Low || 
+| 0x1A || 0x1 || 0xA || Low || LED Duration Multiplier of Mini Cycle 6 (see above).
 |-
 | 0x1B || 0x1 || || || Unused
 |-
-| 0x1C || 0x1 || 0xB || High || 
+| 0x1C || 0x1 || 0xB || High || Mini Cycle 7 LED Intensity.
 |-
-| 0x1D || 0x1 || 0xC || High || 
+| 0x1D || 0x1 || 0xC || High || Fading Transition Duration to Mini Cycle 7 (see above).
 |-
-| 0x1E || 0x1 || 0xC || Low || 
+| 0x1E || 0x1 || 0xC || Low || LED Duration Multiplier of Mini Cycle 7 (see above).
 |-
 | 0x1F || 0x1 || || || Unused
 |-
-| 0x20 || 0x1 || 0xB || Low || 
+| 0x20 || 0x1 || 0xB || Low || Mini Cycle 8 LED Intensity.
 |-
-| 0x21 || 0x1 || 0xD || Low || 
+| 0x21 || 0x1 || 0xD || Low || Fading Transition Duration to Mini Cycle 8 (see above).
 |-
-| 0x22 || 0x1 || 0xD || High || 
+| 0x22 || 0x1 || 0xD || High || LED Duration Multiplier of Mini Cycle 8 (see above).
 |-
 | 0x23 || 0x1 || || || Unused
 |-
-| 0x24 || 0x1 || 0xE || High || 
+| 0x24 || 0x1 || 0xE || High || Mini Cycle 9 LED Intensity.
 |-
-| 0x25 || 0x1 || 0xF || High || 
+| 0x25 || 0x1 || 0xF || High || Fading Transition Duration to Mini Cycle 9 (see above).
 |-
-| 0x26 || 0x1 || 0xF || Low || 
+| 0x26 || 0x1 || 0xF || Low || LED Duration Multiplier of Mini Cycle 9 (see above).
 |-
 | 0x27 || 0x1 || || || Unused
 |-
-| 0x28 || 0x1 || 0xE || Low || 
+| 0x28 || 0x1 || 0xE || Low || Mini Cycle 10 LED Intensity.
 |-
-| 0x29 || 0x1 || 0x10 || High || 
+| 0x29 || 0x1 || 0x10 || High || Fading Transition Duration to Mini Cycle 10 (see above).
 |-
-| 0x2A || 0x1 || 0x10 || Low || 
+| 0x2A || 0x1 || 0x10 || Low || LED Duration Multiplier of Mini Cycle 10 (see above).
 |-
 | 0x2B || 0x1 || || || Unused
 |-
-| 0x2C || 0x1 || 0x11 || High || 
+| 0x2C || 0x1 || 0x11 || High || Mini Cycle 11 LED Intensity.
 |-
-| 0x2D || 0x1 || 0x12 || High || 
+| 0x2D || 0x1 || 0x12 || High || Fading Transition Duration to Mini Cycle 11 (see above).
 |-
-| 0x2E || 0x1 || 0x12 || Low || 
+| 0x2E || 0x1 || 0x12 || Low || LED Duration Multiplier of Mini Cycle 11 (see above).
 |-
 | 0x2F || 0x1 || || || Unused
 |-
-| 0x30 || 0x1 || 0x11 || Low || 
+| 0x30 || 0x1 || 0x11 || Low || Mini Cycle 12 LED Intensity.
 |-
-| 0x31 || 0x1 || 0x13 || High || 
+| 0x31 || 0x1 || 0x13 || High || Fading Transition Duration to Mini Cycle 12 (see above).
 |-
-| 0x32 || 0x1 || 0x13 || Low || 
+| 0x32 || 0x1 || 0x13 || Low || LED Duration Multiplier of Mini Cycle 12 (see above).
 |-
 | 0x33 || 0x1 || || || Unused
 |-
-| 0x34 || 0x1 || 0x14 || High || 
+| 0x34 || 0x1 || 0x14 || High || Mini Cycle 13 LED Intensity.
 |-
-| 0x35 || 0x1 || 0x15 || High || 
+| 0x35 || 0x1 || 0x15 || High || Fading Transition Duration to Mini Cycle 13 (see above).
 |-
-| 0x36 || 0x1 || 0x15 || Low || 
+| 0x36 || 0x1 || 0x15 || Low || LED Duration Multiplier of Mini Cycle 13 (see above).
 |-
 | 0x37 || 0x1 || || || Unused
 |-
-| 0x38 || 0x1 || 0x14 || Low || 
+| 0x38 || 0x1 || 0x14 || Low || Mini Cycle 14 LED Intensity.
 |-
-| 0x39 || 0x1 || 0x16 || High || 
+| 0x39 || 0x1 || 0x16 || High || Fading Transition Duration to Mini Cycle 14 (see above).
 |-
-| 0x3A || 0x1 || 0x16 || Low || 
+| 0x3A || 0x1 || 0x16 || Low || LED Duration Multiplier of Mini Cycle 14 (see above).
 |-
 | 0x3B || 0x1 || || || Unused
 |-
-| 0x3C || 0x1 || 0x17 || High || 
+| 0x3C || 0x1 || 0x17 || High || Mini Cycle 15 LED Intensity.
 |-
-| 0x3D || 0x1 || 0x18 || High || 
+| 0x3D || 0x1 || 0x18 || High || Fading Transition Duration to Mini Cycle 15 (see above).
 |-
-| 0x3E || 0x1 || 0x18 || Low || 
+| 0x3E || 0x1 || 0x18 || Low || LED Duration Multiplier of Mini Cycle 15 (see above).
 |-
 | 0x3F || 0x1 || || || Unused
 |-
-| 0x40 || 0x1 || 0x17 || Low || 
+| 0x40 || 0x1 || 0x17 || Low || Mini Cycle 16 LED Intensity.
 |-
-| 0x41 || 0x1 || 0x19 || High || 
+| 0x41 || 0x1 || 0x19 || High || Fading Transition Duration to Mini Cycle 16 (see above).
 |-
-| 0x42 || 0x1 || 0x19 || Low || 
+| 0x42 || 0x1 || 0x19 || Low || LED Duration Multiplier of Mini Cycle 16 (see above).
 |-
 | 0x43 || 0x1 || || || Unused
 |-
-| 0x44 || 0x1 || 0x1A || High || 
+| 0x44 || 0x1 || 0x1A || High || Unknown
 |-
-| 0x45 || 0x1 || 0x1A || Low || 
+| 0x45 || 0x1 || 0x1A || Low || Unknown
 |-
 | 0x46 || 0x1 || || || Padding
 |-
@@ -1040,6 +1040,8 @@ This sends subcommand 0x38 to the specified controller, for setting the pattern 
 This is "nn::hid::system::NotificationLedPattern".
 
 This is a 0x48-byte struct.
+
+The above descriptions in the table are based on the info from [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/bluetooth_hid_subcommands_notes.md here].
 
 argdata in the subcommand is initialized as follows: <code>((u8*)cmd_argdata)[pos] = u8_in[pos2] | u8_in[pos3]<<4;</code> Hence, 4bits from pairs of 2-bytes of the input struct are combined to write to the subcommand. Only the low 4bits of each used byte in the struct is used. This is written to stack initially, then copied to the actual cmd_argdata (the data immediately following the subcommandID byte). There's a total of 0x1B-bytes of cmd_argdata initialized from this.
 
