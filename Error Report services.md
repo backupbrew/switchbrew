@@ -679,5 +679,7 @@ This is "nn::erpt::sf::IManager".
 | 0x252   | \[7.0.0+\] GpuCrashDumpSize                                         |         |                                                                       |
 | 0x253   | \[7.0.0+\] GpuCrashDump                                             |         |                                                                       |
 | 0x254   | \[7.0.0+\] RunningApplicationProgramIndex                           |         |                                                                       |
+| 0x255   | \[8.0.0+\] UsbTopology                                              |         |                                                                       |
+| 0x256   | \[8.0.0+\] AkamaiReferenceId                                        |         |                                                                       |
 
 [Category:Services](Category:Services "wikilink")

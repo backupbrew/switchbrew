@@ -3103,6 +3103,16 @@ This is "nn::erpt::sf::IManager".
 | [7.0.0+] RunningApplicationProgramIndex
 | 
 |
+|-
+| 0x255
+| [8.0.0+] UsbTopology
+| 
+|
+|-
+| 0x256
+| [8.0.0+] AkamaiReferenceId
+| 
+|
 |}
 
 [[Category:Services]]
