@@ -633,6 +633,8 @@ This is "nn::hid::IHidDebugServer".
 == UpdateControllerColor ==
 Takes two input u32s for the colors, an input u64 '''UniquePadId''', and no output.
 
+A state flag must be clear, otherwise an error is thrown. Afterwards, this flag is set.
+
 Sends the spi-write subcommand to the specified controller, for writing the [[Joy-Con#Colors|color data]]. This writes to offset 0x6050 size 0x6, where the first 3-bytes are from the first u32 and the remaining 3-bytes are from the second u32.
 
 = hid:sys =

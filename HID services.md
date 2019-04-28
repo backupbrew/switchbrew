@@ -446,6 +446,9 @@ This is "nn::hid::IHidDebugServer".
 Takes two input u32s for the colors, an input u64 **UniquePadId**, and
 no output.
 
+A state flag must be clear, otherwise an error is thrown. Afterwards,
+this flag is set.
+
 Sends the spi-write subcommand to the specified controller, for writing
 the [color data](Joy-Con#Colors.md##Colors "wikilink"). This writes to
 offset 0x6050 size 0x6, where the first 3-bytes are from the first u32
