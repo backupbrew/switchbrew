@@ -3235,6 +3235,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010000A00CA78000 || Chalk Dash Carnival || USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100DE200C350000 || Chasm || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 01009AC00D5F4000 || Cinders || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010039700BA7E000 || Circle of Sumo || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3767,6 +3769,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100A0A00D1AA000 || SKYHILL || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100CCC0002E6000 || SKYLANDERS® IMAGINATORS || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
 | 0100EA400BF44000 || SkyScrappers || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100F3C00C400000 || SkyTime || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3778,6 +3782,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100C4200B820000 || SmuggleCraft || USA || || Digital || 0 0x10000 || || Game
 |-
 | 01004AB00AEF8000 || SNK 40th ANNIVERSARY COLLECTION || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 0100BE200C34A000 || Snowboarding The Next Phase || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 01007D600D242000 || Solitaire Klondike BLACK || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3905,6 +3911,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100DAF00B620000 || Ultrawings || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01002D900C5E4000 || Uncanny Valley || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 0100A0F00BC24000 || UNI || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010001300CC4A000 || Unruly Heroes || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
@@ -3929,6 +3937,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100B4700A47C000 || Vostok Inc. || EUR || || Cartridge || 0 0x10000 || || Game
 |-
+| 0100BFB00D1F4000 || Voxel Sword || EUR USA || || Digital || 0 0x10000 || || Game
+|-
 | 010084D00A134000 || War Theatre || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01000F0002BB6000 || Wargroove || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
@@ -3940,6 +3950,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100FEE00A64E000 || Warframe || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 0x80000 0x90000 || || Game
 |-
 | 010089A00C7B0000 || Warhammer Age of Sigmar: Champions || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010075400b220000 || Wer weiß denn sowas? - Das Spiel || DEU || || Digital || 0 0x10000 || || Game
 |-
 | 010033600ADE6000 || Wheel of Fortune || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
@@ -4230,6 +4242,10 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010092700D6B8000 || アーケードクラシックス アニバーサリーコレクション || JPN || || Digital || 0 0x10000 || || Game
 |-
 | 0100CE600BE26000 || GRIP || KOR || || Cartridge || 0 0x10000 0x20000 || || Game
+|-
+| 0100E6900A5A8000 || 戦場のヴァルキュリア for Nintendo Switch || JPN || || Digital || 0 0x10000 || || Game
+|-
+| 0100C16009AB6000 || 加藤一二三 九段監修　ひふみんの将棋道場 || JPN || || Digital || 0 0x10000 || || Game
 |}
 
 = Demos =
