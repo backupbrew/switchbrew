@@ -1,7 +1,6 @@
 HID shared memory is a 0x40000 byte read-only segment of memory shared
 between applications for input. The segment contains structures for most
-if not all input methods available to
-applications.
+if not all input methods available to applications.
 
 # Memory Map
 
