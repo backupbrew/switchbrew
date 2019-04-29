@@ -68,6 +68,10 @@ HID shared memory is a 0x40000 byte read-only segment of memory shared between a
 | 0x4600
 | Unknown
 |-
+| 0x3C200
+| ?
+| [5.0.0+] SevenSixAxisSensor
+|-
 |}
 
 == Capacitive Touchscreen ==

@@ -22,6 +22,7 @@ applications.
 | 0x5A00  | 0x4000        | Controller Serials?                                                        |
 | 0x9A00  | 0x32000       | Controllers                                                                |
 | 0x3BA00 | 0x4600        | Unknown                                                                    |
+| 0x3C200 | ?             | \[5.0.0+\] SevenSixAxisSensor                                              |
 |         |               |                                                                            |
 
 ## Capacitive Touchscreen
