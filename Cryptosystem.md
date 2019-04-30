@@ -3,7 +3,7 @@
 The bootrom initializes two keyslots in the hardware engine:
 
   - the SBK (Secure Boot Key) in keyslot 14
-  - the SSK (Secure Storage Key) in keyslot 15.
+  - the SSK (Secure System Key) in keyslot 15.
 
 Reads from both of these keyslots are disabled by the bootROM. The SBK
 is stored in
@@ -16,8 +16,7 @@ originally believed.
 The SSK is derived on boot via the SBK, the 32-bit console-unique
 "Device Key", and hardware information stored in fuses.
 
-Pseudocode for the derivation is as
-follows:
+Pseudocode for the derivation is as follows:
 
 ` void generateSSK() {`  
 `     char keyBuffer[0x10]; // Used to store keydata`  
@@ -60,18 +59,17 @@ The falcon processor (TSEC) generates a special console-unique key (that
 will be referred to as the "tsec key").
 
 This is presumably using data stored in fuses that only microcode
-authenticated by NVidia has access
-to.
+authenticated by NVidia has access to.
 
 ## Package1ldr
 
 ### Key table during package1ldr
 
-| Keyslot | Name             | Set by                                                         | Per-console | Per-firmware |
-| ------- | ---------------- | -------------------------------------------------------------- | ----------- | ------------ |
-| 11      | Package1Key      | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes          |
-| 14      | SecureBootKey    | Bootrom                                                        | Yes         | No           |
-| 15      | SecureStorageKey | Bootrom                                                        | Yes         | No           |
+| Keyslot | Name            | Set by                                                         | Per-console | Per-firmware |
+| ------- | --------------- | -------------------------------------------------------------- | ----------- | ------------ |
+| 11      | Package1Key     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes          |
+| 14      | SecureBootKey   | Bootrom                                                        | Yes         | No           |
+| 15      | SecureSystemKey | Bootrom                                                        | Yes         | No           |
 
 ### \[1.0.0-3.0.2\] Key table after package1ldr
 
@@ -99,12 +97,12 @@ to.
 
 ### \[6.2.0\]+ Key table after package1ldr/TSEC Payload (Secure Monitor boot)
 
-| Keyslot | Name             | Set by                                                           | Per-console | Per-firmware |
-| ------- | ---------------- | ---------------------------------------------------------------- | ----------- | ------------ |
-| 12      | TsecKey          | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | Yes         | No           |
-| 13      | TsecRootKey      | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | No          | Unknown      |
-| 14      | SecureBootKey    | Bootrom                                                          | Yes         | No           |
-| 15      | SecureStorageKey | Bootrom                                                          | Yes         | No           |
+| Keyslot | Name            | Set by                                                           | Per-console | Per-firmware |
+| ------- | --------------- | ---------------------------------------------------------------- | ----------- | ------------ |
+| 12      | TsecKey         | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | Yes         | No           |
+| 13      | TsecRootKey     | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | No          | Unknown      |
+| 14      | SecureBootKey   | Bootrom                                                          | Yes         | No           |
+| 15      | SecureSystemKey | Bootrom                                                          | Yes         | No           |
 
 ### Key generation
 
@@ -112,8 +110,7 @@ Note: aes\_unwrap(wrapped\_key, wrap\_key) is just another name for a
 single AES-128 block decryption.
 
 If bit0 of 0x7000FB94 is clear, it will initialize keys like this
-(probably used for internal development units
-only):
+(probably used for internal development units only):
 
 ` // Final keys:`  
 ` package1_key    /* slot11 */ = aes_unwrap(f5b1eadb.., sbk)`  
@@ -122,8 +119,7 @@ only):
 
 \[4.0.0+\] Above method was removed.
 
-Normal key generation looks like this on
-1.0.0/2.0.0:
+Normal key generation looks like this on 1.0.0/2.0.0:
 
 ` keyblob_key /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key    /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
@@ -139,8 +135,7 @@ Normal key generation looks like this on
 ` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., keyblob_key)`
 
 .. and on 3.0.0, they moved keyslots around a little to generate the
-same per-console key as
-1.0.0:
+same per-console key as 1.0.0:
 
 ` old_keyblob_key /* slot10 */ = aes_unwrap(aes_unwrap(df206f59.., tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
@@ -156,8 +151,7 @@ same per-console key as
 ` master_key      /* slot12 */ = aes_unwrap(bct->pubkey[0] == 0x4f ? normalseed_dev : normalseed_retail, keyblob+0x20)`  
 ` per_console_key /* slot13 */ = aes_unwrap(4f025f0e.., old_keyblob_key)`
 
-.. and on 4.0.0 it was further moved
-around:
+.. and on 4.0.0 it was further moved around:
 
 ` keyblob_key     /* slot13 */ = aes_unwrap(aes_unwrap(wrapped_keyblob_key, tsec_key /* slot13 */), sbk /* slot14 */)`  
 ` cmac_key        /* slot11 */ = aes_unwrap(59c7fb6f.., keyblob_key)`  
@@ -175,8 +169,7 @@ around:
 ` per_console_key     /* slot15 */ = aes_unwrap(4f025f0e.., old_keyblob_key)`
 
 .. and on 6.2.0, they moved key generation out of package1ldr, and into
-the Secure Monitor's boot
-section:
+the Secure Monitor's boot section:
 
 ` clear_keyslots_other_than_12_13_and_14()`  
 ` `  
@@ -220,8 +213,7 @@ encrypted with a console-unique key derived from the console's SBK, the
 console's tsec key, and a constant specific to each keyblob.
 
 Despite being encrypted with console unique keys, though, the decrypted
-keyblob contents are shared for all
-consoles.
+keyblob contents are shared for all consoles.
 
 #### Seeds
 
