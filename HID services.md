@@ -3,137 +3,136 @@ shared-memory.
 
 # hid
 
-This is
-"nn::hid::IHidServer".
+This is "nn::hid::IHidServer".
 
-| Cmd  | Name                                                                                             |
-| ---- | ------------------------------------------------------------------------------------------------ |
-| 0    | [\#CreateAppletResource](#CreateAppletResource "wikilink")                                       |
-| 1    | ActivateDebugPad                                                                                 |
-| 11   | ActivateTouchScreen                                                                              |
-| 21   | ActivateMouse                                                                                    |
-| 31   | ActivateKeyboard                                                                                 |
-| 32   | \[6.0.0+\] SendKeyboardLockKeyEvent                                                              |
-| 40   | AcquireXpadIdEventHandle                                                                         |
-| 41   | ReleaseXpadIdEventHandle                                                                         |
-| 51   | ActivateXpad                                                                                     |
-| 55   | GetXpadIds                                                                                       |
-| 56   | ActivateJoyXpad                                                                                  |
-| 58   | GetJoyXpadLifoHandle                                                                             |
-| 59   | GetJoyXpadIds                                                                                    |
-| 60   | ActivateSixAxisSensor                                                                            |
-| 61   | DeactivateSixAxisSensor                                                                          |
-| 62   | GetSixAxisSensorLifoHandle                                                                       |
-| 63   | ActivateJoySixAxisSensor                                                                         |
-| 64   | DeactivateJoySixAxisSensor                                                                       |
-| 65   | GetJoySixAxisSensorLifoHandle                                                                    |
-| 66   | StartSixAxisSensor                                                                               |
-| 67   | StopSixAxisSensor                                                                                |
-| 68   | IsSixAxisSensorFusionEnabled                                                                     |
-| 69   | EnableSixAxisSensorFusion                                                                        |
-| 70   | SetSixAxisSensorFusionParameters                                                                 |
-| 71   | GetSixAxisSensorFusionParameters                                                                 |
-| 72   | ResetSixAxisSensorFusionParameters                                                               |
-| 73   | SetAccelerometerParameters                                                                       |
-| 74   | GetAccelerometerParameters                                                                       |
-| 75   | ResetAccelerometerParameters                                                                     |
-| 76   | SetAccelerometerPlayMode                                                                         |
-| 77   | GetAccelerometerPlayMode                                                                         |
-| 78   | ResetAccelerometerPlayMode                                                                       |
-| 79   | SetGyroscopeZeroDriftMode                                                                        |
-| 80   | GetGyroscopeZeroDriftMode                                                                        |
-| 81   | ResetGyroscopeZeroDriftMode                                                                      |
-| 82   | IsSixAxisSensorAtRest                                                                            |
-| 83   | \[6.0.0+\] IsFirmwareUpdateAvailableForSixAxisSensor                                             |
-| 91   | ActivateGesture                                                                                  |
-| 100  | [\#SetSupportedNpadStyleSet](#SetSupportedNpadStyleSet "wikilink")                               |
-| 101  | [\#GetSupportedNpadStyleSet](#GetSupportedNpadStyleSet "wikilink")                               |
-| 102  | [\#SetSupportedNpadIdType](#SetSupportedNpadIdType "wikilink")                                   |
-| 103  | ActivateNpad                                                                                     |
-| 104  | DeactivateNpad                                                                                   |
-| 106  | [\#AcquireNpadStyleSetUpdateEventHandle](#AcquireNpadStyleSetUpdateEventHandle "wikilink")       |
-| 107  | DisconnectNpad                                                                                   |
-| 108  | GetPlayerLedPattern                                                                              |
-| 109  | \[5.0.0+\] ActivateNpadWithRevision                                                              |
-| 120  | SetNpadJoyHoldType                                                                               |
-| 121  | GetNpadJoyHoldType                                                                               |
-| 122  | [\#SetNpadJoyAssignmentModeSingleByDefault](#SetNpadJoyAssignmentModeSingleByDefault "wikilink") |
-| 123  | [\#SetNpadJoyAssignmentModeSingle](#SetNpadJoyAssignmentModeSingle "wikilink")                   |
-| 124  | [\#SetNpadJoyAssignmentModeDual](#SetNpadJoyAssignmentModeDual "wikilink")                       |
-| 125  | [\#MergeSingleJoyAsDualJoy](#MergeSingleJoyAsDualJoy "wikilink")                                 |
-| 126  | StartLrAssignmentMode                                                                            |
-| 127  | StopLrAssignmentMode                                                                             |
-| 128  | SetNpadHandheldActivationMode                                                                    |
-| 129  | [\#GetNpadHandheldActivationMode](#GetNpadHandheldActivationMode "wikilink")                     |
-| 130  | SwapNpadAssignment                                                                               |
-| 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                     |
-| 132  | EnableUnintendedHomeButtonInputProtection                                                        |
-| 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                         |
-| 134  | \[6.1.0+\] SetNpadAnalogStickUseCenterClamp                                                      |
-| 135  | \[8.0.0+\] SetNpadCaptureButtonAssignment                                                        |
-| 136  | \[8.0.0+\] ClearNpadCaptureButtonAssignment                                                      |
-| 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                   |
-| 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                           |
-| 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                 |
-| 203  | [\#CreateActiveVibrationDeviceList](#CreateActiveVibrationDeviceList "wikilink")                 |
-| 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                 |
-| 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                       |
-| 206  | [\#SendVibrationValues](#SendVibrationValues "wikilink")                                         |
-| 207  | \[4.0.0+\] SendVibrationGcErmCommand                                                             |
-| 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                        |
-| 209  | \[4.0.0+\] BeginPermitVibrationSession                                                           |
-| 210  | \[4.0.0+\] EndPermitVibrationSession                                                             |
-| 211  | \[7.0.0+\] [\#IsVibrationDeviceMounted](#IsVibrationDeviceMounted "wikilink")                    |
-| 300  | ActivateConsoleSixAxisSensor                                                                     |
-| 301  | StartConsoleSixAxisSensor                                                                        |
-| 302  | StopConsoleSixAxisSensor                                                                         |
-| 303  | \[5.0.0+\] [\#ActivateSevenSixAxisSensor](#ActivateSevenSixAxisSensor "wikilink")                |
-| 304  | \[5.0.0+\] [\#StartSevenSixAxisSensor](#StartSevenSixAxisSensor "wikilink")                      |
-| 305  | \[5.0.0+\] [\#StopSevenSixAxisSensor](#StopSevenSixAxisSensor "wikilink")                        |
-| 306  | \[5.0.0+\] [\#InitializeSevenSixAxisSensor](#InitializeSevenSixAxisSensor "wikilink")            |
-| 307  | \[5.0.0+\] [\#FinalizeSevenSixAxisSensor](#FinalizeSevenSixAxisSensor "wikilink")                |
-| 308  | \[5.0.0+\] SetSevenSixAxisSensorFusionStrength                                                   |
-| 309  | \[5.0.0+\] GetSevenSixAxisSensorFusionStrength                                                   |
-| 310  | \[6.0.0+\] [\#ResetSevenSixAxisSensorTimestamp](#ResetSevenSixAxisSensorTimestamp "wikilink")    |
-| 400  | IsUsbFullKeyControllerEnabled                                                                    |
-| 401  | EnableUsbFullKeyController                                                                       |
-| 402  | IsUsbFullKeyControllerConnected                                                                  |
-| 403  | \[4.0.0+\] HasBattery                                                                            |
-| 404  | \[4.0.0+\] HasLeftRightBattery                                                                   |
-| 405  | \[4.0.0+\] GetNpadInterfaceType                                                                  |
-| 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                         |
-| 500  | \[5.0.0+\] GetPalmaConnectionHandle                                                              |
-| 501  | \[5.0.0+\] InitializePalma                                                                       |
-| 502  | \[5.0.0+\] AcquirePalmaOperationCompleteEvent                                                    |
-| 503  | \[5.0.0+\] GetPalmaOperationInfo                                                                 |
-| 504  | \[5.0.0+\] PlayPalmaActivity                                                                     |
-| 505  | \[5.0.0+\] SetPalmaFrModeType                                                                    |
-| 506  | \[5.0.0+\] ReadPalmaStep                                                                         |
-| 507  | \[5.0.0+\] EnablePalmaStep                                                                       |
-| 508  | \[5.0.0+\] ResetPalmaStep                                                                        |
-| 509  | \[5.0.0+\] ReadPalmaApplicationSection                                                           |
-| 510  | \[5.0.0+\] WritePalmaApplicationSection                                                          |
-| 511  | \[5.0.0+\] ReadPalmaUniqueCode                                                                   |
-| 512  | \[5.0.0+\] SetPalmaUniqueCodeInvalid                                                             |
-| 513  | \[5.0.0+\] WritePalmaActivityEntry                                                               |
-| 514  | \[5.0.0+\] WritePalmaRgbLedPatternEntry                                                          |
-| 515  | \[5.0.0+\] WritePalmaWaveEntry                                                                   |
-| 516  | \[5.0.0+\] SetPalmaDataBaseIdentificationVersion                                                 |
-| 517  | \[5.0.0+\] GetPalmaDataBaseIdentificationVersion                                                 |
-| 518  | \[5.0.0+\] SuspendPalmaFeature                                                                   |
-| 519  | \[5.1.0+\] GetPalmaOperationResult                                                               |
-| 520  | \[5.1.0+\] ReadPalmaPlayLog                                                                      |
-| 521  | \[5.1.0+\] ResetPalmaPlayLog                                                                     |
-| 522  | \[5.1.0+\] SetIsPalmaAllConnectable                                                              |
-| 523  | \[5.1.0+\] SetIsPalmaPairedConnectable                                                           |
-| 524  | \[5.1.0+\] PairPalma                                                                             |
-| 525  | \[5.1.0+\] SetPalmaBoostMode                                                                     |
-| 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                             |
-| 527  | \[8.0.0+\] EnablePalmaBoostMode                                                                  |
-| 528  | \[8.0.0+\] GetPalmaBluetoothAddress                                                              |
-| 529  | \[8.0.0+\] SetDisallowedPalmaConnection                                                          |
-| 1000 | SetNpadCommunicationMode                                                                         |
-| 1001 | GetNpadCommunicationMode                                                                         |
+| Cmd  | Name                                                                                                |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| 0    | [\#CreateAppletResource](#CreateAppletResource "wikilink")                                          |
+| 1    | ActivateDebugPad                                                                                    |
+| 11   | ActivateTouchScreen                                                                                 |
+| 21   | ActivateMouse                                                                                       |
+| 31   | ActivateKeyboard                                                                                    |
+| 32   | \[6.0.0+\] SendKeyboardLockKeyEvent                                                                 |
+| 40   | AcquireXpadIdEventHandle                                                                            |
+| 41   | ReleaseXpadIdEventHandle                                                                            |
+| 51   | ActivateXpad                                                                                        |
+| 55   | GetXpadIds                                                                                          |
+| 56   | ActivateJoyXpad                                                                                     |
+| 58   | GetJoyXpadLifoHandle                                                                                |
+| 59   | GetJoyXpadIds                                                                                       |
+| 60   | ActivateSixAxisSensor                                                                               |
+| 61   | DeactivateSixAxisSensor                                                                             |
+| 62   | GetSixAxisSensorLifoHandle                                                                          |
+| 63   | ActivateJoySixAxisSensor                                                                            |
+| 64   | DeactivateJoySixAxisSensor                                                                          |
+| 65   | GetJoySixAxisSensorLifoHandle                                                                       |
+| 66   | StartSixAxisSensor                                                                                  |
+| 67   | StopSixAxisSensor                                                                                   |
+| 68   | IsSixAxisSensorFusionEnabled                                                                        |
+| 69   | EnableSixAxisSensorFusion                                                                           |
+| 70   | SetSixAxisSensorFusionParameters                                                                    |
+| 71   | GetSixAxisSensorFusionParameters                                                                    |
+| 72   | ResetSixAxisSensorFusionParameters                                                                  |
+| 73   | SetAccelerometerParameters                                                                          |
+| 74   | GetAccelerometerParameters                                                                          |
+| 75   | ResetAccelerometerParameters                                                                        |
+| 76   | SetAccelerometerPlayMode                                                                            |
+| 77   | GetAccelerometerPlayMode                                                                            |
+| 78   | ResetAccelerometerPlayMode                                                                          |
+| 79   | SetGyroscopeZeroDriftMode                                                                           |
+| 80   | GetGyroscopeZeroDriftMode                                                                           |
+| 81   | ResetGyroscopeZeroDriftMode                                                                         |
+| 82   | IsSixAxisSensorAtRest                                                                               |
+| 83   | \[6.0.0+\] IsFirmwareUpdateAvailableForSixAxisSensor                                                |
+| 91   | ActivateGesture                                                                                     |
+| 100  | [\#SetSupportedNpadStyleSet](#SetSupportedNpadStyleSet "wikilink")                                  |
+| 101  | [\#GetSupportedNpadStyleSet](#GetSupportedNpadStyleSet "wikilink")                                  |
+| 102  | [\#SetSupportedNpadIdType](#SetSupportedNpadIdType "wikilink")                                      |
+| 103  | ActivateNpad                                                                                        |
+| 104  | DeactivateNpad                                                                                      |
+| 106  | [\#AcquireNpadStyleSetUpdateEventHandle](#AcquireNpadStyleSetUpdateEventHandle "wikilink")          |
+| 107  | DisconnectNpad                                                                                      |
+| 108  | GetPlayerLedPattern                                                                                 |
+| 109  | \[5.0.0+\] ActivateNpadWithRevision                                                                 |
+| 120  | SetNpadJoyHoldType                                                                                  |
+| 121  | GetNpadJoyHoldType                                                                                  |
+| 122  | [\#SetNpadJoyAssignmentModeSingleByDefault](#SetNpadJoyAssignmentModeSingleByDefault "wikilink")    |
+| 123  | [\#SetNpadJoyAssignmentModeSingle](#SetNpadJoyAssignmentModeSingle "wikilink")                      |
+| 124  | [\#SetNpadJoyAssignmentModeDual](#SetNpadJoyAssignmentModeDual "wikilink")                          |
+| 125  | [\#MergeSingleJoyAsDualJoy](#MergeSingleJoyAsDualJoy "wikilink")                                    |
+| 126  | StartLrAssignmentMode                                                                               |
+| 127  | StopLrAssignmentMode                                                                                |
+| 128  | SetNpadHandheldActivationMode                                                                       |
+| 129  | [\#GetNpadHandheldActivationMode](#GetNpadHandheldActivationMode "wikilink")                        |
+| 130  | SwapNpadAssignment                                                                                  |
+| 131  | IsUnintendedHomeButtonInputProtectionEnabled                                                        |
+| 132  | EnableUnintendedHomeButtonInputProtection                                                           |
+| 133  | \[5.0.0+\] SetNpadJoyAssignmentModeSingleWithDestination                                            |
+| 134  | \[6.1.0+\] SetNpadAnalogStickUseCenterClamp                                                         |
+| 135  | \[8.0.0+\] SetNpadCaptureButtonAssignment                                                           |
+| 136  | \[8.0.0+\] ClearNpadCaptureButtonAssignment                                                         |
+| 200  | [\#GetVibrationDeviceInfo](#GetVibrationDeviceInfo "wikilink")                                      |
+| 201  | [\#SendVibrationValue](#SendVibrationValue "wikilink")                                              |
+| 202  | [\#GetActualVibrationValue](#GetActualVibrationValue "wikilink")                                    |
+| 203  | [\#CreateActiveVibrationDeviceList](#CreateActiveVibrationDeviceList "wikilink")                    |
+| 204  | [\#PermitVibration](#PermitVibration "wikilink")                                                    |
+| 205  | [\#IsVibrationPermitted](#IsVibrationPermitted "wikilink")                                          |
+| 206  | [\#SendVibrationValues](#SendVibrationValues "wikilink")                                            |
+| 207  | \[4.0.0+\] SendVibrationGcErmCommand                                                                |
+| 208  | \[4.0.0+\] GetActualVibrationGcErmCommand                                                           |
+| 209  | \[4.0.0+\] BeginPermitVibrationSession                                                              |
+| 210  | \[4.0.0+\] EndPermitVibrationSession                                                                |
+| 211  | \[7.0.0+\] [\#IsVibrationDeviceMounted](#IsVibrationDeviceMounted "wikilink")                       |
+| 300  | ActivateConsoleSixAxisSensor                                                                        |
+| 301  | StartConsoleSixAxisSensor                                                                           |
+| 302  | StopConsoleSixAxisSensor                                                                            |
+| 303  | \[5.0.0+\] [\#ActivateSevenSixAxisSensor](#ActivateSevenSixAxisSensor "wikilink")                   |
+| 304  | \[5.0.0+\] [\#StartSevenSixAxisSensor](#StartSevenSixAxisSensor "wikilink")                         |
+| 305  | \[5.0.0+\] [\#StopSevenSixAxisSensor](#StopSevenSixAxisSensor "wikilink")                           |
+| 306  | \[5.0.0+\] [\#InitializeSevenSixAxisSensor](#InitializeSevenSixAxisSensor "wikilink")               |
+| 307  | \[5.0.0+\] [\#FinalizeSevenSixAxisSensor](#FinalizeSevenSixAxisSensor "wikilink")                   |
+| 308  | \[5.0.0+\] [\#SetSevenSixAxisSensorFusionStrength](#SetSevenSixAxisSensorFusionStrength "wikilink") |
+| 309  | \[5.0.0+\] [\#GetSevenSixAxisSensorFusionStrength](#GetSevenSixAxisSensorFusionStrength "wikilink") |
+| 310  | \[6.0.0+\] [\#ResetSevenSixAxisSensorTimestamp](#ResetSevenSixAxisSensorTimestamp "wikilink")       |
+| 400  | IsUsbFullKeyControllerEnabled                                                                       |
+| 401  | EnableUsbFullKeyController                                                                          |
+| 402  | IsUsbFullKeyControllerConnected                                                                     |
+| 403  | \[4.0.0+\] HasBattery                                                                               |
+| 404  | \[4.0.0+\] HasLeftRightBattery                                                                      |
+| 405  | \[4.0.0+\] GetNpadInterfaceType                                                                     |
+| 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                            |
+| 500  | \[5.0.0+\] GetPalmaConnectionHandle                                                                 |
+| 501  | \[5.0.0+\] InitializePalma                                                                          |
+| 502  | \[5.0.0+\] AcquirePalmaOperationCompleteEvent                                                       |
+| 503  | \[5.0.0+\] GetPalmaOperationInfo                                                                    |
+| 504  | \[5.0.0+\] PlayPalmaActivity                                                                        |
+| 505  | \[5.0.0+\] SetPalmaFrModeType                                                                       |
+| 506  | \[5.0.0+\] ReadPalmaStep                                                                            |
+| 507  | \[5.0.0+\] EnablePalmaStep                                                                          |
+| 508  | \[5.0.0+\] ResetPalmaStep                                                                           |
+| 509  | \[5.0.0+\] ReadPalmaApplicationSection                                                              |
+| 510  | \[5.0.0+\] WritePalmaApplicationSection                                                             |
+| 511  | \[5.0.0+\] ReadPalmaUniqueCode                                                                      |
+| 512  | \[5.0.0+\] SetPalmaUniqueCodeInvalid                                                                |
+| 513  | \[5.0.0+\] WritePalmaActivityEntry                                                                  |
+| 514  | \[5.0.0+\] WritePalmaRgbLedPatternEntry                                                             |
+| 515  | \[5.0.0+\] WritePalmaWaveEntry                                                                      |
+| 516  | \[5.0.0+\] SetPalmaDataBaseIdentificationVersion                                                    |
+| 517  | \[5.0.0+\] GetPalmaDataBaseIdentificationVersion                                                    |
+| 518  | \[5.0.0+\] SuspendPalmaFeature                                                                      |
+| 519  | \[5.1.0+\] GetPalmaOperationResult                                                                  |
+| 520  | \[5.1.0+\] ReadPalmaPlayLog                                                                         |
+| 521  | \[5.1.0+\] ResetPalmaPlayLog                                                                        |
+| 522  | \[5.1.0+\] SetIsPalmaAllConnectable                                                                 |
+| 523  | \[5.1.0+\] SetIsPalmaPairedConnectable                                                              |
+| 524  | \[5.1.0+\] PairPalma                                                                                |
+| 525  | \[5.1.0+\] SetPalmaBoostMode                                                                        |
+| 526  | \[7.0.0+\] CancelWritePalmaWaveEntry                                                                |
+| 527  | \[8.0.0+\] EnablePalmaBoostMode                                                                     |
+| 528  | \[8.0.0+\] GetPalmaBluetoothAddress                                                                 |
+| 529  | \[8.0.0+\] SetDisallowedPalmaConnection                                                             |
+| 1000 | SetNpadCommunicationMode                                                                            |
+| 1001 | GetNpadCommunicationMode                                                                            |
 
 ## CreateAppletResource
 
@@ -275,6 +274,17 @@ MemoryPermission=none.
 Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"), no output.
 
+## SetSevenSixAxisSensorFusionStrength
+
+Takes a PID, a float, and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
+## GetSevenSixAxisSensorFusionStrength
+
+Takes a PID and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), returns an output
+float.
+
 ## ResetSevenSixAxisSensorTimestamp
 
 Takes a PID and an u64
@@ -305,8 +315,7 @@ handle.
 
 ## IActiveVibrationDeviceList
 
-This is
-"nn::hid::IActiveVibrationDeviceList".
+This is "nn::hid::IActiveVibrationDeviceList".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
@@ -470,8 +479,7 @@ color data.
 
 # hid:sys
 
-This is
-"nn::hid::IHidSystemServer".
+This is "nn::hid::IHidSystemServer".
 
 | Cmd  | Name                                                                            |
 | ---- | ------------------------------------------------------------------------------- |
@@ -739,8 +747,7 @@ This service no longer exists in \[8.0.0+\].
 
 # irs
 
-This is
-"nn::irsensor::IIrSensorServer".
+This is "nn::irsensor::IIrSensorServer".
 
 | Cmd | Name                                                                           |
 | --- | ------------------------------------------------------------------------------ |
@@ -864,8 +871,7 @@ This is an u32.
 ## PackedMomentProcessorConfig
 
 This is a 0x20-byte struct. This is converted from another structure by
-the official
-user-process.
+the official user-process.
 
 | Offset | Size | Description            | DefaultConfig                  |
 | ------ | ---- | ---------------------- | ------------------------------ |
@@ -924,8 +930,7 @@ This is "nn::irsensor::IIrSensorSystemServer".
 
 This is "nn::ahid::IServerSession".
 
-Used for USB HID
-devices.
+Used for USB HID devices.
 
 | Cmd | Name | Notes                                                                        |
 | --- | ---- | ---------------------------------------------------------------------------- |
@@ -973,8 +978,7 @@ output buffer using the actual-transfer-size.
 
 ## IWriteSession
 
-This is
-"nn::ahid::IWriteSession".
+This is "nn::ahid::IWriteSession".
 
 | Cmd | Name | Notes                                                                                                                  |
 | --- | ---- | ---------------------------------------------------------------------------------------------------------------------- |

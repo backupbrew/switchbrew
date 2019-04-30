@@ -175,9 +175,9 @@ This is "nn::hid::IHidServer".
 |-
 | 307 || [5.0.0+] [[#FinalizeSevenSixAxisSensor]]
 |-
-| 308 || [5.0.0+] SetSevenSixAxisSensorFusionStrength
+| 308 || [5.0.0+] [[#SetSevenSixAxisSensorFusionStrength]]
 |-
-| 309 || [5.0.0+] GetSevenSixAxisSensorFusionStrength
+| 309 || [5.0.0+] [[#GetSevenSixAxisSensorFusionStrength]]
 |-
 | 310 || [6.0.0+] [[#ResetSevenSixAxisSensorTimestamp]]
 |-
@@ -338,6 +338,12 @@ The size of the first TransferMemory is 0x1000 with MemoryPermission=read-only, 
 
 == FinalizeSevenSixAxisSensor ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.
+
+== SetSevenSixAxisSensorFusionStrength ==
+Takes a PID, a float, and an u64 [[AM_services|AppletResourceUserId]], no output.
+
+== GetSevenSixAxisSensorFusionStrength ==
+Takes a PID and an u64 [[AM_services|AppletResourceUserId]], returns an output float.
 
 == ResetSevenSixAxisSensorTimestamp ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.
