@@ -1,3 +1,7 @@
+  - **26 March 19** [Atmosphère
+    v0.8.6](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.6)
+    released with lots of bugfixes, more cheat stuff and web applet
+    homebrew support.
   - **21 February 19** [Atmosphère
     v0.8.4](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.4)
     released with 7.0.x support.
