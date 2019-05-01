@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **1 May 19** [libnx v2.2.0 and switch-examples
+    v20190501](https://devkitpro.org/viewtopic.php?f=13&t=8908)
+    released.
   - **23 April 19** Nintendo released system update
     [8.0.1](8.0.1.md "wikilink").
   - **15 April 19** Nintendo released system update
@@ -28,7 +31,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     r13](https://devkitpro.org/viewtopic.php?f=13&t=8891) and [libnx
     v2.1.0](https://github.com/switchbrew/libnx/releases/tag/v2.1.0)
     released with pthread/std::thread support.
-  - **26 March 19** [Atmosphère
-    v0.8.6](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.6)
-    released with lots of bugfixes, more cheat stuff and web applet
-    homebrew support.
