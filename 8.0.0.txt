@@ -97,6 +97,7 @@ The Secure Monitor was updated.
 Kernel initialization has changed significantly.
 * There is now a new loader program ("kernelldr") that runs before the kernel, and sets up KASLR/memory/etc. (kernelldr has its own .dynamic section).
 * The INI1 containing the Initial Programs is no longer its own section inside of [[Package2]]. It is instead now embedded inside the kernel section, with kernelldr preparing it for the kernel.
+* svcQueryIoMapping no longer accepts unaligned addresses as input when (input physaddr >= 0x1000). In addition, when input physaddr is < 0x1000, the kernel takes a new codepath to convert this to a different physical address.
 
 <check back later for more detailed diffs>
 
