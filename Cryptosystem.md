@@ -3,7 +3,7 @@
 The bootrom initializes two keyslots in the hardware engine:
 
   - the SBK (Secure Boot Key) in keyslot 14
-  - the SSK (Secure System Key) in keyslot 15.
+  - the SSK (Secure Storage Key) in keyslot 15.
 
 Reads from both of these keyslots are disabled by the bootROM. The SBK
 is stored in
@@ -65,11 +65,11 @@ authenticated by NVidia has access to.
 
 ### Key table during package1ldr
 
-| Keyslot | Name            | Set by                                                         | Per-console | Per-firmware |
-| ------- | --------------- | -------------------------------------------------------------- | ----------- | ------------ |
-| 11      | Package1Key     | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes          |
-| 14      | SecureBootKey   | Bootrom                                                        | Yes         | No           |
-| 15      | SecureSystemKey | Bootrom                                                        | Yes         | No           |
+| Keyslot | Name             | Set by                                                         | Per-console | Per-firmware |
+| ------- | ---------------- | -------------------------------------------------------------- | ----------- | ------------ |
+| 11      | Package1Key      | [Package1ldr](Package1#Package1ldr.md##Package1ldr "wikilink") | No          | Yes          |
+| 14      | SecureBootKey    | Bootrom                                                        | Yes         | No           |
+| 15      | SecureStorageKey | Bootrom                                                        | Yes         | No           |
 
 ### \[1.0.0-3.0.2\] Key table after package1ldr
 
@@ -97,12 +97,12 @@ authenticated by NVidia has access to.
 
 ### \[6.2.0\]+ Key table after package1ldr/TSEC Payload (Secure Monitor boot)
 
-| Keyslot | Name            | Set by                                                           | Per-console | Per-firmware |
-| ------- | --------------- | ---------------------------------------------------------------- | ----------- | ------------ |
-| 12      | TsecKey         | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | Yes         | No           |
-| 13      | TsecRootKey     | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | No          | Unknown      |
-| 14      | SecureBootKey   | Bootrom                                                          | Yes         | No           |
-| 15      | SecureSystemKey | Bootrom                                                          | Yes         | No           |
+| Keyslot | Name             | Set by                                                           | Per-console | Per-firmware |
+| ------- | ---------------- | ---------------------------------------------------------------- | ----------- | ------------ |
+| 12      | TsecKey          | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | Yes         | No           |
+| 13      | TsecRootKey      | [Package1ldr TSEC Firmware](TSEC#Payload.md##Payload "wikilink") | No          | Unknown      |
+| 14      | SecureBootKey    | Bootrom                                                          | Yes         | No           |
+| 15      | SecureStorageKey | Bootrom                                                          | Yes         | No           |
 
 ### Key generation
 

@@ -2,7 +2,7 @@
 The bootrom initializes two keyslots in the hardware engine:
 
 * the SBK (Secure Boot Key) in keyslot 14
-* the SSK (Secure System Key) in keyslot 15.
+* the SSK (Secure Storage Key) in keyslot 15.
 
 Reads from both of these keyslots are disabled by the bootROM.
 The SBK is stored in [[Fuses#FUSE_PRIVATE_KEY|FUSE_PRIVATE_KEY]], which are locked to read out only FFs after the bootrom finishes.
@@ -77,7 +77,7 @@ This is presumably using data stored in fuses that only microcode authenticated 
 | No
 |-
 | 15
-| SecureSystemKey
+| SecureStorageKey
 | Bootrom
 | Yes
 | No
@@ -199,7 +199,7 @@ This is presumably using data stored in fuses that only microcode authenticated 
 | No
 |-
 | 15
-| SecureSystemKey
+| SecureStorageKey
 | Bootrom
 | Yes
 | No
