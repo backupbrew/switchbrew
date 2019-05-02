@@ -883,8 +883,7 @@ This is "nn::gpio::IPadSession".
 
 # i2c, i2c:pcv
 
-This is
-"nn::i2c::IManager".
+This is "nn::i2c::IManager".
 
 | Cmd               | Name                                                 |
 | ----------------- | ---------------------------------------------------- |
@@ -896,35 +895,40 @@ This is
 
 ## Known Devices
 
-| I2cDevice | Port:Addr | Is10bit | Speed  | Max Retries | Retry Delay | Usage                                            | Used by                                                                                            |
-| --------- | --------- | ------- | ------ | ----------- | ----------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| 0         | 0:52      | N       | 100000 | 0           | 0           | DebugPadDriver                                   | [HID services](HID%20services.md "wikilink")                                                       |
-| 1         | 2:49      | N       | 400000 | 0           | 0           | TouchPanel                                       | [HID services](HID%20services.md "wikilink")                                                       |
-| 2         | 0:4c      | N       | 100000 | 0           | 0           | Temperature Sensor (TMP451 or NCT72)             | [PTM services](PTM%20services.md "wikilink")                                                       |
-| 3         | 0:4c      | N       | 100000 | 0           | 0           | Temperature Sensor (TMP451 or NCT72) (duplicate) |                                                                                                    |
-| 4         | 0:1c      | N       | 100000 | 0           | 0           | Audio Codec (ALC5639)                            | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink") |
-| 5         | 4:68      | N       | 400000 | 3           | 5000000     | PMIC RTC (max77620\_rtc0), max77620\_irq0        | [PCV services](PCV%20services.md "wikilink")                                                       |
-| 6         | 4:3c      | N       | 400000 | 3           | 5000000     | PMIC (MAX77620), max77620\_irq0                  | [PCV services](PCV%20services.md "wikilink")                                                       |
-| 7         | 4:1b      | N       | 400000 | 3           | 5000000     | Sub-PMIC for CPU (max77621\_cpu)                 | [PCV services](PCV%20services.md "wikilink")                                                       |
-| 8         | 4:1c      | N       | 400000 | 3           | 5000000     | Sub-PMIC for GPU (max77621\_gpu)                 | [PCV services](PCV%20services.md "wikilink")                                                       |
-| 9         | 0:6b      | N       | 100000 | 3           | 5000000     | Charger IC (BQ24193)                             | [PTM services](PTM%20services.md "wikilink")                                                       |
-| 10        | 0:36      | N       | 100000 | 3           | 5000000     | Fuel Gauge IC (MAX17050)                         | [PCV services](PCV%20services.md "wikilink"), [PTM services](PTM%20services.md "wikilink")         |
-| 11        | 0:18      | N       | 100000 | 3           | 5000000     | USB-PD controller (RHOM BM92T30MWV)              | [USB services](USB%20services.md "wikilink")                                                       |
-| 12        | 1:40      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VDD15V0-HB)            | Factory testing                                                                                    |
-| 13        | 1:41      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-CPU-DS)           | Factory testing                                                                                    |
-| 14        | 1:44      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-GPU-DS)           | Factory testing                                                                                    |
-| 15        | 1:45      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-DDR-DS)           | Factory testing                                                                                    |
-| 16        | 1:46      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-AP)               | Factory testing                                                                                    |
-| 17        | 1:47      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-BL-DS)            | Factory testing                                                                                    |
-| 18        | 1:29      | N       | 400000 | 3           | 5000000     | Ambient Light Sensor (BH1730)                    | [Backlight services](Backlight%20services.md "wikilink")                                           |
-| 19        | 1:48      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_CORE)                     | Factory testing                                                                                    |
-| 20        | 1:49      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_Soc-1V8)                  | Factory testing                                                                                    |
-| 21        | 1:4a      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_LPDDR4-1V8)               | Factory testing                                                                                    |
-| 22        | 1:4b      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_REG1V32)                  | Factory testing                                                                                    |
-| 23        | 1:4d      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_VDD3V3-SYS)               | Factory testing                                                                                    |
-| 24        | 3:50      | N       | 100000 | 0           | 0           | HDMI DDC                                         | [NV services](NV%20services.md "wikilink")                                                         |
-| 25        | 3:54      | N       | 100000 | 0           | 0           | HDMI SCDC                                        | [NV services](NV%20services.md "wikilink")                                                         |
-| 26        | 3:3a      | N       | 100000 | 0           | 0           | DisplayHdmiHotplugHandler                        | [NV services](NV%20services.md "wikilink")                                                         |
+| Name | ID         | Port:Addr | Is10bit | Speed  | Max Retries | Retry Delay | Usage                                            | Used by                                                                                            |
+| ---- | ---------- | --------- | ------- | ------ | ----------- | ----------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| 0    | 0x350000C9 | 0:52      | N       | 100000 | 0           | 0           | DebugPadDriver                                   | [HID services](HID%20services.md "wikilink")                                                       |
+| 1    | 0x35000033 | 2:49      | N       | 400000 | 0           | 0           | TouchPanel                                       | [HID services](HID%20services.md "wikilink")                                                       |
+| 2    | 0x3E000001 | 0:4c      | N       | 100000 | 0           | 0           | Temperature Sensor (TMP451 or NCT72)             | [PTM services](PTM%20services.md "wikilink")                                                       |
+| 3    | 0x3E000001 | 0:4c      | N       | 100000 | 0           | 0           | Temperature Sensor (TMP451 or NCT72) (duplicate) |                                                                                                    |
+| 4    | 0x33000001 | 0:1c      | N       | 100000 | 0           | 0           | Audio Codec (ALC5639)                            | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink") |
+| 5    | 0x3B000001 | 4:68      | N       | 400000 | 3           | 5000000     | PMIC RTC (max77620\_rtc0), max77620\_irq0        | [PCV services](PCV%20services.md "wikilink")                                                       |
+| 6    | 0x3A000001 | 4:3c      | N       | 400000 | 3           | 5000000     | PMIC (MAX77620), max77620\_irq0                  | [PCV services](PCV%20services.md "wikilink")                                                       |
+| 7    | 0x3A000003 | 4:1b      | N       | 400000 | 3           | 5000000     | Sub-PMIC for CPU (max77621\_cpu)                 | [PCV services](PCV%20services.md "wikilink")                                                       |
+| 8    | 0x3A000004 | 4:1c      | N       | 400000 | 3           | 5000000     | Sub-PMIC for GPU (max77621\_gpu)                 | [PCV services](PCV%20services.md "wikilink")                                                       |
+| 9    | 0x39000001 | 0:6b      | N       | 100000 | 3           | 5000000     | Charger IC (BQ24193)                             | [PTM services](PTM%20services.md "wikilink")                                                       |
+| 10   | 0x39000033 | 0:36      | N       | 100000 | 3           | 5000000     | Fuel Gauge IC (MAX17050)                         | [PCV services](PCV%20services.md "wikilink"), [PTM services](PTM%20services.md "wikilink")         |
+| 11   | 0x040000C9 | 0:18      | N       | 100000 | 3           | 5000000     | USB-PD controller (RHOM BM92T30MWV)              | [USB services](USB%20services.md "wikilink")                                                       |
+| 12   | 0x3F000401 | 1:40      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VDD15V0-HB)            | Factory testing                                                                                    |
+| 13   | 0x3F000001 | 1:41      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-CPU-DS)           | Factory testing                                                                                    |
+| 14   | 0x3F000002 | 1:44      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-GPU-DS)           | Factory testing                                                                                    |
+| 15   | 0x3F000003 | 1:45      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-DDR-DS)           | Factory testing                                                                                    |
+| 16   | 0x3F000402 | 1:46      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-AP)               | Factory testing                                                                                    |
+| 17   | 0x3F000403 | 1:47      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VSYS-BL-DS)            | Factory testing                                                                                    |
+| 18   | 0x35000047 | 1:29      | N       | 400000 | 3           | 5000000     | Ambient Light Sensor (BH1730)                    | [Backlight services](Backlight%20services.md "wikilink")                                           |
+| 19   | 0x3F000404 | 1:48      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_CORE)                     | Factory testing                                                                                    |
+| 20   | 0x3F000405 | 1:49      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_Soc-1V8)                  | Factory testing                                                                                    |
+| 21   | 0x3F000406 | 1:4a      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_LPDDR4-1V8)               | Factory testing                                                                                    |
+| 22   | 0x3F000407 | 1:4b      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_REG1V32)                  | Factory testing                                                                                    |
+| 23   | 0x3F000408 | 1:4d      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_VDD3V3-SYS)               | Factory testing                                                                                    |
+| 24   | 0x34000001 | 3:50      | N       | 100000 | 0           | 0           | HDMI DDC                                         | [NV services](NV%20services.md "wikilink")                                                         |
+| 25   | 0x34000002 | 3:54      | N       | 100000 | 0           | 0           | HDMI SCDC                                        | [NV services](NV%20services.md "wikilink")                                                         |
+| 26   | 0x34000003 | 3:3a      | N       | 100000 | 0           | 0           | HDMI HDCP                                        | [NV services](NV%20services.md "wikilink")                                                         |
+| 27   | 0x3A000005 | 4:a4      | N       | 400000 | 0           | 0           | Fan (Fan53528)                                   |                                                                                                    |
+| 28   | 0x3A000002 | 4:31      | N       | 400000 | 0           | 0           | PMIC (Max77812)                                  |                                                                                                    |
+| 29   | 0x3A000002 | 4:33      | N       | 400000 | 0           | 0           | PMIC (Max77812)                                  |                                                                                                    |
+| 30   | 0x3F000409 | 1:4e      | N       | 400000 | 3           | 5000000     | Power Monitor (ina226\_V\_VDD-DDR-0V6)           |                                                                                                    |
+| 31   | 0x36000001 | 1:08      | N       | 400000 | 3           | 5000000     |                                                  |                                                                                                    |
 
 ## OpenSessionForDev
 
@@ -950,8 +954,7 @@ true if the device exists or false otherwise.
 
 ## II2cSession
 
-This is
-"nn::i2c::ISession".
+This is "nn::i2c::ISession".
 
 | Cmd               | Name                                                           |
 | ----------------- | -------------------------------------------------------------- |
