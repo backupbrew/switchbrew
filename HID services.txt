@@ -607,23 +607,23 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 323 || [5.0.0+] UnsetAllAutoPilotVirtualPadState
 |-
-| 324 || [7.0.0+] AttachHdlsWorkBuffer
+| 324 || [7.0.0+] [[#AttachHdlsWorkBuffer]]
 |-
-| 325 || [7.0.0+] ReleaseHdlsWorkBuffer
+| 325 || [7.0.0+] [[#ReleaseHdlsWorkBuffer]]
 |-
-| 326 || [7.0.0+] DumpHdlsNpadAssignmentState
+| 326 || [7.0.0+] [[#DumpHdlsNpadAssignmentState]]
 |-
-| 327 || [7.0.0+] DumpHdlsStates
+| 327 || [7.0.0+] [[#DumpHdlsStates]]
 |-
-| 328 || [7.0.0+] ApplyHdlsNpadAssignmentState
+| 328 || [7.0.0+] [[#ApplyHdlsNpadAssignmentState]]
 |-
-| 329 || [7.0.0+] ApplyHdlsStateList
+| 329 || [7.0.0+] [[#ApplyHdlsStateList]]
 |-
-| 330 || [7.0.0+] AttachHdlsVirtualDevice
+| 330 || [7.0.0+] [[#AttachHdlsVirtualDevice]]
 |-
-| 331 || [7.0.0+] DetachHdlsVirtualDevice
+| 331 || [7.0.0+] [[#DetachHdlsVirtualDevice]]
 |-
-| 332 || [7.0.0+] SetHdlsState
+| 332 || [7.0.0+] [[#SetHdlsState]]
 |-
 | 350 || [5.0.0+] AddRegisteredDevice
 |-
@@ -649,6 +649,45 @@ Takes 4 input u32s for the colors, an input u8, an input u64 '''UniquePadId''', 
 A state flag must be clear (same as [[#UpdateControllerColor]]), otherwise an error is thrown. Afterwards, this flag is set.
 
 Sends the spi-write subcommand to the specified controller, for writing to offset 0x6050 size 0xD. The first 3-bytes from each u32 is used for the spi-write-data, with the u8 being copied immediately afterwards the color data.
+
+== AttachHdlsWorkBuffer ==
+Takes an input TransferMemory handle and an u64 for the TransferMemory size, no output.
+
+Official user-processes use TransferMemory size=0x1000 and permissions=RW.
+
+This TransferMemory is used as input/output by the other Hdls commands.
+
+== ReleaseHdlsWorkBuffer ==
+No input/output.
+
+== DumpHdlsNpadAssignmentState ==
+No input/output.
+
+After using this cmd, the output 0x208-byte '''HdlsNpadAssignment''' struct is located at tmem+0.
+
+== DumpHdlsStates ==
+No input/output.
+
+After using this cmd, the output 0x408-byte '''HdlsStateList''' struct is located at tmem+0.
+
+== ApplyHdlsNpadAssignmentState ==
+Takes an input u8 bool, no output.
+
+Prior to using this cmd, the input 0x208-byte '''HdlsNpadAssignment''' struct is written to tmem+0 by the user-process.
+
+== ApplyHdlsStateList ==
+No input/output.
+
+Prior to using this cmd, the input 0x408-byte '''HdlsStateList''' struct is written to tmem+0 by the user-process.
+
+== AttachHdlsVirtualDevice ==
+Takes an 0x10-byte '''HdlsDeviceInfo''' struct, returns a 8-byte '''HdlsHandle'''.
+
+== DetachHdlsVirtualDevice ==
+Takes an input 8-byte '''HdlsHandle''', no output.
+
+== SetHdlsState ==
+Takes an input 0x24-byte '''HdlsState''' struct and an input 8-byte '''HdlsHandle''', no output.
 
 = hid:sys =
 This is "nn::hid::IHidSystemServer".
