@@ -686,6 +686,62 @@ This is an 0x4000-byte struct. Official sw uses fixed-size 0x4000 for the buffer
 
 This is loaded from the [[Title_list|TimeZoneBinary]] title with the specified LocationName under the zoneinfo/ directory, the content is then converted into this TimeZoneRule structure.
 
+The files contained under zoneinfo/ directory are Tzif2 files without Tzif1 header and data at the begining of them (see [https://tools.ietf.org/html/rfc8536 RFC8536] for more information).
+
+The conversion of a Tzif2 file to a TimeZoneRule structure is based on [https://github.com/eggert/tz/blob/master/localtime.c tz database code] with some custom modifications (Leap seconds aren't handled, no usage of "posixrules" and Tzif1 support stripped out).
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || timecnt
+|-
+| 0x4 || 0x4 || typecnt
+|-
+| 0x8 || 0x4 || charcnt
+|-
+| 0xC || 0x1 || goback
+|-
+| 0xD || 0x1 || goahead
+|-
+| 0xE || 0x2 || Padding
+|-
+| 0x10 || 0x8 * 1000 || ats
+|-
+| 0x1f50 || 0x1 * 1000 || types
+|-
+| 0x2338 || 0x10 * 128 || ttis (time type information), struct ttinfo[1000]
+|-
+| 0x2b38 || 0x1 * 512 || chars
+|-
+| 0x2d38 || 0x4 || defaulttype
+|-
+| 0x2d3c || 0x12c4 || Reserved / Unused
+|}
+
+=== ttinfo ===
+This is an 0x10-byte struct.
+Represent a Time Type Information used in [[#TimeZoneRule]].
+
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || tt_gmtoff
+|-
+| 0x4 || 0x1 || tt_isdst
+|-
+| 0x5 || 0x3 || Padding
+|-
+| 0x8 || 0x4 || tt_abbrind
+|-
+| 0xC || 0x1 || tt_ttisstd
+|-
+| 0xD || 0x1 || tt_ttisgmt
+|-
+| 0xE || 0x2 || Padding
+|}
+
 === TimeZoneRuleVersion ===
 This is an u128.
 

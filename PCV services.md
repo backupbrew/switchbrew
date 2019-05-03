@@ -81,8 +81,7 @@ and GetPowerDomainStateTable.
 These are "nn::pcv::Module\_X" where X is the power, clock and reset
 block name.
 
-\[8.0.0+\] Every module name is now mapped to an
-ID.
+\[8.0.0+\] Every module name is now mapped to an ID.
 
 ### Power Switch / Clocking / Reset
 
@@ -342,8 +341,7 @@ This was added with \[8.0.0+\].
 
 # time:u, time:a, time:s
 
-This is
-"nn::timesrv::detail::<service::IStaticService>".
+This is "nn::timesrv::detail::<service::IStaticService>".
 
 | Cmd | Name                                                                | Notes                                                          |
 | --- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
@@ -370,8 +368,7 @@ This is
 
 ## ISteadyClock
 
-This is
-"nn::timesrv::detail::<service::ISteadyClock>".
+This is "nn::timesrv::detail::<service::ISteadyClock>".
 
 | Cmd | Name                              | Notes                                                                                   |
 | --- | --------------------------------- | --------------------------------------------------------------------------------------- |
@@ -399,8 +396,7 @@ This is an u64.
 
 ## ISystemClock
 
-This is
-"nn::timesrv::detail::<service::ISystemClock>".
+This is "nn::timesrv::detail::<service::ISystemClock>".
 
 | Cmd | Name                  | Notes                                                                     |
 | --- | --------------------- | ------------------------------------------------------------------------- |
@@ -415,8 +411,7 @@ This is an u64 for UTC POSIX time.
 
 ### SystemClockContext
 
-This is an 0x20-byte
-struct.
+This is an 0x20-byte struct.
 
 | Offset | Size | Description                                                                 |
 | ------ | ---- | --------------------------------------------------------------------------- |
@@ -425,8 +420,7 @@ struct.
 
 ## ITimeZoneService
 
-This is
-"nn::timesrv::detail::<service::ITimeZoneService>".
+This is "nn::timesrv::detail::<service::ITimeZoneService>".
 
 | Cmd | Name                                           | Notes                                                                                                                                                                                                                                                             |
 | --- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -460,6 +454,45 @@ the buffer size with the above commands.
 This is loaded from the [TimeZoneBinary](Title%20list.md "wikilink")
 title with the specified LocationName under the zoneinfo/ directory, the
 content is then converted into this TimeZoneRule structure.
+
+The files contained under zoneinfo/ directory are Tzif2 files without
+Tzif1 header and data at the begining of them (see
+[RFC8536](https://tools.ietf.org/html/rfc8536) for more information).
+
+The conversion of a Tzif2 file to a TimeZoneRule structure is based on
+[tz database code](https://github.com/eggert/tz/blob/master/localtime.c)
+with some custom modifications (Leap seconds aren't handled, no usage of
+"posixrules" and Tzif1 support stripped out).
+
+| Offset | Size        | Description                                         |
+| ------ | ----------- | --------------------------------------------------- |
+| 0x0    | 0x4         | timecnt                                             |
+| 0x4    | 0x4         | typecnt                                             |
+| 0x8    | 0x4         | charcnt                                             |
+| 0xC    | 0x1         | goback                                              |
+| 0xD    | 0x1         | goahead                                             |
+| 0xE    | 0x2         | Padding                                             |
+| 0x10   | 0x8 \* 1000 | ats                                                 |
+| 0x1f50 | 0x1 \* 1000 | types                                               |
+| 0x2338 | 0x10 \* 128 | ttis (time type information), struct ttinfo\[1000\] |
+| 0x2b38 | 0x1 \* 512  | chars                                               |
+| 0x2d38 | 0x4         | defaulttype                                         |
+| 0x2d3c | 0x12c4      | Reserved / Unused                                   |
+
+### ttinfo
+
+This is an 0x10-byte struct. Represent a Time Type Information used in
+[\#TimeZoneRule](#TimeZoneRule "wikilink").
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x4  | tt\_gmtoff  |
+| 0x4    | 0x1  | tt\_isdst   |
+| 0x5    | 0x3  | Padding     |
+| 0x8    | 0x4  | tt\_abbrind |
+| 0xC    | 0x1  | tt\_ttisstd |
+| 0xD    | 0x1  | tt\_ttisgmt |
+| 0xE    | 0x2  | Padding     |
 
 ### TimeZoneRuleVersion
 
