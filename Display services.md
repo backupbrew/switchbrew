@@ -5,8 +5,7 @@ layers/framebuffers.
 # caps:sc
 
 This is "nn::capsrv::sf::IScreenShotControlService". This is available
-with
-\[2.0.0+\].
+with \[2.0.0+\].
 
 | Cmd                  | Name         | Notes                                                                                                                                  |
 | -------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -224,8 +223,7 @@ Takes an input u64 and u32. Returns an
 
 # IApplicationDisplayService
 
-This is
-"nn::visrv::sf::IApplicationDisplayService".
+This is "nn::visrv::sf::IApplicationDisplayService".
 
 | Cmd  | Name                                                                                                  |
 | ---- | ----------------------------------------------------------------------------------------------------- |
@@ -493,7 +491,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 6012 | \[7.0.0+\] DisableLayerAutoClearTransitionBuffer           |
 | 7000 | SetContentVisibility                                       |
 | 8000 | SetConductorLayer                                          |
-| 8001 | \[8.0.0+\]                                                 |
+| 8001 | \[8.0.0+\] SetTimestampTracking                            |
 | 8100 | SetIndirectProducerFlipOffset                              |
 | 8200 | \[4.0.0+\] CreateSharedBufferStaticStorage                 |
 | 8201 | \[4.0.0+\] CreateSharedBufferTransferMemory                |

@@ -532,7 +532,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 |-
 | 8000 || SetConductorLayer
 |-
-| 8001 || [8.0.0+]
+| 8001 || [8.0.0+] SetTimestampTracking
 |-
 | 8100 || SetIndirectProducerFlipOffset
 |-
