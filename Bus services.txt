@@ -305,7 +305,7 @@ This is "nn::i2c::IManager".
 |-
 | [1.0.0-5.1.0] 3 || [[#HasDeviceForDev|HasDeviceForDev]]
 |-
-| 4 || [6.0.0+]
+| 4 || [6.0.0+] [[#OpenSessionWithId|OpenSessionWithId]]
 |}
 
 == Known Devices ==
@@ -390,6 +390,9 @@ Takes an '''I2cDevice''' and returns true if the device exists or false otherwis
 == HasDeviceForDev ==
 Takes an u32 '''port''', an u16 '''addr''', an '''AddressingMode''' (1 for 10-bit, 0 otherwise) and a '''SpeedMode''' (400000 or 100000). Returns true if the device exists or false otherwise.
 
+== OpenSessionWithId ==
+Takes an '''I2cId''' and returns a [[#II2cSession]] session for it.
+
 == II2cSession ==
 This is "nn::i2c::ISession".
 
@@ -413,15 +416,12 @@ This is "nn::i2c::ISession".
 |}
 
 == SendAuto ==
-
 Takes bytes to write in either a static buffer or a receive buffer, returns an error code for success
 
 == ExecuteCommandListAuto ==
-
 Takes a command list from either a static buffer or a receive buffer, returns data in either a static (or recieve?) buffer.
 
 === Commands ===
-
 * 0x40 [u8 len] <bytes> - Write bytes to device
 * 0xC1 [u8 len] - Receive bytes from device
 

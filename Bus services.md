@@ -885,13 +885,13 @@ This is "nn::gpio::IPadSession".
 
 This is "nn::i2c::IManager".
 
-| Cmd               | Name                                                 |
-| ----------------- | ---------------------------------------------------- |
-| 0                 | [OpenSessionForDev](#OpenSessionForDev_2 "wikilink") |
-| 1                 | [OpenSession](#OpenSession_2 "wikilink")             |
-| \[1.0.0-5.1.0\] 2 | [HasDevice](#HasDevice "wikilink")                   |
-| \[1.0.0-5.1.0\] 3 | [HasDeviceForDev](#HasDeviceForDev "wikilink")       |
-| 4                 | \[6.0.0+\]                                           |
+| Cmd               | Name                                                          |
+| ----------------- | ------------------------------------------------------------- |
+| 0                 | [OpenSessionForDev](#OpenSessionForDev_2 "wikilink")          |
+| 1                 | [OpenSession](#OpenSession_2 "wikilink")                      |
+| \[1.0.0-5.1.0\] 2 | [HasDevice](#HasDevice "wikilink")                            |
+| \[1.0.0-5.1.0\] 3 | [HasDeviceForDev](#HasDeviceForDev "wikilink")                |
+| 4                 | \[6.0.0+\] [OpenSessionWithId](#OpenSessionWithId "wikilink") |
 
 ## Known Devices
 
@@ -951,6 +951,11 @@ otherwise.
 Takes an u32 **port**, an u16 **addr**, an **AddressingMode** (1 for
 10-bit, 0 otherwise) and a **SpeedMode** (400000 or 100000). Returns
 true if the device exists or false otherwise.
+
+## OpenSessionWithId
+
+Takes an **I2cId** and returns a
+[\#II2cSession](#II2cSession "wikilink") session for it.
 
 ## II2cSession
 
