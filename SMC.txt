@@ -312,10 +312,10 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  DramId_EristaIcosaSamsung6gb
 |-
 |  5
-|  [4.0.0+] Reserved (DramId_EristaIcosaHynix6gb)
+|  [4.0.0+] Reserved
 |-
 |  6
-|  [4.0.0+] Reserved (DramId_EristaIcosaMicron6gb)
+|  [4.0.0+] Reserved
 |-
 |  7
 |  [5.0.0+] DramId_MarikoIowax1x2Samsung4gb ([4.0.0-4.1.0] Reserved)
@@ -343,16 +343,21 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |-
 |  15
 |  [7.0.0+] DramId_MarikoHoagMicron4gb ([5.0.0-6.2.0] Reserved)
+|-
+|  16
+|  [8.0.0+] DramId_MarikoUnkSamsung4gb
 |}
 
 [[PCV_services|PCV]] selects memory training tables based on DramId.
 {| class="wikitable" border="1"
 |-
+!  SoC
 !  Platform
 !  DramId
 !  Revision
 !  DVFS version
 |-
+|  T210
 |  jetson-tx1
 |  N/A
 |  0x07
@@ -368,6 +373,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  11_1331200_01_V9.8.3_V1.6
  11_1600000_02_V9.8.3_V1.6
 |-
+|  T210
 |  nx-abcb
 |  EristaIcosaSamsung4gb
 |  0x07
@@ -383,6 +389,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.7_V1.6
  10_1600000_NoCfgVersion_V9.8.7_V1.6
 |-
+|  T210
 |  nx-abcb
 |  EristaIcosaMicron4gb
 |  0x07
@@ -398,6 +405,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.4_V1.6
  10_1600000_NoCfgVersion_V9.8.4_V1.6
 |-
+|  T210
 |  nx-abcb
 |  EristaIcosaHynix4gb
 |  0x07
@@ -413,8 +421,9 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.4_V1.6
  10_1600000_NoCfgVersion_V9.8.4_V1.6
 |-
+|  T210
 |  nx-abca2
-|  EristaIcosaSamsung4gb or EristaIcosaMicron4gb
+|  EristaIcosaSamsung4gb, EristaIcosaMicron4gb
 |  0x07
 | 
  10_40800_NoCfgVersion_V9.8.7_V1.6
@@ -428,6 +437,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.7_V1.6
  10_1600000_NoCfgVersion_V9.8.7_V1.6
 |-
+|  T210
 |  nx-abca2
 |  EristaIcosaHynix4gb
 |  0x07
@@ -443,6 +453,7 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.7_V1.6
  10_1600000_NoCfgVersion_V9.8.7_V1.6
 |-
+|  T210
 |  nx-abca2
 |  EristaIcosaSamsung6gb
 |  0x07
@@ -458,7 +469,8 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  10_1331200_NoCfgVersion_V9.8.7_V1.6
  10_1600000_NoCfgVersion_V9.8.7_V1.6
 |-
-|  nx-abca2
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
 |  MarikoIowax1x2Samsung4gb
 |  0x03
 |
@@ -466,32 +478,45 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  01_1331200.0_NoCfgVersion_V0.3.1_V2.0
  01_1600000_NoCfgVersion_V0.3.1_V2.0
 |-
-|  nx-abca2
-|  MarikoIowaSamsung4gb or MarikoHoagSamsung4gb
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  MarikoIowaSamsung4gb, MarikoHoagSamsung4gb
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.3.1_V2.0
  01_1331200.0_NoCfgVersion_V0.3.1_V2.0
  01_1600000_NoCfgVersion_V0.3.1_V2.0
 |-
-|  nx-abca2
-|  MarikoIowaSamsung8gb or MarikoHoagSamsung8gb
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  MarikoIowaSamsung8gb, MarikoHoagSamsung8gb
 |  0x03
 |
  01_204000_NoCfgVersion_V0.4.2_V2.0
  01_1331200.0_NoCfgVersion_V0.4.2_V2.0
  01_1600000_NoCfgVersion_V0.4.2_V2.0
 |-
-|  nx-abca2
-|  MarikoIowaHynix4gb or MarikoHoagHynix4gb
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  MarikoIowaHynix4gb, MarikoHoagHynix4gb
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.3.1_V2.0
  01_1331200.0_NoCfgVersion_V0.3.1_V2.0
  01_1600000_NoCfgVersion_V0.3.1_V2.0
 |-
-|  nx-abca2
-|  MarikoIowaMicron4gb or MarikoHoagMicron4gb
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  MarikoIowaMicron4gb, MarikoHoagMicron4gb
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoUnkSamsung4gb
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.4.2_V2.0
@@ -499,9 +524,11 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
  01_1600000_NoCfgVersion_V0.4.2_V2.0
 |}
 
+'''nx-abca2''' ('''Icosa''' or '''Hoag''' in '''Erista''', '''Iowa''' or '''Hoag''' in '''Mariko''') hardware types are variations of the retail and EDEV form factors.
+
 '''nx-abcb''' ('''Copper''') is the SDEV unit. Among other differences, this has extra hardware to support HDMI output.
 
-'''nx-abca2''' ('''Icosa''' or '''Hoag''' in '''Erista''', '''Iowa''' or '''Hoag''' in '''Mariko''') hardware types are variations of the retail or EDEV form factors.
+[8.0.0+] '''nx-abcc''' was added for '''Mariko'''.
 
 '''Erista''' memory is LPDDR4, while '''Mariko''' memory is LPDDR4X.
 
@@ -514,7 +541,7 @@ The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 ==== HardwareType ====
 [1.0.0+] This item is obtained by checking bits 8 and 2 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 2 (Hoag) or 3 (Invalid).
 
-[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Mariko) or 4 (Invalid).
+[4.0.0+] This item is obtained by checking bits 8, 2 and 16-19 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa) or 4 (Invalid).
 
 [7.0.0+] This item no longer depends on fuses and can only be 0 (Icosa) or 0xF (Invalid) in retail units.
 
@@ -531,6 +558,20 @@ Under normal circumstances, this just returns bit 0 of the active [[BCT#bootload
 
 ==== BootReason ====
 Used to determine how the system booted.
+
+{| class=wikitable
+! Value || Description
+|-
+| 0 || Invalid
+|-
+| 1 || AcOk
+|-
+| 2 || OnKey
+|-
+| 3 || RtcAlarm1
+|-
+| 4 || RtcAlarm2
+|}
 
 ==== MemoryArrange ====
 [[Process Manager services|PM]] uses this item for selecting the appropriate size for each [[SVC#LimitableResource|LimitableResource_Memory]].

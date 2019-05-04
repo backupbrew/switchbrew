@@ -26,8 +26,7 @@ the call sub-id and returning the result of the call.
 
 Functions exposed to user-mode processes using
 [svcCallSecureMonitor](SVC.md "wikilink"). SMCs should be called from
-CPUID 3 (where SPL
-runs).
+CPUID 3 (where SPL runs).
 
 | Sub-ID                     | Name                                                                       | In | Out |
 | -------------------------- | -------------------------------------------------------------------------- | -- | --- |
@@ -237,8 +236,7 @@ represents a RSA wrapped AES key.
 
 ## ID 1
 
-Functions exposed to the kernel
-internally.
+Functions exposed to the kernel internally.
 
 | Sub-ID     | Name                                                                              | In                                                                        | Out                                         |
 | ---------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------- |
@@ -269,8 +267,7 @@ Standard ARM PCSI SMC. Turns on the CPU (CPU1, CPU2 or CPU3).
 
 ### GetConfig
 
-Takes a **config\_item** and returns an associated
-**config\_val**.
+Takes a **config\_item** and returns an associated **config\_val**.
 
 | ConfigItem | Name                                                                   |
 | ---------- | ---------------------------------------------------------------------- |
@@ -309,8 +306,8 @@ This is extracted directly from
 | 2     | DramId\_EristaIcosaMicron4gb                                           |
 | 3     | Reserved                                                               |
 | 4     | DramId\_EristaIcosaSamsung6gb                                          |
-| 5     | \[4.0.0+\] Reserved (DramId\_EristaIcosaHynix6gb)                      |
-| 6     | \[4.0.0+\] Reserved (DramId\_EristaIcosaMicron6gb)                     |
+| 5     | \[4.0.0+\] Reserved                                                    |
+| 6     | \[4.0.0+\] Reserved                                                    |
 | 7     | \[5.0.0+\] DramId\_MarikoIowax1x2Samsung4gb (\[4.0.0-4.1.0\] Reserved) |
 | 8     | \[5.0.0+\] DramId\_MarikoIowaSamsung4gb                                |
 | 9     | \[5.0.0+\] DramId\_MarikoIowaSamsung8gb                                |
@@ -320,6 +317,7 @@ This is extracted directly from
 | 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb                                |
 | 14    | \[7.0.0+\] DramId\_MarikoHoagHynix4gb (\[5.0.0-6.2.0\] Reserved)       |
 | 15    | \[7.0.0+\] DramId\_MarikoHoagMicron4gb (\[5.0.0-6.2.0\] Reserved)      |
+| 16    | \[8.0.0+\] DramId\_MarikoUnkSamsung4gb                                 |
 
 [PCV](PCV%20services.md "wikilink") selects memory training tables based
 on DramId.
@@ -327,6 +325,7 @@ on DramId.
 <table>
 <thead>
 <tr class="header">
+<th><p>SoC</p></th>
 <th><p>Platform</p></th>
 <th><p>DramId</p></th>
 <th><p>Revision</p></th>
@@ -335,6 +334,7 @@ on DramId.
 </thead>
 <tbody>
 <tr class="odd">
+<td><p>T210</p></td>
 <td><p>jetson-tx1</p></td>
 <td><p>N/A</p></td>
 <td><p>0x07</p></td>
@@ -350,6 +350,7 @@ on DramId.
 <code>11_1600000_02_V9.8.3_V1.6</code></p></td>
 </tr>
 <tr class="even">
+<td><p>T210</p></td>
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaSamsung4gb</p></td>
 <td><p>0x07</p></td>
@@ -365,6 +366,7 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
 </tr>
 <tr class="odd">
+<td><p>T210</p></td>
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaMicron4gb</p></td>
 <td><p>0x07</p></td>
@@ -380,6 +382,7 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
 </tr>
 <tr class="even">
+<td><p>T210</p></td>
 <td><p>nx-abcb</p></td>
 <td><p>EristaIcosaHynix4gb</p></td>
 <td><p>0x07</p></td>
@@ -395,8 +398,9 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.4_V1.6</code></p></td>
 </tr>
 <tr class="odd">
+<td><p>T210</p></td>
 <td><p>nx-abca2</p></td>
-<td><p>EristaIcosaSamsung4gb or EristaIcosaMicron4gb</p></td>
+<td><p>EristaIcosaSamsung4gb, EristaIcosaMicron4gb</p></td>
 <td><p>0x07</p></td>
 <td><p><code>10_40800_NoCfgVersion_V9.8.7_V1.6</code><br />
 <code>10_68000_NoCfgVersion_V9.8.7_V1.6</code><br />
@@ -410,6 +414,7 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
 </tr>
 <tr class="even">
+<td><p>T210</p></td>
 <td><p>nx-abca2</p></td>
 <td><p>EristaIcosaHynix4gb</p></td>
 <td><p>0x07</p></td>
@@ -425,6 +430,7 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
 </tr>
 <tr class="odd">
+<td><p>T210</p></td>
 <td><p>nx-abca2</p></td>
 <td><p>EristaIcosaSamsung6gb</p></td>
 <td><p>0x07</p></td>
@@ -440,7 +446,8 @@ on DramId.
 <code>10_1600000_NoCfgVersion_V9.8.7_V1.6</code></p></td>
 </tr>
 <tr class="even">
-<td><p>nx-abca2</p></td>
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
 <td><p>MarikoIowax1x2Samsung4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
@@ -448,32 +455,45 @@ on DramId.
 <code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
 </tr>
 <tr class="odd">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaSamsung4gb or MarikoHoagSamsung4gb</p></td>
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>MarikoIowaSamsung4gb, MarikoHoagSamsung4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
 <code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
 </tr>
 <tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaSamsung8gb or MarikoHoagSamsung8gb</p></td>
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>MarikoIowaSamsung8gb, MarikoHoagSamsung8gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
 </tr>
 <tr class="odd">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaHynix4gb or MarikoHoagHynix4gb</p></td>
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>MarikoIowaHynix4gb, MarikoHoagHynix4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.3.1_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.3.1_V2.0</code><br />
 <code>01_1600000_NoCfgVersion_V0.3.1_V2.0</code></p></td>
 </tr>
 <tr class="even">
-<td><p>nx-abca2</p></td>
-<td><p>MarikoIowaMicron4gb or MarikoHoagMicron4gb</p></td>
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>MarikoIowaMicron4gb, MarikoHoagMicron4gb</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoUnkSamsung4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
@@ -482,12 +502,14 @@ on DramId.
 </tbody>
 </table>
 
+**nx-abca2** (**Icosa** or **Hoag** in **Erista**, **Iowa** or **Hoag**
+in **Mariko**) hardware types are variations of the retail and EDEV form
+factors.
+
 **nx-abcb** (**Copper**) is the SDEV unit. Among other differences, this
 has extra hardware to support HDMI output.
 
-**nx-abca2** (**Icosa** or **Hoag** in **Erista**, **Iowa** or **Hoag**
-in **Mariko**) hardware types are variations of the retail or EDEV form
-factors.
+\[8.0.0+\] **nx-abcc** was added for **Mariko**.
 
 **Erista** memory is LPDDR4, while **Mariko** memory is LPDDR4X.
 
@@ -508,7 +530,7 @@ It can be 0 (Icosa), 1 (Copper), 2 (Hoag) or 3 (Invalid).
 
 \[4.0.0+\] This item is obtained by checking bits 8, 2 and 16-19 from
 [FUSE\_RESERVED\_ODM4](Fuse%20registers#FUSE%20RESERVED%20ODM4.md##FUSE_RESERVED_ODM4 "wikilink").
-It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Mariko) or 4 (Invalid).
+It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa) or 4 (Invalid).
 
 \[7.0.0+\] This item no longer depends on fuses and can only be 0
 (Icosa) or 0xF (Invalid) in retail units.
@@ -537,6 +559,14 @@ cleared. If they don't match, a panic is thrown.
 #### BootReason
 
 Used to determine how the system booted.
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Invalid     |
+| 1     | AcOk        |
+| 2     | OnKey       |
+| 3     | RtcAlarm1   |
+| 4     | RtcAlarm2   |
 
 #### MemoryArrange
 
@@ -622,8 +652,7 @@ This item is currently hardcoded to 0.
 
 \[5.0.0+\] [PCV](PCV%20services.md "wikilink") uses this value in
 combination with [HardwareType](#HardwareType "wikilink") to configure
-power blocks and memory tables for different
-hardware.
+power blocks and memory tables for different hardware.
 
 | Value | SoC  | GPU           | Power Blocks                                   |
 | ----- | ---- | ------------- | ---------------------------------------------- |
