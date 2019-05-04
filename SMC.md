@@ -493,7 +493,7 @@ on DramId.
 <tr class="odd">
 <td><p>T214</p></td>
 <td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
-<td><p>DramId_MarikoUnkSamsung4gb</p></td>
+<td><p>MarikoUnkSamsung4gb</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
@@ -534,6 +534,10 @@ It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa) or 4 (Invalid).
 
 \[7.0.0+\] This item no longer depends on fuses and can only be 0
 (Icosa) or 0xF (Invalid) in retail units.
+
+\[8.0.0+\] This item can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa), 4
+(Unknown) or 5 (Invalid). It still can only be 0 (Icosa) or 0xF
+(Invalid) in retail units.
 
 #### IsRetail
 
