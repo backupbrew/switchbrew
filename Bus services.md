@@ -34,7 +34,7 @@ This is "nn::gpio::IManager".
 <td><p>0x01</p></td>
 <td><p>0xCC</p></td>
 <td><p>Z, 4</p></td>
-<td><p>Audio Codec (ALC5639) Power</p></td>
+<td><p>Audio Codec (ALC5639) Power (CODEC_LDO_EN_TEMP)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="Audio services.md" title="wikilink">Audio services</a>, <a href="Fatal services.md" title="wikilink">Fatal services</a>)</p></td>
@@ -43,7 +43,7 @@ This is "nn::gpio::IManager".
 <td><p>0x02</p></td>
 <td><p>0x24</p></td>
 <td><p>E, 4</p></td>
-<td><p>SDCard Power</p></td>
+<td><p>SDCard Power (POW_SD_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
@@ -61,7 +61,7 @@ This is "nn::gpio::IManager".
 <td><p>0x04</p></td>
 <td><p>0xDA</p></td>
 <td><p>BB, 2</p></td>
-<td></td>
+<td><p>RAM_CODE3</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -69,7 +69,7 @@ This is "nn::gpio::IManager".
 <td><p>0x05</p></td>
 <td><p>0xDB</p></td>
 <td><p>BB, 3</p></td>
-<td><p>GcAsic Power</p></td>
+<td><p>GcAsic Reset (GC_RST)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
@@ -78,7 +78,7 @@ This is "nn::gpio::IManager".
 <td><p>0x06</p></td>
 <td><p>0xDC</p></td>
 <td><p>BB, 4</p></td>
-<td><p>Headphone Detect</p></td>
+<td><p>Headphone Detect (CODEC_ALERT)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
@@ -87,7 +87,7 @@ This is "nn::gpio::IManager".
 <td><p>0x07</p></td>
 <td><p>0x25</p></td>
 <td><p>E, 5</p></td>
-<td></td>
+<td><p>GcAsic Power (POW_GC)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag</p></td>
 </tr>
@@ -95,7 +95,7 @@ This is "nn::gpio::IManager".
 <td><p>0x08</p></td>
 <td><p>0x90</p></td>
 <td><p>S, 0</p></td>
-<td><p>DebugPadDriver</p></td>
+<td><p>DebugPadDriver (DEBUG_CONTROLLER_DET)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -104,7 +104,7 @@ This is "nn::gpio::IManager".
 <td><p>0x09</p></td>
 <td><p>0x91</p></td>
 <td><p>S, 1</p></td>
-<td></td>
+<td><p>Battery Charge Status (BATT_CHG_STATUS)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -112,7 +112,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0A</p></td>
 <td><p>0x96</p></td>
 <td><p>S, 6</p></td>
-<td><p>Charger IC (BQ24193) Charge Enable</p></td>
+<td><p>Charger IC (BQ24193) Charge Enable (BATT_CHG_ENABLE_N)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
@@ -121,7 +121,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0B</p></td>
 <td><p>0x97</p></td>
 <td><p>S, 7</p></td>
-<td><p>CPU fan sampling</p></td>
+<td><p>CPU fan sampling (FAN_TACH)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -129,7 +129,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0C</p></td>
 <td><p>0x26</p></td>
 <td><p>E, 6</p></td>
-<td><p>Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_S)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -138,7 +138,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0D</p></td>
 <td><p>0x05</p></td>
 <td><p>A, 5</p></td>
-<td><p>Fan enable (normal)</p></td>
+<td><p>Fan enable (normal) (VDD50A-EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
@@ -147,7 +147,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0E</p></td>
 <td><p>0x78</p></td>
 <td><p>P, 0</p></td>
-<td><p>SDMMC3_CLK_PP0?</p></td>
+<td><p>SDEV Coax Select (SDEV_COAX_SEL_1)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -155,7 +155,7 @@ This is "nn::gpio::IManager".
 <td><p>0x0F</p></td>
 <td><p>0x93</p></td>
 <td><p>S, 3</p></td>
-<td><p>GcAsic IRQ</p></td>
+<td><p>GcAsic IRQ (GC_CD)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
@@ -164,7 +164,7 @@ This is "nn::gpio::IManager".
 <td><p>0x10</p></td>
 <td><p>0x7D</p></td>
 <td><p>P, 5</p></td>
-<td><p>SDMMC3_DAT0_PP5?</p></td>
+<td><p>PROD_TYPE_0</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -172,7 +172,7 @@ This is "nn::gpio::IManager".
 <td><p>0x11</p></td>
 <td><p>0x7C</p></td>
 <td><p>P, 4</p></td>
-<td><p>SDMMC3_DAT1_PP4?</p></td>
+<td><p>PROD_TYPE_1</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -180,7 +180,7 @@ This is "nn::gpio::IManager".
 <td><p>0x12</p></td>
 <td><p>0x7B</p></td>
 <td><p>P, 3</p></td>
-<td><p>SDMMC3_DAT2_PP3?</p></td>
+<td><p>PROD_TYPE_2</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -188,7 +188,7 @@ This is "nn::gpio::IManager".
 <td><p>0x13</p></td>
 <td><p>0x7A</p></td>
 <td><p>P, 2</p></td>
-<td><p>SDMMC3_DAT3_PP2?</p></td>
+<td><p>PROD_TYPE_3</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -196,7 +196,7 @@ This is "nn::gpio::IManager".
 <td><p>0x14</p></td>
 <td><p>0xBC</p></td>
 <td><p>X, 4</p></td>
-<td><p>Temperature Sensor</p></td>
+<td><p>Temperature Sensor (TEMP_ALERT)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -204,7 +204,7 @@ This is "nn::gpio::IManager".
 <td><p>0x15</p></td>
 <td><p>0xAE</p></td>
 <td><p>V, 6</p></td>
-<td></td>
+<td><p>CODEC_HP_DET_IRQ</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
@@ -213,7 +213,7 @@ This is "nn::gpio::IManager".
 <td><p>0x16</p></td>
 <td><p>0xBA</p></td>
 <td><p>X, 2</p></td>
-<td><p>MOTION_INT_PX2?</p></td>
+<td><p>MOTION_INT_PX2</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -221,7 +221,7 @@ This is "nn::gpio::IManager".
 <td><p>0x17</p></td>
 <td><p>0xB9</p></td>
 <td><p>X, 1</p></td>
-<td><p>TouchPanel IRQ (TOUCH_INT_PX1) (unused - polled instead)</p></td>
+<td><p>TouchPanel IRQ (TP_IRQ) (unused - polled instead)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -256,7 +256,7 @@ This is "nn::gpio::IManager".
 <td><p>0x1B</p></td>
 <td><p>0xC0</p></td>
 <td><p>Y, 0</p></td>
-<td><p>Fuel Gauge IC (MAX17050) IRQ</p></td>
+<td><p>Fuel Gauge IC (MAX17050) IRQ (BATT_MGIC_IRQ)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
@@ -265,7 +265,7 @@ This is "nn::gpio::IManager".
 <td><p>0x1C</p></td>
 <td><p>0xC1</p></td>
 <td><p>Y, 1</p></td>
-<td><p>BUTTON_HOME_PY1</p></td>
+<td><p>Recovery Mode Key (BUTTON_HOME_PY1)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -291,7 +291,7 @@ This is "nn::gpio::IManager".
 <td><p>0x1F</p></td>
 <td><p>0x55</p></td>
 <td><p>K, 5</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select</p></td>
+<td><p>Charger IC (BQ24193) OTG charge select (PD_VCONN_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -300,7 +300,7 @@ This is "nn::gpio::IManager".
 <td><p>0x20</p></td>
 <td><p>0xAD</p></td>
 <td><p>V, 5</p></td>
-<td><p>USB-PD controller (RHOM BM92T30MWV) related</p></td>
+<td><p>USB-PD controller (RHOM BM92T30MWV) Reset (PD_RST)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -309,7 +309,7 @@ This is "nn::gpio::IManager".
 <td><p>0x21</p></td>
 <td><p>0xC8</p></td>
 <td><p>Z, 0</p></td>
-<td><p>Charger IC (BQ24193) IRQ</p></td>
+<td><p>Charger IC (BQ24193) IRQ (BQ24193_IRQ)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
@@ -318,7 +318,7 @@ This is "nn::gpio::IManager".
 <td><p>0x22</p></td>
 <td><p>0xCA</p></td>
 <td><p>Z, 2</p></td>
-<td></td>
+<td><p>SDEV Coax Select (SDEV_COAX_SEL_0)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -326,7 +326,7 @@ This is "nn::gpio::IManager".
 <td><p>0x23</p></td>
 <td><p>0xCB</p></td>
 <td><p>Z, 3</p></td>
-<td></td>
+<td><p>SD_WP</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -334,7 +334,7 @@ This is "nn::gpio::IManager".
 <td><p>0x24</p></td>
 <td><p>0x4F</p></td>
 <td><p>J, 7</p></td>
-<td><p>TouchPanel reset</p></td>
+<td><p>TouchPanel reset (TP_RST)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -343,7 +343,7 @@ This is "nn::gpio::IManager".
 <td><p>0x25</p></td>
 <td><p>0x50</p></td>
 <td><p>K, 0</p></td>
-<td></td>
+<td><p>BT_GPIO_2</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -351,7 +351,7 @@ This is "nn::gpio::IManager".
 <td><p>0x26</p></td>
 <td><p>0x51</p></td>
 <td><p>K, 1</p></td>
-<td></td>
+<td><p>BT_GPIO_3</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -359,7 +359,7 @@ This is "nn::gpio::IManager".
 <td><p>0x27</p></td>
 <td><p>0x52</p></td>
 <td><p>K, 2</p></td>
-<td></td>
+<td><p>BT_GPIO_4</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -367,7 +367,7 @@ This is "nn::gpio::IManager".
 <td><p>0x28</p></td>
 <td><p>0x54</p></td>
 <td><p>K, 4</p></td>
-<td><p>USB-PD controller (RHOM BM92T30MWV) IRQ</p></td>
+<td><p>USB-PD controller (RHOM BM92T30MWV) IRQ (PD_IRQ)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -376,7 +376,7 @@ This is "nn::gpio::IManager".
 <td><p>0x29</p></td>
 <td><p>0x56</p></td>
 <td><p>K, 6</p></td>
-<td></td>
+<td><p>POW_VCPU_INT</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -384,7 +384,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2A</p></td>
 <td><p>0x57</p></td>
 <td><p>K, 7</p></td>
-<td></td>
+<td><p>MAX77621_GPU_INT</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag</p></td>
 </tr>
@@ -392,7 +392,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2B</p></td>
 <td><p>0x53</p></td>
 <td><p>K, 3</p></td>
-<td><p>Joy-Con(R) NwcpDriver1.NwcpCharger</p></td>
+<td><p>Joy-Con(R) NwcpDriver1.NwcpCharger (EXTCON_CHG_U)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -401,7 +401,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2C</p></td>
 <td><p>0xE3</p></td>
 <td><p>CC, 3</p></td>
-<td><p>Joy-Con(L) NwcpDriver0.NwcpCharger</p></td>
+<td><p>Joy-Con(L) NwcpDriver0.NwcpCharger (EXTCON_CHG_S)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -410,7 +410,7 @@ This is "nn::gpio::IManager".
 <td><p>0x2D</p></td>
 <td><p>0x38</p></td>
 <td><p>H, 0</p></td>
-<td><p>WIFI_EN_PH0?</p></td>
+<td><p>WIFI_RF_DISABLE</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -436,7 +436,7 @@ This is "nn::gpio::IManager".
 <td><p>0x30</p></td>
 <td><p>0x3D</p></td>
 <td><p>H, 5</p></td>
-<td></td>
+<td><p>BT_WAKE_AP</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -444,7 +444,7 @@ This is "nn::gpio::IManager".
 <td><p>0x31</p></td>
 <td><p>0x3F</p></td>
 <td><p>H, 7</p></td>
-<td></td>
+<td><p>BT_GPIO_5</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -452,7 +452,7 @@ This is "nn::gpio::IManager".
 <td><p>0x32</p></td>
 <td><p>0x40</p></td>
 <td><p>I, 0</p></td>
-<td><p>Backlight +5V</p></td>
+<td><p>Backlight +5V (LCD_VDD_P_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
@@ -461,7 +461,7 @@ This is "nn::gpio::IManager".
 <td><p>0x33</p></td>
 <td><p>0x41</p></td>
 <td><p>I, 1</p></td>
-<td><p>Backlight -5V</p></td>
+<td><p>Backlight -5V (LCD_VDD_N_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
@@ -470,7 +470,7 @@ This is "nn::gpio::IManager".
 <td><p>0x34</p></td>
 <td><p>0x3E</p></td>
 <td><p>H, 6</p></td>
-<td><p>Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?)</p></td>
+<td><p>Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_U)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -479,7 +479,7 @@ This is "nn::gpio::IManager".
 <td><p>0x35</p></td>
 <td><p>0xE2</p></td>
 <td><p>CC, 2</p></td>
-<td></td>
+<td><p>RAM_CODE2</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -487,7 +487,7 @@ This is "nn::gpio::IManager".
 <td><p>0x36</p></td>
 <td><p>0xE4</p></td>
 <td><p>CC, 4</p></td>
-<td><p>Fan enable (high power)</p></td>
+<td><p>Fan enable (high power) (VDD50B_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
@@ -496,7 +496,7 @@ This is "nn::gpio::IManager".
 <td><p>0x37</p></td>
 <td><p>0x3A</p></td>
 <td><p>H, 2</p></td>
-<td></td>
+<td><p>WIFI_WAKE_HOST</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -504,7 +504,7 @@ This is "nn::gpio::IManager".
 <td><p>0x38</p></td>
 <td><p>0xC9</p></td>
 <td><p>Z, 1</p></td>
-<td><p>SDCard Card Detect</p></td>
+<td><p>SDCard Card Detect (SD_CD)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
 (<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
@@ -513,7 +513,7 @@ This is "nn::gpio::IManager".
 <td><p>0x39</p></td>
 <td><p>0x4D</p></td>
 <td><p>J, 5</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select</p></td>
+<td><p>Charger IC (BQ24193) OTG charge select (OTG_FET_1)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -522,7 +522,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3A</p></td>
 <td><p>0x58</p></td>
 <td><p>L, 0</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select</p></td>
+<td><p>Charger IC (BQ24193) OTG charge select (OTG_FET_2)</p></td>
 <td><p>Out</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
 (<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -531,7 +531,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3B</p></td>
 <td><p>0x3E</p></td>
 <td><p>H, 6</p></td>
-<td><p>Joy-Con(R) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
+<td><p>Joy-Con(R) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_U)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -539,7 +539,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3C</p></td>
 <td><p>0x26</p></td>
 <td><p>E, 6</p></td>
-<td><p>Joy-Con(L) NwcpDriver1.GpioMonitorTask0 duplicate?</p></td>
+<td><p>Joy-Con(L) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_S)</p></td>
 <td><p>In</p></td>
 <td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
 </tr>
@@ -555,7 +555,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3E</p></td>
 <td><p>0x33</p></td>
 <td><p>G, 3</p></td>
-<td><p>Joy-Con(R) CTS (checked low)</p></td>
+<td><p>Joy-Con(R) CTS (checked low) (EXT_UART2_CTS)</p></td>
 <td><p>In</p></td>
 <td><p>None<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -564,7 +564,7 @@ This is "nn::gpio::IManager".
 <td><p>0x3F</p></td>
 <td><p>0x1C</p></td>
 <td><p>D, 4</p></td>
-<td><p>Joy-Con(L) CTS (checked low)</p></td>
+<td><p>Joy-Con(L) CTS (checked low) (EXT_UART3_CTS)</p></td>
 <td><p>In</p></td>
 <td><p>None<br />
 (<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
@@ -573,7 +573,7 @@ This is "nn::gpio::IManager".
 <td><p>0x40</p></td>
 <td><p>0xD9</p></td>
 <td><p>BB, 1</p></td>
-<td></td>
+<td><p>5V_STEPDOWN_EN</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -581,7 +581,7 @@ This is "nn::gpio::IManager".
 <td><p>0x41</p></td>
 <td><p>0x0C</p></td>
 <td><p>B, 4</p></td>
-<td><p>Lid Closed (unused)</p></td>
+<td><p>Lid Closed (unused) (USB_B2_OC)</p></td>
 <td><p>In</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -589,7 +589,7 @@ This is "nn::gpio::IManager".
 <td><p>0x42</p></td>
 <td><p>0x0D</p></td>
 <td><p>B, 5</p></td>
-<td></td>
+<td><p>5V_STEPDOWN_PG</p></td>
 <td><p>In</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -597,7 +597,7 @@ This is "nn::gpio::IManager".
 <td><p>0x43</p></td>
 <td><p>0x21</p></td>
 <td><p>E, 1</p></td>
-<td><p>USB power</p></td>
+<td><p>USB power (USB_A_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -606,7 +606,7 @@ This is "nn::gpio::IManager".
 <td><p>0x44</p></td>
 <td><p>0x27</p></td>
 <td><p>E, 7</p></td>
-<td></td>
+<td><p>USB power (USB_A_FLAG)</p></td>
 <td><p>In</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -614,7 +614,7 @@ This is "nn::gpio::IManager".
 <td><p>0x45</p></td>
 <td><p>0x92</p></td>
 <td><p>S, 2</p></td>
-<td></td>
+<td><p>USB_B3_OC</p></td>
 <td><p>In</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -622,7 +622,7 @@ This is "nn::gpio::IManager".
 <td><p>0x46</p></td>
 <td><p>0x95</p></td>
 <td><p>S, 5</p></td>
-<td><p>USB root port 4 power</p></td>
+<td><p>USB root port 4 power (USB_B3_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -631,7 +631,7 @@ This is "nn::gpio::IManager".
 <td><p>0x47</p></td>
 <td><p>0x98</p></td>
 <td><p>T, 0</p></td>
-<td><p>USB root port 3 power</p></td>
+<td><p>USB root port 3 power (USB_B2_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -640,7 +640,7 @@ This is "nn::gpio::IManager".
 <td><p>0x48</p></td>
 <td><p>0x10</p></td>
 <td><p>C, 0</p></td>
-<td><p>HdmiHotplug</p></td>
+<td><p>HdmiHotplug (HDMI_5V_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
@@ -649,7 +649,7 @@ This is "nn::gpio::IManager".
 <td><p>0x49</p></td>
 <td><p>0x11</p></td>
 <td><p>C, 1</p></td>
-<td><p>USB root port 2 power</p></td>
+<td><p>USB root port 2 power (USB_B1_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
@@ -658,7 +658,7 @@ This is "nn::gpio::IManager".
 <td><p>0x4A</p></td>
 <td><p>0x12</p></td>
 <td><p>C, 2</p></td>
-<td><p>HdmiHotplug</p></td>
+<td><p>HdmiHotplug (HDMI_PD_TR_EN)</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper<br />
 (<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
@@ -667,7 +667,7 @@ This is "nn::gpio::IManager".
 <td><p>0x4B</p></td>
 <td><p>0x42</p></td>
 <td><p>I, 2</p></td>
-<td></td>
+<td><p>FAN_EN</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -675,7 +675,7 @@ This is "nn::gpio::IManager".
 <td><p>0x4C</p></td>
 <td><p>0xE6</p></td>
 <td><p>CC, 6</p></td>
-<td></td>
+<td><p>USB_B1_OC</p></td>
 <td><p>In</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -683,7 +683,7 @@ This is "nn::gpio::IManager".
 <td><p>[2.0.0+] 0x4D</p></td>
 <td><p>0xAC</p></td>
 <td><p>V, 4</p></td>
-<td></td>
+<td><p>PWM_FAN</p></td>
 <td><p>Out</p></td>
 <td><p>[2.0.0+] Copper</p></td>
 </tr>
@@ -700,7 +700,7 @@ This is "nn::gpio::IManager".
 <td><p>[5.0.0+] 0x4F</p></td>
 <td><p>0x56</p></td>
 <td><p>K, 6</p></td>
-<td></td>
+<td><p>MAX77812_IRQ</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -740,7 +740,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x54</p></td>
 <td><p>0x4C</p></td>
 <td><p>J, 4</p></td>
-<td></td>
+<td><p>NFC_IRQ</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -748,7 +748,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x55</p></td>
 <td><p>0x57</p></td>
 <td><p>K, 7</p></td>
-<td></td>
+<td><p>NFC_RST</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -756,7 +756,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x56</p></td>
 <td><p>0x94</p></td>
 <td><p>S, 4</p></td>
-<td></td>
+<td><p>MCU_IRQ</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -764,7 +764,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x57</p></td>
 <td><p>0x98</p></td>
 <td><p>T, 0</p></td>
-<td></td>
+<td><p>MCU_BOOT</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -772,7 +772,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x58</p></td>
 <td><p>0x99</p></td>
 <td><p>T, 1</p></td>
-<td></td>
+<td><p>MCU_RST</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -780,7 +780,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x59</p></td>
 <td><p>0xBB</p></td>
 <td><p>X, 3</p></td>
-<td></td>
+<td><p>VDD5V3_EN</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>
@@ -788,7 +788,7 @@ This is "nn::gpio::IManager".
 <td><p>[6.0.0+] 0x5A</p></td>
 <td><p>0xE5</p></td>
 <td><p>CC, 5</p></td>
-<td></td>
+<td><p>MCU_POR</p></td>
 <td></td>
 <td><p>None</p></td>
 </tr>

@@ -33,51 +33,51 @@ This is "nn::gpio::IManager".
 |-
 ! GpioPadName || GpioPadDescriptor || Tegra (port, pin) || Usage || Direction || Used by
 |-
-| 0x01 || 0xCC || Z, 4 || Audio Codec (ALC5639) Power || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]], [[Fatal services]])
+| 0x01 || 0xCC || Z, 4 || Audio Codec (ALC5639) Power (CODEC_LDO_EN_TEMP) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]], [[Fatal services]])
 |-
-| 0x02 || 0x24 || E, 4 || SDCard Power || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
+| 0x02 || 0x24 || E, 4 || SDCard Power (POW_SD_EN) || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
 |-
 | 0x03 || 0x3C || H, 4 || BT_RST_PH4 || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Bluetooth Driver services]])
 |-
-| 0x04 || 0xDA || BB, 2 || || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x04 || 0xDA || BB, 2 || RAM_CODE3 || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x05 || 0xDB || BB, 3 || GcAsic Power || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
+| 0x05 || 0xDB || BB, 3 || GcAsic Reset (GC_RST) || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
 |-
-| 0x06 || 0xDC || BB, 4 || Headphone Detect || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]])
+| 0x06 || 0xDC || BB, 4 || Headphone Detect (CODEC_ALERT) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]])
 |-
-| 0x07 || 0x25 || E, 5 || || Out || Icosa, Copper, Hoag
+| 0x07 || 0x25 || E, 5 || GcAsic Power (POW_GC) || Out || Icosa, Copper, Hoag
 |-
-| 0x08 || 0x90 || S, 0 || DebugPadDriver || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x08 || 0x90 || S, 0 || DebugPadDriver (DEBUG_CONTROLLER_DET) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x09 || 0x91 || S, 1 || || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x09 || 0x91 || S, 1 || Battery Charge Status (BATT_CHG_STATUS) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x0A || 0x96 || S, 6 || Charger IC (BQ24193) Charge Enable || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
+| 0x0A || 0x96 || S, 6 || Charger IC (BQ24193) Charge Enable (BATT_CHG_ENABLE_N) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x0B || 0x97 || S, 7 || CPU fan sampling || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x0B || 0x97 || S, 7 || CPU fan sampling (FAN_TACH) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x0C || 0x26 || E, 6 || Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x0C || 0x26 || E, 6 || Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_S) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x0D || 0x05 || A, 5 || Fan enable (normal) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
+| 0x0D || 0x05 || A, 5 || Fan enable (normal) (VDD50A-EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x0E || 0x78 || P, 0 || SDMMC3_CLK_PP0? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x0E || 0x78 || P, 0 || SDEV Coax Select (SDEV_COAX_SEL_1) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x0F || 0x93 || S, 3 || GcAsic IRQ || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
+| 0x0F || 0x93 || S, 3 || GcAsic IRQ (GC_CD) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
 |-
-| 0x10 || 0x7D || P, 5 || SDMMC3_DAT0_PP5? || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x10 || 0x7D || P, 5 || PROD_TYPE_0 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x11 || 0x7C || P, 4 || SDMMC3_DAT1_PP4? || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x11 || 0x7C || P, 4 || PROD_TYPE_1 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x12 || 0x7B || P, 3 || SDMMC3_DAT2_PP3? || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x12 || 0x7B || P, 3 || PROD_TYPE_2 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x13 || 0x7A || P, 2 || SDMMC3_DAT3_PP2? || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x13 || 0x7A || P, 2 || PROD_TYPE_3 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x14 || 0xBC || X, 4 || Temperature Sensor || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x14 || 0xBC || X, 4 || Temperature Sensor (TEMP_ALERT) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x15 || 0xAE || V, 6 || || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]])
+| 0x15 || 0xAE || V, 6 || CODEC_HP_DET_IRQ || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[Audio services]])
 |-
-| 0x16 || 0xBA || X, 2 || MOTION_INT_PX2? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x16 || 0xBA || X, 2 || MOTION_INT_PX2 || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x17 || 0xB9 || X, 1 || TouchPanel IRQ (TOUCH_INT_PX1) (unused - polled instead) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x17 || 0xB9 || X, 1 || TouchPanel IRQ (TP_IRQ) (unused - polled instead) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
 | 0x18 || 0xBD || X, 5 || Power Button (BUTTON_POWER_ON_PX5) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
@@ -85,111 +85,111 @@ This is "nn::gpio::IManager".
 |-
 | 0x1A || 0xBF || X, 7 || Volume Down (BUTTON_VOL_DOWN_PX7) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Boot2]], [[Audio services]])
 |-
-| 0x1B || 0xC0 || Y, 0 || Fuel Gauge IC (MAX17050) IRQ || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
+| 0x1B || 0xC0 || Y, 0 || Fuel Gauge IC (MAX17050) IRQ  (BATT_MGIC_IRQ) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x1C || 0xC1 || Y, 1 || BUTTON_HOME_PY1 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x1C || 0xC1 || Y, 1 || Recovery Mode Key (BUTTON_HOME_PY1) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
 | 0x1D || 0xA9 || V, 1 || Backlight Enable (LCD_BL_EN_PV1) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]], [[Backlight services]])
 |-
 | 0x1E || 0xAA || V, 2 || Backlight Reset (LCD_RST_PV2) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
 |-
-| 0x1F || 0x55 || K, 5 || Charger IC (BQ24193) OTG charge select || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
+| 0x1F || 0x55 || K, 5 || Charger IC (BQ24193) OTG charge select (PD_VCONN_EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
 |-
-| 0x20 || 0xAD || V, 5 || USB-PD controller (RHOM BM92T30MWV) related || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[USB services]])
+| 0x20 || 0xAD || V, 5 || USB-PD controller (RHOM BM92T30MWV) Reset (PD_RST) || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[USB services]])
 |-
-| 0x21 || 0xC8 || Z, 0 || Charger IC (BQ24193) IRQ || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
+| 0x21 || 0xC8 || Z, 0 || Charger IC (BQ24193) IRQ (BQ24193_IRQ) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x22 || 0xCA || Z, 2 || || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x22 || 0xCA || Z, 2 || SDEV Coax Select (SDEV_COAX_SEL_0) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x23 || 0xCB || Z, 3 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x23 || 0xCB || Z, 3 || SD_WP || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x24 || 0x4F || J, 7 || TouchPanel reset || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x24 || 0x4F || J, 7 || TouchPanel reset (TP_RST) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x25 || 0x50 || K, 0 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x25 || 0x50 || K, 0 || BT_GPIO_2 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x26 || 0x51 || K, 1 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x26 || 0x51 || K, 1 || BT_GPIO_3 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x27 || 0x52 || K, 2 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x27 || 0x52 || K, 2 || BT_GPIO_4 || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x28 || 0x54 || K, 4 || USB-PD controller (RHOM BM92T30MWV) IRQ || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[USB services]])
+| 0x28 || 0x54 || K, 4 || USB-PD controller (RHOM BM92T30MWV) IRQ (PD_IRQ) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[USB services]])
 |-
-| 0x29 || 0x56 || K, 6 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x29 || 0x56 || K, 6 || POW_VCPU_INT || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x2A || 0x57 || K, 7 || || In || Icosa, Copper, Hoag
+| 0x2A || 0x57 || K, 7 || MAX77621_GPU_INT || In || Icosa, Copper, Hoag
 |-
-| 0x2B || 0x53 || K, 3 || Joy-Con(R) NwcpDriver1.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x2B || 0x53 || K, 3 || Joy-Con(R) NwcpDriver1.NwcpCharger (EXTCON_CHG_U) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x2C || 0xE3 || CC, 3 || Joy-Con(L) NwcpDriver0.NwcpCharger || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x2C || 0xE3 || CC, 3 || Joy-Con(L) NwcpDriver0.NwcpCharger (EXTCON_CHG_S) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x2D || 0x38 || H, 0 || WIFI_EN_PH0? || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x2D || 0x38 || H, 0 || WIFI_RF_DISABLE || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
 | 0x2E || 0x39 || H, 1 || WIFI_RST_PH1 || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Wlan services]], [[PCIe services]])
 |-
 | 0x2F || 0x3B || H, 3 || AP_WAKE_BT_PH3 || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Bluetooth Driver services]])
 |-
-| 0x30 || 0x3D || H, 5 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x30 || 0x3D || H, 5 || BT_WAKE_AP || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x31 || 0x3F || H, 7 || || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x31 || 0x3F || H, 7 || BT_GPIO_5 || Out || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x32 || 0x40 || I, 0 || Backlight +5V || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
+| 0x32 || 0x40 || I, 0 || Backlight +5V (LCD_VDD_P_EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
 |-
-| 0x33 || 0x41 || I, 1 || Backlight -5V || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
+| 0x33 || 0x41 || I, 1 || Backlight -5V (LCD_VDD_N_EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[NV services]])
 |-
-| 0x34 || 0x3E || H, 6 || Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
+| 0x34 || 0x3E || H, 6 || Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_U) || In || Icosa, Hoag, [5.0.0+] Mariko <br>([[HID services]])
 |-
-| 0x35 || 0xE2 || CC, 2 || || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x35 || 0xE2 || CC, 2 || RAM_CODE2 || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x36 || 0xE4 || CC, 4 || Fan enable (high power) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
+| 0x36 || 0xE4 || CC, 4 || Fan enable (high power) (VDD50B_EN) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]])
 |-
-| 0x37 || 0x3A || H, 2 || || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
+| 0x37 || 0x3A || H, 2 || WIFI_WAKE_HOST || In || Icosa, Copper, Hoag, [5.0.0+] Mariko
 |-
-| 0x38 || 0xC9 || Z, 1 || SDCard Card Detect || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
+| 0x38 || 0xC9 || Z, 1 || SDCard Card Detect (SD_CD) || In || Icosa, Copper, Hoag, [5.0.0+] Mariko <br>([[Filesystem services]])
 |-
-| 0x39 || 0x4D || J, 5 || Charger IC (BQ24193) OTG charge select || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
+| 0x39 || 0x4D || J, 5 || Charger IC (BQ24193) OTG charge select (OTG_FET_1) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
 |-
-| 0x3A || 0x58 || L, 0 || Charger IC (BQ24193) OTG charge select || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
+| 0x3A || 0x58 || L, 0 || Charger IC (BQ24193) OTG charge select (OTG_FET_2) || Out || Icosa, Hoag, [5.0.0+] Mariko <br>([[PTM services]], [[USB services]])
 |-
-| 0x3B || 0x3E || H, 6 || Joy-Con(R) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x3B || 0x3E || H, 6 || Joy-Con(R) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_U) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
-| 0x3C || 0x26 || E, 6 || Joy-Con(L) NwcpDriver1.GpioMonitorTask0 duplicate? || In || Icosa, Hoag, [5.0.0+] Mariko
+| 0x3C || 0x26 || E, 6 || Joy-Con(L) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_S) || In || Icosa, Hoag, [5.0.0+] Mariko
 |-
 | 0x3D || -1 || || || ||
 |-
-| 0x3E || 0x33 || G, 3 || Joy-Con(R) CTS (checked low) || In || None <br>([[HID services]])
+| 0x3E || 0x33 || G, 3 || Joy-Con(R) CTS (checked low) (EXT_UART2_CTS) || In || None <br>([[HID services]])
 |-
-| 0x3F || 0x1C || D, 4 || Joy-Con(L) CTS (checked low) || In || None <br>([[HID services]])
+| 0x3F || 0x1C || D, 4 || Joy-Con(L) CTS (checked low) (EXT_UART3_CTS) || In || None <br>([[HID services]])
 |-
-| 0x40 || 0xD9 || BB, 1 || || Out || [2.0.0+] Copper
+| 0x40 || 0xD9 || BB, 1 || 5V_STEPDOWN_EN || Out || [2.0.0+] Copper
 |-
-| 0x41 || 0x0C || B, 4 || Lid Closed (unused) || In || [2.0.0+] Copper
+| 0x41 || 0x0C || B, 4 || Lid Closed (unused) (USB_B2_OC) || In || [2.0.0+] Copper
 |-
-| 0x42 || 0x0D || B, 5 || || In || [2.0.0+] Copper
+| 0x42 || 0x0D || B, 5 || 5V_STEPDOWN_PG || In || [2.0.0+] Copper
 |-
-| 0x43 || 0x21 || E, 1 || USB power || Out || [2.0.0+] Copper <br>([[USB services]])
+| 0x43 || 0x21 || E, 1 || USB power (USB_A_EN) || Out || [2.0.0+] Copper <br>([[USB services]])
 |-
-| 0x44 || 0x27 || E, 7 || || In || [2.0.0+] Copper
+| 0x44 || 0x27 || E, 7 || USB power (USB_A_FLAG) || In || [2.0.0+] Copper
 |-
-| 0x45 || 0x92 || S, 2 || || In || [2.0.0+] Copper
+| 0x45 || 0x92 || S, 2 || USB_B3_OC || In || [2.0.0+] Copper
 |-
-| 0x46 || 0x95 || S, 5 || USB root port 4 power || Out || [2.0.0+] Copper <br>([[USB services]])
+| 0x46 || 0x95 || S, 5 || USB root port 4 power (USB_B3_EN) || Out || [2.0.0+] Copper <br>([[USB services]])
 |-
-| 0x47 || 0x98 || T, 0 || USB root port 3 power || Out || [2.0.0+] Copper <br>([[USB services]])
+| 0x47 || 0x98 || T, 0 || USB root port 3 power (USB_B2_EN) || Out || [2.0.0+] Copper <br>([[USB services]])
 |-
-| 0x48 || 0x10 || C, 0 || HdmiHotplug || Out || [2.0.0+] Copper <br>([[NV services]])
+| 0x48 || 0x10 || C, 0 || HdmiHotplug (HDMI_5V_EN) || Out || [2.0.0+] Copper <br>([[NV services]])
 |-
-| 0x49 || 0x11 || C, 1 || USB root port 2 power || Out || [2.0.0+] Copper <br>([[USB services]])
+| 0x49 || 0x11 || C, 1 || USB root port 2 power (USB_B1_EN) || Out || [2.0.0+] Copper <br>([[USB services]])
 |-
-| 0x4A || 0x12 || C, 2 || HdmiHotplug || Out || [2.0.0+] Copper <br>([[NV services]])
+| 0x4A || 0x12 || C, 2 || HdmiHotplug (HDMI_PD_TR_EN) || Out || [2.0.0+] Copper <br>([[NV services]])
 |-
-| 0x4B || 0x42 || I, 2 || || Out || [2.0.0+] Copper
+| 0x4B || 0x42 || I, 2 || FAN_EN || Out || [2.0.0+] Copper
 |-
-| 0x4C || 0xE6 || CC, 6 || || In || [2.0.0+] Copper
+| 0x4C || 0xE6 || CC, 6 || USB_B1_OC || In || [2.0.0+] Copper
 |-
-| [2.0.0+] 0x4D || 0xAC || V, 4 || || Out || [2.0.0+] Copper
+| [2.0.0+] 0x4D || 0xAC || V, 4 || PWM_FAN || Out || [2.0.0+] Copper
 |-
 | [2.0.0+] 0x4E || 0xE1 || CC, 1 || HdmiHotplug (HDMI_INT_DP_HPD_PCC1) || In || [2.0.0+] Copper <br>([[NV services]])
 |-
-| [5.0.0+] 0x4F || 0x56 || K, 6 || || || None
+| [5.0.0+] 0x4F || 0x56 || K, 6 || MAX77812_IRQ || || None
 |-
 | [6.0.0+] 0x50 || 0x20 || E, 0 || || || None
 |-
@@ -199,19 +199,19 @@ This is "nn::gpio::IManager".
 |-
 | [6.0.0+] 0x53 || 0x23 || E, 3 || || || None
 |-
-| [6.0.0+] 0x54 || 0x4C || J, 4 || || || None
+| [6.0.0+] 0x54 || 0x4C || J, 4 || NFC_IRQ || || None
 |-
-| [6.0.0+] 0x55 || 0x57 || K, 7 || || || None
+| [6.0.0+] 0x55 || 0x57 || K, 7 || NFC_RST || || None
 |-
-| [6.0.0+] 0x56 || 0x94 || S, 4 || || || None
+| [6.0.0+] 0x56 || 0x94 || S, 4 || MCU_IRQ || || None
 |-
-| [6.0.0+] 0x57 || 0x98 || T, 0 || || || None
+| [6.0.0+] 0x57 || 0x98 || T, 0 || MCU_BOOT || || None
 |-
-| [6.0.0+] 0x58 || 0x99 || T, 1 || || || None
+| [6.0.0+] 0x58 || 0x99 || T, 1 || MCU_RST || || None
 |-
-| [6.0.0+] 0x59 || 0xBB || X, 3 || || || None
+| [6.0.0+] 0x59 || 0xBB || X, 3 || VDD5V3_EN || || None
 |-
-| [6.0.0+] 0x5A || 0xE5 || CC, 5 || || || None
+| [6.0.0+] 0x5A || 0xE5 || CC, 5 || MCU_POR || || None
 |-
 | [6.0.0+] 0x5B || 0xAB || V, 3 || || || None
 |-
