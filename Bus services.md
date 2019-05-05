@@ -247,7 +247,7 @@ true if the device exists or false otherwise.
 
 ## OpenSession2
 
-Same as [\#OpenSession](#OpenSession "wikilink") but takes a
+Same as [OpenSession](#OpenSession_2 "wikilink") but takes a
 **DeviceCode** instead of a **I2cDevice**.
 
 ## II2cSession

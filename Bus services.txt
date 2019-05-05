@@ -401,7 +401,7 @@ Takes an '''I2cDevice''' and returns true if the device exists or false otherwis
 Takes an u32 '''port''', an u16 '''addr''', an '''AddressingMode''' (1 for 10-bit, 0 otherwise) and a '''SpeedMode''' (400000 or 100000). Returns true if the device exists or false otherwise.
 
 == OpenSession2 ==
-Same as [[#OpenSession]] but takes a '''DeviceCode''' instead of a '''I2cDevice'''.
+Same as [[#OpenSession_2|OpenSession]] but takes a '''DeviceCode''' instead of a '''I2cDevice'''.
 
 == II2cSession ==
 This is "nn::i2c::ISession".
