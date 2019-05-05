@@ -3303,6 +3303,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F1F00D5B2000 || Darkest Hunters || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100E1400BA96000 || Darksiders Warmastered Edition || EUR USA || || Digital || 0 || || Game
+|-
 | 01002ED00ACC0000 || DEADBOLT || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010032800BC38000 || Death Mark || EUR || || Digital || 0 0x10000 || || Game
@@ -3411,7 +3413,9 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100C3A00BB76000 || Fimbul || EUR USA || || Digital || 0 0x10000 || || Game
 |-
-| 0100EB100AB42000 || Final Fantasy XII: The Zodiac Age || EUR JPN USA || || Digital || 0 0x10000 || || Game
+| 0100EB100AB42000 || FINAL FANTASY XII THE ZODIAC AGE || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100BC300CB48000 || FINAL FANTASY X/X-2 HD Remaster || EUR USA || || Digital || 0 || || Game
 |-
 | 0100F3700C09C000 || Find the Balance || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3607,6 +3611,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100D8700B712000 || Modern Combat Blackout || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 0100B8500D570000 || Moero Chronicle™ Hyper || EUR USA || || Digital || 0 || || Game
+|-
 | 01004A400C320000 || Momodora: Reverie Under the Moonlight || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 01002CC00BC4C000 || Momonga Pinball Adventures || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3701,6 +3707,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01002A300BDE2000 || Panda Hero || USA || || Digital || 0 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
+| 01002BD00CB86000 || Panty Party || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 0100721008D24000 || Party Arcade || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010076E009C5E000 || Party Hard || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3730,6 +3738,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010003F003A34000 || Pokémon: Let's Go, Pikachu! || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100E1E00CF1A000 || Power Rangers: Battle for the Grid || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100E6A00B960000 || The Princess Guide || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100BBD00976C000 || Project Highrise: Architect's Edition || EUR USA || || Digital || 0 || || Game
 |-
@@ -3974,6 +3984,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01002D900C5E4000 || Uncanny Valley || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100A0F00BC24000 || UNI || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100E5D00CC0C000 || Unravel Two || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 010001300CC4A000 || Unruly Heroes || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
