@@ -43,6 +43,7 @@ fatal-errors, since the Description ends with bit21.
 | 24    | SDMMC                                        |
 | 25    | OVLN                                         |
 | 26    | SPL                                          |
+| 30    | Bus                                          |
 | 100   | ETHC                                         |
 | 101   | I2C                                          |
 | 102   | GPIO                                         |
@@ -567,8 +568,7 @@ fatal-errors, since the Description ends with bit21.
 
 The following are the error codes recognized by
 nn::fs::detail::LogErrorMessage found in some
-[factory](Factory%20Setup.md "wikilink")
-titles:
+[factory](Factory%20Setup.md "wikilink") titles:
 
 | Value               | Description                                               | Message                                                                                      |
 | ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -629,8 +629,7 @@ separate from the normal Result errors.
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |
 | 811   | [ShopN](Internet%20Browser.md "wikilink")              |
 
-8XX is for/includes system
-applets.
+8XX is for/includes system applets.
 
 ## Errors
 

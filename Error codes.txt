@@ -60,6 +60,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 26 || SPL
 |-
+| 30 || Bus
+|-
 | 100 || ETHC
 |-
 | 101 || I2C
