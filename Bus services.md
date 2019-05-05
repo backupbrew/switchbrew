@@ -18,814 +18,102 @@ This is "nn::gpio::IManager".
 
 ## Known Devices
 
-<table>
-<thead>
-<tr class="header">
-<th><p>GpioPadName</p></th>
-<th><p>GpioPadDescriptor</p></th>
-<th><p>Tegra (port, pin)</p></th>
-<th><p>Usage</p></th>
-<th><p>Direction</p></th>
-<th><p>Used by</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0x01</p></td>
-<td><p>0xCC</p></td>
-<td><p>Z, 4</p></td>
-<td><p>Audio Codec (ALC5639) Power (CODEC_LDO_EN_TEMP)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="Audio services.md" title="wikilink">Audio services</a>, <a href="Fatal services.md" title="wikilink">Fatal services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x02</p></td>
-<td><p>0x24</p></td>
-<td><p>E, 4</p></td>
-<td><p>SDCard Power (POW_SD_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x03</p></td>
-<td><p>0x3C</p></td>
-<td><p>H, 4</p></td>
-<td><p>BT_RST_PH4</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Bluetooth Driver services.md" title="wikilink">Bluetooth Driver services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x04</p></td>
-<td><p>0xDA</p></td>
-<td><p>BB, 2</p></td>
-<td><p>RAM_CODE3</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x05</p></td>
-<td><p>0xDB</p></td>
-<td><p>BB, 3</p></td>
-<td><p>GcAsic Reset (GC_RST)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x06</p></td>
-<td><p>0xDC</p></td>
-<td><p>BB, 4</p></td>
-<td><p>Headphone Detect (CODEC_ALERT)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x07</p></td>
-<td><p>0x25</p></td>
-<td><p>E, 5</p></td>
-<td><p>GcAsic Power (POW_GC)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag</p></td>
-</tr>
-<tr class="even">
-<td><p>0x08</p></td>
-<td><p>0x90</p></td>
-<td><p>S, 0</p></td>
-<td><p>DebugPadDriver (DEBUG_CONTROLLER_DET)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x09</p></td>
-<td><p>0x91</p></td>
-<td><p>S, 1</p></td>
-<td><p>Battery Charge Status (BATT_CHG_STATUS)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x0A</p></td>
-<td><p>0x96</p></td>
-<td><p>S, 6</p></td>
-<td><p>Charger IC (BQ24193) Charge Enable (BATT_CHG_ENABLE_N)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x0B</p></td>
-<td><p>0x97</p></td>
-<td><p>S, 7</p></td>
-<td><p>CPU fan sampling (FAN_TACH)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x0C</p></td>
-<td><p>0x26</p></td>
-<td><p>E, 6</p></td>
-<td><p>Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_S)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x0D</p></td>
-<td><p>0x05</p></td>
-<td><p>A, 5</p></td>
-<td><p>Fan enable (normal) (VDD50A-EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x0E</p></td>
-<td><p>0x78</p></td>
-<td><p>P, 0</p></td>
-<td><p>SDEV Coax Select (SDEV_COAX_SEL_1)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x0F</p></td>
-<td><p>0x93</p></td>
-<td><p>S, 3</p></td>
-<td><p>GcAsic IRQ (GC_CD)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x10</p></td>
-<td><p>0x7D</p></td>
-<td><p>P, 5</p></td>
-<td><p>PROD_TYPE_0</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x11</p></td>
-<td><p>0x7C</p></td>
-<td><p>P, 4</p></td>
-<td><p>PROD_TYPE_1</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x12</p></td>
-<td><p>0x7B</p></td>
-<td><p>P, 3</p></td>
-<td><p>PROD_TYPE_2</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x13</p></td>
-<td><p>0x7A</p></td>
-<td><p>P, 2</p></td>
-<td><p>PROD_TYPE_3</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x14</p></td>
-<td><p>0xBC</p></td>
-<td><p>X, 4</p></td>
-<td><p>Temperature Sensor (TEMP_ALERT)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x15</p></td>
-<td><p>0xAE</p></td>
-<td><p>V, 6</p></td>
-<td><p>CODEC_HP_DET_IRQ</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x16</p></td>
-<td><p>0xBA</p></td>
-<td><p>X, 2</p></td>
-<td><p>MOTION_INT_PX2</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x17</p></td>
-<td><p>0xB9</p></td>
-<td><p>X, 1</p></td>
-<td><p>TouchPanel IRQ (TP_IRQ) (unused - polled instead)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x18</p></td>
-<td><p>0xBD</p></td>
-<td><p>X, 5</p></td>
-<td><p>Power Button (BUTTON_POWER_ON_PX5)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x19</p></td>
-<td><p>0xBE</p></td>
-<td><p>X, 6</p></td>
-<td><p>Volume Up (BUTTON_VOL_UP_PX6)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Boot2.md" title="wikilink">Boot2</a>, <a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x1A</p></td>
-<td><p>0xBF</p></td>
-<td><p>X, 7</p></td>
-<td><p>Volume Down (BUTTON_VOL_DOWN_PX7)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Boot2.md" title="wikilink">Boot2</a>, <a href="Audio services.md" title="wikilink">Audio services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x1B</p></td>
-<td><p>0xC0</p></td>
-<td><p>Y, 0</p></td>
-<td><p>Fuel Gauge IC (MAX17050) IRQ (BATT_MGIC_IRQ)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x1C</p></td>
-<td><p>0xC1</p></td>
-<td><p>Y, 1</p></td>
-<td><p>Recovery Mode Key (BUTTON_HOME_PY1)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x1D</p></td>
-<td><p>0xA9</p></td>
-<td><p>V, 1</p></td>
-<td><p>Backlight Enable (LCD_BL_EN_PV1)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="NV services.md" title="wikilink">NV services</a>, <a href="Backlight services.md" title="wikilink">Backlight services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x1E</p></td>
-<td><p>0xAA</p></td>
-<td><p>V, 2</p></td>
-<td><p>Backlight Reset (LCD_RST_PV2)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x1F</p></td>
-<td><p>0x55</p></td>
-<td><p>K, 5</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select (PD_VCONN_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x20</p></td>
-<td><p>0xAD</p></td>
-<td><p>V, 5</p></td>
-<td><p>USB-PD controller (RHOM BM92T30MWV) Reset (PD_RST)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x21</p></td>
-<td><p>0xC8</p></td>
-<td><p>Z, 0</p></td>
-<td><p>Charger IC (BQ24193) IRQ (BQ24193_IRQ)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x22</p></td>
-<td><p>0xCA</p></td>
-<td><p>Z, 2</p></td>
-<td><p>SDEV Coax Select (SDEV_COAX_SEL_0)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x23</p></td>
-<td><p>0xCB</p></td>
-<td><p>Z, 3</p></td>
-<td><p>SD_WP</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x24</p></td>
-<td><p>0x4F</p></td>
-<td><p>J, 7</p></td>
-<td><p>TouchPanel reset (TP_RST)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x25</p></td>
-<td><p>0x50</p></td>
-<td><p>K, 0</p></td>
-<td><p>BT_GPIO_2</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x26</p></td>
-<td><p>0x51</p></td>
-<td><p>K, 1</p></td>
-<td><p>BT_GPIO_3</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x27</p></td>
-<td><p>0x52</p></td>
-<td><p>K, 2</p></td>
-<td><p>BT_GPIO_4</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x28</p></td>
-<td><p>0x54</p></td>
-<td><p>K, 4</p></td>
-<td><p>USB-PD controller (RHOM BM92T30MWV) IRQ (PD_IRQ)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x29</p></td>
-<td><p>0x56</p></td>
-<td><p>K, 6</p></td>
-<td><p>POW_VCPU_INT</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x2A</p></td>
-<td><p>0x57</p></td>
-<td><p>K, 7</p></td>
-<td><p>MAX77621_GPU_INT</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x2B</p></td>
-<td><p>0x53</p></td>
-<td><p>K, 3</p></td>
-<td><p>Joy-Con(R) NwcpDriver1.NwcpCharger (EXTCON_CHG_U)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x2C</p></td>
-<td><p>0xE3</p></td>
-<td><p>CC, 3</p></td>
-<td><p>Joy-Con(L) NwcpDriver0.NwcpCharger (EXTCON_CHG_S)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x2D</p></td>
-<td><p>0x38</p></td>
-<td><p>H, 0</p></td>
-<td><p>WIFI_RF_DISABLE</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x2E</p></td>
-<td><p>0x39</p></td>
-<td><p>H, 1</p></td>
-<td><p>WIFI_RST_PH1</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Wlan services.md" title="wikilink">Wlan services</a>, <a href="PCIe services.md" title="wikilink">PCIe services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x2F</p></td>
-<td><p>0x3B</p></td>
-<td><p>H, 3</p></td>
-<td><p>AP_WAKE_BT_PH3</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Bluetooth Driver services.md" title="wikilink">Bluetooth Driver services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x30</p></td>
-<td><p>0x3D</p></td>
-<td><p>H, 5</p></td>
-<td><p>BT_WAKE_AP</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x31</p></td>
-<td><p>0x3F</p></td>
-<td><p>H, 7</p></td>
-<td><p>BT_GPIO_5</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x32</p></td>
-<td><p>0x40</p></td>
-<td><p>I, 0</p></td>
-<td><p>Backlight +5V (LCD_VDD_P_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x33</p></td>
-<td><p>0x41</p></td>
-<td><p>I, 1</p></td>
-<td><p>Backlight -5V (LCD_VDD_N_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x34</p></td>
-<td><p>0x3E</p></td>
-<td><p>H, 6</p></td>
-<td><p>Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_U)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x35</p></td>
-<td><p>0xE2</p></td>
-<td><p>CC, 2</p></td>
-<td><p>RAM_CODE2</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x36</p></td>
-<td><p>0xE4</p></td>
-<td><p>CC, 4</p></td>
-<td><p>Fan enable (high power) (VDD50B_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x37</p></td>
-<td><p>0x3A</p></td>
-<td><p>H, 2</p></td>
-<td><p>WIFI_WAKE_HOST</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x38</p></td>
-<td><p>0xC9</p></td>
-<td><p>Z, 1</p></td>
-<td><p>SDCard Card Detect (SD_CD)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Copper, Hoag, [5.0.0+] Mariko<br />
-(<a href="Filesystem services.md" title="wikilink">Filesystem services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x39</p></td>
-<td><p>0x4D</p></td>
-<td><p>J, 5</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select (OTG_FET_1)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x3A</p></td>
-<td><p>0x58</p></td>
-<td><p>L, 0</p></td>
-<td><p>Charger IC (BQ24193) OTG charge select (OTG_FET_2)</p></td>
-<td><p>Out</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko<br />
-(<a href="PTM services.md" title="wikilink">PTM services</a>, <a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x3B</p></td>
-<td><p>0x3E</p></td>
-<td><p>H, 6</p></td>
-<td><p>Joy-Con(R) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_U)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="even">
-<td><p>0x3C</p></td>
-<td><p>0x26</p></td>
-<td><p>E, 6</p></td>
-<td><p>Joy-Con(L) NwcpDriver1.GpioMonitorTask0 Wake Detection (EXTCON_DET_S)</p></td>
-<td><p>In</p></td>
-<td><p>Icosa, Hoag, [5.0.0+] Mariko</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x3D</p></td>
-<td><p>-1</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>0x3E</p></td>
-<td><p>0x33</p></td>
-<td><p>G, 3</p></td>
-<td><p>Joy-Con(R) CTS (checked low) (EXT_UART2_CTS)</p></td>
-<td><p>In</p></td>
-<td><p>None<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x3F</p></td>
-<td><p>0x1C</p></td>
-<td><p>D, 4</p></td>
-<td><p>Joy-Con(L) CTS (checked low) (EXT_UART3_CTS)</p></td>
-<td><p>In</p></td>
-<td><p>None<br />
-(<a href="HID services.md" title="wikilink">HID services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x40</p></td>
-<td><p>0xD9</p></td>
-<td><p>BB, 1</p></td>
-<td><p>5V_STEPDOWN_EN</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x41</p></td>
-<td><p>0x0C</p></td>
-<td><p>B, 4</p></td>
-<td><p>Lid Closed (unused) (USB_B2_OC)</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="even">
-<td><p>0x42</p></td>
-<td><p>0x0D</p></td>
-<td><p>B, 5</p></td>
-<td><p>5V_STEPDOWN_PG</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x43</p></td>
-<td><p>0x21</p></td>
-<td><p>E, 1</p></td>
-<td><p>USB power (USB_A_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x44</p></td>
-<td><p>0x27</p></td>
-<td><p>E, 7</p></td>
-<td><p>USB power (USB_A_FLAG)</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x45</p></td>
-<td><p>0x92</p></td>
-<td><p>S, 2</p></td>
-<td><p>USB_B3_OC</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="even">
-<td><p>0x46</p></td>
-<td><p>0x95</p></td>
-<td><p>S, 5</p></td>
-<td><p>USB root port 4 power (USB_B3_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x47</p></td>
-<td><p>0x98</p></td>
-<td><p>T, 0</p></td>
-<td><p>USB root port 3 power (USB_B2_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x48</p></td>
-<td><p>0x10</p></td>
-<td><p>C, 0</p></td>
-<td><p>HdmiHotplug (HDMI_5V_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x49</p></td>
-<td><p>0x11</p></td>
-<td><p>C, 1</p></td>
-<td><p>USB root port 2 power (USB_B1_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="USB services.md" title="wikilink">USB services</a>)</p></td>
-</tr>
-<tr class="even">
-<td><p>0x4A</p></td>
-<td><p>0x12</p></td>
-<td><p>C, 2</p></td>
-<td><p>HdmiHotplug (HDMI_PD_TR_EN)</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>0x4B</p></td>
-<td><p>0x42</p></td>
-<td><p>I, 2</p></td>
-<td><p>FAN_EN</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="even">
-<td><p>0x4C</p></td>
-<td><p>0xE6</p></td>
-<td><p>CC, 6</p></td>
-<td><p>USB_B1_OC</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="odd">
-<td><p>[2.0.0+] 0x4D</p></td>
-<td><p>0xAC</p></td>
-<td><p>V, 4</p></td>
-<td><p>PWM_FAN</p></td>
-<td><p>Out</p></td>
-<td><p>[2.0.0+] Copper</p></td>
-</tr>
-<tr class="even">
-<td><p>[2.0.0+] 0x4E</p></td>
-<td><p>0xE1</p></td>
-<td><p>CC, 1</p></td>
-<td><p>HdmiHotplug (HDMI_INT_DP_HPD_PCC1)</p></td>
-<td><p>In</p></td>
-<td><p>[2.0.0+] Copper<br />
-(<a href="NV services.md" title="wikilink">NV services</a>)</p></td>
-</tr>
-<tr class="odd">
-<td><p>[5.0.0+] 0x4F</p></td>
-<td><p>0x56</p></td>
-<td><p>K, 6</p></td>
-<td><p>MAX77812_IRQ</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x50</p></td>
-<td><p>0x20</p></td>
-<td><p>E, 0</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x51</p></td>
-<td><p>0x21</p></td>
-<td><p>E, 1</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x52</p></td>
-<td><p>0x22</p></td>
-<td><p>E, 2</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x53</p></td>
-<td><p>0x23</p></td>
-<td><p>E, 3</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x54</p></td>
-<td><p>0x4C</p></td>
-<td><p>J, 4</p></td>
-<td><p>NFC_IRQ</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x55</p></td>
-<td><p>0x57</p></td>
-<td><p>K, 7</p></td>
-<td><p>NFC_RST</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x56</p></td>
-<td><p>0x94</p></td>
-<td><p>S, 4</p></td>
-<td><p>MCU_IRQ</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x57</p></td>
-<td><p>0x98</p></td>
-<td><p>T, 0</p></td>
-<td><p>MCU_BOOT</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x58</p></td>
-<td><p>0x99</p></td>
-<td><p>T, 1</p></td>
-<td><p>MCU_RST</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x59</p></td>
-<td><p>0xBB</p></td>
-<td><p>X, 3</p></td>
-<td><p>VDD5V3_EN</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x5A</p></td>
-<td><p>0xE5</p></td>
-<td><p>CC, 5</p></td>
-<td><p>MCU_POR</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>[6.0.0+] 0x5B</p></td>
-<td><p>0xAB</p></td>
-<td><p>V, 3</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>[6.0.0+] 0x5C</p></td>
-<td><p>0x4E</p></td>
-<td><p>J, 6</p></td>
-<td></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>-</p></td>
-<td><p>0x32</p></td>
-<td><p>G, 2</p></td>
-<td><p>Joy-Con(R) RTS</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>-</p></td>
-<td><p>0x1B</p></td>
-<td><p>D, 3</p></td>
-<td><p>Joy-Con(L) RTS</p></td>
-<td></td>
-<td><p>None</p></td>
-</tr>
-</tbody>
-</table>
+| GpioPadName     | GpioPadDescriptor | Tegra (port, pin) | Usage                                                                                               | Direction | Used by                                                                                              |
+| --------------- | ----------------- | ----------------- | --------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| 0x01            | 0xCC              | Z, 4              | Audio Codec (ALC5639) Power (CODEC\_LDO\_EN\_TEMP)                                                  | Out       | [Audio services](Audio%20services.md "wikilink"), [Fatal services](Fatal%20services.md "wikilink")   |
+| 0x02            | 0x24              | E, 4              | SDCard Power (POW\_SD\_EN)                                                                          | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x03            | 0x3C              | H, 4              | Bluetooth Reset (BT\_RST\_PH4)                                                                      | Out       | [Bluetooth Driver services](Bluetooth%20Driver%20services.md "wikilink")                             |
+| 0x04            | 0xDA              | BB, 2             | Secondary Boot Device Configration (RAM\_CODE3)                                                     | In        |                                                                                                      |
+| 0x05            | 0xDB              | BB, 3             | GcAsic Reset (GC\_RST)                                                                              | Out       | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x06            | 0xDC              | BB, 4             | Headphone Detect (CODEC\_ALERT)                                                                     | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 0x07            | 0x25              | E, 5              | GcAsic Power (POW\_GC)                                                                              | Out       |                                                                                                      |
+| 0x08            | 0x90              | S, 0              | Debug Pad Detect (DEBUG\_CONTROLLER\_DET)                                                           | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x09            | 0x91              | S, 1              | Battery Charge Status (BATT\_CHG\_STATUS)                                                           | In        |                                                                                                      |
+| 0x0A            | 0x96              | S, 6              | Charger IC (BQ24193) Charge Enable (BATT\_CHG\_ENABLE\_N)                                           | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x0B            | 0x97              | S, 7              | CPU Fan Tachometer (FAN\_TACH)                                                                      | In        |                                                                                                      |
+| 0x0C            | 0x26              | E, 6              | Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON\_DET\_S) | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x0D            | 0x05              | A, 5              | Fan Enable (normal) (VDD50A\_EN)                                                                    | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x0E            | 0x78              | P, 0              | SDEV Coax Select (SDEV\_COAX\_SEL\_1)                                                               | In        |                                                                                                      |
+| 0x0F            | 0x93              | S, 3              | GcAsic Card Detect (GC\_CD)                                                                         | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x10            | 0x7D              | P, 5              | PROD\_TYPE\_0                                                                                       | In        |                                                                                                      |
+| 0x11            | 0x7C              | P, 4              | PROD\_TYPE\_1                                                                                       | In        |                                                                                                      |
+| 0x12            | 0x7B              | P, 3              | PROD\_TYPE\_2                                                                                       | In        |                                                                                                      |
+| 0x13            | 0x7A              | P, 2              | PROD\_TYPE\_3                                                                                       | In        |                                                                                                      |
+| 0x14            | 0xBC              | X, 4              | Temperature Sensor (TEMP\_ALERT)                                                                    | In        |                                                                                                      |
+| 0x15            | 0xAE              | V, 6              | Audio Codec (ALC5639) Headphone Detect (CODEC\_HP\_DET\_IRQ)                                        | In        | [Audio services](Audio%20services.md "wikilink")                                                     |
+| 0x16            | 0xBA              | X, 2              | MOTION\_INT\_PX2                                                                                    | In        |                                                                                                      |
+| 0x17            | 0xB9              | X, 1              | TouchPanel IRQ (TP\_IRQ) (unused - polled instead)                                                  | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x18            | 0xBD              | X, 5              | Power Button (BUTTON\_POWER\_ON\_PX5)                                                               | In        |                                                                                                      |
+| 0x19            | 0xBE              | X, 6              | Volume Up (BUTTON\_VOL\_UP\_PX6)                                                                    | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
+| 0x1A            | 0xBF              | X, 7              | Volume Down (BUTTON\_VOL\_DOWN\_PX7)                                                                | In        | [Boot2](Boot2.md "wikilink"), [Audio services](Audio%20services.md "wikilink")                       |
+| 0x1B            | 0xC0              | Y, 0              | Fuel Gauge IC (MAX17050) IRQ (BATT\_MGIC\_IRQ)                                                      | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x1C            | 0xC1              | Y, 1              | Recovery Mode Key (BUTTON\_HOME\_PY1)                                                               | In        |                                                                                                      |
+| 0x1D            | 0xA9              | V, 1              | Backlight Enable (LCD\_BL\_EN\_PV1)                                                                 | Out       | [NV services](NV%20services.md "wikilink"), [Backlight services](Backlight%20services.md "wikilink") |
+| 0x1E            | 0xAA              | V, 2              | Backlight Reset (LCD\_RST\_PV2)                                                                     | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x1F            | 0x55              | K, 5              | USB-PD Controller (RHOM BM92T30MWV) VCONN Power (PD\_VCONN\_EN)                                     | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x20            | 0xAD              | V, 5              | USB-PD Controller (RHOM BM92T30MWV) Reset (PD\_RST)                                                 | Out       | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x21            | 0xC8              | Z, 0              | Charger IC (BQ24193) IRQ (BQ24193\_IRQ)                                                             | In        | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x22            | 0xCA              | Z, 2              | SDEV Coax Select (SDEV\_COAX\_SEL\_0)                                                               | In        |                                                                                                      |
+| 0x23            | 0xCB              | Z, 3              | SDCard Write Protect (SD\_WP)                                                                       | In        |                                                                                                      |
+| 0x24            | 0x4F              | J, 7              | TouchPanel Reset (TP\_RST)                                                                          | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x25            | 0x50              | K, 0              | BT\_GPIO\_2                                                                                         | In        |                                                                                                      |
+| 0x26            | 0x51              | K, 1              | BT\_GPIO\_3                                                                                         | In        |                                                                                                      |
+| 0x27            | 0x52              | K, 2              | BT\_GPIO\_4                                                                                         | In        |                                                                                                      |
+| 0x28            | 0x54              | K, 4              | USB-PD Controller (RHOM BM92T30MWV) IRQ (PD\_IRQ)                                                   | In        | [USB services](USB%20services.md "wikilink")                                                         |
+| 0x29            | 0x56              | K, 6              | POW\_VCPU\_INT                                                                                      | In        |                                                                                                      |
+| 0x2A            | 0x57              | K, 7              | MAX77621\_GPU\_INT                                                                                  | In        |                                                                                                      |
+| 0x2B            | 0x53              | K, 3              | Joy-Con(R) Charge Detect (EXTCON\_CHG\_U)                                                           | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2C            | 0xE3              | CC, 3             | Joy-Con(L) Charge Detect (EXTCON\_CHG\_S)                                                           | Out       | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x2D            | 0x38              | H, 0              | WIFI\_RF\_DISABLE                                                                                   | Out       |                                                                                                      |
+| 0x2E            | 0x39              | H, 1              | WIFI\_RST\_PH1                                                                                      | Out       | [Wlan services](Wlan%20services.md "wikilink"), [PCIe services](PCIe%20services.md "wikilink")       |
+| 0x2F            | 0x3B              | H, 3              | AP\_WAKE\_BT\_PH3                                                                                   | Out       | [Bluetooth Driver services](Bluetooth%20Driver%20services.md "wikilink")                             |
+| 0x30            | 0x3D              | H, 5              | BT\_WAKE\_AP                                                                                        | In        |                                                                                                      |
+| 0x31            | 0x3F              | H, 7              | BT\_GPIO\_5                                                                                         | Out       |                                                                                                      |
+| 0x32            | 0x40              | I, 0              | Backlight +5V (LCD\_VDD\_P\_EN)                                                                     | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x33            | 0x41              | I, 1              | Backlight -5V (LCD\_VDD\_N\_EN)                                                                     | Out       | [NV services](NV%20services.md "wikilink")                                                           |
+| 0x34            | 0x3E              | H, 6              | Joy-Con(R) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON\_DET\_U) | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x35            | 0xE2              | CC, 2             | Secondary Boot Device Configration (RAM\_CODE2)                                                     | In        |                                                                                                      |
+| 0x36            | 0xE4              | CC, 4             | Fan Enable (high power) (VDD50B\_EN)                                                                | Out       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 0x37            | 0x3A              | H, 2              | WIFI\_WAKE\_HOST                                                                                    | In        |                                                                                                      |
+| 0x38            | 0xC9              | Z, 1              | SDCard Card Detect (SD\_CD)                                                                         | In        | [Filesystem services](Filesystem%20services.md "wikilink")                                           |
+| 0x39            | 0x4D              | J, 5              | Charger IC (BQ24193) OTG Charge Select (OTG\_FET\_1)                                                | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x3A            | 0x58              | L, 0              | Charger IC (BQ24193) OTG Charge Select (OTG\_FET\_2)                                                | Out       | [PTM services](PTM%20services.md "wikilink"), [USB services](USB%20services.md "wikilink")           |
+| 0x3B            | 0x3E              | H, 6              | Joy-Con(R) Wake Detect (EXTCON\_DET\_U)                                                             | In        |                                                                                                      |
+| 0x3C            | 0x26              | E, 6              | Joy-Con(L) Wake Detect (EXTCON\_DET\_S)                                                             | In        |                                                                                                      |
+| 0x3D            | \-1               |                   |                                                                                                     |           |                                                                                                      |
+| 0x3E            | 0x33              | G, 3              | Joy-Con(R) CTS (checked low) (EXT\_UART2\_CTS)                                                      | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x3F            | 0x1C              | D, 4              | Joy-Con(L) CTS (checked low) (EXT\_UART3\_CTS)                                                      | In        | [HID services](HID%20services.md "wikilink")                                                         |
+| 0x40            | 0xD9              | BB, 1             | 5V Step-Down Regulator Power (5V\_STEPDOWN\_EN)                                                     | Out       | (SDEV only)                                                                                          |
+| 0x41            | 0x0C              | B, 4              | USB Root Port 2 Over Current (USB\_B2\_OC)                                                          | In        | (SDEV only)                                                                                          |
+| 0x42            | 0x0D              | B, 5              | 5V Step-Down Regulator Power Good Flag (5V\_STEPDOWN\_PG)                                           | In        | (SDEV only)                                                                                          |
+| 0x43            | 0x21              | E, 1              | USB Power (USB\_A\_EN)                                                                              | Out       | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x44            | 0x27              | E, 7              | USB Power Flag (USB\_A\_FLAG)                                                                       | In        | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x45            | 0x92              | S, 2              | USB Root Port 3 Over Current (USB\_B3\_OC)                                                          | In        | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x46            | 0x95              | S, 5              | USB Root Port 3 Power (USB\_B3\_EN)                                                                 | Out       | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x47            | 0x98              | T, 0              | USB Root Port 2 Power (USB\_B2\_EN)                                                                 | Out       | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x48            | 0x10              | C, 0              | HDMI 5V (HDMI\_5V\_EN)                                                                              | Out       | \[2.0.0+\] [NV services](NV%20services.md "wikilink") (SDEV only)                                    |
+| 0x49            | 0x11              | C, 1              | USB Root Port 1 Power (USB\_B1\_EN)                                                                 | Out       | [USB services](USB%20services.md "wikilink") (SDEV only)                                             |
+| 0x4A            | 0x12              | C, 2              | HDMI/Power Delivery Switch (HDMI\_PD\_TR\_EN)                                                       | Out       | [NV services](NV%20services.md "wikilink") (SDEV only)                                               |
+| 0x4B            | 0x42              | I, 2              | FAN\_EN                                                                                             | Out       | (SDEV only)                                                                                          |
+| 0x4C            | 0xE6              | CC, 6             | USB Root Port 1 Over Current (USB\_B1\_OC)                                                          | In        | (SDEV only)                                                                                          |
+| \[2.0.0+\] 0x4D | 0xAC              | V, 4              | PWM\_FAN                                                                                            | Out       | (SDEV only)                                                                                          |
+| \[2.0.0+\] 0x4E | 0xE1              | CC, 1             | HDMI Hot Plug Detect (HDMI\_INT\_DP\_HPD\_PCC1)                                                     | In        | [NV services](NV%20services.md "wikilink") (SDEV only)                                               |
+| \[5.0.0+\] 0x4F | 0x56              | K, 6              | MAX77812\_IRQ                                                                                       |           |                                                                                                      |
+| \[6.0.0+\] 0x50 | 0x20              | E, 0              |                                                                                                     |           |                                                                                                      |
+| \[6.0.0+\] 0x51 | 0x21              | E, 1              |                                                                                                     |           |                                                                                                      |
+| \[6.0.0+\] 0x52 | 0x22              | E, 2              |                                                                                                     |           |                                                                                                      |
+| \[6.0.0+\] 0x53 | 0x23              | E, 3              |                                                                                                     |           |                                                                                                      |
+| \[6.0.0+\] 0x54 | 0x4C              | J, 4              | NFC\_IRQ                                                                                            |           |                                                                                                      |
+| \[6.0.0+\] 0x55 | 0x57              | K, 7              | NFC\_RST                                                                                            |           |                                                                                                      |
+| \[6.0.0+\] 0x56 | 0x94              | S, 4              | MCU\_IRQ                                                                                            |           |                                                                                                      |
+| \[6.0.0+\] 0x57 | 0x98              | T, 0              | MCU\_BOOT                                                                                           |           |                                                                                                      |
+| \[6.0.0+\] 0x58 | 0x99              | T, 1              | MCU\_RST                                                                                            |           |                                                                                                      |
+| \[6.0.0+\] 0x59 | 0xBB              | X, 3              | VDD5V3\_EN                                                                                          |           |                                                                                                      |
+| \[6.0.0+\] 0x5A | 0xE5              | CC, 5             | MCU\_POR                                                                                            |           |                                                                                                      |
+| \[6.0.0+\] 0x5B | 0xAB              | V, 3              |                                                                                                     |           |                                                                                                      |
+| \[6.0.0+\] 0x5C | 0x4E              | J, 6              |                                                                                                     |           |                                                                                                      |
+| \-              | 0x32              | G, 2              | Joy-Con(R) RTS                                                                                      |           |                                                                                                      |
+| \-              | 0x1B              | D, 3              | Joy-Con(L) RTS                                                                                      |           |                                                                                                      |
 
 ## GpioPadDescriptor
 
@@ -879,7 +167,7 @@ This is "nn::gpio::IPadSession".
 | 14  | SetDebounceTime                  |
 | 15  | GetDebounceTime                  |
 | 16  | \[4.0.0+\] SetValueForSleepState |
-| 17  | \[6.0.0+\]                       |
+| 17  | \[6.0.0+\] GetValueForSleepState |
 
 # i2c, i2c:pcv
 
