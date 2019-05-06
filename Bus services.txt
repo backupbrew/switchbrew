@@ -177,7 +177,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x48 || 0x10 || 0x34000004 || C, 0 || HDMI 5V (HDMI_5V_EN) || Out || [2.0.0+] [[NV services]] (SDEV only)
 |-
-| 0x49 || 0x11 || 0x04000407 || C, 1 || USB Root Port 1 Power (USB_B1_EN) || Out || [[USB services]] (SDEV only)
+| 0x49 || 0x11 || 0x04000407 || C, 1 || USB Root Port 1 Power (USB_B1_EN) || Out || [[USB services]]
 |-
 | 0x4A || 0x12 || 0x34000005 || C, 2 || HDMI/Power Delivery Switch (HDMI_PD_TR_EN) || Out || [[NV services]] (SDEV only)
 |-
@@ -323,15 +323,15 @@ This is "nn::i2c::IManager".
 |-
 ! Name || DeviceCode || Port:Addr || Is10bit || Speed || Max Retries || Retry Delay || Usage || Used by
 |-
-|  0 || 0x350000C9 || 0:52 || N || 100000 || 0 ||       0 || DebugPadDriver || [[HID services]], [[PCV services]]
+|  0 || 0x350000C9 || 0:52 || N || 100000 || 0 ||       0 || DebugPadDriver || [[HID services]]
 |-
-|  1 || 0x35000033 || 2:49 || N || 400000 || 0 ||       0 || TouchPanel || [[HID services]], [[PCV services]]
+|  1 || 0x35000033 || 2:49 || N || 400000 || 0 ||       0 || TouchPanel || [[HID services]]
 |-
-|  2 || 0x3E000001 || 0:4c || N || 100000 || 0 ||       0 || Temperature Sensor (TMP451 or NCT72) || [[PTM services]], [[PCV services]]
+|  2 || 0x3E000001 || 0:4c || N || 100000 || 0 ||       0 || Temperature Sensor (TMP451 or NCT72) || [[PTM services]]
 |-
-|  3 || 0x3E000001 || 0:4c || N || 100000 || 0 ||       0 || Temperature Sensor (TMP451 or NCT72) (duplicate) || [[PTM services]], [[PCV services]]
+|  3 || 0x3E000001 || 0:4c || N || 100000 || 0 ||       0 || Temperature Sensor (TMP451 or NCT72) (duplicate) || [[PTM services]]
 |-
-|  4 || 0x33000001 || 0:1c || N || 100000 || 0 ||       0 || Audio Codec (ALC5639) || [[Audio services]], [[Fatal services]], [[PCV services]]
+|  4 || 0x33000001 || 0:1c || N || 100000 || 0 ||       0 || Audio Codec (ALC5639) || [[Audio services]], [[Fatal services]]
 |-
 |  5 || 0x3B000001 || 4:68 || N || 400000 || 3 || 5000000 || PMIC RTC (max77620_rtc0), max77620_irq0 || [[PCV services]]
 |-
@@ -341,51 +341,51 @@ This is "nn::i2c::IManager".
 |-
 |  8 || 0x3A000004 || 4:1c || N || 400000 || 3 || 5000000 || Sub-PMIC for GPU (max77621_gpu) || [[PCV services]]
 |-
-|  9 || 0x39000001 || 0:6b || N || 100000 || 3 || 5000000 || Charger IC (BQ24193) || [[PTM services]], [[PCV services]]
+|  9 || 0x39000001 || 0:6b || N || 100000 || 3 || 5000000 || Charger IC (BQ24193) || [[PTM services]]
 |-
 | 10 || 0x39000033 || 0:36 || N || 100000 || 3 || 5000000 || Fuel Gauge IC (MAX17050) || [[PTM services]], [[PCV services]]
 |-
-| 11 || 0x040000C9 || 0:18 || N || 100000 || 3 || 5000000 || USB-PD controller (RHOM BM92T30MWV) || [[USB services]], [[PCV services]]
+| 11 || 0x040000C9 || 0:18 || N || 100000 || 3 || 5000000 || USB-PD controller (RHOM BM92T30MWV) || [[USB services]]
 |-
-| 12 || 0x3F000401 || 1:40 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VDD15V0-HB) || Factory testing, [[PCV services]]
+| 12 || 0x3F000401 || 1:40 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VDD15V0-HB) || Factory testing
 |-
-| 13 || 0x3F000001 || 1:41 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-CPU-DS) || Factory testing, [[PCV services]]
+| 13 || 0x3F000001 || 1:41 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-CPU-DS) || Factory testing
 |-
-| 14 || 0x3F000002 || 1:44 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-GPU-DS) || Factory testing, [[PCV services]]
+| 14 || 0x3F000002 || 1:44 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-GPU-DS) || Factory testing
 |-
-| 15 || 0x3F000003 || 1:45 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-DDR-DS) || Factory testing, [[PCV services]]
+| 15 || 0x3F000003 || 1:45 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-DDR-DS) || Factory testing
 |-
-| 16 || 0x3F000402 || 1:46 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-AP) || Factory testing, [[PCV services]]
+| 16 || 0x3F000402 || 1:46 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-AP) || Factory testing
 |-
-| 17 || 0x3F000403 || 1:47 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-BL-DS) || Factory testing, [[PCV services]]
+| 17 || 0x3F000403 || 1:47 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VSYS-BL-DS) || Factory testing
 |-
-| 18 || 0x35000047 || 1:29 || N || 400000 || 3 || 5000000 || Ambient Light Sensor (BH1730) || [[Backlight services]], [[PCV services]]
+| 18 || 0x35000047 || 1:29 || N || 400000 || 3 || 5000000 || Ambient Light Sensor (BH1730) || [[Backlight services]]
 |-
-| 19 || 0x3F000404 || 1:48 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_CORE) || Factory testing, [[PCV services]]
+| 19 || 0x3F000404 || 1:48 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_CORE) || Factory testing
 |-
-| 20 || 0x3F000405 || 1:49 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_Soc-1V8) || Factory testing, [[PCV services]]
+| 20 || 0x3F000405 || 1:49 || N || 400000 || 3 || 5000000 || Power Monitor (ina226_Soc-1V8) || Factory testing
 |-
-| 21 || 0x3F000406 || 1:4a || N || 400000 || 3 || 5000000 || Power Monitor (ina226_LPDDR4-1V8) || Factory testing, [[PCV services]]
+| 21 || 0x3F000406 || 1:4a || N || 400000 || 3 || 5000000 || Power Monitor (ina226_LPDDR4-1V8) || Factory testing
 |-
-| 22 || 0x3F000407 || 1:4b || N || 400000 || 3 || 5000000 || Power Monitor (ina226_REG1V32) || Factory testing, [[PCV services]]
+| 22 || 0x3F000407 || 1:4b || N || 400000 || 3 || 5000000 || Power Monitor (ina226_REG1V32) || Factory testing
 |-
-| 23 || 0x3F000408 || 1:4d || N || 400000 || 3 || 5000000 || Power Monitor (ina226_VDD3V3-SYS) || Factory testing, [[PCV services]]
+| 23 || 0x3F000408 || 1:4d || N || 400000 || 3 || 5000000 || Power Monitor (ina226_VDD3V3-SYS) || Factory testing
 |-
-| [2.0.0+] 24 || 0x34000001 || 3:50 || N || 100000 || 0 ||       0 || HDMI DDC || [[NV services]], [[PCV services]]
+| [2.0.0+] 24 || 0x34000001 || 3:50 || N || 100000 || 0 ||       0 || HDMI DDC || [[NV services]]
 |-
-| [2.0.0+] 25 || 0x34000002 || 3:54 || N || 100000 || 0 ||       0 || HDMI SCDC || [[NV services]], [[PCV services]]
+| [2.0.0+] 25 || 0x34000002 || 3:54 || N || 100000 || 0 ||       0 || HDMI SCDC || [[NV services]]
 |-
-| [2.0.0+] 26 || 0x34000003 || 3:3a || N || 100000 || 0 ||       0 || HDMI HDCP || [[NV services]], [[PCV services]]
+| [2.0.0+] 26 || 0x34000003 || 3:3a || N || 100000 || 0 ||       0 || HDMI HDCP || [[NV services]]
 |-
-| [4.0.0+] 27 || 0x3A000005 || 4:a4 || N || 400000 || 0 ||       0 || Buck Regulator (FAN53528) || [[PCV services]]
+| [4.0.0+] 27 || 0x3A000005 || 4:a4 || N || 400000 || 0 ||       0 || Buck Regulator (FAN53528) ||
 |-
 | [4.0.0+] 28 || 0x3A000002 || 4:31 || N || 400000 || 0 ||       0 || PMIC (MAX77812) || [[PCV services]]
 |-
 | [4.0.0+] 29 || 0x3A000002 || 4:33 || N || 400000 || 0 ||       0 || PMIC (MAX77812) || [[PCV services]]
 |-
-| [4.0.0+] 30 || 0x3F000409 || 1:4e || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VDD-DDR-0V6) || Factory testing, [[PCV services]] 
+| [4.0.0+] 30 || 0x3F000409 || 1:4e || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VDD-DDR-0V6) || Factory testing
 |-
-| [8.0.0+] 31 || 0x36000001 || 1:08 || N || 400000 || 3 || 5000000 || || [[PCV services]]
+| [8.0.0+] 31 || 0x36000001 || 1:08 || N || 400000 || 3 || 5000000 || ||
 |}
 
 == OpenSessionForDev ==
