@@ -53,11 +53,11 @@ This is "nn::gpio::IManager".
 |-
 | 0x0A || 0x96 || 0x39000003 || S, 6 || Charger IC (BQ24193) Charge Enable (BATT_CHG_ENABLE_N) || Out || [[PTM services]]
 |-
-| 0x0B || 0x97 || 0x3D000002 || S, 7 || CPU Fan Tachometer (FAN_TACH) || In ||
+| 0x0B || 0x97 || 0x3D000002 || S, 7 || Fan Tachometer (FAN_TACH) || In ||
 |-
 | 0x0C || 0x26 || 0x3500040B || E, 6 || Joy-Con(L) IsAttached (insertion, Joy-Con pin 5/console TX, pulled low on insert?) (EXTCON_DET_S) || In || [[HID services]]
 |-
-| 0x0D || 0x05 || 0x39000401 || A, 5 || Fan Enable (normal) (VDD50A_EN) || Out || [[PTM services]]
+| 0x0D || 0x05 || 0x39000401 || A, 5 || Fan Power (normal) (VDD50A_EN) || Out || [[PTM services]]
 |-
 | 0x0E || 0x78 || 0xCA000402 || P, 0 || SDEV Coax Select (SDEV_COAX_SEL_1) || In ||
 |-
@@ -123,7 +123,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x2D || 0x38 || 0x38000003 || H, 0 || WIFI_RF_DISABLE || Out ||
 |-
-| 0x2E || 0x39 || 0x38000002 || H, 1 || WIFI_RST_PH1 || Out || [[Wlan services]], [[PCIe services]]
+| 0x2E || 0x39 || 0x38000002 || H, 1 || WiFi Reset (WIFI_RST_PH1) || Out || [[WLAN services]], [[PCIe services]]
 |-
 | 0x2F || 0x3B || 0x37000003 || H, 3 || AP_WAKE_BT_PH3 || Out || [[Bluetooth Driver services]]
 |-
@@ -139,7 +139,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x35 || 0xE2 || 0xC9000401 || CC, 2 || Secondary Boot Device Configration (RAM_CODE2) || In ||
 |-
-| 0x36 || 0xE4 || 0x39000402 || CC, 4 || Fan Enable (high power) (VDD50B_EN) || Out || [[PTM services]]
+| 0x36 || 0xE4 || 0x39000402 || CC, 4 || Fan Power (high) (VDD50B_EN) || Out || [[PTM services]]
 |-
 | 0x37 || 0x3A || 0x38000004 || H, 2 || WIFI_WAKE_HOST || In ||
 |-
@@ -181,11 +181,11 @@ This is "nn::gpio::IManager".
 |-
 | 0x4A || 0x12 || 0x34000005 || C, 2 || HDMI/Power Delivery Switch (HDMI_PD_TR_EN) || Out || [[NV services]] (SDEV only)
 |-
-| 0x4B || 0x42 || 0x3D000003 || I, 2 || FAN_EN || Out || [[PTM services]] (SDEV only)
+| 0x4B || 0x42 || 0x3D000003 || I, 2 || Fan Enable (FAN_EN) || Out || [[PTM services]]
 |-
 | 0x4C || 0xE6 || 0x04000408 || CC, 6 || USB Root Port 1 Over Current (USB_B1_OC) || In || [[USB services]] (SDEV only)
 |-
-| [2.0.0+] 0x4D || 0xAC || 0x3D000001 || V, 4 || PWM_FAN || Out || [[PTM services]] (SDEV only)
+| [2.0.0+] 0x4D || 0xAC || 0x3D000001 || V, 4 || Fan Pulse-Width Modulation Control (PWM_FAN) || Out || [[PTM services]]
 |-
 | [2.0.0+] 0x4E || 0xE1 || 0x34000006 || CC, 1 || HDMI Hot Plug Detect (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]] (SDEV only)
 |-
@@ -209,7 +209,7 @@ This is "nn::gpio::IManager".
 |-
 | [6.0.0+] 0x58 || 0x99 || 0x35000417 || T, 1 || MCU_RST || ||
 |-
-| [6.0.0+] 0x59 || 0xBB || 0x39000403 || X, 3 || VDD5V3_EN || || [[PTM services]]
+| [6.0.0+] 0x59 || 0xBB || 0x39000403 || X, 3 || Fan Power (5V3) (VDD5V3_EN) || || [[PTM services]]
 |-
 | [6.0.0+] 0x5A || 0xE5 || 0x35000418 || CC, 5 || MCU_POR || ||
 |-
