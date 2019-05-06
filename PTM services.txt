@@ -79,6 +79,8 @@ This is "nn::psm::IPsmServer".
 |-
 | 17 || [[#GetBatteryChargeInfoFields]]
 |-
+| 18 || [3.0.0+]
+|-
 |}
 
 == GetBatteryChargePercentage ==

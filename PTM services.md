@@ -29,8 +29,7 @@ presumably replaced with new cmds?
 
 # psm
 
-This is
-"nn::psm::IPsmServer".
+This is "nn::psm::IPsmServer".
 
 | Cmd | Name                                                                                 |
 | --- | ------------------------------------------------------------------------------------ |
@@ -52,6 +51,7 @@ This is
 | 15  | [\#GetBatteryAgePercentage](#GetBatteryAgePercentage "wikilink")                     |
 | 16  | [\#GetBatteryChargeInfoEvent](#GetBatteryChargeInfoEvent "wikilink")                 |
 | 17  | [\#GetBatteryChargeInfoFields](#GetBatteryChargeInfoFields "wikilink")               |
+| 18  | \[3.0.0+\]                                                                           |
 |     |                                                                                      |
 
 ## GetBatteryChargePercentage
@@ -128,8 +128,7 @@ No input, returns an output 0x40-byte struct.
 
 ## IPsmSession
 
-This is
-"nn::psm::IPsmSession".
+This is "nn::psm::IPsmSession".
 
 | Cmd | Name                                                                                               |
 | --- | -------------------------------------------------------------------------------------------------- |
@@ -178,8 +177,7 @@ This is "nn::tc::IManager".
 
 # ts
 
-This is
-"nn::ts::server::IMeasurementServer".
+This is "nn::ts::server::IMeasurementServer".
 
 | Cmd | Name                                                                                              |
 | --- | ------------------------------------------------------------------------------------------------- |
