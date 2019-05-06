@@ -17,7 +17,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 5 || GetProfile || Returns an [[#IProfile]].
 |-
-| 6 || GetProfileDigest ||
+| 6 || [3.0.0+] GetProfileDigest ||
 |-
 | 50 || IsUserRegistrationRequestPermitted ||
 |-
@@ -69,7 +69,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 206 || CompleteUserRegistrationForcibly ||
 |-
-| 210 || CreateFloatingRegistrationRequest || Returns an [[#IFloatingRegistrationRequest]].
+| 210 || [3.0.0+] CreateFloatingRegistrationRequest || Returns an [[#IFloatingRegistrationRequest]].
 |-
 | 211 || [8.0.0+] CreateProcedureToRegisterUserWithNintendoAccount || Takes a total of 0x4-bytes of input and a handle, returns an [[#IOAuthProcedureForUserRegistration]].
 |-
@@ -79,13 +79,13 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 250 || GetBaasAccountAdministrator || Returns an [[#IAdministrator]].
 |-
-| 290 || ProxyProcedureForGuestLoginWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
+| 290 || ProxyProcedureForGuestLoginWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]] (formerly [[#IOAuthProcedureForGuestLogin]] with [?-2.3.0]).
 |-
-| 291 || ProxyProcedureForFloatingRegistrationWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
+| 291 || [3.0.0+] ProxyProcedureForFloatingRegistrationWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
 |-
 | 299 || SuspendBackgroundDaemon || Returns an [[#ISessionObject]].
 |-
-| 997 || DebugInvalidateTokenCacheForUser ||
+| 997 || [3.0.0+] DebugInvalidateTokenCacheForUser ||
 |-
 | 998 || DebugSetUserStateClose ||
 |-
@@ -138,6 +138,8 @@ This is "nn::account::baas::IManagerForSystemService".
 
 == IFloatingRegistrationRequest ==
 This is "nn::account::baas::IFloatingRegistrationRequest".
+
+Added with [3.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -235,9 +237,9 @@ This is "nn::account::baas::IAdministrator".
 |-
 | 256 || ResumeProcedureToUpdateLinkageStateOfNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
-| 260 || CreateProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
+| 260 || [3.0.0+] CreateProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
-| 261 || ResumeProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
+| 261 || [3.0.0+] ResumeProcedureToLinkNnidWithNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
 | 280 || ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount || Returns an [[#IOAuthProcedure]].
 |-
@@ -294,6 +296,8 @@ This is "nn::account::http::IOAuthProcedure".
 
 == IOAuthProcedureForExternalNsa ==
 This is "nn::account::nas::IOAuthProcedureForExternalNsa".
+
+Added with [3.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -453,7 +457,7 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 5 || GetProfile || Takes an input userID, returns an [[#IProfile]].
 |-
-| 6 || GetProfileDigest ||
+| 6 || [3.0.0+] GetProfileDigest ||
 |-
 | 50 || IsUserRegistrationRequestPermitted ||
 |-
@@ -497,6 +501,8 @@ This is "nn::account::baas::IGuestLoginRequest".
 |-
 | 0 || GetSessionId
 |-
+| [?-2.3.0] 11 || 
+|-
 | 12 || GetAccountId
 |-
 | 13 || GetLinkedNintendoAccountId
@@ -505,7 +511,7 @@ This is "nn::account::baas::IGuestLoginRequest".
 |-
 | 15 || GetProfileImage
 |-
-| 21 || LoadIdTokenCache
+| 21 || [3.0.0+] LoadIdTokenCache
 |}
 
 == IManagerForApplication ==
@@ -571,7 +577,7 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 5 || GetProfile || Returns an [[#IProfile]].
 |-
-| 6 || GetProfileDigest ||
+| 6 || [3.0.0+] GetProfileDigest ||
 |-
 | 50 || IsUserRegistrationRequestPermitted ||
 |-
@@ -609,7 +615,7 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 191 || [7.0.0+] UpdateNotificationReceiverInfo ([5.0.0-5.1.0] ActivateOpenContextHolder) ||
 |-
-| 997 || DebugInvalidateTokenCacheForUser ||
+| 997 || [3.0.0+] DebugInvalidateTokenCacheForUser ||
 |-
 | 998 || DebugSetUserStateClose ||
 |-
