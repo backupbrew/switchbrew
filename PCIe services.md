@@ -1,7 +1,6 @@
 # pcie
 
-This is
-"nn::pcie::detail::IManager".
+This is "nn::pcie::detail::IManager".
 
 | Cmd | Name                                                                   |
 | --- | ---------------------------------------------------------------------- |
@@ -48,7 +47,7 @@ This is "nn::pcie::detail::ISession".
 | 18  | ReleaseIrq             |
 | 19  | SetIrqEnable           |
 | 20  | SetAspmEnable          |
-| 21  | \[?+\]                 |
+| 21  | \[3.0.0+\]             |
 | 22  | \[?+\]                 |
 | 23  | \[7.0.0+\]             |
 
