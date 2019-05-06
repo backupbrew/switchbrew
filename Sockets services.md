@@ -69,8 +69,7 @@ latter.
 The transfer memory must be larger than a the computed size below.
 Should the transfer memory be smaller than that, the BSD sockets service
 would only send ZeroWindow packets (for TCP), resulting in a transfer
-rate not exceeding 1
-byte/s.
+rate not exceeding 1 byte/s.
 
 `static size_t _bsdGetTransferMemSizeForBufferConfig(const BsdBufferConfig *config)`  
 `{`  
@@ -116,8 +115,7 @@ SIOCGIFADDR, SIOCGIFCONF, SIOCGIFNETMASK, SIOCAIFADDR, SIOCGIFMTU,
 SIOCSIFMTU, SIOCGIFMEDIA, SIOCSIFLLADDR and SIOCGIFXMEDIA.
 
 Nintendo use the following definition (hence changing all ioctls using
-this
-structure):
+this structure):
 
 `struct bpf_program {`  
 `   u_int bf_len;`  
@@ -158,21 +156,35 @@ returns a total of 8-bytes of output.
 
 This is "nn::bsdsocket::cfg::ServerInterface".
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | SetIfUp           |
-| 1   | SetIfUpWithEvent  |
-| 2   | CancelIf          |
-| 3   | SetIfDown         |
-| 4   | GetIfState        |
-| 5   | DhcpRenew         |
-| 6   | AddStaticArpEntry |
-| 7   | RemoveArpEntry    |
-| 8   | LookupArpEntry    |
-| 9   | LookupArpEntry2   |
-| 10  | ClearArpEntries   |
-| 11  | ClearArpEntries2  |
-| 12  | PrintArpEntries   |
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | [\#SetIfUp](#SetIfUp "wikilink")                   |
+| 1   | [\#SetIfUpWithEvent](#SetIfUpWithEvent "wikilink") |
+| 2   | CancelIf                                           |
+| 3   | SetIfDown                                          |
+| 4   | GetIfState                                         |
+| 5   | DhcpRenew                                          |
+| 6   | AddStaticArpEntry                                  |
+| 7   | RemoveArpEntry                                     |
+| 8   | LookupArpEntry                                     |
+| 9   | LookupArpEntry2                                    |
+| 10  | ClearArpEntries                                    |
+| 11  | ClearArpEntries2                                   |
+| 12  | PrintArpEntries                                    |
+
+## SetIfUp
+
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer, no
+output.
+
+\[3.0.0+\] Takes an additional 4-bytes of input.
+
+## SetIfUpWithEvent
+
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer,
+returns an output handle.
+
+\[3.0.0+\] Takes an additional 4-bytes of input.
 
 # ethc:c
 
@@ -203,8 +215,7 @@ This is "nn::eth::sf::IEthInterfaceGroup".
 
 This is "nn::socket::resolver::IResolver".
 
-This service uses `bionic/libc/dns` to perform its
-tasks.
+This service uses `bionic/libc/dns` to perform its tasks.
 
 | Cmd | Name                                                                                      |
 | --- | ----------------------------------------------------------------------------------------- |
@@ -272,8 +283,7 @@ Takes no arguments, doesn't return anything, never fails.
 
 # nsd:u, nsd:a
 
-This is
-"nn::nsd::detail::IManager".
+This is "nn::nsd::detail::IManager".
 
 | Cmd           | Name                                                                 |
 | ------------- | -------------------------------------------------------------------- |

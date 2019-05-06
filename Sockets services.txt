@@ -158,9 +158,9 @@ This is "nn::bsdsocket::cfg::ServerInterface".
 |-
 ! Cmd || Name
 |-
-| 0  || SetIfUp
+| 0  || [[#SetIfUp]]
 |-
-| 1  || SetIfUpWithEvent
+| 1  || [[#SetIfUpWithEvent]]
 |-
 | 2  || CancelIf
 |-
@@ -184,6 +184,16 @@ This is "nn::bsdsocket::cfg::ServerInterface".
 |-
 | 12 || PrintArpEntries
 |}
+
+== SetIfUp ==
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer, no output.
+
+[3.0.0+] Takes an additional 4-bytes of input.
+
+== SetIfUpWithEvent ==
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an output handle.
+
+[3.0.0+] Takes an additional 4-bytes of input.
 
 = ethc:c =
 This is "nn::eth::sf::IEthInterface".
