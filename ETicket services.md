@@ -1,7 +1,6 @@
 # es
 
-This is
-"nn::es::IETicketService".
+This is "nn::es::IETicketService".
 
 | Cmd  | Name                                                                                    |
 | ---- | --------------------------------------------------------------------------------------- |
@@ -74,6 +73,8 @@ This is
 | 2502 | \[6.0.0+\]                                                                              |
 | 3001 | \[7.0.0+\]                                                                              |
 | 3002 | \[7.0.0+\]                                                                              |
+
+\[3.0.0+\] GetTitleKey now takes an additional 4-bytes of input.
 
 \[7.0.0+\] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
 

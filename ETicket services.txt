@@ -144,6 +144,8 @@ This is "nn::es::IETicketService".
 | 3002 || [7.0.0+]
 |}
 
+[3.0.0+] GetTitleKey now takes an additional 4-bytes of input.
+
 [7.0.0+] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
 
 == EsAsyncValue ==
