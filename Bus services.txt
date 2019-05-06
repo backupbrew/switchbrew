@@ -377,11 +377,11 @@ This is "nn::i2c::IManager".
 |-
 | [2.0.0+] 26 || 0x34000003 || 3:3a || N || 100000 || 0 ||       0 || HDMI HDCP || [[NV services]], [[PCV services]]
 |-
-| [4.0.0+] 27 || 0x3A000005 || 4:a4 || N || 400000 || 0 ||       0 || Fan (Fan53528) || [[PCV services]]
+| [4.0.0+] 27 || 0x3A000005 || 4:a4 || N || 400000 || 0 ||       0 || Buck Regulator (FAN53528) || [[PCV services]]
 |-
-| [4.0.0+] 28 || 0x3A000002 || 4:31 || N || 400000 || 0 ||       0 || PMIC (Max77812) || [[PCV services]]
+| [4.0.0+] 28 || 0x3A000002 || 4:31 || N || 400000 || 0 ||       0 || PMIC (MAX77812) || [[PCV services]]
 |-
-| [4.0.0+] 29 || 0x3A000002 || 4:33 || N || 400000 || 0 ||       0 || PMIC (Max77812) || [[PCV services]]
+| [4.0.0+] 29 || 0x3A000002 || 4:33 || N || 400000 || 0 ||       0 || PMIC (MAX77812) || [[PCV services]]
 |-
 | [4.0.0+] 30 || 0x3F000409 || 1:4e || N || 400000 || 3 || 5000000 || Power Monitor (ina226_V_VDD-DDR-0V6) || Factory testing, [[PCV services]] 
 |-
