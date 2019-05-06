@@ -40,7 +40,7 @@ This is "nn::friends::detail::ipc::IFriendService".
 | 20200 | GetReceivedFriendRequestCount                            |
 | 20201 | GetFriendRequestList                                     |
 | 20300 | GetFriendCandidateList                                   |
-| 20301 | GetNintendoNetworkIdInfo                                 |
+| 20301 | \[3.0.0+\] GetNintendoNetworkIdInfo                      |
 | 20302 | \[5.0.0+\] GetSnsAccountLinkage                          |
 | 20303 | \[5.0.0+\] GetSnsAccountProfile                          |
 | 20304 | \[5.0.0+\] GetSnsAccountFriendList                       |
@@ -73,7 +73,7 @@ This is "nn::friends::detail::ipc::IFriendService".
 | 30214 | GetFacedFriendRequestProfileImageFromPath                |
 | 30215 | SendFriendRequestWithExternalApplicationCatalogId        |
 | 30216 | ResendFacedFriendRequest                                 |
-| 30217 | SendFriendRequestWithNintendoNetworkIdInfo               |
+| 30217 | \[3.0.0+\] SendFriendRequestWithNintendoNetworkIdInfo    |
 | 30300 | \[5.0.0+\] GetSnsAccountLinkPageUrl                      |
 | 30301 | \[5.0.0+\] UnlinkSnsAccount                              |
 | 30400 | BlockUser                                                |

@@ -71,7 +71,7 @@ This is "nn::friends::detail::ipc::IFriendService".
 |-
 | 20300 || GetFriendCandidateList
 |-
-| 20301 || GetNintendoNetworkIdInfo
+| 20301 || [3.0.0+] GetNintendoNetworkIdInfo
 |-
 | 20302 || [5.0.0+] GetSnsAccountLinkage
 |-
@@ -137,7 +137,7 @@ This is "nn::friends::detail::ipc::IFriendService".
 |-
 | 30216 || ResendFacedFriendRequest
 |-
-| 30217 || SendFriendRequestWithNintendoNetworkIdInfo
+| 30217 || [3.0.0+] SendFriendRequestWithNintendoNetworkIdInfo
 |-
 | 30300 || [5.0.0+] GetSnsAccountLinkPageUrl
 |-
