@@ -11,8 +11,7 @@ Each service is used by:
   - "nvdrv": regular applications
   - "nvdrv:a": applets
   - "nvdrv:s": sysmodules
-  - "nvdrv:t": factory
-titles
+  - "nvdrv:t": factory titles
 
 | Cmd | Name                                                              |
 | --- | ----------------------------------------------------------------- |
@@ -142,8 +141,7 @@ kernel):
 `#define _IOC(inout, group, num, len) \`  
 `   (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))`
 
-The following table contains known
-ioctls.
+The following table contains known ioctls.
 
 ## /dev/nvhost-ctrl
 
@@ -257,8 +255,7 @@ Waits on an event. If waiting fails, returns error code 0x05 (Timeout)
 and sets **value** to ((**syncpt\_id** \<\< 0x10) | 0x10000000).
 
 Depending on **threshold**, an **user\_event\_id** may be returned for
-using with other event
-ioctls.
+using with other event ioctls.
 
 ` struct {`  
 `   __in    u32 syncpt_id;`  
@@ -273,8 +270,7 @@ Waits on an event (async version). If waiting fails, returns error code
 0x0B (BadValue).
 
 Depending on **threshold**, an **user\_event\_id** may be returned for
-using with other event
-ioctls.
+using with other event ioctls.
 
 ` struct {`  
 `   __in    u32 syncpt_id;`  
@@ -301,8 +297,7 @@ Unregisters an user event. Exclusive to the Switch.
 
 ### NVHOST\_IOCTL\_CTRL\_EVENT\_KILL
 
-Kills user events. Exclusive to the
-Switch.
+Kills user events. Exclusive to the Switch.
 
 ` struct {`  
 `   __in u64 user_events;       // 64-bit bitfield where each bit represents one event`  
@@ -382,8 +377,7 @@ the handle as the ioctl "arg-ptr", and HIPC can't handle that voodoo.
 ### NVMAP\_IOC\_PARAM
 
 Returns info about a nvmap object. Identical to Linux driver, but
-extended with further
-params.
+extended with further params.
 
 ` struct {`  
 `   __in  u32 handle;`  
@@ -393,8 +387,7 @@ params.
 
 ### NVMAP\_IOC\_GET\_ID
 
-Returns an id for a nvmap object. Identical to Linux
-driver.
+Returns an id for a nvmap object. Identical to Linux driver.
 
 ` struct {`  
 `   __out u32 id; //~0 indicates error`  
@@ -632,8 +625,7 @@ Places the given application in detached state.
 
 ## /dev/nverpt-ctrl
 
-Added in firmware version
-3.0.0.
+Added in firmware version 3.0.0.
 
 | Value      | Direction | Size | Description                         | Notes |
 | ---------- | --------- | ---- | ----------------------------------- | ----- |
@@ -648,8 +640,7 @@ is then later bound with a channel.
 
 Once a nvgpu channel has been bound to an address space it cannot be
 unbound. There is no support for allowing an nvgpu channel to change
-from one address space to another (or from one to
-none).
+from one address space to another (or from one to none).
 
 | Value      | Direction | Size     | Description                                                                       | Notes |
 | ---------- | --------- | -------- | --------------------------------------------------------------------------------- | ----- |
@@ -760,8 +751,7 @@ Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
 
-Nintendo modified to get rid of pointer in
-struct.
+Nintendo modified to get rid of pointer in struct.
 
 ` struct va_region {`  
 `   u64 offset;`  
@@ -780,8 +770,7 @@ struct.
 ### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
 
 Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
-(unavailable) with extra
-params.
+(unavailable) with extra params.
 
 ` struct {`  
 `   __in u32 big_page_size;   // depends on GPU's available_big_page_sizes; 0=default`  
@@ -813,8 +802,7 @@ Nintendo's custom implementation of address space remapping.
 ## /dev/nvhost-dbg-gpu
 
 Returns [NotSupported](#Errors "wikilink") on Open unless
-nn::settings::detail::GetDebugModeFlag is
-set.
+nn::settings::detail::GetDebugModeFlag is set.
 
 | Value      | Direction | Size     | Description                                    | Notes        |
 | ---------- | --------- | -------- | ---------------------------------------------- | ------------ |
@@ -843,8 +831,7 @@ This device is identical to
 
 ## /dev/nvhost-ctrl-gpu
 
-This device is for global (context independent) operations on the
-gpu.
+This device is for global (context independent) operations on the gpu.
 
 | Value      | Direction | Size | Description                                                                                               | Notes |
 | ---------- | --------- | ---- | --------------------------------------------------------------------------------------------------------- | ----- |
@@ -923,8 +910,7 @@ Queries the active ZBC table. Identical to Linux driver.
 ### NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS
 
 Returns the GPU characteristics. Modified to return inline data instead
-of using a
-pointer.
+of using a pointer.
 
 ` struct gpu_characteristics {`  
 `   u32 arch;                           // 0x120 (NVGPU_GPU_ARCH_GM200)`  
@@ -972,8 +958,7 @@ pointer.
 
 ### NVGPU\_GPU\_IOCTL\_FLUSH\_L2
 
-Flushes the GPU L2
-cache.
+Flushes the GPU L2 cache.
 
 ` struct {`  
 `   __in u32 flush;          // l2_flush | l2_invalidate << 1 | fb_flush << 2`  
@@ -1065,8 +1050,7 @@ Allocates gpfifo entries. Identical to Linux driver.
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO
 
 Submits a gpfifo object. Modified to take inline entry objects instead
-of a
-pointer.
+of a pointer.
 
 ` struct fence {`  
 `   u32 syncpt_id;`  
@@ -1090,8 +1074,7 @@ pointer.
 Allocates a graphics context object. Modified to ignore object's ID.
 
 You can only have one object context allocated at a time. You must have
-bound an address space before using
-this.
+bound an address space before using this.
 
 ` struct {`  
 `   __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo`  
@@ -1101,8 +1084,7 @@ this.
 
 ### NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND
 
-Binds a ZCULL context to the channel. Identical to Linux
-driver.
+Binds a ZCULL context to the channel. Identical to Linux driver.
 
 `struct {`  
 `   __in u64 gpu_va;`  
@@ -1115,8 +1097,7 @@ driver.
 Initializes the error notifier for this channel. Unlike for the Linux
 kernel, the Switch driver cannot write to an arbitrary userspace buffer.
 Thus new ioctls have been introduced to fetch the error information
-rather than using a shared memory
-buffer.
+rather than using a shared memory buffer.
 
 ` struct {`  
 `   __in u64 offset;  // ignored`  
@@ -1127,8 +1108,7 @@ buffer.
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
 
-Change channel's priority. Identical to Linux
-driver.
+Change channel's priority. Identical to Linux driver.
 
 ` struct {`  
 `   __in u32 priority;    // 0x32 is low, 0x64 is medium and 0x96 is high`  
@@ -1152,8 +1132,7 @@ Forces the channel to reset. Identical to Linux driver.
 
 ### NVGPU\_IOCTL\_CHANNEL\_EVENT\_ID\_CONTROL
 
-Controls event
-notifications.
+Controls event notifications.
 
 ` struct {`  
 `   __in u32 cmd;    // 0=disable, 1=enable, 2=clear`  
@@ -1192,8 +1171,7 @@ Switch.
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
 
-Submits a gpfifo object (async version). Exclusive to the
-Switch.
+Submits a gpfifo object (async version). Exclusive to the Switch.
 
 ` struct {`  
 `   u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)`  
@@ -1258,16 +1236,16 @@ Takes fd and reads log into a type-6 buffer.
 
 This is "nv::gemcontrol::INvGemControl".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
-| 5   |      |
-| 6   |      |
-| 7   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   |            |
+| 6   |            |
+| 7   | \[3.0.0+\] |
 
 # nvgem:cd
 
