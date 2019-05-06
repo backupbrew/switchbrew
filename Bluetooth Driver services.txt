@@ -91,15 +91,15 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 39 || GetLatestPlr
 |-
-| 40 || ExtGetPendingConnections
+| 40 || [3.0.0+] ExtGetPendingConnections
 |-
-| 41 || GetChannelMap
+| 41 || [3.0.0+] GetChannelMap
 |-
-| 42 || EnableBluetoothBoostSetting
+| 42 || [3.0.0+] EnableBluetoothBoostSetting
 |-
-| 43 || IsBluetoothBoostSettingEnabled
+| 43 || [3.0.0+] IsBluetoothBoostSettingEnabled
 |-
-| 44 || EnableBluetoothAfhSetting
+| 44 || [3.0.0+] EnableBluetoothAfhSetting
 |-
 | 45 || IsBluetoothAfhSettingEnabled
 |-

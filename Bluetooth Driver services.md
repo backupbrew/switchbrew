@@ -11,8 +11,7 @@ The code seems to be derived from a broadcom stack. A good starting
 point for similar source code can be found in the MICO project:
 <https://github.com/yinhongxing/mico/tree/ea67ff3659f12d730d4dc3b8d547b093bd2ee2ee/MICO/bluetooth_bte>
 Note that the library files contain many (symbolized) functions which
-match
-btdrv.
+match btdrv.
 
 | Cmd                     | Name                                                         |
 | ----------------------- | ------------------------------------------------------------ |
@@ -56,11 +55,11 @@ btdrv.
 | 37                      | RegisterHidReportEvent                                       |
 | 38                      | [\#HidGetReportEventInfo](#HidGetReportEventInfo "wikilink") |
 | 39                      | GetLatestPlr                                                 |
-| 40                      | ExtGetPendingConnections                                     |
-| 41                      | GetChannelMap                                                |
-| 42                      | EnableBluetoothBoostSetting                                  |
-| 43                      | IsBluetoothBoostSettingEnabled                               |
-| 44                      | EnableBluetoothAfhSetting                                    |
+| 40                      | \[3.0.0+\] ExtGetPendingConnections                          |
+| 41                      | \[3.0.0+\] GetChannelMap                                     |
+| 42                      | \[3.0.0+\] EnableBluetoothBoostSetting                       |
+| 43                      | \[3.0.0+\] IsBluetoothBoostSettingEnabled                    |
+| 44                      | \[3.0.0+\] EnableBluetoothAfhSetting                         |
 | 45                      | IsBluetoothAfhSettingEnabled                                 |
 | 46                      | \[5.0.0+\] InitializeBluetoothLe                             |
 | 47                      | \[5.0.0+\] EnableBluetoothLe                                 |
