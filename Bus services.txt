@@ -341,7 +341,7 @@ This is "nn::i2c::IManager".
 |-
 |  8 || 0x3A000004 || 4:1c || N || 400000 || 3 || 5000000 || Sub-PMIC for GPU (max77621_gpu) || [[PCV services]]
 |-
-|  9 || 0x39000001 || 0:6b || N || 100000 || 3 || 5000000 || Charger IC (BQ24193) || [[PTM services]]
+|  9 || 0x39000001 || 0:6b || N || 100000 || 3 || 5000000 || Charger IC (BQ24193) || [[PTM services]], [[PCV services]]
 |-
 | 10 || 0x39000033 || 0:36 || N || 100000 || 3 || 5000000 || Fuel Gauge IC (MAX17050) || [[PTM services]], [[PCV services]]
 |-
