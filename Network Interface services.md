@@ -4,8 +4,7 @@ These are "nn::nifm::detail::IStaticService".
 
 Max sessions: nifm:a = 0x2, nifm:s = 0x10, nifm:u = 0x5.
 
-nifm:u = User, nifm:s = System, and nifm:a =
-Admin.
+nifm:u = User, nifm:s = System, and nifm:a = Admin.
 
 | Cmd | Name                                                           | Notes                                                        |
 | --- | -------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -14,8 +13,7 @@ Admin.
 
 ## IGeneralService
 
-This is
-"nn::nifm::detail::IGeneralService".
+This is "nn::nifm::detail::IGeneralService".
 
 | Cmd | Name                                                             | Notes                                                        |
 | --- | ---------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -76,8 +74,7 @@ This is "nn::nifm::detail::IScanRequest".
 ### IRequest
 
 This is "nn::nifm::detail::IRequest". This represents an application or
-sysmodule's request to bring a network
-up.
+sysmodule's request to bring a network up.
 
 | Cmd | Name                                                                             |
 | --- | -------------------------------------------------------------------------------- |
@@ -86,7 +83,7 @@ up.
 | 2   | [\#GetSystemEventReadableHandles](#GetSystemEventReadableHandles "wikilink")     |
 | 3   | [\#Cancel](#Cancel "wikilink")                                                   |
 | 4   | [\#Submit](#Submit "wikilink")                                                   |
-| 5   | SetRequirement                                                                   |
+| 5   | [\#SetRequirement](#SetRequirement "wikilink")                                   |
 | 6   | SetRequirementPreset                                                             |
 | 8   | SetPriority                                                                      |
 | 9   | SetNetworkProfileId                                                              |
@@ -99,13 +96,13 @@ up.
 | 16  | SetGreedy                                                                        |
 | 17  | SetSharable                                                                      |
 | 18  | SetRequirementByRevision                                                         |
-| 19  | GetRequirement                                                                   |
+| 19  | [\#GetRequirement](#GetRequirement "wikilink")                                   |
 | 20  | GetRevision                                                                      |
 | 21  | GetAppletInfo                                                                    |
 | 22  | GetAdditionalInfo                                                                |
-| 23  | SetKeptInSleep                                                                   |
-| 24  | RegisterSocketDescriptor                                                         |
-| 25  | UnregisterSocketDescriptor                                                       |
+| 23  | \[3.0.0+\] SetKeptInSleep                                                        |
+| 24  | \[3.0.0+\] RegisterSocketDescriptor                                              |
+| 25  | \[3.0.0+\] UnregisterSocketDescriptor                                            |
 
 #### GetRequestState
 
@@ -135,6 +132,12 @@ Cancels the request to bring the network up.
 Submits the request to bring the network up. Call this after configuring
 the request.
 
+#### SetRequirement
+
+Takes a total of 0x20-bytes of input, no output.
+
+\[3.0.0+\] Takes an additional 4-bytes of input.
+
 #### SetConnectionConfirmationOption
 
 Set how to verify the internet connection.
@@ -154,6 +157,12 @@ Set how to verify the internet connection.
 If this is set, when the network connection is lost, rather than causing
 the request to enter state 1, it will instead enter state 2 and attempt
 to bring the network back up again.
+
+#### GetRequirement
+
+No input, returns a total of 0x20-bytes of output.
+
+\[3.0.0+\] Returns an additional 4-bytes of output.
 
 ### INetworkProfile
 

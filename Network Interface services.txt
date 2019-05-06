@@ -139,7 +139,7 @@ This is "nn::nifm::detail::IRequest". This represents an application or sysmodul
 |-
 | 4 || [[#Submit]]
 |-
-| 5 || SetRequirement
+| 5 || [[#SetRequirement]]
 |-
 | 6 || SetRequirementPreset
 |-
@@ -165,7 +165,7 @@ This is "nn::nifm::detail::IRequest". This represents an application or sysmodul
 |-
 | 18 || SetRequirementByRevision
 |-
-| 19 || GetRequirement
+| 19 || [[#GetRequirement]]
 |-
 | 20 || GetRevision
 |-
@@ -173,11 +173,11 @@ This is "nn::nifm::detail::IRequest". This represents an application or sysmodul
 |-
 | 22 || GetAdditionalInfo
 |-
-| 23 || SetKeptInSleep
+| 23 || [3.0.0+] SetKeptInSleep
 |-
-| 24 || RegisterSocketDescriptor
+| 24 || [3.0.0+] RegisterSocketDescriptor
 |-
-| 25 || UnregisterSocketDescriptor
+| 25 || [3.0.0+] UnregisterSocketDescriptor
 |}
 
 ==== GetRequestState ====
@@ -204,6 +204,11 @@ Cancels the request to bring the network up.
 ==== Submit ====
 Submits the request to bring the network up. Call this after configuring the request.
 
+==== SetRequirement ====
+Takes a total of 0x20-bytes of input, no output.
+
+[3.0.0+] Takes an additional 4-bytes of input.
+
 ==== SetConnectionConfirmationOption ====
 Set how to verify the internet connection.
 
@@ -227,6 +232,11 @@ Set how to verify the internet connection.
 
 ==== SetPersistent ====
 If this is set, when the network connection is lost, rather than causing the request to enter state 1, it will instead enter state 2 and attempt to bring the network back up again.
+
+==== GetRequirement ====
+No input, returns a total of 0x20-bytes of output.
+
+[3.0.0+] Returns an additional 4-bytes of output.
 
 === INetworkProfile ===
 This is "nn::nifm::detail::INetworkProfile".
