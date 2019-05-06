@@ -161,7 +161,7 @@ This is "nn::gpio::IManager".
 |-
 | 0x40 || 0xD9 || 0x39000408 || BB, 1 || 5V Step-Down Regulator Power (5V_STEPDOWN_EN) || Out || (SDEV only)
 |-
-| 0x41 || 0x0C || 0x04000401 || B, 4 || USB Root Port 2 Over Current (USB_B2_OC) || In || (SDEV only)
+| 0x41 || 0x0C || 0x04000401 || B, 4 || USB Root Port 2 Over Current (USB_B2_OC) || In || [[USB services]] (SDEV only)
 |-
 | 0x42 || 0x0D || 0x39000409 || B, 5 || 5V Step-Down Regulator Power Good Flag (5V_STEPDOWN_PG) || In || (SDEV only)
 |-
@@ -181,11 +181,11 @@ This is "nn::gpio::IManager".
 |-
 | 0x4A || 0x12 || 0x34000005 || C, 2 || HDMI/Power Delivery Switch (HDMI_PD_TR_EN) || Out || [[NV services]] (SDEV only)
 |-
-| 0x4B || 0x42 || 0x3D000003 || I, 2 || FAN_EN || Out || (SDEV only)
+| 0x4B || 0x42 || 0x3D000003 || I, 2 || FAN_EN || Out || [[PTM services]] (SDEV only)
 |-
-| 0x4C || 0xE6 || 0x04000408 || CC, 6 || USB Root Port 1 Over Current (USB_B1_OC) || In || (SDEV only)
+| 0x4C || 0xE6 || 0x04000408 || CC, 6 || USB Root Port 1 Over Current (USB_B1_OC) || In || [[USB services]] (SDEV only)
 |-
-| [2.0.0+] 0x4D || 0xAC || 0x3D000001 || V, 4 || PWM_FAN || Out || (SDEV only)
+| [2.0.0+] 0x4D || 0xAC || 0x3D000001 || V, 4 || PWM_FAN || Out || [[PTM services]] (SDEV only)
 |-
 | [2.0.0+] 0x4E || 0xE1 || 0x34000006 || CC, 1 || HDMI Hot Plug Detect (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]] (SDEV only)
 |-
@@ -209,7 +209,7 @@ This is "nn::gpio::IManager".
 |-
 | [6.0.0+] 0x58 || 0x99 || 0x35000417 || T, 1 || MCU_RST || ||
 |-
-| [6.0.0+] 0x59 || 0xBB || 0x39000403 || X, 3 || VDD5V3_EN || ||
+| [6.0.0+] 0x59 || 0xBB || 0x39000403 || X, 3 || VDD5V3_EN || || [[PTM services]]
 |-
 | [6.0.0+] 0x5A || 0xE5 || 0x35000418 || CC, 5 || MCU_POR || ||
 |-
@@ -254,7 +254,7 @@ Same thing as [[#OpenSessionForDev]] except it takes a '''GpioPadName''' which i
 Same as [[#OpenSession]] but panics on failure.
 
 == OpenSession2 ==
-Same as [[#OpenSession]] but takes a '''DeviceCode''' instead of a '''GpioPadName'''.
+Same as [[#OpenSession]] but takes a '''DeviceCode''' instead of a '''GpioPadName''' and an u32 '''DeviceUnk'''.
 
 == IPadSession ==
 This is "nn::gpio::IPadSession".
