@@ -81,7 +81,7 @@ Takes a pid.
 | [[Glue services]]
 | 
 |-
-| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug, [6.0.0+] auddev
+| audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, [?-2.3.0] codecctl, hwopus, auddebug, [6.0.0+] auddev
 | [[Audio services]]
 |
 |-

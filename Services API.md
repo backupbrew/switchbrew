@@ -101,7 +101,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, codecctl, hwopus, auddebug, [6.0.0+] auddev</p></td>
+<td><p>audin:a, audin:d, audin:u, audout:a, audout:d, audout:u, audren:a, audren:d, audren:u, audrec:a, audrec:d, audrec:u, audctl, [?-2.3.0] codecctl, hwopus, auddebug, [6.0.0+] auddev</p></td>
 <td><p><a href="Audio services.md" title="wikilink">Audio services</a></p></td>
 <td></td>
 </tr>
