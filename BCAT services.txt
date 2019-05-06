@@ -12,6 +12,10 @@ These are "nn::bcat::detail::ipc::IServiceCreator".
 | 1 || CreateDeliveryCacheStorageService
 |-
 | 2 || CreateDeliveryCacheStorageServiceWithApplicationId
+|-
+| [?-2.3.0] 3 || 
+|-
+| [?-2.3.0] 4 || 
 |}
 
 Equivalent to 3DS BOSS(SpotPass). See [[BCAT_Content_Container|here]] for BCAT-content-container.
@@ -23,13 +27,13 @@ This is "nn::bcat::detail::ipc::IBcatService".
 |-
 ! Cmd || Name
 |-
-| 10100 || RequestSyncDeliveryCache
+| 10100 || [[#RequestSyncDeliveryCache]]
 |-
 | 10101 || [5.0.0+] RequestSyncDeliveryCacheWithDirectoryName
 |-
 | 10200 || [5.0.0+] CancelSyncDeliveryCacheRequest
 |-
-| 20100 || RequestSyncDeliveryCacheWithApplicationId
+| 20100 || [[#RequestSyncDeliveryCacheWithApplicationId]]
 |-
 | 20101 || [5.0.0+] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName
 |-
@@ -39,32 +43,51 @@ This is "nn::bcat::detail::ipc::IBcatService".
 |-
 | 30100 || SetPassphrase
 |-
-| 30200 || RegisterDeliveryTask
+| [?-2.3.0] 30101 || 
 |-
-| 30201 || UnregisterDeliveryTask
+| [?-2.3.0] 30102 || 
 |-
-| 30202 || BlockDeliveryTask
+| 30200 || [3.0.0+] RegisterDeliveryTask
 |-
-| 30203 || UnblockDeliveryTask
+| 30201 || [3.0.0+] UnregisterDeliveryTask
+|-
+| 30202 || [3.0.0+] BlockDeliveryTask
+|-
+| 30203 || [3.0.0+] UnblockDeliveryTask
 |-
 | 30300 || [8.0.0+] RegisterSystemApplicationDeliveryTasks
 |-
 | 90100 || GetDeliveryTaskList
 |-
-| 90200 || GetDeliveryList
+| 90200 || [[#GetDeliveryList]]
 |-
-| 90201 || ClearDeliveryCacheStorage
+| 90201 || [3.0.0+] ClearDeliveryCacheStorage
 |-
 | 90202 || [8.0.0+] ClearDeliveryTaskSubscriptionStatus
 |-
-| 90300 || GetPushNotificationLog
+| 90300 || [3.0.0+] GetPushNotificationLog
 |}
+
+=== RequestSyncDeliveryCache ===
+No input/output.
+
+[3.0.0+] Now returns an [[#IDeliveryCacheProgressService]].
+
+=== RequestSyncDeliveryCacheWithApplicationId ===
+Takes a total of 8-bytes of input, no output.
+
+[3.0.0+] Now takes an additional 8-bytes of input, and returns an [[#IDeliveryCacheProgressService]].
 
 === GetDeliveryCacheStorageUpdateNotifier ===
 Takes a total of 8-bytes of input, returns an [[#INotifierService]].
 
 === RequestSuspendDeliveryTask ===
 Takes a total of 8-bytes of input, returns an [[#IDeliveryTaskSuspensionService]].
+
+=== GetDeliveryList ===
+Takes a type-0x6 output buffer, returns a total of 4-bytes of output.
+
+[3.0.0+] Now takes a total of 8-bytes of input, and returns an additional 4-bytes of output.
 
 === IDeliveryCacheProgressService ===
 This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
@@ -177,7 +200,7 @@ This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
 |-
 | 30100 || 
 |-
-| 30101 || 
+| 30101 || [3.0.0+]
 |-
 | 30110 || [6.0.0+]
 |-
@@ -187,13 +210,13 @@ This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
 |-
 | 30300 || 
 |-
-| 30400 || 
+| 30400 || [3.0.0+]
 |-
 | 30500 || [8.0.0+] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [[#IUnknown2]])
 |-
 | 40100 || 
 |-
-| 40101 || 
+| 40101 || [3.0.0+]
 |-
 | 40200 || 
 |-
