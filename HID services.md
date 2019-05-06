@@ -83,9 +83,9 @@ This is "nn::hid::IHidServer".
 | 209  | \[4.0.0+\] BeginPermitVibrationSession                                                              |
 | 210  | \[4.0.0+\] EndPermitVibrationSession                                                                |
 | 211  | \[7.0.0+\] [\#IsVibrationDeviceMounted](#IsVibrationDeviceMounted "wikilink")                       |
-| 300  | ActivateConsoleSixAxisSensor                                                                        |
-| 301  | StartConsoleSixAxisSensor                                                                           |
-| 302  | StopConsoleSixAxisSensor                                                                            |
+| 300  | \[3.0.0+\] ActivateConsoleSixAxisSensor                                                             |
+| 301  | \[3.0.0+\] StartConsoleSixAxisSensor                                                                |
+| 302  | \[3.0.0+\] StopConsoleSixAxisSensor                                                                 |
 | 303  | \[5.0.0+\] [\#ActivateSevenSixAxisSensor](#ActivateSevenSixAxisSensor "wikilink")                   |
 | 304  | \[5.0.0+\] [\#StartSevenSixAxisSensor](#StartSevenSixAxisSensor "wikilink")                         |
 | 305  | \[5.0.0+\] [\#StopSevenSixAxisSensor](#StopSevenSixAxisSensor "wikilink")                           |
@@ -94,9 +94,9 @@ This is "nn::hid::IHidServer".
 | 308  | \[5.0.0+\] [\#SetSevenSixAxisSensorFusionStrength](#SetSevenSixAxisSensorFusionStrength "wikilink") |
 | 309  | \[5.0.0+\] [\#GetSevenSixAxisSensorFusionStrength](#GetSevenSixAxisSensorFusionStrength "wikilink") |
 | 310  | \[6.0.0+\] [\#ResetSevenSixAxisSensorTimestamp](#ResetSevenSixAxisSensorTimestamp "wikilink")       |
-| 400  | IsUsbFullKeyControllerEnabled                                                                       |
-| 401  | EnableUsbFullKeyController                                                                          |
-| 402  | IsUsbFullKeyControllerConnected                                                                     |
+| 400  | \[3.0.0+\] IsUsbFullKeyControllerEnabled                                                            |
+| 401  | \[3.0.0+\] EnableUsbFullKeyController                                                               |
+| 402  | \[3.0.0+\] IsUsbFullKeyControllerConnected                                                          |
 | 403  | \[4.0.0+\] HasBattery                                                                               |
 | 404  | \[4.0.0+\] HasLeftRightBattery                                                                      |
 | 405  | \[4.0.0+\] GetNpadInterfaceType                                                                     |
@@ -385,11 +385,11 @@ This is "nn::hid::IHidDebugServer".
 | 130 | DeactivateCaptureButton                                                               |
 | 131 | SetCaptureButtonAutoPilotState                                                        |
 | 132 | UnsetCaptureButtonAutoPilotState                                                      |
-| 133 | SetShiftAccelerometerCalibrationValue                                                 |
-| 134 | GetShiftAccelerometerCalibrationValue                                                 |
-| 135 | SetShiftGyroscopeCalibrationValue                                                     |
-| 136 | GetShiftGyroscopeCalibrationValue                                                     |
-| 140 | DeactivateConsoleSixAxisSensor                                                        |
+| 133 | \[3.0.0+\] SetShiftAccelerometerCalibrationValue                                      |
+| 134 | \[3.0.0+\] GetShiftAccelerometerCalibrationValue                                      |
+| 135 | \[3.0.0+\] SetShiftGyroscopeCalibrationValue                                          |
+| 136 | \[3.0.0+\] GetShiftGyroscopeCalibrationValue                                          |
+| 140 | \[3.0.0+\] DeactivateConsoleSixAxisSensor                                             |
 | 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency                                   |
 | 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor                                               |
 | 143 | \[5.0.0+\] GetConsoleSixAxisSensorCountStates                                         |
@@ -403,18 +403,18 @@ This is "nn::hid::IHidDebugServer".
 | 151 | \[8.0.0+\] SetGyroscopeOdr                                                            |
 | 201 | ActivateFirmwareUpdate                                                                |
 | 202 | DeactivateFirmwareUpdate                                                              |
-| 203 | StartFirmwareUpdate                                                                   |
+| 203 | [\#StartFirmwareUpdate](#StartFirmwareUpdate "wikilink")                              |
 | 204 | GetFirmwareUpdateStage                                                                |
-| 205 | GetFirmwareVersion                                                                    |
-| 206 | GetDestinationFirmwareVersion                                                         |
-| 207 | DiscardFirmwareInfoCacheForRevert                                                     |
-| 208 | StartFirmwareUpdateForRevert                                                          |
-| 209 | GetAvailableFirmwareVersionForRevert                                                  |
+| 205 | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                |
+| 206 | [\#GetDestinationFirmwareVersion](#GetDestinationFirmwareVersion "wikilink")          |
+| 207 | [\#DiscardFirmwareInfoCacheForRevert](#DiscardFirmwareInfoCacheForRevert "wikilink")  |
+| 208 | \[3.0.0+\] StartFirmwareUpdateForRevert                                               |
+| 209 | \[3.0.0+\] GetAvailableFirmwareVersionForRevert                                       |
 | 210 | \[4.0.0+\] IsFirmwareUpdatingDevice                                                   |
 | 211 | \[6.0.0+\] StartFirmwareUpdateIndividual                                              |
 | 215 | \[6.0.0+\] SetUsbFirmwareForceUpdateEnabled                                           |
 | 216 | \[6.0.0+\] SetAllKuinaDevicesToFirmwareUpdateMode                                     |
-| 221 | [\#UpdateControllerColor](#UpdateControllerColor "wikilink")                          |
+| 221 | \[3.0.0+\] [\#UpdateControllerColor](#UpdateControllerColor "wikilink")               |
 | 222 | \[4.0.0+\] ConnectUsbPadsAsync                                                        |
 | 223 | \[4.0.0+\] DisconnectUsbPadsAsync                                                     |
 | 224 | \[5.0.0+\] [\#UpdateDesignInfo](#UpdateDesignInfo "wikilink")                         |
@@ -449,6 +449,35 @@ This is "nn::hid::IHidDebugServer".
 | 401 | \[6.0.0+\] DisableRailDeviceFiltering                                                 |
 | 500 | \[8.0.0+\] SetFactoryInt                                                              |
 | 501 | \[8.0.0+\] IsFactoryBootEnabled                                                       |
+
+## StartFirmwareUpdate
+
+Takes a total of 0x20-bytes of input, 2 handles, and returns an output
+handle.
+
+\[3.0.0+\] Now takes a total of 8-bytes of input, and no longer uses any
+input/output handles.
+
+## GetFirmwareVersion
+
+Takes a total of 8-bytes of input, and returns a total of 4-bytes of
+output.
+
+\[3.0.0+\] Now returns an additional 0xC-bytes of output.
+
+## GetDestinationFirmwareVersion
+
+Takes a total of 8-bytes of input, and returns a total of 4-bytes of
+output.
+
+\[3.0.0+\] Now returns an additional 0xC-bytes of output.
+
+## DiscardFirmwareInfoCacheForRevert
+
+Takes a total of 8-bytes of input, and returns a total of 5-bytes of
+output.
+
+\[3.0.0+\] No input/output.
 
 ## UpdateControllerColor
 
@@ -577,18 +606,18 @@ This is "nn::hid::IHidSystemServer".
 | 505  | EnableAppletToGetSixAxisSensor                                                  |
 | 510  | [\#SetVibrationMasterVolume](#SetVibrationMasterVolume "wikilink")              |
 | 511  | GetVibrationMasterVolume                                                        |
-| 512  | BeginPermitVibrationSession                                                     |
-| 513  | EndPermitVibrationSession                                                       |
+| 512  | \[3.0.0+\] BeginPermitVibrationSession                                          |
+| 513  | \[3.0.0+\] EndPermitVibrationSession                                            |
 | 520  | EnableHandheldHids                                                              |
 | 521  | DisableHandheldHids                                                             |
 | 540  | AcquirePlayReportControllerUsageUpdateEvent                                     |
 | 541  | GetPlayReportControllerUsages                                                   |
 | 542  | AcquirePlayReportRegisteredDeviceUpdateEvent                                    |
 | 543  | GetRegisteredDevicesOld (\[1.0.0-4.1.0\] GetRegisteredDevices)                  |
-| 544  | AcquireConnectionTriggerTimeoutEvent                                            |
-| 545  | SendConnectionTrigger                                                           |
-| 546  | AcquireDeviceRegisteredEventForControllerSupport                                |
-| 547  | GetAllowedBluetoothLinksCount                                                   |
+| 544  | \[3.0.0+\] AcquireConnectionTriggerTimeoutEvent                                 |
+| 545  | \[3.0.0+\] SendConnectionTrigger                                                |
+| 546  | \[3.0.0+\] AcquireDeviceRegisteredEventForControllerSupport                     |
+| 547  | \[3.0.0+\] GetAllowedBluetoothLinksCount                                        |
 | 548  | \[5.0.0+\] GetRegisteredDevices                                                 |
 | 549  | \[6.0.0+\] GetConnectableRegisteredDevices                                      |
 | 700  | ActivateUniquePad                                                               |
@@ -600,8 +629,8 @@ This is "nn::hid::IHidSystemServer".
 | 802  | ResetSixAxisSensorCalibrationValues                                             |
 | 803  | StartSixAxisSensorUserCalibration                                               |
 | 804  | CancelSixAxisSensorUserCalibration                                              |
-| 805  | GetUniquePadBluetoothAddress                                                    |
-| 806  | DisconnectUniquePad                                                             |
+| 805  | \[3.0.0+\] GetUniquePadBluetoothAddress                                         |
+| 806  | \[3.0.0+\] DisconnectUniquePad                                                  |
 | 807  | \[5.0.0+\] GetUniquePadType                                                     |
 | 808  | \[5.0.0+\] GetUniquePadInterface                                                |
 | 809  | \[5.0.0+\] GetUniquePadSerialNumber                                             |
@@ -618,20 +647,20 @@ This is "nn::hid::IHidSystemServer".
 | 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                                       |
 | 829  | \[5.0.0+\] IsAnalogStickInCircumference                                         |
 | 830  | \[7.0.0+\] [\#SetNotificationLedPattern](#SetNotificationLedPattern "wikilink") |
-| 850  | IsUsbFullKeyControllerEnabled                                                   |
-| 851  | EnableUsbFullKeyController                                                      |
-| 852  | IsUsbConnected                                                                  |
+| 850  | \[3.0.0+\] IsUsbFullKeyControllerEnabled                                        |
+| 851  | \[3.0.0+\] EnableUsbFullKeyController                                           |
+| 852  | \[3.0.0+\] IsUsbConnected                                                       |
 | 870  | \[5.1.0+\] IsHandheldButtonPressedOnConsoleMode                                 |
 | 900  | ActivateInputDetector                                                           |
 | 901  | [\#NotifyInputDetector](#NotifyInputDetector "wikilink")                        |
-| 1000 | InitializeFirmwareUpdate                                                        |
-| 1001 | GetFirmwareVersion                                                              |
-| 1002 | GetAvailableFirmwareVersion                                                     |
-| 1003 | IsFirmwareUpdateAvailable                                                       |
-| 1004 | CheckFirmwareUpdateRequired                                                     |
-| 1005 | StartFirmwareUpdate                                                             |
-| 1006 | AbortFirmwareUpdate                                                             |
-| 1007 | GetFirmwareUpdateState                                                          |
+| 1000 | \[3.0.0+\] InitializeFirmwareUpdate                                             |
+| 1001 | \[3.0.0+\] GetFirmwareVersion                                                   |
+| 1002 | \[3.0.0+\] GetAvailableFirmwareVersion                                          |
+| 1003 | \[3.0.0+\] IsFirmwareUpdateAvailable                                            |
+| 1004 | \[3.0.0+\] CheckFirmwareUpdateRequired                                          |
+| 1005 | \[3.0.0+\] StartFirmwareUpdate                                                  |
+| 1006 | \[3.0.0+\] AbortFirmwareUpdate                                                  |
+| 1007 | \[3.0.0+\] GetFirmwareUpdateState                                               |
 | 1008 | \[4.0.0+\] ActivateAudioControl                                                 |
 | 1009 | \[4.0.0+\] AcquireAudioControlEventHandle                                       |
 | 1010 | \[4.0.0+\] GetAudioControlStates                                                |
@@ -795,7 +824,7 @@ The layout of cmd\_argdata is as follows:
 
 This is "nn::hid::IHidTemporaryServer".
 
-This service no longer exists in \[8.0.0+\].
+This service was added with \[3.0.0+\], then removed with \[8.0.0+\].
 
 | Cmd | Name                                     |
 | --- | ---------------------------------------- |
@@ -988,32 +1017,33 @@ This is "nn::ahid::IServerSession".
 
 Used for USB HID devices.
 
-| Cmd | Name | Notes                                                                        |
-| --- | ---- | ---------------------------------------------------------------------------- |
-| 0   |      | Takes an input s32, no output.                                               |
-| 1   |      | Takes an input s32, no output.                                               |
-| 2   |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
-| 3   |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
-| 4   |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
+| Cmd           | Name | Notes                                                                        |
+| ------------- | ---- | ---------------------------------------------------------------------------- |
+| 0             |      | Takes an input s32, no output.                                               |
+| 1             |      | Takes an input s32, no output.                                               |
+| 2             |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
+| 3             |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
+| \[?-2.3.0\] 4 |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
 
 ## ICtrlSession
 
 This is "nn::ahid::ICtrlSession".
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-| 1   |      |       |
-| 2   |      |       |
-| 3   |      |       |
-| 4   |      |       |
-| 5   |      |       |
-| 6   |      |       |
-| 7   |      |       |
-| 8   |      |       |
-| 9   |      |       |
-| 10  |      |       |
-| 11  |      |       |
+| Cmd | Name       | Notes |
+| --- | ---------- | ----- |
+| 0   |            |       |
+| 1   |            |       |
+| 2   |            |       |
+| 3   |            |       |
+| 4   |            |       |
+| 5   |            |       |
+| 6   |            |       |
+| 7   |            |       |
+| 8   |            |       |
+| 9   |            |       |
+| 10  |            |       |
+| 11  |            |       |
+| 12  | \[3.0.0+\] |       |
 
 All of these use USB [CtrlXfer](USB%20services.md "wikilink"), except
 for cmd10-11 which are event(?) related, and cmd1 which copies
@@ -1032,9 +1062,13 @@ INPUT endpoint. The size must be \<=0x1000. The actual transfer size is
 returned in an output u64. The data is copied from the tmpbuf to the
 output buffer using the actual-transfer-size.
 
+\[3.0.0+\] Cmd0 now takes a total of 8-bytes of input.
+
 ## IWriteSession
 
 This is "nn::ahid::IWriteSession".
+
+This was removed with \[3.0.0+\].
 
 | Cmd | Name | Notes                                                                                                                  |
 | --- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
