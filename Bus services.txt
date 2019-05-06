@@ -175,11 +175,11 @@ This is "nn::gpio::IManager".
 |-
 | 0x47 || 0x98 || 0x04000406 || T, 0 || USB Root Port 2 Power (USB_B2_EN) || Out || [[USB services]] (SDEV only)
 |-
-| 0x48 || 0x10 || 0x34000004 || C, 0 || HDMI 5V (HDMI_5V_EN) || Out || [2.0.0+] [[NV services]] (SDEV only)
+| 0x48 || 0x10 || 0x34000004 || C, 0 || HDMI 5V (HDMI_5V_EN) || Out || [2.0.0+] [[NV services]]
 |-
 | 0x49 || 0x11 || 0x04000407 || C, 1 || USB Root Port 1 Power (USB_B1_EN) || Out || [[USB services]]
 |-
-| 0x4A || 0x12 || 0x34000005 || C, 2 || HDMI/Power Delivery Switch (HDMI_PD_TR_EN) || Out || [[NV services]] (SDEV only)
+| 0x4A || 0x12 || 0x34000005 || C, 2 || HDMI/Power Delivery Switch (HDMI_PD_TR_EN) || Out || [[NV services]]
 |-
 | 0x4B || 0x42 || 0x3D000003 || I, 2 || Fan Enable (FAN_EN) || Out || [[PTM services]]
 |-
@@ -187,7 +187,7 @@ This is "nn::gpio::IManager".
 |-
 | [2.0.0+] 0x4D || 0xAC || 0x3D000001 || V, 4 || Fan Pulse-Width Modulation Control (PWM_FAN) || Out || [[PTM services]]
 |-
-| [2.0.0+] 0x4E || 0xE1 || 0x34000006 || CC, 1 || HDMI Hot Plug Detect (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]] (SDEV only)
+| [2.0.0+] 0x4E || 0xE1 || 0x34000006 || CC, 1 || HDMI Hot Plug Detect (HDMI_INT_DP_HPD_PCC1) || In || [[NV services]]
 |-
 | [5.0.0+] 0x4F || 0x56 || 0x3E000003 || K, 6 || MAX77812_IRQ || ||
 |-
