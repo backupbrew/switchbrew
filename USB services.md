@@ -20,8 +20,7 @@ domains.
 
 This service can be used by multiple processes at the same time, with
 separate interfaces. However, if one process does usbds shutdown, usbds
-will reset to defaults even if there's a process still using
-it.
+will reset to defaults even if there's a process still using it.
 
 | Cmd               | Name                                                     |
 | ----------------- | -------------------------------------------------------- |
@@ -235,8 +234,7 @@ all-zero, for padding to size 0x20.
 
 ## IDsInterface
 
-This is
-"nn::usb::ds::IDsInterface".
+This is "nn::usb::ds::IDsInterface".
 
 | Cmd | Name                                                                 | Notes                                                                                                                        |
 | --- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -367,8 +365,7 @@ same function. From strings: "m\_pProtocol-\>Stall(0x80)"
 
 ### IDsEndpoint
 
-This is
-"nn::usb::ds::IDsEndpoint".
+This is "nn::usb::ds::IDsEndpoint".
 
 | Cmd | Name                                                   | Notes                               |
 | --- | ------------------------------------------------------ | ----------------------------------- |
@@ -419,16 +416,14 @@ via [\#Stall](#Stall "wikilink").
 
 No input. Returns 0x84 bytes of report data from the endpoint. Seems to
 be eventually loaded from state, since this doesn't trigger any USB bus
-activity. All-zero before PostBufferAsync was used at least
-once.
+activity. All-zero before PostBufferAsync was used at least once.
 
 | Offset | Size            | Description                                  |
 | ------ | --------------- | -------------------------------------------- |
 | 0x0    | 0x10\*0x8(0x80) | 0x8 entries 0x10-bytes each for each report. |
 | 0x80   | 0x4             | u32 report count                             |
 
-Entry
-data:
+Entry data:
 
 | Offset | Size | Description                                                                                                        |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------ |
@@ -454,8 +449,7 @@ This is "nn::usb::hs::IClientRootSession".
 
 \[7.0.0+\] usb:hs:a opens an nn::usb::hs::IClientRootSession, but sets
 an "isSystemClient" field in the object (and in interfaces/eps opened by
-the session) to
-false.
+the session) to false.
 
 | Cmd             | Name                                                                            | Notes                                                   |
 | --------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -583,8 +577,7 @@ instead.
 
 ## IClientIfSession
 
-This is
-"nn::usb::hs::IClientIfSession".
+This is "nn::usb::hs::IClientIfSession".
 
 | Cmd             | Name                                                                                                                              | Notes                                                                                                    |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -699,8 +692,7 @@ must be non-zero.
 
 ### IClientEpSession
 
-This is
-"nn::usb::hs::IClientEpSession".
+This is "nn::usb::hs::IClientEpSession".
 
 | Cmd          | Name                                                                                      | Notes                                                                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -773,8 +765,8 @@ Starts a data transfer with a single urb.
 
 #### GetXferReport
 
-Takes an input u32 and a type-0x6 output buffer, returns an output u32
-**count**.
+Takes an input u32 and a type-0x6 (\[3.0.0+\] type-0x22) output buffer,
+returns an output u32 **count**.
 
 The input u32 specifies the total number of entries to read, this must
 fit within the specified buffer size. The output u32 is the total actual
@@ -787,8 +779,8 @@ The buffer contains an array of [\#XferReport](#XferReport "wikilink").
 Unofficial name.
 
 Takes 3 input u32s (**urbCount**, **unk1**, and **unk2**), an input u64
-**buffer** and u64 **unk**, and a type-0x5 input buffer, returns an
-output u32 **xferId**.
+**buffer** and u64 **unk**, and a type-0x5 (\[3.0.0+\] type-0x21) input
+buffer, returns an output u32 **xferId**.
 
 Where **unk** is the same as
 [\#PostBufferAsync](#PostBufferAsync_2 "wikilink").
@@ -800,8 +792,7 @@ for the size of each urb, where **urbCount** is the total number of
 entries in this array. With
 [\#PostBufferAsync](#PostBufferAsync_2 "wikilink") the last 2 params
 passed to the internal func are hard-coded to 0, while with this command
-it's **unk1** and
-**unk2**.
+it's **unk1** and **unk2**.
 
 # UsbHsInterface
 
@@ -939,8 +930,7 @@ USB-sysmodule symbols for this refer to "Cradle", which is the
 
 ## IPdCradleSession
 
-This is
-"nn::usb::pd::detail::IPdCradleSession".
+This is "nn::usb::pd::detail::IPdCradleSession".
 
 | Cmd | Name                         | Notes                                                                                                                             |
 | --- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -960,8 +950,7 @@ the given (enum) value to the actual cmd to send.
 # usb:pd:m
 
 This is "nn::usb::pd::detail::IPdManufactureManager". This is only
-available on
-1.0.0.
+available on 1.0.0.
 
 | Cmd | Name | Notes                                                                              |
 | --- | ---- | ---------------------------------------------------------------------------------- |

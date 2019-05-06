@@ -607,7 +607,7 @@ HID-sysmodule passes value 0 for the last u64.
 Starts a data transfer with a single urb.
 
 ==== GetXferReport ====
-Takes an input u32 and a type-0x6 output buffer, returns an output u32 '''count'''.
+Takes an input u32 and a type-0x6 ([3.0.0+] type-0x22) output buffer, returns an output u32 '''count'''.
 
 The input u32 specifies the total number of entries to read, this must fit within the specified buffer size. The output u32 is the total actual output entries.
 
@@ -616,7 +616,7 @@ The buffer contains an array of [[#XferReport]].
 ==== PostBufferMultiAsync ====
 Unofficial name.
 
-Takes 3 input u32s ('''urbCount''', '''unk1''', and '''unk2'''), an input u64 '''buffer''' and u64 '''unk''', and a type-0x5 input buffer, returns an output u32 '''xferId'''.
+Takes 3 input u32s ('''urbCount''', '''unk1''', and '''unk2'''), an input u64 '''buffer''' and u64 '''unk''', and a type-0x5 ([3.0.0+] type-0x21) input buffer, returns an output u32 '''xferId'''.
 
 Where '''unk''' is the same as [[#PostBufferAsync_2|#PostBufferAsync]].
 
