@@ -20,6 +20,9 @@ This is "nn::bpc::IBoardPowerControlManager".
 | 13  | \[3.0.0+\]                     |
 | 14  | \[6.0.0+\]                     |
 
+Cmd10: No input, returns a total of 0x10-bytes of output. \[3.0.0+\] Now
+returns a total of 0xC-bytes of output.
+
 # bpc:r
 
 This is "nn::bpc::IRtcManager".
