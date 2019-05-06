@@ -59,7 +59,7 @@ Takes a pid.
 | [[Account services]]
 | u0: System, u1: User, su: Admin, aa: Baas
 |-
-| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys, [4.0.0-7.0.1] hid:tmp, [5.0.0+] hidbus
+| ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys, [3.0.0-7.0.1] hid:tmp, [5.0.0+] hidbus
 | [[HID services]]
 |
 |-
