@@ -120,8 +120,10 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with
 
 # caps:su
 
-This is "nn::capsrv::sf::IScreenShotApplicationService". This was moved
-to [AM](Applet%20Manager%20services.md "wikilink") with \[6.0.0+\].
+This is "nn::capsrv::sf::IScreenShotApplicationService".
+
+This was added with \[3.0.0+\]. This was moved to
+[AM](Applet%20Manager%20services.md "wikilink") with \[6.0.0+\].
 
 | Cmd | Name              |
 | --- | ----------------- |
