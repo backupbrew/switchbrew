@@ -141,7 +141,7 @@ Takes a pid.
 <td><p>a: AlbumAccessor, c: AlbumControl</p></td>
 </tr>
 <tr class="odd">
-<td><p>[2.0.0+] caps:sc, [2.0.0+] caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [4.0.0-5.1.0] caps:su</p></td>
+<td><p>[2.0.0+] caps:sc, [2.0.0+] caps:ss, vi:m, vi:s, vi:u, cec-mgr, [2.0.0+] mm:u, [3.0.0-5.1.0] caps:su</p></td>
 <td><p><a href="Display services.md" title="wikilink">Display services</a></p></td>
 <td></td>
 </tr>
