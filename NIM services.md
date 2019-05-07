@@ -1,7 +1,6 @@
 # nim
 
-This is
-"nn::nim::detail::INetworkInstallManager".
+This is "nn::nim::detail::INetworkInstallManager".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
@@ -105,6 +104,11 @@ This is
 | 98  | \[6.0.0+\]                                                       |
 | 99  | \[7.0.0+\]                                                       |
 
+\[3.0.0+\] GetSystemUpdateTaskInfo now returns an additional 0x10-bytes
+of output. GetNetworkInstallTaskInfo now returns an additional
+0x18-bytes of output. GetApplyDeltaTaskInfo now returns an additional
+0x10-bytes of output.
+
 \[8.0.0+\] Cmd76 now takes an additional 0x8-bytes of input.
 
 ## DestroySystemUpdateTask
@@ -121,21 +125,20 @@ blocked.
 
 # nim:shp
 
-This is
-"nn::nim::detail::IShopServiceManager".
+This is "nn::nim::detail::IShopServiceManager".
 
 | Cmd | Name                                                                                                           |
 | --- | -------------------------------------------------------------------------------------------------------------- |
 | 0   | RequestDeviceAuthenticationToken                                                                               |
-| 1   | RequestCachedDeviceAuthenticationToken                                                                         |
+| 1   | \[3.0.0+\] RequestCachedDeviceAuthenticationToken                                                              |
 | 100 | RequestRegisterDeviceAccount                                                                                   |
 | 101 | RequestUnregisterDeviceAccount                                                                                 |
 | 102 | RequestDeviceAccountStatus                                                                                     |
 | 103 | GetDeviceAccountInfo                                                                                           |
 | 104 | RequestDeviceRegistrationInfo                                                                                  |
 | 105 | RequestTransferDeviceAccount                                                                                   |
-| 106 | RequestSyncRegistration                                                                                        |
-| 107 | IsOwnDeviceId                                                                                                  |
+| 106 | \[3.0.0+\] RequestSyncRegistration                                                                             |
+| 107 | \[3.0.0+\] IsOwnDeviceId                                                                                       |
 | 200 | RequestRegisterNotificationToken                                                                               |
 | 300 | RequestUnlinkDevice                                                                                            |
 | 301 | RequestUnlinkDeviceIntegrated                                                                                  |
@@ -208,8 +211,8 @@ This is "nn::ntc::detail::<service::IStaticService>".
 | Cmd | Name                                      |
 | --- | ----------------------------------------- |
 | 0   | OpenEnsureNetworkClockAvailabilityService |
-| 100 | SuspendAutonomicTimeCorrection            |
-| 101 | ResumeAutonomicTimeCorrection             |
+| 100 | \[3.0.0+\] SuspendAutonomicTimeCorrection |
+| 101 | \[3.0.0+\] ResumeAutonomicTimeCorrection  |
 
 Network-time-sync uses the "\<...\>/time" HTTPS URL listed in the below
 Network section. This just returns an UTC Unix time string.
@@ -226,6 +229,6 @@ This is
 | 2   | GetResult                  |
 | 3   | Cancel                     |
 | 4   | IsProcessing               |
-| 5   | GetServerTime              |
+| 5   | \[3.0.0+\] GetServerTime   |
 
 [Category:Services](Category:Services "wikilink")
