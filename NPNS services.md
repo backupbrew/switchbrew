@@ -1,7 +1,6 @@
 # npns:u
 
-This is
-"nn::npns::INpnsUser".
+This is "nn::npns::INpnsUser".
 
 | Cmd | Name                                                                              |
 | --- | --------------------------------------------------------------------------------- |
@@ -18,7 +17,7 @@ This is
 | 101 | Suspend                                                                           |
 | 102 | Resume                                                                            |
 | 103 | GetState                                                                          |
-| 104 | GetStatistics                                                                     |
+| 104 | \[3.0.0+\] GetStatistics                                                          |
 | 111 | GetJid                                                                            |
 | 120 | \[7.0.0+\] [\#CreateNotificationReceiver](#CreateNotificationReceiver "wikilink") |
 | 151 | \[8.0.0+\] GetStateWithHandover                                                   |
@@ -33,8 +32,7 @@ Returns an [\#INotificationReceiver](#INotificationReceiver "wikilink").
 
 This is "nn::npns::INotificationReceiver".
 
-This was added with
-\[7.0.0+\].
+This was added with \[7.0.0+\].
 
 | Cmd | Name                    | Notes                                                           |
 | --- | ----------------------- | --------------------------------------------------------------- |
@@ -45,8 +43,7 @@ This was added with
 
 # npns:s
 
-This is
-"nn::npns::INpnsSystem".
+This is "nn::npns::INpnsSystem".
 
 | Cmd | Name                                                                              |
 | --- | --------------------------------------------------------------------------------- |
@@ -72,8 +69,8 @@ This is
 | 101 | Suspend                                                                           |
 | 102 | Resume                                                                            |
 | 103 | GetState                                                                          |
-| 104 | GetStatistics                                                                     |
-| 105 | GetPlayReportRequestEvent                                                         |
+| 104 | \[3.0.0+\] GetStatistics                                                          |
+| 105 | \[3.0.0+\] GetPlayReportRequestEvent                                              |
 | 111 | GetJid                                                                            |
 | 112 | CreateJid                                                                         |
 | 113 | DestroyJid                                                                        |
@@ -83,7 +80,7 @@ This is
 | 151 | \[8.0.0+\] GetStateWithHandover                                                   |
 | 152 | \[8.0.0+\] GetStateChangeEventWithHandover                                        |
 | 153 | \[8.0.0+\] GetDropEventWithHandover                                               |
-| 201 | RequestChangeStateForceTimed                                                      |
-| 202 | RequestChangeStateForceAsync                                                      |
+| 201 | \[3.0.0+\] RequestChangeStateForceTimed                                           |
+| 202 | \[3.0.0+\] RequestChangeStateForceAsync                                           |
 
 [Category:Services](Category:Services "wikilink")

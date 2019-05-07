@@ -31,7 +31,7 @@ This is "nn::npns::INpnsUser".
 |-
 | 103 || GetState
 |-
-| 104 || GetStatistics
+| 104 || [3.0.0+] GetStatistics
 |-
 | 111 || GetJid
 |-
@@ -116,9 +116,9 @@ This is "nn::npns::INpnsSystem".
 |-
 | 103 || GetState
 |-
-| 104 || GetStatistics
+| 104 || [3.0.0+] GetStatistics
 |-
-| 105 || GetPlayReportRequestEvent
+| 105 || [3.0.0+] GetPlayReportRequestEvent
 |-
 | 111 || GetJid
 |-
@@ -138,9 +138,9 @@ This is "nn::npns::INpnsSystem".
 |-
 | 153 || [8.0.0+] GetDropEventWithHandover
 |-
-| 201 || RequestChangeStateForceTimed
+| 201 || [3.0.0+] RequestChangeStateForceTimed
 |-
-| 202 || RequestChangeStateForceAsync
+| 202 || [3.0.0+] RequestChangeStateForceAsync
 |}
 
 [[Category:Services]]
