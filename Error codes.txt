@@ -464,7 +464,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x313802 || 2 || 6300 || Operation not supported
 |-
-| 0x31AE02 || 2 || 6359 || Query ID not supported
+| 0x31AE02 || 2 || 6359 || Operation not supported in nn::fssystem::ConcatenationFileSystem
+|-
+| 0x31B002 || 2 || 6360 || Operation not supported in nn::fssystem::ConcatenationFile
 |-
 | 0x320002 || 2 || 6400 || Permission denied
 |-
