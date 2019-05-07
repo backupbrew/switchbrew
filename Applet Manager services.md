@@ -8,8 +8,7 @@ and the Nintendo Switch logo displayed during system boot.
 
 # appletAE
 
-This is
-"nn::am::<service::IAllSystemAppletProxiesService>".
+This is "nn::am::<service::IAllSystemAppletProxiesService>".
 
 | Cmd  | Name                                                                      | Notes                                                                                        |
 | ---- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -53,8 +52,7 @@ copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input
 buffer **AppletAttribute**.
 
 Official user-processes use the same retry loop with this as the other
-Open\*Proxy
-commands.
+Open\*Proxy commands.
 
 ## ISystemAppletProxy
 
@@ -115,8 +113,7 @@ Takes an input u32, returns an output
 
 ##### GetEvent
 
-No input, returns an output
-handle.
+No input, returns an output handle.
 
 ### IGlobalStateController
 
@@ -130,9 +127,9 @@ handle.
 | 9   | \[7.0.0+\] [\#IsAutoPowerDownRequested](#IsAutoPowerDownRequested "wikilink") |       |
 | 10  | LoadAndApplyIdlePolicySettings                                                |       |
 | 11  | \[2.0.0+\] NotifyCecSettingsChanged                                           |       |
-| 12  | \[2.0.0+\] SetDefaultHomeButtonLongPressTime                                  |       |
-| 13  | \[2.0.0+\] UpdateDefaultDisplayResolution                                     |       |
-| 14  | \[2.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink")               |       |
+| 12  | \[3.0.0+\] SetDefaultHomeButtonLongPressTime                                  |       |
+| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution                                     |       |
+| 14  | \[3.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink")               |       |
 | 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                                   |       |
 
 #### IsAutoPowerDownRequested
@@ -141,8 +138,7 @@ No input, returns an output u8 bool.
 
 #### ShouldSleepOnBoot
 
-No input, returns an output u8
-bool.
+No input, returns an output u8 bool.
 
 ### IApplicationCreator
 
@@ -250,8 +246,7 @@ No input/output.
 
 ## IAppletCommonFunctions
 
-Added with
-[7.0.0](7.0.0.md "wikilink").
+Added with [7.0.0](7.0.0.md "wikilink").
 
 | Cmd | Name                                       | Notes                                                                                                          |
 | --- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
@@ -263,8 +258,7 @@ Added with
 | 51  | \[8.0.0+\] GetHomeButtonDoubleClickEnabled |                                                                                                                |
 
 These commands copy data from/to a state buffer and the user specified
-buffer. The size of the state buffer is
-0x400-bytes.
+buffer. The size of the state buffer is 0x400-bytes.
 
 ## ILibraryAppletProxy
 
@@ -298,7 +292,7 @@ buffer. The size of the state buffer is
 | 14  | GetCallerAppletIdentityInfo                                                                                 |       |
 | 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |       |
 | 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |       |
-| 17  | \[2.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |       |
+| 17  | \[3.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |       |
 | 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |       |
 | 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |       |
 | 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                            |       |
@@ -306,7 +300,7 @@ buffer. The size of the state buffer is
 | 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |       |
 | 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |       |
 | 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |       |
-| 50  | \[2.0.0+\] ReportVisibleError                                                                               |       |
+| 50  | \[3.0.0+\] ReportVisibleError                                                                               |       |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |       |
 | 70  | \[8.0.0+\] GetCurrentApplicationId                                                                          |       |
@@ -412,7 +406,7 @@ Takes an input u64 and handle, returns a GRC
 | 3   | SetGpuTimeSliceBoost                                |
 | 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled    |
 | 5   | \[2.0.0+\] TerminateApplicationAndSetReason         |
-| 6   | \[2.0.0+\] SetScreenShotPermissionGlobally          |
+| 6   | \[3.0.0+\] SetScreenShotPermissionGlobally          |
 | 10  | \[6.0.0+\] StartShutdownSequenceForOverlay          |
 | 11  | \[6.0.0+\] StartRebootSequenceForOverlay            |
 | 20  | \[8.0.0+\] SetHandlingHomeButtonShortPressedEnabled |
@@ -421,8 +415,7 @@ Takes an input u64 and handle, returns a GRC
 
 #### SetRequiresGpuResourceUse
 
-Takes an input u8, no
-output.
+Takes an input u8, no output.
 
 ## IApplicationProxy
 
@@ -454,8 +447,8 @@ output.
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                                                                             |
 | 23   | GetDisplayVersion                                                                                                               |                                                                                                             |
 | 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |                                                                                                             |
-| 25   | \[2.0.0+\] ExtendSaveData                                                                                                       |                                                                                                             |
-| 26   | \[2.0.0+\] GetSaveDataSize                                                                                                      |                                                                                                             |
+| 25   | \[3.0.0+\] ExtendSaveData                                                                                                       |                                                                                                             |
+| 26   | \[3.0.0+\] GetSaveDataSize                                                                                                      |                                                                                                             |
 | 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |                                                                                                             |
 | 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |                                                                                                             |
 | 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                              |                                                                                                             |
@@ -657,8 +650,7 @@ No input, returns a GRC [IMovieMaker](GRC%20services.md "wikilink").
 
 #### GetLayerHandle
 
-No input, returns an output
-u64.
+No input, returns an output u64.
 
 ## ILibraryAppletCreator
 
@@ -713,8 +705,7 @@ Takes an input copy-handle and an input s64, returns an
 the negative bit set.
 
 The input can be arbitrary, however official sw is only (?) known to use
-this for TransferMemory (with
-s64=size).
+this for TransferMemory (with s64=size).
 
 ### ILibraryAppletAccessor
 
@@ -791,8 +782,7 @@ Takes an input PID and an input u64 AppletResourceUserId, returns an
 output u64 IndirectLayerConsumerHandle.
 
 Official sw uses this during LibraryApplet creation when
-[\#LibraryAppletMode](#LibraryAppletMode "wikilink") is
-0x3.
+[\#LibraryAppletMode](#LibraryAppletMode "wikilink") is 0x3.
 
 ## ICommonStateGetter
 
@@ -983,8 +973,7 @@ No input, returns the result of calling
 
 ### GetOperationModeSystemInfo
 
-No input, returns a total of 4-bytes of
-output.
+No input, returns a total of 4-bytes of output.
 
 ## ISelfController
 
@@ -1147,8 +1136,7 @@ Returns an output [\#IStorageChannel](#IStorageChannel "wikilink").
 
 ## IStorageChannel
 
-Added with
-[7.0.0](7.0.0.md "wikilink").
+Added with [7.0.0](7.0.0.md "wikilink").
 
 | Cmd | Name              | Notes                                                           |
 | --- | ----------------- | --------------------------------------------------------------- |
@@ -1198,8 +1186,7 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for
 saving/restoring state for LibraryApplet launching, with
 SetExpectedMasterVolume being used with new state prior to launching a
 LibraryApplet. With official sw these applet funcs are used directly in
-the
-main-codebin.
+the main-codebin.
 
 ## IDisplayController
 
@@ -1224,8 +1211,8 @@ main-codebin.
 | 16  | AcquireLastApplicationCaptureBufferEx                                                    |
 | 17  | AcquireLastForegroundCaptureBufferEx                                                     |
 | 18  | AcquireCallerAppletCaptureBufferEx                                                       |
-| 20  | \[2.0.0+\] ClearCaptureBuffer                                                            |
-| 21  | \[2.0.0+\] ClearAppletTransitionBuffer                                                   |
+| 20  | \[3.0.0+\] ClearCaptureBuffer                                                            |
+| 21  | \[3.0.0+\] ClearAppletTransitionBuffer                                                   |
 | 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer                                     |
 | 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer                                     |
 | 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer                                      |
@@ -1244,8 +1231,7 @@ No input, returns an output handle.
 
 ### AcquireCallerAppletCaptureBuffer
 
-No input, returns an output
-handle.
+No input, returns an output handle.
 
 ## ISystemAppletControllerForDebug
 
@@ -1352,8 +1338,7 @@ return the same s64.
 
 # appletOE
 
-This is
-"nn::am::<service::IApplicationProxyService>".
+This is "nn::am::<service::IApplicationProxyService>".
 
 | Cmd | Name                                                       | Notes |
 | --- | ---------------------------------------------------------- | ----- |
@@ -1389,6 +1374,9 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 | 3          | SetHandlingContext    |
 | 4          | LoadAndApplySettings  |
 | 5          | ReportUserIsActive    |
+
+\[3.0.0+\] SetHandlingContext now takes an additional 0x10-bytes of
+input.
 
 # omm
 
@@ -1449,6 +1437,8 @@ This is "nn::spsm::detail::IPowerStateInterface".
 | 10  |                                               |
 | 11  | \[1.0.0-3.0.2\]                               |
 
+\[3.0.0+\] Cmd11 now takes a total of 8-bytes of input.
+
 # tcap
 
 This is "nn::tcap::server::IManager".
@@ -1465,8 +1455,7 @@ This is "nn::capsrv::sf::IScreenShotApplicationService".
 
 This was added with [6.0.0](6.0.0.md "wikilink").
 
-This can be used by applications to save
-screenshots.
+This can be used by applications to save screenshots.
 
 | Cmd | Name                             | Notes                                                                                                                                  |
 | --- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1525,8 +1514,7 @@ This struct is 0x20-bytes.
 
 Official sw handles the first 8-bytes separately, which is a header.
 With CommonArguments version 0x0, the header is 4-bytes, while starting
-with version 0x1 it's
-8-bytes.
+with version 0x1 it's 8-bytes.
 
 | Offset | Size | Typical Value | Notes                                                                                      |
 | ------ | ---- | ------------- | ------------------------------------------------------------------------------------------ |

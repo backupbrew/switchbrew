@@ -146,11 +146,11 @@ No input, returns an output handle.
 |-
 | 11 || [2.0.0+] NotifyCecSettingsChanged || 
 |-
-| 12 || [2.0.0+] SetDefaultHomeButtonLongPressTime || 
+| 12 || [3.0.0+] SetDefaultHomeButtonLongPressTime || 
 |-
-| 13 || [2.0.0+] UpdateDefaultDisplayResolution || 
+| 13 || [3.0.0+] UpdateDefaultDisplayResolution || 
 |-
-| 14 || [2.0.0+] [[#ShouldSleepOnBoot]] || 
+| 14 || [3.0.0+] [[#ShouldSleepOnBoot]] || 
 |-
 | 15 || [4.0.0+] GetHdcpAuthenticationFailedEvent || 
 |}
@@ -360,7 +360,7 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 16 || [2.0.0+] [[#GetMainAppletStorageId]] ||
 |-
-| 17 || [2.0.0+] GetCallerAppletIdentityInfoStack ||
+| 17 || [3.0.0+] GetCallerAppletIdentityInfoStack ||
 |-
 | 18 || [4.0.0+] GetNextReturnDestinationAppletIdentityInfo ||
 |-
@@ -376,7 +376,7 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 40 || [2.0.0+] GetIndirectLayerProducerHandle ||
 |-
-| 50 || [2.0.0+] ReportVisibleError ||
+| 50 || [3.0.0+] ReportVisibleError ||
 |-
 | 51 || [4.0.0+] ReportVisibleErrorWithErrorContext ||
 |-
@@ -490,7 +490,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 5 || [2.0.0+] TerminateApplicationAndSetReason
 |-
-| 6 || [2.0.0+] SetScreenShotPermissionGlobally
+| 6 || [3.0.0+] SetScreenShotPermissionGlobally
 |-
 | 10 || [6.0.0+] StartShutdownSequenceForOverlay
 |-
@@ -559,9 +559,9 @@ Takes an input u8, no output.
 |-
 | 24 || [2.0.0+] GetLaunchStorageInfoForDebug ||
 |-
-| 25 || [2.0.0+] ExtendSaveData ||
+| 25 || [3.0.0+] ExtendSaveData ||
 |-
-| 26 || [2.0.0+] GetSaveDataSize ||
+| 26 || [3.0.0+] GetSaveDataSize ||
 |-
 | 27 || [5.0.0+] CreateCacheStorage ||
 |-
@@ -1299,9 +1299,9 @@ GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for saving/re
 |-
 | 18 || AcquireCallerAppletCaptureBufferEx
 |-
-| 20 || [2.0.0+] ClearCaptureBuffer
+| 20 || [3.0.0+] ClearCaptureBuffer
 |-
-| 21 || [2.0.0+] ClearAppletTransitionBuffer
+| 21 || [3.0.0+] ClearAppletTransitionBuffer
 |-
 | 22 || [4.0.0+] AcquireLastApplicationCaptureSharedBuffer
 |-
@@ -1483,6 +1483,8 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 | 5 || ReportUserIsActive
 |}
 
+[3.0.0+] SetHandlingContext now takes an additional 0x10-bytes of input.
+
 = omm =
 This is "nn::omm::detail::IOperationModeManager"
 
@@ -1579,6 +1581,8 @@ This is "nn::spsm::detail::IPowerStateInterface".
 |-
 | 11 || [1.0.0-3.0.2]
 |}
+
+[3.0.0+] Cmd11 now takes a total of 8-bytes of input.
 
 = tcap =
 This is "nn::tcap::server::IManager".
