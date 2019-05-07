@@ -13,9 +13,9 @@ This is "nn::ssl::sf::ISslService".
 |-
 | 3 || GetCertificateBufSize
 |-
-| 4 || DebugIoctl
+| 4 || [3.0.0+] DebugIoctl
 |-
-| 5 || SetInterfaceVersion
+| 5 || [3.0.0+] SetInterfaceVersion
 |-
 | 6 || [5.0.0+] FlushSessionCache
 |-
@@ -23,6 +23,8 @@ This is "nn::ssl::sf::ISslService".
 |-
 | 8 || [6.0.0+] GetDebugOption
 |}
+
+[3.0.0+] GetCertificates now returns 4-bytes of output.
 
 == ISslContext ==
 This is "nn::ssl::sf::ISslContext".
@@ -51,9 +53,9 @@ This is "nn::ssl::sf::ISslContext".
 |-
 | 9 || AddPolicyOid
 |-
-| 10 || ImportCrl
+| 10 || [3.0.0+] ImportCrl
 |-
-| 11 || RemoveCrl
+| 11 || [3.0.0+] RemoveCrl
 |}
 
 === ISslConnection ===

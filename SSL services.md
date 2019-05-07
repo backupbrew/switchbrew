@@ -2,36 +2,38 @@
 
 This is "nn::ssl::sf::ISslService".
 
-| Cmd | Name                         |
-| --- | ---------------------------- |
-| 0   | CreateContext                |
-| 1   | GetContextCount              |
-| 2   | GetCertificates              |
-| 3   | GetCertificateBufSize        |
-| 4   | DebugIoctl                   |
-| 5   | SetInterfaceVersion          |
-| 6   | \[5.0.0+\] FlushSessionCache |
-| 7   | \[6.0.0+\] SetDebugOption    |
-| 8   | \[6.0.0+\] GetDebugOption    |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | CreateContext                  |
+| 1   | GetContextCount                |
+| 2   | GetCertificates                |
+| 3   | GetCertificateBufSize          |
+| 4   | \[3.0.0+\] DebugIoctl          |
+| 5   | \[3.0.0+\] SetInterfaceVersion |
+| 6   | \[5.0.0+\] FlushSessionCache   |
+| 7   | \[6.0.0+\] SetDebugOption      |
+| 8   | \[6.0.0+\] GetDebugOption      |
+
+\[3.0.0+\] GetCertificates now returns 4-bytes of output.
 
 ## ISslContext
 
 This is "nn::ssl::sf::ISslContext".
 
-| Cmd | Name                |
-| --- | ------------------- |
-| 0   | SetOption           |
-| 1   | GetOption           |
-| 2   | CreateConnection    |
-| 3   | GetConnectionCount  |
-| 4   | ImportServerPki     |
-| 5   | ImportClientPki     |
-| 6   | RemoveServerPki     |
-| 7   | RemoveClientPki     |
-| 8   | RegisterInternalPki |
-| 9   | AddPolicyOid        |
-| 10  | ImportCrl           |
-| 11  | RemoveCrl           |
+| Cmd | Name                 |
+| --- | -------------------- |
+| 0   | SetOption            |
+| 1   | GetOption            |
+| 2   | CreateConnection     |
+| 3   | GetConnectionCount   |
+| 4   | ImportServerPki      |
+| 5   | ImportClientPki      |
+| 6   | RemoveServerPki      |
+| 7   | RemoveClientPki      |
+| 8   | RegisterInternalPki  |
+| 9   | AddPolicyOid         |
+| 10  | \[3.0.0+\] ImportCrl |
+| 11  | \[3.0.0+\] RemoveCrl |
 
 ### ISslConnection
 
