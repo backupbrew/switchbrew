@@ -218,6 +218,8 @@ Wrapper for [[SMC#UnwrapTitleKey|UnwrapTitleKey SMC]].
 
 Takes one type-10 (C descriptor) buffer ('''data_out_buf''') and 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
 
+[3.0.0+] Now takes an additional 4-bytes of input.
+
 Decrypts '''data_in_buf''' into '''data_out_buf''' using the private key imported with [[#ImportEsKey]] and the supplied '''mod_in_buf'''. Afterwards, verifies RSA-OAEP encoding using '''label_hash_in_buf'''.
 
 Returns an u32 ('''dec_data_size''').
@@ -235,6 +237,8 @@ Sets the specified '''keyslot''' with the titlekey.
 Wrapper for [[SMC#UnwrapCommonTitleKey|UnwrapCommonTitleKey SMC]].
 
 Takes a 16-byte EKS ('''Encryption Key Source''').
+
+[3.0.0+] Now takes an additional 4-bytes of input.
 
 Returns a sealed titlekey.
 

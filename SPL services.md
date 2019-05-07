@@ -33,8 +33,7 @@ These are "nn::spl::detail::IGeneralInterface",
 support for 4 of them.
 
 \[2.0.0+\] When the session closes, all allocated AES keyslots are
-automatically
-freed.
+automatically freed.
 
 | Cmd | Name                                                                                | Permissions                                      |
 | --- | ----------------------------------------------------------------------------------- | ------------------------------------------------ |
@@ -266,6 +265,8 @@ Takes one type-10 (C descriptor) buffer (**data\_out\_buf**) and 3
 type-9 (X descriptor) buffers (**data\_in\_buf**, **mod\_in\_buf** and
 **label\_hash\_in\_buf**).
 
+\[3.0.0+\] Now takes an additional 4-bytes of input.
+
 Decrypts **data\_in\_buf** into **data\_out\_buf** using the private key
 imported with [\#ImportEsKey](#ImportEsKey "wikilink") and the supplied
 **mod\_in\_buf**. Afterwards, verifies RSA-OAEP encoding using
@@ -290,6 +291,8 @@ Wrapper for [UnwrapCommonTitleKey
 SMC](SMC#UnwrapCommonTitleKey.md##UnwrapCommonTitleKey "wikilink").
 
 Takes a 16-byte EKS (**Encryption Key Source**).
+
+\[3.0.0+\] Now takes an additional 4-bytes of input.
 
 Returns a sealed titlekey.
 
