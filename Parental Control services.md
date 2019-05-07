@@ -11,8 +11,7 @@ These are "nn::pctl::detail::ipc::IParentalControlServiceFactory".
 
 ## IParentalControlService
 
-This is
-"nn::pctl::detail::ipc::IParentalControlService".
+This is "nn::pctl::detail::ipc::IParentalControlService".
 
 | Cmd  | Name                                                                        |
 | ---- | --------------------------------------------------------------------------- |
@@ -47,7 +46,7 @@ This is
 | 1044 | GetFreeCommunicationApplicationList                                         |
 | 1045 | UpdateFreeCommunicationApplicationList                                      |
 | 1046 | DisableFeaturesForReset                                                     |
-| 1047 | NotifyApplicationDownloadStarted                                            |
+| 1047 | \[3.0.0+\] NotifyApplicationDownloadStarted                                 |
 | 1048 | \[6.0.0+\] NotifyNetworkProfileCreated                                      |
 | 1061 | \[4.0.0+\] ConfirmStereoVisionRestrictionConfigurable                       |
 | 1062 | \[4.0.0+\] GetStereoVisionRestriction                                       |

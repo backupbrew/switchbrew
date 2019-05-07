@@ -81,7 +81,7 @@ This is "nn::pctl::detail::ipc::IParentalControlService".
 |-
 | 1046 || DisableFeaturesForReset
 |-
-| 1047 || NotifyApplicationDownloadStarted
+| 1047 || [3.0.0+] NotifyApplicationDownloadStarted
 |-
 | 1048 || [6.0.0+] NotifyNetworkProfileCreated
 |-
