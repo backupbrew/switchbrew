@@ -64,7 +64,7 @@ Takes a pid.
 |
 |-
 | appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap, [6.0.0+] caps:su, [8.0.0+] apm 
-| [[AM services]]
+| [[Applet Manager services]]
 | 
 |-
 | [1.0.0-2.3.0] aoc:u, mii:u, mii:e, ns:am, ns:su, ns:dev, pl:u, ovln:rcv, ovln:snd, pdm:ntfy, pdm:qry

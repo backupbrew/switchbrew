@@ -81,7 +81,7 @@ Takes a pid.
 </tr>
 <tr class="odd">
 <td><p>appletAE, appletOE, idle:sys, omm, spsm, [5.0.0+] tcap, [6.0.0+] caps:su, [8.0.0+] apm</p></td>
-<td><p><a href="AM services.md" title="wikilink">AM services</a></p></td>
+<td><p><a href="Applet Manager services.md" title="wikilink">Applet Manager services</a></p></td>
 <td></td>
 </tr>
 <tr class="even">
