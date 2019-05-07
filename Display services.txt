@@ -102,9 +102,9 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].
 |-
 | 202 ||
 |-
-| 203 ||
+| 203 || [3.0.0+]
 |-
-| 204 ||
+| 204 || [3.0.0+]
 |}
 
 = caps:su =
@@ -462,7 +462,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 |-
 | 201 || [4.0.0+] FreeProcessHeapBlock
 |-
-| 1102 || GetDisplayResolution
+| 1102 || [3.0.0+] GetDisplayResolution
 |-
 | 2010 || CreateManagedLayer
 |-

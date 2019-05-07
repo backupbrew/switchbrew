@@ -111,12 +111,12 @@ be at least 0x7D000. The size of the type-0x45 buffer must be at least
 This is "nn::capsrv::sf::IScreenShotService". This is available with
 \[2.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 201 |      |
-| 202 |      |
-| 203 |      |
-| 204 |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 201 |            |
+| 202 |            |
+| 203 | \[3.0.0+\] |
+| 204 | \[3.0.0+\] |
 
 # caps:su
 
@@ -457,7 +457,7 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | ---- | ---------------------------------------------------------- |
 | 200  | \[4.0.0+\] AllocateProcessHeapBlock                        |
 | 201  | \[4.0.0+\] FreeProcessHeapBlock                            |
-| 1102 | GetDisplayResolution                                       |
+| 1102 | \[3.0.0+\] GetDisplayResolution                            |
 | 2010 | CreateManagedLayer                                         |
 | 2011 | DestroyManagedLayer                                        |
 | 2012 | \[7.0.0+\] CreateStrayLayer                                |
