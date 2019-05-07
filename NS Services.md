@@ -1,7 +1,6 @@
 # aoc:u
 
-This is
-"nn::aocsrv::detail::IAddOnContentManager".
+This is "nn::aocsrv::detail::IAddOnContentManager".
 
 | Cmd | Name                                                                          |
 | --- | ----------------------------------------------------------------------------- |
@@ -159,8 +158,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 Takes a type-6 output buffer and an u32 entry\_offset.
 
 Returns an array of title-info entries using the specified offset and
-size. No input titleID is passed to
-this.
+size. No input titleID is passed to this.
 
 ### Application Record Format
 
@@ -249,8 +247,7 @@ specified u32 entryindex. Can only return game titles. The second entry
 if any is the update-title usually. When the input entryindex is \>=
 totalentries, this will return 0 with out\_entrycount=0.
 
-Entry
-structure:
+Entry structure:
 
 | Offset | Size | Description                                                                                          |
 | ------ | ---- | ---------------------------------------------------------------------------------------------------- |
@@ -266,15 +263,14 @@ structure:
 These services are all, at the top level,
 "nn::ns::detail::IServiceGetterInterface". These commands check a state
 field for a command-specific bit and returns an error if not set, this
-is likely a permissions check for
-service+command.
+is likely a permissions check for service+command.
 
 | Cmd  | Name                                                                                                                             |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
 | 7988 | \[6.0.0+\] Returns an output [\#IDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
 | 7989 | \[5.1.0+\] Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
-| 7992 | [GetECommerceInterface](#IECommerceInterface "wikilink")                                                                         |
-| 7993 | [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                                       |
+| 7992 | \[?+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                                                  |
+| 7993 | \[?+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                                |
 | 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                                   |
 | 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                                   |
 | 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                                       |
@@ -294,8 +290,7 @@ This is "nn::ns::detail::IAccountProxyInterface".
 
 ### IApplicationManagerInterface
 
-This is
-"nn::ns::detail::IApplicationManagerInterface".
+This is "nn::ns::detail::IApplicationManagerInterface".
 
 | Cmd                  | Name                                                                                               |
 | -------------------- | -------------------------------------------------------------------------------------------------- |
@@ -350,16 +345,16 @@ This is
 | 63                   | IsSystemProgramInstalled                                                                           |
 | 64                   | StartApplyDeltaTask                                                                                |
 | 65                   | GetRequestServerStopper                                                                            |
-| 66                   | GetBackgroundApplyDeltaStressTaskInfo                                                              |
-| 67                   | CancelApplicationApplyDelta                                                                        |
-| 68                   | ResumeApplicationApplyDelta                                                                        |
-| 69                   | CalculateApplicationApplyDeltaRequiredSize                                                         |
-| 70                   | ResumeAll                                                                                          |
-| 71                   | GetStorageSize                                                                                     |
-| 80                   | RequestDownloadApplication                                                                         |
-| 81                   | RequestDownloadAddOnContent                                                                        |
-| 82                   | DownloadApplication                                                                                |
-| \[3.0.0-6.2.0\] 83   | CheckApplicationResumeRights                                                                       |
+| 66                   | \[3.0.0+\] GetBackgroundApplyDeltaStressTaskInfo                                                   |
+| 67                   | \[3.0.0+\] CancelApplicationApplyDelta                                                             |
+| 68                   | \[3.0.0+\] ResumeApplicationApplyDelta                                                             |
+| 69                   | \[3.0.0+\] CalculateApplicationApplyDeltaRequiredSize                                              |
+| 70                   | \[3.0.0+\] ResumeAll                                                                               |
+| 71                   | \[3.0.0+\] GetStorageSize                                                                          |
+| 80                   | \[3.0.0+\] RequestDownloadApplication                                                              |
+| 81                   | \[3.0.0+\] RequestDownloadAddOnContent                                                             |
+| 82                   | \[3.0.0+\] DownloadApplication                                                                     |
+| \[?-6.2.0\] 83       | CheckApplicationResumeRights                                                                       |
 | 84                   | GetDynamicCommitEvent                                                                              |
 | 85                   | RequestUpdateApplication2                                                                          |
 | 86                   | EnableApplicationCrashReport                                                                       |
@@ -403,10 +398,10 @@ This is
 | 502                  | RequestCheckGameCardRegistration                                                                   |
 | 503                  | RequestGameCardRegistrationGoldPoint                                                               |
 | 504                  | RequestRegisterGameCard                                                                            |
-| 505                  | GetGameCardMountFailureEvent                                                                       |
-| 506                  | IsGameCardInserted                                                                                 |
-| 507                  | EnsureGameCardAccess                                                                               |
-| 508                  | GetLastGameCardMountFailureResult                                                                  |
+| 505                  | \[3.0.0+\] GetGameCardMountFailureEvent                                                            |
+| 506                  | \[3.0.0+\] IsGameCardInserted                                                                      |
+| 507                  | \[3.0.0+\] EnsureGameCardAccess                                                                    |
+| 508                  | \[3.0.0+\] GetLastGameCardMountFailureResult                                                       |
 | 509                  | ListApplicationIdOnGameCard                                                                        |
 | 600                  | CountApplicationContentMeta                                                                        |
 | 601                  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
@@ -414,7 +409,7 @@ This is
 | 603                  | GetOwnedApplicationContentMetaStatus                                                               |
 | 604                  | RegisterContentsExternalKey                                                                        |
 | 605                  | ListApplicationContentMetaStatusWithRightsCheck                                                    |
-| 606                  | GetContentMetaStorage                                                                              |
+| 606                  | \[3.0.0+\] GetContentMetaStorage                                                                   |
 | 607                  | \[6.0.0+\] ListAvailableAddOnContent                                                               |
 | 700                  | PushDownloadTaskList                                                                               |
 | 701                  | ClearTaskStatusList                                                                                |
@@ -424,7 +419,7 @@ This is
 | 705                  | RequestDownloadTaskListData                                                                        |
 | 800                  | RequestVersionList                                                                                 |
 | 801                  | ListVersionList                                                                                    |
-| 802                  | RequestVersionListData                                                                             |
+| 802                  | \[3.0.0+\] RequestVersionListData                                                                  |
 | 900                  | GetApplicationRecord                                                                               |
 | 901                  | GetApplicationRecordProperty                                                                       |
 | 902                  | EnableApplicationAutoUpdate                                                                        |
@@ -434,21 +429,21 @@ This is
 | 906                  | IsApplicationUpdateRequested                                                                       |
 | 907                  | WithdrawApplicationUpdateRequest                                                                   |
 | 908                  | ListApplicationRecordInstalledContentMeta                                                          |
-| 909                  | WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                             |
+| 909                  | \[3.0.0+\] WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                  |
 | 910                  | \[?+\] HasApplicationRecord                                                                        |
 | 911                  | \[5.1.0+\] SetPreInstalledApplication                                                              |
 | 912                  | \[5.1.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000                 | RequestVerifyApplicationDeprecated                                                                 |
 | 1001                 | CorruptApplicationForDebug                                                                         |
-| 1002                 | RequestVerifyAddOnContentsRights                                                                   |
+| 1002                 | \[3.0.0+\] RequestVerifyAddOnContentsRights                                                        |
 | 1003                 | RequestVerifyApplication                                                                           |
 | 1004                 | CorruptContentForDebug                                                                             |
 | 1200                 | NeedsUpdateVulnerability                                                                           |
 | 1300                 | IsAnyApplicationEntityInstalled                                                                    |
 | 1301                 | DeleteApplicationContentEntities                                                                   |
 | 1302                 | CleanupUnrecordedApplicationEntity                                                                 |
-| 1303                 | CleanupAddOnContentsWithNoRights                                                                   |
-| 1304                 | DeleteApplicationContentEntity                                                                     |
+| 1303                 | \[3.0.0+\] CleanupAddOnContentsWithNoRights                                                        |
+| 1304                 | \[3.0.0+\] DeleteApplicationContentEntity                                                          |
 | 1305                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationEntity                                                  |
 | 1306                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationCompletely                                              |
 | 1307                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationContentEntities                                         |
@@ -458,20 +453,20 @@ This is
 | 1500                 | FormatSdCard                                                                                       |
 | 1501                 | NeedsSystemUpdateToFormatSdCard                                                                    |
 | 1502                 | GetLastSdCardFormatUnexpectedResult                                                                |
-| 1504                 | InsertSdCard                                                                                       |
-| 1505                 | RemoveSdCard                                                                                       |
+| 1504                 | \[3.0.0+\] InsertSdCard                                                                            |
+| 1505                 | \[3.0.0+\] RemoveSdCard                                                                            |
 | 1600                 | GetSystemSeedForPseudoDeviceId                                                                     |
-| 1601                 | ResetSystemSeedForPseudoDeviceId                                                                   |
+| 1601                 | \[3.0.0+\] ResetSystemSeedForPseudoDeviceId                                                        |
 | 1700                 | ListApplicationDownloadingContentMeta                                                              |
-| 1701                 | GetApplicationView                                                                                 |
-| 1702                 | GetApplicationDownloadTaskStatus                                                                   |
+| 1701                 | \[3.0.0+\] GetApplicationView                                                                      |
+| 1702                 | \[3.0.0+\] GetApplicationDownloadTaskStatus                                                        |
 | 1703                 | GetApplicationViewDownloadErrorContext                                                             |
 | 1704                 | \[8.0.0+\]                                                                                         |
 | 1800                 | IsNotificationSetupCompleted                                                                       |
 | 1801                 | GetLastNotificationInfoCount                                                                       |
 | 1802                 | ListLastNotificationInfo                                                                           |
-| 1803                 | ListNotificationTask                                                                               |
-| 1900                 | IsActiveAccount                                                                                    |
+| 1803                 | \[3.0.0+\] ListNotificationTask                                                                    |
+| 1900                 | \[3.0.0+\] IsActiveAccount                                                                         |
 | 1901                 | RequestDownloadApplicationPrepurchasedRights                                                       |
 | 1902                 | GetApplicationTicketInfo                                                                           |
 | 2000                 | GetSystemDeliveryInfo                                                                              |
@@ -570,18 +565,18 @@ This is "nn::ns::detail::IDocumentInterface".
 
 This is "nn::ns::detail::IDownloadTaskInterface".
 
-| Cmd | Name                                    |
-| --- | --------------------------------------- |
-| 701 | ClearTaskStatusList                     |
-| 702 | RequestDownloadTaskList                 |
-| 703 | RequestEnsureDownloadTask               |
-| 704 | ListDownloadTaskStatus                  |
-| 705 | RequestDownloadTaskListData             |
-| 706 | TryCommitCurrentApplicationDownloadTask |
-| 707 | EnableAutoCommit                        |
-| 708 | DisableAutoCommit                       |
-| 709 | TriggerDynamicCommitEvent               |
-|     |                                         |
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 701 | ClearTaskStatusList                            |
+| 702 | RequestDownloadTaskList                        |
+| 703 | RequestEnsureDownloadTask                      |
+| 704 | ListDownloadTaskStatus                         |
+| 705 | RequestDownloadTaskListData                    |
+| 706 | \[?+\] TryCommitCurrentApplicationDownloadTask |
+| 707 | \[?+\] EnableAutoCommit                        |
+| 708 | \[?+\] DisableAutoCommit                       |
+| 709 | \[?+\] TriggerDynamicCommitEvent               |
+|     |                                                |
 
 ### IReadOnlyApplicationControlDataInterface
 
@@ -655,22 +650,26 @@ This is "nn::ns::detail::IVulnerabilityManagerInterface".
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                                                        |
-| --- | ----------------------------------------------------------- |
-| 0   | GetBackgroundNetworkUpdateState                             |
-| 1   | [OpenSystemUpdateControl](#ISystemUpdateControl "wikilink") |
-| 2   | NotifyExFatDriverRequired                                   |
-| 3   | ClearExFatDriverStatusForDebug                              |
-| 4   | RequestBackgroundNetworkUpdate                              |
-| 5   | NotifyBackgroundNetworkUpdate                               |
-| 6   | NotifyExFatDriverDownloadedForDebug                         |
-| 9   | GetSystemUpdateNotificationEventForContentDelivery          |
-| 10  | NotifySystemUpdateForContentDelivery                        |
-| 11  | PrepareShutdown                                             |
-| 16  | DestroySystemUpdateTask                                     |
-| 17  | RequestSendSystemUpdate                                     |
-| 18  | GetSendSystemUpdateProgress                                 |
-|     |                                                             |
+| Cmd            | Name                                                        |
+| -------------- | ----------------------------------------------------------- |
+| 0              | GetBackgroundNetworkUpdateState                             |
+| 1              | [OpenSystemUpdateControl](#ISystemUpdateControl "wikilink") |
+| 2              | NotifyExFatDriverRequired                                   |
+| 3              | ClearExFatDriverStatusForDebug                              |
+| 4              | RequestBackgroundNetworkUpdate                              |
+| 5              | NotifyBackgroundNetworkUpdate                               |
+| 6              | NotifyExFatDriverDownloadedForDebug                         |
+| 9              | GetSystemUpdateNotificationEventForContentDelivery          |
+| 10             | NotifySystemUpdateForContentDelivery                        |
+| 11             | \[3.0.0+\] PrepareShutdown                                  |
+| \[3.0.0-?\] 12 |                                                             |
+| \[3.0.0-?\] 13 |                                                             |
+| \[3.0.0-?\] 14 |                                                             |
+| \[3.0.0-?\] 15 |                                                             |
+| 16             | DestroySystemUpdateTask                                     |
+| 17             | RequestSendSystemUpdate                                     |
+| 18             | GetSendSystemUpdateProgress                                 |
+|                |                                                             |
 
 ## ISystemUpdateControl
 
@@ -702,8 +701,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 # ns:dev
 
-This is
-"nn::ns::detail::IDevelopInterface".
+This is "nn::ns::detail::IDevelopInterface".
 
 | Cmd | Name                                                                                               |
 | --- | -------------------------------------------------------------------------------------------------- |

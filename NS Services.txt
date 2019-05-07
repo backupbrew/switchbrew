@@ -411,9 +411,9 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |-
 | 7989 || [5.1.0+] Returns an output [[#IReadOnlyApplicationControlDataInterface]].
 |-
-| 7992 || [[#IECommerceInterface|GetECommerceInterface]]
+| 7992 || [?+] [[#IECommerceInterface|GetECommerceInterface]]
 |-
-| 7993 || [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
+| 7993 || [?+] [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
 |-
 | 7994 || [[#IFactoryResetInterface|GetFactoryResetInterface]]
 |-
@@ -549,25 +549,25 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 65 || GetRequestServerStopper
 |-
-| 66 || GetBackgroundApplyDeltaStressTaskInfo
+| 66 || [3.0.0+] GetBackgroundApplyDeltaStressTaskInfo
 |-
-| 67 || CancelApplicationApplyDelta
+| 67 || [3.0.0+] CancelApplicationApplyDelta
 |-
-| 68 || ResumeApplicationApplyDelta
+| 68 || [3.0.0+] ResumeApplicationApplyDelta
 |-
-| 69 || CalculateApplicationApplyDeltaRequiredSize
+| 69 || [3.0.0+] CalculateApplicationApplyDeltaRequiredSize
 |-
-| 70 || ResumeAll
+| 70 || [3.0.0+] ResumeAll
 |-
-| 71 || GetStorageSize
+| 71 || [3.0.0+] GetStorageSize
 |-
-| 80 || RequestDownloadApplication
+| 80 || [3.0.0+] RequestDownloadApplication
 |-
-| 81 || RequestDownloadAddOnContent
+| 81 || [3.0.0+] RequestDownloadAddOnContent
 |-
-| 82 || DownloadApplication
+| 82 || [3.0.0+] DownloadApplication
 |-
-| [3.0.0-6.2.0] 83 || CheckApplicationResumeRights
+| [?-6.2.0] 83 || CheckApplicationResumeRights
 |-
 | 84 || GetDynamicCommitEvent
 |-
@@ -655,13 +655,13 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 504 || RequestRegisterGameCard
 |-
-| 505 || GetGameCardMountFailureEvent
+| 505 || [3.0.0+] GetGameCardMountFailureEvent
 |-
-| 506 || IsGameCardInserted
+| 506 || [3.0.0+] IsGameCardInserted
 |-
-| 507 || EnsureGameCardAccess
+| 507 || [3.0.0+] EnsureGameCardAccess
 |-
-| 508 || GetLastGameCardMountFailureResult
+| 508 || [3.0.0+] GetLastGameCardMountFailureResult
 |-
 | 509 || ListApplicationIdOnGameCard
 |-
@@ -677,7 +677,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 605 || ListApplicationContentMetaStatusWithRightsCheck
 |-
-| 606 || GetContentMetaStorage
+| 606 || [3.0.0+] GetContentMetaStorage
 |-
 | 607 || [6.0.0+] ListAvailableAddOnContent
 |-
@@ -697,7 +697,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 801 || ListVersionList
 |-
-| 802 || RequestVersionListData
+| 802 || [3.0.0+] RequestVersionListData
 |-
 | 900 || GetApplicationRecord
 |-
@@ -717,7 +717,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 908 || ListApplicationRecordInstalledContentMeta
 |-
-| 909 || WithdrawCleanupAddOnContentsWithNoRightsRecommendation
+| 909 || [3.0.0+] WithdrawCleanupAddOnContentsWithNoRightsRecommendation
 |-
 | 910 || [?+] HasApplicationRecord
 |-
@@ -729,7 +729,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1001 || CorruptApplicationForDebug
 |-
-| 1002 || RequestVerifyAddOnContentsRights
+| 1002 || [3.0.0+] RequestVerifyAddOnContentsRights
 |-
 | 1003 || RequestVerifyApplication
 |-
@@ -743,9 +743,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1302 || CleanupUnrecordedApplicationEntity
 |-
-| 1303 || CleanupAddOnContentsWithNoRights
+| 1303 || [3.0.0+] CleanupAddOnContentsWithNoRights
 |-
-| 1304 || DeleteApplicationContentEntity
+| 1304 || [3.0.0+] DeleteApplicationContentEntity
 |-
 | 1305 || [?.?.?-5.1.0] TryDeleteRunningApplicationEntity
 |-
@@ -765,19 +765,19 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1502 || GetLastSdCardFormatUnexpectedResult
 |-
-| 1504 || InsertSdCard
+| 1504 || [3.0.0+] InsertSdCard
 |-
-| 1505 || RemoveSdCard
+| 1505 || [3.0.0+] RemoveSdCard
 |-
 | 1600 || GetSystemSeedForPseudoDeviceId
 |-
-| 1601 || ResetSystemSeedForPseudoDeviceId
+| 1601 || [3.0.0+] ResetSystemSeedForPseudoDeviceId
 |-
 | 1700 || ListApplicationDownloadingContentMeta
 |-
-| 1701 || GetApplicationView
+| 1701 || [3.0.0+] GetApplicationView
 |-
-| 1702 || GetApplicationDownloadTaskStatus
+| 1702 || [3.0.0+] GetApplicationDownloadTaskStatus
 |-
 | 1703 || GetApplicationViewDownloadErrorContext
 |-
@@ -789,9 +789,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1802 || ListLastNotificationInfo
 |-
-| 1803 || ListNotificationTask
+| 1803 || [3.0.0+] ListNotificationTask
 |-
-| 1900 || IsActiveAccount
+| 1900 || [3.0.0+] IsActiveAccount
 |-
 | 1901 || RequestDownloadApplicationPrepurchasedRights
 |-
@@ -977,13 +977,13 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 | 705 || RequestDownloadTaskListData
 |-
-| 706 || TryCommitCurrentApplicationDownloadTask
+| 706 || [?+] TryCommitCurrentApplicationDownloadTask
 |-
-| 707 || EnableAutoCommit
+| 707 || [?+] EnableAutoCommit
 |-
-| 708 || DisableAutoCommit
+| 708 || [?+] DisableAutoCommit
 |-
-| 709 || TriggerDynamicCommitEvent
+| 709 || [?+] TriggerDynamicCommitEvent
 |-
 |}
 
@@ -1113,7 +1113,15 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 10 || NotifySystemUpdateForContentDelivery
 |-
-| 11 || PrepareShutdown
+| 11 || [3.0.0+] PrepareShutdown
+|-
+| [3.0.0-?] 12 || 
+|-
+| [3.0.0-?] 13 || 
+|-
+| [3.0.0-?] 14 || 
+|-
+| [3.0.0-?] 15 || 
 |-
 | 16 || DestroySystemUpdateTask
 |-
