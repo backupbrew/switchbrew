@@ -65,7 +65,7 @@ This is "nn::nfc::mifare::detail::IUser".
 |-
 | 12 || GetNpadId
 |-
-| 13 || GetAvailabilityChangeEventHandle
+| 13 || [3.0.0+] GetAvailabilityChangeEventHandle
 |}
 
 = nfc:user =
@@ -329,9 +329,9 @@ This is "nn::nfp::detail::IDebug".
 |-
 | 22 || GetApplicationArea2
 |-
-| 23 || AttachAvailabilityChangeEvent
+| 23 || [3.0.0+] AttachAvailabilityChangeEvent
 |-
-| 24 || RecreateApplicationArea
+| 24 || [3.0.0+] RecreateApplicationArea
 |-
 | 100 || Format
 |-
@@ -361,35 +361,35 @@ This is "nn::nfp::detail::IDebug".
 |-
 | 206 || WriteNtf
 |-
-| 300 || [1.0.0-3.0.2]
+| 300 || [3.0.0-3.0.2]
 |-
-| 301 || [1.0.0-3.0.2]
+| 301 || [3.0.0-3.0.2]
 |-
-| 302 || [1.0.0-3.0.2]
+| 302 || [3.0.0-3.0.2]
 |-
-| 303 || [1.0.0-3.0.2]
+| 303 || [3.0.0-3.0.2]
 |-
-| 304 || [1.0.0-3.0.2]
+| 304 || [3.0.0-3.0.2]
 |-
-| 305 || [1.0.0-3.0.2]
+| 305 || [3.0.0-3.0.2]
 |-
-| 306 || [1.0.0-3.0.2]
+| 306 || [3.0.0-3.0.2]
 |-
-| 307 || [1.0.0-3.0.2]
+| 307 || [3.0.0-3.0.2]
 |-
-| 308 || [1.0.0-3.0.2]
+| 308 || [3.0.0-3.0.2]
 |-
-| 309 || [1.0.0-3.0.2]
+| 309 || [3.0.0-3.0.2]
 |-
-| 310 || [1.0.0-3.0.2]
+| 310 || [3.0.0-3.0.2]
 |-
-| 311 || [1.0.0-3.0.2]
+| 311 || [3.0.0-3.0.2]
 |-
-| 312 || [1.0.0-3.0.2]
+| 312 || [3.0.0-3.0.2]
 |-
-| 313 || [1.0.0-3.0.2]
+| 313 || [3.0.0-3.0.2]
 |-
-| 314 || [1.0.0-3.0.2]
+| 314 || [3.0.0-3.0.2]
 |}
 
 = nfp:sys =
@@ -445,7 +445,7 @@ This is "nn::nfp::detail::ISystem".
 |-
 | 21 || GetNpadId
 |-
-| 23 || AttachAvailabilityChangeEvent
+| 23 || [3.0.0+] AttachAvailabilityChangeEvent
 |-
 | 100 || Format
 |-

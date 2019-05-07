@@ -28,22 +28,22 @@ This is "nn::nfc::mifare::detail::IUserManager".
 
 This is "nn::nfc::mifare::detail::IUser".
 
-| Cmd | Name                             |
-| --- | -------------------------------- |
-| 0   | Initialize                       |
-| 1   | Finalize                         |
-| 2   | ListDevices                      |
-| 3   | StartDetection                   |
-| 4   | StopDetection                    |
-| 5   | Read                             |
-| 6   | Write                            |
-| 7   | GetTagInfo                       |
-| 8   | GetActivateEventHandle           |
-| 9   | GetDeactivateEventHandle         |
-| 10  | GetState                         |
-| 11  | GetDeviceState                   |
-| 12  | GetNpadId                        |
-| 13  | GetAvailabilityChangeEventHandle |
+| Cmd | Name                                        |
+| --- | ------------------------------------------- |
+| 0   | Initialize                                  |
+| 1   | Finalize                                    |
+| 2   | ListDevices                                 |
+| 3   | StartDetection                              |
+| 4   | StopDetection                               |
+| 5   | Read                                        |
+| 6   | Write                                       |
+| 7   | GetTagInfo                                  |
+| 8   | GetActivateEventHandle                      |
+| 9   | GetDeactivateEventHandle                    |
+| 10  | GetState                                    |
+| 11  | GetDeviceState                              |
+| 12  | GetNpadId                                   |
+| 13  | \[3.0.0+\] GetAvailabilityChangeEventHandle |
 
 # nfc:user
 
@@ -174,62 +174,62 @@ This is "nn::nfp::detail::IDebugManager".
 
 This is "nn::nfp::detail::IDebug".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   | InitializeDebug               |
-| 1   | FinalizeDebug                 |
-| 2   | ListDevices                   |
-| 3   | StartDetection                |
-| 4   | StopDetection                 |
-| 5   | Mount                         |
-| 6   | Unmount                       |
-| 7   | OpenApplicationArea           |
-| 8   | GetApplicationArea            |
-| 9   | SetApplicationArea            |
-| 10  | Flush                         |
-| 11  | Restore                       |
-| 12  | CreateApplicationArea         |
-| 13  | GetTagInfo                    |
-| 14  | GetRegisterInfo               |
-| 15  | GetCommonInfo                 |
-| 16  | GetModelInfo                  |
-| 17  | AttachActivateEvent           |
-| 18  | AttachDeactivateEvent         |
-| 19  | GetState                      |
-| 20  | GetDeviceState                |
-| 21  | GetNpadId                     |
-| 22  | GetApplicationArea2           |
-| 23  | AttachAvailabilityChangeEvent |
-| 24  | RecreateApplicationArea       |
-| 100 | Format                        |
-| 101 | GetAdminInfo                  |
-| 102 | GetRegisterInfo               |
-| 103 | SetRegisterInfo               |
-| 104 | DeleteRegisterInfo            |
-| 105 | DeleteApplicationArea         |
-| 106 | ExistsApplicationArea         |
-| 200 | GetAll                        |
-| 201 | SetAll                        |
-| 202 | FlushDebug                    |
-| 203 | BreakTag                      |
-| 204 | ReadBackupData                |
-| 205 | WriteBackupData               |
-| 206 | WriteNtf                      |
-| 300 | \[1.0.0-3.0.2\]               |
-| 301 | \[1.0.0-3.0.2\]               |
-| 302 | \[1.0.0-3.0.2\]               |
-| 303 | \[1.0.0-3.0.2\]               |
-| 304 | \[1.0.0-3.0.2\]               |
-| 305 | \[1.0.0-3.0.2\]               |
-| 306 | \[1.0.0-3.0.2\]               |
-| 307 | \[1.0.0-3.0.2\]               |
-| 308 | \[1.0.0-3.0.2\]               |
-| 309 | \[1.0.0-3.0.2\]               |
-| 310 | \[1.0.0-3.0.2\]               |
-| 311 | \[1.0.0-3.0.2\]               |
-| 312 | \[1.0.0-3.0.2\]               |
-| 313 | \[1.0.0-3.0.2\]               |
-| 314 | \[1.0.0-3.0.2\]               |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | InitializeDebug                          |
+| 1   | FinalizeDebug                            |
+| 2   | ListDevices                              |
+| 3   | StartDetection                           |
+| 4   | StopDetection                            |
+| 5   | Mount                                    |
+| 6   | Unmount                                  |
+| 7   | OpenApplicationArea                      |
+| 8   | GetApplicationArea                       |
+| 9   | SetApplicationArea                       |
+| 10  | Flush                                    |
+| 11  | Restore                                  |
+| 12  | CreateApplicationArea                    |
+| 13  | GetTagInfo                               |
+| 14  | GetRegisterInfo                          |
+| 15  | GetCommonInfo                            |
+| 16  | GetModelInfo                             |
+| 17  | AttachActivateEvent                      |
+| 18  | AttachDeactivateEvent                    |
+| 19  | GetState                                 |
+| 20  | GetDeviceState                           |
+| 21  | GetNpadId                                |
+| 22  | GetApplicationArea2                      |
+| 23  | \[3.0.0+\] AttachAvailabilityChangeEvent |
+| 24  | \[3.0.0+\] RecreateApplicationArea       |
+| 100 | Format                                   |
+| 101 | GetAdminInfo                             |
+| 102 | GetRegisterInfo                          |
+| 103 | SetRegisterInfo                          |
+| 104 | DeleteRegisterInfo                       |
+| 105 | DeleteApplicationArea                    |
+| 106 | ExistsApplicationArea                    |
+| 200 | GetAll                                   |
+| 201 | SetAll                                   |
+| 202 | FlushDebug                               |
+| 203 | BreakTag                                 |
+| 204 | ReadBackupData                           |
+| 205 | WriteBackupData                          |
+| 206 | WriteNtf                                 |
+| 300 | \[3.0.0-3.0.2\]                          |
+| 301 | \[3.0.0-3.0.2\]                          |
+| 302 | \[3.0.0-3.0.2\]                          |
+| 303 | \[3.0.0-3.0.2\]                          |
+| 304 | \[3.0.0-3.0.2\]                          |
+| 305 | \[3.0.0-3.0.2\]                          |
+| 306 | \[3.0.0-3.0.2\]                          |
+| 307 | \[3.0.0-3.0.2\]                          |
+| 308 | \[3.0.0-3.0.2\]                          |
+| 309 | \[3.0.0-3.0.2\]                          |
+| 310 | \[3.0.0-3.0.2\]                          |
+| 311 | \[3.0.0-3.0.2\]                          |
+| 312 | \[3.0.0-3.0.2\]                          |
+| 313 | \[3.0.0-3.0.2\]                          |
+| 314 | \[3.0.0-3.0.2\]                          |
 
 # nfp:sys
 
@@ -243,34 +243,34 @@ This is "nn::nfp::detail::ISystemManager".
 
 This is "nn::nfp::detail::ISystem".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   | InitializeSystem              |
-| 1   | FinalizeSystem                |
-| 2   | ListDevices                   |
-| 3   | StartDetection                |
-| 4   | StopDetection                 |
-| 5   | Mount                         |
-| 6   | Unmount                       |
-| 10  | Flush                         |
-| 11  | Restore                       |
-| 13  | GetTagInfo                    |
-| 14  | GetRegisterInfo               |
-| 15  | GetCommonInfo                 |
-| 16  | GetModelInfo                  |
-| 17  | AttachActivateEvent           |
-| 18  | AttachDeactivateEvent         |
-| 19  | GetState                      |
-| 20  | GetDeviceState                |
-| 21  | GetNpadId                     |
-| 23  | AttachAvailabilityChangeEvent |
-| 100 | Format                        |
-| 101 | GetAdminInfo                  |
-| 102 | GetRegisterInfo               |
-| 103 | SetRegisterInfo               |
-| 104 | DeleteRegisterInfo            |
-| 105 | DeleteApplicationArea         |
-| 106 | ExistsApplicationArea         |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | InitializeSystem                         |
+| 1   | FinalizeSystem                           |
+| 2   | ListDevices                              |
+| 3   | StartDetection                           |
+| 4   | StopDetection                            |
+| 5   | Mount                                    |
+| 6   | Unmount                                  |
+| 10  | Flush                                    |
+| 11  | Restore                                  |
+| 13  | GetTagInfo                               |
+| 14  | GetRegisterInfo                          |
+| 15  | GetCommonInfo                            |
+| 16  | GetModelInfo                             |
+| 17  | AttachActivateEvent                      |
+| 18  | AttachDeactivateEvent                    |
+| 19  | GetState                                 |
+| 20  | GetDeviceState                           |
+| 21  | GetNpadId                                |
+| 23  | \[3.0.0+\] AttachAvailabilityChangeEvent |
+| 100 | Format                                   |
+| 101 | GetAdminInfo                             |
+| 102 | GetRegisterInfo                          |
+| 103 | SetRegisterInfo                          |
+| 104 | DeleteRegisterInfo                       |
+| 105 | DeleteApplicationArea                    |
+| 106 | ExistsApplicationArea                    |
 
 # Application IDs
 
