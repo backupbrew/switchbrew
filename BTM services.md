@@ -67,6 +67,10 @@ This is "nn::btm::IBtm".
 | 60  | \[8.0.0+\]                                     |
 | 61  | \[8.0.0+\]                                     |
 
+\[3.0.0+\] RegisterSystemEventForConnectedDeviceCondition,
+RegisterSystemEventForRegisteredDeviceInfo, and cmd18 now returns an
+output u8.
+
 With \[5.1.0+\] cmds 24-42 were moved/replaced/etc (input/output
 changed).
 
@@ -90,6 +94,8 @@ This is "nn::btm::IBtmDebug".
 | 11  | \[5.1.0+\]                      |
 | 12  | \[5.1.0+\]                      |
 
+\[3.0.0+\] RegisterSystemEventForDiscovery now returns an output u8.
+
 # btm:sys
 
 This is "nn::btm::IBtmSystem".
@@ -111,9 +117,9 @@ This is "nn::btm::IBtmSystemCore".
 | 4   | EnableRadio                           |
 | 5   | DisableRadio                          |
 | 6   | GetRadioOnOff                         |
-| 7   | \[2.0.0+\] AcquireRadioEvent          |
-| 8   | \[2.0.0+\] AcquireGamepadPairingEvent |
-| 9   | \[2.0.0+\] IsGamepadPairingStarted    |
+| 7   | \[3.0.0+\] AcquireRadioEvent          |
+| 8   | \[3.0.0+\] AcquireGamepadPairingEvent |
+| 9   | \[3.0.0+\] IsGamepadPairingStarted    |
 
 # btm:u
 
