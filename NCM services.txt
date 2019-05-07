@@ -299,9 +299,9 @@ This is "nn::ncm::IContentStorage".
 |-
 | 18 || [2.0.0+] [[#ReadContentIdFile]] ||
 |-
-| 19 || [2.0.0+] GetRightsIdFromPlaceHolderId || Gets the Rights ID for the [[#NcaID]]'s placeholder path.
+| 19 || [2.0.0+] [[#GetRightsIdFromPlaceHolderId]] || 
 |-
-| 20 || [2.0.0+] GetRightsIdFromContentId || Gets the Rights ID for the [[#NcaID]]'s registered path
+| 20 || [2.0.0+] [[#GetRightsIdFromContentId]] || 
 |-
 | 21 || [2.0.0+] WriteContentForDebug || Takes a [[#NcaID]], a u64 offset, and a type 5 buffer. On debug units, writes the buffer to the NCA's registered path. On retail units, this just aborts.
 |-
@@ -343,6 +343,20 @@ Returns the total size readable by [[#ReadContentIdFile]]. This is the same as t
 Takes an output buffer, a [[#NcaID]] as input, and a u64 file offset.
 
 Reads plaintext NCA file contents from the Registered path for the NcaID.
+
+==== GetRightsIdFromPlaceHolderId ====
+Takes a total of 0x10-bytes of input, returns a total of 0x10-bytes of output.
+
+[3.0.0+] Returns an additional 8-bytes of output.
+
+Gets the Rights ID for the [[#NcaID]]'s placeholder path.
+
+==== GetRightsIdFromContentId ====
+Takes a total of 0x10-bytes of input, returns a total of 0x10-bytes of output.
+
+[3.0.0+] Returns an additional 8-bytes of output.
+
+Gets the Rights ID for the [[#NcaID]]'s registered path
 
 === IContentMetaDatabase ===
 This is "nn::ncm::IContentMetaDatabase".
