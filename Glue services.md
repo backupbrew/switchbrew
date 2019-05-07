@@ -47,35 +47,35 @@ This is "nn::arp::detail::IRegistrar".
 
 This is "nn::bgtc::ITaskService".
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 1   | NotifyTaskStarting                     |
-| 2   | NotifyTaskFinished                     |
-| 3   | GetTriggerEvent                        |
-| 4   | IsInHalfAwake                          |
-| 5   | NotifyClientName                       |
-| 6   | IsInFullAwake                          |
-| 11  | ScheduleTask                           |
-| 12  | GetScheduledTaskInterval               |
-| 13  | UnscheduleTask                         |
-| 14  | GetScheduleEvent                       |
-| 15  | SchedulePeriodicTask                   |
-| 101 | GetOperationMode                       |
-| 102 | WillDisconnectNetworkWhenEnteringSleep |
-| 103 | WillStayHalfAwakeInsteadSleep          |
-|     |                                        |
+| Cmd | Name                                              |
+| --- | ------------------------------------------------- |
+| 1   | NotifyTaskStarting                                |
+| 2   | NotifyTaskFinished                                |
+| 3   | GetTriggerEvent                                   |
+| 4   | IsInHalfAwake                                     |
+| 5   | NotifyClientName                                  |
+| 6   | \[3.0.0+\] IsInFullAwake                          |
+| 11  | ScheduleTask                                      |
+| 12  | GetScheduledTaskInterval                          |
+| 13  | UnscheduleTask                                    |
+| 14  | GetScheduleEvent                                  |
+| 15  | SchedulePeriodicTask                              |
+| 101 | \[3.0.0+\] GetOperationMode                       |
+| 102 | \[3.0.0+\] WillDisconnectNetworkWhenEnteringSleep |
+| 103 | \[3.0.0+\] WillStayHalfAwakeInsteadSleep          |
+|     |                                                   |
 
 # bgtc:sc
 
 This is "nn::bgtc::IStateControlService".
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 1   | GetState                          |
-| 2   | GetStateChangedEvent              |
-| 3   | NotifyEnteringHalfAwake           |
-| 4   | NotifyLeavingHalfAwake            |
-| 5   | SetIsUsingSleepUnsupportedDevices |
-|     |                                   |
+| Cmd | Name                                         |
+| --- | -------------------------------------------- |
+| 1   | GetState                                     |
+| 2   | GetStateChangedEvent                         |
+| 3   | NotifyEnteringHalfAwake                      |
+| 4   | NotifyLeavingHalfAwake                       |
+| 5   | \[3.0.0+\] SetIsUsingSleepUnsupportedDevices |
+|     |                                              |
 
 [Category:Services](Category:Services "wikilink")

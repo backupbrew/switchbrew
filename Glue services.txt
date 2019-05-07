@@ -90,7 +90,7 @@ This is "nn::bgtc::ITaskService".
 |-
 | 5 || NotifyClientName
 |-
-| 6 || IsInFullAwake
+| 6 || [3.0.0+] IsInFullAwake
 |-
 | 11 || ScheduleTask
 |-
@@ -102,11 +102,11 @@ This is "nn::bgtc::ITaskService".
 |-
 | 15 || SchedulePeriodicTask
 |-
-| 101 || GetOperationMode
+| 101 || [3.0.0+] GetOperationMode
 |-
-| 102 || WillDisconnectNetworkWhenEnteringSleep
+| 102 || [3.0.0+] WillDisconnectNetworkWhenEnteringSleep
 |-
-| 103 || WillStayHalfAwakeInsteadSleep
+| 103 || [3.0.0+] WillStayHalfAwakeInsteadSleep
 |-
 |}
 
@@ -125,7 +125,7 @@ This is "nn::bgtc::IStateControlService".
 |-
 | 4 || NotifyLeavingHalfAwake
 |-
-| 5 || SetIsUsingSleepUnsupportedDevices
+| 5 || [3.0.0+] SetIsUsingSleepUnsupportedDevices
 |-
 |}
 
