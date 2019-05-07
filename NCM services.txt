@@ -315,7 +315,7 @@ This is "nn::ncm::IContentStorage".
 |-
 | 26 || [4.0.0+] RepairInvalidFileAttribute || 
 |-
-| 27 || [8.0.0+] || 
+| 27 || [8.0.0+] GetRightsIdFromPlaceHolderIdWithCache || 
 |}
 
 ==== GeneratePlaceHolderId ====

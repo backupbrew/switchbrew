@@ -310,7 +310,7 @@ This is "nn::ncm::IContentStorage".
 | 24  | \[3.0.0+\] FlushPlaceHolder                                                           | Flushes resources for the storage without closing it.                                                                                                                       |
 | 25  | \[4.0.0+\] GetSizeFromPlaceHolderId                                                   |                                                                                                                                                                             |
 | 26  | \[4.0.0+\] RepairInvalidFileAttribute                                                 |                                                                                                                                                                             |
-| 27  | \[8.0.0+\]                                                                            |                                                                                                                                                                             |
+| 27  | \[8.0.0+\] GetRightsIdFromPlaceHolderIdWithCache                                      |                                                                                                                                                                             |
 
 #### GeneratePlaceHolderId
 
