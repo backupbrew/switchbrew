@@ -978,6 +978,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE7A || 122 || 7 || Object not opened
 |-
+| 0xA07A || 122 || 80 || Passphrase not found
+|-
+| 0xA27A || 122 || 81 || Data verification failed
+|-
 | 0xB47A || 122 || 90 || Invalid API call
 |-
 | 0xC47A || 122 || 98 || Invalid operation
