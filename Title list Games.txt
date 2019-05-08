@@ -3137,6 +3137,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01007D200D3FC000 || Arcade Archives ICE CLIMBER || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100348001DE6000 || Arcade Archives TERRA FORCE || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010050000D6C4000 || Arcade Classics Anniversary Collection || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01008D8006A6A000 || Arena of Valor || EUR JPN USA || || Digital || 0 0x20000 0x30000 0x40000 0x50000 0x60000 0x70000 || || Game
@@ -3323,6 +3325,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01000BF00B6BC000 || Deployment || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 010023600C704000 || Deponia || EUR USA || || Digital || 0 || || Game
+|-
 | 0100ED700469A000 || Deru - The Art of Cooperation || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 01000DC00AF1C000 || Desert Child || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3413,6 +3417,10 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100C3A00BB76000 || Fimbul || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01007EF00B094000 || FINAL FANTASY IX || EUR USA || || Digital || 0 || || Game
+|-
+| 0100A5B00BDC6000 || FINAL FANTASY VII || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 0100EB100AB42000 || FINAL FANTASY XII THE ZODIAC AGE || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 0100BC300CB48000 || FINAL FANTASY X/X-2 HD Remaster || EUR USA || || Digital || 0 || || Game
@@ -3450,6 +3458,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100A9500C606000 || GhoulBoy || EUR || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 01003830092B8000 || Giana Sisters Twisted Dreams - Owltimate Edition || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 010045F00BFC2000 || Giga Wrecker Alt. || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 01005CB009E20000 || Glaive: Brick Breaker || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3717,6 +3727,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100CEC003A4A000 || PAW Patrol: On a Roll || EUR USA || || Digital || 0 || || Game
 |-
+| 0100CB000A142000 || Phoenix Wright: Ace Attorney Trilogy || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010077300A86C000 || Pianista: The Legendary Virtuoso || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010029600CD44000 || Piczle Colors || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3807,6 +3819,16 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100A8900AF04000 || SEGA AGES Alex Kidd in Miracle World || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 01001E600AF08000 || SEGA AGES Gain Ground || EUR JPN USA || || Digital || 0 || || Game
+|-
+| 0100D4D00AC62000 || SEGA AGES Out Run || EUR JPN USA || || Digital || 0 || || Game
+|-
+| 01005A300C9F6000 || SEGA AGES Phantasy Star || EUR USA || || Digital || 0 || || Game
+|-
+| 010051F00AC5E000 || SEGA AGES Sonic The Hedgehog || EUR JPN USA || || Digital || 0 || || Game
+|-
+| 0100D6800AC5C000 || SEGA AGES Thunder Force IV || EUR JPN || || Digital || 0 || || Game
+|-
 | 0100A6300B250000 || SEGA Genesis Classics || USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100F7300B24E000 || SEGA® Mega Drive Classics™ || EUR || || Digital || 0 0x10000 0x20000 || || Game
@@ -3892,6 +3914,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01009AB00BDFE000 || The Stillness of the Wind || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010040D00BCF4000 || Storm Boy || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010072500D52E000 || Strike Suit Zero: Director's Cut || EUR USA || || Digital || 0 || || Game
 |-
 | 010060600CFDE000 || Strikey Sisters || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
@@ -3995,6 +4019,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010064400B138000 || V-Rally 4 || EUR USA || || Digital || 0 0x20000 || || Game
 |-
+| 010086500D3C8000 || VA-11 Hall-A: Cyberpunk Bartender Action || EUR USA || || Digital || 0 || || Game
+|-
 | 010042100BAA6000 || Valthirian Arc: Hero School Story || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010030F00CA1E000 || Vaporum || EUR USA || || Digital || 0 0x10000 || || Game
@@ -4042,6 +4068,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 010028700D1CA000 || WitchAndHero || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010069B00D9FE000 || Wonder Boy Returns Remix || EUR JPN USA || || Digital || 0 0x20000 || || Game
+|-
+| 010048900CF64000 || World End Syndrome || USA || || Digital || 0 || || Game
 |-
 | 0100E6200D56E000 || The World Next Door || EUR USA || || Digital || 0 0x10000 || || Game
 |-
