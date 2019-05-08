@@ -12,7 +12,7 @@ This is "nn::lm::ILogger".
 
 | Cmd | Name                      |
 | --- | ------------------------- |
-| 0   | Initialize                |
+| 0   | Log                       |
 | 1   | \[3.0.0+\] SetDestination |
 
 # lm:get
