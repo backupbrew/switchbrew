@@ -94,7 +94,7 @@ fatal-errors, since the Description ends with bit21.
 | 154   | NPNS                                         |
 | 155   | NPNS HTTP Stream                             |
 | 157   | ARP                                          |
-| 158   | Boot                                         |
+| 158   | Updater                                      |
 | 159   | SWKBD                                        |
 | 161   | NFC Mifare                                   |
 | 162   | Userland assert                              |
