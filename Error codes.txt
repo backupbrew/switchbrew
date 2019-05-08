@@ -978,6 +978,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xE7A || 122 || 7 || Object not opened
 |-
+| 0xC470 || 122 || 98 || Invalid operation
+|-
 | 0x287C || 124 || 20 || Argument is NULL
 |-
 | 0x2C7C || 124 || 22 || Argument is invalid
