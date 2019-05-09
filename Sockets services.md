@@ -133,8 +133,10 @@ Takes a socket file descriptor and an unused u64. Duplicates the socket
 
 ## GetResourceStatistics
 
-Takes a total of 0x10-bytes of input, a PID, a type-0x22 output buffer,
-and returns a total of 8-bytes of output.
+Takes a total of 8-bytes of input, a PID, a type-0x22 output buffer, and
+returns a total of 8-bytes of output.
+
+\[4.0.0+\] Now takes an additional 8-bytes of input.
 
 \[7.0.0+\] Now takes an additional type-0x21 input buffer.
 
@@ -285,26 +287,27 @@ Takes no arguments, doesn't return anything, never fails.
 
 This is "nn::nsd::detail::IManager".
 
-| Cmd           | Name                                                                 |
-| ------------- | -------------------------------------------------------------------- |
-| 10            | GetSettingName                                                       |
-| 11            | [\#GetEnvironmentIdentifier](#GetEnvironmentIdentifier "wikilink")   |
-| 12            | GetDeviceId                                                          |
-| 13            | DeleteSettings                                                       |
-| 14            | ImportSettings                                                       |
-| 20            | Resolve                                                              |
-| 21            | ResolveEx                                                            |
-| 30            | GetNasServiceSetting                                                 |
-| 31            | GetNasServiceSettingEx                                               |
-| 40            | GetNasRequestFqdn                                                    |
-| 41            | GetNasRequestFqdnEx                                                  |
-| 42            | GetNasApiFqdn                                                        |
-| 43            | GetNasApiFqdnEx                                                      |
-| 50            | GetCurrentSetting                                                    |
-| 60            | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
-| 61            | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
-| 62            | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
-| \[7.0.0+\] 63 | IsChangeEnvironmentIdentifierDisabled                                |
+| Cmd | Name                                                                 |
+| --- | -------------------------------------------------------------------- |
+| 10  | GetSettingName                                                       |
+| 11  | [\#GetEnvironmentIdentifier](#GetEnvironmentIdentifier "wikilink")   |
+| 12  | GetDeviceId                                                          |
+| 13  | DeleteSettings                                                       |
+| 14  | ImportSettings                                                       |
+| 15  | \[4.0.0+\]                                                           |
+| 20  | Resolve                                                              |
+| 21  | ResolveEx                                                            |
+| 30  | GetNasServiceSetting                                                 |
+| 31  | GetNasServiceSettingEx                                               |
+| 40  | GetNasRequestFqdn                                                    |
+| 41  | GetNasRequestFqdnEx                                                  |
+| 42  | GetNasApiFqdn                                                        |
+| 43  | GetNasApiFqdnEx                                                      |
+| 50  | GetCurrentSetting                                                    |
+| 60  | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
+| 61  | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
+| 62  | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |
+| 63  | \[4.0.0+\] IsChangeEnvironmentIdentifierDisabled                     |
 
 ## GetEnvironmentIdentifier
 

@@ -137,7 +137,9 @@ FreeBSD's <code>fcntl</code>, limited to <code>F_GETFL</code> and <code>F_SETFL<
 Takes a socket file descriptor and an unused u64. Duplicates the socket (FreeBSD's <code>dup</code>). Reserved to <code>bsd:s</code>.
 
 == GetResourceStatistics ==
-Takes a total of 0x10-bytes of input, a PID, a type-0x22 output buffer, and returns a total of 8-bytes of output.
+Takes a total of 8-bytes of input, a PID, a type-0x22 output buffer, and returns a total of 8-bytes of output.
+
+[4.0.0+] Now takes an additional 8-bytes of input.
 
 [7.0.0+] Now takes an additional type-0x21 input buffer.
 
@@ -329,6 +331,8 @@ This is "nn::nsd::detail::IManager".
 |-
 | 14 || ImportSettings
 |-
+| 15 || [4.0.0+]
+|-
 | 20 || Resolve
 |-
 | 21 || ResolveEx
@@ -353,7 +357,7 @@ This is "nn::nsd::detail::IManager".
 |-
 | 62 || [[#DeleteSaveDataOfFsForTest]]
 |-
-| [7.0.0+] 63 || IsChangeEnvironmentIdentifierDisabled
+| 63 || [4.0.0+] IsChangeEnvironmentIdentifierDisabled
 |}
 
 == GetEnvironmentIdentifier ==
