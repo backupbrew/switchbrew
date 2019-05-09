@@ -36,6 +36,8 @@ This is "nn::wlan::detail::IInfraManager".
 | 29  | \[7.0.0+\]      |
 | 30  | \[8.0.0+\]      |
 
+\[4.0.0+\] Connect now takes an additional 4-bytes of input.
+
 \[7.0.0+\] Input/output for cmds 27/28 were swapped, perhaps these cmds
 were swapped?
 
@@ -98,6 +100,9 @@ This is "nn::wlan::detail::ILocalManager".
 | 50  | \[6.0.0+\]                    |
 | 51  | \[8.0.0+\]                    |
 | 52  | \[8.0.0+\]                    |
+
+\[4.0.0+\] CreateBss, Connect, and Join now takes an additional 4-bytes
+of input.
 
 # wlan:lg
 
