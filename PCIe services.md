@@ -48,7 +48,7 @@ This is "nn::pcie::detail::ISession".
 | 19  | SetIrqEnable           |
 | 20  | SetAspmEnable          |
 | 21  | \[3.0.0+\]             |
-| 22  | \[?+\]                 |
+| 22  | \[4.0.0+\]             |
 | 23  | \[7.0.0+\]             |
 
 \[7.0.0+\] AcquireIrq now takes an additional 4-bytes of input, and no
