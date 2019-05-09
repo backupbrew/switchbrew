@@ -1,7 +1,6 @@
 # audout:u
 
-This is
-"nn::audio::detail::IAudioOutManager".
+This is "nn::audio::detail::IAudioOutManager".
 
 | Cmd | Name                                                            |
 | --- | --------------------------------------------------------------- |
@@ -49,8 +48,7 @@ type-0x21 input buffer instead.
 
 ## IAudioOut
 
-This is
-"nn::audio::detail::IAudioOut".
+This is "nn::audio::detail::IAudioOut".
 
 | Cmd | Name                                                                                    |
 | --- | --------------------------------------------------------------------------------------- |
@@ -87,8 +85,7 @@ returning.
 Takes a type-5 input buffer for sample data and a u64 which acts as a
 tag for the supplied buffer (official apps use the buffer's address).
 
-The format of the input buffer is as
-follows:
+The format of the input buffer is as follows:
 
 | Offset | Size | Description                                           |
 | ------ | ---- | ----------------------------------------------------- |
@@ -264,8 +261,7 @@ Returns the upper limit of the rendering time in percent. (u32)
 
 ## IAudioDevice
 
-This is
-"nn::audio::detail::IAudioDevice".
+This is "nn::audio::detail::IAudioDevice".
 
 | Cmd | Name                                                                                      |
 | --- | ----------------------------------------------------------------------------------------- |
@@ -326,6 +322,9 @@ This is "nn::audio::detail::IAudioOutManagerForApplet".
 | 4   | \[4.0.0+\] GetAudioOutsProcessRecordVolume |
 | 5   | \[4.0.0+\] SetAudioOutsProcessRecordVolume |
 
+\[4.0.0+\] RequestSuspendAudioOuts/RequestResumeAudioOuts no longer
+returns an output handle.
+
 # audin:a
 
 This is "nn::audio::detail::IAudioInManagerForApplet".
@@ -337,6 +336,9 @@ This is "nn::audio::detail::IAudioInManagerForApplet".
 | 2   | GetAudioInsProcessMasterVolume |
 | 3   | SetAudioInsProcessMasterVolume |
 
+\[4.0.0+\] RequestSuspendAudioIns/RequestResumeAudioIns no longer
+returns an output handle.
+
 # audrec:a
 
 This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
@@ -345,6 +347,10 @@ This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
 | --- | ---------------------------------- |
 | 0   | RequestSuspendFinalOutputRecorders |
 | 1   | RequestResumeFinalOutputRecorders  |
+
+\[4.0.0+\]
+RequestSuspendFinalOutputRecorders/RequestResumeFinalOutputRecorders no
+longer returns an output handle.
 
 # audren:a
 
@@ -360,6 +366,9 @@ This is "nn::audio::detail::IAudioRendererManagerForApplet".
 | 5   | UnregisterAppletResourceUserId                  |
 | 6   | \[4.0.0+\] GetAudioRenderersProcessRecordVolume |
 | 7   | \[4.0.0+\] SetAudioRenderersProcessRecordVolume |
+
+\[4.0.0+\] RequestSuspendAudioRenderers/RequestResumeAudioRenderers no
+longer returns an output handle.
 
 # audout:d, audin:d, audrec:d, audren:d
 
@@ -422,8 +431,7 @@ This is "nn::audioctrl::detail::IAudioController".
 
 This is "nn::audio::detail::ICodecController".
 
-This service no longer exists in
-\[3.0.0+\].
+This service no longer exists in \[3.0.0+\].
 
 | Cmd | Name                                                                                     |
 | --- | ---------------------------------------------------------------------------------------- |
@@ -495,8 +503,7 @@ Returns a bool.
 
 # hwopus
 
-This is
-"nn::codec::detail::IHardwareOpusDecoderManager".
+This is "nn::codec::detail::IHardwareOpusDecoderManager".
 
 | Cmd | Name                                                                                                    |
 | --- | ------------------------------------------------------------------------------------------------------- |
@@ -557,8 +564,7 @@ The input buffer is a
 
 ## IHardwareOpusDecoder
 
-This is
-"nn::codec::detail::IHardwareOpusDecoder".
+This is "nn::codec::detail::IHardwareOpusDecoder".
 
 | Cmd | Name                                                                                                                                                                        |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

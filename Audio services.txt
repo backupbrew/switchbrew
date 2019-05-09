@@ -386,6 +386,8 @@ This is "nn::audio::detail::IAudioOutManagerForApplet".
 | 5 || [4.0.0+] SetAudioOutsProcessRecordVolume
 |}
 
+[4.0.0+] RequestSuspendAudioOuts/RequestResumeAudioOuts no longer returns an output handle.
+
 = audin:a =
 This is "nn::audio::detail::IAudioInManagerForApplet".
 
@@ -402,6 +404,8 @@ This is "nn::audio::detail::IAudioInManagerForApplet".
 | 3 || SetAudioInsProcessMasterVolume
 |}
 
+[4.0.0+] RequestSuspendAudioIns/RequestResumeAudioIns no longer returns an output handle.
+
 = audrec:a =
 This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
 
@@ -413,6 +417,8 @@ This is "nn::audio::detail::IFinalOutputRecorderManagerForApplet".
 |-
 | 1 || RequestResumeFinalOutputRecorders
 |}
+
+[4.0.0+] RequestSuspendFinalOutputRecorders/RequestResumeFinalOutputRecorders no longer returns an output handle.
 
 = audren:a =
 This is "nn::audio::detail::IAudioRendererManagerForApplet".
@@ -437,6 +443,8 @@ This is "nn::audio::detail::IAudioRendererManagerForApplet".
 |-
 | 7 || [4.0.0+] SetAudioRenderersProcessRecordVolume
 |}
+
+[4.0.0+] RequestSuspendAudioRenderers/RequestResumeAudioRenderers no longer returns an output handle.
 
 = audout:d, audin:d, audrec:d, audren:d =
 This is "nn::audio::detail::IAudioOutManagerForDebugger", "nn::audio::detail::IAudioInManagerForDebugger", "nn::audio::detail::IFinalOutputRecorderManagerForDebugger", "nn::audio::detail::IAudioRendererManagerForDebugger".
