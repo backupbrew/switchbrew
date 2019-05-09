@@ -346,7 +346,7 @@ The type of an IPC command is described by a bitfield as below:
 
 | Bits | Name                           | Description                                                         |
 | ---- | ------------------------------ | ------------------------------------------------------------------- |
-| 0    | In                             | Direction is input. "                                               |
+| 0    | In                             | Direction is input.                                                 |
 | 1    | Out                            | Direction is output.                                                |
 | 2    | HipcMapAlias                   | Use buffer descriptors A ("Send"), B ("Receive") or W ("Exchange"). |
 | 3    | HipcPointer                    | Use buffer descriptors X ("Pointer") or C ("ReceiveList").          |

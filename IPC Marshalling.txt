@@ -300,7 +300,7 @@ The type of an IPC command is described by a bitfield as below:
 {| class="wikitable" border="1"
 ! Bits || Name || Description
 |-
-| 0 || In || Direction is input. "
+| 0 || In || Direction is input.
 |-
 | 1 || Out || Direction is output.
 |-
