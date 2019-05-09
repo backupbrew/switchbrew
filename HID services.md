@@ -849,11 +849,11 @@ This is "nn::irsensor::IIrSensorServer".
 | 312 | [\#RunPointingProcessor](#RunPointingProcessor "wikilink")                     |
 | 313 | [\#SuspendImageProcessor](#SuspendImageProcessor "wikilink")                   |
 | 314 | \[3.0.0+\] [\#CheckFirmwareVersion](#CheckFirmwareVersion "wikilink")          |
-| 315 | \[5.0.0+\] SetFunctionLevel                                                    |
-| 316 | \[5.0.0+\] RunImageTransferExProcessor                                         |
-| 317 | \[5.0.0+\] RunIrLedProcessor                                                   |
-| 318 | \[5.0.0+\] StopImageProcessorAsync                                             |
-| 319 | \[5.0.0+\] ActivateIrsensorWithFunctionLevel                                   |
+| 315 | \[4.0.0+\] SetFunctionLevel                                                    |
+| 316 | \[4.0.0+\] RunImageTransferExProcessor                                         |
+| 317 | \[4.0.0+\] RunIrLedProcessor                                                   |
+| 318 | \[4.0.0+\] StopImageProcessorAsync                                             |
+| 319 | \[4.0.0+\] ActivateIrsensorWithFunctionLevel                                   |
 
 ## ActivateIrsensor
 

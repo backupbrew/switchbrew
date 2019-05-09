@@ -1182,15 +1182,15 @@ This is "nn::irsensor::IIrSensorServer".
 |-
 | 314 || [3.0.0+] [[#CheckFirmwareVersion]]
 |-
-| 315 || [5.0.0+] SetFunctionLevel
+| 315 || [4.0.0+] SetFunctionLevel
 |-
-| 316 || [5.0.0+] RunImageTransferExProcessor
+| 316 || [4.0.0+] RunImageTransferExProcessor
 |-
-| 317 || [5.0.0+] RunIrLedProcessor
+| 317 || [4.0.0+] RunIrLedProcessor
 |-
-| 318 || [5.0.0+] StopImageProcessorAsync
+| 318 || [4.0.0+] StopImageProcessorAsync
 |-
-| 319 || [5.0.0+] ActivateIrsensorWithFunctionLevel
+| 319 || [4.0.0+] ActivateIrsensorWithFunctionLevel
 |}
 
 == ActivateIrsensor ==
