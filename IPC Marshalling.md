@@ -44,8 +44,7 @@ processes requests in
 
 #### Close
 
-When processing a request of this type, the IPC server
-    calls:
+When processing a request of this type, the IPC server calls:
 
   - "nn::sf::hipc::server::HipcServerSessionManager::DestroyServerSession"
   - "nn::sf::hipc::CloseServerSessionHandle"
@@ -55,8 +54,7 @@ properly closed.
 
 #### LegacyRequest, LegacyControl
 
-These types are handled by
-    calling:
+These types are handled by calling:
 
   - "nn::sf::hipc::detail::HipcMessageBufferAccessor::ParseHeader"
   - "nn::sf::hipc::server::HipcServerSessionManager::ProcessMessage"
@@ -68,8 +66,7 @@ system where headers were further partitioned.
 
 #### Request, Control
 
-These types are handled by
-    calling:
+These types are handled by calling:
 
   - "nn::sf::hipc::server::HipcServerSessionManager::ProcessMessage2"
   - "nn::sf::hipc::server::HipcServerSessionManager::RegisterServerSessionToWaitBase"
@@ -285,8 +282,7 @@ this by just using the dispatch table for the object in the map with the
 appropriate ID, instead of the dispatch table the session was
 initialized with.
 
-Format for the extra request header for domain
-message:
+Format for the extra request header for domain message:
 
 | Word | Bits  | Description                                                                                      |
 | ---- | ----- | ------------------------------------------------------------------------------------------------ |
@@ -310,8 +306,7 @@ Format for the extra response header for domain message:
 ### Data payload
 
 This is an array of u32's, but individual parameters are generally
-stored as
-u64's.
+stored as u64's.
 
 | Word | Description                                                                                     |
 | ---- | ----------------------------------------------------------------------------------------------- |
@@ -347,19 +342,18 @@ and takes:
   - The size of the IPC command's [raw
     data](IPC%20Marshalling#Raw%20data%20section.md##Raw_data_section "wikilink").
 
-The type of an IPC command is described by a bitfield as
-below:
+The type of an IPC command is described by a bitfield as below:
 
-| Bits | Description                                                         |
-| ---- | ------------------------------------------------------------------- |
-| 0    | Direction is input.                                                 |
-| 1    | Direction is output.                                                |
-| 2    | Use buffer descriptors A ("Send"), B ("Receive") or W ("Exchange"). |
-| 3    | Use buffer descriptors X ("Pointer") or C ("ReceiveList").          |
-| 4    | Skip saving the pointer buffer size in raw data.                    |
-| 5    | Select which buffer descriptor to use automatically.                |
-| 6    | Use [NonSecureIpc flag](#Flags "wikilink").                         |
-| 7    | Use [NonDeviceIpc flag](#Flags "wikilink").                         |
+| Bits | Name                           | Description                                                         |
+| ---- | ------------------------------ | ------------------------------------------------------------------- |
+| 0    | In                             | Direction is input. "                                               |
+| 1    | Out                            | Direction is output.                                                |
+| 2    | HipcMapAlias                   | Use buffer descriptors A ("Send"), B ("Receive") or W ("Exchange"). |
+| 3    | HipcPointer                    | Use buffer descriptors X ("Pointer") or C ("ReceiveList").          |
+| 4    | FixedSize                      | Skip saving the pointer buffer size in raw data.                    |
+| 5    | HipcAutoSelect                 | Select which buffer descriptor to use automatically.                |
+| 6    | HipcMapTransferAllowsNonSecure | Use [NonSecureIpc flag](#Flags "wikilink").                         |
+| 7    | HipcMapTransferAllowsNonDevice | Use [NonDeviceIpc flag](#Flags "wikilink").                         |
 
 C and X (Pointer and ReceiveList) descriptors are backed by the "pointer
 buffer", a buffer in the service process. Its size is a u16, which is
