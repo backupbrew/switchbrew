@@ -711,6 +711,31 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                       |
 | 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate |
 
+# IAsyncValue
+
+This is "nn::ns::detail::IAsyncValue".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   | \[4.0.0+\] |
+
+Cmd3: No input/output, takes a type-0x16 output buffer.
+
+# IAsyncResult
+
+This is "nn::ns::detail::IAsyncResult".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   | \[4.0.0+\] |
+
+Cmd2: No input/output, takes a type-0x16 output buffer.
+
 # ns:dev
 
 This is "nn::ns::detail::IDevelopInterface".
