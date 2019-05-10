@@ -269,8 +269,8 @@ is likely a permissions check for service+command.
 | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
 | 7988 | \[6.0.0+\] Returns an output [\#IDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
 | 7989 | \[5.1.0+\] Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
-| 7992 | \[?+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                                                  |
-| 7993 | \[?+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                                |
+| 7992 | \[4.0.0+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                                              |
+| 7993 | \[4.0.0+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                            |
 | 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                                   |
 | 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                                   |
 | 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                                       |
@@ -314,6 +314,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 26                   | BeginInstallApplication                                                                            |
 | 27                   | DeleteApplicationRecord                                                                            |
 | 30                   | RequestApplicationUpdateInfo                                                                       |
+| \[?-3.0.2\] 31       |                                                                                                    |
 | 32                   | CancelApplicationDownload                                                                          |
 | 33                   | ResumeApplicationDownload                                                                          |
 | 35                   | UpdateVersionList                                                                                  |
@@ -354,12 +355,12 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 80                   | \[3.0.0+\] RequestDownloadApplication                                                              |
 | 81                   | \[3.0.0+\] RequestDownloadAddOnContent                                                             |
 | 82                   | \[3.0.0+\] DownloadApplication                                                                     |
-| \[?-6.2.0\] 83       | CheckApplicationResumeRights                                                                       |
-| 84                   | GetDynamicCommitEvent                                                                              |
-| 85                   | RequestUpdateApplication2                                                                          |
-| 86                   | EnableApplicationCrashReport                                                                       |
-| 87                   | IsApplicationCrashReportEnabled                                                                    |
-| 90                   | BoostSystemMemoryResourceLimit                                                                     |
+| \[4.0.0-6.2.0\] 83   | CheckApplicationResumeRights                                                                       |
+| 84                   | \[4.0.0+\] GetDynamicCommitEvent                                                                   |
+| 85                   | \[4.0.0+\] RequestUpdateApplication2                                                               |
+| 86                   | \[4.0.0+\] EnableApplicationCrashReport                                                            |
+| 87                   | \[4.0.0+\] IsApplicationCrashReportEnabled                                                         |
+| 90                   | \[4.0.0+\] BoostSystemMemoryResourceLimit                                                          |
 | 91                   | \[5.0.0+\] DeprecatedLaunchApplication                                                             |
 | 92                   | \[5.0.0+\] GetRunningApplicationProgramId                                                          |
 | 93                   | \[5.0.0+\] GetMainApplicationProgramIndex                                                          |
@@ -460,33 +461,33 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1700                 | ListApplicationDownloadingContentMeta                                                              |
 | 1701                 | \[3.0.0+\] GetApplicationView                                                                      |
 | 1702                 | \[3.0.0+\] GetApplicationDownloadTaskStatus                                                        |
-| 1703                 | GetApplicationViewDownloadErrorContext                                                             |
+| 1703                 | \[4.0.0+\] GetApplicationViewDownloadErrorContext                                                  |
 | 1704                 | \[8.0.0+\]                                                                                         |
 | 1800                 | IsNotificationSetupCompleted                                                                       |
 | 1801                 | GetLastNotificationInfoCount                                                                       |
 | 1802                 | ListLastNotificationInfo                                                                           |
 | 1803                 | \[3.0.0+\] ListNotificationTask                                                                    |
 | 1900                 | \[3.0.0+\] IsActiveAccount                                                                         |
-| 1901                 | RequestDownloadApplicationPrepurchasedRights                                                       |
+| 1901                 | \[4.0.0+\] RequestDownloadApplicationPrepurchasedRights                                            |
 | 1902                 | GetApplicationTicketInfo                                                                           |
-| 2000                 | GetSystemDeliveryInfo                                                                              |
-| 2001                 | SelectLatestSystemDeliveryInfo                                                                     |
-| 2002                 | VerifyDeliveryProtocolVersion                                                                      |
-| 2003                 | GetApplicationDeliveryInfo                                                                         |
-| 2004                 | HasAllContentsToDeliver                                                                            |
-| 2005                 | CompareApplicationDeliveryInfo                                                                     |
-| 2006                 | CanDeliverApplication                                                                              |
-| 2007                 | ListContentMetaKeyToDeliverApplication                                                             |
-| 2008                 | NeedsSystemUpdateToDeliverApplication                                                              |
-| 2009                 | EstimateRequiredSize                                                                               |
-| 2010                 | RequestReceiveApplication                                                                          |
-| 2011                 | CommitReceiveApplication                                                                           |
-| 2012                 | GetReceiveApplicationProgress                                                                      |
-| 2013                 | RequestSendApplication                                                                             |
-| 2014                 | GetSendApplicationProgress                                                                         |
-| 2015                 | CompareSystemDeliveryInfo                                                                          |
-| 2016                 | ListNotCommittedContentMeta                                                                        |
-| 2017                 | RecoverDownloadTask                                                                                |
+| 2000                 | \[4.0.0+\] GetSystemDeliveryInfo                                                                   |
+| 2001                 | \[4.0.0+\] SelectLatestSystemDeliveryInfo                                                          |
+| 2002                 | \[4.0.0+\] VerifyDeliveryProtocolVersion                                                           |
+| 2003                 | \[4.0.0+\] GetApplicationDeliveryInfo                                                              |
+| 2004                 | \[4.0.0+\] HasAllContentsToDeliver                                                                 |
+| 2005                 | \[4.0.0+\] CompareApplicationDeliveryInfo                                                          |
+| 2006                 | \[4.0.0+\] CanDeliverApplication                                                                   |
+| 2007                 | \[4.0.0+\] ListContentMetaKeyToDeliverApplication                                                  |
+| 2008                 | \[4.0.0+\] NeedsSystemUpdateToDeliverApplication                                                   |
+| 2009                 | \[4.0.0+\] EstimateRequiredSize                                                                    |
+| 2010                 | \[4.0.0+\] RequestReceiveApplication                                                               |
+| 2011                 | \[4.0.0+\] CommitReceiveApplication                                                                |
+| 2012                 | \[4.0.0+\] GetReceiveApplicationProgress                                                           |
+| 2013                 | \[4.0.0+\] RequestSendApplication                                                                  |
+| 2014                 | \[4.0.0+\] GetSendApplicationProgress                                                              |
+| 2015                 | \[4.0.0+\] CompareSystemDeliveryInfo                                                               |
+| 2016                 | \[4.0.0+\] ListNotCommittedContentMeta                                                             |
+| 2017                 | \[4.0.0+\] RecoverDownloadTask                                                                     |
 | 2018                 | \[?+\] GetApplicationDeliveryInfoHash                                                              |
 | 2050                 | \[6.0.0+\] GetApplicationRightsOnClient                                                            |
 | 2100                 | \[6.0.0+\] GetApplicationTerminateResult                                                           |
@@ -519,7 +520,14 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2500                 | \[8.0.0+\]                                                                                         |
 |                      |                                                                                                    |
 
+\[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
+of input.
+
 ### IApplicationVersionInterface
+
+This is "nn::ns::detail::IApplicationVersionInterface".
+
+This was added with \[4.0.0+\].
 
 | Cmd  | Name                         |
 | ---- | ---------------------------- |
@@ -565,18 +573,18 @@ This is "nn::ns::detail::IDocumentInterface".
 
 This is "nn::ns::detail::IDownloadTaskInterface".
 
-| Cmd | Name                                           |
-| --- | ---------------------------------------------- |
-| 701 | ClearTaskStatusList                            |
-| 702 | RequestDownloadTaskList                        |
-| 703 | RequestEnsureDownloadTask                      |
-| 704 | ListDownloadTaskStatus                         |
-| 705 | RequestDownloadTaskListData                    |
-| 706 | \[?+\] TryCommitCurrentApplicationDownloadTask |
-| 707 | \[?+\] EnableAutoCommit                        |
-| 708 | \[?+\] DisableAutoCommit                       |
-| 709 | \[?+\] TriggerDynamicCommitEvent               |
-|     |                                                |
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 701 | ClearTaskStatusList                                |
+| 702 | RequestDownloadTaskList                            |
+| 703 | RequestEnsureDownloadTask                          |
+| 704 | ListDownloadTaskStatus                             |
+| 705 | RequestDownloadTaskListData                        |
+| 706 | \[4.0.0+\] TryCommitCurrentApplicationDownloadTask |
+| 707 | \[4.0.0+\] EnableAutoCommit                        |
+| 708 | \[4.0.0+\] DisableAutoCommit                       |
+| 709 | \[4.0.0+\] TriggerDynamicCommitEvent               |
+|     |                                                    |
 
 ### IReadOnlyApplicationControlDataInterface
 
@@ -615,6 +623,10 @@ This was added with \[6.0.0+\].
 
 ### IECommerceInterface
 
+This is "nn::ns::detail::IECommerceInterface".
+
+This was added with \[4.0.0+\].
+
 | Cmd | Name                                                 | Notes                                                                                        |
 | --- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | 0   | RequestLinkDevice                                    | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
@@ -650,26 +662,26 @@ This is "nn::ns::detail::IVulnerabilityManagerInterface".
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd            | Name                                                        |
-| -------------- | ----------------------------------------------------------- |
-| 0              | GetBackgroundNetworkUpdateState                             |
-| 1              | [OpenSystemUpdateControl](#ISystemUpdateControl "wikilink") |
-| 2              | NotifyExFatDriverRequired                                   |
-| 3              | ClearExFatDriverStatusForDebug                              |
-| 4              | RequestBackgroundNetworkUpdate                              |
-| 5              | NotifyBackgroundNetworkUpdate                               |
-| 6              | NotifyExFatDriverDownloadedForDebug                         |
-| 9              | GetSystemUpdateNotificationEventForContentDelivery          |
-| 10             | NotifySystemUpdateForContentDelivery                        |
-| 11             | \[3.0.0+\] PrepareShutdown                                  |
-| \[3.0.0-?\] 12 |                                                             |
-| \[3.0.0-?\] 13 |                                                             |
-| \[3.0.0-?\] 14 |                                                             |
-| \[3.0.0-?\] 15 |                                                             |
-| 16             | DestroySystemUpdateTask                                     |
-| 17             | RequestSendSystemUpdate                                     |
-| 18             | GetSendSystemUpdateProgress                                 |
-|                |                                                             |
+| Cmd                | Name                                                        |
+| ------------------ | ----------------------------------------------------------- |
+| 0                  | GetBackgroundNetworkUpdateState                             |
+| 1                  | [OpenSystemUpdateControl](#ISystemUpdateControl "wikilink") |
+| 2                  | NotifyExFatDriverRequired                                   |
+| 3                  | ClearExFatDriverStatusForDebug                              |
+| 4                  | RequestBackgroundNetworkUpdate                              |
+| 5                  | NotifyBackgroundNetworkUpdate                               |
+| 6                  | NotifyExFatDriverDownloadedForDebug                         |
+| 9                  | GetSystemUpdateNotificationEventForContentDelivery          |
+| 10                 | NotifySystemUpdateForContentDelivery                        |
+| 11                 | \[3.0.0+\] PrepareShutdown                                  |
+| \[3.0.0-3.0.2\] 12 |                                                             |
+| \[3.0.0-3.0.2\] 13 |                                                             |
+| \[3.0.0-3.0.2\] 14 |                                                             |
+| \[3.0.0-3.0.2\] 15 |                                                             |
+| 16                 | \[4.0.0+\] DestroySystemUpdateTask                          |
+| 17                 | \[4.0.0+\] RequestSendSystemUpdate                          |
+| 18                 | \[4.0.0+\] GetSendSystemUpdateProgress                      |
+|                    |                                                             |
 
 ## ISystemUpdateControl
 
