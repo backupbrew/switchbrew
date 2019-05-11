@@ -164,7 +164,7 @@ the current Gamecard's header data as follows.
 | Offset | Size  | Description                                                                                                   |
 | ------ | ----- | ------------------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x4   | CUP Version                                                                                                   |
-| 0x4    | 0x4   | Gamecard ID1                                                                                                  |
+| 0x4    | 0x4   | [Gamecard ID1](#ReadId1Normal.2C_ReadId1Secure.2C_ReadId1Writer "wikilink")                                   |
 | 0x8    | 0x100 | [Gamecard header](Gamecard%20Format#Gamecard%20Header.md##Gamecard_Header "wikilink") (without the signature) |
 
 ## GetCardKeyArea

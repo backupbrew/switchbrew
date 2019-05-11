@@ -204,7 +204,7 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 |-
 | 0x4
 | 0x4
-| Gamecard ID1
+| [[#ReadId1Normal.2C_ReadId1Secure.2C_ReadId1Writer|Gamecard ID1]]
 |-
 | 0x8
 | 0x100
