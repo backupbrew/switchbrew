@@ -193,7 +193,7 @@ variation of the Tegra 210 BCT format.
 <code>0x2338: start_page (0x00000000)</code><br />
 <code>0x233C: length (variable)</code><br />
 <code>0x2340: load_addr (0x40010000)</code><br />
-<code>0x2344: entry_point (0x40010020)</code><br />
+<code>0x2344: entry_point (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)</code><br />
 <code>0x2348: attribute (0x00000000)</code><br />
 <code>0x234C: bootloader0_hash (empty)</code><br />
 <code>0x235C: bootloader0_rsa_pss_signature</code></p></td>
@@ -208,7 +208,7 @@ variation of the Tegra 210 BCT format.
 <code>0x2464: start_page (0x00000000)</code><br />
 <code>0x2468: length (variable)</code><br />
 <code>0x246C: load_addr (0x40010000)</code><br />
-<code>0x2470: entry_point (0x40010020)</code><br />
+<code>0x2470: entry_point (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)</code><br />
 <code>0x2474: attribute (0x00000000)</code><br />
 <code>0x2478: bootloader1_hash (empty)</code><br />
 <code>0x2488: bootloader1_rsa_pss_signature</code></p></td>
@@ -267,8 +267,7 @@ at offset 0x0450, to store the active
 remaining bytes are zero.
 
 The first bootloader validates and decrypts this block for further key
-generation. The decrypted keyblob payload is as
-follows.
+generation. The decrypted keyblob payload is as follows.
 
 | Offset | Size | Description                                               |
 | ------ | ---- | --------------------------------------------------------- |
