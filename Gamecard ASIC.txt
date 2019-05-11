@@ -199,8 +199,12 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 ! Description
 |-
 | 0x0
-| 0x8
-| Unknown
+| 0x4
+| CUP Version
+|-
+| 0x4
+| 0x4
+| Gamecard ID1
 |-
 | 0x8
 | 0x100
@@ -342,6 +346,9 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | 
 |-
 | 0xE2
+| 
+|-
+| 0xEC
 | 
 |}
 

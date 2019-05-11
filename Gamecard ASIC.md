@@ -21,8 +21,7 @@ commands.
 ## WriteOperation
 
 Submits a Gamecard ASIC [operation](#ASIC_commands "wikilink") using a
-0x40 byte sized buffer as
-follows.
+0x40 byte sized buffer as follows.
 
 ### OperationBuffer
 
@@ -51,8 +50,7 @@ commands are passed to the ASIC using the
 [\#WriteOperation](#WriteOperation "wikilink") MMC command.
 
 Additional data buffers are then read/written using standard MMC
-read/write
-commands.
+read/write commands.
 
 | Command | Name                                                                               |
 | ------- | ---------------------------------------------------------------------------------- |
@@ -161,12 +159,12 @@ byte sized buffer containing information on the current Gamecard.
 ## GetCardHeader
 
 Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing
-the current Gamecard's header data as
-follows.
+the current Gamecard's header data as follows.
 
 | Offset | Size  | Description                                                                                                   |
 | ------ | ----- | ------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8   | Unknown                                                                                                       |
+| 0x0    | 0x4   | CUP Version                                                                                                   |
+| 0x4    | 0x4   | Gamecard ID1                                                                                                  |
 | 0x8    | 0x100 | [Gamecard header](Gamecard%20Format#Gamecard%20Header.md##Gamecard_Header "wikilink") (without the signature) |
 
 ## GetCardKeyArea
@@ -219,8 +217,7 @@ using the [\#OperationBuffer](#OperationBuffer "wikilink") passed to
 [\#SendCardCommand](#SendCardCommand "wikilink").
 
 Additional data buffers are then read/written using standard MMC
-read/write
-commands.
+read/write commands.
 
 | Command | Name                                                                       |
 | ------- | -------------------------------------------------------------------------- |
@@ -246,6 +243,7 @@ commands.
 | 0xC4    | [\#ReadId2Secure](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
 | 0xE0    |                                                                            |
 | 0xE2    |                                                                            |
+| 0xEC    |                                                                            |
 
 ## ReadId1Normal, ReadId1Secure, ReadId1Writer
 
@@ -523,8 +521,7 @@ modes.
 
 [FS](Filesystem%20services.md "wikilink") provides the appropriate
 Gamecard ASIC's user firmware (Lotus ASIC Firmware or LAFW) which is
-encrypted, signed and follows the format
-below.
+encrypted, signed and follows the format below.
 
 | Offset | Size   | Description                                                               |
 | ------ | ------ | ------------------------------------------------------------------------- |
