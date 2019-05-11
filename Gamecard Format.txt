@@ -184,12 +184,12 @@ This is the Gamecard's unique certificate and is located at offset 0x7000.
 | Device ID
 |-
 | 0x120
-| 0xA
+| 0x10
 | 
 |-
-| 0x12A
-| 0xD6
-| Encrypted data. Some kind of key?
+| 0x130
+| 0xD0
+| Encrypted data
 |}
 
 The data between the Gamecard Certificate and the start of the HFS0 region is all 0xFF.

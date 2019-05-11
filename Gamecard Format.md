@@ -3,8 +3,7 @@ storing the contents of a Nintendo Switch Gamecard.
 
 # Gamecard Header
 
-This header is 0x200 bytes and is located at offset 0 in the
-Gamecard.
+This header is 0x200 bytes and is located at offset 0 in the Gamecard.
 
 | Offset | Size  | Description                                                                              |
 | ------ | ----- | ---------------------------------------------------------------------------------------- |
@@ -31,8 +30,7 @@ Gamecard.
 
 ## Gamecard Info
 
-When decrypted, this 0x70 byte region is as
-follows:
+When decrypted, this 0x70 byte region is as follows:
 
 | Offset | Size | Description                                                                                 |
 | ------ | ---- | ------------------------------------------------------------------------------------------- |
@@ -55,8 +53,7 @@ This is the Gamecard's unique certificate and is located at offset
 0x7000.
 
 [FS](Filesystem%20services.md "wikilink") IDeviceOperator cmd 206
-"GetGameCardDeviceCertificate" retrieves this
-data.
+"GetGameCardDeviceCertificate" retrieves this data.
 
 | Offset | Size  | Description                                                   |
 | ------ | ----- | ------------------------------------------------------------- |
@@ -66,8 +63,8 @@ data.
 | 0x108  | 0x1   | KEK Index                                                     |
 | 0x109  | 0x7   |                                                               |
 | 0x110  | 0x10  | Device ID                                                     |
-| 0x120  | 0xA   |                                                               |
-| 0x12A  | 0xD6  | Encrypted data. Some kind of key?                             |
+| 0x120  | 0x10  |                                                               |
+| 0x130  | 0xD0  | Encrypted data                                                |
 
 The data between the Gamecard Certificate and the start of the HFS0
 region is all 0xFF.
@@ -79,8 +76,7 @@ the Gamecard's secure mode.
 
 [FS](Filesystem%20services.md "wikilink") calculates a SHA-256 hash over
 the whole 0x200 bytes and compares it with the hash stored at offset
-0x160 in the [Gamecard
-Header](#Gamecard_Header "wikilink").
+0x160 in the [Gamecard Header](#Gamecard_Header "wikilink").
 
 | Offset | Size  | Description                                                                    |
 | ------ | ----- | ------------------------------------------------------------------------------ |
@@ -120,8 +116,7 @@ partition):
 | 0x10 + X     | Y    | String Table             |
 | 0x10 + X + Y | Z    | Raw File Data            |
 
-Where File Entry Table consists of Number of Files
-FileEntries:
+Where File Entry Table consists of Number of Files FileEntries:
 
 | Offset | Size | Description                                                                                                             |
 | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------- |
