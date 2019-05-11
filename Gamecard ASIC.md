@@ -241,8 +241,8 @@ read/write commands.
 | 0xA5    | [\#ReadId3Normal](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
 | 0xB8    | [\#GetStatus](#GetStatus "wikilink")                                       |
 | 0xC4    | [\#ReadId2Secure](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
-| 0xE0    |                                                                            |
-| 0xE2    |                                                                            |
+| 0xE0    | ReadInitialData                                                            |
+| 0xE2    | ReadSecureModeFlag                                                         |
 | 0xEC    |                                                                            |
 
 ## ReadId1Normal, ReadId1Secure, ReadId1Writer

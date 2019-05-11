@@ -343,10 +343,10 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Secure]]
 |-
 | 0xE0
-| 
+| ReadInitialData
 |-
 | 0xE2
-| 
+| ReadSecureModeFlag
 |-
 | 0xEC
 | 
