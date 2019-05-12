@@ -144,9 +144,9 @@ This is "nn::nim::detail::IShopServiceManager".
 | 301 | RequestUnlinkDeviceIntegrated                                                                                  |
 | 302 | RequestLinkDevice                                                                                              |
 | 303 | HasDeviceLink                                                                                                  |
-| 304 | RequestUnlinkDeviceAll                                                                                         |
-| 305 | RequestCreateVirtualAccount                                                                                    |
-| 306 | RequestDeviceLinkStatus                                                                                        |
+| 304 | \[4.0.0+\] RequestUnlinkDeviceAll                                                                              |
+| 305 | \[4.0.0+\] RequestCreateVirtualAccount                                                                         |
+| 306 | \[4.0.0+\] RequestDeviceLinkStatus                                                                             |
 | 400 | GetAccountByVirtualAccount                                                                                     |
 | 401 | \[6.0.0+\]                                                                                                     |
 | 500 | RequestSyncTicket                                                                                              |
