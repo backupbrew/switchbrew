@@ -25,6 +25,7 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 18    | \[6.0.0+\]                                        |
 | 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot              |
 | 301   | GetLastThumbnail                                  |
+| 302   | \[4.0.0+\]                                        |
 | 401   | GetAutoSavingStorage                              |
 | 501   | GetRequiredStorageSpaceSizeToCopyAll              |
 | 1001  | \[3.0.0+\]                                        |
@@ -40,61 +41,88 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 50000 | \[6.0.0+\]                                        |
 | 60002 | \[4.0.0+\]                                        |
 
+Cmd1002: Takes a total of 0x38-bytes of input, two type-0x5 input
+buffers, and returns 0x20-bytes of output. \[4.0.0+\] No longer returns
+output, and now takes the following buffers instead: type-0x16,
+type-0x46, and type-0x6.
+
+Cmd60002: Takes a total of 8-bytes of input, a PID, and returns an
+[\#IAlbumAccessorSession](#IAlbumAccessorSession "wikilink").
+
+## IAlbumAccessorSession
+
+This is "nn::capsrv::sf::IAlbumAccessorSession".
+
+This was added with \[4.0.0+\].
+
+| Cmd  | Name |
+| ---- | ---- |
+| 2001 |      |
+| 2002 |      |
+| 2003 |      |
+| 2004 |      |
+| 2005 |      |
+| 2006 |      |
+| 2007 |      |
+| 2008 |      |
+
 # caps:c
 
-This is
-"nn::capsrv::sf::IAlbumControlService".
+This is "nn::capsrv::sf::IAlbumControlService".
 
-| Cmd   | Name       | Notes                                                                                                               |
-| ----- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| 33    | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.                                                                    |
-| 2001  |            |                                                                                                                     |
-| 2002  |            |                                                                                                                     |
-| 2011  |            |                                                                                                                     |
-| 2012  |            |                                                                                                                     |
-| 2013  |            |                                                                                                                     |
-| 2014  |            |                                                                                                                     |
-| 2101  |            | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
-| 2102  |            |                                                                                                                     |
-| 2201  |            |                                                                                                                     |
-| 2301  |            |                                                                                                                     |
-| 60001 | \[?+\]     | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
+| Cmd              | Name       | Notes                                                                                                               |
+| ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
+| 33               | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.                                                                    |
+| 2001             |            |                                                                                                                     |
+| 2002             |            |                                                                                                                     |
+| 2011             |            |                                                                                                                     |
+| 2012             |            |                                                                                                                     |
+| 2013             |            |                                                                                                                     |
+| 2014             |            |                                                                                                                     |
+| 2101             |            | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
+| 2102             |            |                                                                                                                     |
+| \[?-3.0.2\] 2201 |            |                                                                                                                     |
+| 2202             | \[4.0.0+\] |                                                                                                                     |
+| 2301             |            |                                                                                                                     |
+| 2302             | \[4.0.0+\] |                                                                                                                     |
+| 60001            | \[4.0.0+\] | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
 
 ## IAlbumControlSession
 
 This is "nn::capsrv::sf::IAlbumControlSession".
 
+This was added with \[4.0.0+\].
+
 | Cmd  | Name       | Notes |
 | ---- | ---------- | ----- |
-| 2001 | \[?+\]     |       |
-| 2002 | \[?+\]     |       |
-| 2003 | \[?+\]     |       |
-| 2004 | \[?+\]     |       |
-| 2005 | \[?+\]     |       |
-| 2006 | \[?+\]     |       |
-| 2007 | \[?+\]     |       |
-| 2008 | \[?+\]     |       |
-| 2401 | \[?+\]     |       |
-| 2402 | \[?+\]     |       |
-| 2403 | \[?+\]     |       |
-| 2404 | \[?+\]     |       |
-| 2405 | \[?+\]     |       |
+| 2001 |            |       |
+| 2002 |            |       |
+| 2003 |            |       |
+| 2004 |            |       |
+| 2005 |            |       |
+| 2006 |            |       |
+| 2007 |            |       |
+| 2008 |            |       |
+| 2401 |            |       |
+| 2402 |            |       |
+| 2403 |            |       |
+| 2404 |            |       |
+| 2405 |            |       |
 | 2406 | \[7.0.0+\] |       |
-| 2411 | \[?+\]     |       |
-| 2412 | \[?+\]     |       |
-| 2413 | \[?+\]     |       |
-| 2414 | \[?+\]     |       |
-| 2421 | \[?+\]     |       |
-| 2422 | \[?+\]     |       |
-| 2424 | \[?+\]     |       |
-| 2431 | \[?+\]     |       |
-| 2433 | \[?+\]     |       |
-| 2434 | \[?+\]     |       |
+| 2411 |            |       |
+| 2412 |            |       |
+| 2413 |            |       |
+| 2414 |            |       |
+| 2421 |            |       |
+| 2422 |            |       |
+| 2424 |            |       |
+| 2431 |            |       |
+| 2433 |            |       |
+| 2434 |            |       |
 
 # caps:u
 
-This is
-"nn::capsrv::sf::IAlbumApplicationService".
+This is "nn::capsrv::sf::IAlbumApplicationService".
 
 | Cmd   | Name                                                                    |
 | ----- | ----------------------------------------------------------------------- |
