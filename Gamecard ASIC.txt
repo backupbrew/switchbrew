@@ -214,6 +214,29 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 == GetCardKeyArea ==
 Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the current Gamecard's key area sectors.
 
+{| class="wikitable" border="1"
+|-
+! Sector
+! Size
+! Description
+|-
+| 0
+| 0x200
+| Gamecard specific data
+|-
+| 1
+| 0x200
+| [[Gamecard_Format#Gamecard_Certificate|Gamecard Certificate]]
+|-
+| 2
+| 0x200
+| [[Gamecard_Format#Initial_Data|Gamecard Initial Data]]
+|-
+| 3
+| 0x200
+| Empty sector (all FFs)
+|}
+
 == SendCardCommand ==
 Signals the Gamecard ASIC to relay a specific [[#Gamecard commands|command]] to the Gamecard. The command is sent to the Gamecard using the [[#OperationBuffer]] as follows.
 
@@ -228,8 +251,20 @@ Signals the Gamecard ASIC to relay a specific [[#Gamecard commands|command]] to 
 | Gamecard ASIC operation command (0x10)
 |-
 | 0x1
-| 0x7
-| Unknown
+| 0x1
+| Page size
+|-
+| 0x2
+| 0x1
+| Direction (0 = read, 1 = write)
+|-
+| 0x3
+| 0x1
+| Padding
+|-
+| 0x4
+| 0x4
+| Page count
 |-
 | 0x8
 | 0x1
@@ -1062,11 +1097,11 @@ Both the Gamecard ASIC and the actual Gamecard can operate in different modes.
 |-
 | 0x108
 | 0x4
-|
+| Empty
 |-
 | 0x10C
 | 0x4
-| 
+| Empty
 |-
 | 0x110
 | 0x4
@@ -1082,7 +1117,7 @@ Both the Gamecard ASIC and the actual Gamecard can operate in different modes.
 |-
 | 0x11C
 | 0x4
-| 
+| Empty
 |-
 | 0x120
 | 0x10

@@ -172,6 +172,13 @@ the current Gamecard's header data as follows.
 Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing
 the current Gamecard's key area sectors.
 
+| Sector | Size  | Description                                                                                          |
+| ------ | ----- | ---------------------------------------------------------------------------------------------------- |
+| 0      | 0x200 | Gamecard specific data                                                                               |
+| 1      | 0x200 | [Gamecard Certificate](Gamecard%20Format#Gamecard%20Certificate.md##Gamecard_Certificate "wikilink") |
+| 2      | 0x200 | [Gamecard Initial Data](Gamecard%20Format#Initial%20Data.md##Initial_Data "wikilink")                |
+| 3      | 0x200 | Empty sector (all FFs)                                                                               |
+
 ## SendCardCommand
 
 Signals the Gamecard ASIC to relay a specific
@@ -182,7 +189,10 @@ sent to the Gamecard using the
 | Offset | Size | Description                            |
 | ------ | ---- | -------------------------------------- |
 | 0x0    | 0x1  | Gamecard ASIC operation command (0x10) |
-| 0x1    | 0x7  | Unknown                                |
+| 0x1    | 0x1  | Page size                              |
+| 0x2    | 0x1  | Direction (0 = read, 1 = write)        |
+| 0x3    | 0x1  | Padding                                |
+| 0x4    | 0x4  | Page count                             |
 | 0x8    | 0x1  | Gamecard command                       |
 | 0x9    | 0x17 | Command specific data                  |
 | 0x20   | 0x20 | Command verification value             |
@@ -528,12 +538,12 @@ encrypted, signed and follows the format below.
 | 0x0    | 0x100  | RSA-2048 PKCS \#1 signature over the firmware (data from 0x100 to 0x7800) |
 | 0x100  | 0x4    | Magic ("LAFW")                                                            |
 | 0x104  | 0x4    | Unknown (0xFF000000, 0xFFFF0000 or 0xFFFFFF00)                            |
-| 0x108  | 0x4    |                                                                           |
-| 0x10C  | 0x4    |                                                                           |
+| 0x108  | 0x4    | Empty                                                                     |
+| 0x10C  | 0x4    | Empty                                                                     |
 | 0x110  | 0x4    | Version (0, 1 or 3)                                                       |
 | 0x114  | 0x4    | Unknown (0x80000000)                                                      |
 | 0x118  | 0x4    | Data size                                                                 |
-| 0x11C  | 0x4    |                                                                           |
+| 0x11C  | 0x4    | Empty                                                                     |
 | 0x120  | 0x10   | Encrypted data IV/CTR                                                     |
 | 0x130  | 0x10   | Placeholder string ("IDIDIDIDIDIDIDID")                                   |
 | 0x140  | 0x40   | Empty                                                                     |
