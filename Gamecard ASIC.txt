@@ -234,7 +234,7 @@ Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the curre
 |-
 | 3
 | 0x200
-| Empty sector (all FFs)
+| Empty sector (all 0xFF)
 |}
 
 == SendCardCommand ==

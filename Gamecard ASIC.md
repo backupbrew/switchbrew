@@ -177,7 +177,7 @@ the current Gamecard's key area sectors.
 | 0      | 0x200 | Gamecard specific data                                                                               |
 | 1      | 0x200 | [Gamecard Certificate](Gamecard%20Format#Gamecard%20Certificate.md##Gamecard_Certificate "wikilink") |
 | 2      | 0x200 | [Gamecard Initial Data](Gamecard%20Format#Initial%20Data.md##Initial_Data "wikilink")                |
-| 3      | 0x200 | Empty sector (all FFs)                                                                               |
+| 3      | 0x200 | Empty sector (all 0xFF)                                                                              |
 
 ## SendCardCommand
 
