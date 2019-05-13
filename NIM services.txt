@@ -376,4 +376,70 @@ This is "nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService".
 | 5 || [3.0.0+] GetServerTime
 |}
 
+= IAsyncValue =
+This is "nn::nim::detail::IAsyncValue".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || [4.0.0+]
+|}
+
+= IAsyncResult =
+This is "nn::nim::detail::IAsyncResult".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || [4.0.0+]
+|}
+
+= IAsyncProgressResult =
+This is "nn::nim::detail::IAsyncProgressResult".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || [4.0.0+]
+|}
+
+= IAsyncData =
+This is "nn::nim::detail::IAsyncData".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 || 
+|-
+| 5 || [4.0.0+]
+|}
+
 [[Category:Services]]

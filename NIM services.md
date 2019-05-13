@@ -231,4 +231,49 @@ This is
 | 4   | IsProcessing               |
 | 5   | \[3.0.0+\] GetServerTime   |
 
+# IAsyncValue
+
+This is "nn::nim::detail::IAsyncValue".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   | \[4.0.0+\] |
+
+# IAsyncResult
+
+This is "nn::nim::detail::IAsyncResult".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   | \[4.0.0+\] |
+
+# IAsyncProgressResult
+
+This is "nn::nim::detail::IAsyncProgressResult".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   | \[4.0.0+\] |
+
+# IAsyncData
+
+This is "nn::nim::detail::IAsyncData".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   |            |
+| 1   |            |
+| 2   |            |
+| 3   |            |
+| 4   |            |
+| 5   | \[4.0.0+\] |
+
 [Category:Services](Category:Services "wikilink")
