@@ -258,6 +258,8 @@ Returns a [[Settings_services#setcal_Container_Structure|container]] with the Ga
 == GetEciDeviceKey ==
 Returns the extended device ECC-B233 key (0x50 bytes) from [[Calibration#CAL0|CAL0]]. If the extended key is not programmed then it falls back to the normal device ECC-B233 key (0x30 bytes).
 
+[5.0.0+] Now returns an additional 4-bytes.
+
 == GetEticketDeviceKey ==
 Takes a type-0x16 output buffer with fixed size 0x244.
 

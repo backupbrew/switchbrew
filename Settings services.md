@@ -1,7 +1,6 @@
 # set
 
-This is
-"nn::settings::ISettingsServer".
+This is "nn::settings::ISettingsServer".
 
 | Cmd | Name                                      | Notes                                                                                                                  |
 | --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -47,8 +46,7 @@ array from GetAvailableLanguageCodes.
 
 This is "nn::settings::LanguageCode".
 
-This is an u64, which is a NUL-terminated
-string.
+This is an u64, which is a NUL-terminated string.
 
 | Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
 | ------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------- |
@@ -115,8 +113,7 @@ mode](SPL%20services#IsDebugMode.md##IsDebugMode "wikilink").
 
 # set:cal
 
-This is
-"nn::settings::IFactorySettingsServer".
+This is "nn::settings::IFactorySettingsServer".
 
 | Cmd | Name                                                                          |
 | --- | ----------------------------------------------------------------------------- |
@@ -212,6 +209,8 @@ Returns the extended device ECC-B233 key (0x50 bytes) from
 programmed then it falls back to the normal device ECC-B233 key (0x30
 bytes).
 
+\[5.0.0+\] Now returns an additional 4-bytes.
+
 ## GetEticketDeviceKey
 
 Takes a type-0x16 output buffer with fixed size 0x244.
@@ -230,8 +229,7 @@ returns a RSA-2048 variant of the device certificate.
 ## GetEciDeviceKey2
 
 Same as [\#GetEciDeviceKey](#GetEciDeviceKey "wikilink"), but returns a
-RSA-2048 variant of the device
-key.
+RSA-2048 variant of the device key.
 
 ## setcal Container Structure
 
@@ -244,8 +242,7 @@ This container is used for returning data with variable sizes.
 
 # set:sys
 
-This is
-"nn::settings::ISystemSettingsServer".
+This is "nn::settings::ISystemSettingsServer".
 
 | Cmd | Name                                                                                              |
 | --- | ------------------------------------------------------------------------------------------------- |
