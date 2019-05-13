@@ -32,7 +32,7 @@ This is "nn::es::IETicketService".
 | 26   | \[4.0.0+\] DeleteAllPrepurchaseRecord                                                   |
 | 27   | \[4.0.0+\] CountPrepurchaseRecord                                                       |
 | 28   | \[6.0.0+\] ListPrepurchaseRecordRightsIds (\[4.0.0-5.1.0\] ListPrepurchaseRecord)       |
-| 29   | ListPrepurchaseRecordInfo                                                               |
+| 29   | \[4.0.0+\] ListPrepurchaseRecordInfo                                                    |
 | 30   | \[5.0.0+\] CountTicket                                                                  |
 | 31   | \[5.0.0+\] ListTicketRightsIds                                                          |
 | 32   | \[5.0.0+\] CountPrepurchaseRecordEx                                                     |

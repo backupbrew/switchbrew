@@ -61,7 +61,7 @@ This is "nn::es::IETicketService".
 |-
 | 28 || [6.0.0+] ListPrepurchaseRecordRightsIds ([4.0.0-5.1.0] ListPrepurchaseRecord)
 |-
-| 29 || ListPrepurchaseRecordInfo
+| 29 || [4.0.0+] ListPrepurchaseRecordInfo
 |-
 | 30 || [5.0.0+] CountTicket
 |-
