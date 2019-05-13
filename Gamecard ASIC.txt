@@ -208,7 +208,7 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 |-
 | 0x8
 | 0x100
-| [[Gamecard_Format#Gamecard_Header|Gamecard header]] (without the signature)
+| [[Gamecard_Format#Gamecard_Header|Gamecard Header]] (without the signature)
 |}
 
 == GetCardKeyArea ==
