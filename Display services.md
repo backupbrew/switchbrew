@@ -145,6 +145,20 @@ This is "nn::cec::ICecManager".
 | 6   | \[2.0.0+\]                      |
 | 100 | \[4.0.0+\] GetHdcpServiceObject |
 
+GetHdcpServiceObject: No input, returns a
+[\#CecManagerSubinterface100](#CecManagerSubinterface100 "wikilink").
+
+# CecManagerSubinterface100
+
+Added with \[4.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+
 # mm:u
 
 This is "nn::mmnv::IRequest".
