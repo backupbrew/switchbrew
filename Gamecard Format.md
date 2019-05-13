@@ -11,20 +11,20 @@ This header is 0x200 bytes and is located at offset 0 in the Gamecard.
 | 0x100  | 0x4   | Magicnum "HEAD"                                                                          |
 | 0x104  | 0x4   | Secure Area Start Address (in Media Units which are 0x200 bytes)                         |
 | 0x108  | 0x4   | Backup Area Start Address (always 0xFFFFFFFF)                                            |
-| 0x10C  | 0x1   | Title KEK Index (high nibble) and KEK Index (low nibble)                                 |
+| 0x10C  | 0x1   | TitleKeyDec Index (high nibble) and KEK Index (low nibble)                               |
 | 0x10D  | 0x1   | Gamecard Size (0xFA = 1GB, 0xF8 = 2GB, 0xF0 = 4GB, 0xE0 = 8GB, 0xE1 = 16GB, 0xE2 = 32GB) |
 | 0x10E  | 0x1   | Gamecard Header Version                                                                  |
-| 0x10F  | 0x1   | Gamecard Flags (bit0 = AutoBoot, bit1 = HistoryErase)                                    |
-| 0x110  | 0x8   | Package Id (used for challenge–response authentication)                                  |
+| 0x10F  | 0x1   | Gamecard Flags (bit0 = AutoBoot, bit1 = HistoryErase, bit2 = RepairTool)                 |
+| 0x110  | 0x8   | Package ID (used for challenge–response authentication)                                  |
 | 0x118  | 0x8   | Valid Data End Address (in Media Units which are 0x200 bytes)                            |
 | 0x120  | 0x10  | Gamecard Info IV (reversed)                                                              |
 | 0x130  | 0x8   | HFS0 partition offset                                                                    |
 | 0x138  | 0x8   | HFS0 header size                                                                         |
 | 0x140  | 0x20  | SHA-256 hash of the [HFS0 Header](#HFS0_Header "wikilink")                               |
 | 0x160  | 0x20  | SHA-256 hash of the [Initial Data](#Initial_Data "wikilink")                             |
-| 0x180  | 0x4   | Secure Mode Flag (always 1, which means Secure Mode is available)                        |
-| 0x184  | 0x4   | Title Key Flag (always 2)                                                                |
-| 0x188  | 0x4   | Key Flag (always 0)                                                                      |
+| 0x180  | 0x4   | Security Mode (0x01 = T1, 0x02 = T2)                                                     |
+| 0x184  | 0x4   | T1 Key Index (always 2)                                                                  |
+| 0x188  | 0x4   | Key Index (always 0)                                                                     |
 | 0x18C  | 0x4   | Normal Area End Address (in Media Units which are 0x200 bytes)                           |
 | 0x190  | 0x70  | [Gamecard Info](#Gamecard_Info "wikilink") (AES-128-CBC encrypted)                       |
 
@@ -32,20 +32,20 @@ This header is 0x200 bytes and is located at offset 0 in the Gamecard.
 
 When decrypted, this 0x70 byte region is as follows:
 
-| Offset | Size | Description                                                                                 |
-| ------ | ---- | ------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | Firmware Version (0x01 for old Gamecards, 0x02 for new Gamecards with the "logo" partition) |
-| 0x8    | 0x4  | Access Control Flags (0x00A10011 for 25MHz access or 0x00A10010 for 50MHz access)           |
-| 0xC    | 0x4  | Read Wait Time (always 0x1388)                                                              |
-| 0x10   | 0x4  | Read Wait Time2 (always 0)                                                                  |
-| 0x14   | 0x4  | Write Wait Time (always 0)                                                                  |
-| 0x18   | 0x4  | Write Wait Time2 (always 0)                                                                 |
-| 0x1C   | 0x4  | Firmware Mode                                                                               |
-| 0x20   | 0x4  | CUP Version                                                                                 |
-| 0x24   | 0x4  | Empty                                                                                       |
-| 0x28   | 0x8  | Update Partition Hash                                                                       |
-| 0x30   | 0x8  | CUP Id (always 0x0100000000000816, which is the title-listing data archive's title ID)      |
-| 0x38   | 0x38 | Empty                                                                                       |
+| Offset | Size | Description                                                                            |
+| ------ | ---- | -------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | Firmware Version (0x00 = Development, 0x01 = Retail, 0x02 = Retail on 4.0.0+)          |
+| 0x8    | 0x4  | Access Control (0x00A10011 = 25MHz access, 0x00A10010 = 50MHz access)                  |
+| 0xC    | 0x4  | Wait1 Time Read (always 0x1388)                                                        |
+| 0x10   | 0x4  | Wait2 Time Read (always 0)                                                             |
+| 0x14   | 0x4  | Wait1 Time Write (always 0)                                                            |
+| 0x18   | 0x4  | Wait2 Time Write (always 0)                                                            |
+| 0x1C   | 0x4  | Firmware Mode                                                                          |
+| 0x20   | 0x4  | CUP Version                                                                            |
+| 0x24   | 0x4  | Empty                                                                                  |
+| 0x28   | 0x8  | Update Partition Hash                                                                  |
+| 0x30   | 0x8  | CUP ID (always 0x0100000000000816, which is the title-listing data archive's title ID) |
+| 0x38   | 0x38 | Empty                                                                                  |
 
 # Gamecard Certificate
 
@@ -59,11 +59,11 @@ This is the Gamecard's unique certificate and is located at offset
 | ------ | ----- | ------------------------------------------------------------- |
 | 0x0    | 0x100 | RSA-2048 PKCS \#1 signature over the data from 0x100 to 0x200 |
 | 0x100  | 0x4   | Magicnum "CERT"                                               |
-| 0x104  | 0x4   |                                                               |
+| 0x104  | 0x4   | Empty                                                         |
 | 0x108  | 0x1   | KEK Index                                                     |
-| 0x109  | 0x7   |                                                               |
+| 0x109  | 0x7   | Empty                                                         |
 | 0x110  | 0x10  | Device ID                                                     |
-| 0x120  | 0x10  |                                                               |
+| 0x120  | 0x10  | Unknown                                                       |
 | 0x130  | 0xD0  | Encrypted data                                                |
 
 The data between the Gamecard Certificate and the start of the HFS0
@@ -80,7 +80,7 @@ the whole 0x200 bytes and compares it with the hash stored at offset
 
 | Offset | Size  | Description                                                                    |
 | ------ | ----- | ------------------------------------------------------------------------------ |
-| 0x0    | 0x8   | Package Id from [Gamecard Header](#Gamecard_Header "wikilink") at offset 0x110 |
+| 0x0    | 0x8   | Package ID from [Gamecard Header](#Gamecard_Header "wikilink") at offset 0x110 |
 | 0x8    | 0x8   | Empty                                                                          |
 | 0x10   | 0x10  | Challenge–response authentication data                                         |
 | 0x20   | 0x10  | Challenge–response authentication MAC                                          |
