@@ -1,7 +1,6 @@
 # pl:u
 
-This is
-"nn::pl::detail::ISharedFontManager".
+This is "nn::pl::detail::ISharedFontManager".
 
 | Cmd | Name                                                                           |
 | --- | ------------------------------------------------------------------------------ |
@@ -154,8 +153,8 @@ This is "nn::pdm::detail::INotifyService".
 | 3   |            |
 | 4   |            |
 | 5   |            |
-| 6   |            |
-| 7   |            |
+| 6   | \[4.0.0+\] |
+| 7   | \[4.0.0+\] |
 | 8   | \[6.0.0+\] |
 | 9   | \[8.0.0+\] |
 
@@ -176,8 +175,8 @@ This is "nn::pdm::detail::IQueryService".
 | 8                 |            |
 | 9                 |            |
 | 10                |            |
-| 11                |            |
-| 12                |            |
+| 11                | \[4.0.0+\] |
+| 12                | \[4.0.0+\] |
 | 13                |            |
 | 14                | \[6.0.0+\] |
 | 15                | \[6.0.0+\] |
@@ -187,8 +186,7 @@ This is "nn::pdm::detail::IQueryService".
 
 This is "nn::avm::srv::IAvmService".
 
-This was added with
-\[6.0.0+\].
+This was added with \[6.0.0+\].
 
 | Cmd  | Name                                                                             |
 | ---- | -------------------------------------------------------------------------------- |
