@@ -219,20 +219,24 @@ This is "nn::socket::resolver::IResolver".
 
 This service uses `bionic/libc/dns` to perform its tasks.
 
-| Cmd | Name                                                                                      |
-| --- | ----------------------------------------------------------------------------------------- |
-| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03)                                         |
-| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)                                           |
-| 2   | GetHostByName                                                                             |
-| 3   | GetHostByAddr                                                                             |
-| 4   | GetHostStringError                                                                        |
-| 5   | GetGaiStringError                                                                         |
-| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")                                                  |
-| 7   | GetNameInfo                                                                               |
-| 8   | RequestCancelHandle                                                                       |
-| 9   | CancelSocketCall                                                                          |
-| 10  | ?                                                                                         |
-| 11  | [\#ClearDnsIpServerAddressArray](#ClearDnsIpServerAddressArray "wikilink") (made-up name) |
+| Cmd | Name                                                                                                 |
+| --- | ---------------------------------------------------------------------------------------------------- |
+| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03)                                                    |
+| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)                                                      |
+| 2   | GetHostByName                                                                                        |
+| 3   | GetHostByAddr                                                                                        |
+| 4   | GetHostStringError                                                                                   |
+| 5   | GetGaiStringError                                                                                    |
+| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")                                                             |
+| 7   | GetNameInfo                                                                                          |
+| 8   | RequestCancelHandle                                                                                  |
+| 9   | CancelSocketCall                                                                                     |
+| 10  | \[5.0.0+\]                                                                                           |
+| 11  | \[5.0.0+\] [\#ClearDnsIpServerAddressArray](#ClearDnsIpServerAddressArray "wikilink") (made-up name) |
+| 12  | \[5.0.0+\]                                                                                           |
+| 13  | \[5.0.0+\]                                                                                           |
+| 14  | \[5.0.0+\]                                                                                           |
+| 15  | \[5.0.0+\]                                                                                           |
 
 ## GetAddrInfo
 

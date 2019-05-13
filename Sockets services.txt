@@ -264,9 +264,17 @@ This service uses <code>bionic/libc/dns</code> to perform its tasks.
 |-
 | 9 || CancelSocketCall
 |-
-| 10 || ?
+| 10 || [5.0.0+]
 |-
-| 11 || [[#ClearDnsIpServerAddressArray]] (made-up name)
+| 11 || [5.0.0+] [[#ClearDnsIpServerAddressArray]] (made-up name)
+|-
+| 12 || [5.0.0+]
+|-
+| 13 || [5.0.0+]
+|-
+| 14 || [5.0.0+]
+|-
+| 15 || [5.0.0+]
 |}
 
 == GetAddrInfo ==
