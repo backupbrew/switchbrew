@@ -53,7 +53,7 @@ This is "nn::bpc::IRtcManager".
 |-
 | 3 || [2.0.0+] ClearExternalRtcResetFlag
 |-
-| 4 || [3.0.0+]
+| 4 || [3.0.0+] SetUpRtcResetOnShutdown
 |}
 
 GetExternalRtcValue / SetExternalRtcValue directly accesses the max77620_rtc0 device.
