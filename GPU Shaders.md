@@ -31,7 +31,7 @@ this "sign" is unknown.
 
 ## Registers
 
-Maxwell GPUs have 254 type-less general purpose registers and one
+Maxwell GPUs have 255 type-less general purpose registers and one
 special register with id 255, *nvdisasm* shows it as RZ and *envydis* as
 0x0. Writing here is a no-op unless there are side effects. Reading from
 RZ returns zero. The fewer registers a shader uses, the more it can be
