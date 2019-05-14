@@ -58,7 +58,7 @@ TODO Add nvdisasm example
 There are 6 general purpose "1-bit" predicates. These can be used to
 conditionally execute a given instructions. There is an extra predicate
 that always evaluates as true (and false when negated), writing here is
-a no-op unless there are side-effects. It is shown as *PT* in
+a no-op unless there are side-effects. It is shown as "PT" in
 *nvdisasm*.
 
 Most of the time predicates can be negated.
