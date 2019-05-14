@@ -27,13 +27,13 @@ returns a total of 0xC-bytes of output.
 
 This is "nn::bpc::IRtcManager".
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | GetExternalRtcValue                  |
-| 1   | SetExternalRtcValue                  |
-| 2   | ReadExternalRtcResetFlag             |
-| 3   | \[2.0.0+\] ClearExternalRtcResetFlag |
-| 4   | \[3.0.0+\] SetUpRtcResetOnShutdown   |
+| Cmd | Name                               |
+| --- | ---------------------------------- |
+| 0   | GetRtcTime                         |
+| 1   | SetRtcTime                         |
+| 2   | GetRtcResetDetected                |
+| 3   | \[2.0.0+\] ClearRtcResetDetected   |
+| 4   | \[3.0.0+\] SetUpRtcResetOnShutdown |
 
 GetExternalRtcValue / SetExternalRtcValue directly accesses the
 max77620\_rtc0 device.

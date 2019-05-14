@@ -45,13 +45,13 @@ This is "nn::bpc::IRtcManager".
 |-
 ! Cmd || Name
 |-
-| 0 || GetExternalRtcValue
+| 0 || GetRtcTime
 |-
-| 1 || SetExternalRtcValue
+| 1 || SetRtcTime
 |-
-| 2 || ReadExternalRtcResetFlag
+| 2 || GetRtcResetDetected
 |-
-| 3 || [2.0.0+] ClearExternalRtcResetFlag
+| 3 || [2.0.0+] ClearRtcResetDetected
 |-
 | 4 || [3.0.0+] SetUpRtcResetOnShutdown
 |}
