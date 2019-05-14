@@ -38,6 +38,9 @@ This is "nn::wlan::detail::IInfraManager".
 
 \[4.0.0+\] Connect now takes an additional 4-bytes of input.
 
+\[5.0.0+\] Cmd24 now returns a total of 0x58-bytes of output instead of
+0x5C.
+
 \[7.0.0+\] Input/output for cmds 27/28 were swapped, perhaps these cmds
 were swapped?
 
@@ -104,6 +107,9 @@ This is "nn::wlan::detail::ILocalManager".
 \[4.0.0+\] CreateBss, Connect, and Join now takes an additional 4-bytes
 of input.
 
+\[5.0.0+\] GetAllowedChannels now returns a total of 4-bytes of output
+instead of 0x50, and now takes a type-0xA output buffer.
+
 # wlan:lg
 
 This is "nn::wlan::detail::ILocalGetFrame".
@@ -119,6 +125,9 @@ This is "nn::wlan::detail::ILocalGetActionFrame".
 | Cmd | Name |
 | --- | ---- |
 | 0   |      |
+
+\[5.0.0+\] Cmd0 now takes an additional 4-bytes of input, and returns an
+additional 4-bytes of output.
 
 # wlan:sg
 
