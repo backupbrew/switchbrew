@@ -2,23 +2,23 @@
 
 This is "nn::bpc::IBoardPowerControlManager".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | ShutdownSystem                 |
-| 1   | RebootSystem                   |
-| 2   | GetWakeupReason                |
-| 3   | GetShutdownReason              |
-| 4   | GetAcOk                        |
-| 5   | GetBoardPowerControlEvent      |
-| 6   | \[2.0.0+\] GetSleepButtonState |
-| 7   | \[2.0.0+\] GetPowerEvent       |
-| 8   | \[2.0.0+\]                     |
-| 9   | \[2.0.0+\]                     |
-| 10  | \[2.0.0+\]                     |
-| 11  | \[3.0.0+\]                     |
-| 12  | \[3.0.0+\]                     |
-| 13  | \[3.0.0+\]                     |
-| 14  | \[6.0.0+\]                     |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 0   | ShutdownSystem                           |
+| 1   | RebootSystem                             |
+| 2   | GetWakeupReason                          |
+| 3   | GetShutdownReason                        |
+| 4   | GetAcOk                                  |
+| 5   | GetBoardPowerControlEvent                |
+| 6   | \[2.0.0+\] GetSleepButtonState           |
+| 7   | \[2.0.0+\] GetPowerEvent                 |
+| 8   | \[2.0.0+\] CreateWakeupTimer             |
+| 9   | \[2.0.0+\] CancelWakeupTimer             |
+| 10  | \[2.0.0+\] EnableWakeupTimerOnDevice     |
+| 11  | \[3.0.0+\] CreateWakeupTimerEx           |
+| 12  | \[3.0.0+\] GetLastEnabledWakeupTimerType |
+| 13  | \[3.0.0+\] CleanAllWakeupTimers          |
+| 14  | \[6.0.0+\]                               |
 
 Cmd10: No input, returns a total of 0x10-bytes of output. \[3.0.0+\] Now
 returns a total of 0xC-bytes of output.
