@@ -566,117 +566,117 @@ Takes an input 0x24-byte **HdlsState** struct and an input 8-byte
 
 This is "nn::hid::IHidSystemServer".
 
-| Cmd  | Name                                                                            |
-| ---- | ------------------------------------------------------------------------------- |
-| 31   | SendKeyboardLockKeyEvent                                                        |
-| 101  | AcquireHomeButtonEventHandle                                                    |
-| 111  | ActivateHomeButton                                                              |
-| 121  | AcquireSleepButtonEventHandle                                                   |
-| 131  | ActivateSleepButton                                                             |
-| 141  | AcquireCaptureButtonEventHandle                                                 |
-| 151  | ActivateCaptureButton                                                           |
-| 161  | \[7.0.0+\] GetPlatformConfig                                                    |
-| 210  | AcquireNfcDeviceUpdateEventHandle                                               |
-| 211  | GetNpadsWithNfc                                                                 |
-| 212  | AcquireNfcActivateEventHandle                                                   |
-| 213  | ActivateNfc                                                                     |
-| 214  | \[4.0.0+\] GetXcdHandleForNpadWithNfc                                           |
-| 215  | \[4.0.0+\] IsNfcActivated                                                       |
-| 230  | AcquireIrSensorEventHandle                                                      |
-| 231  | ActivateIrSensor                                                                |
-| 301  | ActivateNpadSystem                                                              |
-| 303  | ApplyNpadSystemCommonPolicy                                                     |
-| 304  | EnableAssigningSingleOnSlSrPress                                                |
-| 305  | DisableAssigningSingleOnSlSrPress                                               |
-| 306  | GetLastActiveNpad                                                               |
-| 307  | GetNpadSystemExtStyle                                                           |
-| 308  | \[5.0.0+\] ApplyNpadSystemCommonPolicyFull                                      |
-| 309  | \[5.0.0+\] GetNpadFullKeyGripColor                                              |
-| 310  | \[6.0.0+\] GetMaskedSupportedNpadStyleSet                                       |
-| 311  | SetNpadPlayerLedBlinkingDevice                                                  |
-| 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                                          |
-| 321  | \[3.0.0+\] [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")         |
-| 322  | GetIrSensorState                                                                |
-| 323  | GetXcdHandleForNpadWithIrSensor                                                 |
-| 500  | SetAppletResourceUserId                                                         |
-| 501  | RegisterAppletResourceUserId                                                    |
-| 502  | UnregisterAppletResourceUserId                                                  |
-| 503  | EnableAppletToGetInput                                                          |
-| 504  | SetAruidValidForVibration                                                       |
-| 505  | EnableAppletToGetSixAxisSensor                                                  |
-| 510  | [\#SetVibrationMasterVolume](#SetVibrationMasterVolume "wikilink")              |
-| 511  | GetVibrationMasterVolume                                                        |
-| 512  | \[3.0.0+\] BeginPermitVibrationSession                                          |
-| 513  | \[3.0.0+\] EndPermitVibrationSession                                            |
-| 520  | EnableHandheldHids                                                              |
-| 521  | DisableHandheldHids                                                             |
-| 540  | AcquirePlayReportControllerUsageUpdateEvent                                     |
-| 541  | GetPlayReportControllerUsages                                                   |
-| 542  | AcquirePlayReportRegisteredDeviceUpdateEvent                                    |
-| 543  | GetRegisteredDevicesOld (\[1.0.0-4.1.0\] GetRegisteredDevices)                  |
-| 544  | \[3.0.0+\] AcquireConnectionTriggerTimeoutEvent                                 |
-| 545  | \[3.0.0+\] SendConnectionTrigger                                                |
-| 546  | \[3.0.0+\] AcquireDeviceRegisteredEventForControllerSupport                     |
-| 547  | \[3.0.0+\] GetAllowedBluetoothLinksCount                                        |
-| 548  | \[5.0.0+\] GetRegisteredDevices                                                 |
-| 549  | \[6.0.0+\] GetConnectableRegisteredDevices                                      |
-| 700  | ActivateUniquePad                                                               |
-| 702  | AcquireUniquePadConnectionEventHandle                                           |
-| 703  | [\#GetUniquePadIds](#GetUniquePadIds "wikilink")                                |
-| 751  | AcquireJoyDetachOnBluetoothOffEventHandle                                       |
-| 800  | ListSixAxisSensorHandles                                                        |
-| 801  | IsSixAxisSensorUserCalibrationSupported                                         |
-| 802  | ResetSixAxisSensorCalibrationValues                                             |
-| 803  | StartSixAxisSensorUserCalibration                                               |
-| 804  | CancelSixAxisSensorUserCalibration                                              |
-| 805  | \[3.0.0+\] GetUniquePadBluetoothAddress                                         |
-| 806  | \[3.0.0+\] DisconnectUniquePad                                                  |
-| 807  | \[5.0.0+\] GetUniquePadType                                                     |
-| 808  | \[5.0.0+\] GetUniquePadInterface                                                |
-| 809  | \[5.0.0+\] GetUniquePadSerialNumber                                             |
-| 810  | \[5.0.0+\] GetUniquePadControllerNumber                                         |
-| 811  | \[5.0.0+\] GetSixAxisSensorUserCalibrationStage                                 |
-| 812  | \[8.0.0+\] GetConsoleUniqueSixAxisSensorHandle                                  |
-| 821  | StartAnalogStickManualCalibration                                               |
-| 822  | RetryCurrentAnalogStickManualCalibrationStage                                   |
-| 823  | CancelAnalogStickManualCalibration                                              |
-| 824  | ResetAnalogStickManualCalibration                                               |
-| 825  | \[5.0.0+\] GetAnalogStickState                                                  |
-| 826  | \[5.0.0+\] GetAnalogStickManualCalibrationStage                                 |
-| 827  | \[5.0.0+\] IsAnalogStickButtonPressed                                           |
-| 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                                       |
-| 829  | \[5.0.0+\] IsAnalogStickInCircumference                                         |
-| 830  | \[7.0.0+\] [\#SetNotificationLedPattern](#SetNotificationLedPattern "wikilink") |
-| 850  | \[3.0.0+\] IsUsbFullKeyControllerEnabled                                        |
-| 851  | \[3.0.0+\] EnableUsbFullKeyController                                           |
-| 852  | \[3.0.0+\] IsUsbConnected                                                       |
-| 870  | \[5.1.0+\] IsHandheldButtonPressedOnConsoleMode                                 |
-| 900  | ActivateInputDetector                                                           |
-| 901  | [\#NotifyInputDetector](#NotifyInputDetector "wikilink")                        |
-| 1000 | \[3.0.0+\] InitializeFirmwareUpdate                                             |
-| 1001 | \[3.0.0+\] GetFirmwareVersion                                                   |
-| 1002 | \[3.0.0+\] GetAvailableFirmwareVersion                                          |
-| 1003 | \[3.0.0+\] IsFirmwareUpdateAvailable                                            |
-| 1004 | \[3.0.0+\] CheckFirmwareUpdateRequired                                          |
-| 1005 | \[3.0.0+\] StartFirmwareUpdate                                                  |
-| 1006 | \[3.0.0+\] AbortFirmwareUpdate                                                  |
-| 1007 | \[3.0.0+\] GetFirmwareUpdateState                                               |
-| 1008 | \[4.0.0+\] ActivateAudioControl                                                 |
-| 1009 | \[4.0.0+\] AcquireAudioControlEventHandle                                       |
-| 1010 | \[4.0.0+\] GetAudioControlStates                                                |
-| 1011 | \[4.0.0+\] DeactivateAudioControl                                               |
-| 1050 | \[5.0.0+\] IsSixAxisSensorAccurateUserCalibrationSupported                      |
-| 1051 | \[5.0.0+\] StartSixAxisSensorAccurateUserCalibration                            |
-| 1052 | \[5.0.0+\] CancelSixAxisSensorAccurateUserCalibration                           |
-| 1053 | \[5.0.0+\] GetSixAxisSensorAccurateUserCalibrationState                         |
-| 1100 | \[5.0.0+\] GetHidbusSystemServiceObject                                         |
-| 1120 | \[6.0.0+\] SetFirmwareHotfixUpdateSkipEnabled                                   |
-| 1130 | \[6.0.0+\] InitializeUsbFirmwareUpdate                                          |
-| 1131 | \[6.0.0+\] FinalizeUsbFirmwareUpdate                                            |
-| 1132 | \[6.0.0+\] CheckUsbFirmwareUpdateRequired                                       |
-| 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                               |
-| 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                                            |
-| 1150 | \[8.0.0+\] SetTouchScreenMagnification                                          |
+| Cmd  | Name                                                                                  |
+| ---- | ------------------------------------------------------------------------------------- |
+| 31   | SendKeyboardLockKeyEvent                                                              |
+| 101  | AcquireHomeButtonEventHandle                                                          |
+| 111  | ActivateHomeButton                                                                    |
+| 121  | AcquireSleepButtonEventHandle                                                         |
+| 131  | ActivateSleepButton                                                                   |
+| 141  | AcquireCaptureButtonEventHandle                                                       |
+| 151  | ActivateCaptureButton                                                                 |
+| 161  | \[7.0.0+\] GetPlatformConfig                                                          |
+| 210  | AcquireNfcDeviceUpdateEventHandle                                                     |
+| 211  | GetNpadsWithNfc                                                                       |
+| 212  | AcquireNfcActivateEventHandle                                                         |
+| 213  | ActivateNfc                                                                           |
+| 214  | \[4.0.0+\] GetXcdHandleForNpadWithNfc                                                 |
+| 215  | \[4.0.0+\] IsNfcActivated                                                             |
+| 230  | AcquireIrSensorEventHandle                                                            |
+| 231  | ActivateIrSensor                                                                      |
+| 301  | ActivateNpadSystem                                                                    |
+| 303  | ApplyNpadSystemCommonPolicy                                                           |
+| 304  | EnableAssigningSingleOnSlSrPress                                                      |
+| 305  | DisableAssigningSingleOnSlSrPress                                                     |
+| 306  | GetLastActiveNpad                                                                     |
+| 307  | GetNpadSystemExtStyle                                                                 |
+| 308  | \[5.0.0+\] ApplyNpadSystemCommonPolicyFull                                            |
+| 309  | \[5.0.0+\] GetNpadFullKeyGripColor                                                    |
+| 310  | \[6.0.0+\] GetMaskedSupportedNpadStyleSet                                             |
+| 311  | SetNpadPlayerLedBlinkingDevice                                                        |
+| 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                                                |
+| 321  | \[3.0.0+\] [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")               |
+| 322  | GetIrSensorState                                                                      |
+| 323  | GetXcdHandleForNpadWithIrSensor                                                       |
+| 500  | SetAppletResourceUserId                                                               |
+| 501  | RegisterAppletResourceUserId                                                          |
+| 502  | UnregisterAppletResourceUserId                                                        |
+| 503  | EnableAppletToGetInput                                                                |
+| 504  | SetAruidValidForVibration                                                             |
+| 505  | EnableAppletToGetSixAxisSensor                                                        |
+| 510  | [\#SetVibrationMasterVolume](#SetVibrationMasterVolume "wikilink")                    |
+| 511  | GetVibrationMasterVolume                                                              |
+| 512  | \[3.0.0+\] BeginPermitVibrationSession                                                |
+| 513  | \[3.0.0+\] EndPermitVibrationSession                                                  |
+| 520  | EnableHandheldHids                                                                    |
+| 521  | DisableHandheldHids                                                                   |
+| 540  | AcquirePlayReportControllerUsageUpdateEvent                                           |
+| 541  | GetPlayReportControllerUsages                                                         |
+| 542  | AcquirePlayReportRegisteredDeviceUpdateEvent                                          |
+| 543  | GetRegisteredDevicesOld (\[1.0.0-4.1.0\] GetRegisteredDevices)                        |
+| 544  | \[3.0.0+\] AcquireConnectionTriggerTimeoutEvent                                       |
+| 545  | \[3.0.0+\] SendConnectionTrigger                                                      |
+| 546  | \[3.0.0+\] AcquireDeviceRegisteredEventForControllerSupport                           |
+| 547  | \[3.0.0+\] GetAllowedBluetoothLinksCount                                              |
+| 548  | \[5.0.0+\] GetRegisteredDevices                                                       |
+| 549  | \[6.0.0+\] GetConnectableRegisteredDevices                                            |
+| 700  | ActivateUniquePad                                                                     |
+| 702  | AcquireUniquePadConnectionEventHandle                                                 |
+| 703  | [\#GetUniquePadIds](#GetUniquePadIds "wikilink")                                      |
+| 751  | AcquireJoyDetachOnBluetoothOffEventHandle                                             |
+| 800  | ListSixAxisSensorHandles                                                              |
+| 801  | IsSixAxisSensorUserCalibrationSupported                                               |
+| 802  | ResetSixAxisSensorCalibrationValues                                                   |
+| 803  | StartSixAxisSensorUserCalibration                                                     |
+| 804  | CancelSixAxisSensorUserCalibration                                                    |
+| 805  | \[3.0.0+\] GetUniquePadBluetoothAddress                                               |
+| 806  | \[3.0.0+\] DisconnectUniquePad                                                        |
+| 807  | \[5.0.0+\] GetUniquePadType                                                           |
+| 808  | \[5.0.0+\] GetUniquePadInterface                                                      |
+| 809  | \[5.0.0+\] GetUniquePadSerialNumber                                                   |
+| 810  | \[5.0.0+\] GetUniquePadControllerNumber                                               |
+| 811  | \[5.0.0+\] GetSixAxisSensorUserCalibrationStage                                       |
+| 812  | \[8.0.0+\] GetConsoleUniqueSixAxisSensorHandle                                        |
+| 821  | StartAnalogStickManualCalibration                                                     |
+| 822  | RetryCurrentAnalogStickManualCalibrationStage                                         |
+| 823  | CancelAnalogStickManualCalibration                                                    |
+| 824  | ResetAnalogStickManualCalibration                                                     |
+| 825  | \[5.0.0+\] GetAnalogStickState                                                        |
+| 826  | \[5.0.0+\] GetAnalogStickManualCalibrationStage                                       |
+| 827  | \[5.0.0+\] IsAnalogStickButtonPressed                                                 |
+| 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                                             |
+| 829  | \[5.0.0+\] IsAnalogStickInCircumference                                               |
+| 830  | \[7.0.0+\] [\#SetNotificationLedPattern](#SetNotificationLedPattern "wikilink")       |
+| 850  | \[3.0.0+\] IsUsbFullKeyControllerEnabled                                              |
+| 851  | \[3.0.0+\] EnableUsbFullKeyController                                                 |
+| 852  | \[3.0.0+\] IsUsbConnected                                                             |
+| 870  | \[5.1.0+\] IsHandheldButtonPressedOnConsoleMode                                       |
+| 900  | ActivateInputDetector                                                                 |
+| 901  | [\#NotifyInputDetector](#NotifyInputDetector "wikilink")                              |
+| 1000 | \[3.0.0+\] InitializeFirmwareUpdate                                                   |
+| 1001 | \[3.0.0+\] GetFirmwareVersion                                                         |
+| 1002 | \[3.0.0+\] GetAvailableFirmwareVersion                                                |
+| 1003 | \[3.0.0+\] IsFirmwareUpdateAvailable                                                  |
+| 1004 | \[3.0.0+\] CheckFirmwareUpdateRequired                                                |
+| 1005 | \[3.0.0+\] StartFirmwareUpdate                                                        |
+| 1006 | \[3.0.0+\] AbortFirmwareUpdate                                                        |
+| 1007 | \[3.0.0+\] GetFirmwareUpdateState                                                     |
+| 1008 | \[4.0.0+\] ActivateAudioControl                                                       |
+| 1009 | \[4.0.0+\] AcquireAudioControlEventHandle                                             |
+| 1010 | \[4.0.0+\] GetAudioControlStates                                                      |
+| 1011 | \[4.0.0+\] DeactivateAudioControl                                                     |
+| 1050 | \[5.0.0+\] IsSixAxisSensorAccurateUserCalibrationSupported                            |
+| 1051 | \[5.0.0+\] StartSixAxisSensorAccurateUserCalibration                                  |
+| 1052 | \[5.0.0+\] CancelSixAxisSensorAccurateUserCalibration                                 |
+| 1053 | \[5.0.0+\] GetSixAxisSensorAccurateUserCalibrationState                               |
+| 1100 | \[5.0.0+\] [\#GetHidbusSystemServiceObject](#GetHidbusSystemServiceObject "wikilink") |
+| 1120 | \[6.0.0+\] SetFirmwareHotfixUpdateSkipEnabled                                         |
+| 1130 | \[6.0.0+\] InitializeUsbFirmwareUpdate                                                |
+| 1131 | \[6.0.0+\] FinalizeUsbFirmwareUpdate                                                  |
+| 1132 | \[6.0.0+\] CheckUsbFirmwareUpdateRequired                                             |
+| 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                                     |
+| 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                                                  |
+| 1150 | \[8.0.0+\] SetTouchScreenMagnification                                                |
 
 ## GetUniquePadsFromNpad
 
@@ -715,6 +715,11 @@ This sends subcommand 0x38 to the specified controller, for setting the
 pattern for the HOME button notification LED. The input structure is
 converted to the format used by this
 [subcommand](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/bluetooth_hid_subcommands_notes.md#subcommand-0x38-set-home-light).
+
+## GetHidbusSystemServiceObject
+
+No input, returns an
+[\#IHidbusSystemServer](#IHidbusSystemServer "wikilink").
 
 ## NotificationLedPattern
 
@@ -819,6 +824,18 @@ The layout of cmd\_argdata is as follows:
 | 0x2B   | 0x8  | Set to an input value, which is hard-coded 0. |
 | 0x33   | 0x2  | Set to value 0.                               |
 | 0x35   | 0x1  | Set to value 1.                               |
+
+## IHidbusSystemServer
+
+This is "nn::hidbus::IHidbusSystemServer".
+
+This was added with \[5.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 500 |      |
+| 501 |      |
+| 502 |      |
 
 # hid:tmp
 
@@ -1101,6 +1118,7 @@ This is "nn::xcd::detail::ISystemServer".
 | 3   | SetMcuState                       |
 | 4   | GetMcuVersionForNfc               |
 | 5   | CheckNfcDevicePower               |
+| 6   | \[5.0.0+\]                        |
 | 10  | SetNfcEvent                       |
 | 11  | GetNfcInfo                        |
 | 12  | StartNfcDiscovery                 |
@@ -1115,12 +1133,17 @@ This is "nn::xcd::detail::ISystemServer".
 | 101 | GetAwakeTriggerReasonForLeftRail  |
 | 102 | GetAwakeTriggerReasonForRightRail |
 
+\[5.0.0+\] SetDataFormat, SetMcuState, and ClearMifareKey: now takes a
+total of 0xC-bytes of input instead of 0x10.
+
 \[6.0.0+\]: The buffer type used by GetNfcInfo is now 0x32 instead of
 0x1A.
 
 # hidbus
 
 This is "nn::hidbus::IHidbusServer".
+
+This was added with \[5.0.0+\].
 
 | Cmd                | Name                             |
 | ------------------ | -------------------------------- |

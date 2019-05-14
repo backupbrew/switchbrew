@@ -918,7 +918,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1053 || [5.0.0+] GetSixAxisSensorAccurateUserCalibrationState
 |-
-| 1100 || [5.0.0+] GetHidbusSystemServiceObject
+| 1100 || [5.0.0+] [[#GetHidbusSystemServiceObject]]
 |-
 | 1120 || [6.0.0+] SetFirmwareHotfixUpdateSkipEnabled
 |-
@@ -959,6 +959,9 @@ Takes an input [[#NotificationLedPattern]] and an u64 '''UniquePadId''', no outp
 The specified controller must have a HOME button.
 
 This sends subcommand 0x38 to the specified controller, for setting the pattern for the HOME button notification LED. The input structure is converted to the format used by this [https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/bluetooth_hid_subcommands_notes.md#subcommand-0x38-set-home-light subcommand].
+
+== GetHidbusSystemServiceObject ==
+No input, returns an [[#IHidbusSystemServer]].
 
 == NotificationLedPattern ==
 {| class="wikitable" border="1"
@@ -1135,6 +1138,22 @@ The layout of cmd_argdata is as follows:
 | 0x33 || 0x2 || Set to value 0.
 |-
 | 0x35 || 0x1 || Set to value 1.
+|}
+
+== IHidbusSystemServer ==
+This is "nn::hidbus::IHidbusSystemServer".
+
+This was added with [5.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 500 || 
+|-
+| 501 || 
+|-
+| 502 || 
 |}
 
 = hid:tmp =
@@ -1424,6 +1443,8 @@ This is "nn::xcd::detail::ISystemServer".
 |-
 | 5 || CheckNfcDevicePower
 |-
+| 6 || [5.0.0+]
+|-
 | 10 || SetNfcEvent
 |-
 | 11 || GetNfcInfo
@@ -1451,10 +1472,14 @@ This is "nn::xcd::detail::ISystemServer".
 | 102 || GetAwakeTriggerReasonForRightRail
 |}
 
+[5.0.0+] SetDataFormat, SetMcuState, and ClearMifareKey: now takes a total of 0xC-bytes of input instead of 0x10.
+
 [6.0.0+]: The buffer type used by GetNfcInfo is now 0x32 instead of 0x1A.
 
 = hidbus =
 This is "nn::hidbus::IHidbusServer".
+
+This was added with [5.0.0+].
 
 {| class="wikitable" border="1"
 |-
