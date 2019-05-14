@@ -14,7 +14,7 @@ Shaders emitted by Nvidia's compiler include a branching instruction pointing to
 == Registers ==
 Maxwell GPUs have 254 type-less general purpose registers and one special register with id 255, ''nvdisasm'' shows it as RZ and ''envydis'' as 0x0. Writing here is a no-op unless there are side effects. Reading from RZ returns zero. The fewer registers a shader uses, the more it can be parallelized.
 
-General purpose registers or GPRs are 32 bits long and are the same for all operations, these are given meaning on the instructions. Half float instructions are SIMD and operate on 16 bit pairs, meanwhile double instructions take two registers to operate. uint64 instructions are read two subsequent registers but operate on individual uint32 values extending their domain through the carry flag.
+General purpose registers or GPRs are 32 bits long and are the same for all operations, these are given meaning on the instructions. Half float instructions are SIMD and operate on 16 bit pairs, meanwhile double instructions take two registers to operate. uint64 values are emulated using uint32 instructions extending their domain through condition codes; when an instruction has to read an uint64 value it reads two subsequent registers.
 
 It is a common technique to read or write subsequent registers with a single instruction. For example TEXS (used to sample a texture) reads the texture coordinates from Ra and Ra+1, although it gets more complex with other layouts like 3D textures (it's not Ra+2). The result of the sample is given in an Rd and their subsequent registers.
 

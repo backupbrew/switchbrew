@@ -40,9 +40,10 @@ parallelized.
 General purpose registers or GPRs are 32 bits long and are the same for
 all operations, these are given meaning on the instructions. Half float
 instructions are SIMD and operate on 16 bit pairs, meanwhile double
-instructions take two registers to operate. uint64 instructions are read
-two subsequent registers but operate on individual uint32 values
-extending their domain through the carry flag.
+instructions take two registers to operate. uint64 values are emulated
+using uint32 instructions extending their domain through condition
+codes; when an instruction has to read an uint64 value it reads two
+subsequent registers.
 
 It is a common technique to read or write subsequent registers with a
 single instruction. For example TEXS (used to sample a texture) reads
