@@ -518,16 +518,18 @@ This was added with [8.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetRtcTime
 |-
-| 1 ||
+| 1 || SetRtcTime
 |-
 | 2 ||
 |-
-| 3 ||
+| 3 || GetRtcResetDetected
 |-
-| 4 ||
+| 4 || ClearRtcResetDetected
 |}
+
+Commands 0, 1, 2, 4 call the same internal functions as bpc, except they take an extra u32 [[Bus_services#Known_Devices_2|device code]], where bpc:r hardcodes 0x3B000001 (max77620_rtc0).
 
 = time:u, time:a, time:s =
 This is "nn::timesrv::detail::service::IStaticService".

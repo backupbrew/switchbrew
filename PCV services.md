@@ -334,13 +334,18 @@ Takes in a voltage in microvolts and sets the LDO to this voltage.
 
 This was added with \[8.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | GetRtcTime            |
+| 1   | SetRtcTime            |
+| 2   |                       |
+| 3   | GetRtcResetDetected   |
+| 4   | ClearRtcResetDetected |
+
+Commands 0, 1, 2, 4 call the same internal functions as bpc, except they
+take an extra u32 [device
+code](Bus%20services#Known%20Devices%202.md##Known_Devices_2 "wikilink"),
+where bpc:r hardcodes 0x3B000001 (max77620\_rtc0).
 
 # time:u, time:a, time:s
 
