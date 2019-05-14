@@ -133,6 +133,7 @@ This is "nn::audio::detail::IAudioInManager".
 | 2   | \[3.0.0+\] ListAudioInsAuto         |
 | 3   | \[3.0.0+\] OpenAudioInAuto          |
 | 4   | \[3.0.0+\] ListAudioInsAutoFiltered |
+| 5   | \[5.0.0+\]                          |
 
 ## IAudioIn
 
