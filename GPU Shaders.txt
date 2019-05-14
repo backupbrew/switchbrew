@@ -21,7 +21,7 @@ It is a common technique to read or write subsequent registers with a single ins
 TODO Add nvdisasm example
 
 == Predicates ==
-There are 5 general purpose "1-bit" predicates. These can be used to conditionally execute a given instructions. There are 2 more predicates which evaluate as always true and always false.
+There are 6 general purpose "1-bit" predicates. These can be used to conditionally execute a given instructions. There is an extra predicate that always evaluates as true (and false when negated), writing here is a no-op unless there are side-effects. It is shown as ''PT'' in ''nvdisasm''.
 
 Most of the time predicates can be negated.
 
