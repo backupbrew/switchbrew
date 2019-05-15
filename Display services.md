@@ -95,6 +95,8 @@ buffer, and two type-0x46 output buffers, returns 3 output u64s.
 be at least 0x7D000. The requirements for the type-0x46 buffers are the
 same as [\#Cmd1101](#Cmd1101 "wikilink").
 
+\[5.0.0+\] Now takes a total of 0x68-bytes of input instead of 0x30.
+
 ## Cmd1107
 
 Takes a 0x40-byte input struct, two input u64s **width**/**height**, a
@@ -105,6 +107,8 @@ buffer, and a type-0x45 input buffer, returns 3 output u64s.
 [\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
 be at least 0x7D000. The size of the type-0x45 buffer must be at least
 0x384000.
+
+\[5.0.0+\] Now takes a total of 0x68-bytes of input instead of 0x30.
 
 # caps:ss
 
@@ -117,6 +121,7 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with
 | 202 |            |
 | 203 | \[3.0.0+\] |
 | 204 | \[3.0.0+\] |
+| 208 | \[5.0.0+\] |
 
 # caps:su
 
@@ -539,6 +544,12 @@ This is "nn::visrv::sf::IManagerDisplayService".
 | 8296 | \[4.0.0+\] SetDetachedSharedFrameBufferSubImage            |
 | 8297 | \[4.0.0+\] GetSharedFrameBufferContentParameter            |
 | 8298 | \[5.0.0+\] ExpandStartupLogoOnSharedFrameBuffer            |
+
+\[5.0.0+\] SetDetachedSharedFrameBufferImage now takes an additional
+0x10-bytes of input. CopyDetachedSharedFrameBufferImage now takes an
+additional 0x18-bytes of input. SetDetachedSharedFrameBufferSubImage now
+takes an additional 0x10-bytes of input, and the buffer type was changed
+from 0x5 to 0x45.
 
 # DisplayInfo
 
