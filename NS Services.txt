@@ -411,6 +411,8 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |-
 | 7989 || [5.1.0+] Returns an output [[#IReadOnlyApplicationControlDataInterface]].
 |-
+| 7991 || [5.0.0+] Returns an output [[#IReadOnlyApplicationRecordInterface]].
+|-
 | 7992 || [4.0.0+] [[#IECommerceInterface|GetECommerceInterface]]
 |-
 | 7993 || [4.0.0+] [[#IApplicationVersionInterface|GetApplicationVersionInterface]]
@@ -665,7 +667,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 508 || [3.0.0+] GetLastGameCardMountFailureResult
 |-
-| 509 || ListApplicationIdOnGameCard
+| 509 || [5.0.0+] ListApplicationIdOnGameCard
 |-
 | 600 || CountApplicationContentMeta
 |-
@@ -721,7 +723,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 909 || [3.0.0+] WithdrawCleanupAddOnContentsWithNoRightsRecommendation
 |-
-| 910 || [?+] HasApplicationRecord
+| 910 || [5.0.0+] HasApplicationRecord
 |-
 | 911 || [5.1.0+] SetPreInstalledApplication
 |-
@@ -733,9 +735,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1002 || [3.0.0+] RequestVerifyAddOnContentsRights
 |-
-| 1003 || RequestVerifyApplication
+| 1003 || [5.0.0+] RequestVerifyApplication
 |-
-| 1004 || CorruptContentForDebug
+| 1004 || [5.0.0+] CorruptContentForDebug
 |-
 | 1200 || NeedsUpdateVulnerability
 |-
@@ -755,7 +757,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1307 || [?.?.?-5.1.0] TryDeleteRunningApplicationContentEntities
 |-
-| 1308 || [?+] DeleteApplicationCompletelyForDebug
+| 1308 || [5.0.0+] DeleteApplicationCompletelyForDebug
 |-
 | 1309 || [6.0.0+] CleanupUnavailableAddOnContents
 |-
@@ -797,7 +799,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1901 || [4.0.0+] RequestDownloadApplicationPrepurchasedRights
 |-
-| 1902 || GetApplicationTicketInfo
+| 1902 || [5.0.0+] GetApplicationTicketInfo
 |-
 | 2000 || [4.0.0+] GetSystemDeliveryInfo
 |-
@@ -835,7 +837,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2017 || [4.0.0+] RecoverDownloadTask
 |-
-| 2018 || [?+] GetApplicationDeliveryInfoHash
+| 2018 || [5.0.0+] GetApplicationDeliveryInfoHash
 |-
 | 2050 || [6.0.0+] GetApplicationRightsOnClient
 |-
@@ -964,7 +966,7 @@ This is "nn::ns::detail::IDocumentInterface".
 |-
 | 23 || ResolveApplicationContentPath
 |-
-| 92 || [?+] GetRunningApplicationProgramId
+| 92 || [5.0.0+] GetRunningApplicationProgramId
 |-
 |}
 
@@ -993,6 +995,18 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 | 709 || [4.0.0+] TriggerDynamicCommitEvent
 |-
+|}
+
+=== IReadOnlyApplicationRecordInterface ===
+This is "nn::ns::detail::IReadOnlyApplicationRecordInterface".
+
+This was added with [5.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
 |}
 
 === IReadOnlyApplicationControlDataInterface ===

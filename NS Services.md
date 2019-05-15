@@ -269,6 +269,7 @@ is likely a permissions check for service+command.
 | ---- | -------------------------------------------------------------------------------------------------------------------------------- |
 | 7988 | \[6.0.0+\] Returns an output [\#IDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
 | 7989 | \[5.1.0+\] Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
+| 7991 | \[5.0.0+\] Returns an output [\#IReadOnlyApplicationRecordInterface](#IReadOnlyApplicationRecordInterface "wikilink").           |
 | 7992 | \[4.0.0+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                                              |
 | 7993 | \[4.0.0+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                            |
 | 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                                   |
@@ -403,7 +404,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 506                  | \[3.0.0+\] IsGameCardInserted                                                                      |
 | 507                  | \[3.0.0+\] EnsureGameCardAccess                                                                    |
 | 508                  | \[3.0.0+\] GetLastGameCardMountFailureResult                                                       |
-| 509                  | ListApplicationIdOnGameCard                                                                        |
+| 509                  | \[5.0.0+\] ListApplicationIdOnGameCard                                                             |
 | 600                  | CountApplicationContentMeta                                                                        |
 | 601                  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                 |
 | 602                  | \[2.0.0-5.1.0\] ListAvailableAddOnContent                                                          |
@@ -431,14 +432,14 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 907                  | WithdrawApplicationUpdateRequest                                                                   |
 | 908                  | ListApplicationRecordInstalledContentMeta                                                          |
 | 909                  | \[3.0.0+\] WithdrawCleanupAddOnContentsWithNoRightsRecommendation                                  |
-| 910                  | \[?+\] HasApplicationRecord                                                                        |
+| 910                  | \[5.0.0+\] HasApplicationRecord                                                                    |
 | 911                  | \[5.1.0+\] SetPreInstalledApplication                                                              |
 | 912                  | \[5.1.0+\] ClearPreInstalledApplicationFlag                                                        |
 | 1000                 | RequestVerifyApplicationDeprecated                                                                 |
 | 1001                 | CorruptApplicationForDebug                                                                         |
 | 1002                 | \[3.0.0+\] RequestVerifyAddOnContentsRights                                                        |
-| 1003                 | RequestVerifyApplication                                                                           |
-| 1004                 | CorruptContentForDebug                                                                             |
+| 1003                 | \[5.0.0+\] RequestVerifyApplication                                                                |
+| 1004                 | \[5.0.0+\] CorruptContentForDebug                                                                  |
 | 1200                 | NeedsUpdateVulnerability                                                                           |
 | 1300                 | IsAnyApplicationEntityInstalled                                                                    |
 | 1301                 | DeleteApplicationContentEntities                                                                   |
@@ -448,7 +449,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1305                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationEntity                                                  |
 | 1306                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationCompletely                                              |
 | 1307                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationContentEntities                                         |
-| 1308                 | \[?+\] DeleteApplicationCompletelyForDebug                                                         |
+| 1308                 | \[5.0.0+\] DeleteApplicationCompletelyForDebug                                                     |
 | 1309                 | \[6.0.0+\] CleanupUnavailableAddOnContents                                                         |
 | 1400                 | PrepareShutdown                                                                                    |
 | 1500                 | FormatSdCard                                                                                       |
@@ -469,7 +470,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1803                 | \[3.0.0+\] ListNotificationTask                                                                    |
 | 1900                 | \[3.0.0+\] IsActiveAccount                                                                         |
 | 1901                 | \[4.0.0+\] RequestDownloadApplicationPrepurchasedRights                                            |
-| 1902                 | GetApplicationTicketInfo                                                                           |
+| 1902                 | \[5.0.0+\] GetApplicationTicketInfo                                                                |
 | 2000                 | \[4.0.0+\] GetSystemDeliveryInfo                                                                   |
 | 2001                 | \[4.0.0+\] SelectLatestSystemDeliveryInfo                                                          |
 | 2002                 | \[4.0.0+\] VerifyDeliveryProtocolVersion                                                           |
@@ -488,7 +489,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2015                 | \[4.0.0+\] CompareSystemDeliveryInfo                                                               |
 | 2016                 | \[4.0.0+\] ListNotCommittedContentMeta                                                             |
 | 2017                 | \[4.0.0+\] RecoverDownloadTask                                                                     |
-| 2018                 | \[?+\] GetApplicationDeliveryInfoHash                                                              |
+| 2018                 | \[5.0.0+\] GetApplicationDeliveryInfoHash                                                          |
 | 2050                 | \[6.0.0+\] GetApplicationRightsOnClient                                                            |
 | 2100                 | \[6.0.0+\] GetApplicationTerminateResult                                                           |
 | 2101                 | \[6.0.0+\] GetRawApplicationTerminateResult                                                        |
@@ -562,12 +563,12 @@ This is "nn::ns::detail::IContentManagementInterface".
 
 This is "nn::ns::detail::IDocumentInterface".
 
-| Cmd | Name                                  |
-| --- | ------------------------------------- |
-| 21  | GetApplicationContentPath             |
-| 23  | ResolveApplicationContentPath         |
-| 92  | \[?+\] GetRunningApplicationProgramId |
-|     |                                       |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 21  | GetApplicationContentPath                 |
+| 23  | ResolveApplicationContentPath             |
+| 92  | \[5.0.0+\] GetRunningApplicationProgramId |
+|     |                                           |
 
 ### IDownloadTaskInterface
 
@@ -585,6 +586,16 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 | 708 | \[4.0.0+\] DisableAutoCommit                       |
 | 709 | \[4.0.0+\] TriggerDynamicCommitEvent               |
 |     |                                                    |
+
+### IReadOnlyApplicationRecordInterface
+
+This is "nn::ns::detail::IReadOnlyApplicationRecordInterface".
+
+This was added with \[5.0.0+\].
+
+| Cmd | Name | Notes |
+| --- | ---- | ----- |
+| 0   |      |       |
 
 ### IReadOnlyApplicationControlDataInterface
 
