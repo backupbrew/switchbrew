@@ -206,6 +206,8 @@ This is "nn::nim::detail::INetworkInstallManager".
 
 [3.0.0+] GetSystemUpdateTaskInfo now returns an additional 0x10-bytes of output. GetNetworkInstallTaskInfo now returns an additional 0x18-bytes of output. GetApplyDeltaTaskInfo now returns an additional 0x10-bytes of output.
 
+[5.0.0+] GetSystemUpdateTaskInfo now returns an additional 8-bytes of output. RequestGameCardRegistrationStatus/RequestRegisterGameCard removed 8-bytes of input, and now takes an additional type-0x5 input buffer.
+
 [8.0.0+] Cmd76 now takes an additional 0x8-bytes of input.
 
 == DestroySystemUpdateTask ==
