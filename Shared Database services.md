@@ -125,6 +125,8 @@ This is "nn::mii::detail::IDatabaseService".
 
 This is "nn::mii::detail::IImageDatabaseService".
 
+This was added with \[5.0.0+\].
+
 | Cmd | Name             |
 | --- | ---------------- |
 | 0   | Initialize       |
@@ -177,7 +179,7 @@ This is "nn::pdm::detail::IQueryService".
 | 10                |            |
 | 11                | \[4.0.0+\] |
 | 12                | \[4.0.0+\] |
-| 13                |            |
+| 13                | \[5.0.0+\] |
 | 14                | \[6.0.0+\] |
 | 15                | \[6.0.0+\] |
 | 16                | \[6.0.0+\] |

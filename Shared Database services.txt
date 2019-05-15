@@ -154,6 +154,8 @@ This is "nn::mii::detail::IDatabaseService".
 = miiimg =
 This is "nn::mii::detail::IImageDatabaseService".
 
+This was added with [5.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -246,7 +248,7 @@ This is "nn::pdm::detail::IQueryService".
 |-
 | 12 || [4.0.0+]
 |-
-| 13 || 
+| 13 || [5.0.0+]
 |-
 | 14 || [6.0.0+]
 |-
