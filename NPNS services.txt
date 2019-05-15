@@ -23,7 +23,7 @@ This is "nn::npns::INpnsUser".
 |-
 | 25 || QueryIsTokenValid
 |-
-| 26 || [6.0.0+] ListenToMyApplicationId
+| 26 || [5.0.0+] ListenToMyApplicationId
 |-
 | 101 || Suspend
 |-
@@ -43,6 +43,8 @@ This is "nn::npns::INpnsUser".
 |-
 | 153 || [8.0.0+] GetDropEventWithHandover
 |}
+
+[5.0.0+] CreateToken/DestroyToken now takes an additional 8-bytes of input and a PID.
 
 == CreateNotificationReceiver ==
 Returns an [[#INotificationReceiver]].
@@ -102,6 +104,8 @@ This is "nn::npns::INpnsSystem".
 |-
 | 25 || QueryIsTokenValid
 |-
+| 26 || [5.0.0+]
+|-
 | 31 || UploadTokenToBaaS
 |-
 | 32 || DestroyTokenForBaaS
@@ -142,5 +146,7 @@ This is "nn::npns::INpnsSystem".
 |-
 | 202 || [3.0.0+] RequestChangeStateForceAsync
 |}
+
+[5.0.0+] CreateToken/DestroyToken now takes an additional 8-bytes of input and a PID.
 
 [[Category:Services]]

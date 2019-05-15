@@ -13,7 +13,7 @@ This is "nn::npns::INpnsUser".
 | 21  | CreateToken                                                                       |
 | 23  | DestroyToken                                                                      |
 | 25  | QueryIsTokenValid                                                                 |
-| 26  | \[6.0.0+\] ListenToMyApplicationId                                                |
+| 26  | \[5.0.0+\] ListenToMyApplicationId                                                |
 | 101 | Suspend                                                                           |
 | 102 | Resume                                                                            |
 | 103 | GetState                                                                          |
@@ -23,6 +23,9 @@ This is "nn::npns::INpnsUser".
 | 151 | \[8.0.0+\] GetStateWithHandover                                                   |
 | 152 | \[8.0.0+\] GetStateChangeEventWithHandover                                        |
 | 153 | \[8.0.0+\] GetDropEventWithHandover                                               |
+
+\[5.0.0+\] CreateToken/DestroyToken now takes an additional 8-bytes of
+input and a PID.
 
 ## CreateNotificationReceiver
 
@@ -62,6 +65,7 @@ This is "nn::npns::INpnsSystem".
 | 23  | DestroyToken                                                                      |
 | 24  | DestroyTokenWithApplicationId                                                     |
 | 25  | QueryIsTokenValid                                                                 |
+| 26  | \[5.0.0+\]                                                                        |
 | 31  | UploadTokenToBaaS                                                                 |
 | 32  | DestroyTokenForBaaS                                                               |
 | 33  | \[7.0.0+\] CreateTokenForBaas                                                     |
@@ -82,5 +86,8 @@ This is "nn::npns::INpnsSystem".
 | 153 | \[8.0.0+\] GetDropEventWithHandover                                               |
 | 201 | \[3.0.0+\] RequestChangeStateForceTimed                                           |
 | 202 | \[3.0.0+\] RequestChangeStateForceAsync                                           |
+
+\[5.0.0+\] CreateToken/DestroyToken now takes an additional 8-bytes of
+input and a PID.
 
 [Category:Services](Category:Services "wikilink")
