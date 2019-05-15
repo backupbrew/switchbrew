@@ -83,8 +83,7 @@ If set to 0x01, this register disables fuse programming.
 #### FUSE\_WRITE\_ACCESS
 
 If set to 0x01, this register disables software writes to the fuse
-driver
-registers.
+driver registers.
 
 ### Cache registers
 
@@ -302,8 +301,7 @@ units it stores a single value (key generation).
 #### FUSE\_RESERVED\_ODM3
 
 This stores an hardware ID in original launch units, but in patched
-units it's
-empty.
+units it's empty.
 
 #### FUSE\_RESERVED\_ODM4
 
@@ -438,8 +436,7 @@ The bootrom reads these fuses in order to initialize the IPATCH
 hardware, which allows overriding data returned for code and data
 fetches done by BPMP.
 
-The following represents the patch data dumped from a Switch
-    console:
+The following represents the patch data dumped from a Switch console:
 
     RAM:00000000 ; =============== S U B R O U T I N E =======================================
     RAM:00000000
@@ -934,8 +931,7 @@ instead of restoring it from the saved SE context.
 The first bootloader verifies
 [FUSE\_RESERVED\_ODM7](#FUSE_RESERVED_ODM7 "wikilink") to prevent
 downgrading. How many fuses are expected to be burnt depends the
-device's unit type as
-below.
+device's unit type as below.
 
 | System version | Expected number of burnt fuses (retail) | Expected number of burnt fuses (non-retail) |
 | -------------- | --------------------------------------- | ------------------------------------------- |
@@ -947,7 +943,7 @@ below.
 | 5.0.0-5.1.0    | 6                                       | 1                                           |
 | 6.0.0-6.1.0    | 7                                       | 1                                           |
 | 6.2.0          | 8                                       | 1                                           |
-| 7.0.0-8.0.0    | 9                                       | 1                                           |
+| 7.0.0-8.0.1    | 9                                       | 1                                           |
 
 If too many fuses are burnt the bootloader will panic immediately.
 
