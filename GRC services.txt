@@ -9,14 +9,18 @@ This is "nn::grcsrv::IGrcService".
 |-
 ! Cmd || Name || Notes
 |-
-| 1 || OpenContinuousRecorder || Takes a total of 0x48-bytes of input and a handle, returns an [[#IContinuousRecorder]].
+| 1 || OpenContinuousRecorder || Takes a total of 0x28-bytes of input and a handle, returns an [[#IContinuousRecorder]].
 |-
 | 2 || OpenGameMovieTrimmer || Takes a total of 0x8-bytes of input and a handle, returns an [[#IGameMovieTrimmer]].
 |-
-| 3 || || Takes a total of 0x8-bytes of input and a handle, returns an [[#IOffscreenRecorder]].
+| 3 || [5.0.0+] || Takes a total of 0x8-bytes of input and a handle, returns an [[#IOffscreenRecorder]].
 |-
-| 101 || || Takes a total of 0x10-bytes of input, returns an [[#IMovieMaker]].
+| 101 || [5.0.0+] || Takes a total of 0x10-bytes of input, returns an [[#IMovieMaker]].
+|-
+| 9903 || [5.0.0+] || Takes 8-bytes of input, no output.
 |}
+
+[5.0.0+] OpenContinuousRecorder now takes an additional 0x20-bytes of input.
 
 == IContinuousRecorder ==
 This is "nn::grcsrv::IContinuousRecorder".
@@ -37,8 +41,10 @@ This is "nn::grcsrv::IContinuousRecorder".
 |-
 | 13 ||
 |-
-| 14 ||
+| 14 || [5.0.0+]
 |}
+
+[5.0.0+] Cmd11 now takes a total of 0x40-bytes of input.
 
 [8.0.0+] Cmd11/cmd14 no longer take any rawdata input, these now take a type-0x15 input buffer.
 
@@ -81,6 +87,8 @@ Retrieves video data. Takes u32 "stream" (0: video, 1: audio), returns u32 (num_
 = IOffscreenRecorder =
 This is "nn::grcsrv::IOffscreenRecorder".
 
+This was added with [5.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -92,6 +100,8 @@ This is "nn::grcsrv::IOffscreenRecorder".
 
 = IMovieMaker =
 This is "nn::grcsrv::IMovieMaker".
+
+This was added with [5.0.0+].
 
 {| class="wikitable" border="1"
 |-

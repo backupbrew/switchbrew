@@ -7,29 +7,34 @@ ioctls.
 
 # grc:c
 
-This is
-"nn::grcsrv::IGrcService".
+This is "nn::grcsrv::IGrcService".
 
-| Cmd | Name                   | Notes                                                                                                                   |
-| --- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 1   | OpenContinuousRecorder | Takes a total of 0x48-bytes of input and a handle, returns an [\#IContinuousRecorder](#IContinuousRecorder "wikilink"). |
-| 2   | OpenGameMovieTrimmer   | Takes a total of 0x8-bytes of input and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").      |
-| 3   |                        | Takes a total of 0x8-bytes of input and a handle, returns an [\#IOffscreenRecorder](#IOffscreenRecorder "wikilink").    |
-| 101 |                        | Takes a total of 0x10-bytes of input, returns an [\#IMovieMaker](#IMovieMaker "wikilink").                              |
+| Cmd  | Name                   | Notes                                                                                                                   |
+| ---- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1    | OpenContinuousRecorder | Takes a total of 0x28-bytes of input and a handle, returns an [\#IContinuousRecorder](#IContinuousRecorder "wikilink"). |
+| 2    | OpenGameMovieTrimmer   | Takes a total of 0x8-bytes of input and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").      |
+| 3    | \[5.0.0+\]             | Takes a total of 0x8-bytes of input and a handle, returns an [\#IOffscreenRecorder](#IOffscreenRecorder "wikilink").    |
+| 101  | \[5.0.0+\]             | Takes a total of 0x10-bytes of input, returns an [\#IMovieMaker](#IMovieMaker "wikilink").                              |
+| 9903 | \[5.0.0+\]             | Takes 8-bytes of input, no output.                                                                                      |
+
+\[5.0.0+\] OpenContinuousRecorder now takes an additional 0x20-bytes of
+input.
 
 ## IContinuousRecorder
 
 This is "nn::grcsrv::IContinuousRecorder".
 
-| Cmd | Name |
-| --- | ---- |
-| 1   |      |
-| 2   |      |
-| 10  |      |
-| 11  |      |
-| 12  |      |
-| 13  |      |
-| 14  |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 1   |            |
+| 2   |            |
+| 10  |            |
+| 11  |            |
+| 12  |            |
+| 13  |            |
+| 14  | \[5.0.0+\] |
+
+\[5.0.0+\] Cmd11 now takes a total of 0x40-bytes of input.
 
 \[8.0.0+\] Cmd11/cmd14 no longer take any rawdata input, these now take
 a type-0x15 input buffer.
@@ -49,8 +54,7 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 
 This is "nn::grcsrv::IRemoteVideoTransfer".
 
-Added with
-[6.0.0](6.0.0.md "wikilink").
+Added with [6.0.0](6.0.0.md "wikilink").
 
 | Cmd | Name | Notes                                                                                                         |
 | --- | ---- | ------------------------------------------------------------------------------------------------------------- |
@@ -71,8 +75,9 @@ audio, and multiple threads to read out both streams at the same time.
 
 # IOffscreenRecorder
 
-This is
-"nn::grcsrv::IOffscreenRecorder".
+This is "nn::grcsrv::IOffscreenRecorder".
+
+This was added with \[5.0.0+\].
 
 | Cmd | Name | Notes                                                                        |
 | --- | ---- | ---------------------------------------------------------------------------- |
@@ -81,8 +86,9 @@ This is
 
 # IMovieMaker
 
-This is
-"nn::grcsrv::IMovieMaker".
+This is "nn::grcsrv::IMovieMaker".
+
+This was added with \[5.0.0+\].
 
 | Cmd | Name                                                                                                   |
 | --- | ------------------------------------------------------------------------------------------------------ |
