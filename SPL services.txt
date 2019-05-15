@@ -148,7 +148,7 @@ Takes one type-9 (X descriptor) buffer ('''enc_privk_in_buf'''), a 16-byte KEK (
 
 Decrypts '''enc_privk_in_buf''' with a key generated from '''key_x''' and '''key_y''' and imports it for later usage.
 
-[5.0.0+] This now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
+[5.0.0+] The '''version''' param was removed, and this now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
 
 == DecryptLotusMessage ==
 Takes 3 type-9 (X descriptor) buffers ('''data_in_buf''', '''mod_in_buf''' and '''label_hash_in_buf''').
@@ -179,7 +179,7 @@ Decrypts '''enc_privk_in_buf''' into '''dec_privk_out_buf''' with a key generate
 
 Used by [[SSL_services|SSL]]-sysmodule for TLS client-privk.
 
-[5.0.0+] This now calls [[SMC#DecryptOrImportRsaPrivateKey|DecryptOrImportRsaPrivateKey SMC]] instead.
+[5.0.0+] The '''version''' param was removed, and this now calls [[SMC#DecryptOrImportRsaPrivateKey|DecryptOrImportRsaPrivateKey SMC]] instead.
 
 == DecryptAesKey ==
 Takes a 16-byte encrypted key ('''enc_key''') and two words ('''KeyGeneration''' and '''option''') as input.
@@ -211,7 +211,7 @@ Takes one type-9 (X descriptor) buffer (enc_privk_in_buf), a 16-byte KEK (key_x)
 
 Decrypts enc_privk_in_buf with a key generated from key_x and key_y and imports it for later usage.
 
-[5.0.0+] This now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
+[5.0.0+] The '''version''' param was removed, and this now calls [[SMC#ReEncryptRsaPrivateKey|ReEncryptRsaPrivateKey SMC]] instead.
 
 == UnwrapTitleKey ==
 Wrapper for [[SMC#UnwrapTitleKey|UnwrapTitleKey SMC]].

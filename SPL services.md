@@ -149,7 +149,8 @@ Takes one type-9 (X descriptor) buffer (**enc\_privk\_in\_buf**), a
 Decrypts **enc\_privk\_in\_buf** with a key generated from **key\_x**
 and **key\_y** and imports it for later usage.
 
-\[5.0.0+\] This now calls [ReEncryptRsaPrivateKey
+\[5.0.0+\] The **version** param was removed, and this now calls
+[ReEncryptRsaPrivateKey
 SMC](SMC#ReEncryptRsaPrivateKey.md##ReEncryptRsaPrivateKey "wikilink")
 instead.
 
@@ -199,7 +200,8 @@ key generated from **key\_x** and **key\_y**.
 Used by [SSL](SSL%20services.md "wikilink")-sysmodule for TLS
 client-privk.
 
-\[5.0.0+\] This now calls [DecryptOrImportRsaPrivateKey
+\[5.0.0+\] The **version** param was removed, and this now calls
+[DecryptOrImportRsaPrivateKey
 SMC](SMC#DecryptOrImportRsaPrivateKey.md##DecryptOrImportRsaPrivateKey "wikilink")
 instead.
 
@@ -252,7 +254,8 @@ for normal keys or 1 for extended keys.
 Decrypts enc\_privk\_in\_buf with a key generated from key\_x and key\_y
 and imports it for later usage.
 
-\[5.0.0+\] This now calls [ReEncryptRsaPrivateKey
+\[5.0.0+\] The **version** param was removed, and this now calls
+[ReEncryptRsaPrivateKey
 SMC](SMC#ReEncryptRsaPrivateKey.md##ReEncryptRsaPrivateKey "wikilink")
 instead.
 
