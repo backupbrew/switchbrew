@@ -23,6 +23,8 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 16    | \[4.0.0+\]                                        |
 | 17    | \[4.0.0+\]                                        |
 | 18    | \[6.0.0+\]                                        |
+| 100   | \[5.0.0+\]                                        |
+| 101   | \[5.0.0+\]                                        |
 | 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot              |
 | 301   | GetLastThumbnail                                  |
 | 302   | \[4.0.0+\]                                        |
@@ -124,6 +126,8 @@ This was added with \[4.0.0+\].
 
 This is "nn::capsrv::sf::IAlbumApplicationService".
 
+This was added with \[5.0.0+\].
+
 | Cmd   | Name                                                                    |
 | ----- | ----------------------------------------------------------------------- |
 | 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink") |
@@ -147,6 +151,8 @@ Takes a total of 0x10-bytes of input and a PID, no output.
 ## IAlbumAccessorApplicationSession
 
 This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
+
+This was added with \[5.0.0+\].
 
 | Cmd  | Name                                  |
 | ---- | ------------------------------------- |
