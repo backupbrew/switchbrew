@@ -18,9 +18,9 @@ This is "nn::es::IETicketService".
 | 12   | \[6.0.0+\] ListPersonalizedTicketRightsIds (\[2.0.0-5.1.0\] ListPersonalizedTicket)     |
 | 13   | ListMissingPersonalizedTicket                                                           |
 | 14   | GetCommonTicketSize                                                                     |
-| 15   | \[2.0.0-?\] GetPersonalizedTicketSize                                                   |
+| 15   | \[2.0.0-4.1.0\] GetPersonalizedTicketSize                                               |
 | 16   | GetCommonTicketData                                                                     |
-| 17   | \[2.0.0-?\] GetPersonalizedTicketData                                                   |
+| 17   | \[2.0.0-4.1.0\] GetPersonalizedTicketData                                               |
 | 18   | OwnTicket                                                                               |
 | 19   | GetTicketInfo                                                                           |
 | 20   | ListLightTicketInfo                                                                     |
