@@ -51,6 +51,9 @@ This is "nn::pcie::detail::ISession".
 | 22  | \[4.0.0+\]             |
 | 23  | \[7.0.0+\]             |
 
+\[5.0.0+\] The buffer types for ReadBarRegion/WriteBarRegion were
+changed: 0x6 changed to 0x22, and 0x5 changed to 0x21.
+
 \[7.0.0+\] AcquireIrq now takes an additional 4-bytes of input, and no
 longer returns an output handle. SetAspmEnable now returns an output
 handle.
