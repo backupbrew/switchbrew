@@ -118,6 +118,8 @@ match btdrv.
 | 256                     | \[5.0.0+\] GetIsManufacturingMode                            |
 | 257                     | \[7.0.0+\] EmulateBluetoothCrash                             |
 
+Various cmdids were moved with \[4.0.0+\] and \[5.0.0+\].
+
 ## HidGetReportEventInfo
 
 No input, takes a type-0xA output buffer and returns 4-bytes of output.
