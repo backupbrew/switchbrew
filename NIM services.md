@@ -162,6 +162,8 @@ This is "nn::nim::detail::IShopServiceManager".
 
 This is "nn::nim::detail::IShopServiceAccessServerInterface".
 
+This was added with \[5.0.0+\].
+
 | Cmd | Name                                |
 | --- | ----------------------------------- |
 | 0   | CreateServerInterface               |
@@ -173,6 +175,8 @@ This is "nn::nim::detail::IShopServiceAccessServerInterface".
 
 This is "nn::nim::detail::IShopServiceAccessServer".
 
+This was added with \[5.0.0+\].
+
 | Cmd | Name                    |
 | --- | ----------------------- |
 | 0   | CreateAccessorInterface |
@@ -181,6 +185,8 @@ This is "nn::nim::detail::IShopServiceAccessServer".
 
 This is "nn::nim::detail::IShopServiceAccessor".
 
+This was added with \[5.0.0+\].
+
 | Cmd | Name                 |
 | --- | -------------------- |
 | 0   | CreateAsyncInterface |
@@ -188,6 +194,8 @@ This is "nn::nim::detail::IShopServiceAccessor".
 #### IShopServiceAsync
 
 This is "nn::nim::detail::IShopServiceAsync".
+
+This was added with \[5.0.0+\].
 
 | Cmd | Name         |
 | --- | ------------ |
