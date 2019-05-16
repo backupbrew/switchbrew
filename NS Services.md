@@ -315,7 +315,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 26                   | BeginInstallApplication                                                                            |
 | 27                   | DeleteApplicationRecord                                                                            |
 | 30                   | RequestApplicationUpdateInfo                                                                       |
-| \[?-3.0.2\] 31       |                                                                                                    |
+| \[1.0.0-3.0.2\] 31   |                                                                                                    |
 | 32                   | CancelApplicationDownload                                                                          |
 | 33                   | ResumeApplicationDownload                                                                          |
 | 35                   | UpdateVersionList                                                                                  |
@@ -446,9 +446,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1302                 | CleanupUnrecordedApplicationEntity                                                                 |
 | 1303                 | \[3.0.0+\] CleanupAddOnContentsWithNoRights                                                        |
 | 1304                 | \[3.0.0+\] DeleteApplicationContentEntity                                                          |
-| 1305                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationEntity                                                  |
-| 1306                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationCompletely                                              |
-| 1307                 | \[?.?.?-5.1.0\] TryDeleteRunningApplicationContentEntities                                         |
+| 1305                 | \[?.?.?-?.?.?\] TryDeleteRunningApplicationEntity                                                  |
+| 1306                 | \[?.?.?-?.?.?\] TryDeleteRunningApplicationCompletely                                              |
+| 1307                 | \[?.?.?-?.?.?\] TryDeleteRunningApplicationContentEntities                                         |
 | 1308                 | \[5.0.0+\] DeleteApplicationCompletelyForDebug                                                     |
 | 1309                 | \[6.0.0+\] CleanupUnavailableAddOnContents                                                         |
 | 1400                 | PrepareShutdown                                                                                    |
