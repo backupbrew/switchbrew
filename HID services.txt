@@ -1337,7 +1337,7 @@ Used for USB HID devices.
 |-
 | 3 || || Takes an input u32, returns an [[#IReadSession]].
 |-
-| [?-2.3.0] 4 || || Takes an input u32, returns an [[#IWriteSession]].
+| [1.0.0-2.3.0] 4 || || Takes an input u32, returns an [[#IWriteSession]].
 |}
 
 == ICtrlSession ==

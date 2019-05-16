@@ -1034,13 +1034,13 @@ This is "nn::ahid::IServerSession".
 
 Used for USB HID devices.
 
-| Cmd           | Name | Notes                                                                        |
-| ------------- | ---- | ---------------------------------------------------------------------------- |
-| 0             |      | Takes an input s32, no output.                                               |
-| 1             |      | Takes an input s32, no output.                                               |
-| 2             |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
-| 3             |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
-| \[?-2.3.0\] 4 |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
+| Cmd               | Name | Notes                                                                        |
+| ----------------- | ---- | ---------------------------------------------------------------------------- |
+| 0                 |      | Takes an input s32, no output.                                               |
+| 1                 |      | Takes an input s32, no output.                                               |
+| 2                 |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
+| 3                 |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
+| \[1.0.0-2.3.0\] 4 |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
 
 ## ICtrlSession
 
