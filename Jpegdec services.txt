@@ -2,4 +2,11 @@ Jpegdec is a refactored sysmodule for handling all JPEG decoding associated with
 
 = caps:dc =
 
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 3001 || || Takes a total of 0x28-bytes of input, type-0x46 and type-0x5 buffers, and no output.
+|}
+
 [[Category:Services]]
