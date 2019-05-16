@@ -3,6 +3,8 @@ BCAT (Background Content Asymmetric synchronized delivery and Transmission) enco
 = bcat:a, bcat:m, bcat:u, bcat:s =
 These are "nn::bcat::detail::ipc::IServiceCreator".
 
+These were added with [2.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -13,15 +15,17 @@ These are "nn::bcat::detail::ipc::IServiceCreator".
 |-
 | 2 || CreateDeliveryCacheStorageServiceWithApplicationId
 |-
-| [?-2.3.0] 3 || 
+| [2.0.0-2.3.0] 3 || 
 |-
-| [?-2.3.0] 4 || 
+| [2.0.0-2.3.0] 4 || 
 |}
 
 Equivalent to 3DS BOSS(SpotPass). See [[BCAT_Content_Container|here]] for BCAT-content-container.
 
 == IBcatService ==
 This is "nn::bcat::detail::ipc::IBcatService".
+
+This was added with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -43,9 +47,9 @@ This is "nn::bcat::detail::ipc::IBcatService".
 |-
 | 30100 || SetPassphrase
 |-
-| [?-2.3.0] 30101 || 
+| [2.0.0-2.3.0] 30101 || 
 |-
-| [?-2.3.0] 30102 || 
+| [2.0.0-2.3.0] 30102 || 
 |-
 | 30200 || [3.0.0+] RegisterDeliveryTask
 |-
@@ -92,6 +96,8 @@ Takes a type-0x6 output buffer, returns a total of 4-bytes of output.
 === IDeliveryCacheProgressService ===
 This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
 
+This was added with [2.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -103,6 +109,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
 
 == IDeliveryCacheStorageService ==
 This is "nn::bcat::detail::ipc::IDeliveryCacheStorageService".
+
+This was added with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -117,6 +125,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheStorageService".
 
 === IDeliveryCacheFileService ===
 This is "nn::bcat::detail::ipc::IDeliveryCacheFileService".
+
+This was added with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -133,6 +143,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheFileService".
 
 === IDeliveryCacheDirectoryService ===
 This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
+
+This was added with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -171,6 +183,8 @@ Added with [8.0.0+].
 
 = <nowiki>news:a, news:c, news:m, news:p, news:v</nowiki> =
 These are <nowiki>"nn::news::detail::ipc::IServiceCreator"</nowiki>.
+
+On [1.0.0] these are <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>, see [[#INewsService]].
 
 {| class="wikitable" border="1"
 |-
@@ -213,6 +227,12 @@ This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
 | 30400 || [3.0.0+]
 |-
 | 30500 || [8.0.0+] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [[#IUnknown2]])
+|-
+| [1.0.0] 30900 || (No input, returns an [[#INewlyArrivedEventHolder]])
+|-
+| [1.0.0] 30901 || (No input, returns an [[#INewsDataService]])
+|-
+| [1.0.0] 30902 || (No input, returns an [[#INewsDatabaseService]])
 |-
 | 40100 || 
 |-
@@ -338,11 +358,15 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 |-
 | 30500 || [6.0.0+] GetLastUploadError
 |-
-| 40100 || IsUserAgreementCheckEnabled
+| 40100 || [2.0.0+] IsUserAgreementCheckEnabled
 |-
-| 40101 || SetUserAgreementCheckEnabled
+| 40101 || [2.0.0+] SetUserAgreementCheckEnabled
 |-
 | 90100 || [6.0.0+] ReadAllReportFiles ([1.0.0-5.1.0] GetStorageUsage)
+|-
+| [1.0.0] 90101 || 
+|-
+| [1.0.0] 90102 || 
 |-
 | [5.0.0-5.1.0] 90200 || 
 |-

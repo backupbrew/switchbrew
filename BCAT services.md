@@ -6,13 +6,15 @@ services.
 
 These are "nn::bcat::detail::ipc::IServiceCreator".
 
-| Cmd           | Name                                               |
-| ------------- | -------------------------------------------------- |
-| 0             | CreateBcatService                                  |
-| 1             | CreateDeliveryCacheStorageService                  |
-| 2             | CreateDeliveryCacheStorageServiceWithApplicationId |
-| \[?-2.3.0\] 3 |                                                    |
-| \[?-2.3.0\] 4 |                                                    |
+These were added with \[2.0.0+\].
+
+| Cmd               | Name                                               |
+| ----------------- | -------------------------------------------------- |
+| 0                 | CreateBcatService                                  |
+| 1                 | CreateDeliveryCacheStorageService                  |
+| 2                 | CreateDeliveryCacheStorageServiceWithApplicationId |
+| \[2.0.0-2.3.0\] 3 |                                                    |
+| \[2.0.0-2.3.0\] 4 |                                                    |
 
 Equivalent to 3DS BOSS(SpotPass). See
 [here](BCAT%20Content%20Container.md "wikilink") for
@@ -22,28 +24,30 @@ BCAT-content-container.
 
 This is "nn::bcat::detail::ipc::IBcatService".
 
-| Cmd               | Name                                                                                                    |
-| ----------------- | ------------------------------------------------------------------------------------------------------- |
-| 10100             | [\#RequestSyncDeliveryCache](#RequestSyncDeliveryCache "wikilink")                                      |
-| 10101             | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                                    |
-| 10200             | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                               |
-| 20100             | [\#RequestSyncDeliveryCacheWithApplicationId](#RequestSyncDeliveryCacheWithApplicationId "wikilink")    |
-| 20101             | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                                    |
-| 20300             | \[8.0.0+\] [\#GetDeliveryCacheStorageUpdateNotifier](#GetDeliveryCacheStorageUpdateNotifier "wikilink") |
-| 20301             | \[8.0.0+\] [\#RequestSuspendDeliveryTask](#RequestSuspendDeliveryTask "wikilink")                       |
-| 30100             | SetPassphrase                                                                                           |
-| \[?-2.3.0\] 30101 |                                                                                                         |
-| \[?-2.3.0\] 30102 |                                                                                                         |
-| 30200             | \[3.0.0+\] RegisterDeliveryTask                                                                         |
-| 30201             | \[3.0.0+\] UnregisterDeliveryTask                                                                       |
-| 30202             | \[3.0.0+\] BlockDeliveryTask                                                                            |
-| 30203             | \[3.0.0+\] UnblockDeliveryTask                                                                          |
-| 30300             | \[8.0.0+\] RegisterSystemApplicationDeliveryTasks                                                       |
-| 90100             | GetDeliveryTaskList                                                                                     |
-| 90200             | [\#GetDeliveryList](#GetDeliveryList "wikilink")                                                        |
-| 90201             | \[3.0.0+\] ClearDeliveryCacheStorage                                                                    |
-| 90202             | \[8.0.0+\] ClearDeliveryTaskSubscriptionStatus                                                          |
-| 90300             | \[3.0.0+\] GetPushNotificationLog                                                                       |
+This was added with \[2.0.0+\].
+
+| Cmd                   | Name                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------------------- |
+| 10100                 | [\#RequestSyncDeliveryCache](#RequestSyncDeliveryCache "wikilink")                                      |
+| 10101                 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                                    |
+| 10200                 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                               |
+| 20100                 | [\#RequestSyncDeliveryCacheWithApplicationId](#RequestSyncDeliveryCacheWithApplicationId "wikilink")    |
+| 20101                 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                                    |
+| 20300                 | \[8.0.0+\] [\#GetDeliveryCacheStorageUpdateNotifier](#GetDeliveryCacheStorageUpdateNotifier "wikilink") |
+| 20301                 | \[8.0.0+\] [\#RequestSuspendDeliveryTask](#RequestSuspendDeliveryTask "wikilink")                       |
+| 30100                 | SetPassphrase                                                                                           |
+| \[2.0.0-2.3.0\] 30101 |                                                                                                         |
+| \[2.0.0-2.3.0\] 30102 |                                                                                                         |
+| 30200                 | \[3.0.0+\] RegisterDeliveryTask                                                                         |
+| 30201                 | \[3.0.0+\] UnregisterDeliveryTask                                                                       |
+| 30202                 | \[3.0.0+\] BlockDeliveryTask                                                                            |
+| 30203                 | \[3.0.0+\] UnblockDeliveryTask                                                                          |
+| 30300                 | \[8.0.0+\] RegisterSystemApplicationDeliveryTasks                                                       |
+| 90100                 | GetDeliveryTaskList                                                                                     |
+| 90200                 | [\#GetDeliveryList](#GetDeliveryList "wikilink")                                                        |
+| 90201                 | \[3.0.0+\] ClearDeliveryCacheStorage                                                                    |
+| 90202                 | \[8.0.0+\] ClearDeliveryTaskSubscriptionStatus                                                          |
+| 90300                 | \[3.0.0+\] GetPushNotificationLog                                                                       |
 
 ### RequestSyncDeliveryCache
 
@@ -80,6 +84,8 @@ additional 4-bytes of output.
 
 This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
 
+This was added with \[2.0.0+\].
+
 | Cmd | Name     |
 | --- | -------- |
 | 0   | GetEvent |
@@ -88,6 +94,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheProgressService".
 ## IDeliveryCacheStorageService
 
 This is "nn::bcat::detail::ipc::IDeliveryCacheStorageService".
+
+This was added with \[2.0.0+\].
 
 | Cmd | Name                            |
 | --- | ------------------------------- |
@@ -99,6 +107,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheStorageService".
 
 This is "nn::bcat::detail::ipc::IDeliveryCacheFileService".
 
+This was added with \[2.0.0+\].
+
 | Cmd | Name      |
 | --- | --------- |
 | 0   | Open      |
@@ -109,6 +119,8 @@ This is "nn::bcat::detail::ipc::IDeliveryCacheFileService".
 ### IDeliveryCacheDirectoryService
 
 This is "nn::bcat::detail::ipc::IDeliveryCacheDirectoryService".
+
+This was added with \[2.0.0+\].
 
 | Cmd | Name     |
 | --- | -------- |
@@ -140,6 +152,9 @@ Added with \[8.0.0+\].
 
 These are "nn::news::detail::ipc::IServiceCreator".
 
+On \[1.0.0\] these are "nn::news::detail::ipc::INewsService", see
+[\#INewsService](#INewsService "wikilink").
+
 | Cmd | Name | Notes                                                                                    |
 | --- | ---- | ---------------------------------------------------------------------------------------- |
 | 0   |      | No input, returns an [\#INewsService](#INewsService "wikilink").                         |
@@ -152,23 +167,26 @@ These are "nn::news::detail::ipc::IServiceCreator".
 
 This is "nn::news::detail::ipc::INewsService".
 
-| Cmd   | Name                                                                                                                                     |
-| ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 10100 |                                                                                                                                          |
-| 20100 |                                                                                                                                          |
-| 30100 |                                                                                                                                          |
-| 30101 | \[3.0.0+\]                                                                                                                               |
-| 30110 | \[6.0.0+\]                                                                                                                               |
-| 30200 |                                                                                                                                          |
-| 30201 | \[8.0.0+\]                                                                                                                               |
-| 30300 |                                                                                                                                          |
-| 30400 | \[3.0.0+\]                                                                                                                               |
-| 30500 | \[8.0.0+\] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [\#IUnknown2](#IUnknown2 "wikilink")) |
-| 40100 |                                                                                                                                          |
-| 40101 | \[3.0.0+\]                                                                                                                               |
-| 40200 |                                                                                                                                          |
-| 40201 |                                                                                                                                          |
-| 90100 |                                                                                                                                          |
+| Cmd             | Name                                                                                                                                     |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 10100           |                                                                                                                                          |
+| 20100           |                                                                                                                                          |
+| 30100           |                                                                                                                                          |
+| 30101           | \[3.0.0+\]                                                                                                                               |
+| 30110           | \[6.0.0+\]                                                                                                                               |
+| 30200           |                                                                                                                                          |
+| 30201           | \[8.0.0+\]                                                                                                                               |
+| 30300           |                                                                                                                                          |
+| 30400           | \[3.0.0+\]                                                                                                                               |
+| 30500           | \[8.0.0+\] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [\#IUnknown2](#IUnknown2 "wikilink")) |
+| \[1.0.0\] 30900 | (No input, returns an [\#INewlyArrivedEventHolder](#INewlyArrivedEventHolder "wikilink"))                                                |
+| \[1.0.0\] 30901 | (No input, returns an [\#INewsDataService](#INewsDataService "wikilink"))                                                                |
+| \[1.0.0\] 30902 | (No input, returns an [\#INewsDatabaseService](#INewsDatabaseService "wikilink"))                                                        |
+| 40100           |                                                                                                                                          |
+| 40101           | \[3.0.0+\]                                                                                                                               |
+| 40200           |                                                                                                                                          |
+| 40201           |                                                                                                                                          |
+| 90100           |                                                                                                                                          |
 
 ## INewlyArrivedEventHolder
 
@@ -244,9 +262,11 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 | 30400                 | \[6.0.0+\] GetStatistics                                        |
 | 30401                 | \[6.0.0+\] GetThroughputHistory                                 |
 | 30500                 | \[6.0.0+\] GetLastUploadError                                   |
-| 40100                 | IsUserAgreementCheckEnabled                                     |
-| 40101                 | SetUserAgreementCheckEnabled                                    |
+| 40100                 | \[2.0.0+\] IsUserAgreementCheckEnabled                          |
+| 40101                 | \[2.0.0+\] SetUserAgreementCheckEnabled                         |
 | 90100                 | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
+| \[1.0.0\] 90101       |                                                                 |
+| \[1.0.0\] 90102       |                                                                 |
 | \[5.0.0-5.1.0\] 90200 |                                                                 |
 | \[5.0.0-5.1.0\] 90201 |                                                                 |
 | \[5.0.0-5.1.0\] 90300 |                                                                 |
