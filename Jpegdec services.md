@@ -1,5 +1,6 @@
-Jpegdec is a refactored sysmodule for handling all JPEG decoding
-associated with [capture services](Capture%20services.md "wikilink").
+Jpegdec is a refactored sysmodule added with \[4.0.0+\] for handling all
+JPEG decoding associated with [capture
+services](Capture%20services.md "wikilink").
 
 # caps:dc
 
