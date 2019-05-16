@@ -79,7 +79,7 @@ This is "nn::account::IAccountServiceForAdministrator".
 |-
 | 250 || GetBaasAccountAdministrator || Returns an [[#IAdministrator]].
 |-
-| 290 || ProxyProcedureForGuestLoginWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]] (formerly [[#IOAuthProcedureForGuestLogin]] with [?-2.3.0]).
+| 290 || ProxyProcedureForGuestLoginWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]] (formerly [[#IOAuthProcedureForGuestLogin]] with [1.0.0-2.3.0]).
 |-
 | 291 || [3.0.0+] ProxyProcedureForFloatingRegistrationWithNintendoAccount || Returns an [[#IOAuthProcedureForExternalNsa]].
 |-
@@ -343,7 +343,7 @@ This is "nn::account::nas::IOAuthProcedureForNintendoAccountLinkage".
 |-
 | 101 || IsNetworkServiceAccountReplaced ||
 |-
-| [?-5.1.0] 199 || GetUrlForIntroductionOfExtraMembership ||
+| [2.0.0-5.1.0] 199 || GetUrlForIntroductionOfExtraMembership ||
 |}
 
 == INotifier ==
@@ -501,7 +501,7 @@ This is "nn::account::baas::IGuestLoginRequest".
 |-
 | 0 || GetSessionId
 |-
-| [?-2.3.0] 11 || 
+| [1.0.0-2.3.0] 11 || 
 |-
 | 12 || GetAccountId
 |-
