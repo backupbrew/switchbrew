@@ -73,7 +73,7 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 |-
 | 8013 || [4.0.0+]
 |-
-| 8021 || GetAlbumEntryFromApplicationAlbumEntryAruid
+| 8021 || [2.0.0+] GetAlbumEntryFromApplicationAlbumEntryAruid
 |-
 | 10011 || SetInternalErrorConversionEnabled
 |-
@@ -113,35 +113,45 @@ This was added with [4.0.0+].
 |}
 
 = caps:c =
-This is "nn::capsrv::sf::IAlbumControlService".
+This is "nn::capsrv::sf::IAlbumControlService", previously "nn::capsrv::sf::ICaptureControllerService" with [1.0.0].
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
+| [1.0.0] 1 || || 
+|-
+| [1.0.0] 2 || || 
+|-
 | 33 || [7.0.0+] || Takes a total of 0x10-bytes of input, no output.
+|-
+| [1.0.0] 1001 || || 
+|-
+| [1.0.0] 1002 || || 
+|-
+| [1.0.0] 1011 || || 
 |-
 | 2001 || || 
 |-
 | 2002 || || 
 |-
-| 2011 || || 
+| 2011 || [2.0.0+] || 
 |-
-| 2012 || || 
+| 2012 || [2.0.0+] || 
 |-
-| 2013 || || 
+| 2013 || [2.0.0+] || 
 |-
-| 2014 || || 
+| 2014 || [2.0.0+] || 
 |-
-| 2101 || || Takes an input u8 and u64, returns a 0x18-byte struct.
+| 2101 || [2.0.0+] || Takes an input u8 and u64, returns a 0x18-byte struct.
 |-
-| 2102 || || 
+| 2102 || [2.0.0+] || 
 |-
-| [?-3.0.2] 2201 || || 
+| [2.0.0-3.0.2] 2201 || || 
 |-
 | 2202 || [4.0.0+] || 
 |-
-| 2301 || || 
+| 2301 || [2.0.0+] || 
 |-
 | 2302 || [4.0.0+] || 
 |-

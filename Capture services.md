@@ -2,46 +2,46 @@
 
 This is "nn::capsrv::sf::IAlbumAccessorService".
 
-| Cmd   | Name                                              |
-| ----- | ------------------------------------------------- |
-| 0     | GetAlbumFileCount                                 |
-| 1     | GetAlbumFileList                                  |
-| 2     | LoadAlbumFile                                     |
-| 3     | DeleteAlbumFile                                   |
-| 4     | StorageCopyAlbumFile                              |
-| 5     | IsAlbumMounted                                    |
-| 6     | GetAlbumUsage                                     |
-| 7     | GetAlbumFileSize                                  |
-| 8     | LoadAlbumFileThumbnail                            |
-| 9     | \[2.0.0+\] LoadAlbumScreenShotImage               |
-| 10    | \[2.0.0+\] LoadAlbumScreenShotThumbnailImage      |
-| 11    | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntry |
-| 12    | \[3.0.0+\]                                        |
-| 13    | \[3.0.0+\]                                        |
-| 14    | \[3.0.0+\]                                        |
-| 15    | \[4.0.0+\]                                        |
-| 16    | \[4.0.0+\]                                        |
-| 17    | \[4.0.0+\]                                        |
-| 18    | \[6.0.0+\]                                        |
-| 100   | \[5.0.0+\]                                        |
-| 101   | \[5.0.0+\]                                        |
-| 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot              |
-| 301   | GetLastThumbnail                                  |
-| 302   | \[4.0.0+\]                                        |
-| 401   | GetAutoSavingStorage                              |
-| 501   | GetRequiredStorageSpaceSizeToCopyAll              |
-| 1001  | \[3.0.0+\]                                        |
-| 1002  | \[3.0.0+\]                                        |
-| 1003  | \[4.0.0+\]                                        |
-| 8001  | ForceAlbumUnmounted                               |
-| 8002  | ResetAlbumMountStatus                             |
-| 8011  | RefreshAlbumCache                                 |
-| 8012  | GetAlbumCache                                     |
-| 8013  | \[4.0.0+\]                                        |
-| 8021  | GetAlbumEntryFromApplicationAlbumEntryAruid       |
-| 10011 | SetInternalErrorConversionEnabled                 |
-| 50000 | \[6.0.0+\]                                        |
-| 60002 | \[4.0.0+\]                                        |
+| Cmd   | Name                                                   |
+| ----- | ------------------------------------------------------ |
+| 0     | GetAlbumFileCount                                      |
+| 1     | GetAlbumFileList                                       |
+| 2     | LoadAlbumFile                                          |
+| 3     | DeleteAlbumFile                                        |
+| 4     | StorageCopyAlbumFile                                   |
+| 5     | IsAlbumMounted                                         |
+| 6     | GetAlbumUsage                                          |
+| 7     | GetAlbumFileSize                                       |
+| 8     | LoadAlbumFileThumbnail                                 |
+| 9     | \[2.0.0+\] LoadAlbumScreenShotImage                    |
+| 10    | \[2.0.0+\] LoadAlbumScreenShotThumbnailImage           |
+| 11    | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntry      |
+| 12    | \[3.0.0+\]                                             |
+| 13    | \[3.0.0+\]                                             |
+| 14    | \[3.0.0+\]                                             |
+| 15    | \[4.0.0+\]                                             |
+| 16    | \[4.0.0+\]                                             |
+| 17    | \[4.0.0+\]                                             |
+| 18    | \[6.0.0+\]                                             |
+| 100   | \[5.0.0+\]                                             |
+| 101   | \[5.0.0+\]                                             |
+| 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot                   |
+| 301   | GetLastThumbnail                                       |
+| 302   | \[4.0.0+\]                                             |
+| 401   | GetAutoSavingStorage                                   |
+| 501   | GetRequiredStorageSpaceSizeToCopyAll                   |
+| 1001  | \[3.0.0+\]                                             |
+| 1002  | \[3.0.0+\]                                             |
+| 1003  | \[4.0.0+\]                                             |
+| 8001  | ForceAlbumUnmounted                                    |
+| 8002  | ResetAlbumMountStatus                                  |
+| 8011  | RefreshAlbumCache                                      |
+| 8012  | GetAlbumCache                                          |
+| 8013  | \[4.0.0+\]                                             |
+| 8021  | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntryAruid |
+| 10011 | SetInternalErrorConversionEnabled                      |
+| 50000 | \[6.0.0+\]                                             |
+| 60002 | \[4.0.0+\]                                             |
 
 Cmd1002: Takes a total of 0x38-bytes of input, two type-0x5 input
 buffers, and returns 0x20-bytes of output. \[4.0.0+\] No longer returns
@@ -70,24 +70,30 @@ This was added with \[4.0.0+\].
 
 # caps:c
 
-This is "nn::capsrv::sf::IAlbumControlService".
+This is "nn::capsrv::sf::IAlbumControlService", previously
+"nn::capsrv::sf::ICaptureControllerService" with \[1.0.0\].
 
-| Cmd              | Name       | Notes                                                                                                               |
-| ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| 33               | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.                                                                    |
-| 2001             |            |                                                                                                                     |
-| 2002             |            |                                                                                                                     |
-| 2011             |            |                                                                                                                     |
-| 2012             |            |                                                                                                                     |
-| 2013             |            |                                                                                                                     |
-| 2014             |            |                                                                                                                     |
-| 2101             |            | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
-| 2102             |            |                                                                                                                     |
-| \[?-3.0.2\] 2201 |            |                                                                                                                     |
-| 2202             | \[4.0.0+\] |                                                                                                                     |
-| 2301             |            |                                                                                                                     |
-| 2302             | \[4.0.0+\] |                                                                                                                     |
-| 60001            | \[4.0.0+\] | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
+| Cmd                  | Name       | Notes                                                                                                               |
+| -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
+| \[1.0.0\] 1          |            |                                                                                                                     |
+| \[1.0.0\] 2          |            |                                                                                                                     |
+| 33                   | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.                                                                    |
+| \[1.0.0\] 1001       |            |                                                                                                                     |
+| \[1.0.0\] 1002       |            |                                                                                                                     |
+| \[1.0.0\] 1011       |            |                                                                                                                     |
+| 2001                 |            |                                                                                                                     |
+| 2002                 |            |                                                                                                                     |
+| 2011                 | \[2.0.0+\] |                                                                                                                     |
+| 2012                 | \[2.0.0+\] |                                                                                                                     |
+| 2013                 | \[2.0.0+\] |                                                                                                                     |
+| 2014                 | \[2.0.0+\] |                                                                                                                     |
+| 2101                 | \[2.0.0+\] | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
+| 2102                 | \[2.0.0+\] |                                                                                                                     |
+| \[2.0.0-3.0.2\] 2201 |            |                                                                                                                     |
+| 2202                 | \[4.0.0+\] |                                                                                                                     |
+| 2301                 | \[2.0.0+\] |                                                                                                                     |
+| 2302                 | \[4.0.0+\] |                                                                                                                     |
+| 60001                | \[4.0.0+\] | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
 
 ## IAlbumControlSession
 
