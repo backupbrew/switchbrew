@@ -419,7 +419,7 @@ This is "nn::timesrv::detail::<service::ISystemClock>".
 
 ### PosixTime
 
-This is an u64 for UTC POSIX time.
+This is an s64 for UTC POSIX time.
 
 ### SystemClockContext
 
