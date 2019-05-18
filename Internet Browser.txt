@@ -204,7 +204,9 @@ Unlike the applets listed above, WebApplet TID 010000000000100A has access to th
 The size used for [[SVC|svcSetHeapSize]] by the web-applets is 0x15600000. Under ShopN, the largest size that can be passed to this without an error being returned, is 0x1B400000.
 
 == Applet Launching ==
-The web-applets are launched using a storage containing the input arg data, on exit the output storage contains the "*ReturnValue" reply data struct. The output struct is specific to each applet.
+The web-applets are launched using a storage containing the input arg data, on exit the output storage contains the "*ReturnValue" reply data.
+
+Input/output storage size for TLV data is 0x2000-bytes.
 
 === Library Applet Versions ===
 {| class="wikitable" border="1"
@@ -218,6 +220,8 @@ The web-applets are launched using a storage containing the input arg data, on e
 | [5.0.0+] || 0x50000
 |-
 | [6.0.0+] || 0x60000
+|-
+| [8.0.0+] || 0x80000
 |}
 
 The above only (?) applies to non-WebWifi. WebWifi uses version 0x0.
@@ -371,7 +375,7 @@ This is the output struct for WifiWebAuthApplet. This is a total of 0x8-bytes.
 | 0x1008 || 0x8 || lastUrlSize
 |}
 
-This is the 0x1010-byte output storage used by all non-WebWifi applets - except for Share which returns a TLV storage on [3.0.0+].
+This is the 0x1010-byte output storage used by all non-WebWifi applets - except for Share which returns a TLV storage on [3.0.0+], and Web on [8.0.0+].
 
 === WebArgHeader ===
 {| class="wikitable" border="1"
@@ -846,6 +850,13 @@ All strings are NUL-terminated.
 | 0x1
 | u8 bool
 | Enables using [[#WebSession]] when set.
+|-
+| [8.0.0+]
+| Offline
+| 0x43
+| 0x1
+| u8 bool
+| MediaPlayerUiEnabled
 |}
 
 Offline: title to load the content from is controlled by ApplicationId/SystemDataId. With DocumentKind_OfflineHtmlPage, it will ignore this and only load from the user-process title.
@@ -863,61 +874,77 @@ Share: An error will be displayed if neither AlbumEntry or ApplicationAlbumEntry
 {| class="wikitable" border="1"
 |-
 !  System Version
+!  Applets
 !  Type
 !  Size
 !  Value
 !  Description
 |-
 | [3.0.0+]
+| Share, Web
 | 0x1
 | 0x4
 | u32
 | ShareExitReason
 |-
 | [3.0.0+]
+| Share, Web
 | 0x2
 | 
 | string
 | LastUrl
 |-
 | [3.0.0+]
+| Share, Web
 | 0x3
 | 0x8
 | u64
 | LastUrlSize
 |-
 | [3.0.0+]
+| Share
 | 0x4
 | 0x4
 | u32
 | SharePostResult
 |-
 | [3.0.0+]
+| Share
 | 0x5
 | 
 | string
 | PostServiceName
 |-
 | [3.0.0+]
+| Share
 | 0x6
 | 0x8
 | u64
 | PostServiceNameSize
 |-
 | [3.0.0+]
+| Share
 | 0x7
 | 
 | string
 | PostId
 |-
 | [3.0.0+]
+| Share
 | 0x8
 | 0x8
 | u64
 | PostIdSize
+|-
+| [8.0.0+]
+| Web
+| 0x9
+| 0x1
+| u8 bool
+| MediaPlayerAutoClosedByCompletion
 |}
 
-These are used for Share-applet. Official user-processes doesn't check the TLV size for any of these.
+These are used for Share-applet on [3.0.0+], and with Web on [8.0.0+]. Official user-processes doesn't check the TLV size for any of these.
 
 ==== DocumentKind ====
 {| class="wikitable" border="1"

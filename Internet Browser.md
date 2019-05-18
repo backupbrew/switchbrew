@@ -107,8 +107,7 @@ than ShopN.
 
 The file at "<data:/whitelist/WhitelistLns.txt>" for
 LoginApplet/ShareApplet/LobbyApplet, which doesn't exist in
-WifiWebAuthApplet, contains the
-following:
+WifiWebAuthApplet, contains the following:
 
 ` ^https://([0-9A-Za-z\-]+\.)*nintendo\.net(/|$)`  
 ` ^https?://([0-9A-Za-z\-]+\.)*nintendo\.(co\.jp|com|eu|co\.uk|es|pt|ch|at|de|nl|be|ch|ru|fr|it|co\.za|co\.kr|tw|com\.hk|com\.au|ca|co\.nz)(/|$)`  
@@ -240,8 +239,10 @@ without an error being returned, is 0x1B400000.
 ## Applet Launching
 
 The web-applets are launched using a storage containing the input arg
-data, on exit the output storage contains the "\*ReturnValue" reply data
-struct. The output struct is specific to each applet.
+data, on exit the output storage contains the "\*ReturnValue" reply
+data.
+
+Input/output storage size for TLV data is 0x2000-bytes.
 
 ### Library Applet Versions
 
@@ -251,6 +252,7 @@ struct. The output struct is specific to each applet.
 | \[3.0.0+\]     | 0x30000 |
 | \[5.0.0+\]     | 0x50000 |
 | \[6.0.0+\]     | 0x60000 |
+| \[8.0.0+\]     | 0x80000 |
 
 The above only (?) applies to non-WebWifi. WebWifi uses version 0x0.
 
@@ -299,8 +301,7 @@ message is ignored. Otherwise:
     to the user [\#SessionMessage](#SessionMessage "wikilink"). Reads
     the message content into the user
     [\#SessionMessage](#SessionMessage "wikilink"), when contentsize is
-    non-zero. Then sends an Ack with the storage
-size.
+    non-zero. Then sends an Ack with the storage size.
 
 #### SessionMessage
 
@@ -360,8 +361,8 @@ This is the output struct for WifiWebAuthApplet. This is a total of
 | 0x1008 | 0x8    | lastUrlSize    |
 
 This is the 0x1010-byte output storage used by all non-WebWifi applets -
-except for Share which returns a TLV storage on
-\[3.0.0+\].
+except for Share which returns a TLV storage on \[3.0.0+\], and Web on
+\[8.0.0+\].
 
 ### WebArgHeader
 
@@ -398,8 +399,7 @@ Web TLV used in the input web Arg storage, after
 
 ### TLVs
 
-All strings are
-NUL-terminated.
+All strings are NUL-terminated.
 
 #### Input TLVs
 
@@ -464,6 +464,7 @@ NUL-terminated.
 | \[6.0.0+\]     |                  | 0x40 | 0x4    | float                                                                                          | OverrideMediaAudioVolume                                                                                                                                         |
 | \[7.0.0+\]     |                  | 0x41 | 0x4    | u32 enum [\#WebSessionBootMode](#WebSessionBootMode "wikilink")                                | BootMode                                                                                                                                                         |
 | \[7.0.0+\]     |                  | 0x42 | 0x1    | u8 bool                                                                                        | Enables using [\#WebSession](#WebSession "wikilink") when set.                                                                                                   |
+| \[8.0.0+\]     | Offline          | 0x43 | 0x1    | u8 bool                                                                                        | MediaPlayerUiEnabled                                                                                                                                             |
 
 Offline: title to load the content from is controlled by
 ApplicationId/SystemDataId. With DocumentKind\_OfflineHtmlPage, it will
@@ -490,20 +491,21 @@ ApplicationAlbumEntry are set, with
 
 #### Output TLVs
 
-| System Version | Type | Size | Value  | Description         |
-| -------------- | ---- | ---- | ------ | ------------------- |
-| \[3.0.0+\]     | 0x1  | 0x4  | u32    | ShareExitReason     |
-| \[3.0.0+\]     | 0x2  |      | string | LastUrl             |
-| \[3.0.0+\]     | 0x3  | 0x8  | u64    | LastUrlSize         |
-| \[3.0.0+\]     | 0x4  | 0x4  | u32    | SharePostResult     |
-| \[3.0.0+\]     | 0x5  |      | string | PostServiceName     |
-| \[3.0.0+\]     | 0x6  | 0x8  | u64    | PostServiceNameSize |
-| \[3.0.0+\]     | 0x7  |      | string | PostId              |
-| \[3.0.0+\]     | 0x8  | 0x8  | u64    | PostIdSize          |
+| System Version | Applets    | Type | Size | Value   | Description                       |
+| -------------- | ---------- | ---- | ---- | ------- | --------------------------------- |
+| \[3.0.0+\]     | Share, Web | 0x1  | 0x4  | u32     | ShareExitReason                   |
+| \[3.0.0+\]     | Share, Web | 0x2  |      | string  | LastUrl                           |
+| \[3.0.0+\]     | Share, Web | 0x3  | 0x8  | u64     | LastUrlSize                       |
+| \[3.0.0+\]     | Share      | 0x4  | 0x4  | u32     | SharePostResult                   |
+| \[3.0.0+\]     | Share      | 0x5  |      | string  | PostServiceName                   |
+| \[3.0.0+\]     | Share      | 0x6  | 0x8  | u64     | PostServiceNameSize               |
+| \[3.0.0+\]     | Share      | 0x7  |      | string  | PostId                            |
+| \[3.0.0+\]     | Share      | 0x8  | 0x8  | u64     | PostIdSize                        |
+| \[8.0.0+\]     | Web        | 0x9  | 0x1  | u8 bool | MediaPlayerAutoClosedByCompletion |
 
-These are used for Share-applet. Official user-processes doesn't check
-the TLV size for any of
-these.
+These are used for Share-applet on \[3.0.0+\], and with Web on
+\[8.0.0+\]. Official user-processes doesn't check the TLV size for any
+of these.
 
 #### DocumentKind
 
@@ -513,8 +515,7 @@ these.
 | 0x2   | DocumentKind\_ApplicationLegalInformation | Use the LegalInformation NCA content from the application.                                                                                                                    |
 | 0x3   | DocumentKind\_SystemDataPage              | Use the Data NCA content from the specified title, see also: [Title\_list\#System\_Data\_Archives](Title%20list#System%20Data%20Archives.md##System_Data_Archives "wikilink") |
 
-This controls the kind of content to mount with
-Offline-applet.
+This controls the kind of content to mount with Offline-applet.
 
 #### ShareStartPage
 
@@ -523,8 +524,7 @@ Offline-applet.
 | 0     | ShareStartPage\_Default  | ["<https://web-%.share.srv.nintendo.net/>"](Network.md "wikilink")          |
 | 1     | ShareStartPage\_Settings | ["<https://web-%.share.srv.nintendo.net/settings/>"](Network.md "wikilink") |
 
-This enum controls the initial page for
-ShareApplet.
+This enum controls the initial page for ShareApplet.
 
 #### BootDisplayKind
 
@@ -547,8 +547,7 @@ The applet converts this to internal values.
           - If [\#BackgroundKind](#BackgroundKind "wikilink") is 2..1,
             return 3..2. When 0, run the below, otherwise assert.
       - return TLV value from BootAsMediaPlayer
-  - BootDisplayKind 1..4: return
-0..3.
+  - BootDisplayKind 1..4: return 0..3.
 
 #### BackgroundKind
 
@@ -559,8 +558,7 @@ The applet converts this to internal values.
 | 2     |      | Same as [\#BootDisplayKind](#BootDisplayKind "wikilink") value 4. Used by Lobby default Arg initialization.                     |
 
 Kind values for BackgroundKind. Only used when
-[\#BootDisplayKind](#BootDisplayKind "wikilink") is
-0.
+[\#BootDisplayKind](#BootDisplayKind "wikilink") is 0.
 
 #### LeftStickMode
 
@@ -572,8 +570,7 @@ Kind values for BackgroundKind. Only used when
 Controls the initial mode, this can be toggled by the user via the
 pressing the left-stick button. If the Pointer flag is set to false,
 only LeftStickMode\_Cursor will be used and mode toggle by the user is
-disabled (input value
-ignored).
+disabled (input value ignored).
 
 #### FooterButtonId
 
