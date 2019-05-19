@@ -105,7 +105,7 @@ When decrypted, this 0x70 byte region is as follows:
 |-
 | 0x8
 | 0x4
-| Access Control (0x00A10011 = 25MHz access, 0x00A10010 = 50MHz access)
+| Access Control (0x1100A100 = 25MHz access, 0x1000A100 = 50MHz access)
 |-
 | 0xC
 | 0x4
