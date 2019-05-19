@@ -36,10 +36,10 @@ When decrypted, this 0x70 byte region is as follows:
 | ------ | ---- | -------------------------------------------------------------------------------------- |
 | 0x0    | 0x8  | Firmware Version (0x00 = Development, 0x01 = Retail, 0x02 = Retail on 4.0.0+)          |
 | 0x8    | 0x4  | Access Control (0x00A10011 = 25MHz access, 0x00A10010 = 50MHz access)                  |
-| 0xC    | 0x4  | Wait1 Time Read (always 0x1388)                                                        |
-| 0x10   | 0x4  | Wait2 Time Read (always 0)                                                             |
-| 0x14   | 0x4  | Wait1 Time Write (always 0)                                                            |
-| 0x18   | 0x4  | Wait2 Time Write (always 0)                                                            |
+| 0xC    | 0x4  | Read Time Wait1 (always 0x1388)                                                        |
+| 0x10   | 0x4  | Read Time Wait2 (always 0)                                                             |
+| 0x14   | 0x4  | Write Time Wait1 (always 0)                                                            |
+| 0x18   | 0x4  | Write Time Wait2 (always 0)                                                            |
 | 0x1C   | 0x4  | Firmware Mode                                                                          |
 | 0x20   | 0x4  | CUP Version                                                                            |
 | 0x24   | 0x4  | Empty                                                                                  |

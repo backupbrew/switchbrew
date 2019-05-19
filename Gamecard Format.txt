@@ -109,19 +109,19 @@ When decrypted, this 0x70 byte region is as follows:
 |-
 | 0xC
 | 0x4
-| Wait1 Time Read (always 0x1388)
+| Read Time Wait1 (always 0x1388)
 |-
 | 0x10
 | 0x4
-| Wait2 Time Read (always 0)
+| Read Time Wait2 (always 0)
 |-
 | 0x14
 | 0x4
-| Wait1 Time Write (always 0)
+| Write Time Wait1 (always 0)
 |-
 | 0x18
 | 0x4
-| Wait2 Time Write (always 0)
+| Write Time Wait2 (always 0)
 |-
 | 0x1C
 | 0x4
