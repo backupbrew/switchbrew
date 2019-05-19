@@ -50,6 +50,10 @@ For pre-1.0.0 "NCA2" NCAs, the first 0x400 byte are encrypted the same way as in
 | 0x8
 | titleID
 |-
+| 0x218
+| 0x4
+| contentIndex
+|-
 | 0x21C
 | 0x4
 | sdk_version. byte0 is normally 0? Compared with a required minimum-value(0x000B0000). Matches this string from codebin: "FS_ACCESS: { sdk_version: {byte3}.{byte2}.{byte1}, ...".

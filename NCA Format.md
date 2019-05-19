@@ -30,6 +30,7 @@ NCA3.
 | 0x207  | 0x1             | Key index, must be 0-2.                                                                                                                                                              |
 | 0x208  | 0x8             | Size of the entire NCA.                                                                                                                                                              |
 | 0x210  | 0x8             | titleID                                                                                                                                                                              |
+| 0x218  | 0x4             | contentIndex                                                                                                                                                                         |
 | 0x21C  | 0x4             | sdk\_version. byte0 is normally 0? Compared with a required minimum-value(0x000B0000). Matches this string from codebin: "FS\_ACCESS: { sdk\_version: {byte3}.{byte2}.{byte1}, ...". |
 | 0x220  | 0x1             | Crypto-Type2. Selects which crypto-sysver to use. 0x3 = [3.0.1](3.0.1.md "wikilink"), 0x4 = [4.0.0](4.0.0.md "wikilink"), 0x5 = [5.0.0](5.0.0.md "wikilink").                        |
 | 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                                                                                                                           |
@@ -97,8 +98,7 @@ follows:
 Entry size is 0x10-bytes.
 
 Media offset is absoluteoffset/{mediasize}, where mediasize is
-hard-coded to
-0x200.
+hard-coded to 0x200.
 
 # Section Header Block
 
@@ -116,8 +116,7 @@ The Section Header Block for each section is at
 absoluteoffset+0x400+(sectionid\*0x200), where sectionid corresponds to
 the index used with the entry/hash tables.
 
-The total size is
-0x200-bytes.
+The total size is 0x200-bytes.
 
 ## PFS0 superblock
 
@@ -138,8 +137,7 @@ The total size is
 | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x8    | 0xE0 | IVFC header. Basically the same as [Savegames](Savegames.md "wikilink") IVFC except with 2 more levels and +0x0C is non-zero, see below. |
 
-This documents the structure of Section Header Block +0 for
-RomFS.
+This documents the structure of Section Header Block +0 for RomFS.
 
 ### IVFC
 
@@ -205,8 +203,7 @@ The BKTR section enables combining data from an update NCA with the
 RomFS from a base NCA to create a single patched RomFS image.
 
 The first BKTR entry describes how to map regions of the two RomFS
-images to create the patched RomFS. It has the following
-format:
+images to create the patched RomFS. It has the following format:
 
 | Start  | Length    | Description                                                          |
 | ------ | --------- | -------------------------------------------------------------------- |
@@ -234,8 +231,7 @@ Where relocation entries are as follows:
 | 0x10  | 0x4    | 1=Is from Patch RomFS, 0=Is from Base RomFS |
 
 The second BKTR entry describes the subsections within the Patch RomFS.
-It has the following
-format:
+It has the following format:
 
 | Start  | Length    | Description                                                           |
 | ------ | --------- | --------------------------------------------------------------------- |
