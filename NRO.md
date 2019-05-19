@@ -53,7 +53,7 @@ The below offsets are relative to the beginning of the assets section
 | 0x0    | 0x4  | Magic "ASET"                                                                                   |
 | 0x4    | 0x4  | Format version, currently 0.                                                                   |
 | 0x8    | 0x10 | AssetSection icon. Used by the Homebrew Launcher. Like official icons, this is a 256x256 JPEG. |
-| 0x18   | 0x10 | AssetSection [nacp](Control.nacp.md "wikilink"). Used by the Homebrew Launcher.                |
+| 0x18   | 0x10 | AssetSection [NACP](NACP%20Format.md "wikilink"). Used by the Homebrew Launcher.               |
 | 0x28   | 0x10 | AssetSection romfs. Can be used by the application.                                            |
 |        |      |                                                                                                |
 
