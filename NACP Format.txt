@@ -1,3 +1,5 @@
+This is "control.nacp".
+
 Roughly equivalent to non-gfx areas of 3DS SMDH. All strings for language-entries are UTF-8, unlike SMDH which uses UTF-16.
 
 Total size is 0x4000-bytes.
@@ -23,11 +25,11 @@ Total size is 0x4000-bytes.
 |-
 | 0x3026
 | 0x1
-| ?
+| UserAccountSwitchLock
 |-
 | 0x3027
 | 0x1
-| ?
+| AddOnContentRegistrationType
 |-
 | 0x3028
 | 0x4
@@ -43,7 +45,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3034
 | 0x1
-| isScreenshotEnabled
+| Screenshot
 |-
 | 0x3035
 | 0x1
@@ -51,11 +53,11 @@ Total size is 0x4000-bytes.
 |-
 | 0x3036
 | 0x1
-| isDataLossConfirmationEnabled
+| DataLossConfirmation
 |-
 | 0x3037
 | 0x1
-| ?
+| PlayLogPolicy
 |-
 | 0x3038
 | 0x8
@@ -115,19 +117,19 @@ Total size is 0x4000-bytes.
 |-
 | 0x30F2
 | 0x1
-| isRuntimeAddOnContentInstallEnabled
+| RuntimeAddOnContentInstall
 |-
 | 0x30F3
 | 0x3
-| ?
+| Reserved
 |-
 | 0x30F6
 | 0x1
-| ?
+| CrashReport
 |-
 | 0x30F7
 | 0x1
-| ?
+| Hdcp
 |-
 | 0x30F8
 | 0x8
@@ -135,15 +137,15 @@ Total size is 0x4000-bytes.
 |-
 | 0x3100
 | 0x41
-| [[BCAT_Content_Container|BcatPassphrase]], all-zero when unused.
+| [[BCAT_Content_Container|BcatPassphrase]] (all-zero when unused)
 |-
 | 0x3141
 | 0x1
-| ?
+| Reserved
 |-
 | 0x3142
 | 0x6
-| ?
+| Reserved
 |-
 | 0x3148
 | 0x8
@@ -182,8 +184,28 @@ Total size is 0x4000-bytes.
 | CacheStorageMaxIndex
 |-
 | 0x3190
-| 0xE70
-| ?
+| 0x80 (0x10*0x8)
+| PlayLogQueryableApplicationId
+|-
+| 0x3210
+| 0x1
+| PlayLogQueryCapability
+|-
+| 0x3211
+| 0x1
+| RepairFlag
+|-
+| 0x3212
+| 0x1
+| ProgramIndex
+|-
+| 0x3213
+| 0x1
+| RequiredNetworkServiceLicenseOnLaunchFlag
+|-
+| 0x3214
+| 0xDEC
+| Reserved
 |}
 
 == Title Entry ==
@@ -244,12 +266,11 @@ Entry index for each [[Settings_services#LanguageCode|language]]:
 Official apps tend to have the title entries' strings set only to English. Some apps don't have certain title entries set at all. In addition, official apps usually (?) don't have the following title entries set: Korean, Taiwanese, and Chinese.
 
 == VideoCaptureMode ==
-
 This is the enum used to determine how gameplay recording can occur, if at all.
 
 {| class="wikitable" border="1"
 |-
-! Enum Value || Meaning
+! Value || Meaning
 |-
 | 0 || Disabled
 |-
