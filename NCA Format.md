@@ -19,35 +19,35 @@ NCA3.
 
 # Header
 
-| Offset | Size            | Description                                                                                                                                                                          |
-| ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using fixed key.                                                                                                    |
-| 0x100  | 0x100           | RSA-2048 signature over the 0x200-bytes starting at offset 0x200 using key from [NPDM](NPDM.md "wikilink"), or zeroes if not a program.                                              |
-| 0x200  | 0x4             | Magicnum (Normally "NCA3", "NCA2" for some pre-1.0.0 NCAs)                                                                                                                           |
-| 0x204  | 0x1             | 0 for system NCAs. 1 for a NCA from gamecard.                                                                                                                                        |
-| 0x205  | 0x1             | Content Type (0=Program, 1=Meta, 2=Control, 3=Manual, 4=Data, 5=PublicData)                                                                                                          |
-| 0x206  | 0x1             | Crypto Type. Only used stating with [3.0.0](3.0.0.md "wikilink"). Normally 0. 2 = Crypto supported starting with [3.0.0](3.0.0.md "wikilink").                                       |
-| 0x207  | 0x1             | Key index, must be 0-2.                                                                                                                                                              |
-| 0x208  | 0x8             | Size of the entire NCA.                                                                                                                                                              |
-| 0x210  | 0x8             | titleID                                                                                                                                                                              |
-| 0x218  | 0x4             | contentIndex                                                                                                                                                                         |
-| 0x21C  | 0x4             | sdk\_version. byte0 is normally 0? Compared with a required minimum-value(0x000B0000). Matches this string from codebin: "FS\_ACCESS: { sdk\_version: {byte3}.{byte2}.{byte1}, ...". |
-| 0x220  | 0x1             | Crypto-Type2. Selects which crypto-sysver to use. 0x3 = [3.0.1](3.0.1.md "wikilink"), 0x4 = [4.0.0](4.0.0.md "wikilink"), 0x5 = [5.0.0](5.0.0.md "wikilink").                        |
-| 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                                                                                                                           |
-| 0x240  | 0x10\*0x4(0x40) | Table for each section, see below.                                                                                                                                                   |
-| 0x280  | 0x20\*0x4(0x80) | Table of SHA256 hashes, over each 0x200-byte Section Header Block.                                                                                                                   |
-| 0x300  | 0x10\*0x4(0x40) | Key area                                                                                                                                                                             |
+| Offset | Size            | Description                                                                                                                                                       |
+| ------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x100           | RSA-2048 signature over the header (data from 0x200 to 0x400) using a fixed key                                                                                   |
+| 0x100  | 0x100           | RSA-2048 signature over the header (data from 0x200 to 0x400) using a key from [NPDM](NPDM.md "wikilink") (or zeroes if not a program)                            |
+| 0x200  | 0x4             | Magicnum "NCA3" ("NCA2", "NCA1" or "NCA0" for pre-1.0.0 NCAs)                                                                                                     |
+| 0x204  | 0x1             | Distribution Type (0 = System NCA, 1 = Gamecard NCA)                                                                                                              |
+| 0x205  | 0x1             | Content Type (0 = Program, 1 = Meta, 2 = Control, 3 = Manual, 4 = Data, 5 = PublicData)                                                                           |
+| 0x206  | 0x1             | Old Key Generation (0 = [1.0.0](1.0.0.md "wikilink"), 2 = [3.0.0](3.0.0.md "wikilink"))                                                                           |
+| 0x207  | 0x1             | Key Area Encryption Key Index (0 = Application, 1 = Ocean, 2 = System)                                                                                            |
+| 0x208  | 0x8             | Size of the entire NCA                                                                                                                                            |
+| 0x210  | 0x8             | Title ID                                                                                                                                                          |
+| 0x218  | 0x4             | Content Index                                                                                                                                                     |
+| 0x21C  | 0x4             | SDK AddOn Version (used in "FS\_ACCESS: { sdk\_version: {byte3}.{byte2}.{byte1}, ..." with byte0 set to 0 and compared with a required minimum value: 0x000B0000) |
+| 0x220  | 0x1             | Key Generation (3 = [3.0.1](3.0.1.md "wikilink"), 4 = [4.0.0](4.0.0.md "wikilink"), 5 = [5.0.0](5.0.0.md "wikilink"))                                             |
+| 0x230  | 0x10            | Rights ID ([Ticket](Ticket.md "wikilink"))                                                                                                                        |
+| 0x240  | 0x10\*0x4(0x40) | Table for each section (see below)                                                                                                                                |
+| 0x280  | 0x20\*0x4(0x80) | Table of SHA256 hashes (over each 0x200-byte [Section Header Block](#Section_Header_Block "wikilink"))                                                            |
+| 0x300  | 0x10\*0x4(0x40) | Key area                                                                                                                                                          |
 
 The header is 0x400-bytes, at NCA+0.
 
-When the above "Crypto Type" field is 0x2 on \>=v3.0, different
-{crypto/keydata} is used for the sections' data. With system content,
-this is used with every ncatype except ncatype0. The only other
+When the above **Old Key Generation** field is 0x2 on \>= v3.0,
+different {crypto/keydata} is used for the sections' data. With system
+content, this is used with every ncatype except ncatype0. The only other
 exception is {data-content} for the firm titles: this is required in
 order for older-system-versions to install it.
 
-Crypto-Type2 0x3(with the above crypto-type value) is used for all
-[3.0.1](3.0.1.md "wikilink") sysmodules and the
+**Key Generation** 0x3 (with **Old Key Generation** set to 0x2) is used
+for all [3.0.1](3.0.1.md "wikilink") sysmodules and the
 [System\_Version\_Title](System%20Version%20Title.md "wikilink").
 
 With [3.0.2](3.0.2.md "wikilink"), all updated titles use the crypto
@@ -60,26 +60,26 @@ well.
 The keyindex passed to <key-generation-related code> is determined as
 follows:
 
-  - Pre-[3.0.0](3.0.0.md "wikilink"): The ncahdr keyindex field(0x207)
-    is passed directly.
-  - [3.0.0](3.0.0.md "wikilink")+: It's determined using ncahdr
-    keyindex(0x207) and "Crypto Type"(0x206). The latter field must be
-    0-2. In each ncahdr\_keyindex block, it executes
-    "if(ncahdr\_x206\>=3)<panic>", but that won't trigger due to the
-    earlier check. The end result is basically the same as
-    pre-[3.0.0](3.0.0.md "wikilink"), except when ncahdr\_x206 == 0x2,
-    final\_index is new\_base\_index+ncahdr\_keyindex. Actual
-    implementation loads index from u32\_array\[ncahdr\_crypto\_type\],
-    where the address of u32\_array is different for each
-    ncahdr\_keyindex.
-  - [3.0.1](3.0.1.md "wikilink")+: The dedicated range check for
-    ncahdr\_x206("Crypto Type") was removed, since the updated code no
-    longer needs it. The output from a function masked with 0xFF is now
-    used instead of ncahdr\_x206(ncahdr\_crypto\_type). The range check
-    for that field was changed from {ncahdr\_x206 check with panic
-    described above}, to "if(index\>=4)final\_index=10;"(skips accessing
-    the array and uses 10 directly). The arrays were updated with an
-    additional entry: final\_index=v301\_base\_index+ncahdr\_keyindex.
+  - Pre-[3.0.0](3.0.0.md "wikilink"): The **Key Area Encryption Key
+    Index** field (0x207) is passed directly.
+  - [3.0.0](3.0.0.md "wikilink")+: It's determined using the **Key Area
+    Encryption Key Index** field (0x207) and the **Old Key Generation**
+    field (0x206). The latter field must be 0, 1 or 2. In each
+    ncahdr\_keyindex block, it executes "if(ncahdr\_x206\>=3)<panic>",
+    but that won't trigger due to the earlier check. The end result is
+    basically the same as pre-[3.0.0](3.0.0.md "wikilink"), except when
+    ncahdr\_x206 == 0x2, final\_index is
+    new\_base\_index+ncahdr\_keyindex. Actual implementation loads index
+    from u32\_array\[ncahdr\_crypto\_type\], where the address of
+    u32\_array is different for each ncahdr\_keyindex.
+  - [3.0.1](3.0.1.md "wikilink")+: The dedicated range check for the
+    **Old Key Generation** field (0x206) was removed, since the updated
+    code no longer needs it. The output from a function masked with 0xFF
+    is now used instead of ncahdr\_x206. The range check for that field
+    was changed from {ncahdr\_x206 check with panic described above}, to
+    "if(index\>=4)final\_index=10;"(skips accessing the array and uses
+    10 directly). The arrays were updated with an additional entry:
+    final\_index=v301\_base\_index+ncahdr\_keyindex.
       - The keydata for the above index10 is not(?) known to be
         initialized.
       - The new function called by the code described above does:
@@ -88,29 +88,29 @@ follows:
 
 ## Section Table Entry
 
-| Offset | Size | Description      |
-| ------ | ---- | ---------------- |
-| 0x0    | 0x4  | Media offset     |
-| 0x4    | 0x4  | Media end-offset |
-| 0x8    | 0x4  | Unknown          |
-| 0xC    | 0x4  | Unknown          |
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 0x4  | Media Start Offset |
+| 0x4    | 0x4  | Media End Offset   |
+| 0x8    | 0x4  | Unknown            |
+| 0xC    | 0x4  | Unknown            |
 
 Entry size is 0x10-bytes.
 
-Media offset is absoluteoffset/{mediasize}, where mediasize is
-hard-coded to 0x200.
+Media offset is absoluteoffset/{mediasize}, where mediasize is 0x200
+bytes.
 
 # Section Header Block
 
-| Offset | Size | Description                                                                                                              |
-| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x2  | Version. Always 0x2                                                                                                      |
-| 0x2    | 0x1  | Filesystem Type. 0x0 = RomFS. 0x1 = PFS0                                                                                 |
-| 0x3    | 0x1  | Hash Type. 0x2 = PFS0. 0x3 = RomFS                                                                                       |
-| 0x4    | 0x1  | Crypto type. 0 and \>4 are invalid. 1 = none(plaintext from raw NCA). 2 = other crypto. 3 = regular crypto. 4 = unknown. |
-| 0x5    | 0x1  | Padding?                                                                                                                 |
-| 0x8    | 0xF8 | FS-specific superblock.                                                                                                  |
-| 0x100  | ?    | Optional BKTR header. Can be used with any section, but only known to be used with game-updates RomFS.                   |
+| Offset | Size | Description                                                                                            |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x2  | Version (always 2)                                                                                     |
+| 0x2    | 0x1  | Filesystem Type (0 = RomFS, 1 = PFS0)                                                                  |
+| 0x3    | 0x1  | Hash Type (2 = PFS0, 3 = RomFS)                                                                        |
+| 0x4    | 0x1  | Encryption Type (1 = None, 2 = AesCtrOld, 3 = AesCtr, 4 = AesCtrEx)                                    |
+| 0x5    | 0x1  | Padding                                                                                                |
+| 0x8    | 0xF8 | FS-specific superblock                                                                                 |
+| 0x100  | ?    | Optional BKTR header (can be used with any section, but only known to be used with game-updates RomFS) |
 
 The Section Header Block for each section is at
 absoluteoffset+0x400+(sectionid\*0x200), where sectionid corresponds to
@@ -120,22 +120,22 @@ The total size is 0x200-bytes.
 
 ## PFS0 superblock
 
-| Offset | Size | Description                                                                        |
-| ------ | ---- | ---------------------------------------------------------------------------------- |
-| 0x0    | 0x20 | SHA256 hash over the hash-table at section-start+0 with the below hash-table size. |
-| 0x20   | 0x4  | Block size in bytes.                                                               |
-| 0x24   | 0x4  | Must be 0x2.                                                                       |
-| 0x28   | 0x8  | Offset of hash-table. Normally zero?                                               |
-| 0x30   | 0x8  | Size of hash-table.                                                                |
-| 0x38   | 0x8  | Offset relative to section-start where the PFS0 header is located.                 |
-| 0x40   | 0x8  | Actual byte-size of the PFS0 filesystem relative to the PFS0 header.               |
-| 0x48   | 0xB0 | Normally zeros.                                                                    |
+| Offset | Size | Description                                                                       |
+| ------ | ---- | --------------------------------------------------------------------------------- |
+| 0x0    | 0x20 | SHA256 hash over the hash-table at section-start+0 with the below hash-table size |
+| 0x20   | 0x4  | Block size in bytes                                                               |
+| 0x24   | 0x4  | Must be 0x2                                                                       |
+| 0x28   | 0x8  | Offset of hash-table (normally zero)                                              |
+| 0x30   | 0x8  | Size of hash-table                                                                |
+| 0x38   | 0x8  | Offset relative to section-start where the PFS0 header is located                 |
+| 0x40   | 0x8  | Actual byte-size of the PFS0 filesystem relative to the PFS0 header               |
+| 0x48   | 0xB0 | Empty                                                                             |
 
 ## RomFS superblock
 
 | Offset | Size | Description                                                                                                                              |
 | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x8    | 0xE0 | IVFC header. Basically the same as [Savegames](Savegames.md "wikilink") IVFC except with 2 more levels and +0x0C is non-zero, see below. |
+| 0x8    | 0xE0 | IVFC header (basically the same as [Savegames](Savegames.md "wikilink") IVFC except with 2 more levels and +0x0C is non-zero, see below) |
 
 This documents the structure of Section Header Block +0 for RomFS.
 
@@ -143,33 +143,33 @@ This documents the structure of Section Header Block +0 for RomFS.
 
 | Start | Length | Description                                                           |
 | ----- | ------ | --------------------------------------------------------------------- |
-| 0x00  | 4      | Magic ("IVFC")                                                        |
+| 0x00  | 4      | Magicnum "IVFC"                                                       |
 | 0x04  | 4      | Magic Number (0x20000)                                                |
 | 0x08  | 4      | Master hash size?                                                     |
 | 0x0C  | 4      | Usually 7? Unknown, could be related to total number of levels maybe? |
 | 0x10  | 8      | Level 1 offset                                                        |
 | 0x18  | 8      | Level 1 size                                                          |
-| 0x20  | 4      | Level 1 block size, in log2                                           |
+| 0x20  | 4      | Level 1 block size (in log2)                                          |
 | 0x24  | 4      | Reserved                                                              |
 | 0x28  | 8      | Level 2 offset                                                        |
 | 0x30  | 8      | Level 2 size                                                          |
-| 0x38  | 4      | Level 2 block size, in log2.                                          |
+| 0x38  | 4      | Level 2 block size (in log2)                                          |
 | 0x3C  | 4      | Reserved                                                              |
 | 0x40  | 8      | Level 3 offset                                                        |
 | 0x48  | 8      | Level 3 size                                                          |
-| 0x50  | 4      | Level 3 block size, in log2.                                          |
+| 0x50  | 4      | Level 3 block size (in log2)                                          |
 | 0x54  | 4      | Reserved                                                              |
 | 0x58  | 8      | Level 4 offset                                                        |
 | 0x60  | 8      | Level 4 size                                                          |
-| 0x68  | 4      | Level 4 block size, in log2.                                          |
+| 0x68  | 4      | Level 4 block size (in log2)                                          |
 | 0x6C  | 4      | Reserved                                                              |
 | 0x70  | 8      | Level 5 offset                                                        |
 | 0x78  | 8      | Level 5 size                                                          |
-| 0x80  | 4      | Level 5 block size, in log2.                                          |
+| 0x80  | 4      | Level 5 block size (in log2)                                          |
 | 0x84  | 4      | Reserved                                                              |
 | 0x88  | 8      | Level 6 offset                                                        |
 | 0x90  | 8      | Level 6 size                                                          |
-| 0x98  | 4      | Level 6 block size, in log2.                                          |
+| 0x98  | 4      | Level 6 block size (in log2)                                          |
 | 0x9C  | 4      | Reserved                                                              |
 | 0xA0  | 32     | Unknown, reserved?                                                    |
 | 0xC0  | 32     | Hash                                                                  |
@@ -179,9 +179,8 @@ This documents the structure of Section Header Block +0 for RomFS.
 | Start | Length | Description                                              |
 | ----- | ------ | -------------------------------------------------------- |
 | 0x0   | 0x8    | Offset                                                   |
-|       |        |                                                          |
 | 0x8   | 0x8    | Size                                                     |
-| 0x10  | 0x4    | "BKTR"                                                   |
+| 0x10  | 0x4    | Magicnum "BKTR"                                          |
 | 0x14  | 0x4    | u32, must be \<=1.                                       |
 | 0x18  | 0x4    | s32, must be \>=1.                                       |
 | 0x1C  | 0x4    | ?                                                        |
@@ -267,8 +266,10 @@ entries before anything else.
 
 # Logo section
 
-This is a PFS0. See [here](NCA%20Content%20FS.md "wikilink") for the
-mounted-FS logo contents.
+This is a PFS0.
+
+See [here](NCA%20Content%20FS.md "wikilink") for the mounted-FS logo
+contents.
 
 # ExeFS section
 
@@ -308,7 +309,7 @@ See also the PFS0 superblock above.
 
 | Offset       | Size | Description              |
 | ------------ | ---- | ------------------------ |
-| 0x0          | 0x4  | "PFS0" Magic             |
+| 0x0          | 0x4  | Magicnum "PFS0"          |
 | 0x4          | 0x4  | Number of files          |
 | 0x8          | 0x4  | Size of the string table |
 | 0xC          | 0x4  | Zero/Reserved            |
