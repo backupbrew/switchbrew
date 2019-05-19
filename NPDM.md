@@ -11,70 +11,70 @@ varies.
 
 # META
 
-| Offset | Size | Description                                                                                                                                                                                             |
-| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magic "META".                                                                                                                                                                                           |
-| 0x4    | 0x8  | Reserved (Padding / Unused)                                                                                                                                                                             |
-| 0xC    | 0x1  | MmuFlags, bit0: 64-bit instructions, bits1-3: address space width (1=64-bit, 2=32-bit). Needs to be \<= 0xF                                                                                             |
-| 0xD    | 0x1  | Reserved (Padding / Unused)                                                                                                                                                                             |
-| 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                             |
-| 0xF    | 0x1  | DefaultCpuId                                                                                                                                                                                            |
-| 0x10   | 0x4  | Reserved                                                                                                                                                                                                |
-| 0x14   | 0x4  | \[3.0.0+\] System resource size (max size as of 5.x: 534773760). The size of PersonalMmHeap.                                                                                                            |
-| 0x18   | 0x4  | ProcessCategory (0: regular title, 1: kernel built-in). Should be 0 here.                                                                                                                               |
-| 0x1C   | 0x4  | Main entrypoint stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
-| 0x20   | 0x10 | Title name (usually/always "Application")                                                                                                                                                               |
-| 0x30   | 0x10 | Product code (usually/always all zeroes)                                                                                                                                                                |
-| 0x40   | 0x30 | Reserved (Padding / Unused)                                                                                                                                                                             |
-| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                                                                                                                       |
-| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                                                                                                                         |
-| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                                                                                                                       |
-| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                                                                                                                         |
+| Offset | Size | Description                                                                                                                                                                                         |
+| ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Magicnum "META"                                                                                                                                                                                     |
+| 0x4    | 0x8  | Reserved                                                                                                                                                                                            |
+| 0xC    | 0x1  | MMU flags (bit0 = use 64-bit instructions, bit1 = use 64-bit address space, bit2 = use 32-bit address space, bit3 = use 32-bit address space without reserved region)                               |
+| 0xD    | 0x1  | Reserved                                                                                                                                                                                            |
+| 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                         |
+| 0xF    | 0x1  | Main thread core number                                                                                                                                                                             |
+| 0x10   | 0x4  | Reserved                                                                                                                                                                                            |
+| 0x14   | 0x4  | \[3.0.0+\] System resource (PersonalMmHeap) size (max size as of 5.x: 534773760)                                                                                                                    |
+| 0x18   | 0x4  | Process category (0 = regular title, 1 = kernel built-in)                                                                                                                                           |
+| 0x1C   | 0x4  | Main thread stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
+| 0x20   | 0x10 | Title name (usually/always "Application")                                                                                                                                                           |
+| 0x30   | 0x10 | Product code (usually/always all zeroes)                                                                                                                                                            |
+| 0x40   | 0x30 | Reserved                                                                                                                                                                                            |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                                                                                                                   |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                                                                                                                     |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                                                                                                                   |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                                                                                                                     |
 
 # ACID
 
-| Offset | Size  | Description                                                                                                                                                                                                                                            |
-| ------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x100 | RSA-2048 signature, seems to verify the data starting at 0x100 with the size field from 0x204.                                                                                                                                                         |
-| 0x100  | 0x100 | RSA-2048 public key, seems to be used for the second [NCA](NCA%20Format.md "wikilink") signature.                                                                                                                                                      |
-| 0x200  | 0x4   | Magic "ACID".                                                                                                                                                                                                                                          |
-| 0x204  | 0x4   | s32 Size field used with the above signature(?).                                                                                                                                                                                                       |
-| 0x208  | 0x4   | Zeroes                                                                                                                                                                                                                                                 |
-| 0x20C  | 0x4   | Flags. Bit0 must be 1 on retail, on devunit 0 is also allowed. Bit1 is unknown, set to 1 for ARMS? \[5.0.0+\] Bit3-2: PoolPartition? For applets set to 0b01, for sysmodules set to 0b10. Exceptions: "starter" is set to 0, "nvservices" is set to 3. |
-| 0x210  | 0x8   | TitleIdRange\_Min                                                                                                                                                                                                                                      |
-| 0x218  | 0x8   | TitleIdRange\_Max                                                                                                                                                                                                                                      |
-| 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset                                                                                                                                                                                            |
-| 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size                                                                                                                                                                                              |
-| 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset                                                                                                                                                                                  |
-| 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size                                                                                                                                                                                    |
-| 0x230  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                                                                                                                                                                                    |
-| 0x234  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                                                                                                                                                                      |
-| 0x238  | 0x8   | Padding                                                                                                                                                                                                                                                |
+| Offset | Size  | Description                                                                                                                                                                                                   |
+| ------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x100 | RSA-2048 signature over the data starting at 0x100 with the size field from 0x204                                                                                                                             |
+| 0x100  | 0x100 | RSA-2048 public key for the second [NCA](NCA%20Format.md "wikilink") signature                                                                                                                                |
+| 0x200  | 0x4   | Magicnum "ACID"                                                                                                                                                                                               |
+| 0x204  | 0x4   | Data size                                                                                                                                                                                                     |
+| 0x208  | 0x4   | Reserved                                                                                                                                                                                                      |
+| 0x20C  | 0x4   | Flags (bit0 = ProductionFlag, bit1 = UnqualifiedApproval, \[5.0.0+\] bit2-3: PoolPartition? For applets set to 0b01, for sysmodules set to 0b10. Exceptions: "starter" is set to 0, "nvservices" is set to 3) |
+| 0x210  | 0x8   | TitleIdRange\_Min                                                                                                                                                                                             |
+| 0x218  | 0x8   | TitleIdRange\_Max                                                                                                                                                                                             |
+| 0x220  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") offset                                                                                                                                                   |
+| 0x224  | 0x4   | [\#FS Access Control](#FS_Access_Control "wikilink") size                                                                                                                                                     |
+| 0x228  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") offset                                                                                                                                         |
+| 0x22C  | 0x4   | [\#Service Access Control](#Service_Access_Control "wikilink") size                                                                                                                                           |
+| 0x230  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                                                                                                                                           |
+| 0x234  | 0x4   | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                                                                                                                                             |
+| 0x238  | 0x8   | Reserved                                                                                                                                                                                                      |
 
 # ACI0
 
-| Offset | Size | Description                                                                          |
-| ------ | ---- | ------------------------------------------------------------------------------------ |
-| 0x0    | 0x4  | Magic "ACI0".                                                                        |
-| 0x4    | 0xC  | Zeroes                                                                               |
-| 0x10   | 0x8  | Title id                                                                             |
-| 0x18   | 0x8  | Reserved (Not currently used, potentially to be used for lowest title ID in future.) |
-| 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset                            |
-| 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size                              |
-| 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset                |
-| 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size                  |
-| 0x30   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset                  |
-| 0x34   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size                    |
-| 0x38   | 0x8  | Padding                                                                              |
+| Offset | Size | Description                                                           |
+| ------ | ---- | --------------------------------------------------------------------- |
+| 0x0    | 0x4  | Magicnum "ACI0"                                                       |
+| 0x4    | 0xC  | Reserved                                                              |
+| 0x10   | 0x8  | Title ID                                                              |
+| 0x18   | 0x8  | Reserved                                                              |
+| 0x20   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") offset             |
+| 0x24   | 0x4  | [\#FS Access Header](#FS_Access_Header "wikilink") size               |
+| 0x28   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") offset |
+| 0x2C   | 0x4  | [\#Service Access Control](#Service_Access_Control "wikilink") size   |
+| 0x30   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") offset   |
+| 0x34   | 0x4  | [\#Kernel Access Control](#Kernel_Access_Control "wikilink") size     |
+| 0x38   | 0x8  | Reserved                                                              |
 
 # FS Access Header
 
 | Offset                            | Size                                       | Description                                                                       |
 | --------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------- |
-| 0x0                               | 0x1                                        | Version? Always 1. Must be non-zero.                                              |
+| 0x0                               | 0x1                                        | Version (always 1, must be non-zero)                                              |
 | 0x1                               | 0x3                                        | Padding                                                                           |
 | 0x4                               | 0x8                                        | Permissions bitmask                                                               |
-| 0xC                               | 0x4                                        | Data Size (Always 0x1C)                                                           |
+| 0xC                               | 0x4                                        | Data Size (always 0x1C)                                                           |
 | 0x10                              | 0x4                                        | Size of Content Owner ID section.                                                 |
 | 0x14                              | 0x4                                        | Data size (0x1C) plus Content Owner size                                          |
 | 0x18                              | 0x4                                        | Size of Save Data owners section (for applications that wish to share save data?) |
@@ -88,22 +88,54 @@ varies.
 
 | Offset | Size | Description                          |
 | ------ | ---- | ------------------------------------ |
-| 0x0    | 0x1  | Version? Always 1. Must be non-zero. |
+| 0x0    | 0x1  | Version (always 1, must be non-zero) |
 | 0x1    | 0x3  | Padding                              |
 | 0x4    | 0x8  | Permissions bitmask                  |
-| 0xC    | 0x20 | Usually all zeroes for applications  |
+| 0xC    | 0x20 | Reserved                             |
 
 [Permissions](Filesystem%20services#Permissions.md##Permissions "wikilink")
 bitmask:
 
-| Bit | Description                                                                                                                                                 |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   | MountContent\* is accessible when set.                                                                                                                      |
-| 34  | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28?                                                                         |
-| 63  | Enables access to everything: all [permission-types](Filesystem%20services#Permissions.md##Permissions "wikilink") which check a bitmask have this bit set. |
-
-For bit62 in permissions, see
-[here](SPL%20services#GetConfig.md##GetConfig "wikilink").
+| Bit   | Name                     | Description                                                                                                                                                 |
+| ----- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | ApplicationInfo          | MountContent\* is accessible when set.                                                                                                                      |
+| 1     | BootModeControl          |                                                                                                                                                             |
+| 2     | Calibration              |                                                                                                                                                             |
+| 3     | SystemSaveData           |                                                                                                                                                             |
+| 4     | GameCard                 |                                                                                                                                                             |
+| 5     | SaveDataBackUp           |                                                                                                                                                             |
+| 6     | SaveDataManagement       |                                                                                                                                                             |
+| 7     | BisAllRaw                |                                                                                                                                                             |
+| 8     | GameCardRaw              |                                                                                                                                                             |
+| 9     | GameCardPrivate          |                                                                                                                                                             |
+| 10    | SetTime                  |                                                                                                                                                             |
+| 11    | ContentManager           |                                                                                                                                                             |
+| 12    | ImageManager             |                                                                                                                                                             |
+| 13    | CreateSaveData           |                                                                                                                                                             |
+| 14    | SystemSaveDataManagement |                                                                                                                                                             |
+| 15    | BisFileSystem            |                                                                                                                                                             |
+| 16    | SystemUpdate             |                                                                                                                                                             |
+| 17    | SaveDataMeta             |                                                                                                                                                             |
+| 18    | DeviceSaveData           |                                                                                                                                                             |
+| 19    | SettingsControl          |                                                                                                                                                             |
+| 20    |                          |                                                                                                                                                             |
+| 21    |                          |                                                                                                                                                             |
+| 22    |                          |                                                                                                                                                             |
+| 23    |                          |                                                                                                                                                             |
+| 24    |                          |                                                                                                                                                             |
+| 25    |                          |                                                                                                                                                             |
+| 26    |                          |                                                                                                                                                             |
+| 27    |                          |                                                                                                                                                             |
+| 28    |                          |                                                                                                                                                             |
+| 29    |                          |                                                                                                                                                             |
+| 30    |                          |                                                                                                                                                             |
+| 31    |                          |                                                                                                                                                             |
+| 32    |                          |                                                                                                                                                             |
+| 33    |                          |                                                                                                                                                             |
+| 34    |                          | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28?                                                                         |
+| 35-61 | Reserved                 |                                                                                                                                                             |
+| 62    | Debug                    | See [here](SPL%20services#GetConfig.md##GetConfig "wikilink").                                                                                              |
+| 63    | FullPermission           | Enables access to everything: all [permission types](Filesystem%20services#Permissions.md##Permissions "wikilink") which check a bitmask have this bit set. |
 
 Web-applets permissions:
 
@@ -128,8 +160,7 @@ The service string can contain a wildcard `*` character.
 
 # Kernel Access Control
 
-On Switch, descriptors are identified by pattern 01..11 in low
-bits.
+On Switch, descriptors are identified by pattern 01..11 in low bits.
 
 | Pattern of lower bits | Lowest clear bitmask/bit | Type                 | Fields                                                                                                                                                                                                                                              |
 | --------------------- | ------------------------ | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,4 +206,5 @@ checks were added. For Normal mappings it is still applied
 | 3.0.2    | 7.4.0          | 3.0.0           |
 | 5.0.0    | 9.3.0          | 3.0.0           |
 
-Bit31-19: Major version Bit18-15: Minor version Bit14-0: Zeroes
+Bit31-19: Major version</br> Bit18-15: Minor version</br> Bit14-0:
+Zeroes
