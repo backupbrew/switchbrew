@@ -25,12 +25,12 @@ will be used to create TransferMemory storage which is then pushed.
 | \[4.0.0+\]     | 0x40008  |
 | \[5.0.0+\]     | 0x50009  |
 | \[6.0.0+\]     | 0x6000B  |
+| \[8.0.0+\]     | 0x8000D  |
 
 ## KeyboardConfig
 
 The second IStorage passed to this applet should contain the
-configuration for the
-keyboard.
+configuration for the keyboard.
 
 | Offset | Size | Typical Value | Notes                                                                                                                                              |
 | ------ | ---- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -56,22 +56,24 @@ keyboard.
 | 0x3CC  | 4    | 0             | Length of user dictionary (number of entries)                                                                                                      |
 | 0x3D0  | 1    | 0             | [\#Text check](#Text_check "wikilink") enable                                                                                                      |
 
-Before version
-0x6000B:
+Before version 0x6000B:
 
 | Offset | Size | Typical Value | Notes                                                                                                                                                                             |
 | ------ | ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x3D8  | 8    | 0             | [\#Text check](#Text_check "wikilink") callback function address. Removed with the struct used by 0x6000B+.                                                                       |
 | 0x3E0  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
 
-Version
-0x6000B+:
+Version 0x6000B+:
 
 | Offset | Size | Typical Value | Notes                                                                                                                                                                             |
 | ------ | ---- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x3D4  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
 | 0x3F4  | 0xC0 | 0             | [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") array data.                                                                                                      |
 | 0x4B4  | 0x1  | 0             | Total array entries for [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink").                                                                                         |
+| 0x4B5  | 0x1  | 0             | \[8.0.0+\] Unknown                                                                                                                                                                |
+| 0x4B6  | 0xD  | 0             | Padding                                                                                                                                                                           |
+| 0x4C3  | 0x1  | 0             | \[8.0.0+\] Trigger                                                                                                                                                                |
+| 0x4C4  | 0x4  | 0             | Padding                                                                                                                                                                           |
 
 Struct sizes:
 
@@ -226,8 +228,7 @@ The above struct is cleared to 0 during initialization, besides the
 fields specified otherwise.
 
 \[6.0.0+\] Flags bitmask 0x10000 is set when
-[\#CalcArg](#CalcArg "wikilink") trigger is
-set.
+[\#CalcArg](#CalcArg "wikilink") trigger is set.
 
 ### CalcArg
 
@@ -294,8 +295,7 @@ following:
         IStorage, reads 2 u32s from the [\#Reply](#Reply "wikilink")
         storage and processes the reply.
       - The u32 from offset 0x0 from the last processed storage is then
-        returned as the
-retval.
+        returned as the retval.
 
 ### Request
 
@@ -311,8 +311,7 @@ retval.
 Requests are sent via an applet Interactive input IStorage: the u32 at
 offset 0x0 is the RequestCommand, and the rest of the storage is the
 request-specific data. While swkbd supports other requests, official sw
-only uses requests 0x4, 0x7, and
-0xA.
+only uses requests 0x4, 0x7, and 0xA.
 
 ### Reply
 
@@ -349,8 +348,7 @@ Reply data format:
     s32s.
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
     one is the stringLen, and the second one is cursorPos.
-  - DecidedEnter\*: +0 = string. The last u32 is the
-stringLen.
+  - DecidedEnter\*: +0 = string. The last u32 is the stringLen.
 
 ## CustomizedDictionarySet
 

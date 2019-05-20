@@ -26,6 +26,8 @@ With version 0x6000B+ after pushing all other storage: when [[#CustomizedDiction
 | [5.0.0+] || 0x50009
 |-
 | [6.0.0+] || 0x6000B
+|-
+| [8.0.0+] || 0x8000D
 |}
 
 == KeyboardConfig ==
@@ -99,6 +101,14 @@ Version 0x6000B+:
 | 0x3F4 || 0xC0 || 0 || [[#CustomizedDictionarySet]] array data.
 |-
 | 0x4B4 || 0x1 || 0 || Total array entries for [[#CustomizedDictionarySet]].
+|-
+| 0x4B5 || 0x1 || 0 || [8.0.0+] Unknown
+|-
+| 0x4B6 || 0xD || 0 || Padding
+|-
+| 0x4C3 || 0x1 || 0 || [8.0.0+] Trigger
+|-
+| 0x4C4 || 0x4 || 0 || Padding
 |}
 
 Struct sizes:
