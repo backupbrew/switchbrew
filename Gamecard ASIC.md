@@ -176,8 +176,8 @@ the current Gamecard's key area sectors.
 | ------ | ----- | ---------------------------------------------------------------------------------------------------- |
 | 0      | 0x200 | Gamecard specific data                                                                               |
 | 1      | 0x200 | [Gamecard Certificate](Gamecard%20Format#Gamecard%20Certificate.md##Gamecard_Certificate "wikilink") |
-| 2      | 0x200 | [Gamecard Initial Data](Gamecard%20Format#Initial%20Data.md##Initial_Data "wikilink")                |
-| 3      | 0x200 | Empty sector (all 0xFF)                                                                              |
+| 2      | 0x200 | Empty sector (all 0xFF)                                                                              |
+| 3      | 0x200 | [Gamecard Initial Data](Gamecard%20Format#Initial%20Data.md##Initial_Data "wikilink")                |
 
 ## SendCardCommand
 
@@ -243,17 +243,16 @@ read/write commands.
 | 0x28    | [\#ReadId2Normal](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
 | 0x2E    | [\#UnlockForceErase](#UnlockForceErase "wikilink")                         |
 | 0x30    | [\#ReadId3Secure](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
-| 0x39    | [\#Refresh](#Refresh "wikilink")                                           |
+| 0x39    | [\#UpdateKey](#UpdateKey "wikilink")                                       |
 | 0x56    | [\#ReadId1Normal](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
 | 0x83    | [\#WritePageSecure](#WritePage,_WritePageSecure "wikilink")                |
 | 0x5B    | [\#ReadPage](#ReadPage,_ReadPageSecure "wikilink")                         |
 | 0x67    | [\#ReadId1Secure](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
 | 0xA5    | [\#ReadId3Normal](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
-| 0xB8    | [\#GetStatus](#GetStatus "wikilink")                                       |
+| 0xB8    | [\#Refresh](#Refresh "wikilink")                                           |
 | 0xC4    | [\#ReadId2Secure](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
 | 0xE0    | ReadInitialData                                                            |
-| 0xE2    | ReadSecureModeFlag                                                         |
-| 0xEC    |                                                                            |
+| 0xE2    | EnterSecureMode                                                            |
 
 ## ReadId1Normal, ReadId1Secure, ReadId1Writer
 
@@ -443,10 +442,10 @@ The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 | 0x10   | 0x10 | Empty                                  |
 | 0x20   | 0x20 | Command verification value             |
 
-## Refresh
+## UpdateKey
 
-Resets the Gamecard's internal error status. This command is only
-available in [Secure](#Gamecard_modes "wikilink") mode.
+Updates the Gamecard's internal key data. This command is only available
+in [Secure](#Gamecard_modes "wikilink") mode.
 
 The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 
@@ -464,10 +463,10 @@ The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 | 0x10   | 0x10 | Empty                                  |
 | 0x20   | 0x20 | Command verification value             |
 
-## GetStatus
+## Refresh
 
-Retrieves the Gamecard's internal error status. This command is only
-available in [Secure](#Gamecard_modes "wikilink") mode.
+Resets the Gamecard's internal status. This command is only available in
+[Secure](#Gamecard_modes "wikilink") mode.
 
 The [\#OperationBuffer](#OperationBuffer "wikilink") is as follows.
 

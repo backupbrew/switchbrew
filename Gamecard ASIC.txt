@@ -230,11 +230,11 @@ Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the curre
 |-
 | 2
 | 0x200
-| [[Gamecard_Format#Initial_Data|Gamecard Initial Data]]
+| Empty sector (all 0xFF)
 |-
 | 3
 | 0x200
-| Empty sector (all 0xFF)
+| [[Gamecard_Format#Initial_Data|Gamecard Initial Data]]
 |}
 
 == SendCardCommand ==
@@ -354,7 +354,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Secure]]
 |-
 | 0x39
-| [[#Refresh]]
+| [[#UpdateKey]]
 |-
 | 0x56
 | [[#ReadId1Normal, ReadId1Secure, ReadId1Writer|#ReadId1Normal]]
@@ -372,7 +372,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Normal]]
 |-
 | 0xB8
-| [[#GetStatus]]
+| [[#Refresh]]
 |-
 | 0xC4
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Secure]]
@@ -381,10 +381,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | ReadInitialData
 |-
 | 0xE2
-| ReadSecureModeFlag
-|-
-| 0xEC
-| 
+| EnterSecureMode
 |}
 
 == ReadId1Normal, ReadId1Secure, ReadId1Writer ==
@@ -879,8 +876,8 @@ The [[#OperationBuffer]] is as follows.
 | Command verification value
 |}
 
-== Refresh ==
-Resets the Gamecard's internal error status. This command is only available in [[#Gamecard modes|Secure]] mode.
+== UpdateKey ==
+Updates the Gamecard's internal key data. This command is only available in [[#Gamecard modes|Secure]] mode.
 
 The [[#OperationBuffer]] is as follows.
 
@@ -935,8 +932,8 @@ The [[#OperationBuffer]] is as follows.
 | Command verification value
 |}
 
-== GetStatus ==
-Retrieves the Gamecard's internal error status. This command is only available in [[#Gamecard modes|Secure]] mode.
+== Refresh ==
+Resets the Gamecard's internal status. This command is only available in [[#Gamecard modes|Secure]] mode.
 
 The [[#OperationBuffer]] is as follows.
 
