@@ -86,8 +86,8 @@ Entry index for each
 | 10          | "Portuguese"                                                                  |
 | 11          | "Russian"                                                                     |
 | 12          | "Korean"                                                                      |
-| 13          | "Taiwanese"                                                                   |
-| 14          | "Chinese"                                                                     |
+| 13          | "TraditionalChinese"                                                          |
+| 14          | "SimplifiedChinese"                                                           |
 
 Official apps tend to have the title entries' strings set only to
 English. Some apps don't have certain title entries set at all. In

@@ -258,9 +258,9 @@ Entry index for each [[Settings_services#LanguageCode|language]]:
 |-
 | 12 || "Korean"
 |-
-| 13 || "Taiwanese"
+| 13 || "TraditionalChinese"
 |-
-| 14 || "Chinese"
+| 14 || "SimplifiedChinese"
 |}
 
 Official apps tend to have the title entries' strings set only to English. Some apps don't have certain title entries set at all. In addition, official apps usually (?) don't have the following title entries set: Korean, Taiwanese, and Chinese.
