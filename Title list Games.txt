@@ -3101,7 +3101,11 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100C6300AFE0000 || ACA NEOGEO NINJA MASTER'S || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 010049F00AFE8000 || ACA NEOGEO SAMURAI SHODOWN V SPECIAL || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010061600BF7E000 || ACA NEOGEO STRIKERS 1945 PLUS || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 0100591008790000 || ACA NEOGEO THE ULTIMATE 11: SNK FOOTBALL CHAMPIONSHIP || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 010061900AFAC000 || ACA NEOGEO THRASH RALLY || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3121,6 +3125,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01009C400C88C000 || Almost There: The Platformer || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100F0700CD8E000 || Alvastia Chronicles || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010002B00C534000 || American Fugitive || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010089D00A3FA000 || American Ninja Warrior: Challenge || USA || || Digital || 0 0x10000 || || Game
@@ -3139,15 +3145,25 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 01005DD00BE08000 || Arcade Archives ALPHA MISSION || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 010014F001DE2000 || Arcade Archives Armed F || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010002E00D3FE000 || Arcade Archives DONKEY KONG 3 || EUR JPN USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 0100DDC00C7A6000 || Arcade Archives DONKEY KONG JR. || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100BF8006EC6000 || Arcade Archives ELEVATOR ACTION || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 01007D200D3FC000 || Arcade Archives ICE CLIMBER || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 010049400C7A8000 || Arcade Archives IKARI WARRIORS || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 01003EF00D3B4000 || Arcade Archives NINJA GAIDEN || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 01000D200C7A4000 || Arcade Archives PSYCHO SOLDIER || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 0100348001DE6000 || Arcade Archives TERRA FORCE || EUR JPN USA || || Digital || 0 || || Game
+|-
+| 0100AF300D2E8000 || Arcade Archives TIME PILOT || EUR JPN USA || || Digital || 0 || || Game
 |-
 | 010050000D6C4000 || Arcade Classics Anniversary Collection || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3198,6 +3214,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100C4D0093EA000 || Battle Princess Madelyn || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
 | 010048300D5C2000 || Battlloon || EUR JPN USA || || Digital || 0 0x10000 || || Game
+|-
+| 01009C300BB4C000 || Beat Cop || EUR USA || || Digital || 0 || || Game
 |-
 | 010053200B0E0000 || Behind The Screen || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3263,6 +3281,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100DE200C350000 || Chasm || EUR USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100BF600BF26000 || Chocobo's Mystery Dungeon EVERY BUDDY! || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 01009AC00D5F4000 || Cinders || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
 |-
 | 010039700BA7E000 || Circle of Sumo || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3309,6 +3329,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010087F00D70C000 || Daemon X Machina: Prototype Missions || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 0100BFF00D5AE000 || Dark Quest 2 || EUR USA || || Digital || 0 || || Game
+|-
 | 01004AB00A260000 || Dark Souls™: Remastered || EUR USA || || Digital || 0 0x10000 x020000 x030000 || || Game
 |-
 | 010083B00989C000 || Darkest Dungeon || EUR || || Cartridge || 0 0x10000 0x20000 0x30000 || || Game
@@ -3346,6 +3368,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 01000DC00AF1C000 || Desert Child || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010031B00CF66000 || Devil Engine || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
+|-
+| 0100A5A00DBB0000 || Dig Dog || EUR USA || || Digital || 0 || || Game
 |-
 | 01003D800BE5C000 || Digerati Indie Bundle: INK & Hacky Zack || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3481,9 +3505,13 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010045F00BFC2000 || Giga Wrecker Alt. || EUR JPN USA || || Digital || 0 || || Game
 |-
+| 010067A00D35E000 || Gigantic Army || EUR USA || || Digital || 0 || || Game
+|-
 | 01005CB009E20000 || Glaive: Brick Breaker || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010032600C8CE000 || Goat Simulator: The GOATY || EUR USA || || Digital || 0 0x10000 || || Game
+|-
+| 0100BAA00AE16000 || GODS Remastered || EUR USA || || Digital || 0 || || Game
 |-
 | 010014A00AC5A000 || The Golf || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3498,6 +3526,14 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100E1700C31C000 || GRIS || EUR JPN USA || || Digital || 0 0x10000 0x20000 0x30000 || || Game
 |-
 | 01007E100456C000 || Guacamelee! 2 || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 010045B00C702000 || Guilty Gear || EUR || || Digital || 0 || || Game
+|-
+| 0100C8400B248000 || Guilty Gear || JPN USA || || Digital || 0 || || Game
+|-
+| 0100D1C00C700000 || Guilty Gear XX Accent Core Plus R || EUR || || Digital || 0 || || Game
+|-
+| 01006F80082E4000 || Guilty Gear XX Accent Core Plus R || USA JPN || || Digital || 0 || || Game
 |-
 | 010088700C5F8000 || Guns of Mercy - Rangers Edition || EUR USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3761,6 +3797,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 010077300A86C000 || Pianista: The Legendary Virtuoso || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
+| 010079200D330000 || Picross S3 || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 010029600CD44000 || Piczle Colors || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
 | 010097D006DEA000 || Pikuniku || EUR USA || || Digital || 0 0x10000 0x20000 || || Game
@@ -3785,6 +3823,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100BBD00976C000 || Project Highrise: Architect's Edition || EUR USA || || Digital || 0 || || Game
 |-
+| 0100ACE00DAB6000 || Project Nimbus: Complete Edition || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 01009AE00B788000 || Pumped BMX Pro || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010023600AA34000 || Q.U.B.E. 2 || EUR USA || || Digital || 0 0x10000 || || Game
@@ -3804,6 +3844,12 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100EB100D17C000 || The Red Strings Club || EUR USA || || Digital || 0 0x10000 || || Game
 |-
 | 010095900B436000 || RemiLore || USA || || Digital || 0 0x10000 0x20000 || || Game
+|-
+| 010050F00BC1A000 || Resident Evil || EUR USA || || Digital || 0 || || Game
+|-
+| 010097000BC10000 || Resident Evil 0 || EUR USA || || Digital || 0 || || Game
+|-
+| 010099A00BC1E000 || Resident Evil 4 || EUR USA || || Digital || 0 || || Game
 |-
 | 0100BE400BEC8000 || Revenant Dogma || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
@@ -3865,6 +3911,8 @@ parse error: Invalid numeric literal at line 2, column 0
 |-
 | 0100F7300B24E000 || SEGA® Mega Drive Classics™ || EUR || || Digital || 0 0x10000 0x20000 || || Game
 |-
+| 010059700D4A0000 || Sephirothic Stories || EUR JPN USA || || Digital || 0 || || Game
+|-
 | 0100F89003BC8000 || The Sexy Brutale || EUR USA || || Digital || 0 0x10000 0x20000 0x30000 0x40000 0x50000 || || Game
 |-
 | 010073400B696000 || Shadowgate || EUR JPN USA || || Digital || 0 0x10000 || || Game
@@ -3902,6 +3950,8 @@ parse error: Invalid numeric literal at line 2, column 0
 | 0100C4200B820000 || SmuggleCraft || USA || || Digital || 0 0x10000 || || Game
 |-
 | 01004AB00AEF8000 || SNK 40th ANNIVERSARY COLLECTION || EUR USA || || Digital || 0 0x10000 0x30000 || || Game
+|-
+| 0100ADF00CB64000 || Snow Battle Princess Sayuki || EUR USA || || Digital || 0 || || Game
 |-
 | 0100BE200C34A000 || Snowboarding The Next Phase || EUR JPN USA || || Digital || 0 0x10000 || || Game
 |-
