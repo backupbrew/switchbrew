@@ -149,7 +149,7 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p><a href="5.0.2.md" title="wikilink">5.0.2</a></p></td>
 <td><p>January 2018</p></td>
 <td><p>April 29, 2018</p></td>
-<td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a>, <a href="User:Rei" title="wikilink">Reisyukaku</a> (independently).</p></td>
+<td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a>, <a href="User:Rei" title="wikilink">Reisyukaku</a> (independently), probably others (independently).</p></td>
 </tr>
 <tr class="even">
 <td><p>Stack smash in TSEC firmware's KeygenLdr</p></td>
