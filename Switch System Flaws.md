@@ -152,6 +152,16 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p><a href="User:Hexkyz" title="wikilink">hexkyz</a>, probably others (independently).</p></td>
 </tr>
 <tr class="even">
+<td><p>Keygenldr compromise</p></td>
+<td><p>Given that we can control keyarea data (since its not authenticated) and boot (as mentioned in another exploit), as well as the fact NS and HS code share the same stack, we can use this to attack keygenldr. In keygenldr, theres a function that uses memcpy to copy over a payload to DMEM to verify it. These can be abused to smash the stack (which is also in DMEM) and write over the return addr of said function.</p></td>
+<td><p>ROP under keygenldr during HS mode.</p></td>
+<td><p>None</p></td>
+<td><p><a href="8.0.1.md" title="wikilink">8.0.1</a></p></td>
+<td><p>Spring 2019 (Earlier for some)</p></td>
+<td><p>Spring 2019</p></td>
+<td><p><a href="User:Rei" title="wikilink">Reisyukaku</a> and <a href="User:Govanify" title="wikilink">Govanify</a>/ <a href="User:SciresM" title="wikilink">SciresM</a> and <a href="User:motezazer" title="wikilink">motezazer</a>.</p></td>
+</tr>
+<tr class="odd">
 <td><p>pk1ldrhax</p></td>
 <td><p>Package1ldr decrypts and verifies the keyblob inside of the current BCT in order to get the package1 key, and then uses the package1 key to decrypt package1. It then validates package1 before jumping to it by checking the PK11 magic number, and that the section sizes sum to the expected size (and are individually less than the expected size).</p>
 <p>However, package1ldr does not actually validate the package1 key against a fixed vector (much like kernel9loader forgot to do so on the 3ds). This would normally not matter, as keyblobs are validated -- however, with bootrom code execution one can dump SBK and forge keyblobs, and thus control the package1 key.</p>
@@ -165,7 +175,7 @@ bootloader](Package1#Section%201.md##Section_1 "wikilink") or the
 <td><p>November 20, 2018</p></td>
 <td><p>Everyone</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>
