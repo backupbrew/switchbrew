@@ -136,7 +136,7 @@ Additionally, since signed Falcon code can't be revoked without an hardware revi
 |  [[5.0.2]]
 |  January 2018
 |  April 29, 2018
-|  [[User:Hexkyz|hexkyz]], probably others (independently).
+|  [[User:Hexkyz|hexkyz]], [[User:Rei|Reisyukaku]] (independently).
 |-
 |  Stack smash in TSEC firmware's KeygenLdr
 |  Given that we can control the [[TSEC_Firmware#Key_data|key data]] (which is not authenticated) and the [[TSEC_Firmware#Boot|Boot]] blob (see "maconstack"), as well as the fact Non-secure and Heavy Secure code share the same stack, we can use this to attack KeygenLdr. KeygenLdr uses memcpy to copy over a payload to DMEM to verify it, which can be abused to smash the stack (in DMEM) and write over the return address of said function.
