@@ -320,7 +320,6 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 | 0x0
 | 0x10
 | [[CNMT#Content_Meta_Records|Content Meta Record]]
-| Version
 |-
 | 0xC
 | 0x1
