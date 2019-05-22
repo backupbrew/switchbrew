@@ -282,19 +282,19 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x1C
 | 0x38 * History Count
-| [[CNMT#Patch_Extended_Data#History_Header|History Headers]]
+| [[CNMT#History_Header|History Headers]]
 |-
 | 
 | 0x28 * Delta History Count
-| [[CNMT#Patch_Extended_Data#Delta_History|Delta Histories]]
+| [[CNMT#Delta_History|Delta Histories]]
 |-
 | 
 | 0x28 * Delta Count
-| [[CNMT#Patch_Extended_Data#Delta_Header|Delta Headers]]
+| [[CNMT#Delta_Header|Delta Headers]]
 |-
 | 
 | 0x34 * Fragment Set Count
-| [[CNMT#Patch_Extended_Data#Fragment_Set|Fragment Sets]]
+| [[CNMT#Fragment_Set|Fragment Sets]]
 |-
 | 
 | 0x18 * History Content Count
@@ -306,7 +306,7 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 |
 | 0x4 * Fragment Indicator Count (Fragment Set)
-| [[CNMT#Patch_Extended_Data#Fragment_Indicator|Fragment Indicators]]
+| [[CNMT#Fragment_Indicator|Fragment Indicators]]
 |}
 
 === History Header ===
@@ -512,11 +512,11 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x20
 | 0x34 * Fragment Set Count
-| [[CNMT#Patch_Extended_Data#Fragment_Set|Fragment Sets]]
+| [[CNMT#Fragment_Set|Fragment Sets]]
 |-
 |
 | 0x4 * Fragment Indicator Count (Fragment Set)
-| [[CNMT#Patch_Extended_Data#Fragment_Indicator|Fragment Indicators]]
+| [[CNMT#Fragment_Indicator|Fragment Indicators]]
 |}
 
 == Digest ==
