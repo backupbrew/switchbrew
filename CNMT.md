@@ -102,35 +102,34 @@ This is used for SystemUpdate, see here:
 
 ## Patch Extended Data
 
-| Offset | Size                                           | Description                                                      |
-| ------ | ---------------------------------------------- | ---------------------------------------------------------------- |
-| 0x0    | 0x4                                            | History Count                                                    |
-| 0x4    | 0x4                                            | Delta History Count                                              |
-| 0x8    | 0x4                                            | Delta Count                                                      |
-| 0xC    | 0x4                                            | Fragment Set Count                                               |
-| 0x10   | 0x4                                            | History Content Count                                            |
-| 0x14   | 0x4                                            | Delta Content Count                                              |
-| 0x18   | 0x4                                            | Unused                                                           |
-| 0x1C   | 0x38 \* History Count                          | History Headers                                                  |
-|        | 0x28 \* Delta History Count                    | Delta Histories                                                  |
-|        | 0x28 \* Delta Count                            | Delta Headers                                                    |
-|        | 0x34 \* Fragment Set Count                     | Fragment Sets                                                    |
-|        | 0x18 \* History Content Count                  | History Content Records (Content Records without the Hash entry) |
-|        | 0x38 \* Delta Content Count                    | Delta Content Records                                            |
-|        | 0x4 \* Fragment Indicator Count (Fragment Set) | Fragment Indicators                                              |
+| Offset | Size                                           | Description                                                                                                                    |
+| ------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x4                                            | History Count                                                                                                                  |
+| 0x4    | 0x4                                            | Delta History Count                                                                                                            |
+| 0x8    | 0x4                                            | Delta Count                                                                                                                    |
+| 0xC    | 0x4                                            | Fragment Set Count                                                                                                             |
+| 0x10   | 0x4                                            | History Content Count                                                                                                          |
+| 0x14   | 0x4                                            | Delta Content Count                                                                                                            |
+| 0x18   | 0x4                                            | Unused                                                                                                                         |
+| 0x1C   | 0x38 \* History Count                          | [History Headers](CNMT#Patch%20Extended%20Data#History%20Header.md##Patch_Extended_Data#History_Header "wikilink")             |
+|        | 0x28 \* Delta History Count                    | [Delta Histories](CNMT#Patch%20Extended%20Data#Delta%20History.md##Patch_Extended_Data#Delta_History "wikilink")               |
+|        | 0x28 \* Delta Count                            | [Delta Headers](CNMT#Patch%20Extended%20Data#Delta%20Header.md##Patch_Extended_Data#Delta_Header "wikilink")                   |
+|        | 0x34 \* Fragment Set Count                     | [Fragment Sets](CNMT#Patch%20Extended%20Data#Fragment%20Set.md##Patch_Extended_Data#Fragment_Set "wikilink")                   |
+|        | 0x18 \* History Content Count                  | [History Content Records (Content Records without the Hash entry)](CNMT#Content%20Records.md##Content_Records "wikilink")      |
+|        | 0x38 \* Delta Content Count                    | [Delta Content Records](CNMT#Content%20Records.md##Content_Records "wikilink")                                                 |
+|        | 0x4 \* Fragment Indicator Count (Fragment Set) | [Fragment Indicators](CNMT#Patch%20Extended%20Data#Fragment%20Indicator.md##Patch_Extended_Data#Fragment_Indicator "wikilink") |
 
 ### History Header
 
-| Offset | Size | Description                                                          |
-| ------ | ---- | -------------------------------------------------------------------- |
-| 0x0    | 0x8  | Title ID                                                             |
-| 0x8    | 0x4  | Version                                                              |
-| 0xC    | 0x1  | [Meta Type](NCM%20services#Title%20Types.md##Title_Types "wikilink") |
-| 0xD    | 0x1  | Attributes (0=None, 1=IncludesExFatDriver, 2=Rebootless)             |
-| 0xE    | 0x2  | Unused                                                               |
-| 0x10   | 0x20 | Digest                                                               |
-| 0x30   | 0x2  | Content Info Count                                                   |
-| 0x32   | 0x6  | Unused                                                               |
+| Offset | Size | Description                                                                              |
+| ------ | ---- | ---------------------------------------------------------------------------------------- |
+| 0x0    | 0x10 | [Content Meta Record](CNMT#Content%20Meta%20Records.md##Content_Meta_Records "wikilink") |
+| 0xC    | 0x1  | [Meta Type](NCM%20services#Title%20Types.md##Title_Types "wikilink")                     |
+| 0xD    | 0x1  | Attributes (0=None, 1=IncludesExFatDriver, 2=Rebootless)                                 |
+| 0xE    | 0x2  | Unused                                                                                   |
+| 0x10   | 0x20 | Digest                                                                                   |
+| 0x30   | 0x2  | Content Info Count                                                                       |
+| 0x32   | 0x6  | Unused                                                                                   |
 
 ### Delta History
 
@@ -178,16 +177,16 @@ This is used for SystemUpdate, see here:
 
 ## Delta Extended Data
 
-| Offset | Size                                           | Description          |
-| ------ | ---------------------------------------------- | -------------------- |
-| 0x0    | 0x8                                            | Source Patch ID      |
-| 0x8    | 0x8                                            | Destination Patch ID |
-| 0x10   | 0x4                                            | Source Version       |
-| 0x14   | 0x4                                            | Destination Version  |
-| 0x18   | 0x2                                            | Fragment Set Count   |
-| 0x1A   | 0x6                                            | Unused               |
-| 0x20   | 0x34 \* Fragment Set Count                     | Fragment Sets        |
-|        | 0x4 \* Fragment Indicator Count (Fragment Set) | Fragment Indicators  |
+| Offset | Size                                           | Description                                                                                                                    |
+| ------ | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x8                                            | Source Patch ID                                                                                                                |
+| 0x8    | 0x8                                            | Destination Patch ID                                                                                                           |
+| 0x10   | 0x4                                            | Source Version                                                                                                                 |
+| 0x14   | 0x4                                            | Destination Version                                                                                                            |
+| 0x18   | 0x2                                            | Fragment Set Count                                                                                                             |
+| 0x1A   | 0x6                                            | Unused                                                                                                                         |
+| 0x20   | 0x34 \* Fragment Set Count                     | [Fragment Sets](CNMT#Patch%20Extended%20Data#Fragment%20Set.md##Patch_Extended_Data#Fragment_Set "wikilink")                   |
+|        | 0x4 \* Fragment Indicator Count (Fragment Set) | [Fragment Indicators](CNMT#Patch%20Extended%20Data#Fragment%20Indicator.md##Patch_Extended_Data#Fragment_Indicator "wikilink") |
 
 ## Digest
 
