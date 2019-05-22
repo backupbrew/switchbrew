@@ -89,6 +89,10 @@ There's at least 9 different filenames used for ".cnmt":
 | 0x8
 | 0x4
 | Required System Version
+|-
+| 0xC
+| 0x4
+| Unused
 |}
 
 == Patch Extended Header ==
@@ -299,6 +303,10 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 | 
 | 0x38 * Delta Content Count
 | Delta Content Records
+|-
+|
+| 0x4 * Fragment Indicator Count (Fragment Set)
+| Fragment Indicators
 |}
 
 === History Header ===
@@ -319,11 +327,11 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0xC
 | 0x1
-| [[NCM_services#Title_Types|Title Types]]
+| [[NCM_services#Title_Types|Meta Type]]
 |-
 | 0xD
 | 0x1
-| Attributes
+| Attributes (0=None, 1=IncludesExFatDriver, 2=Rebootless)
 |-
 | 0xE
 | 0x2
@@ -352,11 +360,11 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x0
 | 0x8
-| Source Title ID
+| Source Patch ID
 |-
 | 0x8
 | 0x8
-| Destination Title ID
+| Destination Patch ID
 |-
 | 0x10
 | 0x4
@@ -385,11 +393,11 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x0
 | 0x8
-| Source Title ID
+| Source Patch ID
 |-
 | 0x8
 | 8
-| Destination Title ID
+| Destination Patch ID
 |-
 | 0x10
 | 0x4
@@ -446,7 +454,7 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x2E
 | 0x1
-| [[NCM_services#Title_Types|Title Types]]
+| [[NCM_services#Title_Types|Meta Type]]
 |-
 | 0x2F
 | 0x1
@@ -472,4 +480,60 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 | 0x2
 | 0x2
 | Fragment Index
+|}
+
+== Delta Extended Data ==
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x8
+| Source Patch ID
+|-
+| 0x8
+| 0x8
+| Destination Patch ID
+|-
+| 0x10
+| 0x4
+| Source Version
+|-
+| 0x14
+| 0x4
+| Destination Version
+|-
+| 0x18
+| 0x2
+| Fragment Set Count
+|-
+| 0x1A
+| 0x6
+| Unused
+|-
+| 0x20
+| 0x34 * Fragment Set Count
+| Fragment Sets
+|-
+|
+| 0x4 * Fragment Indicator Count (Fragment Set)
+| Fragment Indicators
+|}
+
+== Digest ==
+
+Always found at the end of the file.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x20
+| Digest
 |}
