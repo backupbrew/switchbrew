@@ -13,78 +13,79 @@ There's at least 9 different filenames used for ".cnmt":
   - "BootImagePackageSafe\_{lower-case hex titleID}.cnmt"
   - "Delta\_{lower-case hex titleID}.cnmt"
 
-It starts with a
-header:
+## Header
 
-| Offset | Size | Description                                                                       |
-| ------ | ---- | --------------------------------------------------------------------------------- |
-| 0x0    | 8    | Title ID                                                                          |
-| 0x8    | 4    | u32 [title-version](Title%20list.md "wikilink")                                   |
-| 0xC    | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0xD    | 1    |                                                                                   |
-| 0xE    | 2    | Offset to table relative to the end of this 0x20-byte header.                     |
-| 0x10   | 2    | Number of content entries                                                         |
-| 0x12   | 2    | Number of meta entries                                                            |
-| 0x14   | 12   |                                                                                   |
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x0    | 0x8  | Title ID                                                             |
+| 0x8    | 0x4  | [Version](Title%20list.md "wikilink")                                |
+| 0xC    | 0x1  | [Meta Type](NCM%20services#Title%20Types.md##Title_Types "wikilink") |
+| 0xD    | 0x1  | Unused                                                               |
+| 0xE    | 0x2  | Extended Header Size                                                 |
+| 0x10   | 0x2  | Content Count                                                        |
+| 0x12   | 0x2  | Content Meta Count                                                   |
+| 0x14   | 0x1  | Attributes (0=None, 1=IncludesExFatDriver, 2=Rebootless)             |
+| 0x15   | 0x3  | Unused                                                               |
+| 0x18   | 0x4  | Required Download System Version                                     |
+| 0x1C   | 0x4  | Unused                                                               |
 
-With SystemUpdate, the 4-bytes at offset 0xE are zero, with the
-entry-count field located at offset 0x12 instead(header size is the
-same).
+## SystemUpdate Extended Header
 
-An optional header can follow, depending on the title type.
+| Offset | Size | Description          |
+| ------ | ---- | -------------------- |
+| 0x0    | 0x4  | Extended Header Size |
 
-At the end of the file following the entries is a 0x20-byte block,
-presumably a hash.
+## Application Extended Header
 
-With Patch-format, there's additional data after the end of the entries
-specified in the header and before the ending hash.
+| Offset | Size | Description             |
+| ------ | ---- | ----------------------- |
+| 0x0    | 0x8  | Patch ID                |
+| 0x8    | 0x4  | Required System Version |
 
-## Application header
+## Patch Extended Header
 
-| Offset | Size | Description            |
-| ------ | ---- | ---------------------- |
-| 0x20   | 8    | Patch Title ID         |
-| 0x28   | 8    | Minimum system version |
+| Offset | Size | Description             |
+| ------ | ---- | ----------------------- |
+| 0x0    | 0x8  | Application ID          |
+| 0x8    | 0x4  | Required System Version |
+| 0xC    | 0x4  | Extended Data Size      |
+| 0x10   | 0x8  | Unused                  |
 
-## Patch header
+## AddOnContent Extended Header
 
-| Offset | Size | Description            |
-| ------ | ---- | ---------------------- |
-| 0x20   | 8    | Original title ID      |
-| 0x28   | 8    | Minimum system version |
+| Offset | Size | Description                  |
+| ------ | ---- | ---------------------------- |
+| 0x0    | 0x8  | Application ID               |
+| 0x8    | 0x4  | Required Application Version |
+| 0xC    | 0x4  | Unused                       |
 
-## Add-on content header
+## Delta Extended Header
 
-| Offset | Size | Description                 |
-| ------ | ---- | --------------------------- |
-| 0x20   | 8    | Application title ID        |
-| 0x28   | 8    | Minimum application version |
+| Offset | Size | Description        |
+| ------ | ---- | ------------------ |
+| 0x0    | 0x8  | Application ID     |
+| 0x8    | 0x4  | Extended Data Size |
+| 0xC    | 0x4  | Unused             |
 
 ## Content records
 
-Each entry is 0x38
-bytes:
-
-| Offset | Size | Description                                                                                                                                                                                            |
-| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 32   | Hash                                                                                                                                                                                                   |
-| 0x20   | 16   | NcaId \[same as first 16-bytes of hash\]                                                                                                                                                               |
-| 0x30   | 6    | Size, same as the output from [NCM\_services\#GetSizeFromContentId](NCM%20services#GetSizeFromContentId.md##GetSizeFromContentId "wikilink").                                                          |
-| 0x36   | 1    | Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
-| 0x37   | 1    |                                                                                                                                                                                                        |
+| Offset | Size | Description                                                                                                                                                                                                  |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x20 | Hash                                                                                                                                                                                                         |
+| 0x20   | 0x10 | Content ID                                                                                                                                                                                                   |
+| 0x30   | 0x6  | Size                                                                                                                                                                                                         |
+| 0x36   | 0x1  | Title Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
+| 0x37   | 0x1  | Id Offset                                                                                                                                                                                                    |
 
 ## Meta records
 
-Each entry is 0x10
-bytes:
-
-| Offset | Size | Description                                                                       |
-| ------ | ---- | --------------------------------------------------------------------------------- |
-| 0x0    | 8    | Title ID                                                                          |
-| 0x8    | 4    | Title version                                                                     |
-| 0xC    | 1    | Type (see [Title Types](NCM%20services#Title%20Types.md##Title_Types "wikilink")) |
-| 0xD    | 1    | ? bit0 set = don't install?                                                       |
-| 0xE    | 2    | Unused?                                                                           |
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x0    | 0x8  | Title ID                                                             |
+| 0x8    | 0x4  | Version                                                              |
+| 0xC    | 0x1  | [Meta Type](NCM%20services#Title%20Types.md##Title_Types "wikilink") |
+| 0xD    | 0x1  | Attributes (0=None, 1=IncludesExFatDriver, 2=Rebootless)             |
+| 0xE    | 0x2  | Unused                                                               |
 
 This is used for SystemUpdate, see here:
 [NCM\_services\#ReadEntryMetaRecords](NCM%20services#ReadEntryMetaRecords.md##ReadEntryMetaRecords "wikilink").
@@ -115,8 +116,7 @@ Patch-type cnmt files include an extended data section.
 
 ## Previous cnmt records
 
-Each entry is 0x38
-bytes:
+Each entry is 0x38 bytes:
 
 | Offset | Size | Description                                                                       |
 | ------ | ---- | --------------------------------------------------------------------------------- |
@@ -166,8 +166,7 @@ This contains information on the current delta patch.
 
 ## Delta application info records
 
-Each entry is 0x34
-bytes:
+Each entry is 0x34 bytes:
 
 | Offset | Size | Description                                                                       |
 | ------ | ---- | --------------------------------------------------------------------------------- |
@@ -186,8 +185,7 @@ This contains information on how to apply deltas to the previous patch.
 
 ## Previous content records
 
-Each entry is 0x18
-bytes:
+Each entry is 0x18 bytes:
 
 | Offset | Size | Description                                                                       |
 | ------ | ---- | --------------------------------------------------------------------------------- |
