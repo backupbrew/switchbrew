@@ -181,7 +181,7 @@ There's at least 9 different filenames used for ".cnmt":
 |-
 | 0x36
 | 0x1
-| Title Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[[Internet_Browser|HtmlDocument]], 5=[[Internet_Browser|LegalInformation]], 6=[[NCA_Format|DeltaFragment]])
+| Content Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[[Internet_Browser|HtmlDocument]], 5=[[Internet_Browser|LegalInformation]], 6=[[NCA_Format|DeltaFragment]])
 |-
 | 0x37
 | 0x1
@@ -450,7 +450,7 @@ This is used for SystemUpdate, see here: [[NCM_services#ReadEntryMetaRecords]].
 |-
 | 0x2E
 | 0x1
-| [[NCM_services#Title_Types|Meta Type]]
+| Content Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[[Internet_Browser|HtmlDocument]], 5=[[Internet_Browser|LegalInformation]], 6=[[NCA_Format|DeltaFragment]])
 |-
 | 0x2F
 | 0x1

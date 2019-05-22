@@ -70,13 +70,13 @@ There's at least 9 different filenames used for ".cnmt":
 
 ## Content Records
 
-| Offset | Size | Description                                                                                                                                                                                                  |
-| ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x20 | Hash                                                                                                                                                                                                         |
-| 0x20   | 0x10 | Content ID                                                                                                                                                                                                   |
-| 0x30   | 0x6  | Size                                                                                                                                                                                                         |
-| 0x36   | 0x1  | Title Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
-| 0x37   | 0x1  | Id Offset                                                                                                                                                                                                    |
+| Offset | Size | Description                                                                                                                                                                                                    |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x20 | Hash                                                                                                                                                                                                           |
+| 0x20   | 0x10 | Content ID                                                                                                                                                                                                     |
+| 0x30   | 0x6  | Size                                                                                                                                                                                                           |
+| 0x36   | 0x1  | Content Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
+| 0x37   | 0x1  | Id Offset                                                                                                                                                                                                      |
 
 ## Content Meta Records
 
@@ -157,16 +157,16 @@ This is used for SystemUpdate, see here:
 
 ### Fragment Set
 
-| Offset | Size | Description                                                          |
-| ------ | ---- | -------------------------------------------------------------------- |
-| 0x0    | 0x10 | Source Content ID                                                    |
-| 0x10   | 0x10 | Destination Content ID                                               |
-| 0x20   | 0x6  | Source Size                                                          |
-| 0x26   | 0x6  | Destination Size                                                     |
-| 0x2C   | 0x2  | Fragment Indicator Count                                             |
-| 0x2E   | 0x1  | [Meta Type](NCM%20services#Title%20Types.md##Title_Types "wikilink") |
-| 0x2F   | 0x1  | Update Type (0=ApplyAsDelta, 1=Overwrite, 2=Create)                  |
-| 0x30   | 0x4  | Unused                                                               |
+| Offset | Size | Description                                                                                                                                                                                                    |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x10 | Source Content ID                                                                                                                                                                                              |
+| 0x10   | 0x10 | Destination Content ID                                                                                                                                                                                         |
+| 0x20   | 0x6  | Source Size                                                                                                                                                                                                    |
+| 0x26   | 0x6  | Destination Size                                                                                                                                                                                               |
+| 0x2C   | 0x2  | Fragment Indicator Count                                                                                                                                                                                       |
+| 0x2E   | 0x1  | Content Type (0=Meta, 1=Program, 2=Data, 3=Control, 4=[HtmlDocument](Internet%20Browser.md "wikilink"), 5=[LegalInformation](Internet%20Browser.md "wikilink"), 6=[DeltaFragment](NCA%20Format.md "wikilink")) |
+| 0x2F   | 0x1  | Update Type (0=ApplyAsDelta, 1=Overwrite, 2=Create)                                                                                                                                                            |
+| 0x30   | 0x4  | Unused                                                                                                                                                                                                         |
 
 ### Fragment Indicator
 
