@@ -1000,7 +1000,7 @@ This was added with [5.0.0+].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || HasApplicationRecord || Same as [[#IApplicationManagerInterface]] cmd 910
 |}
 
 === IReadOnlyApplicationControlDataInterface ===
@@ -1012,13 +1012,13 @@ This was added with [5.1.0+].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || [[#GetApplicationControlData]] || Same as [[#IApplicationManagerInterface]] cmd 400
 |-
-| 1 || || 
+| 1 || [[#GetApplicationDesiredLanguage]] || Same as [[#IApplicationManagerInterface]] cmd 55
 |-
-| 2 || || 
+| 2 || ConvertApplicationLanguageToLanguageCode || Same as [[#IApplicationManagerInterface]] cmd 59
 |-
-| 3 || || 
+| 3 || [[#ConvertLanguageCodeToApplicationLanguage]] || Same as [[#IApplicationManagerInterface]] cmd 60
 |}
 
 === IDynamicRightsInterface ===

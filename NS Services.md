@@ -590,9 +590,9 @@ This is "nn::ns::detail::IReadOnlyApplicationRecordInterface".
 
 This was added with \[5.0.0+\].
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
+| Cmd | Name                 | Notes                                                                                      |
+| --- | -------------------- | ------------------------------------------------------------------------------------------ |
+| 0   | HasApplicationRecord | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 910 |
 
 ### IReadOnlyApplicationControlDataInterface
 
@@ -600,12 +600,12 @@ This is "nn::ns::detail::IReadOnlyApplicationControlDataInterface".
 
 This was added with \[5.1.0+\].
 
-| Cmd | Name | Notes |
-| --- | ---- | ----- |
-| 0   |      |       |
-| 1   |      |       |
-| 2   |      |       |
-| 3   |      |       |
+| Cmd | Name                                                                                               | Notes                                                                                      |
+| --- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 0   | [\#GetApplicationControlData](#GetApplicationControlData "wikilink")                               | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 400 |
+| 1   | [\#GetApplicationDesiredLanguage](#GetApplicationDesiredLanguage "wikilink")                       | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 55  |
+| 2   | ConvertApplicationLanguageToLanguageCode                                                           | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 59  |
+| 3   | [\#ConvertLanguageCodeToApplicationLanguage](#ConvertLanguageCodeToApplicationLanguage "wikilink") | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 60  |
 
 ### IDynamicRightsInterface
 
