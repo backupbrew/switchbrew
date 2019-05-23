@@ -118,20 +118,20 @@ bitmask:
 | 17    | SaveDataMeta             |                                                                                                                                                             |
 | 18    | DeviceSaveData           |                                                                                                                                                             |
 | 19    | SettingsControl          |                                                                                                                                                             |
-| 20    |                          |                                                                                                                                                             |
-| 21    |                          |                                                                                                                                                             |
+| 20    | SystemData               |                                                                                                                                                             |
+| 21    | SdCard                   |                                                                                                                                                             |
 | 22    |                          |                                                                                                                                                             |
 | 23    |                          |                                                                                                                                                             |
 | 24    |                          |                                                                                                                                                             |
 | 25    |                          |                                                                                                                                                             |
-| 26    |                          |                                                                                                                                                             |
-| 27    |                          |                                                                                                                                                             |
-| 28    |                          |                                                                                                                                                             |
+| 26    | FormatSdCard             |                                                                                                                                                             |
+| 27    | GetRightsId              |                                                                                                                                                             |
+| 28    | RegisterExternalKey      |                                                                                                                                                             |
 | 29    |                          |                                                                                                                                                             |
-| 30    |                          |                                                                                                                                                             |
-| 31    |                          |                                                                                                                                                             |
+| 30    | SaveDataTransfer         |                                                                                                                                                             |
+| 31    | DeviceDetection          |                                                                                                                                                             |
 | 32    |                          |                                                                                                                                                             |
-| 33    |                          |                                                                                                                                                             |
+| 33    | SaveDataTransferVersion2 |                                                                                                                                                             |
 | 34    |                          | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28?                                                                         |
 | 35-61 | Reserved                 |                                                                                                                                                             |
 | 62    | Debug                    | See [here](SPL%20services#GetConfig.md##GetConfig "wikilink").                                                                                              |

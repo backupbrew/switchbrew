@@ -383,11 +383,11 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 20
-| 
+| SystemData
 | 
 |-
 | 21
-| 
+| SdCard
 | 
 |-
 | 22
@@ -407,15 +407,15 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 26
-| 
+| FormatSdCard
 | 
 |-
 | 27
-| 
+| GetRightsId
 | 
 |-
 | 28
-| 
+| RegisterExternalKey
 | 
 |-
 | 29
@@ -423,19 +423,19 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 30
-| 
+| SaveDataTransfer
 | 
 |-
 | 31
-| 
-| 
+| DeviceDetection
+|
 |-
 | 32
 | 
 | 
 |-
 | 33
-| 
+| SaveDataTransferVersion2
 | 
 |-
 | 34
