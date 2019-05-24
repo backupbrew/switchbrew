@@ -1,7 +1,6 @@
 # fsp-ldr
 
-This is
-"nn::fssrv::sf::IFileSystemProxyForLoader".
+This is "nn::fssrv::sf::IFileSystemProxyForLoader".
 
 | Cmd | Name                         | Arguments                                                           | Notes                                                                                           |
 | --- | ---------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
@@ -11,8 +10,7 @@ This is
 
 # fsp-pr
 
-This is
-"nn::fssrv::sf::IProgramRegistry".
+This is "nn::fssrv::sf::IProgramRegistry".
 
 | Cmd | Name                                                                         | Notes |
 | --- | ---------------------------------------------------------------------------- | ----- |
@@ -49,8 +47,7 @@ fails, it will throw an error and abort.
 
 # fsp-srv
 
-This is
-"nn::fssrv::sf::IFileSystemProxy".
+This is "nn::fssrv::sf::IFileSystemProxy".
 
 | Cmd  | Name                                                                                                                                                              |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1275,8 +1272,7 @@ current end of the file(appended).
 
 This is "nn::fssrv::sf::IStorage".
 
-This is the interface for a raw device, usually a block
-device.
+This is the interface for a raw device, usually a block device.
 
 | Cmd | Name                    | Arguments                                      |
 | --- | ----------------------- | ---------------------------------------------- |
@@ -1297,8 +1293,7 @@ There are two main implementations of this interface:
     binary. Uses an [\#IStorage](#IStorage "wikilink") interface as
     underlying raw device.
   - **IPC proxy**: Used for all non-RomFS filesystems. In this case,
-    actual filesystem implementation is in the FS
-process.
+    actual filesystem implementation is in the FS process.
 
 | Cmd | Name                                                                            |
 | --- | ------------------------------------------------------------------------------- |
@@ -1393,8 +1388,7 @@ Returns an u64 for the total number of readable entries.
 
 # DirectoryEntry
 
-This is
-"nn::fs::DirectoryEntry".
+This is "nn::fs::DirectoryEntry".
 
 | Offset | Size  | Description                                                 |
 | ------ | ----- | ----------------------------------------------------------- |
@@ -1451,8 +1445,7 @@ are available (in that case the out u64 is value 0).
 
 # IDeviceOperator
 
-This is
-"nn::fssrv::sf::IDeviceOperator".
+This is "nn::fssrv::sf::IDeviceOperator".
 
 | Cmd | Name                                                                                                          |
 | --- | ------------------------------------------------------------------------------------------------------------- |
@@ -1627,8 +1620,7 @@ No input/output.
 
 # ISaveDataTransferManagerWithDivision
 
-This is
-"nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
+This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
 
 | Cmd | Name                                                                                            |
 | --- | ----------------------------------------------------------------------------------------------- |
@@ -1710,8 +1702,7 @@ Takes an input u64 and a 0x10-byte struct, no output.
 
 # ISaveDataDivisionExporter
 
-This is
-"nn::fssrv::sf::ISaveDataDivisionExporter".
+This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1734,8 +1725,7 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataDivisionImporter
 
-This is
-"nn::fssrv::sf::ISaveDataDivisionImporter".
+This is "nn::fssrv::sf::ISaveDataDivisionImporter".
 
 | Cmd | Name                                                                                                                      |
 | --- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1766,8 +1756,7 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkExporter
 
-This is
-"nn::fssrv::sf::ISaveDataChunkExporter".
+This is "nn::fssrv::sf::ISaveDataChunkExporter".
 
 | Cmd | Name                                                                          |
 | --- | ----------------------------------------------------------------------------- |
@@ -1779,8 +1768,7 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 # ISaveDataChunkImporter
 
-This is
-"nn::fssrv::sf::ISaveDataChunkImporter".
+This is "nn::fssrv::sf::ISaveDataChunkImporter".
 
 | Cmd | Name                                                             |
 | --- | ---------------------------------------------------------------- |
@@ -1792,8 +1780,7 @@ This was added with [5.0.0](5.0.0.md "wikilink").
 
 This was added with [6.0.0](6.0.0.md "wikilink").
 
-This doesn't seem to handle any commands
-(?).
+This doesn't seem to handle any commands (?).
 
 # IMultiCommitManager
 
@@ -1808,8 +1795,8 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 
 | Value | Name               |
 | ----- | ------------------ |
-| 0     | Invalid            |
-| 1     | Invalid            |
+| 0     | Code               |
+| 1     | Data               |
 | 2     | Logo               |
 | 3     | ContentControl     |
 | 4     | ContentManual      |
@@ -1919,8 +1906,7 @@ returned via various
 Total size is 0x40-bytes.
 
 For DeviceSaveData, this struct is all-zero except for the
-[\#SaveDataType](#SaveDataType "wikilink")
-field.
+[\#SaveDataType](#SaveDataType "wikilink") field.
 
 # SaveCreate Struct
 
@@ -1951,8 +1937,7 @@ SaveCreate-struct.
 
 The 0x10-byte struct passed to
 [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink") has
-the first 0x5-bytes set to
-all-zero.
+the first 0x5-bytes set to all-zero.
 
 # SaveDataInfo
 

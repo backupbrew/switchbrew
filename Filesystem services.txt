@@ -1241,9 +1241,9 @@ This was added with [[6.0.0]].
 |-
 ! Value || Name
 |-
-| 0 || Invalid
+| 0 || Code
 |-
-| 1 || Invalid
+| 1 || Data
 |-
 | 2 || Logo
 |-
