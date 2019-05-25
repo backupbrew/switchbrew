@@ -151,20 +151,20 @@ register index is passed in the actual
 Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing
 the values of all ASIC registers as follows.
 
-| Offset | Description    |
-| ------ | -------------- |
-| 0x0    | Status         |
-| 0x4    | Access Control |
-| 0x8    |                |
-| 0xC    |                |
-| 0x10   |                |
-| 0x14   |                |
-| 0x18   |                |
-| 0x1C   |                |
-| 0x20   |                |
-| 0x24   |                |
-| 0x28   |                |
-| 0x2C   |                |
+| Register | Size | Description    |
+| -------- | ---- | -------------- |
+| 0x0      | 0x4  | Status         |
+| 0x4      | 0x4  | Access Control |
+| 0x8      | 0x4  |                |
+| 0xC      | 0x4  |                |
+| 0x10     | 0x4  |                |
+| 0x14     | 0x4  |                |
+| 0x18     | 0x4  |                |
+| 0x1C     | 0x4  |                |
+| 0x20     | 0x4  |                |
+| 0x24     | 0x4  |                |
+| 0x28     | 0x4  |                |
+| 0x2C     | 0x4  |                |
 
 ## ChangeDebugMode
 
