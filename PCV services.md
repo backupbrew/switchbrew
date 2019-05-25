@@ -2,25 +2,27 @@
 
 This is "nn::bpc::IBoardPowerControlManager".
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 0   | ShutdownSystem                           |
-| 1   | RebootSystem                             |
-| 2   | GetWakeupReason                          |
-| 3   | GetShutdownReason                        |
-| 4   | GetAcOk                                  |
-| 5   | GetBoardPowerControlEvent                |
-| 6   | \[2.0.0+\] GetSleepButtonState           |
-| 7   | \[2.0.0+\] GetPowerEvent                 |
-| 8   | \[2.0.0+\] CreateWakeupTimer             |
-| 9   | \[2.0.0+\] CancelWakeupTimer             |
-| 10  | \[2.0.0+\] EnableWakeupTimerOnDevice     |
-| 11  | \[3.0.0+\] CreateWakeupTimerEx           |
-| 12  | \[3.0.0+\] GetLastEnabledWakeupTimerType |
-| 13  | \[3.0.0+\] CleanAllWakeupTimers          |
-| 14  | \[6.0.0+\]                               |
+| Cmd | Name                                                                            |
+| --- | ------------------------------------------------------------------------------- |
+| 0   | ShutdownSystem                                                                  |
+| 1   | RebootSystem                                                                    |
+| 2   | GetWakeupReason                                                                 |
+| 3   | GetShutdownReason                                                               |
+| 4   | GetAcOk                                                                         |
+| 5   | GetBoardPowerControlEvent                                                       |
+| 6   | \[2.0.0+\] GetSleepButtonState                                                  |
+| 7   | \[2.0.0+\] GetPowerEvent                                                        |
+| 8   | \[2.0.0+\] CreateWakeupTimer                                                    |
+| 9   | \[2.0.0+\] CancelWakeupTimer                                                    |
+| 10  | \[2.0.0+\] [\#EnableWakeupTimerOnDevice](#EnableWakeupTimerOnDevice "wikilink") |
+| 11  | \[3.0.0+\] CreateWakeupTimerEx                                                  |
+| 12  | \[3.0.0+\] GetLastEnabledWakeupTimerType                                        |
+| 13  | \[3.0.0+\] CleanAllWakeupTimers                                                 |
+| 14  | \[6.0.0+\]                                                                      |
 
-Cmd10: No input, returns a total of 0x10-bytes of output. \[3.0.0+\] Now
+## EnableWakeupTimerOnDevice
+
+No input, returns a total of 0x10-bytes of output. \[3.0.0+\] Now
 returns a total of 0xC-bytes of output.
 
 # bpc:r
@@ -42,42 +44,52 @@ max77620\_rtc0 device.
 
 This is "nn::pcv::detail::IPcvService".
 
-| Cmd                | Name                     |
-| ------------------ | ------------------------ |
-| \[1.0.0-7.0.1\] 0  | SetPowerEnabled          |
-| \[1.0.0-7.0.1\] 1  | SetClockEnabled          |
-| \[1.0.0-7.0.1\] 2  | SetClockRate             |
-| \[1.0.0-7.0.1\] 3  | GetClockRate             |
-| \[1.0.0-7.0.1\] 4  | GetState                 |
-| \[1.0.0-7.0.1\] 5  | GetPossibleClockRates    |
-| \[1.0.0-7.0.1\] 6  | SetMinVClockRate         |
-| \[1.0.0-7.0.1\] 7  | SetReset                 |
-| \[1.0.0-7.0.1\] 8  | SetVoltageEnabled        |
-| \[1.0.0-7.0.1\] 9  | GetVoltageEnabled        |
-| \[1.0.0-7.0.1\] 10 | GetVoltageRange          |
-| \[1.0.0-7.0.1\] 11 | SetVoltageValue          |
-| \[1.0.0-7.0.1\] 12 | GetVoltageValue          |
-| \[1.0.0-7.0.1\] 13 | GetTemperatureThresholds |
-| \[1.0.0-7.0.1\] 14 | SetTemperature           |
-| \[1.0.0-5.1.0\] 15 | Initialize               |
-| \[1.0.0-5.1.0\] 16 | IsInitialized            |
-| \[1.0.0-5.1.0\] 17 | Finalize                 |
-| \[3.0.0-7.0.1\] 18 | PowerOn                  |
-| \[3.0.0-7.0.1\] 19 | PowerOff                 |
-| \[3.0.0-7.0.1\] 20 | ChangeVoltage            |
-| \[3.0.0-7.0.1\] 21 | GetPowerClockInfoEvent   |
-| \[3.0.0-7.0.1\] 22 | GetOscillatorClock       |
-| \[3.0.0-7.0.1\] 23 | GetDvfsTable             |
-| \[3.0.0-7.0.1\] 24 | GetModuleStateTable      |
-| \[3.0.0-7.0.1\] 25 | GetPowerDomainStateTable |
-| 26                 | \[3.0.0+\] GetFuseInfo   |
-| 27                 | \[5.0.0+\] GetDramId     |
-| \[6.0.0-7.0.1\] 28 |                          |
-| \[6.0.0-7.0.1\] 29 |                          |
+| Cmd                | Name                                     |
+| ------------------ | ---------------------------------------- |
+| \[1.0.0-7.0.1\] 0  | SetPowerEnabled                          |
+| \[1.0.0-7.0.1\] 1  | SetClockEnabled                          |
+| \[1.0.0-7.0.1\] 2  | SetClockRate                             |
+| \[1.0.0-7.0.1\] 3  | GetClockRate                             |
+| \[1.0.0-7.0.1\] 4  | GetState                                 |
+| \[1.0.0-7.0.1\] 5  | GetPossibleClockRates                    |
+| \[1.0.0-7.0.1\] 6  | SetMinVClockRate                         |
+| \[1.0.0-7.0.1\] 7  | SetReset                                 |
+| \[1.0.0-7.0.1\] 8  | SetVoltageEnabled                        |
+| \[1.0.0-7.0.1\] 9  | GetVoltageEnabled                        |
+| \[1.0.0-7.0.1\] 10 | GetVoltageRange                          |
+| \[1.0.0-7.0.1\] 11 | SetVoltageValue                          |
+| \[1.0.0-7.0.1\] 12 | GetVoltageValue                          |
+| \[1.0.0-7.0.1\] 13 | GetTemperatureThresholds                 |
+| \[1.0.0-7.0.1\] 14 | SetTemperature                           |
+| \[1.0.0-5.1.0\] 15 | Initialize                               |
+| \[1.0.0-5.1.0\] 16 | IsInitialized                            |
+| \[1.0.0-5.1.0\] 17 | Finalize                                 |
+| \[3.0.0-7.0.1\] 18 | PowerOn                                  |
+| \[3.0.0-7.0.1\] 19 | PowerOff                                 |
+| \[3.0.0-7.0.1\] 20 | ChangeVoltage                            |
+| \[3.0.0-7.0.1\] 21 | GetPowerClockInfoEvent                   |
+| \[3.0.0-7.0.1\] 22 | GetOscillatorClock                       |
+| \[3.0.0-7.0.1\] 23 | GetDvfsTable                             |
+| \[3.0.0-7.0.1\] 24 | GetModuleStateTable                      |
+| \[3.0.0-7.0.1\] 25 | GetPowerDomainStateTable                 |
+| 26                 | \[3.0.0+\] GetFuseInfo                   |
+| 27                 | \[5.0.0+\] GetDramId                     |
+| \[6.0.0-7.0.1\] 28 | [\#IsPoweredOn](#IsPoweredOn "wikilink") |
+| \[6.0.0-7.0.1\] 29 | [\#GetVoltage](#GetVoltage "wikilink")   |
 
 \[7.0.0+\] The type-0xA output buffers were replaced with type-0x22
 output buffers, for the following: GetDvfsTable, GetModuleStateTable,
 and GetPowerDomainStateTable.
+
+## IsPoweredOn
+
+Takes an u32 **PowerControlTarget** and returns a bool indicating the
+status of the requested [voltage block](#Voltage "wikilink").
+
+## GetVoltage
+
+Takes an u32 **PowerControlTarget** and returns an u32 voltage value for
+the requested [voltage block](#Voltage "wikilink").
 
 ## Modules
 

@@ -25,7 +25,7 @@ This is "nn::bpc::IBoardPowerControlManager".
 |-
 | 9 || [2.0.0+] CancelWakeupTimer
 |-
-| 10 || [2.0.0+] EnableWakeupTimerOnDevice
+| 10 || [2.0.0+] [[#EnableWakeupTimerOnDevice]]
 |-
 | 11 || [3.0.0+] CreateWakeupTimerEx
 |-
@@ -36,7 +36,8 @@ This is "nn::bpc::IBoardPowerControlManager".
 | 14 || [6.0.0+]
 |}
 
-Cmd10: No input, returns a total of 0x10-bytes of output. [3.0.0+] Now returns a total of 0xC-bytes of output.
+== EnableWakeupTimerOnDevice ==
+No input, returns a total of 0x10-bytes of output. [3.0.0+] Now returns a total of 0xC-bytes of output.
 
 = bpc:r =
 This is "nn::bpc::IRtcManager".
@@ -121,12 +122,18 @@ This is "nn::pcv::detail::IPcvService".
 |-
 | 27 || [5.0.0+] GetDramId
 |-
-| [6.0.0-7.0.1] 28 ||
+| [6.0.0-7.0.1] 28 || [[#IsPoweredOn]]
 |-
-| [6.0.0-7.0.1] 29 ||
+| [6.0.0-7.0.1] 29 || [[#GetVoltage]]
 |}
 
 [7.0.0+] The type-0xA output buffers were replaced with type-0x22 output buffers, for the following: GetDvfsTable, GetModuleStateTable, and GetPowerDomainStateTable.
+
+== IsPoweredOn ==
+Takes an u32 '''PowerControlTarget''' and returns a bool indicating the status of the requested [[#Voltage|voltage block]].
+
+== GetVoltage ==
+Takes an u32 '''PowerControlTarget''' and returns an u32 voltage value for the requested [[#Voltage|voltage block]].
 
 == Modules ==
 These are "nn::pcv::Module_X" where X is the power, clock and reset block name.
