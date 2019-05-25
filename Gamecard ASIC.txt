@@ -255,7 +255,7 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 |-
 | 0x0
 | 0x4
-| CUP Version
+| [[Gamecard_Format#Gamecard_Info|CUP Version]]
 |-
 | 0x4
 | 0x4
