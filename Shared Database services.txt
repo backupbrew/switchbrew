@@ -1,34 +1,33 @@
-
 = pl:u =
-This is "nn::pl::detail::ISharedFontManager".
+This is "nn::pl::detail::IPlatformServiceManager".
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || [[#RequestLoad]]
+| 0 || [[#RequestSharedFontLoad]]
 |-
-| 1 || [[#GetLoadState]]
+| 1 || [[#GetSharedFontLoadState]]
 |-
-| 2 || [[#GetSize]]
+| 2 || [[#GetSharedFontSize]]
 |-
-| 3 || [[#GetSharedMemoryAddressOffset]]
+| 3 || [[#GetSharedFontAddress]]
 |-
-| 4 || [[#GetSharedMemoryNativeHandle]]
+| 4 || [[#GetSharedFontSharedMemoryHandle]]
 |-
 | 5 || [[#GetSharedFontInOrderOfPriority]]
 |-
 | 6 || [4.0.0+] GetSharedFontInOrderOfPriorityForSystem
 |-
-| 100 || [8.0.0+]
+| 100 || [8.0.0+] RequestApplicationFunctionAuthorization
 |-
-| 101 || [8.0.0+]
+| 101 || [8.0.0+] RequestApplicationFunctionAuthorizationForSystem
 |}
 
-== RequestLoad ==
+== RequestSharedFontLoad ==
 Takes a [[#SharedFontType]] (uint32), no output.
 
-== GetLoadState ==
+== GetSharedFontLoadState ==
 Takes a [[#SharedFontType]] (uint32), returns the [[#LoadState]] (uint32).
 
 === LoadState ===
@@ -41,25 +40,25 @@ Takes a [[#SharedFontType]] (uint32), returns the [[#LoadState]] (uint32).
 | 0x01 || Loaded
 |}
 
-== GetSize ==
+== GetSharedFontSize ==
 Takes a [[#SharedFontType]] (uint32), returns the Font Size (uint32).
 
-== GetSharedMemoryAddressOffset ==
+== GetSharedFontAddress ==
 Takes a [[#SharedFontType]] (uint32), returns the offset (uint32) to the Font Address.
 
-== GetSharedMemoryNativeHandle ==
+== GetSharedFontSharedMemoryHandle ==
 No input, returns an output SharedMemory handle.
 
 User-processes map this SharedMemory with size=0x1100000 and permissions=R--.
 
-Font data is TTF, located at the offset returned by [[#GetSharedMemoryAddressOffset]].
+Font data is TTF, located at the offset returned by [[#GetSharedFontAddress]].
 
 == GetSharedFontInOrderOfPriority ==
 Takes an input u64 [[Settings_services#LanguageCode|LanguageCode]] and 3 type-0x6 output buffers, returns an output u8 and u32. The u8 is a bool to specify if the fonts are loaded or not and the u32 is the font count.
 The first buffer contains a list of [[#SharedFontType|Shared font types]], the second buffer contains the font offsets and the final buffer contains the font sizes.
 The buffers are an array of u32s which specify information about a specific font. Buffer1[n] is related to Buffer2[n] and Buffer3[n].
 Example: Font index 0s offset is at Buffer2[0], size is at Buffer3[0].
-The fonts are relative to the shared memory created by [[#GetSharedMemoryNativeHandle]]
+The fonts are relative to the shared memory created by [[#GetSharedFontSharedMemoryHandle]]
 
 == SharedFontType ==
 {| class="wikitable" border="1"

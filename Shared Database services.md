@@ -1,25 +1,25 @@
 # pl:u
 
-This is "nn::pl::detail::ISharedFontManager".
+This is "nn::pl::detail::IPlatformServiceManager".
 
-| Cmd | Name                                                                           |
-| --- | ------------------------------------------------------------------------------ |
-| 0   | [\#RequestLoad](#RequestLoad "wikilink")                                       |
-| 1   | [\#GetLoadState](#GetLoadState "wikilink")                                     |
-| 2   | [\#GetSize](#GetSize "wikilink")                                               |
-| 3   | [\#GetSharedMemoryAddressOffset](#GetSharedMemoryAddressOffset "wikilink")     |
-| 4   | [\#GetSharedMemoryNativeHandle](#GetSharedMemoryNativeHandle "wikilink")       |
-| 5   | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink") |
-| 6   | \[4.0.0+\] GetSharedFontInOrderOfPriorityForSystem                             |
-| 100 | \[8.0.0+\]                                                                     |
-| 101 | \[8.0.0+\]                                                                     |
+| Cmd | Name                                                                             |
+| --- | -------------------------------------------------------------------------------- |
+| 0   | [\#RequestSharedFontLoad](#RequestSharedFontLoad "wikilink")                     |
+| 1   | [\#GetSharedFontLoadState](#GetSharedFontLoadState "wikilink")                   |
+| 2   | [\#GetSharedFontSize](#GetSharedFontSize "wikilink")                             |
+| 3   | [\#GetSharedFontAddress](#GetSharedFontAddress "wikilink")                       |
+| 4   | [\#GetSharedFontSharedMemoryHandle](#GetSharedFontSharedMemoryHandle "wikilink") |
+| 5   | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink")   |
+| 6   | \[4.0.0+\] GetSharedFontInOrderOfPriorityForSystem                               |
+| 100 | \[8.0.0+\] RequestApplicationFunctionAuthorization                               |
+| 101 | \[8.0.0+\] RequestApplicationFunctionAuthorizationForSystem                      |
 
-## RequestLoad
+## RequestSharedFontLoad
 
 Takes a [\#SharedFontType](#SharedFontType "wikilink") (uint32), no
 output.
 
-## GetLoadState
+## GetSharedFontLoadState
 
 Takes a [\#SharedFontType](#SharedFontType "wikilink") (uint32), returns
 the [\#LoadState](#LoadState "wikilink") (uint32).
@@ -31,17 +31,17 @@ the [\#LoadState](#LoadState "wikilink") (uint32).
 | 0x00  | Loading     |
 | 0x01  | Loaded      |
 
-## GetSize
+## GetSharedFontSize
 
 Takes a [\#SharedFontType](#SharedFontType "wikilink") (uint32), returns
 the Font Size (uint32).
 
-## GetSharedMemoryAddressOffset
+## GetSharedFontAddress
 
 Takes a [\#SharedFontType](#SharedFontType "wikilink") (uint32), returns
 the offset (uint32) to the Font Address.
 
-## GetSharedMemoryNativeHandle
+## GetSharedFontSharedMemoryHandle
 
 No input, returns an output SharedMemory handle.
 
@@ -49,7 +49,7 @@ User-processes map this SharedMemory with size=0x1100000 and
 permissions=R--.
 
 Font data is TTF, located at the offset returned by
-[\#GetSharedMemoryAddressOffset](#GetSharedMemoryAddressOffset "wikilink").
+[\#GetSharedFontAddress](#GetSharedFontAddress "wikilink").
 
 ## GetSharedFontInOrderOfPriority
 
@@ -64,7 +64,7 @@ array of u32s which specify information about a specific font.
 Buffer1\[n\] is related to Buffer2\[n\] and Buffer3\[n\]. Example: Font
 index 0s offset is at Buffer2\[0\], size is at Buffer3\[0\]. The fonts
 are relative to the shared memory created by
-[\#GetSharedMemoryNativeHandle](#GetSharedMemoryNativeHandle "wikilink")
+[\#GetSharedFontSharedMemoryHandle](#GetSharedFontSharedMemoryHandle "wikilink")
 
 ## SharedFontType
 
