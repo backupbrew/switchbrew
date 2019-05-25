@@ -188,7 +188,7 @@ Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing the values
 
 {| class="wikitable" border="1"
 |-
-! Register
+! Offset
 ! Size
 ! Description
 |-
