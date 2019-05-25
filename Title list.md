@@ -1831,8 +1831,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 
 ## System Debug Applets
 
-Note: No 01000000000020XX titles exist on retail
-systems.
+Note: No 01000000000020XX titles exist on retail systems.
 
 | Title-id         | Versions | Name                                                                 | Notes                                                    |
 | ---------------- | -------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -1920,6 +1919,8 @@ systems.
 | 0100000000002126 |          | PalmaSerialCodeTool                                                  |                                                          |
 | 0100000000002127 |          | renderdoccmd                                                         |                                                          |
 | 0100000000002128 |          | HidInspectionToolProd                                                |                                                          |
+| 010000000000212C |          | ExhibitionMenu                                                       |                                                          |
+| 0100000000002130 |          | LuciaConverter                                                       |                                                          |
 
 ## System Debug Modules
 
