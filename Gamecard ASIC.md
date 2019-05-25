@@ -149,7 +149,7 @@ register index is passed in the actual
 ## ReadAsicRegister
 
 Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing
-the values of all ASIC registers.
+the values of all ASIC registers as follows.
 
 | Offset | Description    |
 | ------ | -------------- |

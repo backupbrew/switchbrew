@@ -184,7 +184,7 @@ Signals the Gamecard ASIC to write an internal register. The register value is p
 |}
 
 == ReadAsicRegister ==
-Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing the values of all ASIC registers.
+Signals the Gamecard ASIC to send a 0x30 byte sized buffer containing the values of all ASIC registers as follows.
 
 {| class="wikitable" border="1"
 |-
