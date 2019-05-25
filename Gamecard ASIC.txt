@@ -254,7 +254,7 @@ Signals the Gamecard ASIC to send a 0x108 byte sized buffer containing the curre
 |}
 
 == GetCardKeyArea ==
-Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the current Gamecard's key area sectors.
+Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing the current Gamecard's key area sectors as follows.
 
 {| class="wikitable" border="1"
 |-

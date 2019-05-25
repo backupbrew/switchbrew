@@ -185,7 +185,7 @@ the current Gamecard's header data as follows.
 ## GetCardKeyArea
 
 Signals the Gamecard ASIC to send a 0x800 byte sized buffer containing
-the current Gamecard's key area sectors.
+the current Gamecard's key area sectors as follows.
 
 | Sector | Size  | Description                                                                                          |
 | ------ | ----- | ---------------------------------------------------------------------------------------------------- |
