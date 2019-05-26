@@ -148,41 +148,41 @@ This was added with \[5.0.0+\].
 
 This is "nn::pdm::detail::INotifyService".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 2   |            |
-| 3   |            |
-| 4   |            |
-| 5   |            |
-| 6   | \[4.0.0+\] |
-| 7   | \[4.0.0+\] |
-| 8   | \[6.0.0+\] |
-| 9   | \[8.0.0+\] |
+| Cmd | Name                                      |
+| --- | ----------------------------------------- |
+| 0   | NotifyAppletEvent                         |
+| 2   | NotifyOperationModeChangeEvent            |
+| 3   | NotifyPowerStateChangeEvent               |
+| 4   | NotifyClearAllEvent                       |
+| 5   | NotifyEventForDebug                       |
+| 6   | \[4.0.0+\] SuspendUserAccountEventService |
+| 7   | \[4.0.0+\] ResumeUserAccountEventService  |
+| 8   | \[6.0.0+\]                                |
+| 9   | \[8.0.0+\]                                |
 
 # pdm:qry
 
 This is "nn::pdm::detail::IQueryService".
 
-| Cmd               | Name       |
-| ----------------- | ---------- |
-| 0                 |            |
-| \[1.0.0-6.2.0\] 1 |            |
-| \[1.0.0-6.2.0\] 2 |            |
-| \[1.0.0-6.2.0\] 3 |            |
-| 4                 |            |
-| 5                 |            |
-| \[1.0.0-6.2.0\] 6 |            |
-| 7                 |            |
-| 8                 |            |
-| 9                 |            |
-| 10                |            |
-| 11                | \[4.0.0+\] |
-| 12                | \[4.0.0+\] |
-| 13                | \[5.0.0+\] |
-| 14                | \[6.0.0+\] |
-| 15                | \[6.0.0+\] |
-| 16                | \[6.0.0+\] |
+| Cmd               | Name                                                         |
+| ----------------- | ------------------------------------------------------------ |
+| 0                 | QueryApplicationEvent                                        |
+| \[1.0.0-6.2.0\] 1 | QueryPlayStatistics                                          |
+| \[1.0.0-6.2.0\] 2 | QueryPlayStatisticsByUserAccountId                           |
+| \[1.0.0-6.2.0\] 3 | QueryPlayStatisticsByNetworkServiceAccountId                 |
+| 4                 | QueryPlayStatisticsByApplicationId                           |
+| 5                 | QueryPlayStatisticsByApplicationIdAndUserAccountId           |
+| \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId |
+| 7                 | QueryLastPlayTime                                            |
+| 8                 | QueryPlayEvent                                               |
+| 9                 | GetAvailablePlayEventRange                                   |
+| 10                | QueryAccountEvent                                            |
+| 11                | \[4.0.0+\] QueryAccountPlayEvent                             |
+| 12                | \[4.0.0+\] GetAvailableAccountPlayEventRange                 |
+| 13                | \[5.0.0+\] QueryApplicationPlayStatisticsForSystem           |
+| 14                | \[6.0.0+\]                                                   |
+| 15                | \[6.0.0+\]                                                   |
+| 16                | \[6.0.0+\]                                                   |
 
 # avm
 
