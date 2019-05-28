@@ -130,8 +130,7 @@ This is "nn::pm::detail::IBootModeInterface".
 
 # pm:dmnt
 
-This is
-"nn::pm::detail::IDebugMonitorInterface".
+This is "nn::pm::detail::IDebugMonitorInterface".
 
 | Cmd                   | Name                                                                 |
 | --------------------- | -------------------------------------------------------------------- |
@@ -215,8 +214,7 @@ Takes a pid and returns the title-id associated with the process.
 
 # pm:shell
 
-This is
-"nn::pm::detail::IShellInterface".
+This is "nn::pm::detail::IShellInterface".
 
 | Cmd                   | Name                                                                                      |
 | --------------------- | ----------------------------------------------------------------------------------------- |
@@ -322,14 +320,12 @@ first time.
 On normal [7.0.0](7.0.0.md "wikilink") retail firmware, this will double
 the limit on system threads from 0x60 to 0xC0.
 
-## GetUnimplementedEventHandle
+## GetBootFinishedEvent
 
-This function returns a handle, and in [8.0.0](8.0.0.md "wikilink") code
-was added to the global ProcessManager object constructor to call
-svcCreateEvent to make a new global event.
+This function returns a handle to an event that is signaled when
+[\#NotifyBootFinished](#NotifyBootFinished "wikilink") is called.
 
-This command is presumably intended to retrieve this event, however, the
-event is never signaled anywhere, and as of [8.0.0](8.0.0.md "wikilink")
-the implementation for this command just does "abort();".
+However, this is only used/available in safe mode; in normal, non-safe
+FIRM, the implementation for this command just does "abort();".
 
 [Category:Services](Category:Services "wikilink")
