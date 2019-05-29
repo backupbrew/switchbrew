@@ -315,22 +315,26 @@ only uses requests 0x4, 0x7, and 0xA.
 
 ### Reply
 
-| ReplyType          | Data Size | Name                        | Notes                                                                                               |
-| ------------------ | --------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
-| 0x0                | 0x1       | FinishedInitialize          | Reply data is ignored by the user-process.                                                          |
-| 0x1 / default case | 0x0       |                             | Official sw has no handling for this besides just closing the storage.                              |
-| 0x2                | 0x3FC     | ChangedString               |                                                                                                     |
-| 0x3                | 0x3F4     | MovedCursor                 |                                                                                                     |
-| 0x4                | 0x3F4     | MovedTab                    |                                                                                                     |
-| 0x5                | 0x3F0     | DecidedEnter                |                                                                                                     |
-| 0x6                | 0x0       | DecidedCancel               |                                                                                                     |
-| 0x7                | 0x7E4     | ChangedStringUtf8           |                                                                                                     |
-| 0x8                | 0x7DC     | MovedCursorUtf8             |                                                                                                     |
-| 0x9                | 0x7D8     | DecidedEnterUtf8            |                                                                                                     |
-| 0xA                | 0x0       | UnsetCustomizeDic           | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
-| 0xB                | 0x0       | ReleasedUserWordInfo        |                                                                                                     |
-| 0xC                | 0x0       | UnsetCustomizedDictionaries | \[6.0.0+\] Official sw handles this the same as UnsetCustomizeDic.                                  |
-|                    |           |                             |                                                                                                     |
+| ReplyType          | Data Size   | Name                        | Notes                                                                                               |
+| ------------------ | ----------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
+| 0x0                | 0x1         | FinishedInitialize          | Reply data is ignored by the user-process.                                                          |
+| 0x1 / default case | 0x0         |                             | Official sw has no handling for this besides just closing the storage.                              |
+| 0x2                | 0x3FC       | ChangedString               |                                                                                                     |
+| 0x3                | 0x3F4       | MovedCursor                 |                                                                                                     |
+| 0x4                | 0x3F4       | MovedTab                    |                                                                                                     |
+| 0x5                | 0x3F0       | DecidedEnter                |                                                                                                     |
+| 0x6                | 0x0         | DecidedCancel               |                                                                                                     |
+| 0x7                | 0x7E4       | ChangedStringUtf8           |                                                                                                     |
+| 0x8                | 0x7DC       | MovedCursorUtf8             |                                                                                                     |
+| 0x9                | 0x7D8       | DecidedEnterUtf8            |                                                                                                     |
+| 0xA                | 0x0         | UnsetCustomizeDic           | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
+| 0xB                | 0x0         | ReleasedUserWordInfo        |                                                                                                     |
+| 0xC                | 0x0         | UnsetCustomizedDictionaries | \[6.0.0+\] Official sw handles this the same as UnsetCustomizeDic.                                  |
+| 0xD                | 0x7E4 + 0x1 | ChangedStringV2             | \[8.0.0+\]                                                                                          |
+| 0xE                | 0x7DC + 0x1 | MovedCursorV2               | \[8.0.0+\]                                                                                          |
+| 0xF                | 0x3FC + 0x1 | ChangedStringUtf8V2         | \[8.0.0+\]                                                                                          |
+| 0x10               | 0x3F4 + 0x1 | MovedCursorUtf8V2           | \[8.0.0+\]                                                                                          |
+|                    |             |                             |                                                                                                     |
 
 See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is
 the State, while the second u32 is the ReplyType. The rest is the
@@ -349,6 +353,8 @@ Reply data format:
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
     one is the stringLen, and the second one is cursorPos.
   - DecidedEnter\*: +0 = string. The last u32 is the stringLen.
+  - \*V2: +0 = string. Last byte: u8 bool, passed to the callback as
+    `flag==0`.
 
 ## CustomizedDictionarySet
 

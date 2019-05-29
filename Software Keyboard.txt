@@ -410,6 +410,14 @@ Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x
 |-
 | 0xC || 0x0 || UnsetCustomizedDictionaries || [6.0.0+] Official sw handles this the same as UnsetCustomizeDic.
 |-
+| 0xD || 0x7E4 + 0x1 || ChangedStringV2 || [8.0.0+]
+|-
+| 0xE || 0x7DC + 0x1 || MovedCursorV2 || [8.0.0+]
+|-
+| 0xF || 0x3FC + 0x1 || ChangedStringUtf8V2 || [8.0.0+]
+|-
+| 0x10 || 0x3F4 + 0x1 || MovedCursorUtf8V2 || [8.0.0+]
+|-
 |}
 
 See [[#Runtime]]. In the storage, the first u32 is the State, while the second u32 is the ReplyType. The rest is the reply-specific data.
@@ -420,6 +428,7 @@ Reply data format:
 * ChangedString*: +0 = string. Last 0x10-bytes: 4 u32s, where the first one is the length of the string in characters, without NUL-terminator. The last u32 is cursorPos. The other 2 fields are s32s.
 * MovedCursor*: +0 = string. Last 0x8-bytes: 2 u32s, where the first one is the stringLen, and the second one is cursorPos.
 * DecidedEnter*: +0 = string. The last u32 is the stringLen.
+* *V2: +0 = string. Last byte: u8 bool, passed to the callback as <code>flag==0</code>.
 
 == CustomizedDictionarySet ==
 {| class="wikitable" border="1"
