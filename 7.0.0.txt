@@ -49,6 +49,12 @@ Resource limit initialization was changed:
 * PM now sets the maximum number of threads creatable by sysmodules to 0x60 instead of 0x260.
 ** A [[Process Manager services#EnableAdditionalSystemThreads|new command]] was added to pm:shell to increase this limit once, on retail this doubles the number of threads creatable to 0xC0.
 
+=====[[Filesystem services|FS]]=====
+* Device Address Space initialization for nn::sdmmc is now handled differently.
+** Previously, the shared SDMMC device address space handle was attached to all devices during global init prior to service registration.
+** Now, the handle is attached to specific devices during their relevant DeviceAccessor::Initialize() call, which only happens when the relevant device is ready for access.
+* (Many other differences not yet reversed/noted here.)
+
 ==System Titles==
 All titles were updated, except: "Chinese and Korean dictionaries", "European English and Japanese dictionaries", EULA, "Blacklist URL", "Dummy file", "Hoag system config", and flog.
 
