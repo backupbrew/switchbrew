@@ -141,6 +141,8 @@ When decrypted, this section contains the plaintext Switch kernel binary.
 == Section 1 ==
 When decrypted, this section contains the built-in system modules encapsulated in a custom format.
 
+Note: On firmware [[8.0.0]] INI1 is contained within the Kernel and section 1 is empty with NULL SHA256 to match.
+
 === INI1 ===
 {| class="wikitable" border="1"
 |-

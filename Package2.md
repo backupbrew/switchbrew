@@ -7,8 +7,7 @@ partitions](Flash%20Filesystem#User%20Partitions.md##User_Partitions "wikilink")
 # Format
 
 Package2 is distributed in an already encrypted format. Therefore, it's
-not additionally encrypted when installed into the flash
-filesystem.
+not additionally encrypted when installed into the flash filesystem.
 
 | Offset | Size     | Description                                                                                |
 | ------ | -------- | ------------------------------------------------------------------------------------------ |
@@ -27,8 +26,7 @@ a CTR stored inside the decrypted header.
 
 ## Header
 
-When decrypted, package2's header is as
-follows.
+When decrypted, package2's header is as follows.
 
 | Offset | Size | Description                                                                                                                                                  |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -80,6 +78,9 @@ binary.
 When decrypted, this section contains the built-in system modules
 encapsulated in a custom format.
 
+Note: On firmware [8.0.0](8.0.0.md "wikilink") INI1 is contained within
+the Kernel and section 1 is empty with NULL SHA256 to match.
+
 ### INI1
 
 | Offset | Type | Description                      |
@@ -91,8 +92,7 @@ encapsulated in a custom format.
 
 #### KIP1
 
-Kernel Initial
-Process.
+Kernel Initial Process.
 
 | Offset | Type                                              | Description                                                                                                                                                                                             |
 | ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -135,8 +135,7 @@ expansion.
 ## Section 3
 
 This section is not present (CTR and SHA-256 hash in package2's header
-are NULL). Likely reserved for future
-expansion.
+are NULL). Likely reserved for future expansion.
 
 # Versions
 
