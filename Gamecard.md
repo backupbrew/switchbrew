@@ -101,7 +101,7 @@ A typical boot up sequence of a game cartridge (in this case, the game
     Uses card id: 0xC2
   - Renesas  
     Uses package: LGA, TSOP-48
-    Uses card id: 0xAE
+    Uses card id: 0x23
   - SanDisk?  
     Uses package: ??
     Uses card id: 0x45 ?
