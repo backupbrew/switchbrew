@@ -194,10 +194,10 @@ A typical boot up sequence of a game cartridge (in this case, the game "1,2 Swit
 
 = Manufacturers =
 ;Macronix (MX)
-: Uses package: LGA
+: Uses package: LGA, TSOP-48
 : Uses card id: 0xC2
-;OKI Semiconductor 
-: Uses package: TSOP-48
+;Renesas 
+: Uses package: LGA, TSOP-48
 : Uses card id: 0xAE
 ;SanDisk?
 : Uses package: ??

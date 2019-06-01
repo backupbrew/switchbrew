@@ -1,5 +1,4 @@
-This page documents the Nintendo Switch
-Gamecard.
+This page documents the Nintendo Switch Gamecard.
 
 |                                                                                                     |                                                                                         |
 | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -18,8 +17,7 @@ For the Gamecard ASIC, see [here](Gamecard%20ASIC.md "wikilink").
 
 # Pinout
 
-![Gamecard-pinout.png](Gamecard-pinout.png
-"Gamecard-pinout.png")
+![Gamecard-pinout.png](Gamecard-pinout.png "Gamecard-pinout.png")
 
 | Pin | Name     | Direction | Description                                                                      |
 | --- | -------- | --------- | -------------------------------------------------------------------------------- |
@@ -75,8 +73,7 @@ The actual response bytes are also followed immediately by a 4-byte
 CRC-32 over the actual data response bytes.
 
 A typical boot up sequence of a game cartridge (in this case, the game
-"1,2 Switch") looks like
-this:
+"1,2 Switch") looks like this:
 
 | Command                            | Size  | Description                                                                  |
 | ---------------------------------- | ----- | ---------------------------------------------------------------------------- |
@@ -100,10 +97,10 @@ this:
 # Manufacturers
 
   - Macronix (MX)  
-    Uses package: LGA
+    Uses package: LGA, TSOP-48
     Uses card id: 0xC2
-  - OKI Semiconductor  
-    Uses package: TSOP-48
+  - Renesas  
+    Uses package: LGA, TSOP-48
     Uses card id: 0xAE
   - SanDisk?  
     Uses package: ??
