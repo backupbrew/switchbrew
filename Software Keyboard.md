@@ -307,6 +307,8 @@ following:
 | 0xA            | 0x4A0     | Calc                        | Data is [\#CalcArg](#CalcArg "wikilink").                                                                       |
 | 0xB            | 0xD0      | SetCustomizedDictionaries   | Data is [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") with an additional 2-bytes of padding. |
 | 0xC            | 0x0       | UnsetCustomizedDictionaries |                                                                                                                 |
+| 0xD            | 0x1       | \[8.0.0+\]                  | Takes an input u8 bool which controls whether ChangedString\*V2 or ChangedString\* replies should be used.      |
+| 0xE            | 0x1       | \[8.0.0+\]                  | Takes an input u8 bool which controls whether MovedCursor\*V2 or MovedCursor\* replies should be used.          |
 
 Requests are sent via an applet Interactive input IStorage: the u32 at
 offset 0x0 is the RequestCommand, and the rest of the storage is the
@@ -353,7 +355,7 @@ Reply data format:
   - MovedCursor\*: +0 = string. Last 0x8-bytes: 2 u32s, where the first
     one is the stringLen, and the second one is cursorPos.
   - DecidedEnter\*: +0 = string. The last u32 is the stringLen.
-  - \*V2: +0 = string. Last byte: u8 bool, passed to the callback as
+  - \*V2: See above. Last byte: u8 bool, passed to the callback as
     `flag==0`.
 
 ## CustomizedDictionarySet
