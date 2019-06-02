@@ -332,10 +332,10 @@ only uses requests 0x4, 0x7, and 0xA.
 | 0xA                | 0x0         | UnsetCustomizeDic           | Official sw clears a flag related to CustomizeDic, then runs the same handling code as 0x1/default. |
 | 0xB                | 0x0         | ReleasedUserWordInfo        |                                                                                                     |
 | 0xC                | 0x0         | UnsetCustomizedDictionaries | \[6.0.0+\] Official sw handles this the same as UnsetCustomizeDic.                                  |
-| 0xD                | 0x7E4 + 0x1 | ChangedStringV2             | \[8.0.0+\]                                                                                          |
-| 0xE                | 0x7DC + 0x1 | MovedCursorV2               | \[8.0.0+\]                                                                                          |
-| 0xF                | 0x3FC + 0x1 | ChangedStringUtf8V2         | \[8.0.0+\]                                                                                          |
-| 0x10               | 0x3F4 + 0x1 | MovedCursorUtf8V2           | \[8.0.0+\]                                                                                          |
+| 0xD                | 0x3FC + 0x1 | ChangedStringV2             | \[8.0.0+\]                                                                                          |
+| 0xE                | 0x3F4 + 0x1 | MovedCursorV2               | \[8.0.0+\]                                                                                          |
+| 0xF                | 0x7E4 + 0x1 | ChangedStringUtf8V2         | \[8.0.0+\]                                                                                          |
+| 0x10               | 0x7DC + 0x1 | MovedCursorUtf8V2           | \[8.0.0+\]                                                                                          |
 |                    |             |                             |                                                                                                     |
 
 See [\#Runtime](#Runtime "wikilink"). In the storage, the first u32 is

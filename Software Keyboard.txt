@@ -414,13 +414,13 @@ Requests are sent via an applet Interactive input IStorage: the u32 at offset 0x
 |-
 | 0xC || 0x0 || UnsetCustomizedDictionaries || [6.0.0+] Official sw handles this the same as UnsetCustomizeDic.
 |-
-| 0xD || 0x7E4 + 0x1 || ChangedStringV2 || [8.0.0+]
+| 0xD || 0x3FC + 0x1 || ChangedStringV2 || [8.0.0+]
 |-
-| 0xE || 0x7DC + 0x1 || MovedCursorV2 || [8.0.0+]
+| 0xE || 0x3F4 + 0x1 || MovedCursorV2 || [8.0.0+]
 |-
-| 0xF || 0x3FC + 0x1 || ChangedStringUtf8V2 || [8.0.0+]
+| 0xF || 0x7E4 + 0x1 || ChangedStringUtf8V2 || [8.0.0+]
 |-
-| 0x10 || 0x3F4 + 0x1 || MovedCursorUtf8V2 || [8.0.0+]
+| 0x10 || 0x7DC + 0x1 || MovedCursorUtf8V2 || [8.0.0+]
 |-
 |}
 
