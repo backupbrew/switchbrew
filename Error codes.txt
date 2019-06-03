@@ -960,7 +960,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x70C74 || 116 || 902 || Value out of valid range
 |-
-| 0x7BA74 || 116 || 989 || Entry not found
+| 0x70E74 || 116 || 903 || TimeZoneRule conversion failed
+|-
+| 0x7BA74 || 116 || 989 || TimeZone location name not found
 |-
 | 0x7BC74 || 116 || 990 || Unimplemented functionality
 |-
