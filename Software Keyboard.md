@@ -70,7 +70,7 @@ Version 0x6000B+:
 | 0x3D4  | 0x20 | \-1           | When set and enabled via textDrawType, controls displayed text grouping (inserts spaces, without affecting output string). Used for DownloadCodes, otherwise this is -1 normally. |
 | 0x3F4  | 0xC0 | 0             | [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink") array data.                                                                                                      |
 | 0x4B4  | 0x1  | 0             | Total array entries for [\#CustomizedDictionarySet](#CustomizedDictionarySet "wikilink").                                                                                         |
-| 0x4B5  | 0x1  | 0             | \[8.0.0+\] Unknown                                                                                                                                                                |
+| 0x4B5  | 0x1  | 0             | \[8.0.0+\] Cancel Button Flag (0 = do not disable cancel, 1 = disable cancel)                                                                                                     |
 | 0x4B6  | 0xD  | 0             | Padding                                                                                                                                                                           |
 | 0x4C3  | 0x1  | 0             | \[8.0.0+\] Trigger                                                                                                                                                                |
 | 0x4C4  | 0x4  | 0             | Padding                                                                                                                                                                           |

@@ -102,7 +102,7 @@ Version 0x6000B+:
 |-
 | 0x4B4 || 0x1 || 0 || Total array entries for [[#CustomizedDictionarySet]].
 |-
-| 0x4B5 || 0x1 || 0 || [8.0.0+] Unknown
+| 0x4B5 || 0x1 || 0 || [8.0.0+] Cancel Button Flag (0 = do not disable cancel, 1 = disable cancel)
 |-
 | 0x4B6 || 0xD || 0 || Padding
 |-
