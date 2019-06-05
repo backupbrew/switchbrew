@@ -185,7 +185,7 @@ This is "nn::nfc::detail::ISystem".
 |-
 | 500 || [4.0.0+] SetNfcEnabled
 |-
-| 510 || [7.0.0+]
+| 510 || [7.0.0+] OutputTestWave
 |-
 | 1000 || [4.0.0+] ReadMifare
 |-
