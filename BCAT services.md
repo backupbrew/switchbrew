@@ -267,9 +267,9 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 | 90100                 | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
 | \[1.0.0\] 90101       |                                                                 |
 | \[1.0.0\] 90102       |                                                                 |
-| \[5.0.0-5.1.0\] 90200 |                                                                 |
-| \[5.0.0-5.1.0\] 90201 |                                                                 |
-| \[5.0.0-5.1.0\] 90300 |                                                                 |
+| \[5.0.0-5.1.0\] 90200 | GetStatistics                                                   |
+| \[5.0.0-5.1.0\] 90201 | GetThroughputHistory                                            |
+| \[5.0.0-5.1.0\] 90300 | GetLastUploadError                                              |
 
 ## Data reporting
 
