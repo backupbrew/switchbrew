@@ -120,7 +120,7 @@
 | 0x7C | [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")                               | W0=process\_handle, W1=[\#ProcessInfoType](#ProcessInfoType "wikilink")                                                                                                                                                                                                            | W0=result, X1=[\#ProcessState](#ProcessState "wikilink") |
 | 0x7D | svcCreateResourceLimit                                                             | None                                                                                                                                                                                                                                                                               | W0=result, W1=reslimit\_handle                           |
 | 0x7E | svcSetResourceLimitLimitValue                                                      | W0=reslimit\_handle, W1=[\#LimitableResource](#LimitableResource "wikilink"), X2=value                                                                                                                                                                                             | W0=result                                                |
-| 0x7F | svcCallSecureMonitor                                                               | X0=smc\_sub\_id, X1,X2,X3,X4,X5,X6,X7=smc\_args                                                                                                                                                                                                                                    | X0,X1,X2,X3,X4,X5,X6,X7=result                           |
+| 0x7F | [\#svcCallSecureMonitor](#svcCallSecureMonitor "wikilink")                         | X0=smc\_sub\_id, X1,X2,X3,X4,X5,X6,X7=smc\_args                                                                                                                                                                                                                                    | X0,X1,X2,X3,X4,X5,X6,X7=result                           |
 
 ## svcSetHeapSize
 
@@ -186,8 +186,7 @@ This is used to turn on/off caching for a given memory area. Useful when
 talking to devices such as the GPU.
 
 What happens "under the hood" is the "Memory Attribute Indirection
-Register" index is changed from 2 to 3 in the MMU
-descriptor.
+Register" index is changed from 2 to 3 in the MMU descriptor.
 
 | State0 | State1 | Action                                                          |
 | ------ | ------ | --------------------------------------------------------------- |
@@ -1321,6 +1320,35 @@ used.
 
 Returns an enum with value 0-7.
 
+## svcCallSecureMonitor
+
+<div style="display: inline-block;">
+
+| Argument    | Type                                           | Name                                          |
+| ----------- | ---------------------------------------------- | --------------------------------------------- |
+| (In) X0     | u64                                            | [Function ID](SMC#ID%200.md##ID_0 "wikilink") |
+| (In) X1-X7  | u64                                            | SMC sub-arguments                             |
+| (Out) X0    | [SMC Result](SMC#Errors.md##Errors "wikilink") | Result of SMC                                 |
+| (Out) X1-X7 | u64                                            | SMC sub-output                                |
+
+</div>
+
+Takes in a SMC function ID in X0, and arguments for that SMC function in
+X1-X7.
+
+Passing an invalid SMC function ID or calling from a core other than
+core 3 will result in a secure monitor panic.
+
+The kernel parses bits 9-15 in the passed SMC function ID (per the ARM
+SMC calling convention), and when set uses as an indicator to translate
+a pointer in the associated register (X1-X7) to a physical address. The
+kernel will translate any address mapped as R-W, other addresses (R--,
+R-X, or invalid pointers) will be translated as 0/NULL.
+
+Output is returned raw from the Secure Monitor; X0 will be the
+untranslated SMC result and X1-X7 will contain other SMC output (or be
+unchanged, depending on the SMC).
+
 ## Debugging
 
 \[2.0.0+\] Exactly 6 debug SVCs require that
@@ -1389,8 +1417,7 @@ register](http://infocenter.arm.com/help/topic/com.arm.doc.ddi0488h/way138245556
 
 ## ThreadContextFlags
 
-Bitfield of one of more of
-these:
+Bitfield of one of more of these:
 
 | Bit | Bitmask | Name                             | Description                                                                                           |
 | --- | ------- | -------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -1502,8 +1529,7 @@ DebugThreadParam\_PreferredCpuCore: output in out2
 
 DebugThreadParam\_CurrentCpuCore: output in out2
 
-DebugThreadParam\_AffinityMask: output in
-out1
+DebugThreadParam\_AffinityMask: output in out1
 
 ## CreateProcessInfo
 
@@ -1542,8 +1568,7 @@ The PersonalMmHeap are allocated as follows:
     used to provide protection.
   - For the applet, a pre-allocated secure pool segment of size 0x400000
     is used.
-  - For sysmodules, secure pool is
-allocated.
+  - For sysmodules, secure pool is allocated.
 
 ### AddressSpaceType
 
@@ -1809,8 +1834,7 @@ AttachThread specific:
 | 0x18   | u64    | TlsPtr      |
 | 0x20   | u64    | Entrypoint  |
 
-Exit
-specific:
+Exit specific:
 
 | Offset | Length | Description                                                                  |
 | ------ | ------ | ---------------------------------------------------------------------------- |

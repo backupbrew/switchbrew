@@ -238,7 +238,7 @@ __NOTOC__
 |-
 | 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value || W0=result
 |-
-| 0x7F || svcCallSecureMonitor || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args || X0,X1,X2,X3,X4,X5,X6,X7=result
+| 0x7F || [[#svcCallSecureMonitor]] || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args || X0,X1,X2,X3,X4,X5,X6,X7=result
 |}
 
 == svcSetHeapSize ==
@@ -1520,6 +1520,31 @@ CapabilitiesNum is a number of capabilities in the CapabilitiesPtr array (number
 </div>
 
 Returns an enum with value 0-7.
+
+== svcCallSecureMonitor ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) X0 || u64 || [[SMC#ID_0|Function ID]]
+|-
+| (In) X1-X7 || u64 || SMC sub-arguments
+|-
+| (Out) X0 || [[SMC#Errors|SMC Result]] || Result of SMC
+|-
+| (Out) X1-X7 || u64 || SMC sub-output
+|}
+</div>
+
+Takes in a SMC function ID in X0, and arguments for that SMC function in X1-X7.
+
+Passing an invalid SMC function ID or calling from a core other than core 3 will result in a secure monitor panic.
+
+The kernel parses bits 9-15 in the passed SMC function ID (per the ARM SMC calling convention), and when set uses as an indicator to translate a pointer in the associated register (X1-X7) to a physical address. The kernel will translate any address mapped as R-W, other addresses (R--, R-X, or invalid pointers) will be translated as 0/NULL.
+
+Output is returned raw from the Secure Monitor; X0 will be the untranslated SMC result and X1-X7 will contain other SMC output (or be unchanged, depending on the SMC).
 
 == Debugging ==
 [2.0.0+] Exactly 6 debug SVCs require that [[SPL_services#GetConfig|IsDebugMode]] is non-zero. Error 0x4201 is returned otherwise.
