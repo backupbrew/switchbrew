@@ -2,8 +2,7 @@ This is the 0x200-byte TLS (thread local storage). It's base address is
 loaded via ARM threadid register tpidrro\_el0. TLS for multiple threads
 are stored in the same page, with the first TLS normally located at
 page+0x200, because the first TLS spot is reserved for usermode
-exception
-handling.
+exception handling.
 
 # Structure
 
@@ -28,8 +27,7 @@ This is "nn::os::detail::g\_OsBootParamter".
 
 ## Resource manager storage
 
-This is
-"nn::os::detail::g\_OsResourceManagerStorage".
+This is "nn::os::detail::g\_OsResourceManagerStorage".
 
 | Offset | Size  | Description                                                                                                                                                                                            |
 | ------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -80,7 +78,7 @@ storage](Thread%20Local%20Storage#Resource%20manager%20storage.md##Resource_mana
 | 0x70   | 0x08  | Always 0?                                                                                                     |
 | 0x78   | 0x08  | Always 0?                                                                                                     |
 | 0x80   | 0x08  | Always 0?                                                                                                     |
-| 0x88   | 0x100 | Initially empty (contains unknown pointers).                                                                  |
+| 0x88   | 0x100 | TLS slots.                                                                                                    |
 | 0x188  | 0x20  | Thread name.                                                                                                  |
 | 0x1A8  | 0x08  | Thread name address.                                                                                          |
 | 0x1B0  | 0x04  | Critical Section.                                                                                             |

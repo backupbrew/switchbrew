@@ -220,7 +220,7 @@ This structure is used for describing each thread's context. In the main thread'
 |-
 | 0x88
 | 0x100
-| Initially empty (contains unknown pointers).
+| TLS slots.
 |-
 | 0x188
 | 0x20
