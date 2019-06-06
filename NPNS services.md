@@ -65,7 +65,7 @@ This is "nn::npns::INpnsSystem".
 | 23  | DestroyToken                                                                      |
 | 24  | DestroyTokenWithApplicationId                                                     |
 | 25  | QueryIsTokenValid                                                                 |
-| 26  | \[5.0.0+\]                                                                        |
+| 26  | \[5.0.0+\] ListenToMyApplicationId                                                |
 | 31  | UploadTokenToBaaS                                                                 |
 | 32  | DestroyTokenForBaaS                                                               |
 | 33  | \[7.0.0+\] CreateTokenForBaas                                                     |

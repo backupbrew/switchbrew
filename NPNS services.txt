@@ -104,7 +104,7 @@ This is "nn::npns::INpnsSystem".
 |-
 | 25 || QueryIsTokenValid
 |-
-| 26 || [5.0.0+]
+| 26 || [5.0.0+] ListenToMyApplicationId
 |-
 | 31 || UploadTokenToBaaS
 |-
