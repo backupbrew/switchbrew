@@ -482,6 +482,18 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | 0x4
 | Flags2
 |-
+| 0x419C
+| 0x4
+| PowerInfo0 battery state
+|-
+| 0x41A0
+| 0x4
+| PowerInfo1 battery state
+|-
+| 0x41A4
+| 0x4
+| PowerInfo2 battery state
+|-
 | 0x41D0
 | 0x10
 | Controller MAC
@@ -491,6 +503,8 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | Controller MAC
 |-
 |}
+
+The battery state must be 0-4.
 
 ==== Flags ====
 {| class="wikitable" border="1"
