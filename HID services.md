@@ -516,6 +516,8 @@ permissions=RW.
 
 This TransferMemory is used as input/output by the other Hdls commands.
 
+Hdls is for virtual HID controllers.
+
 ## ReleaseHdlsWorkBuffer
 
 No input/output.
@@ -524,34 +526,38 @@ No input/output.
 
 No input/output.
 
-After using this cmd, the output 0x208-byte **HdlsNpadAssignment**
-struct is located at tmem+0.
+After using this cmd, the output
+[\#HdlsNpadAssignment](#HdlsNpadAssignment "wikilink") is located at
+tmem+0.
 
 ## DumpHdlsStates
 
 No input/output.
 
-After using this cmd, the output 0x408-byte **HdlsStateList** struct is
-located at tmem+0.
+After using this cmd, the output
+[\#HdlsStateList](#HdlsStateList "wikilink") struct is located at
+tmem+0.
 
 ## ApplyHdlsNpadAssignmentState
 
 Takes an input u8 bool, no output.
 
-Prior to using this cmd, the input 0x208-byte **HdlsNpadAssignment**
-struct is written to tmem+0 by the user-process.
+Prior to using this cmd, the input
+[\#HdlsNpadAssignment](#HdlsNpadAssignment "wikilink") is written to
+tmem+0 by the user-process.
 
 ## ApplyHdlsStateList
 
 No input/output.
 
-Prior to using this cmd, the input 0x408-byte **HdlsStateList** struct
-is written to tmem+0 by the user-process.
+Prior to using this cmd, the input
+[\#HdlsStateList](#HdlsStateList "wikilink") is written to tmem+0 by the
+user-process.
 
 ## AttachHdlsVirtualDevice
 
-Takes an 0x10-byte **HdlsDeviceInfo** struct, returns a 8-byte
-**HdlsHandle**.
+Takes an [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"), returns a
+8-byte **HdlsHandle**.
 
 ## DetachHdlsVirtualDevice
 
@@ -559,8 +565,42 @@ Takes an input 8-byte **HdlsHandle**, no output.
 
 ## SetHdlsState
 
-Takes an input 0x24-byte **HdlsState** struct and an input 8-byte
+Takes an input [\#HdlsState](#HdlsState "wikilink") and an input 8-byte
 **HdlsHandle**, no output.
+
+## HdlsNpadAssignment
+
+This is a 0x208-byte struct. This seems to be an array, structure
+unknown.
+
+## HdlsStateList
+
+This is a 0x408-byte struct. This seems to be an array, structure
+unknown.
+
+## HdlsDeviceInfo
+
+| Offset | Size | Description                                                          |
+| ------ | ---- | -------------------------------------------------------------------- |
+| 0x0    | 0x4  | [\#NpadStyleTag](#NpadStyleTag "wikilink"), only one bit can be set. |
+| 0x4    | 0x4  | RGBA Single Body Color                                               |
+| 0x8    | 0x4  | RGBA Single Buttons Color                                            |
+| 0xC    | 0x1  | Unknown                                                              |
+| 0xD    | 0x3  | Padding                                                              |
+
+This is a 0x10-byte struct.
+
+## HdlsState
+
+| Offset | Size          | Description                                                                                                                            |
+| ------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8           | Unknown                                                                                                                                |
+| 0x8    | 0x4           | Unknown. Written to [HID\_Shared\_Memory\#Controllers](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink") +0x419C.          |
+| 0xC    | 0x4           | Buttons                                                                                                                                |
+| 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink"). |
+| 0x20   | 0x4           | Unused                                                                                                                                 |
+
+This is a 0x24-byte struct.
 
 # hid:sys
 
