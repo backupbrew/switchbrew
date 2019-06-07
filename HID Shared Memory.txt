@@ -466,6 +466,10 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 | 0x20 header + 0x68 * 17
 | SixAxisSensor Single Right State
 |-
+| 0x4188
+| 0x4
+| DeviceType bitmask
+|-
 | 0x41D0
 | 0x10
 | Controller MAC

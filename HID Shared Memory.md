@@ -175,6 +175,7 @@ each available controller.
 | 0x2C70 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Right State                             |
 | 0x3378 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Left State                            |
 | 0x3A80 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Right State                           |
+| 0x4188 | 0x4                      | DeviceType bitmask                                         |
 | 0x41D0 | 0x10                     | Controller MAC                                             |
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
