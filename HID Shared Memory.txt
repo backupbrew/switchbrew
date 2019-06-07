@@ -492,6 +492,9 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
+==== Flags2 ====
+Bit0: clear = UnintendedHomeButtonInputProtectionEnabled.
+
 ==== Controller Header ====
 
 {| class="wikitable" border="1"

@@ -183,6 +183,10 @@ each available controller.
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
 
+#### Flags2
+
+Bit0: clear = UnintendedHomeButtonInputProtectionEnabled.
+
 #### Controller Header
 
 | Offset | Size in bytes | Description                                                                                           |
