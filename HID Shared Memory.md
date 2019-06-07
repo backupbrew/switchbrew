@@ -178,6 +178,7 @@ each available controller.
 | 0x4188 | 0x4                      | DeviceType bitmask                                         |
 | 0x418C | 0x4                      | Padding                                                    |
 | 0x4190 | 0x8                      | Flags                                                      |
+| 0x4198 | 0x4                      | Flags2                                                     |
 | 0x41D0 | 0x10                     | Controller MAC                                             |
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
