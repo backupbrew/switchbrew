@@ -138,7 +138,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 143 || BTM
 |-
-| 144 || EC (Shop)
+| 144 || LA (Library Applet)
 |-
 | 145 || ETicket
 |-
@@ -1045,6 +1045,14 @@ When a fatal-error is received the error code is outputted using the following f
 | 0xD48C || 140 || 106 || Invalid descriptor
 |-
 | 0x1928C || 140 || 201 || USB device not bound / interface already enabled
+|-
+| 0x290 || 144 || 1 || Exited Abnormally ([[Applet_Manager_services#LibraryAppletExitReason|ExitReason]] == Abormal)
+|-
+| 0x690 || 144 || 3 || Canceled ([[Applet_Manager_services#LibraryAppletExitReason|ExitReason]] == Canceled)
+|-
+| 0x890 || 144 || 4 || Rejected
+|-
+| 0xA90 || 144 || 5 || Exited Unexpectedly ([[Applet_Manager_services#LibraryAppletExitReason|ExitReason]] == Unexpected)
 |-
 | 0x299 || 153 || 1 || Invalid audio device
 |-

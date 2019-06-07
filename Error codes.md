@@ -82,7 +82,7 @@ fatal-errors, since the Description ends with bit21.
 | 141   | NSD                                          |
 | 142   | PCTL                                         |
 | 143   | BTM                                          |
-| 144   | EC (Shop)                                    |
+| 144   | LA (Library Applet)                          |
 | 145   | ETicket                                      |
 | 146   | NGC (Bad Words)                              |
 | 147   | Error Report                                 |
@@ -539,6 +539,10 @@ fatal-errors, since the Description ends with bit21.
 | 0x668C            | 140    | 51          | USB data-transfer in progress                                                                                                                                                        |
 | 0xD48C            | 140    | 106         | Invalid descriptor                                                                                                                                                                   |
 | 0x1928C           | 140    | 201         | USB device not bound / interface already enabled                                                                                                                                     |
+| 0x290             | 144    | 1           | Exited Abnormally ([ExitReason](Applet%20Manager%20services#LibraryAppletExitReason.md##LibraryAppletExitReason "wikilink") == Abormal)                                              |
+| 0x690             | 144    | 3           | Canceled ([ExitReason](Applet%20Manager%20services#LibraryAppletExitReason.md##LibraryAppletExitReason "wikilink") == Canceled)                                                      |
+| 0x890             | 144    | 4           | Rejected                                                                                                                                                                             |
+| 0xA90             | 144    | 5           | Exited Unexpectedly ([ExitReason](Applet%20Manager%20services#LibraryAppletExitReason.md##LibraryAppletExitReason "wikilink") == Unexpected)                                         |
 | 0x299             | 153    | 1           | Invalid audio device                                                                                                                                                                 |
 | 0x499             | 153    | 2           | Operation couldn't complete successfully                                                                                                                                             |
 | 0x699             | 153    | 3           | Invalid sample rate                                                                                                                                                                  |
