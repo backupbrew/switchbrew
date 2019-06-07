@@ -187,6 +187,12 @@ each available controller.
 
 | Bit | Description                 |
 | --- | --------------------------- |
+| 0   | PowerInfo0 flag0            |
+| 1   | PowerInfo1 flag0            |
+| 2   | PowerInfo2 flag0            |
+| 3   | PowerInfo0 flag1            |
+| 4   | PowerInfo1 flag1            |
+| 5   | PowerInfo2 flag1            |
 | 11  | AbxyButtonOriented          |
 | 12  | IsSlSrButtonOriented        |
 | 13  | PlusButtonCapability        |
