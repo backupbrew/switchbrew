@@ -492,6 +492,28 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 |}
 
+==== Flags ====
+{| class="wikitable" border="1"
+|-
+!   Bit
+!   Description
+|-
+| 11
+| AbxyButtonOriented
+|-
+| 12
+| IsSlSrButtonOriented
+|-
+| 13
+| PlusButtonCapability
+|-
+| 14
+| MinusButtonCapability
+|-
+| 15
+| DirectionalButtonsSupported
+|}
+
 ==== Flags2 ====
 Bit0: clear = UnintendedHomeButtonInputProtectionEnabled.
 

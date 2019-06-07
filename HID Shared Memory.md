@@ -183,6 +183,16 @@ each available controller.
 | 0x41F0 | 0x10                     | Controller MAC                                             |
 |        |                          |                                                            |
 
+#### Flags
+
+| Bit | Description                 |
+| --- | --------------------------- |
+| 11  | AbxyButtonOriented          |
+| 12  | IsSlSrButtonOriented        |
+| 13  | PlusButtonCapability        |
+| 14  | MinusButtonCapability       |
+| 15  | DirectionalButtonsSupported |
+
 #### Flags2
 
 Bit0: clear = UnintendedHomeButtonInputProtectionEnabled.
