@@ -192,20 +192,20 @@ The battery state must be 0-4.
 
 | Bit   | Description                             |
 | ----- | --------------------------------------- |
-| 0     | PowerInfo0 flag0                        |
-| 1     | PowerInfo1 flag0                        |
-| 2     | PowerInfo2 flag0                        |
-| 3     | PowerInfo0 flag1                        |
-| 4     | PowerInfo1 flag1                        |
-| 5     | PowerInfo2 flag1                        |
+| 0     | PowerInfo0 isCharging                   |
+| 1     | PowerInfo1 isCharging                   |
+| 2     | PowerInfo2 isCharging                   |
+| 3     | PowerInfo0 powerConnected               |
+| 4     | PowerInfo1 powerConnected               |
+| 5     | PowerInfo2 powerConnected               |
 | 6-8   | Unused                                  |
 | 9     | UnsupportedButtonPressed\_NpadSystem    |
 | 10    | UnsupportedButtonPressed\_NpadSystemExt |
 | 11    | AbxyButtonOriented                      |
 | 12    | SlSrButtonOriented                      |
-| 13    | PlusButtonCapability                    |
-| 14    | MinusButtonCapability                   |
-| 15    | DirectionalButtonsSupported             |
+| 13    | \[4.0.0+\] PlusButtonCapability         |
+| 14    | \[4.0.0+\] MinusButtonCapability        |
+| 15    | \[8.0.0+\] DirectionalButtonsSupported  |
 | 16-63 | Unused                                  |
 
 #### Flags2
