@@ -530,11 +530,20 @@ The battery state must be 0-4.
 | 5
 | PowerInfo2 flag1
 |-
+| 6-8
+| Unused
+|-
+| 9
+| UnsupportedButtonPressed_NpadSystem
+|-
+| 10
+| UnsupportedButtonPressed_NpadSystemExt
+|-
 | 11
 | AbxyButtonOriented
 |-
 | 12
-| IsSlSrButtonOriented
+| SlSrButtonOriented
 |-
 | 13
 | PlusButtonCapability
@@ -544,6 +553,9 @@ The battery state must be 0-4.
 |-
 | 15
 | DirectionalButtonsSupported
+|-
+| 16-63
+| Unused
 |}
 
 ==== Flags2 ====

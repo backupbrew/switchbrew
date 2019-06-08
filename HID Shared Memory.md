@@ -190,19 +190,23 @@ The battery state must be 0-4.
 
 #### Flags
 
-| Bit | Description                 |
-| --- | --------------------------- |
-| 0   | PowerInfo0 flag0            |
-| 1   | PowerInfo1 flag0            |
-| 2   | PowerInfo2 flag0            |
-| 3   | PowerInfo0 flag1            |
-| 4   | PowerInfo1 flag1            |
-| 5   | PowerInfo2 flag1            |
-| 11  | AbxyButtonOriented          |
-| 12  | IsSlSrButtonOriented        |
-| 13  | PlusButtonCapability        |
-| 14  | MinusButtonCapability       |
-| 15  | DirectionalButtonsSupported |
+| Bit   | Description                             |
+| ----- | --------------------------------------- |
+| 0     | PowerInfo0 flag0                        |
+| 1     | PowerInfo1 flag0                        |
+| 2     | PowerInfo2 flag0                        |
+| 3     | PowerInfo0 flag1                        |
+| 4     | PowerInfo1 flag1                        |
+| 5     | PowerInfo2 flag1                        |
+| 6-8   | Unused                                  |
+| 9     | UnsupportedButtonPressed\_NpadSystem    |
+| 10    | UnsupportedButtonPressed\_NpadSystemExt |
+| 11    | AbxyButtonOriented                      |
+| 12    | SlSrButtonOriented                      |
+| 13    | PlusButtonCapability                    |
+| 14    | MinusButtonCapability                   |
+| 15    | DirectionalButtonsSupported             |
+| 16-63 | Unused                                  |
 
 #### Flags2
 
