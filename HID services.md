@@ -575,8 +575,27 @@ unknown.
 
 ## HdlsStateList
 
-This is a 0x408-byte struct. This seems to be an array, structure
-unknown.
+| Offset | Size              | Description                                                      |
+| ------ | ----------------- | ---------------------------------------------------------------- |
+| 0x0    | 0x4               | Total entries                                                    |
+| 0x4    | 0x4               | Padding                                                          |
+| 0x8    | 0x400(0x40\*0x10) | Array of [\#HdlsStateListEntry](#HdlsStateListEntry "wikilink"). |
+
+This is a 0x408-byte struct.
+
+This contains a list of all controllers, including non-virtual
+controllers.
+
+### HdlsStateListEntry
+
+| Offset | Size | Description                                    |
+| ------ | ---- | ---------------------------------------------- |
+| 0x0    | 0x8  | HdlsHandle                                     |
+| 0x8    | 0x10 | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") |
+| 0x18   | 0x24 | [\#HdlsState](#HdlsState "wikilink")           |
+| 0x3C   | 0x4  | Padding                                        |
+
+This is a 0x40-byte struct.
 
 ## HdlsDeviceInfo
 
@@ -595,7 +614,7 @@ This is a 0x10-byte struct.
 | Offset | Size          | Description                                                                                                                            |
 | ------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x8           | Unknown                                                                                                                                |
-| 0x8    | 0x4           | Unknown. Written to [HID\_Shared\_Memory\#Controllers](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink") +0x419C.          |
+| 0x8    | 0x4           | batteryCharge for the main [PowerInfo](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").                                  |
 | 0xC    | 0x4           | Buttons                                                                                                                                |
 | 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink"). |
 | 0x20   | 0x4           | Unused                                                                                                                                 |

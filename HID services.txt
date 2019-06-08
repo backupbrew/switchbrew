@@ -715,7 +715,36 @@ Takes an input [[#HdlsState]] and an input 8-byte '''HdlsHandle''', no output.
 This is a 0x208-byte struct. This seems to be an array, structure unknown.
 
 == HdlsStateList ==
-This is a 0x408-byte struct. This seems to be an array, structure unknown.
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || Total entries
+|-
+| 0x4 || 0x4 || Padding
+|-
+| 0x8 || 0x400(0x40*0x10) || Array of [[#HdlsStateListEntry]].
+|}
+
+This is a 0x408-byte struct.
+
+This contains a list of all controllers, including non-virtual controllers.
+
+=== HdlsStateListEntry ===
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || HdlsHandle
+|-
+| 0x8 || 0x10 || [[#HdlsDeviceInfo]]
+|-
+| 0x18 || 0x24 || [[#HdlsState]]
+|-
+| 0x3C || 0x4 || Padding
+|}
+
+This is a 0x40-byte struct.
 
 == HdlsDeviceInfo ==
 {| class="wikitable" border="1"
@@ -742,7 +771,7 @@ This is a 0x10-byte struct.
 |-
 | 0x0 || 0x8 || Unknown
 |-
-| 0x8 || 0x4 || Unknown. Written to [[HID_Shared_Memory#Controllers]] +0x419C.
+| 0x8 || 0x4 || batteryCharge for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
 |-
 | 0xC || 0x4 || Buttons
 |-
