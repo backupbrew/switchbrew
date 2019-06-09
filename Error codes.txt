@@ -324,7 +324,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x6402 || 2 || 50 || NCA is older than version 3, or NCA SDK version is older than 0.11.0.0
 |-
-| 0x7802 || 2 || 60 || The specified [[NCA]]-type doesn't exist for this title.
+| 0x7802 || 2 || 60 || Specified mount name already exists.
 |-
 | 0x7D202 || 2 || 1001 || Process does not have RomFs 
 |-
