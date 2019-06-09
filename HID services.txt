@@ -702,6 +702,8 @@ No input/output.
 
 Prior to using this cmd, the input [[#HdlsStateList]] is written to tmem+0 by the user-process.
 
+The [[#HdlsState]] will be applied for each HdlsHandle. If a HdlsHandle is not found, code similar to [[#AttachHdlsVirtualDevice]] will run with the [[#HdlsDeviceInfo]], then it will continue with applying state with the new device.
+
 == AttachHdlsVirtualDevice ==
 Takes an [[#HdlsDeviceInfo]], returns a 8-byte '''HdlsHandle'''.
 
@@ -737,7 +739,7 @@ This contains a list of all controllers, including non-virtual controllers.
 |-
 | 0x0 || 0x8 || HdlsHandle
 |-
-| 0x8 || 0x10 || [[#HdlsDeviceInfo]]
+| 0x8 || 0x10 || [[#HdlsDeviceInfo]]. With [[#ApplyHdlsStateList]] this is only used when creating new devices.
 |-
 | 0x18 || 0x24 || [[#HdlsState]]
 |-

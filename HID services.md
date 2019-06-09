@@ -554,6 +554,12 @@ Prior to using this cmd, the input
 [\#HdlsStateList](#HdlsStateList "wikilink") is written to tmem+0 by the
 user-process.
 
+The [\#HdlsState](#HdlsState "wikilink") will be applied for each
+HdlsHandle. If a HdlsHandle is not found, code similar to
+[\#AttachHdlsVirtualDevice](#AttachHdlsVirtualDevice "wikilink") will
+run with the [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"), then it
+will continue with applying state with the new device.
+
 ## AttachHdlsVirtualDevice
 
 Takes an [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"), returns a
@@ -588,12 +594,12 @@ controllers.
 
 ### HdlsStateListEntry
 
-| Offset | Size | Description                                    |
-| ------ | ---- | ---------------------------------------------- |
-| 0x0    | 0x8  | HdlsHandle                                     |
-| 0x8    | 0x10 | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") |
-| 0x18   | 0x24 | [\#HdlsState](#HdlsState "wikilink")           |
-| 0x3C   | 0x4  | Padding                                        |
+| Offset | Size | Description                                                                                                                                              |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | HdlsHandle                                                                                                                                               |
+| 0x8    | 0x10 | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"). With [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink") this is only used when creating new devices. |
+| 0x18   | 0x24 | [\#HdlsState](#HdlsState "wikilink")                                                                                                                     |
+| 0x3C   | 0x4  | Padding                                                                                                                                                  |
 
 This is a 0x40-byte struct.
 
