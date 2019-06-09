@@ -488,6 +488,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x339602 || 2 || 6603 || Directory not found.
 |-
+| 0x35F202 || 2 || 6905 || Mount name not found in table.
+|-
 | 0x3DBC02 || 2 || 7902 || RomFs table: Entry not found in dictionary
 |-
 | 0x3DBE02 || 2 || 7903 || RomFs table: File not found
