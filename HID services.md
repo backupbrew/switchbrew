@@ -330,21 +330,22 @@ Takes an input
 
 This is a bitfield describing which controller styles are supported.
 
-| Bits | Description      | Notes                                    |
-| ---- | ---------------- | ---------------------------------------- |
-| 0    | NpadFullKey      | Pro Controller.                          |
-| 1    | NpadHandheld     | Joy-Con controller in handheld mode.     |
-| 2    | NpadJoyDual      | Joy-Con controller in dual mode.         |
-| 3    | NpadJoyLeft      | Joy-Con left controller in single mode.  |
-| 4    | NpadJoyRight     | Joy-Con right controller in single mode. |
-| 5    | NpadGc           | GameCube controller.                     |
-| 6    | NpadPalma        | Poké Ball Plus controller.               |
-| 7    | NpadLark         | NES controller.                          |
-| 8    | NpadHandheldLark | NES controller in handheld mode.         |
-| 9-28 | Reserved         |                                          |
-| 29   | NpadSystemExt    |                                          |
-| 30   | NpadSystem       |                                          |
-| 31   | Reserved         |                                          |
+| Bits  | Description      | Notes                                    |
+| ----- | ---------------- | ---------------------------------------- |
+| 0     | NpadFullKey      | Pro Controller.                          |
+| 1     | NpadHandheld     | Joy-Con controller in handheld mode.     |
+| 2     | NpadJoyDual      | Joy-Con controller in dual mode.         |
+| 3     | NpadJoyLeft      | Joy-Con left controller in single mode.  |
+| 4     | NpadJoyRight     | Joy-Con right controller in single mode. |
+| 5     | NpadGc           | GameCube controller.                     |
+| 6     | NpadPalma        | Poké Ball Plus controller.               |
+| 7     | NpadLark         | NES controller.                          |
+| 8     | NpadHandheldLark | NES controller in handheld mode.         |
+| 9     | NpadLucia        |                                          |
+| 10-28 | Reserved         |                                          |
+| 29    | NpadSystemExt    |                                          |
+| 30    | NpadSystem       |                                          |
+| 31    | Reserved         |                                          |
 
 ## NpadIdType
 

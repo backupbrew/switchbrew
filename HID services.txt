@@ -426,7 +426,11 @@ This is a bitfield describing which controller styles are supported.
 | NpadHandheldLark
 | NES controller in handheld mode.
 |-
-| 9-28
+| 9
+| NpadLucia
+| 
+|-
+| 10-28
 | Reserved
 |
 |-
