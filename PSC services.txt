@@ -234,7 +234,7 @@ This is "nn::ovln::ISender".
 |-
 | 0x15 || [[Nvnflinger services|Nvnflinger]]
 |-
-| 0x18 ||
+| 0x18 || [[HID services|nn::psc::PmModuleId_Hid]]
 |-
 | 0x1B ||
 |-

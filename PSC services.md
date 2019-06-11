@@ -170,7 +170,7 @@ This is "nn::ovln::ISender".
 | 0x13 | [PCIe](PCIe%20services.md "wikilink")                    |
 | 0x14 | [Backlight](Backlight%20services.md "wikilink")          |
 | 0x15 | [Nvnflinger](Nvnflinger%20services.md "wikilink")        |
-| 0x18 |                                                          |
+| 0x18 | [nn::psc::PmModuleId\_Hid](HID%20services.md "wikilink") |
 | 0x1B |                                                          |
 | 0x1C | [Audio](Audio%20services.md "wikilink")                  |
 | 0x1E |                                                          |
