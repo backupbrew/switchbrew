@@ -1595,11 +1595,23 @@ The hid-sysmodule RomFS contains:
     ├── NTD_4CD_1801.fts256
     ├── NTD_4CD_2602.fts256
     ├── NTD_4CD_3801.fts256
-    └── NTD_4CD_xxxx.fts256
+    └── NTD_4CD_xxxx.fts256 [7.0.0+]
 
 These are firmware files for the touchscreen controller.
 
 = Firmware update =
-Starting with [[3.0.0]] HID-sysmodule now contains strings for data stored in title [[Title_list|0100000000000822]].
+HID-sysmodule mounts the contents of title [[Title_list|0100000000000822]] as "systemData" or the contents of title [[Title_list|010000000000B22B]] as "systemDataD". Both titles contain the same files, but [[Title_list|0100000000000822]] is used on retail units while [[Title_list|010000000000B22B]] is used for development.
+
+These titles contain the following files:
+* '''ExpectVersionInfo.csv''' - List in the format "[device],[type],[version]" where "device" can be "JoyLeft", "JoyRight", "FullKey" or "Palma", "type" can be "BT", "MCU" or "USB" and "version" is the hexadecimal representation of the firmware file's version.
+* '''FirmwareInfo.csv''' - List in the format "[device],[type],[version],[file]" where "device", "type" and "version" should match the values from "ExpectVersionInfo" and "file" is the name of the firmware file.
+* '''ukyosakyo_ep2_ota.bin''' - Left/Right Joy-Con BT firmware.
+* '''raizo_ep2_ota.bin''' - Pro Controller BT firmware.
+* '''tera_ota.bin''' - Right Joy-Con MCU firmware. 
+* '''tera_ota_iap.bin''' - Right Joy-Con MCU (IAP profile) firmware.
+* '''tera_fullkey_ota.bin''' - Pro Controller MCU firmware.
+* '''tera_fullkey_ota_iap.bin''' - Pro Controller MCU (IAP profile) firmware.
+* [6.0.0+] '''ProController.dfu''' - Pro Controller USB firmware.
+* [6.1.0+] '''PalmaFw.bin''' - Poké Ball Plus BT firmware.
 
 [[Category:Services]]
