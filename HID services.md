@@ -624,7 +624,8 @@ This is a 0x10-byte struct.
 | 0x8    | 0x4           | batteryCharge for the main [PowerInfo](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").                                  |
 | 0xC    | 0x4           | Buttons                                                                                                                                |
 | 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink"). |
-| 0x20   | 0x4           | Unused                                                                                                                                 |
+| 0x20   | 0x1           | Unused for input. Set with output from [\#DumpHdlsStates](#DumpHdlsStates "wikilink") (zero in some cases).                            |
+| 0x21   | 0x3           | Padding                                                                                                                                |
 
 This is a 0x24-byte struct.
 
