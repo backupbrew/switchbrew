@@ -3,31 +3,27 @@ This is "nn::arp::detail::IReader".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || GetApplicationLaunchProperty
+| 0 || GetApplicationLaunchProperty || Takes an input u64 ProcessId, returns an [[#ApplicationLaunchProperty]]
 |-
-| 1 || GetApplicationLaunchPropertyWithApplicationId
+| 1 || GetApplicationLaunchPropertyWithApplicationId || Takes an input u64 TitleId, returns an [[#ApplicationLaunchProperty]]
 |-
-| 2 || GetApplicationControlProperty
+| 2 || GetApplicationControlProperty || Takes an input u64 ProcessId, returns a type-0x16 buffer filled with the contents of [[NACP_Format|control.nacp]]
 |-
-| 3 || GetApplicationControlPropertyWithApplicationId
+| 3 || GetApplicationControlPropertyWithApplicationId || Takes an input u64 TitleId, returns a type-0x16 buffer filled with the contents of [[NACP_Format|control.nacp]]
 |}
-
-== GetApplicationControlPropertyWithApplicationId ==
-
-Takes in a title id and a type-0x16 buffer. This is filled with the contents of control.nacp for that application.
 
 = arp:w =
 This is "nn::arp::detail::IWriter".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || AcquireRegistrar
+| 0 || AcquireRegistrar || Returns an [[#IRegistrar]]
 |-
-| 1 || DeleteProperties
+| 1 || DeleteProperties || Takes an input u64 unknown
 |}
 
 == IRegistrar ==
@@ -35,42 +31,13 @@ This is "nn::arp::detail::IRegistrar".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || Issue
+| 0 || Issue || Takes an input u64 unknown
 |-
-| 1 || SetApplicationLaunchProperty
+| 1 || SetApplicationLaunchProperty || Takes an input [[#ApplicationLaunchProperty]]
 |-
-| 2 || SetApplicationControlProperty
-|}
-
-=== Launch Property Format ===
-
-{| class="wikitable" border="1"
-|-
-! Offset
-! Size
-! Description
-|-
-| 0x0
-| 0x8
-| Title ID
-|-
-| 0x8
-| 0x4
-| Version
-|-
-| 0xC
-| 0x1
-| Base Game Storage ID
-|-
-| 0xD
-| 0x1
-| Update Storage ID
-|-
-| 0xE
-| 0x2
-| Padding
+| 2 || SetApplicationControlProperty || Takes an input type-0x15 buffer filled with the contents of [[NACP_Format|control.nacp]]
 |}
 
 = bgtc:t =
@@ -127,6 +94,37 @@ This is "nn::bgtc::IStateControlService".
 |-
 | 5 || [3.0.0+] SetIsUsingSleepUnsupportedDevices
 |-
+|}
+
+= ApplicationLaunchProperty =
+
+Total size is 0x10-bytes.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x00
+| 0x08
+| Title ID
+|-
+| 0x08
+| 0x04
+| Version
+|-
+| 0x0C
+| 0x01
+| Base Game [[Filesystem_services#StorageId|Storage Id]]
+|-
+| 0x0D
+| 0x01
+| Update [[Filesystem_services#StorageId|Storage Id]]
+|-
+| 0x0E
+| 0x02
+| Padding
 |}
 
 [[Category:Services]]
