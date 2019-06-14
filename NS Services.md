@@ -693,31 +693,62 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 ## ISystemUpdateControl
 
-| Cmd | Name                                                        |
-| --- | ----------------------------------------------------------- |
-| 0   | HasDownloaded                                               |
-| 1   | RequestCheckLatestUpdate                                    |
-| 2   | RequestDownloadLatestUpdate                                 |
-| 3   | GetDownloadProgress                                         |
-| 4   | ApplyDownloadedUpdate                                       |
-| 5   | RequestPrepareCardUpdate                                    |
-| 6   | GetPrepareCardUpdateProgress                                |
-| 7   | HasPreparedCardUpdate                                       |
-| 8   | ApplyCardUpdate                                             |
-| 9   | GetDownloadedEulaDataSize                                   |
-| 10  | GetDownloadedEulaData                                       |
-| 11  | SetupCardUpdate                                             |
-| 12  | GetPreparedCardUpdateEulaDataSize                           |
-| 13  | GetPreparedCardUpdateEulaData                               |
-| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater                  |
-| 15  | \[4.0.0+\] HasReceived                                      |
-| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                       |
-| 17  | \[4.0.0+\] GetReceiveProgress                               |
-| 18  | \[4.0.0+\] ApplyReceivedUpdate                              |
-| 19  | \[4.0.0+\] GetReceivedEulaDataSize                          |
-| 20  | \[4.0.0+\] GetReceivedEulaData                              |
-| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                       |
-| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                 |
+| 1   | RequestCheckLatestUpdate                                     |
+| 2   | RequestDownloadLatestUpdate                                  |
+| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")     |
+| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink") |
+| 5   | RequestPrepareCardUpdate                                     |
+| 6   | GetPrepareCardUpdateProgress                                 |
+| 7   | HasPreparedCardUpdate                                        |
+| 8   | ApplyCardUpdate                                              |
+| 9   | GetDownloadedEulaDataSize                                    |
+| 10  | GetDownloadedEulaData                                        |
+| 11  | SetupCardUpdate                                              |
+| 12  | GetPreparedCardUpdateEulaDataSize                            |
+| 13  | GetPreparedCardUpdateEulaData                                |
+| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater                   |
+| 15  | \[4.0.0+\] HasReceived                                       |
+| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                        |
+| 17  | \[4.0.0+\] GetReceiveProgress                                |
+| 18  | \[4.0.0+\] ApplyReceivedUpdate                               |
+| 19  | \[4.0.0+\] GetReceivedEulaDataSize                           |
+| 20  | \[4.0.0+\] GetReceivedEulaData                               |
+| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                        |
+| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate  |
+
+### HasDownloaded
+
+No input, returns an output u8 bool flag.
+
+Gets whether a network sysupdate was downloaded, with install pending.
+
+Uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask and
+[nim](NIM%20services.md "wikilink") GetSystemUpdateTaskInfo. When
+ListSystemUpdateTask successfully returns a task and
+GetSystemUpdateTaskInfo is successful, the output flag is set to:
+`*((u8*)(taskinfo+0) == 0x3`. Otherwise, flag=0.
+
+This always returns 0, however this will assert if
+GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
+
+### GetDownloadProgress
+
+No input, returns a 0x10-byte output struct.
+
+Similar to [\#HasDownloaded](#HasDownloaded "wikilink") except instead
+of a flag, this returns the 0x10-bytes from taskinfo+8. The output
+struct is cleared when the task(info) isn't available.
+
+### ApplyDownloadedUpdate
+
+No input/output.
+
+Runs code similar to [\#HasDownloaded](#HasDownloaded "wikilink"),
+throwing an error if a network sysupdate isn't ready for install. Then
+the sysupdate is installed.
 
 # IAsyncValue
 

@@ -1156,15 +1156,15 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || HasDownloaded
+| 0 || [[#HasDownloaded]]
 |-
 | 1 || RequestCheckLatestUpdate
 |-
 | 2 || RequestDownloadLatestUpdate
 |-
-| 3 || GetDownloadProgress
+| 3 || [[#GetDownloadProgress]]
 |-
-| 4 || ApplyDownloadedUpdate
+| 4 || [[#ApplyDownloadedUpdate]]
 |-
 | 5 || RequestPrepareCardUpdate
 |-
@@ -1202,6 +1202,25 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 22 || [6.0.0+] RequestCheckLatestUpdateIncludesRebootlessUpdate
 |}
+
+=== HasDownloaded ===
+No input, returns an output u8 bool flag.
+
+Gets whether a network sysupdate was downloaded, with install pending.
+
+Uses [[NIM_services|nim]] ListSystemUpdateTask and [[NIM_services|nim]] GetSystemUpdateTaskInfo. When ListSystemUpdateTask successfully returns a task and GetSystemUpdateTaskInfo is successful, the output flag is set to: <code>*((u8*)(taskinfo+0) == 0x3</code>. Otherwise, flag=0.
+
+This always returns 0, however this will assert if GetSystemUpdateTaskInfo fails with ret!=0x3C89.
+
+=== GetDownloadProgress ===
+No input, returns a 0x10-byte output struct.
+
+Similar to [[#HasDownloaded]] except instead of a flag, this returns the 0x10-bytes from taskinfo+8. The output struct is cleared when the task(info) isn't available.
+
+=== ApplyDownloadedUpdate ===
+No input/output.
+
+Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install. Then the sysupdate is installed.
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".
