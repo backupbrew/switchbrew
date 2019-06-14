@@ -748,7 +748,17 @@ No input/output.
 
 Runs code similar to [\#HasDownloaded](#HasDownloaded "wikilink"),
 throwing an error if a network sysupdate isn't ready for install. Then
-the sysupdate is installed.
+the sysupdate is installed:
+
+  - Uses ListSystemUpdateTask again, then
+    [nim](NIM%20services.md "wikilink") IsExFatDriverIncluded. Runs
+    ExFat handling when the output flag is set.
+  - The two flags in
+    [Flash\_Filesystem\#System\_Update\_Control](Flash%20Filesystem#System%20Update%20Control.md##System_Update_Control "wikilink")
+    are set to 1.
+  - Uses [nim](NIM%20services.md "wikilink") CommitSystemUpdateTask and
+    [nim](NIM%20services.md "wikilink") DestroySystemUpdateTask.
+  - Installs FIRM.
 
 # IAsyncValue
 

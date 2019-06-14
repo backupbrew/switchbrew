@@ -1220,7 +1220,12 @@ Similar to [[#HasDownloaded]] except instead of a flag, this returns the 0x10-by
 === ApplyDownloadedUpdate ===
 No input/output.
 
-Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install. Then the sysupdate is installed.
+Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install. Then the sysupdate is installed:
+
+* Uses ListSystemUpdateTask again, then [[NIM_services|nim]] IsExFatDriverIncluded. Runs ExFat handling when the output flag is set.
+* The two flags in [[Flash_Filesystem#System_Update_Control]] are set to 1.
+* Uses [[NIM_services|nim]] CommitSystemUpdateTask and [[NIM_services|nim]] DestroySystemUpdateTask.
+* Installs FIRM.
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".
