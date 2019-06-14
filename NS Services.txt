@@ -1174,9 +1174,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 8 || ApplyCardUpdate
 |-
-| 9 || GetDownloadedEulaDataSize
+| 9 || [[#GetDownloadedEulaDataSize]]
 |-
-| 10 || GetDownloadedEulaData
+| 10 || [[#GetDownloadedEulaData]]
 |-
 | 11 || SetupCardUpdate
 |-
@@ -1226,6 +1226,20 @@ Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdat
 * The two flags in [[Flash_Filesystem#System_Update_Control]] are set to 1.
 * Uses [[NIM_services|nim]] CommitSystemUpdateTask and [[NIM_services|nim]] DestroySystemUpdateTask.
 * Installs FIRM.
+
+=== GetDownloadedEulaDataSize ===
+Takes a type-0x15 input buffer '''path''', returns an output u64 '''filesize'''.
+
+Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install.
+
+Uses ListSystemUpdateTask again. Then [[NIM_services|nim]] GetDownloadedSystemDataPath, with the output ContentPath being used to mount the EULA title with FS.
+
+Then "<mountname>:/<'''path'''>" is opened, gets the '''filesize''', then runs cleanup.
+
+=== GetDownloadedEulaData ===
+Takes a type-0x15 input buffer '''path''' and a type-0x6 output buffer, returns an output u64 '''filesize'''.
+
+Similar to [[#GetDownloadedEulaDataSize]] except this reads the file instead, using the specified output buffer with size=filesize. This will throw an error if the filesize is larger than the buffer size.
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".

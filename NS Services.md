@@ -693,31 +693,31 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 ## ISystemUpdateControl
 
-| Cmd | Name                                                         |
-| --- | ------------------------------------------------------------ |
-| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                 |
-| 1   | RequestCheckLatestUpdate                                     |
-| 2   | RequestDownloadLatestUpdate                                  |
-| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")     |
-| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink") |
-| 5   | RequestPrepareCardUpdate                                     |
-| 6   | GetPrepareCardUpdateProgress                                 |
-| 7   | HasPreparedCardUpdate                                        |
-| 8   | ApplyCardUpdate                                              |
-| 9   | GetDownloadedEulaDataSize                                    |
-| 10  | GetDownloadedEulaData                                        |
-| 11  | SetupCardUpdate                                              |
-| 12  | GetPreparedCardUpdateEulaDataSize                            |
-| 13  | GetPreparedCardUpdateEulaData                                |
-| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater                   |
-| 15  | \[4.0.0+\] HasReceived                                       |
-| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                        |
-| 17  | \[4.0.0+\] GetReceiveProgress                                |
-| 18  | \[4.0.0+\] ApplyReceivedUpdate                               |
-| 19  | \[4.0.0+\] GetReceivedEulaDataSize                           |
-| 20  | \[4.0.0+\] GetReceivedEulaData                               |
-| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                        |
-| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate  |
+| Cmd | Name                                                                 |
+| --- | -------------------------------------------------------------------- |
+| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                         |
+| 1   | RequestCheckLatestUpdate                                             |
+| 2   | RequestDownloadLatestUpdate                                          |
+| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")             |
+| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")         |
+| 5   | RequestPrepareCardUpdate                                             |
+| 6   | GetPrepareCardUpdateProgress                                         |
+| 7   | HasPreparedCardUpdate                                                |
+| 8   | ApplyCardUpdate                                                      |
+| 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink") |
+| 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")         |
+| 11  | SetupCardUpdate                                                      |
+| 12  | GetPreparedCardUpdateEulaDataSize                                    |
+| 13  | GetPreparedCardUpdateEulaData                                        |
+| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater                           |
+| 15  | \[4.0.0+\] HasReceived                                               |
+| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                |
+| 17  | \[4.0.0+\] GetReceiveProgress                                        |
+| 18  | \[4.0.0+\] ApplyReceivedUpdate                                       |
+| 19  | \[4.0.0+\] GetReceivedEulaDataSize                                   |
+| 20  | \[4.0.0+\] GetReceivedEulaData                                       |
+| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                                |
+| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate          |
 
 ### HasDownloaded
 
@@ -759,6 +759,32 @@ the sysupdate is installed:
   - Uses [nim](NIM%20services.md "wikilink") CommitSystemUpdateTask and
     [nim](NIM%20services.md "wikilink") DestroySystemUpdateTask.
   - Installs FIRM.
+
+### GetDownloadedEulaDataSize
+
+Takes a type-0x15 input buffer **path**, returns an output u64
+**filesize**.
+
+Runs code similar to [\#HasDownloaded](#HasDownloaded "wikilink"),
+throwing an error if a network sysupdate isn't ready for install.
+
+Uses ListSystemUpdateTask again. Then
+[nim](NIM%20services.md "wikilink") GetDownloadedSystemDataPath, with
+the output ContentPath being used to mount the EULA title with FS.
+
+Then "<mountname>:/\<**path**\>" is opened, gets the **filesize**, then
+runs cleanup.
+
+### GetDownloadedEulaData
+
+Takes a type-0x15 input buffer **path** and a type-0x6 output buffer,
+returns an output u64 **filesize**.
+
+Similar to
+[\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")
+except this reads the file instead, using the specified output buffer
+with size=filesize. This will throw an error if the filesize is larger
+than the buffer size.
 
 # IAsyncValue
 
