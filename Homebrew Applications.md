@@ -16,8 +16,7 @@ described above. You can also freely navigate the filesystem to select
 an application.
 
 Icon/metadata for each application is loaded from data embedded in the
-NRO (custom assets section), if
-available.
+NRO (custom assets section), if available.
 
 ## Notes
 
@@ -130,5 +129,5 @@ available.
 | Name          | Description                                    | Author                                         | Download                                              | Open-Source | Last Updated |
 | ------------- | ---------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------- | ----------- | ------------ |
 | 34c3-demo     | Demo from the 34c3 for Homebrew on the Switch. | [plutoo](User:plutoo "wikilink")               | [Here](https://github.com/switchbrew/34c3-demo)       | Yes         | 2018-02-19   |
-| Dokkaebi Hack | Animated Demo using SDL on the Switch.         | [StevenMattera](User:StevenMattera "wikilink") | [Here](https://github.com/StevenMattera/DokkaebiHack) | Yes         | 2018-05-26   |
+| Dokkaebi Hack | Animated Demo using SDL on the Switch.         | [StevenMattera](User:StevenMattera "wikilink") | [Here](https://github.com/StevenMattera/DokkaebiHack) | Yes         | 2019-06-14   |
 |               |                                                |                                                |                                                       |             |              |
