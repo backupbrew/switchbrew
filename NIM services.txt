@@ -41,7 +41,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 18 || AddNetworkInstallTaskContentMeta
 |-
-| 19 || GetDownloadedSystemDataPath
+| 19 || [[#GetDownloadedSystemDataPath]]
 |-
 | 20 || CalculateNetworkInstallTaskRequiredSize
 |-
@@ -218,6 +218,11 @@ Takes a type-0x6 output buffer, for an array of [[#SystemUpdateTask]]. Returns a
 
 == CommitSystemUpdateTask ==
 Takes an input [[#SystemUpdateTask]], no output.
+
+== GetDownloadedSystemDataPath ==
+Takes an input u64 titleID, a [[#SystemUpdateTask]], and an type-0x16 output buffer containing the [[Filesystem_services|ContentPath]].
+
+Gets the FS ContentPath for the specified task and title.
 
 == IsExFatDriverIncluded ==
 Takes an input [[#SystemUpdateTask]], returns an output u8 bool flag.
