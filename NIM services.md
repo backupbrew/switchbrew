@@ -24,7 +24,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 18  | AddNetworkInstallTaskContentMeta                                 |
 | 19  | GetDownloadedSystemDataPath                                      |
 | 20  | CalculateNetworkInstallTaskRequiredSize                          |
-| 21  | IsExFatDriverIncluded                                            |
+| 21  | [\#IsExFatDriverIncluded](#IsExFatDriverIncluded "wikilink")     |
 | 22  | GetBackgroundDownloadStressTaskInfo                              |
 | 23  | \[2.0.0+\] RequestDeviceAuthenticationToken                      |
 | 24  | \[2.0.0+\] RequestGameCardRegistrationStatus                     |
@@ -131,6 +131,11 @@ total output entries.
 
 Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"), no
 output.
+
+## IsExFatDriverIncluded
+
+Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"),
+returns an output u8 bool flag.
 
 ## SystemUpdateTask
 

@@ -45,7 +45,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 20 || CalculateNetworkInstallTaskRequiredSize
 |-
-| 21 || IsExFatDriverIncluded
+| 21 || [[#IsExFatDriverIncluded]]
 |-
 | 22 || GetBackgroundDownloadStressTaskInfo
 |-
@@ -218,6 +218,9 @@ Takes a type-0x6 output buffer, for an array of [[#SystemUpdateTask]]. Returns a
 
 == CommitSystemUpdateTask ==
 Takes an input [[#SystemUpdateTask]], no output.
+
+== IsExFatDriverIncluded ==
+Takes an input [[#SystemUpdateTask]], returns an output u8 bool flag.
 
 == SystemUpdateTask ==
 This is a 0x10-byte struct.
