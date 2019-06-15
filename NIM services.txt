@@ -13,7 +13,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 3 || RequestSystemUpdateTaskRun
 |-
-| 4 || GetSystemUpdateTaskInfo
+| 4 || [[#GetSystemUpdateTaskInfo]]
 |-
 | 5 || [[#CommitSystemUpdateTask]]
 |-
@@ -216,6 +216,9 @@ Takes an input [[#SystemUpdateTask]], no output.
 == ListSystemUpdateTask ==
 Takes a type-0x6 output buffer, for an array of [[#SystemUpdateTask]]. Returns an u32 for total output entries.
 
+== GetSystemUpdateTaskInfo ==
+Takes an input [[#SystemUpdateTask]], returns an output [[#SystemUpdateTaskInfo]].
+
 == CommitSystemUpdateTask ==
 Takes an input [[#SystemUpdateTask]], no output.
 
@@ -229,6 +232,9 @@ Takes an input [[#SystemUpdateTask]], returns an output u8 bool flag.
 
 == SystemUpdateTask ==
 This is a 0x10-byte struct.
+
+== SystemUpdateTaskInfo ==
+This is a 0x28-byte struct.
 
 = nim:shp =
 This is "nn::nim::detail::IShopServiceManager".

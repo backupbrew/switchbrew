@@ -8,7 +8,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 1   | [\#DestroySystemUpdateTask](#DestroySystemUpdateTask "wikilink")         |
 | 2   | [\#ListSystemUpdateTask](#ListSystemUpdateTask "wikilink")               |
 | 3   | RequestSystemUpdateTaskRun                                               |
-| 4   | GetSystemUpdateTaskInfo                                                  |
+| 4   | [\#GetSystemUpdateTaskInfo](#GetSystemUpdateTaskInfo "wikilink")         |
 | 5   | [\#CommitSystemUpdateTask](#CommitSystemUpdateTask "wikilink")           |
 | 6   | CreateNetworkInstallTask                                                 |
 | 7   | DestroyNetworkInstallTask                                                |
@@ -127,6 +127,12 @@ Takes a type-0x6 output buffer, for an array of
 [\#SystemUpdateTask](#SystemUpdateTask "wikilink"). Returns an u32 for
 total output entries.
 
+## GetSystemUpdateTaskInfo
+
+Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"),
+returns an output
+[\#SystemUpdateTaskInfo](#SystemUpdateTaskInfo "wikilink").
+
 ## CommitSystemUpdateTask
 
 Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"), no
@@ -149,6 +155,10 @@ returns an output u8 bool flag.
 ## SystemUpdateTask
 
 This is a 0x10-byte struct.
+
+## SystemUpdateTaskInfo
+
+This is a 0x28-byte struct.
 
 # nim:shp
 
