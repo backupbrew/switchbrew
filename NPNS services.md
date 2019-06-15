@@ -1,3 +1,5 @@
+This is used for Push Notifications.
+
 # npns:u
 
 This is "nn::npns::INpnsUser".
