@@ -131,6 +131,7 @@ Where:
 * "[[#znc|api-%.znc.srv.nintendo.net]]"
 * "api-%.pctl.srv.nintendo.net"
 * "api-%.frs.srv.nintendo.net"
+* "app-a04.%.npns.srv.nintendo.net"
 * "app-b01.%.npns.srv.nintendo.net"
 * "broker.%.npns.srv.nintendo.net"
 * "consumer.%.npns.srv.nintendo.net"
@@ -165,6 +166,11 @@ URLs:
 
 ==== znc ====
 Used by the Switch Online app to get app data, like the list of game-specific services to display.
+
+==== app ====
+app-a04* uses XMPP with TLS over port 443, without HTTP. Sample request:
+
+<code><nowiki><?xml version="1.0"?><stream:stream to="app-a04.lp1.npns.srv.nintendo.net" xml:lang="en" version="1.0" xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams"></nowiki></code>
 
 == Others ==
 Miscellaneous domains for various APIs and tests.

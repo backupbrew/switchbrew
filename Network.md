@@ -8,8 +8,7 @@ Only HTTPS is used with these domains unless noted otherwise.
 ## CDN
 
 The URLs for content delivery network servers on the Switch usually
-follow this
-format:
+follow this format:
 
 `{server_name}.hac.{environment}.{serverset}.nintendo.net`
 
@@ -47,8 +46,7 @@ The response is json with a "system\_update\_metas" block, containing
 "title\_id" and "title\_version" entries. The actual server response
 only contains 1 title.
 
-Example, from 2.0
-system:
+Example, from 2.0 system:
 
 `{"timestamp":REDACTED-TIMESTSAMP,"system_update_metas":[{"title_id":"0100000000000816","title_version":201327002}]}`
 
@@ -65,8 +63,7 @@ The following response is json from accessing the aqua URL:
 
 A while after [3.0.0](3.0.0.md "wikilink") release, the above
 title-version was changed to the one for v3.0("Last-Modified: Thu, 29
-Jun 2017 00:00:04
-GMT").
+Jun 2017 00:00:04 GMT").
 
 URLs:
 
@@ -86,8 +83,7 @@ appears to match 's' usage attempts: the only URL that returned actual
 data with 's' was with titleID 0100000000000816.
 
 As of June 30, 2017, accessing old content via the atumn "/c/" and "/t/"
-URLs works
-fine.
+URLs works fine.
 
 URLs:
 
@@ -109,8 +105,7 @@ URLs:
 
 #### tagaya
 
-VersionList for eShop
-titles.
+VersionList for eShop titles.
 
 URLs:
 
@@ -134,8 +129,7 @@ URLs:
 
 ## Shop API
 
-Domains for interacting with the online shop
-API.
+Domains for interacting with the online shop API.
 
 ### Servers
 
@@ -164,8 +158,7 @@ URLs:
 ## Services
 
 The URLs for general online service servers on the Switch usually follow
-one of these
-formats:
+one of these formats:
 
 `{server_name}.{environment}.{service_name}.srv.nintendo.net`  
 `{server_name}-{environment}.{service_name}.srv.nintendo.net`
@@ -183,6 +176,7 @@ Where:
   - "[api-%.znc.srv.nintendo.net](#znc "wikilink")"
   - "api-%.pctl.srv.nintendo.net"
   - "api-%.frs.srv.nintendo.net"
+  - "app-a04.%.npns.srv.nintendo.net"
   - "app-b01.%.npns.srv.nintendo.net"
   - "broker.%.npns.srv.nintendo.net"
   - "consumer.%.npns.srv.nintendo.net"
@@ -191,8 +185,7 @@ Where:
 
 #### aauth
 
-Application
-authentication.
+Application authentication.
 
 URLs:
 
@@ -204,8 +197,7 @@ URLs:
 
 #### dauth
 
-Device
-authentication.
+Device authentication.
 
 URLs:
 
@@ -225,6 +217,15 @@ URLs:
 
 Used by the Switch Online app to get app data, like the list of
 game-specific services to display.
+
+#### app
+
+app-a04\* uses XMPP with TLS over port 443, without HTTP. Sample
+request:
+
+`<?xml version="1.0"?><stream:stream
+to="app-a04.lp1.npns.srv.nintendo.net" xml:lang="en" version="1.0"
+xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams">`
 
 ## Others
 
@@ -246,8 +247,7 @@ News and game content:
 
 Connection:
 
-  - "ctest.cdn.nintendo.net" (replaces
-    "conntest.nintendowifi.net")
+  - "ctest.cdn.nintendo.net" (replaces "conntest.nintendowifi.net")
   - "nasc.nintendowifi.net"
 
 [Error\_applet](Error%20applet.md "wikilink"):
@@ -256,8 +256,7 @@ Connection:
 
 # User-Agent
 
-[NIM](NIM%20services.md "wikilink") generates two User-Agent
-strings:
+[NIM](NIM%20services.md "wikilink") generates two User-Agent strings:
 
 `snprintf(..., "User-Agent: NintendoSDK Firmware/%s-%u (platform:%s; did:%016llx; eid:%s)", <string at `[`sysver`](System%20Version%20Title.md "wikilink")`+0x68>, {u32 from `[`sysver`](System%20Version%20Title.md "wikilink")`+4}, "NX", DeviceId, {`[`GetEnvironmentIdentifier`](Sockets%20services#GetEnvironmentIdentifier.md##GetEnvironmentIdentifier "wikilink")` output});`  
 ` `  
