@@ -15,7 +15,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 4 || GetSystemUpdateTaskInfo
 |-
-| 5 || CommitSystemUpdateTask
+| 5 || [[#CommitSystemUpdateTask]]
 |-
 | 6 || CreateNetworkInstallTask
 |-
@@ -215,6 +215,9 @@ Takes an input [[#SystemUpdateTask]], no output.
 
 == ListSystemUpdateTask ==
 Takes a type-0x6 output buffer, for an array of [[#SystemUpdateTask]]. Returns an u32 for total output entries.
+
+== CommitSystemUpdateTask ==
+Takes an input [[#SystemUpdateTask]], no output.
 
 == SystemUpdateTask ==
 This is a 0x10-byte struct.

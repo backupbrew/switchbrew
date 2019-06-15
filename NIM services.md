@@ -9,7 +9,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 2   | [\#ListSystemUpdateTask](#ListSystemUpdateTask "wikilink")       |
 | 3   | RequestSystemUpdateTaskRun                                       |
 | 4   | GetSystemUpdateTaskInfo                                          |
-| 5   | CommitSystemUpdateTask                                           |
+| 5   | [\#CommitSystemUpdateTask](#CommitSystemUpdateTask "wikilink")   |
 | 6   | CreateNetworkInstallTask                                         |
 | 7   | DestroyNetworkInstallTask                                        |
 | 8   | ListNetworkInstallTask                                           |
@@ -126,6 +126,11 @@ output.
 Takes a type-0x6 output buffer, for an array of
 [\#SystemUpdateTask](#SystemUpdateTask "wikilink"). Returns an u32 for
 total output entries.
+
+## CommitSystemUpdateTask
+
+Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"), no
+output.
 
 ## SystemUpdateTask
 
