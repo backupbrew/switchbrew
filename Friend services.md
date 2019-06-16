@@ -2,11 +2,11 @@
 
 This is "nn::friends::detail::ipc::IServiceCreator".
 
-| Cmd | Name                                         |
-| --- | -------------------------------------------- |
-| 0   | CreateFriendService                          |
-| 1   | CreateNotificationService                    |
-| 2   | \[4.0.0+\] CreateDaemonSuspendSessionService |
+| Cmd | Name                                         | Notes                                                                                         |
+| --- | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 0   | CreateFriendService                          | Returns an [\#IFriendService](#IFriendService "wikilink").                                    |
+| 1   | \[2.0.0+\] CreateNotificationService         | Takes an input userID and returns [\#INotificationService](#INotificationService "wikilink"). |
+| 2   | \[4.0.0+\] CreateDaemonSuspendSessionService | Returns an [\#IDaemonSuspendSessionService](#IDaemonSuspendSessionService "wikilink").        |
 
 ## IFriendService
 
@@ -97,6 +97,18 @@ This is "nn::friends::detail::ipc::INotificationService".
 | 0   | GetEvent |
 | 1   | Clear    |
 | 2   | Pop      |
+
+## IDaemonSuspendSessionService
+
+This is "nn::friends::detail::ipc::IDaemonSuspendSessionService".
+
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | \[4.0.0+\] |
+| 1   | \[4.0.0+\] |
+| 2   | \[4.0.0+\] |
+| 3   | \[4.0.0+\] |
+| 4   | \[4.0.0+\] |
 
 # nd:app
 

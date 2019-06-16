@@ -3,13 +3,13 @@ This is "nn::friends::detail::ipc::IServiceCreator".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || CreateFriendService
+| 0 || CreateFriendService || Returns an [[#IFriendService]].
 |-
-| 1 || CreateNotificationService
+| 1 || [2.0.0+] CreateNotificationService || Takes an input userID and returns [[#INotificationService]].
 |-
-| 2 || [4.0.0+] CreateDaemonSuspendSessionService
+| 2 || [4.0.0+] CreateDaemonSuspendSessionService || Returns an [[#IDaemonSuspendSessionService]].
 |}
 
 == IFriendService ==
@@ -178,6 +178,24 @@ This is "nn::friends::detail::ipc::INotificationService".
 | 1 || Clear
 |-
 | 2 || Pop
+|}
+
+== IDaemonSuspendSessionService ==
+This is "nn::friends::detail::ipc::IDaemonSuspendSessionService".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [4.0.0+]
+|-
+| 1 || [4.0.0+]
+|-
+| 2 || [4.0.0+]
+|-
+| 3 || [4.0.0+]
+|-
+| 4 || [4.0.0+]
 |}
 
 = nd:app =
