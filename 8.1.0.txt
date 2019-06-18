@@ -7,8 +7,44 @@ Security flaws fixed: yes.
 * General system stability improvements to enhance the user's experience.
 *     
 
+==FIRM==
+====Package1ldr====
+package1ldr was updated. The TSEC secureboot firmware was updated.
+
+====NX_BOOTLOADER====
+NX bootloader was updated.
+
+<check back later for diff>
+
+====Secure Monitor====
+The Secure Monitor was updated.
+
+<check back later for diff>
+
+====Kernel====
+<check back later for diff>
+
+====Warmboot====
+<check back later for diff>
+
+====FIRM Sysmodules====
+FIRM sysmodules were updated. Specific diffs for a few sysmodules are below <check back later, to be updated>:
+
+=====[[Loader services|Loader]]=====
+*ldr:pm->CreateProcess() now performs additional validation on the NPDM header.
+** When the title id is one of certain hardcoded titles, Loader now validates that the version field at NPDM header is non-zero. This prevents selectively downgrading those titles to versions vulnerable to known exploits.
+** The titles checked are:
+*** settings
+*** bus
+*** audio
+*** nvservices
+*** ns
+*** ssl
+*** es
+*** creport
+*** ro
+
 ==System Titles==
-<fill this in (manually) later>
 
 No changes with IPC service commands.
 
