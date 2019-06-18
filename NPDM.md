@@ -21,7 +21,7 @@ varies.
 | 0xF    | 0x1  | Main thread core number                                                                                                                                                                             |
 | 0x10   | 0x4  | Reserved                                                                                                                                                                                            |
 | 0x14   | 0x4  | \[3.0.0+\] System resource (PersonalMmHeap) size (max size as of 5.x: 534773760)                                                                                                                    |
-| 0x18   | 0x4  | Process category (0 = regular title, 1 = kernel built-in)                                                                                                                                           |
+| 0x18   | 0x4  | Version (0 for all titles prior to [8.1.0](8.1.0.md "wikilink"), 1 for certain titles since).                                                                                                       |
 | 0x1C   | 0x4  | Main thread stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
 | 0x20   | 0x10 | Title name (usually/always "Application")                                                                                                                                                           |
 | 0x30   | 0x10 | Product code (usually/always all zeroes)                                                                                                                                                            |
