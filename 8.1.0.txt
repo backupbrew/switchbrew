@@ -10,6 +10,11 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+No changes with IPC service commands.
+
+==Keys==
+Keys were updated.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=06-17-19_08-05-09&sys=hac]
