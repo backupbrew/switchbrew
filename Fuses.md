@@ -944,6 +944,7 @@ device's unit type as below.
 | 6.0.0-6.1.0    | 7                                       | 1                                           |
 | 6.2.0          | 8                                       | 1                                           |
 | 7.0.0-8.0.1    | 9                                       | 1                                           |
+| 8.1.0          | 10                                      | 1                                           |
 
 If too many fuses are burnt the bootloader will panic immediately.
 
