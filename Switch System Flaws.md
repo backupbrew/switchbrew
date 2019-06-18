@@ -445,6 +445,19 @@ modules](Package2#Section%201.md##Section_1 "wikilink").
 <td><p>SciresM</p></td>
 </tr>
 <tr class="even">
+<td><p>System modules vulnerable to selective downgrade attacks</p></td>
+<td><p>Horizon has no mechanism for specifying the specific title version to Loader on process creation.</p>
+<p>Observing this, one can note that after a system update one could install a downgraded version of a specific system module (e.g. nvservices) while leaving the rest of the OS at the same version.</p>
+<p>Unless there was some breaking API change, this allows one to make a console vulnerable once more to an exploit in a sysmodule by downgrading it and nothing else.</p>
+<p>This was fixed in <a href="8.1.0.md" title="wikilink">8.1.0</a> by incrementing a version field in NPDM, and checking it against a hardcoded list for certain titles in Loader's process creation func.</p></td>
+<td><p>With access to content installation commands (or a vulnerable lower version to selectively install newer titles), reintroducing bugs in vulnerable system modules on newer firmware versions.</p></td>
+<td><p><a href="8.1.0.md" title="wikilink">8.1.0</a></p></td>
+<td><p><a href="8.1.0.md" title="wikilink">8.1.0</a></p></td>
+<td><p>When FIRM was first dumped in 2017.</p></td>
+<td><p>June 17, 2019</p></td>
+<td><p>Everyone</p></td>
+</tr>
+<tr class="odd">
 <td></td>
 <td></td>
 <td></td>

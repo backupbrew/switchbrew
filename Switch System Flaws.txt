@@ -418,6 +418,21 @@ This was fixed in [[6.0.0]], the new code looks like this:
 | September 19, 2018
 | SciresM
 |-
+| System modules vulnerable to selective downgrade attacks
+| Horizon has no mechanism for specifying the specific title version to Loader on process creation.
+
+Observing this, one can note that after a system update one could install a downgraded version of a specific system module (e.g. nvservices) while leaving the rest of the OS at the same version.
+
+Unless there was some breaking API change, this allows one to make a console vulnerable once more to an exploit in a sysmodule by downgrading it and nothing else.
+
+This was fixed in [[8.1.0]] by incrementing a version field in NPDM, and checking it against a hardcoded list for certain titles in Loader's process creation func.
+| With access to content installation commands (or a vulnerable lower version to selectively install newer titles), reintroducing bugs in vulnerable system modules on newer firmware versions.
+| [[8.1.0]]
+| [[8.1.0]]
+| When FIRM was first dumped in 2017.
+| June 17, 2019
+| Everyone
+|-
 |}
 
 === System Modules ===
