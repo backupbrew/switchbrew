@@ -81,7 +81,7 @@ SPL was not updated.
 ==System Titles==
 Updated titles:
 * Sysmodules: 
-** settings Rebuild.
+** settings Rebuilt.
 ** bus Identical codebin.
 ** bcat .text updated.
 ** hid .text updated.
@@ -92,14 +92,14 @@ Updated titles:
 ** account .text updated.
 ** ns .text updated.
 ** am .text updated.
-** ssl Rebuild.
+** ssl Rebuilt.
 ** vi .text updated.
 ** es .text updated.
 ** fatal .text updated.
 ** creport Identical codebin.
 ** ro Identical codebin.
 ** grc .text updated.
-* ErrorMessage, BrowserDll, [[System_Version_Title]], FIRM, qlaunch, web-applets, and RebootlessSystemUpdateVersion.
+* ErrorMessage, BrowserDll, [[System_Version_Title]], FIRM, qlaunch, web-applets (main codebin rebuilt), and RebootlessSystemUpdateVersion.
 
 No changes with IPC service commands.
 
