@@ -30,7 +30,13 @@ Kernel was not changed.
 <check back later for diff>
 
 ====FIRM Sysmodules====
-FIRM sysmodules were updated. Specific diffs for a few sysmodules are below <check back later, to be updated>:
+FIRM sysmodules were updated. Specific diffs available below:
+
+=====[[Boot]]=====
+Only GNU build hash was updated.
+
+=====[[Filesystem services|FS]]=====
+Only GNU build hash was updated.
 
 =====[[Loader services|Loader]]=====
 *ldr:pm->CreateProcess() now performs additional validation on the NPDM header.
@@ -45,6 +51,18 @@ FIRM sysmodules were updated. Specific diffs for a few sysmodules are below <che
 *** es
 *** creport
 *** ro
+
+=====[[NCM services|NCM]]=====
+Only GNU build hash was updated.
+
+=====[[Process Manager services|PM]]=====
+Only GNU build hash was updated.
+
+=====[[Services_API|SM]]=====
+SM was not updated.
+
+=====[[SPL services|SPL]]=====
+SM was not updated.
 
 ==System Titles==
 
