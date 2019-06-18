@@ -62,7 +62,7 @@ Only GNU build hash was updated.
 SM was not updated.
 
 =====[[SPL services|SPL]]=====
-SM was not updated.
+SPL was not updated.
 
 ==System Titles==
 
