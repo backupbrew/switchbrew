@@ -1,3 +1,7 @@
+  - **29 March 19** [devkitA64
+    r13](https://devkitpro.org/viewtopic.php?f=13&t=8891) and [libnx
+    v2.1.0](https://github.com/switchbrew/libnx/releases/tag/v2.1.0)
+    released with pthread/std::thread support.
   - **26 March 19** [Atmosphère
     v0.8.6](https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.8.6)
     released with lots of bugfixes, more cheat stuff and web applet
