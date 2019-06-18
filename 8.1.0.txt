@@ -24,7 +24,7 @@ The Secure Monitor was updated.
 <check back later for diff>
 
 ====Kernel====
-<check back later for diff>
+Kernel was not changed.
 
 ====Warmboot====
 <check back later for diff>
