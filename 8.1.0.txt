@@ -8,6 +8,8 @@ Security flaws fixed: yes.
 *     
 
 ==FIRM==
+All files in RomFS were updated.
+
 ====Package1ldr====
 package1ldr was updated. The TSEC secureboot firmware was updated.
 
