@@ -70,8 +70,12 @@ SPL was not updated.
 
 No changes with IPC service commands.
 
-Titles' RomFS changes:
+Titles' RomFS changes, besides [[System_Version_Title]]:
+* ErrorMessage: Error 2124-4517 was updated with actual strings etc. "/2181/4017/common" and "/DatabaseInfo" were updated.
 * BrowserDll: the NROs and buildinfo were updated.
+* RebootlessSystemUpdateVersion: The "/version" file was updated.
+* qlaunch: "/lyt/Notification.szs" was updated.
+* Web-applets: "/buildinfo/buildinfo.dat" and "/.nrr/netfront.nrr" were updated.
 
 ==Keys==
 Keys were updated.
