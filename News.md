@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **17 June 19** Nintendo released system update
+    [8.1.0](8.1.0.md "wikilink").
   - **1 May 19** [libnx v2.2.0 and switch-examples
     v20190501](https://devkitpro.org/viewtopic.php?f=13&t=8908)
     released.
@@ -27,7 +29,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     [8.0.1](8.0.1.md "wikilink").
   - **15 April 19** Nintendo released system update
     [8.0.0](8.0.0.md "wikilink").
-  - **29 March 19** [devkitA64
-    r13](https://devkitpro.org/viewtopic.php?f=13&t=8891) and [libnx
-    v2.1.0](https://github.com/switchbrew/libnx/releases/tag/v2.1.0)
-    released with pthread/std::thread support.
