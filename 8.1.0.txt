@@ -50,6 +50,9 @@ FIRM sysmodules were updated. Specific diffs for a few sysmodules are below <che
 
 No changes with IPC service commands.
 
+Titles' RomFS changes:
+* BrowserDll: the NROs and buildinfo were updated.
+
 ==Keys==
 Keys were updated.
 
