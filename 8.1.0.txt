@@ -27,7 +27,9 @@ The Secure Monitor was updated.
 Kernel was not changed.
 
 ====Warmboot====
-<check back later for diff>
+* The firmware revision magic was changed from 0x129 to 0x14A.
+* Security Engine state validation was changed (first six keyslots now expected to read zeroes instead of FFs).
+* <check back for more diffs later>
 
 ====FIRM Sysmodules====
 FIRM sysmodules were updated. Specific diffs available below:
