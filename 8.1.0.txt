@@ -1,0 +1,15 @@
+The Switch 8.1.0 system update was released on June 17, 2019. This Switch update was released for the following regions: ALL.
+
+Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
+
+==Change-log==
+[https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
+* General system stability improvements to enhance the user's experience.
+*     
+
+==System Titles==
+<fill this in (manually) later>
+
+==See Also==
+System update report(s):
+* [https://yls8.mtheall.com/ninupdates/reports.php?date=06-17-19_08-05-09&sys=hac]
