@@ -612,6 +612,9 @@ Bit 2 is a boolean determining whether kernel should enable usermode
 access to the Performance Monitors (whether PMUSERENR\_EL0 should be 1
 or 0).
 
+\[8.0.0+\] Bit 3 is a boolean determining whether the kernldr should
+allocate 0x68000 extra bytes before INI1 data
+
 Bits 8-15 are a boolean determining whether kernel should call smcPanic
 on error instead of infinite-looping.
 
