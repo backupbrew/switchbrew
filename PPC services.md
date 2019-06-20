@@ -41,8 +41,7 @@ This was added with \[8.0.0+\] and is the same as the old
 
 # apm:sys
 
-This is
-"nn::apm::ISystemManager".
+This is "nn::apm::ISystemManager".
 
 | Cmd | Name                                                                                              |
 | --- | ------------------------------------------------------------------------------------------------- |
@@ -61,8 +60,7 @@ Returns an [\#ISession](#ISession "wikilink").
 
 ## SetCpuBoostMode
 
-Takes an u32
-[\#CpuBoostMode](#CpuBoostMode "wikilink").
+Takes an u32 [\#CpuBoostMode](#CpuBoostMode "wikilink").
 
 ### CpuBoostMode
 
@@ -165,14 +163,25 @@ This is "nn::fgm::sf::IDebugger".
 
 # Settings
 
-| Key                                          | Size   | Notes                                                                                                           |
-| -------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------- |
-| battery\_draining\_enabled                   | 1      | ?                                                                                                               |
-| performance\_mode\_policy                    | strlen | "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only). |
-| sdev\_cpu\_overclock\_enabled                | 1      | SDEV only. Used to allow access to 1224MHz CPU mode.                                                            |
-| sdev\_throttling\_additional\_delay\_us      | 4      | SDEV only.                                                                                                      |
-| sdev\_throttling\_additional\_delay\_enabled | 1      | SDEV only.                                                                                                      |
-| throttling\_for\_smpd\_enabled               | 1      | Not used as of 3.0.                                                                                             |
-| throttling\_for\_undock\_enabled             | 1      | Not used as of 3.0.                                                                                             |
+| Key                                            | Size   | Notes                                                                                                           |
+| ---------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------- |
+| background\_download\_stress\_testing\_storage | strlen | "sdcard", "builtin", "system".                                                                                  |
+| battery\_draining\_enabled                     | 1      | ?                                                                                                               |
+| fs\_access\_log\_mode                          | strlen | "log", "sdcard", "log+sdcard", "off".                                                                           |
+| fs\_speed\_emulation\_mode                     | strlen | "faster", "slower", "random", "off".                                                                            |
+| host\_romfs\_redirection\_target               | strlen | "builtin", "off".                                                                                               |
+| idle\_time\_detect\_mode                       | strlen | "on", "off".                                                                                                    |
+| initial\_tick\_value                           | strlen | "7days", "14days", "30days", "90days", "hex": ?.                                                                |
+| memory\_mode                                   | strlen | "auto": ?, "4GB": ?, "6GB": ?.                                                                                  |
+| needs\_update\_vulnerability\_policy           | strlen | "default": ?, "force\_true": ?, "force\_false": ?.                                                              |
+| operation\_mode\_policy                        | strlen | "auto": ?, "handheld": ?, "console": ?.                                                                         |
+| performance\_mode\_policy                      | strlen | "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only). |
+| screenshot\_target                             | strlen | "screenshot": ?, "physical": ?.                                                                                 |
+| sdev\_cpu\_overclock\_enabled                  | 1      | SDEV only. Used to allow access to 1224MHz CPU mode.                                                            |
+| sdev\_throttling\_additional\_delay\_us        | 4      | SDEV only.                                                                                                      |
+| sdev\_throttling\_additional\_delay\_enabled   | 1      | SDEV only.                                                                                                      |
+| sleep\_mode                                    | strlen | "default": ?, "pseudo": ?.                                                                                      |
+| throttling\_for\_smpd\_enabled                 | 1      | Not used as of 3.0.                                                                                             |
+| throttling\_for\_undock\_enabled               | 1      | Not used as of 3.0.                                                                                             |
 
 [Category:Services](Category:Services "wikilink")

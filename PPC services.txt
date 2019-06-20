@@ -203,15 +203,37 @@ This is "nn::fgm::sf::IDebugger".
 |-
 ! Key || Size || Notes
 |-
+| background_download_stress_testing_storage || strlen || "sdcard", "builtin", "system".
+|-
 | battery_draining_enabled || 1 || ?
 |-
+| fs_access_log_mode || strlen || "log", "sdcard", "log+sdcard", "off".
+|-
+| fs_speed_emulation_mode || strlen || "faster", "slower", "random", "off".
+|-
+| host_romfs_redirection_target || strlen || "builtin", "off".
+|-
+| idle_time_detect_mode || strlen || "on", "off".
+|-
+| initial_tick_value || strlen || "7days", "14days", "30days", "90days", "hex": ?.
+|-
+| memory_mode || strlen || "auto": ?, "4GB": ?, "6GB": ?.
+|-
+| needs_update_vulnerability_policy || strlen || "default": ?, "force_true": ?, "force_false": ?.
+|-
+| operation_mode_policy || strlen || "auto": ?, "handheld": ?, "console": ?.
+|-
 | performance_mode_policy || strlen || "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only).
+|-
+| screenshot_target || strlen || "screenshot": ?, "physical": ?.
 |-
 | sdev_cpu_overclock_enabled || 1 || SDEV only. Used to allow access to 1224MHz CPU mode.
 |-
 | sdev_throttling_additional_delay_us || 4 || SDEV only.
 |-
 | sdev_throttling_additional_delay_enabled || 1 || SDEV only.
+|-
+| sleep_mode || strlen || "default": ?, "pseudo": ?.
 |-
 | throttling_for_smpd_enabled || 1 || Not used as of 3.0.
 |-
