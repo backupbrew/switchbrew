@@ -217,11 +217,11 @@ This is "nn::fgm::sf::IDebugger".
 |-
 | initial_tick_value || strlen || "7days", "14days", "30days", "90days", "hex": ?.
 |-
-| memory_mode || strlen || "auto": ?, "4GB": ?, "6GB": ?.
+| memory_mode || strlen || "auto", "4GB", "6GB".
 |-
 | needs_update_vulnerability_policy || strlen || "default": ?, "force_true": ?, "force_false": ?.
 |-
-| operation_mode_policy || strlen || "auto": ?, "handheld": ?, "console": ?.
+| operation_mode_policy || strlen || "auto": ?, "handheld", "console".
 |-
 | performance_mode_policy || strlen || "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only).
 |-

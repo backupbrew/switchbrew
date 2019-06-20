@@ -172,9 +172,9 @@ This is "nn::fgm::sf::IDebugger".
 | host\_romfs\_redirection\_target               | strlen | "builtin", "off".                                                                                               |
 | idle\_time\_detect\_mode                       | strlen | "on", "off".                                                                                                    |
 | initial\_tick\_value                           | strlen | "7days", "14days", "30days", "90days", "hex": ?.                                                                |
-| memory\_mode                                   | strlen | "auto": ?, "4GB": ?, "6GB": ?.                                                                                  |
+| memory\_mode                                   | strlen | "auto", "4GB", "6GB".                                                                                           |
 | needs\_update\_vulnerability\_policy           | strlen | "default": ?, "force\_true": ?, "force\_false": ?.                                                              |
-| operation\_mode\_policy                        | strlen | "auto": ?, "handheld": ?, "console": ?.                                                                         |
+| operation\_mode\_policy                        | strlen | "auto": ?, "handheld", "console".                                                                               |
 | performance\_mode\_policy                      | strlen | "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only). |
 | screenshot\_target                             | strlen | "screenshot": ?, "physical": ?.                                                                                 |
 | sdev\_cpu\_overclock\_enabled                  | 1      | SDEV only. Used to allow access to 1224MHz CPU mode.                                                            |
