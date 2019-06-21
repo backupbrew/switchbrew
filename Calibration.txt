@@ -21,7 +21,7 @@ This is the raw data stored under the PRODINFO partition.
 |-
 |  0x0004
 |  0x04
-|  unk
+|  version
 |  Always 0x07.
 |-
 |  0x0008
@@ -31,7 +31,7 @@ This is the raw data stored under the PRODINFO partition.
 |-
 |  0x000C
 |  0x02
-|  version
+|  model
 |  Always 0x01.
 |-
 |  0x000E

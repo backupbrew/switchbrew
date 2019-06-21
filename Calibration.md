@@ -12,15 +12,14 @@ which ranges from hardware IDs to system keys.
 
 # CAL0
 
-This is the raw data stored under the PRODINFO
-partition.
+This is the raw data stored under the PRODINFO partition.
 
 | Offset | Size   | Field                                                    | Description                                                                           |
 | ------ | ------ | -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 0x0000 | 0x04   | magic                                                    | "CAL0" header magic.                                                                  |
-| 0x0004 | 0x04   | unk                                                      | Always 0x07.                                                                          |
+| 0x0004 | 0x04   | version                                                  | Always 0x07.                                                                          |
 | 0x0008 | 0x04   | calib\_data\_size                                        | Total size of calibration data minus 0x40 bytes (header + calib\_data\_sha256).       |
-| 0x000C | 0x02   | version                                                  | Always 0x01.                                                                          |
+| 0x000C | 0x02   | model                                                    | Always 0x01.                                                                          |
 | 0x000E | 0x02   | revision                                                 | Increases each time calibration data is installed.                                    |
 | 0x0020 | 0x20   | calib\_data\_sha256                                      | SHA256 hash calculated over calibration data.                                         |
 | 0x0040 | 0x1D   | config\_id1                                              | Configuration ID string.                                                              |
