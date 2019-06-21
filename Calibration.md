@@ -62,7 +62,7 @@ This is the raw data stored under the PRODINFO partition.
 | 0x3620 | 0x40   | amiibo\_key\_ecqv\_bls                                   | Amiibo key (ECQV-BLS version).                                                        |
 | 0x3670 | 0x20   | amiibo\_cert\_ecqv\_bls                                  | Amiibo certificate (ECQV-BLS version).                                                |
 | 0x36A0 | 0x90   | amiibo\_root\_cert\_ecqv\_bls                            | Amiibo root certificate (ECQV-BLS version).                                           |
-| 0x3740 | 0x04   | product\_model                                           |                                                                                       |
+| 0x3740 | 0x04   | product\_model                                           | 1 = Nx, 2 = Copper                                                                    |
 | 0x3750 | 0x06   | color\_variation                                         |                                                                                       |
 | 0x3760 | 0x0C   | lcd\_backlight\_brightness\_mapping                      |                                                                                       |
 | 0x3770 | 0x50   | device\_ext\_key\_ecc\_b233                              | Extended device key (ECC-B233 version; active).                                       |
