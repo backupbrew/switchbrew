@@ -659,33 +659,33 @@ Otherwise just return 0.
 
 </div>
 
-| Handle type | Id0        | Id1                   | Description                                                                                                 |
-| ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Process     | 0          | 0                     | AllowedCpuIdBitmask                                                                                         |
-| Process     | 1          | 0                     | AllowedThreadPrioBitmask                                                                                    |
-| Process     | 2          | 0                     | AliasRegionBaseAddr                                                                                         |
-| Process     | 3          | 0                     | AliasRegionSize                                                                                             |
-| Process     | 4          | 0                     | HeapRegionBaseAddr                                                                                          |
-| Process     | 5          | 0                     | HeapRegionSize                                                                                              |
-| Process     | 6          | 0                     | TotalMemoryAvailable. Total memory available(free+used).                                                    |
-| Process     | 7          | 0                     | TotalMemoryUsage. Total used size of codebin memory + main-thread stack + allocated heap.                   |
-| Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                               |
-| Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink"). |
-| Zero        | 10         | \-1, {current coreid} | IdleTickCount                                                                                               |
-| Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                      |
-| Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceBaseAddr                                                                             |
-| Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                 |
-| Process     | 14         | 0                     | \[2.0.0+\] StackRegionBaseAddr                                                                              |
-| Process     | 15         | 0                     | \[2.0.0+\] StackRegionSize                                                                                  |
-| Process     | 16         | 0                     | \[3.0.0+\] PersonalMmHeapSize                                                                               |
-| Process     | 17         | 0                     | \[3.0.0+\] PersonalMmHeapUsage                                                                              |
-| Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                          |
-| Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                             |
-| Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                             |
-| Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                         |
-| Process     | 21         | 0                     | \[6.0.0+\] TotalMemoryAvailableWithoutMmHeap                                                                |
-| Process     | 22         | 0                     | \[6.0.0+\] TotalMemoryUsedWithoutMmHeap                                                                     |
-| Thread      | 0xF0000002 | 0                     | Scheduler related.                                                                                          |
+| Handle type | Id0        | Id1                   | Description                                                                                                                               |
+| ----------- | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Process     | 0          | 0                     | AllowedCpuIdBitmask                                                                                                                       |
+| Process     | 1          | 0                     | AllowedThreadPrioBitmask                                                                                                                  |
+| Process     | 2          | 0                     | AliasRegionBaseAddr                                                                                                                       |
+| Process     | 3          | 0                     | AliasRegionSize                                                                                                                           |
+| Process     | 4          | 0                     | HeapRegionBaseAddr                                                                                                                        |
+| Process     | 5          | 0                     | HeapRegionSize                                                                                                                            |
+| Process     | 6          | 0                     | TotalMemoryAvailable. Total memory available(free+used).                                                                                  |
+| Process     | 7          | 0                     | TotalMemoryUsage. Total used size of codebin memory + main-thread stack + allocated heap.                                                 |
+| Zero        | 8          | 0                     | IsCurrentProcessBeingDebugged                                                                                                             |
+| Zero        | 9          | 0                     | Returns ResourceLimit handle for current process. Used by [PM](Process%20Manager%20services.md "wikilink").                               |
+| Zero        | 10         | \-1, {current coreid} | IdleTickCount                                                                                                                             |
+| Zero        | 11         | 0-3                   | RandomEntropy from current process. TRNG. Used to seed usermode PRNGs.                                                                    |
+| Process     | 12         | 0                     | \[2.0.0+\] AddressSpaceBaseAddr                                                                                                           |
+| Process     | 13         | 0                     | \[2.0.0+\] AddressSpaceSize                                                                                                               |
+| Process     | 14         | 0                     | \[2.0.0+\] StackRegionBaseAddr                                                                                                            |
+| Process     | 15         | 0                     | \[2.0.0+\] StackRegionSize                                                                                                                |
+| Process     | 16         | 0                     | \[3.0.0+\] PersonalMmHeapSize                                                                                                             |
+| Process     | 17         | 0                     | \[3.0.0+\] PersonalMmHeapUsage                                                                                                            |
+| Process     | 18         | 0                     | \[3.0.0+\] TitleId                                                                                                                        |
+| Zero        | 19         | 0                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_LowerBound                                                                                           |
+| Zero        | 19         | 1                     | \[4.0.0-4.1.0\] PrivilegedProcessId\_UpperBound                                                                                           |
+| Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                                                       |
+| Process     | 21         | 0                     | \[6.0.0+\] TotalMemoryAvailableWithoutMmHeap                                                                                              |
+| Process     | 22         | 0                     | \[6.0.0+\] TotalMemoryUsedWithoutMmHeap                                                                                                   |
+| Thread      | 0xF0000002 | 0-3, -1               | Thread Ticks. When 0-3 are passed, gets specific core CPU ticks spent on thread. When -1 is passed, gets total CPU ticks spent on thread. |
 
 ## svcMapPhysicalMemory
 
