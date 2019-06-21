@@ -219,26 +219,26 @@ This is "nn::socket::resolver::IResolver".
 
 This service uses `bionic/libc/dns` to perform its tasks.
 
-| Cmd | Name                                                                                                 |
-| --- | ---------------------------------------------------------------------------------------------------- |
-| 0   | SetDnsAddressesPrivate (stubbed, returns 0x7FE03)                                                    |
-| 1   | GetDnsAddressPrivate (stubbed, returns 0x7FE03)                                                      |
-| 2   | GetHostByName                                                                                        |
-| 3   | GetHostByAddr                                                                                        |
-| 4   | GetHostStringError                                                                                   |
-| 5   | GetGaiStringError                                                                                    |
-| 6   | [\#GetAddrInfo](#GetAddrInfo "wikilink")                                                             |
-| 7   | GetNameInfo                                                                                          |
-| 8   | RequestCancelHandle                                                                                  |
-| 9   | CancelSocketCall                                                                                     |
-| 10  | \[5.0.0+\]                                                                                           |
-| 11  | \[5.0.0+\] [\#ClearDnsIpServerAddressArray](#ClearDnsIpServerAddressArray "wikilink") (made-up name) |
-| 12  | \[5.0.0+\]                                                                                           |
-| 13  | \[5.0.0+\]                                                                                           |
-| 14  | \[5.0.0+\]                                                                                           |
-| 15  | \[5.0.0+\]                                                                                           |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 0   | SetDnsAddressesPrivateRequest (stubbed, returns 0x7FE03) |
+| 1   | GetDnsAddressPrivateRequest (stubbed, returns 0x7FE03)   |
+| 2   | GetHostByNameRequest                                     |
+| 3   | GetHostByAddrRequest                                     |
+| 4   | GetHostStringErrorRequest                                |
+| 5   | GetGaiStringErrorRequest                                 |
+| 6   | [\#GetAddrInfoRequest](#GetAddrInfoRequest "wikilink")   |
+| 7   | GetNameInfoRequest                                       |
+| 8   | GetCancelHandleRequest                                   |
+| 9   | CancelRequest                                            |
+| 10  | \[5.0.0+\] GetHostByNameRequestWithOptions               |
+| 11  | \[5.0.0+\] GetHostByAddrRequestWithOptions               |
+| 12  | \[5.0.0+\] GetAddrInfoRequestWithOptions                 |
+| 13  | \[5.0.0+\] GetNameInfoRequestWithOptions                 |
+| 14  | \[5.0.0+\] ResolverSetOptionRequest                      |
+| 15  | \[5.0.0+\] ResolverGetOptionRequest                      |
 
-## GetAddrInfo
+## GetAddrInfoRequest
 
 Takes three type 5 buffers (host, port, and hints), and a type 6 buffer
 (the output addrinfos). Also takes a u8 (padded to 4 bytes so the next
@@ -278,14 +278,6 @@ If `ai_family` is recognized as AF\_INET6 (28) or AF\_INET (2),
 Otherwise, it's just read as `u8[ai_addrlen]`.
 
 The list should be terminated with a sentinel four-byte zero value.
-
-## ClearDnsIpServerAddressArray
-
-This function clears `nn::socket::resolver::g_DnsIpServerAddressArray`,
-setting its length to 0 as well. The array initially contains IPs filled
-by `bsdconfig`, a privileged service handling DHCP and such.
-
-Takes no arguments, doesn't return anything, never fails.
 
 # nsd:u, nsd:a
 
