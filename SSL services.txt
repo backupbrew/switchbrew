@@ -19,12 +19,24 @@ This is "nn::ssl::sf::ISslService".
 |-
 | 6 || [5.0.0+] FlushSessionCache
 |-
-| 7 || [6.0.0+] SetDebugOption
+| 7 || [6.0.0+] [[#SetDebugOption]]
 |-
-| 8 || [6.0.0+] GetDebugOption
+| 8 || [6.0.0+] [[#GetDebugOption]]
 |}
 
 [3.0.0+] GetCertificates now returns 4-bytes of output.
+
+== SetDebugOption ==
+Takes an input u32 '''DebugOptionType''' and a type-0x5 input buffer, no output.
+
+The input u32 value must be 0, and the buffer addr/size must not be 0.
+
+The u8 at buf+0 is copied to state.
+
+== GetDebugOption ==
+Takes an input u32 '''DebugOptionType''' and a type-0x6 output buffer.
+
+Same as [[#SetDebugOption]] except this copies state to the buffer instead.
 
 == ISslContext ==
 This is "nn::ssl::sf::ISslContext".

@@ -2,19 +2,35 @@
 
 This is "nn::ssl::sf::ISslService".
 
-| Cmd | Name                           |
-| --- | ------------------------------ |
-| 0   | CreateContext                  |
-| 1   | GetContextCount                |
-| 2   | GetCertificates                |
-| 3   | GetCertificateBufSize          |
-| 4   | \[3.0.0+\] DebugIoctl          |
-| 5   | \[3.0.0+\] SetInterfaceVersion |
-| 6   | \[5.0.0+\] FlushSessionCache   |
-| 7   | \[6.0.0+\] SetDebugOption      |
-| 8   | \[6.0.0+\] GetDebugOption      |
+| Cmd | Name                                                      |
+| --- | --------------------------------------------------------- |
+| 0   | CreateContext                                             |
+| 1   | GetContextCount                                           |
+| 2   | GetCertificates                                           |
+| 3   | GetCertificateBufSize                                     |
+| 4   | \[3.0.0+\] DebugIoctl                                     |
+| 5   | \[3.0.0+\] SetInterfaceVersion                            |
+| 6   | \[5.0.0+\] FlushSessionCache                              |
+| 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink") |
+| 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink") |
 
 \[3.0.0+\] GetCertificates now returns 4-bytes of output.
+
+## SetDebugOption
+
+Takes an input u32 **DebugOptionType** and a type-0x5 input buffer, no
+output.
+
+The input u32 value must be 0, and the buffer addr/size must not be 0.
+
+The u8 at buf+0 is copied to state.
+
+## GetDebugOption
+
+Takes an input u32 **DebugOptionType** and a type-0x6 output buffer.
+
+Same as [\#SetDebugOption](#SetDebugOption "wikilink") except this
+copies state to the buffer instead.
 
 ## ISslContext
 
