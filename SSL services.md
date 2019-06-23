@@ -8,13 +8,17 @@ This is "nn::ssl::sf::ISslService".
 | 1   | GetContextCount                                           |
 | 2   | GetCertificates                                           |
 | 3   | GetCertificateBufSize                                     |
-| 4   | \[3.0.0+\] DebugIoctl                                     |
+| 4   | \[3.0.0+\] [\#DebugIoctl](#DebugIoctl "wikilink")         |
 | 5   | \[3.0.0+\] SetInterfaceVersion                            |
 | 6   | \[5.0.0+\] FlushSessionCache                              |
 | 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink") |
 | 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink") |
 
 \[3.0.0+\] GetCertificates now returns 4-bytes of output.
+
+## DebugIoctl
+
+Stubbed on retail, just returns an error.
 
 ## SetDebugOption
 
