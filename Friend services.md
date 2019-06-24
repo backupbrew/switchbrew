@@ -92,11 +92,11 @@ This is "nn::friends::detail::ipc::IFriendService".
 
 This is "nn::friends::detail::ipc::INotificationService".
 
-| Cmd | Name     |
-| --- | -------- |
-| 0   | GetEvent |
-| 1   | Clear    |
-| 2   | Pop      |
+| Cmd | Name                | Notes                          |
+| --- | ------------------- | ------------------------------ |
+| 0   | \[2.0.0+\] GetEvent | Returns an output event handle |
+| 1   | \[2.0.0+\] Clear    |                                |
+| 2   | \[2.0.0+\] Pop      |                                |
 
 ## IDaemonSuspendSessionService
 
