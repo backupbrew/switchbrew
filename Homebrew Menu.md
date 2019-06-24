@@ -38,9 +38,9 @@ displayed when the required service is available/accessible.
 With netloader activated as described above you can load apps over the
 network with nxlink. With the
 [toolchain](Setting%20up%20Development%20Environment.md "wikilink")
-setup run `nxlink `<nrofile> if your network can handle UDP broadcast
+setup run ` nxlink  `<nrofile> if your network can handle UDP broadcast
 messages. If nxlink fails with "No response from Switch\!" you can use
-`-a `<ip address> before <nrofile> for the address to send the app to.
+` -a  `<ip address> before <nrofile> for the address to send the app to.
 See nxlink help for more options.
 
 # Themes
@@ -116,6 +116,8 @@ filepath for the associated file. See below regarding the icon used for
 the menu entry. The author and version fields for the menu entry are
 loaded from app\_path, while the name is the filename (unless a
 directory is being processed, in this case the directory name is used).
+Git-only: when {$FILEPATH with extension changed to .nacp} exists, the
+aforementioned strings will be loaded from there instead.
 
 The only optional setting is icon\_path. All paths are absolute. Icon
 will attempted to be loaded from the following: {$FILEPATH with

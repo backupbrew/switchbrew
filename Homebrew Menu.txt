@@ -61,7 +61,7 @@ File-association cfg files can optionally be loaded from SD "/config/nx-hbmenu/f
 
 When processing directories where no NRO was detected, hbmenu will go through the dir-listing and use the first entry where the filename matches a fileassoc entry where <code>filename</code> is specified (file_extension entries are skipped).
 
-The generated menu entry launches the specified app_path where the first passed argument (argv[1] in the launched app) is the absolute filepath for the associated file. See below regarding the icon used for the menu entry. The author and version fields for the menu entry are loaded from app_path, while the name is the filename (unless a directory is being processed, in this case the directory name is used).
+The generated menu entry launches the specified app_path where the first passed argument (argv[1] in the launched app) is the absolute filepath for the associated file. See below regarding the icon used for the menu entry. The author and version fields for the menu entry are loaded from app_path, while the name is the filename (unless a directory is being processed, in this case the directory name is used). Git-only: when {$FILEPATH with extension changed to .nacp} exists, the aforementioned strings will be loaded from there instead.
 
 The only optional setting is icon_path. All paths are absolute. Icon will attempted to be loaded from the following: {$FILEPATH with extension changed to .jpg} -> icon_path setting if it exists (target setting -> main file_assoc setting) -> icon from app_path.
 
