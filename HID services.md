@@ -606,13 +606,13 @@ This is a 0x40-byte struct.
 
 ## HdlsDeviceInfo
 
-| Offset | Size | Description                                                          |
-| ------ | ---- | -------------------------------------------------------------------- |
-| 0x0    | 0x4  | [\#NpadStyleTag](#NpadStyleTag "wikilink"), only one bit can be set. |
-| 0x4    | 0x4  | RGBA Single Body Color                                               |
-| 0x8    | 0x4  | RGBA Single Buttons Color                                            |
-| 0xC    | 0x1  | Unknown                                                              |
-| 0xD    | 0x3  | Padding                                                              |
+| Offset | Size | Description                                                                                |
+| ------ | ---- | ------------------------------------------------------------------------------------------ |
+| 0x0    | 0x4  | Only one bit can be set. Bit0 = Pro-Controller, bit1 = Joy-Con Left, bit2 = Joy-Con Right. |
+| 0x4    | 0x4  | RGBA Single Body Color                                                                     |
+| 0x8    | 0x4  | RGBA Single Buttons Color                                                                  |
+| 0xC    | 0x1  | Unknown                                                                                    |
+| 0xD    | 0x3  | Padding                                                                                    |
 
 This is a 0x10-byte struct.
 

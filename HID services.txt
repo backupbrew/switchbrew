@@ -757,7 +757,7 @@ This is a 0x40-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || [[#NpadStyleTag]], only one bit can be set.
+| 0x0 || 0x4 || Only one bit can be set. Bit0 = Pro-Controller, bit1 = Joy-Con Left, bit2 = Joy-Con Right.
 |-
 | 0x4 || 0x4 || RGBA Single Body Color
 |-
