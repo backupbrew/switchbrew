@@ -608,13 +608,28 @@ This is a 0x40-byte struct.
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                                                                                   |
 | ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Only one bit can be set. Bit0 = Pro-Controller, bit1 = Joy-Con Left, bit2 = Joy-Con Right, bit21 = unknown.                                                                                                                                                                                                                                   |
+| 0x0    | 0x4  | Only one bit can be set, see below.                                                                                                                                                                                                                                                                                                           |
 | 0x4    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                                                                                                                        |
 | 0x8    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                                                                                     |
 | 0xC    | 0x1  | Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type Joy-Con Left/Right: with value 0x2 the system doesn't list the controller in hid sharedmem. Type bit21: value 0x3 = unknown. |
 | 0xD    | 0x3  | Padding                                                                                                                                                                                                                                                                                                                                       |
 
 This is a 0x10-byte struct.
+
+Bits for the above type field:
+
+| Bits  | Description | Notes                                                                                                                         |
+| ----- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0-7   |             | BIT(N\*4+0) = Pro-Controller, BIT(N\*4+1) = Joy-Con Left, BIT(N\*4+2) = Joy-Con Right, BIT(N\*4+3) = invalid. Where N is 0-1. |
+| 8-10  |             | Pro-Controller                                                                                                                |
+| 11    |             | Famicom-Controller                                                                                                            |
+| 12    |             | Famicom-Controller II with microphone                                                                                         |
+| 13    |             | NES-Controller ([\#DeviceType](#DeviceType "wikilink")=0x200)                                                                 |
+| 14    |             | NES-Controller ([\#DeviceType](#DeviceType "wikilink")=0x400)                                                                 |
+| 15-16 |             | Invalid                                                                                                                       |
+| 17    |             | Unknown ([\#DeviceType](#DeviceType "wikilink")=0x8000)                                                                       |
+| 18-20 |             | Invalid                                                                                                                       |
+| 21-23 |             | Unknown ([\#DeviceType](#DeviceType "wikilink")=0x80000000)                                                                   |
 
 ## HdlsState
 

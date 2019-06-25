@@ -757,7 +757,7 @@ This is a 0x40-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || Only one bit can be set. Bit0 = Pro-Controller, bit1 = Joy-Con Left, bit2 = Joy-Con Right, bit21 = unknown.
+| 0x0 || 0x4 || Only one bit can be set, see below.
 |-
 | 0x4 || 0x4 || RGBA Single Body Color
 |-
@@ -769,6 +769,54 @@ This is a 0x40-byte struct.
 |}
 
 This is a 0x10-byte struct.
+
+Bits for the above type field:
+
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+!  Notes
+|-
+| 0-7
+| 
+| BIT(N*4+0) = Pro-Controller, BIT(N*4+1) = Joy-Con Left, BIT(N*4+2) = Joy-Con Right, BIT(N*4+3) = invalid. Where N is 0-1.
+|-
+| 8-10
+| 
+| Pro-Controller
+|-
+| 11
+| 
+| Famicom-Controller
+|-
+| 12
+| 
+| Famicom-Controller II with microphone
+|-
+| 13
+| 
+| NES-Controller ([[#DeviceType]]=0x200)
+|-
+| 14
+| 
+| NES-Controller ([[#DeviceType]]=0x400)
+|-
+| 15-16
+| 
+| Invalid
+|-
+| 17
+| 
+| Unknown ([[#DeviceType]]=0x8000)
+|-
+| 18-20
+| 
+| Invalid
+|-
+| 21-23
+| 
+| Unknown ([[#DeviceType]]=0x80000000)
+|}
 
 == HdlsState ==
 {| class="wikitable" border="1"
