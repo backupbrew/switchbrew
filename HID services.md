@@ -894,6 +894,28 @@ The layout of cmd\_argdata is as follows:
 | 0x33   | 0x2  | Set to value 0.                               |
 | 0x35   | 0x1  | Set to value 1.                               |
 
+## DeviceType
+
+This is a bitmask describing the controller device type.
+
+| Bits  | Description | Notes                                        |
+| ----- | ----------- | -------------------------------------------- |
+| 0     |             | Pro Controller.                              |
+| 1     |             | Unknown                                      |
+| 2     |             | Unknown                                      |
+| 3     |             | Unknown                                      |
+| 4     |             | Joy-Con left controller.                     |
+| 5     |             | Joy-Con right controller.                    |
+| 6     |             | Unknown                                      |
+| 7     |             | Famicom controller.                          |
+| 8     |             | Famicom controller II with microphone.       |
+| 9     |             | NES controller.                              |
+| 10    |             | NES controller (same as above?).             |
+| 11-14 | Unknown     |                                              |
+| 15    |             | Unknown controller type.                     |
+| 16-30 |             | Unknown                                      |
+| 31    |             | Unknown controller type (similar to bit15?). |
+
 ## IHidbusSystemServer
 
 This is "nn::hidbus::IHidbusSystemServer".
