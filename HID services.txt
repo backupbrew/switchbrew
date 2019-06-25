@@ -775,7 +775,11 @@ This is a 0x10-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8 || Unknown
+| 0x0 || 0x1 || powerConnected for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
+|-
+| 0x1 || 0x1 || ORRed with powerConnected to set the value of the first byte for the controller [[HID_Shared_Memory#Flags|flags]].
+|-
+| 0x2 || 0x6 || Unknown
 |-
 | 0x8 || 0x4 || batteryCharge for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
 |-
