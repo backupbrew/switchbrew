@@ -468,7 +468,7 @@ This section contains a series of 10 0x5000 byte structures describing each avai
 |-
 | 0x4188
 | 0x4
-| DeviceType bitmask
+| [[HID_services#DeviceType|DeviceType]]
 |-
 | 0x418C
 | 0x4

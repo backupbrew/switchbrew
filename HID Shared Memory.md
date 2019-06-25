@@ -159,32 +159,32 @@ each available controller.
 
 ### Controller
 
-| Offset | Size in bytes            | Description                                                |
-| ------ | ------------------------ | ---------------------------------------------------------- |
-| 0x0    | 0x28                     | Controller Header                                          |
-| 0x28   | 0x20 header + 0x30 \* 17 | Controller Pro Controller State                            |
-| 0x378  | 0x20 header + 0x30 \* 17 | Controller Handheld Joined State                           |
-| 0x6C8  | 0x20 header + 0x30 \* 17 | Controller Joined State (Lone Joy-Con or Pair of Joy-Con)  |
-| 0xA18  | 0x20 header + 0x30 \* 17 | Controller Left State (Vertical Controls w/ Joy-Con Half)  |
-| 0xD68  | 0x20 header + 0x30 \* 17 | Controller Right State (Vertical Controls w/ Joy-Con Half) |
-| 0x10B8 | 0x20 header + 0x30 \* 17 | Controller Main State (No Analog Sticks)                   |
-| 0x1408 | 0x20 header + 0x30 \* 17 | Controller Main State                                      |
-| 0x1758 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pro Controller State                         |
-| 0x1E60 | 0x20 header + 0x68 \* 17 | SixAxisSensor Handheld State                               |
-| 0x2568 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Left State                              |
-| 0x2C70 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Right State                             |
-| 0x3378 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Left State                            |
-| 0x3A80 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Right State                           |
-| 0x4188 | 0x4                      | DeviceType bitmask                                         |
-| 0x418C | 0x4                      | Padding                                                    |
-| 0x4190 | 0x8                      | Flags                                                      |
-| 0x4198 | 0x4                      | Flags2                                                     |
-| 0x419C | 0x4                      | PowerInfo0 battery state                                   |
-| 0x41A0 | 0x4                      | PowerInfo1 battery state                                   |
-| 0x41A4 | 0x4                      | PowerInfo2 battery state                                   |
-| 0x41D0 | 0x10                     | Controller MAC                                             |
-| 0x41F0 | 0x10                     | Controller MAC                                             |
-|        |                          |                                                            |
+| Offset | Size in bytes            | Description                                                       |
+| ------ | ------------------------ | ----------------------------------------------------------------- |
+| 0x0    | 0x28                     | Controller Header                                                 |
+| 0x28   | 0x20 header + 0x30 \* 17 | Controller Pro Controller State                                   |
+| 0x378  | 0x20 header + 0x30 \* 17 | Controller Handheld Joined State                                  |
+| 0x6C8  | 0x20 header + 0x30 \* 17 | Controller Joined State (Lone Joy-Con or Pair of Joy-Con)         |
+| 0xA18  | 0x20 header + 0x30 \* 17 | Controller Left State (Vertical Controls w/ Joy-Con Half)         |
+| 0xD68  | 0x20 header + 0x30 \* 17 | Controller Right State (Vertical Controls w/ Joy-Con Half)        |
+| 0x10B8 | 0x20 header + 0x30 \* 17 | Controller Main State (No Analog Sticks)                          |
+| 0x1408 | 0x20 header + 0x30 \* 17 | Controller Main State                                             |
+| 0x1758 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pro Controller State                                |
+| 0x1E60 | 0x20 header + 0x68 \* 17 | SixAxisSensor Handheld State                                      |
+| 0x2568 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Left State                                     |
+| 0x2C70 | 0x20 header + 0x68 \* 17 | SixAxisSensor Pair Right State                                    |
+| 0x3378 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Left State                                   |
+| 0x3A80 | 0x20 header + 0x68 \* 17 | SixAxisSensor Single Right State                                  |
+| 0x4188 | 0x4                      | [DeviceType](HID%20services#DeviceType.md##DeviceType "wikilink") |
+| 0x418C | 0x4                      | Padding                                                           |
+| 0x4190 | 0x8                      | Flags                                                             |
+| 0x4198 | 0x4                      | Flags2                                                            |
+| 0x419C | 0x4                      | PowerInfo0 battery state                                          |
+| 0x41A0 | 0x4                      | PowerInfo1 battery state                                          |
+| 0x41A4 | 0x4                      | PowerInfo2 battery state                                          |
+| 0x41D0 | 0x10                     | Controller MAC                                                    |
+| 0x41F0 | 0x10                     | Controller MAC                                                    |
+|        |                          |                                                                   |
 
 The battery state must be 0-4.
 
