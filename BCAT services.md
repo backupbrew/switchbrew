@@ -8,13 +8,13 @@ These are "nn::bcat::detail::ipc::IServiceCreator".
 
 These were added with \[2.0.0+\].
 
-| Cmd               | Name                                               |
-| ----------------- | -------------------------------------------------- |
-| 0                 | CreateBcatService                                  |
-| 1                 | CreateDeliveryCacheStorageService                  |
-| 2                 | CreateDeliveryCacheStorageServiceWithApplicationId |
-| \[2.0.0-2.3.0\] 3 |                                                    |
-| \[2.0.0-2.3.0\] 4 |                                                    |
+| Cmd               | Name                                                | Notes                                                                                                                 |
+| ----------------- | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| 0                 | CreateBcatService                                   | Takes an input u64 ProcessId, returns an [\#IBcatService](#IBcatService "wikilink")                                   |
+| 1                 | CreateDeliveryCacheStorageService                   | Takes an input u64 ProcessId, returns an [\#IDeliveryCacheStorageService](#IDeliveryCacheStorageService "wikilink")   |
+| 2                 | CreateDeliveryCacheStorageServiceWithApplicationId  | Takes an input u64 TitleId, returns an [\#IDeliveryCacheStorageService](#IDeliveryCacheStorageService "wikilink")     |
+| \[2.0.0-2.3.0\] 3 | CreateDeliveryCacheProgressService                  | Takes an input u64 ProcessId, returns an [\#IDeliveryCacheProgressService](#IDeliveryCacheProgressService "wikilink") |
+| \[2.0.0-2.3.0\] 4 | CreateDeliveryCacheProgressServiceWithApplicationId | Takes an input u64 TitleId, returns an [\#IDeliveryCacheProgressService](#IDeliveryCacheProgressService "wikilink")   |
 
 Equivalent to 3DS BOSS(SpotPass). See
 [here](BCAT%20Content%20Container.md "wikilink") for

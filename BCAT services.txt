@@ -7,17 +7,17 @@ These were added with [2.0.0+].
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || CreateBcatService
+| 0 || CreateBcatService || Takes an input u64 ProcessId, returns an [[#IBcatService]]
 |-
-| 1 || CreateDeliveryCacheStorageService
+| 1 || CreateDeliveryCacheStorageService || Takes an input u64 ProcessId, returns an [[#IDeliveryCacheStorageService]]
 |-
-| 2 || CreateDeliveryCacheStorageServiceWithApplicationId
+| 2 || CreateDeliveryCacheStorageServiceWithApplicationId || Takes an input u64 TitleId, returns an [[#IDeliveryCacheStorageService]]
 |-
-| [2.0.0-2.3.0] 3 || 
+| [2.0.0-2.3.0] 3 || CreateDeliveryCacheProgressService || Takes an input u64 ProcessId, returns an [[#IDeliveryCacheProgressService]]
 |-
-| [2.0.0-2.3.0] 4 || 
+| [2.0.0-2.3.0] 4 || CreateDeliveryCacheProgressServiceWithApplicationId || Takes an input u64 TitleId, returns an [[#IDeliveryCacheProgressService]]
 |}
 
 Equivalent to 3DS BOSS(SpotPass). See [[BCAT_Content_Container|here]] for BCAT-content-container.
