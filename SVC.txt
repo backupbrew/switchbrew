@@ -1785,7 +1785,7 @@ DebugThreadParam_AffinityMask: output in out1
 |-
 | 0x20 || 4 || || CodeNumPages
 |-
-| 0x24 || 4 || || MmuFlags
+| 0x24 || 4 || || Flags
 |-
 | || || Bit0 || IsAarch64
 |-
@@ -1795,17 +1795,17 @@ DebugThreadParam_AffinityMask: output in out1
 |-
 | || || Bit5 || EnableAslr
 |-
-| || || Bit6 || UseSystemMemBlocks
+| || || Bit6 || IsApplication
 |-
-| || || Bit7 || [4.0.0] ?
+| || || Bit7 || [4.0.0] UseSecureMemory
 |-
 | || || Bit10-7 || [5.0.0+] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices)
 |-
-| || || Bit11 || [7.0.0+] Only allowed in combination with bit6.
+| || || Bit11 || [7.0.0+] OptimizeMemoryAllocation (Only allowed in combination with IsApplication).
 |-
 | 0x28 || 4 || || ResourceLimitHandle or zero
 |-
-| 0x2C || 4 || || [3.0.0+] PersonalMmHeapNumPages
+| 0x2C || 4 || || [3.0.0+] SystemResourceNumPages
 |}
 
 On [1.0.0] there's only one pool.

@@ -1533,24 +1533,24 @@ DebugThreadParam\_AffinityMask: output in out1
 
 ## CreateProcessInfo
 
-| Offset | Length | Bits    | Description                                                                   |
-| ------ | ------ | ------- | ----------------------------------------------------------------------------- |
-| 0      | 12     |         | ProcessName (doesn't have to be null-terminated)                              |
-| 0x0C   | 4      |         | ProcessCategory (0: regular title, 1: kernel built-in)                        |
-| 0x10   | 8      |         | TitleId                                                                       |
-| 0x18   | 8      |         | CodeAddr                                                                      |
-| 0x20   | 4      |         | CodeNumPages                                                                  |
-| 0x24   | 4      |         | MmuFlags                                                                      |
-|        |        | Bit0    | IsAarch64                                                                     |
-|        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")                            |
-|        |        | Bit4    | \[2.0.0+\] EnableDebug                                                        |
-|        |        | Bit5    | EnableAslr                                                                    |
-|        |        | Bit6    | UseSystemMemBlocks                                                            |
-|        |        | Bit7    | \[4.0.0\] ?                                                                   |
-|        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices) |
-|        |        | Bit11   | \[7.0.0+\] Only allowed in combination with bit6.                             |
-| 0x28   | 4      |         | ResourceLimitHandle or zero                                                   |
-| 0x2C   | 4      |         | \[3.0.0+\] PersonalMmHeapNumPages                                             |
+| Offset | Length | Bits    | Description                                                                           |
+| ------ | ------ | ------- | ------------------------------------------------------------------------------------- |
+| 0      | 12     |         | ProcessName (doesn't have to be null-terminated)                                      |
+| 0x0C   | 4      |         | ProcessCategory (0: regular title, 1: kernel built-in)                                |
+| 0x10   | 8      |         | TitleId                                                                               |
+| 0x18   | 8      |         | CodeAddr                                                                              |
+| 0x20   | 4      |         | CodeNumPages                                                                          |
+| 0x24   | 4      |         | Flags                                                                                 |
+|        |        | Bit0    | IsAarch64                                                                             |
+|        |        | Bit3-1  | [\#AddressSpaceType](#AddressSpaceType "wikilink")                                    |
+|        |        | Bit4    | \[2.0.0+\] EnableDebug                                                                |
+|        |        | Bit5    | EnableAslr                                                                            |
+|        |        | Bit6    | IsApplication                                                                         |
+|        |        | Bit7    | \[4.0.0\] UseSecureMemory                                                             |
+|        |        | Bit10-7 | \[5.0.0+\] PoolPartition (0=Application, 1=Applet, 2=Sysmodule, 3=Nvservices)         |
+|        |        | Bit11   | \[7.0.0+\] OptimizeMemoryAllocation (Only allowed in combination with IsApplication). |
+| 0x28   | 4      |         | ResourceLimitHandle or zero                                                           |
+| 0x2C   | 4      |         | \[3.0.0+\] SystemResourceNumPages                                                     |
 
 On \[1.0.0\] there's only one pool.
 
