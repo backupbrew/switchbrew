@@ -430,7 +430,7 @@ This is "nn::hid::IHidDebugServer".
 | 233 | \[6.0.0+\] ClearPairingInfo                                                           |
 | 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal                                          |
 | 235 | \[7.0.0+\] EnableAnalogStickPower                                                     |
-| 301 | \[5.0.0+\] GetAbstractedPadHandles                                                    |
+| 301 | \[5.0.0+\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")           |
 | 302 | \[5.0.0+\] GetAbstractedPadState                                                      |
 | 303 | \[5.0.0+\] GetAbstractedPadsState                                                     |
 | 321 | \[5.0.0+\] SetAutoPilotVirtualPadState                                                |
@@ -515,6 +515,15 @@ size, and an u64 **UniquePadId**, no output.
 Reads from the specified controller's spi-flash. The input size is the
 original size without page-alignment. The TransferMemory permissions is
 RW-.
+
+This doesn't seem to be usable?
+
+## GetAbstractedPadHandles
+
+Takes a type-0xA output buffer containing an array of u64
+**AbstractedPadHandle** and returns an output s32 for total entries.
+
+Returns a handle for each controller detected by the system.
 
 ## AttachHdlsWorkBuffer
 

@@ -599,7 +599,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 235 || [7.0.0+] EnableAnalogStickPower
 |-
-| 301 || [5.0.0+] GetAbstractedPadHandles
+| 301 || [5.0.0+] [[#GetAbstractedPadHandles]]
 |-
 | 302 || [5.0.0+] GetAbstractedPadState
 |-
@@ -678,6 +678,13 @@ Sends the spi-write subcommand to the specified controller, for writing to offse
 Takes an input TransferMemory handle, an input u32 offset, an input u64 size, and an u64 '''UniquePadId''', no output.
 
 Reads from the specified controller's spi-flash. The input size is the original size without page-alignment. The TransferMemory permissions is RW-.
+
+This doesn't seem to be usable?
+
+== GetAbstractedPadHandles ==
+Takes a type-0xA output buffer containing an array of u64 '''AbstractedPadHandle''' and returns an output s32 for total entries.
+
+Returns a handle for each controller detected by the system.
 
 == AttachHdlsWorkBuffer ==
 Takes an input TransferMemory handle and an u64 for the TransferMemory size, no output.
