@@ -423,7 +423,7 @@ This is "nn::hid::IHidDebugServer".
 | 226 | \[5.0.0+\] GetSixAxisSensorDriverStates                                               |
 | 227 | \[5.0.0+\] GetRxPacketHistory                                                         |
 | 228 | \[6.0.0+\] AcquireOperationEventHandle                                                |
-| 229 | \[6.0.0+\] ReadSerialFlash                                                            |
+| 229 | \[6.0.0+\] [\#ReadSerialFlash](#ReadSerialFlash "wikilink")                           |
 | 230 | \[6.0.0+\] WriteSerialFlash                                                           |
 | 231 | \[6.0.0+\] GetOperationResult                                                         |
 | 232 | \[6.0.0+\] EnableShipmentMode                                                         |
@@ -506,6 +506,15 @@ Sends the spi-write subcommand to the specified controller, for writing
 to offset 0x6050 size 0xD. The first 3-bytes from each u32 is used for
 the spi-write-data, with the u8 being copied immediately afterwards the
 color data.
+
+## ReadSerialFlash
+
+Takes an input TransferMemory handle, an input u32 offset, an input u64
+size, and an u64 **UniquePadId**, no output.
+
+Writes to the specified controller's spi-flash. The input size is the
+original size without page-alignment. The TransferMemory permissions is
+RW-.
 
 ## AttachHdlsWorkBuffer
 
