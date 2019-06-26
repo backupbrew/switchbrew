@@ -512,7 +512,7 @@ color data.
 Takes an input TransferMemory handle, an input u32 offset, an input u64
 size, and an u64 **UniquePadId**, no output.
 
-Writes to the specified controller's spi-flash. The input size is the
+Reads from the specified controller's spi-flash. The input size is the
 original size without page-alignment. The TransferMemory permissions is
 RW-.
 
