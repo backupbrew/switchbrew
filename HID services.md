@@ -431,8 +431,8 @@ This is "nn::hid::IHidDebugServer".
 | 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal                                          |
 | 235 | \[7.0.0+\] EnableAnalogStickPower                                                     |
 | 301 | \[5.0.0+\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")           |
-| 302 | \[5.0.0+\] GetAbstractedPadState                                                      |
-| 303 | \[5.0.0+\] GetAbstractedPadsState                                                     |
+| 302 | \[5.0.0+\] [\#GetAbstractedPadState](#GetAbstractedPadState "wikilink")               |
+| 303 | \[5.0.0+\] [\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink")             |
 | 321 | \[5.0.0+\] SetAutoPilotVirtualPadState                                                |
 | 322 | \[5.0.0+\] UnsetAutoPilotVirtualPadState                                              |
 | 323 | \[5.0.0+\] UnsetAllAutoPilotVirtualPadState                                           |
@@ -525,6 +525,18 @@ Takes a type-0xA output buffer containing an array of u64
 
 Returns a handle for each controller detected by the system.
 
+## GetAbstractedPadState
+
+Takes an input u64 **AbstractedPadHandle**, returns an output
+[\#AbstractedPadState](#AbstractedPadState "wikilink").
+
+## GetAbstractedPadsState
+
+Takes a type-0xA output buffer containing an array of u64
+**AbstractedPadHandle**, a type-0x22 output buffer containing an array
+of [\#AbstractedPadState](#AbstractedPadState "wikilink"), and returns
+an output s32 for total entries.
+
 ## AttachHdlsWorkBuffer
 
 Takes an input TransferMemory handle and an u64 for the TransferMemory
@@ -597,6 +609,12 @@ Takes an input [\#HdlsState](#HdlsState "wikilink") and an input 8-byte
 
 This is a 0x208-byte struct. This seems to be an array, structure
 unknown.
+
+## AbstractedPadState
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x98 | ?           |
 
 ## HdlsStateList
 
