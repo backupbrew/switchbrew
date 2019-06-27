@@ -1308,7 +1308,7 @@ This is a bitmask describing the controller device type.
 !  Notes
 |-
 | 0
-| 
+| FullKey
 | Pro Controller.
 |-
 | 1
@@ -1316,24 +1316,24 @@ This is a bitmask describing the controller device type.
 | Unknown
 |-
 | 2
-| 
-| Unknown
+| HandheldLeft
+| Joy-Con left controller in handheld mode.
 |-
 | 3
-| 
-| Unknown
+| HandheldRight
+| Joy-Con right controller in handheld mode.
 |-
 | 4
-| 
-| Joy-Con left controller.
+| JoyLeft
+| Joy-Con left controller in single mode.
 |-
 | 5
-| 
-| Joy-Con right controller.
+| JoyRight
+| Joy-Con right controller in single mode.
 |-
 | 6
-| 
-| Unknown
+| Palma
+| Poké Ball Plus controller.
 |-
 | 7
 | 
@@ -1352,8 +1352,8 @@ This is a bitmask describing the controller device type.
 | NES controller (same as above?).
 |-
 | 11-14
-| Unknown
 | 
+| Unknown
 |-
 | 15
 | 

@@ -949,23 +949,23 @@ The layout of cmd\_argdata is as follows:
 
 This is a bitmask describing the controller device type.
 
-| Bits  | Description | Notes                                        |
-| ----- | ----------- | -------------------------------------------- |
-| 0     |             | Pro Controller.                              |
-| 1     |             | Unknown                                      |
-| 2     |             | Unknown                                      |
-| 3     |             | Unknown                                      |
-| 4     |             | Joy-Con left controller.                     |
-| 5     |             | Joy-Con right controller.                    |
-| 6     |             | Unknown                                      |
-| 7     |             | Famicom controller.                          |
-| 8     |             | Famicom controller II with microphone.       |
-| 9     |             | NES controller.                              |
-| 10    |             | NES controller (same as above?).             |
-| 11-14 | Unknown     |                                              |
-| 15    |             | Unknown controller type.                     |
-| 16-30 |             | Unknown                                      |
-| 31    |             | Unknown controller type (similar to bit15?). |
+| Bits  | Description   | Notes                                        |
+| ----- | ------------- | -------------------------------------------- |
+| 0     | FullKey       | Pro Controller.                              |
+| 1     |               | Unknown                                      |
+| 2     | HandheldLeft  | Joy-Con left controller in handheld mode.    |
+| 3     | HandheldRight | Joy-Con right controller in handheld mode.   |
+| 4     | JoyLeft       | Joy-Con left controller in single mode.      |
+| 5     | JoyRight      | Joy-Con right controller in single mode.     |
+| 6     | Palma         | Poké Ball Plus controller.                   |
+| 7     |               | Famicom controller.                          |
+| 8     |               | Famicom controller II with microphone.       |
+| 9     |               | NES controller.                              |
+| 10    |               | NES controller (same as above?).             |
+| 11-14 |               | Unknown                                      |
+| 15    |               | Unknown controller type.                     |
+| 16-30 |               | Unknown                                      |
+| 31    |               | Unknown controller type (similar to bit15?). |
 
 ## IHidbusSystemServer
 
