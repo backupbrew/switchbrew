@@ -698,8 +698,12 @@ Takes an input s8 '''AbstractedVirtualPadId''' and an input [[#AbstractedPadStat
 == UnsetAutoPilotVirtualPadState ==
 Takes an input s8 '''AbstractedVirtualPadId''', no output.
 
+Clears AutoPilot state for the specified pad.
+
 == UnsetAllAutoPilotVirtualPadState ==
 No input/output.
+
+Same as [[#UnsetAutoPilotVirtualPadState]] except this clears state for every pad.
 
 == AttachHdlsWorkBuffer ==
 Takes an input TransferMemory handle and an u64 for the TransferMemory size, no output.

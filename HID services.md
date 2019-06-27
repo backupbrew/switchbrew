@@ -546,9 +546,15 @@ Takes an input s8 **AbstractedVirtualPadId** and an input
 
 Takes an input s8 **AbstractedVirtualPadId**, no output.
 
+Clears AutoPilot state for the specified pad.
+
 ## UnsetAllAutoPilotVirtualPadState
 
 No input/output.
+
+Same as
+[\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink")
+except this clears state for every pad.
 
 ## AttachHdlsWorkBuffer
 
