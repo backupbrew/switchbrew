@@ -1458,7 +1458,7 @@ Takes a PID-descriptor, a type-0x6 output buffer, an [[#IrCameraHandle]], and an
 Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedTeraPluginProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.
 
 == GetNpadIrCameraHandle ==
-Takes an input u32. Returns an output [[#IrCameraHandle]].
+Takes an input u32 NpadTypeId. Returns an output [[#IrCameraHandle]].
 
 == RunPointingProcessor ==
 Takes a PID-descriptor, an [[#IrCameraHandle]], a [[#PackedDpdProcessorConfig]] (immediately after the previous word), and an [[AM_services|AppletResourceUserId]]. No output.

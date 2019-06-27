@@ -1066,7 +1066,7 @@ Takes a PID-descriptor, an
 
 ## GetNpadIrCameraHandle
 
-Takes an input u32. Returns an output
+Takes an input u32 NpadTypeId. Returns an output
 [\#IrCameraHandle](#IrCameraHandle "wikilink").
 
 ## RunPointingProcessor
