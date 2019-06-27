@@ -605,11 +605,11 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 303 || [5.0.0+] [[#GetAbstractedPadsState]]
 |-
-| 321 || [5.0.0+] SetAutoPilotVirtualPadState
+| 321 || [5.0.0+] [[#SetAutoPilotVirtualPadState]]
 |-
-| 322 || [5.0.0+] UnsetAutoPilotVirtualPadState
+| 322 || [5.0.0+] [[#UnsetAutoPilotVirtualPadState]]
 |-
-| 323 || [5.0.0+] UnsetAllAutoPilotVirtualPadState
+| 323 || [5.0.0+] [[#UnsetAllAutoPilotVirtualPadState]]
 |-
 | 324 || [7.0.0+] [[#AttachHdlsWorkBuffer]]
 |-
@@ -691,6 +691,15 @@ Takes an input u64 '''AbstractedPadHandle''', returns an output [[#AbstractedPad
 
 == GetAbstractedPadsState ==
 Takes a type-0xA output buffer containing an array of u64 '''AbstractedPadHandle''', a type-0x22 output buffer containing an array of [[#AbstractedPadState]], and returns an output s32 for total entries.
+
+== SetAutoPilotVirtualPadState ==
+Takes an input s8 '''AbstractedVirtualPadId''' and an input [[#AbstractedPadState]], no output.
+
+== UnsetAutoPilotVirtualPadState ==
+Takes an input s8 '''AbstractedVirtualPadId''', no output.
+
+== UnsetAllAutoPilotVirtualPadState ==
+No input/output.
 
 == AttachHdlsWorkBuffer ==
 Takes an input TransferMemory handle and an u64 for the TransferMemory size, no output.
