@@ -254,7 +254,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1010 || [5.1.0-6.2.0] SetDataStorageRedirectTarget
 |-
-| 1011 || [7.0.0+] OutputAccessLogToSdCard2 (no input, returns two 32-bit values, second is "program_index")
+| 1011 || [7.0.0+] GetAccessLogVersionInfo (Unofficial name, no input, returns two 32-bit values "version" and "program_index")
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-

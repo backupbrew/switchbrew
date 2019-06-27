@@ -154,7 +154,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                                                                                          |
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
 | 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                                                      |
-| 1011 | \[7.0.0+\] OutputAccessLogToSdCard2 (no input, returns two 32-bit values, second is "program\_index")                                                             |
+| 1011 | \[7.0.0+\] GetAccessLogVersionInfo (Unofficial name, no input, returns two 32-bit values "version" and "program\_index")                                          |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
 | 1110 | \[6.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId2                                                                                                            |
 | 1200 | \[6.0.0+\] OpenMultiCommitManager (No input, returns an output \#IMultiCommitManager)                                                                             |
