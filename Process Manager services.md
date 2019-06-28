@@ -132,16 +132,16 @@ This is "nn::pm::detail::IBootModeInterface".
 
 This is "nn::pm::detail::IDebugMonitorInterface".
 
-| Cmd                   | Name                                                                 |
-| --------------------- | -------------------------------------------------------------------- |
-| \[1.0.0-4.1.0\] 0     | [\#GetModuleIdList](#GetModuleIdList "wikilink")                     |
-| 0 (\[1.0.0-4.1.0\] 1) | [\#GetJitDebugProcessIdList](#GetJitDebugProcessIdList "wikilink")   |
-| 1 (\[1.0.0-4.1.0\] 2) | [\#StartProcess](#StartProcess "wikilink")                           |
-| 2 (\[1.0.0-4.1.0\] 3) | [\#GetProcessId](#GetProcessId "wikilink")                           |
-| 3 (\[1.0.0-4.1.0\] 4) | [\#HookToCreateProcess](#HookToCreateProcess "wikilink")             |
-| 4 (\[1.0.0-4.1.0\] 5) | [\#GetApplicationProcessId](#GetApplicationProcessId "wikilink")     |
-| 5 (\[1.0.0-4.1.0\] 6) | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
-| \[6.0.0+\] 6          | [\#ClearHook](#ClearHook "wikilink")                                 |
+| Cmd                   | Name                                                                           |
+| --------------------- | ------------------------------------------------------------------------------ |
+| \[1.0.0-4.1.0\] 0     | [\#GetModuleIdList](#GetModuleIdList "wikilink")                               |
+| 0 (\[1.0.0-4.1.0\] 1) | [\#GetJitDebugProcessIdList](#GetJitDebugProcessIdList "wikilink")             |
+| 1 (\[1.0.0-4.1.0\] 2) | [\#StartProcess](#StartProcess "wikilink")                                     |
+| 2 (\[1.0.0-4.1.0\] 3) | [\#GetProcessId](#GetProcessId "wikilink")                                     |
+| 3 (\[1.0.0-4.1.0\] 4) | [\#HookToCreateProcess](#HookToCreateProcess "wikilink")                       |
+| 4 (\[1.0.0-4.1.0\] 5) | [\#GetApplicationProcessId](#GetApplicationProcessId "wikilink")               |
+| 5 (\[1.0.0-4.1.0\] 6) | [\#HookToCreateApplicationProcess](#HookToCreateApplicationProcess "wikilink") |
+| \[6.0.0+\] 6          | [\#ClearHook](#ClearHook "wikilink")                                           |
 
 ## GetModuleIdList
 

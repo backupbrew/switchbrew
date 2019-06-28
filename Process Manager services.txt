@@ -121,7 +121,7 @@ This is "nn::pm::detail::IDebugMonitorInterface".
 |-
 | 4 ([1.0.0-4.1.0] 5)  || [[#GetApplicationProcessId]]
 |-
-| 5 ([1.0.0-4.1.0] 6)  || [[#EnableDebugForApplication]]
+| 5 ([1.0.0-4.1.0] 6)  || [[#HookToCreateApplicationProcess]]
 |-
 | [6.0.0+] 6  || [[#ClearHook]]
 |}
