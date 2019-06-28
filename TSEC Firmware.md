@@ -101,8 +101,7 @@ code changed.
 
 ## Firmware booting
 
-Falcon is booted up and the first bootloader waits for it to
-finish.
+Falcon is booted up and the first bootloader waits for it to finish.
 
 `   // Set magic value in host1x scratch space`  
 `   *(u32 *)0x50003300 = 0x34C2E1DA;`  
@@ -1043,8 +1042,7 @@ from [KeygenLdr](#KeygenLdr "wikilink").
 #### gen\_tsec\_key
 
 This is the method responsible for generating the final TSEC key. It
-takes **key\_addr** and **key\_type** as
-arguments.
+takes **key\_addr** and **key\_type** as arguments.
 
 ``` 
     // This will use TSEC DMA to look for 0x34C2E1DA in host1x scratch space
@@ -1374,6 +1372,52 @@ the SecureBoot blob's Falcon OS image.
     // Clear interrupt flags
     $flags.ie0 = 0;
     $flags.ie1 = 0;
+ 
+    // Jump to the SecureBoot blob's Falcon OS image
+    exec_secboot();
+ 
+    return 0x0F0F0F0F;
+```
+
+\[8.1.0+\] Removed transfer base address setting and added IMEM
+protection.
+
+``` 
+    // The next xfer instruction will be overridden
+    // and target changes from DMA to crypto
+    cxset(0x01);
+ 
+    u32 crypto_reg_flag = 0x00060000;
+    u32 blob4_flcn_os_img_hash_addr = 0; 
+ 
+    // Transfer data to crypto register c6
+    xdst(0, (blob4_flcn_os_img_hash_addr | crypto_reg_flag));
+ 
+    // The next xfer instruction will be overridden
+    // and target changes from DMA to crypto
+    cxset(0x01);
+ 
+    // Wait for all data loads/stores to finish
+    xdwait();
+ 
+    cmov($c7, $c6);
+    cxor($c7, $c7);
+ 
+    // Set auth_addr to 0x100, auth_size to 0x1D00,
+    // bit 16 (use_secret) and bit 17 (is_encrypted)
+    $cauth = ((0x02 << 0x10) | (0x01 << 0x10) | (0x1D00 << 0x10) | (0x100 >> 0x08));
+ 
+    // Clear interrupt flags
+    $flags.ie0 = 0;
+    $flags.ie1 = 0;
+
+    // Fill remaining IMEM with secret pages
+    bool use_secret = true;
+    memcpy_d2i(0x1E00, 0, 0x2200, 0x1E00, use_secret);
+    memcpy_d2i(0x4000, 0, 0x4000, 0x4000, use_secret);
+
+    // Wait for all code loads to finish
+    xcwait();
  
     // Jump to the SecureBoot blob's Falcon OS image
     exec_secboot();
@@ -1917,8 +1961,7 @@ This is the signed and encrypted portion of the
 ## Key data
 
 Small buffer stored after the [Boot](#Boot "wikilink") blob and used
-across all
-stages.
+across all stages.
 
 | Offset | Size | Description                                                        |
 | ------ | ---- | ------------------------------------------------------------------ |
