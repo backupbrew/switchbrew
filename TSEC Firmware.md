@@ -1958,6 +1958,9 @@ This is the signed and encrypted portion of the
     return;
 ```
 
+\[8.1.0+\] Key derivation algorithm was changed. Very minor changes were
+introduced to mitigate and prevent attacks.
+
 ## Key data
 
 Small buffer stored after the [Boot](#Boot "wikilink") blob and used
