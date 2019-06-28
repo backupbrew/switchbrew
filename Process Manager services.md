@@ -202,11 +202,11 @@ disables debugging/clears the next application if bit 1 is set.
 
 This is "nn::pm::detail::IInformationInterface".
 
-| Cmd | Name                                   |
-| --- | -------------------------------------- |
-| 0   | [\#GetTitleId](#GetTitleId "wikilink") |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | [\#GetProgramId](#GetProgramId "wikilink") |
 
-## GetTitleId
+## GetProgramId
 
 Takes a pid and returns the title-id associated with the process.
 

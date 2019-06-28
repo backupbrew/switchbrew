@@ -174,10 +174,10 @@ This is "nn::pm::detail::IInformationInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#GetTitleId]]
+| 0 || [[#GetProgramId]]
 |}
 
-== GetTitleId ==
+== GetProgramId ==
 Takes a pid and returns the title-id associated with the process.
 
 = pm:shell =
