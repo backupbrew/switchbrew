@@ -187,37 +187,37 @@ This is "nn::pm::detail::IShellInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || [[#LaunchProcess]]
+| 0 || [[#LaunchProgram]]
 |-
-| 1 || TerminateProcessByPid
+| 1 || TerminateProcess
 |-
-| 2 || TerminateProcessByTitleId
+| 2 || TerminateProgram
 |-
-| 3 || GetProcessEventWaiter
+| 3 || GetProcessEventHandle
 |-
-| 4 || [[#GetProcessEventType]]
+| 4 || [[#GetProcessEventInfo]]
 |-
-| ([1.0.0-4.1.0] 5) || [[#FinalizeDeadProcess]]
+| ([1.0.0-4.1.0] 5) || [[#CleanupProcess]]
 |-
-| ([1.0.0-4.1.0] 6) || [[#ClearProcessNotificationFlag]]
+| ([1.0.0-4.1.0] 6) || [[#ClearJitDebugOccured]]
 |-
 | 5 ([1.0.0-4.1.0] 7) || [[#NotifyBootFinished]]
 |-
-| 6 ([1.0.0-4.1.0] 8) || [[#GetApplicationPid]]
+| 6 ([1.0.0-4.1.0] 8) || [[#GetApplicationProcessIdForShell]]
 |-
 | 7 ([4.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |-
-| 8 || [7.0.0+] [[#EnableAdditionalSystemThreads]]
+| 8 || [7.0.0+] [[#BoostSystemThreadResourceLimit]]
 |-
-| 9 || [8.0.0+] [[#GetUnimplementedEventHandle]]
+| 9 || [8.0.0+] [[#GetBootFinishedEventHandle]]
 |}
 
-== LaunchProcess ==
+== LaunchProgram ==
 Takes launch_flags, title-id, and storageID. See [[#Process launch]].
 
 Returns the u64 title PID.
 
-== GetProcessEventType ==
+== GetProcessEventInfo ==
 Returns 1 if flags has mask 2 set.
 
 Returns 2 if flags has mask 1 set and state is 6.
@@ -230,14 +230,14 @@ Returns 4 if flags has mask 0x30 set.
 
 Returns 0 if process is not found.
 
-== FinalizeDeadProcess ==
+== CleanupProcess ==
 Takes a pid as input. If the process with pid has the state "dead", it unregisters the pid in fsp:pr, sm:m, and ldr:pm.
 
 Then it removes the process from PMs internal linked-list of active processes.
 
 [5.0.0+] This command was removed.
 
-== ClearProcessNotificationFlag ==
+== ClearJitDebugOccured ==
 Takes a pid as input. Clears 0x10 from process flags.
 
 [5.0.0+] This command was removed.
@@ -261,7 +261,7 @@ This launches the [[boot2]] title.
 * 0100000000000031 (glue)
 * 010000000000003D (safemode)
 
-== GetApplicationPid ==
+== GetApplicationProcessIdForShell ==
 Loops through the internal linked-list of processes, looks for mask 0x40 set in process flags. Returns pid of first such entry.
 
 == BoostSystemMemoryResourceLimit ==
@@ -269,14 +269,14 @@ Takes an u64 '''mem_size''' as input. If the desired memory size doesn't exceed 
 
 This is used directly by [[NS_Services#IApplicationManagerInterface|ns:am2 BoostSystemMemoryResourceLimit]].
 
-== EnableAdditionalSystemThreads==
+== BoostSystemThreadResourceLimit ==
 Calls svcSetResourceLimitLimitValue to increase the limit on system threads by an amount calculated dynamically during setup.
 
 This function can only increase the limit once, on further calls it will call svcSetResourceLimitLimitValue with the same value it called the first time.
 
 On normal [[7.0.0]] retail firmware, this will double the limit on system threads from 0x60 to 0xC0.
 
-== GetBootFinishedEvent ==
+== GetBootFinishedEventHandle ==
 This function returns a handle to an event that is signaled when [[#NotifyBootFinished]] is called.
 
 However, this is only used/available in safe mode; in normal, non-safe FIRM, the implementation for this command just does "abort();". 

@@ -216,27 +216,27 @@ This is "nn::pm::detail::IShellInterface".
 
 | Cmd                   | Name                                                                                      |
 | --------------------- | ----------------------------------------------------------------------------------------- |
-| 0                     | [\#LaunchProcess](#LaunchProcess "wikilink")                                              |
-| 1                     | TerminateProcessByPid                                                                     |
-| 2                     | TerminateProcessByTitleId                                                                 |
-| 3                     | GetProcessEventWaiter                                                                     |
-| 4                     | [\#GetProcessEventType](#GetProcessEventType "wikilink")                                  |
-| (\[1.0.0-4.1.0\] 5)   | [\#FinalizeDeadProcess](#FinalizeDeadProcess "wikilink")                                  |
-| (\[1.0.0-4.1.0\] 6)   | [\#ClearProcessNotificationFlag](#ClearProcessNotificationFlag "wikilink")                |
+| 0                     | [\#LaunchProgram](#LaunchProgram "wikilink")                                              |
+| 1                     | TerminateProcess                                                                          |
+| 2                     | TerminateProgram                                                                          |
+| 3                     | GetProcessEventHandle                                                                     |
+| 4                     | [\#GetProcessEventInfo](#GetProcessEventInfo "wikilink")                                  |
+| (\[1.0.0-4.1.0\] 5)   | [\#CleanupProcess](#CleanupProcess "wikilink")                                            |
+| (\[1.0.0-4.1.0\] 6)   | [\#ClearJitDebugOccured](#ClearJitDebugOccured "wikilink")                                |
 | 5 (\[1.0.0-4.1.0\] 7) | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
-| 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                                      |
+| 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationProcessIdForShell](#GetApplicationProcessIdForShell "wikilink")          |
 | 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
-| 8                     | \[7.0.0+\] [\#EnableAdditionalSystemThreads](#EnableAdditionalSystemThreads "wikilink")   |
-| 9                     | \[8.0.0+\] [\#GetUnimplementedEventHandle](#GetUnimplementedEventHandle "wikilink")       |
+| 8                     | \[7.0.0+\] [\#BoostSystemThreadResourceLimit](#BoostSystemThreadResourceLimit "wikilink") |
+| 9                     | \[8.0.0+\] [\#GetBootFinishedEventHandle](#GetBootFinishedEventHandle "wikilink")         |
 
-## LaunchProcess
+## LaunchProgram
 
 Takes launch\_flags, title-id, and storageID. See [\#Process
 launch](#Process_launch "wikilink").
 
 Returns the u64 title PID.
 
-## GetProcessEventType
+## GetProcessEventInfo
 
 Returns 1 if flags has mask 2 set.
 
@@ -250,7 +250,7 @@ Returns 4 if flags has mask 0x30 set.
 
 Returns 0 if process is not found.
 
-## FinalizeDeadProcess
+## CleanupProcess
 
 Takes a pid as input. If the process with pid has the state "dead", it
 unregisters the pid in fsp:pr, sm:m, and ldr:pm.
@@ -260,7 +260,7 @@ processes.
 
 \[5.0.0+\] This command was removed.
 
-## ClearProcessNotificationFlag
+## ClearJitDebugOccured
 
 Takes a pid as input. Clears 0x10 from process flags.
 
@@ -289,7 +289,7 @@ order:
   - 0100000000000031 (glue)
   - 010000000000003D (safemode)
 
-## GetApplicationPid
+## GetApplicationProcessIdForShell
 
 Loops through the internal linked-list of processes, looks for mask 0x40
 set in process flags. Returns pid of first such entry.
@@ -306,7 +306,7 @@ value.
 This is used directly by [ns:am2
 BoostSystemMemoryResourceLimit](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink").
 
-## EnableAdditionalSystemThreads
+## BoostSystemThreadResourceLimit
 
 Calls svcSetResourceLimitLimitValue to increase the limit on system
 threads by an amount calculated dynamically during setup.
@@ -318,7 +318,7 @@ first time.
 On normal [7.0.0](7.0.0.md "wikilink") retail firmware, this will double
 the limit on system threads from 0x60 to 0xC0.
 
-## GetBootFinishedEvent
+## GetBootFinishedEventHandle
 
 This function returns a handle to an event that is signaled when
 [\#NotifyBootFinished](#NotifyBootFinished "wikilink") is called.
