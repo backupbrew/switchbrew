@@ -631,9 +631,40 @@ unknown.
 
 ## AbstractedPadState
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x98 | ?           |
+| Offset | Size | Description                                                                                                                                                                                                                                          |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Type, only 1 bit can be set. Converted to [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink")::type internally by [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink").                                                               |
+| 0x4    | 0x1  | Flags. [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink") only uses bit0: when clear it will skip using the rest of the input and run [\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink") internally. |
+| 0x5    | 0x3  | Padding                                                                                                                                                                                                                                              |
+| 0x8    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                               |
+| 0xC    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                            |
+| 0x10   | 0x1  | Type2. See [\#HiddbgHdlsDeviceInfo](#HiddbgHdlsDeviceInfo "wikilink")::type2.                                                                                                                                                                        |
+| 0x11   | 0x3  | Padding                                                                                                                                                                                                                                              |
+| 0x14   | 0x24 | [\#HdlsState](#HdlsState "wikilink"). Unknown if the last 4-bytes are included in this struct, [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink") only uses the first 0x20-bytes.                                              |
+| 0x38   | 0x60 | Unused with [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink").                                                                                                                                                                |
+
+Type:
+
+| Bits | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink")::type bits | Description | Notes |
+| ---- | --------------------------------------------------------- | ----------- | ----- |
+| 0    | 0                                                         |             |       |
+| 1    | 15                                                        |             |       |
+| 2    | 1                                                         |             |       |
+| 3    | 2                                                         |             |       |
+| 4    | 1                                                         |             |       |
+| 5    | 2                                                         |             |       |
+| 6    | 3                                                         |             |       |
+| 7    | 11                                                        |             |       |
+| 8    | 12                                                        |             |       |
+| 9    | 13                                                        |             |       |
+| 10   | 14                                                        |             |       |
+| 11   | 15                                                        |             |       |
+| 12   | 12                                                        |             |       |
+| 13   | 13                                                        |             |       |
+| 14   | 14                                                        |             |       |
+| 15   | 17                                                        |             |       |
+| 31   | 21                                                        |             |       |
+|      |                                                           |             |       |
 
 ## HdlsStateList
 
