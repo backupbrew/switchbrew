@@ -134,33 +134,31 @@ This is "nn::pm::detail::IDebugMonitorInterface".
 
 | Cmd                   | Name                                                                 |
 | --------------------- | -------------------------------------------------------------------- |
-| \[1.0.0-4.1.0\] 0     | [\#IsDebugMode](#IsDebugMode "wikilink")                             |
-| 0 (\[1.0.0-4.1.0\] 1) | [\#GetDebugProcesses](#GetDebugProcesses "wikilink")                 |
-| 1 (\[1.0.0-4.1.0\] 2) | [\#StartDebugProcess](#StartDebugProcess "wikilink")                 |
-| 2 (\[1.0.0-4.1.0\] 3) | [\#GetTitlePid](#GetTitlePid "wikilink")                             |
-| 3 (\[1.0.0-4.1.0\] 4) | [\#EnableDebugForTitleId](#EnableDebugForTitleId "wikilink")         |
-| 4 (\[1.0.0-4.1.0\] 5) | [\#GetApplicationPid](#GetApplicationPid "wikilink")                 |
+| \[1.0.0-4.1.0\] 0     | [\#GetModuleIdList](#GetModuleIdList "wikilink")                     |
+| 0 (\[1.0.0-4.1.0\] 1) | [\#GetJitDebugProcessIdList](#GetJitDebugProcessIdList "wikilink")   |
+| 1 (\[1.0.0-4.1.0\] 2) | [\#StartProcess](#StartProcess "wikilink")                           |
+| 2 (\[1.0.0-4.1.0\] 3) | [\#GetProcessId](#GetProcessId "wikilink")                           |
+| 3 (\[1.0.0-4.1.0\] 4) | [\#HookToCreateProcess](#HookToCreateProcess "wikilink")             |
+| 4 (\[1.0.0-4.1.0\] 5) | [\#GetApplicationProcessId](#GetApplicationProcessId "wikilink")     |
 | 5 (\[1.0.0-4.1.0\] 6) | [\#EnableDebugForApplication](#EnableDebugForApplication "wikilink") |
-| \[6.0.0+\] 6          | [\#DisableDebug](#DisableDebug "wikilink")                           |
+| \[6.0.0+\] 6          | [\#ClearHook](#ClearHook "wikilink")                                 |
 
-## IsDebugMode
+## GetModuleIdList
 
-Always returns u32 0 on retail.
+Stubbed in all versions of retail firmware (just returns 0).
 
-\[2.0.0+\] Additional check on input that can return 0xC0F. The meaning
-is probably useless because function is somewhat nopped on non-dev
-builds anyway.
+\[2.0.0+\] When output buffer size is \> INT\_MAX, returns
+ResultInvalidSize.
 
-## GetDebugProcesses
+## GetJitDebugProcessIdList
 
 Returns an array of pids of all processes that have mask 4 set in
 process flags.
 
-\[2.0.0+\] Additional check on input that can return 0xC0F. The meaning
-is probably useless because function is somewhat nopped on non-dev
-builds anyway.
+\[2.0.0+\] When output buffer size is \> INT\_MAX, returns
+ResultInvalidSize.
 
-## StartDebugProcess
+## StartProcess
 
 Takes a pid. Last process event must be ProcessEvent\_Created or
 ProcessEvent\_DebugAttached.
@@ -170,11 +168,11 @@ coming from ldr:pm GetProgramInfo.
 
 After that, it sets last process state to ProcessEvent\_DebugDetached.
 
-## GetTitlePid
+## GetProcessId
 
 Takes a title-id and returns the pid.
 
-## EnableDebugForTitleId
+## HookToCreateProcess
 
 Takes a title-id of the program to debug. Sets this to a global field.
 
@@ -183,17 +181,17 @@ Next time it gets launched it will be handled differently.
 Returns an event handle that is signaled when the requested title is
 about to be launched.
 
-## GetApplicationPid
+## GetApplicationProcessId
 
 Returns the pid of the application process.
 
-## EnableDebugForApplication
+## HookToCreateApplicationProcess
 
 Does \*not\* take a specific title-id as input.
 
 Returns an event handle that is triggered for application titles.
 
-## DisableDebug
+## ClearHook
 
 Takes in a u32 of bitflags.
 
