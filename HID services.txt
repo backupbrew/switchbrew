@@ -770,9 +770,9 @@ This is a 0x208-byte struct. This seems to be an array, structure unknown.
 |-
 | 0x11 || 0x3 || Padding
 |-
-| 0x14 || 0x24 || [[#HdlsState]]. Unknown if the last 4-bytes are included in this struct, [[#SetAutoPilotVirtualPadState]] only uses the first 0x20-bytes.
+| 0x14 || 0x24 || [[#HdlsState]]. Unknown if the last 4-bytes are included in this struct, [[#SetAutoPilotVirtualPadState]]/[[#hiddbgGetAbstractedPadsState]] only uses the first 0x20-bytes.
 |-
-| 0x38 || 0x60 || Unused with [[#SetAutoPilotVirtualPadState]].
+| 0x38 || 0x60 || Unused with [[#SetAutoPilotVirtualPadState]]/[[#GetAbstractedPadsState]].
 |}
 
 Normally the input state is merged with an existing controller selected by Type. However in some cases (BIT(2-5) with type2!=0x2 and BIT(31)) it's detected as a dedicated controller.
