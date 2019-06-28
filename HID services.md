@@ -643,28 +643,32 @@ unknown.
 | 0x14   | 0x24 | [\#HdlsState](#HdlsState "wikilink"). Unknown if the last 4-bytes are included in this struct, [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink") only uses the first 0x20-bytes.                                              |
 | 0x38   | 0x60 | Unused with [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink").                                                                                                                                                                |
 
+Normally the input state is merged with an existing controller selected
+by Type. However in some cases (BIT(2-5) with type2\!=0x2 and BIT(31))
+it's detected as a dedicated controller.
+
 Type:
 
-| Bits | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink")::type bits | Description | Notes |
-| ---- | --------------------------------------------------------- | ----------- | ----- |
-| 0    | 0                                                         |             |       |
-| 1    | 15                                                        |             |       |
-| 2    | 1                                                         |             |       |
-| 3    | 2                                                         |             |       |
-| 4    | 1                                                         |             |       |
-| 5    | 2                                                         |             |       |
-| 6    | 3                                                         |             |       |
-| 7    | 11                                                        |             |       |
-| 8    | 12                                                        |             |       |
-| 9    | 13                                                        |             |       |
-| 10   | 14                                                        |             |       |
-| 11   | 15                                                        |             |       |
-| 12   | 12                                                        |             |       |
-| 13   | 13                                                        |             |       |
-| 14   | 14                                                        |             |       |
-| 15   | 17                                                        |             |       |
-| 31   | 21                                                        |             |       |
-|      |                                                           |             |       |
+| Bits | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink")::type bits | Description | Notes                                             |
+| ---- | --------------------------------------------------------- | ----------- | ------------------------------------------------- |
+| 0    | 0                                                         |             |                                                   |
+| 1    | 15                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(1)  |
+| 2    | 1                                                         |             |                                                   |
+| 3    | 2                                                         |             |                                                   |
+| 4    | 1                                                         |             |                                                   |
+| 5    | 2                                                         |             |                                                   |
+| 6    | 3                                                         |             |                                                   |
+| 7    | 11                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(11) |
+| 8    | 12                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(12) |
+| 9    | 13                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(13) |
+| 10   | 14                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(14) |
+| 11   | 15                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(11) |
+| 12   | 12                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(12) |
+| 13   | 13                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(13) |
+| 14   | 14                                                        |             | [\#DeviceType](#DeviceType "wikilink") |= BIT(14) |
+| 15   | 17                                                        |             |                                                   |
+| 31   | 21                                                        |             | [\#DeviceType](#DeviceType "wikilink") = BIT(31)  |
+|      |                                                           |             |                                                   |
 
 ## HdlsStateList
 

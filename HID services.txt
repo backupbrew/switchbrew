@@ -775,6 +775,8 @@ This is a 0x208-byte struct. This seems to be an array, structure unknown.
 | 0x38 || 0x60 || Unused with [[#SetAutoPilotVirtualPadState]].
 |}
 
+Normally the input state is merged with an existing controller selected by Type. However in some cases (BIT(2-5) with type2!=0x2 and BIT(31)) it's detected as a dedicated controller.
+
 Type:
 {| class="wikitable" border="1"
 !  Bits
@@ -784,7 +786,7 @@ Type:
 |-
 | 0 || 0 || || 
 |-
-| 1 || 15 || || 
+| 1 || 15 || || [[#DeviceType]] |= BIT(1)
 |-
 | 2 || 1 || || 
 |-
@@ -796,25 +798,25 @@ Type:
 |-
 | 6 || 3 || || 
 |-
-| 7 || 11 || || 
+| 7 || 11 || || [[#DeviceType]] |= BIT(11)
 |-
-| 8 || 12 || || 
+| 8 || 12 || || [[#DeviceType]] |= BIT(12)
 |-
-| 9 || 13 || || 
+| 9 || 13 || || [[#DeviceType]] |= BIT(13)
 |-
-| 10 || 14 || || 
+| 10 || 14 || || [[#DeviceType]] |= BIT(14)
 |-
-| 11 || 15 || || 
+| 11 || 15 || || [[#DeviceType]] |= BIT(11)
 |-
-| 12 || 12 || || 
+| 12 || 12 || || [[#DeviceType]] |= BIT(12)
 |-
-| 13 || 13 || || 
+| 13 || 13 || || [[#DeviceType]] |= BIT(13)
 |-
-| 14 || 14 || || 
+| 14 || 14 || || [[#DeviceType]] |= BIT(14)
 |-
 | 15 || 17 || || 
 |-
-| 31 || 21 || || 
+| 31 || 21 || || [[#DeviceType]] = BIT(31)
 |-
 |}
 
