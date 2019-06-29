@@ -820,6 +820,8 @@ Type:
 |-
 |}
 
+The above "[[#DeviceType]] |=" notes only apply when type2 is 0x2.
+
 == HdlsStateList ==
 {| class="wikitable" border="1"
 |-

@@ -670,6 +670,9 @@ Type:
 | 31   | 21                                                        |             | [\#DeviceType](#DeviceType "wikilink") = BIT(31)  |
 |      |                                                           |             |                                                   |
 
+The above "[\#DeviceType](#DeviceType "wikilink") |=" notes only apply
+when type2 is 0x2.
+
 ## HdlsStateList
 
 | Offset | Size              | Description                                                      |
