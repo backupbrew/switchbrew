@@ -184,7 +184,7 @@ Total size is 0x4000-bytes.
 | CacheStorageMaxIndex
 |-
 | 0x3190
-| 0x80 (0x10*0x8)
+| 0x80 (0x8*0x10)
 | PlayLogQueryableApplicationId
 |-
 | 0x3210
@@ -281,3 +281,20 @@ This is the enum used to determine how gameplay recording can occur, if at all.
 |}
 
 When this value is 0, gameplay cannot be recorded. When this value is 1, the game must manually sacrifice some of its heap as transfer memory for AM's IApplicationProxy->InitializeGamePlayRecording(). When this value is 2, AM will call NS->BoostSystemMemoryResourceSize(), and allocate the required memory for recording automatically without the usermode process having to do anything.
+
+== PlayLogQuery ==
+This is used with [[Applet_Manager_services|AM]] commands QueryApplicationPlayStatistics and QueryApplicationPlayStatisticsByUid, to verify whether querying the specified titleIDs are allowed. When not allowed, error 0x3E880 is returned.
+
+PlayLogQueryCapability is a type field (values >2 are invalid):
+
+{| class="wikitable" border="1"
+|-
+! Value || Meaning
+|-
+| 0 || The specified titleIDs must match the user-process titleID.
+|-
+| 1 || The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId.
+|-
+| 2 || All titleIDs are allowed.
+|-
+|}

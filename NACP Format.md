@@ -52,7 +52,7 @@ Total size is 0x4000-bytes.
 | 0x3178 | 0x8                  | CacheStorageJournalSize                                                           |
 | 0x3180 | 0x8                  | CacheStorageMaxSizeAndMaxJournalSize                                              |
 | 0x3188 | 0x8                  | CacheStorageMaxIndex                                                              |
-| 0x3190 | 0x80 (0x10\*0x8)     | PlayLogQueryableApplicationId                                                     |
+| 0x3190 | 0x80 (0x8\*0x10)     | PlayLogQueryableApplicationId                                                     |
 | 0x3210 | 0x1                  | PlayLogQueryCapability                                                            |
 | 0x3211 | 0x1                  | RepairFlag                                                                        |
 | 0x3212 | 0x1                  | ProgramIndex                                                                      |
@@ -112,3 +112,20 @@ AM's IApplicationProxy-\>InitializeGamePlayRecording(). When this value
 is 2, AM will call NS-\>BoostSystemMemoryResourceSize(), and allocate
 the required memory for recording automatically without the usermode
 process having to do anything.
+
+## PlayLogQuery
+
+This is used with [AM](Applet%20Manager%20services.md "wikilink")
+commands QueryApplicationPlayStatistics and
+QueryApplicationPlayStatisticsByUid, to verify whether querying the
+specified titleIDs are allowed. When not allowed, error 0x3E880 is
+returned.
+
+PlayLogQueryCapability is a type field (values \>2 are invalid):
+
+| Value | Meaning                                                                                                                |
+| ----- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0     | The specified titleIDs must match the user-process titleID.                                                            |
+| 1     | The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId. |
+| 2     | All titleIDs are allowed.                                                                                              |
+|       |                                                                                                                        |
