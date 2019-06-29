@@ -624,11 +624,6 @@ Takes an input 8-byte **HdlsHandle**, no output.
 Takes an input [\#HdlsState](#HdlsState "wikilink") and an input 8-byte
 **HdlsHandle**, no output.
 
-## HdlsNpadAssignment
-
-This is a 0x208-byte struct. This seems to be an array, structure
-unknown.
-
 ## AbstractedPadState
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                        |
@@ -673,11 +668,34 @@ Type:
 The above "[\#DeviceType](#DeviceType "wikilink") |=" notes only apply
 when type2 is 0x2.
 
+## HdlsNpadAssignment
+
+| Offset | Size              | Description                                                                |
+| ------ | ----------------- | -------------------------------------------------------------------------- |
+| 0x0    | 0x4               | s32 Total entries                                                          |
+| 0x4    | 0x4               | Padding                                                                    |
+| 0x8    | 0x200(0x20\*0x10) | Array of [\#HdlsNpadAssignmentEntry](#HdlsNpadAssignmentEntry "wikilink"). |
+
+This is a 0x208-byte struct.
+
+### HdlsNpadAssignmentEntry
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | HdlsHandle  |
+| 0x8    | 0x4  | ?           |
+| 0xC    | 0x4  | ?           |
+| 0x10   | 0x8  | ?           |
+| 0x18   | 0x1  | ?           |
+| 0x19   | 0x7  | Padding     |
+
+This is a 0x20-byte struct.
+
 ## HdlsStateList
 
 | Offset | Size              | Description                                                      |
 | ------ | ----------------- | ---------------------------------------------------------------- |
-| 0x0    | 0x4               | Total entries                                                    |
+| 0x0    | 0x4               | s32 Total entries                                                |
 | 0x4    | 0x4               | Padding                                                          |
 | 0x8    | 0x400(0x40\*0x10) | Array of [\#HdlsStateListEntry](#HdlsStateListEntry "wikilink"). |
 
