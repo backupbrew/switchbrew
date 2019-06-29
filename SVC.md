@@ -1481,13 +1481,13 @@ Bitfield of one of more of these:
 
 ## LimitableResource
 
-| Value | Name                                |
-| ----- | ----------------------------------- |
-| 0     | LimitableResource\_Memory           |
-| 1     | LimitableResource\_Threads          |
-| 2     | LimitableResource\_Events           |
-| 3     | LimitableResource\_TransferMemories |
-| 4     | LimitableResource\_Sessions         |
+| Value | Name                                | Note                                                                                                        |
+| ----- | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 0     | LimitableResource\_Memory           | Bytes of memory a process may allocate.                                                                     |
+| 1     | LimitableResource\_Threads          | Amount of threads a process can create.                                                                     |
+| 2     | LimitableResource\_Events           | Amount of events a process can create through svcCreateEvent or svcSendAsyncRequestWithUserBuffer.          |
+| 3     | LimitableResource\_TransferMemories | Amount of TransferMemory a process can create through svcCreateTransferMemory.                              |
+| 4     | LimitableResource\_Sessions         | Amount of session a process can create through svcCreateSession, svcConnectToPort or svcConnectToNamedPort. |
 
 ## ProcessInfoType
 
