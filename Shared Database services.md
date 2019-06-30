@@ -214,4 +214,16 @@ This was added with \[6.0.0+\].
 | 1   |      |
 | 2   |      |
 
+# ApplicationPlayStatistics
+
+| Offset | Size | Description                                     |
+| ------ | ---- | ----------------------------------------------- |
+| 0x0    | 0x8  | titleID                                         |
+| 0x8    | 0x8  | Total play-time in nanoseconds.                 |
+| 0x10   | 0x8  | Total times the application title was launched. |
+
+This is "nn::pdm::ApplicationPlayStatistics".
+
+This is a 0x18-byte struct.
+
 [Category:Services](Category:Services "wikilink")
