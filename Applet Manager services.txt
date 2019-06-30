@@ -967,6 +967,8 @@ No input, returns an output u8.
 === GetBootMode ===
 No input, returns an output u8.
 
+Returns the value from [[Process_Manager_services|pm:bm]] GetBootMode.
+
 === GetCurrentFocusState ===
 No input. Returns an output u8:
 

@@ -885,6 +885,9 @@ No input, returns an output u8.
 
 No input, returns an output u8.
 
+Returns the value from
+[pm:bm](Process%20Manager%20services.md "wikilink") GetBootMode.
+
 ### GetCurrentFocusState
 
 No input. Returns an output u8:
