@@ -469,7 +469,7 @@ Takes an input u8, no output.
 | 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |                                                                                                             |
 | 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
-| 111  | \[6.0.0+\] QueryApplicationPlayStatisticsByUid                                                                                  |                                                                                                             |
+| 111  | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUid](#QueryApplicationPlayStatisticsByUid "wikilink")                             |                                                                                                             |
 | 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |                                                                                                             |
 | 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |                                                                                                             |
 | 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                                                                             |
@@ -616,12 +616,25 @@ Takes an input u8 bool, no output.
 #### QueryApplicationPlayStatistics
 
 Takes a type-0x6 output buffer containing an array of
-ApplicationPlayStatistics and a type-0x5 input buffer containing an
-array of u64 titleIDs. Returns an output s32 (actual total output
-entries?).
+[ApplicationPlayStatistics](Shared%20Database%20services.md "wikilink")
+and a type-0x5 input buffer containing an array of u64 titleIDs. Returns
+an output s32 for actual total output entries.
 
 The number of entries in each array is the same.
-ApplicationPlayStatistics is a 8-byte struct.
+
+See also
+[NACP\_Format\#PlayLogQuery](NACP%20Format#PlayLogQuery.md##PlayLogQuery "wikilink").
+
+#### QueryApplicationPlayStatisticsByUid
+
+Takes a u128 userID, a type-0x6 output buffer containing an array of
+[ApplicationPlayStatistics](Shared%20Database%20services.md "wikilink")
+and a type-0x5 input buffer containing an array of u64 titleIDs. Returns
+an output s32 for actual total output entries.
+
+Same as
+[\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")
+except this gets playstats specific to userIDs.
 
 #### ClearUserChannel
 
