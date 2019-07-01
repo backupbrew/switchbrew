@@ -269,7 +269,7 @@ Takes an input u64, an input u128, and returns an output 0x28-byte struct.
 Takes a type-0x6 output buffer containing an array where the struct size is 0x18-bytes, and a type-0x5 input buffer containing an array of u64s. Returns an output u32.
 
 == QueryPlayEvent ==
-Takes an input u32, a type-0x6 output buffer containing an array where the struct size is 0x38-bytes, and returns an output u32.
+Takes an input u32 entryoffset, a type-0x6 output buffer containing an array of [[#PlayEvent]], and returns an output u32 for actual total output entries.
 
 == GetAvailablePlayEventRange ==
 No input, returns 3 output u32s.
@@ -356,6 +356,9 @@ This was added with [6.0.0+].
 |}
 
 This is a 0x18-byte struct.
+
+= PlayEvent =
+This is a 0x38-byte struct.
 
 = ApplicationPlayStatistics =
 {| class="wikitable" border="1"

@@ -207,8 +207,9 @@ Returns an output u32.
 
 ## QueryPlayEvent
 
-Takes an input u32, a type-0x6 output buffer containing an array where
-the struct size is 0x38-bytes, and returns an output u32.
+Takes an input u32 entryoffset, a type-0x6 output buffer containing an
+array of [\#PlayEvent](#PlayEvent "wikilink"), and returns an output u32
+for actual total output entries.
 
 ## GetAvailablePlayEventRange
 
@@ -295,6 +296,10 @@ This was added with \[6.0.0+\].
 | 0x8    | 0x10 | ?           |
 
 This is a 0x18-byte struct.
+
+# PlayEvent
+
+This is a 0x38-byte struct.
 
 # ApplicationPlayStatistics
 
