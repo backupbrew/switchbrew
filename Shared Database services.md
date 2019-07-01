@@ -193,6 +193,10 @@ output s32 for actual total output entries.
 
 The number of entries in each array is the same.
 
+## Cmd15
+
+No input, returns an output handle.
+
 ## Cmd16
 
 Takes a u128 userID, a type-0x6 output buffer containing an array of
