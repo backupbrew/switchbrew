@@ -197,8 +197,8 @@ Takes an input u64 titleID and returns an output
 
 ## QueryPlayStatisticsByApplicationIdAndUserAccountId
 
-Takes an input u64, an input u128, and returns an output 0x28-byte
-struct.
+Takes an input u64 titleID, an input u128 userID, and returns an output
+[\#PlayStatistics](#PlayStatistics "wikilink").
 
 ## QueryLastPlayTime
 

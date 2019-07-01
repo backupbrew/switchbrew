@@ -263,7 +263,7 @@ Takes an input u32, a type-0x6 output buffer containing an array of [[#Applicati
 Takes an input u64 titleID and returns an output [[#PlayStatistics]].
 
 == QueryPlayStatisticsByApplicationIdAndUserAccountId ==
-Takes an input u64, an input u128, and returns an output 0x28-byte struct.
+Takes an input u64 titleID, an input u128 userID, and returns an output [[#PlayStatistics]].
 
 == QueryLastPlayTime ==
 Takes a type-0x6 output buffer containing an array of [[#LastPlayTime]], and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output u32 for actual total output entries.
