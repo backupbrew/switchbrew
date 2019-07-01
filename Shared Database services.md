@@ -192,7 +192,8 @@ output u32 for actual total output entries.
 
 ## QueryPlayStatisticsByApplicationId
 
-Takes an input u64 and returns an output 0x28-byte struct.
+Takes an input u64 titleID and returns an output
+[\#PlayStatistics](#PlayStatistics "wikilink").
 
 ## QueryPlayStatisticsByApplicationIdAndUserAccountId
 
@@ -201,9 +202,10 @@ struct.
 
 ## QueryLastPlayTime
 
-Takes a type-0x6 output buffer containing an array where the struct size
-is 0x18-bytes, and a type-0x5 input buffer containing an array of u64s.
-Returns an output u32.
+Takes a type-0x6 output buffer containing an array of
+[\#LastPlayTime](#LastPlayTime "wikilink"), and a type-0x5 input buffer
+containing an array of u64 titleIDs. Returns an output u32 for actual
+total output entries.
 
 ## QueryPlayEvent
 
@@ -297,7 +299,29 @@ This was added with \[6.0.0+\].
 
 This is a 0x18-byte struct.
 
+# PlayStatistics
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | titleID     |
+| 0x8    | 0x20 | ?           |
+
+This is a 0x28-byte struct.
+
+# LastPlayTime
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | titleID     |
+| 0x8    | 0x10 | ?           |
+
+This is a 0x18-byte struct.
+
 # PlayEvent
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x38 | ?           |
 
 This is a 0x38-byte struct.
 
