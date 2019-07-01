@@ -232,7 +232,7 @@ output u32 for actual total output entries.
 
 ## GetAvailableAccountPlayEventRange
 
-Takes an input u128 and returns 3 output u32s.
+Takes an input u128 userID and returns 3 output u32s.
 
 ## QueryApplicationPlayStatisticsForSystem
 

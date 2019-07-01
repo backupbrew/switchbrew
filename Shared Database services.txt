@@ -281,7 +281,7 @@ Takes an input u32, a type-0x6 output buffer containing an array of [[#AccountEv
 Takes an input u32 entryoffset, an input u128 userID, a type-0x6 output buffer containing an array of [[#AccountPlayEvent]], and returns an output u32 for actual total output entries.
 
 == GetAvailableAccountPlayEventRange ==
-Takes an input u128 and returns 3 output u32s.
+Takes an input u128 userID and returns 3 output u32s.
 
 == QueryApplicationPlayStatisticsForSystem ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationPlayStatistics]] and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 for actual total output entries.
