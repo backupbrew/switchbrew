@@ -625,6 +625,9 @@ The number of entries in each array is the same.
 See also
 [NACP\_Format\#PlayLogQuery](NACP%20Format#PlayLogQuery.md##PlayLogQuery "wikilink").
 
+This uses [pdm:qry](Shared%20Database%20services.md "wikilink")
+QueryApplicationPlayStatisticsForSystem.
+
 #### QueryApplicationPlayStatisticsByUid
 
 Takes a u128 userID, a type-0x6 output buffer containing an array of
@@ -634,7 +637,8 @@ an output s32 for actual total output entries.
 
 Same as
 [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")
-except this gets playstats specific to userIDs.
+except this uses [pdm:qry](Shared%20Database%20services.md "wikilink")
+cmd16, to get playstats specific to userIDs.
 
 #### ClearUserChannel
 

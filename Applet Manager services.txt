@@ -711,10 +711,12 @@ The number of entries in each array is the same.
 
 See also [[NACP_Format#PlayLogQuery]].
 
+This uses [[Shared_Database_services|pdm:qry]] QueryApplicationPlayStatisticsForSystem.
+
 ==== QueryApplicationPlayStatisticsByUid ====
 Takes a u128 userID, a type-0x6 output buffer containing an array of [[Shared_Database_services|ApplicationPlayStatistics]] and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 for actual total output entries.
 
-Same as [[#QueryApplicationPlayStatistics]] except this gets playstats specific to userIDs.
+Same as [[#QueryApplicationPlayStatistics]] except this uses [[Shared_Database_services|pdm:qry]] cmd16, to get playstats specific to userIDs. 
 
 ==== ClearUserChannel ====
 No input/output.
