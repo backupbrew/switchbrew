@@ -1852,4 +1852,7 @@ This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]
 = AppletKind =
 This is 8-bytes.
 
+= Notes =
+AM-sysmodule will only initialize [[Shared_Database_services|pdm:ntfy]] / use pdm:ntfy service commands when the value from [[Process_Manager_services|pm:bm]] GetBootMode is not 0x1.
+
 [[Category:Services]]

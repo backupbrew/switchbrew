@@ -1635,4 +1635,12 @@ u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
 
 This is 8-bytes.
 
+# Notes
+
+AM-sysmodule will only initialize
+[pdm:ntfy](Shared%20Database%20services.md "wikilink") / use pdm:ntfy
+service commands when the value from
+[pm:bm](Process%20Manager%20services.md "wikilink") GetBootMode is not
+0x1.
+
 [Category:Services](Category:Services "wikilink")
