@@ -278,7 +278,7 @@ No input, returns 3 output u32s.
 Takes an input u32, a type-0x6 output buffer containing an array of [[#AccountEvent]], and returns an output u32 for actual total output entries.
 
 == QueryAccountPlayEvent ==
-Takes an input u32, an input u128, a type-0x6 output buffer containing an array where the struct size is 0x28-bytes, and returns an output u32.
+Takes an input u32 entryoffset, an input u128 userID, a type-0x6 output buffer containing an array of [[#AccountPlayEvent]], and returns an output u32 for actual total output entries.
 
 == GetAvailableAccountPlayEventRange ==
 Takes an input u128 and returns 3 output u32s.
@@ -410,6 +410,20 @@ This is a 0x38-byte struct.
 |}
 
 This is a 0x38-byte struct.
+
+= AccountPlayEvent =
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 || 0x8 || titleID
+|-
+| 0x8 || 0x20 || ?
+|}
+
+This is a 0x28-byte struct.
 
 = ApplicationPlayStatistics =
 {| class="wikitable" border="1"

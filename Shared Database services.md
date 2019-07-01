@@ -225,8 +225,10 @@ for actual total output entries.
 
 ## QueryAccountPlayEvent
 
-Takes an input u32, an input u128, a type-0x6 output buffer containing
-an array where the struct size is 0x28-bytes, and returns an output u32.
+Takes an input u32 entryoffset, an input u128 userID, a type-0x6 output
+buffer containing an array of
+[\#AccountPlayEvent](#AccountPlayEvent "wikilink"), and returns an
+output u32 for actual total output entries.
 
 ## GetAvailableAccountPlayEventRange
 
@@ -334,6 +336,15 @@ This is a 0x38-byte struct.
 | 0x10   | 0x28 | ?           |
 
 This is a 0x38-byte struct.
+
+# AccountPlayEvent
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | titleID     |
+| 0x8    | 0x20 | ?           |
+
+This is a 0x28-byte struct.
 
 # ApplicationPlayStatistics
 
