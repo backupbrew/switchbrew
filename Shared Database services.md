@@ -245,8 +245,11 @@ The number of entries in each array is the same.
 
 ## Cmd14
 
-Takes an input u128, a type-0x6 output buffer containing an array of
-u64s, and returns an output u32.
+Takes an input u128 userID, a type-0x6 output buffer containing an array
+of u64 titleIDs, and returns an output u32 for actual total output
+entries.
+
+Returns a list of titles played by the specified user.
 
 ## Cmd15
 
