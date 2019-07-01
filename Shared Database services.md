@@ -219,8 +219,9 @@ No input, returns 3 output u32s.
 
 ## QueryAccountEvent
 
-Takes an input u32, a type-0x6 output buffer containing an array where
-the struct size is 0x38-bytes, and returns an output u32.
+Takes an input u32, a type-0x6 output buffer containing an array of
+[\#AccountEvent](#AccountEvent "wikilink"), and returns an output u32
+for actual total output entries.
 
 ## QueryAccountPlayEvent
 
@@ -322,6 +323,15 @@ This is a 0x18-byte struct.
 | Offset | Size | Description |
 | ------ | ---- | ----------- |
 | 0x0    | 0x38 | ?           |
+
+This is a 0x38-byte struct.
+
+# AccountEvent
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x10 | userID      |
+| 0x10   | 0x28 | ?           |
 
 This is a 0x38-byte struct.
 
