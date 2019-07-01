@@ -164,25 +164,39 @@ This is "nn::pdm::detail::INotifyService".
 
 This is "nn::pdm::detail::IQueryService".
 
-| Cmd               | Name                                                                                                        |
-| ----------------- | ----------------------------------------------------------------------------------------------------------- |
-| 0                 | QueryApplicationEvent                                                                                       |
-| \[1.0.0-6.2.0\] 1 | QueryPlayStatistics                                                                                         |
-| \[1.0.0-6.2.0\] 2 | QueryPlayStatisticsByUserAccountId                                                                          |
-| \[1.0.0-6.2.0\] 3 | QueryPlayStatisticsByNetworkServiceAccountId                                                                |
-| 4                 | QueryPlayStatisticsByApplicationId                                                                          |
-| 5                 | QueryPlayStatisticsByApplicationIdAndUserAccountId                                                          |
-| \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId                                                |
-| 7                 | QueryLastPlayTime                                                                                           |
-| 8                 | QueryPlayEvent                                                                                              |
-| 9                 | GetAvailablePlayEventRange                                                                                  |
-| 10                | QueryAccountEvent                                                                                           |
-| 11                | \[4.0.0+\] QueryAccountPlayEvent                                                                            |
-| 12                | \[4.0.0+\] GetAvailableAccountPlayEventRange                                                                |
-| 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink") |
-| 14                | \[6.0.0+\]                                                                                                  |
-| 15                | \[6.0.0+\]                                                                                                  |
-| 16                | \[6.0.0+\]                                                                                                  |
+| Cmd               | Name                                                                                                                   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0                 | [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink")                                                           |
+| \[1.0.0-6.2.0\] 1 | QueryPlayStatistics                                                                                                    |
+| \[1.0.0-6.2.0\] 2 | QueryPlayStatisticsByUserAccountId                                                                                     |
+| \[1.0.0-6.2.0\] 3 | QueryPlayStatisticsByNetworkServiceAccountId                                                                           |
+| 4                 | [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink")                                 |
+| 5                 | [\#QueryPlayStatisticsByApplicationIdAndUserAccountId](#QueryPlayStatisticsByApplicationIdAndUserAccountId "wikilink") |
+| \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId                                                           |
+| 7                 | QueryLastPlayTime                                                                                                      |
+| 8                 | QueryPlayEvent                                                                                                         |
+| 9                 | GetAvailablePlayEventRange                                                                                             |
+| 10                | QueryAccountEvent                                                                                                      |
+| 11                | \[4.0.0+\] QueryAccountPlayEvent                                                                                       |
+| 12                | \[4.0.0+\] GetAvailableAccountPlayEventRange                                                                           |
+| 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink")            |
+| 14                | \[6.0.0+\]                                                                                                             |
+| 15                | \[6.0.0+\]                                                                                                             |
+| 16                | \[6.0.0+\]                                                                                                             |
+
+## QueryApplicationEvent
+
+Takes an input u32, a type-0x6 output buffer containing an array where
+the struct size is 0x18-bytes, and returns an output u32.
+
+## QueryPlayStatisticsByApplicationId
+
+Takes an input u64 and returns an output 0x28-byte struct.
+
+## QueryPlayStatisticsByApplicationIdAndUserAccountId
+
+Takes an input u64, an input u128, and returns an output 0x28-byte
+struct.
 
 ## QueryApplicationPlayStatisticsForSystem
 
