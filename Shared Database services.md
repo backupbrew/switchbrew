@@ -173,12 +173,12 @@ This is "nn::pdm::detail::IQueryService".
 | 4                 | [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink")                                 |
 | 5                 | [\#QueryPlayStatisticsByApplicationIdAndUserAccountId](#QueryPlayStatisticsByApplicationIdAndUserAccountId "wikilink") |
 | \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId                                                           |
-| 7                 | QueryLastPlayTime                                                                                                      |
-| 8                 | QueryPlayEvent                                                                                                         |
-| 9                 | GetAvailablePlayEventRange                                                                                             |
-| 10                | QueryAccountEvent                                                                                                      |
-| 11                | \[4.0.0+\] QueryAccountPlayEvent                                                                                       |
-| 12                | \[4.0.0+\] GetAvailableAccountPlayEventRange                                                                           |
+| 7                 | [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink")                                                                   |
+| 8                 | [\#QueryPlayEvent](#QueryPlayEvent "wikilink")                                                                         |
+| 9                 | [\#GetAvailablePlayEventRange](#GetAvailablePlayEventRange "wikilink")                                                 |
+| 10                | [\#QueryAccountEvent](#QueryAccountEvent "wikilink")                                                                   |
+| 11                | \[4.0.0+\] [\#QueryAccountPlayEvent](#QueryAccountPlayEvent "wikilink")                                                |
+| 12                | \[4.0.0+\] [\#GetAvailableAccountPlayEventRange](#GetAvailableAccountPlayEventRange "wikilink")                        |
 | 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink")            |
 | 14                | \[6.0.0+\]                                                                                                             |
 | 15                | \[6.0.0+\]                                                                                                             |
@@ -198,6 +198,35 @@ Takes an input u64 and returns an output 0x28-byte struct.
 Takes an input u64, an input u128, and returns an output 0x28-byte
 struct.
 
+## QueryLastPlayTime
+
+Takes a type-0x6 output buffer containing an array where the struct size
+is 0x18-bytes, and a type-0x5 input buffer containing an array of u64s.
+Returns an output u32.
+
+## QueryPlayEvent
+
+Takes an input u32, a type-0x6 output buffer containing an array where
+the struct size is 0x38-bytes, and returns an output u32.
+
+## GetAvailablePlayEventRange
+
+No input, returns 3 output u32s.
+
+## QueryAccountEvent
+
+Takes an input u32, a type-0x6 output buffer containing an array where
+the struct size is 0x38-bytes, and returns an output u32.
+
+## QueryAccountPlayEvent
+
+Takes an input u32, an input u128, a type-0x6 output buffer containing
+an array where the struct size is 0x28-bytes, and returns an output u32.
+
+## GetAvailableAccountPlayEventRange
+
+Takes an input u128 and returns 3 output u32s.
+
 ## QueryApplicationPlayStatisticsForSystem
 
 Takes a type-0x6 output buffer containing an array of
@@ -206,6 +235,11 @@ a type-0x5 input buffer containing an array of u64 titleIDs. Returns an
 output s32 for actual total output entries.
 
 The number of entries in each array is the same.
+
+## Cmd14
+
+Takes an input u128, a type-0x6 output buffer containing an array of
+u64s, and returns an output u32.
 
 ## Cmd15
 
