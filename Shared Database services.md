@@ -342,12 +342,13 @@ This is a 0x38-byte struct.
 
 # AccountPlayEvent
 
-| Offset | Size | Description     |
-| ------ | ---- | --------------- |
-| 0x0    | 0x8  | titleID         |
-| 0x8    | 0x10 | ?               |
-| 0x18   | 0x8  | POSIX timestamp |
-| 0x20   | 0x8  | POSIX timestamp |
+| Offset | Size | Description                                   |
+| ------ | ---- | --------------------------------------------- |
+| 0x0    | 0x4  | ?                                             |
+| 0x4    | 0x8  | titleID, with the u32 low/high words swapped. |
+| 0xC    | 0xC  | ?                                             |
+| 0x18   | 0x8  | POSIX timestamp                               |
+| 0x20   | 0x8  | POSIX timestamp                               |
 
 This is a 0x28-byte struct.
 

@@ -420,9 +420,11 @@ This is a 0x38-byte struct.
 ! Size
 ! Description
 |-
-| 0x0 || 0x8 || titleID
+| 0x0 || 0x4 || ?
 |-
-| 0x8 || 0x10 || ?
+| 0x4 || 0x8 || titleID, with the u32 low/high words swapped.
+|-
+| 0xC || 0xC || ?
 |-
 | 0x18 || 0x8 || POSIX timestamp
 |-
