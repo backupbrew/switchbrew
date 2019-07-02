@@ -4,7 +4,7 @@ This is "nn::ssl::sf::ISslService".
 
 | Cmd | Name                                                                |
 | --- | ------------------------------------------------------------------- |
-| 0   | CreateContext                                                       |
+| 0   | [\#CreateContext](#CreateContext "wikilink")                        |
 | 1   | GetContextCount                                                     |
 | 2   | [\#GetCertificates](#GetCertificates "wikilink")                    |
 | 3   | [\#GetCertificateBufSize](#GetCertificateBufSize "wikilink")        |
@@ -13,6 +13,12 @@ This is "nn::ssl::sf::ISslService".
 | 6   | \[5.0.0+\] FlushSessionCache                                        |
 | 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink")           |
 | 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink")           |
+
+## CreateContext
+
+Takes a PID, an input u32 [\#SslVersion](#SslVersion "wikilink"), an
+input u64 pid\_placeholder, and returns an output
+[\#ISslContext](#ISslContext "wikilink").
 
 ## GetCertificates
 
@@ -63,20 +69,24 @@ copies state to the buffer instead.
 
 This is "nn::ssl::sf::ISslContext".
 
-| Cmd | Name                 |
-| --- | -------------------- |
-| 0   | SetOption            |
-| 1   | GetOption            |
-| 2   | CreateConnection     |
-| 3   | GetConnectionCount   |
-| 4   | ImportServerPki      |
-| 5   | ImportClientPki      |
-| 6   | RemoveServerPki      |
-| 7   | RemoveClientPki      |
-| 8   | RegisterInternalPki  |
-| 9   | AddPolicyOid         |
-| 10  | \[3.0.0+\] ImportCrl |
-| 11  | \[3.0.0+\] RemoveCrl |
+| Cmd | Name                                               |
+| --- | -------------------------------------------------- |
+| 0   | SetOption                                          |
+| 1   | GetOption                                          |
+| 2   | [\#CreateConnection](#CreateConnection "wikilink") |
+| 3   | GetConnectionCount                                 |
+| 4   | ImportServerPki                                    |
+| 5   | ImportClientPki                                    |
+| 6   | RemoveServerPki                                    |
+| 7   | RemoveClientPki                                    |
+| 8   | RegisterInternalPki                                |
+| 9   | AddPolicyOid                                       |
+| 10  | \[3.0.0+\] ImportCrl                               |
+| 11  | \[3.0.0+\] RemoveCrl                               |
+
+### CreateConnection
+
+No input, returns an [\#ISslConnection](#ISslConnection "wikilink").
 
 ### ISslConnection
 
@@ -110,6 +120,10 @@ This is "nn::ssl::sf::ISslConnection".
 | 23  | GetOption                     |
 | 24  | GetVerifyCertErrors           |
 | 25  | \[4.0.0+\] GetCipherInfo      |
+
+# SslVersion
+
+This is the "nn::ssl::sf::SslVersion" enum.
 
 # BuiltInCertificateInfo
 

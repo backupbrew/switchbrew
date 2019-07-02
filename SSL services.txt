@@ -5,7 +5,7 @@ This is "nn::ssl::sf::ISslService".
 |-
 ! Cmd || Name
 |-
-| 0 || CreateContext
+| 0 || [[#CreateContext]]
 |-
 | 1 || GetContextCount
 |-
@@ -23,6 +23,9 @@ This is "nn::ssl::sf::ISslService".
 |-
 | 8 || [6.0.0+] [[#GetDebugOption]]
 |}
+
+== CreateContext ==
+Takes a PID, an input u32 [[#SslVersion]], an input u64 pid_placeholder, and returns an output [[#ISslContext]].
 
 == GetCertificates ==
 Takes a type-0x6 output buffer and a type-0x5 input buffer containing an array of [[#CaCertificateId]].
@@ -65,7 +68,7 @@ This is "nn::ssl::sf::ISslContext".
 |-
 | 1 || GetOption
 |-
-| 2 || CreateConnection
+| 2 || [[#CreateConnection]]
 |-
 | 3 || GetConnectionCount
 |-
@@ -85,6 +88,9 @@ This is "nn::ssl::sf::ISslContext".
 |-
 | 11 || [3.0.0+] RemoveCrl
 |}
+
+=== CreateConnection ===
+No input, returns an [[#ISslConnection]].
 
 === ISslConnection ===
 This is "nn::ssl::sf::ISslConnection".
@@ -145,6 +151,9 @@ This is "nn::ssl::sf::ISslConnection".
 |-
 | 25 || [4.0.0+] GetCipherInfo
 |}
+
+= SslVersion =
+This is the "nn::ssl::sf::SslVersion" enum.
 
 = BuiltInCertificateInfo =
 {| class="wikitable" border="1"
