@@ -25,12 +25,14 @@ This is "nn::ssl::sf::ISslService".
 |}
 
 == GetCertificates ==
-Takes a type-0x6 output buffer and a type-0x5 input buffer containing an array of s32 '''CaCertificateId'''.
+Takes a type-0x6 output buffer and a type-0x5 input buffer containing an array of [[#CaCertificateId]].
 
-[3.0.0+] This now returns 4-bytes of output.
+[3.0.0+] This now returns an output u32 for actual total output entries.
+
+The output buffer starts with an array of [[#BuiltInCertificateInfo]], with the DER cert data following afterwards.
 
 == GetCertificateBufSize ==
-Takes a type-0x5 input buffer containing an array of s32 '''CaCertificateId''', returns an output u32 for the size to use with [[#GetCertificates]].
+Takes a type-0x5 input buffer containing an array of [[#CaCertificateId]], returns an output u32 for the size to use with [[#GetCertificates]].
 
 == DebugIoctl ==
 Stubbed on retail, just returns an error.
@@ -138,6 +140,62 @@ This is "nn::ssl::sf::ISslConnection".
 |-
 | 25 || [4.0.0+] GetCipherInfo
 |}
+
+= BuiltInCertificateInfo =
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x4
+| CaCertificateId
+|-
+| 0x4
+| 0x4
+| [[#BuiltinDataStatus]]
+|-
+| 0x8
+| 0x8
+| Data size
+|-
+| 0x10
+| 0x8
+| Data offset
+|}
+
+This is the struct returned by [[#GetCertificates]]. Official sw converts this to "nn::ssl::BuiltInManager::BuiltInCertificateInfo" with offset converted to a ptr.
+
+= BuiltinDataStatus =
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| -1
+| Invalid
+|-
+| 1
+| Valid
+|}
+
+This is the "nn::ssl::detail::BuiltinDataInfo::BuiltinDataStatus" enum.
+
+= CaCertificateId =
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| 1
+| Nintendo {...}
+|-
+| 2
+| Nintendo {...}
+|}
+
+This is the "nn::ssl::CaCertificateId" enum.
 
 = Client cert+privk =
 SSL-sysmodule uses [[Settings_services|set:cal]] [[Settings_services#GetSslKey|GetSslKey]] and [[Settings_services#GetSslCert|GetSslCert]]. The rest of this section documents handling for the former, which can be decrypted with [[SPL_services|SPL]].

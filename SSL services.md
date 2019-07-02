@@ -17,14 +17,20 @@ This is "nn::ssl::sf::ISslService".
 ## GetCertificates
 
 Takes a type-0x6 output buffer and a type-0x5 input buffer containing an
-array of s32 **CaCertificateId**.
+array of [\#CaCertificateId](#CaCertificateId "wikilink").
 
-\[3.0.0+\] This now returns 4-bytes of output.
+\[3.0.0+\] This now returns an output u32 for actual total output
+entries.
+
+The output buffer starts with an array of
+[\#BuiltInCertificateInfo](#BuiltInCertificateInfo "wikilink"), with the
+DER cert data following afterwards.
 
 ## GetCertificateBufSize
 
-Takes a type-0x5 input buffer containing an array of s32
-**CaCertificateId**, returns an output u32 for the size to use with
+Takes a type-0x5 input buffer containing an array of
+[\#CaCertificateId](#CaCertificateId "wikilink"), returns an output u32
+for the size to use with
 [\#GetCertificates](#GetCertificates "wikilink").
 
 ## DebugIoctl
@@ -98,6 +104,38 @@ This is "nn::ssl::sf::ISslConnection".
 | 23  | GetOption                     |
 | 24  | GetVerifyCertErrors           |
 | 25  | \[4.0.0+\] GetCipherInfo      |
+
+# BuiltInCertificateInfo
+
+| Offset | Size | Description                                          |
+| ------ | ---- | ---------------------------------------------------- |
+| 0x0    | 0x4  | CaCertificateId                                      |
+| 0x4    | 0x4  | [\#BuiltinDataStatus](#BuiltinDataStatus "wikilink") |
+| 0x8    | 0x8  | Data size                                            |
+| 0x10   | 0x8  | Data offset                                          |
+
+This is the struct returned by
+[\#GetCertificates](#GetCertificates "wikilink"). Official sw converts
+this to "nn::ssl::BuiltInManager::BuiltInCertificateInfo" with offset
+converted to a ptr.
+
+# BuiltinDataStatus
+
+| Value | Description |
+| ----- | ----------- |
+| \-1   | Invalid     |
+| 1     | Valid       |
+
+This is the "nn::ssl::detail::BuiltinDataInfo::BuiltinDataStatus" enum.
+
+# CaCertificateId
+
+| Value | Description    |
+| ----- | -------------- |
+| 1     | Nintendo {...} |
+| 2     | Nintendo {...} |
+
+This is the "nn::ssl::CaCertificateId" enum.
 
 # Client cert+privk
 
