@@ -2,19 +2,30 @@
 
 This is "nn::ssl::sf::ISslService".
 
-| Cmd | Name                                                      |
-| --- | --------------------------------------------------------- |
-| 0   | CreateContext                                             |
-| 1   | GetContextCount                                           |
-| 2   | GetCertificates                                           |
-| 3   | GetCertificateBufSize                                     |
-| 4   | \[3.0.0+\] [\#DebugIoctl](#DebugIoctl "wikilink")         |
-| 5   | \[3.0.0+\] SetInterfaceVersion                            |
-| 6   | \[5.0.0+\] FlushSessionCache                              |
-| 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink") |
-| 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink") |
+| Cmd | Name                                                         |
+| --- | ------------------------------------------------------------ |
+| 0   | CreateContext                                                |
+| 1   | GetContextCount                                              |
+| 2   | [\#GetCertificates](#GetCertificates "wikilink")             |
+| 3   | [\#GetCertificateBufSize](#GetCertificateBufSize "wikilink") |
+| 4   | \[3.0.0+\] [\#DebugIoctl](#DebugIoctl "wikilink")            |
+| 5   | \[3.0.0+\] SetInterfaceVersion                               |
+| 6   | \[5.0.0+\] FlushSessionCache                                 |
+| 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink")    |
+| 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink")    |
 
-\[3.0.0+\] GetCertificates now returns 4-bytes of output.
+## GetCertificates
+
+Takes a type-0x6 output buffer and a type-0x5 input buffer containing an
+array of s32 **CaCertificateId**.
+
+\[3.0.0+\] This now returns 4-bytes of output.
+
+## GetCertificateBufSize
+
+Takes a type-0x5 input buffer containing an array of s32
+**CaCertificateId**, returns an output u32 for the size to use with
+[\#GetCertificates](#GetCertificates "wikilink").
 
 ## DebugIoctl
 
