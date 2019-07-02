@@ -92,34 +92,47 @@ No input, returns an [\#ISslConnection](#ISslConnection "wikilink").
 
 This is "nn::ssl::sf::ISslConnection".
 
-| Cmd | Name                          |
-| --- | ----------------------------- |
-| 0   | SetSocketDescriptor           |
-| 1   | SetHostName                   |
-| 2   | SetVerifyOption               |
-| 3   | SetIoMode                     |
-| 4   | GetSocketDescriptor           |
-| 5   | GetHostName                   |
-| 6   | GetVerifyOption               |
-| 7   | GetIoMode                     |
-| 8   | DoHandshake                   |
-| 9   | DoHandshakeGetServerCert      |
-| 10  | Read                          |
-| 11  | Write                         |
-| 12  | Pending                       |
-| 13  | Peek                          |
-| 14  | Poll                          |
-| 15  | GetVerifyCertError            |
-| 16  | GetNeededServerCertBufferSize |
-| 17  | SetSessionCacheMode           |
-| 18  | GetSessionCacheMode           |
-| 19  | FlushSessionCache             |
-| 20  | SetRenegotiationMode          |
-| 21  | GetRenegotiationMode          |
-| 22  | SetOption                     |
-| 23  | GetOption                     |
-| 24  | GetVerifyCertErrors           |
-| 25  | \[4.0.0+\] GetCipherInfo      |
+| Cmd | Name                                             |
+| --- | ------------------------------------------------ |
+| 0   | SetSocketDescriptor                              |
+| 1   | SetHostName                                      |
+| 2   | [\#SetVerifyOption](#SetVerifyOption "wikilink") |
+| 3   | SetIoMode                                        |
+| 4   | GetSocketDescriptor                              |
+| 5   | GetHostName                                      |
+| 6   | [\#GetVerifyOption](#GetVerifyOption "wikilink") |
+| 7   | GetIoMode                                        |
+| 8   | DoHandshake                                      |
+| 9   | DoHandshakeGetServerCert                         |
+| 10  | Read                                             |
+| 11  | Write                                            |
+| 12  | Pending                                          |
+| 13  | Peek                                             |
+| 14  | Poll                                             |
+| 15  | GetVerifyCertError                               |
+| 16  | GetNeededServerCertBufferSize                    |
+| 17  | SetSessionCacheMode                              |
+| 18  | GetSessionCacheMode                              |
+| 19  | FlushSessionCache                                |
+| 20  | SetRenegotiationMode                             |
+| 21  | GetRenegotiationMode                             |
+| 22  | SetOption                                        |
+| 23  | GetOption                                        |
+| 24  | GetVerifyCertErrors                              |
+| 25  | \[4.0.0+\] GetCipherInfo                         |
+
+#### SetVerifyOption
+
+Takes an input u32 [\#VerifyOption](#VerifyOption "wikilink"), no
+output.
+
+Originally ssl-sysmodule just wrote the input field to state. With newer
+sysvers there's now validation for the input.
+
+#### GetVerifyOption
+
+No input, returns an output u32
+[\#VerifyOption](#VerifyOption "wikilink").
 
 # SslVersion
 
@@ -156,6 +169,10 @@ This is the "nn::ssl::detail::BuiltinDataInfo::BuiltinDataStatus" enum.
 | 2     | Nintendo {...} |
 
 This is the "nn::ssl::CaCertificateId" enum.
+
+# VerifyOption
+
+This is the "nn::ssl::sf::VerifyOption" enum.
 
 # Client cert+privk
 

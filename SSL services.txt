@@ -103,7 +103,7 @@ This is "nn::ssl::sf::ISslConnection".
 |-
 | 1 || SetHostName
 |-
-| 2 || SetVerifyOption
+| 2 || [[#SetVerifyOption]]
 |-
 | 3 || SetIoMode
 |-
@@ -111,7 +111,7 @@ This is "nn::ssl::sf::ISslConnection".
 |-
 | 5 || GetHostName
 |-
-| 6 || GetVerifyOption
+| 6 || [[#GetVerifyOption]]
 |-
 | 7 || GetIoMode
 |-
@@ -151,6 +151,14 @@ This is "nn::ssl::sf::ISslConnection".
 |-
 | 25 || [4.0.0+] GetCipherInfo
 |}
+
+==== SetVerifyOption ====
+Takes an input u32 [[#VerifyOption]], no output.
+
+Originally ssl-sysmodule just wrote the input field to state. With newer sysvers there's now validation for the input.
+
+==== GetVerifyOption ====
+No input, returns an output u32 [[#VerifyOption]].
 
 = SslVersion =
 This is the "nn::ssl::sf::SslVersion" enum.
@@ -210,6 +218,9 @@ This is the "nn::ssl::detail::BuiltinDataInfo::BuiltinDataStatus" enum.
 |}
 
 This is the "nn::ssl::CaCertificateId" enum.
+
+= VerifyOption =
+This is the "nn::ssl::sf::VerifyOption" enum.
 
 = Client cert+privk =
 SSL-sysmodule uses [[Settings_services|set:cal]] [[Settings_services#GetSslKey|GetSslKey]] and [[Settings_services#GetSslCert|GetSslCert]]. The rest of this section documents handling for the former, which can be decrypted with [[SPL_services|SPL]].
