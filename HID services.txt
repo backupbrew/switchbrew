@@ -964,7 +964,7 @@ Bits for the above type field:
 |-
 | 0x8 || 0x4 || batteryCharge for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
 |-
-| 0xC || 0x4 || Buttons
+| 0xC || 0x4 || [[HID_Shared_Memory#Button_State|Buttons]]. Bit18 = HOME and bit19 = Capture.
 |-
 | 0x10 || 0x10(4*2*2) || Joystick data, see [[HID_Shared_Memory#Controller_State]].
 |-

@@ -750,7 +750,7 @@ Bits for the above type field:
 | 0x1    | 0x1           | ORRed with powerConnected to set the value of the first byte for the controller [flags](HID%20Shared%20Memory#Flags.md##Flags "wikilink"). |
 | 0x2    | 0x6           | Unknown                                                                                                                                    |
 | 0x8    | 0x4           | batteryCharge for the main [PowerInfo](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").                                      |
-| 0xC    | 0x4           | Buttons                                                                                                                                    |
+| 0xC    | 0x4           | [Buttons](HID%20Shared%20Memory#Button%20State.md##Button_State "wikilink"). Bit18 = HOME and bit19 = Capture.                             |
 | 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink").     |
 | 0x20   | 0x1           | Unused for input. Set with output from [\#DumpHdlsStates](#DumpHdlsStates "wikilink") (zero in some cases).                                |
 | 0x21   | 0x3           | Padding                                                                                                                                    |
