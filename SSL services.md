@@ -2,17 +2,17 @@
 
 This is "nn::ssl::sf::ISslService".
 
-| Cmd | Name                                                         |
-| --- | ------------------------------------------------------------ |
-| 0   | CreateContext                                                |
-| 1   | GetContextCount                                              |
-| 2   | [\#GetCertificates](#GetCertificates "wikilink")             |
-| 3   | [\#GetCertificateBufSize](#GetCertificateBufSize "wikilink") |
-| 4   | \[3.0.0+\] [\#DebugIoctl](#DebugIoctl "wikilink")            |
-| 5   | \[3.0.0+\] SetInterfaceVersion                               |
-| 6   | \[5.0.0+\] FlushSessionCache                                 |
-| 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink")    |
-| 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink")    |
+| Cmd | Name                                                                |
+| --- | ------------------------------------------------------------------- |
+| 0   | CreateContext                                                       |
+| 1   | GetContextCount                                                     |
+| 2   | [\#GetCertificates](#GetCertificates "wikilink")                    |
+| 3   | [\#GetCertificateBufSize](#GetCertificateBufSize "wikilink")        |
+| 4   | \[3.0.0+\] [\#DebugIoctl](#DebugIoctl "wikilink")                   |
+| 5   | \[3.0.0+\] [\#SetInterfaceVersion](#SetInterfaceVersion "wikilink") |
+| 6   | \[5.0.0+\] FlushSessionCache                                        |
+| 7   | \[6.0.0+\] [\#SetDebugOption](#SetDebugOption "wikilink")           |
+| 8   | \[6.0.0+\] [\#GetDebugOption](#GetDebugOption "wikilink")           |
 
 ## GetCertificates
 
@@ -36,6 +36,12 @@ for the size to use with
 ## DebugIoctl
 
 Stubbed on retail, just returns an error.
+
+## SetInterfaceVersion
+
+Takes an input u32 **version**, no output.
+
+Used by user-processes during service init.
 
 ## SetDebugOption
 
