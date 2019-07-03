@@ -320,10 +320,14 @@ This is a 0x28-byte struct.
 
 # LastPlayTime
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x8  | titleID     |
-| 0x8    | 0x10 | ?           |
+| Offset | Size | Description                                                                      |
+| ------ | ---- | -------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | titleID                                                                          |
+| 0x8    | 0x4  | Same as the first [\#ApplicationEvent](#ApplicationEvent "wikilink") timestamp.  |
+| 0xC    | 0x4  | Same as the second [\#ApplicationEvent](#ApplicationEvent "wikilink") timestamp. |
+| 0x10   | 0x4  | ?                                                                                |
+| 0x14   | 0x1  | ?                                                                                |
+| 0x15   | 0x3  | Padding                                                                          |
 
 This is a 0x18-byte struct.
 
