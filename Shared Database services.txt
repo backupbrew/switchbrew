@@ -257,7 +257,7 @@ This is "nn::pdm::detail::IQueryService".
 |}
 
 == QueryApplicationEvent ==
-Takes an input u32, a type-0x6 output buffer containing an array of [[#ApplicationEvent]], and returns an output u32 for actual total output entries.
+Takes an input u32 entryindex, a type-0x6 output buffer containing an array of [[#ApplicationEvent]], and returns an output s32 for actual total output entries.
 
 == QueryPlayStatisticsByApplicationId ==
 Takes an input u64 titleID and returns an output [[#PlayStatistics]].
@@ -269,7 +269,7 @@ Takes an input u64 titleID, an input u128 userID, and returns an output [[#PlayS
 Takes a type-0x6 output buffer containing an array of [[#LastPlayTime]], and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output u32 for actual total output entries.
 
 == QueryPlayEvent ==
-Takes an input u32 entryoffset, a type-0x6 output buffer containing an array of [[#PlayEvent]], and returns an output u32 for actual total output entries.
+Takes an input u32 entryindex, a type-0x6 output buffer containing an array of [[#PlayEvent]], and returns an output u32 for actual total output entries.
 
 == GetAvailablePlayEventRange ==
 No input, returns 3 output u32s.
@@ -354,7 +354,15 @@ This was added with [6.0.0+].
 |-
 | 0x0 || 0x8 || titleID
 |-
-| 0x8 || 0x10 || ?
+| 0x8 || 0x4 || entryindex
+|-
+| 0xC || 0x4 || ?
+|-
+| 0x10 || 0x4 || ?
+|-
+| 0x14 || 0x1 || ?
+|-
+| 0x15 || 0x3 || Padding
 |}
 
 This is a 0x18-byte struct.

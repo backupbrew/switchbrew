@@ -186,9 +186,9 @@ This is "nn::pdm::detail::IQueryService".
 
 ## QueryApplicationEvent
 
-Takes an input u32, a type-0x6 output buffer containing an array of
-[\#ApplicationEvent](#ApplicationEvent "wikilink"), and returns an
-output u32 for actual total output entries.
+Takes an input u32 entryindex, a type-0x6 output buffer containing an
+array of [\#ApplicationEvent](#ApplicationEvent "wikilink"), and returns
+an output s32 for actual total output entries.
 
 ## QueryPlayStatisticsByApplicationId
 
@@ -209,7 +209,7 @@ total output entries.
 
 ## QueryPlayEvent
 
-Takes an input u32 entryoffset, a type-0x6 output buffer containing an
+Takes an input u32 entryindex, a type-0x6 output buffer containing an
 array of [\#PlayEvent](#PlayEvent "wikilink"), and returns an output u32
 for actual total output entries.
 
@@ -301,7 +301,11 @@ This was added with \[6.0.0+\].
 | Offset | Size | Description |
 | ------ | ---- | ----------- |
 | 0x0    | 0x8  | titleID     |
-| 0x8    | 0x10 | ?           |
+| 0x8    | 0x4  | entryindex  |
+| 0xC    | 0x4  | ?           |
+| 0x10   | 0x4  | ?           |
+| 0x14   | 0x1  | ?           |
+| 0x15   | 0x3  | Padding     |
 
 This is a 0x18-byte struct.
 
