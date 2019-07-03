@@ -214,20 +214,20 @@ Takes a pid and returns the title-id associated with the process.
 
 This is "nn::pm::detail::IShellInterface".
 
-| Cmd                   | Name                                                                                      |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| 0                     | [\#LaunchProgram](#LaunchProgram "wikilink")                                              |
-| 1                     | TerminateProcess                                                                          |
-| 2                     | TerminateProgram                                                                          |
-| 3                     | GetProcessEventHandle                                                                     |
-| 4                     | [\#GetProcessEventInfo](#GetProcessEventInfo "wikilink")                                  |
-| (\[1.0.0-4.1.0\] 5)   | [\#CleanupProcess](#CleanupProcess "wikilink")                                            |
-| (\[1.0.0-4.1.0\] 6)   | [\#ClearJitDebugOccured](#ClearJitDebugOccured "wikilink")                                |
-| 5 (\[1.0.0-4.1.0\] 7) | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                    |
-| 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationProcessIdForShell](#GetApplicationProcessIdForShell "wikilink")          |
-| 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink") |
-| 8                     | \[7.0.0+\] [\#BoostSystemThreadResourceLimit](#BoostSystemThreadResourceLimit "wikilink") |
-| 9                     | \[8.0.0+\] [\#GetBootFinishedEventHandle](#GetBootFinishedEventHandle "wikilink")         |
+| Cmd                   | Name                                                                                                |
+| --------------------- | --------------------------------------------------------------------------------------------------- |
+| 0                     | [\#LaunchProgram](#LaunchProgram "wikilink")                                                        |
+| 1                     | TerminateProcess                                                                                    |
+| 2                     | TerminateProgram                                                                                    |
+| 3                     | GetProcessEventHandle                                                                               |
+| 4                     | [\#GetProcessEventInfo](#GetProcessEventInfo "wikilink")                                            |
+| (\[1.0.0-4.1.0\] 5)   | [\#CleanupProcess](#CleanupProcess "wikilink")                                                      |
+| (\[1.0.0-4.1.0\] 6)   | [\#ClearJitDebugOccured](#ClearJitDebugOccured "wikilink")                                          |
+| 5 (\[1.0.0-4.1.0\] 7) | [\#NotifyBootFinished](#NotifyBootFinished "wikilink")                                              |
+| 6 (\[1.0.0-4.1.0\] 8) | [\#GetApplicationProcessIdForShell](#GetApplicationProcessIdForShell "wikilink")                    |
+| 7 (\[4.0.0-4.1.0\] 9) | \[4.0.0+\] [\#BoostSystemMemoryResourceLimit](#BoostSystemMemoryResourceLimit "wikilink")           |
+| 8                     | \[7.0.0+\] [\#BoostApplicationThreadResourceLimit](#BoostApplicationThreadResourceLimit "wikilink") |
+| 9                     | \[8.0.0+\] [\#GetBootFinishedEventHandle](#GetBootFinishedEventHandle "wikilink")                   |
 
 ## LaunchProgram
 
@@ -306,9 +306,9 @@ value.
 This is used directly by [ns:am2
 BoostSystemMemoryResourceLimit](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink").
 
-## BoostSystemThreadResourceLimit
+## BoostApplicationThreadResourceLimit
 
-Calls svcSetResourceLimitLimitValue to increase the limit on system
+Calls svcSetResourceLimitLimitValue to increase the limit on application
 threads by an amount calculated dynamically during setup.
 
 This function can only increase the limit once, on further calls it will
@@ -316,7 +316,7 @@ call svcSetResourceLimitLimitValue with the same value it called the
 first time.
 
 On normal [7.0.0](7.0.0.md "wikilink") retail firmware, this will double
-the limit on system threads from 0x60 to 0xC0.
+the limit on application threads from 0x60 to 0xC0.
 
 ## GetBootFinishedEventHandle
 

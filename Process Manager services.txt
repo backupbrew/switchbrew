@@ -207,7 +207,7 @@ This is "nn::pm::detail::IShellInterface".
 |-
 | 7 ([4.0.0-4.1.0] 9) || [4.0.0+] [[#BoostSystemMemoryResourceLimit]]
 |-
-| 8 || [7.0.0+] [[#BoostSystemThreadResourceLimit]]
+| 8 || [7.0.0+] [[#BoostApplicationThreadResourceLimit]]
 |-
 | 9 || [8.0.0+] [[#GetBootFinishedEventHandle]]
 |}
@@ -269,12 +269,12 @@ Takes an u64 '''mem_size''' as input. If the desired memory size doesn't exceed 
 
 This is used directly by [[NS_Services#IApplicationManagerInterface|ns:am2 BoostSystemMemoryResourceLimit]].
 
-== BoostSystemThreadResourceLimit ==
-Calls svcSetResourceLimitLimitValue to increase the limit on system threads by an amount calculated dynamically during setup.
+== BoostApplicationThreadResourceLimit ==
+Calls svcSetResourceLimitLimitValue to increase the limit on application threads by an amount calculated dynamically during setup.
 
 This function can only increase the limit once, on further calls it will call svcSetResourceLimitLimitValue with the same value it called the first time.
 
-On normal [[7.0.0]] retail firmware, this will double the limit on system threads from 0x60 to 0xC0.
+On normal [[7.0.0]] retail firmware, this will double the limit on application threads from 0x60 to 0xC0.
 
 == GetBootFinishedEventHandle ==
 This function returns a handle to an event that is signaled when [[#NotifyBootFinished]] is called.
