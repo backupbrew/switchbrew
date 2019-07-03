@@ -346,20 +346,20 @@ title was played.
 
 # PlayEvent
 
-| Offset | Size | Description                                   |
-| ------ | ---- | --------------------------------------------- |
-| 0x0    | 0x8  | titleID, with the u32 low/high words swapped. |
-| 0x8    | 0x4  | ?                                             |
-| 0xC    | 0x1  | ?                                             |
-| 0xD    | 0x1  | ?                                             |
-| 0xE    | 0x1  | ?                                             |
-| 0xF    | 0x1  | ?                                             |
-| 0x10   | 0xC  | ?                                             |
-| 0x1C   | 0x1  | ?                                             |
-| 0x1D   | 0x3  | ?                                             |
-| 0x20   | 0x8  | PosixTime timestamp0                          |
-| 0x28   | 0x8  | PosixTime timestamp1                          |
-| 0x30   | 0x8  | ?                                             |
+| Offset | Size | Description                                                                            |
+| ------ | ---- | -------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | titleID, with the u32 low/high words swapped.                                          |
+| 0x8    | 0x4  | ?                                                                                      |
+| 0xC    | 0x1  | ?                                                                                      |
+| 0xD    | 0x1  | ?                                                                                      |
+| 0xE    | 0x1  | ?                                                                                      |
+| 0xF    | 0x1  | ?                                                                                      |
+| 0x10   | 0xC  | ?                                                                                      |
+| 0x1C   | 0x1  | ?                                                                                      |
+| 0x1D   | 0x3  | ?                                                                                      |
+| 0x20   | 0x8  | PosixTime timestamp0                                                                   |
+| 0x28   | 0x8  | PosixTime timestamp1                                                                   |
+| 0x30   | 0x8  | Timestamp in seconds derived from [StandardSteadyClock](PCV%20services.md "wikilink"). |
 
 This is a 0x38-byte struct.
 

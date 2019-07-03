@@ -448,7 +448,7 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 |-
 | 0x28 || 0x8 || PosixTime timestamp1
 |-
-| 0x30 || 0x8 || ?
+| 0x30 || 0x8 || Timestamp in seconds derived from [[PCV_services|StandardSteadyClock]].
 |}
 
 This is a 0x38-byte struct.
