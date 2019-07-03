@@ -367,6 +367,15 @@ This is the raw entry struct directly read from FS, without any entry
 filtering. The other structs are extracted+converted from this one, with
 filtering.
 
+Filtering:
+
+  - [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink") and
+    [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink"): PlayEvent
+    +0x1C must be 0, +0xC must be 1, and +0xE must be 0.
+  - [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink"):
+    PlayEvent +0x1C must be 0, +0xC must be 1, and the titleID must
+    match.
+
 # AccountEvent
 
 | Offset | Size | Description     |

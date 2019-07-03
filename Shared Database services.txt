@@ -455,6 +455,10 @@ This is a 0x38-byte struct.
 
 This is the raw entry struct directly read from FS, without any entry filtering. The other structs are extracted+converted from this one, with filtering.
 
+Filtering:
+* [[#QueryApplicationEvent]] and [[#QueryLastPlayTime]]: PlayEvent +0x1C must be 0, +0xC must be 1, and +0xE must be 0.
+* [[#QueryPlayStatisticsByApplicationId]]: PlayEvent +0x1C must be 0, +0xC must be 1, and the titleID must match.
+
 = AccountEvent =
 {| class="wikitable" border="1"
 |-
