@@ -349,10 +349,13 @@ filtering.
 | Offset | Size | Description     |
 | ------ | ---- | --------------- |
 | 0x0    | 0x10 | userID          |
-| 0x10   | 0x8  | ?               |
+| 0x10   | 0x4  | entryindex      |
+| 0x14   | 0x4  | Padding         |
 | 0x18   | 0x8  | POSIX timestamp |
 | 0x20   | 0x8  | POSIX timestamp |
-| 0x28   | 0x10 | ?               |
+| 0x28   | 0x8  | ?               |
+| 0x30   | 0x1  | ?               |
+| 0x31   | 0x7  | Padding         |
 
 This is a 0x38-byte struct.
 
