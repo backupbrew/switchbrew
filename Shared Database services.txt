@@ -266,7 +266,7 @@ Takes an input u64 titleID and returns an output [[#PlayStatistics]].
 Takes an input u64 titleID, an input u128 userID, and returns an output [[#PlayStatistics]].
 
 == QueryLastPlayTime ==
-Takes a type-0x6 output buffer containing an array of [[#LastPlayTime]], and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output u32 for actual total output entries.
+Takes a type-0x6 output buffer containing an array of [[#LastPlayTime]], and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 for actual total output entries.
 
 == QueryPlayEvent ==
 Takes an input u32 entryindex, a type-0x6 output buffer containing an array of [[#PlayEvent]], and returns an output u32 for actual total output entries.

@@ -204,7 +204,7 @@ Takes an input u64 titleID, an input u128 userID, and returns an output
 
 Takes a type-0x6 output buffer containing an array of
 [\#LastPlayTime](#LastPlayTime "wikilink"), and a type-0x5 input buffer
-containing an array of u64 titleIDs. Returns an output u32 for actual
+containing an array of u64 titleIDs. Returns an output s32 for actual
 total output entries.
 
 ## QueryPlayEvent
