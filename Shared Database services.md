@@ -215,7 +215,8 @@ for actual total output entries.
 
 ## GetAvailablePlayEventRange
 
-No input, returns 3 output u32s.
+No input, returns 3 output u32s: total\_entries, start\_entryindex, and
+end\_entryindex.
 
 ## QueryAccountEvent
 
