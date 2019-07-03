@@ -220,9 +220,9 @@ end\_entryindex.
 
 ## QueryAccountEvent
 
-Takes an input u32, a type-0x6 output buffer containing an array of
-[\#AccountEvent](#AccountEvent "wikilink"), and returns an output u32
-for actual total output entries.
+Takes an input u32 entryindex, a type-0x6 output buffer containing an
+array of [\#AccountEvent](#AccountEvent "wikilink"), and returns an
+output s32 for actual total output entries.
 
 ## QueryAccountPlayEvent
 
