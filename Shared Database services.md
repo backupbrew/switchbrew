@@ -339,6 +339,10 @@ This is a 0x18-byte struct.
 
 This is a 0x38-byte struct.
 
+This is the raw entry struct directly read from FS, without any entry
+filtering. The other structs are extracted+converted from this one, with
+filtering.
+
 # AccountEvent
 
 | Offset | Size | Description     |
