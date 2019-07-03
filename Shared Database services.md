@@ -346,9 +346,12 @@ title was played.
 
 # PlayEvent
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x38 | ?           |
+| Offset | Size | Description          |
+| ------ | ---- | -------------------- |
+| 0x0    | 0x20 | ?                    |
+| 0x20   | 0x8  | PosixTime timestamp0 |
+| 0x28   | 0x8  | PosixTime timestamp1 |
+| 0x30   | 0x8  | ?                    |
 
 This is a 0x38-byte struct.
 

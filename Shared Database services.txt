@@ -426,7 +426,13 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 ! Size
 ! Description
 |-
-| 0x0 || 0x38 || ?
+| 0x0 || 0x20 || ?
+|-
+| 0x20 || 0x8 || PosixTime timestamp0
+|-
+| 0x28 || 0x8 || PosixTime timestamp1
+|-
+| 0x30 || 0x8 || ?
 |}
 
 This is a 0x38-byte struct.
