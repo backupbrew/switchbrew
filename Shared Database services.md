@@ -324,8 +324,8 @@ Timestamp format: total minutes since epoch 1999/12/31.
 | 0x14   | 0x4  | Last entryindex                                                                                    |
 | 0x18   | 0x4  | Last timestamp0. Same as the first [\#ApplicationEvent](#ApplicationEvent "wikilink") timestamp.   |
 | 0x1C   | 0x4  | Last timestamp1. Same as the second [\#ApplicationEvent](#ApplicationEvent "wikilink") timestamp.  |
-| 0x20   | 0x4  | unkTotal                                                                                           |
-| 0x24   | 0x4  | eventCount0                                                                                        |
+| 0x20   | 0x4  | Total play-time in minutes.                                                                        |
+| 0x24   | 0x4  | Total times the application title was launched.                                                    |
 
 This is a 0x28-byte struct.
 
