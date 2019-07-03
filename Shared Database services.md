@@ -340,7 +340,8 @@ This is a 0x28-byte struct.
 | 0x14   | 0x1  | ?                                                                                |
 | 0x15   | 0x3  | Padding                                                                          |
 
-This is a 0x18-byte struct.
+This is a 0x18-byte struct. This contains data from the last time the
+title was played.
 
 # PlayEvent
 
