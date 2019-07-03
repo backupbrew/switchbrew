@@ -300,16 +300,18 @@ This was added with \[6.0.0+\].
 
 # ApplicationEvent
 
-| Offset | Size | Description       |
-| ------ | ---- | ----------------- |
-| 0x0    | 0x8  | titleID           |
-| 0x8    | 0x4  | entryindex        |
-| 0xC    | 0x4  | Unknown timestamp |
-| 0x10   | 0x4  | Unknown timestamp |
-| 0x14   | 0x1  | ?                 |
-| 0x15   | 0x3  | Padding           |
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | titleID     |
+| 0x8    | 0x4  | entryindex  |
+| 0xC    | 0x4  | timestamp0  |
+| 0x10   | 0x4  | timestamp1  |
+| 0x14   | 0x1  | ?           |
+| 0x15   | 0x3  | Padding     |
 
 This is a 0x18-byte struct.
+
+Timestamp format: total minutes since epoch 1999/12/31.
 
 # PlayStatistics
 
