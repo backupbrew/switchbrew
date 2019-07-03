@@ -372,6 +372,9 @@ This is a 0x38-byte struct.
 
 This is a 0x28-byte struct.
 
+This is the raw entry struct directly read from FS, without any entry
+filtering. This is separate from [\#PlayEvent](#PlayEvent "wikilink").
+
 # ApplicationPlayStatistics
 
 | Offset | Size | Description                                     |
