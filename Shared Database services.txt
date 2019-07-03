@@ -367,7 +367,7 @@ This was added with [6.0.0+].
 
 This is a 0x18-byte struct.
 
-Timestamp format: total minutes since epoch 1999/12/31.
+Timestamp format, converted from PosixTime: total minutes since epoch UTC 1999/12/31 00:00.
 
 = PlayStatistics =
 {| class="wikitable" border="1"
