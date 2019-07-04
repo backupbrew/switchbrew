@@ -66,8 +66,7 @@ Size: 0x18
 
 Size: 0x28
 
-\[5.0.0\]? Size:
-0x20
+\[5.0.0\]? Size: 0x20
 
 | Offset | Type                                             | Description |
 | ------ | ------------------------------------------------ | ----------- |
@@ -86,8 +85,7 @@ Size: 0x28
 
 # KLinkedListNode
 
-Size:
-0x10
+Size: 0x10
 
 | Offset | Type                                               | Description |
 | ------ | -------------------------------------------------- | ----------- |
@@ -96,8 +94,7 @@ Size:
 
 # KLinkedListEntry
 
-Size: 0x10 +
-`sizeof(T)`
+Size: 0x10 + `sizeof(T)`
 
 | Offset | Type                                             | Description     |
 | ------ | ------------------------------------------------ | --------------- |
@@ -106,8 +103,7 @@ Size: 0x10 +
 
 # KLinkedList
 
-Size:
-0x18
+Size: 0x18
 
 | Offset | Type                                             | Description          |
 | ------ | ------------------------------------------------ | -------------------- |
@@ -330,8 +326,7 @@ Size: 0xB0
 
 \[1.0.0\] Size: 0x2A0
 
-\[2.0.0\] Size:
-0x20C0
+\[2.0.0\] Size: 0x20C0
 
 <div style="display: inline-block">
 
@@ -369,8 +364,7 @@ Size: 0xB0
 
 \[2.0.0\] Size: 8
 
-\[6.0.0\]? Size:
-0x10
+\[6.0.0\]? Size: 0x10
 
 <div style="display: inline-block">
 
@@ -428,8 +422,7 @@ Size: 0xB0
 
 ## KSharedMemoryRef
 
-\[2.0.0\] Size:
-0x40
+\[2.0.0\] Size: 0x40
 
 | Offset | Type                                                                                                      | Description                         |
 | ------ | --------------------------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -443,8 +436,7 @@ Size: 0xB0
 
 \[2.0.0\] Size: 0xC8
 
-\[5.0.0\] Size:
-0xF8?
+\[5.0.0\] Size: 0xF8?
 
 <div style="display: inline-block">
 
@@ -558,8 +550,7 @@ Size: 0x10
 
 ## KMemoryBlockManager
 
-Size:
-0x18
+Size: 0x18
 
 | Offset | Type                                         | Description     |
 | ------ | -------------------------------------------- | --------------- |
@@ -569,8 +560,7 @@ Size:
 
 ## KMemoryBlock
 
-Size:
-0x40
+Size: 0x40
 
 | Offset | Type                                                                                              | Description                |
 | ------ | ------------------------------------------------------------------------------------------------- | -------------------------- |
@@ -624,8 +614,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 \[2.0.0\] Size: 0x48
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 <div style="display: inline-block;">
 
@@ -677,8 +666,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 \[7.0.0\] Size: 0x110
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 <div style="display: inline-block;">
 
@@ -739,8 +727,7 @@ Inherits from:
 
 Size: 0xB0
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                           | Description |
 | ------ | ---------------------------------------------- | ----------- |
@@ -763,14 +750,13 @@ Inherits from:
 | 0x38   | [\#KSession\*](#KSession* "wikilink")                                 | Parent                         |
 | 0x40   | KLinkedListNode\<[\#KSessionRequest](#KSessionRequest "wikilink")\*\> | RequestList                    |
 | 0x50   | [\#KSessionRequest](#KSessionRequest "wikilink")\*                    | ActiveRequest                  |
-| 0x58   |                                                                       |                                |
+| 0x58   | [\#KMutex](#KMutex "wikilink")                                        | lock                           |
 
 ### KSessionRequest
 
 Size: 0x158
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                                      | Description            |
 | ------ | --------------------------------------------------------- | ---------------------- |
@@ -818,8 +804,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 Size: 0xA8
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                                     | Description |
 | ------ | -------------------------------------------------------- | ----------- |
@@ -832,8 +817,7 @@ Inherits from:
 
 Size: 0x58
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                         | Description                         |
 | ------ | -------------------------------------------- | ----------------------------------- |
@@ -846,8 +830,7 @@ Inherits from:
 
 Size: 0x38
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                           | Description    |
 | ------ | ---------------------------------------------- | -------------- |
@@ -862,8 +845,7 @@ Inherits from:
 
 Size: 0x70
 
-Inherits from:
-[\#KAutoObject](#KAutoObject "wikilink")
+Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 | Offset | Type                                           | Description   |
 | ------ | ---------------------------------------------- | ------------- |
@@ -903,8 +885,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 \[2.0.0\] Size: 0x48
 
-Inherits from:
-[\#KReadableEvent](#KReadableEvent "wikilink")
+Inherits from: [\#KReadableEvent](#KReadableEvent "wikilink")
 
 <div style="display: inline-block;">
 
@@ -999,8 +980,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 \[1.0.0\] Size: 0x380
 
-\[2.0.0\] Size:
-0x450
+\[2.0.0\] Size: 0x450
 
 <div style="display: inline-block;">
 
@@ -1085,8 +1065,7 @@ Inherits from: [\#KAutoObject](#KAutoObject "wikilink")
 
 ## KPoolRefManager
 
-\[1.0.0\] Size:
-0x20
+\[1.0.0\] Size: 0x20
 
 | Offset | Type                                         | Description   |
 | ------ | -------------------------------------------- | ------------- |
@@ -1154,8 +1133,7 @@ Size: 0x30
 
 ## KIrqEntry
 
-\[1.0.0\] Size:
-0x10
+\[1.0.0\] Size: 0x10
 
 | Offset | Type                                                     | Description |
 | ------ | -------------------------------------------------------- | ----------- |
@@ -1165,8 +1143,7 @@ Size: 0x30
 
 # KDebug
 
-Size:
-0x50
+Size: 0x50
 
 | Offset | Type                                                                                         | Description |
 | ------ | -------------------------------------------------------------------------------------------- | ----------- |
@@ -1178,8 +1155,7 @@ Size:
 
 ## KDebugEvent
 
-Size:
-0x60
+Size: 0x60
 
 | Offset | Type                                                                                            | Description          |
 | ------ | ----------------------------------------------------------------------------------------------- | -------------------- |
@@ -1193,8 +1169,7 @@ Size:
 
 # KManagedPort
 
-Size:
-0x28
+Size: 0x28
 
 | Offset | Type                                                                                              | Description                |
 | ------ | ------------------------------------------------------------------------------------------------- | -------------------------- |

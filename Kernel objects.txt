@@ -1174,7 +1174,7 @@ Inherits from: [[#KSynchronizationObject]]
 |-
 | 0x50 || [[#KSessionRequest]]* || ActiveRequest
 |-
-| 0x58 || ||
+| 0x58 || [[#KMutex]] || lock
 |}
 
 === KSessionRequest ===
