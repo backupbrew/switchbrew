@@ -203,7 +203,7 @@ This is "nn::pdm::detail::INotifyService".
 |-
 | 4 || NotifyClearAllEvent
 |-
-| 5 || NotifyEventForDebug
+| 5 || [[#NotifyEventForDebug]]
 |-
 | 6 || [4.0.0+] SuspendUserAccountEventService
 |-
@@ -213,6 +213,13 @@ This is "nn::pdm::detail::INotifyService".
 |-
 | 9 || [8.0.0+]
 |}
+
+== NotifyEventForDebug ==
+Takes an input type-0x5 buffer containing an array of [[#PlayEvent]], no output.
+
+Gets the [[System_Settings|system-setting]] <code>pdm!is_production</code>, the size must be 1 and the value must be 0, otherwise an error is returned.
+
+Each [[#PlayEvent]] entry is validated, throwing an error on failure. After an entry is successfully validated, it is written to the log.
 
 = pdm:qry =
 This is "nn::pdm::detail::IQueryService".

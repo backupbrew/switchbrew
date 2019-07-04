@@ -148,17 +148,30 @@ This was added with \[5.0.0+\].
 
 This is "nn::pdm::detail::INotifyService".
 
-| Cmd | Name                                      |
-| --- | ----------------------------------------- |
-| 0   | NotifyAppletEvent                         |
-| 2   | NotifyOperationModeChangeEvent            |
-| 3   | NotifyPowerStateChangeEvent               |
-| 4   | NotifyClearAllEvent                       |
-| 5   | NotifyEventForDebug                       |
-| 6   | \[4.0.0+\] SuspendUserAccountEventService |
-| 7   | \[4.0.0+\] ResumeUserAccountEventService  |
-| 8   | \[6.0.0+\]                                |
-| 9   | \[8.0.0+\]                                |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 0   | NotifyAppletEvent                                        |
+| 2   | NotifyOperationModeChangeEvent                           |
+| 3   | NotifyPowerStateChangeEvent                              |
+| 4   | NotifyClearAllEvent                                      |
+| 5   | [\#NotifyEventForDebug](#NotifyEventForDebug "wikilink") |
+| 6   | \[4.0.0+\] SuspendUserAccountEventService                |
+| 7   | \[4.0.0+\] ResumeUserAccountEventService                 |
+| 8   | \[6.0.0+\]                                               |
+| 9   | \[8.0.0+\]                                               |
+
+## NotifyEventForDebug
+
+Takes an input type-0x5 buffer containing an array of
+[\#PlayEvent](#PlayEvent "wikilink"), no output.
+
+Gets the [system-setting](System%20Settings.md "wikilink")
+`pdm!is_production`, the size must be 1 and the value must be 0,
+otherwise an error is returned.
+
+Each [\#PlayEvent](#PlayEvent "wikilink") entry is validated, throwing
+an error on failure. After an entry is successfully validated, it is
+written to the log.
 
 # pdm:qry
 
