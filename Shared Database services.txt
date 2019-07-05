@@ -559,11 +559,11 @@ Applet:
 |-
 | 0xC || 0x1 || [[Applet_Manager_services#AppletId|AppletId]]
 |-
-| 0xD || 0x1 || ?
+| 0xD || 0x1 || [[Filesystem_services#StorageId|StorageId]]
 |-
 | 0xE || 0x1 || ?
 |-
-| 0xF || 0x1 || ?
+| 0xF || 0x1 || [[#AppletEvent]]
 |-
 | 0x10 || 0xC || Unused
 |}
