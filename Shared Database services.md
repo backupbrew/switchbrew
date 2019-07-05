@@ -459,21 +459,27 @@ This is a 0x28-byte struct.
 This is a 0x18-byte struct. This contains data from the last time the
 title was played.
 
+# PlayEventType
+
+| Value | Description         |
+| ----- | ------------------- |
+| 0     | Applet              |
+| 1     | Account             |
+| 2     | PowerStateChange    |
+| 3     | OperationModeChange |
+
+This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0x1C, which
+indicates the type of [\#PlayEvent](#PlayEvent "wikilink").
+
 # PlayEvent
 
-| Offset | Size   | Description                                                                            |
-| ------ | ------ | -------------------------------------------------------------------------------------- |
-| 0x0    | 0x0x10 | titleID or userID, with the u32 low/high words swapped in each u64.                    |
-| 0xC    | 0x1    | ?                                                                                      |
-| 0xD    | 0x1    | ?                                                                                      |
-| 0xE    | 0x1    | ?                                                                                      |
-| 0xF    | 0x1    | ?                                                                                      |
-| 0x18   | 0x1    | ?                                                                                      |
-| 0x1C   | 0x1    | ?                                                                                      |
-| 0x1D   | 0x3    | ?                                                                                      |
-| 0x20   | 0x8    | PosixTime timestamp from [StandardUserSystemClock](PCV%20services.md "wikilink").      |
-| 0x28   | 0x8    | PosixTime timestamp from [StandardNetworkSystemClock](PCV%20services.md "wikilink").   |
-| 0x30   | 0x8    | Timestamp in seconds derived from [StandardSteadyClock](PCV%20services.md "wikilink"). |
+| Offset | Size | Description                                                                            |
+| ------ | ---- | -------------------------------------------------------------------------------------- |
+| 0x1C   | 0x1  | [\#PlayEventType](#PlayEventType "wikilink")                                           |
+| 0x1D   | 0x3  | Padding                                                                                |
+| 0x20   | 0x8  | PosixTime timestamp from [StandardUserSystemClock](PCV%20services.md "wikilink").      |
+| 0x28   | 0x8  | PosixTime timestamp from [StandardNetworkSystemClock](PCV%20services.md "wikilink").   |
+| 0x30   | 0x8  | Timestamp in seconds derived from [StandardSteadyClock](PCV%20services.md "wikilink"). |
 
 This is a 0x38-byte struct.
 
@@ -491,6 +497,37 @@ Filtering:
     match.
   - [\#QueryAccountEvent](#QueryAccountEvent "wikilink"): PlayEvent
     +0x1C must be 1 and PlayEvent +0x18 must be \<=1.
+
+The structure of the first 0x1C-bytes are determined by
+[\#PlayEventType](#PlayEventType "wikilink"). For titleIDs/userIDs, the
+low/high u32 in each u64 is swapped.
+
+Applet:
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | titleID     |
+| 0x8    | 0x4  | ?           |
+| 0x9    | 0x1  | ?           |
+| 0xC    | 0x1  | ?           |
+| 0xD    | 0x1  | ?           |
+| 0xE    | 0x1  | ?           |
+| 0xF    | 0x1  | ?           |
+| 0x10   | 0xC  | Unused      |
+
+Account:
+
+| Offset | Size | Description                                                                                                        |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x10 | userID                                                                                                             |
+| 0x10   | 0x8  | titleID, when u8 +0x18 = 2.                                                                                        |
+| 0x18   | 0x1  | Type. 0-1 to be listed by [\#QueryAccountEvent](#QueryAccountEvent "wikilink"), or 2 to include the above titleID. |
+| 0x19   | 0x3  | Padding                                                                                                            |
+
+PlayEventType PowerStateChange/OperationModeChange: u8 +0x0 is the input
+value from
+[\#NotifyOperationModeChangeEvent](#NotifyOperationModeChangeEvent "wikilink")/[\#NotifyPowerStateChangeEvent](#NotifyPowerStateChangeEvent "wikilink"),
+the rest is unused.
 
 # AccountEvent
 

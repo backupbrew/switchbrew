@@ -493,6 +493,27 @@ This is a 0x28-byte struct.
 
 This is a 0x18-byte struct. This contains data from the last time the title was played.
 
+= PlayEventType =
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| 0
+| Applet
+|-
+| 1
+| Account
+|-
+| 2
+| PowerStateChange
+|-
+| 3
+| OperationModeChange
+|}
+
+This is an enum for [[#PlayEvent]] +0x1C, which indicates the type of [[#PlayEvent]].
+
 = PlayEvent =
 {| class="wikitable" border="1"
 |-
@@ -500,21 +521,9 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 ! Size
 ! Description
 |-
-| 0x0 || 0x0x10 || titleID or userID, with the u32 low/high words swapped in each u64.
+| 0x1C || 0x1 || [[#PlayEventType]]
 |-
-| 0xC || 0x1 || ?
-|-
-| 0xD || 0x1 || ?
-|-
-| 0xE || 0x1 || ?
-|-
-| 0xF || 0x1 || ?
-|-
-| 0x18 || 0x1 || ?
-|-
-| 0x1C || 0x1 || ?
-|-
-| 0x1D || 0x3 || ?
+| 0x1D || 0x3 || Padding
 |-
 | 0x20 || 0x8 || PosixTime timestamp from [[PCV_services|StandardUserSystemClock]].
 |-
@@ -531,6 +540,52 @@ Filtering:
 * [[#QueryApplicationEvent]] and [[#QueryLastPlayTime]]: PlayEvent +0x1C must be 0, +0xC must be 1, and +0xE must be 0.
 * [[#QueryPlayStatisticsByApplicationId]]: PlayEvent +0x1C must be 0, +0xC must be 1, and the titleID must match.
 * [[#QueryAccountEvent]]: PlayEvent +0x1C must be 1 and PlayEvent +0x18 must be <=1.
+
+The structure of the first 0x1C-bytes are determined by [[#PlayEventType]]. For titleIDs/userIDs, the low/high u32 in each u64 is swapped.
+
+Applet:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 || 0x8 || titleID
+|-
+| 0x8 || 0x4 || ?
+|-
+| 0x9 || 0x1 || ?
+|-
+| 0xC || 0x1 || ?
+|-
+| 0xD || 0x1 || ?
+|-
+| 0xE || 0x1 || ?
+|-
+| 0xF || 0x1 || ?
+|-
+| 0x10 || 0xC || Unused
+|}
+
+Account:
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 || 0x10 || userID
+|-
+| 0x10 || 0x8 || titleID, when u8 +0x18 = 2.
+|-
+| 0x18 || 0x1 || Type. 0-1 to be listed by [[#QueryAccountEvent]], or 2 to include the above titleID.
+|-
+| 0x19 || 0x3 || Padding
+|}
+
+PlayEventType PowerStateChange/OperationModeChange: u8 +0x0 is the input value from [[#NotifyOperationModeChangeEvent]]/[[#NotifyPowerStateChangeEvent]], the rest is unused.
 
 = AccountEvent =
 {| class="wikitable" border="1"
