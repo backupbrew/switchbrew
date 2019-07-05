@@ -509,7 +509,7 @@ Applet:
 | 0x0    | 0x8  | titleID                                                                                     |
 | 0x8    | 0x4  | When set to u8 0x1 by pdm:ntfy [\#Cmd8](#Cmd8 "wikilink"), this indicates that +0x9 is set. |
 | 0x9    | 0x1  | See above.                                                                                  |
-| 0xC    | 0x1  | ?                                                                                           |
+| 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                    |
 | 0xD    | 0x1  | ?                                                                                           |
 | 0xE    | 0x1  | ?                                                                                           |
 | 0xF    | 0x1  | ?                                                                                           |

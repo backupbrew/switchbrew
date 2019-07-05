@@ -557,7 +557,7 @@ Applet:
 |-
 | 0x9 || 0x1 || See above.
 |-
-| 0xC || 0x1 || ?
+| 0xC || 0x1 || [[Applet_Manager_services#AppletId|AppletId]]
 |-
 | 0xD || 0x1 || ?
 |-
