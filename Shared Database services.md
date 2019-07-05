@@ -238,7 +238,9 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
     **event\_xE**.
 
 After the initial logging, additional code runs with some of the above
-input params.
+input params. This is handled the same as
+[\#NotifyAppletEvent](#NotifyAppletEvent "wikilink"), except that the
+value passed for **event\_x8** is value 0 here.
 
 ## Cmd9
 
