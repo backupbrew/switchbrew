@@ -166,15 +166,20 @@ Takes an input u8 **event\_xF**, an u8 **event\_xC**, an u8
 **event\_xD**, an u8 **event\_xE**, an u32 **event\_x8**, and an u64
 **titleID**. Returns no output.
 
+When **event\_xE** is 2 this will immediately return 0.
+
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x10-bytes at +0x10.
-  - u8 +0xF = **event\_xF**
+  - u8 +0xF = **event\_xF**.
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
-  - u32 +0x8 = **event\_x8**
+  - u32 +0x8 = **event\_x8**.
   - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
     **event\_xE**.
+
+After the initial logging, additional code runs with some of the above
+input params.
 
 ## NotifyOperationModeChangeEvent
 
@@ -192,6 +197,8 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 clears the 0x20-bytes at +0x0, u8 +0x1C = 0x2, u8 +0x0 = **inval**, and
 sets the 3 timestamps.
 
+After the initial logging, additional code runs which uses **inval**.
+
 ## NotifyClearAllEvent
 
 No input/output.
@@ -208,6 +215,57 @@ otherwise an error is returned.
 Each [\#PlayEvent](#PlayEvent "wikilink") entry is validated, throwing
 an error on failure. After an entry is successfully validated, it is
 written to the log.
+
+## Cmd8
+
+Takes an input u8 **event\_xF**, an u8 **event\_x9**, an u8
+**event\_xC**, an u8 **event\_xD**, an u8 **event\_xE**, and an u64
+**titleID**. Returns no output.
+
+This is similar to [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink").
+
+When **event\_xE** is 2 this will immediately return 0.
+
+Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
+
+  - Clears the 0x20-bytes at +0x0.
+  - u8 +0xF = **event\_xF**.
+  - Sets the 3 timestamps.
+  - Converts **titleID** and writes it to +0x0.
+  - u8 +0x9 = **event\_x9**.
+  - u8 +0x8 = 1.
+  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
+    **event\_xE**.
+
+After the initial logging, additional code runs with some of the above
+input params.
+
+## Cmd9
+
+Takes an input u8 **event\_xF**, an u8 **event\_xC**, an u8
+**event\_xD**, an 0x20-byte struct, an u8 bool flag, an u8
+**event\_xE**, an u32 **event\_x8**, and an u64 **titleID**. Returns no
+output.
+
+This is identical to
+[\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") except for the
+additional struct/flag params.
+
+When **event\_xE** is 2 this will immediately return 0.
+
+Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
+
+  - Clears the 0x10-bytes at +0x10.
+  - u8 +0xF = **event\_xF**
+  - Sets the 3 timestamps.
+  - Converts **titleID** and writes it to +0x0.
+  - u32 +0x8 = **event\_x8**
+  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
+    **event\_xE**.
+
+After the initial logging, additional code runs with some of the above
+input params. When the u8 bool flag is set, the input struct is used
+with this.
 
 # pdm:qry
 
