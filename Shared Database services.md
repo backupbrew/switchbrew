@@ -266,8 +266,9 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
     **event\_xE**.
 
 After the initial logging, additional code runs with some of the above
-input params. When the u8 bool flag is set, the input struct is used
-with this.
+input params. This is handled the same as
+[\#NotifyAppletEvent](#NotifyAppletEvent "wikilink"), except that when
+the u8 bool flag is set the input struct is used with this.
 
 # pdm:qry
 

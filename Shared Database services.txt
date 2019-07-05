@@ -284,7 +284,7 @@ Logs a new [[#PlayEvent]] with the following data:
 * u32 +0x8 = '''event_x8'''
 * u8 +0xC = '''event_xC''', u8 +0xD = '''event_xD''', and u8 +0xE = '''event_xE'''.
 
-After the initial logging, additional code runs with some of the above input params. When the u8 bool flag is set, the input struct is used with this.
+After the initial logging, additional code runs with some of the above input params. This is handled the same as [[#NotifyAppletEvent]], except that when the u8 bool flag is set the input struct is used with this.
 
 = pdm:qry =
 This is "nn::pdm::detail::IQueryService".
