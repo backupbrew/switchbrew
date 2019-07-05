@@ -162,21 +162,27 @@ This is "nn::pdm::detail::INotifyService".
 
 ## NotifyAppletEvent
 
-Takes an input u8 **event\_xF**, an u8 **event\_xC**, an u8
-**event\_xD**, an u8 **event\_xE**, an u32 **event\_x8**, and an u64
-**titleID**. Returns no output.
+Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
+[AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+an u8
+[StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+an u8 **event\_xE**, an u32 **event\_x8**, and an u64 **titleID**.
+Returns no output.
 
 When **event\_xE** is 2 this will immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x10-bytes at +0x10.
-  - u8 +0xF = **event\_xF**.
+  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
   - u32 +0x8 = **event\_x8**.
-  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
-    **event\_xE**.
+  - u8 +0xC =
+    [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+    u8 +0xD =
+    [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+    and u8 +0xE = **event\_xE**.
 
 After the initial logging, additional code runs with some of the above
 input params.
@@ -218,9 +224,12 @@ written to the log.
 
 ## Cmd8
 
-Takes an input u8 **event\_xF**, an u8 **event\_x9**, an u8
-**event\_xC**, an u8 **event\_xD**, an u8 **event\_xE**, and an u64
-**titleID**. Returns no output.
+Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
+**event\_x9**, an u8
+[AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+an u8
+[StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+an u8 **event\_xE**, and an u64 **titleID**. Returns no output.
 
 This is similar to [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink").
 
@@ -229,13 +238,16 @@ When **event\_xE** is 2 this will immediately return 0.
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x20-bytes at +0x0.
-  - u8 +0xF = **event\_xF**.
+  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
   - u8 +0x9 = **event\_x9**.
   - u8 +0x8 = 1.
-  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
-    **event\_xE**.
+  - u8 +0xC =
+    [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+    u8 +0xD =
+    [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+    and u8 +0xE = **event\_xE**.
 
 After the initial logging, additional code runs with some of the above
 input params. This is handled the same as
@@ -244,10 +256,12 @@ value passed for **event\_x8** is value 0 here.
 
 ## Cmd9
 
-Takes an input u8 **event\_xF**, an u8 **event\_xC**, an u8
-**event\_xD**, an 0x20-byte struct, an u8 bool flag, an u8
-**event\_xE**, an u32 **event\_x8**, and an u64 **titleID**. Returns no
-output.
+Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
+[AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+an u8
+[StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+an 0x20-byte struct, an u8 bool flag, an u8 **event\_xE**, an u32
+**event\_x8**, and an u64 **titleID**. Returns no output.
 
 This is identical to
 [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") except for the
@@ -258,12 +272,15 @@ When **event\_xE** is 2 this will immediately return 0.
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x10-bytes at +0x10.
-  - u8 +0xF = **event\_xF**
+  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
   - u32 +0x8 = **event\_x8**
-  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
-    **event\_xE**.
+  - u8 +0xC =
+    [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
+    u8 +0xD =
+    [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
+    and u8 +0xE = **event\_xE**.
 
 After the initial logging, additional code runs with some of the above
 input params. This is handled the same as
