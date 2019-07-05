@@ -1555,6 +1555,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 | ID   | Title-id         | Description                                                                                                      |
 | ---- | ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 0x01 |                  | Application. Not valid for use with LibraryApplets.                                                              |
 | 0x02 | 010000000000100C | "overlayDisp"                                                                                                    |
 | 0x03 | 0100000000001000 | "qlaunch"                                                                                                        |
 | 0x04 | 0100000000001012 | "starter"                                                                                                        |

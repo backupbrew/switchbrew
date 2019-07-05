@@ -1683,6 +1683,10 @@ See also [[:Category:Library Applets]].
 !  Title-id
 !  Description
 |-
+| 0x01
+| 
+| Application. Not valid for use with LibraryApplets.
+|-
 | 0x02
 | 010000000000100C
 | "overlayDisp"
