@@ -195,7 +195,7 @@ This is "nn::pdm::detail::INotifyService".
 |-
 ! Cmd || Name
 |-
-| 0 || NotifyAppletEvent
+| 0 || [[#NotifyAppletEvent]]
 |-
 | 2 || [[#NotifyOperationModeChangeEvent]]
 |-
@@ -213,6 +213,17 @@ This is "nn::pdm::detail::INotifyService".
 |-
 | 9 || [8.0.0+]
 |}
+
+== NotifyAppletEvent ==
+Takes an input u8 '''event_xF''', an u8 '''event_xC''', an u8 '''event_xD''', an u8 '''event_xE''', an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
+
+Logs a new [[#PlayEvent]] with the following data: 
+* Clears the 0x10-bytes at +0x10.
+* u8 +0xF = '''event_xF'''
+* Sets the 3 timestamps.
+* Converts '''titleID''' and writes it to +0x0.
+* u32 +0x8 = '''event_x8'''
+* u8 +0xC = '''event_xC''', u8 +0xD = '''event_xD''', and u8 +0xE = '''event_xE'''.
 
 == NotifyOperationModeChangeEvent ==
 Takes an input u8 '''inval''', no output.

@@ -150,7 +150,7 @@ This is "nn::pdm::detail::INotifyService".
 
 | Cmd | Name                                                                           |
 | --- | ------------------------------------------------------------------------------ |
-| 0   | NotifyAppletEvent                                                              |
+| 0   | [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink")                           |
 | 2   | [\#NotifyOperationModeChangeEvent](#NotifyOperationModeChangeEvent "wikilink") |
 | 3   | [\#NotifyPowerStateChangeEvent](#NotifyPowerStateChangeEvent "wikilink")       |
 | 4   | [\#NotifyClearAllEvent](#NotifyClearAllEvent "wikilink")                       |
@@ -159,6 +159,22 @@ This is "nn::pdm::detail::INotifyService".
 | 7   | \[4.0.0+\] ResumeUserAccountEventService                                       |
 | 8   | \[6.0.0+\]                                                                     |
 | 9   | \[8.0.0+\]                                                                     |
+
+## NotifyAppletEvent
+
+Takes an input u8 **event\_xF**, an u8 **event\_xC**, an u8
+**event\_xD**, an u8 **event\_xE**, an u32 **event\_x8**, and an u64
+**titleID**. Returns no output.
+
+Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
+
+  - Clears the 0x10-bytes at +0x10.
+  - u8 +0xF = **event\_xF**
+  - Sets the 3 timestamps.
+  - Converts **titleID** and writes it to +0x0.
+  - u32 +0x8 = **event\_x8**
+  - u8 +0xC = **event\_xC**, u8 +0xD = **event\_xD**, and u8 +0xE =
+    **event\_xE**.
 
 ## NotifyOperationModeChangeEvent
 
