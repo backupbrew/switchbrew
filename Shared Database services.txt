@@ -197,11 +197,11 @@ This is "nn::pdm::detail::INotifyService".
 |-
 | 0 || NotifyAppletEvent
 |-
-| 2 || NotifyOperationModeChangeEvent
+| 2 || [[#NotifyOperationModeChangeEvent]]
 |-
-| 3 || NotifyPowerStateChangeEvent
+| 3 || [[#NotifyPowerStateChangeEvent]]
 |-
-| 4 || NotifyClearAllEvent
+| 4 || [[#NotifyClearAllEvent]]
 |-
 | 5 || [[#NotifyEventForDebug]]
 |-
@@ -213,6 +213,19 @@ This is "nn::pdm::detail::INotifyService".
 |-
 | 9 || [8.0.0+]
 |}
+
+== NotifyOperationModeChangeEvent ==
+Takes an input u8 '''inval''', no output.
+
+Logs a new [[#PlayEvent]] with the following data: clears the 0x20-bytes at +0x0, u8 +0x1C = 0x3, u8 +0x0 = '''inval''', and sets the 3 timestamps.
+
+== NotifyPowerStateChangeEvent ==
+Takes an input u8 '''inval''', no output.
+
+Logs a new [[#PlayEvent]] with the following data: clears the 0x20-bytes at +0x0, u8 +0x1C = 0x2, u8 +0x0 = '''inval''', and sets the 3 timestamps.
+
+== NotifyClearAllEvent ==
+No input/output.
 
 == NotifyEventForDebug ==
 Takes an input type-0x5 buffer containing an array of [[#PlayEvent]], no output.

@@ -148,17 +148,37 @@ This was added with \[5.0.0+\].
 
 This is "nn::pdm::detail::INotifyService".
 
-| Cmd | Name                                                     |
-| --- | -------------------------------------------------------- |
-| 0   | NotifyAppletEvent                                        |
-| 2   | NotifyOperationModeChangeEvent                           |
-| 3   | NotifyPowerStateChangeEvent                              |
-| 4   | NotifyClearAllEvent                                      |
-| 5   | [\#NotifyEventForDebug](#NotifyEventForDebug "wikilink") |
-| 6   | \[4.0.0+\] SuspendUserAccountEventService                |
-| 7   | \[4.0.0+\] ResumeUserAccountEventService                 |
-| 8   | \[6.0.0+\]                                               |
-| 9   | \[8.0.0+\]                                               |
+| Cmd | Name                                                                           |
+| --- | ------------------------------------------------------------------------------ |
+| 0   | NotifyAppletEvent                                                              |
+| 2   | [\#NotifyOperationModeChangeEvent](#NotifyOperationModeChangeEvent "wikilink") |
+| 3   | [\#NotifyPowerStateChangeEvent](#NotifyPowerStateChangeEvent "wikilink")       |
+| 4   | [\#NotifyClearAllEvent](#NotifyClearAllEvent "wikilink")                       |
+| 5   | [\#NotifyEventForDebug](#NotifyEventForDebug "wikilink")                       |
+| 6   | \[4.0.0+\] SuspendUserAccountEventService                                      |
+| 7   | \[4.0.0+\] ResumeUserAccountEventService                                       |
+| 8   | \[6.0.0+\]                                                                     |
+| 9   | \[8.0.0+\]                                                                     |
+
+## NotifyOperationModeChangeEvent
+
+Takes an input u8 **inval**, no output.
+
+Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
+clears the 0x20-bytes at +0x0, u8 +0x1C = 0x3, u8 +0x0 = **inval**, and
+sets the 3 timestamps.
+
+## NotifyPowerStateChangeEvent
+
+Takes an input u8 **inval**, no output.
+
+Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
+clears the 0x20-bytes at +0x0, u8 +0x1C = 0x2, u8 +0x0 = **inval**, and
+sets the 3 timestamps.
+
+## NotifyClearAllEvent
+
+No input/output.
 
 ## NotifyEventForDebug
 
