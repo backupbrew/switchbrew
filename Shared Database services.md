@@ -471,6 +471,22 @@ title was played.
 This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0x1C, which
 indicates the type of [\#PlayEvent](#PlayEvent "wikilink").
 
+# AppletEvent
+
+| Value | Description      |
+| ----- | ---------------- |
+| 0     | "launch"         |
+| 1     | "exit"           |
+| 2     | "in\_focus"      |
+| 3     | "out\_of\_focus" |
+| 4     | "out\_of\_focus" |
+| 5     | "exit"           |
+| 6     | "exit"           |
+
+This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0xF with
+[\#PlayEventType](#PlayEventType "wikilink") = Applet, this indicates
+the type of the Applet event.
+
 # PlayEvent
 
 | Offset | Size | Description                                                                            |

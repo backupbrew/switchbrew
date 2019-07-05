@@ -499,20 +499,39 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 ! Value
 ! Description
 |-
-| 0
-| Applet
+| 0 || Applet
 |-
-| 1
-| Account
+| 1 || Account
 |-
-| 2
-| PowerStateChange
+| 2 || PowerStateChange
 |-
-| 3
-| OperationModeChange
+| 3 || OperationModeChange
 |}
 
 This is an enum for [[#PlayEvent]] +0x1C, which indicates the type of [[#PlayEvent]].
+
+= AppletEvent =
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| 0 || "launch"
+|-
+| 1 || "exit"
+|-
+| 2 || "in_focus"
+|-
+| 3 || "out_of_focus"
+|-
+| 4 || "out_of_focus"
+|-
+| 5 || "exit"
+|-
+| 6 || "exit"
+|}
+
+This is an enum for [[#PlayEvent]] +0xF with [[#PlayEventType]] = Applet, this indicates the type of the Applet event.
 
 = PlayEvent =
 {| class="wikitable" border="1"
