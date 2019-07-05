@@ -268,7 +268,12 @@ Returns a list of titles played by the specified user.
 
 ## Cmd15
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
+
+This is signaled when logging a new [\#PlayEvent](#PlayEvent "wikilink")
+which would be available via
+[\#QueryAccountEvent](#QueryAccountEvent "wikilink"), where
+[\#PlayEvent](#PlayEvent "wikilink") +0x18 is 0.
 
 ## Cmd16
 
