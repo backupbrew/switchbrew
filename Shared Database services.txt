@@ -451,9 +451,9 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 |-
 | 0x1D || 0x3 || ?
 |-
-| 0x20 || 0x8 || PosixTime timestamp0
+| 0x20 || 0x8 || PosixTime timestamp from [[PCV_services|StandardUserSystemClock]].
 |-
-| 0x28 || 0x8 || PosixTime timestamp1
+| 0x28 || 0x8 || PosixTime timestamp from [[PCV_services|StandardNetworkSystemClock]].
 |-
 | 0x30 || 0x8 || Timestamp in seconds derived from [[PCV_services|StandardSteadyClock]].
 |}

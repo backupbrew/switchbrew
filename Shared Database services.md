@@ -374,8 +374,8 @@ title was played.
 | 0x18   | 0x1    | ?                                                                                      |
 | 0x1C   | 0x1    | ?                                                                                      |
 | 0x1D   | 0x3    | ?                                                                                      |
-| 0x20   | 0x8    | PosixTime timestamp0                                                                   |
-| 0x28   | 0x8    | PosixTime timestamp1                                                                   |
+| 0x20   | 0x8    | PosixTime timestamp from [StandardUserSystemClock](PCV%20services.md "wikilink").      |
+| 0x28   | 0x8    | PosixTime timestamp from [StandardNetworkSystemClock](PCV%20services.md "wikilink").   |
 | 0x30   | 0x8    | Timestamp in seconds derived from [StandardSteadyClock](PCV%20services.md "wikilink"). |
 
 This is a 0x38-byte struct.
