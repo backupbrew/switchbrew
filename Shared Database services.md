@@ -166,10 +166,11 @@ Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-an u8 **event\_xE**, an u32 **event\_x8**, and an u64 **titleID**.
-Returns no output.
+an u8 [\#PlayLogPolicy](#PlayLogPolicy "wikilink"), an u32
+**event\_x8**, and an u64 **titleID**. Returns no output.
 
-When **event\_xE** is 2 this will immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
+immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
@@ -182,7 +183,7 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
     [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
     u8 +0xD =
     [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-    and u8 +0xE = **event\_xE**.
+    and u8 +0xE = [\#PlayLogPolicy](#PlayLogPolicy "wikilink").
 
 After the initial logging, additional code runs with some of the above
 input params.
@@ -229,11 +230,13 @@ Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-an u8 **event\_xE**, and an u64 **titleID**. Returns no output.
+an u8 [\#PlayLogPolicy](#PlayLogPolicy "wikilink"), and an u64
+**titleID**. Returns no output.
 
 This is similar to [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink").
 
-When **event\_xE** is 2 this will immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
+immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
@@ -247,7 +250,7 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
     [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
     u8 +0xD =
     [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-    and u8 +0xE = **event\_xE**.
+    and u8 +0xE = [\#PlayLogPolicy](#PlayLogPolicy "wikilink").
 
 After the initial logging, additional code runs with some of the above
 input params. This is handled the same as
@@ -260,14 +263,16 @@ Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-an 0x20-byte struct, an u8 bool flag, an u8 **event\_xE**, an u32
-**event\_x8**, and an u64 **titleID**. Returns no output.
+an 0x20-byte struct, an u8 bool flag, an u8
+[\#PlayLogPolicy](#PlayLogPolicy "wikilink"), an u32 **event\_x8**, and
+an u64 **titleID**. Returns no output.
 
 This is identical to
 [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") except for the
 additional struct/flag params.
 
-When **event\_xE** is 2 this will immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
+immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
@@ -280,7 +285,7 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
     [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
     u8 +0xD =
     [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-    and u8 +0xE = **event\_xE**.
+    and u8 +0xE = [\#PlayLogPolicy](#PlayLogPolicy "wikilink").
 
 After the initial logging, additional code runs with some of the above
 input params. This is handled the same as
@@ -504,6 +509,18 @@ This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0xF with
 [\#PlayEventType](#PlayEventType "wikilink") = Applet, this indicates
 the type of the Applet event.
 
+# PlayLogPolicy
+
+| Value | Description                                                                                                                                                                                  |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink") and [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink") will only return the entry when PlayLogPolicy matches this value.      |
+| 1     | The above commands will filter out the entry with this.                                                                                                                                      |
+| 2     | pdm:ntfy [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink"), [\#Cmd8](#Cmd8 "wikilink"), and [\#Cmd9](#Cmd9 "wikilink") will immediately return 0 when the input param matches this value. |
+
+This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0xE with
+[\#PlayEventType](#PlayEventType "wikilink") = Applet. This is set via
+the above commands, which uses this as an input param.
+
 # PlayEvent
 
 | Offset | Size | Description                                                                            |
@@ -544,7 +561,7 @@ Applet:
 | 0x9    | 0x1  | See above.                                                                                  |
 | 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                    |
 | 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")                       |
-| 0xE    | 0x1  | ?                                                                                           |
+| 0xE    | 0x1  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                                |
 | 0xF    | 0x1  | [\#AppletEvent](#AppletEvent "wikilink")                                                    |
 | 0x10   | 0xC  | Unused                                                                                      |
 
