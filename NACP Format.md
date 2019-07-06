@@ -20,7 +20,7 @@ Total size is 0x4000-bytes.
 | 0x3034 | 0x1                  | Screenshot                                                                        |
 | 0x3035 | 0x1                  | [\#VideoCaptureMode](#VideoCaptureMode "wikilink")                                |
 | 0x3036 | 0x1                  | DataLossConfirmation                                                              |
-| 0x3037 | 0x1                  | PlayLogPolicy                                                                     |
+| 0x3037 | 0x1                  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                      |
 | 0x3038 | 0x8                  | PresenceGroupId                                                                   |
 | 0x3040 | 0x20                 | RatingAge                                                                         |
 | 0x3060 | 0x10                 | DisplayVersion                                                                    |
@@ -112,6 +112,11 @@ AM's IApplicationProxy-\>InitializeGamePlayRecording(). When this value
 is 2, AM will call NS-\>BoostSystemMemoryResourceSize(), and allocate
 the required memory for recording automatically without the usermode
 process having to do anything.
+
+## PlayLogPolicy
+
+[AM](Applet%20Manager%20services.md "wikilink") passes this to
+[pdm:ntfy](Shared%20Database%20services.md "wikilink") cmd9.
 
 ## PlayLogQuery
 

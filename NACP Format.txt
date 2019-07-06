@@ -57,7 +57,7 @@ Total size is 0x4000-bytes.
 |-
 | 0x3037
 | 0x1
-| PlayLogPolicy
+| [[#PlayLogPolicy]]
 |-
 | 0x3038
 | 0x8
@@ -281,6 +281,9 @@ This is the enum used to determine how gameplay recording can occur, if at all.
 |}
 
 When this value is 0, gameplay cannot be recorded. When this value is 1, the game must manually sacrifice some of its heap as transfer memory for AM's IApplicationProxy->InitializeGamePlayRecording(). When this value is 2, AM will call NS->BoostSystemMemoryResourceSize(), and allocate the required memory for recording automatically without the usermode process having to do anything.
+
+== PlayLogPolicy ==
+[[Applet_Manager_services|AM]] passes this to [[Shared_Database_services|pdm:ntfy]] cmd9.
 
 == PlayLogQuery ==
 This is used with [[Applet_Manager_services|AM]] commands QueryApplicationPlayStatistics and QueryApplicationPlayStatisticsByUid, to verify whether querying the specified titleIDs are allowed. When not allowed, error 0x3E880 is returned.
