@@ -537,13 +537,14 @@ This is an enum for [[#PlayEvent]] +0xF with [[#PlayEventType]] = Applet, this i
 {| class="wikitable" border="1"
 |-
 ! Value
+! Meaning
 ! Description
 |-
-| 0 || [[#QueryApplicationEvent]] and [[#QueryLastPlayTime]] will only return the entry when PlayLogPolicy matches this value.
+| 0 || All || [[#QueryApplicationEvent]] and [[#QueryLastPlayTime]] will only return the entry when PlayLogPolicy matches this value.
 |-
-| 1 || The above commands will filter out the entry with this.
+| 1 || LogOnly || The above commands will filter out the entry with this.
 |-
-| 2 || pdm:ntfy [[#NotifyAppletEvent]], [[#Cmd8]], and [[#Cmd9]] will immediately return 0 when the input param matches this value.
+| 2 || None || pdm:ntfy [[#NotifyAppletEvent]], [[#Cmd8]], and [[#Cmd9]] will immediately return 0 when the input param matches this value.
 |}
 
 This is an enum for [[#PlayEvent]] +0xE with [[#PlayEventType]] = Applet. This is set via the above commands, which uses this as an input param.
