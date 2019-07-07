@@ -289,11 +289,11 @@ This is used with [[Applet_Manager_services|AM]] commands QueryApplicationPlaySt
 
 {| class="wikitable" border="1"
 |-
-! Value || Meaning
+! Value || Meaning || Description
 |-
-| 0 || None (the specified titleIDs must match the user-process titleID)
+| 0 || None || The specified titleIDs must match the user-process titleID.
 |-
-| 1 || WhiteList (the specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId)
+| 1 || WhiteList || The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId.
 |-
-| 2 || All (all titleIDs are allowed)
+| 2 || All || All titleIDs are allowed.
 |}

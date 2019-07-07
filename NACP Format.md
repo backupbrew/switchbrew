@@ -126,8 +126,8 @@ QueryApplicationPlayStatisticsByUid, to verify whether querying the
 specified titleIDs are allowed. When not allowed, error 0x3E880 is
 returned.
 
-| Value | Meaning                                                                                                                           |
-| ----- | --------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | None (the specified titleIDs must match the user-process titleID)                                                                 |
-| 1     | WhiteList (the specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId) |
-| 2     | All (all titleIDs are allowed)                                                                                                    |
+| Value | Meaning   | Description                                                                                                            |
+| ----- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0     | None      | The specified titleIDs must match the user-process titleID.                                                            |
+| 1     | WhiteList | The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId. |
+| 2     | All       | All titleIDs are allowed.                                                                                              |
