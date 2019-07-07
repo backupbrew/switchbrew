@@ -238,8 +238,6 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 | Pikachu Yellow || #FFDC00 || #322800
 |-
 | Nintendo Labo "creators contest" || #D7AA73 || #1E1914
-|-
-| Black Pro Controller || #323232 or #323231 || ?
 |}
 
 ==Additional Links==
