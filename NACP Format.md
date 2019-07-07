@@ -114,14 +114,9 @@ process having to do anything.
 
 ## PlayLogPolicy
 
-[AM](Applet%20Manager%20services.md "wikilink") passes this to
-[pdm:ntfy](Shared%20Database%20services.md "wikilink") cmd9.
-
-| Value | Meaning |
-| ----- | ------- |
-| 0     | All     |
-| 1     | LogOnly |
-| 2     | None    |
+[AM](Applet%20Manager%20services.md "wikilink") passes
+[this](Shared%20Database%20services#PlayLogPolicy.md##PlayLogPolicy "wikilink")
+to [pdm:ntfy](Shared%20Database%20services.md "wikilink") cmd9.
 
 ## PlayLogQueryCapability
 

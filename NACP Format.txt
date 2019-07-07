@@ -282,18 +282,7 @@ This is the enum used to determine how gameplay recording can occur, if at all.
 When this value is 0, gameplay cannot be recorded. When this value is 1, the game must manually sacrifice some of its heap as transfer memory for AM's IApplicationProxy->InitializeGamePlayRecording(). When this value is 2, AM will call NS->BoostSystemMemoryResourceSize(), and allocate the required memory for recording automatically without the usermode process having to do anything.
 
 == PlayLogPolicy ==
-[[Applet_Manager_services|AM]] passes this to [[Shared_Database_services|pdm:ntfy]] cmd9.
-
-{| class="wikitable" border="1"
-|-
-! Value || Meaning
-|-
-| 0 || All
-|-
-| 1 || LogOnly
-|-
-| 2 || None
-|}
+[[Applet_Manager_services|AM]] passes [[Shared_Database_services#PlayLogPolicy|this]] to [[Shared_Database_services|pdm:ntfy]] cmd9.
 
 == PlayLogQueryCapability ==
 This is used with [[Applet_Manager_services|AM]] commands QueryApplicationPlayStatistics and QueryApplicationPlayStatisticsByUid, to verify whether querying the specified titleIDs are allowed. When not allowed, error 0x3E880 is returned.
