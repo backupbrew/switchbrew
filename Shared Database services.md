@@ -271,22 +271,6 @@ This is identical to
 [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") except for the
 additional struct/flag params.
 
-When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 ("None") this
-will immediately return 0.
-
-Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
-
-  - Clears the 0x10-bytes at +0x10.
-  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
-  - Sets the 3 timestamps.
-  - Converts **titleID** and writes it to +0x0.
-  - u32 +0x8 = **event\_x8**
-  - u8 +0xC =
-    [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
-    u8 +0xD =
-    [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
-    and u8 +0xE = [\#PlayLogPolicy](#PlayLogPolicy "wikilink").
-
 After the initial logging, additional code runs with some of the above
 input params. This is handled the same as
 [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink"), except that when
