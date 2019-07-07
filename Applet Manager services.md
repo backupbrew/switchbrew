@@ -623,7 +623,7 @@ an output s32 for actual total output entries.
 The number of entries in each array is the same.
 
 See also
-[NACP\_Format\#PlayLogQuery](NACP%20Format#PlayLogQuery.md##PlayLogQuery "wikilink").
+[PlayLogQueryCapability](NACP%20Format#PlayLogQueryCapability.md##PlayLogQueryCapability "wikilink").
 
 This uses [pdm:qry](Shared%20Database%20services.md "wikilink")
 QueryApplicationPlayStatisticsForSystem.
