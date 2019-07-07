@@ -104,7 +104,6 @@ at all.
 | 0     | Disabled  |
 | 1     | Enabled   |
 | 2     | Automatic |
-|       |           |
 
 When this value is 0, gameplay cannot be recorded. When this value is 1,
 the game must manually sacrifice some of its heap as transfer memory for
@@ -118,7 +117,13 @@ process having to do anything.
 [AM](Applet%20Manager%20services.md "wikilink") passes this to
 [pdm:ntfy](Shared%20Database%20services.md "wikilink") cmd9.
 
-## PlayLogQuery
+| Value | Meaning |
+| ----- | ------- |
+| 0     | All     |
+| 1     | LogOnly |
+| 2     | None    |
+
+## PlayLogQueryCapability
 
 This is used with [AM](Applet%20Manager%20services.md "wikilink")
 commands QueryApplicationPlayStatistics and
@@ -126,11 +131,8 @@ QueryApplicationPlayStatisticsByUid, to verify whether querying the
 specified titleIDs are allowed. When not allowed, error 0x3E880 is
 returned.
 
-PlayLogQueryCapability is a type field (values \>2 are invalid):
-
-| Value | Meaning                                                                                                                |
-| ----- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0     | The specified titleIDs must match the user-process titleID.                                                            |
-| 1     | The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId. |
-| 2     | All titleIDs are allowed.                                                                                              |
-|       |                                                                                                                        |
+| Value | Meaning                                                                                                                           |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | None (the specified titleIDs must match the user-process titleID)                                                                 |
+| 1     | WhiteList (the specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId) |
+| 2     | All (all titleIDs are allowed)                                                                                                    |
