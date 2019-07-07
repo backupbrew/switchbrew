@@ -161,6 +161,8 @@ of official HEX colors recovered from SPI dumps.
 | Neon Green                       | \#1EDC00             | \#002800   |
 | Neon Pink                        | \#FF3278             | \#28001E   |
 | Mario Red                        | \#E10F00             | \#280A0A   |
+| Eevee Brown                      | \#C88C32             | \#281900   |
+| Pikachu Yellow                   | \#FFDC00             | \#322800   |
 | Nintendo Labo "creators contest" | \#D7AA73             | \#1E1914   |
 | Black Pro Controller             | \#323232 or \#323231 | ?          |
 
