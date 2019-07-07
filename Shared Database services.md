@@ -169,8 +169,8 @@ an u8
 an u8 [\#PlayLogPolicy](#PlayLogPolicy "wikilink"), an u32
 **event\_x8**, and an u64 **titleID**. Returns no output.
 
-When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
-immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 ("None") this
+will immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
@@ -235,8 +235,8 @@ an u8 [\#PlayLogPolicy](#PlayLogPolicy "wikilink"), and an u64
 
 This is similar to [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink").
 
-When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
-immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 ("None") this
+will immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
@@ -271,8 +271,8 @@ This is identical to
 [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") except for the
 additional struct/flag params.
 
-When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 this will
-immediately return 0.
+When [\#PlayLogPolicy](#PlayLogPolicy "wikilink") is 2 ("None") this
+will immediately return 0.
 
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 

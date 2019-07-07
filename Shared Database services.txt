@@ -217,7 +217,7 @@ This is "nn::pdm::detail::INotifyService".
 == NotifyAppletEvent ==
 Takes an input u8 [[#AppletEvent]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
 
-When [[#PlayLogPolicy]] is 2 this will immediately return 0.
+When [[#PlayLogPolicy]] is 2 ("None") this will immediately return 0.
 
 Logs a new [[#PlayEvent]] with the following data:
 * Clears the 0x10-bytes at +0x10.
@@ -256,7 +256,7 @@ Takes an input u8 [[#AppletEvent]], an u8 '''event_x9''', an u8 [[Applet_Manager
 
 This is similar to [[#NotifyAppletEvent]].
 
-When [[#PlayLogPolicy]] is 2 this will immediately return 0.
+When [[#PlayLogPolicy]] is 2 ("None") this will immediately return 0.
 
 Logs a new [[#PlayEvent]] with the following data:
 * Clears the 0x20-bytes at +0x0.
@@ -274,7 +274,7 @@ Takes an input u8 [[#AppletEvent]], an u8 [[Applet_Manager_services#AppletId|App
 
 This is identical to [[#NotifyAppletEvent]] except for the additional struct/flag params.
 
-When [[#PlayLogPolicy]] is 2 this will immediately return 0.
+When [[#PlayLogPolicy]] is 2 ("None") this will immediately return 0.
 
 Logs a new [[#PlayEvent]] with the following data: 
 * Clears the 0x10-bytes at +0x10.
