@@ -700,8 +700,9 @@ is set to "true".
 
 ## GetSafeSystemVersion
 
-No input, returns an u64 **titleID** and an u64 **version** as a 0x10
-byte array.
+No input, returns a 0x10 byte array with the cached contents of
+"ns\_ssversion:/entry" (u64 **titleID**, u32 **version** and u32
+**policy** from `vulnerability!needs_update_vulnerability_policy`).
 
 # ns:su
 

@@ -1123,7 +1123,7 @@ Finally, it calls [[NCM_services#ncm|OpenContentMetaDatabase]] with [[Filesystem
 If the supplied '''version''' is higher than the one in NCM's database, the value returned by [[NS_Services#NeedsUpdateVulnerability|NeedsUpdateVulnerability]] is set to "true".
 
 == GetSafeSystemVersion ==
-No input, returns an u64 '''titleID''' and an u64 '''version''' as a 0x10 byte array.
+No input, returns a 0x10 byte array with the cached contents of "ns_ssversion:/entry" (u64 '''titleID''', u32 '''version''' and u32 '''policy''' from <code>vulnerability!needs_update_vulnerability_policy</code>).
 
 = ns:su =
 This is "nn::ns::detail::ISystemUpdateInterface".
