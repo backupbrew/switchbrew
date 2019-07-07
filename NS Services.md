@@ -138,7 +138,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 908  | \[2.0.0+\] ListApplicationRecordInstalledContentMeta                                               |
 | 1000 | \[2.0.0+\] RequestVerifyApplicationDeprecated                                                      |
 | 1001 | \[2.0.0+\] CorruptApplicationForDebug                                                              |
-| 1200 | \[2.0.0+\] NeedsUpdateVulnerability                                                                |
+| 1200 | \[2.0.0+\] [\#NeedsUpdateVulnerability](#NeedsUpdateVulnerability "wikilink")                      |
 | 1300 | \[2.0.0+\] IsAnyApplicationEntityInstalled                                                         |
 | 1301 | \[2.0.0+\] DeleteApplicationContentEntities                                                        |
 | 1302 | \[2.0.0+\] CleanupUnrecordedApplicationEntity                                                      |
@@ -440,7 +440,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1002                 | \[3.0.0+\] RequestVerifyAddOnContentsRights                                                        |
 | 1003                 | \[5.0.0+\] RequestVerifyApplication                                                                |
 | 1004                 | \[5.0.0+\] CorruptContentForDebug                                                                  |
-| 1200                 | NeedsUpdateVulnerability                                                                           |
+| 1200                 | [\#NeedsUpdateVulnerability](#NeedsUpdateVulnerability "wikilink")                                 |
 | 1300                 | IsAnyApplicationEntityInstalled                                                                    |
 | 1301                 | DeleteApplicationContentEntities                                                                   |
 | 1302                 | CleanupUnrecordedApplicationEntity                                                                 |
@@ -659,12 +659,49 @@ This is "nn::ns::detail::IFactoryResetInterface".
 
 This is "nn::ns::detail::IVulnerabilityManagerInterface".
 
-| Cmd  | Name                                       |
-| ---- | ------------------------------------------ |
-| 1200 | \[3.0.0+\] NeedsUpdateVulnerability        |
-| 1201 | \[4.0.0+\] UpdateSafeSystemVersionForDebug |
-| 1202 | \[4.0.0+\] GetSafeSystemVersion            |
-|      |                                            |
+| Cmd  | Name                                                                                        |
+| ---- | ------------------------------------------------------------------------------------------- |
+| 1200 | \[3.0.0+\] [\#NeedsUpdateVulnerability](#NeedsUpdateVulnerability "wikilink")               |
+| 1201 | \[4.0.0+\] [\#UpdateSafeSystemVersionForDebug](#UpdateSafeSystemVersionForDebug "wikilink") |
+| 1202 | \[4.0.0+\] [\#GetSafeSystemVersion](#GetSafeSystemVersion "wikilink")                       |
+|      |                                                                                             |
+
+## NeedsUpdateVulnerability
+
+No input, returns an output u8 bool flag.
+
+Web-applets use this command to check if the system needs an update.
+
+## UpdateSafeSystemVersionForDebug
+
+Takes an input u64 **titleID** and an u32 **version**.
+
+This command is not available for retail units. On a debug unit, if the
+[system setting](System%20Settings.md "wikilink")
+`vulnerability!enable_debug` is set, this mounts the system savegame
+[0x8000000000000049](Flash%20Filesystem#System%20Savegames.md##System_Savegames "wikilink")
+as "ns\_ssversion:/", opens the file "ns\_ssversion:/entry" and writes
+the supplied **titleID** and **version** in it.
+
+Finally, it calls
+[OpenContentMetaDatabase](NCM%20services#ncm.md##ncm "wikilink") with
+[StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") 3,
+then calls
+[GetLatestContentMetaKey](NCM%20services#IContentMetaDatabase.md##IContentMetaDatabase "wikilink")
+with the supplied **titleID** and compares the version field from the
+returned [Content Meta
+Record](CNMT#Content%20Meta%20Records.md##Content_Meta_Records "wikilink")
+with the supplied **version**.
+
+If the supplied **version** is higher than the one in NCM's database,
+the value returned by
+[NeedsUpdateVulnerability](NS%20Services#NeedsUpdateVulnerability.md##NeedsUpdateVulnerability "wikilink")
+is set to "true".
+
+## GetSafeSystemVersion
+
+No input, returns an u64 **titleID** and an u64 **version** as a 0x10
+byte array.
 
 # ns:su
 

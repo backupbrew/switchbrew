@@ -257,7 +257,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1001 || [2.0.0+] CorruptApplicationForDebug
 |-
-| 1200 || [2.0.0+] NeedsUpdateVulnerability
+| 1200 || [2.0.0+] [[#NeedsUpdateVulnerability]]
 |-
 | 1300 || [2.0.0+] IsAnyApplicationEntityInstalled
 |-
@@ -739,7 +739,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 1004 || [5.0.0+] CorruptContentForDebug
 |-
-| 1200 || NeedsUpdateVulnerability
+| 1200 || [[#NeedsUpdateVulnerability]]
 |-
 | 1300 || IsAnyApplicationEntityInstalled
 |-
@@ -1100,13 +1100,30 @@ This is "nn::ns::detail::IVulnerabilityManagerInterface".
 |-
 ! Cmd || Name
 |-
-| 1200 || [3.0.0+] NeedsUpdateVulnerability
+| 1200 || [3.0.0+] [[#NeedsUpdateVulnerability]]
 |-
-| 1201 || [4.0.0+] UpdateSafeSystemVersionForDebug
+| 1201 || [4.0.0+] [[#UpdateSafeSystemVersionForDebug]]
 |-
-| 1202 || [4.0.0+] GetSafeSystemVersion
+| 1202 || [4.0.0+] [[#GetSafeSystemVersion]]
 |-
 |}
+
+== NeedsUpdateVulnerability ==
+No input, returns an output u8 bool flag.
+
+Web-applets use this command to check if the system needs an update.
+
+== UpdateSafeSystemVersionForDebug ==
+Takes an input u64 '''titleID''' and an u32 '''version'''.
+
+This command is not available for retail units. On a debug unit, if the [[System_Settings|system setting]] <code>vulnerability!enable_debug</code> is set, this mounts the system savegame [[Flash_Filesystem#System_Savegames|0x8000000000000049]] as "ns_ssversion:/", opens the file "ns_ssversion:/entry" and writes the supplied '''titleID''' and '''version''' in it.
+
+Finally, it calls [[NCM_services#ncm|OpenContentMetaDatabase]] with [[Filesystem_services#StorageId|StorageID]] 3, then calls [[NCM_services#IContentMetaDatabase|GetLatestContentMetaKey]] with the supplied '''titleID''' and compares the version field from the returned [[CNMT#Content_Meta_Records|Content Meta Record]] with the supplied '''version'''.
+
+If the supplied '''version''' is higher than the one in NCM's database, the value returned by [[NS_Services#NeedsUpdateVulnerability|NeedsUpdateVulnerability]] is set to "true".
+
+== GetSafeSystemVersion ==
+No input, returns an u64 '''titleID''' and an u64 '''version''' as a 0x10 byte array.
 
 = ns:su =
 This is "nn::ns::detail::ISystemUpdateInterface".
