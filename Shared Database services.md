@@ -162,7 +162,8 @@ This is "nn::pdm::detail::INotifyService".
 
 ## NotifyAppletEvent
 
-Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
+Takes an input u8 [\#AppletEventType](#AppletEventType "wikilink"), an
+u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
@@ -175,7 +176,7 @@ will immediately return 0.
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x10-bytes at +0x10.
-  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
+  - u8 +0xF = [\#AppletEventType](#AppletEventType "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
   - u32 +0x8 = **event\_x8**.
@@ -225,8 +226,8 @@ written to the log.
 
 ## Cmd8
 
-Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
-**event\_x9**, an u8
+Takes an input u8 [\#AppletEventType](#AppletEventType "wikilink"), an
+u8 **event\_x9**, an u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
@@ -241,7 +242,7 @@ will immediately return 0.
 Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
 
   - Clears the 0x20-bytes at +0x0.
-  - u8 +0xF = [\#AppletEvent](#AppletEvent "wikilink").
+  - u8 +0xF = [\#AppletEventType](#AppletEventType "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
   - u8 +0x9 = **event\_x9**.
@@ -259,7 +260,8 @@ value passed for **event\_x8** is value 0 here.
 
 ## Cmd9
 
-Takes an input u8 [\#AppletEvent](#AppletEvent "wikilink"), an u8
+Takes an input u8 [\#AppletEventType](#AppletEventType "wikilink"), an
+u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
@@ -477,7 +479,7 @@ title was played.
 This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0x1C, which
 indicates the type of [\#PlayEvent](#PlayEvent "wikilink").
 
-# AppletEvent
+# AppletEventType
 
 | Value | Description      |
 | ----- | ---------------- |
@@ -551,7 +553,7 @@ Applet:
 | 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                    |
 | 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")                       |
 | 0xE    | 0x1  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                                |
-| 0xF    | 0x1  | [\#AppletEvent](#AppletEvent "wikilink")                                                    |
+| 0xF    | 0x1  | [\#AppletEventType](#AppletEventType "wikilink")                                            |
 | 0x10   | 0xC  | Unused                                                                                      |
 
 Account:

@@ -215,13 +215,13 @@ This is "nn::pdm::detail::INotifyService".
 |}
 
 == NotifyAppletEvent ==
-Takes an input u8 [[#AppletEvent]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
+Takes an input u8 [[#AppletEventType]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
 
 When [[#PlayLogPolicy]] is 2 ("None") this will immediately return 0.
 
 Logs a new [[#PlayEvent]] with the following data:
 * Clears the 0x10-bytes at +0x10.
-* u8 +0xF = [[#AppletEvent]].
+* u8 +0xF = [[#AppletEventType]].
 * Sets the 3 timestamps.
 * Converts '''titleID''' and writes it to +0x0.
 * u32 +0x8 = '''event_x8'''.
@@ -252,7 +252,7 @@ Gets the [[System_Settings|system-setting]] <code>pdm!is_production</code>, the 
 Each [[#PlayEvent]] entry is validated, throwing an error on failure. After an entry is successfully validated, it is written to the log.
 
 == Cmd8 ==
-Takes an input u8 [[#AppletEvent]], an u8 '''event_x9''', an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], and an u64 '''titleID'''. Returns no output.
+Takes an input u8 [[#AppletEventType]], an u8 '''event_x9''', an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], and an u64 '''titleID'''. Returns no output.
 
 This is similar to [[#NotifyAppletEvent]].
 
@@ -260,7 +260,7 @@ When [[#PlayLogPolicy]] is 2 ("None") this will immediately return 0.
 
 Logs a new [[#PlayEvent]] with the following data:
 * Clears the 0x20-bytes at +0x0.
-* u8 +0xF = [[#AppletEvent]].
+* u8 +0xF = [[#AppletEventType]].
 * Sets the 3 timestamps.
 * Converts '''titleID''' and writes it to +0x0.
 * u8 +0x9 = '''event_x9'''.
@@ -270,7 +270,7 @@ Logs a new [[#PlayEvent]] with the following data:
 After the initial logging, additional code runs with some of the above input params. This is handled the same as [[#NotifyAppletEvent]], except that the value passed for '''event_x8''' is value 0 here.
 
 == Cmd9 ==
-Takes an input u8 [[#AppletEvent]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an 0x20-byte struct, an u8 bool flag, an u8 [[#PlayLogPolicy]], an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
+Takes an input u8 [[#AppletEventType]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an 0x20-byte struct, an u8 bool flag, an u8 [[#PlayLogPolicy]], an u32 '''event_x8''', and an u64 '''titleID'''. Returns no output.
 
 This is identical to [[#NotifyAppletEvent]] except for the additional struct/flag params.
 
@@ -500,7 +500,7 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 
 This is an enum for [[#PlayEvent]] +0x1C, which indicates the type of [[#PlayEvent]].
 
-= AppletEvent =
+= AppletEventType =
 {| class="wikitable" border="1"
 |-
 ! Value
@@ -589,7 +589,7 @@ Applet:
 |-
 | 0xE || 0x1 || [[#PlayLogPolicy]]
 |-
-| 0xF || 0x1 || [[#AppletEvent]]
+| 0xF || 0x1 || [[#AppletEventType]]
 |-
 | 0x10 || 0xC || Unused
 |}
