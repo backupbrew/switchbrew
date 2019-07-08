@@ -497,7 +497,7 @@ the type of the Applet event.
 
 | Value | Meaning | Description                                                                                                                                                                                  |
 | ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | All     | [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink") and [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink") will only return the entry when PlayLogPolicy matches this value.      |
+| 0     | All     | All pdm:qry cmds which require [\#PlayEventType](#PlayEventType "wikilink") = Applet and AppletId = Application will only return the entry when PlayLogPolicy matches this value.            |
 | 1     | LogOnly | The above commands will filter out the entry with this.                                                                                                                                      |
 | 2     | None    | pdm:ntfy [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink"), [\#Cmd8](#Cmd8 "wikilink"), and [\#Cmd9](#Cmd9 "wikilink") will immediately return 0 when the input param matches this value. |
 

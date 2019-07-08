@@ -530,7 +530,7 @@ This is an enum for [[#PlayEvent]] +0xF with [[#PlayEventType]] = Applet, this i
 ! Meaning
 ! Description
 |-
-| 0 || All || [[#QueryApplicationEvent]] and [[#QueryLastPlayTime]] will only return the entry when PlayLogPolicy matches this value.
+| 0 || All || All pdm:qry cmds which require [[#PlayEventType]] = Applet and AppletId = Application will only return the entry when PlayLogPolicy matches this value.
 |-
 | 1 || LogOnly || The above commands will filter out the entry with this.
 |-
