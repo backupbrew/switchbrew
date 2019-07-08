@@ -523,14 +523,19 @@ filtering.
 
 Filtering:
 
-  - [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink") and
-    [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink"): PlayEvent
-    +0x1C must be 0, +0xC must be 1, and +0xE must be 0.
+  - [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink"),
+    [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink"), and
+    [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink"):
+    PlayEvent +0x1C must be 0, +0xC must be 1, and +0xE must be 0.
   - [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink"):
     PlayEvent +0x1C must be 0, +0xC must be 1, and the titleID must
     match.
   - [\#QueryAccountEvent](#QueryAccountEvent "wikilink"): PlayEvent
     +0x1C must be 1 and PlayEvent +0x18 must be \<=1.
+  - [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink"):
+    In addition to the above, this also handles
+    [\#PlayEventType](#PlayEventType "wikilink") PowerStateChange, where
+    PlayEvent +0x0 is value 0 or 1.
 
 The structure of the first 0x1C-bytes are determined by
 [\#PlayEventType](#PlayEventType "wikilink"). For titleIDs/userIDs, the
