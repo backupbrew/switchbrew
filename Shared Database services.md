@@ -545,16 +545,17 @@ low/high u32 in each u64 is swapped.
 
 Applet:
 
-| Offset | Size | Description                                                                                 |
-| ------ | ---- | ------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | titleID                                                                                     |
-| 0x8    | 0x4  | When set to u8 0x1 by pdm:ntfy [\#Cmd8](#Cmd8 "wikilink"), this indicates that +0x9 is set. |
-| 0x9    | 0x1  | See above.                                                                                  |
-| 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                    |
-| 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")                       |
-| 0xE    | 0x1  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                                |
-| 0xF    | 0x1  | [\#AppletEventType](#AppletEventType "wikilink")                                            |
-| 0x10   | 0xC  | Unused                                                                                      |
+| Offset | Size | Description                                                                                                                 |
+| ------ | ---- | --------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | titleID                                                                                                                     |
+| 0x8    | 0x4  | Title version, set by pdm:ntfy [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") and [\#Cmd9](#Cmd9 "wikilink").         |
+| 0x8    | 0x1  | When set to u8 0x1 by pdm:ntfy [\#Cmd8](#Cmd8 "wikilink"), this indicates that +0x9 is set. Only used for non-applications. |
+| 0x9    | 0x1  | See above.                                                                                                                  |
+| 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                                                    |
+| 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")                                                       |
+| 0xE    | 0x1  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                                                                |
+| 0xF    | 0x1  | [\#AppletEventType](#AppletEventType "wikilink")                                                                            |
+| 0x10   | 0xC  | Unused                                                                                                                      |
 
 Account:
 
