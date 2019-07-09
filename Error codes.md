@@ -37,6 +37,7 @@ fatal-errors, since the Description ends with bit21.
 | 16    | NS                                           |
 | 17    | Sockets                                      |
 | 18    | HTC                                          |
+| 19    | TSC                                          |
 | 20    | NCM Content                                  |
 | 21    | SM                                           |
 | 22    | RO userland                                  |

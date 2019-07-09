@@ -48,6 +48,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 18 || HTC
 |-
+| 19 || TSC
+|-
 | 20 || NCM Content
 |-
 | 21 || SM
