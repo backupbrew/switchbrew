@@ -20,6 +20,9 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **10 July 19** Nintendo
+    [announced](https://twitter.com/NintendoAmerica/status/1148934589026455552)
+    the Nintendo Switch Lite system.
   - **17 June 19** Nintendo released system update
     [8.1.0](8.1.0.md "wikilink").
   - **1 May 19** [libnx v2.2.0 and switch-examples
@@ -27,5 +30,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     released.
   - **23 April 19** Nintendo released system update
     [8.0.1](8.0.1.md "wikilink").
-  - **15 April 19** Nintendo released system update
-    [8.0.0](8.0.0.md "wikilink").
