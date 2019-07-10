@@ -1885,7 +1885,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0 || u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards.
 |-
-| 1 || u64 titleID. "JumpToSubApplicationProgramForDevelopment"
+| 1 || u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [[Settings_services#GetDebugModeFlag|DebugMode]] is 1.
 |-
 | 2 || u64 = value 0. "RestartProgram"
 |-

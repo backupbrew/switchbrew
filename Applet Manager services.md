@@ -1668,12 +1668,12 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 ### ProgramSpecifyKind
 
-| Value | Description                                                                                        |
-| ----- | -------------------------------------------------------------------------------------------------- |
-| 0     | u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards. |
-| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment"                                           |
-| 2     | u64 = value 0. "RestartProgram"                                                                    |
-|       |                                                                                                    |
+| Value | Description                                                                                                                                                           |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards.                                                                    |
+| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [DebugMode](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") is 1. |
+| 2     | u64 = value 0. "RestartProgram"                                                                                                                                       |
+|       |                                                                                                                                                                       |
 
 This is "nn::am::<service::ProgramSpecifyKind>". This controls the type
 of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
