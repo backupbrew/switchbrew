@@ -469,12 +469,13 @@ title was played.
 
 # PlayEventType
 
-| Value | Description         |
-| ----- | ------------------- |
-| 0     | Applet              |
-| 1     | Account             |
-| 2     | PowerStateChange    |
-| 3     | OperationModeChange |
+| Value | Description                                                                                |
+| ----- | ------------------------------------------------------------------------------------------ |
+| 0     | Applet                                                                                     |
+| 1     | Account                                                                                    |
+| 2     | PowerStateChange                                                                           |
+| 3     | OperationModeChange                                                                        |
+| 4     | Initialize. Used for the very first [\#PlayEvent](#PlayEvent "wikilink") entry in the log. |
 
 This is an enum for [\#PlayEvent](#PlayEvent "wikilink") +0x1C, which
 indicates the type of [\#PlayEvent](#PlayEvent "wikilink").

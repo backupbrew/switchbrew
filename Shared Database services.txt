@@ -496,6 +496,8 @@ This is a 0x18-byte struct. This contains data from the last time the title was 
 | 2 || PowerStateChange
 |-
 | 3 || OperationModeChange
+|-
+| 4 || Initialize. Used for the very first [[#PlayEvent]] entry in the log.
 |}
 
 This is an enum for [[#PlayEvent]] +0x1C, which indicates the type of [[#PlayEvent]].
