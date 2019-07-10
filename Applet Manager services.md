@@ -457,7 +457,7 @@ Takes an input u8, no output.
 | 20   | EnsureSaveData                                                                                                                  |                                                                                                             |
 | 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |                                                                                                             |
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                                                                             |
-| 23   | GetDisplayVersion                                                                                                               |                                                                                                             |
+| 23   | [\#GetDisplayVersion](#GetDisplayVersion "wikilink")                                                                            |                                                                                                             |
 | 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |                                                                                                             |
 | 25   | \[3.0.0+\] ExtendSaveData                                                                                                       |                                                                                                             |
 | 26   | \[3.0.0+\] GetSaveDataSize                                                                                                      |                                                                                                             |
@@ -561,6 +561,15 @@ Takes an input u32 **Result**, no output.
 
 For example, in some cases official apps use this with
 [error](Error%20codes.md "wikilink") 0x2A2 then uses svcBreak.
+
+#### GetDisplayVersion
+
+No input, returns an output 0x10-byte struct.
+
+The output struct is "nn::oe::DisplayVersion". This the DisplayVersion
+string copied from the application
+[control.nacp](NACP%20Format.md "wikilink"), this is always
+NUL-terminated.
 
 #### EndBlockingHomeButtonShortAndLongPressed
 
