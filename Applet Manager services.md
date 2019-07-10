@@ -296,7 +296,7 @@ buffer. The size of the state buffer is 0x400-bytes.
 | 12  | GetMainAppletIdentityInfo                                                                                   |       |
 | 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                |       |
 | 14  | GetCallerAppletIdentityInfo                                                                                 |       |
-| 15  | \[2.0.0+\] GetMainAppletApplicationControlProperty                                                          |       |
+| 15  | \[2.0.0+\] [\#GetMainAppletApplicationControlProperty](#GetMainAppletApplicationControlProperty "wikilink") |       |
 | 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |       |
 | 17  | \[3.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |       |
 | 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |       |
@@ -340,6 +340,12 @@ No input, returns an output handle.
 #### GetPopInteractiveInDataEvent
 
 No input, returns an output handle.
+
+#### GetMainAppletApplicationControlProperty
+
+No input, takes a type-0x16 output buffer.
+
+This gets the [control.nacp](NACP%20Format.md "wikilink").
 
 #### GetMainAppletStorageId
 

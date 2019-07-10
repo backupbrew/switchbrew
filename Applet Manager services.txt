@@ -361,7 +361,7 @@ These commands copy data from/to a state buffer and the user specified buffer. T
 |-
 | 14 || GetCallerAppletIdentityInfo ||
 |-
-| 15 || [2.0.0+] GetMainAppletApplicationControlProperty ||
+| 15 || [2.0.0+] [[#GetMainAppletApplicationControlProperty]] ||
 |-
 | 16 || [2.0.0+] [[#GetMainAppletStorageId]] ||
 |-
@@ -419,6 +419,11 @@ No input, returns an output handle.
 
 ==== GetPopInteractiveInDataEvent ====
 No input, returns an output handle.
+
+==== GetMainAppletApplicationControlProperty ====
+No input, takes a type-0x16 output buffer.
+
+This gets the [[NACP_Format|control.nacp]].
 
 ==== GetMainAppletStorageId ====
 No input, returns an output u8 storageId.
