@@ -615,13 +615,13 @@ Takes an input u8, no output.
 |-
 | 111 || [6.0.0+] [[#QueryApplicationPlayStatisticsByUid]] || 
 |-
-| 120 || [5.0.0+] ExecuteProgram || 
+| 120 || [5.0.0+] [[#ExecuteProgram]] || 
 |-
 | 121 || [5.0.0+] [[#ClearUserChannel]] || 
 |-
-| 122 || [5.0.0+] UnpopToUserChannel || 
+| 122 || [5.0.0+] [[#UnpopToUserChannel]] || 
 |-
-| 123 || [5.0.0+] GetPreviousProgramIndex || 
+| 123 || [5.0.0+] [[#GetPreviousProgramIndex]] || 
 |-
 | 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
 |-
@@ -733,8 +733,23 @@ Takes a u128 userID, a type-0x6 output buffer containing an array of [[Shared_Da
 
 Same as [[#QueryApplicationPlayStatistics]] except this uses [[Shared_Database_services|pdm:qry]] cmd16, to get playstats specific to userIDs. 
 
+==== ExecuteProgram ====
+Takes an input u32 [[#ProgramSpecifyKind]] and an input u64, no output.
+
 ==== ClearUserChannel ====
 No input/output.
+
+Clears the UserChannel.
+
+==== UnpopToUserChannel ====
+Takes an input [[#IStorage]], no output.
+
+The input storage is pushed to the UserChannel, which is also used by [[#ClearUserChannel]].
+
+User-processes create a storage using data specified by the user (written to offset=0 size=inputsize), with max size 0x1000. This storage is then used with this cmd.
+
+==== GetPreviousProgramIndex ====
+No input, returns an output s32.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
@@ -1861,6 +1876,22 @@ See also [[:Category:Library Applets]].
 |-
 | 10 || Unexpected
 |}
+
+=== ProgramSpecifyKind ===
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+| 0 || u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards.
+|-
+| 1 || u64 titleID. "JumpToSubApplicationProgramForDevelopment"
+|-
+| 2 || u64 = value 0. "RestartProgram"
+|-
+|}
+
+This is "nn::am::service::ProgramSpecifyKind". This controls the type of the u64 passed to [[#ExecuteProgram]].
 
 = AppletResourceUserId =
 This u64 is officially called "nn::applet::AppletResourceUserId". Used by a number of non-AM services.

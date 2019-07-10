@@ -482,10 +482,10 @@ Takes an input u8, no output.
 | 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
 | 111  | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUid](#QueryApplicationPlayStatisticsByUid "wikilink")                             |                                                                                                             |
-| 120  | \[5.0.0+\] ExecuteProgram                                                                                                       |                                                                                                             |
+| 120  | \[5.0.0+\] [\#ExecuteProgram](#ExecuteProgram "wikilink")                                                                       |                                                                                                             |
 | 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |                                                                                                             |
-| 122  | \[5.0.0+\] UnpopToUserChannel                                                                                                   |                                                                                                             |
-| 123  | \[5.0.0+\] GetPreviousProgramIndex                                                                                              |                                                                                                             |
+| 122  | \[5.0.0+\] [\#UnpopToUserChannel](#UnpopToUserChannel "wikilink")                                                               |                                                                                                             |
+| 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                     |                                                                                                             |
 | 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                                                                             |
 | 130  | \[8.0.0+\] GetGpuErrorDetectedSystemEvent                                                                                       |                                                                                                             |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                                                                             |
@@ -661,9 +661,32 @@ Same as
 except this uses [pdm:qry](Shared%20Database%20services.md "wikilink")
 cmd16, to get playstats specific to userIDs.
 
+#### ExecuteProgram
+
+Takes an input u32
+[\#ProgramSpecifyKind](#ProgramSpecifyKind "wikilink") and an input u64,
+no output.
+
 #### ClearUserChannel
 
 No input/output.
+
+Clears the UserChannel.
+
+#### UnpopToUserChannel
+
+Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+The input storage is pushed to the UserChannel, which is also used by
+[\#ClearUserChannel](#ClearUserChannel "wikilink").
+
+User-processes create a storage using data specified by the user
+(written to offset=0 size=inputsize), with max size 0x1000. This storage
+is then used with this cmd.
+
+#### GetPreviousProgramIndex
+
+No input, returns an output s32.
 
 #### CreateMovieMaker
 
@@ -1642,6 +1665,18 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 1     | Canceled    |
 | 2     | Abnormal    |
 | 10    | Unexpected  |
+
+### ProgramSpecifyKind
+
+| Value | Description                                                                                        |
+| ----- | -------------------------------------------------------------------------------------------------- |
+| 0     | u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards. |
+| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment"                                           |
+| 2     | u64 = value 0. "RestartProgram"                                                                    |
+|       |                                                                                                    |
+
+This is "nn::am::<service::ProgramSpecifyKind>". This controls the type
+of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
 
 # AppletResourceUserId
 
