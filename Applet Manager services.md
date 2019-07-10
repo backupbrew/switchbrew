@@ -171,30 +171,30 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                                                   | Notes |
-| --- | ---------------------------------------------------------------------- | ----- |
-| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink") |       |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")                               |       |
-| 10  | Start                                                                  |       |
-| 20  | RequestExit                                                            |       |
-| 25  | Terminate                                                              |       |
-| 30  | GetResult                                                              |       |
-| 101 | RequestForApplicationToGetForeground                                   |       |
-| 110 | TerminateAllLibraryApplets                                             |       |
-| 111 | AreAnyLibraryAppletsLeft                                               |       |
-| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")       |       |
-| 120 | GetApplicationId                                                       |       |
-| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")               |       |
-| 122 | GetApplicationControlProperty                                          |       |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                |       |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                             |       |
-| 130 | \[6.0.0+\] SetUsers                                                    |       |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                             |       |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                |       |
-| 140 | \[6.0.0+\] GetDesirableUids                                            |       |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                |       |
-| 160 | \[8.0.0+\] SetApplicationAttribute                                     |       |
-| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                 |       |
+| Cmd | Name                                                                         | Notes |
+| --- | ---------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")       |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                     |       |
+| 10  | Start                                                                        |       |
+| 20  | RequestExit                                                                  |       |
+| 25  | Terminate                                                                    |       |
+| 30  | GetResult                                                                    |       |
+| 101 | RequestForApplicationToGetForeground                                         |       |
+| 110 | TerminateAllLibraryApplets                                                   |       |
+| 111 | AreAnyLibraryAppletsLeft                                                     |       |
+| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")             |       |
+| 120 | GetApplicationId                                                             |       |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                     |       |
+| 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink") |       |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                      |       |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                                   |       |
+| 130 | \[6.0.0+\] SetUsers                                                          |       |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                   |       |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                      |       |
+| 140 | \[6.0.0+\] GetDesirableUids                                                  |       |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                      |       |
+| 160 | \[8.0.0+\] SetApplicationAttribute                                           |       |
+| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                       |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -208,6 +208,12 @@ No input, returns an output
 
 Takes an input u32 and an input [\#IStorage](#IStorage "wikilink"), no
 output.
+
+#### GetApplicationControlProperty
+
+No input, takes a type-0x6 output buffer.
+
+This gets the application [control.nacp](NACP%20Format.md "wikilink").
 
 ##### IAppletAccessor
 

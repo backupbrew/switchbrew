@@ -216,7 +216,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 121 || [[#PushLaunchParameter]] || 
 |-
-| 122 || GetApplicationControlProperty || 
+| 122 || [[#GetApplicationControlProperty]] || 
 |-
 | 123 || [2.0.0+] GetApplicationLaunchProperty || 
 |-
@@ -244,6 +244,11 @@ No input, returns an output [[#IAppletAccessor]].
 
 ===== PushLaunchParameter =====
 Takes an input u32 and an input [[#IStorage]], no output.
+
+==== GetApplicationControlProperty ====
+No input, takes a type-0x6 output buffer.
+
+This gets the application [[NACP_Format|control.nacp]].
 
 ===== IAppletAccessor =====
 {| class="wikitable" border="1"
