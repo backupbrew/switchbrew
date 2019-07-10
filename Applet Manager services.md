@@ -478,7 +478,7 @@ Takes an input u8, no output.
 | 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |                                                                                                             |
 | 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |                                                                                                             |
 | 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |                                                                                                             |
-| 101  | \[5.0.0+\] SetApplicationCopyrightImage                                                                                         |                                                                                                             |
+| 101  | \[5.0.0+\] [\#SetApplicationCopyrightImage](#SetApplicationCopyrightImage "wikilink")                                           |                                                                                                             |
 | 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
 | 111  | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUid](#QueryApplicationPlayStatisticsByUid "wikilink")                             |                                                                                                             |
@@ -629,6 +629,15 @@ uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
 #### EnableApplicationCrashReport
 
 Takes an input u8 bool, no output.
+
+#### SetApplicationCopyrightImage
+
+Takes a type-0x45 input buffer and 5 input s32s, no output.
+
+The last s32 is "nn::oe::WindowOriginMode".
+
+The first two s32s must not have the negative bit set, and the following
+two s32s must not be \<1.
 
 #### SetApplicationCopyrightVisibility
 
