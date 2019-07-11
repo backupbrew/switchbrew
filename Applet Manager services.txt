@@ -245,13 +245,13 @@ No input, returns an output [[#IAppletAccessor]].
 ===== PushLaunchParameter =====
 Takes an input u32 and an input [[#IStorage]], no output.
 
-==== SetApplicationAttribute ====
-Takes a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.
-
-==== GetApplicationControlProperty ====
+===== GetApplicationControlProperty =====
 No input, takes a type-0x6 output buffer.
 
 This gets the application [[NACP_Format|control.nacp]].
+
+===== SetApplicationAttribute =====
+Takes a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.
 
 ===== IAppletAccessor =====
 {| class="wikitable" border="1"

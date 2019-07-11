@@ -209,16 +209,16 @@ No input, returns an output
 Takes an input u32 and an input [\#IStorage](#IStorage "wikilink"), no
 output.
 
-#### SetApplicationAttribute
-
-Takes a type-0x15 input buffer containing an
-[\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
-
-#### GetApplicationControlProperty
+##### GetApplicationControlProperty
 
 No input, takes a type-0x6 output buffer.
 
 This gets the application [control.nacp](NACP%20Format.md "wikilink").
+
+##### SetApplicationAttribute
+
+Takes a type-0x15 input buffer containing an
+[\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
 
 ##### IAppletAccessor
 
