@@ -666,12 +666,12 @@ Takes 2 input u32s (loaded from struct [[#ApplicationAttributeForQuest]]) and an
 Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except without the input storage, official sw uses this when no input storage is specified.
 
 ==== CreateApplicationWithAttributeAndPushAndRequestToStartForQuest ====
-Takes an input u64 titleID, a type-0x15 input buffer [[#ApplicationAttribute]], an input [[#IStorage]], no output.
+Takes an input u64 titleID, a type-0x15 input buffer containing an [[#ApplicationAttribute]], an input [[#IStorage]], no output.
 
 Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except the entire attributes structure is directly specified via the input buffer. This command replaces [[#CreateApplicationAndPushAndRequestToStartForQuest]], official user-processes no longer use [[#CreateApplicationAndPushAndRequestToStartForQuest]].
 
 ==== CreateApplicationWithAttributeAndRequestToStartForQuest ====
-Takes an input u64 titleID and a type-0x15 input buffer containing a [[#ApplicationAttribute]], no output.
+Takes an input u64 titleID and a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.
 
 Same as [[#CreateApplicationAndRequestToStartForQuest]] except the entire attributes structure is directly specified via the input buffer. This command replaces [[#CreateApplicationAndRequestToStartForQuest]], official user-processes no longer use [[#CreateApplicationAndPushAndRequestToStartForQuest]].
 

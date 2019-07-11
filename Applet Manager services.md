@@ -560,7 +560,7 @@ storage is specified.
 
 #### CreateApplicationWithAttributeAndPushAndRequestToStartForQuest
 
-Takes an input u64 titleID, a type-0x15 input buffer
+Takes an input u64 titleID, a type-0x15 input buffer containing an
 [\#ApplicationAttribute](#ApplicationAttribute "wikilink"), an input
 [\#IStorage](#IStorage "wikilink"), no output.
 
@@ -574,7 +574,7 @@ official user-processes no longer use
 
 #### CreateApplicationWithAttributeAndRequestToStartForQuest
 
-Takes an input u64 titleID and a type-0x15 input buffer containing a
+Takes an input u64 titleID and a type-0x15 input buffer containing an
 [\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
 
 Same as
