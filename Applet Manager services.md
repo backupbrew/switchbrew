@@ -1751,8 +1751,8 @@ This struct is "nn::applet::ApplicationAttributeForQuest".
 User-processes copy the first 0x8-bytes (0xC-bytes with
 [\#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest](#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest "wikilink")/[\#CreateApplicationWithAttributeAndRequestToStartForQuest](#CreateApplicationWithAttributeAndRequestToStartForQuest "wikilink"))
 to a [\#ApplicationAttribute](#ApplicationAttribute "wikilink") with the
-rest of the struct being cleared, which is then passed to the actual
-cmd.
+rest of the struct being cleared, which is then passed to the actual cmd
+(CreateApplication\*ToStartForQuest).
 
 # ApplicationAttribute
 

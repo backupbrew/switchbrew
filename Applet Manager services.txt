@@ -1938,7 +1938,7 @@ This is 8-bytes.
 
 This struct is "nn::applet::ApplicationAttributeForQuest".
 
-User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest]]/[[#CreateApplicationWithAttributeAndRequestToStartForQuest]]) to a [[#ApplicationAttribute]] with the rest of the struct being cleared, which is then passed to the actual cmd.
+User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest]]/[[#CreateApplicationWithAttributeAndRequestToStartForQuest]]) to a [[#ApplicationAttribute]] with the rest of the struct being cleared, which is then passed to the actual cmd (CreateApplication*ToStartForQuest).
 
 = ApplicationAttribute =
 {| class="wikitable" border="1"
