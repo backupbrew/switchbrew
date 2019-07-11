@@ -193,7 +193,7 @@ No input, returns an
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                      |       |
 | 140 | \[6.0.0+\] GetDesirableUids                                                  |       |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout                                      |       |
-| 160 | \[8.0.0+\] SetApplicationAttribute                                           |       |
+| 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")  |       |
 | 170 | \[8.0.0+\] HasSaveDataAccessPermission                                       |       |
 
 Commands \<=30 are inherited from
@@ -208,6 +208,11 @@ No input, returns an output
 
 Takes an input u32 and an input [\#IStorage](#IStorage "wikilink"), no
 output.
+
+#### SetApplicationAttribute
+
+Takes a type-0x15 input buffer containing an
+[\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
 
 #### GetApplicationControlProperty
 
