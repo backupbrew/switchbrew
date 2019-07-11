@@ -339,12 +339,12 @@ This is a bitfield describing which controller styles are supported.
 | 4     | NpadJoyRight     | Joy-Con right controller in single mode. |
 | 5     | NpadGc           | GameCube controller.                     |
 | 6     | NpadPalma        | Poké Ball Plus controller.               |
-| 7     | NpadLark         | NES controller.                          |
-| 8     | NpadHandheldLark | NES controller in handheld mode.         |
-| 9     | NpadLucia        |                                          |
+| 7     | NpadLark         | NES/Famicom controller.                  |
+| 8     | NpadHandheldLark | NES/Famicom controller in handheld mode. |
+| 9     | NpadLucia        | Unknown.                                 |
 | 10-28 | Reserved         |                                          |
-| 29    | NpadSystemExt    |                                          |
-| 30    | NpadSystem       |                                          |
+| 29    | NpadSystemExt    | Generic external controller.             |
+| 30    | NpadSystem       | Generic controller.                      |
 | 31    | Reserved         |                                          |
 
 ## NpadIdType

@@ -420,15 +420,15 @@ This is a bitfield describing which controller styles are supported.
 |-
 | 7
 | NpadLark
-| NES controller.
+| NES/Famicom controller.
 |-
 | 8
 | NpadHandheldLark
-| NES controller in handheld mode.
+| NES/Famicom controller in handheld mode.
 |-
 | 9
 | NpadLucia
-| 
+| Unknown.
 |-
 | 10-28
 | Reserved
@@ -436,11 +436,11 @@ This is a bitfield describing which controller styles are supported.
 |-
 | 29
 | NpadSystemExt
-|
+| Generic external controller.
 |-
 | 30
 | NpadSystem
-|
+| Generic controller.
 |-
 | 31
 | Reserved
