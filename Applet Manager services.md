@@ -445,52 +445,52 @@ Takes an input u8, no output.
 
 ### IApplicationFunctions
 
-| Cmd  | Name                                                                                                                            | Notes                                                                                                       |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| 1    | [\#PopLaunchParameter](#PopLaunchParameter "wikilink")                                                                          |                                                                                                             |
-| 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                            |                                                                                                             |
-| 11   | \[3.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink") |                                                                                                             |
-| 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                               |                                                                                                             |
-| 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")               |                                                                                                             |
-| 14   | \[7.0.0+\] CreateApplicationWithAttributeAndPushAndRequestToStartForQuest                                                       | Takes a total of 8-bytes and a type-0x15 input buffer, return an output [\#IStorage](#IStorage "wikilink"). |
-| 15   | \[7.0.0+\] CreateApplicationWithAttributeAndRequestToStartForQuest                                                              | Takes a total of 8-bytes and a type-0x15 input buffer, no output.                                           |
-| 20   | EnsureSaveData                                                                                                                  |                                                                                                             |
-| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                          |                                                                                                             |
-| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                          |                                                                                                             |
-| 23   | [\#GetDisplayVersion](#GetDisplayVersion "wikilink")                                                                            |                                                                                                             |
-| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                         |                                                                                                             |
-| 25   | \[3.0.0+\] ExtendSaveData                                                                                                       |                                                                                                             |
-| 26   | \[3.0.0+\] GetSaveDataSize                                                                                                      |                                                                                                             |
-| 27   | \[5.0.0+\] CreateCacheStorage                                                                                                   |                                                                                                             |
-| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                      |                                                                                                             |
-| 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                              |                                                                                                             |
-| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                |                                                                                                             |
-| 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                    |                                                                                                             |
-| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                    |                                                                                                             |
-| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                    |                                                                                                             |
-| 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                             |                                                                                                             |
-| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                           |                                                                                                             |
-| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                             |                                                                                                             |
-| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                 |                                                                                                             |
-| 68   | \[4.0.0+\] [\#RequestFlushGamePlayingMovieForDebug](#RequestFlushGamePlayingMovieForDebug "wikilink")                           |                                                                                                             |
-| 70   | \[3.0.0+\] [\#RequestToShutdown](#RequestToShutdown "wikilink")                                                                 |                                                                                                             |
-| 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                     |                                                                                                             |
-| 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |                                                                                                             |
-| 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |                                                                                                             |
-| 100  | \[5.0.0+\] [\#InitializeApplicationCopyrightFrameBuffer](#InitializeApplicationCopyrightFrameBuffer "wikilink")                 |                                                                                                             |
-| 101  | \[5.0.0+\] [\#SetApplicationCopyrightImage](#SetApplicationCopyrightImage "wikilink")                                           |                                                                                                             |
-| 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
-| 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
-| 111  | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUid](#QueryApplicationPlayStatisticsByUid "wikilink")                             |                                                                                                             |
-| 120  | \[5.0.0+\] [\#ExecuteProgram](#ExecuteProgram "wikilink")                                                                       |                                                                                                             |
-| 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                   |                                                                                                             |
-| 122  | \[5.0.0+\] [\#UnpopToUserChannel](#UnpopToUserChannel "wikilink")                                                               |                                                                                                             |
-| 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                     |                                                                                                             |
-| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                |                                                                                                             |
-| 130  | \[8.0.0+\] GetGpuErrorDetectedSystemEvent                                                                                       |                                                                                                             |
-| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                |                                                                                                             |
-| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                   |                                                                                                             |
-| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                         |                                                                                                             |
+| Cmd  | Name                                                                                                                                                      | Notes |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| 1    | [\#PopLaunchParameter](#PopLaunchParameter "wikilink")                                                                                                    |       |
+| 10   | [\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink")                                                      |       |
+| 11   | \[3.0.0+\] [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink")                           |       |
+| 12   | \[4.0.0+\] [\#CreateApplicationAndRequestToStart](#CreateApplicationAndRequestToStart "wikilink")                                                         |       |
+| 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")                                         |       |
+| 14   | \[7.0.0+\] [\#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest](#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest "wikilink") |       |
+| 15   | \[7.0.0+\] [\#CreateApplicationWithAttributeAndRequestToStartForQuest](#CreateApplicationWithAttributeAndRequestToStartForQuest "wikilink")               |       |
+| 20   | EnsureSaveData                                                                                                                                            |       |
+| 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                                                    |       |
+| 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                                                    |       |
+| 23   | [\#GetDisplayVersion](#GetDisplayVersion "wikilink")                                                                                                      |       |
+| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                                                   |       |
+| 25   | \[3.0.0+\] ExtendSaveData                                                                                                                                 |       |
+| 26   | \[3.0.0+\] GetSaveDataSize                                                                                                                                |       |
+| 27   | \[5.0.0+\] CreateCacheStorage                                                                                                                             |       |
+| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                                                |       |
+| 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                                                        |       |
+| 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                                          |       |
+| 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                                              |       |
+| 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                                              |       |
+| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                                              |       |
+| 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                                                       |       |
+| 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                                                     |       |
+| 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                                                       |       |
+| 67   | \[3.0.0+\] [\#SetGamePlayRecordingState](#SetGamePlayRecordingState "wikilink")                                                                           |       |
+| 68   | \[4.0.0+\] [\#RequestFlushGamePlayingMovieForDebug](#RequestFlushGamePlayingMovieForDebug "wikilink")                                                     |       |
+| 70   | \[3.0.0+\] [\#RequestToShutdown](#RequestToShutdown "wikilink")                                                                                           |       |
+| 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                                               |       |
+| 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                                           |       |
+| 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                                                     |       |
+| 100  | \[5.0.0+\] [\#InitializeApplicationCopyrightFrameBuffer](#InitializeApplicationCopyrightFrameBuffer "wikilink")                                           |       |
+| 101  | \[5.0.0+\] [\#SetApplicationCopyrightImage](#SetApplicationCopyrightImage "wikilink")                                                                     |       |
+| 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                                           |       |
+| 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                                                 |       |
+| 111  | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUid](#QueryApplicationPlayStatisticsByUid "wikilink")                                                       |       |
+| 120  | \[5.0.0+\] [\#ExecuteProgram](#ExecuteProgram "wikilink")                                                                                                 |       |
+| 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                                             |       |
+| 122  | \[5.0.0+\] [\#UnpopToUserChannel](#UnpopToUserChannel "wikilink")                                                                                         |       |
+| 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                                               |       |
+| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                                          |       |
+| 130  | \[8.0.0+\] GetGpuErrorDetectedSystemEvent                                                                                                                 |       |
+| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                                          |       |
+| 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
+| 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                                                   |       |
 
 The BOTW game uses this GamePlayRecording functionality from the
 main-nso "nninitStartup" function, with size 0x6000000(96MiB). The
@@ -527,9 +527,10 @@ relaunch the current application.
 
 #### CreateApplicationAndPushAndRequestToStartForQuest
 
-Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest), an
-input u64 titleID, and an input [\#IStorage](#IStorage "wikilink"), no
-output.
+Takes 2 input u32s (loaded from struct
+[\#ApplicationAttributeForQuest](#ApplicationAttributeForQuest "wikilink")),
+an input u64 titleID, and an input [\#IStorage](#IStorage "wikilink"),
+no output.
 
 #### CreateApplicationAndRequestToStart
 
@@ -542,13 +543,41 @@ storage is specified.
 
 #### CreateApplicationAndRequestToStartForQuest
 
-Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest) and
-an input u64 titleID, no output.
+Takes 2 input u32s (loaded from struct
+[\#ApplicationAttributeForQuest](#ApplicationAttributeForQuest "wikilink"))
+and an input u64 titleID, no output.
 
 Same as
 [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink")
 except without the input storage, official sw uses this when no input
 storage is specified.
+
+#### CreateApplicationWithAttributeAndPushAndRequestToStartForQuest
+
+Takes an input u64 titleID, a type-0x15 input buffer
+[\#ApplicationAttribute](#ApplicationAttribute "wikilink"), an input
+[\#IStorage](#IStorage "wikilink"), no output.
+
+Same as
+[\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink")
+except the entire attributes structure is directly specified via the
+input buffer. This command replaces
+[\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink"),
+official user-processes no longer use
+[\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink").
+
+#### CreateApplicationWithAttributeAndRequestToStartForQuest
+
+Takes an input u64 titleID and a type-0x15 input buffer containing a
+[\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
+
+Same as
+[\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")
+except the entire attributes structure is directly specified via the
+input buffer. This command replaces
+[\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink"),
+official user-processes no longer use
+[\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink").
 
 #### GetDesiredLanguage
 
@@ -1708,6 +1737,33 @@ u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
 # AppletKind
 
 This is 8-bytes.
+
+# ApplicationAttributeForQuest
+
+| Offset | Size | Description                                                     |
+| ------ | ---- | --------------------------------------------------------------- |
+| 0x0    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
+| 0x4    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
+| 0x8    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
+
+This struct is "nn::applet::ApplicationAttributeForQuest".
+
+User-processes copy the first 0x8-bytes (0xC-bytes with
+[\#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest](#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest "wikilink")/[\#CreateApplicationWithAttributeAndRequestToStartForQuest](#CreateApplicationWithAttributeAndRequestToStartForQuest "wikilink"))
+to a [\#ApplicationAttribute](#ApplicationAttribute "wikilink") with the
+rest of the struct being cleared, which is then passed to the actual
+cmd.
+
+# ApplicationAttribute
+
+| Offset | Size | Description                                                    |
+| ------ | ---- | -------------------------------------------------------------- |
+| 0x0    | 0x4  | ?                                                              |
+| 0x4    | 0x4  | ?                                                              |
+| 0x8    | 0x4  | float. Must be in the range of 0.0f-1.0f. The default is 1.0f. |
+| 0xC    | 0x14 | ?                                                              |
+
+This struct is "nn::am::ApplicationAttribute".
 
 # Notes
 

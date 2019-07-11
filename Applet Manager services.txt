@@ -555,9 +555,9 @@ Takes an input u8, no output.
 |-
 | 13 || [4.0.0+] [[#CreateApplicationAndRequestToStartForQuest]] || 
 |-
-| 14 || [7.0.0+] CreateApplicationWithAttributeAndPushAndRequestToStartForQuest || Takes a total of 8-bytes and a type-0x15 input buffer, return an output [[#IStorage]].
+| 14 || [7.0.0+] [[#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest]] || 
 |-
-| 15 || [7.0.0+] CreateApplicationWithAttributeAndRequestToStartForQuest || Takes a total of 8-bytes and a type-0x15 input buffer, no output.
+| 15 || [7.0.0+] [[#CreateApplicationWithAttributeAndRequestToStartForQuest]] || 
 |-
 | 20 || EnsureSaveData ||
 |-
@@ -650,7 +650,7 @@ Pops a LaunchParameter [[#IStorage]], the storage will be removed from sysmodule
 Takes an input u64 titleID and an input [[#IStorage]], no output. titleID=0 can be used to relaunch the current application.
 
 ==== CreateApplicationAndPushAndRequestToStartForQuest ====
-Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest), an input u64 titleID, and an input [[#IStorage]], no output.
+Takes 2 input u32s (loaded from struct [[#ApplicationAttributeForQuest]]), an input u64 titleID, and an input [[#IStorage]], no output.
 
 ==== CreateApplicationAndRequestToStart ====
 Takes an input u64 titleID, no output.
@@ -658,9 +658,19 @@ Takes an input u64 titleID, no output.
 Same as [[#CreateApplicationAndPushAndRequestToStart]] except without the input storage, official sw uses this when no input storage is specified.
 
 ==== CreateApplicationAndRequestToStartForQuest ====
-Takes 2 input u32s (loaded from struct ApplicationAttributeForQuest) and an input u64 titleID, no output.
+Takes 2 input u32s (loaded from struct [[#ApplicationAttributeForQuest]]) and an input u64 titleID, no output.
 
 Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except without the input storage, official sw uses this when no input storage is specified.
+
+==== CreateApplicationWithAttributeAndPushAndRequestToStartForQuest ====
+Takes an input u64 titleID, a type-0x15 input buffer [[#ApplicationAttribute]], an input [[#IStorage]], no output.
+
+Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except the entire attributes structure is directly specified via the input buffer. This command replaces [[#CreateApplicationAndPushAndRequestToStartForQuest]], official user-processes no longer use [[#CreateApplicationAndPushAndRequestToStartForQuest]].
+
+==== CreateApplicationWithAttributeAndRequestToStartForQuest ====
+Takes an input u64 titleID and a type-0x15 input buffer containing a [[#ApplicationAttribute]], no output.
+
+Same as [[#CreateApplicationAndRequestToStartForQuest]] except the entire attributes structure is directly specified via the input buffer. This command replaces [[#CreateApplicationAndRequestToStartForQuest]], official user-processes no longer use [[#CreateApplicationAndPushAndRequestToStartForQuest]].
 
 ==== GetDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
@@ -1913,6 +1923,38 @@ This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]
 
 = AppletKind =
 This is 8-bytes.
+
+= ApplicationAttributeForQuest =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || See [[#ApplicationAttribute]].
+|-
+| 0x4 || 0x4 || See [[#ApplicationAttribute]].
+|-
+| 0x8 || 0x4 || See [[#ApplicationAttribute]].
+|}
+
+This struct is "nn::applet::ApplicationAttributeForQuest".
+
+User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest]]/[[#CreateApplicationWithAttributeAndRequestToStartForQuest]]) to a [[#ApplicationAttribute]] with the rest of the struct being cleared, which is then passed to the actual cmd.
+
+= ApplicationAttribute =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || ?
+|-
+| 0x4 || 0x4 || ?
+|-
+| 0x8 || 0x4 || float. Must be in the range of 0.0f-1.0f. The default is 1.0f.
+|-
+| 0xC || 0x14 || ?
+|}
+
+This struct is "nn::am::ApplicationAttribute".
 
 = Notes =
 AM-sysmodule will only initialize [[Shared_Database_services|pdm:ntfy]] / use pdm:ntfy service commands when the value from [[Process_Manager_services|pm:bm]] GetBootMode is not 0x1.
