@@ -468,7 +468,7 @@ Takes an input u8, no output.
 | 25   | \[3.0.0+\] ExtendSaveData                                                                                                                                 |       |
 | 26   | \[3.0.0+\] GetSaveDataSize                                                                                                                                |       |
 | 27   | \[5.0.0+\] CreateCacheStorage                                                                                                                             |       |
-| 30   | BeginBlockingHomeButtonShortAndLongPressed                                                                                                                |       |
+| 30   | [\#BeginBlockingHomeButtonShortAndLongPressed](#BeginBlockingHomeButtonShortAndLongPressed "wikilink")                                                    |       |
 | 31   | [\#EndBlockingHomeButtonShortAndLongPressed](#EndBlockingHomeButtonShortAndLongPressed "wikilink")                                                        |       |
 | 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                                          |       |
 | 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                                              |       |
@@ -606,9 +606,20 @@ string copied from the application
 [control.nacp](NACP%20Format.md "wikilink"), this is always
 NUL-terminated.
 
+#### BeginBlockingHomeButtonShortAndLongPressed
+
+Takes an input u64, no output.
+
+Official user-processes use hard-coded value 0 for the u64.
+
+Starts blocking the Home button.
+
 #### EndBlockingHomeButtonShortAndLongPressed
 
 No input/output.
+
+Ends the blocking started by
+[\#BeginBlockingHomeButtonShortAndLongPressed](#BeginBlockingHomeButtonShortAndLongPressed "wikilink").
 
 #### BeginBlockingHomeButton
 
