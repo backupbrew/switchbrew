@@ -1438,6 +1438,12 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>FunctionBlackList</p></td>
 <td><p>Used for restricting specific features in applications.</p></td>
 </tr>
+<tr class="odd">
+<td><p>0100000000000829</p></td>
+<td></td>
+<td><p>PlatformConfigCalcio</p></td>
+<td><p>Currently not present on retail devices.</p></td>
+</tr>
 </tbody>
 </table>
 
