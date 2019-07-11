@@ -545,7 +545,7 @@ The current [[Package2#Versions|Package1 Maxver Constant]] - 1.
 
 [7.0.0+] This item no longer depends on fuses and can only be 0 (Icosa) or 0xF (Invalid) in retail units.
 
-[8.0.0+] This item can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa), 4 (Unknown) or 5 (Invalid). It still can only be 0 (Icosa) or 0xF (Invalid) in retail units.
+[8.0.0+] This item can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa), 4 (Calcio) or 5 (Invalid). It still can only be 0 (Icosa) or 0xF (Invalid) in retail units.
 
 ==== IsRetail ====
 This item is obtained by checking bits 9 and 0-1 from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVED_ODM4]]. It can be 0 (Debug), 1 (Retail) or 2 (Invalid).
@@ -633,12 +633,12 @@ This item is currently hardcoded to 0.
 |-
 |  1
 |  T214
-|  GM2?? (0x12E)
+|  GM20B_B (0x12E)
 |  max77620_sd0, max77812_cpu and max77812_gpu
 |-
 |  2
 |  T214
-|  GM2?? (0x12E)
+|  GM20B_B (0x12E)
 |  max77620_sd0, max77812_cpu and max77812_gpu
 |}
 

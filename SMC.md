@@ -536,8 +536,8 @@ It can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa) or 4 (Invalid).
 (Icosa) or 0xF (Invalid) in retail units.
 
 \[8.0.0+\] This item can be 0 (Icosa), 1 (Copper), 2 (Hoag), 3 (Iowa), 4
-(Unknown) or 5 (Invalid). It still can only be 0 (Icosa) or 0xF
-(Invalid) in retail units.
+(Calcio) or 5 (Invalid). It still can only be 0 (Icosa) or 0xF (Invalid)
+in retail units.
 
 #### IsRetail
 
@@ -661,11 +661,11 @@ This item is currently hardcoded to 0.
 combination with [HardwareType](#HardwareType "wikilink") to configure
 power blocks and memory tables for different hardware.
 
-| Value | SoC  | GPU           | Power Blocks                                   |
-| ----- | ---- | ------------- | ---------------------------------------------- |
-| 0     | T210 | GM20B (0x12B) | max77620\_sd0, max77621\_cpu and max77621\_gpu |
-| 1     | T214 | GM2?? (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
-| 2     | T214 | GM2?? (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
+| Value | SoC  | GPU              | Power Blocks                                   |
+| ----- | ---- | ---------------- | ---------------------------------------------- |
+| 0     | T210 | GM20B (0x12B)    | max77620\_sd0, max77621\_cpu and max77621\_gpu |
+| 1     | T214 | GM20B\_B (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
+| 2     | T214 | GM20B\_B (0x12E) | max77620\_sd0, max77812\_cpu and max77812\_gpu |
 
 #### Package2Hash
 
