@@ -1758,10 +1758,10 @@ cmd.
 
 | Offset | Size | Description                                                    |
 | ------ | ---- | -------------------------------------------------------------- |
-| 0x0    | 0x4  | ?                                                              |
-| 0x4    | 0x4  | ?                                                              |
+| 0x0    | 0x4  | Unknown. Default is 0.                                         |
+| 0x4    | 0x4  | Unknown. Default is 0.                                         |
 | 0x8    | 0x4  | float. Must be in the range of 0.0f-1.0f. The default is 1.0f. |
-| 0xC    | 0x14 | ?                                                              |
+| 0xC    | 0x14 | Unknown. Default is 0.                                         |
 
 This struct is "nn::am::ApplicationAttribute". This struct is
 0x20-bytes.
