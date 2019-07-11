@@ -1024,23 +1024,23 @@ The layout of cmd\_argdata is as follows:
 
 This is a bitmask describing the controller device type.
 
-| Bits  | Description   | Notes                                        |
-| ----- | ------------- | -------------------------------------------- |
-| 0     | FullKey       | Pro Controller.                              |
-| 1     |               | Unknown                                      |
-| 2     | HandheldLeft  | Joy-Con left controller in handheld mode.    |
-| 3     | HandheldRight | Joy-Con right controller in handheld mode.   |
-| 4     | JoyLeft       | Joy-Con left controller in single mode.      |
-| 5     | JoyRight      | Joy-Con right controller in single mode.     |
-| 6     | Palma         | Poké Ball Plus controller.                   |
-| 7     |               | Famicom controller.                          |
-| 8     |               | Famicom controller II with microphone.       |
-| 9     |               | NES controller.                              |
-| 10    |               | NES controller (same as above?).             |
-| 11-14 |               | Unknown                                      |
-| 15    |               | Unknown controller type.                     |
-| 16-30 |               | Unknown                                      |
-| 31    |               | Unknown controller type (similar to bit15?). |
+| Bits  | Description     | Notes                                                  |
+| ----- | --------------- | ------------------------------------------------------ |
+| 0     | FullKey         | Pro Controller and Gc controller.                      |
+| 1     |                 | Unknown                                                |
+| 2     | HandheldLeft    | Joy-Con/Famicom/NES left controller in handheld mode.  |
+| 3     | HandheldRight   | Joy-Con/Famicom/NES right controller in handheld mode. |
+| 4     | JoyLeft         | Joy-Con left controller.                               |
+| 5     | JoyRight        | Joy-Con right controller.                              |
+| 6     | Palma           | Poké Ball Plus controller.                             |
+| 7     | LarkLeft (HVC)  | Famicom left controller.                               |
+| 8     | LarkRight (HVC) | Famicom right controller (with microphone).            |
+| 9     | LarkLeft (NES)  | NES left controller.                                   |
+| 10    | LarkRight (NES) | NES right controller.                                  |
+| 11-14 |                 | Reserved                                               |
+| 15    | SystemExt       | Generic external controller.                           |
+| 16-30 |                 | Reserved                                               |
+| 31    | System          | Generic controller.                                    |
 
 ## IHidbusSystemServer
 

@@ -1416,7 +1416,7 @@ This is a bitmask describing the controller device type.
 |-
 | 0
 | FullKey
-| Pro Controller.
+| Pro Controller and Gc controller.
 |-
 | 1
 | 
@@ -1424,55 +1424,55 @@ This is a bitmask describing the controller device type.
 |-
 | 2
 | HandheldLeft
-| Joy-Con left controller in handheld mode.
+| Joy-Con/Famicom/NES left controller in handheld mode.
 |-
 | 3
 | HandheldRight
-| Joy-Con right controller in handheld mode.
+| Joy-Con/Famicom/NES right controller in handheld mode.
 |-
 | 4
 | JoyLeft
-| Joy-Con left controller in single mode.
+| Joy-Con left controller.
 |-
 | 5
 | JoyRight
-| Joy-Con right controller in single mode.
+| Joy-Con right controller.
 |-
 | 6
 | Palma
 | Poké Ball Plus controller.
 |-
 | 7
-| 
-| Famicom controller.
+| LarkLeft (HVC)
+| Famicom left controller.
 |-
 | 8
-| 
-| Famicom controller II with microphone.
+| LarkRight (HVC)
+| Famicom right controller (with microphone).
 |-
 | 9
-| 
-| NES controller.
+| LarkLeft (NES)
+| NES left controller.
 |-
 | 10
-| 
-| NES controller (same as above?).
+| LarkRight (NES)
+| NES right controller.
 |-
 | 11-14
 | 
-| Unknown
+| Reserved
 |-
 | 15
-| 
-| Unknown controller type.
+| SystemExt
+| Generic external controller.
 |-
 | 16-30
 | 
-| Unknown
+| Reserved
 |-
 | 31
-| 
-| Unknown controller type (similar to bit15?).
+| System
+| Generic controller.
 |}
 
 == IHidbusSystemServer ==
