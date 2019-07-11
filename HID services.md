@@ -731,16 +731,16 @@ Bits for the above type field:
 
 | Bits  | Description | Notes                                                                                                                         |
 | ----- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 0-7   |             | BIT(N\*4+0) = Pro-Controller, BIT(N\*4+1) = Joy-Con Left, BIT(N\*4+2) = Joy-Con Right, BIT(N\*4+3) = invalid. Where N is 0-1. |
-| 8-10  |             | Pro-Controller                                                                                                                |
-| 11    |             | Famicom-Controller                                                                                                            |
-| 12    |             | Famicom-Controller II with microphone                                                                                         |
-| 13    |             | NES-Controller ([\#DeviceType](#DeviceType "wikilink")=0x200)                                                                 |
-| 14    |             | NES-Controller ([\#DeviceType](#DeviceType "wikilink")=0x400)                                                                 |
+| 0-7   |             | BIT(N\*4+0) = Pro Controller, BIT(N\*4+1) = Joy-Con Left, BIT(N\*4+2) = Joy-Con Right, BIT(N\*4+3) = invalid. Where N is 0-1. |
+| 8-10  |             | Pro Controller                                                                                                                |
+| 11    |             | Famicom left controller                                                                                                       |
+| 12    |             | Famicom right controller (with microphone)                                                                                    |
+| 13    |             | NES left controller                                                                                                           |
+| 14    |             | NES right controller                                                                                                          |
 | 15-16 |             | Invalid                                                                                                                       |
-| 17    |             | Unknown ([\#DeviceType](#DeviceType "wikilink")=0x8000)                                                                       |
+| 17    |             | Generic external controller                                                                                                   |
 | 18-20 |             | Invalid                                                                                                                       |
-| 21-23 |             | Unknown ([\#DeviceType](#DeviceType "wikilink")=0x80000000)                                                                   |
+| 21-23 |             | Generic controller                                                                                                            |
 
 ## HdlsState
 
