@@ -206,8 +206,9 @@ No input, returns an output
 
 ##### PushLaunchParameter
 
-Takes an input u32 and an input [\#IStorage](#IStorage "wikilink"), no
-output.
+Takes an input u32
+[\#LaunchParameterKind](#LaunchParameterKind "wikilink") and an input
+[\#IStorage](#IStorage "wikilink"), no output.
 
 ##### GetApplicationControlProperty
 

@@ -243,7 +243,7 @@ Commands <=30 are inherited from [[#IAppletAccessor]].
 No input, returns an output [[#IAppletAccessor]].
 
 ===== PushLaunchParameter =====
-Takes an input u32 and an input [[#IStorage]], no output.
+Takes an input u32 [[#LaunchParameterKind]] and an input [[#IStorage]], no output.
 
 ===== GetApplicationControlProperty =====
 No input, takes a type-0x6 output buffer.
