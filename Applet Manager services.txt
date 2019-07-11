@@ -1206,7 +1206,19 @@ No input, returns an output event handle with autoclear=false.
 === SetScreenShotPermission ===
 Takes an input s32. No output.
 
-Controls whether screenshot-capture is allowed. 0 = disable, 1 = enable, 2 = unknown.
+Controls whether screenshot-capture is allowed.
+
+{| class="wikitable" border="1"
+|-
+! Value || Description
+|-
+| 0 || Inherit from parent applet
+|-
+| 1 || Enable
+|-
+| 2 || Disable
+|-
+|}
 
 === SetOperationModeChangedNotification ===
 Takes an input u8 bool flag. No output.

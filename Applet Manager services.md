@@ -1180,8 +1180,14 @@ No input, returns an output event handle with autoclear=false.
 
 Takes an input s32. No output.
 
-Controls whether screenshot-capture is allowed. 0 = disable, 1 = enable,
-2 = unknown.
+Controls whether screenshot-capture is allowed.
+
+| Value | Description                |
+| ----- | -------------------------- |
+| 0     | Inherit from parent applet |
+| 1     | Enable                     |
+| 2     | Disable                    |
+|       |                            |
 
 ### SetOperationModeChangedNotification
 
