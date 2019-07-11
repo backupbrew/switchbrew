@@ -477,7 +477,7 @@ Takes an input u8, no output.
 | 71   | \[3.0.0+\] [\#RequestToReboot](#RequestToReboot "wikilink")                                                                     |                                                                                                             |
 | 80   | \[4.0.0+\] [\#ExitAndRequestToShowThanksMessage](#ExitAndRequestToShowThanksMessage "wikilink")                                 |                                                                                                             |
 | 90   | \[4.0.0+\] [\#EnableApplicationCrashReport](#EnableApplicationCrashReport "wikilink")                                           |                                                                                                             |
-| 100  | \[5.0.0+\] InitializeApplicationCopyrightFrameBuffer                                                                            |                                                                                                             |
+| 100  | \[5.0.0+\] [\#InitializeApplicationCopyrightFrameBuffer](#InitializeApplicationCopyrightFrameBuffer "wikilink")                 |                                                                                                             |
 | 101  | \[5.0.0+\] [\#SetApplicationCopyrightImage](#SetApplicationCopyrightImage "wikilink")                                           |                                                                                                             |
 | 102  | \[5.0.0+\] [\#SetApplicationCopyrightVisibility](#SetApplicationCopyrightVisibility "wikilink")                                 |                                                                                                             |
 | 110  | \[5.0.0+\] [\#QueryApplicationPlayStatistics](#QueryApplicationPlayStatistics "wikilink")                                       |                                                                                                             |
@@ -629,6 +629,14 @@ uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
 #### EnableApplicationCrashReport
 
 Takes an input u8 bool, no output.
+
+#### InitializeApplicationCopyrightFrameBuffer
+
+Takes an input TransferMemory handle, an u32 **width**, an u32
+**height**, an u64 tmem\_size, and no output.
+
+User-processes create the tmem with an user-specified buffer with
+permissions=0. **width** = 1280 and **height** = 720.
 
 #### SetApplicationCopyrightImage
 

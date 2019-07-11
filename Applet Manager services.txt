@@ -605,7 +605,7 @@ Takes an input u8, no output.
 |-
 | 90 || [4.0.0+] [[#EnableApplicationCrashReport]] || 
 |-
-| 100 || [5.0.0+] InitializeApplicationCopyrightFrameBuffer || 
+| 100 || [5.0.0+] [[#InitializeApplicationCopyrightFrameBuffer]] || 
 |-
 | 101 || [5.0.0+] [[#SetApplicationCopyrightImage]] || 
 |-
@@ -715,6 +715,11 @@ Used to exit the application and return to the kiosk menu. Official sw uses [[#U
 
 ==== EnableApplicationCrashReport ====
 Takes an input u8 bool, no output.
+
+==== InitializeApplicationCopyrightFrameBuffer ====
+Takes an input TransferMemory handle, an u32 '''width''', an u32 '''height''', an u64 tmem_size, and no output.
+
+User-processes create the tmem with an user-specified buffer with permissions=0. '''width''' = 1280 and '''height''' = 720.
 
 ==== SetApplicationCopyrightImage ====
 Takes a type-0x45 input buffer and 5 input s32s, no output.
