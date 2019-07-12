@@ -773,12 +773,12 @@ Takes an input u32 [[#ProgramSpecifyKind]] and an input u64, no output.
 ==== ClearUserChannel ====
 No input/output.
 
-Clears the UserChannel.
+Clears the UserChannel used by [[#UnpopToUserChannel]].
 
 ==== UnpopToUserChannel ====
 Takes an input [[#IStorage]], no output.
 
-The input storage is pushed to the UserChannel, which is also used by [[#ClearUserChannel]].
+The input storage is pushed to the UserChannel. This is the same channel used by [[#LaunchParameterKind]] value 1.
 
 User-processes create a storage using data specified by the user (written to offset=0 size=inputsize), with max size 0x1000. This storage is then used with this cmd.
 

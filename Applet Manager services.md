@@ -735,14 +735,16 @@ no output.
 
 No input/output.
 
-Clears the UserChannel.
+Clears the UserChannel used by
+[\#UnpopToUserChannel](#UnpopToUserChannel "wikilink").
 
 #### UnpopToUserChannel
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
-The input storage is pushed to the UserChannel, which is also used by
-[\#ClearUserChannel](#ClearUserChannel "wikilink").
+The input storage is pushed to the UserChannel. This is the same channel
+used by [\#LaunchParameterKind](#LaunchParameterKind "wikilink") value
+1.
 
 User-processes create a storage using data specified by the user
 (written to offset=0 size=inputsize), with max size 0x1000. This storage
