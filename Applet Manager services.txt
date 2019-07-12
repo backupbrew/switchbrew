@@ -1977,9 +1977,9 @@ User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWith
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || Unknown. Default is 0.
+| 0x0 || 0x4 || Unknown. Default is 0 for non-Quest.
 |-
-| 0x4 || 0x4 || Unknown. Default is 0.
+| 0x4 || 0x4 || Unknown. Default is 0 for non-Quest.
 |-
 | 0x8 || 0x4 || float. Must be in the range of 0.0f-1.0f. The default is 1.0f.
 |-
@@ -1987,6 +1987,8 @@ User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWith
 |}
 
 This struct is "nn::am::ApplicationAttribute". This struct is 0x20-bytes.
+
+The function called internally by CreateApplication* only uses the first 0xC-bytes from ApplicationAttribute.
 
 = Notes =
 AM-sysmodule will only initialize [[Shared_Database_services|pdm:ntfy]] / use pdm:ntfy service commands when the value from [[Process_Manager_services|pm:bm]] GetBootMode is not 0x1.
