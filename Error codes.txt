@@ -1259,67 +1259,89 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 {| class=wikitable
 ! Value || Description || Message
 |-
-| 0x7802 || 60 || Error: Specified mount name already exists.
+| 0x7802 || 60 || nn::fs::ResultMountNameAlreadyExists: Error: Specified mount name already exists.
 |-
-| 0xD401 || 106 || Error: Passed buffer is not usable for fs library.
+| 0xD401 || 106 || nn::svc::ResultInvalidCurrentMemory: Error: Passed buffer is not usable for fs library. See a manual of fs library for more information.
 |-
-| 0x7D202 || 1001 || Error: Specified partition is not found.
+| 0x7D202 || 1001 || nn::fs::ResultPartitionNotFound: Error: Specified partition is not found.
 |-
-| 0x7D402 || 1002 || Error: Specified target is not found.
+| 0x7D402 || 1002 || nn::fs::ResultTargetNotFound: Error: Specified target is not found.
 |-
-| 0xFA002 - 0x138602 || 2000 - 2499 || Error: Failed to access SD card.
+| 0xFA002 - 0x138602 || 2000 - 2499 || nn::fs::ResultSdCardAccessFailed: Error: Failed to access SD card.
 |-
-| 0x136802 - 0x176E02 || 2500 - 2999 || Error: Failed to access game card.
+| 0x136802 - 0x176E02 || 2500 - 2999 || nn::fs::ResultGameCardAccessFailed: Error: Failed to access game card.
 |-
-| 0x177202 || 3001 || Error: Specified operation is not implemented.
+| 0x177202 || 3001 || nn::fs::ResultNotImplemented: Error: Specified operation is not implemented.
 |-
-| 0x177A02 || 3005 || Error: Specified value is out of range.
+| 0x177A02 || 3005 || nn::fs::ResultOutOfRange: Error: Specified value is out of range.
 |-
-| 0x1B5802 - 0x1F3E02 || 3500 - 3999 || Error: Failed to access MMC.
+| 0x190002 - 0x1B5602 || 3200 - 3499 || nn::fs::ResultAllocationMemoryFailed: Error: Failed to allocate memory.
 |-
-| 0x1F4202 - 0x219602 || 4001 - 4299 || Error: ROM is corrupted.
+| 0x1B5802 - 0x1F3E02 || 3500 - 3999 || nn::fs::ResultMmcAccessFailed: Error: Failed to access MMC.
 |-
-| 0x219A02 - 0x232602 || 4301 - 4499 || Error: Save data is corrupted.
+| 0x1F4202 - 0x219602 || 4001 - 4299 || nn::fs::ResultRomCorrupted: Error: ROM is corrupted.
 |-
-| 0x232A02 - 0x23EE02 || 4501 - 4599 || Error: NCA is corrupted.
+| 0x219A02 - 0x232602 || 4301 - 4499 || nn::fs::ResultSaveDataCorrupted: Error: Save data is corrupted.
 |-
-| 0x23F202 - 0x243E02 || 4601 - 4639 || Error: Integrity verification failed.
+| 0x232A02 - 0x23EE02 || 4501 - 4599 || nn::fs::ResultNcaCorrupted: Error: NCA is corrupted.
 |-
-| 0x244202 - 0x246602 || 4641 - 4659 || Error: Partition FS is corrupted.
+| 0x23F202 - 0x243E02 || 4601 - 4639 || nn::fs::ResultIntegrityVerificationStorageCorrupted: Error: Integrity verification failed.
 |-
-| 0x246A02 - 0x248E02 || 4661 - 4679 || Error: Built-in-storage is corrupted.
+| 0x244202 - 0x246602 || 4641 - 4659 || nn::fs::ResultPartitionFileSystemCorrupted: Error: Partition FS is corrupted.
 |-
-| 0x249202 - 0x24B602 || 4681 - 4699 || Error: FAT FS is corrupted.
+| 0x246A02 - 0x248E02 || 4661 - 4679 || nn::fs::ResultBuiltInStorageCorrupted: Error: Built-in-storage is corrupted.
 |-
-| 0x24BA02 - 0x24DE02 || 4701 - 4719 || Error: HOST FS is corrupted.
+| 0x249202 - 0x24B602 || 4681 - 4699 || nn::fs::ResultFatFileSystemCorrupted: Error: FAT FS is corrupted.
 |-
-| 0x1F4002 - 0x270E02 || 4000, 4300, 4500, 4600, 4640, 4660, 4680, 4700, 4720-4999 || Error: Data is corrupted.
+| 0x24BA02 - 0x24DE02 || 4701 - 4719 || nn::fs::ResultHostFileSystemCorrupted: Error: HOST FS is corrupted.
 |-
-| 0x271002 - 0x2EDE02 || 5000-5999 || Error: Unexpected failure occurred.
+| 0x1F4002 - 0x270E02 || 4000, 4300, 4500, 4600, 4640, 4660, 4680, 4700, 4720-4999 || nn::fs::ResultDataCorrupted: Error: Data is corrupted.
 |-
-| 0x2EE402 - 0x2F1A02 || 6002-6029 || Error: Invalid path was specified.
+| 0x271002 - 0x2EDE02 || 5000-5999 || nn::fs::ResultUnexpected: Error: Unexpected failure occurred.
 |-
-| 0x2F5A02 || 6061 || Error: Invalid offset was specified.
+| 0x2EE002 - 0x32C602 || 6000-6499 || nn::fs::ResultPreconditionViolation: Error: Precondition violation.
 |-
-| 0x2F5C02 || 6062 || Error: Invalid size was specified.
+| 0x2EE202 - 0x306E02 || 6001-6199 || nn::fs::ResultInvalidArgument: Error: Invalid argument was specified.
 |-
-| 0x2F5E02 || 6063 || Error: Null pointer argument was specified.
+| 0x2EE402 - 0x2F1A02 || 6002-6029 || nn::fs::ResultInvalidPath: Error: Invalid path was specified.
 |-
-| 0x2EE002 || 6000 || Error: Precondition violation.
+| 0x2EE602 || 6003 || nn::fs::ResultTooLongPath: Error: Too long path was specified.
 |-
-| 0x2EE202 - 0x306E02 || 6001-6199 || Error: Invalid argument was specified.
+| 0x2EE802 || 6004 || nn::fs::ResultInvalidCharacter: Error: Invalid path character was specified.
 |-
-| 0x307202 || 6201 || Error: OpenMode_AllowAppend is required for implicit extension of file size by WriteFile().
+| 0x2EEA02 || 6005 || nn::fs::ResultInvalidPathFormat: Error: Invalid path format was specified.
 |-
-| 0x307002 - 0x313602 || 6200, 6202 - 6299 || Error: Invalid operation for the open mode.
+| 0x2F5A02 || 6061 || nn::fs::ResultInvalidOffset: Error: Invalid offset was specified.
 |-
-| 0x313802 - 0x31FE02 || 6300-6399 || Error: Unsupported operation.
+| 0x2F5C02 || 6062 || nn::fs::ResultInvalidSize: Error: Invalid size was specified.
 |-
-| 0x320002 - 0x32C602 || 6400-6499 || Error: Permission denied.
+| 0x2F5E02 || 6063 || nn::fs::ResultNullptrArgument: Error: Null pointer argument was specified.
 |-
-| 0x346402 || 6706 || Error: Enough journal space is not left.
+| 0x2F6202 || 6065 || nn::fs::ResultInvalidMountName: Error: Invalid mount name was specified.
 |-
-| 0x346A02 || 6709 || Error: The open count of files and directories reached the limitation.
+| 0x2F6402 || 6066 || nn::fs::ResultExtensionSizeTooLarge: Error: Extension size exceeds max value set in nmeta file.
+|-
+| 0x2F6602 || 6067 || nn::fs::ResultExtensionSizeInvalid: Error: Extension size is not a multiple of nn::fs::SaveDataExtensionUnitSize.
+|-
+| 0x307202 || 6201 || nn::fs::ResultFileExtensionWithoutOpenModeAllowAppend: Error: OpenMode_AllowAppend is required for implicit extension of file size by WriteFile().
+|-
+| 0x307002 - 0x313602 || 6200, 6202 - 6299 || nn::fs::ResultInvalidOperationForOpenMode: Error: Invalid operation for the open mode.
+|-
+| 0x313802 - 0x31FE02 || 6300-6399 || nn::fs::ResultUnsupportedOperation: Error: Unsupported operation.
+|-
+| 0x320002 - 0x326202 || 6400-6449 || nn::fs::ResultPermissionDenied: Error: Permission denied.
+|-
+| 0x327202 || 6457 || nn::fs::ResultWriteModeFileNotClosed: Error: Close files opened in write mode before committing.
+|-
+| 0x328202 || 6465 || nn::fs::ResultUserNotExist: Error: Specified user doesn't exist.
+|-
+| 0x346402 || 6706 || nn::fs::ResultMappingTableFull: Error: Enough journal space is not left.
+|-
+| 0x346A02 || 6709 || nn::fs::ResultOpenCountLimit: Error: The open count of files and directories reached the limitation.
+|-
+| 0x353602 || 6811 || nn::fs::ResultMapFull: Error: Save data extension count reached the limitation.
+|-
+| 0x35F202 || 6905 || nn::fs::ResultNotMounted: Error: Specified mount name is not found.
 |}
 
 = Fatal Errors =
