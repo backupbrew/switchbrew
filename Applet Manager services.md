@@ -492,7 +492,7 @@ Takes an input u8, no output.
 | 121  | \[5.0.0+\] [\#ClearUserChannel](#ClearUserChannel "wikilink")                                                                                             |       |
 | 122  | \[5.0.0+\] [\#UnpopToUserChannel](#UnpopToUserChannel "wikilink")                                                                                         |       |
 | 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                                               |       |
-| 124  | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                                                                          |       |
+| 124  | \[6.0.0+\] [\#EnableApplicationAllThreadDumpOnCrash](#EnableApplicationAllThreadDumpOnCrash "wikilink")                                                   |       |
 | 130  | \[8.0.0+\] GetGpuErrorDetectedSystemEvent                                                                                                                 |       |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                                          |       |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
@@ -750,6 +750,10 @@ is then used with this cmd.
 #### GetPreviousProgramIndex
 
 No input, returns an output s32.
+
+#### EnableApplicationAllThreadDumpOnCrash
+
+Takes an input u8 bool, no output.
 
 #### CreateMovieMaker
 

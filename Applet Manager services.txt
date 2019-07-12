@@ -626,7 +626,7 @@ Takes an input u8, no output.
 |-
 | 123 || [5.0.0+] [[#GetPreviousProgramIndex]] || 
 |-
-| 124 || [6.0.0+] EnableApplicationAllThreadDumpOnCrash || 
+| 124 || [6.0.0+] [[#EnableApplicationAllThreadDumpOnCrash]] || 
 |-
 | 130 || [8.0.0+] GetGpuErrorDetectedSystemEvent || 
 |-
@@ -784,6 +784,9 @@ User-processes create a storage using data specified by the user (written to off
 
 ==== GetPreviousProgramIndex ====
 No input, returns an output s32.
+
+==== EnableApplicationAllThreadDumpOnCrash ====
+Takes an input u8 bool, no output.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
