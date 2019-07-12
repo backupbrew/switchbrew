@@ -1802,8 +1802,8 @@ rest of the struct being cleared, which is then passed to the actual cmd
 This struct is "nn::am::ApplicationAttribute". This struct is
 0x20-bytes.
 
-The function called internally by CreateApplication\* only uses the
-first 0xC-bytes from ApplicationAttribute.
+Internally AM only uses the first 0xC-bytes from ApplicationAttribute,
+regardless of the cmd.
 
 # Notes
 

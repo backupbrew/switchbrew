@@ -1988,7 +1988,7 @@ User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWith
 
 This struct is "nn::am::ApplicationAttribute". This struct is 0x20-bytes.
 
-The function called internally by CreateApplication* only uses the first 0xC-bytes from ApplicationAttribute.
+Internally AM only uses the first 0xC-bytes from ApplicationAttribute, regardless of the cmd.
 
 = Notes =
 AM-sysmodule will only initialize [[Shared_Database_services|pdm:ntfy]] / use pdm:ntfy service commands when the value from [[Process_Manager_services|pm:bm]] GetBootMode is not 0x1.
