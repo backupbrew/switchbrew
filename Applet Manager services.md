@@ -493,7 +493,7 @@ Takes an input u8, no output.
 | 122  | \[5.0.0+\] [\#UnpopToUserChannel](#UnpopToUserChannel "wikilink")                                                                                         |       |
 | 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                                               |       |
 | 124  | \[6.0.0+\] [\#EnableApplicationAllThreadDumpOnCrash](#EnableApplicationAllThreadDumpOnCrash "wikilink")                                                   |       |
-| 130  | \[8.0.0+\] GetGpuErrorDetectedSystemEvent                                                                                                                 |       |
+| 130  | \[8.0.0+\] [\#GetGpuErrorDetectedSystemEvent](#GetGpuErrorDetectedSystemEvent "wikilink")                                                                 |       |
 | 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                                          |       |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                                                   |       |
@@ -754,6 +754,14 @@ No input, returns an output s32.
 #### EnableApplicationAllThreadDumpOnCrash
 
 Takes an input u8 bool, no output.
+
+#### GetGpuErrorDetectedSystemEvent
+
+No input, returns an output Event handle with autoclear=false.
+
+This is used by sdknso during applet-application initialization. A
+seperate thread is setup where event-waiting is handled. When the Event
+is signaled, official sw will assert.
 
 #### CreateMovieMaker
 

@@ -628,7 +628,7 @@ Takes an input u8, no output.
 |-
 | 124 || [6.0.0+] [[#EnableApplicationAllThreadDumpOnCrash]] || 
 |-
-| 130 || [8.0.0+] GetGpuErrorDetectedSystemEvent || 
+| 130 || [8.0.0+] [[#GetGpuErrorDetectedSystemEvent]] || 
 |-
 | 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
 |-
@@ -787,6 +787,11 @@ No input, returns an output s32.
 
 ==== EnableApplicationAllThreadDumpOnCrash ====
 Takes an input u8 bool, no output.
+
+==== GetGpuErrorDetectedSystemEvent ====
+No input, returns an output Event handle with autoclear=false.
+
+This is used by sdknso during applet-application initialization. A seperate thread is setup where event-waiting is handled. When the Event is signaled, official sw will assert.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
