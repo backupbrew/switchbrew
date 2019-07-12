@@ -269,8 +269,9 @@ Added with [7.0.0](7.0.0.md "wikilink").
 | 50  | \[8.0.0+\] SetHomeButtonDoubleClickEnabled |                                                                                                                |
 | 51  | \[8.0.0+\] GetHomeButtonDoubleClickEnabled |                                                                                                                |
 
-These commands copy data from/to a state buffer and the user specified
-buffer. The size of the state buffer is 0x400-bytes.
+ReadThemeStorage/WriteThemeStorage: these commands copy data from/to a
+state buffer and the user specified buffer. The size of the state buffer
+is 0x400-bytes.
 
 ## ILibraryAppletProxy
 
