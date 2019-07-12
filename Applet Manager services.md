@@ -1792,12 +1792,12 @@ rest of the struct being cleared, which is then passed to the actual cmd
 
 # ApplicationAttribute
 
-| Offset | Size | Description                                                    |
-| ------ | ---- | -------------------------------------------------------------- |
-| 0x0    | 0x4  | Unknown. Default is 0 for non-Quest.                           |
-| 0x4    | 0x4  | Unknown. Default is 0 for non-Quest.                           |
-| 0x8    | 0x4  | float. Must be in the range of 0.0f-1.0f. The default is 1.0f. |
-| 0xC    | 0x14 | Unknown. Default is 0.                                         |
+| Offset | Size | Description                                                                    |
+| ------ | ---- | ------------------------------------------------------------------------------ |
+| 0x0    | 0x4  | Default is 0 for non-Quest. Only used when non-zero: unknown value in seconds. |
+| 0x4    | 0x4  | Default is 0 for non-Quest. Only used when non-zero: unknown value in seconds. |
+| 0x8    | 0x4  | float. Must be in the range of 0.0f-1.0f. The default is 1.0f.                 |
+| 0xC    | 0x14 | Unknown. Default is 0.                                                         |
 
 This struct is "nn::am::ApplicationAttribute". This struct is
 0x20-bytes.
