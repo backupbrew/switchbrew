@@ -118,21 +118,21 @@ These are "nn::srepo::detail::ipc::ISrepoService".
 
 This is "nn::ovln::IReceiverService".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name         |
+| --- | ------------ |
+| 0   | OpenReceiver |
 
 ## IReceiver
 
 This is "nn::ovln::IReceiver".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 4   |      |
+| Cmd | Name                  |
+| --- | --------------------- |
+| 0   | AddSource             |
+| 1   | RemoveSource          |
+| 2   | GetReceiveEventHandle |
+| 3   | Receive               |
+| 4   | ReceiveWithTick       |
 
 # ovln:snd
 

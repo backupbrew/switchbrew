@@ -156,7 +156,7 @@ This is "nn::ovln::IReceiverService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || OpenReceiver
 |}
 
 == IReceiver ==
@@ -166,15 +166,15 @@ This is "nn::ovln::IReceiver".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || AddSource
 |-
-| 1 ||
+| 1 || RemoveSource
 |-
-| 2 ||
+| 2 || GetReceiveEventHandle
 |-
-| 3 ||
+| 3 || Receive
 |-
-| 4 ||
+| 4 || ReceiveWithTick
 |}
 
 = ovln:snd =
