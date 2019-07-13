@@ -609,9 +609,9 @@ NUL-terminated.
 
 #### BeginBlockingHomeButtonShortAndLongPressed
 
-Takes an input u64, no output.
+Takes an input s64, no output.
 
-Official user-processes use hard-coded value 0 for the u64.
+Official user-processes use hard-coded value 0 for the s64.
 
 Starts blocking the Home button.
 

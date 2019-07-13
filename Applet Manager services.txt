@@ -689,9 +689,9 @@ No input, returns an output 0x10-byte struct.
 The output struct is "nn::oe::DisplayVersion". This the DisplayVersion string copied from the application [[NACP_Format|control.nacp]], this is always NUL-terminated.
 
 ==== BeginBlockingHomeButtonShortAndLongPressed ====
-Takes an input u64, no output.
+Takes an input s64, no output.
 
-Official user-processes use hard-coded value 0 for the u64.
+Official user-processes use hard-coded value 0 for the s64.
 
 Starts blocking the Home button.
 
