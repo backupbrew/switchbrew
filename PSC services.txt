@@ -184,7 +184,7 @@ This is "nn::ovln::ISenderService".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || OpenSender
 |}
 
 == ISender ==
@@ -194,9 +194,9 @@ This is "nn::ovln::ISender".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Send
 |-
-| 1 ||
+| 1 || GetUnreceivedMessageCount
 |}
 
 = PSC Module IDs =

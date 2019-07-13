@@ -138,18 +138,18 @@ This is "nn::ovln::IReceiver".
 
 This is "nn::ovln::ISenderService".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
+| Cmd | Name       |
+| --- | ---------- |
+| 0   | OpenSender |
 
 ## ISender
 
 This is "nn::ovln::ISender".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
+| Cmd | Name                      |
+| --- | ------------------------- |
+| 0   | Send                      |
+| 1   | GetUnreceivedMessageCount |
 
 # PSC Module IDs
 
