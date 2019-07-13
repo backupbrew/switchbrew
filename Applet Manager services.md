@@ -1778,11 +1778,11 @@ This is 8-bytes.
 
 # ApplicationAttributeForQuest
 
-| Offset | Size | Description                                                     |
-| ------ | ---- | --------------------------------------------------------------- |
-| 0x0    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
-| 0x4    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
-| 0x8    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
+| Offset | Size | Description                                                                |
+| ------ | ---- | -------------------------------------------------------------------------- |
+| 0x0    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink").            |
+| 0x4    | 0x4  | See [\#ApplicationAttribute](#ApplicationAttribute "wikilink").            |
+| 0x8    | 0x4  | \[7.0.0+\] See [\#ApplicationAttribute](#ApplicationAttribute "wikilink"). |
 
 This struct is "nn::applet::ApplicationAttributeForQuest".
 
