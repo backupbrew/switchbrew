@@ -697,7 +697,8 @@ This is used as an overlay for screenshots.
 #### SetApplicationCopyrightImage
 
 Takes a type-0x45 input buffer, an s32 **x**, an s32 **y**, an s32
-**width**, an s32 **height**, and no output.
+**width**, an s32 **height**, an s32 **WindowOriginMode**, and no
+output.
 
 The last s32 is "nn::oe::WindowOriginMode". This should be at least 1.
 
