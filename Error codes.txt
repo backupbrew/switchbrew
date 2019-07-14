@@ -1070,7 +1070,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x74 || 116 || 0 || Time service not initialized
 |-
-| 0xCC74 || 116 || 102 || Time not set
+| 0x274 || 116 || 1 || Permission denied
+|-
+| 0xCC74 || 116 || 102 || Time not set / Clock Source Id mismatch
 |-
 | 0x19074 || 116 || 200 || Invalid time comparison
 |-
