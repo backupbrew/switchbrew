@@ -756,7 +756,7 @@ The last s32 is "nn::oe::WindowOriginMode". This should be at least 1.
 
 '''x''' and '''y''' must not have the negative bit set. '''width''' and '''height''' must not be <1.
 
-Sets the RGBA8 image for use with [[#InitializeApplicationCopyrightFrameBuffer]].
+Sets the RGBA8 image for use with [[#InitializeApplicationCopyrightFrameBuffer]]. Overrides the current image, if this was already used previously.
 
 ==== SetApplicationCopyrightVisibility ====
 Takes an input u8 bool, no output.

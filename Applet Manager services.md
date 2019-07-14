@@ -706,6 +706,7 @@ The last s32 is "nn::oe::WindowOriginMode". This should be at least 1.
 
 Sets the RGBA8 image for use with
 [\#InitializeApplicationCopyrightFrameBuffer](#InitializeApplicationCopyrightFrameBuffer "wikilink").
+Overrides the current image, if this was already used previously.
 
 #### SetApplicationCopyrightVisibility
 
