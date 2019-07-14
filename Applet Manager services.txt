@@ -743,6 +743,8 @@ Takes an input u8 bool, no output.
 ==== InitializeApplicationCopyrightFrameBuffer ====
 Takes an input TransferMemory handle, an u32 '''width''', an u32 '''height''', an u64 tmem_size, and no output.
 
+tmem_size must be 0x40000-byte aligned. '''width''' must be 1-1280, and '''height''' must be 1-720.
+
 User-processes create the tmem with an user-specified buffer with permissions=0. '''width''' = 1280 and '''height''' = 720.
 
 ==== SetApplicationCopyrightImage ====
