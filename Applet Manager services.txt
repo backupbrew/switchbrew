@@ -735,6 +735,8 @@ No input/output.
 
 Used to exit the application and return to the kiosk menu. Official sw uses [[#UnlockExit]] immediately before this.
 
+This throws an error when the cached [[Settings_services#GetQuestFlag]] value is 0.
+
 ==== EnableApplicationCrashReport ====
 Takes an input u8 bool, no output.
 

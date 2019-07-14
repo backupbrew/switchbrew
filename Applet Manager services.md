@@ -673,6 +673,10 @@ No input/output.
 Used to exit the application and return to the kiosk menu. Official sw
 uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
 
+This throws an error when the cached
+[Settings\_services\#GetQuestFlag](Settings%20services#GetQuestFlag.md##GetQuestFlag "wikilink")
+value is 0.
+
 #### EnableApplicationCrashReport
 
 Takes an input u8 bool, no output.
