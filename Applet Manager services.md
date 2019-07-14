@@ -683,7 +683,7 @@ Takes an input u8 bool, no output.
 
 #### InitializeApplicationCopyrightFrameBuffer
 
-Takes an input TransferMemory handle, an u32 **width**, an u32
+Takes an input TransferMemory handle, an s32 **width**, an s32
 **height**, an u64 tmem\_size, and no output.
 
 tmem\_size must be 0x40000-byte aligned. **width** must be 1-1280, and
@@ -692,18 +692,28 @@ tmem\_size must be 0x40000-byte aligned. **width** must be 1-1280, and
 User-processes create the tmem with an user-specified buffer with
 permissions=0. **width** = 1280 and **height** = 720.
 
+This is used as an overlay for screenshots.
+
 #### SetApplicationCopyrightImage
 
-Takes a type-0x45 input buffer and 5 input s32s, no output.
+Takes a type-0x45 input buffer, an s32 **x**, an s32 **y**, an s32
+**width**, an s32 **height**, and no output.
 
-The last s32 is "nn::oe::WindowOriginMode".
+The last s32 is "nn::oe::WindowOriginMode". This should be at least 1.
 
-The first two s32s must not have the negative bit set, and the following
-two s32s must not be \<1.
+**x** and **y** must not have the negative bit set. **width** and
+**height** must not be \<1.
+
+Sets the RGBA8 image for use with
+[\#InitializeApplicationCopyrightFrameBuffer](#InitializeApplicationCopyrightFrameBuffer "wikilink").
 
 #### SetApplicationCopyrightVisibility
 
 Takes an input u8 bool, no output.
+
+Sets the visibility for the image set by
+[\#SetApplicationCopyrightImage](#SetApplicationCopyrightImage "wikilink"),
+in screenshots. By default it's visible.
 
 #### QueryApplicationPlayStatistics
 
