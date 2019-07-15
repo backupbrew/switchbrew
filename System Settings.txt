@@ -81,6 +81,8 @@ This class does not exist on retail firmware.
 |
 |
 | rowspan="1" |Not set on retail firmware. Enables a few IPC commands and allows OpenSystem/OverlayAppletProxy when there is already a system/overlay applet.
+|-
+| cpu_boost_always_no_boost || ? || || Only used when [[Settings_services#GetDebugModeFlag]] returns 1.
 |}
 
 = am.display =

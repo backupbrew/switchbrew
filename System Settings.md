@@ -1,5 +1,4 @@
-\_\_NOTOC\_\_ Data sourced from 0100000000000818
-archive.
+\_\_NOTOC\_\_ Data sourced from 0100000000000818 archive.
 
 # account
 
@@ -26,12 +25,12 @@ archive.
 
 # am.debug
 
-This class does not exist on retail
-firmware.
+This class does not exist on retail firmware.
 
-| Name          | Versions | Default Values | Description                                                                                                                                    |
-| ------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| dev\_function |          |                | Not set on retail firmware. Enables a few IPC commands and allows OpenSystem/OverlayAppletProxy when there is already a system/overlay applet. |
+| Name                          | Versions | Default Values | Description                                                                                                                                    |
+| ----------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| dev\_function                 |          |                | Not set on retail firmware. Enables a few IPC commands and allows OpenSystem/OverlayAppletProxy when there is already a system/overlay applet. |
+| cpu\_boost\_always\_no\_boost | ?        |                | Only used when [Settings\_services\#GetDebugModeFlag](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") returns 1.         |
 
 # am.display
 
