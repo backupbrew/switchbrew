@@ -10,18 +10,18 @@ and the Nintendo Switch logo displayed during system boot.
 
 This is "nn::am::<service::IAllSystemAppletProxiesService>".
 
-| Cmd  | Name                                                                      | Notes                                                                                        |
-| ---- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| 100  | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").                           |
-| 200  | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
-| 201  | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                         |
-| 300  | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").                         |
-| 350  | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").                             |
-| 400  | CreateSelfLibraryAppletCreatorForDevelop                                  | Returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink").                     |
-| 410  | \[6.0.0+\] GetSystemAppletControllerForDebug                              | Returns an [\#ISystemAppletControllerForDebug](#ISystemAppletControllerForDebug "wikilink"). |
-| 1000 | \[6.0.0+\] GetDebugFunctions                                              | Returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                                 |
+| Cmd  | Name                                                                      | Notes                                                                                                                   |
+| ---- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 100  | OpenSystemAppletProxy                                                     | Returns an [\#ISystemAppletProxy](#ISystemAppletProxy "wikilink").                                                      |
+| 200  | OpenLibraryAppletProxyOld (\[1.0.0-2.3.0\] OpenLibraryAppletProxy)        | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                                                    |
+| 201  | \[3.0.0+\] [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") | Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").                                                    |
+| 300  | OpenOverlayAppletProxy                                                    | Returns an [\#IOverlayAppletProxy](#IOverlayAppletProxy "wikilink").                                                    |
+| 350  | OpenSystemApplicationProxy                                                | Returns an [\#IApplicationProxy](#IApplicationProxy "wikilink").                                                        |
+| 400  | CreateSelfLibraryAppletCreatorForDevelop                                  | Takes a PID and an input u64 pid\_placeholder, returns an [\#ILibraryAppletCreator](#ILibraryAppletCreator "wikilink"). |
+| 410  | \[6.0.0+\] GetSystemAppletControllerForDebug                              | No input, returns an [\#ISystemAppletControllerForDebug](#ISystemAppletControllerForDebug "wikilink").                  |
+| 1000 | \[6.0.0+\] GetDebugFunctions                                              | No input, returns an [\#IDebugFunctions](#IDebugFunctions "wikilink").                                                  |
 
-All of these commands except
+All of these Open\*Proxy commands except
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink") take the
 same input as
 [\#OpenApplicationProxy](#OpenApplicationProxy "wikilink"), with the

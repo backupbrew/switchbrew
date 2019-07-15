@@ -19,14 +19,14 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 350 || OpenSystemApplicationProxy || Returns an [[#IApplicationProxy]].
 |-
-| 400 || CreateSelfLibraryAppletCreatorForDevelop || Returns an [[#ILibraryAppletCreator]].
+| 400 || CreateSelfLibraryAppletCreatorForDevelop || Takes a PID and an input u64 pid_placeholder, returns an [[#ILibraryAppletCreator]].
 |-
-| 410 || [6.0.0+] GetSystemAppletControllerForDebug || Returns an [[#ISystemAppletControllerForDebug]].
+| 410 || [6.0.0+] GetSystemAppletControllerForDebug || No input, returns an [[#ISystemAppletControllerForDebug]].
 |-
-| 1000 || [6.0.0+] GetDebugFunctions || Returns an [[#IDebugFunctions]].
+| 1000 || [6.0.0+] GetDebugFunctions || No input, returns an [[#IDebugFunctions]].
 |}
 
-All of these commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
+All of these Open*Proxy commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
 
 This service is used by all system non-regular-applications.
 
