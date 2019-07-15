@@ -19,7 +19,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 350 || OpenSystemApplicationProxy || Returns an [[#IApplicationProxy]].
 |-
-| 400 || CreateSelfLibraryAppletCreatorForDevelop || Takes a PID and an input u64 pid_placeholder, returns an [[#ILibraryAppletCreator]].
+| 400 || [[#CreateSelfLibraryAppletCreatorForDevelop]] || 
 |-
 | 410 || [6.0.0+] [[#GetSystemAppletControllerForDebug]] || 
 |-
@@ -44,12 +44,17 @@ Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-
 
 Official user-processes use the same retry loop with this as the other Open*Proxy commands.
 
-== GetSystemAppletControllerForDebug ==
-No input, returns an [[#ISystemAppletControllerForDebug]].
+== CreateSelfLibraryAppletCreatorForDevelop ==
+Takes a PID and an input u64 pid_placeholder, returns an [[#ILibraryAppletCreator]].
 
 The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
 
 The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, otherwise an error is returned.
+
+== GetSystemAppletControllerForDebug ==
+No input, returns an [[#ISystemAppletControllerForDebug]].
+
+The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, and various state checks must pass, otherwise 0 is returned with no output interface.
 
 == GetDebugFunctions ==
 No input, returns an [[#IDebugFunctions]].
