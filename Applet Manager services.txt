@@ -21,9 +21,9 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 |-
 | 400 || CreateSelfLibraryAppletCreatorForDevelop || Takes a PID and an input u64 pid_placeholder, returns an [[#ILibraryAppletCreator]].
 |-
-| 410 || [6.0.0+] GetSystemAppletControllerForDebug || No input, returns an [[#ISystemAppletControllerForDebug]].
+| 410 || [6.0.0+] [[#GetSystemAppletControllerForDebug]] || 
 |-
-| 1000 || [6.0.0+] GetDebugFunctions || No input, returns an [[#IDebugFunctions]].
+| 1000 || [6.0.0+] [[#GetDebugFunctions]] || 
 |}
 
 All of these Open*Proxy commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
@@ -43,6 +43,18 @@ Returns an [[#ILibraryAppletProxy]].
 Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-coded value 0), a PID,a process copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input buffer '''AppletAttribute'''.
 
 Official user-processes use the same retry loop with this as the other Open*Proxy commands.
+
+== GetSystemAppletControllerForDebug ==
+No input, returns an [[#ISystemAppletControllerForDebug]].
+
+The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
+
+The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, otherwise an error is returned.
+
+== GetDebugFunctions ==
+No input, returns an [[#IDebugFunctions]].
+
+The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, otherwise 0 is returned with no output interface.
 
 == ISystemAppletProxy ==
 {| class="wikitable" border="1"
