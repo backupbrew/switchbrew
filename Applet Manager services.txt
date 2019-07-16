@@ -1180,7 +1180,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 18 || [3.0.0+] SetRequiresCaptureButtonShortPressedMessage
 |-
-| 19 || [3.0.0+] [[#SetScreenShotImageOrientation]]
+| 19 || [3.0.0+] [[#SetAlbumImageOrientation]]
 |-
 | 20 || [4.0.0+] SetDesirableKeyboardLayout
 |-
@@ -1289,8 +1289,8 @@ Takes an input 0x10-byte struct AppletIdentityInfo. No output.
 === SetOutOfFocusSuspendingEnabled ===
 Takes an input u8(bool flag). No output.
 
-=== SetScreenShotImageOrientation ===
-Takes an input s32. No output.
+=== SetAlbumImageOrientation ===
+Takes an input s32 "nn::album::ImageOrientation". No output.
 
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].

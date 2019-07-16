@@ -1208,7 +1208,7 @@ No input, returns a total of 4-bytes of output.
 | 16   | \[2.0.0+\] [\#SetOutOfFocusSuspendingEnabled](#SetOutOfFocusSuspendingEnabled "wikilink")               |
 | 17   | \[3.0.0+\] SetControllerFirmwareUpdateSection                                                           |
 | 18   | \[3.0.0+\] SetRequiresCaptureButtonShortPressedMessage                                                  |
-| 19   | \[3.0.0+\] [\#SetScreenShotImageOrientation](#SetScreenShotImageOrientation "wikilink")                 |
+| 19   | \[3.0.0+\] [\#SetAlbumImageOrientation](#SetAlbumImageOrientation "wikilink")                           |
 | 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                                   |
 | 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                    |
 | 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                 |
@@ -1308,9 +1308,9 @@ Takes an input 0x10-byte struct AppletIdentityInfo. No output.
 
 Takes an input u8(bool flag). No output.
 
-### SetScreenShotImageOrientation
+### SetAlbumImageOrientation
 
-Takes an input s32. No output.
+Takes an input s32 "nn::album::ImageOrientation". No output.
 
 ### CreateManagedDisplayLayer
 
