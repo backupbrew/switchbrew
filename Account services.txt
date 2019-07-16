@@ -467,7 +467,7 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 99 || [6.0.0+] DebugActivateOpenContextRetention || No input, returns an [[#ISessionObject]].
 |-
-| 100 || InitializeApplicationInfo ||
+| 100 || [[#InitializeApplicationInfoV0]] ||
 |-
 | 101 || GetBaasAccountManagerForApplication || Returns an [[#IManagerForApplication]].
 |-
@@ -485,12 +485,20 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 131 || [6.0.0+] ListOpenContextStoredUsers || 
 |-
-| 140 || [6.0.0+] InitializeApplicationInfo || 
+| 140 || [6.0.0+] [[#InitializeApplicationInfo]] || 
 |-
 | 141 || [6.0.0+] ListQualifiedUsers || 
 |-
 | 150 || [6.0.0+] IsUserAccountSwitchLocked || 
 |}
+
+InitializeApplicationInfo* is used by the user-process during service init.
+
+== InitializeApplicationInfoV0 ==
+Takes a PID and an input u64 pid_placeholder, no output.
+
+== InitializeApplicationInfo ==
+Takes a PID and an input u64 pid_placeholder, no output.
 
 == IGuestLoginRequest ==
 This is "nn::account::baas::IGuestLoginRequest".

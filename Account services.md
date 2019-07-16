@@ -286,31 +286,42 @@ This is "nn::account::detail::ISessionObject".
 
 This is "nn::account::IAccountServiceForApplication".
 
-| Cmd | Name                                            | Notes                                                                      |
-| --- | ----------------------------------------------- | -------------------------------------------------------------------------- |
-| 0   | GetUserCount                                    |                                                                            |
-| 1   | GetUserExistence                                |                                                                            |
-| 2   | ListAllUsers                                    |                                                                            |
-| 3   | ListOpenUsers                                   |                                                                            |
-| 4   | GetLastOpenedUser                               |                                                                            |
-| 5   | GetProfile                                      | Takes an input userID, returns an [\#IProfile](#IProfile "wikilink").      |
-| 6   | \[3.0.0+\] GetProfileDigest                     |                                                                            |
-| 50  | IsUserRegistrationRequestPermitted              |                                                                            |
-| 51  | TrySelectUserWithoutInteraction                 |                                                                            |
-| 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers      |                                                                            |
-| 99  | \[6.0.0+\] DebugActivateOpenContextRetention    | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").       |
-| 100 | InitializeApplicationInfo                       |                                                                            |
-| 101 | GetBaasAccountManagerForApplication             | Returns an [\#IManagerForApplication](#IManagerForApplication "wikilink"). |
-| 102 | AuthenticateApplicationAsync                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                   |
-| 103 | \[4.0.0+\] CheckNetworkServiceAvailabilityAsync | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                   |
-| 110 | StoreSaveDataThumbnail                          |                                                                            |
-| 111 | ClearSaveDataThumbnail                          |                                                                            |
-| 120 | CreateGuestLoginRequest                         | Returns an [\#IGuestLoginRequest](#IGuestLoginRequest "wikilink").         |
-| 130 | \[5.0.0+\] LoadOpenContext                      |                                                                            |
-| 131 | \[6.0.0+\] ListOpenContextStoredUsers           |                                                                            |
-| 140 | \[6.0.0+\] InitializeApplicationInfo            |                                                                            |
-| 141 | \[6.0.0+\] ListQualifiedUsers                   |                                                                            |
-| 150 | \[6.0.0+\] IsUserAccountSwitchLocked            |                                                                            |
+| Cmd | Name                                                                            | Notes                                                                      |
+| --- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 0   | GetUserCount                                                                    |                                                                            |
+| 1   | GetUserExistence                                                                |                                                                            |
+| 2   | ListAllUsers                                                                    |                                                                            |
+| 3   | ListOpenUsers                                                                   |                                                                            |
+| 4   | GetLastOpenedUser                                                               |                                                                            |
+| 5   | GetProfile                                                                      | Takes an input userID, returns an [\#IProfile](#IProfile "wikilink").      |
+| 6   | \[3.0.0+\] GetProfileDigest                                                     |                                                                            |
+| 50  | IsUserRegistrationRequestPermitted                                              |                                                                            |
+| 51  | TrySelectUserWithoutInteraction                                                 |                                                                            |
+| 60  | \[5.0.0-5.1.0\] ListOpenContextStoredUsers                                      |                                                                            |
+| 99  | \[6.0.0+\] DebugActivateOpenContextRetention                                    | No input, returns an [\#ISessionObject](#ISessionObject "wikilink").       |
+| 100 | [\#InitializeApplicationInfoV0](#InitializeApplicationInfoV0 "wikilink")        |                                                                            |
+| 101 | GetBaasAccountManagerForApplication                                             | Returns an [\#IManagerForApplication](#IManagerForApplication "wikilink"). |
+| 102 | AuthenticateApplicationAsync                                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                   |
+| 103 | \[4.0.0+\] CheckNetworkServiceAvailabilityAsync                                 | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                   |
+| 110 | StoreSaveDataThumbnail                                                          |                                                                            |
+| 111 | ClearSaveDataThumbnail                                                          |                                                                            |
+| 120 | CreateGuestLoginRequest                                                         | Returns an [\#IGuestLoginRequest](#IGuestLoginRequest "wikilink").         |
+| 130 | \[5.0.0+\] LoadOpenContext                                                      |                                                                            |
+| 131 | \[6.0.0+\] ListOpenContextStoredUsers                                           |                                                                            |
+| 140 | \[6.0.0+\] [\#InitializeApplicationInfo](#InitializeApplicationInfo "wikilink") |                                                                            |
+| 141 | \[6.0.0+\] ListQualifiedUsers                                                   |                                                                            |
+| 150 | \[6.0.0+\] IsUserAccountSwitchLocked                                            |                                                                            |
+
+InitializeApplicationInfo\* is used by the user-process during service
+init.
+
+## InitializeApplicationInfoV0
+
+Takes a PID and an input u64 pid\_placeholder, no output.
+
+## InitializeApplicationInfo
+
+Takes a PID and an input u64 pid\_placeholder, no output.
 
 ## IGuestLoginRequest
 
