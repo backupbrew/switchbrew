@@ -469,7 +469,7 @@ This is "nn::account::IAccountServiceForApplication".
 |-
 | 100 || [[#InitializeApplicationInfoV0]] ||
 |-
-| 101 || GetBaasAccountManagerForApplication || Returns an [[#IManagerForApplication]].
+| 101 || GetBaasAccountManagerForApplication || Takes an input userID, returns an [[#IManagerForApplication]].
 |-
 | 102 || AuthenticateApplicationAsync || Returns an [[#IAsyncContext]].
 |-
