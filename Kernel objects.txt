@@ -35,13 +35,7 @@ Size: 0x10
 |-
 | 8 || u32 || ReferenceCount
 |-
-| 0x10 || u64 || ?
-|-
-| 0x18 || ptr || ?
-|-
-| 0x20 || u64 || ?
-|-
-| 0x28 || u64 || ?
+| 0x10 || [[#KRedBlackTreeNode]] || Intrusive red-black tree node, replaces the Intrusive list node from previous versions.
 |}
 
 = KSynchronizationObject =
@@ -150,6 +144,37 @@ Size: 0x18
 | 0 || u64 || Count 
 |-
 | 8 || [[#KLinkedListNode]] || Bounds (first, last)
+|}
+
+= KRedBlackTreeNode =
+Size: 0x20
+
+Note: This is BSD sys/tree.h's RB_ENTRY(...).
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || KRedBlackTreeNode* || Left Child 
+|-
+| 8 || KRedBlackTreeNode* || Right Child 
+|-
+| 0x10 || KRedBlackTreeNode* || Parent 
+|-
+| 0x18 || int || Color
+|}
+
+= KRedBlackTree =
+Size: 0x8
+
+Note: This is BSD sys/tree.h's RB_HEAD(..., KRedBlackTreeNode);
+
+{| class="wikitable" border="1"
+|-
+! Offset || Type || Description
+|-
+| 0 || KRedBlackTreeNode* || Root 
+|-
 |}
 
 = KThread =

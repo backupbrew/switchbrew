@@ -21,14 +21,11 @@ Size: 0x10
 
 \[6.0.0\]:
 
-| Offset | Type | Description    |
-| ------ | ---- | -------------- |
-| 0      | \*   | Vtable         |
-| 8      | u32  | ReferenceCount |
-| 0x10   | u64  | ?              |
-| 0x18   | ptr  | ?              |
-| 0x20   | u64  | ?              |
-| 0x28   | u64  | ?              |
+| Offset | Type                                                 | Description                                                                             |
+| ------ | ---------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 0      | \*                                                   | Vtable                                                                                  |
+| 8      | u32                                                  | ReferenceCount                                                                          |
+| 0x10   | [\#KRedBlackTreeNode](#KRedBlackTreeNode "wikilink") | Intrusive red-black tree node, replaces the Intrusive list node from previous versions. |
 
 # KSynchronizationObject
 
@@ -109,6 +106,30 @@ Size: 0x18
 | ------ | ------------------------------------------------ | -------------------- |
 | 0      | u64                                              | Count                |
 | 8      | [\#KLinkedListNode](#KLinkedListNode "wikilink") | Bounds (first, last) |
+
+# KRedBlackTreeNode
+
+Size: 0x20
+
+Note: This is BSD sys/tree.h's RB\_ENTRY(...).
+
+| Offset | Type                | Description |
+| ------ | ------------------- | ----------- |
+| 0      | KRedBlackTreeNode\* | Left Child  |
+| 8      | KRedBlackTreeNode\* | Right Child |
+| 0x10   | KRedBlackTreeNode\* | Parent      |
+| 0x18   | int                 | Color       |
+
+# KRedBlackTree
+
+Size: 0x8
+
+Note: This is BSD sys/tree.h's RB\_HEAD(..., KRedBlackTreeNode);
+
+| Offset | Type                | Description |
+| ------ | ------------------- | ----------- |
+| 0      | KRedBlackTreeNode\* | Root        |
+|        |                     |             |
 
 # KThread
 
