@@ -508,7 +508,7 @@ Takes an input u8, no output.
 | 32   | [\#BeginBlockingHomeButton](#BeginBlockingHomeButton "wikilink")                                                                                          |       |
 | 33   | [\#EndBlockingHomeButton](#EndBlockingHomeButton "wikilink")                                                                                              |       |
 | 40   | [\#NotifyRunning](#NotifyRunning "wikilink")                                                                                                              |       |
-| 50   | \[2.0.0+\] GetPseudoDeviceId                                                                                                                              |       |
+| 50   | \[2.0.0+\] [\#GetPseudoDeviceId](#GetPseudoDeviceId "wikilink")                                                                                           |       |
 | 60   | \[2.0.0+\] [\#SetMediaPlaybackStateForApplication](#SetMediaPlaybackStateForApplication "wikilink")                                                       |       |
 | 65   | \[3.0.0+\] [\#IsGamePlayRecordingSupported](#IsGamePlayRecordingSupported "wikilink")                                                                     |       |
 | 66   | \[3.0.0+\] [\#InitializeGamePlayRecording](#InitializeGamePlayRecording "wikilink")                                                                       |       |
@@ -669,6 +669,17 @@ No input/output.
 
 Takes no input. Returns an output u8 bool, which is ignored by official
 user-processes.
+
+#### GetPseudoDeviceId
+
+No input, returns an output 0x10-byte "nn::util::Uuid" struct.
+
+The 0x20-byte output data from
+[GetSystemSeedForPseudoDeviceId](NS%20Services.md "wikilink") followed
+by the 8-byte [SeedForPseudoDeviceId](NACP%20Format.md "wikilink") from
+the current control.nacp, is hashed with SHA1. Then
+"nn::util::GenerateUuidVersion5" is called with the final hash, the
+output from this is then returned for the Uuid.
 
 #### SetMediaPlaybackStateForApplication
 

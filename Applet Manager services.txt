@@ -605,7 +605,7 @@ Takes an input u8, no output.
 |-
 | 40 || [[#NotifyRunning]] ||
 |-
-| 50 || [2.0.0+] GetPseudoDeviceId ||
+| 50 || [2.0.0+] [[#GetPseudoDeviceId]] ||
 |-
 | 60 || [2.0.0+] [[#SetMediaPlaybackStateForApplication]] ||
 |-
@@ -725,6 +725,11 @@ No input/output.
 
 ==== NotifyRunning ====
 Takes no input. Returns an output u8 bool, which is ignored by official user-processes.
+
+==== GetPseudoDeviceId ====
+No input, returns an output 0x10-byte "nn::util::Uuid" struct.
+
+The 0x20-byte output data from [[NS_Services|GetSystemSeedForPseudoDeviceId]] followed by the 8-byte [[NACP_Format|SeedForPseudoDeviceId]] from the current control.nacp, is hashed with SHA1. Then "nn::util::GenerateUuidVersion5" is called with the final hash, the output from this is then returned for the Uuid.
 
 ==== SetMediaPlaybackStateForApplication ====
 Takes an input u8 bool, no output.
