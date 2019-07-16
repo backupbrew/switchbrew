@@ -1228,7 +1228,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 100 || [7.0.0+] [[#SetAlbumImageTakenNotificationEnabled]]
 |-
-| 110 || [8.0.0+] SetApplicationAlbumUserData
+| 110 || [8.0.0+] [[#SetApplicationAlbumUserData]]
 |-
 | 1000 || [7.0.0+] [[#GetDebugStorageChannel]]
 |}
@@ -1317,6 +1317,11 @@ Uses [[Backlight_services|lbl]] command GetAmbientLightSensorValue.
 
 === SetAlbumImageTakenNotificationEnabled ===
 Takes an input u8, no output.
+
+=== SetApplicationAlbumUserData ===
+Takes a type-0x21 input buffer, no output.
+
+The buffer contains arbitrary UserData.
 
 === GetDebugStorageChannel ===
 Returns an output [[#IStorageChannel]].

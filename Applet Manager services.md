@@ -1232,7 +1232,7 @@ No input, returns a total of 4-bytes of output.
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                             |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                      |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink") |
-| 110  | \[8.0.0+\] SetApplicationAlbumUserData                                                                  |
+| 110  | \[8.0.0+\] [\#SetApplicationAlbumUserData](#SetApplicationAlbumUserData "wikilink")                     |
 | 1000 | \[7.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                               |
 
 ### Exit
@@ -1349,6 +1349,12 @@ GetAmbientLightSensorValue.
 ### SetAlbumImageTakenNotificationEnabled
 
 Takes an input u8, no output.
+
+### SetApplicationAlbumUserData
+
+Takes a type-0x21 input buffer, no output.
+
+The buffer contains arbitrary UserData.
 
 ### GetDebugStorageChannel
 
