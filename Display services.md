@@ -196,9 +196,10 @@ Returns an
 [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 Takes an input u32, user-processes use 0 or 1, with 0 for
 regular-applications normally. 0 = user-service(vi:u), 1 =
-non-user-service? Returns an error when using value 1 with vi:u(same
-error listed below for IApplicationDisplayService for unavailable
-commands).
+system/manager service (vi:s/vi:m). Returns an error when using value 1
+with vi:u(same error listed below for IApplicationDisplayService for
+unavailable commands), however passing 1 to vi:s/vi:m results in the
+IApplicationDisplayService having greater privileges.
 
 # vi:s
 
