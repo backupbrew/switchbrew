@@ -112,7 +112,7 @@ The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!d
 |-
 | 100 || [6.0.0+] PopRequestLaunchApplicationForDebug ||
 |-
-| 200 || [8.0.0+] LaunchDevMenu ||
+| 200 || [8.0.0+] [[#LaunchDevMenu]] ||
 |}
 
 ==== PopFromGeneralChannel ====
@@ -126,6 +126,11 @@ No input, returns an output [[#ILockAccessor]].
 
 ==== GetWriterLockAccessorEx ====
 Takes an input u32, returns an output [[#ILockAccessor]].
+
+==== LaunchDevMenu ====
+No input/output.
+
+Uses [[NS_Services#IApplicationManagerInterface]] cmd99.
 
 ==== ILockAccessor ====
 {| class="wikitable" border="1"

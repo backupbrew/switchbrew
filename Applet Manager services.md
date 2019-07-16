@@ -117,7 +117,7 @@ returned with no output interface.
 | 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
 | 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")      |       |
 | 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
-| 200 | \[8.0.0+\] LaunchDevMenu                                                         |       |
+| 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                          |       |
 
 #### PopFromGeneralChannel
 
@@ -136,6 +136,14 @@ No input, returns an output
 
 Takes an input u32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
+
+#### LaunchDevMenu
+
+No input/output.
+
+Uses
+[NS\_Services\#IApplicationManagerInterface](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink")
+cmd99.
 
 #### ILockAccessor
 
