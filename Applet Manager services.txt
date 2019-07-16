@@ -1323,6 +1323,8 @@ Takes a type-0x21 input buffer, no output.
 
 The buffer contains arbitrary UserData.
 
+The size must be <=0x400. The input buffer is copied to a buffer loaded from a state ptr (throwing an error when the state ptr is not set), with the u32 size being written to statebuf+0x400 afterwards.
+
 === GetDebugStorageChannel ===
 Returns an output [[#IStorageChannel]].
 
