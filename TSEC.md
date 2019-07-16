@@ -1144,9 +1144,9 @@ register.
 
 Controls accesses to the following registers:
 
-  - FALCON\_VM\_SUPERVISOR
-  - FALCON\_SUBENGINE\_RESET
-  - FALCON\_HOST\_IO\_INDEX
+  - FALCON\_PRIVSTATE
+  - FALCON\_SFTRESET
+  - FALCON\_ADDR
   - [FALCON\_DMACTL](#FALCON_DMACTL "wikilink")
   - [FALCON\_IMCTL](#FALCON_IMCTL "wikilink")
   - [FALCON\_IMSTAT](#FALCON_IMSTAT "wikilink")
@@ -1166,9 +1166,9 @@ Controls accesses to the following registers:
   - [FALCON\_IRQMSET](#FALCON_IRQMSET "wikilink")
   - [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")
   - [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")
-  - FALCON\_GPTMR\_PERIOD
-  - FALCON\_GPTMR\_TIME
-  - FALCON\_GPTMR\_ENABLE
+  - FALCON\_GPTMRINT
+  - FALCON\_GPTMRVAL
+  - FALCON\_GPTMRCTL
   - FALCON\_UNK\_3C
   - FALCON\_UNK\_E0
 
@@ -1184,13 +1184,13 @@ Controls accesses to the following registers:
   - [FALCON\_ITFEN](#FALCON_ITFEN "wikilink")
   - FALCON\_CURCTX
   - FALCON\_NXTCTX
-  - FALCON\_CMDCTX
-  - FALCON\_MTHD\_DATA
-  - FALCON\_MTHD\_CMD
-  - FALCON\_MTHD\_DATA\_WR
-  - FALCON\_MTHD\_OCCUPIED
-  - FALCON\_MTHD\_ACK
-  - FALCON\_MTHD\_LIMIT
+  - FALCON\_CTXACK
+  - FALCON\_MTHDDATA
+  - FALCON\_MTHDID
+  - FALCON\_MTHDWDAT
+  - FALCON\_MTHDCOUNT
+  - FALCON\_MTHDPOP
+  - FALCON\_MTHDRAMSZ
   - [FALCON\_DEBUG1](#FALCON_DEBUG1 "wikilink")
 
 ### FALCON\_SPROT\_SCTL
@@ -1212,8 +1212,8 @@ register.
 
 Controls accesses to the following registers:
 
-  - FALCON\_WDTMR\_TIME
-  - FALCON\_WDTMR\_ENABLE
+  - FALCON\_WDTMRVAL
+  - FALCON\_WDTMRCTL
 
 ### TSEC\_SCP\_CTL0
 
