@@ -17,13 +17,12 @@ communicating with the Falcon microprocessor. From this range, the
 subset of registers from 0x54501400 to 0x54501FE8 are specific to the
 TSEC and are subdivided into:
 
-  - 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
+  - 0x54501400 to 0x54501500: SCP (Secure Co-Processor).
   - 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
   - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG
     (Clock Gate).
   - 0x54501700 to 0x54501800: DMA.
-  - 0x54501800 to 0x54501900: TEGRA (miscellaneous
-interfaces).
+  - 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces).
 
 | Name                                                                    | Address    | Width |
 | ----------------------------------------------------------------------- | ---------- | ----- |
@@ -49,13 +48,13 @@ interfaces).
 | [FALCON\_IRQMCLR](#FALCON_IRQMCLR "wikilink")                           | 0x54501014 | 0x04  |
 | [FALCON\_IRQMASK](#FALCON_IRQMASK "wikilink")                           | 0x54501018 | 0x04  |
 | [FALCON\_IRQDEST](#FALCON_IRQDEST "wikilink")                           | 0x5450101C | 0x04  |
-| FALCON\_GPTMR\_PERIOD                                                   | 0x54501020 | 0x04  |
-| FALCON\_GPTMR\_TIME                                                     | 0x54501024 | 0x04  |
-| FALCON\_GPTMR\_ENABLE                                                   | 0x54501028 | 0x04  |
-| FALCON\_TIME\_LOW                                                       | 0x5450102C | 0x04  |
-| FALCON\_TIME\_HIGH                                                      | 0x54501030 | 0x04  |
-| FALCON\_WDTMR\_TIME                                                     | 0x54501034 | 0x04  |
-| FALCON\_WDTMR\_ENABLE                                                   | 0x54501038 | 0x04  |
+| FALCON\_GPTMRINT                                                        | 0x54501020 | 0x04  |
+| FALCON\_GPTMRVAL                                                        | 0x54501024 | 0x04  |
+| FALCON\_GPTMRCTL                                                        | 0x54501028 | 0x04  |
+| FALCON\_PTIMER0                                                         | 0x5450102C | 0x04  |
+| FALCON\_PTIMER1                                                         | 0x54501030 | 0x04  |
+| FALCON\_WDTMRVAL                                                        | 0x54501034 | 0x04  |
+| FALCON\_WDTMRCTL                                                        | 0x54501038 | 0x04  |
 | FALCON\_UNK\_3C                                                         | 0x5450103C | 0x04  |
 | [FALCON\_MAILBOX0](#FALCON_MAILBOX0 "wikilink")                         | 0x54501040 | 0x04  |
 | [FALCON\_MAILBOX1](#FALCON_MAILBOX1 "wikilink")                         | 0x54501044 | 0x04  |
@@ -63,31 +62,31 @@ interfaces).
 | [FALCON\_IDLESTATE](#FALCON_IDLESTATE "wikilink")                       | 0x5450104C | 0x04  |
 | FALCON\_CURCTX                                                          | 0x54501050 | 0x04  |
 | FALCON\_NXTCTX                                                          | 0x54501054 | 0x04  |
-| FALCON\_CMDCTX                                                          | 0x54501058 | 0x04  |
-| FALCON\_STATUS\_MASK                                                    | 0x5450105C | 0x04  |
-| FALCON\_VM\_SUPERVISOR                                                  | 0x54501060 | 0x04  |
-| FALCON\_MTHD\_DATA                                                      | 0x54501064 | 0x04  |
-| FALCON\_MTHD\_CMD                                                       | 0x54501068 | 0x04  |
-| FALCON\_MTHD\_DATA\_WR                                                  | 0x5450106C | 0x04  |
-| FALCON\_MTHD\_OCCUPIED                                                  | 0x54501070 | 0x04  |
-| FALCON\_MTHD\_ACK                                                       | 0x54501074 | 0x04  |
-| FALCON\_MTHD\_LIMIT                                                     | 0x54501078 | 0x04  |
-| FALCON\_SUBENGINE\_RESET                                                | 0x5450107C | 0x04  |
+| FALCON\_CTXACK                                                          | 0x54501058 | 0x04  |
+| FALCON\_FHSTATE                                                         | 0x5450105C | 0x04  |
+| FALCON\_PRIVSTATE                                                       | 0x54501060 | 0x04  |
+| FALCON\_MTHDDATA                                                        | 0x54501064 | 0x04  |
+| FALCON\_MTHDID                                                          | 0x54501068 | 0x04  |
+| FALCON\_MTHDWDAT                                                        | 0x5450106C | 0x04  |
+| FALCON\_MTHDCOUNT                                                       | 0x54501070 | 0x04  |
+| FALCON\_MTHDPOP                                                         | 0x54501074 | 0x04  |
+| FALCON\_MTHDRAMSZ                                                       | 0x54501078 | 0x04  |
+| FALCON\_SFTRESET                                                        | 0x5450107C | 0x04  |
 | FALCON\_OS                                                              | 0x54501080 | 0x04  |
 | FALCON\_RM                                                              | 0x54501084 | 0x04  |
-| FALCON\_PM\_SIGNAL                                                      | 0x54501088 | 0x04  |
-| FALCON\_PM\_MODE                                                        | 0x5450108C | 0x04  |
+| FALCON\_SOFT\_PM                                                        | 0x54501088 | 0x04  |
+| FALCON\_SOFT\_MODE                                                      | 0x5450108C | 0x04  |
 | [FALCON\_DEBUG1](#FALCON_DEBUG1 "wikilink")                             | 0x54501090 | 0x04  |
 | [FALCON\_DEBUGINFO](#FALCON_DEBUGINFO "wikilink")                       | 0x54501094 | 0x04  |
-| FALCON\_BREAKPOINT0                                                     | 0x54501098 | 0x04  |
-| FALCON\_BREAKPOINT1                                                     | 0x5450109C | 0x04  |
+| FALCON\_IBRKPT1                                                         | 0x54501098 | 0x04  |
+| FALCON\_IBRKPT2                                                         | 0x5450109C | 0x04  |
 | FALCON\_CGCTL                                                           | 0x545010A0 | 0x04  |
 | FALCON\_ENGCTL                                                          | 0x545010A4 | 0x04  |
-| FALCON\_PM\_SEL                                                         | 0x545010A8 | 0x04  |
-| FALCON\_HOST\_IO\_INDEX                                                 | 0x545010AC | 0x04  |
-| FALCON\_BREAKPOINT2                                                     | 0x545010B0 | 0x04  |
-| FALCON\_BREAKPOINT3                                                     | 0x545010B4 | 0x04  |
-| FALCON\_BREAKPOINT4                                                     | 0x545010B8 | 0x04  |
+| FALCON\_PMM                                                             | 0x545010A8 | 0x04  |
+| FALCON\_ADDR                                                            | 0x545010AC | 0x04  |
+| FALCON\_IBRKPT3                                                         | 0x545010B0 | 0x04  |
+| FALCON\_IBRKPT4                                                         | 0x545010B4 | 0x04  |
+| FALCON\_IBRKPT5                                                         | 0x545010B8 | 0x04  |
 | [FALCON\_EXCI](#FALCON_EXCI "wikilink")                                 | 0x545010D0 | 0x04  |
 | FALCON\_UNK\_D4                                                         | 0x545010D4 | 0x04  |
 | FALCON\_UNK\_D8                                                         | 0x545010D8 | 0x04  |
@@ -101,8 +100,8 @@ interfaces).
 | [FALCON\_DMATRFMOFFS](#FALCON_DMATRFMOFFS "wikilink")                   | 0x54501114 | 0x04  |
 | [FALCON\_DMATRFCMD](#FALCON_DMATRFCMD "wikilink")                       | 0x54501118 | 0x04  |
 | [FALCON\_DMATRFFBOFFS](#FALCON_DMATRFFBOFFS "wikilink")                 | 0x5450111C | 0x04  |
-| [FALCON\_DMATRFSTAT](#FALCON_DMATRFSTAT "wikilink")                     | 0x54501120 | 0x04  |
-| [FALCON\_CRYPTTRFSTAT](#FALCON_CRYPTTRFSTAT "wikilink")                 | 0x54501124 | 0x04  |
+| [FALCON\_DMAPOLL\_FB](#FALCON_DMAPOLL_FB "wikilink")                    | 0x54501120 | 0x04  |
+| [FALCON\_DMAPOLL\_CP](#FALCON_DMAPOLL_CP "wikilink")                    | 0x54501124 | 0x04  |
 | FALCON\_CPUSTAT                                                         | 0x54501128 | 0x04  |
 | [FALCON\_HWCFG1](#FALCON_HWCFG1 "wikilink")                             | 0x5450112C | 0x04  |
 | FALCON\_CPUCTL\_ALIAS                                                   | 0x54501130 | 0x04  |
@@ -118,7 +117,7 @@ interfaces).
 | FALCON\_EXTERRCFG                                                       | 0x54501164 | 0x04  |
 | FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                                      | 0x5450116C | 0x04  |
-| FALCON\_CG2                                                             | 0x5450117C | 0x04  |
+| FALCON\_CG1\_SLCG                                                       | 0x5450117C | 0x04  |
 | [FALCON\_IMEMC](#FALCON_IMEMC "wikilink")                               | 0x54501180 | 0x04  |
 | [FALCON\_IMEMD](#FALCON_IMEMD "wikilink")                               | 0x54501184 | 0x04  |
 | [FALCON\_IMEMT](#FALCON_IMEMT "wikilink")                               | 0x54501188 | 0x04  |
@@ -139,9 +138,9 @@ interfaces).
 | FALCON\_DMEMC7                                                          | 0x545011F8 | 0x04  |
 | FALCON\_DMEMD7                                                          | 0x545011FC | 0x04  |
 | [FALCON\_ICD\_CMD](#FALCON_ICD_CMD "wikilink")                          | 0x54501200 | 0x04  |
-| FALCON\_ICD\_ADDR                                                       | 0x54501204 | 0x04  |
-| FALCON\_ICD\_WDATA                                                      | 0x54501208 | 0x04  |
-| FALCON\_ICD\_RDATA                                                      | 0x5450120C | 0x04  |
+| [FALCON\_ICD\_ADDR](#FALCON_ICD_ADDR "wikilink")                        | 0x54501204 | 0x04  |
+| [FALCON\_ICD\_WDATA](#FALCON_ICD_WDATA "wikilink")                      | 0x54501208 | 0x04  |
+| [FALCON\_ICD\_RDATA](#FALCON_ICD_RDATA "wikilink")                      | 0x5450120C | 0x04  |
 | [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                 | 0x54501240 | 0x04  |
 | [FALCON\_SCTL\_STAT](#FALCON_SCTL_STAT "wikilink")                      | 0x54501244 | 0x04  |
 | FALCON\_UNK\_248                                                        | 0x54501248 | 0x04  |
@@ -470,9 +469,10 @@ Used for detecting if Falcon is busy or not.
 
 ### FALCON\_DEBUG1
 
-| Bits | Description                 |
-| ---- | --------------------------- |
-| 16   | FALCON\_DEBUG1\_CTXSW\_MODE |
+| Bits | Description                       |
+| ---- | --------------------------------- |
+| 0-15 | FALCON\_DEBUG1\_MTHD\_DRAIN\_TIME |
+| 16   | FALCON\_DEBUG1\_CTXSW\_MODE       |
 
 ### FALCON\_DEBUGINFO
 
@@ -535,12 +535,12 @@ Takes the Falcon's boot vector address.
 
 ### FALCON\_HWCFG
 
-| Bits  | Description                  |
-| ----- | ---------------------------- |
-| 0-8   | FALCON\_HWCFG\_IMEM\_SIZE    |
-| 9-17  | FALCON\_HWCFG\_DMEM\_SIZE    |
-| 18-25 | FALCON\_HWCFG\_MTHD\_SIZE    |
-| 26-31 | FALCON\_HWCFG\_DMATRF\_SLOTS |
+| Bits  | Description                      |
+| ----- | -------------------------------- |
+| 0-8   | FALCON\_HWCFG\_IMEM\_SIZE        |
+| 9-17  | FALCON\_HWCFG\_DMEM\_SIZE        |
+| 18-26 | FALCON\_HWCFG\_METHODFIFO\_DEPTH |
+| 27-31 | FALCON\_HWCFG\_DMAQUEUE\_DEPTH   |
 
 ### FALCON\_DMACTL
 
@@ -584,37 +584,48 @@ Used for configuring DMA transfers.
 
 For transfers to IMEM: the destination physical IMEM page.
 
-### FALCON\_DMATRFSTAT
+### FALCON\_DMAPOLL\_FB
 
-| Bits  | Description                              |
-| ----- | ---------------------------------------- |
-| 0     | FALCON\_DMATRFSTAT\_PENDING              |
-| 16-18 | FALCON\_DMATRFSTAT\_NUM\_STORES\_PENDING |
-| 24-26 | FALCON\_DMATRFSTAT\_NUM\_LOADS\_PENDING  |
+| Bits  | Description                        |
+| ----- | ---------------------------------- |
+| 0     | FALCON\_DMAPOLL\_FB\_FENCE\_ACTIVE |
+| 1     | FALCON\_DMAPOLL\_FB\_DMA\_ACTIVE   |
+| 4     | FALCON\_DMAPOLL\_FB\_CFG\_R\_FENCE |
+| 5     | FALCON\_DMAPOLL\_FB\_CFG\_W\_FENCE |
+| 16-23 | FALCON\_DMAPOLL\_FB\_WCOUNT        |
+| 24-31 | FALCON\_DMAPOLL\_FB\_RCOUNT        |
 
-### FALCON\_CRYPTTRFSTAT
+Contains the status of a DMA transfer between the Falcon and external
+memory.
 
-| Bits  | Description                                |
-| ----- | ------------------------------------------ |
-| 1     | FALCON\_CRYPTTRFSTAT\_PENDING              |
-| 5     | FALCON\_CRYPTTRFSTAT\_ENABLED              |
-| 16-18 | FALCON\_CRYPTTRFSTAT\_NUM\_STORES\_PENDING |
-| 24-26 | FALCON\_CRYPTTRFSTAT\_NUM\_LOADS\_PENDING  |
+### FALCON\_DMAPOLL\_CP
+
+| Bits  | Description                        |
+| ----- | ---------------------------------- |
+| 0     | FALCON\_DMAPOLL\_CP\_FENCE\_ACTIVE |
+| 1     | FALCON\_DMAPOLL\_CP\_DMA\_ACTIVE   |
+| 4     | FALCON\_DMAPOLL\_CP\_CFG\_R\_FENCE |
+| 5     | FALCON\_DMAPOLL\_CP\_CFG\_W\_FENCE |
+| 16-23 | FALCON\_DMAPOLL\_CP\_WCOUNT        |
+| 24-31 | FALCON\_DMAPOLL\_CP\_RCOUNT        |
+
+Contains the status of a DMA transfer between the Falcon and the SCP.
 
 ### FALCON\_HWCFG1
 
-| Bits  | Description                     |
-| ----- | ------------------------------- |
-| 0-3   | FALCON\_HWCFG1\_VERSION         |
-| 4-5   | FALCON\_HWCFG1\_SCP\_MODE       |
-| 6-7   | FALCON\_HWCFG1\_SUBVERSION      |
-| 8-11  | FALCON\_HWCFG1\_IMEM\_PORTS     |
-| 12-15 | FALCON\_HWCFG1\_DMEM\_PORTS     |
-| 16-19 | FALCON\_HWCFG1\_VM\_PAGES\_LOG2 |
-| 27    | FALCON\_HWCFG1\_HAS\_ICD        |
-| 28-29 | FALCON\_HWCFG1\_IO\_ADDR\_TYPE  |
-| 30    | FALCON\_HWCFG1\_HAS\_EXTERR     |
-| 31    | FALCON\_HWCFG1\_HAS\_IMFILL     |
+| Bits  | Description                           |
+| ----- | ------------------------------------- |
+| 0-3   | FALCON\_HWCFG1\_CORE\_REV             |
+| 4-5   | FALCON\_HWCFG1\_SECURITY\_MODEL       |
+| 6-7   | FALCON\_HWCFG1\_CORE\_REV\_SUBVERSION |
+| 8-11  | FALCON\_HWCFG1\_IMEM\_PORTS           |
+| 12-15 | FALCON\_HWCFG1\_DMEM\_PORTS           |
+| 16-20 | FALCON\_HWCFG1\_TAG\_WIDTH            |
+| 27    | FALCON\_HWCFG1\_DBG\_PRIV\_BUS        |
+| 28    | FALCON\_HWCFG1\_CSB\_SIZE\_16M        |
+| 29    | FALCON\_HWCFG1\_PRIV\_DIRECT          |
+| 30    | FALCON\_HWCFG1\_DMEM\_APERTURES       |
+| 31    | FALCON\_HWCFG1\_IMEM\_AUTOFILL        |
 
 ### FALCON\_IMCTL
 
@@ -633,9 +644,10 @@ For transfers to IMEM: the destination physical IMEM page.
 <tr class="even">
 <td><p>24-26</p></td>
 <td><p>Command</p>
-<p><code>1: ITLB</code><br />
-<code>2: PTLB</code><br />
-<code>3: VTLB</code></p></td>
+<p><code>0x00: NOP</code><br />
+<code>0x01: IMINV (ITLB)</code><br />
+<code>0x02: IMBLK (PTLB)</code><br />
+<code>0x03: IMTAG (VTLB)</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -714,29 +726,62 @@ Returns or takes the value for a DMEM read/write operation.
 <tr class="odd">
 <td><p>0-3</p></td>
 <td><p>FALCON_ICD_CMD_OPC</p>
-<p><code>0x0: BREAK</code><br />
-<code>0x1: CONTINUE_FROM_PC</code><br />
-<code>0x2: CONTINUE_FROM_ADDR</code><br />
-<code>0x3: CONTINUE_UNK1_FROM_PC</code><br />
-<code>0x4: CONTINUE_UNK1_FROM_ADDR</code><br />
-<code>0x5: SINGLE_STEP_FROM_PC</code><br />
-<code>0x6: SINGLE_STEP_FROM_ADDR</code><br />
-<code>0x7: SET_BREAK_MASK</code><br />
-<code>0x8: REG_READ</code><br />
-<code>0x9: REG_WRITE</code><br />
-<code>0xA: DATA_READ</code><br />
-<code>0xB: DATA_WRITE</code><br />
-<code>0xC: IO_READ</code><br />
-<code>0xD: IO_WRITE</code><br />
-<code>0xE: STATUS_READ</code></p></td>
+<p><code>0x00: STOP</code><br />
+<code>0x01: RUN (run from PC)</code><br />
+<code>0x02: JRUN (run from address)</code><br />
+<code>0x03: RUNB (run from PC)</code><br />
+<code>0x04: JRUNB (run from address)</code><br />
+<code>0x05: STEP (step from PC)</code><br />
+<code>0x06: JSTEP (step from address)</code><br />
+<code>0x07: EMASK (set exception mask)</code><br />
+<code>0x08: RREG (read register)</code><br />
+<code>0x09: WREG (write register)</code><br />
+<code>0x0A: RDM (read data memory)</code><br />
+<code>0x0B: WDM (write data memory)</code><br />
+<code>0x0C: RCM (read code memory)</code><br />
+<code>0x0D: WCM (write code memory)</code><br />
+<code>0x0E: RSTAT (read status)</code><br />
+<code>0x0F: SBU</code></p></td>
 </tr>
 <tr class="even">
 <td><p>6-7</p></td>
-<td><p>FALCON_ICD_CMD_DATA_SIZE</p></td>
+<td><p>FALCON_ICD_CMD_SZ</p>
+<p><code>0x00: B (byte</code><br />
+<code>0x01: HW (half word)</code><br />
+<code>0x02: W (word)</code></p></td>
 </tr>
 <tr class="odd">
 <td><p>8-12</p></td>
-<td><p>FALCON_ICD_CMD_IDX</p></td>
+<td><p>FALCON_ICD_CMD_IDX</p>
+<p><code>0x00: REG0 | RSTAT0 | WB0</code><br />
+<code>0x01: REG1 | RSTAT1 | WB1</code><br />
+<code>0x02: REG2 | RSTAT2 | WB2</code><br />
+<code>0x03: REG3 | RSTAT3 | WB3</code><br />
+<code>0x04: REG4 | RSTAT4</code><br />
+<code>0x05: REG5 | RSTAT5</code><br />
+<code>0x06: REG6</code><br />
+<code>0x07: REG7</code><br />
+<code>0x08: REG8</code><br />
+<code>0x09: REG9</code><br />
+<code>0x0A: REG10</code><br />
+<code>0x0B: REG11</code><br />
+<code>0x0C: REG12</code><br />
+<code>0x0D: REG13</code><br />
+<code>0x0E: REG14</code><br />
+<code>0x0F: REG15</code><br />
+<code>0x10: IV0</code><br />
+<code>0x11: IV1</code><br />
+<code>0x12: UNDEFINED</code><br />
+<code>0x13: EV</code><br />
+<code>0x14: SP</code><br />
+<code>0x15: PC</code><br />
+<code>0x16: IMB</code><br />
+<code>0x17: DMB</code><br />
+<code>0x18: CSW</code><br />
+<code>0x19: CCR</code><br />
+<code>0x1A: SEC</code><br />
+<code>0x1B: CTX</code><br />
+<code>0x1C: EXCI</code></p></td>
 </tr>
 <tr class="even">
 <td><p>14</p></td>
@@ -744,14 +789,282 @@ Returns or takes the value for a DMEM read/write operation.
 </tr>
 <tr class="odd">
 <td><p>15</p></td>
-<td><p>FALCON_ICD_CMD_DONE</p></td>
+<td><p>FALCON_ICD_CMD_RDVLD</p></td>
 </tr>
 <tr class="even">
 <td><p>16-31</p></td>
-<td><p>FALCON_ICD_CMD_BREAK_MASK</p></td>
+<td><p>FALCON_ICD_CMD_PARM</p>
+<p><code>0x0001: EMASK_TRAP0</code><br />
+<code>0x0002: EMASK_TRAP1</code><br />
+<code>0x0004: EMASK_TRAP2</code><br />
+<code>0x0008: EMASK_TRAP3</code><br />
+<code>0x0010: EMASK_EXC_UNIMP</code><br />
+<code>0x0020: EMASK_EXC_IMISS</code><br />
+<code>0x0040: EMASK_EXC_IMHIT</code><br />
+<code>0x0080: EMASK_EXC_IBREAK</code><br />
+<code>0x0100: EMASK_IV0</code><br />
+<code>0x0200: EMASK_IV1</code><br />
+<code>0x0400: EMASK_IV2</code><br />
+<code>0x0800: EMASK_EXT0</code><br />
+<code>0x1000: EMASK_EXT1</code><br />
+<code>0x2000: EMASK_EXT2</code><br />
+<code>0x4000: EMASK_EXT3</code><br />
+<code>0x8000: EMASK_EXT4</code></p></td>
 </tr>
 </tbody>
 </table>
+
+Used for sending commands to the Falcon's in-chip debugger.
+
+### FALCON\_ICD\_ADDR
+
+Takes the target address for the Falcon's in-chip debugger.
+
+### FALCON\_ICD\_WDATA
+
+Takes the data for writing using the Falcon's in-chip debugger.
+
+### FALCON\_ICD\_RDATA
+
+Returns the data read using the Falcon's in-chip debugger.
+
+When reading from an internal status register (STAT), the following
+applies:
+
+| Bits  | Description                   |
+| ----- | ----------------------------- |
+| 0     | RSTAT0\_MEM\_STALL            |
+| 1     | RSTAT0\_DMA\_STALL            |
+| 2     | RSTAT0\_FENCE\_STALL          |
+| 3     | RSTAT0\_DIV\_STALL            |
+| 4     | RSTAT0\_DMA\_STALL\_DMAQ      |
+| 5     | RSTAT0\_DMA\_STALL\_DMWAITING |
+| 6     | RSTAT0\_DMA\_STALL\_IMWAITING |
+| 7     | RSTAT0\_ANY\_STALL            |
+| 8     | RSTAT0\_SBFULL\_STALL         |
+| 9     | RSTAT0\_SBHIT\_STALL          |
+| 10    | RSTAT0\_FLOW\_STALL           |
+| 11    | RSTAT0\_SP\_STALL             |
+| 12    | RSTAT0\_BL\_STALL             |
+| 13    | RSTAT0\_IPND\_STALL           |
+| 14    | RSTAT0\_LDSTQ\_STALL          |
+| 16    | RSTAT0\_NOINSTR\_STALL        |
+| 20    | RSTAT0\_HALTSTOP\_FLUSH       |
+| 21    | RSTAT0\_AFILL\_FLUSH          |
+| 22    | RSTAT0\_EXC\_FLUSH            |
+| 23-25 | RSTAT0\_IRQ\_FLUSH            |
+| 28    | RSTAT0\_VALIDRD               |
+| 29    | RSTAT0\_WAITING               |
+| 30    | RSTAT0\_HALTED                |
+| 31    | RSTAT0\_MTHD\_FULL            |
+
+| Bits  | Description       |
+| ----- | ----------------- |
+| 0-3   | RSTAT1\_WB\_ALLOC |
+| 4-7   | RSTAT1\_WB\_VALID |
+| 8-9   | RSTAT1\_WB0\_SZ   |
+| 10-11 | RSTAT1\_WB1\_SZ   |
+| 12-13 | RSTAT1\_WB2\_SZ   |
+| 14-15 | RSTAT1\_WB3\_SZ   |
+| 16-19 | RSTAT1\_WB0\_IDX  |
+| 20-23 | RSTAT1\_WB1\_IDX  |
+| 24-27 | RSTAT1\_WB2\_IDX  |
+| 28-31 | RSTAT1\_WB3\_IDX  |
+
+| Bits  | Description         |
+| ----- | ------------------- |
+| 0-3   | RSTAT2\_DMAQ\_NUM   |
+| 4     | RSTAT2\_DMA\_ENABLE |
+| 5-7   | RSTAT2\_LDSTQ\_NUM  |
+| 16-19 | RSTAT2\_EM\_BUSY    |
+| 20-23 | RSTAT2\_EM\_ACKED   |
+| 24-27 | RSTAT2\_EM\_ISWR    |
+| 28-31 | RSTAT2\_EM\_DVLD    |
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0</p></td>
+<td><p>RSTAT3_MTHD_IDLE</p></td>
+</tr>
+<tr class="even">
+<td><p>1</p></td>
+<td><p>RSTAT3_CTXSW_IDLE</p></td>
+</tr>
+<tr class="odd">
+<td><p>2</p></td>
+<td><p>RSTAT3_DMA_IDLE</p></td>
+</tr>
+<tr class="even">
+<td><p>3</p></td>
+<td><p>RSTAT3_SCP_IDLE</p></td>
+</tr>
+<tr class="odd">
+<td><p>4</p></td>
+<td><p>RSTAT3_LDST_IDLE</p></td>
+</tr>
+<tr class="even">
+<td><p>5</p></td>
+<td><p>RSTAT3_SBWB_EMPTY</p></td>
+</tr>
+<tr class="odd">
+<td><p>6-8</p></td>
+<td><p>RSTAT3_CSWIE</p></td>
+</tr>
+<tr class="even">
+<td><p>10</p></td>
+<td><p>RSTAT3_CSWE</p></td>
+</tr>
+<tr class="odd">
+<td><p>12-14</p></td>
+<td><p>RSTAT3_CTXSW_STATE</p>
+<p><code>0x00: IDLE</code><br />
+<code>0x01: SM_CHECK</code><br />
+<code>0x02: SM_SAVE</code><br />
+<code>0x03: SM_SAVE_WAIT</code><br />
+<code>0x04: SM_BLK_BIND</code><br />
+<code>0x05: SM_RESET</code><br />
+<code>0x06: SM_RESETWAIT</code><br />
+<code>0x07: SM_ACK</code></p></td>
+</tr>
+<tr class="even">
+<td><p>15</p></td>
+<td><p>RSTAT3_CTXSW_PEND</p></td>
+</tr>
+<tr class="odd">
+<td><p>17</p></td>
+<td><p>RSTAT3_DMA_FBREQ_IDLE</p></td>
+</tr>
+<tr class="even">
+<td><p>18</p></td>
+<td><p>RSTAT3_DMA_ACKQ_EMPTY</p></td>
+</tr>
+<tr class="odd">
+<td><p>19</p></td>
+<td><p>RSTAT3_DMA_RDQ_EMPTY</p></td>
+</tr>
+<tr class="even">
+<td><p>20</p></td>
+<td><p>RSTAT3_DMA_WR_BUSY</p></td>
+</tr>
+<tr class="odd">
+<td><p>21</p></td>
+<td><p>RSTAT3_DMA_RD_BUSY</p></td>
+</tr>
+<tr class="even">
+<td><p>22</p></td>
+<td><p>RSTAT3_LDST_XT_BUSY</p></td>
+</tr>
+<tr class="odd">
+<td><p>23</p></td>
+<td><p>RSTAT3_LDST_XT_BLOCK</p></td>
+</tr>
+<tr class="even">
+<td><p>24</p></td>
+<td><p>RSTAT3_ENG_IDLE</p></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-1</p></td>
+<td><p>RSTAT4_ICD_STATE</p>
+<p><code>0x00: NORMAL</code><br />
+<code>0x01: WAIT_ISSUE_CLEAR</code><br />
+<code>0x02: WAIT_EXLDQ_CLEAR</code><br />
+<code>0x03: FULL_DBG_MODE</code></p></td>
+</tr>
+<tr class="even">
+<td><p>2-3</p></td>
+<td><p>RSTAT4_ICD_MODE</p>
+<p><code>0x00: SUPPRESSICD</code><br />
+<code>0x01: ENTERICD_IBRK</code><br />
+<code>0x02: ENTERICD_STEP</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>16</p></td>
+<td><p>RSTAT4_ICD_EMASK_TRAP0</p></td>
+</tr>
+<tr class="even">
+<td><p>17</p></td>
+<td><p>RSTAT4_ICD_EMASK_TRAP1</p></td>
+</tr>
+<tr class="odd">
+<td><p>18</p></td>
+<td><p>RSTAT4_ICD_EMASK_TRAP2</p></td>
+</tr>
+<tr class="even">
+<td><p>19</p></td>
+<td><p>RSTAT4_ICD_EMASK_TRAP3</p></td>
+</tr>
+<tr class="odd">
+<td><p>20</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXC_UNIMP</p></td>
+</tr>
+<tr class="even">
+<td><p>21</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXC_IMISS</p></td>
+</tr>
+<tr class="odd">
+<td><p>22</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXC_IMHIT</p></td>
+</tr>
+<tr class="even">
+<td><p>23</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXC_IBREAK</p></td>
+</tr>
+<tr class="odd">
+<td><p>24</p></td>
+<td><p>RSTAT4_ICD_EMASK_IV0</p></td>
+</tr>
+<tr class="even">
+<td><p>25</p></td>
+<td><p>RSTAT4_ICD_EMASK_IV1</p></td>
+</tr>
+<tr class="odd">
+<td><p>26</p></td>
+<td><p>RSTAT4_ICD_EMASK_IV2</p></td>
+</tr>
+<tr class="even">
+<td><p>27</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXT0</p></td>
+</tr>
+<tr class="odd">
+<td><p>28</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXT1</p></td>
+</tr>
+<tr class="even">
+<td><p>29</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXT2</p></td>
+</tr>
+<tr class="odd">
+<td><p>30</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXT3</p></td>
+</tr>
+<tr class="even">
+<td><p>31</p></td>
+<td><p>RSTAT4_ICD_EMASK_EXT4</p></td>
+</tr>
+</tbody>
+</table>
+
+| Bits | Description        |
+| ---- | ------------------ |
+| 0-7  | RSTAT5\_LRU\_STATE |
 
 ### FALCON\_SCTL
 
@@ -962,8 +1275,7 @@ Controls the last crypto sequence (cs0 or cs1) created.
 | 4-9   | Sequence instruction's second operand |
 | 10-14 | Sequence instruction's opcode         |
 
-Contains information on the last crypto sequence (cs0 or cs1)
-created.
+Contains information on the last crypto sequence (cs0 or cs1) created.
 
 ### TSEC\_SCP\_SEQ\_STAT
 
@@ -1100,8 +1412,7 @@ Used for getting the status of crypto IRQs.
 | 24   | Unknown                          |
 | 28   | Unknown                          |
 
-Used for getting the value of the mask for crypto
-IRQs.
+Used for getting the value of the mask for crypto IRQs.
 
 ### TSEC\_SCP\_ACL\_ERR
 
@@ -1326,8 +1637,7 @@ and "csigauth", respectively.
 
 Via [TSEC\_SCP\_SEQ\_CTL](#TSEC_SCP_SEQ_CTL "wikilink") it can be
 observed that a 3-sized macro sequence is loaded into cs0 during a
-secure mode
-transition.
+secure mode transition.
 
 ### Operations
 
@@ -1396,8 +1706,7 @@ SCP, which requires taking the following steps:
   - Write 0xFF00 to TSEC\_TRNG\_CTL.
   - Write 0x1000 to [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink").
 
-Otherwise it hangs
-forever.
+Otherwise it hangs forever.
 
 ### ACL
 
@@ -1447,8 +1756,7 @@ can be read as: `dma_override(type=crypto_reg, count=2)`
 
 The argument to cxset specifies the type of behavior change in the top 3
 bits, and the number of DMA-related instructions the effect lasts for in
-the lower 5
-bits.
+the lower 5 bits.
 
 | Bits | Description                                                                                                                               |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1475,8 +1783,7 @@ arguments.
 Secrets are specific to each Falcon unit with the exception of secret
 0x3F. This secret is effectively empty (all zeros), but is configured to
 be overwritten with the KFUSE private key once the KFUSE clock is
-enabled. The KFUSE private key is
-console-unique.
+enabled. The KFUSE private key is console-unique.
 
 | Index | ACL  | Notes                                                                                                                                                                            |
 | ----- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

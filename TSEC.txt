@@ -7,7 +7,7 @@ A host driver for communicating with the TSEC is mapped to physical address 0x54
 Registers from 0x54500000 to 0x54501000 are used to configure the host interface (HOST1X).
 
 Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
-* 0x54501400 to 0x54501500: SCP (Secure Crypto Processor?).
+* 0x54501400 to 0x54501500: SCP (Secure Co-Processor).
 * 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
 * 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG (Clock Gate).
 * 0x54501700 to 0x54501800: DMA.
@@ -106,31 +106,31 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450101C
 | 0x04
 |-
-| FALCON_GPTMR_PERIOD
+| FALCON_GPTMRINT
 | 0x54501020
 | 0x04
 |-
-| FALCON_GPTMR_TIME
+| FALCON_GPTMRVAL
 | 0x54501024
 | 0x04
 |-
-| FALCON_GPTMR_ENABLE
+| FALCON_GPTMRCTL
 | 0x54501028
 | 0x04
 |-
-| FALCON_TIME_LOW
+| FALCON_PTIMER0
 | 0x5450102C
 | 0x04
 |-
-| FALCON_TIME_HIGH
+| FALCON_PTIMER1
 | 0x54501030
 | 0x04
 |-
-| FALCON_WDTMR_TIME
+| FALCON_WDTMRVAL
 | 0x54501034
 | 0x04
 |-
-| FALCON_WDTMR_ENABLE
+| FALCON_WDTMRCTL
 | 0x54501038
 | 0x04
 |-
@@ -162,43 +162,43 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501054
 | 0x04
 |-
-| FALCON_CMDCTX
+| FALCON_CTXACK
 | 0x54501058
 | 0x04
 |-
-| FALCON_STATUS_MASK
+| FALCON_FHSTATE
 | 0x5450105C
 | 0x04
 |-
-| FALCON_VM_SUPERVISOR
+| FALCON_PRIVSTATE
 | 0x54501060
 | 0x04
 |-
-| FALCON_MTHD_DATA
+| FALCON_MTHDDATA
 | 0x54501064
 | 0x04
 |-
-| FALCON_MTHD_CMD
+| FALCON_MTHDID
 | 0x54501068
 | 0x04
 |-
-| FALCON_MTHD_DATA_WR
+| FALCON_MTHDWDAT
 | 0x5450106C
 | 0x04
 |-
-| FALCON_MTHD_OCCUPIED
+| FALCON_MTHDCOUNT
 | 0x54501070
 | 0x04
 |-
-| FALCON_MTHD_ACK
+| FALCON_MTHDPOP
 | 0x54501074
 | 0x04
 |-
-| FALCON_MTHD_LIMIT
+| FALCON_MTHDRAMSZ
 | 0x54501078
 | 0x04
 |-
-| FALCON_SUBENGINE_RESET
+| FALCON_SFTRESET
 | 0x5450107C
 | 0x04
 |-
@@ -210,11 +210,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501084
 | 0x04
 |-
-| FALCON_PM_SIGNAL
+| FALCON_SOFT_PM
 | 0x54501088
 | 0x04
 |-
-| FALCON_PM_MODE
+| FALCON_SOFT_MODE
 | 0x5450108C
 | 0x04
 |-
@@ -226,11 +226,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501094
 | 0x04
 |-
-| FALCON_BREAKPOINT0
+| FALCON_IBRKPT1
 | 0x54501098
 | 0x04
 |-
-| FALCON_BREAKPOINT1
+| FALCON_IBRKPT2
 | 0x5450109C
 | 0x04
 |-
@@ -242,23 +242,23 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x545010A4
 | 0x04
 |-
-| FALCON_PM_SEL
+| FALCON_PMM
 | 0x545010A8
 | 0x04
 |-
-| FALCON_HOST_IO_INDEX
+| FALCON_ADDR
 | 0x545010AC
 | 0x04
 |-
-| FALCON_BREAKPOINT2
+| FALCON_IBRKPT3
 | 0x545010B0
 | 0x04
 |-
-| FALCON_BREAKPOINT3
+| FALCON_IBRKPT4
 | 0x545010B4
 | 0x04
 |-
-| FALCON_BREAKPOINT4
+| FALCON_IBRKPT5
 | 0x545010B8
 | 0x04
 |-
@@ -314,11 +314,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450111C
 | 0x04
 |-
-| [[#FALCON_DMATRFSTAT|FALCON_DMATRFSTAT]]
+| [[#FALCON_DMAPOLL_FB|FALCON_DMAPOLL_FB]]
 | 0x54501120
 | 0x04
 |-
-| [[#FALCON_CRYPTTRFSTAT|FALCON_CRYPTTRFSTAT]]
+| [[#FALCON_DMAPOLL_CP|FALCON_DMAPOLL_CP]]
 | 0x54501124
 | 0x04
 |-
@@ -382,7 +382,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450116C
 | 0x04
 |-
-| FALCON_CG2
+| FALCON_CG1_SLCG
 | 0x5450117C
 | 0x04
 |-
@@ -466,15 +466,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501200
 | 0x04
 |-
-| FALCON_ICD_ADDR
+| [[#FALCON_ICD_ADDR|FALCON_ICD_ADDR]]
 | 0x54501204
 | 0x04
 |-
-| FALCON_ICD_WDATA
+| [[#FALCON_ICD_WDATA|FALCON_ICD_WDATA]]
 | 0x54501208
 | 0x04
 |-
-| FALCON_ICD_RDATA
+| [[#FALCON_ICD_RDATA|FALCON_ICD_RDATA]]
 | 0x5450120C
 | 0x04
 |-
@@ -1343,6 +1343,9 @@ Used for detecting if Falcon is busy or not.
 !  Bits
 !  Description
 |-
+| 0-15
+| FALCON_DEBUG1_MTHD_DRAIN_TIME
+|-
 | 16
 | FALCON_DEBUG1_CTXSW_MODE
 |}
@@ -1418,11 +1421,11 @@ Takes the Falcon's boot vector address.
 | 9-17
 | FALCON_HWCFG_DMEM_SIZE
 |-
-| 18-25
-| FALCON_HWCFG_MTHD_SIZE
+| 18-26
+| FALCON_HWCFG_METHODFIFO_DEPTH
 |-
-| 26-31
-| FALCON_HWCFG_DMATRF_SLOTS
+| 27-31
+| FALCON_HWCFG_DMAQUEUE_DEPTH
 |}
 
 === FALCON_DMACTL ===
@@ -1489,38 +1492,57 @@ Used for configuring DMA transfers.
 === FALCON_DMATRFFBOFFS ===
 For transfers to IMEM: the destination physical IMEM page.
 
-=== FALCON_DMATRFSTAT ===
+=== FALCON_DMAPOLL_FB ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| FALCON_DMATRFSTAT_PENDING
+| FALCON_DMAPOLL_FB_FENCE_ACTIVE
 |-
-| 16-18
-| FALCON_DMATRFSTAT_NUM_STORES_PENDING
+| 1
+| FALCON_DMAPOLL_FB_DMA_ACTIVE
 |-
-| 24-26
-| FALCON_DMATRFSTAT_NUM_LOADS_PENDING
+| 4
+| FALCON_DMAPOLL_FB_CFG_R_FENCE
+|-
+| 5
+| FALCON_DMAPOLL_FB_CFG_W_FENCE
+|-
+| 16-23
+| FALCON_DMAPOLL_FB_WCOUNT
+|-
+| 24-31
+| FALCON_DMAPOLL_FB_RCOUNT
 |}
 
-=== FALCON_CRYPTTRFSTAT ===
+Contains the status of a DMA transfer between the Falcon and external memory.
+
+=== FALCON_DMAPOLL_CP ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
+| 0
+| FALCON_DMAPOLL_CP_FENCE_ACTIVE
+|-
 | 1
-| FALCON_CRYPTTRFSTAT_PENDING
+| FALCON_DMAPOLL_CP_DMA_ACTIVE
+|-
+| 4
+| FALCON_DMAPOLL_CP_CFG_R_FENCE
 |-
 | 5
-| FALCON_CRYPTTRFSTAT_ENABLED
+| FALCON_DMAPOLL_CP_CFG_W_FENCE
 |-
-| 16-18
-| FALCON_CRYPTTRFSTAT_NUM_STORES_PENDING
+| 16-23
+| FALCON_DMAPOLL_CP_WCOUNT
 |-
-| 24-26
-| FALCON_CRYPTTRFSTAT_NUM_LOADS_PENDING
+| 24-31
+| FALCON_DMAPOLL_CP_RCOUNT
 |}
+
+Contains the status of a DMA transfer between the Falcon and the SCP.
 
 === FALCON_HWCFG1 ===
 {| class="wikitable" border="1"
@@ -1528,13 +1550,13 @@ For transfers to IMEM: the destination physical IMEM page.
 !  Description
 |-
 | 0-3
-| FALCON_HWCFG1_VERSION
+| FALCON_HWCFG1_CORE_REV
 |-
 | 4-5
-| FALCON_HWCFG1_SCP_MODE
+| FALCON_HWCFG1_SECURITY_MODEL
 |-
 | 6-7
-| FALCON_HWCFG1_SUBVERSION
+| FALCON_HWCFG1_CORE_REV_SUBVERSION
 |-
 | 8-11
 | FALCON_HWCFG1_IMEM_PORTS
@@ -1542,20 +1564,23 @@ For transfers to IMEM: the destination physical IMEM page.
 | 12-15
 | FALCON_HWCFG1_DMEM_PORTS
 |-
-| 16-19
-| FALCON_HWCFG1_VM_PAGES_LOG2
+| 16-20
+| FALCON_HWCFG1_TAG_WIDTH
 |-
 | 27
-| FALCON_HWCFG1_HAS_ICD
+| FALCON_HWCFG1_DBG_PRIV_BUS
 |-
-| 28-29
-| FALCON_HWCFG1_IO_ADDR_TYPE
+| 28
+| FALCON_HWCFG1_CSB_SIZE_16M
+|-
+| 29
+| FALCON_HWCFG1_PRIV_DIRECT
 |-
 | 30
-| FALCON_HWCFG1_HAS_EXTERR
+| FALCON_HWCFG1_DMEM_APERTURES
 |-
 | 31
-| FALCON_HWCFG1_HAS_IMFILL
+| FALCON_HWCFG1_IMEM_AUTOFILL
 |}
 
 === FALCON_IMCTL ===
@@ -1568,9 +1593,10 @@ For transfers to IMEM: the destination physical IMEM page.
 |-
 | 24-26
 | Command
- 1: ITLB
- 2: PTLB
- 3: VTLB
+ 0x00: NOP
+ 0x01: IMINV (ITLB)
+ 0x02: IMBLK (PTLB)
+ 0x03: IMTAG (VTLB)
 |}
 
 Controls the Falcon TLB.
@@ -1666,36 +1692,371 @@ Returns or takes the value for a DMEM read/write operation.
 |-
 | 0-3
 | FALCON_ICD_CMD_OPC
- 0x0: BREAK
- 0x1: CONTINUE_FROM_PC
- 0x2: CONTINUE_FROM_ADDR
- 0x3: CONTINUE_UNK1_FROM_PC
- 0x4: CONTINUE_UNK1_FROM_ADDR
- 0x5: SINGLE_STEP_FROM_PC
- 0x6: SINGLE_STEP_FROM_ADDR
- 0x7: SET_BREAK_MASK
- 0x8: REG_READ
- 0x9: REG_WRITE
- 0xA: DATA_READ
- 0xB: DATA_WRITE
- 0xC: IO_READ
- 0xD: IO_WRITE
- 0xE: STATUS_READ
+ 0x00: STOP
+ 0x01: RUN (run from PC)
+ 0x02: JRUN (run from address)
+ 0x03: RUNB (run from PC)
+ 0x04: JRUNB (run from address)
+ 0x05: STEP (step from PC)
+ 0x06: JSTEP (step from address)
+ 0x07: EMASK (set exception mask)
+ 0x08: RREG (read register)
+ 0x09: WREG (write register)
+ 0x0A: RDM (read data memory)
+ 0x0B: WDM (write data memory)
+ 0x0C: RCM (read code memory)
+ 0x0D: WCM (write code memory)
+ 0x0E: RSTAT (read status)
+ 0x0F: SBU
 |-
 | 6-7
-| FALCON_ICD_CMD_DATA_SIZE
+| FALCON_ICD_CMD_SZ
+ 0x00: B (byte
+ 0x01: HW (half word)
+ 0x02: W (word)
 |-
 | 8-12
 | FALCON_ICD_CMD_IDX
+ 0x00: REG0 | RSTAT0 | WB0
+ 0x01: REG1 | RSTAT1 | WB1
+ 0x02: REG2 | RSTAT2 | WB2
+ 0x03: REG3 | RSTAT3 | WB3
+ 0x04: REG4 | RSTAT4
+ 0x05: REG5 | RSTAT5
+ 0x06: REG6
+ 0x07: REG7
+ 0x08: REG8
+ 0x09: REG9
+ 0x0A: REG10
+ 0x0B: REG11
+ 0x0C: REG12
+ 0x0D: REG13
+ 0x0E: REG14
+ 0x0F: REG15
+ 0x10: IV0
+ 0x11: IV1
+ 0x12: UNDEFINED
+ 0x13: EV
+ 0x14: SP
+ 0x15: PC
+ 0x16: IMB
+ 0x17: DMB
+ 0x18: CSW
+ 0x19: CCR
+ 0x1A: SEC
+ 0x1B: CTX
+ 0x1C: EXCI
 |-
 | 14
 | FALCON_ICD_CMD_ERROR
 |-
 | 15
-| FALCON_ICD_CMD_DONE
+| FALCON_ICD_CMD_RDVLD
 |-
 | 16-31
-| FALCON_ICD_CMD_BREAK_MASK
+| FALCON_ICD_CMD_PARM
+ 0x0001: EMASK_TRAP0
+ 0x0002: EMASK_TRAP1
+ 0x0004: EMASK_TRAP2
+ 0x0008: EMASK_TRAP3
+ 0x0010: EMASK_EXC_UNIMP
+ 0x0020: EMASK_EXC_IMISS
+ 0x0040: EMASK_EXC_IMHIT
+ 0x0080: EMASK_EXC_IBREAK
+ 0x0100: EMASK_IV0
+ 0x0200: EMASK_IV1
+ 0x0400: EMASK_IV2
+ 0x0800: EMASK_EXT0
+ 0x1000: EMASK_EXT1
+ 0x2000: EMASK_EXT2
+ 0x4000: EMASK_EXT3
+ 0x8000: EMASK_EXT4
+|}
+
+Used for sending commands to the Falcon's in-chip debugger.
+
+=== FALCON_ICD_ADDR ===
+Takes the target address for the Falcon's in-chip debugger.
+
+=== FALCON_ICD_WDATA ===
+Takes the data for writing using the Falcon's in-chip debugger.
+
+=== FALCON_ICD_RDATA ===
+Returns the data read using the Falcon's in-chip debugger.
+
+When reading from an internal status register (STAT), the following applies:
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| RSTAT0_MEM_STALL
+|-
+| 1
+| RSTAT0_DMA_STALL
+|-
+| 2
+| RSTAT0_FENCE_STALL
+|-
+| 3
+| RSTAT0_DIV_STALL
+|-
+| 4
+| RSTAT0_DMA_STALL_DMAQ
+|-
+| 5
+| RSTAT0_DMA_STALL_DMWAITING
+|-
+| 6
+| RSTAT0_DMA_STALL_IMWAITING
+|-
+| 7
+| RSTAT0_ANY_STALL
+|-
+| 8
+| RSTAT0_SBFULL_STALL
+|-
+| 9
+| RSTAT0_SBHIT_STALL
+|-
+| 10
+| RSTAT0_FLOW_STALL
+|-
+| 11
+| RSTAT0_SP_STALL
+|-
+| 12
+| RSTAT0_BL_STALL
+|-
+| 13
+| RSTAT0_IPND_STALL
+|-
+| 14
+| RSTAT0_LDSTQ_STALL
+|-
+| 16
+| RSTAT0_NOINSTR_STALL
+|-
+| 20
+| RSTAT0_HALTSTOP_FLUSH
+|-
+| 21
+| RSTAT0_AFILL_FLUSH
+|-
+| 22
+| RSTAT0_EXC_FLUSH
+|-
+| 23-25
+| RSTAT0_IRQ_FLUSH
+|-
+| 28
+| RSTAT0_VALIDRD
+|-
+| 29
+| RSTAT0_WAITING
+|-
+| 30
+| RSTAT0_HALTED
+|-
+| 31
+| RSTAT0_MTHD_FULL
+|}
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| RSTAT1_WB_ALLOC
+|-
+| 4-7
+| RSTAT1_WB_VALID
+|-
+| 8-9
+| RSTAT1_WB0_SZ
+|-
+| 10-11
+| RSTAT1_WB1_SZ
+|-
+| 12-13
+| RSTAT1_WB2_SZ
+|-
+| 14-15
+| RSTAT1_WB3_SZ
+|-
+| 16-19
+| RSTAT1_WB0_IDX
+|-
+| 20-23
+| RSTAT1_WB1_IDX
+|-
+| 24-27
+| RSTAT1_WB2_IDX
+|-
+| 28-31
+| RSTAT1_WB3_IDX
+|}
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-3
+| RSTAT2_DMAQ_NUM
+|-
+| 4
+| RSTAT2_DMA_ENABLE
+|-
+| 5-7
+| RSTAT2_LDSTQ_NUM
+|-
+| 16-19
+| RSTAT2_EM_BUSY
+|-
+| 20-23
+| RSTAT2_EM_ACKED
+|-
+| 24-27
+| RSTAT2_EM_ISWR
+|-
+| 28-31
+| RSTAT2_EM_DVLD
+|}
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| RSTAT3_MTHD_IDLE
+|-
+| 1
+| RSTAT3_CTXSW_IDLE
+|-
+| 2
+| RSTAT3_DMA_IDLE
+|-
+| 3
+| RSTAT3_SCP_IDLE
+|-
+| 4
+| RSTAT3_LDST_IDLE
+|-
+| 5
+| RSTAT3_SBWB_EMPTY
+|-
+| 6-8
+| RSTAT3_CSWIE
+|-
+| 10
+| RSTAT3_CSWE
+|-
+| 12-14
+| RSTAT3_CTXSW_STATE
+ 0x00: IDLE
+ 0x01: SM_CHECK
+ 0x02: SM_SAVE
+ 0x03: SM_SAVE_WAIT
+ 0x04: SM_BLK_BIND
+ 0x05: SM_RESET
+ 0x06: SM_RESETWAIT
+ 0x07: SM_ACK
+|-
+| 15
+| RSTAT3_CTXSW_PEND
+|-
+| 17
+| RSTAT3_DMA_FBREQ_IDLE
+|-
+| 18
+| RSTAT3_DMA_ACKQ_EMPTY
+|-
+| 19
+| RSTAT3_DMA_RDQ_EMPTY
+|-
+| 20
+| RSTAT3_DMA_WR_BUSY
+|-
+| 21
+| RSTAT3_DMA_RD_BUSY
+|-
+| 22
+| RSTAT3_LDST_XT_BUSY
+|-
+| 23
+| RSTAT3_LDST_XT_BLOCK
+|-
+| 24
+| RSTAT3_ENG_IDLE
+|}
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-1
+| RSTAT4_ICD_STATE
+ 0x00: NORMAL
+ 0x01: WAIT_ISSUE_CLEAR
+ 0x02: WAIT_EXLDQ_CLEAR
+ 0x03: FULL_DBG_MODE
+|-
+| 2-3
+| RSTAT4_ICD_MODE
+ 0x00: SUPPRESSICD
+ 0x01: ENTERICD_IBRK
+ 0x02: ENTERICD_STEP
+|-
+| 16
+| RSTAT4_ICD_EMASK_TRAP0
+|-
+| 17
+| RSTAT4_ICD_EMASK_TRAP1
+|-
+| 18
+| RSTAT4_ICD_EMASK_TRAP2
+|-
+| 19
+| RSTAT4_ICD_EMASK_TRAP3
+|-
+| 20
+| RSTAT4_ICD_EMASK_EXC_UNIMP
+|-
+| 21
+| RSTAT4_ICD_EMASK_EXC_IMISS
+|-
+| 22
+| RSTAT4_ICD_EMASK_EXC_IMHIT
+|-
+| 23
+| RSTAT4_ICD_EMASK_EXC_IBREAK
+|-
+| 24
+| RSTAT4_ICD_EMASK_IV0
+|-
+| 25
+| RSTAT4_ICD_EMASK_IV1
+|-
+| 26
+| RSTAT4_ICD_EMASK_IV2
+|-
+| 27
+| RSTAT4_ICD_EMASK_EXT0
+|-
+| 28
+| RSTAT4_ICD_EMASK_EXT1
+|-
+| 29
+| RSTAT4_ICD_EMASK_EXT2
+|-
+| 30
+| RSTAT4_ICD_EMASK_EXT3
+|-
+| 31
+| RSTAT4_ICD_EMASK_EXT4
+|}
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-7
+| RSTAT5_LRU_STATE
 |}
 
 === FALCON_SCTL ===
