@@ -1325,7 +1325,7 @@ No input, returns an output u8 bool and float.
 Uses [[Backlight_services|lbl]] command GetAmbientLightSensorValue.
 
 === SetAlbumImageTakenNotificationEnabled ===
-Takes an input u8, no output.
+Takes an input u8 bool, no output.
 
 === SetApplicationAlbumUserData ===
 Takes a type-0x21 input buffer, no output.
