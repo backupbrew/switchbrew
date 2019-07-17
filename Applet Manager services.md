@@ -1304,6 +1304,8 @@ u8, these are bool flags. No output.
 
 Takes an input u8 bool flag, no output.
 
+See [\#NotificationMessage](#NotificationMessage "wikilink").
+
 ### SetScreenShotAppletIdentityInfo
 
 Takes an input 0x10-byte struct AppletIdentityInfo. No output.
@@ -1319,6 +1321,11 @@ Takes an input u8 bool flag, no output.
 ### SetRequiresCaptureButtonShortPressedMessage
 
 Takes an input u8 bool flag, no output.
+
+See [\#NotificationMessage](#NotificationMessage "wikilink").
+
+When enabled with a non-Overlay applet, Overlay applet will not be
+notified of capture button short-presses for screenshots.
 
 ### SetAlbumImageOrientation
 
@@ -1812,13 +1819,14 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 ### NotificationMessage
 
-| ID   | Description                                                                   |
-| ---- | ----------------------------------------------------------------------------- |
-| 0x4  | Exit requested                                                                |
-| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed                        |
-| 0x10 | Current applet execution was [resumed](#SetRestartMessageEnabled "wikilink"). |
-| 0x1E | OperationMode changed                                                         |
-| 0x1F | PerformanceMode changed                                                       |
+| ID   | Description                                                                                  |
+| ---- | -------------------------------------------------------------------------------------------- |
+| 0x4  | Exit requested                                                                               |
+| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed                                       |
+| 0x10 | Current applet execution was [resumed](#SetRestartMessageEnabled "wikilink").                |
+| 0x1E | OperationMode changed                                                                        |
+| 0x1F | PerformanceMode changed                                                                      |
+| 0x5A | Capture button was [short-pressed](#SetRequiresCaptureButtonShortPressedMessage "wikilink"). |
 
 ### OperationMode
 

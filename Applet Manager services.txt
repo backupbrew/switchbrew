@@ -1286,6 +1286,8 @@ Takes 3 input u8s with each field located immediately after the previous u8, the
 === SetRestartMessageEnabled ===
 Takes an input u8 bool flag, no output.
 
+See [[#NotificationMessage]].
+
 === SetScreenShotAppletIdentityInfo ===
 Takes an input 0x10-byte struct AppletIdentityInfo. No output.
 
@@ -1297,6 +1299,10 @@ Takes an input u8 bool flag, no output.
 
 === SetRequiresCaptureButtonShortPressedMessage ===
 Takes an input u8 bool flag, no output.
+
+See [[#NotificationMessage]].
+
+When enabled with a non-Overlay applet, Overlay applet will not be notified of capture button short-presses for screenshots.
 
 === SetAlbumImageOrientation ===
 Takes an input s32 "nn::album::ImageOrientation". No output.
@@ -1943,6 +1949,8 @@ See also [[:Category:Library Applets]].
 | 0x1E || OperationMode changed
 |-
 | 0x1F || PerformanceMode changed
+|-
+| 0x5A || Capture button was [[#SetRequiresCaptureButtonShortPressedMessage|short-pressed]].
 |}
 
 === OperationMode ===
