@@ -10,7 +10,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 * 0x54501400 to 0x54501500: SCP (Secure Co-Processor).
 * 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
 * 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG (Clock Gate).
-* 0x54501700 to 0x54501800: DMA.
+* 0x54501700 to 0x54501800: BAR0.
 * 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
 
 {| class="wikitable" border="1"
@@ -366,11 +366,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450115C
 | 0x04
 |-
-| FALCON_EXTERRWIN
+| FALCON_CMEMBASE
 | 0x54501160
 | 0x04
 |-
-| FALCON_EXTERRCFG
+| FALCON_DMEMAPERT
 | 0x54501164
 | 0x04
 |-
@@ -738,19 +738,19 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x545016D0
 | 0x04
 |-
-| [[#TSEC_DMA_CMD|TSEC_DMA_CMD]]
+| [[#TSEC_BAR0_CTL|TSEC_BAR0_CTL]]
 | 0x54501700
 | 0x04
 |-
-| [[#TSEC_DMA_ADDR|TSEC_DMA_ADDR]]
+| [[#TSEC_BAR0_ADDR|TSEC_BAR0_ADDR]]
 | 0x54501704
 | 0x04
 |-
-| [[#TSEC_DMA_DATA|TSEC_DMA_DATA]]
+| [[#TSEC_BAR0_DATA|TSEC_BAR0_DATA]]
 | 0x54501708
 | 0x04
 |-
-| [[#TSEC_DMA_TIMEOUT|TSEC_DMA_TIMEOUT]]
+| [[#TSEC_BAR0_TIMEOUT|TSEC_BAR0_TIMEOUT]]
 | 0x5450170C
 | 0x04
 |-
@@ -1108,31 +1108,31 @@ Used for getting the status of Falcon's IRQs.
 !  Description
 |-
 | 0
-| FALCON_IRQMODE_GPTMR
+| FALCON_IRQMODE_LVL_GPTMR
 |-
 | 1
-| FALCON_IRQMODE_WDTMR
+| FALCON_IRQMODE_LVL_WDTMR
 |-
 | 2
-| FALCON_IRQMODE_MTHD
+| FALCON_IRQMODE_LVL_MTHD
 |-
 | 3
-| FALCON_IRQMODE_CTXSW
+| FALCON_IRQMODE_LVL_CTXSW
 |-
 | 4
-| FALCON_IRQMODE_HALT
+| FALCON_IRQMODE_LVL_HALT
 |-
 | 5
-| FALCON_IRQMODE_EXTERR
+| FALCON_IRQMODE_LVL_EXTERR
 |-
 | 6
-| FALCON_IRQMODE_SWGEN0
+| FALCON_IRQMODE_LVL_SWGEN0
 |-
 | 7
-| FALCON_IRQMODE_SWGEN1
+| FALCON_IRQMODE_LVL_SWGEN1
 |-
 | 8-15
-| FALCON_IRQMODE_EXT
+| FALCON_IRQMODE_LVL_EXT
 |}
 
 Used for changing the mode Falcon's IRQs. A value of 1 means level triggered while a value of 0 means edge triggered.

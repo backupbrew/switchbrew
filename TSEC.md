@@ -21,7 +21,7 @@ TSEC and are subdivided into:
   - 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
   - 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG
     (Clock Gate).
-  - 0x54501700 to 0x54501800: DMA.
+  - 0x54501700 to 0x54501800: BAR0.
   - 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces).
 
 | Name                                                                    | Address    | Width |
@@ -113,8 +113,8 @@ TSEC and are subdivided into:
 | FALCON\_IMFILLRNG1                                                      | 0x54501154 | 0x04  |
 | FALCON\_IMFILLCTL                                                       | 0x54501158 | 0x04  |
 | FALCON\_IMCTL\_DEBUG                                                    | 0x5450115C | 0x04  |
-| FALCON\_EXTERRWIN                                                       | 0x54501160 | 0x04  |
-| FALCON\_EXTERRCFG                                                       | 0x54501164 | 0x04  |
+| FALCON\_CMEMBASE                                                        | 0x54501160 | 0x04  |
+| FALCON\_DMEMAPERT                                                       | 0x54501164 | 0x04  |
 | FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                                      | 0x5450116C | 0x04  |
 | FALCON\_CG1\_SLCG                                                       | 0x5450117C | 0x04  |
@@ -206,10 +206,10 @@ TSEC and are subdivided into:
 | [TSEC\_TFBIF\_ACTMON\_BORPS](#TSEC_TFBIF_ACTMON_BORPS "wikilink")       | 0x54501650 | 0x04  |
 | [TSEC\_TFBIF\_ACTMON\_CTL](#TSEC_TFBIF_ACTMON_CTL "wikilink")           | 0x54501654 | 0x04  |
 | [TSEC\_CG](#TSEC_CG "wikilink")                                         | 0x545016D0 | 0x04  |
-| [TSEC\_DMA\_CMD](#TSEC_DMA_CMD "wikilink")                              | 0x54501700 | 0x04  |
-| [TSEC\_DMA\_ADDR](#TSEC_DMA_ADDR "wikilink")                            | 0x54501704 | 0x04  |
-| [TSEC\_DMA\_DATA](#TSEC_DMA_DATA "wikilink")                            | 0x54501708 | 0x04  |
-| [TSEC\_DMA\_TIMEOUT](#TSEC_DMA_TIMEOUT "wikilink")                      | 0x5450170C | 0x04  |
+| [TSEC\_BAR0\_CTL](#TSEC_BAR0_CTL "wikilink")                            | 0x54501700 | 0x04  |
+| [TSEC\_BAR0\_ADDR](#TSEC_BAR0_ADDR "wikilink")                          | 0x54501704 | 0x04  |
+| [TSEC\_BAR0\_DATA](#TSEC_BAR0_DATA "wikilink")                          | 0x54501708 | 0x04  |
+| [TSEC\_BAR0\_TIMEOUT](#TSEC_BAR0_TIMEOUT "wikilink")                    | 0x5450170C | 0x04  |
 | TSEC\_TEGRA\_FALCON\_IP\_VER                                            | 0x54501800 | 0x04  |
 | TSEC\_TEGRA\_UNK\_04                                                    | 0x54501804 | 0x04  |
 | TSEC\_TEGRA\_UNK\_08                                                    | 0x54501808 | 0x04  |
@@ -353,17 +353,17 @@ Used for getting the status of Falcon's IRQs.
 
 ### FALCON\_IRQMODE
 
-| Bits | Description             |
-| ---- | ----------------------- |
-| 0    | FALCON\_IRQMODE\_GPTMR  |
-| 1    | FALCON\_IRQMODE\_WDTMR  |
-| 2    | FALCON\_IRQMODE\_MTHD   |
-| 3    | FALCON\_IRQMODE\_CTXSW  |
-| 4    | FALCON\_IRQMODE\_HALT   |
-| 5    | FALCON\_IRQMODE\_EXTERR |
-| 6    | FALCON\_IRQMODE\_SWGEN0 |
-| 7    | FALCON\_IRQMODE\_SWGEN1 |
-| 8-15 | FALCON\_IRQMODE\_EXT    |
+| Bits | Description                  |
+| ---- | ---------------------------- |
+| 0    | FALCON\_IRQMODE\_LVL\_GPTMR  |
+| 1    | FALCON\_IRQMODE\_LVL\_WDTMR  |
+| 2    | FALCON\_IRQMODE\_LVL\_MTHD   |
+| 3    | FALCON\_IRQMODE\_LVL\_CTXSW  |
+| 4    | FALCON\_IRQMODE\_LVL\_HALT   |
+| 5    | FALCON\_IRQMODE\_LVL\_EXTERR |
+| 6    | FALCON\_IRQMODE\_LVL\_SWGEN0 |
+| 7    | FALCON\_IRQMODE\_LVL\_SWGEN1 |
+| 8-15 | FALCON\_IRQMODE\_LVL\_EXT    |
 
 Used for changing the mode Falcon's IRQs. A value of 1 means level
 triggered while a value of 0 means edge triggered.
