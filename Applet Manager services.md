@@ -1369,6 +1369,8 @@ GetAmbientLightSensorValue.
 
 Takes an input u8 bool, no output.
 
+See [\#NotificationMessage](#NotificationMessage "wikilink").
+
 ### SetApplicationAlbumUserData
 
 Takes a type-0x21 input buffer, no output.
@@ -1827,6 +1829,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x1E | OperationMode changed                                                                        |
 | 0x1F | PerformanceMode changed                                                                      |
 | 0x5A | Capture button was [short-pressed](#SetRequiresCaptureButtonShortPressedMessage "wikilink"). |
+| 0x5C | Screenshot was [taken](#SetAlbumImageTakenNotificationEnabled "wikilink").                   |
 
 ### OperationMode
 

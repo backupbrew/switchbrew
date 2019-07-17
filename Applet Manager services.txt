@@ -1333,6 +1333,8 @@ Uses [[Backlight_services|lbl]] command GetAmbientLightSensorValue.
 === SetAlbumImageTakenNotificationEnabled ===
 Takes an input u8 bool, no output.
 
+See [[#NotificationMessage]].
+
 === SetApplicationAlbumUserData ===
 Takes a type-0x21 input buffer, no output.
 
@@ -1951,6 +1953,8 @@ See also [[:Category:Library Applets]].
 | 0x1F || PerformanceMode changed
 |-
 | 0x5A || Capture button was [[#SetRequiresCaptureButtonShortPressedMessage|short-pressed]].
+|-
+| 0x5C || Screenshot was [[#SetAlbumImageTakenNotificationEnabled|taken]].
 |}
 
 === OperationMode ===
