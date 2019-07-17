@@ -1812,13 +1812,13 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 ### NotificationMessage
 
-| ID   | Description                                            |
-| ---- | ------------------------------------------------------ |
-| 0x4  | Exit requested                                         |
-| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed |
-| 0x10 | ?                                                      |
-| 0x1E | OperationMode changed                                  |
-| 0x1F | PerformanceMode changed                                |
+| ID   | Description                                                                   |
+| ---- | ----------------------------------------------------------------------------- |
+| 0x4  | Exit requested                                                                |
+| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed                        |
+| 0x10 | Current applet execution was [resumed](#SetRestartMessageEnabled "wikilink"). |
+| 0x1E | OperationMode changed                                                         |
+| 0x1F | PerformanceMode changed                                                       |
 
 ### OperationMode
 
