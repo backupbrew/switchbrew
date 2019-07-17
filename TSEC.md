@@ -1533,7 +1533,7 @@ on NVDEC, NVENC and NVJPG.
 | 16-18 | TSEC\_CG\_WAKEUP\_DLY\_CNT   |
 | 19    | TSEC\_CG\_WAKEUP\_DLY\_EN    |
 
-### TSEC\_DMA\_CMD
+### TSEC\_BAR0\_CTL
 
 <table>
 <thead>
@@ -1545,19 +1545,19 @@ on NVDEC, NVENC and NVJPG.
 <tbody>
 <tr class="odd">
 <td><p>0</p></td>
-<td><p>TSEC_DMA_CMD_READ</p></td>
+<td><p>TSEC_BAR0_CTL_READ</p></td>
 </tr>
 <tr class="even">
 <td><p>1</p></td>
-<td><p>TSEC_DMA_CMD_WRITE</p></td>
+<td><p>TSEC_BAR0_CTL_WRITE</p></td>
 </tr>
 <tr class="odd">
 <td><p>4-7</p></td>
-<td><p>TSEC_DMA_CMD_BYTE_MASK</p></td>
+<td><p>TSEC_BAR0_CTL_BYTE_MASK</p></td>
 </tr>
 <tr class="even">
 <td><p>12-13</p></td>
-<td><p>TSEC_DMA_CMD_STATUS</p>
+<td><p>TSEC_BAR0_CTL_STATUS</p>
 <p><code>0: Idle</code><br />
 <code>1: Busy</code><br />
 <code>2: Error</code><br />
@@ -1565,31 +1565,33 @@ on NVDEC, NVENC and NVJPG.
 </tr>
 <tr class="odd">
 <td><p>31</p></td>
-<td><p>TSEC_DMA_CMD_INIT</p></td>
+<td><p>TSEC_BAR0_CTL_INIT</p></td>
 </tr>
 </tbody>
 </table>
 
-A DMA read/write operation requires bits TSEC\_DMA\_CMD\_INIT and
-TSEC\_DMA\_CMD\_READ/TSEC\_DMA\_CMD\_WRITE to be set in TSEC\_DMA\_CMD.
+A BAR0 DMA read/write operation requires bits TSEC\_BAR0\_CTL\_INIT and
+TSEC\_BAR0\_CTL\_READ/TSEC\_BAR0\_CTL\_WRITE to be set in
+TSEC\_BAR0\_CTL.
 
-During the transfer, TSEC\_DMA\_CMD\_STATUS is set to "Busy".
+During the transfer, TSEC\_BAR0\_CTL\_STATUS is set to "Busy".
 
-Accessing an invalid address sets TSEC\_DMA\_CMD\_STATUS to "Error".
+Accessing an invalid address sets TSEC\_BAR0\_CTL\_STATUS to "Error".
 
-### TSEC\_DMA\_ADDR
+### TSEC\_BAR0\_ADDR
 
 Takes the address for DMA transfers between TSEC and HOST1X (master and
 clients).
 
-### TSEC\_DMA\_DATA
+### TSEC\_BAR0\_DATA
 
 Takes the data for DMA transfers between TSEC and HOST1X (master and
 clients).
 
-### TSEC\_DMA\_TIMEOUT
+### TSEC\_BAR0\_TIMEOUT
 
-Always 0xFFF.
+Takes the timeout value for DMA transfers between TSEC and HOST1X
+(master and clients).
 
 ### TSEC\_TEGRA\_CTL
 

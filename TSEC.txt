@@ -2700,45 +2700,45 @@ Controls the Activity Monitor. Disconnected on the TSEC, but available on NVDEC,
 | TSEC_CG_WAKEUP_DLY_EN
 |}
 
-=== TSEC_DMA_CMD ===
+=== TSEC_BAR0_CTL ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| TSEC_DMA_CMD_READ
+| TSEC_BAR0_CTL_READ
 |-
 | 1
-| TSEC_DMA_CMD_WRITE
+| TSEC_BAR0_CTL_WRITE
 |-
 | 4-7
-| TSEC_DMA_CMD_BYTE_MASK
+| TSEC_BAR0_CTL_BYTE_MASK
 |-
 | 12-13
-| TSEC_DMA_CMD_STATUS
+| TSEC_BAR0_CTL_STATUS
  0: Idle
  1: Busy
  2: Error
  3: Disabled
 |-
 | 31
-| TSEC_DMA_CMD_INIT
+| TSEC_BAR0_CTL_INIT
 |}
 
-A DMA read/write operation requires bits TSEC_DMA_CMD_INIT and TSEC_DMA_CMD_READ/TSEC_DMA_CMD_WRITE to be set in TSEC_DMA_CMD.
+A BAR0 DMA read/write operation requires bits TSEC_BAR0_CTL_INIT and TSEC_BAR0_CTL_READ/TSEC_BAR0_CTL_WRITE to be set in TSEC_BAR0_CTL.
 
-During the transfer, TSEC_DMA_CMD_STATUS is set to "Busy".
+During the transfer, TSEC_BAR0_CTL_STATUS is set to "Busy".
 
-Accessing an invalid address sets TSEC_DMA_CMD_STATUS to "Error".
+Accessing an invalid address sets TSEC_BAR0_CTL_STATUS to "Error".
 
-=== TSEC_DMA_ADDR ===
+=== TSEC_BAR0_ADDR ===
 Takes the address for DMA transfers between TSEC and HOST1X (master and clients).
 
-=== TSEC_DMA_DATA ===
+=== TSEC_BAR0_DATA ===
 Takes the data for DMA transfers between TSEC and HOST1X (master and clients).
 
-=== TSEC_DMA_TIMEOUT ===
-Always 0xFFF.
+=== TSEC_BAR0_TIMEOUT ===
+Takes the timeout value for DMA transfers between TSEC and HOST1X (master and clients).
 
 === TSEC_TEGRA_CTL ===
 {| class="wikitable" border="1"
