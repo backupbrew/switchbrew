@@ -1170,15 +1170,15 @@ No input, returns a total of 4-bytes of output.
 |-
 | 13 || [[#SetFocusHandlingMode]]
 |-
-| 14 || SetRestartMessageEnabled
+| 14 || [[#SetRestartMessageEnabled]]
 |-
 | 15 || [2.0.0+] [[#SetScreenShotAppletIdentityInfo]]
 |-
 | 16 || [2.0.0+] [[#SetOutOfFocusSuspendingEnabled]]
 |-
-| 17 || [3.0.0+] SetControllerFirmwareUpdateSection
+| 17 || [3.0.0+] [[#SetControllerFirmwareUpdateSection]]
 |-
-| 18 || [3.0.0+] SetRequiresCaptureButtonShortPressedMessage
+| 18 || [3.0.0+] [[#SetRequiresCaptureButtonShortPressedMessage]]
 |-
 | 19 || [3.0.0+] [[#SetAlbumImageOrientation]]
 |-
@@ -1283,11 +1283,20 @@ Takes an input u8 bool flag. No output.
 === SetFocusHandlingMode ===
 Takes 3 input u8s with each field located immediately after the previous u8, these are bool flags. No output.
 
+=== SetRestartMessageEnabled ===
+Takes an input u8 bool flag, no output.
+
 === SetScreenShotAppletIdentityInfo ===
 Takes an input 0x10-byte struct AppletIdentityInfo. No output.
 
 === SetOutOfFocusSuspendingEnabled ===
-Takes an input u8(bool flag). No output.
+Takes an input u8 bool flag. No output.
+
+=== SetControllerFirmwareUpdateSection ===
+Takes an input u8 bool flag, no output.
+
+=== SetRequiresCaptureButtonShortPressedMessage ===
+Takes an input u8 bool flag, no output.
 
 === SetAlbumImageOrientation ===
 Takes an input s32 "nn::album::ImageOrientation". No output.
