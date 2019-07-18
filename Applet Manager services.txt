@@ -1196,13 +1196,13 @@ No input, returns a total of 4-bytes of output.
 |-
 | 51 || [[#ApproveToDisplay]]
 |-
-| 60 || OverrideAutoSleepTimeAndDimmingTime
+| 60 || [[#OverrideAutoSleepTimeAndDimmingTime]]
 |-
 | 61 || [[#SetMediaPlaybackState]]
 |-
-| 62 || SetIdleTimeDetectionExtension
+| 62 || [[#SetIdleTimeDetectionExtension]]
 |-
-| 63 || GetIdleTimeDetectionExtension
+| 63 || [[#GetIdleTimeDetectionExtension]]
 |-
 | 64 || [[#SetInputDetectionSourceSet]]
 |-
@@ -1321,8 +1321,20 @@ Sets an internal state flag. When the input flag is 0, this will in additional r
 === ApproveToDisplay ===
 No input/output.
 
+=== OverrideAutoSleepTimeAndDimmingTime ===
+Takes 4 input s32s, no output.
+
 === SetMediaPlaybackState ===
 Takes an input u8 bool, no output.
+
+=== SetIdleTimeDetectionExtension ===
+Takes an input u32, no output.
+
+=== GetIdleTimeDetectionExtension ===
+No input, returns an output u32.
+
+=== SetInputDetectionSourceSet ===
+Takes an input u32, no output.
 
 === ReportUserIsActive ===
 No input/output.
@@ -1346,9 +1358,6 @@ Takes an input u8 bool, no output.
 
 === IsAutoSleepDisabled ===
 No input, returns an output u8 bool.
-
-=== SetInputDetectionSourceSet ===
-Takes an input u32, no output.
 
 === ReportMultimediaError ===
 Takes an input Result and a type-0x5 input buffer, no output.

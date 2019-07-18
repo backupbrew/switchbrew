@@ -1216,10 +1216,10 @@ No input, returns a total of 4-bytes of output.
 | 43   | \[5.0.0+\] GetSystemSharedBufferHandle                                                                              |
 | 50   | [\#SetHandlesRequestToDisplay](#SetHandlesRequestToDisplay "wikilink")                                              |
 | 51   | [\#ApproveToDisplay](#ApproveToDisplay "wikilink")                                                                  |
-| 60   | OverrideAutoSleepTimeAndDimmingTime                                                                                 |
+| 60   | [\#OverrideAutoSleepTimeAndDimmingTime](#OverrideAutoSleepTimeAndDimmingTime "wikilink")                            |
 | 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                                        |
-| 62   | SetIdleTimeDetectionExtension                                                                                       |
-| 63   | GetIdleTimeDetectionExtension                                                                                       |
+| 62   | [\#SetIdleTimeDetectionExtension](#SetIdleTimeDetectionExtension "wikilink")                                        |
+| 63   | [\#GetIdleTimeDetectionExtension](#GetIdleTimeDetectionExtension "wikilink")                                        |
 | 64   | [\#SetInputDetectionSourceSet](#SetInputDetectionSourceSet "wikilink")                                              |
 | 65   | \[2.0.0+\] [\#ReportUserIsActive](#ReportUserIsActive "wikilink")                                                   |
 | 66   | \[3.0.0+\] [\#GetCurrentIlluminance](#GetCurrentIlluminance "wikilink")                                             |
@@ -1353,9 +1353,25 @@ additional run the same code as
 
 No input/output.
 
+### OverrideAutoSleepTimeAndDimmingTime
+
+Takes 4 input s32s, no output.
+
 ### SetMediaPlaybackState
 
 Takes an input u8 bool, no output.
+
+### SetIdleTimeDetectionExtension
+
+Takes an input u32, no output.
+
+### GetIdleTimeDetectionExtension
+
+No input, returns an output u32.
+
+### SetInputDetectionSourceSet
+
+Takes an input u32, no output.
 
 ### ReportUserIsActive
 
@@ -1387,10 +1403,6 @@ Takes an input u8 bool, no output.
 ### IsAutoSleepDisabled
 
 No input, returns an output u8 bool.
-
-### SetInputDetectionSourceSet
-
-Takes an input u32, no output.
 
 ### ReportMultimediaError
 
