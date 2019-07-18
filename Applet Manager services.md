@@ -1224,9 +1224,9 @@ No input, returns a total of 4-bytes of output.
 | 65   | \[2.0.0+\] [\#ReportUserIsActive](#ReportUserIsActive "wikilink")                                                   |
 | 66   | \[3.0.0+\] [\#GetCurrentIlluminance](#GetCurrentIlluminance "wikilink")                                             |
 | 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                                           |
-| 68   | \[5.0.0+\] SetAutoSleepDisabled                                                                                     |
-| 69   | \[5.0.0+\] IsAutoSleepDisabled                                                                                      |
-| 70   | \[4.0.0+\] ReportMultimediaError                                                                                    |
+| 68   | \[5.0.0+\] [\#SetAutoSleepDisabled](#SetAutoSleepDisabled "wikilink")                                               |
+| 69   | \[5.0.0+\] [\#IsAutoSleepDisabled](#IsAutoSleepDisabled "wikilink")                                                 |
+| 70   | \[4.0.0+\] [\#ReportMultimediaError](#ReportMultimediaError "wikilink")                                             |
 | 71   | \[5.0.0+\] [\#GetCurrentIlluminanceEx](#GetCurrentIlluminanceEx "wikilink")                                         |
 | 80   | \[4.0.0+\] [\#SetWirelessPriorityMode](#SetWirelessPriorityMode "wikilink")                                         |
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                                         |
@@ -1375,6 +1375,21 @@ IsAmbientLightSensorAvailable.
 
 User-processes can use this to determine whether to continue with using
 GetCurrentIlluminance(Ex).
+
+### SetAutoSleepDisabled
+
+Takes an input u8 bool, no output.
+
+### IsAutoSleepDisabled
+
+No input, returns an output u8 bool.
+
+### ReportMultimediaError
+
+Takes an input Result and a type-0x5 input buffer, no output.
+
+The buffer contains a 0x138-byte "movie::MultimediaTelemetryReport"
+struct.
 
 ### GetCurrentIlluminanceEx
 

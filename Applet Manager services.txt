@@ -1212,11 +1212,11 @@ No input, returns a total of 4-bytes of output.
 |-
 | 67 || [3.0.0+] [[#IsIlluminanceAvailable]]
 |-
-| 68 || [5.0.0+] SetAutoSleepDisabled
+| 68 || [5.0.0+] [[#SetAutoSleepDisabled]]
 |-
-| 69 || [5.0.0+] IsAutoSleepDisabled
+| 69 || [5.0.0+] [[#IsAutoSleepDisabled]]
 |-
-| 70 || [4.0.0+] ReportMultimediaError
+| 70 || [4.0.0+] [[#ReportMultimediaError]]
 |-
 | 71 || [5.0.0+] [[#GetCurrentIlluminanceEx]]
 |-
@@ -1337,6 +1337,17 @@ No input, returns an output u8 bool.
 Uses [[Backlight_services|lbl]] command IsAmbientLightSensorAvailable.
 
 User-processes can use this to determine whether to continue with using GetCurrentIlluminance(Ex).
+
+=== SetAutoSleepDisabled ===
+Takes an input u8 bool, no output.
+
+=== IsAutoSleepDisabled ===
+No input, returns an output u8 bool.
+
+=== ReportMultimediaError ===
+Takes an input Result and a type-0x5 input buffer, no output.
+
+The buffer contains a 0x138-byte "movie::MultimediaTelemetryReport" struct.
 
 === GetCurrentIlluminanceEx ===
 No input, returns an output u8 bool and float.
