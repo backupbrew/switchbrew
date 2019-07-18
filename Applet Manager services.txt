@@ -1182,7 +1182,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 19 || [3.0.0+] [[#SetAlbumImageOrientation]]
 |-
-| 20 || [4.0.0+] SetDesirableKeyboardLayout
+| 20 || [4.0.0+] [[#SetDesirableKeyboardLayout]]
 |-
 | 40 || [[#CreateManagedDisplayLayer]]
 |-
@@ -1204,7 +1204,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 63 || GetIdleTimeDetectionExtension
 |-
-| 64 || SetInputDetectionSourceSet
+| 64 || [[#SetInputDetectionSourceSet]]
 |-
 | 65 || [2.0.0+] [[#ReportUserIsActive]]
 |-
@@ -1307,6 +1307,9 @@ When enabled with a non-Overlay applet, Overlay applet will not be notified of c
 === SetAlbumImageOrientation ===
 Takes an input s32 "nn::album::ImageOrientation". No output.
 
+=== SetDesirableKeyboardLayout ===
+Takes an input u32, no output.
+
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
 
@@ -1343,6 +1346,9 @@ Takes an input u8 bool, no output.
 
 === IsAutoSleepDisabled ===
 No input, returns an output u8 bool.
+
+=== SetInputDetectionSourceSet ===
+Takes an input u32, no output.
 
 === ReportMultimediaError ===
 Takes an input Result and a type-0x5 input buffer, no output.

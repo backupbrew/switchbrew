@@ -1209,7 +1209,7 @@ No input, returns a total of 4-bytes of output.
 | 17   | \[3.0.0+\] [\#SetControllerFirmwareUpdateSection](#SetControllerFirmwareUpdateSection "wikilink")                   |
 | 18   | \[3.0.0+\] [\#SetRequiresCaptureButtonShortPressedMessage](#SetRequiresCaptureButtonShortPressedMessage "wikilink") |
 | 19   | \[3.0.0+\] [\#SetAlbumImageOrientation](#SetAlbumImageOrientation "wikilink")                                       |
-| 20   | \[4.0.0+\] SetDesirableKeyboardLayout                                                                               |
+| 20   | \[4.0.0+\] [\#SetDesirableKeyboardLayout](#SetDesirableKeyboardLayout "wikilink")                                   |
 | 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                                |
 | 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                             |
 | 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                               |
@@ -1220,7 +1220,7 @@ No input, returns a total of 4-bytes of output.
 | 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                                        |
 | 62   | SetIdleTimeDetectionExtension                                                                                       |
 | 63   | GetIdleTimeDetectionExtension                                                                                       |
-| 64   | SetInputDetectionSourceSet                                                                                          |
+| 64   | [\#SetInputDetectionSourceSet](#SetInputDetectionSourceSet "wikilink")                                              |
 | 65   | \[2.0.0+\] [\#ReportUserIsActive](#ReportUserIsActive "wikilink")                                                   |
 | 66   | \[3.0.0+\] [\#GetCurrentIlluminance](#GetCurrentIlluminance "wikilink")                                             |
 | 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                                           |
@@ -1331,6 +1331,10 @@ notified of capture button short-presses for screenshots.
 
 Takes an input s32 "nn::album::ImageOrientation". No output.
 
+### SetDesirableKeyboardLayout
+
+Takes an input u32, no output.
+
 ### CreateManagedDisplayLayer
 
 Returns an output u64 LayerId which is then used by the user-process
@@ -1383,6 +1387,10 @@ Takes an input u8 bool, no output.
 ### IsAutoSleepDisabled
 
 No input, returns an output u8 bool.
+
+### SetInputDetectionSourceSet
+
+Takes an input u32, no output.
 
 ### ReportMultimediaError
 
