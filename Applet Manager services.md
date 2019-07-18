@@ -1214,8 +1214,8 @@ No input, returns a total of 4-bytes of output.
 | 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                             |
 | 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                               |
 | 43   | \[5.0.0+\] GetSystemSharedBufferHandle                                                                              |
-| 50   | SetHandlesRequestToDisplay                                                                                          |
-| 51   | ApproveToDisplay                                                                                                    |
+| 50   | [\#SetHandlesRequestToDisplay](#SetHandlesRequestToDisplay "wikilink")                                              |
+| 51   | [\#ApproveToDisplay](#ApproveToDisplay "wikilink")                                                                  |
 | 60   | OverrideAutoSleepTimeAndDimmingTime                                                                                 |
 | 61   | [\#SetMediaPlaybackState](#SetMediaPlaybackState "wikilink")                                                        |
 | 62   | SetIdleTimeDetectionExtension                                                                                       |
@@ -1336,6 +1336,18 @@ Takes an input s32 "nn::album::ImageOrientation". No output.
 Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
+
+### SetHandlesRequestToDisplay
+
+Takes an input u8 bool, no output.
+
+Sets an internal state flag. When the input flag is 0, this will in
+additional run the same code as
+[\#ApproveToDisplay](#ApproveToDisplay "wikilink").
+
+### ApproveToDisplay
+
+No input/output.
 
 ### SetMediaPlaybackState
 

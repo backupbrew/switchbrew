@@ -1192,9 +1192,9 @@ No input, returns a total of 4-bytes of output.
 |-
 | 43 || [5.0.0+] GetSystemSharedBufferHandle
 |-
-| 50 || SetHandlesRequestToDisplay
+| 50 || [[#SetHandlesRequestToDisplay]]
 |-
-| 51 || ApproveToDisplay
+| 51 || [[#ApproveToDisplay]]
 |-
 | 60 || OverrideAutoSleepTimeAndDimmingTime
 |-
@@ -1309,6 +1309,14 @@ Takes an input s32 "nn::album::ImageOrientation". No output.
 
 === CreateManagedDisplayLayer ===
 Returns an output u64 LayerId which is then used by the user-process with [[Display_services#OpenLayer]].
+
+=== SetHandlesRequestToDisplay ===
+Takes an input u8 bool, no output.
+
+Sets an internal state flag. When the input flag is 0, this will in additional run the same code as [[#ApproveToDisplay]].
+
+=== ApproveToDisplay ===
+No input/output.
 
 === SetMediaPlaybackState ===
 Takes an input u8 bool, no output.
