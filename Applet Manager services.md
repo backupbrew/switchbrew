@@ -1228,7 +1228,7 @@ No input, returns a total of 4-bytes of output.
 | 69   | \[5.0.0+\] IsAutoSleepDisabled                                                                                      |
 | 70   | \[4.0.0+\] ReportMultimediaError                                                                                    |
 | 71   | \[5.0.0+\] [\#GetCurrentIlluminanceEx](#GetCurrentIlluminanceEx "wikilink")                                         |
-| 80   | \[4.0.0+\] SetWirelessPriorityMode                                                                                  |
+| 80   | \[4.0.0+\] [\#SetWirelessPriorityMode](#SetWirelessPriorityMode "wikilink")                                         |
 | 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                                         |
 | 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                                  |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink")             |
@@ -1364,6 +1364,12 @@ No input, returns an output u8 bool and float.
 
 Uses [lbl](Backlight%20services.md "wikilink") command
 GetAmbientLightSensorValue.
+
+### SetWirelessPriorityMode
+
+Takes an input s32 enum **WirelessPriorityMode**, no output.
+
+The input value must be 1 or 2.
 
 ### SetAlbumImageTakenNotificationEnabled
 
