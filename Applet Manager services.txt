@@ -1206,7 +1206,7 @@ No input, returns a total of 4-bytes of output.
 |-
 | 64 || SetInputDetectionSourceSet
 |-
-| 65 || [2.0.0+] ReportUserIsActive
+| 65 || [2.0.0+] [[#ReportUserIsActive]]
 |-
 | 66 || [3.0.0+] [[#GetCurrentIlluminance]]
 |-
@@ -1312,6 +1312,11 @@ Returns an output u64 LayerId which is then used by the user-process with [[Disp
 
 === SetMediaPlaybackState ===
 Takes an input u8 bool, no output.
+
+=== ReportUserIsActive ===
+No input/output.
+
+Uses idle:sys ReportUserIsActive.
 
 === GetCurrentIlluminance ===
 No input, returns an output float.

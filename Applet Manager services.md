@@ -1221,7 +1221,7 @@ No input, returns a total of 4-bytes of output.
 | 62   | SetIdleTimeDetectionExtension                                                                                       |
 | 63   | GetIdleTimeDetectionExtension                                                                                       |
 | 64   | SetInputDetectionSourceSet                                                                                          |
-| 65   | \[2.0.0+\] ReportUserIsActive                                                                                       |
+| 65   | \[2.0.0+\] [\#ReportUserIsActive](#ReportUserIsActive "wikilink")                                                   |
 | 66   | \[3.0.0+\] [\#GetCurrentIlluminance](#GetCurrentIlluminance "wikilink")                                             |
 | 67   | \[3.0.0+\] [\#IsIlluminanceAvailable](#IsIlluminanceAvailable "wikilink")                                           |
 | 68   | \[5.0.0+\] SetAutoSleepDisabled                                                                                     |
@@ -1340,6 +1340,12 @@ with
 ### SetMediaPlaybackState
 
 Takes an input u8 bool, no output.
+
+### ReportUserIsActive
+
+No input/output.
+
+Uses idle:sys ReportUserIsActive.
 
 ### GetCurrentIlluminance
 
