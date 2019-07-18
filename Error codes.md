@@ -93,7 +93,7 @@ fatal-errors, since the Description ends with bit21.
 | 151   | Error Upload                                 |
 | 153   | Audio                                        |
 | 154   | NPNS                                         |
-| 155   | NPNS HTTP Stream                             |
+| 155   | NPNS XMPP Stream                             |
 | 157   | ARP                                          |
 | 158   | Updater                                      |
 | 159   | SWKBD                                        |

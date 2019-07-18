@@ -160,7 +160,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 154 || NPNS
 |-
-| 155 || NPNS HTTP Stream
+| 155 || NPNS XMPP Stream
 |-
 | 157 || ARP
 |-
