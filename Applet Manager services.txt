@@ -1387,7 +1387,9 @@ The buffer contains arbitrary UserData.
 The size must be <=0x400. The input buffer is copied to a buffer loaded from a state ptr (throwing an error when the state ptr is not set), with the u32 size being written to statebuf+0x400 afterwards.
 
 === GetDebugStorageChannel ===
-Returns an output [[#IStorageChannel]].
+No input, returns an output [[#IStorageChannel]].
+
+The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, otherwise an error is returned.
 
 == IStorageChannel ==
 Added with [[7.0.0]].

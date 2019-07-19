@@ -1442,7 +1442,13 @@ the u32 size being written to statebuf+0x400 afterwards.
 
 ### GetDebugStorageChannel
 
-Returns an output [\#IStorageChannel](#IStorageChannel "wikilink").
+No input, returns an output
+[\#IStorageChannel](#IStorageChannel "wikilink").
+
+The cached value loaded from
+[system-setting](System%20Settings.md "wikilink")
+`am.debug!dev_function` must be set to 0x1 with size 0x1, otherwise an
+error is returned.
 
 ## IStorageChannel
 
