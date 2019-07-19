@@ -1367,9 +1367,14 @@ Takes an input u8 bool, no output.
 
 Takes an input u32, no output.
 
+The input value must be 0-2.
+
 ### GetIdleTimeDetectionExtension
 
 No input, returns an output u32.
+
+Returns the value set by
+[\#SetIdleTimeDetectionExtension](#SetIdleTimeDetectionExtension "wikilink").
 
 ### SetInputDetectionSourceSet
 
