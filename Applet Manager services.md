@@ -1329,7 +1329,9 @@ notified of capture button short-presses for screenshots.
 
 ### SetAlbumImageOrientation
 
-Takes an input s32 "nn::album::ImageOrientation". No output.
+Takes an input u32 "nn::album::ImageOrientation". No output.
+
+The input value must not be \>3.
 
 ### SetDesirableKeyboardLayout
 
