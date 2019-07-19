@@ -1367,7 +1367,8 @@ Takes an input u8 bool, no output.
 
 Takes an input u32, no output.
 
-The input value must be 0-2.
+The input value must be 0-2: 0 = disabled, 1 = Extended, and 2 =
+ExtendedUnsafe.
 
 ### GetIdleTimeDetectionExtension
 
