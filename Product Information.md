@@ -11,49 +11,63 @@ numbers, product models, etc...).
 
 ## Product List
 
-| Product Code | Description                     |
-| ------------ | ------------------------------- |
-| HAC-001      | Retail Switch console.          |
-| HAC-001-01   | New retail Switch console.      |
-| HAC-002      | AC adapter.                     |
-| HAC-003      | Battery.                        |
-| HAC-004      |                                 |
-| HAC-005      |                                 |
-| HAC-006      | Joy-Con battery.                |
-| HAC-007      | Dock.                           |
-| HAC-008      | Gamecard.                       |
-| HAC-009      | Gamecard case.                  |
-| HAC-010      | USB charging cable.             |
-| HAC-011      | Joy-Con grip.                   |
-| HAC-012      | Joy-Con charge grip.            |
-| HAC-013      | Pro Controller.                 |
-| HAC-014      | Joy-Con strap.                  |
-| HAC-015      | Left Joy-Con.                   |
-| HAC-016      | Right Joy-Con.                  |
-| HAC-017      | Joy-Con handle.                 |
-| HAC-018      | Screen protector.               |
-| HAC-019      | Left Joy-Con extended battery.  |
-| HAC-020      | Right Joy-Con extended battery. |
-| HAC-021      | Carrying case.                  |
-| HAC-022      |                                 |
-| HAC-023      |                                 |
-| HAC-024      | Poké Ball Plus controller.      |
-| HAC-025      |                                 |
-| HAC-026      |                                 |
-| HAC-027      |                                 |
-| HAC-028      |                                 |
-| HAC-029      |                                 |
-| HAC-030      | Poké Ball Plus battery.         |
-| HAC-031      | Charging stand.                 |
-| HAC-032      |                                 |
-| HAC-033      | Left NES controller.            |
-| HAC-034      | Right NES controller.           |
-| HAC-035      | Left Famicom controller.        |
-| HAC-036      | Right Famicom controller.       |
-| HAC-037      |                                 |
-| HAC-038      |                                 |
-| HAC-039      |                                 |
-| HAC-040      | Touch Pen.                      |
+| Product Code | Description                                        |
+| ------------ | -------------------------------------------------- |
+| HAC-001      | Retail Switch console.                             |
+| HAC-001-01   | New retail Switch console.                         |
+| HAC-002      | AC adapter.                                        |
+| HAC-003      | Battery.                                           |
+| HAC-004      |                                                    |
+| HAC-005      |                                                    |
+| HAC-006      | Joy-Con battery.                                   |
+| HAC-007      | Dock.                                              |
+| HAC-008      | Gamecard.                                          |
+| HAC-009      | Gamecard case.                                     |
+| HAC-010      | USB charging cable.                                |
+| HAC-011      | Joy-Con grip.                                      |
+| HAC-012      | Joy-Con charge grip.                               |
+| HAC-013      | Pro Controller.                                    |
+| HAC-014      | Joy-Con strap.                                     |
+| HAC-015      | Left Joy-Con.                                      |
+| HAC-016      | Right Joy-Con.                                     |
+| HAC-017      | Joy-Con handle.                                    |
+| HAC-018      | Screen protector.                                  |
+| HAC-019      | Left Joy-Con extended battery.                     |
+| HAC-020      | Right Joy-Con extended battery.                    |
+| HAC-021      | Carrying case.                                     |
+| HAC-022      |                                                    |
+| HAC-023      |                                                    |
+| HAC-024      | Poké Ball Plus controller.                         |
+| HAC-025      |                                                    |
+| HAC-026      |                                                    |
+| HAC-027      |                                                    |
+| HAC-028      |                                                    |
+| HAC-029      |                                                    |
+| HAC-030      | Poké Ball Plus battery.                            |
+| HAC-031      | Charging stand.                                    |
+| HAC-032      |                                                    |
+| HAC-033      | Left NES controller.                               |
+| HAC-034      | Right NES controller.                              |
+| HAC-035      | Left Famicom controller.                           |
+| HAC-036      | Right Famicom controller.                          |
+| HAC-037      |                                                    |
+| HAC-038      |                                                    |
+| HAC-039      |                                                    |
+| HAC-040      | Touch Pen.                                         |
+| HAC-041      |                                                    |
+| HAC-042      |                                                    |
+| HAC-043      |                                                    |
+| HAC-044      |                                                    |
+| HAC-045      |                                                    |
+| HAC-046      |                                                    |
+| HAC-047      |                                                    |
+| HAC-048      |                                                    |
+| HAC-049      |                                                    |
+| HAC-050      |                                                    |
+| HAC-051      | Nintendo Labo Toy-Con 1 : Variety Kit.             |
+| HAC-052      | Nintendo Labo Toy-Con 2 : Robot Kit. (To confirm.) |
+| HAC-053      | Nintendo Labo Toy-Con 3 : Vehicle Kit.             |
+| HAC-054      | Nintendo Labo Toy-Con 4 : VR Kit.                  |
 
 | Product Code | Description          |
 | ------------ | -------------------- |

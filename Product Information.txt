@@ -98,6 +98,34 @@ This page details miscellaneous Switch product information (serial numbers, prod
 | HAC-039 ||
 |-
 | HAC-040 || Touch Pen.
+|-
+| HAC-041 ||
+|-
+| HAC-042 ||
+|-
+| HAC-043 ||
+|-
+| HAC-044 ||
+|-
+| HAC-045 ||
+|-
+| HAC-046 ||
+|-
+| HAC-047 ||
+|-
+| HAC-048 ||
+|-
+| HAC-049 ||
+|-
+| HAC-050 ||
+|-
+| HAC-051 || Nintendo Labo Toy-Con 1 : Variety Kit.
+|-
+| HAC-052 || Nintendo Labo Toy-Con 2 : Robot Kit. (To confirm.)
+|-
+| HAC-053 || Nintendo Labo Toy-Con 3 : Vehicle Kit.
+|-
+| HAC-054 || Nintendo Labo Toy-Con 4 : VR Kit.
 |}
 {| class="wikitable" border="1"
 |-
