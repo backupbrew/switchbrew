@@ -1395,6 +1395,9 @@ No input/output.
 
 Uses idle:sys ReportUserIsActive.
 
+Reports that the user is active, for idle detection (screen dimming /
+auto-sleep). This is equivalent to when the user uses HID input.
+
 ### GetCurrentIlluminance
 
 No input, returns an output float.
