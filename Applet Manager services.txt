@@ -1322,8 +1322,12 @@ Takes an input u8 bool, no output.
 
 Sets an internal state flag. When the input flag is 0, this will in additional run the same code as [[#ApproveToDisplay]].
 
+See [[#NotificationMessage]].
+
 === ApproveToDisplay ===
 No input/output.
+
+Used to handle the notification enabled by [[#SetHandlesRequestToDisplay]].
 
 === OverrideAutoSleepTimeAndDimmingTime ===
 Takes 4 input s32s, no output.
@@ -2005,6 +2009,8 @@ See also [[:Category:Library Applets]].
 | 0x1E || OperationMode changed
 |-
 | 0x1F || PerformanceMode changed
+|-
+| 0x33 || [[#SetHandlesRequestToDisplay|RequestToDisplay]]. Indicates that [[#ApproveToDisplay]] should be used.
 |-
 | 0x5A || Capture button was [[#SetRequiresCaptureButtonShortPressedMessage|short-pressed]].
 |-

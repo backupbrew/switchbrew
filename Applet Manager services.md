@@ -1354,9 +1354,14 @@ Sets an internal state flag. When the input flag is 0, this will in
 additional run the same code as
 [\#ApproveToDisplay](#ApproveToDisplay "wikilink").
 
+See [\#NotificationMessage](#NotificationMessage "wikilink").
+
 ### ApproveToDisplay
 
 No input/output.
+
+Used to handle the notification enabled by
+[\#SetHandlesRequestToDisplay](#SetHandlesRequestToDisplay "wikilink").
 
 ### OverrideAutoSleepTimeAndDimmingTime
 
@@ -1897,15 +1902,16 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 ### NotificationMessage
 
-| ID   | Description                                                                                  |
-| ---- | -------------------------------------------------------------------------------------------- |
-| 0x4  | Exit requested                                                                               |
-| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed                                       |
-| 0x10 | Current applet execution was [resumed](#SetRestartMessageEnabled "wikilink").                |
-| 0x1E | OperationMode changed                                                                        |
-| 0x1F | PerformanceMode changed                                                                      |
-| 0x5A | Capture button was [short-pressed](#SetRequiresCaptureButtonShortPressedMessage "wikilink"). |
-| 0x5C | Screenshot was [taken](#SetAlbumImageTakenNotificationEnabled "wikilink").                   |
+| ID   | Description                                                                                                                                   |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x4  | Exit requested                                                                                                                                |
+| 0xF  | [FocusState](#GetCurrentFocusState "wikilink") changed                                                                                        |
+| 0x10 | Current applet execution was [resumed](#SetRestartMessageEnabled "wikilink").                                                                 |
+| 0x1E | OperationMode changed                                                                                                                         |
+| 0x1F | PerformanceMode changed                                                                                                                       |
+| 0x33 | [RequestToDisplay](#SetHandlesRequestToDisplay "wikilink"). Indicates that [\#ApproveToDisplay](#ApproveToDisplay "wikilink") should be used. |
+| 0x5A | Capture button was [short-pressed](#SetRequiresCaptureButtonShortPressedMessage "wikilink").                                                  |
+| 0x5C | Screenshot was [taken](#SetAlbumImageTakenNotificationEnabled "wikilink").                                                                    |
 
 ### OperationMode
 
