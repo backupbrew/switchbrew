@@ -1318,6 +1318,9 @@ Takes an input u8 bool flag. No output.
 
 Takes an input u8 bool flag, no output.
 
+This throws error 0x40280 when the internal state flag already matches
+the input value.
+
 ### SetRequiresCaptureButtonShortPressedMessage
 
 Takes an input u8 bool flag, no output.
