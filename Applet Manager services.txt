@@ -1222,9 +1222,9 @@ No input, returns a total of 4-bytes of output.
 |-
 | 80 || [4.0.0+] [[#SetWirelessPriorityMode]]
 |-
-| 90 || [6.0.0+] GetAccumulatedSuspendedTickValue
+| 90 || [6.0.0+] [[#GetAccumulatedSuspendedTickValue]]
 |-
-| 91 || [6.0.0+] GetAccumulatedSuspendedTickChangedEvent
+| 91 || [6.0.0+] [[#GetAccumulatedSuspendedTickChangedEvent]]
 |-
 | 100 || [7.0.0+] [[#SetAlbumImageTakenNotificationEnabled]]
 |-
@@ -1387,6 +1387,16 @@ Uses [[Backlight_services|lbl]] command GetAmbientLightSensorValue.
 Takes an input s32 enum '''WirelessPriorityMode''', no output.
 
 The input value must be 1 or 2.
+
+=== GetAccumulatedSuspendedTickValue ===
+No input, returns an output u64 tick value.
+
+Gets the total time in ticks that the process was suspended.
+
+=== GetAccumulatedSuspendedTickChangedEvent ===
+No input, returns an output Event handle with autoclear=true.
+
+This is signaled when the output from [[#GetAccumulatedSuspendedTickValue]] is updated.
 
 === SetAlbumImageTakenNotificationEnabled ===
 Takes an input u8 bool, no output.

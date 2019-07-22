@@ -1229,8 +1229,8 @@ No input, returns a total of 4-bytes of output.
 | 70   | \[4.0.0+\] [\#ReportMultimediaError](#ReportMultimediaError "wikilink")                                             |
 | 71   | \[5.0.0+\] [\#GetCurrentIlluminanceEx](#GetCurrentIlluminanceEx "wikilink")                                         |
 | 80   | \[4.0.0+\] [\#SetWirelessPriorityMode](#SetWirelessPriorityMode "wikilink")                                         |
-| 90   | \[6.0.0+\] GetAccumulatedSuspendedTickValue                                                                         |
-| 91   | \[6.0.0+\] GetAccumulatedSuspendedTickChangedEvent                                                                  |
+| 90   | \[6.0.0+\] [\#GetAccumulatedSuspendedTickValue](#GetAccumulatedSuspendedTickValue "wikilink")                       |
+| 91   | \[6.0.0+\] [\#GetAccumulatedSuspendedTickChangedEvent](#GetAccumulatedSuspendedTickChangedEvent "wikilink")         |
 | 100  | \[7.0.0+\] [\#SetAlbumImageTakenNotificationEnabled](#SetAlbumImageTakenNotificationEnabled "wikilink")             |
 | 110  | \[8.0.0+\] [\#SetApplicationAlbumUserData](#SetApplicationAlbumUserData "wikilink")                                 |
 | 1000 | \[7.0.0+\] [\#GetDebugStorageChannel](#GetDebugStorageChannel "wikilink")                                           |
@@ -1442,6 +1442,20 @@ GetAmbientLightSensorValue.
 Takes an input s32 enum **WirelessPriorityMode**, no output.
 
 The input value must be 1 or 2.
+
+### GetAccumulatedSuspendedTickValue
+
+No input, returns an output u64 tick value.
+
+Gets the total time in ticks that the process was suspended.
+
+### GetAccumulatedSuspendedTickChangedEvent
+
+No input, returns an output Event handle with autoclear=true.
+
+This is signaled when the output from
+[\#GetAccumulatedSuspendedTickValue](#GetAccumulatedSuspendedTickValue "wikilink")
+is updated.
 
 ### SetAlbumImageTakenNotificationEnabled
 
