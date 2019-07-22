@@ -13,11 +13,14 @@ This was moved to [[Applet_Manager_services|AM]] with [8.0.0+] and is now a shim
 |-
 | 1 || GetPerformanceMode
 |-
-| 6 || [7.0.0+] IsCpuOverclockEnabled
+| 6 || [7.0.0+] [[#IsCpuOverclockEnabled]]
 |}
 
 == OpenSession ==
 Returns an [[#ISession]].
+
+== IsCpuOverclockEnabled ==
+No input, returns an output u8 bool.
 
 = apm:p =
 This is "nn::apm::IManagerPrivileged".
@@ -95,7 +98,7 @@ This is "nn::apm::ISession".
 |-
 | 1 || GetPerformanceConfiguration
 |-
-| 2 || [8.0.0+] SetCpuOverclockEnabled
+| 2 || [8.0.0+] [[#SetCpuOverclockEnabled]]
 |}
 
 == SetPerformanceConfiguration ==
@@ -103,6 +106,9 @@ Takes an u32 [[#PerformanceMode]] and an u32 [[#PerformanceConfiguration]].
 
 == GetPerformanceConfiguration ==
 Takes an u32 [[#PerformanceMode]] and returns an output u32 [[#PerformanceConfiguration]].
+
+== SetCpuOverclockEnabled ==
+Takes an input u8 bool, no output.
 
 == PerformanceMode ==
 {| class="wikitable" border="1"

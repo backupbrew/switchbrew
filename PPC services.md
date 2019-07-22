@@ -8,15 +8,19 @@ This is "nn::apm::IManager".
 This was moved to [AM](Applet%20Manager%20services.md "wikilink") with
 \[8.0.0+\] and is now a shim for [apm:am](#apm:am "wikilink").
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 0   | [\#OpenSession](#OpenSession "wikilink") |
-| 1   | GetPerformanceMode                       |
-| 6   | \[7.0.0+\] IsCpuOverclockEnabled         |
+| Cmd | Name                                                                    |
+| --- | ----------------------------------------------------------------------- |
+| 0   | [\#OpenSession](#OpenSession "wikilink")                                |
+| 1   | GetPerformanceMode                                                      |
+| 6   | \[7.0.0+\] [\#IsCpuOverclockEnabled](#IsCpuOverclockEnabled "wikilink") |
 
 ## OpenSession
 
 Returns an [\#ISession](#ISession "wikilink").
+
+## IsCpuOverclockEnabled
+
+No input, returns an output u8 bool.
 
 # apm:p
 
@@ -80,11 +84,11 @@ Returns the currently active
 
 This is "nn::apm::ISession".
 
-| Cmd | Name                              |
-| --- | --------------------------------- |
-| 0   | SetPerformanceConfiguration       |
-| 1   | GetPerformanceConfiguration       |
-| 2   | \[8.0.0+\] SetCpuOverclockEnabled |
+| Cmd | Name                                                                      |
+| --- | ------------------------------------------------------------------------- |
+| 0   | SetPerformanceConfiguration                                               |
+| 1   | GetPerformanceConfiguration                                               |
+| 2   | \[8.0.0+\] [\#SetCpuOverclockEnabled](#SetCpuOverclockEnabled "wikilink") |
 
 ## SetPerformanceConfiguration
 
@@ -96,6 +100,10 @@ Takes an u32 [\#PerformanceMode](#PerformanceMode "wikilink") and an u32
 Takes an u32 [\#PerformanceMode](#PerformanceMode "wikilink") and
 returns an output u32
 [\#PerformanceConfiguration](#PerformanceConfiguration "wikilink").
+
+## SetCpuOverclockEnabled
+
+Takes an input u8 bool, no output.
 
 ## PerformanceMode
 
