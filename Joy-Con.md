@@ -160,6 +160,9 @@ of official HEX colors recovered from SPI dumps.
 | Neon Yellow                      | \#E6FF00 | \#142800   |
 | Neon Green                       | \#1EDC00 | \#002800   |
 | Neon Pink                        | \#FF3278 | \#28001E   |
+| Neon Orange                      | ?        | ?          |
+| Neon Purple                      | ?        | ?          |
+| Blue                             | ?        | ?          |
 | Mario Red                        | \#E10F00 | \#280A0A   |
 | Eevee Brown                      | \#C88C32 | \#281900   |
 | Pikachu Yellow                   | \#FFDC00 | \#322800   |
