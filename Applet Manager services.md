@@ -1447,7 +1447,8 @@ The input value must be 1 or 2.
 
 No input, returns an output u64 tick value.
 
-Gets the total time in ticks that the process was suspended.
+Gets the total time in ticks that the process was suspended, relative to
+when the applet-service was last initialized.
 
 ### GetAccumulatedSuspendedTickChangedEvent
 
