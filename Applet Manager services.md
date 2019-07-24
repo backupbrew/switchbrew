@@ -1308,7 +1308,8 @@ See [\#NotificationMessage](#NotificationMessage "wikilink").
 
 ### SetScreenShotAppletIdentityInfo
 
-Takes an input 0x10-byte struct AppletIdentityInfo. No output.
+Takes an input [\#AppletIdentityInfo](#AppletIdentityInfo "wikilink"),
+no output.
 
 ### SetOutOfFocusSuspendingEnabled
 
@@ -1980,6 +1981,17 @@ u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
 # AppletKind
 
 This is 8-bytes.
+
+# AppletIdentityInfo
+
+| Offset | Size | Description                        |
+| ------ | ---- | ---------------------------------- |
+| 0x0    | 0x4  | [\#AppletId](#AppletId "wikilink") |
+| 0x4    | 0x4  | Padding                            |
+| 0x8    | 0x8  | titleID                            |
+
+This struct is "nn::am::<service::AppletIdentityInfo>". This struct is
+0x10-bytes.
 
 # ApplicationAttributeForQuest
 

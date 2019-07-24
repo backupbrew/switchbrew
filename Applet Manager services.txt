@@ -1289,7 +1289,7 @@ Takes an input u8 bool flag, no output.
 See [[#NotificationMessage]].
 
 === SetScreenShotAppletIdentityInfo ===
-Takes an input 0x10-byte struct AppletIdentityInfo. No output.
+Takes an input [[#AppletIdentityInfo]], no output.
 
 === SetOutOfFocusSuspendingEnabled ===
 Takes an input u8 bool flag. No output.
@@ -2092,6 +2092,20 @@ This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]
 
 = AppletKind =
 This is 8-bytes.
+
+= AppletIdentityInfo =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || [[#AppletId]]
+|-
+| 0x4 || 0x4 || Padding
+|-
+| 0x8 || 0x8 || titleID
+|}
+
+This struct is "nn::am::service::AppletIdentityInfo". This struct is 0x10-bytes.
 
 = ApplicationAttributeForQuest =
 {| class="wikitable" border="1"
