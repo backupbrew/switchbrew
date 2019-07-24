@@ -380,19 +380,19 @@ ReadThemeStorage/WriteThemeStorage: these commands copy data from/to a state buf
 |-
 | 11 || [[#GetLibraryAppletInfo]] ||
 |-
-| 12 || GetMainAppletIdentityInfo ||
+| 12 || [[#GetMainAppletIdentityInfo]] ||
 |-
 | 13 || [[#CanUseApplicationCore]] ||
 |-
-| 14 || GetCallerAppletIdentityInfo ||
+| 14 || [[#GetCallerAppletIdentityInfo]] ||
 |-
 | 15 || [2.0.0+] [[#GetMainAppletApplicationControlProperty]] ||
 |-
 | 16 || [2.0.0+] [[#GetMainAppletStorageId]] ||
 |-
-| 17 || [3.0.0+] GetCallerAppletIdentityInfoStack ||
+| 17 || [3.0.0+] [[#GetCallerAppletIdentityInfoStack]] ||
 |-
-| 18 || [4.0.0+] GetNextReturnDestinationAppletIdentityInfo ||
+| 18 || [4.0.0+] [[#GetNextReturnDestinationAppletIdentityInfo]] ||
 |-
 | 19 || [4.0.0+] GetDesirableKeyboardLayout ||
 |-
@@ -445,6 +445,23 @@ No input, returns an output handle.
 ==== GetPopInteractiveInDataEvent ====
 No input, returns an output handle.
 
+==== ExitProcessAndReturn ====
+No input/output.
+
+Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
+
+==== GetLibraryAppletInfo ====
+No input, returns an output [[#AppletIdentityInfo]].
+
+==== GetMainAppletIdentityInfo ====
+No input, returns an output [[#AppletIdentityInfo]].
+
+==== CanUseApplicationCore ====
+No input, returns an output u8 bool.
+
+==== GetCallerAppletIdentityInfo ====
+No input, returns an output [[#AppletIdentityInfo]].
+
 ==== GetMainAppletApplicationControlProperty ====
 No input, takes a type-0x16 output buffer.
 
@@ -453,16 +470,11 @@ This gets the [[NACP_Format|control.nacp]].
 ==== GetMainAppletStorageId ====
 No input, returns an output u8 storageId.
 
-==== ExitProcessAndReturn ====
-No input/output.
+==== GetCallerAppletIdentityInfoStack ====
+Takes a type-0x6 output buffer containing an array of [[#AppletIdentityInfo]], and returns an output s32 total_entries.
 
-Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
-
-==== GetLibraryAppletInfo ====
-No input. Returns an output [[#LibraryAppletInfo]].
-
-==== CanUseApplicationCore ====
-No input, returns an output u8 bool.
+==== GetNextReturnDestinationAppletIdentityInfo ====
+No input, returns an output [[#AppletIdentityInfo]].
 
 ==== PopExtraStorage ====
 No input, returns an output [[#IStorage]].

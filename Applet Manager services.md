@@ -332,39 +332,39 @@ is 0x400-bytes.
 
 ### ILibraryAppletSelfAccessor
 
-| Cmd | Name                                                                                                        | Notes |
-| --- | ----------------------------------------------------------------------------------------------------------- | ----- |
-| 0   | [\#PopInData](#PopInData "wikilink")                                                                        |       |
-| 1   | [\#PushOutData](#PushOutData "wikilink")                                                                    |       |
-| 2   | [\#PopInteractiveInData](#PopInteractiveInData "wikilink")                                                  |       |
-| 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                              |       |
-| 5   | [\#GetPopInDataEvent](#GetPopInDataEvent "wikilink")                                                        |       |
-| 6   | [\#GetPopInteractiveInDataEvent](#GetPopInteractiveInDataEvent "wikilink")                                  |       |
-| 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                  |       |
-| 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                  |       |
-| 12  | GetMainAppletIdentityInfo                                                                                   |       |
-| 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                |       |
-| 14  | GetCallerAppletIdentityInfo                                                                                 |       |
-| 15  | \[2.0.0+\] [\#GetMainAppletApplicationControlProperty](#GetMainAppletApplicationControlProperty "wikilink") |       |
-| 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                   |       |
-| 17  | \[3.0.0+\] GetCallerAppletIdentityInfoStack                                                                 |       |
-| 18  | \[4.0.0+\] GetNextReturnDestinationAppletIdentityInfo                                                       |       |
-| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                       |       |
-| 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                            |       |
-| 25  | [\#GetPopExtraStorageEvent](#GetPopExtraStorageEvent "wikilink")                                            |       |
-| 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                    |       |
-| 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                        |       |
-| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                   |       |
-| 50  | \[3.0.0+\] ReportVisibleError                                                                               |       |
-| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                               |       |
-| 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink") |       |
-| 70  | \[8.0.0+\] GetCurrentApplicationId                                                                          |       |
-| 80  | \[6.0.0+\] RequestExitToSelf                                                                                |       |
-| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                       |       |
-| 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                   |       |
-| 101 | \[5.0.0+\] ReserveResourceForMovieOperation                                                                 |       |
-| 102 | \[5.0.0+\] UnreserveResourceForMovieOperation                                                               |       |
-| 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                      |       |
+| Cmd | Name                                                                                                              | Notes |
+| --- | ----------------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#PopInData](#PopInData "wikilink")                                                                              |       |
+| 1   | [\#PushOutData](#PushOutData "wikilink")                                                                          |       |
+| 2   | [\#PopInteractiveInData](#PopInteractiveInData "wikilink")                                                        |       |
+| 3   | [\#PushInteractiveOutData](#PushInteractiveOutData "wikilink")                                                    |       |
+| 5   | [\#GetPopInDataEvent](#GetPopInDataEvent "wikilink")                                                              |       |
+| 6   | [\#GetPopInteractiveInDataEvent](#GetPopInteractiveInDataEvent "wikilink")                                        |       |
+| 10  | [\#ExitProcessAndReturn](#ExitProcessAndReturn "wikilink")                                                        |       |
+| 11  | [\#GetLibraryAppletInfo](#GetLibraryAppletInfo "wikilink")                                                        |       |
+| 12  | [\#GetMainAppletIdentityInfo](#GetMainAppletIdentityInfo "wikilink")                                              |       |
+| 13  | [\#CanUseApplicationCore](#CanUseApplicationCore "wikilink")                                                      |       |
+| 14  | [\#GetCallerAppletIdentityInfo](#GetCallerAppletIdentityInfo "wikilink")                                          |       |
+| 15  | \[2.0.0+\] [\#GetMainAppletApplicationControlProperty](#GetMainAppletApplicationControlProperty "wikilink")       |       |
+| 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                         |       |
+| 17  | \[3.0.0+\] [\#GetCallerAppletIdentityInfoStack](#GetCallerAppletIdentityInfoStack "wikilink")                     |       |
+| 18  | \[4.0.0+\] [\#GetNextReturnDestinationAppletIdentityInfo](#GetNextReturnDestinationAppletIdentityInfo "wikilink") |       |
+| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                             |       |
+| 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                                  |       |
+| 25  | [\#GetPopExtraStorageEvent](#GetPopExtraStorageEvent "wikilink")                                                  |       |
+| 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                          |       |
+| 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                              |       |
+| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                         |       |
+| 50  | \[3.0.0+\] ReportVisibleError                                                                                     |       |
+| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                                     |       |
+| 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
+| 70  | \[8.0.0+\] GetCurrentApplicationId                                                                                |       |
+| 80  | \[6.0.0+\] RequestExitToSelf                                                                                      |       |
+| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                             |       |
+| 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                         |       |
+| 101 | \[5.0.0+\] ReserveResourceForMovieOperation                                                                       |       |
+| 102 | \[5.0.0+\] UnreserveResourceForMovieOperation                                                                     |       |
+| 110 | \[6.0.0+\] GetMainAppletAvailableUsers                                                                            |       |
 
 #### PopInData
 
@@ -390,6 +390,32 @@ No input, returns an output handle.
 
 No input, returns an output handle.
 
+#### ExitProcessAndReturn
+
+No input/output.
+
+Exits the LibraryApplet and returns to running the title which launched
+this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
+
+#### GetLibraryAppletInfo
+
+No input, returns an output
+[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
+
+#### GetMainAppletIdentityInfo
+
+No input, returns an output
+[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
+
+#### CanUseApplicationCore
+
+No input, returns an output u8 bool.
+
+#### GetCallerAppletIdentityInfo
+
+No input, returns an output
+[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
+
 #### GetMainAppletApplicationControlProperty
 
 No input, takes a type-0x16 output buffer.
@@ -400,21 +426,16 @@ This gets the [control.nacp](NACP%20Format.md "wikilink").
 
 No input, returns an output u8 storageId.
 
-#### ExitProcessAndReturn
+#### GetCallerAppletIdentityInfoStack
 
-No input/output.
+Takes a type-0x6 output buffer containing an array of
+[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink"), and returns an
+output s32 total\_entries.
 
-Exits the LibraryApplet and returns to running the title which launched
-this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
+#### GetNextReturnDestinationAppletIdentityInfo
 
-#### GetLibraryAppletInfo
-
-No input. Returns an output
-[\#LibraryAppletInfo](#LibraryAppletInfo "wikilink").
-
-#### CanUseApplicationCore
-
-No input, returns an output u8 bool.
+No input, returns an output
+[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
 
 #### PopExtraStorage
 
