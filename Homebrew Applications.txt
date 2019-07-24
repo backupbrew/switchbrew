@@ -153,6 +153,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/EasyRPG/Player Yes]
 | 2019-03-03
 |-
+| MegaZeux
+| A game creation system originally released in 1994 with text mode-like graphics and a [https://digitalmzx.net large library of games].
+| Lachesis
+| [https://github.com/AliceLR/megazeux/releases here]
+| [https://github.com/AliceLR/megazeux/ yes]
+| 2019-07-22
+|-
 | Solarus Engine
 | Zelda-like Action-RPG game engine
 | [[User:carstene1ns|carstene1ns]]
