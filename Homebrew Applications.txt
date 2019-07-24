@@ -241,6 +241,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/Nop90-Switch/Meritous-Switch Yes]
 | 2018-03-17
 |-
+| Noodles!
+| A clone of the iOS puzzle game Noodles!
+| [[User:MrJPGames|MrJPGames]]
+| [https://github.com/MrJPGames/Noodles-/releases Here]
+| [https://github.com/MrJPGames/Noodles- Yes]
+| 2019-07-24
+|-
 | NXEngine
 | Reimplementation of Cave Story / Doukutsu Monogatari, a Japanese freeware PC side-scrolling platformer game from 2004.
 | [[User:carstene1ns|carstene1ns]]
