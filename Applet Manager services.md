@@ -1232,9 +1232,9 @@ No input, returns a total of 4-bytes of output.
 | 19   | \[3.0.0+\] [\#SetAlbumImageOrientation](#SetAlbumImageOrientation "wikilink")                                       |
 | 20   | \[4.0.0+\] [\#SetDesirableKeyboardLayout](#SetDesirableKeyboardLayout "wikilink")                                   |
 | 40   | [\#CreateManagedDisplayLayer](#CreateManagedDisplayLayer "wikilink")                                                |
-| 41   | \[4.0.0+\] IsSystemBufferSharingEnabled                                                                             |
-| 42   | \[4.0.0+\] GetSystemSharedLayerHandle                                                                               |
-| 43   | \[5.0.0+\] GetSystemSharedBufferHandle                                                                              |
+| 41   | \[4.0.0+\] [\#IsSystemBufferSharingEnabled](#IsSystemBufferSharingEnabled "wikilink")                               |
+| 42   | \[4.0.0+\] [\#GetSystemSharedLayerHandle](#GetSystemSharedLayerHandle "wikilink")                                   |
+| 43   | \[5.0.0+\] [\#GetSystemSharedBufferHandle](#GetSystemSharedBufferHandle "wikilink")                                 |
 | 50   | [\#SetHandlesRequestToDisplay](#SetHandlesRequestToDisplay "wikilink")                                              |
 | 51   | [\#ApproveToDisplay](#ApproveToDisplay "wikilink")                                                                  |
 | 60   | [\#OverrideAutoSleepTimeAndDimmingTime](#OverrideAutoSleepTimeAndDimmingTime "wikilink")                            |
@@ -1367,6 +1367,37 @@ Takes an input u32, no output.
 Returns an output u64 LayerId which is then used by the user-process
 with
 [Display\_services\#OpenLayer](Display%20services#OpenLayer.md##OpenLayer "wikilink").
+
+### IsSystemBufferSharingEnabled
+
+No input/output.
+
+Not available when the current applet is an Application
+([\#AppletId](#AppletId "wikilink") == 0x01).
+
+Checks whether SystemBufferSharing is enabled, throwing an error
+otherwise.
+
+### GetSystemSharedLayerHandle
+
+No input, returns two output u64s "nn::vi::fbshare::SharedBufferHandle"
+and "nn::vi::fbshare::SharedLayerHandle".
+
+Runs code similar to
+[\#IsSystemBufferSharingEnabled](#IsSystemBufferSharingEnabled "wikilink")
+first.
+
+### GetSystemSharedBufferHandle
+
+No input, returns an output u64 "nn::vi::fbshare::SharedBufferHandle".
+
+Runs code similar to
+[\#IsSystemBufferSharingEnabled](#IsSystemBufferSharingEnabled "wikilink")
+first.
+
+Same as
+[\#GetSystemSharedLayerHandle](#GetSystemSharedLayerHandle "wikilink")
+except this just gets the SharedBufferHandle.
 
 ### SetHandlesRequestToDisplay
 
