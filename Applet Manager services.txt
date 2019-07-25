@@ -1050,7 +1050,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 63 || [4.0.0+] [[#GetHdcpAuthenticationStateChangeEvent]] ||
 |-
-| 64 || [5.0.0+] SetTvPowerStateMatchingMode ||
+| 64 || [5.0.0+] [[#SetTvPowerStateMatchingMode]] ||
 |-
 | 65 || [5.1.0+] [[#GetApplicationIdByContentActionName]] ||
 |-
@@ -1176,6 +1176,9 @@ No input, returns an output s32.
 
 === GetHdcpAuthenticationStateChangeEvent ===
 No input, returns an output Event handle with autoclear=true.
+
+=== SetTvPowerStateMatchingMode ===
+Takes an input s32 [[#TvPowerStateMatchingMode]], no output.
 
 === GetApplicationIdByContentActionName ===
 Takes a type-0x5 input buffer containing a string, returns an output u64.
@@ -2105,6 +2108,19 @@ See also [[:Category:Library Applets]].
 |-
 | 1 || Docked
 |}
+
+=== TvPowerStateMatchingMode ===
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+| 0 || Unknown
+|-
+| 1 || Unknown
+|}
+
+This is "nn::oe::TvPowerStateMatchingMode". This is used with [[#SetTvPowerStateMatchingMode]].
 
 === LaunchParameterKind ===
 {| class="wikitable" border="1"

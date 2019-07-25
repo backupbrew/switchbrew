@@ -1049,7 +1049,7 @@ Official sw uses this during LibraryApplet creation when
 | 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink")                 |       |
 | 62  | \[4.0.0+\] [\#GetHdcpAuthenticationState](#GetHdcpAuthenticationState "wikilink")                                         |       |
 | 63  | \[4.0.0+\] [\#GetHdcpAuthenticationStateChangeEvent](#GetHdcpAuthenticationStateChangeEvent "wikilink")                   |       |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                                    |       |
+| 64  | \[5.0.0+\] [\#SetTvPowerStateMatchingMode](#SetTvPowerStateMatchingMode "wikilink")                                       |       |
 | 65  | \[5.1.0+\] [\#GetApplicationIdByContentActionName](#GetApplicationIdByContentActionName "wikilink")                       |       |
 | 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                                               |       |
 | 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                                           |       |
@@ -1232,6 +1232,12 @@ No input, returns an output s32.
 ### GetHdcpAuthenticationStateChangeEvent
 
 No input, returns an output Event handle with autoclear=true.
+
+### SetTvPowerStateMatchingMode
+
+Takes an input s32
+[\#TvPowerStateMatchingMode](#TvPowerStateMatchingMode "wikilink"), no
+output.
 
 ### GetApplicationIdByContentActionName
 
@@ -2037,6 +2043,16 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | ----- | ----------- |
 | 0     | Handheld    |
 | 1     | Docked      |
+
+### TvPowerStateMatchingMode
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Unknown     |
+| 1     | Unknown     |
+
+This is "nn::oe::TvPowerStateMatchingMode". This is used with
+[\#SetTvPowerStateMatchingMode](#SetTvPowerStateMatchingMode "wikilink").
 
 ### LaunchParameterKind
 
