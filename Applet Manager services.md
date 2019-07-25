@@ -1052,7 +1052,7 @@ Official sw uses this during LibraryApplet creation when
 | 64  | \[5.0.0+\] [\#SetTvPowerStateMatchingMode](#SetTvPowerStateMatchingMode "wikilink")                                       |       |
 | 65  | \[5.1.0+\] [\#GetApplicationIdByContentActionName](#GetApplicationIdByContentActionName "wikilink")                       |       |
 | 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                                               |       |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                                           |       |
+| 80  | \[6.0.0+\] [\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink")                     |       |
 | 90  | \[7.0.0+\] [\#SetPerformanceConfigurationChangedNotification](#SetPerformanceConfigurationChangedNotification "wikilink") |       |
 | 91  | \[7.0.0+\] [\#GetCurrentPerformanceConfiguration](#GetCurrentPerformanceConfiguration "wikilink")                         |       |
 | 200 | \[7.0.0+\] [\#GetOperationModeSystemInfo](#GetOperationModeSystemInfo "wikilink")                                         |       |
@@ -1249,6 +1249,11 @@ u64.
 Takes an input u32 **CpuBoostMode** (only modes 0 and 1 are valid) and
 passes it to
 [SetCpuBoostMode](PPC%20services#apm:sys.md##apm:sys "wikilink").
+
+### PerformSystemButtonPressingIfInFocus
+
+Takes an input [\#SystemButtonType](#SystemButtonType "wikilink"), no
+output.
 
 ### SetPerformanceConfigurationChangedNotification
 
@@ -2053,6 +2058,18 @@ Applets](:Category:Library%20Applets.md "wikilink").
 
 This is "nn::oe::TvPowerStateMatchingMode". This is used with
 [\#SetTvPowerStateMatchingMode](#SetTvPowerStateMatchingMode "wikilink").
+
+### SystemButtonType
+
+| Value | Description                       |
+| ----- | --------------------------------- |
+| 1     | PerformHomeButtonShortPressing    |
+| 2     | PerformHomeButtonLongPressing     |
+| 6     | PerformCaptureButtonShortPressing |
+| 7     | PerformCaptureButtonLongPressing  |
+
+This is "nn::am::<service::SystemButtonType>". This is used with
+[\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink").
 
 ### LaunchParameterKind
 

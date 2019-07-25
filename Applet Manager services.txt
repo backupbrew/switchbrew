@@ -1056,7 +1056,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 66 || [6.0.0+] [[#SetCpuBoostMode]] ||
 |-
-| 80 || [6.0.0+] PerformSystemButtonPressingIfInFocus ||
+| 80 || [6.0.0+] [[#PerformSystemButtonPressingIfInFocus]] ||
 |-
 | 90 || [7.0.0+] [[#SetPerformanceConfigurationChangedNotification]] ||
 |-
@@ -1185,6 +1185,9 @@ Takes a type-0x5 input buffer containing a string, returns an output u64.
 
 === SetCpuBoostMode ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
+
+=== PerformSystemButtonPressingIfInFocus ===
+Takes an input [[#SystemButtonType]], no output.
 
 === SetPerformanceConfigurationChangedNotification ===
 Takes an input u8 bool, no output.
@@ -2121,6 +2124,23 @@ See also [[:Category:Library Applets]].
 |}
 
 This is "nn::oe::TvPowerStateMatchingMode". This is used with [[#SetTvPowerStateMatchingMode]].
+
+=== SystemButtonType ===
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+| 1 || PerformHomeButtonShortPressing
+|-
+| 2 || PerformHomeButtonLongPressing
+|-
+| 6 || PerformCaptureButtonShortPressing
+|-
+| 7 || PerformCaptureButtonLongPressing
+|}
+
+This is "nn::am::service::SystemButtonType". This is used with [[#PerformSystemButtonPressingIfInFocus]].
 
 === LaunchParameterKind ===
 {| class="wikitable" border="1"
