@@ -1018,44 +1018,44 @@ Official sw uses this during LibraryApplet creation when
 
 ## ICommonStateGetter
 
-| Cmd | Name                                                                                                      | Notes |
-| --- | --------------------------------------------------------------------------------------------------------- | ----- |
-| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
-| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
-| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |       |
-| 3   | [\#AllowToEnterSleep](#AllowToEnterSleep "wikilink")                                                      |       |
-| 4   | [\#DisallowToEnterSleep](#DisallowToEnterSleep "wikilink")                                                |       |
-| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
-| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |       |
-| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
-| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |       |
-| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |       |
-| 10  | [\#RequestToAcquireSleepLock](#RequestToAcquireSleepLock "wikilink")                                      |       |
-| 11  | [\#ReleaseSleepLock](#ReleaseSleepLock "wikilink")                                                        |       |
-| 12  | [\#ReleaseSleepLockTransiently](#ReleaseSleepLockTransiently "wikilink")                                  |       |
-| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |       |
-| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |       |
-| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
-| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |       |
-| 32  | \[7.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                               |       |
-| 40  | \[2.0.0+\] [\#GetCradleFwVersion](#GetCradleFwVersion "wikilink")                                         |       |
-| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
-| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
-| 52  | \[4.0.0+\] [\#SetLcdBacklighOffEnabled](#SetLcdBacklighOffEnabled "wikilink")                             |       |
-| 53  | \[7.0.0+\] [\#BeginVrModeEx](#BeginVrModeEx "wikilink")                                                   |       |
-| 54  | \[7.0.0+\] [\#EndVrModeEx](#EndVrModeEx "wikilink")                                                       |       |
-| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
-| 60  | \[3.0.0+\] [\#GetDefaultDisplayResolution](#GetDefaultDisplayResolution "wikilink")                       |       |
-| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |       |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |       |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |       |
-| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                    |       |
-| 65  | \[5.1.0+\] GetApplicationIdByContentActionName                                                            |       |
-| 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                               |       |
-| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                           |       |
-| 90  | \[7.0.0+\] SetPerformanceConfigurationChangedNotification                                                 |       |
-| 91  | \[7.0.0+\] GetCurrentPerformanceConfiguration                                                             |       |
-| 200 | \[7.0.0+\] GetOperationModeSystemInfo                                                                     |       |
+| Cmd | Name                                                                                                                      | Notes |
+| --- | ------------------------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                                            |       |
+| 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                                            |       |
+| 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                                      |       |
+| 3   | [\#AllowToEnterSleep](#AllowToEnterSleep "wikilink")                                                                      |       |
+| 4   | [\#DisallowToEnterSleep](#DisallowToEnterSleep "wikilink")                                                                |       |
+| 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                                        |       |
+| 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                                    |       |
+| 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                                          |       |
+| 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                                  |       |
+| 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                                |       |
+| 10  | [\#RequestToAcquireSleepLock](#RequestToAcquireSleepLock "wikilink")                                                      |       |
+| 11  | [\#ReleaseSleepLock](#ReleaseSleepLock "wikilink")                                                                        |       |
+| 12  | [\#ReleaseSleepLockTransiently](#ReleaseSleepLockTransiently "wikilink")                                                  |       |
+| 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                                      |       |
+| 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                                |       |
+| 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                                          |       |
+| 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                                               |       |
+| 32  | \[7.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                                               |       |
+| 40  | \[2.0.0+\] [\#GetCradleFwVersion](#GetCradleFwVersion "wikilink")                                                         |       |
+| 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                                               |       |
+| 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                                             |       |
+| 52  | \[4.0.0+\] [\#SetLcdBacklighOffEnabled](#SetLcdBacklighOffEnabled "wikilink")                                             |       |
+| 53  | \[7.0.0+\] [\#BeginVrModeEx](#BeginVrModeEx "wikilink")                                                                   |       |
+| 54  | \[7.0.0+\] [\#EndVrModeEx](#EndVrModeEx "wikilink")                                                                       |       |
+| 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")                       |       |
+| 60  | \[3.0.0+\] [\#GetDefaultDisplayResolution](#GetDefaultDisplayResolution "wikilink")                                       |       |
+| 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink")                 |       |
+| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                                     |       |
+| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                                          |       |
+| 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                                    |       |
+| 65  | \[5.1.0+\] [\#GetApplicationIdByContentActionName](#GetApplicationIdByContentActionName "wikilink")                       |       |
+| 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                                               |       |
+| 80  | \[6.0.0+\] PerformSystemButtonPressingIfInFocus                                                                           |       |
+| 90  | \[7.0.0+\] [\#SetPerformanceConfigurationChangedNotification](#SetPerformanceConfigurationChangedNotification "wikilink") |       |
+| 91  | \[7.0.0+\] [\#GetCurrentPerformanceConfiguration](#GetCurrentPerformanceConfiguration "wikilink")                         |       |
+| 200 | \[7.0.0+\] [\#GetOperationModeSystemInfo](#GetOperationModeSystemInfo "wikilink")                                         |       |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -1225,6 +1225,11 @@ No input, returns two output s32s **width** and **height**.
 
 No input, returns an output Event handle with autoclear=true.
 
+### GetApplicationIdByContentActionName
+
+Takes a type-0x5 input buffer containing a string, returns an output
+u64.
+
 ### SetCpuBoostMode
 
 Takes an input u32 **CpuBoostMode** (only modes 0 and 1 are valid) and
@@ -1242,7 +1247,7 @@ No input, returns the result of calling
 
 ### GetOperationModeSystemInfo
 
-No input, returns a total of 4-bytes of output.
+No input, returns an output u32.
 
 ## ISelfController
 

@@ -1052,17 +1052,17 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 64 || [5.0.0+] SetTvPowerStateMatchingMode ||
 |-
-| 65 || [5.1.0+] GetApplicationIdByContentActionName ||
+| 65 || [5.1.0+] [[#GetApplicationIdByContentActionName]] ||
 |-
 | 66 || [6.0.0+] [[#SetCpuBoostMode]] ||
 |-
 | 80 || [6.0.0+] PerformSystemButtonPressingIfInFocus ||
 |-
-| 90 || [7.0.0+] SetPerformanceConfigurationChangedNotification ||
+| 90 || [7.0.0+] [[#SetPerformanceConfigurationChangedNotification]] ||
 |-
-| 91 || [7.0.0+] GetCurrentPerformanceConfiguration ||
+| 91 || [7.0.0+] [[#GetCurrentPerformanceConfiguration]] ||
 |-
-| 200 || [7.0.0+] GetOperationModeSystemInfo ||
+| 200 || [7.0.0+] [[#GetOperationModeSystemInfo]] ||
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
@@ -1171,6 +1171,9 @@ No input, returns two output s32s '''width''' and '''height'''.
 === GetDefaultDisplayResolutionChangeEvent ===
 No input, returns an output Event handle with autoclear=true.
 
+=== GetApplicationIdByContentActionName ===
+Takes a type-0x5 input buffer containing a string, returns an output u64.
+
 === SetCpuBoostMode ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
 
@@ -1181,7 +1184,7 @@ Takes an input u8 bool, no output.
 No input, returns the result of calling [[PPC_services#apm:sys|GetCurrentPerformanceConfiguration]].
 
 === GetOperationModeSystemInfo ===
-No input, returns a total of 4-bytes of output.
+No input, returns an output u32.
 
 == ISelfController ==
 {| class="wikitable" border="1"
