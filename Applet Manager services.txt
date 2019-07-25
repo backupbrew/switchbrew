@@ -1078,11 +1078,17 @@ No input. Returns an output u32. Error 0x680 indicates no message is available.
 === GetThisAppletKind ===
 No input, returns an output [[#AppletKind]].
 
+Stubbed, just returns an error.
+
 === AllowToEnterSleep ===
 No input/output.
 
+Stubbed, just returns an error.
+
 === DisallowToEnterSleep ===
 No input/output.
+
+Stubbed, just returns an error.
 
 === GetOperationMode ===
 No input. Returns an output u8 for the current [[#OperationMode]].

@@ -1087,13 +1087,19 @@ available.
 
 No input, returns an output [\#AppletKind](#AppletKind "wikilink").
 
+Stubbed, just returns an error.
+
 ### AllowToEnterSleep
 
 No input/output.
 
+Stubbed, just returns an error.
+
 ### DisallowToEnterSleep
 
 No input/output.
+
+Stubbed, just returns an error.
 
 ### GetOperationMode
 
