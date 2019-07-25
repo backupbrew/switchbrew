@@ -1012,11 +1012,11 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 9 || [[#GetCurrentFocusState]] ||
 |-
-| 10 || RequestToAcquireSleepLock ||
+| 10 || [[#RequestToAcquireSleepLock]] ||
 |-
-| 11 || ReleaseSleepLock ||
+| 11 || [[#ReleaseSleepLock]] ||
 |-
-| 12 || ReleaseSleepLockTransiently ||
+| 12 || [[#ReleaseSleepLockTransiently]] ||
 |-
 | 13 || [[#GetAcquiredSleepLockEvent]] ||
 |-
@@ -1042,7 +1042,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 55 || [3.0.0+] [[#IsInControllerFirmwareUpdateSection]] ||
 |-
-| 60 || [3.0.0+] GetDefaultDisplayResolution ||
+| 60 || [3.0.0+] [[#GetDefaultDisplayResolution]] ||
 |-
 | 61 || [3.0.0+] [[#GetDefaultDisplayResolutionChangeEvent]] ||
 |-
@@ -1104,6 +1104,15 @@ No input. Returns an output u8:
 * 1: In focus.
 * 2/3: Out of focus(running in "background").
 
+=== RequestToAcquireSleepLock ===
+No input/output.
+
+=== ReleaseSleepLock ===
+No input/output.
+
+=== ReleaseSleepLockTransiently ===
+No input/output.
+
 === GetAcquiredSleepLockEvent ===
 No input, returns an output handle.
 
@@ -1153,8 +1162,11 @@ Identical to [[#SetVrModeEnabled]] except with hard-coded flag=0.
 === IsInControllerFirmwareUpdateSection ===
 No input, returns an output u8 bool.
 
+=== GetDefaultDisplayResolution ===
+No input, returns two output s32s '''width''' and '''height'''.
+
 === GetDefaultDisplayResolutionChangeEvent ===
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=true.
 
 === SetCpuBoostMode ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].

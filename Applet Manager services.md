@@ -1030,9 +1030,9 @@ Official sw uses this during LibraryApplet creation when
 | 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
 | 8   | [\#GetBootMode](#GetBootMode "wikilink")                                                                  |       |
 | 9   | [\#GetCurrentFocusState](#GetCurrentFocusState "wikilink")                                                |       |
-| 10  | RequestToAcquireSleepLock                                                                                 |       |
-| 11  | ReleaseSleepLock                                                                                          |       |
-| 12  | ReleaseSleepLockTransiently                                                                               |       |
+| 10  | [\#RequestToAcquireSleepLock](#RequestToAcquireSleepLock "wikilink")                                      |       |
+| 11  | [\#ReleaseSleepLock](#ReleaseSleepLock "wikilink")                                                        |       |
+| 12  | [\#ReleaseSleepLockTransiently](#ReleaseSleepLockTransiently "wikilink")                                  |       |
 | 13  | [\#GetAcquiredSleepLockEvent](#GetAcquiredSleepLockEvent "wikilink")                                      |       |
 | 20  | [\#PushToGeneralChannel](#PushToGeneralChannel "wikilink")                                                |       |
 | 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
@@ -1045,7 +1045,7 @@ Official sw uses this during LibraryApplet creation when
 | 53  | \[7.0.0+\] [\#BeginVrModeEx](#BeginVrModeEx "wikilink")                                                   |       |
 | 54  | \[7.0.0+\] [\#EndVrModeEx](#EndVrModeEx "wikilink")                                                       |       |
 | 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
-| 60  | \[3.0.0+\] GetDefaultDisplayResolution                                                                    |       |
+| 60  | \[3.0.0+\] [\#GetDefaultDisplayResolution](#GetDefaultDisplayResolution "wikilink")                       |       |
 | 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink") |       |
 | 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                     |       |
 | 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                          |       |
@@ -1121,6 +1121,18 @@ No input. Returns an output u8:
 
   - 1: In focus.
   - 2/3: Out of focus(running in "background").
+
+### RequestToAcquireSleepLock
+
+No input/output.
+
+### ReleaseSleepLock
+
+No input/output.
+
+### ReleaseSleepLockTransiently
+
+No input/output.
 
 ### GetAcquiredSleepLockEvent
 
@@ -1201,9 +1213,13 @@ with hard-coded flag=0.
 
 No input, returns an output u8 bool.
 
+### GetDefaultDisplayResolution
+
+No input, returns two output s32s **width** and **height**.
+
 ### GetDefaultDisplayResolutionChangeEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=true.
 
 ### SetCpuBoostMode
 
