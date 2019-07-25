@@ -1028,7 +1028,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 32 || [7.0.0+] [[#GetWriterLockAccessorEx]] ||
 |-
-| 40 || [2.0.0+] GetCradleFwVersion ||
+| 40 || [2.0.0+] [[#GetCradleFwVersion]] ||
 |-
 | 50 || [3.0.0+] [[#IsVrModeEnabled]] ||
 |-
@@ -1133,6 +1133,9 @@ Takes an input u32, returns an output [[#ILockAccessor]].
 
 === GetWriterLockAccessorEx ===
 Takes an input u32, returns an output [[#ILockAccessor]].
+
+=== GetCradleFwVersion ===
+No input, returns 4 output u32s.
 
 === IsVrModeEnabled ===
 No input, returns an output u8 bool.

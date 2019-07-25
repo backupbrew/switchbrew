@@ -1038,7 +1038,7 @@ Official sw uses this during LibraryApplet creation when
 | 30  | [\#GetHomeButtonReaderLockAccessor](#GetHomeButtonReaderLockAccessor "wikilink")                          |       |
 | 31  | \[2.0.0+\] [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink")                               |       |
 | 32  | \[7.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                               |       |
-| 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |       |
+| 40  | \[2.0.0+\] [\#GetCradleFwVersion](#GetCradleFwVersion "wikilink")                                         |       |
 | 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
 | 52  | \[4.0.0+\] [\#SetLcdBacklighOffEnabled](#SetLcdBacklighOffEnabled "wikilink")                             |       |
@@ -1170,6 +1170,10 @@ Takes an input u32, returns an output
 
 Takes an input u32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
+
+### GetCradleFwVersion
+
+No input, returns 4 output u32s.
 
 ### IsVrModeEnabled
 
