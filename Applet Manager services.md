@@ -2121,7 +2121,7 @@ u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
 
 # AppletKind
 
-This is 8-bytes.
+This is "nn::am::<service::AppletKind>". This is 8-bytes.
 
 # AppletIdentityInfo
 
