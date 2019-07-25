@@ -1023,8 +1023,8 @@ Official sw uses this during LibraryApplet creation when
 | 0   | [\#GetEventHandle](#GetEventHandle "wikilink")                                                            |       |
 | 1   | [\#ReceiveMessage](#ReceiveMessage "wikilink")                                                            |       |
 | 2   | [\#GetThisAppletKind](#GetThisAppletKind "wikilink")                                                      |       |
-| 3   | AllowToEnterSleep                                                                                         |       |
-| 4   | DisallowToEnterSleep                                                                                      |       |
+| 3   | [\#AllowToEnterSleep](#AllowToEnterSleep "wikilink")                                                      |       |
+| 4   | [\#DisallowToEnterSleep](#DisallowToEnterSleep "wikilink")                                                |       |
 | 5   | [\#GetOperationMode](#GetOperationMode "wikilink")                                                        |       |
 | 6   | [\#GetPerformanceMode](#GetPerformanceMode "wikilink")                                                    |       |
 | 7   | [\#GetCradleStatus](#GetCradleStatus "wikilink")                                                          |       |
@@ -1041,7 +1041,7 @@ Official sw uses this during LibraryApplet creation when
 | 40  | \[2.0.0+\] GetCradleFwVersion                                                                             |       |
 | 50  | \[3.0.0+\] [\#IsVrModeEnabled](#IsVrModeEnabled "wikilink")                                               |       |
 | 51  | \[3.0.0+\] [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink")                                             |       |
-| 52  | \[4.0.0+\] SetLcdBacklighOffEnabled                                                                       |       |
+| 52  | \[4.0.0+\] [\#SetLcdBacklighOffEnabled](#SetLcdBacklighOffEnabled "wikilink")                             |       |
 | 53  | \[7.0.0+\] [\#BeginVrModeEx](#BeginVrModeEx "wikilink")                                                   |       |
 | 54  | \[7.0.0+\] [\#EndVrModeEx](#EndVrModeEx "wikilink")                                                       |       |
 | 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")       |       |
@@ -1086,6 +1086,14 @@ available.
 ### GetThisAppletKind
 
 No input, returns an output [\#AppletKind](#AppletKind "wikilink").
+
+### AllowToEnterSleep
+
+No input/output.
+
+### DisallowToEnterSleep
+
+No input/output.
 
 ### GetOperationMode
 
@@ -1168,6 +1176,12 @@ flag={disable/enable}.
 When the VrMode is set to true, the console shows a screen rendered like
 vr asking the user to move his face away and hit the 'close' button.
 When this button is pressed, the console resets the vrMode to false.
+
+### SetLcdBacklighOffEnabled
+
+Takes an input u8 bool, no output.
+
+Sets whether the LCD screen blacklight is turned off.
 
 ### BeginVrModeEx
 

@@ -998,9 +998,9 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 2 || [[#GetThisAppletKind]] ||
 |-
-| 3 || AllowToEnterSleep ||
+| 3 || [[#AllowToEnterSleep]] ||
 |-
-| 4 || DisallowToEnterSleep ||
+| 4 || [[#DisallowToEnterSleep]] ||
 |-
 | 5 || [[#GetOperationMode]] ||
 |-
@@ -1034,7 +1034,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 51 || [3.0.0+] [[#SetVrModeEnabled]] ||
 |-
-| 52 || [4.0.0+] SetLcdBacklighOffEnabled ||
+| 52 || [4.0.0+] [[#SetLcdBacklighOffEnabled]] ||
 |-
 | 53 || [7.0.0+] [[#BeginVrModeEx]] || 
 |-
@@ -1077,6 +1077,12 @@ No input. Returns an output u32. Error 0x680 indicates no message is available.
 
 === GetThisAppletKind ===
 No input, returns an output [[#AppletKind]].
+
+=== AllowToEnterSleep ===
+No input/output.
+
+=== DisallowToEnterSleep ===
+No input/output.
 
 === GetOperationMode ===
 No input. Returns an output u8 for the current [[#OperationMode]].
@@ -1128,6 +1134,11 @@ Takes an input u8 bool flag. No output.
 Updates internal AM state fields. If the new state doesn't match the previous state, this uses the [[Backlight_services]] {Disable/Enable}VrMode command depending on whether flag={disable/enable}.
 
 When the VrMode is set to true, the console shows a screen rendered like vr asking the user to move his face away and hit the 'close' button. When this button is pressed, the console resets the vrMode to false.
+
+=== SetLcdBacklighOffEnabled ===
+Takes an input u8 bool, no output.
+
+Sets whether the LCD screen blacklight is turned off.
 
 === BeginVrModeEx ===
 No input/output.
