@@ -1268,6 +1268,8 @@ No input, returns the result of calling
 
 No input, returns an output u32.
 
+This returns the output from omm [\#Cmd26](#Cmd26 "wikilink").
+
 ## ISelfController
 
 | Cmd  | Name                                                                                                                |
@@ -1849,35 +1851,42 @@ the operation changes between docked and handheld modes. Besides
 that interacts with the [Dock](Dock.md "wikilink") through
 [usb:pd\*](USB%20services.md "wikilink").
 
-| Cmd | Name                                                   | Notes                                           |
-| --- | ------------------------------------------------------ | ----------------------------------------------- |
-| 0   | GetOperationMode                                       |                                                 |
-| 1   | GetOperationModeChangeEvent                            |                                                 |
-| 2   | EnableAudioVisual                                      |                                                 |
-| 3   | DisableAudioVisual                                     |                                                 |
-| 4   | EnterSleepAndWait                                      |                                                 |
-| 5   | GetCradleStatus                                        |                                                 |
-| 6   | FadeInDisplay                                          |                                                 |
-| 7   | FadeOutDisplay                                         |                                                 |
-| 8   | \[2.0.0+\] GetCradleFwVersion                          |                                                 |
-| 9   | \[2.0.0+\] NotifyCecSettingsChanged                    |                                                 |
-| 10  | \[3.0.0+\] SetOperationModePolicy                      |                                                 |
-| 11  | \[3.0.0+\] GetDefaultDisplayResolution                 |                                                 |
-| 12  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent      |                                                 |
-| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution              |                                                 |
-| 14  | \[3.0.0+\] ShouldSleepOnBoot                           |                                                 |
-| 15  | \[4.0.0+\] NotifyHdcpApplicationExecutionStarted       |                                                 |
-| 16  | \[4.0.0+\] NotifyHdcpApplicationExecutionFinished      |                                                 |
-| 17  | \[4.0.0+\] NotifyHdcpApplicationDrawingStarted         |                                                 |
-| 18  | \[4.0.0+\] NotifyHdcpApplicationDrawingFinished        |                                                 |
-| 19  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent            |                                                 |
-| 20  | \[4.0.0+\] GetHdcpAuthenticationFailedEmulationEnabled |                                                 |
-| 21  | \[4.0.0+\] SetHdcpAuthenticationFailedEmulation        |                                                 |
-| 22  | \[4.0.0+\] GetHdcpStateChangeEvent                     |                                                 |
-| 23  | \[4.0.0+\] GetHdcpState                                |                                                 |
-| 24  | \[5.0.0+\] ShowCardUpdateProcessing                    |                                                 |
-| 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged   |                                                 |
-| 26  | \[7.0.0+\]                                             | No input, returns a total of 4-bytes of output. |
+| Cmd | Name                                                   | Notes |
+| --- | ------------------------------------------------------ | ----- |
+| 0   | GetOperationMode                                       |       |
+| 1   | GetOperationModeChangeEvent                            |       |
+| 2   | EnableAudioVisual                                      |       |
+| 3   | DisableAudioVisual                                     |       |
+| 4   | EnterSleepAndWait                                      |       |
+| 5   | GetCradleStatus                                        |       |
+| 6   | FadeInDisplay                                          |       |
+| 7   | FadeOutDisplay                                         |       |
+| 8   | \[2.0.0+\] GetCradleFwVersion                          |       |
+| 9   | \[2.0.0+\] NotifyCecSettingsChanged                    |       |
+| 10  | \[3.0.0+\] SetOperationModePolicy                      |       |
+| 11  | \[3.0.0+\] GetDefaultDisplayResolution                 |       |
+| 12  | \[3.0.0+\] GetDefaultDisplayResolutionChangeEvent      |       |
+| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution              |       |
+| 14  | \[3.0.0+\] ShouldSleepOnBoot                           |       |
+| 15  | \[4.0.0+\] NotifyHdcpApplicationExecutionStarted       |       |
+| 16  | \[4.0.0+\] NotifyHdcpApplicationExecutionFinished      |       |
+| 17  | \[4.0.0+\] NotifyHdcpApplicationDrawingStarted         |       |
+| 18  | \[4.0.0+\] NotifyHdcpApplicationDrawingFinished        |       |
+| 19  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent            |       |
+| 20  | \[4.0.0+\] GetHdcpAuthenticationFailedEmulationEnabled |       |
+| 21  | \[4.0.0+\] SetHdcpAuthenticationFailedEmulation        |       |
+| 22  | \[4.0.0+\] GetHdcpStateChangeEvent                     |       |
+| 23  | \[4.0.0+\] GetHdcpState                                |       |
+| 24  | \[5.0.0+\] ShowCardUpdateProcessing                    |       |
+| 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged   |       |
+| 26  | \[7.0.0+\]                                             |       |
+
+## Cmd26
+
+No input, returns an output u32.
+
+This is used by
+[\#GetOperationModeSystemInfo](#GetOperationModeSystemInfo "wikilink").
 
 # spsm
 
