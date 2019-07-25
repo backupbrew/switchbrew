@@ -1047,8 +1047,8 @@ Official sw uses this during LibraryApplet creation when
 | 55  | \[3.0.0+\] [\#IsInControllerFirmwareUpdateSection](#IsInControllerFirmwareUpdateSection "wikilink")                       |       |
 | 60  | \[3.0.0+\] [\#GetDefaultDisplayResolution](#GetDefaultDisplayResolution "wikilink")                                       |       |
 | 61  | \[3.0.0+\] [\#GetDefaultDisplayResolutionChangeEvent](#GetDefaultDisplayResolutionChangeEvent "wikilink")                 |       |
-| 62  | \[4.0.0+\] GetHdcpAuthenticationState                                                                                     |       |
-| 63  | \[4.0.0+\] GetHdcpAuthenticationStateChangeEvent                                                                          |       |
+| 62  | \[4.0.0+\] [\#GetHdcpAuthenticationState](#GetHdcpAuthenticationState "wikilink")                                         |       |
+| 63  | \[4.0.0+\] [\#GetHdcpAuthenticationStateChangeEvent](#GetHdcpAuthenticationStateChangeEvent "wikilink")                   |       |
 | 64  | \[5.0.0+\] SetTvPowerStateMatchingMode                                                                                    |       |
 | 65  | \[5.1.0+\] [\#GetApplicationIdByContentActionName](#GetApplicationIdByContentActionName "wikilink")                       |       |
 | 66  | \[6.0.0+\] [\#SetCpuBoostMode](#SetCpuBoostMode "wikilink")                                                               |       |
@@ -1222,6 +1222,14 @@ No input, returns an output u8 bool.
 No input, returns two output s32s **width** and **height**.
 
 ### GetDefaultDisplayResolutionChangeEvent
+
+No input, returns an output Event handle with autoclear=true.
+
+### GetHdcpAuthenticationState
+
+No input, returns an output s32.
+
+### GetHdcpAuthenticationStateChangeEvent
 
 No input, returns an output Event handle with autoclear=true.
 

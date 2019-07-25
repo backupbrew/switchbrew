@@ -1046,9 +1046,9 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 |-
 | 61 || [3.0.0+] [[#GetDefaultDisplayResolutionChangeEvent]] ||
 |-
-| 62 || [4.0.0+] GetHdcpAuthenticationState || 
+| 62 || [4.0.0+] [[#GetHdcpAuthenticationState]] || 
 |-
-| 63 || [4.0.0+] GetHdcpAuthenticationStateChangeEvent ||
+| 63 || [4.0.0+] [[#GetHdcpAuthenticationStateChangeEvent]] ||
 |-
 | 64 || [5.0.0+] SetTvPowerStateMatchingMode ||
 |-
@@ -1169,6 +1169,12 @@ No input, returns an output u8 bool.
 No input, returns two output s32s '''width''' and '''height'''.
 
 === GetDefaultDisplayResolutionChangeEvent ===
+No input, returns an output Event handle with autoclear=true.
+
+=== GetHdcpAuthenticationState ===
+No input, returns an output s32.
+
+=== GetHdcpAuthenticationStateChangeEvent ===
 No input, returns an output Event handle with autoclear=true.
 
 === GetApplicationIdByContentActionName ===
