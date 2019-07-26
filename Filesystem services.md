@@ -1861,6 +1861,8 @@ This is "nn::fs::ImageDirectoryId".
 
 # CloudBackupWorkStorageId
 
+This is "nn::fs::CloudBackupWorkStorageId".
+
 | Value | Name   |
 | ----- | ------ |
 | 0     | Nand   |
@@ -1890,6 +1892,8 @@ returned via various
 | \[4.0.0+\] @RegUpdate | Registered update partition             |
 
 # Save Struct
+
+This is "nn::fs::SaveDataAttribute".
 
 | Offset | Size | Description                                                                                                                                                                                             |
 | ------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

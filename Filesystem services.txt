@@ -1341,6 +1341,7 @@ This is "nn::fs::ImageDirectoryId".
 |}
 
 = CloudBackupWorkStorageId =
+This is "nn::fs::CloudBackupWorkStorageId".
 {| class="wikitable" border="1"
 |-
 ! Value || Name
@@ -1385,6 +1386,8 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |}
 
 = Save Struct =
+This is "nn::fs::SaveDataAttribute".
+
 {| class="wikitable" border="1"
 |-
 ! Offset
