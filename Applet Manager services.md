@@ -1247,8 +1247,10 @@ output.
 
 ### GetApplicationIdByContentActionName
 
-Takes a type-0x5 input buffer containing a string, returns an output
-u64.
+Takes a type-0x5 input buffer containing a string, returns an output u64
+titleID.
+
+Gets the application titleID for the specified ContentActionName string.
 
 ### SetCpuBoostMode
 

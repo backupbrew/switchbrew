@@ -1187,7 +1187,9 @@ No input, returns an output Event handle with autoclear=true.
 Takes an input s32 [[#TvPowerStateMatchingMode]], no output.
 
 === GetApplicationIdByContentActionName ===
-Takes a type-0x5 input buffer containing a string, returns an output u64.
+Takes a type-0x5 input buffer containing a string, returns an output u64 titleID.
+
+Gets the application titleID for the specified ContentActionName string.
 
 === SetCpuBoostMode ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
