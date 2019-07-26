@@ -1256,6 +1256,8 @@ This was added with [[6.0.0]].
 | 6 || ContentData
 |-
 | 7 || ApplicationPackage
+|-
+| 8 || RegisteredUpdate
 |}
 
 = StorageId =

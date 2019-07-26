@@ -1803,6 +1803,7 @@ This was added with [6.0.0](6.0.0.md "wikilink").
 | 5     | ContentMeta        |
 | 6     | ContentData        |
 | 7     | ApplicationPackage |
+| 8     | RegisteredUpdate   |
 
 # StorageId
 
