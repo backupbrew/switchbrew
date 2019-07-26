@@ -1251,6 +1251,8 @@ Takes a type-0x5 input buffer containing a string, returns an output u64
 titleID.
 
 Gets the application titleID for the specified ContentActionName string.
+Returns an error when the current [\#AppletId](#AppletId "wikilink")
+isn't 0x04 (starter).
 
 ### SetCpuBoostMode
 
