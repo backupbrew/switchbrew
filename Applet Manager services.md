@@ -1181,6 +1181,8 @@ Takes an input u32, returns an output
 
 No input, returns 4 output u32s.
 
+This uses [\#omm](#omm "wikilink") GetCradleFwVersion.
+
 ### IsVrModeEnabled
 
 No input, returns an output u8 bool.

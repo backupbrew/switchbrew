@@ -1143,6 +1143,8 @@ Takes an input u32, returns an output [[#ILockAccessor]].
 === GetCradleFwVersion ===
 No input, returns 4 output u32s.
 
+This uses [[#omm]] GetCradleFwVersion.
+
 === IsVrModeEnabled ===
 No input, returns an output u8 bool.
 
