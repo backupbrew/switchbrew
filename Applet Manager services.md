@@ -1640,6 +1640,8 @@ Added with [7.0.0](7.0.0.md "wikilink").
 
 Takes an input u32, returns an output [\#IWindow](#IWindow "wikilink").
 
+Stubbed, just returns an error.
+
 ### GetAppletResourceUserId
 
 No input, returns an output u64

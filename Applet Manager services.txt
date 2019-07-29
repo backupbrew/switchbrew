@@ -1544,6 +1544,8 @@ Added with [[7.0.0]].
 === CreateWindow ===
 Takes an input u32, returns an output [[#IWindow]].
 
+Stubbed, just returns an error.
+
 === GetAppletResourceUserId ===
 No input, returns an output u64 [[#AppletResourceUserId]].
 
