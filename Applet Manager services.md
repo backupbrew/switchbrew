@@ -1114,6 +1114,8 @@ No input. Returns an output u32 for the current PerformanceMode.
 
 No input, returns an output u8.
 
+This uses [\#omm](#omm "wikilink") GetCradleStatus.
+
 ### GetBootMode
 
 No input, returns an output u8.

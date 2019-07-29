@@ -1099,6 +1099,8 @@ No input. Returns an output u32 for the current PerformanceMode.
 === GetCradleStatus ===
 No input, returns an output u8.
 
+This uses [[#omm]] GetCradleStatus.
+
 === GetBootMode ===
 No input, returns an output u8.
 
