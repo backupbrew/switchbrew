@@ -297,4 +297,6 @@ It also checks the validity of the device's authentication token using
 the following URL:  
 \* https://dauth-%.ndas.srv.nintendo.net/v1/device\_auth\_token
 
+Test
+
 [Category:Services](Category:Services "wikilink")
