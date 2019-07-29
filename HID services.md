@@ -142,11 +142,15 @@ Takes a PID and an u64
 
 ## SetSupportedNpadStyleSet
 
-Takes an u32 [\#NpadStyleTag](#NpadStyleTag "wikilink").
+Takes a PID-descriptor, an u32
+[\#NpadStyleTag](#NpadStyleTag "wikilink"), and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), no output.
 
 ## GetSupportedNpadStyleSet
 
-Returns an u32 [\#NpadStyleTag](#NpadStyleTag "wikilink").
+Takes a PID-descriptor and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), returns an u32
+[\#NpadStyleTag](#NpadStyleTag "wikilink").
 
 ## SetSupportedNpadIdType
 
