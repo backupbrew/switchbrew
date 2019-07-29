@@ -144,8 +144,8 @@ variation of the Tegra 210 BCT format.
 <td><p>0x40</p></td>
 <td><p>DevParams</p></td>
 <td><p>Device parameters</p>
-<p><code> 0x0548: sdmmc_clock_divider (0x09 == 24MHz)</code><br />
-<code> 0x054C: sdmmc_data_width (0x02 == sdmmc_data_width_8bit)</code></p></td>
+<p><code> 0x0548: ClockDivider (0x09 == 24MHz)</code><br />
+<code> 0x054C: DataWidth (0x02 == 8Bit)</code></p></td>
 </tr>
 <tr class="even">
 <td><p>0x0588</p></td>

@@ -110,8 +110,8 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  0x40
 |  DevParams
 |  Device parameters
-  0x0548: sdmmc_clock_divider (0x09 == 24MHz)
-  0x054C: sdmmc_data_width (0x02 == sdmmc_data_width_8bit)
+  0x0548: ClockDivider (0x09 == 24MHz)
+  0x054C: DataWidth (0x02 == 8Bit)
 |-
 |  0x0588
 |  0x04
