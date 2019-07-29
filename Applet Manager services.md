@@ -1656,13 +1656,19 @@ No input, returns an output u64
 
 No input/output.
 
+Just returns 0.
+
 ### ReleaseForegroundRights
 
 No input/output.
 
+Just returns 0.
+
 ### RejectToChangeIntoBackground
 
 No input/output.
+
+Just returns 0.
 
 ### SetAppletWindowVisibility
 
