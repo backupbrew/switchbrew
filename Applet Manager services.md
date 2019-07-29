@@ -1651,19 +1651,44 @@ No input/output.
 
 ## IAudioController
 
-| Cmd | Name                                 |
-| --- | ------------------------------------ |
-| 0   | SetExpectedMasterVolume              |
-| 1   | GetMainAppletExpectedMasterVolume    |
-| 2   | GetLibraryAppletExpectedMasterVolume |
-| 3   | ChangeMainAppletMasterVolume         |
-| 4   | SetTransparentVolumeRate             |
+| Cmd | Name                                                                                       |
+| --- | ------------------------------------------------------------------------------------------ |
+| 0   | [\#SetExpectedMasterVolume](#SetExpectedMasterVolume "wikilink")                           |
+| 1   | [\#GetMainAppletExpectedMasterVolume](#GetMainAppletExpectedMasterVolume "wikilink")       |
+| 2   | [\#GetLibraryAppletExpectedMasterVolume](#GetLibraryAppletExpectedMasterVolume "wikilink") |
+| 3   | [\#ChangeMainAppletMasterVolume](#ChangeMainAppletMasterVolume "wikilink")                 |
+| 4   | [\#SetTransparentVolumeRate](#SetTransparentVolumeRate "wikilink")                         |
 
 GetMainAppletExpectedMasterVolume/SetExpectedMasterVolume are used for
 saving/restoring state for LibraryApplet launching, with
 SetExpectedMasterVolume being used with new state prior to launching a
 LibraryApplet. With official sw these applet funcs are used directly in
 the main-codebin.
+
+### SetExpectedMasterVolume
+
+Takes two input floats, no output.
+
+Writes the input floats to state: first one is used by
+[\#GetMainAppletExpectedMasterVolume](#GetMainAppletExpectedMasterVolume "wikilink"),
+second one is used by
+[\#GetLibraryAppletExpectedMasterVolume](#GetLibraryAppletExpectedMasterVolume "wikilink").
+
+### GetMainAppletExpectedMasterVolume
+
+No input, returns an output float.
+
+### GetLibraryAppletExpectedMasterVolume
+
+No input, returns an output float.
+
+### ChangeMainAppletMasterVolume
+
+Takes an input float and an input u64, no output.
+
+### SetTransparentVolumeRate
+
+Takes an input float, no output.
 
 ## IDisplayController
 
