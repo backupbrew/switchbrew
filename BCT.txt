@@ -18,192 +18,196 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |-
 |  0x0000
 |  0x210
-|  bad_block_table
+|  BadBlockTable
 |  Table containing information on bad blocks
- 0x0000: num_entries (0x200)
- 0x0004: virtual_block_size (0x0F)
- 0x0005: block_size (0x0E)
- 0x0006: bad_blocks
- 0x0206: reserved
+ 0x0000: EntriesUsed (0x200)
+ 0x0004: VirtualBlockSizeLog2 (0x0F)
+ 0x0005: BlockSizeLog2 (0x0E)
+ 0x0006: BadBlocks
+ 0x0206: Reserved
 |-
 |  0x0210
 |  0x100
-|  bct_key
-|  BCT RSA key modulus
+|  Key
+|  BCT RSA public key's modulus
 |-
 |  0x0310
 |  0x110
-|  bct_signature
+|  Signature
 |  BCT object signature
- 0x0310: hash (empty)
- 0x0320: rsa_pss_signature
+ 0x0310: CryptoHash (empty)
+ 0x0320: RsaPssSig
 |-
 |  0x0420
 |  0x04
-|  sec_provisioning_key_num_insecure
+|  SecProvisioningKeyNumInsecure
 |  Used for Factory Secure Provisioning. Always 0.
 |-
 |  0x0424
 |  0x20
-|  sec_provisioning_key
+|  SecProvisioningKey
 |  Used for Factory Secure Provisioning. Always empty.
 |-
 |  0x0444
 |  0xC4
-|  [[#customer_data|customer_data]]
+|  [[#CustomerData|CustomerData]]
 |  Data block available for the customer. Used in key generation.
- 0x0444: padding_0x0C
- 0x0450: keyblob_0xB0
- 0x0500: padding_0x08
+ 0x0444: Reserved (0x0C bytes)
+ 0x0450: [[Flash_Filesystem#Keyblob|Keyblob]] (0xB0 bytes)
+ 0x0500: Reserved (0x08 bytes)
 |-
 |  0x0508
 |  0x04
-|  odm_data
+|  OdmData
 |  Legacy field. Unused.
 |-
 |  0x050C
 |  0x04
-|  reserved0
+|  Reserved
 |  Legacy field. Unused.
 |-
 |  0x0510
 |  0x10
-|  random_aes_block
+|  RandomAesBlock
 |  Always empty.
 |-
 |  0x0520
 |  0x10
-|  unique_chip_id
+|  UniqueChipId
 |  Always empty.
 |-
 |  0x0530
 |  0x04
-|  boot_data_version
+|  BootDataVersion
 |  Set to 0x00210001 (BOOTDATA_VERSION_T210).
 |-
 |  0x0534
 |  0x04
-|  block_size_log2
+|  BlockSizeLog2
 |  Always 0x0E.
 |-
 |  0x0538
 |  0x04
-|  page_size_log2
+|  PageSizeLog2
 |  Always 0x09.
 |-
 |  0x053C
 |  0x04
-|  partition_size
+|  PartitionSize
 |  Always 0x01000000.
 |-
 |  0x0540
 |  0x04
-|  num_param_sets
+|  NumParamSets
 |  Number of device parameter sets. Always 0x01.
 |-
 |  0x0544
 |  0x04
-|  dev_type
+|  DevType
 |  Device type. Set to 0x04 (dev_type_sdmmc).
 |-
 |  0x0548
 |  0x40
-|  dev_params
-| Device parameters
+|  DevParams
+|  Device parameters
   0x0548: sdmmc_clock_divider (0x09 == 24MHz)
   0x054C: sdmmc_data_width (0x02 == sdmmc_data_width_8bit)
 |-
 |  0x0588
 |  0x04
-|  num_sdram_sets
+|  NumSdramSets
 |  Number of SDRAM parameter sets. Always set to 0, but parameters are used despite this.
 |-
 |  0x058C
 |  0x768
-|  sdram_params0
+|  SdramParams0
 |  Default values filled in.
 |-
 |  0x0CF4
 |  0x768
-|  sdram_params1
+|  SdramParams1
 |  Default values filled in.
 |-
 |  0x145C
 |  0x768
-|  sdram_params2
+|  SdramParams2
 |  Default values filled in.
 |-
 |  0x1BC4
 |  0x768
-|  sdram_params3
+|  SdramParams3
 |  Default values filled in.
 |-
 |  0x232C
 |  0x04
-|  num_bootloaders
+|  BootLoadersUsed
 |  Number of bootloaders installed. Always 0x02 (maximum is 0x04).
 |-
 |  0x2330
 |  0x12C
-|  [[#bootloader0_info|bootloader0_info]]
+|  [[#BootLoader0|BootLoader0]]
 |  Configuration parameters for bootloader 0 (normal).
- 0x2330: version (variable)
- 0x2334: start_block (0x00000040)
- 0x2338: start_page (0x00000000)
- 0x233C: length (variable)
- 0x2340: load_addr (0x40010000)
- 0x2344: entry_point (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)
- 0x2348: attribute (0x00000000)
- 0x234C: bootloader0_hash (empty)
- 0x235C: bootloader0_rsa_pss_signature
+ 0x2330: Version (variable)
+ 0x2334: StartBlock (0x00000040)
+ 0x2338: StartPage (0x00000000)
+ 0x233C: Length (variable)
+ 0x2340: LoadAddress (0x40010000)
+ 0x2344: EntryPoint (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)
+ 0x2348: Attribute (0x00000000)
+ 0x234C: CryptoHash (empty)
+ 0x235C: RsaPssSig
 |-
 |  0x245C
 |  0x12C
-|  bootloader1_info
+|  BootLoader1
 |  Configuration parameters for bootloader 1 (safe mode).
- 0x245C: version (variable)
- 0x2460: start_block (0x00000050)
- 0x2464: start_page (0x00000000)
- 0x2468: length (variable)
- 0x246C: load_addr (0x40010000)
- 0x2470: entry_point (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)
- 0x2474: attribute (0x00000000)
- 0x2478: bootloader1_hash (empty)
- 0x2488: bootloader1_rsa_pss_signature
+ 0x245C: Version (variable)
+ 0x2460: StartBlock (0x00000050)
+ 0x2464: StartPage (0x00000000)
+ 0x2468: Length (variable)
+ 0x246C: LoadAddress (0x40010000)
+ 0x2470: EntryPoint (0x40010020 for 1.0.0-3.0.2, 0x40010040 for 4.0.0+)
+ 0x2474: Attribute (0x00000000)
+ 0x2478: CryptoHash (empty)
+ 0x2488: RsaPssSig
 |-
 |  0x2588
-|  0x258
-|  reserved1
-|  Reserved space for bootloaders 2 and 3 (currently unused).
+|  0x12C
+|  BootLoader2
+|  Reserved space for bootloader 2 (unused).
+|-
+|  0x26B4
+|  0x12C
+|  BootLoader3
+|  Reserved space for bootloader 3 (unused).
 |-
 |  0x27E0
 |  0x01
-|  enable_fail_back
+|  EnableFailBack
 |  Always 0.
 |-
 |  0x27E1
 |  0x04
-|  secure_debug_control
+|  SecureJtagControl
 |  Always 0.
 |-
 |  0x27E5
 |  0x04
-|  sec_provisioning_key_num_secure
+|  SecProvisioningKeyNumSecure
 |  Used for Factory Secure Provisioning. Always 0.
 |-
 |  0x27E9
 |  0x12
-|  reserved2
+|  Reserved
 |  Always starts with 0x80000000 (NVBOOT padding pattern).
 |-
 |  0x27FB
 |  0x05
-|  padding
+|  Padding
 |  Empty. Not part of BCT data.
-|-
 |}
 
-== customer_data ==
+== CustomerData ==
 This data block is ignored by the boot ROM, therefore is available for the programmer to use freely.
 The Switch uses 0xB0 bytes of this area, at offset 0x0450, to store the active [[Flash_Filesystem#Keyblob|keyblob]]. All remaining bytes are zero.
 
@@ -224,5 +228,5 @@ The decrypted keyblob payload is as follows.
 | [[Package1#PK11_Blob|PK11]] key
 |}
 
-== bootloader0_info ==
+== BootLoader0 ==
 The version field controls which keyblob is used, where 0x01 is the first one. See [[Cryptosystem]] for the keyblobs used by each system-version.
