@@ -1030,7 +1030,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 309 || [5.0.0+] GetNpadFullKeyGripColor
 |-
-| 310 || [6.0.0+] GetMaskedSupportedNpadStyleSet
+| 310 || [6.0.0+] [[#GetMaskedSupportedNpadStyleSet]]
 |-
 | 311 || SetNpadPlayerLedBlinkingDevice
 |-
@@ -1200,6 +1200,11 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1150 || [8.0.0+] SetTouchScreenMagnification
 |}
+
+== GetMaskedSupportedNpadStyleSet ==
+Takes an input u64 AppletResourceUserId, returns an output u32 [[#NpadStyleTag]].
+
+Official sw uses the output from [[Applet_Manager_services|GetAppletResourceUserIdOfCallerApplet]] with this.
 
 == GetUniquePadsFromNpad ==
 Takes an input u32 [[#NpadIdType]], a type-0xA output buffer, and returns an output u64 for total output entries.
