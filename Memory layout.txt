@@ -1255,132 +1255,137 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
 |-
 |  0x00
 |  0x04
-|  br_version
+|  BootRomVersion
 |  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x04
 |  0x04
-|  bd_version
+|  DataVersion
 |  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x08
 |  0x04
-|  rcm_version
+|  RcmVersion
 |  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
 |-
 |  0x0C
 |  0x04
-|  boot_type
+|  BootType
 |
- BOOT_TYPE_COLD = 1
- BOOT_TYPE_RECOVERY = 2
- BOOT_TYPE_UART = 3
- BOOT_TYPE_EXIT_RCM = 4
+ None = 0
+ Cold = 1
+ Recovery = 2
+ Uart = 3
+ ExitRcm = 4
 |-
 |  0x10
 |  0x04
-|  unk0
-|  Set to 0x05 on coldboot. 
+|  PrimaryDevice
+|  Set to 0x05 (IROM) on coldboot. 
 |-
 |  0x14
 |  0x04
-|  boot_device_type
-|
+|  SecondaryDevice
+|  Set to 0x04 (SDMMC) on coldboot. 
 |-
 |  0x18
 |  0x04
-|  boot_start_time
+|  BootTimeLogInit
 |  Value from TIMERUS_CNTR_1US when the BootROM enters its main function.
 |-
 |  0x1C
 |  0x04
-|  bootrom_lockdown_value
+|  BootTimeLogExit
 |  This is the value that gets written into SB_CSR before nvboot. (0x10)
 |-
 |  0x20
 |  0x04
-|  boot_read_bct_time
+|  BootReadBctTickCnt
 |  Time spent reading the BCT.
 |-
 |  0x24
 |  0x04
-|  boot_parse_bootloader_time
+|  BootReadBLTickCnt
 |  Time spent parsing the bootloader info from the BCT.
 |-
 |  0x28
 |  0x04
-|  osc_freq
+|  OscFrequency
 |  Value from CLK_RST_CONTROLLER_OSC_CTRL. 
 |-
 |  0x2C
 |  0x01
-|  is_boot_device_loaded
+|  DevInitialized
 |  Set to 1 after the boot device is initialized.
 |-
 |  0x2D
 |  0x01
-|  is_sdram_configured
+|  SdramInitialized
 |  Set to 1 after the SDRAM parameters are parsed.
 |-
 |  0x2E
 |  0x01
-|  is_forced_rcm_pmc
+|  ClearedForceRecovery
 |  Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.
 |-
 |  0x2F
 |  0x01
-|  is_enable_fail_back_pmc
+|  ClearedFailBack
 |  Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.
 |-
 |  0x30
-|  0x02
-|  is_bootloader_version_mismatch
+|  0x01
+|  InvokedFailBack
 |  Set to 1 if the bootloaders have different versions in the BCT.
 |-
+|  0x31
+|  0x01
+|  IRomPatchStatus
+|  
+|-
 |  0x32
-|  0x02
-|  is_bct_valid
+|  0x01
+|  BctValid
 |  Set to 1 if the BCT was parsed successfully.
 |-
-|  0x34
-|  0x04
-|  unk2
-|  
-|-
-|  0x38
-|  0x04
-|  unk3
-|  
+|  0x33
+|  0x09
+|  BctStatus
+|  Each bit contains the status for BCT reads in a given block.
 |-
 |  0x3C
 |  0x04
-|  active_bootloader_idx
-|  Value from 0 to 3 that represents which bootloader is active.
+|  BctLastJournalRead
+|  Contains the status of the last journal block read.
+ None = 0
+ Success = 1
+ ValidationFailure = 2
+ DeviceReadError = 3
 |-
 |  0x40
 |  0x04
-|  bct_start_block
+|  BctBlock
 |  Block number where the BCT was found.
 |-
 |  0x44
 |  0x04
-|  bct_start_page
+|  BctPage
 |  Page number where the BCT was found.
 |-
 |  0x48
 |  0x04
-|  bct_size
+|  BctSize
 |  Size of the BCT in IRAM (0x2800). 
 |-
 |  0x4C
 |  0x04
-|  bct_ptr
+|  BctPtr
 |  Pointer to the BCT in IRAM (0x40000100). 
 |-
 |  0x50
 |  0x18*4
-|  bootloader_headers[4]
-|
+|  BlState
+|  Contains the state of attempts to load each bootloader.
  {| class="wikitable" border="1"
  |-
  !  Offset
@@ -1389,42 +1394,130 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
  |-
  |  0x00
  |  0x04
- |  is_active
+ |  Status
  |-
  |  0x04
  |  0x04
- |  bootloader_start_block
+ |  FirstEccBlock
  |-
  |  0x08
  |  0x04
- |  bootloader_start_page
+ |  FirstEccPage
  |-
  |  0x0C
  |  0x04
- |  bootloader_length
+ |  FirstCorrectedEccBlock
  |-
  |  0x10
  |  0x04
- |  bootloader_signed_start
+ |  FirstCorrectedEccPage
  |-
  |  0x14
- |  0x04
- |  bootloader_signature
+ |  0x01
+ |  HadEccError
+ |-
+ |  0x15
+ |  0x01
+ |  HadCrcError
+ |-
+ |  0x16
+ |  0x01
+ |  HadCorrectedEccError
+ |-
+ |  0x17
+ |  0x01
+ |  UsedForEccRecovery 
  |}
 |-
 |  0xB0
-|  0x40
-|  boot_device_info
-|  Structure to hold boot device parameters.
+|  0x3C
+|  SecondaryDevStatus
+|  Structure to hold secondary boot device status.
+For SDMMC, the following applies:
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x01
+ |  FuseDataWidth
+ |-
+ |  0x01
+ |  0x01
+ |  FuseVoltageRange
+ |-
+ |  0x02
+ |  0x01
+ |  FuseDisableBootMode
+ |-
+ |  0x03
+ |  0x01
+ |  FuseDdrMode
+ |-
+ |  0x04
+ |  0x01
+ |  DiscoveredCardType
+ |-
+ |  0x05
+ |  0x03
+ |  Reserved
+ |-
+ |  0x08
+ |  0x04
+ |  DiscoveredVoltageRange
+ |-
+ |  0x0C
+ |  0x01
+ |  DataWidthUnderUse
+ |-
+ |  0x0D
+ |  0x01
+ |  PowerClassUnderUse
+ |-
+ |  0x0E
+ |  0x01
+ |  AutoCalStatus
+ |-
+ |  0x0F
+ |  0x01
+ |  Reserved
+ |-
+ |  0x10
+ |  0x10
+ |  Cid
+ |-
+ |  0x20
+ |  0x04
+ |  NumPagesRead
+ |-
+ |  0x24
+ |  0x04
+ |  NumCrcErrors
+ |-
+ |  0x25
+ |  0x01
+ |  BootFromBootPartition
+ |-
+ |  0x27
+ |  0x15
+ |  Reserved
+ |}
+|-
+|  0xEC
+|  0x04
+|  UsbChargingStatus
+|  
 |-
 |  0xF0
 |  0x04
-|  bct_end_ptr
+|  SafeStartAddr
 |  Pointer to the end of the BCT in IRAM (0x40002900).
 |-
 |  0xF4
 |  0x0C
-|  padding
+|  Padding
 |  Must be empty.
 |}
 

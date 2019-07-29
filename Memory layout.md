@@ -98,8 +98,7 @@ previous rule has one exception: pages that are mapped unreadable in
 usermode are still forced readable from kernelmode.
 
 KASLR is being used since [5.0.0](5.0.0.md "wikilink"), but not before,
-with the following pseudocode (might contains some
-    errors):
+with the following pseudocode (might contains some errors):
 
 <code>
 
@@ -244,8 +243,7 @@ with the following pseudocode (might contains some
 | All   | 0xFFFFFFF7FFDFD000-0xFFFFFFF7FFDFDFFF | 0x50042000 | 0x1000  | 0x60000000000607 | RW-         | Interrupt Controller Physical CPU interface |
 
 The rest are are mapped to core-specific physaddrs, each one is
-0x1000-bytes. Descriptor ORR-value =
-0x6000000000070B.
+0x1000-bytes. Descriptor ORR-value = 0x6000000000070B.
 
 | Vmem               | Physmem                                            |
 | ------------------ | -------------------------------------------------- |
@@ -260,8 +258,7 @@ The rest are are mapped to core-specific physaddrs, each one is
 
 Unless otherwise mentionned, block descriptors (in our case, the one
 uses for the DRAM identity mapping) are all ORRed by 0x401 and page
-descriptors by
-0x403.
+descriptors by 0x403.
 
 ## [1.0.0](1.0.0.md "wikilink")
 
@@ -343,8 +340,7 @@ However, the .rodata and .rwdata segments are both (mistakenly?) mapped
 R-W.
 
 Because the same L3 page is shared for all mappings, this required
-modifying segment layout significantly to prevent
-clashes.
+modifying segment layout significantly to prevent clashes.
 
 | Vmem        | Physmem    | Size    | Descriptor ORR-value | Description                                            |
 | ----------- | ---------- | ------- | -------------------- | ------------------------------------------------------ |
@@ -389,8 +385,7 @@ clashes.
 
 ## [6.0.0](6.0.0.md "wikilink")
 
-6.0.0 reduced the .rwdata segment to one page (previously
-2).
+6.0.0 reduced the .rwdata segment to one page (previously 2).
 
 | Vmem        | Physmem    | Size    | Descriptor ORR-value | Description                                            |
 | ----------- | ---------- | ------- | -------------------- | ------------------------------------------------------ |
@@ -456,155 +451,161 @@ follows:
 <tr class="odd">
 <td><p>0x00</p></td>
 <td><p>0x04</p></td>
-<td><p>br_version</p></td>
+<td><p>BootRomVersion</p></td>
 <td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
 </tr>
 <tr class="even">
 <td><p>0x04</p></td>
 <td><p>0x04</p></td>
-<td><p>bd_version</p></td>
+<td><p>DataVersion</p></td>
 <td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x08</p></td>
 <td><p>0x04</p></td>
-<td><p>rcm_version</p></td>
+<td><p>RcmVersion</p></td>
 <td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0C</p></td>
 <td><p>0x04</p></td>
-<td><p>boot_type</p></td>
-<td><p><code>BOOT_TYPE_COLD = 1</code><br />
-<code>BOOT_TYPE_RECOVERY = 2</code><br />
-<code>BOOT_TYPE_UART = 3</code><br />
-<code>BOOT_TYPE_EXIT_RCM = 4</code></p></td>
+<td><p>BootType</p></td>
+<td><p><code>None = 0</code><br />
+<code>Cold = 1</code><br />
+<code>Recovery = 2</code><br />
+<code>Uart = 3</code><br />
+<code>ExitRcm = 4</code></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x10</p></td>
 <td><p>0x04</p></td>
-<td><p>unk0</p></td>
-<td><p>Set to 0x05 on coldboot.</p></td>
+<td><p>PrimaryDevice</p></td>
+<td><p>Set to 0x05 (IROM) on coldboot.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x14</p></td>
 <td><p>0x04</p></td>
-<td><p>boot_device_type</p></td>
-<td></td>
+<td><p>SecondaryDevice</p></td>
+<td><p>Set to 0x04 (SDMMC) on coldboot.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x18</p></td>
 <td><p>0x04</p></td>
-<td><p>boot_start_time</p></td>
+<td><p>BootTimeLogInit</p></td>
 <td><p>Value from TIMERUS_CNTR_1US when the BootROM enters its main function.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x1C</p></td>
 <td><p>0x04</p></td>
-<td><p>bootrom_lockdown_value</p></td>
+<td><p>BootTimeLogExit</p></td>
 <td><p>This is the value that gets written into SB_CSR before nvboot. (0x10)</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x20</p></td>
 <td><p>0x04</p></td>
-<td><p>boot_read_bct_time</p></td>
+<td><p>BootReadBctTickCnt</p></td>
 <td><p>Time spent reading the BCT.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x24</p></td>
 <td><p>0x04</p></td>
-<td><p>boot_parse_bootloader_time</p></td>
+<td><p>BootReadBLTickCnt</p></td>
 <td><p>Time spent parsing the bootloader info from the BCT.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x28</p></td>
 <td><p>0x04</p></td>
-<td><p>osc_freq</p></td>
+<td><p>OscFrequency</p></td>
 <td><p>Value from CLK_RST_CONTROLLER_OSC_CTRL.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x2C</p></td>
 <td><p>0x01</p></td>
-<td><p>is_boot_device_loaded</p></td>
+<td><p>DevInitialized</p></td>
 <td><p>Set to 1 after the boot device is initialized.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x2D</p></td>
 <td><p>0x01</p></td>
-<td><p>is_sdram_configured</p></td>
+<td><p>SdramInitialized</p></td>
 <td><p>Set to 1 after the SDRAM parameters are parsed.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x2E</p></td>
 <td><p>0x01</p></td>
-<td><p>is_forced_rcm_pmc</p></td>
+<td><p>ClearedForceRecovery</p></td>
 <td><p>Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x2F</p></td>
 <td><p>0x01</p></td>
-<td><p>is_enable_fail_back_pmc</p></td>
+<td><p>ClearedFailBack</p></td>
 <td><p>Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x30</p></td>
-<td><p>0x02</p></td>
-<td><p>is_bootloader_version_mismatch</p></td>
+<td><p>0x01</p></td>
+<td><p>InvokedFailBack</p></td>
 <td><p>Set to 1 if the bootloaders have different versions in the BCT.</p></td>
 </tr>
 <tr class="odd">
-<td><p>0x32</p></td>
-<td><p>0x02</p></td>
-<td><p>is_bct_valid</p></td>
-<td><p>Set to 1 if the BCT was parsed successfully.</p></td>
+<td><p>0x31</p></td>
+<td><p>0x01</p></td>
+<td><p>IRomPatchStatus</p></td>
+<td></td>
 </tr>
 <tr class="even">
-<td><p>0x34</p></td>
-<td><p>0x04</p></td>
-<td><p>unk2</p></td>
-<td></td>
+<td><p>0x32</p></td>
+<td><p>0x01</p></td>
+<td><p>BctValid</p></td>
+<td><p>Set to 1 if the BCT was parsed successfully.</p></td>
 </tr>
 <tr class="odd">
-<td><p>0x38</p></td>
-<td><p>0x04</p></td>
-<td><p>unk3</p></td>
-<td></td>
+<td><p>0x33</p></td>
+<td><p>0x09</p></td>
+<td><p>BctStatus</p></td>
+<td><p>Each bit contains the status for BCT reads in a given block.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x3C</p></td>
 <td><p>0x04</p></td>
-<td><p>active_bootloader_idx</p></td>
-<td><p>Value from 0 to 3 that represents which bootloader is active.</p></td>
+<td><p>BctLastJournalRead</p></td>
+<td><p>Contains the status of the last journal block read.</p>
+<p><code>None = 0</code><br />
+<code>Success = 1</code><br />
+<code>ValidationFailure = 2</code><br />
+<code>DeviceReadError = 3</code></p></td>
 </tr>
 <tr class="odd">
 <td><p>0x40</p></td>
 <td><p>0x04</p></td>
-<td><p>bct_start_block</p></td>
+<td><p>BctBlock</p></td>
 <td><p>Block number where the BCT was found.</p></td>
 </tr>
 <tr class="even">
 <td><p>0x44</p></td>
 <td><p>0x04</p></td>
-<td><p>bct_start_page</p></td>
+<td><p>BctPage</p></td>
 <td><p>Page number where the BCT was found.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x48</p></td>
 <td><p>0x04</p></td>
-<td><p>bct_size</p></td>
+<td><p>BctSize</p></td>
 <td><p>Size of the BCT in IRAM (0x2800).</p></td>
 </tr>
 <tr class="even">
 <td><p>0x4C</p></td>
 <td><p>0x04</p></td>
-<td><p>bct_ptr</p></td>
+<td><p>BctPtr</p></td>
 <td><p>Pointer to the BCT in IRAM (0x40000100).</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x50</p></td>
 <td><p>0x18*4</p></td>
-<td><p>bootloader_headers[4]</p></td>
-<td><table>
+<td><p>BlState</p></td>
+<td><p>Contains the state of attempts to load each bootloader.</p>
+<table>
 <thead>
 <tr class="header">
 <th><p>Offset</p></th>
@@ -616,52 +617,164 @@ follows:
 <tr class="odd">
 <td><p>0x00</p></td>
 <td><p>0x04</p></td>
-<td><p>is_active</p></td>
+<td><p>Status</p></td>
 </tr>
 <tr class="even">
 <td><p>0x04</p></td>
 <td><p>0x04</p></td>
-<td><p>bootloader_start_block</p></td>
+<td><p>FirstEccBlock</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x08</p></td>
 <td><p>0x04</p></td>
-<td><p>bootloader_start_page</p></td>
+<td><p>FirstEccPage</p></td>
 </tr>
 <tr class="even">
 <td><p>0x0C</p></td>
 <td><p>0x04</p></td>
-<td><p>bootloader_length</p></td>
+<td><p>FirstCorrectedEccBlock</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x10</p></td>
 <td><p>0x04</p></td>
-<td><p>bootloader_signed_start</p></td>
+<td><p>FirstCorrectedEccPage</p></td>
 </tr>
 <tr class="even">
 <td><p>0x14</p></td>
-<td><p>0x04</p></td>
-<td><p>bootloader_signature</p></td>
+<td><p>0x01</p></td>
+<td><p>HadEccError</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x15</p></td>
+<td><p>0x01</p></td>
+<td><p>HadCrcError</p></td>
+</tr>
+<tr class="even">
+<td><p>0x16</p></td>
+<td><p>0x01</p></td>
+<td><p>HadCorrectedEccError</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x17</p></td>
+<td><p>0x01</p></td>
+<td><p>UsedForEccRecovery</p></td>
 </tr>
 </tbody>
 </table></td>
 </tr>
 <tr class="even">
 <td><p>0xB0</p></td>
-<td><p>0x40</p></td>
-<td><p>boot_device_info</p></td>
-<td><p>Structure to hold boot device parameters.</p></td>
+<td><p>0x3C</p></td>
+<td><p>SecondaryDevStatus</p></td>
+<td><p>Structure to hold secondary boot device status. For SDMMC, the following applies:</p>
+<table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
 </tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td><p>0xF0</p></td>
-<td><p>0x04</p></td>
-<td><p>bct_end_ptr</p></td>
-<td><p>Pointer to the end of the BCT in IRAM (0x40002900).</p></td>
+<td><p>0x00</p></td>
+<td><p>0x01</p></td>
+<td><p>FuseDataWidth</p></td>
 </tr>
 <tr class="even">
+<td><p>0x01</p></td>
+<td><p>0x01</p></td>
+<td><p>FuseVoltageRange</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x02</p></td>
+<td><p>0x01</p></td>
+<td><p>FuseDisableBootMode</p></td>
+</tr>
+<tr class="even">
+<td><p>0x03</p></td>
+<td><p>0x01</p></td>
+<td><p>FuseDdrMode</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x04</p></td>
+<td><p>0x01</p></td>
+<td><p>DiscoveredCardType</p></td>
+</tr>
+<tr class="even">
+<td><p>0x05</p></td>
+<td><p>0x03</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x08</p></td>
+<td><p>0x04</p></td>
+<td><p>DiscoveredVoltageRange</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0C</p></td>
+<td><p>0x01</p></td>
+<td><p>DataWidthUnderUse</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x0D</p></td>
+<td><p>0x01</p></td>
+<td><p>PowerClassUnderUse</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0E</p></td>
+<td><p>0x01</p></td>
+<td><p>AutoCalStatus</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x0F</p></td>
+<td><p>0x01</p></td>
+<td><p>Reserved</p></td>
+</tr>
+<tr class="even">
+<td><p>0x10</p></td>
+<td><p>0x10</p></td>
+<td><p>Cid</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x20</p></td>
+<td><p>0x04</p></td>
+<td><p>NumPagesRead</p></td>
+</tr>
+<tr class="even">
+<td><p>0x24</p></td>
+<td><p>0x04</p></td>
+<td><p>NumCrcErrors</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x25</p></td>
+<td><p>0x01</p></td>
+<td><p>BootFromBootPartition</p></td>
+</tr>
+<tr class="even">
+<td><p>0x27</p></td>
+<td><p>0x15</p></td>
+<td><p>Reserved</p></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="odd">
+<td><p>0xEC</p></td>
+<td><p>0x04</p></td>
+<td><p>UsbChargingStatus</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0xF0</p></td>
+<td><p>0x04</p></td>
+<td><p>SafeStartAddr</p></td>
+<td><p>Pointer to the end of the BCT in IRAM (0x40002900).</p></td>
+</tr>
+<tr class="odd">
 <td><p>0xF4</p></td>
 <td><p>0x0C</p></td>
-<td><p>padding</p></td>
+<td><p>Padding</p></td>
 <td><p>Must be empty.</p></td>
 </tr>
 </tbody>
