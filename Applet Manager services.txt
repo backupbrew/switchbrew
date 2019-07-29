@@ -1532,13 +1532,13 @@ Added with [[7.0.0]].
 |-
 | 10 || [[#AcquireForegroundRights]] ||
 |-
-| 11 || ReleaseForegroundRights ||
+| 11 || [[#ReleaseForegroundRights]] ||
 |-
-| 12 || RejectToChangeIntoBackground ||
+| 12 || [[#RejectToChangeIntoBackground]] ||
 |-
-| 20 || [7.0.0+] SetAppletWindowVisibility || Takes an input u8, no output.
+| 20 || [7.0.0+] [[#SetAppletWindowVisibility]] || 
 |-
-| 21 || [7.0.0+] SetAppletGpuTimeSlice || Takes a total of 8-bytes of input, no output.
+| 21 || [7.0.0+] [[#SetAppletGpuTimeSlice]] || 
 |}
 
 === CreateWindow ===
@@ -1552,6 +1552,18 @@ No input, returns an output u64 [[#AppletResourceUserId]].
 
 === AcquireForegroundRights ===
 No input/output.
+
+=== ReleaseForegroundRights ===
+No input/output.
+
+=== RejectToChangeIntoBackground ===
+No input/output.
+
+=== SetAppletWindowVisibility ===
+Takes an input u8 bool, no output.
+
+=== SetAppletGpuTimeSlice ===
+Takes an input u64, no output.
 
 == IAudioController ==
 {| class="wikitable" border="1"

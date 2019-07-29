@@ -1625,16 +1625,16 @@ Added with [7.0.0](7.0.0.md "wikilink").
 
 ## IWindowController
 
-| Cmd | Name                                                                                                    | Notes                                         |
-| --- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| 0   | [\#CreateWindow](#CreateWindow "wikilink")                                                              |                                               |
-| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink")                                        |                                               |
-| 2   | \[6.0.0+\] [\#GetAppletResourceUserIdOfCallerApplet](#GetAppletResourceUserIdOfCallerApplet "wikilink") |                                               |
-| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink")                                        |                                               |
-| 11  | ReleaseForegroundRights                                                                                 |                                               |
-| 12  | RejectToChangeIntoBackground                                                                            |                                               |
-| 20  | \[7.0.0+\] SetAppletWindowVisibility                                                                    | Takes an input u8, no output.                 |
-| 21  | \[7.0.0+\] SetAppletGpuTimeSlice                                                                        | Takes a total of 8-bytes of input, no output. |
+| Cmd | Name                                                                                                    | Notes |
+| --- | ------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#CreateWindow](#CreateWindow "wikilink")                                                              |       |
+| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink")                                        |       |
+| 2   | \[6.0.0+\] [\#GetAppletResourceUserIdOfCallerApplet](#GetAppletResourceUserIdOfCallerApplet "wikilink") |       |
+| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink")                                        |       |
+| 11  | [\#ReleaseForegroundRights](#ReleaseForegroundRights "wikilink")                                        |       |
+| 12  | [\#RejectToChangeIntoBackground](#RejectToChangeIntoBackground "wikilink")                              |       |
+| 20  | \[7.0.0+\] [\#SetAppletWindowVisibility](#SetAppletWindowVisibility "wikilink")                         |       |
+| 21  | \[7.0.0+\] [\#SetAppletGpuTimeSlice](#SetAppletGpuTimeSlice "wikilink")                                 |       |
 
 ### CreateWindow
 
@@ -1653,6 +1653,22 @@ No input, returns an output u64
 ### AcquireForegroundRights
 
 No input/output.
+
+### ReleaseForegroundRights
+
+No input/output.
+
+### RejectToChangeIntoBackground
+
+No input/output.
+
+### SetAppletWindowVisibility
+
+Takes an input u8 bool, no output.
+
+### SetAppletGpuTimeSlice
+
+Takes an input u64, no output.
 
 ## IAudioController
 
