@@ -136,13 +136,24 @@ use `result_code = 346 | ((300 + key) << 9);`.
 
   - 14: [\#RandomSeed](#RandomSeed "wikilink")
 
+<!-- end list -->
+
+  - 15: [\#UserIdStorage](#UserIdStorage "wikilink")
+
+<!-- end list -->
+
+  - 16: [\#HosVersion](#HosVersion "wikilink")
+
 #### EndOfList
 
-EndOfList is the final entry in the LoaderConfig.
+EndOfList is the final entry in the LoaderConfig. It also provides
+optional human readable information about the Homebrew loader.
 
   - **Key:** 0
-  - **Value\[0\]:** Ignored.
-  - **Value\[1\]:** Ignored.
+  - **Value\[0\]:** Pointer to loader information string, or zero if not
+    present.
+  - **Value\[1\]:** Size in bytes of the information string, or zero if
+    not present.
 
 #### MainThreadHandle
 
@@ -151,7 +162,7 @@ Required for mutex to function.
 
   - **Key:** 1
   - **Value\[0\]:** Handle to the main thread.
-  - **Value\[1\]:** Ignored.
+  - **Value\[1\]:** Reserved/should be zero.
   - **DefaultBehavior:** Use main thread handle from entry function
     arguments.
 
@@ -182,10 +193,10 @@ points to should be accepted by `free_pages`.
 #### OverrideService
 
 The NRO loader should be able to steal handles from more priliveged
-processes. In this case, the homebrew should use this handle instead of
-the normal one.
+processes. In this case, homebrew should use this handle instead of the
+normal one.
 
-Homebrew should allow up to 32 service overrides.
+Homebrew should allow at least 32 service overrides.
 
 Note: Overridden service handles should not be converted to domains or
 closed. If they are domain, they should be converted to sessions before
@@ -208,7 +219,7 @@ to the stolen one, etc etc.
 The NRO loader should be able to send argv.
 
   - **Key:** 5
-  - **Value\[0\]:** Ignored.
+  - **Value\[0\]:** Reserved/should be zero.
   - **Value\[1\]:** Argv string pointer.
   - **DefaultBehavior:** Setting (argc == 1, argv\[0\] == "", argv\[1\]
     == NULL), or argv parsed in NSO0 fashion.
@@ -264,12 +275,11 @@ This flag means that AM services is broken, and must not be used.
 
   - **Key:** 8
   - **Value\[0\]:** AppletResourceUserId
-  - **Value\[1\]:** Ignored.
+  - **Value\[1\]:** Reserved/should be zero.
 
 #### Reserved9
 
-This was originally stdiosockets which couldn't work long term in clean
-environments the way this was designed. Now reserved for future use.
+This key has been deleted/reserved for future use.
 
 #### ProcessHandle
 
@@ -277,7 +287,7 @@ Handle to self process.
 
   - **Key:** 10
   - **Value\[0\]:** Process handle.
-  - **Value\[1\]:** Ignored.
+  - **Value\[1\]:** Reserved/should be zero.
 
 #### LastLoadResult
 
@@ -286,7 +296,7 @@ so that an error dialog can be displayed.
 
   - **Key:** 11
   - **Value\[0\]:** Result.
-  - **Value\[1\]:** Ignored.
+  - **Value\[1\]:** Reserved/should be zero.
 
 #### AllocPages
 
@@ -380,3 +390,23 @@ within the same process.
   - **Key**: 14
   - **Value\[0\]:** Random data.
   - **Value\[1\]:** More random data.
+
+#### UserIdStorage
+
+This key is used to provide persistent storage space for the preselected
+user id when launching homebrew under an application that has an account
+selection screen.
+
+  - **Key**: 15
+  - **Value\[0\]:** Pointer to a buffer containing enough space (16
+    bytes) to store a user id.
+  - **Value\[1\]:** Reserved/should be zero.
+
+#### HosVersion
+
+This key provides the currently running version of Horizon OS.
+
+  - **Key**: 16
+  - **Value\[0\]:** HOS version, formatted using libnx's [MAKEHOSVERSION
+    macro](https://github.com/switchbrew/libnx/blob/master/nx/include/switch/runtime/hosversion.h#L11).
+  - **Value\[1\]:** Reserved/should be zero.

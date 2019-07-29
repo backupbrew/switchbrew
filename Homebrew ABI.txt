@@ -80,19 +80,23 @@ If there is some error encountered while validating an entry's values, use <code
 
 * 14: [[#RandomSeed]]
 
+* 15: [[#UserIdStorage]]
+
+* 16: [[#HosVersion]]
+
 ==== EndOfList ====
-EndOfList is the final entry in the LoaderConfig.
+EndOfList is the final entry in the LoaderConfig. It also provides optional human readable information about the Homebrew loader.
 
 * '''Key:''' 0
-* '''Value[0]:''' Ignored.
-* '''Value[1]:''' Ignored.
+* '''Value[0]:''' Pointer to loader information string, or zero if not present.
+* '''Value[1]:''' Size in bytes of the information string, or zero if not present.
 
 ==== MainThreadHandle ====
 This is the handle to the thread that is executing the entrypoint. Required for mutex to function.
 
 * '''Key:''' 1
 * '''Value[0]:''' Handle to the main thread.
-* '''Value[1]:''' Ignored.
+* '''Value[1]:''' Reserved/should be zero.
 * '''DefaultBehavior:''' Use main thread handle from entry function arguments.
 
 ==== NextLoadPath ====
@@ -111,9 +115,9 @@ If the NRO loader has reserved some space in the heap for itself, the applicatio
 * '''DefaultBehavior:''' Allocates heap using svcSetHeapSize instead.
 
 ==== OverrideService ====
-The NRO loader should be able to steal handles from more priliveged processes. In this case, the homebrew should use this handle instead of the normal one.
+The NRO loader should be able to steal handles from more priliveged processes. In this case, homebrew should use this handle instead of the normal one.
 
-Homebrew should allow up to 32 service overrides.
+Homebrew should allow at least 32 service overrides.
 
 Note: Overridden service handles should not be converted to domains or closed. If they are domain, they should be converted to sessions before passed to the homebrew application.
 
@@ -130,7 +134,7 @@ Note: There needs be special handling for the file system service. If the origin
 The NRO loader should be able to send argv.
 
 * '''Key:''' 5
-* '''Value[0]:''' Ignored.
+* '''Value[0]:''' Reserved/should be zero.
 * '''Value[1]:''' Argv string pointer.
 * '''DefaultBehavior:''' Setting (argc == 1, argv[0] == "", argv[1] == NULL), or argv parsed in NSO0 fashion.
 
@@ -170,24 +174,24 @@ This flag means that AM services is broken, and must not be used.
 
 * '''Key:''' 8
 * '''Value[0]:''' AppletResourceUserId
-* '''Value[1]:''' Ignored.
+* '''Value[1]:''' Reserved/should be zero.
 
 ==== Reserved9 ====
-This was originally stdiosockets which couldn't work long term in clean environments the way this was designed. Now reserved for future use.
+This key has been deleted/reserved for future use.
 
 ==== ProcessHandle ====
 Handle to self process.
 
 * '''Key:''' 10
 * '''Value[0]:''' Process handle.
-* '''Value[1]:''' Ignored.
+* '''Value[1]:''' Reserved/should be zero.
 
 ==== LastLoadResult ====
 This is used to feed the last NRO error code back to the Homebrew Menu so that an error dialog can be displayed.
 
 * '''Key:''' 11
 * '''Value[0]:''' Result.
-* '''Value[1]:''' Ignored.
+* '''Value[1]:''' Reserved/should be zero.
 
 ==== AllocPages ====
 This key is used to provide function pointers for a memory allocator. If an [[#OverrideHeap]] key is present and this key is recognized, <code>free_pages</code> may be called with the address of the overridden heap as an argument. There may not be more than one [[#AllocPages]] key.
@@ -223,3 +227,17 @@ This key is used to provide an extra entropy source to the application (in addit
 * '''Key''': 14
 * '''Value[0]:''' Random data.
 * '''Value[1]:''' More random data.
+
+==== UserIdStorage ====
+This key is used to provide persistent storage space for the preselected user id when launching homebrew under an application that has an account selection screen.
+
+* '''Key''': 15
+* '''Value[0]:''' Pointer to a buffer containing enough space (16 bytes) to store a user id.
+* '''Value[1]:''' Reserved/should be zero.
+
+==== HosVersion ====
+This key provides the currently running version of Horizon OS.
+
+* '''Key''': 16
+* '''Value[0]:''' HOS version, formatted using libnx's [https://github.com/switchbrew/libnx/blob/master/nx/include/switch/runtime/hosversion.h#L11 MAKEHOSVERSION macro].
+* '''Value[1]:''' Reserved/should be zero.
