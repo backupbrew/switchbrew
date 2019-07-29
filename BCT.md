@@ -137,7 +137,7 @@ variation of the Tegra 210 BCT format.
 <td><p>0x0544</p></td>
 <td><p>0x04</p></td>
 <td><p>DevType</p></td>
-<td><p>Device type. Set to 0x04 (dev_type_sdmmc).</p></td>
+<td><p>Device type. Set to 0x04 (Sdmmc).</p></td>
 </tr>
 <tr class="odd">
 <td><p>0x0548</p></td>

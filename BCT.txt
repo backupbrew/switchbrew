@@ -104,7 +104,7 @@ Below is the BCT structure used by the Switch, which is a minimal variation of t
 |  0x0544
 |  0x04
 |  DevType
-|  Device type. Set to 0x04 (dev_type_sdmmc).
+|  Device type. Set to 0x04 (Sdmmc).
 |-
 |  0x0548
 |  0x40
