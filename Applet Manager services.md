@@ -1676,7 +1676,9 @@ Takes an input u8 bool, no output.
 
 ### SetAppletGpuTimeSlice
 
-Takes an input u64, no output.
+Takes an input s64, no output.
+
+The input s64 must not be negative.
 
 ## IAudioController
 
