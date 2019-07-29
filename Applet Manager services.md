@@ -1625,16 +1625,16 @@ Added with [7.0.0](7.0.0.md "wikilink").
 
 ## IWindowController
 
-| Cmd | Name                                                             | Notes                                         |
-| --- | ---------------------------------------------------------------- | --------------------------------------------- |
-| 0   | [\#CreateWindow](#CreateWindow "wikilink")                       |                                               |
-| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink") |                                               |
-| 2   | \[6.0.0+\] GetAppletResourceUserIdOfCallerApplet                 |                                               |
-| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink") |                                               |
-| 11  | ReleaseForegroundRights                                          |                                               |
-| 12  | RejectToChangeIntoBackground                                     |                                               |
-| 20  | \[7.0.0+\] SetAppletWindowVisibility                             | Takes an input u8, no output.                 |
-| 21  | \[7.0.0+\] SetAppletGpuTimeSlice                                 | Takes a total of 8-bytes of input, no output. |
+| Cmd | Name                                                                                                    | Notes                                         |
+| --- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| 0   | [\#CreateWindow](#CreateWindow "wikilink")                                                              |                                               |
+| 1   | [\#GetAppletResourceUserId](#GetAppletResourceUserId "wikilink")                                        |                                               |
+| 2   | \[6.0.0+\] [\#GetAppletResourceUserIdOfCallerApplet](#GetAppletResourceUserIdOfCallerApplet "wikilink") |                                               |
+| 10  | [\#AcquireForegroundRights](#AcquireForegroundRights "wikilink")                                        |                                               |
+| 11  | ReleaseForegroundRights                                                                                 |                                               |
+| 12  | RejectToChangeIntoBackground                                                                            |                                               |
+| 20  | \[7.0.0+\] SetAppletWindowVisibility                                                                    | Takes an input u8, no output.                 |
+| 21  | \[7.0.0+\] SetAppletGpuTimeSlice                                                                        | Takes a total of 8-bytes of input, no output. |
 
 ### CreateWindow
 
@@ -1642,7 +1642,12 @@ Takes an input u32, returns an output [\#IWindow](#IWindow "wikilink").
 
 ### GetAppletResourceUserId
 
-Returns an output u64:
+No input, returns an output u64
+[\#AppletResourceUserId](#AppletResourceUserId "wikilink").
+
+### GetAppletResourceUserIdOfCallerApplet
+
+No input, returns an output u64
 [\#AppletResourceUserId](#AppletResourceUserId "wikilink").
 
 ### AcquireForegroundRights

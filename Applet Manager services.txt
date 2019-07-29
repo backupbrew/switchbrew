@@ -1528,7 +1528,7 @@ Added with [[7.0.0]].
 |-
 | 1 || [[#GetAppletResourceUserId]] ||
 |-
-| 2 || [6.0.0+] GetAppletResourceUserIdOfCallerApplet ||
+| 2 || [6.0.0+] [[#GetAppletResourceUserIdOfCallerApplet]] ||
 |-
 | 10 || [[#AcquireForegroundRights]] ||
 |-
@@ -1545,7 +1545,10 @@ Added with [[7.0.0]].
 Takes an input u32, returns an output [[#IWindow]].
 
 === GetAppletResourceUserId ===
-Returns an output u64: [[#AppletResourceUserId]].
+No input, returns an output u64 [[#AppletResourceUserId]].
+
+=== GetAppletResourceUserIdOfCallerApplet ===
+No input, returns an output u64 [[#AppletResourceUserId]].
 
 === AcquireForegroundRights ===
 No input/output.
