@@ -1007,9 +1007,13 @@ No input, returns an output event handle with autoclear=false.
 
 No input, returns an output u8 bool.
 
+Stubbed, just returns an error.
+
 #### RequestForAppletToGetForeground
 
 No input/output.
+
+Stubbed, just returns an error.
 
 #### GetIndirectLayerConsumerHandle
 

@@ -981,8 +981,12 @@ No input, returns an output event handle with autoclear=false.
 ==== NeedsToExitProcess ====
 No input, returns an output u8 bool.
 
+Stubbed, just returns an error.
+
 ==== RequestForAppletToGetForeground ====
 No input/output.
+
+Stubbed, just returns an error.
 
 ==== GetIndirectLayerConsumerHandle ====
 Takes an input PID and an input u64 AppletResourceUserId, returns an output u64 IndirectLayerConsumerHandle.
