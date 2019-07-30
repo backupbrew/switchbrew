@@ -1794,7 +1794,8 @@ No input, returns an output handle.
 
 ### GetLaunchReason
 
-No input. Returns an u32 AppletProcessLaunchReason.
+No input, returns an output u32
+"nn::am::<service::AppletProcessLaunchReason>".
 
 Used by LibraryApplets.
 
