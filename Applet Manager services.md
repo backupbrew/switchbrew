@@ -972,6 +972,9 @@ cmd.
 
 Takes an input u8 bool, no output.
 
+Official sw will assert prior to using this if applet-service was not
+initialized as \*Application.
+
 #### PushInData
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
