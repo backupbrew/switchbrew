@@ -1710,13 +1710,13 @@ No input, returns an output handle.
 |-
 | 22 || [[#PopContext]] || 
 |-
-| 23 || CancelWindingReservation ||
+| 23 || [[#CancelWindingReservation]] ||
 |-
-| 30 || WindAndDoReserved ||
+| 30 || [[#WindAndDoReserved]] ||
 |-
 | 40 || [[#ReserveToStartAndWaitAndUnwindThis]] || 
 |-
-| 41 || [4.0.0+] ReserveToStartAndWait ||
+| 41 || [4.0.0+] [[#ReserveToStartAndWait]] ||
 |}
 
 === GetLaunchReason ===
@@ -1733,7 +1733,16 @@ Takes an input [[#IStorage]], no output.
 === PopContext ===
 No input, returns an output [[#IStorage]].
 
+=== CancelWindingReservation ===
+No input/output.
+
+=== WindAndDoReserved ===
+No input/output.
+
 === ReserveToStartAndWaitAndUnwindThis ===
+Takes an input [[#ILibraryAppletAccessor]], no output.
+
+=== ReserveToStartAndWait ===
 Takes an input [[#ILibraryAppletAccessor]], no output.
 
 == IDebugFunctions ==

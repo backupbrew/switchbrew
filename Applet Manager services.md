@@ -1787,10 +1787,10 @@ No input, returns an output handle.
 | 11  | [\#OpenCallingLibraryApplet](#OpenCallingLibraryApplet "wikilink")                     |       |
 | 21  | [\#PushContext](#PushContext "wikilink")                                               |       |
 | 22  | [\#PopContext](#PopContext "wikilink")                                                 |       |
-| 23  | CancelWindingReservation                                                               |       |
-| 30  | WindAndDoReserved                                                                      |       |
+| 23  | [\#CancelWindingReservation](#CancelWindingReservation "wikilink")                     |       |
+| 30  | [\#WindAndDoReserved](#WindAndDoReserved "wikilink")                                   |       |
 | 40  | [\#ReserveToStartAndWaitAndUnwindThis](#ReserveToStartAndWaitAndUnwindThis "wikilink") |       |
-| 41  | \[4.0.0+\] ReserveToStartAndWait                                                       |       |
+| 41  | \[4.0.0+\] [\#ReserveToStartAndWait](#ReserveToStartAndWait "wikilink")                |       |
 
 ### GetLaunchReason
 
@@ -1812,7 +1812,21 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
 
+### CancelWindingReservation
+
+No input/output.
+
+### WindAndDoReserved
+
+No input/output.
+
 ### ReserveToStartAndWaitAndUnwindThis
+
+Takes an input
+[\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"), no
+output.
+
+### ReserveToStartAndWait
 
 Takes an input
 [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink"), no
