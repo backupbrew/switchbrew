@@ -227,7 +227,9 @@ written to the log.
 ## Cmd8
 
 Takes an input u8 [\#AppletEventType](#AppletEventType "wikilink"), an
-u8 **event\_x9**, an u8
+u8
+[LibraryAppletMode](Applet%20Manager%20services#LibraryAppletMode.md##LibraryAppletMode "wikilink"),
+an u8
 [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
 an u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink"),
@@ -245,7 +247,8 @@ Logs a new [\#PlayEvent](#PlayEvent "wikilink") with the following data:
   - u8 +0xF = [\#AppletEventType](#AppletEventType "wikilink").
   - Sets the 3 timestamps.
   - Converts **titleID** and writes it to +0x0.
-  - u8 +0x9 = **event\_x9**.
+  - u8 +0x9 =
+    [LibraryAppletMode](Applet%20Manager%20services#LibraryAppletMode.md##LibraryAppletMode "wikilink").
   - u8 +0x8 = 1.
   - u8 +0xC =
     [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink"),
@@ -551,7 +554,7 @@ Applet:
 | 0x0    | 0x8  | titleID                                                                                                                     |
 | 0x8    | 0x4  | Title version, set by pdm:ntfy [\#NotifyAppletEvent](#NotifyAppletEvent "wikilink") and [\#Cmd9](#Cmd9 "wikilink").         |
 | 0x8    | 0x1  | When set to u8 0x1 by pdm:ntfy [\#Cmd8](#Cmd8 "wikilink"), this indicates that +0x9 is set. Only used for non-applications. |
-| 0x9    | 0x1  | See above.                                                                                                                  |
+| 0x9    | 0x1  | See above. [LibraryAppletMode](Applet%20Manager%20services#LibraryAppletMode.md##LibraryAppletMode "wikilink")              |
 | 0xC    | 0x1  | [AppletId](Applet%20Manager%20services#AppletId.md##AppletId "wikilink")                                                    |
 | 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")                                                       |
 | 0xE    | 0x1  | [\#PlayLogPolicy](#PlayLogPolicy "wikilink")                                                                                |

@@ -252,7 +252,7 @@ Gets the [[System_Settings|system-setting]] <code>pdm!is_production</code>, the 
 Each [[#PlayEvent]] entry is validated, throwing an error on failure. After an entry is successfully validated, it is written to the log.
 
 == Cmd8 ==
-Takes an input u8 [[#AppletEventType]], an u8 '''event_x9''', an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], and an u64 '''titleID'''. Returns no output.
+Takes an input u8 [[#AppletEventType]], an u8 [[Applet_Manager_services#LibraryAppletMode|LibraryAppletMode]], an u8 [[Applet_Manager_services#AppletId|AppletId]], an u8 [[Filesystem_services#StorageId|StorageId]], an u8 [[#PlayLogPolicy]], and an u64 '''titleID'''. Returns no output.
 
 This is similar to [[#NotifyAppletEvent]].
 
@@ -263,7 +263,7 @@ Logs a new [[#PlayEvent]] with the following data:
 * u8 +0xF = [[#AppletEventType]].
 * Sets the 3 timestamps.
 * Converts '''titleID''' and writes it to +0x0.
-* u8 +0x9 = '''event_x9'''.
+* u8 +0x9 = [[Applet_Manager_services#LibraryAppletMode|LibraryAppletMode]].
 * u8 +0x8 = 1.
 * u8 +0xC = [[Applet_Manager_services#AppletId|AppletId]], u8 +0xD = [[Filesystem_services#StorageId|StorageId]], and u8 +0xE = [[#PlayLogPolicy]].
 
@@ -585,7 +585,7 @@ Applet:
 |-
 | 0x8 || 0x1 || When set to u8 0x1 by pdm:ntfy [[#Cmd8]], this indicates that +0x9 is set. Only used for non-applications.
 |-
-| 0x9 || 0x1 || See above.
+| 0x9 || 0x1 || See above. [[Applet_Manager_services#LibraryAppletMode|LibraryAppletMode]]
 |-
 | 0xC || 0x1 || [[Applet_Manager_services#AppletId|AppletId]]
 |-
