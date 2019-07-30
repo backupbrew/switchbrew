@@ -1436,6 +1436,8 @@ The input value must not be \>3.
 
 Takes an input u32, no output.
 
+The input u32 is "nn::settings::KeyboardLayout".
+
 ### CreateManagedDisplayLayer
 
 Returns an output u64 LayerId which is then used by the user-process
