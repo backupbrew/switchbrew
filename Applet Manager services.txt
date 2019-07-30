@@ -451,7 +451,7 @@ No input/output.
 Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
 
 ==== GetLibraryAppletInfo ====
-No input, returns an output [[#AppletIdentityInfo]].
+No input, returns an output [[#LibraryAppletInfo]].
 
 ==== GetMainAppletIdentityInfo ====
 No input, returns an output [[#AppletIdentityInfo]].
@@ -2264,7 +2264,16 @@ This is "nn::am::service::ProgramSpecifyKind". This controls the type of the u64
 This u64 is officially called "nn::applet::AppletResourceUserId". Used by a number of non-AM services.
 
 = LibraryAppletInfo =
-This struct is 8-bytes: +0 u32 is [[#AppletId]], +4 u32 is [[#LibraryAppletMode]].
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || [[#AppletId]]
+|-
+| 0x4 || 0x4 || [[#LibraryAppletMode]]
+|}
+
+This is "nn::am::service::LibraryAppletInfo". This struct is 0x8-bytes.
 
 = AppletKind =
 This is "nn::am::service::AppletKind". This is 8-bytes.

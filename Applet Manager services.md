@@ -400,7 +400,7 @@ this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 #### GetLibraryAppletInfo
 
 No input, returns an output
-[\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
+[\#LibraryAppletInfo](#LibraryAppletInfo "wikilink").
 
 #### GetMainAppletIdentityInfo
 
@@ -2206,8 +2206,13 @@ by a number of non-AM services.
 
 # LibraryAppletInfo
 
-This struct is 8-bytes: +0 u32 is [\#AppletId](#AppletId "wikilink"), +4
-u32 is [\#LibraryAppletMode](#LibraryAppletMode "wikilink").
+| Offset | Size | Description                                          |
+| ------ | ---- | ---------------------------------------------------- |
+| 0x0    | 0x4  | [\#AppletId](#AppletId "wikilink")                   |
+| 0x4    | 0x4  | [\#LibraryAppletMode](#LibraryAppletMode "wikilink") |
+
+This is "nn::am::<service::LibraryAppletInfo>". This struct is
+0x8-bytes.
 
 # AppletKind
 
