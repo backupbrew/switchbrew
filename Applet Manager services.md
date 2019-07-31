@@ -1734,8 +1734,8 @@ Takes an input float, no output.
 
 | Cmd | Name                                                                                     |
 | --- | ---------------------------------------------------------------------------------------- |
-| 0   | GetLastForegroundCaptureImage                                                            |
-| 1   | UpdateLastForegroundCaptureImage                                                         |
+| 0   | [\#GetLastForegroundCaptureImage](#GetLastForegroundCaptureImage "wikilink")             |
+| 1   | [\#UpdateLastForegroundCaptureImage](#UpdateLastForegroundCaptureImage "wikilink")       |
 | 2   | GetLastApplicationCaptureImage                                                           |
 | 3   | GetCallerAppletCaptureImage                                                              |
 | 4   | UpdateCallerAppletCaptureImage                                                           |
@@ -1762,6 +1762,18 @@ Takes an input float, no output.
 | 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer                                        |
 | 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer                                        |
 | 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                                                    |
+
+## GetLastForegroundCaptureImage
+
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+## UpdateLastForegroundCaptureImage
+
+Takes an input u8 bool, no output.
+
+The input bool is ignored.
 
 ### AcquireLastApplicationCaptureBuffer
 

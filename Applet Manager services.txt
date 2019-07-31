@@ -1623,9 +1623,9 @@ Takes an input float, no output.
 |-
 ! Cmd || Name
 |-
-| 0 || GetLastForegroundCaptureImage
+| 0 || [[#GetLastForegroundCaptureImage]]
 |-
-| 1 || UpdateLastForegroundCaptureImage
+| 1 || [[#UpdateLastForegroundCaptureImage]]
 |-
 | 2 || GetLastApplicationCaptureImage
 |-
@@ -1679,6 +1679,16 @@ Takes an input float, no output.
 |-
 | 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
 |}
+
+== GetLastForegroundCaptureImage ==
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+== UpdateLastForegroundCaptureImage ==
+Takes an input u8 bool, no output.
+
+The input bool is ignored.
 
 === AcquireLastApplicationCaptureBuffer ===
 No input, returns an output handle.
