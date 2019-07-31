@@ -1823,6 +1823,8 @@ except that the last param is set to value 2 instead of 1.
 
 No input, returns an output handle.
 
+Stubbed, just returns an error.
+
 ### AcquireLastForegroundCaptureBuffer
 
 No input, returns an output handle.

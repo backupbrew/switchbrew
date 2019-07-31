@@ -1725,6 +1725,8 @@ Calls the same internal func as [[#GetLastForegroundCaptureImageEx]], except tha
 === AcquireLastApplicationCaptureBuffer ===
 No input, returns an output handle.
 
+Stubbed, just returns an error.
+
 === AcquireLastForegroundCaptureBuffer ===
 No input, returns an output handle.
 
