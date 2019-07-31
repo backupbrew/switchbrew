@@ -1627,13 +1627,13 @@ Takes an input float, no output.
 |-
 | 1 || [[#UpdateLastForegroundCaptureImage]]
 |-
-| 2 || GetLastApplicationCaptureImage
+| 2 || [[#GetLastApplicationCaptureImage]]
 |-
-| 3 || GetCallerAppletCaptureImage
+| 3 || [[#GetCallerAppletCaptureImage]]
 |-
-| 4 || UpdateCallerAppletCaptureImage
+| 4 || [[#UpdateCallerAppletCaptureImage]]
 |-
-| 5 || GetLastForegroundCaptureImageEx
+| 5 || [[#GetLastForegroundCaptureImageEx]]
 |-
 | 6 || GetLastApplicationCaptureImageEx
 |-
@@ -1686,9 +1686,25 @@ Takes a type-0x6 output buffer.
 Stubbed, just returns an error.
 
 === UpdateLastForegroundCaptureImage ===
-Takes an input u8 bool, no output.
+No input/output.
 
-The input bool is ignored.
+=== GetLastApplicationCaptureImage ===
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+=== GetCallerAppletCaptureImage ===
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+=== UpdateCallerAppletCaptureImage ===
+No input/output.
+
+=== GetLastForegroundCaptureImageEx ===
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
 
 === AcquireLastApplicationCaptureBuffer ===
 No input, returns an output handle.

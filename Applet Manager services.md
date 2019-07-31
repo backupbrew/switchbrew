@@ -1736,10 +1736,10 @@ Takes an input float, no output.
 | --- | ---------------------------------------------------------------------------------------- |
 | 0   | [\#GetLastForegroundCaptureImage](#GetLastForegroundCaptureImage "wikilink")             |
 | 1   | [\#UpdateLastForegroundCaptureImage](#UpdateLastForegroundCaptureImage "wikilink")       |
-| 2   | GetLastApplicationCaptureImage                                                           |
-| 3   | GetCallerAppletCaptureImage                                                              |
-| 4   | UpdateCallerAppletCaptureImage                                                           |
-| 5   | GetLastForegroundCaptureImageEx                                                          |
+| 2   | [\#GetLastApplicationCaptureImage](#GetLastApplicationCaptureImage "wikilink")           |
+| 3   | [\#GetCallerAppletCaptureImage](#GetCallerAppletCaptureImage "wikilink")                 |
+| 4   | [\#UpdateCallerAppletCaptureImage](#UpdateCallerAppletCaptureImage "wikilink")           |
+| 5   | [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink")         |
 | 6   | GetLastApplicationCaptureImageEx                                                         |
 | 7   | GetCallerAppletCaptureImageEx                                                            |
 | 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                      |
@@ -1771,9 +1771,29 @@ Stubbed, just returns an error.
 
 ### UpdateLastForegroundCaptureImage
 
-Takes an input u8 bool, no output.
+No input/output.
 
-The input bool is ignored.
+### GetLastApplicationCaptureImage
+
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+### GetCallerAppletCaptureImage
+
+Takes a type-0x6 output buffer.
+
+Stubbed, just returns an error.
+
+### UpdateCallerAppletCaptureImage
+
+No input/output.
+
+### GetLastForegroundCaptureImageEx
+
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
 
 ### AcquireLastApplicationCaptureBuffer
 
