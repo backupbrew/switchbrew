@@ -1742,8 +1742,8 @@ Takes an input float, no output.
 | 5   | [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink")                                |
 | 6   | [\#GetLastApplicationCaptureImageEx](#GetLastApplicationCaptureImageEx "wikilink")                              |
 | 7   | [\#GetCallerAppletCaptureImageEx](#GetCallerAppletCaptureImageEx "wikilink")                                    |
-| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                                             |
-| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                                            |
+| 8   | \[2.0.0+\] [\#TakeScreenShotOfOwnLayer](#TakeScreenShotOfOwnLayer "wikilink")                                   |
+| 9   | \[5.0.0+\] [\#CopyBetweenCaptureBuffers](#CopyBetweenCaptureBuffers "wikilink")                                 |
 | 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink")                        |
 | 11  | [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")                        |
 | 12  | [\#AcquireLastForegroundCaptureBuffer](#AcquireLastForegroundCaptureBuffer "wikilink")                          |
@@ -1818,6 +1818,14 @@ The buffer size must match 0x384000.
 Calls the same internal func as
 [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink"),
 except that the last param is set to value 2 instead of 1.
+
+### TakeScreenShotOfOwnLayer
+
+Takes an input u8 bool and a s32, no output.
+
+### CopyBetweenCaptureBuffers
+
+Takes two input s32s, no output.
 
 ### AcquireLastApplicationCaptureBuffer
 
