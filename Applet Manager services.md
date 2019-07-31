@@ -1740,8 +1740,8 @@ Takes an input float, no output.
 | 3   | [\#GetCallerAppletCaptureImage](#GetCallerAppletCaptureImage "wikilink")                 |
 | 4   | [\#UpdateCallerAppletCaptureImage](#UpdateCallerAppletCaptureImage "wikilink")           |
 | 5   | [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink")         |
-| 6   | GetLastApplicationCaptureImageEx                                                         |
-| 7   | GetCallerAppletCaptureImageEx                                                            |
+| 6   | [\#GetLastApplicationCaptureImageEx](#GetLastApplicationCaptureImageEx "wikilink")       |
+| 7   | [\#GetCallerAppletCaptureImageEx](#GetCallerAppletCaptureImageEx "wikilink")             |
 | 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                      |
 | 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                     |
 | 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink") |
@@ -1794,6 +1794,26 @@ No input/output.
 Takes a type-0x6 output buffer, returns an output u8 bool.
 
 The buffer size must match 0x384000.
+
+### GetLastApplicationCaptureImageEx
+
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
+
+Calls the same internal func as
+[\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink"),
+except that the last param is set to value 0 instead of 1.
+
+### GetCallerAppletCaptureImageEx
+
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
+
+Calls the same internal func as
+[\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink"),
+except that the last param is set to value 2 instead of 1.
 
 ### AcquireLastApplicationCaptureBuffer
 

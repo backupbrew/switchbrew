@@ -1635,9 +1635,9 @@ Takes an input float, no output.
 |-
 | 5 || [[#GetLastForegroundCaptureImageEx]]
 |-
-| 6 || GetLastApplicationCaptureImageEx
+| 6 || [[#GetLastApplicationCaptureImageEx]]
 |-
-| 7 || GetCallerAppletCaptureImageEx
+| 7 || [[#GetCallerAppletCaptureImageEx]]
 |-
 | 8 || [2.0.0+] TakeScreenShotOfOwnLayer
 |-
@@ -1705,6 +1705,20 @@ No input/output.
 Takes a type-0x6 output buffer, returns an output u8 bool.
 
 The buffer size must match 0x384000.
+
+=== GetLastApplicationCaptureImageEx ===
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
+
+Calls the same internal func as [[#GetLastForegroundCaptureImageEx]], except that the last param is set to value 0 instead of 1.
+
+=== GetCallerAppletCaptureImageEx ===
+Takes a type-0x6 output buffer, returns an output u8 bool.
+
+The buffer size must match 0x384000.
+
+Calls the same internal func as [[#GetLastForegroundCaptureImageEx]], except that the last param is set to value 2 instead of 1.
 
 === AcquireLastApplicationCaptureBuffer ===
 No input, returns an output handle.
