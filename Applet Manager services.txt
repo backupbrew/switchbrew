@@ -1677,7 +1677,7 @@ Takes an input float, no output.
 |-
 | 27 || [4.0.0+] [[#ReleaseCallerAppletCaptureSharedBuffer]]
 |-
-| 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
+| 28 || [6.0.0+] [[#TakeScreenShotOfOwnLayerEx]]
 |}
 
 === GetLastForegroundCaptureImage ===
@@ -1808,6 +1808,9 @@ Calls the same func internally as [[#AcquireLastApplicationCaptureSharedBuffer]]
 No input/output.
 
 Calls the same func internally as [[#ReleaseLastApplicationCaptureSharedBuffer]], except this passes value 2 for the last param instead of 0.
+
+=== TakeScreenShotOfOwnLayerEx ===
+Takes two input u8 bools and a s32, no output.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
