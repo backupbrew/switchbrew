@@ -1661,9 +1661,9 @@ Takes an input float, no output.
 |-
 | 18 || [[#AcquireCallerAppletCaptureBufferEx]]
 |-
-| 20 || [3.0.0+] ClearCaptureBuffer
+| 20 || [3.0.0+] [[#ClearCaptureBuffer]]
 |-
-| 21 || [3.0.0+] ClearAppletTransitionBuffer
+| 21 || [3.0.0+] [[#ClearAppletTransitionBuffer]]
 |-
 | 22 || [4.0.0+] AcquireLastApplicationCaptureSharedBuffer
 |-
@@ -1766,6 +1766,12 @@ Same as [[#AcquireLastApplicationCaptureBufferEx]] except this uses the [[#Relea
 No input, returns an output handle and an output u8 bool.
 
 Same as [[#AcquireLastApplicationCaptureBufferEx]] except this uses the [[#ReleaseCallerAppletCaptureBuffer]] state field, and uses a different input param value for the called func.
+
+=== ClearCaptureBuffer ===
+Takes an input u8 bool, an s32, and an u32, returns no output.
+
+=== ClearAppletTransitionBuffer ===
+Takes an input u32, no output.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"

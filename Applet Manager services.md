@@ -1753,8 +1753,8 @@ Takes an input float, no output.
 | 16  | [\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink") |
 | 17  | [\#AcquireLastForegroundCaptureBufferEx](#AcquireLastForegroundCaptureBufferEx "wikilink")   |
 | 18  | [\#AcquireCallerAppletCaptureBufferEx](#AcquireCallerAppletCaptureBufferEx "wikilink")       |
-| 20  | \[3.0.0+\] ClearCaptureBuffer                                                                |
-| 21  | \[3.0.0+\] ClearAppletTransitionBuffer                                                       |
+| 20  | \[3.0.0+\] [\#ClearCaptureBuffer](#ClearCaptureBuffer "wikilink")                            |
+| 21  | \[3.0.0+\] [\#ClearAppletTransitionBuffer](#ClearAppletTransitionBuffer "wikilink")          |
 | 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer                                         |
 | 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer                                         |
 | 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer                                          |
@@ -1892,6 +1892,14 @@ Same as
 except this uses the
 [\#ReleaseCallerAppletCaptureBuffer](#ReleaseCallerAppletCaptureBuffer "wikilink")
 state field, and uses a different input param value for the called func.
+
+### ClearCaptureBuffer
+
+Takes an input u8 bool, an s32, and an u32, returns no output.
+
+### ClearAppletTransitionBuffer
+
+Takes an input u32, no output.
 
 ## ISystemAppletControllerForDebug
 
