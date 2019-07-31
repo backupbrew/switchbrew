@@ -1665,17 +1665,17 @@ Takes an input float, no output.
 |-
 | 21 || [3.0.0+] [[#ClearAppletTransitionBuffer]]
 |-
-| 22 || [4.0.0+] AcquireLastApplicationCaptureSharedBuffer
+| 22 || [4.0.0+] [[#AcquireLastApplicationCaptureSharedBuffer]]
 |-
-| 23 || [4.0.0+] ReleaseLastApplicationCaptureSharedBuffer
+| 23 || [4.0.0+] [[#ReleaseLastApplicationCaptureSharedBuffer]]
 |-
-| 24 || [4.0.0+] AcquireLastForegroundCaptureSharedBuffer
+| 24 || [4.0.0+] [[#AcquireLastForegroundCaptureSharedBuffer]]
 |-
-| 25 || [4.0.0+] ReleaseLastForegroundCaptureSharedBuffer
+| 25 || [4.0.0+] [[#ReleaseLastForegroundCaptureSharedBuffer]]
 |-
-| 26 || [4.0.0+] AcquireCallerAppletCaptureSharedBuffer
+| 26 || [4.0.0+] [[#AcquireCallerAppletCaptureSharedBuffer]]
 |-
-| 27 || [4.0.0+] ReleaseCallerAppletCaptureSharedBuffer
+| 27 || [4.0.0+] [[#ReleaseCallerAppletCaptureSharedBuffer]]
 |-
 | 28 || [6.0.0+] TakeScreenShotOfOwnLayerEx
 |}
@@ -1772,6 +1772,24 @@ Takes an input u8 bool, an s32, and an u32, returns no output.
 
 === ClearAppletTransitionBuffer ===
 Takes an input u32, no output.
+
+=== AcquireLastApplicationCaptureSharedBuffer ===
+No input, returns an output u8 bool and an s32.
+
+=== ReleaseLastApplicationCaptureSharedBuffer ===
+No input/output.
+
+=== AcquireLastForegroundCaptureSharedBuffer ===
+No input, returns an output u8 bool and an s32.
+
+=== ReleaseLastForegroundCaptureSharedBuffer ===
+No input/output.
+
+=== AcquireCallerAppletCaptureSharedBuffer ===
+No input, returns an output u8 bool and an s32.
+
+=== ReleaseCallerAppletCaptureSharedBuffer ===
+No input/output.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
