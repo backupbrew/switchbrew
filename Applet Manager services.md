@@ -1763,13 +1763,13 @@ Takes an input float, no output.
 | 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer                                        |
 | 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                                                    |
 
-## GetLastForegroundCaptureImage
+### GetLastForegroundCaptureImage
 
 Takes a type-0x6 output buffer.
 
 Stubbed, just returns an error.
 
-## UpdateLastForegroundCaptureImage
+### UpdateLastForegroundCaptureImage
 
 Takes an input u8 bool, no output.
 
