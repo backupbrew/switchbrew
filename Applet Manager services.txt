@@ -1782,14 +1782,22 @@ No input/output.
 === AcquireLastForegroundCaptureSharedBuffer ===
 No input, returns an output u8 bool and an s32.
 
+Calls the same func internally as [[#AcquireLastApplicationCaptureSharedBuffer]], except this passes value 1 for the last param instead of 0.
+
 === ReleaseLastForegroundCaptureSharedBuffer ===
 No input/output.
+
+Calls the same func internally as [[#ReleaseLastApplicationCaptureSharedBuffer]], except this passes value 1 for the last param instead of 0.
 
 === AcquireCallerAppletCaptureSharedBuffer ===
 No input, returns an output u8 bool and an s32.
 
+Calls the same func internally as [[#AcquireLastApplicationCaptureSharedBuffer]], except this passes value 2 for the last param instead of 0.
+
 === ReleaseCallerAppletCaptureSharedBuffer ===
 No input/output.
+
+Calls the same func internally as [[#ReleaseLastApplicationCaptureSharedBuffer]], except this passes value 2 for the last param instead of 0.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"

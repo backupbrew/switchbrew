@@ -1913,17 +1913,33 @@ No input/output.
 
 No input, returns an output u8 bool and an s32.
 
+Calls the same func internally as
+[\#AcquireLastApplicationCaptureSharedBuffer](#AcquireLastApplicationCaptureSharedBuffer "wikilink"),
+except this passes value 1 for the last param instead of 0.
+
 ### ReleaseLastForegroundCaptureSharedBuffer
 
 No input/output.
+
+Calls the same func internally as
+[\#ReleaseLastApplicationCaptureSharedBuffer](#ReleaseLastApplicationCaptureSharedBuffer "wikilink"),
+except this passes value 1 for the last param instead of 0.
 
 ### AcquireCallerAppletCaptureSharedBuffer
 
 No input, returns an output u8 bool and an s32.
 
+Calls the same func internally as
+[\#AcquireLastApplicationCaptureSharedBuffer](#AcquireLastApplicationCaptureSharedBuffer "wikilink"),
+except this passes value 2 for the last param instead of 0.
+
 ### ReleaseCallerAppletCaptureSharedBuffer
 
 No input/output.
+
+Calls the same func internally as
+[\#ReleaseLastApplicationCaptureSharedBuffer](#ReleaseLastApplicationCaptureSharedBuffer "wikilink"),
+except this passes value 2 for the last param instead of 0.
 
 ## ISystemAppletControllerForDebug
 
