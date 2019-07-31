@@ -1909,6 +1909,9 @@ No input, returns an output u8 bool and an s32.
 
 No input/output.
 
+Depending on whether a state field is 0, this just returns an error or
+returns 0.
+
 ### AcquireLastForegroundCaptureSharedBuffer
 
 No input, returns an output u8 bool and an s32.
