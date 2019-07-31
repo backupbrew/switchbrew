@@ -1655,11 +1655,11 @@ Takes an input float, no output.
 |-
 | 15 || [[#ReleaseCallerAppletCaptureBuffer]]
 |-
-| 16 || AcquireLastApplicationCaptureBufferEx
+| 16 || [[#AcquireLastApplicationCaptureBufferEx]]
 |-
-| 17 || AcquireLastForegroundCaptureBufferEx
+| 17 || [[#AcquireLastForegroundCaptureBufferEx]]
 |-
-| 18 || AcquireCallerAppletCaptureBufferEx
+| 18 || [[#AcquireCallerAppletCaptureBufferEx]]
 |-
 | 20 || [3.0.0+] ClearCaptureBuffer
 |-
@@ -1751,6 +1751,21 @@ Stubbed, just returns an error.
 No input/output.
 
 Same as [[#ReleaseLastApplicationCaptureBuffer]] except with a different state field + different input param for the called func.
+
+=== AcquireLastApplicationCaptureBufferEx ===
+No input, returns an output handle and an output u8 bool.
+
+The state field used by [[#ReleaseLastApplicationCaptureBuffer]] must be 0. Calls a func which just returns an error, hence this cmd will just return that error. If that func would have returned successfully, the state field would be set to 1 and the cmd would return 0.
+
+=== AcquireLastForegroundCaptureBufferEx ===
+No input, returns an output handle and an output u8 bool.
+
+Same as [[#AcquireLastApplicationCaptureBufferEx]] except this uses the [[#ReleaseLastForegroundCaptureBuffer]] state field, and uses a different input param value for the called func.
+
+=== AcquireCallerAppletCaptureBufferEx ===
+No input, returns an output handle and an output u8 bool.
+
+Same as [[#AcquireLastApplicationCaptureBufferEx]] except this uses the [[#ReleaseCallerAppletCaptureBuffer]] state field, and uses a different input param value for the called func.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"

@@ -1732,36 +1732,36 @@ Takes an input float, no output.
 
 ## IDisplayController
 
-| Cmd | Name                                                                                     |
-| --- | ---------------------------------------------------------------------------------------- |
-| 0   | [\#GetLastForegroundCaptureImage](#GetLastForegroundCaptureImage "wikilink")             |
-| 1   | [\#UpdateLastForegroundCaptureImage](#UpdateLastForegroundCaptureImage "wikilink")       |
-| 2   | [\#GetLastApplicationCaptureImage](#GetLastApplicationCaptureImage "wikilink")           |
-| 3   | [\#GetCallerAppletCaptureImage](#GetCallerAppletCaptureImage "wikilink")                 |
-| 4   | [\#UpdateCallerAppletCaptureImage](#UpdateCallerAppletCaptureImage "wikilink")           |
-| 5   | [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink")         |
-| 6   | [\#GetLastApplicationCaptureImageEx](#GetLastApplicationCaptureImageEx "wikilink")       |
-| 7   | [\#GetCallerAppletCaptureImageEx](#GetCallerAppletCaptureImageEx "wikilink")             |
-| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                      |
-| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                     |
-| 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink") |
-| 11  | [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink") |
-| 12  | [\#AcquireLastForegroundCaptureBuffer](#AcquireLastForegroundCaptureBuffer "wikilink")   |
-| 13  | [\#ReleaseLastForegroundCaptureBuffer](#ReleaseLastForegroundCaptureBuffer "wikilink")   |
-| 14  | [\#AcquireCallerAppletCaptureBuffer](#AcquireCallerAppletCaptureBuffer "wikilink")       |
-| 15  | [\#ReleaseCallerAppletCaptureBuffer](#ReleaseCallerAppletCaptureBuffer "wikilink")       |
-| 16  | AcquireLastApplicationCaptureBufferEx                                                    |
-| 17  | AcquireLastForegroundCaptureBufferEx                                                     |
-| 18  | AcquireCallerAppletCaptureBufferEx                                                       |
-| 20  | \[3.0.0+\] ClearCaptureBuffer                                                            |
-| 21  | \[3.0.0+\] ClearAppletTransitionBuffer                                                   |
-| 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer                                     |
-| 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer                                     |
-| 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer                                      |
-| 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer                                      |
-| 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer                                        |
-| 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer                                        |
-| 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                                                    |
+| Cmd | Name                                                                                         |
+| --- | -------------------------------------------------------------------------------------------- |
+| 0   | [\#GetLastForegroundCaptureImage](#GetLastForegroundCaptureImage "wikilink")                 |
+| 1   | [\#UpdateLastForegroundCaptureImage](#UpdateLastForegroundCaptureImage "wikilink")           |
+| 2   | [\#GetLastApplicationCaptureImage](#GetLastApplicationCaptureImage "wikilink")               |
+| 3   | [\#GetCallerAppletCaptureImage](#GetCallerAppletCaptureImage "wikilink")                     |
+| 4   | [\#UpdateCallerAppletCaptureImage](#UpdateCallerAppletCaptureImage "wikilink")               |
+| 5   | [\#GetLastForegroundCaptureImageEx](#GetLastForegroundCaptureImageEx "wikilink")             |
+| 6   | [\#GetLastApplicationCaptureImageEx](#GetLastApplicationCaptureImageEx "wikilink")           |
+| 7   | [\#GetCallerAppletCaptureImageEx](#GetCallerAppletCaptureImageEx "wikilink")                 |
+| 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                          |
+| 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                         |
+| 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink")     |
+| 11  | [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")     |
+| 12  | [\#AcquireLastForegroundCaptureBuffer](#AcquireLastForegroundCaptureBuffer "wikilink")       |
+| 13  | [\#ReleaseLastForegroundCaptureBuffer](#ReleaseLastForegroundCaptureBuffer "wikilink")       |
+| 14  | [\#AcquireCallerAppletCaptureBuffer](#AcquireCallerAppletCaptureBuffer "wikilink")           |
+| 15  | [\#ReleaseCallerAppletCaptureBuffer](#ReleaseCallerAppletCaptureBuffer "wikilink")           |
+| 16  | [\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink") |
+| 17  | [\#AcquireLastForegroundCaptureBufferEx](#AcquireLastForegroundCaptureBufferEx "wikilink")   |
+| 18  | [\#AcquireCallerAppletCaptureBufferEx](#AcquireCallerAppletCaptureBufferEx "wikilink")       |
+| 20  | \[3.0.0+\] ClearCaptureBuffer                                                                |
+| 21  | \[3.0.0+\] ClearAppletTransitionBuffer                                                       |
+| 22  | \[4.0.0+\] AcquireLastApplicationCaptureSharedBuffer                                         |
+| 23  | \[4.0.0+\] ReleaseLastApplicationCaptureSharedBuffer                                         |
+| 24  | \[4.0.0+\] AcquireLastForegroundCaptureSharedBuffer                                          |
+| 25  | \[4.0.0+\] ReleaseLastForegroundCaptureSharedBuffer                                          |
+| 26  | \[4.0.0+\] AcquireCallerAppletCaptureSharedBuffer                                            |
+| 27  | \[4.0.0+\] ReleaseCallerAppletCaptureSharedBuffer                                            |
+| 28  | \[6.0.0+\] TakeScreenShotOfOwnLayerEx                                                        |
 
 ### GetLastForegroundCaptureImage
 
@@ -1862,6 +1862,36 @@ Same as
 [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")
 except with a different state field + different input param for the
 called func.
+
+### AcquireLastApplicationCaptureBufferEx
+
+No input, returns an output handle and an output u8 bool.
+
+The state field used by
+[\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")
+must be 0. Calls a func which just returns an error, hence this cmd will
+just return that error. If that func would have returned successfully,
+the state field would be set to 1 and the cmd would return 0.
+
+### AcquireLastForegroundCaptureBufferEx
+
+No input, returns an output handle and an output u8 bool.
+
+Same as
+[\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink")
+except this uses the
+[\#ReleaseLastForegroundCaptureBuffer](#ReleaseLastForegroundCaptureBuffer "wikilink")
+state field, and uses a different input param value for the called func.
+
+### AcquireCallerAppletCaptureBufferEx
+
+No input, returns an output handle and an output u8 bool.
+
+Same as
+[\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink")
+except this uses the
+[\#ReleaseCallerAppletCaptureBuffer](#ReleaseCallerAppletCaptureBuffer "wikilink")
+state field, and uses a different input param value for the called func.
 
 ## ISystemAppletControllerForDebug
 
