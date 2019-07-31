@@ -1745,11 +1745,11 @@ Takes an input float, no output.
 | 8   | \[2.0.0+\] TakeScreenShotOfOwnLayer                                                      |
 | 9   | \[5.0.0+\] CopyBetweenCaptureBuffers                                                     |
 | 10  | [\#AcquireLastApplicationCaptureBuffer](#AcquireLastApplicationCaptureBuffer "wikilink") |
-| 11  | ReleaseLastApplicationCaptureBuffer                                                      |
+| 11  | [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink") |
 | 12  | [\#AcquireLastForegroundCaptureBuffer](#AcquireLastForegroundCaptureBuffer "wikilink")   |
-| 13  | ReleaseLastForegroundCaptureBuffer                                                       |
+| 13  | [\#ReleaseLastForegroundCaptureBuffer](#ReleaseLastForegroundCaptureBuffer "wikilink")   |
 | 14  | [\#AcquireCallerAppletCaptureBuffer](#AcquireCallerAppletCaptureBuffer "wikilink")       |
-| 15  | ReleaseCallerAppletCaptureBuffer                                                         |
+| 15  | [\#ReleaseCallerAppletCaptureBuffer](#ReleaseCallerAppletCaptureBuffer "wikilink")       |
 | 16  | AcquireLastApplicationCaptureBufferEx                                                    |
 | 17  | AcquireLastForegroundCaptureBufferEx                                                     |
 | 18  | AcquireCallerAppletCaptureBufferEx                                                       |
@@ -1825,13 +1825,43 @@ No input, returns an output handle.
 
 Stubbed, just returns an error.
 
+### ReleaseLastApplicationCaptureBuffer
+
+No input/output.
+
+Clears a state field if it's not already 0, returning an error
+otherwise. Then a func is called which just returns 0, then this cmd
+returns 0.
+
 ### AcquireLastForegroundCaptureBuffer
 
 No input, returns an output handle.
 
+Stubbed, just returns an error.
+
+### ReleaseLastForegroundCaptureBuffer
+
+No input/output.
+
+Same as
+[\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")
+except with a different state field + different input param for the
+called func.
+
 ### AcquireCallerAppletCaptureBuffer
 
 No input, returns an output handle.
+
+Stubbed, just returns an error.
+
+### ReleaseCallerAppletCaptureBuffer
+
+No input/output.
+
+Same as
+[\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")
+except with a different state field + different input param for the
+called func.
 
 ## ISystemAppletControllerForDebug
 

@@ -1645,15 +1645,15 @@ Takes an input float, no output.
 |-
 | 10 || [[#AcquireLastApplicationCaptureBuffer]]
 |-
-| 11 || ReleaseLastApplicationCaptureBuffer
+| 11 || [[#ReleaseLastApplicationCaptureBuffer]]
 |-
 | 12 || [[#AcquireLastForegroundCaptureBuffer]]
 |-
-| 13 || ReleaseLastForegroundCaptureBuffer
+| 13 || [[#ReleaseLastForegroundCaptureBuffer]]
 |-
 | 14 || [[#AcquireCallerAppletCaptureBuffer]]
 |-
-| 15 || ReleaseCallerAppletCaptureBuffer
+| 15 || [[#ReleaseCallerAppletCaptureBuffer]]
 |-
 | 16 || AcquireLastApplicationCaptureBufferEx
 |-
@@ -1727,11 +1727,30 @@ No input, returns an output handle.
 
 Stubbed, just returns an error.
 
+=== ReleaseLastApplicationCaptureBuffer ===
+No input/output.
+
+Clears a state field if it's not already 0, returning an error otherwise. Then a func is called which just returns 0, then this cmd returns 0.
+
 === AcquireLastForegroundCaptureBuffer ===
 No input, returns an output handle.
 
+Stubbed, just returns an error.
+
+=== ReleaseLastForegroundCaptureBuffer ===
+No input/output.
+
+Same as [[#ReleaseLastApplicationCaptureBuffer]] except with a different state field + different input param for the called func.
+
 === AcquireCallerAppletCaptureBuffer ===
 No input, returns an output handle.
+
+Stubbed, just returns an error.
+
+=== ReleaseCallerAppletCaptureBuffer ===
+No input/output.
+
+Same as [[#ReleaseLastApplicationCaptureBuffer]] except with a different state field + different input param for the called func.
 
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
