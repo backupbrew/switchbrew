@@ -1789,6 +1789,10 @@ Stubbed, just returns an error.
 
 No input/output.
 
+Calls the same func internally as
+[\#UpdateLastForegroundCaptureImage](#UpdateLastForegroundCaptureImage "wikilink"),
+except this passes param value 2 instead of 1.
+
 ### GetLastForegroundCaptureImageEx
 
 Takes a type-0x6 output buffer, returns an output u8 bool.
