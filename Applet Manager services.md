@@ -1905,6 +1905,8 @@ Takes an input u32, no output.
 
 No input, returns an output u8 bool and an s32.
 
+This loads data from state.
+
 ### ReleaseLastApplicationCaptureSharedBuffer
 
 No input/output.
