@@ -1812,6 +1812,8 @@ Calls the same func internally as [[#ReleaseLastApplicationCaptureSharedBuffer]]
 === TakeScreenShotOfOwnLayerEx ===
 Takes two input u8 bools and a s32, no output.
 
+Calls the same func internally as [[#TakeScreenShotOfOwnLayer]], except the last bool param is the last cmd param bool instead of hard-coded 0.
+
 == ISystemAppletControllerForDebug ==
 {| class="wikitable" border="1"
 |-
