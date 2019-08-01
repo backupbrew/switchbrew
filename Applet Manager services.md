@@ -1961,7 +1961,8 @@ Takes two input u8 bools and a s32, no output.
 Calls the same func internally as
 [\#TakeScreenShotOfOwnLayer](#TakeScreenShotOfOwnLayer "wikilink"),
 except the last bool param is the last cmd param bool instead of
-hard-coded 0.
+hard-coded 0. This flag indicates whether the screenshot should be taken
+Immediately.
 
 ## ISystemAppletControllerForDebug
 
