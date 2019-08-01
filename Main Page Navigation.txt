@@ -7,6 +7,7 @@
 ! width="33%" | '''Switch Hardware'''
 |- valign="top" style="background: #F5FAFF;"
 | 
+*[[Product Information]]
 |
 *[[Setting up Development Environment]]
 *[[Homebrew Exploits]]
