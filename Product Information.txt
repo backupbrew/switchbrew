@@ -145,3 +145,29 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 | HDH-001 || Retail Switch Lite console.
 |}
+
+= Product Serial Numbers =
+== Console ==
+A Switch console serial number is composed of at least [[#Prefix|three letters]] followed by ten decimal digits. The tenth digit is a [[#Check_Digit|check digit]], meaning that it is derived from the other digits.
+
+=== Prefix ===
+Observed prefixes are normally:
+* First letter represents the product line: "X" (NX).
+* Second letter represents the product model: "A" (original/HAC-001), "J" (Lite/HDH-001) or "K" (new/HAC-001-01).
+* Third letter represents the product region: "W" (North America), "J" (Japan and Europe) or "K" (Korea).
+* Fourth letter is optional: "F" (factory).
+
+=== Check Digit ===
+The check digit is an industry-standard algorithm and is calculated just like it was on the [https://www.3dbrew.org/wiki/Serials#Console_Serial_Numbers 3DS].
+
+To calculate the check digit of a Switch console, separate the non-check digits into "odd" and "even" groups, where the "odd" group is digits in odd-numbered positions, and the "even" group is digits in even-numbered positions. (The first digit is "odd", with "first" representing "1".)
+
+After separating the digits, add the digits in each group together. Multiply the sum of the even digits by 3, then add the sum of the odd digits. To calculate the check digit, take this value modulo 10, and if not 0, subtract from 10.
+
+Example: XAW10075273452
+
+The non-check digits are 1007527345. Separating into odd and even groups, we get the following:
+
+Odds: 1 + 0 + 5 + 7 + 4 = 17 Evens: 0 + 7 + 2 + 3 + 5 = 17
+
+Applying the algorithm, we get ((3 * 17) + 17) % 10 = 8, which is not 0, thus 10 - 8 = 2, matching the example's check digit.
