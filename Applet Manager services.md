@@ -1838,8 +1838,8 @@ Stubbed, just returns an error.
 No input/output.
 
 Clears a state field if it's not already 0, returning an error
-otherwise. Then a func is called which just returns 0, then this cmd
-returns 0.
+otherwise. On newer sysvers: then a func is called which just returns 0,
+then this cmd returns 0.
 
 ### AcquireLastForegroundCaptureBuffer
 
@@ -1873,17 +1873,21 @@ called func.
 
 ### AcquireLastApplicationCaptureBufferEx
 
-No input, returns an output handle and an output u8 bool.
+No input, returns an output TransferMemory handle and an output u8 bool.
 
 The state field used by
 [\#ReleaseLastApplicationCaptureBuffer](#ReleaseLastApplicationCaptureBuffer "wikilink")
-must be 0. Calls a func which just returns an error, hence this cmd will
-just return that error. If that func would have returned successfully,
-the state field would be set to 1 and the cmd would return 0.
+must be 0. Calls a func which just returns an error (this is only the
+case on newer sysvers), hence this cmd will just return that error. If
+that func would have returned successfully, the state field would be set
+to 1 and the cmd would return 0.
+
+On old sysvers, the output TransferMemory is size 0x384000 with
+permissions=RW.
 
 ### AcquireLastForegroundCaptureBufferEx
 
-No input, returns an output handle and an output u8 bool.
+No input, returns an output TransferMemory handle and an output u8 bool.
 
 Same as
 [\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink")
@@ -1893,7 +1897,7 @@ state field, and uses a different input param value for the called func.
 
 ### AcquireCallerAppletCaptureBufferEx
 
-No input, returns an output handle and an output u8 bool.
+No input, returns an output TransferMemory handle and an output u8 bool.
 
 Same as
 [\#AcquireLastApplicationCaptureBufferEx](#AcquireLastApplicationCaptureBufferEx "wikilink")
