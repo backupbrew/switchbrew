@@ -331,7 +331,16 @@ No input, returns an output s32 **width** and s32 **height**.
 
 ### SetDisplayMagnification
 
-Takes 4 input floats, no output.
+Takes an input float **x**, float **y**, float **width**, and float
+**height**, no output.
+
+Sets the DisplayMagnification. This is essentially layer image crop, for
+everything non-Overlay.
+
+**x** and **width** are multiplied with the same width value returned by
+[\#GetDisplayLogicalResolution](#GetDisplayLogicalResolution "wikilink"),
+so these should be in the range 0.0f-1.0f. Likewise for y and height,
+except these are multipled with the height value.
 
 ### SetHomeButtonDoubleClickEnabled
 
