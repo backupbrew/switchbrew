@@ -302,18 +302,44 @@ No input/output.
 
 Added with [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name                                       | Notes                                                                                                          |
-| --- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| 10  | ReadThemeStorage                           | Takes an input u64 **offset** and a type-0x22 output buffer, returns an output u64 **actual\_transfer\_size**. |
-| 11  | WriteThemeStorage                          | Takes an input u64 **offset** and a type-0x21 input buffer, no output.                                         |
-| 40  | \[8.0.0+\] GetDisplayLogicalResolution     |                                                                                                                |
-| 42  | \[8.0.0+\] SetDisplayMagnification         |                                                                                                                |
-| 50  | \[8.0.0+\] SetHomeButtonDoubleClickEnabled |                                                                                                                |
-| 51  | \[8.0.0+\] GetHomeButtonDoubleClickEnabled |                                                                                                                |
+| Cmd | Name                                                                                        | Notes |
+| --- | ------------------------------------------------------------------------------------------- | ----- |
+| 10  | [\#ReadThemeStorage](#ReadThemeStorage "wikilink")                                          |       |
+| 11  | [\#WriteThemeStorage](#WriteThemeStorage "wikilink")                                        |       |
+| 40  | \[8.0.0+\] [\#GetDisplayLogicalResolution](#GetDisplayLogicalResolution "wikilink")         |       |
+| 42  | \[8.0.0+\] [\#SetDisplayMagnification](#SetDisplayMagnification "wikilink")                 |       |
+| 50  | \[8.0.0+\] [\#SetHomeButtonDoubleClickEnabled](#SetHomeButtonDoubleClickEnabled "wikilink") |       |
+| 51  | \[8.0.0+\] [\#GetHomeButtonDoubleClickEnabled](#GetHomeButtonDoubleClickEnabled "wikilink") |       |
 
 ReadThemeStorage/WriteThemeStorage: these commands copy data from/to a
 state buffer and the user specified buffer. The size of the state buffer
-is 0x400-bytes.
+is 0x400-bytes. The default content of the ThemeStorage prior to using
+the WriteThemeStorage cmd, is: `memset(statebuf, 0xAA, 0x400);`
+
+### ReadThemeStorage
+
+Takes an input u64 **offset** and a type-0x22 output buffer, returns an
+output u64 **actual\_transfer\_size**.
+
+### WriteThemeStorage
+
+Takes an input u64 **offset** and a type-0x21 input buffer, no output.
+
+### GetDisplayLogicalResolution
+
+No input, returns an output s32 **width** and s32 **height**.
+
+### SetDisplayMagnification
+
+Takes 4 input floats, no output.
+
+### SetHomeButtonDoubleClickEnabled
+
+Takes an input u8 bool, no output.
+
+### GetHomeButtonDoubleClickEnabled
+
+No input, returns an output u8 bool.
 
 ## ILibraryAppletProxy
 
