@@ -1704,8 +1704,8 @@ Returns or takes the value for a DMEM read/write operation.
  0x09: WREG (write register)
  0x0A: RDM (read data memory)
  0x0B: WDM (write data memory)
- 0x0C: RCM (read code memory)
- 0x0D: WCM (write code memory)
+ 0x0C: RCM (read MMIO/configuration memory)
+ 0x0D: WCM (write MMIO/configuration memory)
  0x0E: RSTAT (read status)
  0x0F: SBU
 |-
