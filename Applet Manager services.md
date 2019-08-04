@@ -1186,7 +1186,7 @@ No input/output.
 
 ### GetAcquiredSleepLockEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ### PushToGeneralChannel
 
