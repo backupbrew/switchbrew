@@ -386,16 +386,52 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450117C
 | 0x04
 |-
-| [[#FALCON_IMEMC|FALCON_IMEMC]]
+| [[#FALCON_IMEMC0|FALCON_IMEMC0]]
 | 0x54501180
 | 0x04
 |-
-| [[#FALCON_IMEMD|FALCON_IMEMD]]
+| [[#FALCON_IMEMD0|FALCON_IMEMD0]]
 | 0x54501184
 | 0x04
 |-
-| [[#FALCON_IMEMT|FALCON_IMEMT]]
+| [[#FALCON_IMEMT0|FALCON_IMEMT0]]
 | 0x54501188
+| 0x04
+|-
+| FALCON_IMEMC1
+| 0x54501190
+| 0x04
+|-
+| FALCON_IMEMD1
+| 0x54501194
+| 0x04
+|-
+| FALCON_IMEMT1
+| 0x54501198
+| 0x04
+|-
+| FALCON_IMEMC2
+| 0x545011A0
+| 0x04
+|-
+| FALCON_IMEMD2
+| 0x545011A4
+| 0x04
+|-
+| FALCON_IMEMT2
+| 0x545011A8
+| 0x04
+|-
+| FALCON_IMEMC3
+| 0x545011B0
+| 0x04
+|-
+| FALCON_IMEMD3
+| 0x545011B4
+| 0x04
+|-
+| FALCON_IMEMT3
+| 0x545011B8
 | 0x04
 |-
 | [[#FALCON_DMEMC0|FALCON_DMEMC0]]
@@ -1610,13 +1646,13 @@ Returns the result of the last command from [[#FALCON_IMCTL|FALCON_IMCTL]].
 !  Description
 |-
 | 0-7
-| Index of where to start tracing from
+| FALCON_TRACEIDX_IDX
 |-
 | 16-23
-| Maximum valid index
+| FALCON_TRACEIDX_MAXIDX
 |-
 | 24-31
-| Number of trace reads remaining
+| FALCON_TRACEIDX_CNT
 |}
 
 Controls the index for tracing with [[#FALCON_TRACEPC|FALCON_TRACEPC]].
@@ -1624,42 +1660,42 @@ Controls the index for tracing with [[#FALCON_TRACEPC|FALCON_TRACEPC]].
 === FALCON_TRACEPC ===
 Returns the PC of the last call or branch executed.
 
-=== FALCON_IMEMC ===
+=== FALCON_IMEMC0 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 2-7
-| Offset in IMEM block to read/write
+| FALCON_IMEMC_OFFS
 |-
 | 8-15
-| IMEM block to read/write
+| FALCON_IMEMC_BLK
 |-
 | 24
-| Write auto-increment
+| FALCON_IMEMC_AINCW
 |-
 | 25
-| Read auto-increment
+| FALCON_IMEMC_AINCR
 |-
 | 28
-| Mark uploaded code as secret
+| FALCON_IMEMC_SECURE
 |-
 | 29
-| Secret code upload lockdown status (read-only)
+| FALCON_IMEMC_SEC_ATOMIC
 |-
 | 30
-| Secret code upload failure status (read-only)
+| FALCON_IMEMC_SEC_WR_VIO
 |-
 | 31
-| Secret code upload reset scrubber status (read-only)
+| FALCON_IMEMC_SEC_LOCK
 |}
 
 Used for configuring access to Falcon's IMEM.
 
-=== FALCON_IMEMD ===
+=== FALCON_IMEMD0 ===
 Returns or takes the value for an IMEM read/write operation.
 
-=== FALCON_IMEMT ===
+=== FALCON_IMEMT0 ===
 Returns or takes the virtual page index for an IMEM read/write operation.
 
 === FALCON_DMEMC0 ===
@@ -1668,16 +1704,16 @@ Returns or takes the virtual page index for an IMEM read/write operation.
 !  Description
 |-
 | 2-7
-| Offset in DMEM block to read/write
+| FALCON_DMEMC_OFFS
 |-
 | 8-15
-| DMEM block to read/write
+| FALCON_DMEMC_BLK
 |-
 | 24
-| Write auto-increment
+| FALCON_DMEMC_AINCW
 |-
 | 25
-| Read auto-increment
+| FALCON_DMEMC_AINCR
 |}
 
 Used for configuring access to Falcon's DMEM.

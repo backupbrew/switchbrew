@@ -118,9 +118,18 @@ TSEC and are subdivided into:
 | FALCON\_EXTERRADDR                                                      | 0x54501168 | 0x04  |
 | FALCON\_EXTERRSTAT                                                      | 0x5450116C | 0x04  |
 | FALCON\_CG1\_SLCG                                                       | 0x5450117C | 0x04  |
-| [FALCON\_IMEMC](#FALCON_IMEMC "wikilink")                               | 0x54501180 | 0x04  |
-| [FALCON\_IMEMD](#FALCON_IMEMD "wikilink")                               | 0x54501184 | 0x04  |
-| [FALCON\_IMEMT](#FALCON_IMEMT "wikilink")                               | 0x54501188 | 0x04  |
+| [FALCON\_IMEMC0](#FALCON_IMEMC0 "wikilink")                             | 0x54501180 | 0x04  |
+| [FALCON\_IMEMD0](#FALCON_IMEMD0 "wikilink")                             | 0x54501184 | 0x04  |
+| [FALCON\_IMEMT0](#FALCON_IMEMT0 "wikilink")                             | 0x54501188 | 0x04  |
+| FALCON\_IMEMC1                                                          | 0x54501190 | 0x04  |
+| FALCON\_IMEMD1                                                          | 0x54501194 | 0x04  |
+| FALCON\_IMEMT1                                                          | 0x54501198 | 0x04  |
+| FALCON\_IMEMC2                                                          | 0x545011A0 | 0x04  |
+| FALCON\_IMEMD2                                                          | 0x545011A4 | 0x04  |
+| FALCON\_IMEMT2                                                          | 0x545011A8 | 0x04  |
+| FALCON\_IMEMC3                                                          | 0x545011B0 | 0x04  |
+| FALCON\_IMEMD3                                                          | 0x545011B4 | 0x04  |
+| FALCON\_IMEMT3                                                          | 0x545011B8 | 0x04  |
 | [FALCON\_DMEMC0](#FALCON_DMEMC0 "wikilink")                             | 0x545011C0 | 0x04  |
 | [FALCON\_DMEMD0](#FALCON_DMEMD0 "wikilink")                             | 0x545011C4 | 0x04  |
 | FALCON\_DMEMC1                                                          | 0x545011C8 | 0x04  |
@@ -661,11 +670,11 @@ Returns the result of the last command from
 
 ### FALCON\_TRACEIDX
 
-| Bits  | Description                          |
-| ----- | ------------------------------------ |
-| 0-7   | Index of where to start tracing from |
-| 16-23 | Maximum valid index                  |
-| 24-31 | Number of trace reads remaining      |
+| Bits  | Description              |
+| ----- | ------------------------ |
+| 0-7   | FALCON\_TRACEIDX\_IDX    |
+| 16-23 | FALCON\_TRACEIDX\_MAXIDX |
+| 24-31 | FALCON\_TRACEIDX\_CNT    |
 
 Controls the index for tracing with
 [FALCON\_TRACEPC](#FALCON_TRACEPC "wikilink").
@@ -674,38 +683,38 @@ Controls the index for tracing with
 
 Returns the PC of the last call or branch executed.
 
-### FALCON\_IMEMC
+### FALCON\_IMEMC0
 
-| Bits | Description                                          |
-| ---- | ---------------------------------------------------- |
-| 2-7  | Offset in IMEM block to read/write                   |
-| 8-15 | IMEM block to read/write                             |
-| 24   | Write auto-increment                                 |
-| 25   | Read auto-increment                                  |
-| 28   | Mark uploaded code as secret                         |
-| 29   | Secret code upload lockdown status (read-only)       |
-| 30   | Secret code upload failure status (read-only)        |
-| 31   | Secret code upload reset scrubber status (read-only) |
+| Bits | Description                 |
+| ---- | --------------------------- |
+| 2-7  | FALCON\_IMEMC\_OFFS         |
+| 8-15 | FALCON\_IMEMC\_BLK          |
+| 24   | FALCON\_IMEMC\_AINCW        |
+| 25   | FALCON\_IMEMC\_AINCR        |
+| 28   | FALCON\_IMEMC\_SECURE       |
+| 29   | FALCON\_IMEMC\_SEC\_ATOMIC  |
+| 30   | FALCON\_IMEMC\_SEC\_WR\_VIO |
+| 31   | FALCON\_IMEMC\_SEC\_LOCK    |
 
 Used for configuring access to Falcon's IMEM.
 
-### FALCON\_IMEMD
+### FALCON\_IMEMD0
 
 Returns or takes the value for an IMEM read/write operation.
 
-### FALCON\_IMEMT
+### FALCON\_IMEMT0
 
 Returns or takes the virtual page index for an IMEM read/write
 operation.
 
 ### FALCON\_DMEMC0
 
-| Bits | Description                        |
-| ---- | ---------------------------------- |
-| 2-7  | Offset in DMEM block to read/write |
-| 8-15 | DMEM block to read/write           |
-| 24   | Write auto-increment               |
-| 25   | Read auto-increment                |
+| Bits | Description          |
+| ---- | -------------------- |
+| 2-7  | FALCON\_DMEMC\_OFFS  |
+| 8-15 | FALCON\_DMEMC\_BLK   |
+| 24   | FALCON\_DMEMC\_AINCW |
+| 25   | FALCON\_DMEMC\_AINCR |
 
 Used for configuring access to Falcon's DMEM.
 
