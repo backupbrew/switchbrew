@@ -134,7 +134,7 @@ No input, returns an output
 
 #### GetWriterLockAccessorEx
 
-Takes an input u32, returns an output
+Takes an input s32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
 #### LaunchDevMenu
@@ -149,13 +149,28 @@ cmd99.
 
 | Cmd | Name                               |
 | --- | ---------------------------------- |
-| 1   | TryLock                            |
-| 2   | Unlock                             |
+| 1   | [\#TryLock](#TryLock "wikilink")   |
+| 2   | [\#Unlock](#Unlock "wikilink")     |
 | 3   | [\#GetEvent](#GetEvent "wikilink") |
+
+##### TryLock
+
+No input, returns an output u8 bool flag and a handle.
+
+Official sw waits on the previously loaded event from
+[\#GetEvent](#GetEvent "wikilink"). The output flag indicates whether
+locking was successful, the user-process can try using this cmd again
+when flag=false.
+
+Official sw just closes the output handle.
+
+##### Unlock
+
+No input/output.
 
 ##### GetEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ### IGlobalStateController
 
@@ -1213,12 +1228,12 @@ No input, returns an output
 
 ### GetReaderLockAccessorEx
 
-Takes an input u32, returns an output
+Takes an input s32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
 ### GetWriterLockAccessorEx
 
-Takes an input u32, returns an output
+Takes an input s32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
 ### GetCradleFwVersion

@@ -125,7 +125,7 @@ No input, returns an output handle.
 No input, returns an output [[#ILockAccessor]].
 
 ==== GetWriterLockAccessorEx ====
-Takes an input u32, returns an output [[#ILockAccessor]].
+Takes an input s32, returns an output [[#ILockAccessor]].
 
 ==== LaunchDevMenu ====
 No input/output.
@@ -137,15 +137,25 @@ Uses [[NS_Services#IApplicationManagerInterface]] cmd99.
 |-
 ! Cmd || Name
 |-
-| 1 || TryLock
+| 1 || [[#TryLock]]
 |-
-| 2 || Unlock
+| 2 || [[#Unlock]]
 |-
 | 3 || [[#GetEvent]]
 |}
 
+===== TryLock =====
+No input, returns an output u8 bool flag and a handle.
+
+Official sw waits on the previously loaded event from [[#GetEvent]]. The output flag indicates whether locking was successful, the user-process can try using this cmd again when flag=false.
+
+Official sw just closes the output handle.
+
+===== Unlock =====
+No input/output.
+
 ===== GetEvent =====
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 === IGlobalStateController ===
 {| class="wikitable" border="1"
@@ -1165,10 +1175,10 @@ Used for sending requests to [[qlaunch]]. sdk-nso creates a 0x10-byte storage wh
 No input, returns an output [[#ILockAccessor]].
 
 === GetReaderLockAccessorEx ===
-Takes an input u32, returns an output [[#ILockAccessor]].
+Takes an input s32, returns an output [[#ILockAccessor]].
 
 === GetWriterLockAccessorEx ===
-Takes an input u32, returns an output [[#ILockAccessor]].
+Takes an input s32, returns an output [[#ILockAccessor]].
 
 === GetCradleFwVersion ===
 No input, returns 4 output u32s.
