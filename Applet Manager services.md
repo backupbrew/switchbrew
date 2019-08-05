@@ -155,14 +155,16 @@ cmd99.
 
 ##### TryLock
 
-No input, returns an output u8 bool flag and a handle.
+Takes an input u8 bool flag, returns an output u8 bool flag and a
+handle.
 
 Official sw waits on the previously loaded event from
 [\#GetEvent](#GetEvent "wikilink"). The output flag indicates whether
 locking was successful, the user-process can try using this cmd again
 when flag=false.
 
-Official sw just closes the output handle.
+Official sw only uses inflag=false. Official sw just closes the output
+handle. The input flag controls whether this returns the output handle.
 
 ##### Unlock
 
