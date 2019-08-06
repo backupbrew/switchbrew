@@ -16,6 +16,8 @@ What actually changed between different revisions is unknown.
 |-
 | Storage || Samsung KLMBG2JENB-B041 32 GB eMMC <br/> or <br/> Toshiba THGBMHG8C2LBAIL 32 GB eMMC
 |-
+| Memory || Samsung K4F6E304HB-MGCH 2 GB LPDDR4 DRAM x2 (Total 4GB)
+|-
 | Wifi/BT || Broadcom BCM4356XKUBG
 |-
 | PMIC || Maxim Integrated MAX77620AEWJ+T 
@@ -24,6 +26,7 @@ What actually changed between different revisions is unknown.
 |-
 |}
 
+== EMMC Pinout ==
 {{:EMMC_pinout}}
 
 == Notes ==

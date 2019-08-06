@@ -33,23 +33,29 @@ or<br />
 Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 </tr>
 <tr class="even">
+<td><p>Memory</p></td>
+<td><p>Samsung K4F6E304HB-MGCH 2 GB LPDDR4 DRAM x2 (Total 4GB)</p></td>
+</tr>
+<tr class="odd">
 <td><p>Wifi/BT</p></td>
 <td><p>Broadcom BCM4356XKUBG</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>PMIC</p></td>
 <td><p>Maxim Integrated MAX77620AEWJ+T</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>Audio</p></td>
 <td><p>Realtek ALC5639</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+
+## EMMC Pinout
 
 ## Notes
 
