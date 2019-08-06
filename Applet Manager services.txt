@@ -887,7 +887,7 @@ This is used by sdknso during applet-application initialization. A seperate thre
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
 
 ==== PrepareForJit ====
-Takes no input. Launches title 010000000000003B (currently not present on retail systems) if some context variable is set.
+Takes no input. Launches title 010000000000003B (currently not present on retail systems) if some context variable is not set, with that context variable being initialized afterwards.
 
 === IMovieMaker ===
 {| class="wikitable" border="1"

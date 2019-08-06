@@ -934,7 +934,8 @@ Takes an input u64 and handle, returns an
 #### PrepareForJit
 
 Takes no input. Launches title 010000000000003B (currently not present
-on retail systems) if some context variable is set.
+on retail systems) if some context variable is not set, with that
+context variable being initialized afterwards.
 
 ### IMovieMaker
 
