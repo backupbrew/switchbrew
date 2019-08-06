@@ -586,7 +586,7 @@ Takes an input u8, no output.
 | 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                                                    |       |
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                                                    |       |
 | 23   | [\#GetDisplayVersion](#GetDisplayVersion "wikilink")                                                                                                      |       |
-| 24   | \[2.0.0+\] GetLaunchStorageInfoForDebug                                                                                                                   |       |
+| 24   | \[2.0.0+\] [\#GetLaunchStorageInfoForDebug](#GetLaunchStorageInfoForDebug "wikilink")                                                                     |       |
 | 25   | \[3.0.0+\] ExtendSaveData                                                                                                                                 |       |
 | 26   | \[3.0.0+\] GetSaveDataSize                                                                                                                                |       |
 | 27   | \[5.0.0+\] CreateCacheStorage                                                                                                                             |       |
@@ -727,6 +727,15 @@ The output struct is "nn::oe::DisplayVersion". This the DisplayVersion
 string copied from the application
 [control.nacp](NACP%20Format.md "wikilink"), this is always
 NUL-terminated.
+
+#### GetLaunchStorageInfoForDebug
+
+No input, returns an output u8
+[StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink")
+and u8
+[StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink").
+
+Just returns two u8s loaded from state.
 
 #### BeginBlockingHomeButtonShortAndLongPressed
 

@@ -640,7 +640,7 @@ Takes an input u8, no output.
 |-
 | 23 || [[#GetDisplayVersion]] ||
 |-
-| 24 || [2.0.0+] GetLaunchStorageInfoForDebug ||
+| 24 || [2.0.0+] [[#GetLaunchStorageInfoForDebug]] ||
 |-
 | 25 || [3.0.0+] ExtendSaveData ||
 |-
@@ -757,6 +757,11 @@ For example, in some cases official apps use this with [[Error_codes|error]] 0x2
 No input, returns an output 0x10-byte struct.
 
 The output struct is "nn::oe::DisplayVersion". This the DisplayVersion string copied from the application [[NACP_Format|control.nacp]], this is always NUL-terminated.
+
+==== GetLaunchStorageInfoForDebug ====
+No input, returns an output u8 [[Filesystem_services#StorageId|StorageId]] and u8 [[Filesystem_services#StorageId|StorageId]].
+
+Just returns two u8s loaded from state.
 
 ==== BeginBlockingHomeButtonShortAndLongPressed ====
 Takes an input s64, no output.
