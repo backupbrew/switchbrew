@@ -116,3 +116,7 @@ Keys were updated.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=06-17-19_08-05-09&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
