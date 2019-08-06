@@ -132,7 +132,7 @@ No input, returns an output handle.
 No input, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
-Same as using
+Similar to using
 [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink") with
 inval=0.
 
@@ -1234,7 +1234,7 @@ functions which use this, with the data written to the storage:
 No input, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
-Same as using
+Similar to using
 [\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink") with
 inval=0.
 

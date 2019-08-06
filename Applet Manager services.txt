@@ -124,7 +124,7 @@ No input, returns an output handle.
 ==== GetHomeButtonWriterLockAccessor ====
 No input, returns an output [[#ILockAccessor]].
 
-Same as using [[#GetWriterLockAccessorEx]] with inval=0.
+Similar to using [[#GetWriterLockAccessorEx]] with inval=0.
 
 ==== GetWriterLockAccessorEx ====
 Takes an input u32, returns an output [[#ILockAccessor]].
@@ -1178,7 +1178,7 @@ Used for sending requests to [[qlaunch]]. sdk-nso creates a 0x10-byte storage wh
 === GetHomeButtonReaderLockAccessor ===
 No input, returns an output [[#ILockAccessor]].
 
-Same as using [[#GetReaderLockAccessorEx]] with inval=0.
+Similar to using [[#GetReaderLockAccessorEx]] with inval=0.
 
 === GetReaderLockAccessorEx ===
 Takes an input u32, returns an output [[#ILockAccessor]].
