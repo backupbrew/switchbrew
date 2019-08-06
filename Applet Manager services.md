@@ -132,10 +132,16 @@ No input, returns an output handle.
 No input, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
+Same as using
+[\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink") with
+inval=0.
+
 #### GetWriterLockAccessorEx
 
-Takes an input s32, returns an output
+Takes an input u32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
+
+The input value must be 0-3. 0 = HomeButton.
 
 #### LaunchDevMenu
 
@@ -1228,15 +1234,23 @@ functions which use this, with the data written to the storage:
 No input, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
 
+Same as using
+[\#GetReaderLockAccessorEx](#GetReaderLockAccessorEx "wikilink") with
+inval=0.
+
 ### GetReaderLockAccessorEx
 
-Takes an input s32, returns an output
+Takes an input u32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
+
+The input value must be 0-3. 0 = HomeButton.
 
 ### GetWriterLockAccessorEx
 
-Takes an input s32, returns an output
+Takes an input u32, returns an output
 [\#ILockAccessor](#ILockAccessor "wikilink").
+
+The input value must be 0-3. 0 = HomeButton.
 
 ### GetCradleFwVersion
 
