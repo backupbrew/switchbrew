@@ -26,7 +26,7 @@ What actually changed between different revisions is unknown.
 |-
 |}
 
-== EMMC Pinout ==
+== eMMC Pinout ==
 {{:EMMC_pinout}}
 
 == Notes ==

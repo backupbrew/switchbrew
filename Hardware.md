@@ -55,7 +55,7 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 </tbody>
 </table>
 
-## EMMC Pinout
+## eMMC Pinout
 
 ## Notes
 
