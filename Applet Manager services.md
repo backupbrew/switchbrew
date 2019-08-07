@@ -147,6 +147,10 @@ The input value must be 0-3. 0 = HomeButton.
 
 No input/output.
 
+The cached value loaded from
+[Settings\_services\#GetDebugModeFlag](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink")
+must be 1, otherwise an error is returned.
+
 Uses
 [NS\_Services\#IApplicationManagerInterface](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink")
 cmd99.

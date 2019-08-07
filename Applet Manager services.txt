@@ -134,6 +134,8 @@ The input value must be 0-3. 0 = HomeButton.
 ==== LaunchDevMenu ====
 No input/output.
 
+The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
+
 Uses [[NS_Services#IApplicationManagerInterface]] cmd99.
 
 ==== ILockAccessor ====
