@@ -84,7 +84,10 @@ __NOTOC__
 |-
 | 0x28 || svcReturnFromException || X0=result || 
 |-
-| 0x29 || [[#svcGetInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
+| 0x29 || [[#svcGetInfo]] || W1=info_id, X2=handle, X3=info_sub_id
+R0=info_sub_id_lower32, R1=info_id, R2=handle, R3=info_sub_id_upper32
+|| W0=result, X1=out
+R0=result, R1=out_lower32, R2=out_upper32
 |-
 | 0x2A || svcFlushEntireDataCache || None || None
 |-
@@ -800,7 +803,7 @@ Otherwise just return 0.
 |-
 ! Argument || Type || Name
 |-
-| (In) X1 || u64 || InfoId
+| (In) W1 || u32 || InfoId
 |-
 | (In) W2 || Handle || Handle
 |-
@@ -811,6 +814,27 @@ Otherwise just return 0.
 | (Out) X1 || u64 || Out
 |}
 </div>
+<div style="display: inline-block; vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) R0 || u32 || InfoSubIdLower32
+|-
+| (In) R1 || u32 || InfoId
+|-
+| (In) R2 || Handle || Handle
+|-
+| (In) R3 || u32 || InfoSubIdUpper32
+|-
+| (Out) R0 || [[#Result]] || Ret
+|-
+| (Out) R1 || u32 || OutLower32
+|-
+| (Out) R2 || u32 || OutUpper32
+|}
+</div>
+
 
 {| class=wikitable
 ! Handle type || Id0 || Id1 || Description
