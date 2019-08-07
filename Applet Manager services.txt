@@ -592,7 +592,7 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 20 || [8.0.0+] SetHandlingHomeButtonShortPressedEnabled
 |-
-| 90 || [7.0.0+] SetRequiresGpuResourceUse
+| 90 || [7.0.0+] [[#SetRequiresGpuResourceUse]]
 |-
 | 101 || [5.0.0+] BeginToObserveHidInputForDevelop
 |}
