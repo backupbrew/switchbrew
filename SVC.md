@@ -18,7 +18,7 @@
 | 0xC  | [\#svcGetThreadPriority](#svcGetThreadPriority "wikilink")                         | W1=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=prio                                                                 |
 | 0xD  | [\#svcSetThreadPriority](#svcSetThreadPriority "wikilink")                         | W0=thread\_handle, W1=prio                                                                                                                                                                                                                                                         | W0=result                                                                          |
 | 0xE  | [\#svcGetThreadCoreMask](#svcGetThreadCoreMask "wikilink")                         | W2=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=out0, X2=out1 R0=result, R1=out0, R2=out1\_lower32, R3=out1\_upper32 |
-| 0xF  | [\#svcSetThreadCoreMask](#svcSetThreadCoreMask "wikilink")                         | W0=thread\_handle, W1=in, X2=in2                                                                                                                                                                                                                                                   | W0=result                                                                          |
+| 0xF  | [\#svcSetThreadCoreMask](#svcSetThreadCoreMask "wikilink")                         | W0=thread\_handle, W1=in, X2=in2 R0=thread\_handle, R1=in, R2=in2\_lower32, R3=in2\_upper32                                                                                                                                                                                        | W0=result                                                                          |
 | 0x10 | [\#svcGetCurrentProcessorNumber](#svcGetCurrentProcessorNumber "wikilink")         | None                                                                                                                                                                                                                                                                               | W0/X0=cpuid                                                                        |
 | 0x11 | svcSignalEvent                                                                     | W0=wevent\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
 | 0x12 | svcClearEvent                                                                      | W0=wevent\_or\_revent\_handle                                                                                                                                                                                                                                                      | W0=result                                                                          |
@@ -434,6 +434,18 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 | (In) W1  | u32                            | In0    |
 | (In) X2  | u64                            | In1    |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
+
+</div>
+
+<div style="display: inline-block;vertical-align:top;">
+
+| Argument | Type                           | Name       |
+| -------- | ------------------------------ | ---------- |
+| (In) R0  | Handle<Thread>                 | Handle     |
+| (In) R1  | u32                            | In0        |
+| (In) R2  | u32                            | In1Lower32 |
+| (In) R3  | u32                            | In1Upper32 |
+| (Out) R0 | [\#Result](#Result "wikilink") | Ret        |
 
 </div>
 

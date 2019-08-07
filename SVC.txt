@@ -35,7 +35,9 @@ R0=nano_lower32, R1=lower_upper32
 |  0xE || [[#svcGetThreadCoreMask]] || W2=thread_handle || W0=result, W1=out0, X2=out1
 R0=result, R1=out0, R2=out1_lower32, R3=out1_upper32
 |-
-|  0xF || [[#svcSetThreadCoreMask]] || W0=thread_handle, W1=in, X2=in2 || W0=result
+|  0xF || [[#svcSetThreadCoreMask]] || W0=thread_handle, W1=in, X2=in2
+R0=thread_handle, R1=in, R2=in2_lower32, R3=in2_upper32
+|| W0=result
 |-
 | 0x10 || [[#svcGetCurrentProcessorNumber]] || None || W0/X0=cpuid
 |-
@@ -606,7 +608,22 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 | (Out) W0 || [[#Result]] || Ret
 |}
 </div>
-
+<div style="display: inline-block;vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) R0 || Handle<Thread> || Handle
+|-
+| (In) R1 || u32 || In0
+|-
+| (In) R2 || u32 || In1Lower32
+|-
+| (In) R3 || u32 || In1Upper32
+|-
+| (Out) R0 || [[#Result]] || Ret
+|}
+</div>
 '''Description:''' Set affinity mask of provided thread handle.
 
 == svcGetCurrentProcessorNumber ==
