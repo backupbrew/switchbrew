@@ -14,7 +14,7 @@
 | 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=thread\_context, X3=stacktop, W4=prio, W5=processor\_id                                                                                                                                                                                                               | W0=result, W1=handle                                          |
 | 0x9  | [\#svcStartThread](#svcStartThread "wikilink")                                     | W0=thread\_handle                                                                                                                                                                                                                                                                  | W0=result                                                     |
 | 0xA  | [\#svcExitThread](#svcExitThread "wikilink")                                       | None                                                                                                                                                                                                                                                                               |                                                               |
-| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano                                                                                                                                                                                                                                                                            |                                                               |
+| 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano R0=nano\_lower32, R1=lower\_upper32                                                                                                                                                                                                                                        |                                                               |
 | 0xC  | [\#svcGetThreadPriority](#svcGetThreadPriority "wikilink")                         | W1=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=prio                                            |
 | 0xD  | [\#svcSetThreadPriority](#svcSetThreadPriority "wikilink")                         | W0=thread\_handle, W1=prio                                                                                                                                                                                                                                                         | W0=result                                                     |
 | 0xE  | [\#svcGetThreadCoreMask](#svcGetThreadCoreMask "wikilink")                         | W2=thread\_handle                                                                                                                                                                                                                                                                  | W0=result, W1=out, X2=out                                     |
@@ -339,6 +339,16 @@ process.
 | -------- | ---- | ----------- |
 | (In) X0  | s64  | Nanoseconds |
 |          |      |             |
+
+</div>
+
+<div style="display: inline-block;vertical-align=top">
+
+| Argument | Type | Name               |
+| -------- | ---- | ------------------ |
+| (In) R0  | u32  | NanosecondsLower32 |
+| (In) R1  | u32  | NanosecondsUpper32 |
+|          |      |                    |
 
 </div>
 
