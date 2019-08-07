@@ -109,9 +109,9 @@ returned with no output interface.
 
 | Cmd | Name                                                                             | Notes |
 | --- | -------------------------------------------------------------------------------- | ----- |
-| 10  | RequestToGetForeground                                                           |       |
-| 11  | LockForeground                                                                   |       |
-| 12  | UnlockForeground                                                                 |       |
+| 10  | [\#RequestToGetForeground](#RequestToGetForeground "wikilink")                   |       |
+| 11  | [\#LockForeground](#LockForeground "wikilink")                                   |       |
+| 12  | [\#UnlockForeground](#UnlockForeground "wikilink")                               |       |
 | 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                     |       |
 | 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")     |       |
 | 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink") |       |
@@ -119,13 +119,25 @@ returned with no output interface.
 | 100 | \[6.0.0+\] PopRequestLaunchApplicationForDebug                                   |       |
 | 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                          |       |
 
+#### RequestToGetForeground
+
+No input/output.
+
+#### LockForeground
+
+No input/output.
+
+#### UnlockForeground
+
+No input/output.
+
 #### PopFromGeneralChannel
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### GetPopFromGeneralChannelEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 #### GetHomeButtonWriterLockAccessor
 

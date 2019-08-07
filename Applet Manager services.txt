@@ -96,11 +96,11 @@ The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!d
 |-
 ! Cmd || Name || Notes
 |-
-| 10 || RequestToGetForeground || 
+| 10 || [[#RequestToGetForeground]] || 
 |-
-| 11 || LockForeground ||
+| 11 || [[#LockForeground]] ||
 |-
-| 12 || UnlockForeground || 
+| 12 || [[#UnlockForeground]] || 
 |-
 | 20 || [[#PopFromGeneralChannel]] || 
 |-
@@ -115,11 +115,20 @@ The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!d
 | 200 || [8.0.0+] [[#LaunchDevMenu]] ||
 |}
 
+==== RequestToGetForeground ====
+No input/output.
+
+==== LockForeground ====
+No input/output.
+
+==== UnlockForeground ====
+No input/output.
+
 ==== PopFromGeneralChannel ====
 No input, returns an output [[#IStorage]].
 
 ==== GetPopFromGeneralChannelEvent ====
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ==== GetHomeButtonWriterLockAccessor ====
 No input, returns an output [[#ILockAccessor]].
