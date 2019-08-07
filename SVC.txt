@@ -55,7 +55,9 @@ R0=thread_handle, R1=in, R2=in2_lower32, R3=in2_upper32
 |-
 | 0x17 || svcResetSignal || W0=revent_or_process_handle || W0=result
 |-
-| 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles. X3=timeout || W0=result, W1=handle_idx
+| 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles, X3=timeout
+R0=timeout_lower32, R1=handles_ptr, R2=num_handles, R3=timeout_upper32
+|| W0=result, W1=handle_idx
 |-
 | 0x19 || [[#svcCancelSynchronization]] || W0=thread_handle || W0=result
 |-
@@ -709,7 +711,24 @@ Closing all handles automatically causes the bit0 in [[#MemoryAttribute]] to cle
 | (Out) W1 || u64 || HandleIndex
 |}
 </div>
-
+<div style="display: inline-block;vertical-align:top;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) R0 || u32 || TimeoutLower32
+|-
+| (In) R1 || Handle* || HandlesPtr
+|-
+| (In) R2 || u32 || HandlesNum
+|-
+| (In) R3 || u32 || TimeoutUpper32
+|-
+| (Out) W0 || [[#Result]] || Ret
+|-
+| (Out) W1 || u64 || HandleIndex
+|}
+</div>
 Works with num_handles <= 0x40.
 
 When zero handles are passed, this will wait forever until either timeout or cancellation occurs.

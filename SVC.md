@@ -27,7 +27,7 @@
 | 0x15 | [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   | X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                                          | W0=result, W1=tmem\_handle                                                         |
 | 0x16 | svcCloseHandle                                                                     | W0=handle                                                                                                                                                                                                                                                                          | W0=result                                                                          |
 | 0x17 | svcResetSignal                                                                     | W0=revent\_or\_process\_handle                                                                                                                                                                                                                                                     | W0=result                                                                          |
-| 0x18 | [\#svcWaitSynchronization](#svcWaitSynchronization "wikilink")                     | X1=handles\_ptr, W2=num\_handles. X3=timeout                                                                                                                                                                                                                                       | W0=result, W1=handle\_idx                                                          |
+| 0x18 | [\#svcWaitSynchronization](#svcWaitSynchronization "wikilink")                     | X1=handles\_ptr, W2=num\_handles, X3=timeout R0=timeout\_lower32, R1=handles\_ptr, R2=num\_handles, R3=timeout\_upper32                                                                                                                                                            | W0=result, W1=handle\_idx                                                          |
 | 0x19 | [\#svcCancelSynchronization](#svcCancelSynchronization "wikilink")                 | W0=thread\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
 | 0x1A | svcArbitrateLock                                                                   | W0=cur\_thread\_handle, X1=ptr, W2=req\_thread\_handle                                                                                                                                                                                                                             |                                                                                    |
 | 0x1B | svcArbitrateUnlock                                                                 | X0=ptr                                                                                                                                                                                                                                                                             |                                                                                    |
@@ -522,6 +522,19 @@ permission to reset.
 | (In) X3  | u64                            | Timeout     |
 | (Out) W0 | [\#Result](#Result "wikilink") | Ret         |
 | (Out) W1 | u64                            | HandleIndex |
+
+</div>
+
+<div style="display: inline-block;vertical-align:top;">
+
+| Argument | Type                           | Name           |
+| -------- | ------------------------------ | -------------- |
+| (In) R0  | u32                            | TimeoutLower32 |
+| (In) R1  | Handle\*                       | HandlesPtr     |
+| (In) R2  | u32                            | HandlesNum     |
+| (In) R3  | u32                            | TimeoutUpper32 |
+| (Out) W0 | [\#Result](#Result "wikilink") | Ret            |
+| (Out) W1 | u64                            | HandleIndex    |
 
 </div>
 
