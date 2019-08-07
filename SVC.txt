@@ -65,7 +65,9 @@ R0=timeout_lower32, R1=handles_ptr, R2=num_handles, R3=timeout_upper32
 |-
 | 0x1B || svcArbitrateUnlock || X0=ptr ||
 |-
-| 0x1C || svcWaitProcessWideKeyAtomic || X0=ptr0, X1=ptr, W2=thread_handle, X3=timeout || W0=result
+| 0x1C || svcWaitProcessWideKeyAtomic || X0=ptr0, X1=ptr, W2=thread_handle, X3=timeout
+R0=ptr0, R1=ptr, R2=thread_handle, R3=timeout_lower32, R4=timeout_upper32
+|| W0=result
 |-
 | 0x1D || svcSignalProcessWideKey || X0=ptr, W1=value || W0=result
 |-
