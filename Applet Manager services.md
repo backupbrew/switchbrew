@@ -243,6 +243,8 @@ No input/output.
 
 No input, returns an output u8 bool.
 
+Uses [\#idle:sys](#idle:sys "wikilink") cmd1.
+
 #### LoadAndApplyIdlePolicySettings
 
 No input/output.
