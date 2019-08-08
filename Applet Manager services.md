@@ -217,9 +217,13 @@ No input, returns an output Event handle with autoclear=false.
 
 No input/output.
 
+Stubbed, just returns an error.
+
 #### EnterSleep
 
 No input/output.
+
+Stubbed, just returns an error.
 
 #### StartSleepSequence
 
