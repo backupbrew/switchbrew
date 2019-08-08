@@ -654,6 +654,10 @@ No input/output.
 ==== GetApplicationIdForLogo ====
 No input, returns an output u64 titleID.
 
+Gets the application titleID for displaying the logo screen during application launch.
+
+When no application is running, this returns success with titleID=0.
+
 ==== SetGpuTimeSliceBoost ====
 Takes an input u64, no output.
 
