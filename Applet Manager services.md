@@ -265,9 +265,13 @@ Takes an input u64, no output.
 
 No input/output.
 
+Uses [\#omm](#omm "wikilink") cmd UpdateDefaultDisplayResolution.
+
 #### ShouldSleepOnBoot
 
 No input, returns an output u8 bool.
+
+Uses [\#omm](#omm "wikilink") cmd ShouldSleepOnBoot.
 
 #### GetHdcpAuthenticationFailedEvent
 

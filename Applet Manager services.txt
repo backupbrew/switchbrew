@@ -244,8 +244,12 @@ Takes an input u64, no output.
 ==== UpdateDefaultDisplayResolution ====
 No input/output.
 
+Uses [[#omm]] cmd UpdateDefaultDisplayResolution.
+
 ==== ShouldSleepOnBoot ====
 No input, returns an output u8 bool.
+
+Uses [[#omm]] cmd ShouldSleepOnBoot.
 
 ==== GetHdcpAuthenticationFailedEvent ====
 No input, returns an output Event handle with autoclear=false.
