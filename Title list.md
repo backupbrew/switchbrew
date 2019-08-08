@@ -112,7 +112,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Settings services.md" title="wikilink">settings</a></p></td>
 </tr>
 <tr class="odd">
@@ -127,7 +128,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Bus services.md" title="wikilink">bus</a></p></td>
 </tr>
 <tr class="even">
@@ -159,7 +161,8 @@ Decimal versions use the format:
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="BCAT services.md" title="wikilink">bcat</a></p></td>
 </tr>
 <tr class="even">
@@ -258,7 +261,8 @@ Decimal versions use the format:
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
-<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)</p></td>
+<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="HID services.md" title="wikilink">hid</a></p></td>
 </tr>
 <tr class="odd">
@@ -275,7 +279,8 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Audio services.md" title="wikilink">audio</a></p></td>
 </tr>
 <tr class="even">
@@ -309,7 +314,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="WLAN services.md" title="wikilink">wlan</a></p></td>
 </tr>
 <tr class="even">
@@ -349,7 +355,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="NV services.md" title="wikilink">nvservices</a></p></td>
 </tr>
 <tr class="odd">
@@ -397,7 +404,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Nvnflinger services.md" title="wikilink">nvnflinger</a></p></td>
 </tr>
 <tr class="even">
@@ -433,7 +441,8 @@ Decimal versions use the format:
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
-<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)</p></td>
+<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Account services.md" title="wikilink">account</a></p></td>
 </tr>
 <tr class="even">
@@ -451,7 +460,8 @@ Decimal versions use the format:
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="NS Services.md" title="wikilink">ns</a></p></td>
 </tr>
 <tr class="odd">
@@ -514,7 +524,8 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="AM services.md" title="wikilink">am</a></p></td>
 </tr>
 <tr class="odd">
@@ -529,7 +540,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="SSL services.md" title="wikilink">ssl</a></p></td>
 </tr>
 <tr class="even">
@@ -631,7 +643,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Display services.md" title="wikilink">vi</a></p></td>
 </tr>
 <tr class="odd">
@@ -727,7 +740,8 @@ Decimal versions use the format:
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="ETicket services.md" title="wikilink">es</a></p></td>
 </tr>
 <tr class="odd">
@@ -744,7 +758,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Fatal services.md" title="wikilink">fatal</a></p></td>
 </tr>
 <tr class="even">
@@ -755,7 +770,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>[4.0.0+] <a href="GRC services.md" title="wikilink">grc</a></p></td>
 </tr>
 <tr class="odd">
@@ -773,7 +789,8 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p><a href="Creport.md" title="wikilink">creport</a></p></td>
 </tr>
 <tr class="even">
@@ -786,7 +803,8 @@ Decimal versions use the format:
 <a href="6.0.0.md" title="wikilink">v402653544</a> (6.0.0.360)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>[3.0.0+] <a href="Loader services#ldr:ro.md##ldr:ro" title="wikilink">ro</a></p></td>
 </tr>
 <tr class="odd">
@@ -907,7 +925,8 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>ErrorMessage</p></td>
 <td><p>Stores the message strings for Support Error Codes. There's "/DatabaseInfo" at FS root, then the rest is stored at "/{first 4 error digits}/{last 4 error digits}/".</p></td>
 </tr>
@@ -940,7 +959,8 @@ Decimal versions use the format:
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>BrowserDll</p></td>
 <td><p>Mounted as "shareddata:/". Contains various browser data: emojis, OSS NROs, "buildinfo/buildinfo.dat", ...</p></td>
 </tr>
@@ -1030,7 +1050,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
-<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)</p></td>
+<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>SystemVersion</p></td>
 <td><p><a href="System Version Title.md" title="wikilink">System Version Title</a>.</p></td>
 </tr>
@@ -1205,7 +1226,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
-<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)</p></td>
+<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>SystemUpdate</p></td>
 <td><p>Contains the title-listing for the associated sysupdate in the <a href="NCA.md" title="wikilink">NCA</a>-type0 .cnmt.</p></td>
 </tr>
@@ -1244,7 +1266,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>BootImagePackage</p></td>
 <td><p>Firmware Package A: Normal Firmware.</p></td>
 </tr>
@@ -1264,7 +1287,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>BootImagePackageSafe</p></td>
 <td><p>Firmware Package B: SafeMode Firmware. See <a href="Boot Modes#Safe Mode.md##Safe_Mode" title="wikilink">Safe Mode</a>.</p></td>
 </tr>
@@ -1284,7 +1308,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>BootImagePackageExFat</p></td>
 <td><p>Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
@@ -1298,7 +1323,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="7.0.1.md" title="wikilink">v469827614</a> (7.0.1.30)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>BootImagePackageExFatSafe</p></td>
 <td><p>Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.</p></td>
 </tr>
@@ -1425,7 +1451,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>RebootlessSystemUpdateVersion</p></td>
 <td><p>Rebootless system update version file.</p></td>
 </tr>
@@ -1482,7 +1509,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
-<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)</p></td>
+<a href="8.0.1.md" title="wikilink">v536936528</a> (8.0.1.80)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>qlaunch (SystemAppletMenu)</p></td>
 <td><p><a href="Qlaunch.md" title="wikilink">qlaunch</a> system applet, launched by NS with TID loaded from system-config-title.</p></td>
 </tr>
@@ -1628,7 +1656,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>web (LibraryAppletWeb)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">WebApplet</a>.</p></td>
 </tr>
@@ -1646,7 +1675,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>shop (LibraryAppletShop)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">ShopN</a> applet.</p></td>
 </tr>
@@ -1701,7 +1731,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>offlineWeb (LibraryAppletOfflineWeb)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">Offline</a> web-applet.</p></td>
 </tr>
@@ -1719,7 +1750,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>loginShare (LibraryAppletLoginShare)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">Whitelisted</a> applet. (LoginApplet+ShareApplet+LobbyApplet)</p></td>
 </tr>
@@ -1737,7 +1769,8 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.1.0.md" title="wikilink">v403701850</a> (6.1.0.90)<br />
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
-<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
+<a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
+<a href="8.1.0.md" title="wikilink">v537919608</a> (8.1.0.120)</p></td>
 <td><p>wifiWebAuth (LibraryAppletWifiWebAuth)</p></td>
 <td><p><a href="Internet Browser.md" title="wikilink">WifiWebAuth</a> applet.</p></td>
 </tr>
