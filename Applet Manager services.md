@@ -253,6 +253,8 @@ Uses [\#idle:sys](#idle:sys "wikilink") cmd LoadAndApplySettings.
 
 No input/output.
 
+Uses [\#omm](#omm "wikilink") cmd NotifyCecSettingsChanged.
+
 #### SetDefaultHomeButtonLongPressTime
 
 Takes an input u64, no output.

@@ -234,6 +234,8 @@ Uses [[#idle:sys]] cmd LoadAndApplySettings.
 ==== NotifyCecSettingsChanged ====
 No input/output.
 
+Uses [[#omm]] cmd NotifyCecSettingsChanged.
+
 ==== SetDefaultHomeButtonLongPressTime ====
 Takes an input u64, no output.
 
