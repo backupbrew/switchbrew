@@ -198,28 +198,70 @@ No input, returns an output Event handle with autoclear=false.
 
 ### IGlobalStateController
 
-| Cmd | Name                                                                          | Notes |
-| --- | ----------------------------------------------------------------------------- | ----- |
-| 0   | RequestToEnterSleep                                                           |       |
-| 1   | EnterSleep                                                                    |       |
-| 2   | StartSleepSequence                                                            |       |
-| 3   | StartShutdownSequence                                                         |       |
-| 4   | StartRebootSequence                                                           |       |
-| 9   | \[7.0.0+\] [\#IsAutoPowerDownRequested](#IsAutoPowerDownRequested "wikilink") |       |
-| 10  | LoadAndApplyIdlePolicySettings                                                |       |
-| 11  | \[2.0.0+\] NotifyCecSettingsChanged                                           |       |
-| 12  | \[3.0.0+\] SetDefaultHomeButtonLongPressTime                                  |       |
-| 13  | \[3.0.0+\] UpdateDefaultDisplayResolution                                     |       |
-| 14  | \[3.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink")               |       |
-| 15  | \[4.0.0+\] GetHdcpAuthenticationFailedEvent                                   |       |
+| Cmd | Name                                                                                            | Notes |
+| --- | ----------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#RequestToEnterSleep](#RequestToEnterSleep "wikilink")                                        |       |
+| 1   | [\#EnterSleep](#EnterSleep "wikilink")                                                          |       |
+| 2   | [\#StartSleepSequence](#StartSleepSequence "wikilink")                                          |       |
+| 3   | [\#StartShutdownSequence](#StartShutdownSequence "wikilink")                                    |       |
+| 4   | [\#StartRebootSequence](#StartRebootSequence "wikilink")                                        |       |
+| 9   | \[7.0.0+\] [\#IsAutoPowerDownRequested](#IsAutoPowerDownRequested "wikilink")                   |       |
+| 10  | [\#LoadAndApplyIdlePolicySettings](#LoadAndApplyIdlePolicySettings "wikilink")                  |       |
+| 11  | \[2.0.0+\] [\#NotifyCecSettingsChanged](#NotifyCecSettingsChanged "wikilink")                   |       |
+| 12  | \[3.0.0+\] [\#SetDefaultHomeButtonLongPressTime](#SetDefaultHomeButtonLongPressTime "wikilink") |       |
+| 13  | \[3.0.0+\] [\#UpdateDefaultDisplayResolution](#UpdateDefaultDisplayResolution "wikilink")       |       |
+| 14  | \[3.0.0+\] [\#ShouldSleepOnBoot](#ShouldSleepOnBoot "wikilink")                                 |       |
+| 15  | \[4.0.0+\] [\#GetHdcpAuthenticationFailedEvent](#GetHdcpAuthenticationFailedEvent "wikilink")   |       |
+
+#### RequestToEnterSleep
+
+No input/output.
+
+#### EnterSleep
+
+No input/output.
+
+#### StartSleepSequence
+
+Takes an input u8 bool, no output.
+
+Official sw uses hard-coded input value = 1.
+
+#### StartShutdownSequence
+
+No input/output.
+
+#### StartRebootSequence
+
+No input/output.
 
 #### IsAutoPowerDownRequested
 
 No input, returns an output u8 bool.
 
+#### LoadAndApplyIdlePolicySettings
+
+No input/output.
+
+#### NotifyCecSettingsChanged
+
+No input/output.
+
+#### SetDefaultHomeButtonLongPressTime
+
+Takes an input u64, no output.
+
+#### UpdateDefaultDisplayResolution
+
+No input/output.
+
 #### ShouldSleepOnBoot
 
 No input, returns an output u8 bool.
+
+#### GetHdcpAuthenticationFailedEvent
+
+No input, returns an output Event handle with autoclear=false.
 
 ### IApplicationCreator
 
