@@ -628,17 +628,17 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 |-
 | 3 || [[#SetGpuTimeSliceBoost]]
 |-
-| 4 || [2.0.0+] SetAutoSleepTimeAndDimmingTimeEnabled
+| 4 || [2.0.0+] [[#SetAutoSleepTimeAndDimmingTimeEnabled]]
 |-
-| 5 || [2.0.0+] TerminateApplicationAndSetReason
+| 5 || [2.0.0+] [[#TerminateApplicationAndSetReason]]
 |-
-| 6 || [3.0.0+] SetScreenShotPermissionGlobally
+| 6 || [3.0.0+] [[#SetScreenShotPermissionGlobally]]
 |-
-| 10 || [6.0.0+] StartShutdownSequenceForOverlay
+| 10 || [6.0.0+] [[#StartShutdownSequenceForOverlay]]
 |-
-| 11 || [6.0.0+] StartRebootSequenceForOverlay
+| 11 || [6.0.0+] [[#StartRebootSequenceForOverlay]]
 |-
-| 20 || [8.0.0+] SetHandlingHomeButtonShortPressedEnabled
+| 20 || [8.0.0+] [[#SetHandlingHomeButtonShortPressedEnabled]]
 |-
 | 90 || [7.0.0+] [[#SetRequiresGpuResourceUse]]
 |-
@@ -656,6 +656,24 @@ No input, returns an output u64 titleID.
 
 ==== SetGpuTimeSliceBoost ====
 Takes an input u64, no output.
+
+==== SetAutoSleepTimeAndDimmingTimeEnabled ====
+Takes an input u8 bool, no output.
+
+==== TerminateApplicationAndSetReason ====
+Takes an input u32, no output.
+
+==== SetScreenShotPermissionGlobally ====
+Takes an input u8 bool, no output.
+
+==== StartShutdownSequenceForOverlay ====
+No input/output.
+
+==== StartRebootSequenceForOverlay ====
+No input/output.
+
+==== SetHandlingHomeButtonShortPressedEnabled ====
+Takes an input u8 bool, no output.
 
 ==== SetRequiresGpuResourceUse ====
 Takes an input u8 bool, no output.
