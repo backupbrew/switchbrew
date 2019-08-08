@@ -243,6 +243,8 @@ No input, returns an output u8 bool.
 
 No input/output.
 
+Uses [\#idle:sys](#idle:sys "wikilink") cmd LoadAndApplySettings.
+
 #### NotifyCecSettingsChanged
 
 No input/output.

@@ -225,6 +225,8 @@ No input, returns an output u8 bool.
 ==== LoadAndApplyIdlePolicySettings ====
 No input/output.
 
+Uses [[#idle:sys]] cmd LoadAndApplySettings.
+
 ==== NotifyCecSettingsChanged ====
 No input/output.
 
