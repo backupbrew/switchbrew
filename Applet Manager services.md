@@ -612,20 +612,20 @@ Takes an input u64 and handle, returns a GRC
 
 ### IOverlayFunctions
 
-| Cmd | Name                                                                                   |
-| --- | -------------------------------------------------------------------------------------- |
-| 0   | [\#BeginToWatchShortHomeButtonMessage](#BeginToWatchShortHomeButtonMessage "wikilink") |
-| 1   | [\#EndToWatchShortHomeButtonMessage](#EndToWatchShortHomeButtonMessage "wikilink")     |
-| 2   | GetApplicationIdForLogo                                                                |
-| 3   | SetGpuTimeSliceBoost                                                                   |
-| 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled                                       |
-| 5   | \[2.0.0+\] TerminateApplicationAndSetReason                                            |
-| 6   | \[3.0.0+\] SetScreenShotPermissionGlobally                                             |
-| 10  | \[6.0.0+\] StartShutdownSequenceForOverlay                                             |
-| 11  | \[6.0.0+\] StartRebootSequenceForOverlay                                               |
-| 20  | \[8.0.0+\] SetHandlingHomeButtonShortPressedEnabled                                    |
-| 90  | \[7.0.0+\] [\#SetRequiresGpuResourceUse](#SetRequiresGpuResourceUse "wikilink")        |
-| 101 | \[5.0.0+\] BeginToObserveHidInputForDevelop                                            |
+| Cmd | Name                                                                                          |
+| --- | --------------------------------------------------------------------------------------------- |
+| 0   | [\#BeginToWatchShortHomeButtonMessage](#BeginToWatchShortHomeButtonMessage "wikilink")        |
+| 1   | [\#EndToWatchShortHomeButtonMessage](#EndToWatchShortHomeButtonMessage "wikilink")            |
+| 2   | [\#GetApplicationIdForLogo](#GetApplicationIdForLogo "wikilink")                              |
+| 3   | [\#SetGpuTimeSliceBoost](#SetGpuTimeSliceBoost "wikilink")                                    |
+| 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled                                              |
+| 5   | \[2.0.0+\] TerminateApplicationAndSetReason                                                   |
+| 6   | \[3.0.0+\] SetScreenShotPermissionGlobally                                                    |
+| 10  | \[6.0.0+\] StartShutdownSequenceForOverlay                                                    |
+| 11  | \[6.0.0+\] StartRebootSequenceForOverlay                                                      |
+| 20  | \[8.0.0+\] SetHandlingHomeButtonShortPressedEnabled                                           |
+| 90  | \[7.0.0+\] [\#SetRequiresGpuResourceUse](#SetRequiresGpuResourceUse "wikilink")               |
+| 101 | \[5.0.0+\] [\#BeginToObserveHidInputForDevelop](#BeginToObserveHidInputForDevelop "wikilink") |
 
 #### BeginToWatchShortHomeButtonMessage
 
@@ -635,9 +635,21 @@ No input/output.
 
 No input/output.
 
+#### GetApplicationIdForLogo
+
+No input, returns an output u64 titleID.
+
+#### SetGpuTimeSliceBoost
+
+Takes an input u64, no output.
+
 #### SetRequiresGpuResourceUse
 
 Takes an input u8 bool, no output.
+
+#### BeginToObserveHidInputForDevelop
+
+No input/output.
 
 ## IApplicationProxy
 
