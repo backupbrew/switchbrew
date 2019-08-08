@@ -649,7 +649,7 @@ Takes an input u8 bool, no output.
 
 #### TerminateApplicationAndSetReason
 
-Takes an input u32, no output.
+Takes an input u32 Result, no output.
 
 #### SetScreenShotPermissionGlobally
 
