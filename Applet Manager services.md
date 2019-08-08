@@ -671,6 +671,8 @@ Takes an input u8 bool, no output.
 
 Takes an input u8 bool, no output.
 
+Just returns 0.
+
 #### BeginToObserveHidInputForDevelop
 
 No input/output.
