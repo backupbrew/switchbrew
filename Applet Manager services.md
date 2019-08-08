@@ -271,6 +271,8 @@ No input, returns an output u8 bool.
 
 No input, returns an output Event handle with autoclear=false.
 
+Uses [\#omm](#omm "wikilink") cmd GetHdcpAuthenticationFailedEvent.
+
 ### IApplicationCreator
 
 | Cmd | Name                                                                                       | Notes |

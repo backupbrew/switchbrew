@@ -248,6 +248,8 @@ No input, returns an output u8 bool.
 ==== GetHdcpAuthenticationFailedEvent ====
 No input, returns an output Event handle with autoclear=false.
 
+Uses [[#omm]] cmd GetHdcpAuthenticationFailedEvent.
+
 === IApplicationCreator ===
 {| class="wikitable" border="1"
 |-
