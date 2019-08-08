@@ -612,24 +612,32 @@ Takes an input u64 and handle, returns a GRC
 
 ### IOverlayFunctions
 
-| Cmd | Name                                                                            |
-| --- | ------------------------------------------------------------------------------- |
-| 0   | BeginToWatchShortHomeButtonMessage                                              |
-| 1   | EndToWatchShortHomeButtonMessage                                                |
-| 2   | GetApplicationIdForLogo                                                         |
-| 3   | SetGpuTimeSliceBoost                                                            |
-| 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled                                |
-| 5   | \[2.0.0+\] TerminateApplicationAndSetReason                                     |
-| 6   | \[3.0.0+\] SetScreenShotPermissionGlobally                                      |
-| 10  | \[6.0.0+\] StartShutdownSequenceForOverlay                                      |
-| 11  | \[6.0.0+\] StartRebootSequenceForOverlay                                        |
-| 20  | \[8.0.0+\] SetHandlingHomeButtonShortPressedEnabled                             |
-| 90  | \[7.0.0+\] [\#SetRequiresGpuResourceUse](#SetRequiresGpuResourceUse "wikilink") |
-| 101 | \[5.0.0+\] BeginToObserveHidInputForDevelop                                     |
+| Cmd | Name                                                                                   |
+| --- | -------------------------------------------------------------------------------------- |
+| 0   | [\#BeginToWatchShortHomeButtonMessage](#BeginToWatchShortHomeButtonMessage "wikilink") |
+| 1   | [\#EndToWatchShortHomeButtonMessage](#EndToWatchShortHomeButtonMessage "wikilink")     |
+| 2   | GetApplicationIdForLogo                                                                |
+| 3   | SetGpuTimeSliceBoost                                                                   |
+| 4   | \[2.0.0+\] SetAutoSleepTimeAndDimmingTimeEnabled                                       |
+| 5   | \[2.0.0+\] TerminateApplicationAndSetReason                                            |
+| 6   | \[3.0.0+\] SetScreenShotPermissionGlobally                                             |
+| 10  | \[6.0.0+\] StartShutdownSequenceForOverlay                                             |
+| 11  | \[6.0.0+\] StartRebootSequenceForOverlay                                               |
+| 20  | \[8.0.0+\] SetHandlingHomeButtonShortPressedEnabled                                    |
+| 90  | \[7.0.0+\] [\#SetRequiresGpuResourceUse](#SetRequiresGpuResourceUse "wikilink")        |
+| 101 | \[5.0.0+\] BeginToObserveHidInputForDevelop                                            |
+
+#### BeginToWatchShortHomeButtonMessage
+
+No input/output.
+
+#### EndToWatchShortHomeButtonMessage
+
+No input/output.
 
 #### SetRequiresGpuResourceUse
 
-Takes an input u8, no output.
+Takes an input u8 bool, no output.
 
 ## IApplicationProxy
 
