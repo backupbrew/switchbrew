@@ -259,7 +259,7 @@ Uses [\#omm](#omm "wikilink") cmd NotifyCecSettingsChanged.
 
 #### SetDefaultHomeButtonLongPressTime
 
-Takes an input u64, no output.
+Takes an input s64, no output.
 
 #### UpdateDefaultDisplayResolution
 
