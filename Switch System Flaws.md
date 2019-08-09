@@ -489,6 +489,17 @@ Flaws in this category pertain to any non-built-in system module.
 </thead>
 <tbody>
 <tr class="odd">
+<td><p><a href="Applet Manager services#IStorage.md##IStorage" title="wikilink">AM IStorage</a> infoleak</p></td>
+<td><p>Originally the buffer allocated by <a href="Applet Manager services#CreateStorage.md##CreateStorage" title="wikilink">CreateStorage</a> using the specified input size was not cleared. With [8.0.0+] this was fixed by adding a memset() for the buffer after successful allocation.</p>
+<p>Hence, IStorage-&gt;IStorageAccessor-&gt;Read will return uninitialized memory when the Write cmd was not previously used with the specified region.</p></td>
+<td><p>Infoleak from the main <a href="Applet Manager services#IStorage.md##IStorage" title="wikilink">AM</a> heap, allowing defeating ASLR by reading addresses from previously allocated objects.</p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p><a href="8.1.0.md" title="wikilink">8.1.0</a></p></td>
+<td><p>December 2018</p></td>
+<td><p>August 9, 2019</p></td>
+<td><p><a href="User:Yellows8" title="wikilink">yellows8</a></p></td>
+</tr>
+<tr class="even">
 <td><p>Out-of-bounds array read for <a href="BCAT Content Container.md" title="wikilink">BCAT_Content_Container</a> secret-data index</p></td>
 <td><p>The <a href="BCAT Content Container.md" title="wikilink">BCAT_Content_Container</a> secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed. This is not useful since the string loaded from this array is only involved with key-generation.</p></td>
 <td></td>
@@ -498,7 +509,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>August 6, 2017</p></td>
 <td><p><a href="User:_shinyquagsire23" title="wikilink">Shiny Quagsire</a>, <a href="User:Yellows8" title="wikilink">yellows8</a> (independently)</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>OOB Read in NS system module (pl:utoohax, pl:utonium, maybe other names)</p></td>
 <td><p>Prior to <a href="3.0.0.md" title="wikilink">3.0.0</a>, pl:u (Shared Font services implemented in the NS sysmodule) service commands 1,2,3 took in a signed 32-bit index and returned that index of an array but did not check that index at all. This allowed for an arbitrary read within a 34-bit range (33-bit signed) from NS .bss. In <a href="3.0.0.md" title="wikilink">3.0.0</a>, sending out of range indexes causes error code 0x60A to be returned.</p></td>
 <td><p>Dumping full NS .text, .rodata and .data, infoleak, etc</p></td>
@@ -508,7 +519,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>On exploit's fix in <a href="3.0.0.md" title="wikilink">3.0.0</a></p></td>
 <td><p><a href="User:qlutoo" title="wikilink">qlutoo</a>, ReSwitched Team (independently)</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>Unchecked domain ID in common IPC code</p></td>
 <td><p>Prior to <a href="2.0.0.md" title="wikilink">2.0.0</a>, object IDs in <a href="IPC Marshalling#Domain message.md##Domain_message" title="wikilink">domain messages</a> are not bounds checked. This out-of-bounds read could be exploited to brute-force ASLR and get PC control in some services that support domain messages.</p></td>
 <td></td>
@@ -518,7 +529,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>20 July 2017‎</p></td>
 <td><p><a href="User:hthh" title="wikilink">hthh</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>expLDR (sysmodule handle table exhaustion)</p></td>
 <td><p>Most sysmodules share common template code to handle IPC control messages. The command DuplicateSession (type 5 command 2)'s template code will abort() if it fails to duplicate a session's handle for the requester. Because many sysmodules have limited handle table size (smaller than the browser/other entrypoints), repeatedly requesting to duplicate one's session will cause the sysmodule to run out of handle table space and abort, causing the service to release all its handles cleanly.</p></td>
 <td><p>Sysmodule crashes. Most usefully, crashing ldr allows access to fsp-ldr and crashing pm allows access to fsp-pr. Useless after <a href="4.0.0.md" title="wikilink">4.0.0</a>, which mitigated a number of single-session service access issues.</p></td>
@@ -528,7 +539,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>8 March 2018</p></td>
 <td><p><a href="User:daeken" title="wikilink">daeken</a></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>Transfer Memory leak in nvservices system module</p></td>
 <td><p>The nvservices sysmodule does not clear most of its transfer memory prior to release.</p></td>
 <td><p>The calling process can read key bits of memory, including breaking ASLR (by revealing the image base) and exposing the address of other transfer memory to set up attacks. More details here: <a href="https://daeken.svbtle.com/nintendo-switch-nvservices-info-leak">transfermeme (nvservices info leak)</a> by <a href="User:daeken" title="wikilink">daeken</a></p></td>
@@ -538,7 +549,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>16 October 2018</p></td>
 <td><p><a href="User:qlutoo" title="wikilink">qlutoo</a> and <a href="User:hexkyz" title="wikilink">hexkyz</a>, <a href="User:daeken" title="wikilink">daeken</a> (independently)</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>OOB write in audio system module</p></td>
 <td><p>Prior to <a href="2.0.0.md" title="wikilink">2.0.0</a>, the <a href="Audio services#audout:u.md##audout:u" title="wikilink">AppendAudioOutBuffer</a> and <a href="Audio services#audin:u.md##audin:u" title="wikilink">AppendAudioInBuffer</a> IPC commands would blindly increment the appended buffers' count while using said count value as an index to where the user data should be copied into. This resulted in an 0x28 bytes, user controlled, out-of-bounds memory write into the <a href="Audio services.md" title="wikilink">audio</a> sysmodule's memory space. Combined with the <a href="Audio services#audout:u.md##audout:u" title="wikilink">GetReleasedAudioOutBuffer</a> or <a href="Audio services#audin:u.md##audin:u" title="wikilink">GetReleasedAudioInBuffer</a> commands, this could also be used as an 8 byte infoleak.</p>
 <p>In <a href="2.0.0.md" title="wikilink">2.0.0</a>, the commands now return error code 0x1099 if the number of unreleased buffers exceeds 0x1F.</p></td>
@@ -549,7 +560,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>November 2, 2018</p></td>
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a>, probably others (independently).</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>nvhax (memory corruption in nvservices system module)</p></td>
 <td><p>Prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> would take a single "pwarpstate" argument which would be interpreted by nvservices as a memory pointer for writing 2 "warpstate" structs (one for each Streaming Multiprocessor). This resulted in nvservices attempting to blindly memcpy into this user supplied address and trigger a crash. However, if paired with an infoleak, this could be used to arbitrarily write 0x30 bytes anywhere in nvservices' memory space. Additionally, the "warpstate" struct itself was never initialized, which means nvservices would leak the 0x30 bytes from the stack. By invoking other ioctls it was also possible to partially control the stack contents and achieve a usable arbitrary memory write primitive.</p>
 <p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#.2Fdev.2Fnvhost-ctrl-gpu.md##.2Fdev.2Fnvhost-ctrl-gpu" title="wikilink">NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE</a> now takes 2 inline "warpstate" structs instead of a "pwarpstate" pointer, thus effectively avoiding the bad memcpy.</p></td>
@@ -560,7 +571,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>November 24, 2018</p></td>
 <td><p><a href="User:hexkyz" title="wikilink">hexkyz</a></p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>Infoleak in nvservices system module</p></td>
 <td><p>The <a href="NV services.md" title="wikilink">nvservices</a> ioctl <a href="NV services#NVMAP IOC ALLOC.md##NVMAP_IOC_ALLOC" title="wikilink">NVMAP_IOC_ALLOC</a> takes an optional argument "addr" which allows the calling process to pass a pointer to user allocated memory for backing a nvmap object. If "addr" is left as 0, nvservices uses the transfer memory region (donated by the user during initialization) instead, when allocating memory for the nvmap object. By design, freeing the nvmap object by calling the ioctl <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> returns, in its "refcount" argument, the user address previously supplied if the reference count reaches 0. However, prior to <a href="6.2.0.md" title="wikilink">6.2.0</a>, the case where the transfer memory region is used to allocate the nvmap object was not taken into account, thus resulting in <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> leaking back an address from within the transfer memory region mapped in nvservices' memory space.</p>
 <p>In <a href="6.2.0.md" title="wikilink">6.2.0</a>, <a href="NV services#NVMAP IOC FREE.md##NVMAP_IOC_FREE" title="wikilink">NVMAP_IOC_FREE</a> no longer returns the address when the transfer memory region is used instead of user supplied memory.</p></td>
@@ -571,7 +582,7 @@ Flaws in this category pertain to any non-built-in system module.
 <td><p>November 24, 2018</p></td>
 <td><p>Everyone</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>

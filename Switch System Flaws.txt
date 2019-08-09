@@ -449,6 +449,17 @@ Flaws in this category pertain to any non-built-in system module.
 !  Public disclosure timeframe
 !  Discovered by
 |-
+| [[Applet_Manager_services#IStorage|AM IStorage]] infoleak
+| Originally the buffer allocated by [[Applet_Manager_services#CreateStorage|CreateStorage]] using the specified input size was not cleared. With [8.0.0+] this was fixed by adding a memset() for the buffer after successful allocation.
+
+Hence, IStorage->IStorageAccessor->Read will return uninitialized memory when the Write cmd was not previously used with the specified region.
+| Infoleak from the main [[Applet_Manager_services#IStorage|AM]] heap, allowing defeating ASLR by reading addresses from previously allocated objects.
+| [[8.0.0]]
+| [[8.1.0]]
+| December 2018
+| August 9, 2019
+| [[User:Yellows8|yellows8]]
+|-
 | Out-of-bounds array read for [[BCAT_Content_Container]] secret-data index
 | The [[BCAT_Content_Container]] secret-data index is not validated at all. This is handled before the RSA-signature(?) is ever used. Since the field is an u8, a total of 0x800-bytes relative to the array start can be accessed.
 This is not useful since the string loaded from this array is only involved with key-generation.
