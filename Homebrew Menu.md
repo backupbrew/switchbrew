@@ -17,6 +17,9 @@ is supported, press A to enter a directory and press B to leave the
 current directory. Press Y to activate netloader and press B to
 deactivate netloader.
 
+Press the - button to enter Theme Menu. Press X to (un)star the current
+menu entry.
+
 ## Touch controls
 
 To navigate through the list of folders and applications you can swipe
@@ -28,10 +31,15 @@ when no message-box is shown / netloader isn't active). To activate the
 netloader you can swipe down on the screen. To enter Theme Menu you can
 swipe left on the screen.
 
-# Battery
+To (un)star the current menu entry you can touch the (un)star button
+prompt.
+
+# Status
 
 The battery/charge status can be displayed, however this is only
 displayed when the required service is available/accessible.
+
+The local-time and network status are also displayed.
 
 # Netloader
 
@@ -55,10 +63,10 @@ theme (including themeInfo).
 See [Homebrew Themes](Homebrew%20Themes.md "wikilink") for a list of
 themes.
 
-The string used for displaying the buttons can be set with buttonAText,
-buttonBText, and buttonMText, but normally this can be left at the
-defaults. Change the value of the enableWaveBlending field to 1 to
-enable wave blending.
+The string used for displaying the buttons/stars can be set with
+buttonAText, buttonBText, buttonXText, buttonMText, labelStarOnText, and
+labelStarOffText, but normally these can be left at the defaults. Change
+the value of the enableWaveBlending field to 1 to enable wave blending.
 
 There's also borderColor, borderTextColor, and progressBarColor fields
 which can be set like the other color fields.
@@ -123,6 +131,9 @@ The only optional setting is icon\_path. All paths are absolute. Icon
 will attempted to be loaded from the following: {$FILEPATH with
 extension changed to .jpg} -\> icon\_path setting if it exists (target
 setting -\> main file\_assoc setting) -\> icon from app\_path.
+
+If {$FILEPATH with extension changed to .nacp} exists the nacp is loaded
+from there, otherwise the fileassoc config is used.
 
 If you have targets where file\_extension and filename both have the
 same extension, the filename target should be located before that
