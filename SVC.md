@@ -1655,12 +1655,12 @@ The PersonalMmHeap are allocated as follows:
 
 ## MemoryAttribute
 
-| Bits | Description                               |
-| ---- | ----------------------------------------- |
-| 0    | IsBorrowed                                |
-| 1    | IsIpcLocked (when IpcRefCount \> 0)       |
-| 2    | IsDeviceShared (when DeviceRefCount \> 0) |
-| 3    | IsUncached                                |
+| Bits | Name           | Description                                                                                |
+| ---- | -------------- | ------------------------------------------------------------------------------------------ |
+| 0    | IsBorrowed     | Currently in use as a user buffer for an IPC call, e.g. with SendSyncRequestWithUserBuffer |
+| 1    | IsIpcLocked    | True when IpcRefCount \> 0                                                                 |
+| 2    | IsDeviceShared | True when DeviceRefCount \> 0                                                              |
+| 3    | IsUncached     |                                                                                            |
 
 ## MemoryState
 
