@@ -2202,6 +2202,9 @@ Used by LibraryApplets.
 No input, returns an output
 [\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink").
 
+The objptr from state is cleared during this, an error is thrown if it's
+already 0.
+
 ### PushContext
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
