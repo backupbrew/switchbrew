@@ -1098,9 +1098,17 @@ Takes 2 input u32s [\#AppletId](#AppletId "wikilink") and
 
 No input/output.
 
+Stubbed with an ILibraryAppletCreator from
+[\#CreateSelfLibraryAppletCreatorForDevelop](#CreateSelfLibraryAppletCreatorForDevelop "wikilink"),
+just returns an error.
+
 ### AreAnyLibraryAppletsLeft
 
 No input, returns an output u8 bool.
+
+Stubbed with an ILibraryAppletCreator from
+[\#CreateSelfLibraryAppletCreatorForDevelop](#CreateSelfLibraryAppletCreatorForDevelop "wikilink"),
+just returns an error.
 
 ### CreateStorage
 

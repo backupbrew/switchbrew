@@ -1027,8 +1027,12 @@ Takes 2 input u32s [[#AppletId]] and [[#LibraryAppletMode]], returns an [[#ILibr
 === TerminateAllLibraryApplets ===
 No input/output.
 
+Stubbed with an ILibraryAppletCreator from [[#CreateSelfLibraryAppletCreatorForDevelop]], just returns an error.
+
 === AreAnyLibraryAppletsLeft ===
 No input, returns an output u8 bool.
+
+Stubbed with an ILibraryAppletCreator from [[#CreateSelfLibraryAppletCreatorForDevelop]], just returns an error.
 
 === CreateStorage ===
 Takes an input s64 for the storage size, returns an [[#IStorage]].
