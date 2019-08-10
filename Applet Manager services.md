@@ -529,6 +529,8 @@ No input/output.
 Exits the LibraryApplet and returns to running the title which launched
 this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 
+Official sw enters an infinite sleep-thread loop after using this.
+
 #### GetLibraryAppletInfo
 
 No input, returns an output
