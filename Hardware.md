@@ -1,30 +1,46 @@
-## Motherboard
+# Motherboard
 
-There are 3 known revisions of the motherboard:
+## Nintendo Switch
 
-  - HAC-CPU-01 (Launch, earliest manifacture date seen: 01/12 2016)
-  - HAC-CPU-10
-  - HAC-CPU-20 (Earliest manifacture date seen: 26/10 2017)
+| Product Code | Description                                                          |
+| ------------ | -------------------------------------------------------------------- |
+| ODIN-CPU-X5  | Pre-release Nintendo Switch.                                         |
+| HAC-CPU-01   | Retail Nintendo Switch (earliest manifacture date seen: 01/12 2016). |
+| HAC-CPU-10   | Retail Nintendo Switch.                                              |
+| HAC-CPU-20   | Retail Nintendo Switch (earliest manifacture date seen: 26/10 2017). |
 
-What actually changed between different revisions is unknown.
+## Nintendo Switch Mariko
 
-## Specifications
+| Product Code | Description                         |
+| ------------ | ----------------------------------- |
+| MODIN-CPU-X5 | Pre-release Nintendo Switch Mariko. |
+| HAD-CPU-01   | Retail Nintendo Switch Mariko.      |
+
+## Nintendo Switch Lite
+
+| Product Code | Description                       |
+| ------------ | --------------------------------- |
+| VALI-CPU-X5  | Pre-release Nintendo Switch Lite. |
+
+# Specifications
+
+## Nintendo Switch
 
 <table>
 <thead>
 <tr class="header">
-<th><p>Type</p></th>
-<th></th>
+<th><p>Component</p></th>
+<th><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><p>SoC</p></td>
-<td><p>NVidia ODNX02-A2 (See also <a href="Tegra-X1.md" title="wikilink">here</a>)</p></td>
+<td><p>NVIDIA ODNX02-A2</p></td>
 </tr>
 <tr class="even">
 <td><p>Screen</p></td>
-<td><p><a href="http://www.nintendo.com/switch/features/tech-specs/#switch-section">6.2-inch, multi-touch capacitive LCD screen</a></p></td>
+<td><p>InnoLux P062CCA-AZ1</p></td>
 </tr>
 <tr class="odd">
 <td><p>Storage</p></td>
@@ -48,18 +64,38 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 <td><p>Audio</p></td>
 <td><p>Realtek ALC5639</p></td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-## eMMC Pinout
+## Nintendo Switch Mariko
 
-## Notes
+| Component | Description                                              |
+| --------- | -------------------------------------------------------- |
+| SoC       | NVIDIA ODNX10-A1                                         |
+| Screen    | InnoLux P062CCA-AZ2                                      |
+| Storage   | SK Hynix H26M62002JPR 32 GB eMMC                         |
+| Memory    | Samsung K4U6E3S4AM-MGCJ 2 GB LPDDR4x DRAM x2 (Total 4GB) |
+| Wifi/BT   |                                                          |
+| PMIC      | Maxim Integrated MAX77812                                |
+| Audio     | Realtek ALC5639                                          |
+
+## Nintendo Switch Lite
+
+| Component | Description                                              |
+| --------- | -------------------------------------------------------- |
+| SoC       |                                                          |
+| Screen    |                                                          |
+| Storage   |                                                          |
+| Memory    | Samsung K4U6E3S4AM-MGCJ 2 GB LPDDR4x DRAM x2 (Total 4GB) |
+| Wifi/BT   |                                                          |
+| PMIC      | Maxim Integrated MAX77812                                |
+| Audio     |                                                          |
+
+# eMMC Pinout
+
+# Notes
 
 1\.
 <https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/>
-
-2\. <https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263>
+</br> 2.
+<https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263>

@@ -1,18 +1,45 @@
-== Motherboard ==
-There are 3 known revisions of the motherboard:
-* HAC-CPU-01 (Launch, earliest manifacture date seen: 01/12 2016)
-* HAC-CPU-10
-* HAC-CPU-20 (Earliest manifacture date seen: 26/10 2017)
-
-What actually changed between different revisions is unknown.
-
-== Specifications ==
-{| class="wikitable"
-! Type !! 
+= Motherboard =
+== Nintendo Switch ==
+{| class="wikitable" border="1"
 |-
-| SoC     || NVidia ODNX02-A2 (See also [[Tegra-X1|here]])
+! Product Code || Description
 |-
-| Screen  || [http://www.nintendo.com/switch/features/tech-specs/#switch-section 6.2-inch, multi-touch capacitive LCD screen]
+| ODIN-CPU-X5 || Pre-release Nintendo Switch.
+|-
+| HAC-CPU-01 || Retail Nintendo Switch (earliest manifacture date seen: 01/12 2016).
+|-
+| HAC-CPU-10 || Retail Nintendo Switch.
+|-
+| HAC-CPU-20 || Retail Nintendo Switch (earliest manifacture date seen: 26/10 2017).
+|}
+
+== Nintendo Switch Mariko ==
+{| class="wikitable" border="1"
+|-
+! Product Code || Description
+|-
+| MODIN-CPU-X5 || Pre-release Nintendo Switch Mariko.
+|-
+| HAD-CPU-01 || Retail Nintendo Switch Mariko.
+|}
+
+== Nintendo Switch Lite ==
+{| class="wikitable" border="1"
+|-
+! Product Code || Description
+|-
+| VALI-CPU-X5 || Pre-release Nintendo Switch Lite.
+|}
+
+= Specifications =
+== Nintendo Switch ==
+{| class="wikitable" border="1"
+|-
+! Component || Description
+|-
+| SoC || NVIDIA ODNX02-A2
+|-
+| Screen || InnoLux P062CCA-AZ1
 |-
 | Storage || Samsung KLMBG2JENB-B041 32 GB eMMC <br/> or <br/> Toshiba THGBMHG8C2LBAIL 32 GB eMMC
 |-
@@ -23,13 +50,51 @@ What actually changed between different revisions is unknown.
 | PMIC || Maxim Integrated MAX77620AEWJ+T 
 |-
 | Audio || Realtek ALC5639
-|-
 |}
 
-== eMMC Pinout ==
+== Nintendo Switch Mariko ==
+{| class="wikitable" border="1"
+|-
+! Component || Description
+|-
+| SoC || NVIDIA ODNX10-A1
+|-
+| Screen || InnoLux P062CCA-AZ2
+|-
+| Storage || SK Hynix H26M62002JPR 32 GB eMMC
+|-
+| Memory || Samsung K4U6E3S4AM-MGCJ 2 GB LPDDR4x DRAM x2 (Total 4GB)
+|-
+| Wifi/BT || 
+|-
+| PMIC || Maxim Integrated MAX77812
+|-
+| Audio || Realtek ALC5639
+|}
+
+== Nintendo Switch Lite ==
+{| class="wikitable" border="1"
+|-
+! Component || Description
+|-
+| SoC || 
+|-
+| Screen || 
+|-
+| Storage ||
+|-
+| Memory || Samsung K4U6E3S4AM-MGCJ 2 GB LPDDR4x DRAM x2 (Total 4GB)
+|-
+| Wifi/BT ||
+|-
+| PMIC || Maxim Integrated MAX77812
+|-
+| Audio ||
+|}
+
+= eMMC Pinout =
 {{:EMMC_pinout}}
 
-== Notes ==
-1. https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/
-
+= Notes =
+1. https://www.sosav.fr/guides/consoles/nintendo/nintendo-salon/nintendo-switch/demontage-complet/ </br>
 2. https://www.ifixit.com/Teardown/Nintendo+Switch+Teardown/78263
