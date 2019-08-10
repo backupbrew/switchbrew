@@ -5,11 +5,13 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 ! Device || Product Code
 |-
-| Switch || HAC
+| Nintendo Switch || HAC
 |-
-| Switch SDEV/EDEV || HAT
+| Nintendo Switch SDEV/EDEV || HAT
 |-
-| Switch Lite || HDH
+| Nintendo Switch Mariko || HAD
+|-
+| Nintendo Switch Lite || HDH
 |}
 
 == Product List ==
@@ -17,9 +19,7 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 ! Product Code || Description
 |-
-| HAC-001 || Retail Switch console.
-|-
-| HAC-001-01 || New retail Switch console.
+| HAC-001 || Retail Nintendo Switch console.
 |-
 | HAC-002 || AC adapter.
 |-
@@ -119,21 +119,21 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 | HAC-050 ||
 |-
-| HAC-051 || Nintendo Labo Toy-Con 1 : Variety Kit.
+| HAC-051 || Nintendo Labo Toy-Con 1: Variety Kit.
 |-
-| HAC-052 || Nintendo Labo Toy-Con 2 : Robot Kit. (To confirm.)
+| HAC-052 || Nintendo Labo Toy-Con 2: Robot Kit. (To confirm.)
 |-
-| HAC-053 || Nintendo Labo Toy-Con 3 : Vehicle Kit.
+| HAC-053 || Nintendo Labo Toy-Con 3: Vehicle Kit.
 |-
-| HAC-054 || Nintendo Labo Toy-Con 4 : VR Kit.
+| HAC-054 || Nintendo Labo Toy-Con 4: VR Kit.
 |}
 {| class="wikitable" border="1"
 |-
 ! Product Code || Description
 |-
-| HAT-001 || SDEV Switch console.
+| HAT-001 || SDEV Nintendo Switch console.
 |-
-| HAT-002 || EDEV Switch console.
+| HAT-002 || EDEV Nintendo Switch console.
 |-
 | HAT-003 || SDEV cradle.
 |-
@@ -143,7 +143,13 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 ! Product Code || Description
 |-
-| HDH-001 || Retail Switch Lite console.
+| HAC-001-01/HAD-001 || Retail Nintendo Switch Mariko console.
+|}
+{| class="wikitable" border="1"
+|-
+! Product Code || Description
+|-
+| HDH-001 || Retail Nintendo Switch Lite console.
 |}
 
 = Product Serial Numbers =
