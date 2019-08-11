@@ -2206,8 +2206,8 @@ Immediately.
 
 ### GetLaunchReason
 
-No input, returns an output u32
-"nn::am::<service::AppletProcessLaunchReason>".
+No input, returns an output
+[\#AppletProcessLaunchReason](#AppletProcessLaunchReason "wikilink").
 
 Used by LibraryApplets.
 
@@ -2630,6 +2630,17 @@ This is "nn::am::AppletAttribute". This struct is 0x8-bytes.
 
 This is used by
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink").
+
+# AppletProcessLaunchReason
+
+| Offset | Size | Description                                                                                                      |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | Flag. When non-zero, LibraryApplets then use [\#OpenCallingLibraryApplet](#OpenCallingLibraryApplet "wikilink"). |
+| 0x1    | 0x2  | Always 0.                                                                                                        |
+| 0x3    | 0x1  | Always 0.                                                                                                        |
+
+This is "nn::am::<service::AppletProcessLaunchReason>". This struct is
+0x4-bytes.
 
 # LibraryAppletInfo
 
