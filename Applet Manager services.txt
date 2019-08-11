@@ -28,7 +28,7 @@ This is "nn::am::service::IAllSystemAppletProxiesService".
 
 All of these Open*Proxy commands except [[#OpenLibraryAppletProxy]] take the same input as [[#OpenApplicationProxy]], with the same user-process retry-loop as [[#OpenApplicationProxy]]. These Open*Proxy commands (including appletOE) doesn't seem to usable from processes which aren't actual applets (such as sysmodules), at least for applet-types which aren't already in use.
 
-OpenLibraryAppletProxyOld eventually calls the same func as [[#OpenLibraryAppletProxy]], except that the AppletAttribute is all-zero.
+OpenLibraryAppletProxyOld eventually calls the same func as [[#OpenLibraryAppletProxy]], except that the [[#AppletAttribute]] is all-zero.
 
 This service is used by all system non-regular-applications.
 
@@ -42,7 +42,7 @@ The 01000000000010XX system [[Title_list|titles]] use the following applet types
 == OpenLibraryAppletProxy ==
 Returns an [[#ILibraryAppletProxy]].
 
-Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-coded value 0), a PID,a process copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input buffer '''AppletAttribute'''.
+Takes a [[IPC_Marshalling|reserved]] input u64(official user-processes use hard-coded value 0), a PID,a process copy-handle(cur-proc handle alias), and a type-0x15 input buffer containing an [[#AppletAttribute]].
 
 Official user-processes use the same retry loop with this as the other Open*Proxy commands.
 
@@ -2548,6 +2548,20 @@ This is "nn::am::service::ProgramSpecifyKind". This controls the type of the u64
 
 = AppletResourceUserId =
 This u64 is officially called "nn::applet::AppletResourceUserId". Used by a number of non-AM services.
+
+= AppletAttribute =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x1 || Flag. When non-zero, two state fields are set to 1.
+|-
+| 0x1 || 0x7F || Unused
+|}
+
+This is "nn::am::AppletAttribute". This struct is 0x8-bytes.
+
+This is used by [[#OpenLibraryAppletProxy]].
 
 = LibraryAppletInfo =
 {| class="wikitable" border="1"

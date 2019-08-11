@@ -33,7 +33,7 @@ applet-types which aren't already in use.
 
 OpenLibraryAppletProxyOld eventually calls the same func as
 [\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink"), except
-that the AppletAttribute is all-zero.
+that the [\#AppletAttribute](#AppletAttribute "wikilink") is all-zero.
 
 This service is used by all system non-regular-applications.
 
@@ -52,8 +52,8 @@ Returns an [\#ILibraryAppletProxy](#ILibraryAppletProxy "wikilink").
 
 Takes a [reserved](IPC%20Marshalling.md "wikilink") input u64(official
 user-processes use hard-coded value 0), a PID,a process
-copy-handle(cur-proc handle alias), and an 0x80-byte type-0x15 input
-buffer **AppletAttribute**.
+copy-handle(cur-proc handle alias), and a type-0x15 input buffer
+containing an [\#AppletAttribute](#AppletAttribute "wikilink").
 
 Official user-processes use the same retry loop with this as the other
 Open\*Proxy commands.
@@ -2618,6 +2618,18 @@ of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
 
 This u64 is officially called "nn::applet::AppletResourceUserId". Used
 by a number of non-AM services.
+
+# AppletAttribute
+
+| Offset | Size | Description                                         |
+| ------ | ---- | --------------------------------------------------- |
+| 0x0    | 0x1  | Flag. When non-zero, two state fields are set to 1. |
+| 0x1    | 0x7F | Unused                                              |
+
+This is "nn::am::AppletAttribute". This struct is 0x8-bytes.
+
+This is used by
+[\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink").
 
 # LibraryAppletInfo
 
