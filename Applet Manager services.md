@@ -31,6 +31,10 @@ Open\*Proxy commands (including appletOE) doesn't seem to usable from
 processes which aren't actual applets (such as sysmodules), at least for
 applet-types which aren't already in use.
 
+OpenLibraryAppletProxyOld eventually calls the same func as
+[\#OpenLibraryAppletProxy](#OpenLibraryAppletProxy "wikilink"), except
+that the AppletAttribute is all-zero.
+
 This service is used by all system non-regular-applications.
 
 The 01000000000010XX system [titles](Title%20list.md "wikilink") use the
