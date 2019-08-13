@@ -521,7 +521,7 @@ No input, returns an output u8 bool.
 |-
 | 102 || [5.0.0+] UnreserveResourceForMovieOperation ||
 |-
-| 110 || [6.0.0+] GetMainAppletAvailableUsers ||
+| 110 || [6.0.0+] [[#GetMainAppletAvailableUsers]] ||
 |}
 
 ==== PopInData ====
@@ -612,6 +612,13 @@ Same as [[#RequestExit]] except this is for the current applet.
 
 ==== CreateGameMovieTrimmer ====
 Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
+
+==== GetMainAppletAvailableUsers ====
+Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u8 bool and a s32 '''total_entries'''.
+
+The size of the output buffer in entries must be at least 8.
+
+Normally the output bool is set to 0, however when no users are available it's set to 1 with '''total_entries''' = -1.
 
 == IOverlayAppletProxy ==
 {| class="wikitable" border="1"
