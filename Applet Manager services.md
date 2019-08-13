@@ -495,7 +495,7 @@ No input, returns an output u8 bool.
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                                     |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
 | 70  | \[8.0.0+\] GetCurrentApplicationId                                                                                |       |
-| 80  | \[6.0.0+\] RequestExitToSelf                                                                                      |       |
+| 80  | \[6.0.0+\] [\#RequestExitToSelf](#RequestExitToSelf "wikilink")                                                   |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                             |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                         |       |
 | 101 | \[5.0.0+\] ReserveResourceForMovieOperation                                                                       |       |
@@ -595,6 +595,13 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 No input, returns an output
 [LanguageCode](Settings%20services#LanguageCode.md##LanguageCode "wikilink").
+
+#### RequestExitToSelf
+
+No input/output.
+
+Same as [\#RequestExit](#RequestExit "wikilink") except this is for the
+current applet.
 
 #### CreateGameMovieTrimmer
 

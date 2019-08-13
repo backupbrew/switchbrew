@@ -511,7 +511,7 @@ No input, returns an output u8 bool.
 |-
 | 70 || [8.0.0+] GetCurrentApplicationId ||
 |-
-| 80 || [6.0.0+] RequestExitToSelf ||
+| 80 || [6.0.0+] [[#RequestExitToSelf]] ||
 |-
 | 90 || [5.0.0+] CreateApplicationAndPushAndRequestToLaunch ||
 |-
@@ -589,6 +589,11 @@ Takes an input [[#IStorage]], no output.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
+
+==== RequestExitToSelf ====
+No input/output.
+
+Same as [[#RequestExit]] except this is for the current applet.
 
 ==== CreateGameMovieTrimmer ====
 Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
