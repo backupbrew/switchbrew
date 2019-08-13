@@ -101,7 +101,7 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 | HAC-041 ||
 |-
-| HAC-042 ||
+| HAC-042 || SNES controller.
 |-
 | HAC-043 ||
 |-

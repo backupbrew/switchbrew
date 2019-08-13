@@ -55,7 +55,7 @@ numbers, product models, etc...).
 | HAC-039      |                                                   |
 | HAC-040      | Touch Pen.                                        |
 | HAC-041      |                                                   |
-| HAC-042      |                                                   |
+| HAC-042      | SNES controller.                                  |
 | HAC-043      |                                                   |
 | HAC-044      |                                                   |
 | HAC-045      |                                                   |
