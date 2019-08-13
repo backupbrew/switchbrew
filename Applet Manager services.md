@@ -581,6 +581,10 @@ No input, returns an output u32.
 
 The output u32 is "nn::settings::KeyboardLayout".
 
+This gets the value previously set by
+[\#SetDesirableKeyboardLayout](#SetDesirableKeyboardLayout "wikilink").
+An error is returned if it's not set.
+
 #### PopExtraStorage
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
