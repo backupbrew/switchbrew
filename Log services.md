@@ -32,7 +32,7 @@ send incoming log messages to. The mask entries are as follows:
 
 | Value  | Description             |
 | ------ | ----------------------- |
-| 1      | Default                 |
+| 1      | TMA                     |
 | 2      | UART                    |
 | 4      | UART when sleeping      |
 | 0xFFFF | Log to all destinations |

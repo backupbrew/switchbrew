@@ -37,7 +37,7 @@ Takes an input u32 mask value indicating the logging destinations to send incomi
 |-
 ! Value || Description
 |-
-| 1 || Default
+| 1 || TMA
 |-
 | 2 || UART
 |-
