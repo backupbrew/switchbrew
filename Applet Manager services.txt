@@ -509,7 +509,7 @@ No input, returns an output u8 bool.
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
 |-
-| 70 || [8.0.0+] GetCurrentApplicationId ||
+| 70 || [8.0.0+] [[#GetCurrentApplicationId]] ||
 |-
 | 80 || [6.0.0+] [[#RequestExitToSelf]] ||
 |-
@@ -599,6 +599,11 @@ No input, returns an output u64.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
+
+==== GetCurrentApplicationId ====
+No input, returns an output u64.
+
+Gets the titleID for the currently running Application. titleID=0 when no Application is running.
 
 ==== RequestExitToSelf ====
 No input/output.

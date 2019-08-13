@@ -494,7 +494,7 @@ No input, returns an output u8 bool.
 | 50  | \[3.0.0+\] ReportVisibleError                                                                                     |       |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                                     |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
-| 70  | \[8.0.0+\] GetCurrentApplicationId                                                                                |       |
+| 70  | \[8.0.0+\] [\#GetCurrentApplicationId](#GetCurrentApplicationId "wikilink")                                       |       |
 | 80  | \[6.0.0+\] [\#RequestExitToSelf](#RequestExitToSelf "wikilink")                                                   |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                             |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                         |       |
@@ -609,6 +609,13 @@ No input, returns an output u64.
 
 No input, returns an output
 [LanguageCode](Settings%20services#LanguageCode.md##LanguageCode "wikilink").
+
+#### GetCurrentApplicationId
+
+No input, returns an output u64.
+
+Gets the titleID for the currently running Application. titleID=0 when
+no Application is running.
 
 #### RequestExitToSelf
 
