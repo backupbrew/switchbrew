@@ -491,7 +491,7 @@ No input, returns an output u8 bool.
 |-
 | 18 || [4.0.0+] [[#GetNextReturnDestinationAppletIdentityInfo]] ||
 |-
-| 19 || [4.0.0+] GetDesirableKeyboardLayout ||
+| 19 || [4.0.0+] [[#GetDesirableKeyboardLayout]] ||
 |-
 | 20 || [[#PopExtraStorage]] || 
 |-
@@ -501,7 +501,7 @@ No input, returns an output u8 bool.
 |-
 | 31 || [[#UnpopExtraStorage]] || 
 |-
-| 40 || [2.0.0+] GetIndirectLayerProducerHandle ||
+| 40 || [2.0.0+] [[#GetIndirectLayerProducerHandle]] ||
 |-
 | 50 || [3.0.0+] ReportVisibleError ||
 |-
@@ -575,6 +575,11 @@ Takes a type-0x6 output buffer containing an array of [[#AppletIdentityInfo]], a
 ==== GetNextReturnDestinationAppletIdentityInfo ====
 No input, returns an output [[#AppletIdentityInfo]].
 
+==== GetDesirableKeyboardLayout ====
+No input, returns an output u32.
+
+The output u32 is "nn::settings::KeyboardLayout". 
+
 ==== PopExtraStorage ====
 No input, returns an output [[#IStorage]].
 
@@ -586,6 +591,9 @@ Takes an input [[#IStorage]], no output.
 
 ==== UnpopExtraStorage ====
 Takes an input [[#IStorage]], no output.
+
+==== GetIndirectLayerProducerHandle ====
+No input, returns an output u64.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].

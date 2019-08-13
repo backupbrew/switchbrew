@@ -485,12 +485,12 @@ No input, returns an output u8 bool.
 | 16  | \[2.0.0+\] [\#GetMainAppletStorageId](#GetMainAppletStorageId "wikilink")                                         |       |
 | 17  | \[3.0.0+\] [\#GetCallerAppletIdentityInfoStack](#GetCallerAppletIdentityInfoStack "wikilink")                     |       |
 | 18  | \[4.0.0+\] [\#GetNextReturnDestinationAppletIdentityInfo](#GetNextReturnDestinationAppletIdentityInfo "wikilink") |       |
-| 19  | \[4.0.0+\] GetDesirableKeyboardLayout                                                                             |       |
+| 19  | \[4.0.0+\] [\#GetDesirableKeyboardLayout](#GetDesirableKeyboardLayout "wikilink")                                 |       |
 | 20  | [\#PopExtraStorage](#PopExtraStorage "wikilink")                                                                  |       |
 | 25  | [\#GetPopExtraStorageEvent](#GetPopExtraStorageEvent "wikilink")                                                  |       |
 | 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                          |       |
 | 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                              |       |
-| 40  | \[2.0.0+\] GetIndirectLayerProducerHandle                                                                         |       |
+| 40  | \[2.0.0+\] [\#GetIndirectLayerProducerHandle](#GetIndirectLayerProducerHandle "wikilink")                         |       |
 | 50  | \[3.0.0+\] ReportVisibleError                                                                                     |       |
 | 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                                     |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
@@ -575,6 +575,12 @@ output s32 total\_entries.
 No input, returns an output
 [\#AppletIdentityInfo](#AppletIdentityInfo "wikilink").
 
+#### GetDesirableKeyboardLayout
+
+No input, returns an output u32.
+
+The output u32 is "nn::settings::KeyboardLayout".
+
 #### PopExtraStorage
 
 No input, returns an output [\#IStorage](#IStorage "wikilink").
@@ -590,6 +596,10 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 #### UnpopExtraStorage
 
 Takes an input [\#IStorage](#IStorage "wikilink"), no output.
+
+#### GetIndirectLayerProducerHandle
+
+No input, returns an output u64.
 
 #### GetMainAppletApplicationDesiredLanguage
 
