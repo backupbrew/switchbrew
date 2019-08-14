@@ -337,7 +337,7 @@ No input, returns an
 | 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                              |       |
 | 150 | \[6.0.0+\] [\#ReportApplicationExitTimeout](#ReportApplicationExitTimeout "wikilink")      |       |
 | 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                |       |
-| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                                     |       |
+| 170 | \[8.0.0+\] [\#HasSaveDataAccessPermission](#HasSaveDataAccessPermission "wikilink")        |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -399,6 +399,16 @@ No input/output.
 
 Takes a type-0x15 input buffer containing an
 [\#ApplicationAttribute](#ApplicationAttribute "wikilink"), no output.
+
+##### HasSaveDataAccessPermission
+
+Takes an input u64 titleID, returns an output u8 bool flag.
+
+Gets whether the savedata specified by the input titleID is accessible.
+The output flag indicates whether it's accessible.
+
+If the titleID matches the current application titleID, this immediately
+returns success with flag=1.
 
 ##### IAppletAccessor
 

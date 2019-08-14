@@ -331,7 +331,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 160 || [8.0.0+] [[#SetApplicationAttribute]] ||
 |-
-| 170 || [8.0.0+] HasSaveDataAccessPermission ||
+| 170 || [8.0.0+] [[#HasSaveDataAccessPermission]] ||
 |}
 
 Commands <=30 are inherited from [[#IAppletAccessor]].
@@ -374,6 +374,13 @@ No input/output.
 
 ===== SetApplicationAttribute =====
 Takes a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.
+
+===== HasSaveDataAccessPermission =====
+Takes an input u64 titleID, returns an output u8 bool flag.
+
+Gets whether the savedata specified by the input titleID is accessible. The output flag indicates whether it's accessible.
+
+If the titleID matches the current application titleID, this immediately returns success with flag=1.
 
 ===== IAppletAccessor =====
 {| class="wikitable" border="1"
