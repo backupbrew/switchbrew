@@ -565,7 +565,7 @@ No input, returns an output u8 bool.
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
 | 70  | \[8.0.0+\] [\#GetCurrentApplicationId](#GetCurrentApplicationId "wikilink")                                       |       |
 | 80  | \[6.0.0+\] [\#RequestExitToSelf](#RequestExitToSelf "wikilink")                                                   |       |
-| 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                             |       |
+| 90  | \[5.0.0+\] [\#CreateApplicationAndPushAndRequestToLaunch](#CreateApplicationAndPushAndRequestToLaunch "wikilink") |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                         |       |
 | 101 | \[5.0.0+\] [\#ReserveResourceForMovieOperation](#ReserveResourceForMovieOperation "wikilink")                     |       |
 | 102 | \[5.0.0+\] [\#UnreserveResourceForMovieOperation](#UnreserveResourceForMovieOperation "wikilink")                 |       |
@@ -706,6 +706,13 @@ No input/output.
 
 Same as [\#RequestExit](#RequestExit "wikilink") except this is for the
 current applet.
+
+#### CreateApplicationAndPushAndRequestToLaunch
+
+Takes an input u64 titleID and an input \#IStorage, no output.
+
+This is is similar to
+[\#CreateApplicationAndPushAndRequestToStart](#CreateApplicationAndPushAndRequestToStart "wikilink").
 
 #### CreateGameMovieTrimmer
 
