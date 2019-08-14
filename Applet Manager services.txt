@@ -309,7 +309,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 112 || [[#GetCurrentLibraryApplet]] || 
 |-
-| 120 || GetApplicationId || 
+| 120 || [[#GetApplicationId]] || 
 |-
 | 121 || [[#PushLaunchParameter]] || 
 |-
@@ -338,6 +338,11 @@ Commands <=30 are inherited from [[#IAppletAccessor]].
 
 ===== GetCurrentLibraryApplet =====
 No input, returns an output [[#IAppletAccessor]].
+
+===== GetApplicationId =====
+No input, returns an output u64 titleID.
+
+Gets the Application titleID.
 
 ===== PushLaunchParameter =====
 Takes an input u32 [[#LaunchParameterKind]] and an input [[#IStorage]], no output.

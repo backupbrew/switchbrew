@@ -326,7 +326,7 @@ No input, returns an
 | 110 | TerminateAllLibraryApplets                                                   |       |
 | 111 | AreAnyLibraryAppletsLeft                                                     |       |
 | 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")             |       |
-| 120 | GetApplicationId                                                             |       |
+| 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                           |       |
 | 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                     |       |
 | 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink") |       |
 | 123 | \[2.0.0+\] GetApplicationLaunchProperty                                      |       |
@@ -346,6 +346,12 @@ Commands \<=30 are inherited from
 
 No input, returns an output
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
+
+##### GetApplicationId
+
+No input, returns an output u64 titleID.
+
+Gets the Application titleID.
 
 ##### PushLaunchParameter
 
