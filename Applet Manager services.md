@@ -331,7 +331,7 @@ No input, returns an
 | 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink") |       |
 | 123 | \[2.0.0+\] GetApplicationLaunchProperty                                      |       |
 | 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                                   |       |
-| 130 | \[6.0.0+\] SetUsers                                                          |       |
+| 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                |       |
 | 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                   |       |
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                      |       |
 | 140 | \[6.0.0+\] GetDesirableUids                                                  |       |
@@ -358,6 +358,17 @@ Takes an input u32
 No input, takes a type-0x6 output buffer.
 
 This gets the application [control.nacp](NACP%20Format.md "wikilink").
+
+##### SetUsers
+
+Takes an input u8 bool flag and a type-0x5 input buffer containing an
+array of u128 userIDs.
+
+The total entries for the userIDs must be \<=8.
+
+When the input flag is true, the **users\_available** state flag is
+cleared to 0, however as long as total\_entries is valid this state flag
+will be set to 1 afterwards regardless.
 
 ##### SetApplicationAttribute
 
@@ -633,6 +644,9 @@ Takes an input u64 and handle, returns a GRC
 
 Takes a type-0x6 output buffer containing an array of u128 userIDs,
 returns an output u8 bool and a s32 **total\_entries**.
+
+This gets the userIDs previously set by
+[\#SetUsers](#SetUsers "wikilink").
 
 The size of the output buffer in entries must be at least 8.
 
