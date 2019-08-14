@@ -315,15 +315,15 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 122 || [[#GetApplicationControlProperty]] || 
 |-
-| 123 || [2.0.0+] GetApplicationLaunchProperty || 
+| 123 || [2.0.0+] [[#GetApplicationLaunchProperty]] || 
 |-
-| 124 || [6.0.0+] GetApplicationLaunchRequestInfo || 
+| 124 || [6.0.0+] [[#GetApplicationLaunchRequestInfo]] || 
 |-
 | 130 || [6.0.0+] [[#SetUsers]] || 
 |-
-| 131 || [6.0.0+] CheckRightsEnvironmentAvailable || 
+| 131 || [6.0.0+] [[#CheckRightsEnvironmentAvailable]] || 
 |-
-| 132 || [6.0.0+] GetNsRightsEnvironmentHandle || 
+| 132 || [6.0.0+] [[#GetNsRightsEnvironmentHandle]] || 
 |-
 | 140 || [6.0.0+] [[#GetDesirableUids]] || 
 |-
@@ -355,12 +355,30 @@ No input, takes a type-0x6 output buffer.
 
 This gets the application [[NACP_Format|control.nacp]].
 
+===== GetApplicationLaunchProperty =====
+Takes a type-0x6 output buffer.
+
+The output buffer size must be at least 0x10-bytes.
+
+This gets the cached ApplicationLaunchProperty.
+
+===== GetApplicationLaunchRequestInfo =====
+No input, returns an output 0x10-byte struct.
+
+This gets the ApplicationLaunchRequestInfo from state.
+
 ===== SetUsers =====
 Takes an input u8 bool flag and a type-0x5 input buffer containing an array of u128 userIDs.
 
 The total entries for the userIDs must be <=8.
 
 When the input flag is true, the '''users_available''' state flag is cleared to 0, however as long as total_entries is valid this state flag will be set to 1 afterwards regardless.
+
+===== CheckRightsEnvironmentAvailable =====
+No input, returns an output u8 bool.
+
+===== GetNsRightsEnvironmentHandle =====
+No input, returns an output u64.
 
 ===== GetDesirableUids =====
 Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u32 '''total_entries'''.

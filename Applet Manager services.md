@@ -314,30 +314,30 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                                                                       | Notes |
-| --- | ------------------------------------------------------------------------------------------ | ----- |
-| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                     |       |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                                   |       |
-| 10  | [\#Start](#Start "wikilink")                                                               |       |
-| 20  | [\#RequestExit](#RequestExit "wikilink")                                                   |       |
-| 25  | [\#Terminate](#Terminate "wikilink")                                                       |       |
-| 30  | [\#GetResult](#GetResult "wikilink")                                                       |       |
-| 101 | [\#RequestForApplicationToGetForeground](#RequestForApplicationToGetForeground "wikilink") |       |
-| 110 | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")                     |       |
-| 111 | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")                         |       |
-| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")                           |       |
-| 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                                         |       |
-| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                                   |       |
-| 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink")               |       |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                                    |       |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                                                 |       |
-| 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                              |       |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                                 |       |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                                    |       |
-| 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                              |       |
-| 150 | \[6.0.0+\] [\#ReportApplicationExitTimeout](#ReportApplicationExitTimeout "wikilink")      |       |
-| 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                |       |
-| 170 | \[8.0.0+\] [\#HasSaveDataAccessPermission](#HasSaveDataAccessPermission "wikilink")        |       |
+| Cmd | Name                                                                                        | Notes |
+| --- | ------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                      |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                                    |       |
+| 10  | [\#Start](#Start "wikilink")                                                                |       |
+| 20  | [\#RequestExit](#RequestExit "wikilink")                                                    |       |
+| 25  | [\#Terminate](#Terminate "wikilink")                                                        |       |
+| 30  | [\#GetResult](#GetResult "wikilink")                                                        |       |
+| 101 | [\#RequestForApplicationToGetForeground](#RequestForApplicationToGetForeground "wikilink")  |       |
+| 110 | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")                      |       |
+| 111 | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")                          |       |
+| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")                            |       |
+| 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                                          |       |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                                    |       |
+| 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink")                |       |
+| 123 | \[2.0.0+\] [\#GetApplicationLaunchProperty](#GetApplicationLaunchProperty "wikilink")       |       |
+| 124 | \[6.0.0+\] [\#GetApplicationLaunchRequestInfo](#GetApplicationLaunchRequestInfo "wikilink") |       |
+| 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                               |       |
+| 131 | \[6.0.0+\] [\#CheckRightsEnvironmentAvailable](#CheckRightsEnvironmentAvailable "wikilink") |       |
+| 132 | \[6.0.0+\] [\#GetNsRightsEnvironmentHandle](#GetNsRightsEnvironmentHandle "wikilink")       |       |
+| 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                               |       |
+| 150 | \[6.0.0+\] [\#ReportApplicationExitTimeout](#ReportApplicationExitTimeout "wikilink")       |       |
+| 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                 |       |
+| 170 | \[8.0.0+\] [\#HasSaveDataAccessPermission](#HasSaveDataAccessPermission "wikilink")         |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -369,6 +369,20 @@ No input, takes a type-0x6 output buffer.
 
 This gets the application [control.nacp](NACP%20Format.md "wikilink").
 
+##### GetApplicationLaunchProperty
+
+Takes a type-0x6 output buffer.
+
+The output buffer size must be at least 0x10-bytes.
+
+This gets the cached ApplicationLaunchProperty.
+
+##### GetApplicationLaunchRequestInfo
+
+No input, returns an output 0x10-byte struct.
+
+This gets the ApplicationLaunchRequestInfo from state.
+
 ##### SetUsers
 
 Takes an input u8 bool flag and a type-0x5 input buffer containing an
@@ -379,6 +393,14 @@ The total entries for the userIDs must be \<=8.
 When the input flag is true, the **users\_available** state flag is
 cleared to 0, however as long as total\_entries is valid this state flag
 will be set to 1 afterwards regardless.
+
+##### CheckRightsEnvironmentAvailable
+
+No input, returns an output u8 bool.
+
+##### GetNsRightsEnvironmentHandle
+
+No input, returns an output u64.
 
 ##### GetDesirableUids
 
