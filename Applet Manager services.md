@@ -314,33 +314,37 @@ No input, returns an
 
 #### IApplicationAccessor
 
-| Cmd | Name                                                                         | Notes |
-| --- | ---------------------------------------------------------------------------- | ----- |
-| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")       |       |
-| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                     |       |
-| 10  | Start                                                                        |       |
-| 20  | RequestExit                                                                  |       |
-| 25  | Terminate                                                                    |       |
-| 30  | GetResult                                                                    |       |
-| 101 | RequestForApplicationToGetForeground                                         |       |
-| 110 | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")       |       |
-| 111 | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")           |       |
-| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")             |       |
-| 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                           |       |
-| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                     |       |
-| 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink") |       |
-| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                      |       |
-| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                                   |       |
-| 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                |       |
-| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                   |       |
-| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                      |       |
-| 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                |       |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                      |       |
-| 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")  |       |
-| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                       |       |
+| Cmd | Name                                                                                       | Notes |
+| --- | ------------------------------------------------------------------------------------------ | ----- |
+| 0   | [\#GetAppletStateChangedEvent](#GetAppletStateChangedEvent "wikilink")                     |       |
+| 1   | [\#IsCompleted](#IsCompleted "wikilink")                                                   |       |
+| 10  | [\#Start](#Start "wikilink")                                                               |       |
+| 20  | [\#RequestExit](#RequestExit "wikilink")                                                   |       |
+| 25  | [\#Terminate](#Terminate "wikilink")                                                       |       |
+| 30  | [\#GetResult](#GetResult "wikilink")                                                       |       |
+| 101 | [\#RequestForApplicationToGetForeground](#RequestForApplicationToGetForeground "wikilink") |       |
+| 110 | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")                     |       |
+| 111 | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")                         |       |
+| 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")                           |       |
+| 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                                         |       |
+| 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                                   |       |
+| 122 | [\#GetApplicationControlProperty](#GetApplicationControlProperty "wikilink")               |       |
+| 123 | \[2.0.0+\] GetApplicationLaunchProperty                                                    |       |
+| 124 | \[6.0.0+\] GetApplicationLaunchRequestInfo                                                 |       |
+| 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                              |       |
+| 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                                 |       |
+| 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                                    |       |
+| 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                              |       |
+| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                                    |       |
+| 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                |       |
+| 170 | \[8.0.0+\] HasSaveDataAccessPermission                                                     |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
+
+##### RequestForApplicationToGetForeground
+
+No input/output.
 
 ##### GetCurrentLibraryApplet
 

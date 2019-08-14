@@ -293,15 +293,15 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 1 || [[#IsCompleted]] ||
 |-
-| 10 || Start ||
+| 10 || [[#Start]] ||
 |-
-| 20 || RequestExit || 
+| 20 || [[#RequestExit]] || 
 |-
-| 25 || Terminate || 
+| 25 || [[#Terminate]] || 
 |-
-| 30 || GetResult || 
+| 30 || [[#GetResult]] || 
 |-
-| 101 || RequestForApplicationToGetForeground || 
+| 101 || [[#RequestForApplicationToGetForeground]] || 
 |-
 | 110 || [[#TerminateAllLibraryApplets]] || 
 |-
@@ -335,6 +335,9 @@ No input, returns an [[#IApplicationAccessor]].
 |}
 
 Commands <=30 are inherited from [[#IAppletAccessor]].
+
+===== RequestForApplicationToGetForeground =====
+No input/output.
 
 ===== GetCurrentLibraryApplet =====
 No input, returns an output [[#IAppletAccessor]].
