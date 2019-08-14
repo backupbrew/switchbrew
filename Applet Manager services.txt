@@ -325,7 +325,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 132 || [6.0.0+] GetNsRightsEnvironmentHandle || 
 |-
-| 140 || [6.0.0+] GetDesirableUids || 
+| 140 || [6.0.0+] [[#GetDesirableUids]] || 
 |-
 | 150 || [6.0.0+] ReportApplicationExitTimeout || 
 |-
@@ -353,6 +353,13 @@ Takes an input u8 bool flag and a type-0x5 input buffer containing an array of u
 The total entries for the userIDs must be <=8.
 
 When the input flag is true, the '''users_available''' state flag is cleared to 0, however as long as total_entries is valid this state flag will be set to 1 afterwards regardless.
+
+===== GetDesirableUids =====
+Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u32 '''total_entries'''.
+
+Gets a userID listing, this is unrelated to [[#SetUsers]].
+
+The stored entry-count in state must be <= <size of output buffer in entries>.
 
 ===== SetApplicationAttribute =====
 Takes a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.

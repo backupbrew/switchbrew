@@ -334,7 +334,7 @@ No input, returns an
 | 130 | \[6.0.0+\] [\#SetUsers](#SetUsers "wikilink")                                |       |
 | 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                   |       |
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                      |       |
-| 140 | \[6.0.0+\] GetDesirableUids                                                  |       |
+| 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                |       |
 | 150 | \[6.0.0+\] ReportApplicationExitTimeout                                      |       |
 | 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")  |       |
 | 170 | \[8.0.0+\] HasSaveDataAccessPermission                                       |       |
@@ -369,6 +369,17 @@ The total entries for the userIDs must be \<=8.
 When the input flag is true, the **users\_available** state flag is
 cleared to 0, however as long as total\_entries is valid this state flag
 will be set to 1 afterwards regardless.
+
+##### GetDesirableUids
+
+Takes a type-0x6 output buffer containing an array of u128 userIDs,
+returns an output u32 **total\_entries**.
+
+Gets a userID listing, this is unrelated to
+[\#SetUsers](#SetUsers "wikilink").
+
+The stored entry-count in state must be \<=
+<size of output buffer in entries>.
 
 ##### SetApplicationAttribute
 
