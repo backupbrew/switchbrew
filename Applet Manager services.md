@@ -723,13 +723,15 @@ Takes an input u64 and handle, returns a GRC
 
 No input/output.
 
-Updates a state field.
+Updates state fields. This must be used before
+[\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink").
 
 #### UnreserveResourceForMovieOperation
 
 No input/output.
 
-Updates a state field.
+Updates state fields. This must be used once finished with
+[IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
 
 #### GetMainAppletAvailableUsers
 

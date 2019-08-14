@@ -677,12 +677,12 @@ Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IG
 ==== ReserveResourceForMovieOperation ====
 No input/output.
 
-Updates a state field.
+Updates state fields. This must be used before [[#CreateGameMovieTrimmer]].
 
 ==== UnreserveResourceForMovieOperation ====
 No input/output.
 
-Updates a state field.
+Updates state fields. This must be used once finished with [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
 
 ==== GetMainAppletAvailableUsers ====
 Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u8 bool and a s32 '''total_entries'''.
