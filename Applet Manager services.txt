@@ -1220,7 +1220,7 @@ Takes an input [[#IStorage]], no output.
 No input, returns an output [[#IStorage]].
 
 ==== GetPopOutDataEvent ====
-No input, returns an output handle.
+No input, returns an output handle with autoclear=false.
 
 ==== GetPopInteractiveOutDataEvent ====
 No input, returns an output event handle with autoclear=false.

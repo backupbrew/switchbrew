@@ -1347,7 +1347,7 @@ No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### GetPopOutDataEvent
 
-No input, returns an output handle.
+No input, returns an output handle with autoclear=false.
 
 #### GetPopInteractiveOutDataEvent
 
