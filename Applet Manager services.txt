@@ -365,7 +365,7 @@ This gets the cached ApplicationLaunchProperty.
 ===== GetApplicationLaunchRequestInfo =====
 No input, returns an output 0x10-byte struct.
 
-This gets the ApplicationLaunchRequestInfo from state.
+This gets the ApplicationLaunchRequestInfo from state. The output struct is "nn::applet::ApplicationLaunchRequestInfo".
 
 ===== SetUsers =====
 Takes an input u8 bool flag and a type-0x5 input buffer containing an array of u128 userIDs.
@@ -381,7 +381,7 @@ No input, returns an output u8 bool.
 No input, returns an output u64.
 
 ===== GetDesirableUids =====
-Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u32 '''total_entries'''.
+Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output s32 '''total_entries'''.
 
 Gets a userID listing, this is unrelated to [[#SetUsers]].
 
