@@ -560,8 +560,8 @@ No input, returns an output u8 bool.
 | 30  | [\#UnpopInData](#UnpopInData "wikilink")                                                                          |       |
 | 31  | [\#UnpopExtraStorage](#UnpopExtraStorage "wikilink")                                                              |       |
 | 40  | \[2.0.0+\] [\#GetIndirectLayerProducerHandle](#GetIndirectLayerProducerHandle "wikilink")                         |       |
-| 50  | \[3.0.0+\] ReportVisibleError                                                                                     |       |
-| 51  | \[4.0.0+\] ReportVisibleErrorWithErrorContext                                                                     |       |
+| 50  | \[3.0.0+\] [\#ReportVisibleError](#ReportVisibleError "wikilink")                                                 |       |
+| 51  | \[4.0.0+\] [\#ReportVisibleErrorWithErrorContext](#ReportVisibleErrorWithErrorContext "wikilink")                 |       |
 | 60  | \[4.0.0+\] [\#GetMainAppletApplicationDesiredLanguage](#GetMainAppletApplicationDesiredLanguage "wikilink")       |       |
 | 70  | \[8.0.0+\] [\#GetCurrentApplicationId](#GetCurrentApplicationId "wikilink")                                       |       |
 | 80  | \[6.0.0+\] [\#RequestExitToSelf](#RequestExitToSelf "wikilink")                                                   |       |
@@ -673,6 +673,20 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 #### GetIndirectLayerProducerHandle
 
 No input, returns an output u64.
+
+#### ReportVisibleError
+
+Takes an input
+[ErrorCode](Error%20Applet#ErrorCode.md##ErrorCode "wikilink"), no
+output.
+
+#### ReportVisibleErrorWithErrorContext
+
+Takes an input
+[ErrorCode](Error%20Applet#ErrorCode.md##ErrorCode "wikilink") and a
+type-0x15 input buffer containing an
+[ErrorContext](Error%20Applet#ErrorContext.md##ErrorContext "wikilink"),
+no output.
 
 #### GetMainAppletApplicationDesiredLanguage
 

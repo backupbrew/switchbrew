@@ -553,9 +553,9 @@ No input, returns an output u8 bool.
 |-
 | 40 || [2.0.0+] [[#GetIndirectLayerProducerHandle]] ||
 |-
-| 50 || [3.0.0+] ReportVisibleError ||
+| 50 || [3.0.0+] [[#ReportVisibleError]] ||
 |-
-| 51 || [4.0.0+] ReportVisibleErrorWithErrorContext ||
+| 51 || [4.0.0+] [[#ReportVisibleErrorWithErrorContext]] ||
 |-
 | 60 || [4.0.0+] [[#GetMainAppletApplicationDesiredLanguage]] ||
 |-
@@ -646,6 +646,12 @@ Takes an input [[#IStorage]], no output.
 
 ==== GetIndirectLayerProducerHandle ====
 No input, returns an output u64.
+
+==== ReportVisibleError ====
+Takes an input [[Error_Applet#ErrorCode|ErrorCode]], no output.
+
+==== ReportVisibleErrorWithErrorContext ====
+Takes an input [[Error_Applet#ErrorCode|ErrorCode]] and a type-0x15 input buffer containing an [[Error_Applet#ErrorContext|ErrorContext]], no output.
 
 ==== GetMainAppletApplicationDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].
