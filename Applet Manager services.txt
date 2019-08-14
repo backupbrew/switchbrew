@@ -327,7 +327,7 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 140 || [6.0.0+] [[#GetDesirableUids]] || 
 |-
-| 150 || [6.0.0+] ReportApplicationExitTimeout || 
+| 150 || [6.0.0+] [[#ReportApplicationExitTimeout]] || 
 |-
 | 160 || [8.0.0+] [[#SetApplicationAttribute]] ||
 |-
@@ -368,6 +368,9 @@ Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an o
 Gets a userID listing, this is unrelated to [[#SetUsers]].
 
 The stored entry-count in state must be <= <size of output buffer in entries>.
+
+===== ReportApplicationExitTimeout =====
+No input/output.
 
 ===== SetApplicationAttribute =====
 Takes a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.

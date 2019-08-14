@@ -335,7 +335,7 @@ No input, returns an
 | 131 | \[6.0.0+\] CheckRightsEnvironmentAvailable                                                 |       |
 | 132 | \[6.0.0+\] GetNsRightsEnvironmentHandle                                                    |       |
 | 140 | \[6.0.0+\] [\#GetDesirableUids](#GetDesirableUids "wikilink")                              |       |
-| 150 | \[6.0.0+\] ReportApplicationExitTimeout                                                    |       |
+| 150 | \[6.0.0+\] [\#ReportApplicationExitTimeout](#ReportApplicationExitTimeout "wikilink")      |       |
 | 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                |       |
 | 170 | \[8.0.0+\] HasSaveDataAccessPermission                                                     |       |
 
@@ -390,6 +390,10 @@ Gets a userID listing, this is unrelated to
 
 The stored entry-count in state must be \<=
 <size of output buffer in entries>.
+
+##### ReportApplicationExitTimeout
+
+No input/output.
 
 ##### SetApplicationAttribute
 
