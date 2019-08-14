@@ -43,12 +43,29 @@ a type-0x15 input buffer.
 
 This is "nn::grcsrv::IGameMovieTrimmer".
 
-| Cmd | Name                |
-| --- | ------------------- |
-| 1   | BeginTrim           |
-| 2   | EndTrim             |
-| 10  | GetNotTrimmingEvent |
-| 20  | SetThumbnailRgba    |
+| Cmd | Name                                                     |
+| --- | -------------------------------------------------------- |
+| 1   | [\#BeginTrim](#BeginTrim "wikilink")                     |
+| 2   | [\#EndTrim](#EndTrim "wikilink")                         |
+| 10  | [\#GetNotTrimmingEvent](#GetNotTrimmingEvent "wikilink") |
+| 20  | [\#SetThumbnailRgba](#SetThumbnailRgba "wikilink")       |
+
+### BeginTrim
+
+Takes an input s32, a s32, and a
+[\#GameMovieId](#GameMovieId "wikilink"), no output.
+
+### EndTrim
+
+No input, returns an output [\#GameMovieId](#GameMovieId "wikilink").
+
+### GetNotTrimmingEvent
+
+No input, returns an output handle.
+
+### SetThumbnailRgba
+
+Takes a type-0x45 input buffer, a s32, and a s32, no output.
 
 # grc:d
 
@@ -201,6 +218,10 @@ autoclear disabled.
 # OffscreenRecordingParameter
 
 This is a 0x80-byte struct.
+
+# GameMovieId
+
+This is "nn::grcsrv::GameMovieId". This is a 0x40-byte struct.
 
 # IHOSBinderDriver
 
