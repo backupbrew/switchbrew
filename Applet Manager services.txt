@@ -303,9 +303,9 @@ No input, returns an [[#IApplicationAccessor]].
 |-
 | 101 || RequestForApplicationToGetForeground || 
 |-
-| 110 || TerminateAllLibraryApplets || 
+| 110 || [[#TerminateAllLibraryApplets]] || 
 |-
-| 111 || AreAnyLibraryAppletsLeft || 
+| 111 || [[#AreAnyLibraryAppletsLeft]] || 
 |-
 | 112 || [[#GetCurrentLibraryApplet]] || 
 |-

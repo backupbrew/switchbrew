@@ -323,8 +323,8 @@ No input, returns an
 | 25  | Terminate                                                                    |       |
 | 30  | GetResult                                                                    |       |
 | 101 | RequestForApplicationToGetForeground                                         |       |
-| 110 | TerminateAllLibraryApplets                                                   |       |
-| 111 | AreAnyLibraryAppletsLeft                                                     |       |
+| 110 | [\#TerminateAllLibraryApplets](#TerminateAllLibraryApplets "wikilink")       |       |
+| 111 | [\#AreAnyLibraryAppletsLeft](#AreAnyLibraryAppletsLeft "wikilink")           |       |
 | 112 | [\#GetCurrentLibraryApplet](#GetCurrentLibraryApplet "wikilink")             |       |
 | 120 | [\#GetApplicationId](#GetApplicationId "wikilink")                           |       |
 | 121 | [\#PushLaunchParameter](#PushLaunchParameter "wikilink")                     |       |
