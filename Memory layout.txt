@@ -847,7 +847,7 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 | 0x70412000
 | 0x2000
 | 0x40000000000304
-| Undocumented/Not Present (Security Engine for Mariko?)
+| Erista: Nothing Present, Mariko: Security Engine 2
 |-
 | 0x1F0092000
 | 0x700F0000
@@ -1082,7 +1082,7 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 | 0x70412000
 | 0x2000
 | 0x40000000000304
-| Undocumented/Not Present (Security Engine for Mariko?)
+| Erista: Nothing Present, Mariko: Security Engine 2
 |-
 | 0x1F0092000
 | 0x700F0000
