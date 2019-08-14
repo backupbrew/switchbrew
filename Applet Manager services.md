@@ -567,8 +567,8 @@ No input, returns an output u8 bool.
 | 80  | \[6.0.0+\] [\#RequestExitToSelf](#RequestExitToSelf "wikilink")                                                   |       |
 | 90  | \[5.0.0+\] CreateApplicationAndPushAndRequestToLaunch                                                             |       |
 | 100 | \[4.0.0+\] [\#CreateGameMovieTrimmer](#CreateGameMovieTrimmer "wikilink")                                         |       |
-| 101 | \[5.0.0+\] ReserveResourceForMovieOperation                                                                       |       |
-| 102 | \[5.0.0+\] UnreserveResourceForMovieOperation                                                                     |       |
+| 101 | \[5.0.0+\] [\#ReserveResourceForMovieOperation](#ReserveResourceForMovieOperation "wikilink")                     |       |
+| 102 | \[5.0.0+\] [\#UnreserveResourceForMovieOperation](#UnreserveResourceForMovieOperation "wikilink")                 |       |
 | 110 | \[6.0.0+\] [\#GetMainAppletAvailableUsers](#GetMainAppletAvailableUsers "wikilink")                               |       |
 
 #### PopInData
@@ -697,6 +697,18 @@ current applet.
 
 Takes an input u64 and handle, returns a GRC
 [IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
+
+#### ReserveResourceForMovieOperation
+
+No input/output.
+
+Updates a state field.
+
+#### UnreserveResourceForMovieOperation
+
+No input/output.
+
+Updates a state field.
 
 #### GetMainAppletAvailableUsers
 
