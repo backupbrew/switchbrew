@@ -589,7 +589,7 @@ Takes an input [\#IStorage](#IStorage "wikilink"), no output.
 
 #### GetPopInDataEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 #### GetPopInteractiveInDataEvent
 
@@ -660,7 +660,7 @@ No input, returns an output [\#IStorage](#IStorage "wikilink").
 
 #### GetPopExtraStorageEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 #### UnpopInData
 

@@ -587,7 +587,7 @@ No input, returns an output [[#IStorage]].
 Takes an input [[#IStorage]], no output.
 
 ==== GetPopInDataEvent ====
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ==== GetPopInteractiveInDataEvent ====
 No input, returns an output Event handle with autoclear=false.
@@ -636,7 +636,7 @@ This gets the value previously set by [[#SetDesirableKeyboardLayout]]. An error 
 No input, returns an output [[#IStorage]].
 
 ==== GetPopExtraStorageEvent ====
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ==== UnpopInData ====
 Takes an input [[#IStorage]], no output.
