@@ -12,7 +12,7 @@ This is "nn::grcsrv::IGrcService".
 | Cmd  | Name                   | Notes                                                                                                                   |
 | ---- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | 1    | OpenContinuousRecorder | Takes a total of 0x28-bytes of input and a handle, returns an [\#IContinuousRecorder](#IContinuousRecorder "wikilink"). |
-| 2    | OpenGameMovieTrimmer   | Takes a total of 0x8-bytes of input and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").      |
+| 2    | OpenGameMovieTrimmer   | Takes an input u64 and a handle, returns an [\#IGameMovieTrimmer](#IGameMovieTrimmer "wikilink").                       |
 | 3    | \[5.0.0+\]             | Takes a total of 0x8-bytes of input and a handle, returns an [\#IOffscreenRecorder](#IOffscreenRecorder "wikilink").    |
 | 101  | \[5.0.0+\]             | Takes a total of 0x10-bytes of input, returns an [\#IMovieMaker](#IMovieMaker "wikilink").                              |
 | 9903 | \[5.0.0+\]             | Takes 8-bytes of input, no output.                                                                                      |
