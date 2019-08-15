@@ -674,6 +674,8 @@ This is is similar to [[#CreateApplicationAndPushAndRequestToStart]].
 ==== CreateGameMovieTrimmer ====
 Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
 
+This is a wrapper for GRC [[GRC_services#OpenGameMovieTrimmer|OpenGameMovieTrimmer]].
+
 ==== ReserveResourceForMovieOperation ====
 No input/output.
 

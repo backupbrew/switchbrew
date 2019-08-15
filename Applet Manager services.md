@@ -719,6 +719,9 @@ This is is similar to
 Takes an input u64 and handle, returns a GRC
 [IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
 
+This is a wrapper for GRC
+[OpenGameMovieTrimmer](GRC%20services#OpenGameMovieTrimmer.md##OpenGameMovieTrimmer "wikilink").
+
 #### ReserveResourceForMovieOperation
 
 No input/output.
