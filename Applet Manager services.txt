@@ -672,9 +672,11 @@ Takes an input u64 titleID and an input #IStorage, no output.
 This is is similar to [[#CreateApplicationAndPushAndRequestToStart]].
 
 ==== CreateGameMovieTrimmer ====
-Takes an input u64 and handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
+Takes an input u64 size and a TransferMemory handle, returns a GRC [[GRC_services#IGameMovieTrimmer|IGameMovieTrimmer]].
 
 This is a wrapper for GRC [[GRC_services#OpenGameMovieTrimmer|OpenGameMovieTrimmer]].
+
+Official sw uses an user-buffer for the tmem, with permissions=0.
 
 ==== ReserveResourceForMovieOperation ====
 No input/output.

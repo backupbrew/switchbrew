@@ -716,11 +716,13 @@ This is is similar to
 
 #### CreateGameMovieTrimmer
 
-Takes an input u64 and handle, returns a GRC
+Takes an input u64 size and a TransferMemory handle, returns a GRC
 [IGameMovieTrimmer](GRC%20services#IGameMovieTrimmer.md##IGameMovieTrimmer "wikilink").
 
 This is a wrapper for GRC
 [OpenGameMovieTrimmer](GRC%20services#OpenGameMovieTrimmer.md##OpenGameMovieTrimmer "wikilink").
+
+Official sw uses an user-buffer for the tmem, with permissions=0.
 
 #### ReserveResourceForMovieOperation
 
