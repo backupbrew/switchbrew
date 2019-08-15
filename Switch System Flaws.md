@@ -260,6 +260,19 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <td><p>April 15, 2019</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a>, <a href="User:motezazer" title="wikilink">motezazer</a> and ktemkin, <a href="User:Naehrwert" title="wikilink">naehrwert</a> (independently), almost certainly others (independently)</p></td>
 </tr>
+<tr class="even">
+<td><p>TrustZone allows using imported RSA exponents with arbitrary modulus</p></td>
+<td><p>TrustZone supports "importing" RSA private exponents for use by userland -- these are stored encrypted with TrustZone only keydata in NAND, and decrypted only to TZRAM. This prevents a console that has compromised userland from learning the private exponents of these keys and doing calculations with them offline. In practice, this is used for FS (gamecard communications), ES (drm), and SSL (console client cert communications).</p>
+<p>However, the actual SMC API only imports the RSA exponent, and not the modulus, which is passed separately by userland in each call. There is no validation done on the modulus passed in -- this means that userland can pass in any message and modulus it chooses, and obtain the result of (message ^ private exponent) % modulus back from the secure monitor.</p>
+<p>By choosing a prime number modulus P such that P has "smooth" order (totient(P) == P-1 is divisible only by "small" primes), one can efficiently use the <a href="wikipedia:Pohlig-Hellman_algorithm" title="wikilink">Pohlig-Hellman algorithm</a> to calculate the discrete logarithm of such a result directly, and thus obtain the private exponent.</p>
+<p>This is mostly useless in practice, given the general availability of other exploits to obtain these decrypted exponents.</p></td>
+<td><p>With userland privileges sufficient to use an imported RSA key: obtaining that RSA key's private exponent.</p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p>August 14, 2019</p></td>
+<td><p>August 14, 2019</p></td>
+<td><p><a href="User:SciresM" title="wikilink">SciresM</a></p></td>
+</tr>
 </tbody>
 </table>
 

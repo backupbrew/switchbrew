@@ -251,6 +251,21 @@ This was fixed in [[8.0.0]] by blocking AHB-DMA arbitration and verifying it is 
 |  December 2017
 |  April 15, 2019
 |  [[User:SciresM|SciresM]], [[User:motezazer|motezazer]] and ktemkin,  [[User:Naehrwert|naehrwert]] (independently), almost certainly others (independently)
+|-
+| TrustZone allows using imported RSA exponents with arbitrary modulus
+| TrustZone supports "importing" RSA private exponents for use by userland -- these are stored encrypted with TrustZone only keydata in NAND, and decrypted only to TZRAM. This prevents a console that has compromised userland from learning the private exponents of these keys and doing calculations with them offline. In practice, this is used for FS (gamecard communications), ES (drm), and SSL (console client cert communications).
+
+However, the actual SMC API only imports the RSA exponent, and not the modulus, which is passed separately by userland in each call. There is no validation done on the modulus passed in -- this means that userland can pass in any message and modulus it chooses, and obtain the result of (message ^ private exponent) % modulus back from the secure monitor.
+
+By choosing a prime number modulus P such that P has "smooth" order (totient(P) == P-1 is divisible only by "small" primes), one can efficiently use the [[wikipedia:Pohlig-Hellman algorithm|Pohlig-Hellman algorithm]] to calculate the discrete logarithm of such a result directly, and thus obtain the private exponent.
+
+This is mostly useless in practice, given the general availability of other exploits to obtain these decrypted exponents.
+| With userland privileges sufficient to use an imported RSA key: obtaining that RSA key's private exponent.
+|  [[8.0.0]]
+|  [[8.0.0]]
+|  August 14, 2019
+|  August 14, 2019
+|  [[User:SciresM|SciresM]]
 |}
 
 === Kernel ===
