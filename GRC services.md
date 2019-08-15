@@ -50,6 +50,16 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 | 10  | [\#GetNotTrimmingEvent](#GetNotTrimmingEvent "wikilink") |
 | 20  | [\#SetThumbnailRgba](#SetThumbnailRgba "wikilink")       |
 
+Album uses
+[CreateGameMovieTrimmer](Applet%20Manager%20services#CreateGameMovieTrimmer.md##CreateGameMovieTrimmer "wikilink"),
+and retries using the cmd in a loop on error 0x8D4 with
+svcSleepThread(100000000) being used first. Then all 4 of these commands
+are used in that same func:
+[\#SetThumbnailRgba](#SetThumbnailRgba "wikilink") if the input buffer
+is set, [\#GetNotTrimmingEvent](#GetNotTrimmingEvent "wikilink"),
+[\#BeginTrim](#BeginTrim "wikilink"), waits on the event, then
+[\#EndTrim](#EndTrim "wikilink") and cleanup.
+
 ### BeginTrim
 
 Takes an input s32, a s32, and a
@@ -61,11 +71,12 @@ No input, returns an output [\#GameMovieId](#GameMovieId "wikilink").
 
 ### GetNotTrimmingEvent
 
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 ### SetThumbnailRgba
 
-Takes a type-0x45 input buffer, a s32, and a s32, no output.
+Takes a type-0x45 input buffer, a s32 **width**, and a s32 **height**,
+no output.
 
 # grc:d
 

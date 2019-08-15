@@ -64,6 +64,8 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 | 20 || [[#SetThumbnailRgba]]
 |}
 
+Album uses [[Applet_Manager_services#CreateGameMovieTrimmer|CreateGameMovieTrimmer]], and retries using the cmd in a loop on error 0x8D4 with svcSleepThread(100000000) being used first. Then all 4 of these commands are used in that same func: [[#SetThumbnailRgba]] if the input buffer is set, [[#GetNotTrimmingEvent]], [[#BeginTrim]], waits on the event, then [[#EndTrim]] and cleanup.
+
 === BeginTrim ===
 Takes an input s32, a s32, and a [[#GameMovieId]], no output.
 
@@ -71,10 +73,10 @@ Takes an input s32, a s32, and a [[#GameMovieId]], no output.
 No input, returns an output [[#GameMovieId]].
 
 === GetNotTrimmingEvent ===
-No input, returns an output handle.
+No input, returns an output Event handle with autoclear=false.
 
 === SetThumbnailRgba ===
-Takes a type-0x45 input buffer, a s32, and a s32, no output.
+Takes a type-0x45 input buffer, a s32 '''width''', and a s32 '''height''', no output.
 
 = grc:d =
 This is "nn::grcsrv::IRemoteVideoTransfer".
