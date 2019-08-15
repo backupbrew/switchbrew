@@ -267,8 +267,8 @@ Monitor](Package1#Section%202.md##Section_2 "wikilink").
 <p>By choosing a prime number modulus P such that P has "smooth" order (totient(P) == P-1 is divisible only by "small" primes), one can efficiently use the <a href="wikipedia:Pohlig-Hellman_algorithm" title="wikilink">Pohlig-Hellman algorithm</a> to calculate the discrete logarithm of such a result directly, and thus obtain the private exponent.</p>
 <p>This is mostly useless in practice, given the general availability of other exploits to obtain these decrypted exponents.</p></td>
 <td><p>With userland privileges sufficient to use an imported RSA key: obtaining that RSA key's private exponent.</p></td>
-<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
-<td><p><a href="8.0.0.md" title="wikilink">8.0.0</a></p></td>
+<td><p>N/A</p></td>
+<td><p><a href="8.1.0.md" title="wikilink">8.1.0</a></p></td>
 <td><p>August 14, 2019</p></td>
 <td><p>August 14, 2019</p></td>
 <td><p><a href="User:SciresM" title="wikilink">SciresM</a></p></td>

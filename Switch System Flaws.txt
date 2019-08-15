@@ -261,8 +261,8 @@ By choosing a prime number modulus P such that P has "smooth" order (totient(P) 
 
 This is mostly useless in practice, given the general availability of other exploits to obtain these decrypted exponents.
 | With userland privileges sufficient to use an imported RSA key: obtaining that RSA key's private exponent.
-|  [[8.0.0]]
-|  [[8.0.0]]
+|  N/A
+|  [[8.1.0]]
 |  August 14, 2019
 |  August 14, 2019
 |  [[User:SciresM|SciresM]]
