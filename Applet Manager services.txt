@@ -597,7 +597,7 @@ No input/output.
 
 Exits the LibraryApplet and returns to running the title which launched this LibraryApplet ([[qlaunch]] for example).
 
-Official sw enters an infinite sleep-thread loop after using this.
+On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 ==== GetLibraryAppletInfo ====
 No input, returns an output [[#LibraryAppletInfo]].
@@ -1013,13 +1013,19 @@ No input/output.
 ==== RequestToShutdown ====
 No input/output.
 
+On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
+
 ==== RequestToReboot ====
 No input/output.
+
+On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 ==== ExitAndRequestToShowThanksMessage ====
 No input/output.
 
-Used to exit the application and return to the kiosk menu. Official sw uses [[#UnlockExit]] immediately before this.
+Used to exit the application and return to the kiosk menu. Official sw uses [[#UnlockExit]] immediately before this if needed.
+
+On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 This throws an error when the cached [[Settings_services#GetQuestFlag]] value is 0.
 
@@ -1565,6 +1571,8 @@ This returns the output from omm [[#Cmd26]].
 
 === Exit ===
 No input/output.
+
+Exits the current applet. On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 === LockExit ===
 No input/output.
@@ -2661,7 +2669,7 @@ This is "nn::am::service::SystemButtonType". This is used with [[#PerformSystemB
 !  Value
 !  Description
 |-
-| 0 || u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards.
+| 0 || u8 ProgramIndex. "ExecuteProgram". After using [[#ExecutProgram]] with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000.
 |-
 | 1 || u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [[Settings_services#GetDebugModeFlag|DebugMode]] is 1.
 |-

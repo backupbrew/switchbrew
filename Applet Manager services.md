@@ -602,7 +602,8 @@ No input/output.
 Exits the LibraryApplet and returns to running the title which launched
 this LibraryApplet ([qlaunch](Qlaunch.md "wikilink") for example).
 
-Official sw enters an infinite sleep-thread loop after using this.
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
 
 #### GetLibraryAppletInfo
 
@@ -1084,16 +1085,26 @@ No input/output.
 
 No input/output.
 
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
+
 #### RequestToReboot
 
 No input/output.
+
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
 
 #### ExitAndRequestToShowThanksMessage
 
 No input/output.
 
 Used to exit the application and return to the kiosk menu. Official sw
-uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this.
+uses [\#UnlockExit](#UnlockExit "wikilink") immediately before this if
+needed.
+
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
 
 This throws an error when the cached
 [Settings\_services\#GetQuestFlag](Settings%20services#GetQuestFlag.md##GetQuestFlag "wikilink")
@@ -1706,6 +1717,9 @@ This returns the output from omm [\#Cmd26](#Cmd26 "wikilink").
 ### Exit
 
 No input/output.
+
+Exits the current applet. On success, official sw will enter an infinite
+loop with sleep-thread value 86400000000000.
 
 ### LockExit
 
@@ -2787,12 +2801,12 @@ This is "nn::am::<service::SystemButtonType>". This is used with
 
 ### ProgramSpecifyKind
 
-| Value | Description                                                                                                                                                           |
-| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | u8 ProgramIndex. "ExecuteProgram". User-process enters an infinite svcSleepThread loop afterwards.                                                                    |
-| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [DebugMode](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") is 1. |
-| 2     | u64 = value 0. "RestartProgram"                                                                                                                                       |
-|       |                                                                                                                                                                       |
+| Value | Description                                                                                                                                                                                                     |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | u8 ProgramIndex. "ExecuteProgram". After using [\#ExecutProgram](#ExecutProgram "wikilink") with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000. |
+| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [DebugMode](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") is 1.                                           |
+| 2     | u64 = value 0. "RestartProgram"                                                                                                                                                                                 |
+|       |                                                                                                                                                                                                                 |
 
 This is "nn::am::<service::ProgramSpecifyKind>". This controls the type
 of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
