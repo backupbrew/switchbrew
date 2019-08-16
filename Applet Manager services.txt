@@ -2164,6 +2164,8 @@ No input, returns an output [[#IApplicationAccessor]].
 === SetCpuBoostModeForApplet ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
 
+The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
+
 == IStorage ==
 {| class="wikitable" border="1"
 |-

@@ -2424,6 +2424,10 @@ Takes an input u32 **CpuBoostMode** (only modes 0 and 1 are valid) and
 passes it to
 [SetCpuBoostMode](PPC%20services#apm:sys.md##apm:sys "wikilink").
 
+The cached value loaded from
+[Settings\_services\#GetDebugModeFlag](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink")
+must be 1, otherwise an error is returned.
+
 ## IStorage
 
 | Cmd | Name                           | Notes                                                                                    |
