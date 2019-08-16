@@ -2422,7 +2422,8 @@ No input, returns an output
 
 ### PerformSystemButtonPressing
 
-Takes an input u32 "nn::am::<service::SystemButtonType>", no output.
+Takes an input [\#SystemButtonType](#SystemButtonType "wikilink"), no
+output.
 
 ### InvalidateTransitionLayer
 
@@ -2762,7 +2763,7 @@ This is "nn::oe::TvPowerStateMatchingMode". This is used with
 | 7     | PerformCaptureButtonLongPressing  |
 
 This is "nn::am::<service::SystemButtonType>". This is used with
-[\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink").
+[\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink")/[\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").
 
 ### LaunchParameterKind
 
