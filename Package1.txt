@@ -55,7 +55,7 @@ The stack pointer is set.
 </syntaxhighlight>
 
 === Main ===
-From firmware versions 1.0.0 to 6.1.0, the bootloader poisons the exception vectors, cleans up memory (.bss and init_array), sets up hardware devices (including the security engine and fuses), does all the necessary checks, generates keys and finally decrypts and executes the next stage.
+The bootloader poisons the exception vectors, cleans up memory (.bss and init_array), sets up hardware devices (including the security engine and fuses), does all the necessary checks, generates keys and finally decrypts and executes the next stage.
 
 <syntaxhighlight lang="c">
  // Poison all exception vectors
@@ -148,7 +148,7 @@ From firmware versions 1.0.0 to 6.1.0, the bootloader poisons the exception vect
  return;
 </syntaxhighlight>
 
-Starting with firmware version 6.2.0, the bootloader maintains most of its design, but passes execution to a [[TSEC]] payload and is left in an infinite loop.
+[6.2.0+] The bootloader maintains most of its design, but passes execution to a [[TSEC]] payload and is left in an infinite loop.
 
 <syntaxhighlight lang="c">
  // Poison all exception vectors
