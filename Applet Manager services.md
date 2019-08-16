@@ -2399,15 +2399,19 @@ output.
 
 ## IDebugFunctions
 
-| Cmd | Name                                                                          | Notes |
-| --- | ----------------------------------------------------------------------------- | ----- |
-| 0   | NotifyMessageToHomeMenuForDebug                                               |       |
-| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                      |       |
-| 10  | EmulateButtonEvent                                                            |       |
-| 20  | InvalidateTransitionLayer                                                     |       |
-| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug                |       |
-| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                                         |       |
-| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink") |       |
+| Cmd | Name                                                                             | Notes |
+| --- | -------------------------------------------------------------------------------- | ----- |
+| 0   | [\#NotifyMessageToHomeMenuForDebug](#NotifyMessageToHomeMenuForDebug "wikilink") |       |
+| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                         |       |
+| 10  | EmulateButtonEvent                                                               |       |
+| 20  | InvalidateTransitionLayer                                                        |       |
+| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug                   |       |
+| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                                            |       |
+| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")    |       |
+
+### NotifyMessageToHomeMenuForDebug
+
+Stubbed, just returns an error.
 
 ### OpenMainApplication
 

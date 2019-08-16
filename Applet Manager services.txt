@@ -2140,7 +2140,7 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || NotifyMessageToHomeMenuForDebug ||
+| 0 || [[#NotifyMessageToHomeMenuForDebug]] ||
 |-
 | 1 || [[#OpenMainApplication]] || 
 |-
@@ -2154,6 +2154,9 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |-
 | 100 || [7.0.0+] [[#SetCpuBoostModeForApplet]] ||
 |}
+
+=== NotifyMessageToHomeMenuForDebug ===
+Stubbed, just returns an error.
 
 === OpenMainApplication ===
 No input, returns an output [[#IApplicationAccessor]].
