@@ -2150,7 +2150,7 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |-
 | 30 || [6.0.0+] RequestLaunchApplicationWithUserAndArgumentForDebug ||
 |-
-| 40 || [6.0.0+] GetAppletResourceUsageInfo ||
+| 40 || [6.0.0+] [[#GetAppletResourceUsageInfo]] ||
 |-
 | 100 || [7.0.0+] [[#SetCpuBoostModeForApplet]] ||
 |}
@@ -2160,6 +2160,9 @@ Stubbed, just returns an error.
 
 === OpenMainApplication ===
 No input, returns an output [[#IApplicationAccessor]].
+
+=== GetAppletResourceUsageInfo ===
+No input, returns an output 0x20-byte struct "nn::am::service::AppletResourceUsageInfo".
 
 === SetCpuBoostModeForApplet ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].

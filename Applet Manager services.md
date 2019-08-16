@@ -2399,15 +2399,15 @@ output.
 
 ## IDebugFunctions
 
-| Cmd | Name                                                                             | Notes |
-| --- | -------------------------------------------------------------------------------- | ----- |
-| 0   | [\#NotifyMessageToHomeMenuForDebug](#NotifyMessageToHomeMenuForDebug "wikilink") |       |
-| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                         |       |
-| 10  | EmulateButtonEvent                                                               |       |
-| 20  | InvalidateTransitionLayer                                                        |       |
-| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug                   |       |
-| 40  | \[6.0.0+\] GetAppletResourceUsageInfo                                            |       |
-| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")    |       |
+| Cmd | Name                                                                              | Notes |
+| --- | --------------------------------------------------------------------------------- | ----- |
+| 0   | [\#NotifyMessageToHomeMenuForDebug](#NotifyMessageToHomeMenuForDebug "wikilink")  |       |
+| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                          |       |
+| 10  | EmulateButtonEvent                                                                |       |
+| 20  | InvalidateTransitionLayer                                                         |       |
+| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug                    |       |
+| 40  | \[6.0.0+\] [\#GetAppletResourceUsageInfo](#GetAppletResourceUsageInfo "wikilink") |       |
+| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")     |       |
 
 ### NotifyMessageToHomeMenuForDebug
 
@@ -2417,6 +2417,11 @@ Stubbed, just returns an error.
 
 No input, returns an output
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+### GetAppletResourceUsageInfo
+
+No input, returns an output 0x20-byte struct
+"nn::am::<service::AppletResourceUsageInfo>".
 
 ### SetCpuBoostModeForApplet
 
