@@ -1428,7 +1428,7 @@ uses svcWaitSynchronization with the event from
 message is available, then if so it uses
 [\#ReceiveMessage](#ReceiveMessage "wikilink"). The actual handling for
 message IDs is done in the app itself(see
-[\#NotificationMessage](#NotificationMessage "wikilink")).
+[\#AppletMessage](#AppletMessage "wikilink")).
 
 \[7.0.0+\] User-processes now use BeginVrModeEx/EndVrModeEx instead of
 [\#SetVrModeEnabled](#SetVrModeEnabled "wikilink"). Prior to using using
@@ -1444,8 +1444,9 @@ message is available with
 
 ### ReceiveMessage
 
-No input. Returns an output u32. Error 0x680 indicates no message is
-available.
+No input. Returns an output
+[\#AppletMessage](#AppletMessage "wikilink"). Error 0x680 indicates no
+message is available.
 
 ### GetThisAppletKind
 
@@ -1771,7 +1772,7 @@ u8, these are bool flags. No output.
 
 Takes an input u8 bool flag, no output.
 
-See [\#NotificationMessage](#NotificationMessage "wikilink").
+See [\#AppletMessage](#AppletMessage "wikilink").
 
 ### SetScreenShotAppletIdentityInfo
 
@@ -1793,7 +1794,7 @@ the input value.
 
 Takes an input u8 bool flag, no output.
 
-See [\#NotificationMessage](#NotificationMessage "wikilink").
+See [\#AppletMessage](#AppletMessage "wikilink").
 
 When enabled with a non-Overlay applet, Overlay applet will not be
 notified of capture button short-presses for screenshots.
@@ -1855,7 +1856,7 @@ Sets an internal state flag. When the input flag is 0, this will in
 additional run the same code as
 [\#ApproveToDisplay](#ApproveToDisplay "wikilink").
 
-See [\#NotificationMessage](#NotificationMessage "wikilink").
+See [\#AppletMessage](#AppletMessage "wikilink").
 
 ### ApproveToDisplay
 
@@ -1963,7 +1964,7 @@ is updated.
 
 Takes an input u8 bool, no output.
 
-See [\#NotificationMessage](#NotificationMessage "wikilink").
+See [\#AppletMessage](#AppletMessage "wikilink").
 
 ### SetApplicationAlbumUserData
 
@@ -2411,7 +2412,7 @@ output.
 
 ### NotifyMessageToHomeMenuForDebug
 
-Takes an input u32 "nn::am::AppletMessage", no output.
+Takes an input [\#AppletMessage](#AppletMessage "wikilink"), no output.
 
 Stubbed, just returns an error.
 
@@ -2723,7 +2724,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x4 | AllForegroundInitiallyHidden. Can be used by \[7.0.0+\] [WebSession](Internet%20Browser.md "wikilink").                                                       |
 |     |                                                                                                                                                               |
 
-### NotificationMessage
+### AppletMessage
 
 | ID   | Description                                                                                                                                   |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2735,6 +2736,8 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x33 | [RequestToDisplay](#SetHandlesRequestToDisplay "wikilink"). Indicates that [\#ApproveToDisplay](#ApproveToDisplay "wikilink") should be used. |
 | 0x5A | Capture button was [short-pressed](#SetRequiresCaptureButtonShortPressedMessage "wikilink").                                                  |
 | 0x5C | Screenshot was [taken](#SetAlbumImageTakenNotificationEnabled "wikilink").                                                                    |
+
+This is "nn::am::AppletMessage".
 
 ### OperationMode
 

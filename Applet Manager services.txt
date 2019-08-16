@@ -1322,7 +1322,7 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 | 200 || [7.0.0+] [[#GetOperationModeSystemInfo]] ||
 |}
 
-Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#NotificationMessage]]).
+Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#AppletMessage]]).
 
 [7.0.0+] User-processes now use BeginVrModeEx/EndVrModeEx instead of [[#SetVrModeEnabled]]. Prior to using using BeginVrModeEx, [[Parental_Control_services|pctl]] IsStereoVisionPermitted is used and error 0xD08E is thrown if not allowed by pctl.
 
@@ -1330,7 +1330,7 @@ Officially notification messages are handled by the application itself, not sdk-
 No input. Returns an output event handle. This is signalled when a message is available with [[#ReceiveMessage]].
 
 === ReceiveMessage ===
-No input. Returns an output u32. Error 0x680 indicates no message is available.
+No input. Returns an output [[#AppletMessage]]. Error 0x680 indicates no message is available.
 
 === GetThisAppletKind ===
 No input, returns an output [[#AppletKind]].
@@ -1616,7 +1616,7 @@ Takes 3 input u8s with each field located immediately after the previous u8, the
 === SetRestartMessageEnabled ===
 Takes an input u8 bool flag, no output.
 
-See [[#NotificationMessage]].
+See [[#AppletMessage]].
 
 === SetScreenShotAppletIdentityInfo ===
 Takes an input [[#AppletIdentityInfo]], no output.
@@ -1632,7 +1632,7 @@ This throws error 0x40280 when the internal state flag already matches the input
 === SetRequiresCaptureButtonShortPressedMessage ===
 Takes an input u8 bool flag, no output.
 
-See [[#NotificationMessage]].
+See [[#AppletMessage]].
 
 When enabled with a non-Overlay applet, Overlay applet will not be notified of capture button short-presses for screenshots.
 
@@ -1673,7 +1673,7 @@ Takes an input u8 bool, no output.
 
 Sets an internal state flag. When the input flag is 0, this will in additional run the same code as [[#ApproveToDisplay]].
 
-See [[#NotificationMessage]].
+See [[#AppletMessage]].
 
 === ApproveToDisplay ===
 No input/output.
@@ -1752,7 +1752,7 @@ This is signaled when the output from [[#GetAccumulatedSuspendedTickValue]] is u
 === SetAlbumImageTakenNotificationEnabled ===
 Takes an input u8 bool, no output.
 
-See [[#NotificationMessage]].
+See [[#AppletMessage]].
 
 === SetApplicationAlbumUserData ===
 Takes a type-0x21 input buffer, no output.
@@ -2156,7 +2156,7 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 |}
 
 === NotifyMessageToHomeMenuForDebug ===
-Takes an input u32 "nn::am::AppletMessage", no output.
+Takes an input [[#AppletMessage]], no output.
 
 Stubbed, just returns an error.
 
@@ -2561,7 +2561,7 @@ See also [[:Category:Library Applets]].
 |-
 |}
 
-=== NotificationMessage ===
+=== AppletMessage ===
 {| class="wikitable" border="1"
 |-
 !  ID
@@ -2583,6 +2583,8 @@ See also [[:Category:Library Applets]].
 |-
 | 0x5C || Screenshot was [[#SetAlbumImageTakenNotificationEnabled|taken]].
 |}
+
+This is "nn::am::AppletMessage".
 
 === OperationMode ===
 {| class="wikitable" border="1"
