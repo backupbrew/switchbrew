@@ -369,16 +369,16 @@ units it's empty.
 
 #### FUSE\_RESERVED\_ODM4
 
-| Bits                               | Description                                             |
-| ---------------------------------- | ------------------------------------------------------- |
-| 0-1                                | Unit type (3 = debug; 0 = retail)                       |
-| 2                                  | Unknown config (must be 1 on retail)                    |
-| \[1.0.0-3.0.2\] 3-5 \[4.0.0+\] 3-7 | DRAM ID                                                 |
-| 8                                  | Unknown config mask (must be 0 on retail)               |
-| 9                                  | Unit type mask (0 = debug; 1 = retail)                  |
-| 10                                 | \[3.0.0+\] Kiosk mode (0 = retail; 1 = kiosk)           |
-| 11                                 | \[5.0.0+\] Unit patch flag (0 = unpatched; 1 = patched) |
-| 16-19                              | \[4.0.0+\] New unit type (0 = Erista; 1 = Mariko)       |
+| Bits                               | Description                                                        |
+| ---------------------------------- | ------------------------------------------------------------------ |
+| 0-1                                | Unit type (3 = debug; 0 = retail)                                  |
+| 2                                  | Unknown config (must be 1 on retail)                               |
+| \[1.0.0-3.0.2\] 3-5 \[4.0.0+\] 3-7 | DRAM ID                                                            |
+| 8                                  | Unknown config mask (must be 0 on retail)                          |
+| 9                                  | Unit type mask (0 = debug; 1 = retail)                             |
+| 10                                 | \[3.0.0+\] Kiosk mode (0 = retail; 1 = kiosk)                      |
+| 11                                 | \[5.0.0+\] Unit patch flag (0 = unpatched; 1 = patched)            |
+| 16-19                              | \[4.0.0+\] New unit type (0 = Erista; 1 = Mariko; 2 = Mariko Lite) |
 
 This stores some device configuration parameters.
 
