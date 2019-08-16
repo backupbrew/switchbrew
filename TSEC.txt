@@ -856,11 +856,38 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 !  ID
 !  Method
 |-
+| 0x100
+| NOP
+|-
+| 0x140
+| PM_TRIGGER
+|-
 | 0x200
 | SET_APPLICATION_ID
 |-
+| 0x204
+| SET_WATCHDOG_TIMER
+|-
+| 0x240
+| SEMAPHORE_A
+|-
+| 0x244
+| SEMAPHORE_B
+|-
+| 0x248
+| SEMAPHORE_C
+|-
+| 0x24C
+| 
+|-
+| 0x250
+| 
+|-
 | 0x300
 | EXECUTE
+|-
+| 0x304
+| SEMAPHORE_D
 |-
 | 0x500
 | HDCP_INIT
@@ -1008,6 +1035,9 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | 0x740
 | [6.0.0+] HDCP_GET_CURRENT_NONCE
+|-
+| 0x1114
+| PM_TRIGGER_END
 |}
 
 Used to encode and send a method's ID over HOST1X to TSEC. This register mirrors the functionality of HOST1X's channel opcode submission.
