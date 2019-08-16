@@ -2399,17 +2399,19 @@ output.
 
 ## IDebugFunctions
 
-| Cmd | Name                                                                              | Notes |
-| --- | --------------------------------------------------------------------------------- | ----- |
-| 0   | [\#NotifyMessageToHomeMenuForDebug](#NotifyMessageToHomeMenuForDebug "wikilink")  |       |
-| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                          |       |
-| 10  | EmulateButtonEvent                                                                |       |
-| 20  | InvalidateTransitionLayer                                                         |       |
-| 30  | \[6.0.0+\] RequestLaunchApplicationWithUserAndArgumentForDebug                    |       |
-| 40  | \[6.0.0+\] [\#GetAppletResourceUsageInfo](#GetAppletResourceUsageInfo "wikilink") |       |
-| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")     |       |
+| Cmd | Name                                                                                                                                | Notes |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#NotifyMessageToHomeMenuForDebug](#NotifyMessageToHomeMenuForDebug "wikilink")                                                    |       |
+| 1   | [\#OpenMainApplication](#OpenMainApplication "wikilink")                                                                            |       |
+| 10  | [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink")                                                            |       |
+| 20  | [\#InvalidateTransitionLayer](#InvalidateTransitionLayer "wikilink")                                                                |       |
+| 30  | \[6.0.0+\] [\#RequestLaunchApplicationWithUserAndArgumentForDebug](#RequestLaunchApplicationWithUserAndArgumentForDebug "wikilink") |       |
+| 40  | \[6.0.0+\] [\#GetAppletResourceUsageInfo](#GetAppletResourceUsageInfo "wikilink")                                                   |       |
+| 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")                                                       |       |
 
 ### NotifyMessageToHomeMenuForDebug
+
+Takes an input u32 "nn::am::AppletMessage", no output.
 
 Stubbed, just returns an error.
 
@@ -2417,6 +2419,20 @@ Stubbed, just returns an error.
 
 No input, returns an output
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+### PerformSystemButtonPressing
+
+Takes an input u32 "nn::am::<service::SystemButtonType>", no output.
+
+### InvalidateTransitionLayer
+
+No input/output.
+
+### RequestLaunchApplicationWithUserAndArgumentForDebug
+
+Takes an input u8 bool flag, an u64 Application titleID, a type-0x5
+input buffer containing an array of u128 userIDs, and a type-0x5 input
+buffer, no output.
 
 ### GetAppletResourceUsageInfo
 
