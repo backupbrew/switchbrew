@@ -22,8 +22,7 @@ decrypt the next stage.
 The code for this stage is stored in plaintext inside the package. By
 looking into the BCT's bootloader0\_info (normal) or bootloader1\_info
 (safe mode), the boot ROM starts executing this stage at address
-0x40010020 in IRAM (0x40010040 for
-4.0.0+).
+0x40010020 in IRAM (0x40010040 for 4.0.0+).
 
 ### Header
 
@@ -396,6 +395,9 @@ aperture designed for AHB redirected access to IRAM.
     
  return mc_iram_reg_ctrl_val;
 ```
+
+\[6.2.0+\] MC\_IRAM\_TOM is now set to 0x80000000 to allow TSEC to
+access IRAM and all MMIO.
 
 #### Key generation
 
@@ -792,8 +794,7 @@ This section contains the Secure Monitor binary.
   - The encrypted binaries' order and calculation for next stage's
     entrypoint was changed.
 
-Old layout (before
-2.0.0):
+Old layout (before 2.0.0):
 
 `1.- PK11 header`  
 `2.- Secure Monitor blob`  
@@ -803,8 +804,7 @@ Old layout (before
 `NX bootloader entrypoint is calculated as:`  
 `0x40013FE0 + 0x20 + 0x20 + NX bootloader blob's offset + Secure Monitor blob's size`
 
-New layout
-(2.0.0+):
+New layout (2.0.0+):
 
 `1.- PK11 header`  
 `2.- Warmboot blob`  

@@ -384,6 +384,8 @@ After disabling fuse programming, the bootloader configures the EMC and MEM/MC. 
  return mc_iram_reg_ctrl_val;
 </syntaxhighlight>
 
+[6.2.0+] MC_IRAM_TOM is now set to 0x80000000 to allow TSEC to access IRAM and all MMIO.
+
 ==== Key generation ====
 After the security engine is ready and before decrypting the next stage, the bootloader initializes and generates several keys into hardware keyslots.
 For more details on the Switch's cryptosystem, please see [[Cryptosystem|this page]].
