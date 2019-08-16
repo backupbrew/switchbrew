@@ -754,7 +754,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_TFBIF_MMU_TRANSCFG|TSEC_TFBIF_MMU_TRANSCFG]]
+| [[#TSEC_TFBIF_MMU_APERTURE_CTL|TSEC_TFBIF_MMU_APERTURE_CTL]]
 | 0x54501648
 | 0x04
 |-
@@ -2675,37 +2675,37 @@ Controls MMU bypass mode. Accessible in HS mode only.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_TFBIF_MMU_TRANSCFG ===
+=== TSEC_TFBIF_MMU_APERTURE_CTL ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
-| 0-3
-| Transfer configuration for CTXDMA port 0
+| 0-2
+| Aperture ID for CTXDMA port 0
 |-
-| 4-7
-| Transfer configuration for CTXDMA port 1
+| 4-6
+| Aperture ID for CTXDMA port 1
 |-
-| 8-11
-| Transfer configuration for CTXDMA port 2
+| 8-10
+| Aperture ID for CTXDMA port 2
 |-
-| 12-15
-| Transfer configuration for CTXDMA port 3
+| 12-14
+| Aperture ID for CTXDMA port 3
 |-
-| 16-19
-| Transfer configuration for CTXDMA port 4
+| 16-18
+| Aperture ID for CTXDMA port 4
 |-
-| 20-23
-| Transfer configuration for CTXDMA port 5
+| 20-22
+| Aperture ID for CTXDMA port 5
 |-
-| 24-27
-| Transfer configuration for CTXDMA port 6
+| 24-26
+| Aperture ID for CTXDMA port 6
 |-
-| 28-31
-| Transfer configuration for CTXDMA port 7
+| 28-30
+| Aperture ID for CTXDMA port 7
 |}
 
-Controls external memory transfers' configuration at the MMU level. Accessible in HS mode only.
+Controls the aperture ID of memory requests. Accessible in HS mode only.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x20 or 0x140 before reading memory from the GPU UCODE carveout.
 
