@@ -10,31 +10,31 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 !  Name
 !  Address
 |-
-| [[#FUSE_CTRL|FUSE_CTRL]]
+| [[#FUSE_FUSECTRL|FUSE_FUSECTRL]]
 | 0x7000F800
 |-
-| [[#FUSE_REG_ADDR|FUSE_REG_ADDR]]
+| [[#FUSE_FUSEADDR|FUSE_FUSEADDR]]
 | 0x7000F804
 |-
-| [[#FUSE_REG_READ|FUSE_REG_READ]]
+| [[#FUSE_FUSERDATA|FUSE_FUSERDATA]]
 | 0x7000F808
 |-
-| [[#FUSE_REG_WRITE|FUSE_REG_WRITE]]
+| [[#FUSE_FUSEWDATA|FUSE_FUSEWDATA]]
 | 0x7000F80C
 |-
-| FUSE_TIME_RD1
+| FUSE_FUSETIME_RD1
 | 0x7000F810
 |-
-| FUSE_TIME_RD2
+| FUSE_FUSETIME_RD2
 | 0x7000F814
 |-
-| FUSE_TIME_PGM1
+| FUSE_FUSETIME_PGM1
 | 0x7000F818
 |-
-| [[#FUSE_TIME_PGM2|FUSE_TIME_PGM2]]
+| [[#FUSE_FUSETIME_PGM2|FUSE_FUSETIME_PGM2]]
 | 0x7000F81C
 |-
-| [[#FUSE_PRIV2INTFC|FUSE_PRIV2INTFC]]
+| [[#FUSE_PRIV2INTFC_START|FUSE_PRIV2INTFC_START]]
 | 0x7000F820
 |-
 | FUSE_FUSEBYPASS
@@ -43,10 +43,10 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | FUSE_PRIVATEKEYDISABLE
 | 0x7000F828
 |-
-| [[#FUSE_DIS_PGM|FUSE_DIS_PGM]]
+| [[#FUSE_DISABLEREGPROGRAM|FUSE_DISABLEREGPROGRAM]]
 | 0x7000F82C
 |-
-| [[#FUSE_WRITE_ACCESS|FUSE_WRITE_ACCESS]]
+| [[#FUSE_WRITE_ACCESS_SW|FUSE_WRITE_ACCESS_SW]]
 | 0x7000F830
 |-
 | FUSE_PWR_GOOD_SW
@@ -55,7 +55,7 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | FUSE_PRIV2RESHIFT
 | 0x7000F83C
 |-
-| FUSE_TIME_RD3
+| FUSE_FUSETIME_RD3
 | 0x7000F84C
 |-
 | FUSE_PRIVATE_KEY0_NONZERO
@@ -74,55 +74,93 @@ Below is a list of fuse driver registers used by the Switch's bootloaders.
 | 0x7000F890
 |}
 
-==== FUSE_CTRL ====
+==== FUSE_FUSECTRL ====
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0-1
-| Fuse command (1 = FUSE_READ; 2 = FUSE_WRITE; 3 = FUSE_SENSE)
+| FUSE_FUSECTRL_CMD
+ 0x00: IDLE
+ 0x01: READ
+ 0x02: WRITE
+ 0x03: SENSE_CTRL
 |-
 | 16-20
-| Fuse state (4 = STATE_IDLE)
+| FUSE_FUSECTRL_STATE
+ 0x00: STATE_RESET
+ 0x01: STATE_POST_RESET
+ 0x02: STATE_LOAD_ROW0
+ 0x03: STATE_LOAD_ROW1
+ 0x04: STATE_IDLE
+ 0x05: STATE_READ_SETUP
+ 0x06: STATE_READ_STROBE
+ 0x07: STATE_SAMPLE_FUSES
+ 0x08: STATE_READ_HOLD
+ 0x09: STATE_FUSE_SRC_SETUP
+ 0x0A: STATE_WRITE_SETUP
+ 0x0B: STATE_WRITE_ADDR_SETUP
+ 0x0C: STATE_WRITE_PROGRAM
+ 0x0D: STATE_WRITE_ADDR_HOLD
+ 0x0E: STATE_FUSE_SRC_HOLD
+ 0x0F: STATE_READ_BEFORE_WRITE_SETUP
+|-
+| 21
+| FUSE_FUSECTRL_MARGIN_READ
+|-
+| 22
+| FUSE_FUSECTRL_RWL
+|-
+| 23
+| FUSE_FUSECTRL_TRCS
+|-
+| 24
+| FUSE_FUSECTRL_AT1
+|-
+| 25
+| FUSE_FUSECTRL_AT0
 |-
 | 26
-| Fuse power down mode flag (FUSE_CTRL_PD)
+| FUSE_FUSECTRL_PD_CTRL
 |-
 | 30
-| Fuse sense status (FUSE_CTRL_SENSE_DONE)
+| FUSE_FUSECTRL_FUSE_SENSE_DONE
+|-
+| 31
+| FUSE_FUSECTRL_RECORD_SHIFT_DONE
 |}
 
 Before fuse reading/writing the power down mode must be disabled.
-FUSE_SENSE mode flushes programmed values into the [[Fuses#Cache_registers|cache registers]].
+SENSE_CTRL mode flushes programmed values into the [[Fuses#Cache_registers|cache registers]].
 
-==== FUSE_REG_ADDR ====
+==== FUSE_FUSEADDR ====
 This register takes the address of the fuse to be read/written/sensed.
 
-==== FUSE_REG_READ ====
+==== FUSE_FUSERDATA ====
 This register receives the value read from the fuse.
 
-==== FUSE_REG_WRITE ====
+==== FUSE_FUSEWDATA ====
 This register takes the value to be written to the fuse.
 
-==== FUSE_TIME_PGM2 ====
+==== FUSE_FUSETIME_PGM2 ====
 This register takes the fuse programming pulse (0xC0 == 19200 kHz).
 
-==== FUSE_PRIV2INTFC ====
+==== FUSE_PRIV2INTFC_START ====
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| FUSE_PRIV2INTFC_SDATA
+| FUSE_PRIV2INTFC_START_DATA
 |-
 | 1
-| FUSE_PRIV2INTFC_SKIP_RECORDS
+| FUSE_PRIV2INTFC_START_SKIP_RECORDS
 |}
 
-==== FUSE_DIS_PGM ====
+==== FUSE_DISABLEREGPROGRAM ====
 If set to 0x01, this register disables fuse programming.
 
-==== FUSE_WRITE_ACCESS ====
+==== FUSE_WRITE_ACCESS_SW ====
 If set to 0x01, this register disables software writes to the fuse driver registers.
 
 === Cache registers ===

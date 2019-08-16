@@ -16,71 +16,135 @@ bootloaders.
 
 ### Driver registers
 
-| Name                                                 | Address    |
-| ---------------------------------------------------- | ---------- |
-| [FUSE\_CTRL](#FUSE_CTRL "wikilink")                  | 0x7000F800 |
-| [FUSE\_REG\_ADDR](#FUSE_REG_ADDR "wikilink")         | 0x7000F804 |
-| [FUSE\_REG\_READ](#FUSE_REG_READ "wikilink")         | 0x7000F808 |
-| [FUSE\_REG\_WRITE](#FUSE_REG_WRITE "wikilink")       | 0x7000F80C |
-| FUSE\_TIME\_RD1                                      | 0x7000F810 |
-| FUSE\_TIME\_RD2                                      | 0x7000F814 |
-| FUSE\_TIME\_PGM1                                     | 0x7000F818 |
-| [FUSE\_TIME\_PGM2](#FUSE_TIME_PGM2 "wikilink")       | 0x7000F81C |
-| [FUSE\_PRIV2INTFC](#FUSE_PRIV2INTFC "wikilink")      | 0x7000F820 |
-| FUSE\_FUSEBYPASS                                     | 0x7000F824 |
-| FUSE\_PRIVATEKEYDISABLE                              | 0x7000F828 |
-| [FUSE\_DIS\_PGM](#FUSE_DIS_PGM "wikilink")           | 0x7000F82C |
-| [FUSE\_WRITE\_ACCESS](#FUSE_WRITE_ACCESS "wikilink") | 0x7000F830 |
-| FUSE\_PWR\_GOOD\_SW                                  | 0x7000F834 |
-| FUSE\_PRIV2RESHIFT                                   | 0x7000F83C |
-| FUSE\_TIME\_RD3                                      | 0x7000F84C |
-| FUSE\_PRIVATE\_KEY0\_NONZERO                         | 0x7000F880 |
-| FUSE\_PRIVATE\_KEY1\_NONZERO                         | 0x7000F884 |
-| FUSE\_PRIVATE\_KEY2\_NONZERO                         | 0x7000F888 |
-| FUSE\_PRIVATE\_KEY3\_NONZERO                         | 0x7000F88C |
-| FUSE\_PRIVATE\_KEY4\_NONZERO                         | 0x7000F890 |
+| Name                                                          | Address    |
+| ------------------------------------------------------------- | ---------- |
+| [FUSE\_FUSECTRL](#FUSE_FUSECTRL "wikilink")                   | 0x7000F800 |
+| [FUSE\_FUSEADDR](#FUSE_FUSEADDR "wikilink")                   | 0x7000F804 |
+| [FUSE\_FUSERDATA](#FUSE_FUSERDATA "wikilink")                 | 0x7000F808 |
+| [FUSE\_FUSEWDATA](#FUSE_FUSEWDATA "wikilink")                 | 0x7000F80C |
+| FUSE\_FUSETIME\_RD1                                           | 0x7000F810 |
+| FUSE\_FUSETIME\_RD2                                           | 0x7000F814 |
+| FUSE\_FUSETIME\_PGM1                                          | 0x7000F818 |
+| [FUSE\_FUSETIME\_PGM2](#FUSE_FUSETIME_PGM2 "wikilink")        | 0x7000F81C |
+| [FUSE\_PRIV2INTFC\_START](#FUSE_PRIV2INTFC_START "wikilink")  | 0x7000F820 |
+| FUSE\_FUSEBYPASS                                              | 0x7000F824 |
+| FUSE\_PRIVATEKEYDISABLE                                       | 0x7000F828 |
+| [FUSE\_DISABLEREGPROGRAM](#FUSE_DISABLEREGPROGRAM "wikilink") | 0x7000F82C |
+| [FUSE\_WRITE\_ACCESS\_SW](#FUSE_WRITE_ACCESS_SW "wikilink")   | 0x7000F830 |
+| FUSE\_PWR\_GOOD\_SW                                           | 0x7000F834 |
+| FUSE\_PRIV2RESHIFT                                            | 0x7000F83C |
+| FUSE\_FUSETIME\_RD3                                           | 0x7000F84C |
+| FUSE\_PRIVATE\_KEY0\_NONZERO                                  | 0x7000F880 |
+| FUSE\_PRIVATE\_KEY1\_NONZERO                                  | 0x7000F884 |
+| FUSE\_PRIVATE\_KEY2\_NONZERO                                  | 0x7000F888 |
+| FUSE\_PRIVATE\_KEY3\_NONZERO                                  | 0x7000F88C |
+| FUSE\_PRIVATE\_KEY4\_NONZERO                                  | 0x7000F890 |
 
-#### FUSE\_CTRL
+#### FUSE\_FUSECTRL
 
-| Bits  | Description                                                     |
-| ----- | --------------------------------------------------------------- |
-| 0-1   | Fuse command (1 = FUSE\_READ; 2 = FUSE\_WRITE; 3 = FUSE\_SENSE) |
-| 16-20 | Fuse state (4 = STATE\_IDLE)                                    |
-| 26    | Fuse power down mode flag (FUSE\_CTRL\_PD)                      |
-| 30    | Fuse sense status (FUSE\_CTRL\_SENSE\_DONE)                     |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-1</p></td>
+<td><p>FUSE_FUSECTRL_CMD</p>
+<p><code>0x00: IDLE</code><br />
+<code>0x01: READ</code><br />
+<code>0x02: WRITE</code><br />
+<code>0x03: SENSE_CTRL</code></p></td>
+</tr>
+<tr class="even">
+<td><p>16-20</p></td>
+<td><p>FUSE_FUSECTRL_STATE</p>
+<p><code>0x00: STATE_RESET</code><br />
+<code>0x01: STATE_POST_RESET</code><br />
+<code>0x02: STATE_LOAD_ROW0</code><br />
+<code>0x03: STATE_LOAD_ROW1</code><br />
+<code>0x04: STATE_IDLE</code><br />
+<code>0x05: STATE_READ_SETUP</code><br />
+<code>0x06: STATE_READ_STROBE</code><br />
+<code>0x07: STATE_SAMPLE_FUSES</code><br />
+<code>0x08: STATE_READ_HOLD</code><br />
+<code>0x09: STATE_FUSE_SRC_SETUP</code><br />
+<code>0x0A: STATE_WRITE_SETUP</code><br />
+<code>0x0B: STATE_WRITE_ADDR_SETUP</code><br />
+<code>0x0C: STATE_WRITE_PROGRAM</code><br />
+<code>0x0D: STATE_WRITE_ADDR_HOLD</code><br />
+<code>0x0E: STATE_FUSE_SRC_HOLD</code><br />
+<code>0x0F: STATE_READ_BEFORE_WRITE_SETUP</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>21</p></td>
+<td><p>FUSE_FUSECTRL_MARGIN_READ</p></td>
+</tr>
+<tr class="even">
+<td><p>22</p></td>
+<td><p>FUSE_FUSECTRL_RWL</p></td>
+</tr>
+<tr class="odd">
+<td><p>23</p></td>
+<td><p>FUSE_FUSECTRL_TRCS</p></td>
+</tr>
+<tr class="even">
+<td><p>24</p></td>
+<td><p>FUSE_FUSECTRL_AT1</p></td>
+</tr>
+<tr class="odd">
+<td><p>25</p></td>
+<td><p>FUSE_FUSECTRL_AT0</p></td>
+</tr>
+<tr class="even">
+<td><p>26</p></td>
+<td><p>FUSE_FUSECTRL_PD_CTRL</p></td>
+</tr>
+<tr class="odd">
+<td><p>30</p></td>
+<td><p>FUSE_FUSECTRL_FUSE_SENSE_DONE</p></td>
+</tr>
+<tr class="even">
+<td><p>31</p></td>
+<td><p>FUSE_FUSECTRL_RECORD_SHIFT_DONE</p></td>
+</tr>
+</tbody>
+</table>
 
 Before fuse reading/writing the power down mode must be disabled.
-FUSE\_SENSE mode flushes programmed values into the [cache
+SENSE\_CTRL mode flushes programmed values into the [cache
 registers](Fuses#Cache%20registers.md##Cache_registers "wikilink").
 
-#### FUSE\_REG\_ADDR
+#### FUSE\_FUSEADDR
 
 This register takes the address of the fuse to be read/written/sensed.
 
-#### FUSE\_REG\_READ
+#### FUSE\_FUSERDATA
 
 This register receives the value read from the fuse.
 
-#### FUSE\_REG\_WRITE
+#### FUSE\_FUSEWDATA
 
 This register takes the value to be written to the fuse.
 
-#### FUSE\_TIME\_PGM2
+#### FUSE\_FUSETIME\_PGM2
 
 This register takes the fuse programming pulse (0xC0 == 19200 kHz).
 
-#### FUSE\_PRIV2INTFC
+#### FUSE\_PRIV2INTFC\_START
 
-| Bits | Description                     |
-| ---- | ------------------------------- |
-| 0    | FUSE\_PRIV2INTFC\_SDATA         |
-| 1    | FUSE\_PRIV2INTFC\_SKIP\_RECORDS |
+| Bits | Description                            |
+| ---- | -------------------------------------- |
+| 0    | FUSE\_PRIV2INTFC\_START\_DATA          |
+| 1    | FUSE\_PRIV2INTFC\_START\_SKIP\_RECORDS |
 
-#### FUSE\_DIS\_PGM
+#### FUSE\_DISABLEREGPROGRAM
 
 If set to 0x01, this register disables fuse programming.
 
-#### FUSE\_WRITE\_ACCESS
+#### FUSE\_WRITE\_ACCESS\_SW
 
 If set to 0x01, this register disables software writes to the fuse
 driver registers.
