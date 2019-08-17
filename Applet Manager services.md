@@ -315,6 +315,8 @@ titleID for the "starter" title.
 No input, returns an
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
 
+Should not be used if no FloatingApplication is available (svcBreak).
+
 #### IApplicationAccessor
 
 | Cmd | Name                                                                                        | Notes |
@@ -2442,6 +2444,8 @@ Stubbed, just returns an error.
 
 No input, returns an output
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+Should not be used when no Application is running (svcBreak).
 
 ### PerformSystemButtonPressing
 

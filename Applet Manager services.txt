@@ -286,6 +286,8 @@ Takes an input u64 titleID (<code>nn::ncm::SystemApplicationId</code>), returns 
 ==== PopFloatingApplicationForDevelopment ====
 No input, returns an [[#IApplicationAccessor]].
 
+Should not be used if no FloatingApplication is available (svcBreak).
+
 ==== IApplicationAccessor ====
 {| class="wikitable" border="1"
 |-
@@ -2174,6 +2176,8 @@ Stubbed, just returns an error.
 
 === OpenMainApplication ===
 No input, returns an output [[#IApplicationAccessor]].
+
+Should not be used when no Application is running (svcBreak).
 
 === PerformSystemButtonPressing ===
 Takes an input [[#SystemButtonType]], no output.
