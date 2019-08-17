@@ -1472,6 +1472,8 @@ Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes 
 === PerformSystemButtonPressingIfInFocus ===
 Takes an input [[#SystemButtonType]], no output.
 
+Just returns 0 when a state field is not value 1. Verifies that the input button is allowed, then calls the same func as [[#PerformSystemButtonPressing]] internally.
+
 === SetPerformanceConfigurationChangedNotification ===
 Takes an input u8 bool, no output.
 
@@ -2629,6 +2631,12 @@ This is "nn::oe::TvPowerStateMatchingMode". This is used with [[#SetTvPowerState
 | 1 || PerformHomeButtonShortPressing
 |-
 | 2 || PerformHomeButtonLongPressing
+|-
+| 3 || Unknown. Only available with [[#PerformSystemButtonPressing]].
+|-
+| 4 || Unknown. Only available with [[#PerformSystemButtonPressing]].
+|-
+| 5 || Unknown. Only available with [[#PerformSystemButtonPressing]].
 |-
 | 6 || PerformCaptureButtonShortPressing
 |-

@@ -1656,6 +1656,11 @@ passes it to
 Takes an input [\#SystemButtonType](#SystemButtonType "wikilink"), no
 output.
 
+Just returns 0 when a state field is not value 1. Verifies that the
+input button is allowed, then calls the same func as
+[\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink")
+internally.
+
 ### SetPerformanceConfigurationChangedNotification
 
 Takes an input u8 bool, no output.
@@ -2775,12 +2780,15 @@ This is "nn::oe::TvPowerStateMatchingMode". This is used with
 
 ### SystemButtonType
 
-| Value | Description                       |
-| ----- | --------------------------------- |
-| 1     | PerformHomeButtonShortPressing    |
-| 2     | PerformHomeButtonLongPressing     |
-| 6     | PerformCaptureButtonShortPressing |
-| 7     | PerformCaptureButtonLongPressing  |
+| Value | Description                                                                                            |
+| ----- | ------------------------------------------------------------------------------------------------------ |
+| 1     | PerformHomeButtonShortPressing                                                                         |
+| 2     | PerformHomeButtonLongPressing                                                                          |
+| 3     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
+| 4     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
+| 5     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
+| 6     | PerformCaptureButtonShortPressing                                                                      |
+| 7     | PerformCaptureButtonLongPressing                                                                       |
 
 This is "nn::am::<service::SystemButtonType>". This is used with
 [\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink")/[\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").
