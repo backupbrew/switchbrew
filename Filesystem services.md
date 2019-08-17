@@ -1868,6 +1868,15 @@ This is "nn::fs::CloudBackupWorkStorageId".
 | 0     | Nand   |
 | 1     | SdCard |
 
+# CustomStorageId
+
+This is "nn::fs::CustomStorageId".
+
+| Value | Name   |
+| ----- | ------ |
+| 0     | Nand   |
+| 1     | SdCard |
+
 # ContentPath
 
 These are the 0x300 paths to NCA files for the various filesystems FS
