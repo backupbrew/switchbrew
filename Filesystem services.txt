@@ -1395,7 +1395,7 @@ These are the 0x300 paths to NCA files for the various filesystems FS can access
 |-
 | @GcApp || Gamecard App partition (Partition 2)
 |-
-| @GcS00000001 || Gamecard Contents.
+| @GcXYYYYYYYY || Gamecard Contents. X is the partition type (U - Update, N - Normal, S - Secure). Y is the gamecard handle as a 32-bit hex value 
 |-
 | @upp || Gamecard update partition (Partition 0)
 |-

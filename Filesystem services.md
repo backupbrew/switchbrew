@@ -1894,21 +1894,21 @@ can access, beginning with @. They're passed via X descriptors, and
 returned via various
 [ncm/lr](Location%20Resolver%20services.md "wikilink") commands.
 
-| Path                  | Notes                                   |
-| --------------------- | --------------------------------------- |
-| @SystemContent        |                                         |
-| @UserContent          |                                         |
-| @SdCardContent        |                                         |
-| @CalibFile            |                                         |
-| @Safe                 |                                         |
-| @User                 |                                         |
-| @System               |                                         |
-| @Sdcard               |                                         |
-| @Host                 |                                         |
-| @GcApp                | Gamecard App partition (Partition 2)    |
-| @GcS00000001          | Gamecard Contents.                      |
-| @upp                  | Gamecard update partition (Partition 0) |
-| \[4.0.0+\] @RegUpdate | Registered update partition             |
+| Path                  | Notes                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| @SystemContent        |                                                                                                                                 |
+| @UserContent          |                                                                                                                                 |
+| @SdCardContent        |                                                                                                                                 |
+| @CalibFile            |                                                                                                                                 |
+| @Safe                 |                                                                                                                                 |
+| @User                 |                                                                                                                                 |
+| @System               |                                                                                                                                 |
+| @Sdcard               |                                                                                                                                 |
+| @Host                 |                                                                                                                                 |
+| @GcApp                | Gamecard App partition (Partition 2)                                                                                            |
+| @GcXYYYYYYYY          | Gamecard Contents. X is the partition type (U - Update, N - Normal, S - Secure). Y is the gamecard handle as a 32-bit hex value |
+| @upp                  | Gamecard update partition (Partition 0)                                                                                         |
+| \[4.0.0+\] @RegUpdate | Registered update partition                                                                                                     |
 
 # Save Struct
 
