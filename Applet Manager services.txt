@@ -2187,7 +2187,7 @@ Takes an input u8 bool flag, an u64 Application titleID, a type-0x5 input buffer
 Requests to launch the specified Application, with the specified users. When the bool flag is true, the content of the second input buffer is used to create a storage which is pushed to the UserChannel for this Application (see [[#LaunchParameterKind]]).
 
 === GetAppletResourceUsageInfo ===
-No input, returns an output 0x20-byte struct "nn::am::service::AppletResourceUsageInfo".
+No input, returns an output [[#AppletResourceUsageInfo]].
 
 === SetCpuBoostModeForApplet ===
 Takes an input u32 '''CpuBoostMode''' (only modes 0 and 1 are valid) and passes it to [[PPC_services#apm:sys|SetCpuBoostMode]].
@@ -2784,6 +2784,22 @@ User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWith
 This struct is "nn::am::ApplicationAttribute". This struct is 0x20-bytes.
 
 Internally AM only uses the first 0xC-bytes from ApplicationAttribute, regardless of the cmd.
+
+= AppletResourceUsageInfo =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || Unknown counter.
+|-
+| 0x4 || 0x4 || Unknown counter.
+|-
+| 0x8 || 0x4 || Output from [[NS_Services|NS GetRightsEnvironmentCountForDebug]].
+|-
+| 0xC || 0x14 || Always zero.
+|}
+
+This struct is "nn::am::service::AppletResourceUsageInfo". This struct is 0x20-bytes.
 
 = Notes =
 AM-sysmodule will only initialize [[Shared_Database_services|pdm:ntfy]] / use pdm:ntfy service commands when the value from [[Process_Manager_services|pm:bm]] GetBootMode is not 0x1.

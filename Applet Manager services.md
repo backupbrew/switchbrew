@@ -2466,8 +2466,8 @@ Application (see
 
 ### GetAppletResourceUsageInfo
 
-No input, returns an output 0x20-byte struct
-"nn::am::<service::AppletResourceUsageInfo>".
+No input, returns an output
+[\#AppletResourceUsageInfo](#AppletResourceUsageInfo "wikilink").
 
 ### SetCpuBoostModeForApplet
 
@@ -2911,6 +2911,18 @@ This struct is "nn::am::ApplicationAttribute". This struct is
 
 Internally AM only uses the first 0xC-bytes from ApplicationAttribute,
 regardless of the cmd.
+
+# AppletResourceUsageInfo
+
+| Offset | Size | Description                                                                      |
+| ------ | ---- | -------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Unknown counter.                                                                 |
+| 0x4    | 0x4  | Unknown counter.                                                                 |
+| 0x8    | 0x4  | Output from [NS GetRightsEnvironmentCountForDebug](NS%20Services.md "wikilink"). |
+| 0xC    | 0x14 | Always zero.                                                                     |
+
+This struct is "nn::am::<service::AppletResourceUsageInfo>". This struct
+is 0x20-bytes.
 
 # Notes
 
