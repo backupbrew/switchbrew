@@ -2184,6 +2184,8 @@ No input/output.
 === RequestLaunchApplicationWithUserAndArgumentForDebug ===
 Takes an input u8 bool flag, an u64 Application titleID, a type-0x5 input buffer containing an array of u128 userIDs, and a type-0x5 input buffer, no output.
 
+Requests to launch the specified Application, with the specified users. When the bool flag is true, the content of the second input buffer is used to create a storage which is pushed to the UserChannel for this Application (see [[#LaunchParameterKind]]).
+
 === GetAppletResourceUsageInfo ===
 No input, returns an output 0x20-byte struct "nn::am::service::AppletResourceUsageInfo".
 
