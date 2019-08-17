@@ -273,13 +273,15 @@ Uses [[#omm]] cmd GetHdcpAuthenticationFailedEvent.
 |}
 
 ==== CreateApplication ====
-Takes an input u64 <code>nn::ncm::ApplicationId</code>(titleID), returns an [[#IApplicationAccessor]].
+Takes an input u64 titleID (<code>nn::ncm::ApplicationId</code>), returns an [[#IApplicationAccessor]].
 
 ==== PopLaunchRequestedApplication ====
 No input, returns an [[#IApplicationAccessor]].
 
 ==== CreateSystemApplication ====
-Takes an input u64 <code>nn::ncm::SystemApplicationId</code>, returns an [[#IApplicationAccessor]].
+Takes an input u64 titleID (<code>nn::ncm::SystemApplicationId</code>), returns an [[#IApplicationAccessor]].
+
+[[qlaunch]] only uses this with a hard-coded titleID for the "starter" title.
 
 ==== PopFloatingApplicationForDevelopment ====
 No input, returns an [[#IApplicationAccessor]].

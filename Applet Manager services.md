@@ -294,7 +294,7 @@ Uses [\#omm](#omm "wikilink") cmd GetHdcpAuthenticationFailedEvent.
 
 #### CreateApplication
 
-Takes an input u64 `nn::ncm::ApplicationId`(titleID), returns an
+Takes an input u64 titleID (`nn::ncm::ApplicationId`), returns an
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
 
 #### PopLaunchRequestedApplication
@@ -304,8 +304,11 @@ No input, returns an
 
 #### CreateSystemApplication
 
-Takes an input u64 `nn::ncm::SystemApplicationId`, returns an
+Takes an input u64 titleID (`nn::ncm::SystemApplicationId`), returns an
 [\#IApplicationAccessor](#IApplicationAccessor "wikilink").
+
+[qlaunch](Qlaunch.md "wikilink") only uses this with a hard-coded
+titleID for the "starter" title.
 
 #### PopFloatingApplicationForDevelopment
 
