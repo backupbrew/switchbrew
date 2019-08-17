@@ -521,6 +521,17 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
 of input.
 
+#### Cmd99
+
+No input/output.
+
+This is used by AM cmd
+[LaunchDevMenu](Applet%20Manager%20services#LaunchDevMenu.md##LaunchDevMenu "wikilink").
+
+This uses [system-settings](System%20Settings.md "wikilink")
+`ns.applet!devmenu_id` and `ns.applet!devoverlaydisp_id`, which only
+exists on devunits.
+
 ### IApplicationVersionInterface
 
 This is "nn::ns::detail::IApplicationVersionInterface".
