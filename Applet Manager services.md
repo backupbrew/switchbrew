@@ -2780,15 +2780,15 @@ This is "nn::oe::TvPowerStateMatchingMode". This is used with
 
 ### SystemButtonType
 
-| Value | Description                                                                                            |
-| ----- | ------------------------------------------------------------------------------------------------------ |
-| 1     | PerformHomeButtonShortPressing                                                                         |
-| 2     | PerformHomeButtonLongPressing                                                                          |
-| 3     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
-| 4     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
-| 5     | Unknown. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
-| 6     | PerformCaptureButtonShortPressing                                                                      |
-| 7     | PerformCaptureButtonLongPressing                                                                       |
+| Value | Description                                                                                                                         |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | PerformHomeButtonShortPressing                                                                                                      |
+| 2     | PerformHomeButtonLongPressing                                                                                                       |
+| 3     | Short-pressing with the Power-button. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
+| 4     | Long-pressing with the Power-button. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").  |
+| 5     | Power off the system. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").                 |
+| 6     | PerformCaptureButtonShortPressing                                                                                                   |
+| 7     | PerformCaptureButtonLongPressing                                                                                                    |
 
 This is "nn::am::<service::SystemButtonType>". This is used with
 [\#PerformSystemButtonPressingIfInFocus](#PerformSystemButtonPressingIfInFocus "wikilink")/[\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").
