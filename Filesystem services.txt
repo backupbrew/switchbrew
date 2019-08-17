@@ -589,6 +589,11 @@ Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
 Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[NCM_services#ReadContentIdFile]].
 
+== OpenCustomStorageFileSystem ==
+Takes a [[#CustomStorageId]]. Invalid values return 0x2EE202.
+
+Returns an [[#IFileSystem]] from either User:/CustomStorage0 or Sdcard:/Nintendo/CustomStorage0. If on the SD card, an AesXtsFileSystem is created using a key source specifically for custom storage.
+
 == OpenDataStorageByDataId ==
 Takes a [[#StorageId]] and a TitleID.
 

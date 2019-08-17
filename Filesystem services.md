@@ -1158,6 +1158,16 @@ Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files. The
 read data from these files is identical to the data read by
 [NCM\_services\#ReadContentIdFile](NCM%20services#ReadContentIdFile.md##ReadContentIdFile "wikilink").
 
+## OpenCustomStorageFileSystem
+
+Takes a [\#CustomStorageId](#CustomStorageId "wikilink"). Invalid values
+return 0x2EE202.
+
+Returns an [\#IFileSystem](#IFileSystem "wikilink") from either
+User:/CustomStorage0 or Sdcard:/Nintendo/CustomStorage0. If on the SD
+card, an AesXtsFileSystem is created using a key source specifically for
+custom storage.
+
 ## OpenDataStorageByDataId
 
 Takes a [\#StorageId](#StorageId "wikilink") and a TitleID.
