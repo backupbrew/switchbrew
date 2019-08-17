@@ -2653,7 +2653,7 @@ This is "nn::am::service::SystemButtonType". This is used with [[#PerformSystemB
 !  Value
 !  Description
 |-
-| 1 || Application-specific LaunchParameter
+| 1 || UserChannel. Application-specific LaunchParameter.
 |-
 | 2 || account PreselectedUser
 |-

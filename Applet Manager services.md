@@ -2801,11 +2801,11 @@ This is "nn::am::<service::SystemButtonType>". This is used with
 
 ### LaunchParameterKind
 
-| Value | Description                          |
-| ----- | ------------------------------------ |
-| 1     | Application-specific LaunchParameter |
-| 2     | account PreselectedUser              |
-| 3     | Unknown if used by anything?         |
+| Value | Description                                        |
+| ----- | -------------------------------------------------- |
+| 1     | UserChannel. Application-specific LaunchParameter. |
+| 2     | account PreselectedUser                            |
+| 3     | Unknown if used by anything?                       |
 
 ### LibraryAppletExitReason
 
