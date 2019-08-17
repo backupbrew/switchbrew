@@ -2786,7 +2786,7 @@ This is "nn::oe::TvPowerStateMatchingMode". This is used with
 | 2     | PerformHomeButtonLongPressing                                                                                                       |
 | 3     | Short-pressing with the Power-button. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink"). |
 | 4     | Long-pressing with the Power-button. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").  |
-| 5     | Power off the system. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").                 |
+| 5     | Shutdown the system. Only available with [\#PerformSystemButtonPressing](#PerformSystemButtonPressing "wikilink").                  |
 | 6     | PerformCaptureButtonShortPressing                                                                                                   |
 | 7     | PerformCaptureButtonLongPressing                                                                                                    |
 
