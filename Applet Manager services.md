@@ -378,7 +378,8 @@ This gets the application [control.nacp](NACP%20Format.md "wikilink").
 
 Takes a type-0x6 output buffer.
 
-The output buffer size must be at least 0x10-bytes.
+The output buffer size must be at least 0x10-bytes. Returns an error
+when the [\#AppletId](#AppletId "wikilink") is 0x04 (starter).
 
 This gets the cached ApplicationLaunchProperty.
 

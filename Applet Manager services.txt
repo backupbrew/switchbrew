@@ -362,7 +362,7 @@ This gets the application [[NACP_Format|control.nacp]].
 ===== GetApplicationLaunchProperty =====
 Takes a type-0x6 output buffer.
 
-The output buffer size must be at least 0x10-bytes.
+The output buffer size must be at least 0x10-bytes. Returns an error when the [[#AppletId]] is 0x04 (starter). 
 
 This gets the cached ApplicationLaunchProperty.
 
