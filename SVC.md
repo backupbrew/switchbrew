@@ -11,7 +11,7 @@
 | 0x5  | [\#svcUnmapMemory](#svcUnmapMemory "wikilink")                                     | X0=dstaddr, X1=srcaddr, X2=size                                                                                                                                                                                                                                                                | W0=result                                                                          |
 | 0x6  | [\#svcQueryMemory](#svcQueryMemory "wikilink")                                     | X0=MemoryInfo\*, X2=addr                                                                                                                                                                                                                                                                       | W0=result, W1=PageInfo                                                             |
 | 0x7  | [\#svcExitProcess](#svcExitProcess "wikilink")                                     | None                                                                                                                                                                                                                                                                                           |                                                                                    |
-| 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=thread\_context, X3=stacktop, W4=prio, W5=processor\_id                                                                                                                                                                                                                           | W0=result, W1=handle                                                               |
+| 0x8  | [\#svcCreateThread](#svcCreateThread "wikilink")                                   | X1=entry, X2=thread\_context, X3=stacktop, W4=prio, W5=processor\_id R0=prio, R1=entry, R2=thread\_context, R3=stacktop, R4=processor\_id                                                                                                                                                      | W0=result, W1=handle                                                               |
 | 0x9  | [\#svcStartThread](#svcStartThread "wikilink")                                     | W0=thread\_handle                                                                                                                                                                                                                                                                              | W0=result                                                                          |
 | 0xA  | [\#svcExitThread](#svcExitThread "wikilink")                                       | None                                                                                                                                                                                                                                                                                           |                                                                                    |
 | 0xB  | [\#svcSleepThread](#svcSleepThread "wikilink")                                     | X0=nano R0=nano\_lower32, R1=lower\_upper32                                                                                                                                                                                                                                                    |                                                                                    |
@@ -288,15 +288,15 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X1  | void(\*)(void\*)               | Entry         |
-| (In) X2  | void\*                         | ThreadContext |
-| (In) X3  | void\*                         | StackTop      |
-| (In) W4  | u32                            | Priority      |
-| (In) W5  | u32                            | ProcessorId   |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
-| (Out) W1 | Handle<Thread>                 | Handle        |
+| Argument64 | Argument32                     | Type             | Name          |
+| ---------- | ------------------------------ | ---------------- | ------------- |
+| (In) X1    | R1                             | void(\*)(void\*) | Entry         |
+| (In) X2    | R2                             | void\*           | ThreadContext |
+| (In) X3    | R3                             | void\*           | StackTop      |
+| (In) W4    | R0                             | u32              | Priority      |
+| (In) W5    | R4                             | u32              | ProcessorId   |
+| (Out) W0   | [\#Result](#Result "wikilink") | Ret              |               |
+| (Out) W1   | Handle<Thread>                 | Handle           |               |
 
 </div>
 
