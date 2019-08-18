@@ -147,7 +147,9 @@ R0=ptr, R1=[[#ArbitrationType]], R2=value, R3=timeout_lower32, R4=timeout_upper3
 R0=timeout_lower32, R1=ptr_handles, R2=num_handles, R3=replytarget_handle(0=none), R4=timeout_upper32
 || W0=result, W1=handle_idx
 |-
-| 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout || W0=result, W1=handle_idx
+| 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout
+R0=num_handles, R1=buf, R2=sz, R3=ptr_handles, R4=replytarget_handle(0=none), R5=timeout_lower32, R6=timeout_upper32
+|| W0=result, W1=handle_idx
 |-
 | 0x45 || svcCreateEvent || None || W0=result, W1=wevent_handle, W2=revent_handle
 |- style="border-top: double"
