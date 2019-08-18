@@ -33,7 +33,7 @@
 | 0x1B | svcArbitrateUnlock                                                                 | X0=ptr                                                                                                                                                                                                                                                                             |                                                                                    |
 | 0x1C | svcWaitProcessWideKeyAtomic                                                        | X0=ptr0, X1=ptr, W2=thread\_handle, X3=timeout R0=ptr0, R1=ptr, R2=thread\_handle, R3=timeout\_lower32, R4=timeout\_upper32                                                                                                                                                        | W0=result                                                                          |
 | 0x1D | svcSignalProcessWideKey                                                            | X0=ptr, W1=value                                                                                                                                                                                                                                                                   | W0=result                                                                          |
-| 0x1E | [\#svcGetSystemTick](#svcGetSystemTick "wikilink")                                 | None                                                                                                                                                                                                                                                                               | X0={value of cntpct\_el0}                                                          |
+| 0x1E | [\#svcGetSystemTick](#svcGetSystemTick "wikilink")                                 | None                                                                                                                                                                                                                                                                               | X0={value of cntpct\_el0} R0=cntpct\_el0\_lower32, R1=cntpct\_el0\_upper32         |
 | 0x1F | svcConnectToNamedPort                                                              | X1=port\_name\_str                                                                                                                                                                                                                                                                 | W0=result, W1=handle                                                               |
 | 0x20 | svcSendSyncRequestLight                                                            | W0=light\_session\_handle, X1=?                                                                                                                                                                                                                                                    | W0=result                                                                          |
 | 0x21 | svcSendSyncRequest                                                                 | X0=normal\_session\_handle                                                                                                                                                                                                                                                         | W0=result                                                                          |
@@ -335,20 +335,10 @@ process.
 
 <div style="display: inline-block;">
 
-| Argument | Type | Name        |
-| -------- | ---- | ----------- |
-| (In) X0  | s64  | Nanoseconds |
-|          |      |             |
-
-</div>
-
-<div style="display: inline-block;vertical-align:top;">
-
-| Argument | Type | Name               |
-| -------- | ---- | ------------------ |
-| (In) R0  | u32  | NanosecondsLower32 |
-| (In) R1  | u32  | NanosecondsUpper32 |
-|          |      |                    |
+| Argument64 | Argument32 | Type | Name        |
+| ---------- | ---------- | ---- | ----------- |
+| (In) X0    | R0, R1     | s64  | Nanoseconds |
+|            |            |      |             |
 
 </div>
 
@@ -401,24 +391,12 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) W2  | Handle<Thread>                 | Handle |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
-| (Out) W1 | u32                            | Out0   |
-| (Out) X2 | u64                            | Out1   |
-
-</div>
-
-<div style="display: inline-block; vertical-align:top;">
-
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) R2  | Handle<Thread>                 | Handle      |
-| (Out) R0 | [\#Result](#Result "wikilink") | Ret         |
-| (Out) R1 | u32                            | Out0        |
-| (Out) R2 | u32                            | Out1Lower32 |
-| (Out) R3 | u32                            | Out1Upper32 |
+| Argument64 | Argument32 | Type                           | Name   |
+| ---------- | ---------- | ------------------------------ | ------ |
+| (In) W2    | R2         | Handle<Thread>                 | Handle |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret    |
+| (Out) W1   | R1         | u32                            | Out0   |
+| (Out) X2   | R2, R3     | u64                            | Out1   |
 
 </div>
 
@@ -428,24 +406,12 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name   |
-| -------- | ------------------------------ | ------ |
-| (In) W0  | Handle<Thread>                 | Handle |
-| (In) W1  | u32                            | In0    |
-| (In) X2  | u64                            | In1    |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret    |
-
-</div>
-
-<div style="display: inline-block;vertical-align:top;">
-
-| Argument | Type                           | Name       |
-| -------- | ------------------------------ | ---------- |
-| (In) R0  | Handle<Thread>                 | Handle     |
-| (In) R1  | u32                            | In0        |
-| (In) R2  | u32                            | In1Lower32 |
-| (In) R3  | u32                            | In1Upper32 |
-| (Out) R0 | [\#Result](#Result "wikilink") | Ret        |
+| Argument64 | Argument32 | Type                           | Name   |
+| ---------- | ---------- | ------------------------------ | ------ |
+| (In) W0    | R0         | Handle<Thread>                 | Handle |
+| (In) W1    | R1         | u32                            | In0    |
+| (In) X2    | R2, R3     | u64                            | In1    |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret    |
 
 </div>
 
@@ -515,26 +481,13 @@ permission to reset.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name        |
-| -------- | ------------------------------ | ----------- |
-| (In) X1  | Handle\*                       | HandlesPtr  |
-| (In) W2  | u64                            | HandlesNum  |
-| (In) X3  | u64                            | Timeout     |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret         |
-| (Out) W1 | u64                            | HandleIndex |
-
-</div>
-
-<div style="display: inline-block;vertical-align:top;">
-
-| Argument | Type                           | Name           |
-| -------- | ------------------------------ | -------------- |
-| (In) R0  | u32                            | TimeoutLower32 |
-| (In) R1  | Handle\*                       | HandlesPtr     |
-| (In) R2  | u32                            | HandlesNum     |
-| (In) R3  | u32                            | TimeoutUpper32 |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret            |
-| (Out) W1 | u64                            | HandleIndex    |
+| Argument64 | Argument32 | Type                           | Name        |
+| ---------- | ---------- | ------------------------------ | ----------- |
+| (In) X1    | R1         | Handle\*                       | HandlesPtr  |
+| (In) W2    | R2         | u64                            | HandlesNum  |
+| (In) X3    | R0, R3     | u64                            | Timeout     |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret         |
+| (Out) W1   | R1         | u64                            | HandleIndex |
 
 </div>
 
@@ -625,9 +578,9 @@ thread handle.
 
 <div style="display: inline-block;">
 
-| Argument | Type | Name  |
-| -------- | ---- | ----- |
-| (Out) X0 | u64  | Ticks |
+| Argument64 | Argument32 | Type | Name  |
+| ---------- | ---------- | ---- | ----- |
+| (Out) X0   | R0, R1     | u64  | Ticks |
 
 </div>
 
