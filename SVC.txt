@@ -116,8 +116,10 @@ R0=timeout_lower32, R1=timeout_upper32
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
 | 0x30 || svcGetResourceLimitLimitValue || W1=reslimit_handle, W2=[[#LimitableResource]] || W0=result, X1=value
+R0=result, R1=value_lower32, R2=value_upper32
 |-
 | 0x31 || svcGetResourceLimitCurrentValue || W1=reslimit_handle, W2=[[#LimitableResource]] || W0=result, X1=value
+R0=result, R1=value_lower32, R2=value_upper32
 |-
 | 0x32 || svcSetThreadActivity || W0=thread_handle, W1=bool || W0=result
 |-
