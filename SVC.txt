@@ -109,7 +109,8 @@ R0=result, R1=out_lower32, R2=out_upper32
 |-
 | 0x2D || [3.0.0+] svcUnmapPhysicalMemory || X0=addr, X1=size || W0=result
 |-
-| 0x2E || [5.0.0+] svcGetFutureThreadInfo || X3=timeout || W0=result, bunch of crap
+| 0x2E || [5.0.0+] svcGetFutureThreadInfo || X3=timeout
+R0=timeout_lower32, R1=timeout_upper32 || W0=result, bunch of crap
 |-
 | 0x2F || svcGetLastThreadInfo || None || W0=result, W1,W2,W3,W4=unk, W5=truncated_u64, W6=bool
 |-
