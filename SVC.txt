@@ -461,9 +461,9 @@ Outputs a [[#MemoryInfo]] struct.
 |-
 | (In) W5 || R4 || u32 || ProcessorId
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |-
-| (Out) W1 || Handle<Thread> || Handle
+| (Out) W1 || R1 || Handle<Thread> || Handle
 |}
 </div>
 

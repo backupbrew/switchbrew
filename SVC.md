@@ -288,15 +288,15 @@ Outputs a [\#MemoryInfo](#MemoryInfo "wikilink") struct.
 
 <div style="display: inline-block;">
 
-| Argument64 | Argument32                     | Type             | Name          |
-| ---------- | ------------------------------ | ---------------- | ------------- |
-| (In) X1    | R1                             | void(\*)(void\*) | Entry         |
-| (In) X2    | R2                             | void\*           | ThreadContext |
-| (In) X3    | R3                             | void\*           | StackTop      |
-| (In) W4    | R0                             | u32              | Priority      |
-| (In) W5    | R4                             | u32              | ProcessorId   |
-| (Out) W0   | [\#Result](#Result "wikilink") | Ret              |               |
-| (Out) W1   | Handle<Thread>                 | Handle           |               |
+| Argument64 | Argument32 | Type                           | Name          |
+| ---------- | ---------- | ------------------------------ | ------------- |
+| (In) X1    | R1         | void(\*)(void\*)               | Entry         |
+| (In) X2    | R2         | void\*                         | ThreadContext |
+| (In) X3    | R3         | void\*                         | StackTop      |
+| (In) W4    | R0         | u32                            | Priority      |
+| (In) W5    | R4         | u32                            | ProcessorId   |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret           |
+| (Out) W1   | R1         | Handle<Thread>                 | Handle        |
 
 </div>
 
