@@ -1002,12 +1002,12 @@ was given.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) X1  | u64                            | PhysAddr |
-| (In) X2  | u64                            | Size     |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
-| (Out) X1 | void\*                         | VirtAddr |
+| Argument64 | Argument32 | Type                           | Name     |
+| ---------- | ---------- | ------------------------------ | -------- |
+| (In) X1    | R2, R3     | u64                            | PhysAddr |
+| (In) X2    | R0         | u64                            | Size     |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret      |
+| (Out) X1   | R1         | void\*                         | VirtAddr |
 
 </div>
 

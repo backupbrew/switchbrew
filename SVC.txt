@@ -1186,15 +1186,15 @@ Create an event handle for the given IRQ number. Waiting on this handle will wai
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) X1 || u64 || PhysAddr
+| (In) X1 || R2, R3 || u64 || PhysAddr
 |-
-| (In) X2 || u64 || Size
+| (In) X2 || R0 || u64 || Size
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |-
-| (Out) X1 || void* || VirtAddr
+| (Out) X1 || R1 || void* || VirtAddr
 |}
 </div>
 
