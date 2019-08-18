@@ -376,7 +376,7 @@ Takes an input u8 bool flag and a type-0x5 input buffer containing an array of u
 
 The total entries for the userIDs must be <=8.
 
-When the input flag is true, this just clears the '''users_available''' state flag to 0.
+When the input flag is true, this just clears the '''users_available''' state flag to 0 and returns.
 
 ===== CheckRightsEnvironmentAvailable =====
 No input, returns an output u8 bool.

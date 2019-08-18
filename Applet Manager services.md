@@ -397,7 +397,7 @@ array of u128 userIDs.
 The total entries for the userIDs must be \<=8.
 
 When the input flag is true, this just clears the **users\_available**
-state flag to 0.
+state flag to 0 and returns.
 
 ##### CheckRightsEnvironmentAvailable
 
