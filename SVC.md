@@ -80,7 +80,7 @@
 | 0x53 | [\#svcCreateInterruptEvent](#svcCreateInterruptEvent "wikilink")                   | X1=irq\_num, W2=flag                                                                                                                                                                                                                                                                           | W0=result, W1=handle                                                               |
 | 0x54 | [\#svcQueryPhysicalAddress](#svcQueryPhysicalAddress "wikilink")                   | X1=addr                                                                                                                                                                                                                                                                                        | W0=result, X1=physaddr, X2=kerneladdr, X3=size                                     |
 | 0x55 | [\#svcQueryIoMapping](#svcQueryIoMapping "wikilink")                               | X1=physaddr, X2=size R0=size, R2=physaddr\_lower32, R3=physaddr\_upper32                                                                                                                                                                                                                       | W0=result, X1=virtaddr                                                             |
-| 0x56 | [\#svcCreateDeviceAddressSpace](#svcCreateDeviceAddressSpace "wikilink")           | X1=dev\_as\_start\_addr, X2=dev\_as\_end\_addr                                                                                                                                                                                                                                                 | W0=result, W1=dev\_as\_handle                                                      |
+| 0x56 | [\#svcCreateDeviceAddressSpace](#svcCreateDeviceAddressSpace "wikilink")           | X1=dev\_as\_start\_addr, X2=dev\_as\_end\_addr R0=dev\_as\_end\_addr\_lower32, R1=dev\_as\_end\_addr\_upper32, R2=dev\_as\_start\_addr\_lower32, R3=dev\_as\_start\_addr\_upper32                                                                                                              | W0=result, W1=dev\_as\_handle                                                      |
 | 0x57 | [\#svcAttachDeviceAddressSpace](#svcAttachDeviceAddressSpace "wikilink")           | W0=device, X1=dev\_as\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
 | 0x58 | [\#svcDetachDeviceAddressSpace](#svcDetachDeviceAddressSpace "wikilink")           | W0=device, X1=dev\_as\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
 | 0x59 | [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm                                                                                                                                                                                            | W0=result                                                                          |
@@ -1017,12 +1017,12 @@ was given.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name               |
-| -------- | ------------------------------ | ------------------ |
-| (In) X1  | u64                            | StartAddr          |
-| (In) X2  | u64                            | EndAddr            |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret                |
-| (Out) W1 | Handle<DeviceAddressSpace>     | AddressSpaceHandle |
+| Argument64 | Argument32 | Type                           | Name               |
+| ---------- | ---------- | ------------------------------ | ------------------ |
+| (In) X1    | R2, R3     | u64                            | StartAddr          |
+| (In) X2    | R0, R1     | u64                            | EndAddr            |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret                |
+| (Out) W1   | R1         | Handle<DeviceAddressSpace>     | AddressSpaceHandle |
 
 </div>
 

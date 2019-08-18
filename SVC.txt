@@ -189,7 +189,9 @@ R0=rw_mask, R1=in_val, R2=reg_addr_lower32, R3=reg_addr_upper32
 R0=size, R2=physaddr_lower32, R3=physaddr_upper32
 || W0=result, X1=virtaddr
 |-
-| 0x56 || [[#svcCreateDeviceAddressSpace]] || X1=dev_as_start_addr, X2=dev_as_end_addr || W0=result, W1=dev_as_handle
+| 0x56 || [[#svcCreateDeviceAddressSpace]] || X1=dev_as_start_addr, X2=dev_as_end_addr
+R0=dev_as_end_addr_lower32, R1=dev_as_end_addr_upper32, R2=dev_as_start_addr_lower32, R3=dev_as_start_addr_upper32
+|| W0=result, W1=dev_as_handle
 |-
 | 0x57 || [[#svcAttachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
 |-
@@ -1205,15 +1207,15 @@ Create an event handle for the given IRQ number. Waiting on this handle will wai
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) X1 || u64 || StartAddr
+| (In) X1 || R2, R3 || u64 || StartAddr
 |-
-| (In) X2 || u64 || EndAddr
+| (In) X2 || R0, R1 || u64 || EndAddr
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |-
-| (Out) W1 || Handle<DeviceAddressSpace> || AddressSpaceHandle
+| (Out) W1 || R1 || Handle<DeviceAddressSpace> || AddressSpaceHandle
 |}
 </div>
 
