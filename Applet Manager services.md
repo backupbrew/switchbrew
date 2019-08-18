@@ -833,9 +833,15 @@ Takes an input u8 bool, no output.
 
 No input/output.
 
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
+
 #### StartRebootSequenceForOverlay
 
 No input/output.
+
+On success, official sw will enter an infinite loop with sleep-thread
+value 86400000000000.
 
 #### SetHandlingHomeButtonShortPressedEnabled
 
