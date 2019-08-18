@@ -101,7 +101,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 100  | OpenImageDirectoryFileSystem                                                                                                                                      |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                        |
 | 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                     |
-| 130  | \[7.0.0+\] OpenCustomStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                              |
+| 130  | \[7.0.0+\] [\#OpenCustomStorageFileSystem](#OpenCustomStorageFileSystem "wikilink") (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink")) |
 | 200  | OpenDataStorageByCurrentProcess                                                                                                                                   |
 | 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                                                             |
 | 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                  |
