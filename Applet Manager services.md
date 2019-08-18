@@ -381,14 +381,17 @@ Takes a type-0x6 output buffer.
 The output buffer size must be at least 0x10-bytes. Returns an error
 when the [\#AppletId](#AppletId "wikilink") is 0x04 (starter).
 
-This gets the cached ApplicationLaunchProperty.
+This gets the
+[\#ApplicationLaunchProperty](#ApplicationLaunchProperty "wikilink").
 
 ##### GetApplicationLaunchRequestInfo
 
 No input, returns an output 0x10-byte struct.
 
-This gets the ApplicationLaunchRequestInfo from state. The output struct
-is "nn::applet::ApplicationLaunchRequestInfo".
+This gets the
+[\#ApplicationLaunchRequestInfo](#ApplicationLaunchRequestInfo "wikilink")
+from state. The output struct is
+"nn::applet::ApplicationLaunchRequestInfo".
 
 ##### SetUsers
 
@@ -2915,6 +2918,30 @@ This struct is "nn::am::ApplicationAttribute". This struct is
 
 Internally AM only uses the first 0xC-bytes from ApplicationAttribute,
 regardless of the cmd.
+
+# ApplicationLaunchProperty
+
+| Offset | Size | Description                                                                                             |
+| ------ | ---- | ------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | Application titleID.                                                                                    |
+| 0x8    | 0x4  | Application title-version.                                                                              |
+| 0xC    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink") for the Application base title.   |
+| 0xD    | 0x1  | [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink") for the Application update title. |
+| 0xE    | 0x1  | Unknown.                                                                                                |
+| 0xF    | 0x1  | Padding.                                                                                                |
+
+This struct is 0x10-bytes.
+
+# ApplicationLaunchRequestInfo
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x4  | Unknown.    |
+| 0x4    | 0x4  | Unknown.    |
+| 0x8    | 0x8  | Unknown.    |
+
+This struct is "nn::applet::ApplicationLaunchRequestInfo". This struct
+is 0x10-bytes.
 
 # AppletResourceUsageInfo
 

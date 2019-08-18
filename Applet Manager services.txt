@@ -364,12 +364,12 @@ Takes a type-0x6 output buffer.
 
 The output buffer size must be at least 0x10-bytes. Returns an error when the [[#AppletId]] is 0x04 (starter). 
 
-This gets the cached ApplicationLaunchProperty.
+This gets the [[#ApplicationLaunchProperty]].
 
 ===== GetApplicationLaunchRequestInfo =====
 No input, returns an output 0x10-byte struct.
 
-This gets the ApplicationLaunchRequestInfo from state. The output struct is "nn::applet::ApplicationLaunchRequestInfo".
+This gets the [[#ApplicationLaunchRequestInfo]] from state. The output struct is "nn::applet::ApplicationLaunchRequestInfo".
 
 ===== SetUsers =====
 Takes an input u8 bool flag and a type-0x5 input buffer containing an array of u128 userIDs.
@@ -2788,6 +2788,40 @@ User-processes copy the first 0x8-bytes (0xC-bytes with [[#CreateApplicationWith
 This struct is "nn::am::ApplicationAttribute". This struct is 0x20-bytes.
 
 Internally AM only uses the first 0xC-bytes from ApplicationAttribute, regardless of the cmd.
+
+= ApplicationLaunchProperty =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || Application titleID.
+|-
+| 0x8 || 0x4 || Application title-version.
+|-
+| 0xC || 0x1 || [[Filesystem_services#StorageId|StorageId]] for the Application base title.
+|-
+| 0xD || 0x1 || [[Filesystem_services#StorageId|StorageId]] for the Application update title.
+|-
+| 0xE || 0x1 || Unknown.
+|-
+| 0xF || 0x1 || Padding.
+|}
+
+This struct is 0x10-bytes.
+
+= ApplicationLaunchRequestInfo =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || Unknown.
+|-
+| 0x4 || 0x4 || Unknown.
+|-
+| 0x8 || 0x8 || Unknown.
+|}
+
+This struct is "nn::applet::ApplicationLaunchRequestInfo". This struct is 0x10-bytes.
 
 = AppletResourceUsageInfo =
 {| class="wikitable" border="1"
