@@ -143,7 +143,9 @@ R0=ptr, R1=[[#ArbitrationType]], R2=value, R3=timeout_lower32, R4=timeout_upper3
 |-
 | 0x42 || svcReplyAndReceiveLight || W0=light_session_handle || W0=result, W1,W2,W3,W4,W5,W6,W7=out
 |-
-| 0x43 || [[#svcReplyAndReceive]] || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout || W0=result, W1=handle_idx
+| 0x43 || [[#svcReplyAndReceive]] || X1=ptr_handles, W2=num_handles, X3=replytarget_handle(0=none), X4=timeout
+R0=timeout_lower32, R1=ptr_handles, R2=num_handles, R3=replytarget_handle(0=none), R4=timeout_upper32
+|| W0=result, W1=handle_idx
 |-
 | 0x44 || svcReplyAndReceiveWithUserBuffer|| X1=buf, X2=sz, X3=ptr_handles, W4=num_handles, X5=replytarget_handle(0=none), X6=timeout || W0=result, W1=handle_idx
 |-
@@ -951,19 +953,19 @@ Does nothing, just returns with registers set to all-zero.
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W1 || *Handle<Port or ServerSession> || Handles
+| (In) W1 || R1 || *Handle<Port or ServerSession> || Handles
 |-
-| (In) W2 || u32 || NumHandles
+| (In) W2 || R2 || u32 || NumHandles
 |-
-| (In) W3 || Handle<ServerSession> || ReplyTarget
+| (In) W3 || R3 || Handle<ServerSession> || ReplyTarget
 |-
-| (In) X4 || u64 (nanoseconds) || Timeout
+| (In) X4 || R0, R4 || u64 (nanoseconds) || Timeout
 |-
-| (Out) W0 || [[#Result]] || Result
+| (Out) W0 || R0 || [[#Result]] || Result
 |-
-| (Out) W1 || u32 || HandleIndex
+| (Out) W1 || R1 || u32 || HandleIndex
 |}
 </div>
 

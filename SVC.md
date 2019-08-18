@@ -63,7 +63,7 @@
 | 0x40 | svcCreateSession                                                                   | W2=is\_light, X3=name\_ptr                                                                                                                                                                                                                                                         | W0=result, W1=server\_handle, W2=client\_handle                                    |
 | 0x41 | [\#svcAcceptSession](#svcAcceptSession "wikilink")                                 | W1=port\_handle                                                                                                                                                                                                                                                                    | W0=result, W1=session\_handle                                                      |
 | 0x42 | svcReplyAndReceiveLight                                                            | W0=light\_session\_handle                                                                                                                                                                                                                                                          | W0=result, W1,W2,W3,W4,W5,W6,W7=out                                                |
-| 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout                                                                                                                                                                                                       | W0=result, W1=handle\_idx                                                          |
+| 0x43 | [\#svcReplyAndReceive](#svcReplyAndReceive "wikilink")                             | X1=ptr\_handles, W2=num\_handles, X3=replytarget\_handle(0=none), X4=timeout R0=timeout\_lower32, R1=ptr\_handles, R2=num\_handles, R3=replytarget\_handle(0=none), R4=timeout\_upper32                                                                                            | W0=result, W1=handle\_idx                                                          |
 | 0x44 | svcReplyAndReceiveWithUserBuffer                                                   | X1=buf, X2=sz, X3=ptr\_handles, W4=num\_handles, X5=replytarget\_handle(0=none), X6=timeout                                                                                                                                                                                        | W0=result, W1=handle\_idx                                                          |
 | 0x45 | svcCreateEvent                                                                     | None                                                                                                                                                                                                                                                                               | W0=result, W1=wevent\_handle, W2=revent\_handle                                    |
 | 0x48 | \[5.0.0+\] [\#svcMapPhysicalMemoryUnsafe](#svcMapPhysicalMemoryUnsafe "wikilink")  | X0=addr, X1=size                                                                                                                                                                                                                                                                   | W0=result                                                                          |
@@ -741,14 +741,14 @@ Does nothing, just returns with registers set to all-zero.
 
 <div style="display: inline-block;">
 
-| Argument | Type                            | Name        |
-| -------- | ------------------------------- | ----------- |
-| (In) W1  | \*Handle<Port or ServerSession> | Handles     |
-| (In) W2  | u32                             | NumHandles  |
-| (In) W3  | Handle<ServerSession>           | ReplyTarget |
-| (In) X4  | u64 (nanoseconds)               | Timeout     |
-| (Out) W0 | [\#Result](#Result "wikilink")  | Result      |
-| (Out) W1 | u32                             | HandleIndex |
+| Argument64 | Argument32 | Type                            | Name        |
+| ---------- | ---------- | ------------------------------- | ----------- |
+| (In) W1    | R1         | \*Handle<Port or ServerSession> | Handles     |
+| (In) W2    | R2         | u32                             | NumHandles  |
+| (In) W3    | R3         | Handle<ServerSession>           | ReplyTarget |
+| (In) X4    | R0, R4     | u64 (nanoseconds)               | Timeout     |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink")  | Result      |
+| (Out) W1   | R1         | u32                             | HandleIndex |
 
 </div>
 
