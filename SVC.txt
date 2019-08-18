@@ -161,7 +161,9 @@ R0=num_handles, R1=buf, R2=sz, R3=ptr_handles, R4=replytarget_handle(0=none), R5
 |-
 | 0x4B || [4.0.0+] [[#svcCreateCodeMemory]] || X1=addr, X2=size || W0=result, W1=code_memory_handle
 |-
-| 0x4C || [4.0.0+] [[#svcControlCodeMemory]] || W0=code_memory_handle, W1=[[#CodeMemoryOperation]], X2=dstaddr, X3=size, W4=perm || W0=result
+| 0x4C || [4.0.0+] [[#svcControlCodeMemory]] || W0=code_memory_handle, W1=[[#CodeMemoryOperation]], X2=dstaddr, X3=size, W4=perm
+R0=code_memory_handle, R1=[[#CodeMemoryOperation]], R2=dstaddr_lower32, R3=dstaddr_upper32, R4=size_lower32, R5=size_upper32, R6=perm
+|| W0=result
 |-
 | 0x4D || svcSleepSystem || None || None
 |-
