@@ -137,7 +137,7 @@ R0=ptr, R1=[[#ArbitrationType]], R2=value, R3=timeout_lower32, R4=timeout_upper3
 |-
 | 0x3D || [4.0.0+] svcDumpInfoNew || ||
 |- style="border-top: double"
-| 0x40 || svcCreateSession || W2=is_light, X3=? || W0=result, W1=server_handle, W2=client_handle
+| 0x40 || svcCreateSession || W2=is_light, X3=name_ptr || W0=result, W1=server_handle, W2=client_handle
 |-
 | 0x41 || [[#svcAcceptSession]] || W1=port_handle || W0=result, W1=session_handle
 |-
