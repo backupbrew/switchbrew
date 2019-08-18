@@ -72,7 +72,7 @@
 | 0x4B | \[4.0.0+\] [\#svcCreateCodeMemory](#svcCreateCodeMemory "wikilink")                | X1=addr, X2=size                                                                                                                                                                                                                                                                               | W0=result, W1=code\_memory\_handle                                                 |
 | 0x4C | \[4.0.0+\] [\#svcControlCodeMemory](#svcControlCodeMemory "wikilink")              | W0=code\_memory\_handle, W1=[\#CodeMemoryOperation](#CodeMemoryOperation "wikilink"), X2=dstaddr, X3=size, W4=perm R0=code\_memory\_handle, R1=[\#CodeMemoryOperation](#CodeMemoryOperation "wikilink"), R2=dstaddr\_lower32, R3=dstaddr\_upper32, R4=size\_lower32, R5=size\_upper32, R6=perm | W0=result                                                                          |
 | 0x4D | svcSleepSystem                                                                     | None                                                                                                                                                                                                                                                                                           | None                                                                               |
-| 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val                                                                                                                                                                                                                                                          | W0=result, W1=out\_val                                                             |
+| 0x4E | [\#svcReadWriteRegister](#svcReadWriteRegister "wikilink")                         | X1=reg\_addr, W2=rw\_mask, W3=in\_val R0=rw\_mask, R1=in\_val, R2=reg\_addr\_lower32, R3=reg\_addr\_upper32                                                                                                                                                                                    | W0=result, W1=out\_val                                                             |
 | 0x4F | svcSetProcessActivity                                                              | W0=process\_handle, W1=bool                                                                                                                                                                                                                                                                    | W0=result                                                                          |
 | 0x50 | [\#svcCreateSharedMemory](#svcCreateSharedMemory "wikilink")                       | W1=size, W2=myperm, W3=otherperm                                                                                                                                                                                                                                                               | W0=result, W1=shmem\_handle                                                        |
 | 0x51 | [\#svcMapTransferMemory](#svcMapTransferMemory "wikilink")                         | X0=tmem\_handle, X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                                     | W0=result                                                                          |
@@ -818,13 +818,13 @@ Code memory object is the same as the current process.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name     |
-| -------- | ------------------------------ | -------- |
-| (In) X1  | u64                            | RegAddr  |
-| (In) W2  | u64                            | RwMask   |
-| (In) W3  | u64                            | InValue  |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret      |
-| (Out) W1 | u64                            | OutValue |
+| Argument64 | Argument32 | Type                           | Name     |
+| ---------- | ---------- | ------------------------------ | -------- |
+| (In) X1    | R2, R3     | u64                            | RegAddr  |
+| (In) W2    | R0         | u64                            | RwMask   |
+| (In) W3    | R1         | u64                            | InValue  |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret      |
+| (Out) W1   | R1         | u64                            | OutValue |
 
 </div>
 

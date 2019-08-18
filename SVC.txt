@@ -169,7 +169,9 @@ R0=code_memory_handle, R1=[[#CodeMemoryOperation]], R2=dstaddr_lower32, R3=dstad
 |-
 | 0x4D || svcSleepSystem || None || None
 |-
-| 0x4E || [[#svcReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val || W0=result, W1=out_val
+| 0x4E || [[#svcReadWriteRegister]] || X1=reg_addr, W2=rw_mask, W3=in_val
+R0=rw_mask, R1=in_val, R2=reg_addr_lower32, R3=reg_addr_upper32
+|| W0=result, W1=out_val
 |-
 | 0x4F || svcSetProcessActivity || W0=process_handle, W1=bool || W0=result
 |-
@@ -1017,17 +1019,17 @@ This allows one "secure JIT" process to map the code memory as RW-, and the othe
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) X1 || u64 || RegAddr
+| (In) X1 || R2, R3 || u64 || RegAddr
 |-
-| (In) W2 || u64 || RwMask
+| (In) W2 || R0 || u64 || RwMask
 |-
-| (In) W3 || u64 || InValue
+| (In) W3 || R1 || u64 || InValue
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |-
-| (Out) W1|| u64 || OutValue
+| (Out) W1 || R1 || u64 || OutValue
 |}
 </div>
 
