@@ -839,12 +839,12 @@ than the buffer size.
 
 This is "nn::ns::detail::IAsyncValue".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   | \[4.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | GetSize                    |
+| 1   | Get                        |
+| 2   | Cancel                     |
+| 3   | \[4.0.0+\] GetErrorContext |
 
 Cmd3: No input/output, takes a type-0x16 output buffer.
 
@@ -852,11 +852,11 @@ Cmd3: No input/output, takes a type-0x16 output buffer.
 
 This is "nn::ns::detail::IAsyncResult".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   | \[4.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | Get                        |
+| 1   | Cancel                     |
+| 2   | \[4.0.0+\] GetErrorContext |
 
 Cmd2: No input/output, takes a type-0x16 output buffer.
 
