@@ -417,7 +417,8 @@ Takes a type-0x6 output buffer containing an array of u128 userIDs,
 returns an output s32 **total\_entries**.
 
 Gets a userID listing, this is unrelated to
-[\#SetUsers](#SetUsers "wikilink").
+[\#SetUsers](#SetUsers "wikilink"). [qlaunch](Qlaunch.md "wikilink")
+only uses 1 userID with this.
 
 The stored entry-count in state must be \<=
 <size of output buffer in entries>.

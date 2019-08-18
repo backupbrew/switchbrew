@@ -387,7 +387,7 @@ No input, returns an output u64.
 ===== GetDesirableUids =====
 Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output s32 '''total_entries'''.
 
-Gets a userID listing, this is unrelated to [[#SetUsers]].
+Gets a userID listing, this is unrelated to [[#SetUsers]]. [[qlaunch]] only uses 1 userID with this.
 
 The stored entry-count in state must be <= <size of output buffer in entries>.
 
