@@ -85,8 +85,10 @@ R0=cntpct_el0_lower32, R1=cntpct_el0_upper32
 | 0x23 || svcSendAsyncRequestWithUserBuffer || X1=cmdbufptr, X2=size, X3=handle || W0=result, W1=revent_handle
 |-
 | 0x24 || svcGetProcessId || W1=thread_or_process_or_debug_handle || W0=result, X1=pid
+R0=result, R1=pid_lower32, R2=pid_upper32
 |-
 | 0x25 || svcGetThreadId || W1=thread_handle || W0=result, X1=out
+R0=result, R1=out_lower32, R2=out_upper32
 |-
 | 0x26 || [[#svcBreak]] || X0=break_reason,X1,X2=info || W0=result = 0
 |-
