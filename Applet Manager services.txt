@@ -2691,7 +2691,7 @@ This is "nn::am::service::SystemButtonType". This is used with [[#PerformSystemB
 !  Value
 !  Description
 |-
-| 0 || u8 ProgramIndex. "ExecuteProgram". After using [[#ExecutProgram]] with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000.
+| 0 || u8 ProgramIndex. "ExecuteProgram". After using [[#ExecuteProgram]] with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000.
 |-
 | 1 || u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [[Settings_services#GetDebugModeFlag|DebugMode]] is 1.
 |-
