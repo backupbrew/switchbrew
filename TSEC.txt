@@ -22,6 +22,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500000
 | 0x04
 |-
+| TSEC_THI_INCR_SYNCPT_CTRL
+| 0x54500004
+| 0x04
+|-
 | TSEC_THI_INCR_SYNCPT_ERR
 | 0x54500008
 | 0x04
@@ -34,8 +38,28 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500020
 | 0x04
 |-
+| TSEC_THI_CTXSW_NEXT
+| 0x54500024
+| 0x04
+|-
 | TSEC_THI_CONT_SYNCPT_EOF
 | 0x54500028
+| 0x04
+|-
+| TSEC_THI_CONT_SYNCPT_L1
+| 0x5450002C
+| 0x04
+|-
+| TSEC_THI_STREAMID0
+| 0x54500030
+| 0x04
+|-
+| TSEC_THI_STREAMID1
+| 0x54500034
+| 0x04
+|-
+| TSEC_THI_THI_SEC
+| 0x54500038
 | 0x04
 |-
 | [[#TSEC_THI_METHOD0|TSEC_THI_METHOD0]]
@@ -46,6 +70,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54500044
 | 0x04
 |-
+| TSEC_THI_CONTEXT_SWITCH
+| 0x54500060
+| 0x04
+|-
 | [[#TSEC_THI_INT_STATUS|TSEC_THI_INT_STATUS]]
 | 0x54500078
 | 0x04
@@ -54,11 +82,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450007C
 | 0x04
 |-
-| TSEC_THI_INT_CLEAR
+| TSEC_THI_CONFIG0
 | 0x54500080
 | 0x04
 |-
-| TSEC_THI_INT_ENABLE
+| TSEC_THI_DBG_MISC
 | 0x54500084
 | 0x04
 |-
@@ -134,7 +162,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501038
 | 0x04
 |-
-| FALCON_UNK_3C
+| [[#FALCON_IRQDEST2|FALCON_IRQDEST2]]
 | 0x5450103C
 | 0x04
 |-
@@ -266,15 +294,15 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x545010D0
 | 0x04
 |-
-| FALCON_UNK_D4
+| [[#FALCON_SVEC_SPR|FALCON_SVEC_SPR]]
 | 0x545010D4
 | 0x04
 |-
-| FALCON_UNK_D8
+| [[#FALCON_RSTAT0|FALCON_RSTAT0]]
 | 0x545010D8
 | 0x04
 |-
-| FALCON_UNK_DC
+| [[#FALCON_RSTAT3|FALCON_RSTAT3]]
 | 0x545010DC
 | 0x04
 |-
@@ -322,7 +350,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501124
 | 0x04
 |-
-| FALCON_CPUSTAT
+| FALCON_DBG_STATE
 | 0x54501128
 | 0x04
 |-
@@ -332,6 +360,10 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 |-
 | FALCON_CPUCTL_ALIAS
 | 0x54501130
+| 0x04
+|-
+| FALCON_STACKCFG
+| 0x54501138
 | 0x04
 |-
 | [[#FALCON_IMCTL|FALCON_IMCTL]]
@@ -382,7 +414,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450116C
 | 0x04
 |-
-| FALCON_CG1_SLCG
+| FALCON_CG2
 | 0x5450117C
 | 0x04
 |-
@@ -570,23 +602,39 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450129C
 | 0x04
 |-
-| FALCON_UNK_2C0
+| FALCON_DMAINFO_FINISHED_FBRD_LOW
 | 0x545012C0
 | 0x04
 |-
-| FALCON_UNK_2C4
+| FALCON_DMAINFO_FINISHED_FBRD_HIGH
 | 0x545012C4
 | 0x04
 |-
-| FALCON_UNK_2C8
+| FALCON_DMAINFO_FINISHED_FBWR_LOW
 | 0x545012C8
 | 0x04
 |-
-| FALCON_UNK_2CC
+| FALCON_DMAINFO_FINISHED_FBWR_HIGH
 | 0x545012CC
 | 0x04
 |-
-| FALCON_UNK_2E0
+| FALCON_DMAINFO_CURRENT_FBRD_LOW
+| 0x545012D0
+| 0x04
+|-
+| FALCON_DMAINFO_CURRENT_FBRD_HIGH
+| 0x545012D4
+| 0x04
+|-
+| FALCON_DMAINFO_CURRENT_FBWR_LOW
+| 0x545012D8
+| 0x04
+|-
+| FALCON_DMAINFO_CURRENT_FBWR_HIGH
+| 0x545012DC
+| 0x04
+|-
+| FALCON_DMAINFO_CTL
 | 0x545012E0
 | 0x04
 |-
@@ -722,7 +770,7 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450152C
 | 0x04
 |-
-| TSEC_TFBIF_CTL
+| [[#TSEC_TFBIF_CTL|TSEC_TFBIF_CTL]]
 | 0x54501600
 | 0x04
 |-
@@ -730,15 +778,47 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501604
 | 0x04
 |-
-| TSEC_TFBIF_THROTTLE
+| [[#TSEC_TFBIF_THROTTLE|TSEC_TFBIF_THROTTLE]]
 | 0x54501608
 | 0x04
 |-
-| TSEC_TFBIF_UNK_0C
+| [[#TSEC_TFBIF_DBG_STAT0|TSEC_TFBIF_DBG_STAT0]]
 | 0x5450160C
 | 0x04
 |-
-| TSEC_TFBIF_DEBUG_STAT
+| TSEC_TFBIF_DBG_STAT1
+| 0x54501610
+| 0x04
+|-
+| TSEC_TFBIF_DBG_RDCOUNT_LO
+| 0x54501614
+| 0x04
+|-
+| TSEC_TFBIF_DBG_RDCOUNT_HI
+| 0x54501618
+| 0x04
+|-
+| TSEC_TFBIF_DBG_WRCOUNT_LO
+| 0x5450161C
+| 0x04
+|-
+| TSEC_TFBIF_DBG_WRCOUNT_HI
+| 0x54501620
+| 0x04
+|-
+| TSEC_TFBIF_DBG_R32COUNT
+| 0x54501624
+| 0x04
+|-
+| TSEC_TFBIF_DBG_R64COUNT
+| 0x54501628
+| 0x04
+|-
+| TSEC_TFBIF_DBG_R128COUNT
+| 0x5450162C
+| 0x04
+|-
+| TSEC_TFBIF_TRANSCFG
 | 0x54501630
 | 0x04
 |-
@@ -746,28 +826,48 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501634
 | 0x04
 |-
-| [[#TSEC_TFBIF_MMU_PROT|TSEC_TFBIF_MMU_PROT]]
+| TSEC_TFBIF_WRR_RDP
+| 0x54501638
+| 0x04
+|-
+| [[#FALCON_SPROT_REGION|FALCON_SPROT_REGION]]
 | 0x54501640
 | 0x04
 |-
-| [[#TSEC_TFBIF_MMU_PHYS_SEC|TSEC_TFBIF_MMU_PHYS_SEC]]
+| [[#TSEC_TFBIF_REGIONCFG|TSEC_TFBIF_REGIONCFG]]
 | 0x54501644
 | 0x04
 |-
-| [[#TSEC_TFBIF_MMU_APERTURE_CTL|TSEC_TFBIF_MMU_APERTURE_CTL]]
+| [[#TSEC_TFBIF_REGIONCFG1|TSEC_TFBIF_REGIONCFG1]]
 | 0x54501648
 | 0x04
 |-
-| [[#TSEC_TFBIF_ACTMON_MAMASK|TSEC_TFBIF_ACTMON_MAMASK]]
+| [[#TSEC_TFBIF_ACTMON_ACTIVE_MASK|TSEC_TFBIF_ACTMON_ACTIVE_MASK]]
 | 0x5450164C
 | 0x04
 |-
-| [[#TSEC_TFBIF_ACTMON_BORPS|TSEC_TFBIF_ACTMON_BORPS]]
+| [[#TSEC_TFBIF_ACTMON_ACTIVE_BORPS|TSEC_TFBIF_ACTMON_ACTIVE_BORPS]]
 | 0x54501650
 | 0x04
 |-
-| [[#TSEC_TFBIF_ACTMON_CTL|TSEC_TFBIF_ACTMON_CTL]]
+| [[#TSEC_TFBIF_ACTMON_ACTIVE_WEIGHT|TSEC_TFBIF_ACTMON_ACTIVE_WEIGHT]]
 | 0x54501654
+| 0x04
+|-
+| TSEC_TFBIF_ACTMON_MCB_MASK
+| 0x54501660
+| 0x04
+|-
+| TSEC_TFBIF_ACTMON_MCB_BORPS
+| 0x54501664
+| 0x04
+|-
+| TSEC_TFBIF_ACTMON_MCB_WEIGHT
+| 0x54501668
+| 0x04
+|-
+| TSEC_TFBIF_THI_TRANSPROP
+| 0x54501670
 | 0x04
 |-
 | [[#TSEC_CG|TSEC_CG]]
@@ -1094,6 +1194,9 @@ Used to encode and send a method's data over HOST1X to TSEC. This register mirro
 |-
 | 8-15
 | FALCON_IRQSSET_EXT
+|-
+| 16
+| FALCON_IRQSSET_DMA
 |}
 
 Used for setting Falcon's IRQs.
@@ -1129,6 +1232,9 @@ Used for setting Falcon's IRQs.
 |-
 | 8-15
 | FALCON_IRQSCLR_EXT
+|-
+| 16
+| FALCON_IRQSCLR_DMA
 |}
 
 Used for clearing Falcon's IRQs.
@@ -1164,6 +1270,9 @@ Used for clearing Falcon's IRQs.
 |-
 | 8-15
 | FALCON_IRQSTAT_EXT
+|-
+| 16
+| FALCON_IRQSTAT_DMA
 |}
 
 Used for getting the status of Falcon's IRQs.
@@ -1199,6 +1308,9 @@ Used for getting the status of Falcon's IRQs.
 |-
 | 8-15
 | FALCON_IRQMODE_LVL_EXT
+|-
+| 16
+| FALCON_IRQMODE_LVL_DMA
 |}
 
 Used for changing the mode Falcon's IRQs. A value of 1 means level triggered while a value of 0 means edge triggered.
@@ -1234,6 +1346,9 @@ Used for changing the mode Falcon's IRQs. A value of 1 means level triggered whi
 |-
 | 8-15
 | FALCON_IRQMSET_EXT
+|-
+| 16
+| FALCON_IRQMSET_DMA
 |}
 
 Used for setting the mask for Falcon's IRQs.
@@ -1269,6 +1384,9 @@ Used for setting the mask for Falcon's IRQs.
 |-
 | 8-15
 | FALCON_IRQMCLR_EXT
+|-
+| 16
+| FALCON_IRQMCLR_DMA
 |}
 
 Used for clearing the mask for Falcon's IRQs.
@@ -1304,6 +1422,9 @@ Used for clearing the mask for Falcon's IRQs.
 |-
 | 8-15
 | FALCON_IRQMASK_EXT
+|-
+| 16
+| FALCON_IRQMASK_DMA
 |}
 
 Used for getting the value of the mask for Falcon's IRQs.
@@ -1370,6 +1491,20 @@ Used for getting the value of the mask for Falcon's IRQs.
 
 Used for routing Falcon's IRQs.
 
+=== FALCON_IRQDEST2 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| FALCON_IRQDEST2_HOST_DMA
+|-
+| 16
+| FALCON_IRQDEST2_TARGET_DMA
+|}
+
+Used for routing Falcon's IRQs.
+
 === FALCON_MAILBOX0 ===
 Scratch register for reading/writing data to Falcon.
 
@@ -1414,6 +1549,9 @@ Used for detecting if Falcon is busy or not.
 |-
 | 16
 | FALCON_DEBUG1_CTXSW_MODE
+|-
+| 17
+| FALCON_DEBUG1_TRACE_FORMAT
 |}
 
 === FALCON_DEBUGINFO ===
@@ -1427,22 +1565,37 @@ Used for UCODE self revocation. This register takes the base address of the GSC 
 !  Description
 |-
 | 0-19
-| PC that originated the exception
+| FALCON_EXCI_EXPC
 |-
 | 20-23
-| Exception type
- 0x00: Trap 0
- 0x01: Trap 1
- 0x02: Trap 2
- 0x03: Trap 3
- 0x08: Invalid opcode
- 0x09: Authentication entry
- 0x0A: Page fault (no hit)
- 0x0B: Page fault (multi hit)
- 0x0F: Breakpoint
+| FALCON_EXCI_EXCAUSE
+ 0x00: TRAP0
+ 0x01: TRAP1
+ 0x02: TRAP2
+ 0x03: TRAP3
+ 0x08: ILL_INS (invalid opcode)
+ 0x09: INV_INS (authentication entry)
+ 0x0A: MISS_INS (page miss)
+ 0x0B: DHIT_INS (page multiple hit)
+ 0x0F: BRKPT_INS (breakpoint hit)
 |}
 
 Contains information about raised exceptions.
+
+=== FALCON_SVEC_SPR ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 18
+| FALCON_SVEC_SPR_SIGPASS
+|}
+
+=== FALCON_RSTAT0 ===
+Mirror of the ICD status register 0.
+
+=== FALCON_RSTAT3 ===
+Mirror of the ICD status register 3.
 
 === FALCON_CPUCTL ===
 {| class="wikitable" border="1"
@@ -1468,7 +1621,7 @@ Contains information about raised exceptions.
 | FALCON_CPUCTL_STOPPED
 |-
 | 6
-| FALCON_CPUCTL_CPUCTL_ALIAS_EN
+| FALCON_CPUCTL_ALIAS_EN
 |}
 
 Used for signaling the Falcon CPU.
@@ -1655,14 +1808,15 @@ Contains the status of a DMA transfer between the Falcon and the SCP.
 !  Description
 |-
 | 0-23
-| Address
+| FALCON_IMCTL_ADDR_BLK
 |-
 | 24-26
-| Command
+| FALCON_IMCTL_CMD
  0x00: NOP
  0x01: IMINV (ITLB)
  0x02: IMBLK (PTLB)
  0x03: IMTAG (VTLB)
+ 0x04: IMTAG_SETVLD
 |}
 
 Controls the Falcon TLB.
@@ -1812,6 +1966,9 @@ Returns or takes the value for a DMEM read/write operation.
  0x1A: SEC
  0x1B: CTX
  0x1C: EXCI
+ 0x1D: SEC1
+ 0x1E: IMB1
+ 0x1F: DMB1
 |-
 | 14
 | FALCON_ICD_CMD_ERROR
@@ -2220,7 +2377,7 @@ Controls accesses to the following registers:
 * [[#FALCON_IMCTL|FALCON_IMCTL]]
 * [[#FALCON_IMSTAT|FALCON_IMSTAT]]
 * FALCON_UNK_250
-* FALCON_UNK_2E0
+* FALCON_DMAINFO_CTL
 
 === FALCON_SPROT_IRQ ===
 {| class="wikitable" border="1"
@@ -2242,7 +2399,7 @@ Controls accesses to the following registers:
 * FALCON_GPTMRINT
 * FALCON_GPTMRVAL
 * FALCON_GPTMRCTL
-* FALCON_UNK_3C
+* FALCON_IRQDEST2
 * FALCON_UNK_E0
 
 === FALCON_SPROT_MTHD ===
@@ -2612,6 +2769,42 @@ Contains information on the status generated by the [[#TSEC_SCP_IRQSTAT|TSEC_SCP
 
 Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|TSEC_SCP_IRQSTAT_INSN_ERROR]] IRQ.
 
+=== TSEC_TFBIF_CTL ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_TFBIF_CTL_CLR_BWCOUNT
+|-
+| 1
+| TSEC_TFBIF_CTL_ENABLE
+|-
+| 2
+| TSEC_TFBIF_CTL_CLR_IDLEWDERR
+|-
+| 3
+| TSEC_TFBIF_CTL_RESET
+|-
+| 4
+| TSEC_TFBIF_CTL_IDLE
+|-
+| 5
+| TSEC_TFBIF_CTL_IDLEWDERR
+|-
+| 6
+| TSEC_TFBIF_CTL_SRTOUT
+|-
+| 7
+| TSEC_TFBIF_CTL_CLR_SRTOUT
+|-
+| 8-11
+| TSEC_TFBIF_CTL_SRTOVAL
+|-
+| 12
+| TSEC_TFBIF_CTL_VPR
+|}
+
 === TSEC_TFBIF_MCCIF_FIFOCTRL ===
 {| class="wikitable" border="1"
 !  Bits
@@ -2657,7 +2850,88 @@ Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|TSEC_
 | TSEC_TFBIF_MCCIF_FIFOCTRL1_SWR2MC_REORDER_DEPTH_LIMIT
 |}
 
-=== TSEC_TFBIF_MMU_PROT ===
+=== TSEC_TFBIF_THROTTLE ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0-11
+| TSEC_TFBIF_THROTTLE_BUCKET_SIZE
+|-
+| 16-27
+| TSEC_TFBIF_THROTTLE_LEAK_COUNT
+|-
+| 30-31
+| TSEC_TFBIF_THROTTLE_LEAK_SIZE
+|}
+
+=== TSEC_TFBIF_DBG_STAT0 ===
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| TSEC_TFBIF_DBG_STAT0_1K_TRANSFER
+|-
+| 1
+| TSEC_TFBIF_DBG_STAT0_RREQ_ISSUED
+|-
+| 2
+| TSEC_TFBIF_DBG_STAT0_WREQ_ISSUED
+|-
+| 3
+| TSEC_TFBIF_DBG_STAT0_TAGQ_ISSUED
+|-
+| 4
+| TSEC_TFBIF_DBG_STAT0_STALL_RDATQ
+|-
+| 5
+| TSEC_TFBIF_DBG_STAT0_STALL_RACKQ
+|-
+| 6
+| TSEC_TFBIF_DBG_STAT0_STALL_WREQQ
+|-
+| 7
+| TSEC_TFBIF_DBG_STAT0_STALL_WDATQ
+|-
+| 8
+| TSEC_TFBIF_DBG_STAT0_STALL_WACKQ
+|-
+| 9
+| TSEC_TFBIF_DBG_STAT0_STALL_RREQ_PENDING
+|-
+| 10
+| TSEC_TFBIF_DBG_STAT0_STALL_WREQ_PENDING
+|-
+| 11
+| TSEC_TFBIF_DBG_STAT0_STALL_MREQ
+|-
+| 12
+| TSEC_TFBIF_DBG_STAT0_ENGINE_IDLE
+|-
+| 13
+| TSEC_TFBIF_DBG_STAT0_RMCCIF_IDLE 
+|-
+| 14
+| TSEC_TFBIF_DBG_STAT0_WMCCIF_IDLE
+|-
+| 15
+| TSEC_TFBIF_DBG_STAT0_CSB_IDLE
+|-
+| 16
+| TSEC_TFBIF_DBG_STAT0_RU_IDLE
+|-
+| 17
+| TSEC_TFBIF_DBG_STAT0_WU_IDLE
+|-
+| 19
+| TSEC_TFBIF_DBG_STAT0_UNWEIGHT_ACTMON_ACTIVE
+|-
+| 20
+| TSEC_TFBIF_DBG_STAT0_UNWEIGHT_ACTMON_MCB
+|}
+
+=== TSEC_TFBIF_SPROT_REGION ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2669,83 +2943,83 @@ Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|TSEC_
 | Write access level
 |}
 
-Controls accesses to external memory at the MMU level. Accessible in HS mode only.
+Controls accesses to external memory regions. Accessible in HS mode only.
 
-=== TSEC_TFBIF_MMU_PHYS_SEC ===
+=== TSEC_TFBIF_REGIONCFG ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| Bypass MMU translation on CTXDMA port 0
+| TSEC_TFBIF_REGIONCFG_T0_VPR
 |-
 | 4
-| Bypass MMU translation on CTXDMA port 1
+| TSEC_TFBIF_REGIONCFG_T1_VPR
 |-
 | 8
-| Bypass MMU translation on CTXDMA port 2
+| TSEC_TFBIF_REGIONCFG_T2_VPR
 |-
 | 12
-| Bypass MMU translation on CTXDMA port 3
+| TSEC_TFBIF_REGIONCFG_T3_VPR
 |-
 | 16
-| Bypass MMU translation on CTXDMA port 4
+| TSEC_TFBIF_REGIONCFG_T4_VPR
 |-
 | 20
-| Bypass MMU translation on CTXDMA port 5
+| TSEC_TFBIF_REGIONCFG_T5_VPR
 |-
 | 24
-| Bypass MMU translation on CTXDMA port 6
+| TSEC_TFBIF_REGIONCFG_T6_VPR
 |-
 | 28
-| Bypass MMU translation on CTXDMA port 7
+| TSEC_TFBIF_REGIONCFG_T7_VPR
 |}
 
-Controls MMU bypass mode. Accessible in HS mode only.
+Controls VPR request mode (which bypasses MMU). Accessible in HS mode only.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x10 or 0x111110 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_TFBIF_MMU_APERTURE_CTL ===
+=== TSEC_TFBIF_REGIONCFG1 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0-2
-| Aperture ID for CTXDMA port 0
+| TSEC_TFBIF_REGIONCFG1_T0_APERT_ID
 |-
 | 4-6
-| Aperture ID for CTXDMA port 1
+| TSEC_TFBIF_REGIONCFG1_T1_APERT_ID
 |-
 | 8-10
-| Aperture ID for CTXDMA port 2
+| TSEC_TFBIF_REGIONCFG1_T2_APERT_ID
 |-
 | 12-14
-| Aperture ID for CTXDMA port 3
+| TSEC_TFBIF_REGIONCFG1_T3_APERT_ID
 |-
 | 16-18
-| Aperture ID for CTXDMA port 4
+| TSEC_TFBIF_REGIONCFG1_T4_APERT_ID
 |-
 | 20-22
-| Aperture ID for CTXDMA port 5
+| TSEC_TFBIF_REGIONCFG1_T5_APERT_ID
 |-
 | 24-26
-| Aperture ID for CTXDMA port 6
+| TSEC_TFBIF_REGIONCFG1_T6_APERT_ID
 |-
 | 28-30
-| Aperture ID for CTXDMA port 7
+| TSEC_TFBIF_REGIONCFG1_T7_APERT_ID
 |}
 
 Controls the aperture ID of memory requests. Accessible in HS mode only.
 
 [6.0.0+] The nvhost_tsec firmware sets this register to 0x20 or 0x140 before reading memory from the GPU UCODE carveout.
 
-=== TSEC_TFBIF_ACTMON_MAMASK ===
+=== TSEC_TFBIF_ACTMON_ACTIVE_MASK ===
 Takes the memory access mask for the Activity Monitor. Disconnected on the TSEC, but available on NVDEC, NVENC and NVJPG.
 
-=== TSEC_TFBIF_ACTMON_BORPS ===
+=== TSEC_TFBIF_ACTMON_ACTIVE_BORPS ===
 Takes the billions of records per second count for the Activity Monitor. Disconnected on the TSEC, but available on NVDEC, NVENC and NVJPG.
 
-=== TSEC_TFBIF_ACTMON_CTL ===
+=== TSEC_TFBIF_ACTMON_ACTIVE_WEIGHT ===
 Controls the Activity Monitor. Disconnected on the TSEC, but available on NVDEC, NVENC and NVJPG.
 
 === TSEC_CG ===
