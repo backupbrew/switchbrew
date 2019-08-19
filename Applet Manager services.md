@@ -295,6 +295,22 @@ Uses [\#omm](#omm "wikilink") cmd GetHdcpAuthenticationFailedEvent.
 | 10  | [\#CreateSystemApplication](#CreateSystemApplication "wikilink")                           |       |
 | 100 | [\#PopFloatingApplicationForDevelopment](#PopFloatingApplicationForDevelopment "wikilink") |       |
 
+[\#CreateApplication](#CreateApplication "wikilink")/[\#CreateSystemApplication](#CreateSystemApplication "wikilink")
+eventually call the same internal func. With
+[\#CreateApplication](#CreateApplication "wikilink"), two ptrs passed to
+the internal func are NULL, while with
+[\#CreateSystemApplication](#CreateSystemApplication "wikilink") these
+are loaded from state. The initial content of
+[\#ApplicationLaunchRequestInfo](#ApplicationLaunchRequestInfo "wikilink")
+is all-zero with
+[\#CreateSystemApplication](#CreateSystemApplication "wikilink"), while
+with [\#CreateApplication](#CreateApplication "wikilink") the first two
+u32s are value 0x3 with the rest all-zero. The
+[\#AppletId](#AppletId "wikilink") is set to 0x01 with
+[\#CreateApplication](#CreateApplication "wikilink"), while with
+[\#CreateSystemApplication](#CreateSystemApplication "wikilink") it's
+0x04.
+
 #### CreateApplication
 
 Takes an input u64 titleID (`nn::ncm::ApplicationId`), returns an
@@ -382,7 +398,8 @@ This gets the application [control.nacp](NACP%20Format.md "wikilink").
 Takes a type-0x6 output buffer.
 
 The output buffer size must be at least 0x10-bytes. Returns an error
-when the [\#AppletId](#AppletId "wikilink") is 0x04 (starter).
+when the [\#AppletId](#AppletId "wikilink") is 0x04, aka when the
+IApplicationAccessor is for a SystemApplication.
 
 This gets the
 [\#ApplicationLaunchProperty](#ApplicationLaunchProperty "wikilink").
@@ -1658,7 +1675,7 @@ titleID.
 
 Gets the application titleID for the specified ContentActionName string.
 Returns an error when the current [\#AppletId](#AppletId "wikilink")
-isn't 0x04 (starter).
+isn't 0x04 (when the current applet isn't a SystemApplication).
 
 ### SetCpuBoostMode
 
@@ -2739,7 +2756,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x01 |                  | Application. Not valid for use with LibraryApplets.                                                              |
 | 0x02 | 010000000000100C | "overlayDisp"                                                                                                    |
 | 0x03 | 0100000000001000 | "qlaunch"                                                                                                        |
-| 0x04 | 0100000000001012 | "starter"                                                                                                        |
+| 0x04 | 0100000000001012 | "starter" SystemApplication.                                                                                     |
 | 0x0A | 0100000000001001 | ["auth"](Auth%20Applet.md "wikilink")                                                                            |
 | 0x0B | 0100000000001002 | "cabinet"                                                                                                        |
 | 0x0C | 0100000000001003 | "controller"                                                                                                     |
@@ -2944,11 +2961,11 @@ This struct is 0x10-bytes.
 
 # ApplicationLaunchRequestInfo
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x4  | Unknown.    |
-| 0x4    | 0x4  | Unknown.    |
-| 0x8    | 0x8  | Unknown.    |
+| Offset | Size | Description                                                                                                                                        |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Unknown. 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
+| 0x4    | 0x4  | Unknown. 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
+| 0x8    | 0x8  | Unknown. The default is 0.                                                                                                                         |
 
 This struct is "nn::applet::ApplicationLaunchRequestInfo". This struct
 is 0x10-bytes.
