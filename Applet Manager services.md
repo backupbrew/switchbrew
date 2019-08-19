@@ -2961,11 +2961,11 @@ This struct is 0x10-bytes.
 
 # ApplicationLaunchRequestInfo
 
-| Offset | Size | Description                                                                                                                                        |
-| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Unknown. 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
-| 0x4    | 0x4  | Unknown. 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
-| 0x8    | 0x8  | Unknown. The default is 0.                                                                                                                         |
+| Offset | Size | Description                                                                                                                                                       |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Unknown. The default is 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
+| 0x4    | 0x4  | Unknown. The default is 0x0 with [\#CreateSystemApplication](#CreateSystemApplication "wikilink"), 0x3 with [\#CreateApplication](#CreateApplication "wikilink"). |
+| 0x8    | 0x8  | Unknown. The default is 0.                                                                                                                                        |
 
 This struct is "nn::applet::ApplicationLaunchRequestInfo". This struct
 is 0x10-bytes.
