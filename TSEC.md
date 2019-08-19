@@ -229,7 +229,7 @@ TSEC and are subdivided into:
 | TSEC\_TFBIF\_TRANSCFG                                                              | 0x54501630 | 0x04  |
 | [TSEC\_TFBIF\_MCCIF\_FIFOCTRL1](#TSEC_TFBIF_MCCIF_FIFOCTRL1 "wikilink")            | 0x54501634 | 0x04  |
 | TSEC\_TFBIF\_WRR\_RDP                                                              | 0x54501638 | 0x04  |
-| [FALCON\_SPROT\_REGION](#FALCON_SPROT_REGION "wikilink")                           | 0x54501640 | 0x04  |
+| [TSEC\_TFBIF\_SPROT\_REGION](#TSEC_TFBIF_SPROT_REGION "wikilink")                  | 0x54501640 | 0x04  |
 | [TSEC\_TFBIF\_REGIONCFG](#TSEC_TFBIF_REGIONCFG "wikilink")                         | 0x54501644 | 0x04  |
 | [TSEC\_TFBIF\_REGIONCFG1](#TSEC_TFBIF_REGIONCFG1 "wikilink")                       | 0x54501648 | 0x04  |
 | [TSEC\_TFBIF\_ACTMON\_ACTIVE\_MASK](#TSEC_TFBIF_ACTMON_ACTIVE_MASK "wikilink")     | 0x5450164C | 0x04  |
