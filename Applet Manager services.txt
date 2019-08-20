@@ -807,6 +807,8 @@ Just returns 0.
 ==== BeginToObserveHidInputForDevelop ====
 No input/output.
 
+Sets various state fields and signals an userspace-event.
+
 == IApplicationProxy ==
 {| class="wikitable" border="1"
 |-

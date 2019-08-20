@@ -874,6 +874,8 @@ Just returns 0.
 
 No input/output.
 
+Sets various state fields and signals an userspace-event.
+
 ## IApplicationProxy
 
 | Cmd  | Name                        | Notes                                                                            |
