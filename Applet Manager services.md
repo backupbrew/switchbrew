@@ -165,6 +165,9 @@ Takes a type-0x6 output buffer containing an array of u128 userIDs,
 returns an output u64 titleID (`nn::ncm::ApplicationId`) and an output
 s32 **total\_userIDs**.
 
+The total entries in the userID buffer must be \>= {total userIDs in
+state}.
+
 #### LaunchDevMenu
 
 No input/output.
