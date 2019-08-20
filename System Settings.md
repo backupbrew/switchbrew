@@ -361,11 +361,13 @@ This class does not exist on retail firmware.
 
 # ns.applet
 
-| Name                | Versions | Default Values       | Description |
-| ------------------- | -------- | -------------------- | ----------- |
-| overlay\_applet\_id | 1.0.0+   | "0x010000000000100c" |             |
-| shop\_applet\_id    | 3.0.0+   | "0x010000000000100b" |             |
-| system\_applet\_id  | 1.0.0+   | "0x0100000000001000" |             |
+| Name                | Versions | Default Values       | Description                                              |
+| ------------------- | -------- | -------------------- | -------------------------------------------------------- |
+| overlay\_applet\_id | 1.0.0+   | "0x010000000000100c" |                                                          |
+| shop\_applet\_id    | 3.0.0+   | "0x010000000000100b" |                                                          |
+| system\_applet\_id  | 1.0.0+   | "0x0100000000001000" |                                                          |
+| devmenu\_id         |          |                      | Only exists on devunits, titleID for DevMenu.            |
+| devoverlaydisp\_id  |          |                      | Only exists on devunits, titleID for dev Overlay-applet. |
 
 # ns.application
 

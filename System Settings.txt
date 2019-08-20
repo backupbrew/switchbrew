@@ -1008,6 +1008,16 @@ This class does not exist on retail firmware.
 | 1.0.0+
 | "0x0100000000001000"
 | rowspan="1" |
+|-
+| rowspan="1" |devmenu_id
+| 
+| 
+| rowspan="1" |Only exists on devunits, titleID for DevMenu.
+|-
+| rowspan="1" |devoverlaydisp_id
+| 
+| 
+| rowspan="1" |Only exists on devunits, titleID for dev Overlay-applet.
 |}
 
 = ns.application =
