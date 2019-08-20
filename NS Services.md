@@ -530,7 +530,16 @@ This is used by AM cmd
 
 This uses [system-settings](System%20Settings.md "wikilink")
 `ns.applet!devmenu_id` and `ns.applet!devoverlaydisp_id`, which only
-exists on devunits.
+exists on devunits. An error is thrown if these don't exist.
+
+[NCM](NCM%20Services.md "wikilink") OpenContentMetaDatabase is used with
+StorageId = NandSystem, then IContentMetaDatabase
+GetLatestContentMetaKey is used with both of the above titleIDs to
+verify that the cmd is successful.
+
+Then if the above succeeds, the above titles are launched with the above
+StorageId via [pmshell](Process%20Manager%20services.md "wikilink")
+LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
 ### IApplicationVersionInterface
 
