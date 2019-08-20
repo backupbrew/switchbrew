@@ -528,9 +528,10 @@ No input/output.
 This is used by AM cmd
 [LaunchDevMenu](Applet%20Manager%20services#LaunchDevMenu.md##LaunchDevMenu "wikilink").
 
-This uses [system-settings](System%20Settings.md "wikilink")
+This loads titleIDs from
+[system-settings](System%20Settings.md "wikilink")
 `ns.applet!devmenu_id` and `ns.applet!devoverlaydisp_id`, which only
-exists on devunits. An error is thrown if these don't exist.
+exists on devunits. An error is thrown if loading these fail.
 
 [NCM](NCM%20Services.md "wikilink") OpenContentMetaDatabase is used with
 StorageId = NandSystem, then IContentMetaDatabase
