@@ -1164,10 +1164,14 @@ No input/output.
 
 Stubbed with an ILibraryAppletCreator from [[#CreateSelfLibraryAppletCreatorForDevelop]], just returns an error.
 
+Terminates all LibraryApplets which were created by the current applet (or by the Application when used from the [[#IApplicationAccessor]] cmd).
+
 === AreAnyLibraryAppletsLeft ===
 No input, returns an output u8 bool.
 
 Stubbed with an ILibraryAppletCreator from [[#CreateSelfLibraryAppletCreatorForDevelop]], just returns an error.
+
+Gets whether any LibraryApplets ([[#ILibraryAppletAccessor]]) which were created by the current applet are still open (or by the Application when used from the [[#IApplicationAccessor]] cmd).
 
 === CreateStorage ===
 Takes an input s64 for the storage size, returns an [[#IStorage]].

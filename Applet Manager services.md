@@ -1318,6 +1318,10 @@ Stubbed with an ILibraryAppletCreator from
 [\#CreateSelfLibraryAppletCreatorForDevelop](#CreateSelfLibraryAppletCreatorForDevelop "wikilink"),
 just returns an error.
 
+Terminates all LibraryApplets which were created by the current applet
+(or by the Application when used from the
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink") cmd).
+
 ### AreAnyLibraryAppletsLeft
 
 No input, returns an output u8 bool.
@@ -1325,6 +1329,12 @@ No input, returns an output u8 bool.
 Stubbed with an ILibraryAppletCreator from
 [\#CreateSelfLibraryAppletCreatorForDevelop](#CreateSelfLibraryAppletCreatorForDevelop "wikilink"),
 just returns an error.
+
+Gets whether any LibraryApplets
+([\#ILibraryAppletAccessor](#ILibraryAppletAccessor "wikilink")) which
+were created by the current applet are still open (or by the Application
+when used from the
+[\#IApplicationAccessor](#IApplicationAccessor "wikilink") cmd).
 
 ### CreateStorage
 
