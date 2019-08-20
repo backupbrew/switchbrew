@@ -210,7 +210,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 210 || Web
 |-
-| 211 ||
+| 211 || Unknown
 |-
 | 212 || GRC
 |-

@@ -118,7 +118,7 @@ fatal-errors, since the Description ends with bit21.
 | 208   | Manu                                         |
 | 209   | ATK                                          |
 | 210   | Web                                          |
-| 211   |                                              |
+| 211   | Unknown                                      |
 | 212   | GRC                                          |
 | 216   | Migration                                    |
 | 217   | Migration Idc Server                         |
