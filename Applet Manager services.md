@@ -876,6 +876,9 @@ No input/output.
 
 Sets various state fields and signals an userspace-event.
 
+Enables HID input for the OverlayApplet, without disabling input for the
+foreground applet.
+
 ## IApplicationProxy
 
 | Cmd  | Name                        | Notes                                                                            |
