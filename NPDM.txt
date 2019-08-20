@@ -438,11 +438,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | SaveDataTransferVersion2
 | 
 |-
-| 34
-| Reserved
-| 
-|-
-| 35-61
+| 34-61
 | Reserved
 | 
 |-

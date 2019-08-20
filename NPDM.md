@@ -132,8 +132,7 @@ bitmask:
 | 31    | DeviceDetection          |                                                                                                                                                             |
 | 32    | AccessFailureResolution  |                                                                                                                                                             |
 | 33    | SaveDataTransferVersion2 |                                                                                                                                                             |
-| 34    | Reserved                 |                                                                                                                                                             |
-| 35-61 | Reserved                 |                                                                                                                                                             |
+| 34-61 | Reserved                 |                                                                                                                                                             |
 | 62    | Debug                    | See [here](SPL%20services#GetConfig.md##GetConfig "wikilink").                                                                                              |
 | 63    | FullPermission           | Enables access to everything: all [permission types](Filesystem%20services#Permissions.md##Permissions "wikilink") which check a bitmask have this bit set. |
 
