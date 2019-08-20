@@ -400,6 +400,10 @@ Takes an input u32
 
 No input, takes a type-0x6 output buffer.
 
+The output buffer must be at least 0x4000-bytes. Returns an error when
+the [\#AppletId](#AppletId "wikilink") is 0x04, aka when the
+IApplicationAccessor is for a SystemApplication.
+
 This gets the application [control.nacp](NACP%20Format.md "wikilink").
 
 ##### GetApplicationLaunchProperty

@@ -366,6 +366,8 @@ Takes an input u32 [[#LaunchParameterKind]] and an input [[#IStorage]], no outpu
 ===== GetApplicationControlProperty =====
 No input, takes a type-0x6 output buffer.
 
+The output buffer must be at least 0x4000-bytes. Returns an error when the [[#AppletId]] is 0x04, aka when the IApplicationAccessor is for a SystemApplication. 
+
 This gets the application [[NACP_Format|control.nacp]].
 
 ===== GetApplicationLaunchProperty =====
