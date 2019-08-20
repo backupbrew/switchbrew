@@ -990,7 +990,7 @@ The output struct is "nn::oe::DisplayVersion". This the DisplayVersion string co
 ==== GetLaunchStorageInfoForDebug ====
 No input, returns an output u8 [[Filesystem_services#StorageId|StorageId]] and u8 [[Filesystem_services#StorageId|StorageId]].
 
-Just returns two u8s loaded from state.
+This returns two u8s loaded from state, these are the same StorageIds from [[#ApplicationLaunchProperty]].
 
 ==== BeginBlockingHomeButtonShortAndLongPressed ====
 Takes an input s64, no output.

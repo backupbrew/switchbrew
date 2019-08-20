@@ -1070,7 +1070,9 @@ No input, returns an output u8
 and u8
 [StorageId](Filesystem%20services#StorageId.md##StorageId "wikilink").
 
-Just returns two u8s loaded from state.
+This returns two u8s loaded from state, these are the same StorageIds
+from
+[\#ApplicationLaunchProperty](#ApplicationLaunchProperty "wikilink").
 
 #### BeginBlockingHomeButtonShortAndLongPressed
 
