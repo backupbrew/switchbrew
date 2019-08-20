@@ -11,25 +11,25 @@ varies.
 
 # META
 
-| Offset | Size | Description                                                                                                                                                                                         |
-| ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Magicnum "META"                                                                                                                                                                                     |
-| 0x4    | 0x8  | Reserved                                                                                                                                                                                            |
-| 0xC    | 0x1  | MMU flags (bit0 = use 64-bit instructions, bit1 = use 64-bit address space, bit2 = use 32-bit address space, bit3 = use 32-bit address space without reserved region)                               |
-| 0xD    | 0x1  | Reserved                                                                                                                                                                                            |
-| 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                         |
-| 0xF    | 0x1  | Main thread core number                                                                                                                                                                             |
-| 0x10   | 0x4  | Reserved                                                                                                                                                                                            |
-| 0x14   | 0x4  | \[3.0.0+\] System resource (PersonalMmHeap) size (max size as of 5.x: 534773760)                                                                                                                    |
-| 0x18   | 0x4  | Version (0 for all titles prior to [8.1.0](8.1.0.md "wikilink"), 1 for certain titles since).                                                                                                       |
-| 0x1C   | 0x4  | Main thread stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?) |
-| 0x20   | 0x10 | Title name (usually/always "Application")                                                                                                                                                           |
-| 0x30   | 0x10 | Product code (usually/always all zeroes)                                                                                                                                                            |
-| 0x40   | 0x30 | Reserved                                                                                                                                                                                            |
-| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                                                                                                                   |
-| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                                                                                                                     |
-| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                                                                                                                   |
-| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                                                                                                                     |
+| Offset | Size | Description                                                                                                                                                                                               |
+| ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Magicnum "META"                                                                                                                                                                                           |
+| 0x4    | 0x8  | Reserved                                                                                                                                                                                                  |
+| 0xC    | 0x1  | MMU flags (bit0 = use 64-bit instructions, bit1 = use 64-bit address space, bit2 = use 32-bit address space, bit3 = use 32-bit address space without reserved region, bit4 = optimize memory allocation?) |
+| 0xD    | 0x1  | Reserved                                                                                                                                                                                                  |
+| 0xE    | 0x1  | Main thread priority (0-63)                                                                                                                                                                               |
+| 0xF    | 0x1  | Main thread core number                                                                                                                                                                                   |
+| 0x10   | 0x4  | Reserved                                                                                                                                                                                                  |
+| 0x14   | 0x4  | \[3.0.0+\] System resource (PersonalMmHeap) size (max size as of 5.x: 534773760)                                                                                                                          |
+| 0x18   | 0x4  | Version (0 for all titles prior to [8.1.0](8.1.0.md "wikilink"), 1 for certain titles since).                                                                                                             |
+| 0x1C   | 0x4  | Main thread stack size (Should(?) be page-aligned. In non-nspwn scenarios, values of 0 can also rarely break in Horizon. This might be something auto-adapting or a security feature of some sort?)       |
+| 0x20   | 0x10 | Title name (usually/always "Application")                                                                                                                                                                 |
+| 0x30   | 0x10 | Product code (usually/always all zeroes)                                                                                                                                                                  |
+| 0x40   | 0x30 | Reserved                                                                                                                                                                                                  |
+| 0x70   | 0x4  | [\#ACI0](#ACI0 "wikilink") offset                                                                                                                                                                         |
+| 0x74   | 0x4  | [\#ACI0](#ACI0 "wikilink") size                                                                                                                                                                           |
+| 0x78   | 0x4  | [\#ACID](#ACID "wikilink") offset                                                                                                                                                                         |
+| 0x7C   | 0x4  | [\#ACID](#ACID "wikilink") size                                                                                                                                                                           |
 
 # ACID
 
@@ -120,19 +120,19 @@ bitmask:
 | 19    | SettingsControl          |                                                                                                                                                             |
 | 20    | SystemData               |                                                                                                                                                             |
 | 21    | SdCard                   |                                                                                                                                                             |
-| 22    |                          |                                                                                                                                                             |
-| 23    |                          |                                                                                                                                                             |
-| 24    |                          |                                                                                                                                                             |
-| 25    |                          |                                                                                                                                                             |
+| 22    | Host                     |                                                                                                                                                             |
+| 23    | FillBis                  |                                                                                                                                                             |
+| 24    | CorruptSaveData          |                                                                                                                                                             |
+| 25    | SaveDataForDebug         |                                                                                                                                                             |
 | 26    | FormatSdCard             |                                                                                                                                                             |
 | 27    | GetRightsId              |                                                                                                                                                             |
 | 28    | RegisterExternalKey      |                                                                                                                                                             |
-| 29    |                          |                                                                                                                                                             |
+| 29    | RegisterUpdatePartition  |                                                                                                                                                             |
 | 30    | SaveDataTransfer         |                                                                                                                                                             |
 | 31    | DeviceDetection          |                                                                                                                                                             |
-| 32    |                          |                                                                                                                                                             |
+| 32    | AccessFailureResolution  |                                                                                                                                                             |
 | 33    | SaveDataTransferVersion2 |                                                                                                                                                             |
-| 34    |                          | Enables access to [Bis](Filesystem%20services.md "wikilink") partitionID 27 and 28?                                                                         |
+| 34    | Reserved                 |                                                                                                                                                             |
 | 35-61 | Reserved                 |                                                                                                                                                             |
 | 62    | Debug                    | See [here](SPL%20services#GetConfig.md##GetConfig "wikilink").                                                                                              |
 | 63    | FullPermission           | Enables access to everything: all [permission types](Filesystem%20services#Permissions.md##Permissions "wikilink") which check a bitmask have this bit set. |

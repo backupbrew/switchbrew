@@ -36,7 +36,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |-
 | 0xC
 | 0x1
-| MMU flags (bit0 = use 64-bit instructions, bit1 = use 64-bit address space, bit2 = use 32-bit address space, bit3 = use 32-bit address space without reserved region)
+| MMU flags (bit0 = use 64-bit instructions, bit1 = use 64-bit address space, bit2 = use 32-bit address space, bit3 = use 32-bit address space without reserved region, bit4 = optimize memory allocation?)
 |-
 | 0xD
 | 0x1
@@ -391,19 +391,19 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 22
-| 
+| Host
 | 
 |-
 | 23
-| 
+| FillBis
 | 
 |-
 | 24
-| 
+| CorruptSaveData
 | 
 |-
 | 25
-| 
+| SaveDataForDebug
 | 
 |-
 | 26
@@ -419,7 +419,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 29
-| 
+| RegisterUpdatePartition
 | 
 |-
 | 30
@@ -431,7 +431,7 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 |
 |-
 | 32
-| 
+| AccessFailureResolution
 | 
 |-
 | 33
@@ -439,8 +439,8 @@ This is the Switch equivalent of 3DS [https://www.3dbrew.org/wiki/NCCH/Extended_
 | 
 |-
 | 34
+| Reserved
 | 
-| Enables access to [[Filesystem_services|Bis]] partitionID 27 and 28?
 |-
 | 35-61
 | Reserved
