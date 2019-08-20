@@ -141,11 +141,11 @@ Total size is 0x4000-bytes.
 |-
 | 0x3141
 | 0x1
-| Reserved
+| StartupUserAccountOption
 |-
 | 0x3142
 | 0x6
-| Reserved
+| ReservedForUserAccountSaveDataOperation
 |-
 | 0x3148
 | 0x8
@@ -204,7 +204,27 @@ Total size is 0x4000-bytes.
 | RequiredNetworkServiceLicenseOnLaunchFlag
 |-
 | 0x3214
-| 0xDEC
+| 0x4
+| Reserved
+|-
+| 0x3218
+| 0x18
+| [[#SendDataConfiguration/ReceivableDataConfiguration Entry|SendDataConfiguration]]
+|-
+| 0x3230
+| 0x180 (0x18 * 0x10)
+| [[#SendDataConfiguration/ReceivableDataConfiguration Entry|ReceivableDataConfigurations]]
+|-
+| 0x33B0
+| 0x8
+| JitConfigurationFlag
+|-
+| 0x33B8
+| 0x8
+| MemorySize
+|-
+| 0x33C0
+| 0xC40
 | Reserved
 |}
 
@@ -296,4 +316,21 @@ This is used with [[Applet_Manager_services|AM]] commands QueryApplicationPlaySt
 | 1 || WhiteList || The specified titleIDs must match the user-process titleID, or one of the titleIDs from PlayLogQueryableApplicationId.
 |-
 | 2 || All || All titleIDs are allowed.
+|}
+
+== SendDataConfiguration/ReceivableDataConfiguration Entry ==
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x8
+| Id
+|-
+| 0x8
+| 0x10
+| Key
 |}
