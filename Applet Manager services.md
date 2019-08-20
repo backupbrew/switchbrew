@@ -180,8 +180,8 @@ Uses
 [NS\_Services\#IApplicationManagerInterface](NS%20Services#IApplicationManagerInterface.md##IApplicationManagerInterface "wikilink")
 cmd99.
 
-On success, official sw will enter an infinite loop with sleep-thread
-value 86400000000000.
+This is used by [qlaunch](Qlaunch.md "wikilink"). On success, official
+sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 #### ILockAccessor
 

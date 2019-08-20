@@ -154,7 +154,7 @@ The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, o
 
 Uses [[NS_Services#IApplicationManagerInterface]] cmd99.
 
-On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
+This is used by [[qlaunch]]. On success, official sw will enter an infinite loop with sleep-thread value 86400000000000.
 
 ==== ILockAccessor ====
 {| class="wikitable" border="1"
