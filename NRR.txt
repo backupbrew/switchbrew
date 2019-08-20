@@ -7,59 +7,63 @@ The Switch uses the NRR file format to verify [[NRO]] at load time. These files 
 ! Size
 ! Description
 |-
-| 0x00
-| 4
-| “NRR0” magic
+| 0x0
+| 0x4
+| Magic "NRR0"
 |-
-| 0x04
-| 28
-| Unknown (0)
+| 0x4
+| 0xC
+| Reserved
+|-
+| 0x10
+| 0x8
+| Title ID Mask
+|-
+| 0x18
+| 0x8
+| Title ID Pattern
 |-
 | 0x20
-| 8
-| Title ID mask?
-|-
-| 0x28
-| 8
-| Title ID pattern?
+| 0x10
+| Reserved
 |-
 | 0x30
-| 256
+| 0x100
 | Modulus for verifying the second signature
 |-
 | 0x130
-| 256
+| 0x100
 | First signature signed by a Nintendo key, over the above contents
 |-
 | 0x230
-| 256
+| 0x100
 | Second signature verifiable with the above key, over the rest of the file
 |-
 | 0x330
-| 8
+| 0x8
 | Title ID
 |-
 | 0x338
-| 4
-| Size
+| 0x4
+| File Size
 |-
 | 0x33C
-| 4
-| Unknown (0)
+| 0x4
+| Module Type
 |-
 | 0x340
-| 4
-| Hash offset (0x350)
+| 0x4
+| Hash Offset (Always 0x350)
 |-
 | 0x344
-| 4
-| Hash count
+| 0x4
+| Hash Count
 |-
 | 0x348
-| 8
-| Unknown (0)
+| 0x8
+| Reserved
 |-
 | 0x350
-| 32 * count
+| 0x20 * Hash Count
 | NRO hashes (SHA-256) 
 |}
