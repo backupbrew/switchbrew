@@ -2896,12 +2896,12 @@ This is "nn::am::<service::SystemButtonType>". This is used with
 
 ### ProgramSpecifyKind
 
-| Value | Description                                                                                                                                                                                                       |
-| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | u8 ProgramIndex. "ExecuteProgram". After using [\#ExecuteProgram](#ExecuteProgram "wikilink") with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000. |
-| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [DebugMode](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") is 1.                                             |
-| 2     | u64 = value 0. "RestartProgram"                                                                                                                                                                                   |
-|       |                                                                                                                                                                                                                   |
+| Value | Description                                                                                                                                                                                                                                                                                                                        |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | u8 ProgramIndex. "ExecuteProgram". [NS](NS%20Services.md "wikilink") handles ProgramIndex by launching titleID {application\_titleID}+ProgramIndex. After using [\#ExecuteProgram](#ExecuteProgram "wikilink") with this successfully, official user-processes will enter an infinite loop with sleep-thread value 86400000000000. |
+| 1     | u64 titleID. "JumpToSubApplicationProgramForDevelopment". Only available when [DebugMode](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink") is 1.                                                                                                                                                              |
+| 2     | u64 = value 0. "RestartProgram"                                                                                                                                                                                                                                                                                                    |
+|       |                                                                                                                                                                                                                                                                                                                                    |
 
 This is "nn::am::<service::ProgramSpecifyKind>". This controls the type
 of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
