@@ -1275,6 +1275,9 @@ is then used with this cmd.
 
 No input, returns an output s32.
 
+Gets the ProgramIndex of the Application which launched this title. The
+output ProgramIndex is -1 when there was no previous title.
+
 #### EnableApplicationAllThreadDumpOnCrash
 
 Takes an input u8 bool, no output.
@@ -2905,6 +2908,11 @@ This is "nn::am::<service::SystemButtonType>". This is used with
 
 This is "nn::am::<service::ProgramSpecifyKind>". This controls the type
 of the u64 passed to [\#ExecuteProgram](#ExecuteProgram "wikilink").
+
+ProgramIndex values where the title is not installed should not be used:
+[qlaunch](Qlaunch.md "wikilink") will display an error message and the
+current title will become "corrupted", however Home Menu will have an
+option to repair it.
 
 # AppletResourceUserId
 
