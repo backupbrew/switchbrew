@@ -861,7 +861,7 @@ Enables HID input for the OverlayApplet, without disabling input for the foregro
 |-
 | 15 || [7.0.0+] [[#CreateApplicationWithAttributeAndRequestToStartForQuest]] || 
 |-
-| 20 || EnsureSaveData ||
+| 20 || [[#EnsureSaveData]] ||
 |-
 | 21 || [[#GetDesiredLanguage]] ||
 |-
@@ -973,6 +973,15 @@ Same as [[#CreateApplicationAndPushAndRequestToStartForQuest]] except the entire
 Takes an input u64 titleID and a type-0x15 input buffer containing an [[#ApplicationAttribute]], no output.
 
 Same as [[#CreateApplicationAndRequestToStartForQuest]] except the entire attributes structure is directly specified via the input buffer. This command replaces [[#CreateApplicationAndRequestToStartForQuest]], official user-processes no longer use [[#CreateApplicationAndPushAndRequestToStartForQuest]].
+
+==== EnsureSaveData ====
+Takes an input u128 userID, returns an output u64 size.
+
+Calls sdk func <code>nn::fs::EnsureApplicationSaveData</code>. [[qlaunch]] also calls this same sdk func directly.
+
+Creates the various savedata as specified by the application [[NACP_Format|control.nacp]] when the savedata doesn't exist.
+
+Official user-processes launch the dataErase LibraryApplet depending on the Result, the above output size is used with this.
 
 ==== GetDesiredLanguage ====
 No input, returns an output [[Settings_services#LanguageCode|LanguageCode]].

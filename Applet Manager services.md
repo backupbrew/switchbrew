@@ -917,7 +917,7 @@ foreground applet.
 | 13   | \[4.0.0+\] [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink")                                         |       |
 | 14   | \[7.0.0+\] [\#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest](#CreateApplicationWithAttributeAndPushAndRequestToStartForQuest "wikilink") |       |
 | 15   | \[7.0.0+\] [\#CreateApplicationWithAttributeAndRequestToStartForQuest](#CreateApplicationWithAttributeAndRequestToStartForQuest "wikilink")               |       |
-| 20   | EnsureSaveData                                                                                                                                            |       |
+| 20   | [\#EnsureSaveData](#EnsureSaveData "wikilink")                                                                                                            |       |
 | 21   | [\#GetDesiredLanguage](#GetDesiredLanguage "wikilink")                                                                                                    |       |
 | 22   | [\#SetTerminateResult](#SetTerminateResult "wikilink")                                                                                                    |       |
 | 23   | [\#GetDisplayVersion](#GetDisplayVersion "wikilink")                                                                                                      |       |
@@ -1041,6 +1041,20 @@ input buffer. This command replaces
 [\#CreateApplicationAndRequestToStartForQuest](#CreateApplicationAndRequestToStartForQuest "wikilink"),
 official user-processes no longer use
 [\#CreateApplicationAndPushAndRequestToStartForQuest](#CreateApplicationAndPushAndRequestToStartForQuest "wikilink").
+
+#### EnsureSaveData
+
+Takes an input u128 userID, returns an output u64 size.
+
+Calls sdk func `nn::fs::EnsureApplicationSaveData`.
+[qlaunch](Qlaunch.md "wikilink") also calls this same sdk func directly.
+
+Creates the various savedata as specified by the application
+[control.nacp](NACP%20Format.md "wikilink") when the savedata doesn't
+exist.
+
+Official user-processes launch the dataErase LibraryApplet depending on
+the Result, the above output size is used with this.
 
 #### GetDesiredLanguage
 
