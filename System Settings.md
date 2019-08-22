@@ -17,7 +17,8 @@
 | long\_sleep\_detection\_threshold | 7.0.0+           | 1468800 (0x166980) |             |
 | na\_info\_refresh\_interval       | 2.0.0-5.0.0      | 46800 (0xb6d0)     |             |
 | 5.0.1-5.1.0                       | 72000 (0x11940)  |                    |             |
-| 6.0.0+                            | 46800 (0xb6d0)   |                    |             |
+| 6.0.0-7.0.1                       | 46800 (0xb6d0)   |                    |             |
+| 8.0.0+                            | 457200 (0x6f9f0) |                    |             |
 | profile\_sync\_interval           | 2.0.0-5.0.0      | 18000 (0x4650)     |             |
 | 5.0.1-5.1.0                       | 172800 (0x2a300) |                    |             |
 | 6.0.0+                            | 18000 (0x4650)   |                    |             |
@@ -56,20 +57,20 @@ This class does not exist on retail firmware.
 | gpu\_scheduling\_fg\_sa\_us          | 1.0.0+           | 11666 (0x2d92) |             |
 | gpu\_scheduling\_frame\_time\_us     | 1.0.0            | 17000 (0x4268) |             |
 | 2.0.0+                               | 116666 (0x1c7ba) |                |             |
-| gpu\_scheduling\_hidden\_fg\_la\_us  | 7.0.0+           | 5000 (0x1388)  |             |
 | gpu\_scheduling\_hidden\_bg\_la\_us  | 7.0.0+           | 0 (0x0)        |             |
+| gpu\_scheduling\_hidden\_fg\_la\_us  | 7.0.0+           | 5000 (0x1388)  |             |
 | gpu\_scheduling\_oa\_us              | 1.0.0+           | 500 (0x1f4)    |             |
 | gpu\_scheduling\_partial\_fg\_la\_us | 1.0.0+           | 2000 (0x7d0)   |             |
 
 # apm
 
-| Name                                    | Versions | Default Values | Description |
-| --------------------------------------- | -------- | -------------- | ----------- |
-| battery\_draining\_enabled              | 1.0.0+   | false          |             |
-| performance\_mode\_policy               | 1.0.0+   | "auto"         |             |
-| sdev\_cpu\_overclock\_enabled           | 3.0.0+   | false          |             |
-| sdev\_throttling\_additional\_delay\_us | 1.0.0+   | 16000 (0x3e80) |             |
-| sdev\_throttling\_enabled               | 1.0.0+   | true           |             |
+| Name                                    | Versions    | Default Values | Description |
+| --------------------------------------- | ----------- | -------------- | ----------- |
+| battery\_draining\_enabled              | 1.0.0-7.0.1 | false          |             |
+| performance\_mode\_policy               | 1.0.0+      | "auto"         |             |
+| sdev\_cpu\_overclock\_enabled           | 3.0.0+      | false          |             |
+| sdev\_throttling\_additional\_delay\_us | 1.0.0+      | 16000 (0x3e80) |             |
+| sdev\_throttling\_enabled               | 1.0.0+      | true           |             |
 
 # audio
 
@@ -89,9 +90,10 @@ This class does not exist on retail firmware.
 
 # bcat
 
-| Name             | Versions | Default Values | Description |
-| ---------------- | -------- | -------------- | ----------- |
-| production\_mode | 1.0.0+   | true           |             |
+| Name                                           | Versions | Default Values | Description |
+| ---------------------------------------------- | -------- | -------------- | ----------- |
+| production\_mode                               | 1.0.0+   | true           |             |
+| system\_save\_data\_creation\_for\_development | 8.0.0+   | false          |             |
 
 # bgtc
 
@@ -105,7 +107,7 @@ This class does not exist on retail firmware.
 | enable\_halfawake          | 3.0.0+       | 1 (0x1)         |             |
 | leaving\_halfawake\_margin | 2.0.0+       | 3 (0x3)         |             |
 | minimum\_interval\_normal  | 2.0.0-6.2.0  | 1800 (0x708)    |             |
-| 7.0.0+                     | 1200 (0x4B0) |                 |             |
+| 7.0.0+                     | 1200 (0x4b0) |                 |             |
 | minimum\_interval\_save    | 2.0.0+       | 86400 (0x15180) |             |
 
 # bluetooth\_debug
@@ -156,6 +158,7 @@ This class does not exist on retail firmware.
 | enable\_debug\_api                                   | 3.0.0+   | false          |             |
 | required\_system\_version\_to\_deliver\_application  | 4.0.0+   | 0 (0x0)        |             |
 | system\_delivery\_protocol\_version                  | 4.0.0+   | 1 (0x1)        |             |
+| updatable\_firmware\_group\_string                   | 8.0.0+   | "1,3,4"        |             |
 
 # dauth
 
@@ -196,9 +199,10 @@ This class does not exist on retail firmware.
 
 # es
 
-| Name                       | Versions | Default Values | Description |
-| -------------------------- | -------- | -------------- | ----------- |
-| device\_registration\_type | 7.0.0+   | "ecc"          |             |
+| Name                       | Versions    | Default Values | Description |
+| -------------------------- | ----------- | -------------- | ----------- |
+| device\_registration\_type | 7.0.0-7.0.1 | "ecc"          |             |
+| 8.0.0+                     | "auto"      |                |             |
 
 # eupld
 
@@ -288,14 +292,16 @@ This class does not exist on retail firmware.
 
 # migration
 
-| Name                                    | Versions | Default Values | Description |
-| --------------------------------------- | -------- | -------------- | ----------- |
-| ldn\_connection\_timeout\_seconds       | 4.0.0+   | 1800 (0x708)   |             |
-| transfer\_large\_data\_timeout\_seconds | 4.0.0+   | 3600 (0xe10)   |             |
-| transfer\_low\_speed\_timeout\_seconds  | 4.0.0+   | 300 (0x12c)    |             |
-| transfer\_messaging\_timeout\_seconds   | 4.0.0+   | 100 (0x64)     |             |
-| transfer\_small\_data\_timeout\_seconds | 4.0.0+   | 300 (0x12c)    |             |
-| ui\_acceptance\_wait\_timeout\_seconds  | 4.0.0+   | 900 (0x384)    |             |
+| Name                                                               | Versions | Default Values | Description |
+| ------------------------------------------------------------------ | -------- | -------------- | ----------- |
+| ldn\_connection\_timeout\_seconds                                  | 4.0.0+   | 1800 (0x708)   |             |
+| save\_data\_migration\_transfer\_accept\_message\_timeout\_seconds | 8.0.0+   | 15 (0xf)       |             |
+| save\_data\_migration\_wait\_acceptance\_timeout\_seconds          | 8.0.0+   | 1800 (0x708)   |             |
+| transfer\_large\_data\_timeout\_seconds                            | 4.0.0+   | 3600 (0xe10)   |             |
+| transfer\_low\_speed\_timeout\_seconds                             | 4.0.0+   | 300 (0x12c)    |             |
+| transfer\_messaging\_timeout\_seconds                              | 4.0.0+   | 100 (0x64)     |             |
+| transfer\_small\_data\_timeout\_seconds                            | 4.0.0+   | 300 (0x12c)    |             |
+| ui\_acceptance\_wait\_timeout\_seconds                             | 4.0.0+   | 900 (0x384)    |             |
 
 # mii
 
@@ -318,7 +324,8 @@ This class does not exist on retail firmware.
 | 3.0.0-3.0.2     | 2 (0x2)     |                |             |
 | 4.0.0-4.1.0     | 3 (0x3)     |                |             |
 | 5.0.0-5.1.0     | 4 (0x4)     |                |             |
-| 6.0.0+          | 5 (0x5)     |                |             |
+| 6.0.0-7.0.1     | 5 (0x5)     |                |             |
+| 8.0.0+          | 6 (0x6)     |                |             |
 
 # nfp
 
@@ -374,6 +381,7 @@ This class does not exist on retail firmware.
 | Name                                                          | Versions | Default Values       | Description |
 | ------------------------------------------------------------- | -------- | -------------------- | ----------- |
 | application\_id\_on\_blacklist                                | 5.0.0+   | "0x0000000000000000" |             |
+| application\_license\_flags\_for\_debug                       | 8.0.0+   | 0 (0x0)              |             |
 | application\_version\_on\_blacklist                           | 5.0.0+   | 0 (0x0)              |             |
 | assign\_all\_device\_linked\_elicenses                        | 6.0.0+   | true                 |             |
 | cleanup\_add\_on\_content\_with\_no\_rights\_result\_value    | 4.0.0+   | 0 (0x0)              |             |
@@ -417,6 +425,12 @@ This class does not exist on retail firmware.
 | version\_list\_waiting\_limit                         | 4.0.0-5.1.0 | 900 (0x384)    |             |
 | version\_list\_waiting\_limit\_bias                   | 6.0.0+      | 48 (0x30)      |             |
 | version\_list\_waiting\_limit\_min                    | 6.0.0+      | 1800 (0x708)   |             |
+
+# ns.promotion
+
+| Name                                        | Versions | Default Values | Description |
+| ------------------------------------------- | -------- | -------------- | ----------- |
+| enable\_update\_promotion\_info\_from\_bcat | 8.0.0+   | true           |             |
 
 # ns.pseudodeviceid
 
@@ -2025,6 +2039,8 @@ This class does not exist on retail firmware.
 | vcc\_verbose\_level                          | 1.0.0+      | ""             |             |
 | vertexlimit                                  | 1.0.0+      | ""             |             |
 | viccomposer.filter                           | 1.0.0+      | ""             |             |
+| viccomposer.highpriority                     | 7.0.0-7.0.1 | ""             |             |
+| 8.0.0+                                       | "1"         |                |             |
 | videostats-enable                            | 1.0.0+      | ""             |             |
 | vidheapreuseratio                            | 1.0.0+      | ""             |             |
 | vpipe                                        | 1.0.0+      | ""             |             |
@@ -2045,21 +2061,23 @@ This class does not exist on retail firmware.
 
 # olsc
 
-| Name                                                        | Versions | Default Values | Description |
-| ----------------------------------------------------------- | -------- | -------------- | ----------- |
-| autonomy\_registration\_interval\_seconds                   | 6.0.0+   | 46800 (0xb6d0) |             |
-| default\_auto\_upload\_global\_setting                      | 6.0.0+   | true           |             |
-| is\_global\_transfer\_task\_autonomy\_registration\_enabled | 6.0.0+   | true           |             |
-| is\_on\_event\_transfer\_task\_registration\_enabled        | 6.0.0+   | true           |             |
-| is\_periodic\_transfer\_task\_registration\_enabled         | 6.0.0+   | true           |             |
-| network\_connection\_polling\_interval\_seconds             | 7.0.0+   | 10800 (0x2a30) |             |
-| network\_trouble\_detection\_span\_seconds                  | 7.0.0+   | 60 (0x3c)      |             |
-| network\_trouble\_detection\_threshold                      | 7.0.0+   | 3 (0x3)        |             |
-| postponed\_transfer\_task\_processing\_interval\_seconds    | 6.0.0+   | 46800 (0xb6d0) |             |
-| retry\_backoff\_scale                                       | 6.0.0+   | 10 (0xa)       |             |
-| retry\_backoff\_unit\_seconds                               | 6.0.0+   | 127 (0x7f)     |             |
-| retry\_lost\_connection\_interval\_seconds                  | 6.0.0+   | 60 (0x3c)      |             |
-| retry\_offset\_seconds                                      | 6.0.0+   | 600 (0x258)    |             |
+| Name                                                        | Versions    | Default Values     | Description |
+| ----------------------------------------------------------- | ----------- | ------------------ | ----------- |
+| autonomy\_registration\_interval\_seconds                   | 6.0.0+      | 46800 (0xb6d0)     |             |
+| default\_auto\_upload\_global\_setting                      | 6.0.0+      | true               |             |
+| is\_global\_transfer\_task\_autonomy\_registration\_enabled | 6.0.0+      | true               |             |
+| is\_on\_event\_transfer\_task\_registration\_enabled        | 6.0.0+      | true               |             |
+| is\_periodic\_transfer\_task\_registration\_enabled         | 6.0.0+      | true               |             |
+| long\_sleep\_detection\_seconds                             | 8.0.0+      | 1468800 (0x166980) |             |
+| network\_connection\_polling\_interval\_seconds             | 7.0.0+      | 10800 (0x2a30)     |             |
+| network\_service\_license\_info\_cache\_expiration\_seconds | 8.0.0+      | 457200 (0x6f9f0)   |             |
+| network\_trouble\_detection\_span\_seconds                  | 7.0.0+      | 60 (0x3c)          |             |
+| network\_trouble\_detection\_threshold                      | 7.0.0+      | 3 (0x3)            |             |
+| postponed\_transfer\_task\_processing\_interval\_seconds    | 6.0.0+      | 46800 (0xb6d0)     |             |
+| retry\_backoff\_scale                                       | 6.0.0+      | 10 (0xa)           |             |
+| retry\_backoff\_unit\_seconds                               | 6.0.0+      | 127 (0x7f)         |             |
+| retry\_lost\_connection\_interval\_seconds                  | 6.0.0-6.2.0 | 60 (0x3c)          |             |
+| retry\_offset\_seconds                                      | 6.0.0+      | 600 (0x258)        |             |
 
 # omm
 
@@ -2108,8 +2126,9 @@ This class does not exist on retail firmware.
 | background\_processing                 | 2.0.0+      | true            |             |
 | buffer\_usage\_for\_immediately\_flush | 7.0.0+      | 50 (0x32)       |             |
 | devmenu\_prepo\_page\_view             | 1.0.0+      | false           |             |
-| output\_save\_log                      | 5.0.0+      | false           |             |
+| output\_save\_log                      | 5.0.0-7.0.1 | false           |             |
 | report\_data\_buffer\_time             | 7.0.0+      | 10 (0xa)        |             |
+| save\_log\_level                       | 8.0.0+      | 0 (0x0)         |             |
 | save\_system\_report                   | 7.0.0+      | true            |             |
 | statistics\_post\_interval             | 6.0.0+      | 86400 (0x15180) |             |
 | statistics\_save\_interval\_min        | 5.0.0-5.1.0 | 10 (0xa)        |             |
@@ -2263,13 +2282,14 @@ This class does not exist on retail firmware.
 
 # time
 
-| Name                                                    | Versions | Default Values | Description |
-| ------------------------------------------------------- | -------- | -------------- | ----------- |
-| notify\_time\_to\_fs\_interval\_seconds                 | 4.0.0+   | 600 (0x258)    |             |
-| standard\_network\_clock\_sufficient\_accuracy\_minutes | 3.0.0+   | 43200 (0xa8c0) |             |
-| standard\_steady\_clock\_rtc\_update\_interval\_minutes | 3.0.0+   | 5 (0x5)        |             |
-| standard\_steady\_clock\_test\_offset\_minutes          | 1.0.0+   | 0 (0x0)        |             |
-| standard\_user\_clock\_initial\_year                    | 5.0.0+   | 2018 (0x7e2)   |             |
+| Name                                                    | Versions     | Default Values | Description |
+| ------------------------------------------------------- | ------------ | -------------- | ----------- |
+| notify\_time\_to\_fs\_interval\_seconds                 | 4.0.0+       | 600 (0x258)    |             |
+| standard\_network\_clock\_sufficient\_accuracy\_minutes | 3.0.0+       | 43200 (0xa8c0) |             |
+| standard\_steady\_clock\_rtc\_update\_interval\_minutes | 3.0.0+       | 5 (0x5)        |             |
+| standard\_steady\_clock\_test\_offset\_minutes          | 1.0.0+       | 0 (0x0)        |             |
+| standard\_user\_clock\_initial\_year                    | 5.0.0-7.0.1  | 2018 (0x7e2)   |             |
+| 8.0.0+                                                  | 2019 (0x7e3) |                |             |
 
 # usb
 
@@ -2287,6 +2307,6 @@ This class does not exist on retail firmware.
 
 # wlan\_debug
 
-| Name             | Versions | Default Values | Description |
-| ---------------- | -------- | -------------- | ----------- |
-| skip\_wlan\_boot | 1.0.0+   | false          |             |
+| Name             | Versions    | Default Values | Description |
+| ---------------- | ----------- | -------------- | ----------- |
+| skip\_wlan\_boot | 1.0.0-6.2.0 | false          |             |

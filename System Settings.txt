@@ -42,16 +42,19 @@ Data sourced from 0100000000000818 archive.
 | 1468800 (0x166980)
 | rowspan="1" |
 |-
-| rowspan="3" |na_info_refresh_interval
+| rowspan="4" |na_info_refresh_interval
 | 2.0.0-5.0.0
 | 46800 (0xb6d0)
-| rowspan="3" |
+| rowspan="4" |
 |-
 | 5.0.1-5.1.0
 | 72000 (0x11940)
 |-
-| 6.0.0+
+| 6.0.0-7.0.1
 | 46800 (0xb6d0)
+|-
+| 8.0.0+
+| 457200 (0x6f9f0)
 |-
 | rowspan="3" |profile_sync_interval
 | 2.0.0-5.0.0
@@ -163,14 +166,14 @@ This class does not exist on retail firmware.
 | 2.0.0+
 | 116666 (0x1c7ba)
 |-
-| rowspan="1" |gpu_scheduling_hidden_fg_la_us
-| 7.0.0+
-| 5000 (0x1388)
-| rowspan="1" |
-|-
 | rowspan="1" |gpu_scheduling_hidden_bg_la_us
 | 7.0.0+
 | 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |gpu_scheduling_hidden_fg_la_us
+| 7.0.0+
+| 5000 (0x1388)
 | rowspan="1" |
 |-
 | rowspan="1" |gpu_scheduling_oa_us
@@ -190,7 +193,7 @@ This class does not exist on retail firmware.
 ! Name || Versions || Default Values || Description
 |-
 | rowspan="1" |battery_draining_enabled
-| 1.0.0+
+| 1.0.0-7.0.1
 | false
 | rowspan="1" |
 |-
@@ -283,6 +286,11 @@ This class does not exist on retail firmware.
 | 1.0.0+
 | true
 | rowspan="1" |
+|-
+| rowspan="1" |system_save_data_creation_for_development
+| 8.0.0+
+| false
+| rowspan="1" |
 |}
 
 = bgtc =
@@ -327,7 +335,7 @@ This class does not exist on retail firmware.
 | rowspan="2" |
 |-
 | 7.0.0+
-| 1200 (0x4B0)
+| 1200 (0x4b0)
 |-
 | rowspan="1" |minimum_interval_save
 | 2.0.0+
@@ -464,6 +472,11 @@ This class does not exist on retail firmware.
 | 4.0.0+
 | 1 (0x1)
 | rowspan="1" |
+|-
+| rowspan="1" |updatable_firmware_group_string
+| 8.0.0+
+| "1,3,4"
+| rowspan="1" |
 |}
 
 = dauth =
@@ -561,10 +574,13 @@ This class does not exist on retail firmware.
 |-
 ! Name || Versions || Default Values || Description
 |-
-| rowspan="1" |device_registration_type
-| 7.0.0+
+| rowspan="2" |device_registration_type
+| 7.0.0-7.0.1
 | "ecc"
-| rowspan="1" |
+| rowspan="2" |
+|-
+| 8.0.0+
+| "auto"
 |}
 
 = eupld =
@@ -796,6 +812,16 @@ This class does not exist on retail firmware.
 | 1800 (0x708)
 | rowspan="1" |
 |-
+| rowspan="1" |save_data_migration_transfer_accept_message_timeout_seconds
+| 8.0.0+
+| 15 (0xf)
+| rowspan="1" |
+|-
+| rowspan="1" |save_data_migration_wait_acceptance_timeout_seconds
+| 8.0.0+
+| 1800 (0x708)
+| rowspan="1" |
+|-
 | rowspan="1" |transfer_large_data_timeout_seconds
 | 4.0.0+
 | 3600 (0xe10)
@@ -854,10 +880,10 @@ This class does not exist on retail firmware.
 |-
 ! Name || Versions || Default Values || Description
 |-
-| rowspan="5" |system_version
+| rowspan="6" |system_version
 | 2.0.0-2.3.0
 | 1 (0x1)
-| rowspan="5" |
+| rowspan="6" |
 |-
 | 3.0.0-3.0.2
 | 2 (0x2)
@@ -868,8 +894,11 @@ This class does not exist on retail firmware.
 | 5.0.0-5.1.0
 | 4 (0x4)
 |-
-| 6.0.0+
+| 6.0.0-7.0.1
 | 5 (0x5)
+|-
+| 8.0.0+
+| 6 (0x6)
 |}
 
 = nfp =
@@ -1030,6 +1059,11 @@ This class does not exist on retail firmware.
 | "0x0000000000000000"
 | rowspan="1" |
 |-
+| rowspan="1" |application_license_flags_for_debug
+| 8.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
 | rowspan="1" |application_version_on_blacklist
 | 5.0.0+
 | 0 (0x0)
@@ -1186,6 +1220,17 @@ This class does not exist on retail firmware.
 | rowspan="1" |version_list_waiting_limit_min
 | 6.0.0+
 | 1800 (0x708)
+| rowspan="1" |
+|}
+
+= ns.promotion =
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |enable_update_promotion_info_from_bcat
+| 8.0.0+
+| true
 | rowspan="1" |
 |}
 
@@ -9104,6 +9149,14 @@ This class does not exist on retail firmware.
 | ""
 | rowspan="1" |
 |-
+| rowspan="2" |viccomposer.highpriority
+| 7.0.0-7.0.1
+| ""
+| rowspan="2" |
+|-
+| 8.0.0+
+| "1"
+|-
 | rowspan="1" |videostats-enable
 | 1.0.0+
 | ""
@@ -9220,9 +9273,19 @@ This class does not exist on retail firmware.
 | true
 | rowspan="1" |
 |-
+| rowspan="1" |long_sleep_detection_seconds
+| 8.0.0+
+| 1468800 (0x166980)
+| rowspan="1" |
+|-
 | rowspan="1" |network_connection_polling_interval_seconds
 | 7.0.0+
 | 10800 (0x2a30)
+| rowspan="1" |
+|-
+| rowspan="1" |network_service_license_info_cache_expiration_seconds
+| 8.0.0+
+| 457200 (0x6f9f0)
 | rowspan="1" |
 |-
 | rowspan="1" |network_trouble_detection_span_seconds
@@ -9251,7 +9314,7 @@ This class does not exist on retail firmware.
 | rowspan="1" |
 |-
 | rowspan="1" |retry_lost_connection_interval_seconds
-| 6.0.0+
+| 6.0.0-6.2.0
 | 60 (0x3c)
 | rowspan="1" |
 |-
@@ -9404,13 +9467,18 @@ This class does not exist on retail firmware.
 | rowspan="1" |
 |-
 | rowspan="1" |output_save_log
-| 5.0.0+
+| 5.0.0-7.0.1
 | false
 | rowspan="1" |
 |-
 | rowspan="1" |report_data_buffer_time
 | 7.0.0+
 | 10 (0xa)
+| rowspan="1" |
+|-
+| rowspan="1" |save_log_level
+| 8.0.0+
+| 0 (0x0)
 | rowspan="1" |
 |-
 | rowspan="1" |save_system_report
@@ -9892,10 +9960,13 @@ This class does not exist on retail firmware.
 | 0 (0x0)
 | rowspan="1" |
 |-
-| rowspan="1" |standard_user_clock_initial_year
-| 5.0.0+
+| rowspan="2" |standard_user_clock_initial_year
+| 5.0.0-7.0.1
 | 2018 (0x7e2)
-| rowspan="1" |
+| rowspan="2" |
+|-
+| 8.0.0+
+| 2019 (0x7e3)
 |}
 
 = usb =
@@ -9937,7 +10008,7 @@ This class does not exist on retail firmware.
 ! Name || Versions || Default Values || Description
 |-
 | rowspan="1" |skip_wlan_boot
-| 1.0.0+
+| 1.0.0-6.2.0
 | false
 | rowspan="1" |
 |}
