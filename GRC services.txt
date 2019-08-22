@@ -213,6 +213,15 @@ Takes an input u64 '''LayerHandle''', returns an output event handle with autocl
 This is a 0x80-byte struct.
 
 = GameMovieId =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x18 || Same as the last 0x18-bytes of [[Capture_services|AlbumEntry]].
+|-
+| 0x18 || 0x28 || Ignored by Album. Album clears this to 0 for the [[#BeginTrim]] input.
+|}
+
 This is "nn::grcsrv::GameMovieId". This is a 0x40-byte struct.
 
 = IHOSBinderDriver =
