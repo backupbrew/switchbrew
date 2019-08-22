@@ -951,7 +951,7 @@ foreground applet.
 | 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                                               |       |
 | 124  | \[6.0.0+\] [\#EnableApplicationAllThreadDumpOnCrash](#EnableApplicationAllThreadDumpOnCrash "wikilink")                                                   |       |
 | 130  | \[8.0.0+\] [\#GetGpuErrorDetectedSystemEvent](#GetGpuErrorDetectedSystemEvent "wikilink")                                                                 |       |
-| 500  | \[5.0.0+\] StartContinuousRecordingFlushForDebug                                                                                                          |       |
+| 500  | \[5.0.0+\] [\#StartContinuousRecordingFlushForDebug](#StartContinuousRecordingFlushForDebug "wikilink")                                                   |       |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                                                   |       |
 
@@ -1150,6 +1150,8 @@ Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 
 No input/output.
 
+Requests to save the video recording, as if the Capture-button was held.
+
 #### RequestToShutdown
 
 No input/output.
@@ -1289,6 +1291,16 @@ No input, returns an output Event handle with autoclear=false.
 This is used by sdknso during applet-application initialization. A
 seperate thread is setup where event-waiting is handled. When the Event
 is signaled, official sw will assert.
+
+#### StartContinuousRecordingFlushForDebug
+
+Takes an input s64 nanoseconds-value, returns an output Event handle
+with autoclear=false.
+
+The cached value loaded from
+[system-setting](System%20Settings.md "wikilink")
+`am.debug!dev_function` must be set to 0x1 with size 0x1, otherwise an
+error is returned.
 
 #### CreateMovieMaker
 

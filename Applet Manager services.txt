@@ -929,7 +929,7 @@ Enables HID input for the OverlayApplet, without disabling input for the foregro
 |-
 | 130 || [8.0.0+] [[#GetGpuErrorDetectedSystemEvent]] || 
 |-
-| 500 || [5.0.0+] StartContinuousRecordingFlushForDebug || 
+| 500 || [5.0.0+] [[#StartContinuousRecordingFlushForDebug]] || 
 |-
 | 1000 || [5.0.0+] [[#CreateMovieMaker]] || 
 |-
@@ -1042,6 +1042,8 @@ Takes an input u32. 0 = disable/pause, 1 = enable/restart.
 ==== RequestFlushGamePlayingMovieForDebug ====
 No input/output.
 
+Requests to save the video recording, as if the Capture-button was held.
+
 ==== RequestToShutdown ====
 No input/output.
 
@@ -1128,6 +1130,11 @@ Takes an input u8 bool, no output.
 No input, returns an output Event handle with autoclear=false.
 
 This is used by sdknso during applet-application initialization. A seperate thread is setup where event-waiting is handled. When the Event is signaled, official sw will assert.
+
+==== StartContinuousRecordingFlushForDebug ====
+Takes an input s64 nanoseconds-value, returns an output Event handle with autoclear=false.
+
+The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!dev_function</code> must be set to 0x1 with size 0x1, otherwise an error is returned.
 
 ==== CreateMovieMaker ====
 Takes an input u64 and handle, returns an [[#IMovieMaker]].
