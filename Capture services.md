@@ -168,6 +168,28 @@ This was added with \[5.0.0+\].
 | 2004 | ReadMovieDataFromAlbumMovieReadStream |
 | 2005 | GetAlbumMovieReadStreamBrokenReason   |
 
+# AlbumEntry
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x8  | Unknown     |
+| 0x8    | 0x8  | titleID     |
+| 0x10   | 0x2  | Year        |
+| 0x12   | 0x1  | Month       |
+| 0x13   | 0x1  | Day         |
+| 0x14   | 0x1  | Hour        |
+| 0x15   | 0x1  | Minute      |
+| 0x16   | 0x1  | Second      |
+| 0x17   | 0x1  | Unknown     |
+| 0x18   | 0x1  | Unknown     |
+| 0x19   | 0x1  | Unknown     |
+| 0x1A   | 0x6  | Padding?    |
+
+This is "nn::capsrv::AlbumEntry". This is a 0x20-byte struct.
+
+The data at offset 0x10 size 0x8 corresponds to each field in the Album
+entry filename, prior to the "-".
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
