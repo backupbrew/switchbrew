@@ -67,7 +67,9 @@ This is "nn::grcsrv::IGameMovieTrimmer".
 Album uses [[Applet_Manager_services#CreateGameMovieTrimmer|CreateGameMovieTrimmer]], and retries using the cmd in a loop on error 0x8D4 with svcSleepThread(100000000) being used first. Then all 4 of these commands are used in that same func: [[#SetThumbnailRgba]] if the input buffer is set, [[#GetNotTrimmingEvent]], [[#BeginTrim]], waits on the event, then [[#EndTrim]] and cleanup.
 
 === BeginTrim ===
-Takes an input s32, a s32, and a [[#GameMovieId]], no output.
+Takes an input s32 '''start''', a s32 '''end''', and a [[#GameMovieId]], no output.
+
+The two s32s are the start/end timestamps in 0.5s units.
 
 === EndTrim ===
 No input, returns an output [[#GameMovieId]].

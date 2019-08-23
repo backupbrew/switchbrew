@@ -62,8 +62,10 @@ is set, [\#GetNotTrimmingEvent](#GetNotTrimmingEvent "wikilink"),
 
 ### BeginTrim
 
-Takes an input s32, a s32, and a
+Takes an input s32 **start**, a s32 **end**, and a
 [\#GameMovieId](#GameMovieId "wikilink"), no output.
+
+The two s32s are the start/end timestamps in 0.5s units.
 
 ### EndTrim
 
