@@ -1632,7 +1632,7 @@ while software ID 1 (PHY\_SWID) bypasses it. Accessible in HS mode only.
 | 12-14 | TSEC\_TFBIF\_REGIONCFG\_T3\_APERT\_ID |
 | 15    | TSEC\_TFBIF\_REGIONCFG\_T3\_VPR       |
 | 16-18 | TSEC\_TFBIF\_REGIONCFG\_T4\_APERT\_ID |
-| 17    | TSEC\_TFBIF\_REGIONCFG\_T4\_VPR       |
+| 19    | TSEC\_TFBIF\_REGIONCFG\_T4\_VPR       |
 | 20-22 | TSEC\_TFBIF\_REGIONCFG\_T5\_APERT\_ID |
 | 23    | TSEC\_TFBIF\_REGIONCFG\_T5\_VPR       |
 | 24-26 | TSEC\_TFBIF\_REGIONCFG\_T6\_APERT\_ID |

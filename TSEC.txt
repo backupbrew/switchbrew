@@ -3011,7 +3011,7 @@ Configures the software ID per CTXDMA port for memory transactions. Software ID 
 | 16-18
 | TSEC_TFBIF_REGIONCFG_T4_APERT_ID
 |-
-| 17
+| 19
 | TSEC_TFBIF_REGIONCFG_T4_VPR
 |-
 | 20-22
