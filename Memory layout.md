@@ -49,8 +49,8 @@ which exist in [ExeFS](ExeFS.md "wikilink"):
 
 ## ASLR Implementation
 
-The kernel uses a MT19937 random number generator, seeded by a
-[smcGetRandomBytes](SMC#GetRandomBytes.md##GetRandomBytes "wikilink")
+The kernel uses a MT19937 random number generator, seeded by
+[smcGetRandomBytes](SMC#GetRandomBytes.md##GetRandomBytes "wikilink").
 
 ### 1.0.0
 
@@ -100,8 +100,6 @@ usermode are still forced readable from kernelmode.
 KASLR is being used since [5.0.0](5.0.0.md "wikilink"), but not before,
 with the following pseudocode (might contains some errors):
 
-<code>
-
     DRAM crt0 mapping (ttbr1): offsets DRAM with (rand64ViaSmc() % 0x3FFF0 << 21), allocates exactly (end - _start) + 1GB.
     This is a "linear" mapping. Permissions are set properly.
     
@@ -144,8 +142,6 @@ with the following pseudocode (might contains some errors):
     },
     
     Map(RandomizePageBoundary(GuardPage + KCoreContext * 4)) -> NextFreePages(4)
-
-</code>
 
 ## 1.0.0
 
@@ -779,6 +775,101 @@ follows:
 </tr>
 </tbody>
 </table>
+
+# Carveouts
+
+The MC (Memory Controller) provides multiple configurable memory
+carveouts which allow to protect and limit access to sensitive DRAM
+regions. Carveouts work on the physical access level, thus acting as the
+last protection barrier from unauthorized memory accesses.
+
+A total of 9 programmable carveouts are available from which 4 have a
+fixed function (TZDRAM, VPR, SEC and MTS) and 5 are generalized
+carevouts (GSCs 1 to 5).
+
+## TZDRAM Carveout
+
+Defines a DRAM region that can only be accessed by TrustZone-secure
+clients. Currently unused by the Switch.
+
+This carveout is controlled by the following MC registers:
+
+  - MC\_SECURITY\_CFG0
+  - MC\_SECURITY\_CFG1
+  - MC\_SECURITY\_CFG3
+
+## VPR Carveout
+
+Defines a DRAM region that can only be accessed by clients that are part
+of the video decode and display process (Display, GPU, TSEC, VIC, NVENC,
+NVDEC and HDA). Currently unused by the Switch.
+
+This carveout is controlled by the following MC registers:
+
+  - MC\_VIDEO\_PROTECT\_GPU\_OVERRIDE\_0
+  - MC\_VIDEO\_PROTECT\_GPU\_OVERRIDE\_1
+  - MC\_VIDEO\_PROTECT\_BOM
+  - MC\_VIDEO\_PROTECT\_SIZE\_MB
+  - MC\_VIDEO\_PROTECT\_REG\_CTRL
+
+## SEC Carveout
+
+Defines a DRAM region that can only be accessed by the
+[TSEC](#TSEC "wikilink"). Deprecated and unused by the Switch.
+
+This carveout is controlled by the following MC registers:
+
+  - MC\_SEC\_CARVEOUT\_BOM
+  - MC\_SEC\_CARVEOUT\_SIZE\_MB
+  - MC\_SEC\_CARVEOUT\_REG\_CTRL
+
+## MTS Carveout
+
+Defines a DRAM region for Falcon microcode. Deprecated and unused by the
+Switch.
+
+This carveout is controlled by the following MC registers:
+
+  - MC\_MTS\_CARVEOUT\_BOM
+  - MC\_MTS\_CARVEOUT\_SIZE\_MB
+  - MC\_MTS\_CARVEOUT\_ADR\_HI
+  - MC\_MTS\_CARVEOUT\_REG\_CTRL
+
+## Generalized Carveouts
+
+These carveouts can be freely configured for any client that supports
+them. By default, they are assigned as:
+
+  - GSC 1: NVDEC
+  - GSC 2: WPR1 (for GPU)
+  - GSC 3: WPR2 (for GPU)
+  - GSC 4: TSECA
+  - GSC 5: TSECB
+
+However, in the Switch's case they are currently assigned as:
+
+  - GSC 1: None
+  - GSC 2: GPU
+  - GSC 3: None
+  - GSC 4: Kernel (active)
+  - GSC 5: Kernel (unused)
+
+These carveouts are controlled by the following MC registers:
+
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_BOM
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_BOM\_HI
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_SIZE\_128KB
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS0
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS1
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS2
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS3
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS4
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS0
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS1
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS2
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS3
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS4
+  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CFG0
 
 # Notes
 
