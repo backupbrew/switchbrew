@@ -913,7 +913,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE ||
 |-
-| 0xC0304710 ([1.0.0-6.1.0] 0xC0084710) || Inout || 8 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
+| 0xC0304710</br>([1.0.0-6.1.0] 0xC0084710) || Inout || 8 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
 |-
 | 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS ||
 |-
