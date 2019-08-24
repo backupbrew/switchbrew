@@ -71,6 +71,9 @@ The two s32s are the start/end timestamps in 0.5s units.
 
 No input, returns an output [\#GameMovieId](#GameMovieId "wikilink").
 
+This just loads the [\#GameMovieId](#GameMovieId "wikilink") from state,
+when available.
+
 ### GetNotTrimmingEvent
 
 No input, returns an output Event handle with autoclear=false.
@@ -79,6 +82,10 @@ No input, returns an output Event handle with autoclear=false.
 
 Takes a type-0x45 input buffer, a s32 **width**, and a s32 **height**,
 no output.
+
+**width** must be 1280, **height** must be 720, and the buffer size must
+be at least 0x384000. After this validation, this just copies the input
+buffer to state with size 0x384000 and returns 0.
 
 # grc:d
 
