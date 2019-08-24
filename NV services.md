@@ -396,52 +396,50 @@ Returns an id for a nvmap object. Identical to Linux driver.
 
 ## /dev/nvdisp-ctrl
 
-| Value      | Direction | Size | Description                                        | Notes |
-| ---------- | --------- | ---- | -------------------------------------------------- | ----- |
-| 0x80040212 | Out       | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_NUM\_OUTPUTS         |       |
-| 0xC0140213 | Inout     | 20   | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_PROPERTIES   |       |
-| 0xC1100214 | Inout     | 272  | TEGRA\_DC\_EXT\_CONTROL\_GET\_OUTPUT\_EDID         |       |
-| 0xC0040216 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_EXT\_HPD\_IN\_EVENT  |       |
-| 0xC0040217 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_EXT\_HPD\_OUT\_EVENT |       |
-| 0xC0100218 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_GET\_VBLANK\_HEAD0\_EVENT |       |
-| 0xC0100219 | Inout     | 16   | TEGRA\_DC\_EXT\_CONTROL\_GET\_VBLANK\_HEAD1\_EVENT |       |
-| 0xC0040220 | Inout     | 4    | TEGRA\_DC\_EXT\_CONTROL\_GET\_UNK\_EVENT           |       |
+| Value      | Direction | Size | Description                             | Notes |
+| ---------- | --------- | ---- | --------------------------------------- | ----- |
+| 0x80040212 | Out       | 4    | NVDISP\_CTRL\_GET\_NUM\_OUTPUTS         |       |
+| 0xC0140213 | Inout     | 20   | NVDISP\_CTRL\_GET\_OUTPUT\_PROPERTIES   |       |
+| 0xC1100214 | Inout     | 272  | NVDISP\_CTRL\_GET\_OUTPUT\_EDID         |       |
+| 0xC0040216 | Inout     | 4    | NVDISP\_CTRL\_GET\_EXT\_HPD\_IN\_EVENT  |       |
+| 0xC0040217 | Inout     | 4    | NVDISP\_CTRL\_GET\_EXT\_HPD\_OUT\_EVENT |       |
+| 0xC0100218 | Inout     | 16   | NVDISP\_CTRL\_GET\_VBLANK\_HEAD0\_EVENT |       |
+| 0xC0100219 | Inout     | 16   | NVDISP\_CTRL\_GET\_VBLANK\_HEAD1\_EVENT |       |
+| 0xC0040220 | Inout     | 4    | NVDISP\_CTRL\_GET\_HPD\_IRQ             |       |
 
 ## /dev/nvdisp-disp0, /dev/nvdisp-disp1
 
-| Value      | Direction | Size  | Description                            | Notes |
-| ---------- | --------- | ----- | -------------------------------------- | ----- |
-| 0x40040201 | In        | 4     | TEGRA\_DC\_EXT\_GET\_WINDOW            |       |
-| 0x40040202 | In        | 4     | TEGRA\_DC\_EXT\_PUT\_WINDOW            |       |
-| 0xC4C80203 | In        | 1224  | TEGRA\_DC\_EXT\_FLIP                   |       |
-| 0x80380204 | Out       | 56    | TEGRA\_DC\_EXT\_GET\_MODE              |       |
-| 0x40380205 | Out       | 56    | TEGRA\_DC\_EXT\_SET\_MODE              |       |
-| 0x430C0206 | In        | 780   | TEGRA\_DC\_EXT\_SET\_LUT               |       |
-| 0x40010207 | In        | 1     | TEGRA\_DC\_EXT\_ENABLE\_DISABLE\_CRC   |       |
-| 0x80040208 | Out       | 4     | TEGRA\_DC\_EXT\_GET\_CRC               |       |
-| 0x80040209 | Out       | 4     | TEGRA\_DC\_EXT\_GET\_HEAD\_STATUS      |       |
-| 0xC038020A | Inout     | 56    | TEGRA\_DC\_EXT\_VALIDATE\_MODE         |       |
-| 0x4018020B | In        | 24    | TEGRA\_DC\_EXT\_SET\_CSC               |       |
-| 0xC004020C | Inout     | 4     | TEGRA\_DC\_EXT\_GET\_VBLANK\_SYNCPT    |       |
-| 0x8040020D | Out       | 64    | TEGRA\_DC\_EXT\_GET\_UNDERFLOWS        |       |
-| 0xC99A020E | Inout     | 2458  | TEGRA\_DC\_EXT\_SET\_CMU               |       |
-| 0xC004020F | Inout     | 4     | TEGRA\_DC\_EXT\_DPMS                   |       |
-| 0x80600210 | Out       | 96    | TEGRA\_DC\_EXT\_GET\_AVI\_INFOFRAME    |       |
-| 0x40600211 | In        | 96    | TEGRA\_DC\_EXT\_SET\_AVI\_INFOFRAME    |       |
-| 0xEBFC0215 | Inout     | 11260 | TEGRA\_DC\_EXT\_GET\_MODE\_DB          |       |
-| 0xC003021A | Inout     | 3     | TEGRA\_DC\_EXT\_PANEL\_GET\_VENDOR\_ID |       |
-| 0x803C021B | Out       | 60    | TEGRA\_DC\_EXT\_GET\_MODE2             |       |
-| 0x403C021C | In        | 60    | TEGRA\_DC\_EXT\_SET\_MODE2             |       |
-| 0xC03C021D | Inout     | 60    | TEGRA\_DC\_EXT\_VALIDATE\_MODE2        |       |
-| 0xEF20021E | Inout     | 12064 | TEGRA\_DC\_EXT\_GET\_MODE\_DB2         |       |
-| 0xC004021F | Inout     | 4     | TEGRA\_DC\_EXT\_GET\_WINMASK           |       |
-|            |           |       |                                        |       |
+| Value      | Direction | Size  | Description                    | Notes |
+| ---------- | --------- | ----- | ------------------------------ | ----- |
+| 0x40040201 | In        | 4     | NVDISP\_GET\_WINDOW            |       |
+| 0x40040202 | In        | 4     | NVDISP\_PUT\_WINDOW            |       |
+| 0xC4C80203 | In        | 1224  | NVDISP\_FLIP                   |       |
+| 0x80380204 | Out       | 56    | NVDISP\_GET\_MODE              |       |
+| 0x40380205 | Out       | 56    | NVDISP\_SET\_MODE              |       |
+| 0x430C0206 | In        | 780   | NVDISP\_SET\_LUT               |       |
+| 0x40010207 | In        | 1     | NVDISP\_ENABLE\_DISABLE\_CRC   |       |
+| 0x80040208 | Out       | 4     | NVDISP\_GET\_CRC               |       |
+| 0x80040209 | Out       | 4     | NVDISP\_GET\_HEAD\_STATUS      |       |
+| 0xC038020A | Inout     | 56    | NVDISP\_VALIDATE\_MODE         |       |
+| 0x4018020B | In        | 24    | NVDISP\_SET\_CSC               |       |
+| 0xC004020C | Inout     | 4     | NVDISP\_GET\_VBLANK\_SYNCPT    |       |
+| 0x8040020D | Out       | 64    | NVDISP\_GET\_UNDERFLOWS        |       |
+| 0xC99A020E | Inout     | 2458  | NVDISP\_SET\_CMU               |       |
+| 0xC004020F | Inout     | 4     | NVDISP\_DPMS                   |       |
+| 0x80600210 | Out       | 96    | NVDISP\_GET\_AVI\_INFOFRAME    |       |
+| 0x40600211 | In        | 96    | NVDISP\_SET\_AVI\_INFOFRAME    |       |
+| 0xEBFC0215 | Inout     | 11260 | NVDISP\_GET\_MODE\_DB          |       |
+| 0xC003021A | Inout     | 3     | NVDISP\_PANEL\_GET\_VENDOR\_ID |       |
+| 0x803C021B | Out       | 60    | NVDISP\_GET\_MODE2             |       |
+| 0x403C021C | In        | 60    | NVDISP\_SET\_MODE2             |       |
+| 0xC03C021D | Inout     | 60    | NVDISP\_VALIDATE\_MODE2        |       |
+| 0xEF20021E | Inout     | 12064 | NVDISP\_GET\_MODE\_DB2         |       |
+| 0xC004021F | Inout     | 4     | NVDISP\_GET\_WINMASK           |       |
 
 ## /dev/nvcec-ctrl
 
 | Value      | Direction | Size | Description                          | Notes |
 | ---------- | --------- | ---- | ------------------------------------ | ----- |
-| 0x40010300 | In        | 1    |                                      |       |
 | 0x40010301 | In        | 1    | NVCEC\_CTRL\_ENABLE                  |       |
 | 0x804C0302 | Out       | 76   | NVCEC\_CTRL\_GET\_PADDR              |       |
 | 0x40040303 | In        | 4    | NVCEC\_CTRL\_SET\_LADDR              |       |
@@ -449,27 +447,29 @@ Returns an id for a nvmap object. Identical to Linux driver.
 | 0xC04C0305 | Inout     | 76   | NVCEC\_CTRL\_READ                    |       |
 | 0x804C0306 | Out       | 76   | NVCEC\_CTRL\_GET\_CONNECTION\_STATUS |       |
 | 0x804C0307 | Out       | 76   | NVCEC\_CTRL\_GET\_WRITE\_STATUS      |       |
-|            |           |      |                                      |       |
 
 ## /dev/nvhdcp\_up-ctrl
 
-| Value      | Direction | Size | Description              | Notes |
-| ---------- | --------- | ---- | ------------------------ | ----- |
-| 0xC4880401 | Inout     | 1160 | TEGRAIO\_NVHDCP\_READ\_M |       |
-| 0xC4880402 | Inout     | 1160 | TEGRAIO\_NVHDCP\_READ\_S |       |
-| 0x40010403 | In        | 1    | TEGRAIO\_NVHDCP\_ON\_OFF |       |
-|            |           |      |                          |       |
+| Value      | Direction | Size | Description             | Notes |
+| ---------- | --------- | ---- | ----------------------- | ----- |
+| 0xC4880401 | Inout     | 1160 | NVHDCP\_READ\_M         |       |
+| 0xC4880402 | Inout     | 1160 | NVHDCP\_READ\_S         |       |
+| 0x40010403 | In        | 1    | NVHDCP\_ON\_OFF         |       |
+| 0xC0080404 | Inout     | 8    | NVHDCP\_READ\_EVENT     |       |
+| 0xC0010405 | Inout     | 1    | NVHDCP\_EVENTS\_ON\_OFF |       |
 
 ## /dev/nvdcutil-disp0, /dev/nvdcutil-disp1
 
-| Value      | Direction | Size | Description                        | Notes |
-| ---------- | --------- | ---- | ---------------------------------- | ----- |
-| 0x40010501 | In        | 1    | NVDCUTIL\_SW\_HOTPLUG\_IN\_OUT     |       |
-| 0x40010502 | In        | 1    | NVDCUTIL\_VIRTUAL\_EDID\_ON\_OFF   |       |
-| 0x42040503 | In        | 1056 | NVDCUTIL\_VIRTUAL\_EDID\_SET\_DATA |       |
-| 0x803C0504 | Out       | 60   | NVDCUTIL\_GET\_MODE                |       |
-| 0x40010505 | In        | 1    | NVDCUTIL\_TELEMETRY\_TEST\_ON\_OFF |       |
-|            |           |      |                                    |       |
+| Value      | Direction | Size | Description                         | Notes |
+| ---------- | --------- | ---- | ----------------------------------- | ----- |
+| 0x40010501 | In        | 1    | NVDCUTIL\_SW\_HOTPLUG\_IN\_OUT      |       |
+| 0x40010502 | In        | 1    | NVDCUTIL\_VIRTUAL\_EDID\_ON\_OFF    |       |
+| 0x42040503 | In        | 1056 | NVDCUTIL\_VIRTUAL\_EDID\_SET\_DATA  |       |
+| 0x803C0504 | Out       | 60   | NVDCUTIL\_GET\_MODE                 |       |
+| 0x40010505 | In        | 1    | NVDCUTIL\_TELEMETRY\_TEST\_ON\_OFF  |       |
+| 0x400C0506 | In        | 12   | NVDCUTIL\_DSI\_PACKET\_SHORT\_WRITE |       |
+| 0x40F80507 | In        | 248  | NVDCUTIL\_DSI\_PACKET\_LONG\_WRITE  |       |
+| 0xC0F40508 | Inout     | 244  | NVDCUTIL\_DSI\_PACKET\_READ         |       |
 
 ## /dev/nvsched-ctrl
 
@@ -498,7 +498,7 @@ scheduler.
 | 0x4008060F | In        | 8    | [\#NVSCHED\_CTRL\_DETACH\_APPLICATION](#NVSCHED_CTRL_DETACH_APPLICATION "wikilink")               |       |
 | 0x40100610 | In        | 16   |                                                                                                   |       |
 | 0x40100611 | In        | 16   |                                                                                                   |       |
-|            |           |      |                                                                                                   |       |
+| 0x40010612 | In        | 1    |                                                                                                   |       |
 
 ### NVSCHED\_CTRL\_ENABLE
 
@@ -631,7 +631,6 @@ Added in firmware version 3.0.0.
 | ---------- | --------- | ---- | ----------------------------------- | ----- |
 | 0xC1280701 | Inout     | 296  | NVERPT\_TELEMETRY\_SUBMIT\_DATA     |       |
 | 0xCF580702 | Inout     | 3928 | NVERPT\_TELEMETRY\_SUBMIT\_DATA\_EX |       |
-|            |           |      |                                     |       |
 
 ## /dev/nvhost-as-gpu
 
@@ -649,10 +648,11 @@ from one address space to another (or from one to none).
 | 0xC0104103 | Inout     | 16       | [\#NVGPU\_AS\_IOCTL\_FREE\_SPACE](#NVGPU_AS_IOCTL_FREE_SPACE "wikilink")          |       |
 | 0xC0184104 | Inout     | 24       | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER](#NVGPU_AS_IOCTL_MAP_BUFFER "wikilink")          |       |
 | 0xC0084105 | Inout     | 8        | [\#NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER](#NVGPU_AS_IOCTL_UNMAP_BUFFER "wikilink")      |       |
-| 0xC0284106 | Inout     | 40       | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX](#NVGPU_AS_IOCTL_MAP_BUFFER_EX "wikilink")   |       |
+| 0xC0284106 | Inout     | 40       | [\#NVGPU\_AS\_IOCTL\_MODIFY](#NVGPU_AS_IOCTL_MODIFY "wikilink")                   |       |
 | 0x40104107 | In        | 16       | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |       |
 | 0xC0404108 | Inout     | 64       | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |       |
 | 0x40284109 | In        | 40       | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |       |
+| 0xC038410A | Inout     | 56       | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |       |
 | 0xC0??4114 | Inout     | Variable | [\#NVGPU\_AS\_IOCTL\_REMAP](#NVGPU_AS_IOCTL_REMAP "wikilink")                     |       |
 
 ### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
@@ -708,10 +708,9 @@ set.
 `   };`  
 ` };`
 
-### NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX
+### NVGPU\_AS\_IOCTL\_MODIFY
 
-Map a memory region in the device address space. Identical to Linux
-driver pretty much.
+Modify a memory region in the device address space.
 
 Unaligned size will cause a [\#Panic](#Panic "wikilink").
 
@@ -804,22 +803,33 @@ Nintendo's custom implementation of address space remapping.
 Returns [NotSupported](#Errors "wikilink") on Open unless
 nn::settings::detail::GetDebugModeFlag is set.
 
-| Value      | Direction | Size     | Description                                    | Notes        |
-| ---------- | --------- | -------- | ---------------------------------------------- | ------------ |
-| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL          |              |
-| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS               |              |
-| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL           |              |
-| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE              |              |
-| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE      |              |
-| 0x40044406 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SUSPEND\_RESUME\_SM    |              |
-| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP           |              |
-| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP         |              |
-| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING           |              |
-| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                |              |
-| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT           |              |
-| 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE |              |
-| 0x0000440D | None      | 0        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT       | Uses Ioctl3. |
-|            |           |          |                                                |              |
+| Value      | Direction | Size     | Description                                            | Notes        |
+| ---------- | --------- | -------- | ------------------------------------------------------ | ------------ |
+| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL                  |              |
+| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS                       |              |
+| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL                   |              |
+| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE                      |              |
+| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE              |              |
+| 0x40044406 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SUSPEND\_RESUME\_ALL\_SMS      |              |
+| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP                   |              |
+| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP                 |              |
+| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                   |              |
+| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                        |              |
+| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                   |              |
+| 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE         |              |
+| 0x0000440D | None      | 0        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT               | Uses Ioctl3. |
+| 0xC018440F | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PDES |              |
+| 0xC0104410 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PDES      | Uses Ioctl3. |
+| 0xC0184411 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PTES |              |
+| 0xC0104412 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PTES      | Uses Ioctl3. |
+| 0xC0684413 | Inout     | 104      | NVGPU\_DBG\_GPU\_IOCTL\_GET\_COMPTAG\_INFO             |              |
+| 0xC0184414 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_READ\_COMPTAGS                 | Uses Ioctl3. |
+| 0xC0184415 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_WRITE\_COMPTAGS                | Uses Ioctl2. |
+| 0xC0104416 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_COMPTAGS              |              |
+| 0xC0104417 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_COMPTAGS       |              |
+| 0xC0104418 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_PA                    |              |
+| 0xC0104419 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_PA             |              |
+| 0xC018441A | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_LAZY\_ALLOC\_RESERVED\_PA      |              |
 
 ## /dev/nvhost-prof-gpu
 
@@ -833,28 +843,32 @@ This device is identical to
 
 This device is for global (context independent) operations on the gpu.
 
-| Value      | Direction | Size | Description                                                                                               | Notes |
-| ---------- | --------- | ---- | --------------------------------------------------------------------------------------------------------- | ----- |
-| 0x80044701 | Out       | 4    | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE](#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE "wikilink")              |       |
-| 0x80284702 | Out       | 40   | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO](#NVGPU_GPU_IOCTL_ZCULL_GET_INFO "wikilink")                       |       |
-| 0x402C4703 | In        | 44   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE](#NVGPU_GPU_IOCTL_ZBC_SET_TABLE "wikilink")                         |       |
-| 0xC0344704 | Inout     | 52   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE](#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE "wikilink")                     |       |
-| 0xC0B04705 | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink")              |       |
-| 0xC0184706 | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                                        |       |
-| 0x40084707 | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                                    |       |
-| 0x4008470D | In        | 8    | NVGPU\_GPU\_IOCTL\_INVAL\_ICACHE                                                                          |       |
-| 0x4008470E | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                                    |       |
-| 0x4010470F | In        | 16   | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                                   |       |
-| 0xC0084710 | Inout     | 8    | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |       |
-| 0x80084711 | Out       | 8    | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                                        |       |
-| 0x80084712 | Out       | 8    | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |       |
-| 0xC0044713 | Inout     | 4    | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |       |
-| 0x80084714 | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_ZBC\_GET\_ACTIVE\_SLOT\_MASK](#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK "wikilink") |       |
-| 0x80044715 | Out       | 4    |                                                                                                           |       |
-| 0x8018471A | Out       | 24   |                                                                                                           |       |
-| 0xC008471B | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |       |
-| 0xC010471C | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |       |
-| 0xC108471D | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |       |
+| Value                                   | Direction | Size | Description                                                                                               | Notes |
+| --------------------------------------- | --------- | ---- | --------------------------------------------------------------------------------------------------------- | ----- |
+| 0x80044701                              | Out       | 4    | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE](#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE "wikilink")              |       |
+| 0x80284702                              | Out       | 40   | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO](#NVGPU_GPU_IOCTL_ZCULL_GET_INFO "wikilink")                       |       |
+| 0x402C4703                              | In        | 44   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE](#NVGPU_GPU_IOCTL_ZBC_SET_TABLE "wikilink")                         |       |
+| 0xC0344704                              | Inout     | 52   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE](#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE "wikilink")                     |       |
+| 0xC0B04705                              | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink")              |       |
+| 0xC0184706                              | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                                        |       |
+| 0x40084707                              | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                                    |       |
+| 0x4008470D                              | In        | 8    | NVGPU\_GPU\_IOCTL\_INVAL\_ICACHE                                                                          |       |
+| 0x4008470E                              | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                                    |       |
+| 0x4010470F                              | In        | 16   | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                                   |       |
+| 0xC0304710 (\[1.0.0-6.1.0\] 0xC0084710) | Inout     | 8    | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |       |
+| 0x80084711                              | Out       | 8    | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                                        |       |
+| 0x80084712                              | Out       | 8    | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |       |
+| 0xC0044713                              | Inout     | 4    | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |       |
+| 0x80084714                              | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_ZBC\_GET\_ACTIVE\_SLOT\_MASK](#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK "wikilink") |       |
+| 0x80044715                              | Out       | 4    |                                                                                                           |       |
+| 0x40084716                              | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_CG\_CONTROLS                                                                      |       |
+| 0xC0084717                              | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_CG\_CONTROLS                                                                      |       |
+| 0x40084718                              | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_PG\_CONTROLS                                                                      |       |
+| 0xC0084719                              | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_PG\_CONTROLS                                                                      |       |
+| 0x8018471A                              | Out       | 24   |                                                                                                           |       |
+| 0xC008471B                              | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |       |
+| 0xC010471C                              | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |       |
+| 0xC108471D                              | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |       |
 
 ### NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE
 
@@ -1024,9 +1038,10 @@ interface.
 | 0xC020481A | 32       | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 "wikilink")             | Seen on 1.0.0.                                               |
 | 0xC018481B | 24       |                                                                                                             | Uses Ioctl2.                                                 |
 | 0xC018481C | 24       |                                                                                                             | Uses Ioctl2.                                                 |
+| 0xC004481D | 4        |                                                                                                             |                                                              |
 |            |          |                                                                                                             |                                                              |
-| 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                      | Sets an unknown user context address. Seen on 1.0.0.         |
-| 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                      | Gets an unknown user context address. Seen on 1.0.0.         |
+| 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                      | Seen on 1.0.0.                                               |
+| 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                      | Seen on 1.0.0.                                               |
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD
 

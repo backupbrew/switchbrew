@@ -379,82 +379,79 @@ Returns an id for a nvmap object. Identical to Linux driver.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x80040212 || Out || 4 || TEGRA_DC_EXT_CONTROL_GET_NUM_OUTPUTS ||
+| 0x80040212 || Out || 4 || NVDISP_CTRL_GET_NUM_OUTPUTS ||
 |-
-| 0xC0140213 || Inout || 20 || TEGRA_DC_EXT_CONTROL_GET_OUTPUT_PROPERTIES ||
+| 0xC0140213 || Inout || 20 || NVDISP_CTRL_GET_OUTPUT_PROPERTIES ||
 |-
-| 0xC1100214 || Inout || 272 || TEGRA_DC_EXT_CONTROL_GET_OUTPUT_EDID ||
+| 0xC1100214 || Inout || 272 || NVDISP_CTRL_GET_OUTPUT_EDID ||
 |-
-| 0xC0040216 || Inout || 4 || TEGRA_DC_EXT_CONTROL_GET_EXT_HPD_IN_EVENT ||
+| 0xC0040216 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_IN_EVENT ||
 |-
-| 0xC0040217 || Inout || 4 || TEGRA_DC_EXT_CONTROL_GET_EXT_HPD_OUT_EVENT ||
+| 0xC0040217 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_OUT_EVENT ||
 |-
-| 0xC0100218 || Inout || 16 || TEGRA_DC_EXT_CONTROL_GET_VBLANK_HEAD0_EVENT ||
+| 0xC0100218 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD0_EVENT ||
 |-
-| 0xC0100219 || Inout || 16 || TEGRA_DC_EXT_CONTROL_GET_VBLANK_HEAD1_EVENT ||
+| 0xC0100219 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD1_EVENT ||
 |-
-| 0xC0040220 || Inout || 4 || TEGRA_DC_EXT_CONTROL_GET_UNK_EVENT ||
+| 0xC0040220 || Inout || 4 || NVDISP_CTRL_GET_HPD_IRQ ||
 |}
 
 == /dev/nvdisp-disp0, /dev/nvdisp-disp1 ==
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0x40040201 || In || 4 || TEGRA_DC_EXT_GET_WINDOW ||
+| 0x40040201 || In || 4 || NVDISP_GET_WINDOW ||
 |-
-| 0x40040202 || In || 4 || TEGRA_DC_EXT_PUT_WINDOW ||
+| 0x40040202 || In || 4 || NVDISP_PUT_WINDOW ||
 |-
-| 0xC4C80203 || In || 1224 || TEGRA_DC_EXT_FLIP ||
+| 0xC4C80203 || In || 1224 || NVDISP_FLIP ||
 |-
-| 0x80380204 || Out || 56 || TEGRA_DC_EXT_GET_MODE ||
+| 0x80380204 || Out || 56 || NVDISP_GET_MODE ||
 |-
-| 0x40380205 || Out || 56 || TEGRA_DC_EXT_SET_MODE ||
+| 0x40380205 || Out || 56 || NVDISP_SET_MODE ||
 |-
-| 0x430C0206 || In || 780 || TEGRA_DC_EXT_SET_LUT ||
+| 0x430C0206 || In || 780 || NVDISP_SET_LUT ||
 |-
-| 0x40010207 || In || 1 || TEGRA_DC_EXT_ENABLE_DISABLE_CRC ||
+| 0x40010207 || In || 1 || NVDISP_ENABLE_DISABLE_CRC ||
 |-
-| 0x80040208 || Out || 4 || TEGRA_DC_EXT_GET_CRC ||
+| 0x80040208 || Out || 4 || NVDISP_GET_CRC ||
 |-
-| 0x80040209 || Out || 4 || TEGRA_DC_EXT_GET_HEAD_STATUS ||
+| 0x80040209 || Out || 4 || NVDISP_GET_HEAD_STATUS ||
 |-
-| 0xC038020A || Inout || 56 || TEGRA_DC_EXT_VALIDATE_MODE ||
+| 0xC038020A || Inout || 56 || NVDISP_VALIDATE_MODE ||
 |-
-| 0x4018020B || In || 24 || TEGRA_DC_EXT_SET_CSC ||
+| 0x4018020B || In || 24 || NVDISP_SET_CSC ||
 |-
-| 0xC004020C || Inout || 4 || TEGRA_DC_EXT_GET_VBLANK_SYNCPT ||
+| 0xC004020C || Inout || 4 || NVDISP_GET_VBLANK_SYNCPT ||
 |-
-| 0x8040020D || Out || 64 || TEGRA_DC_EXT_GET_UNDERFLOWS ||
+| 0x8040020D || Out || 64 || NVDISP_GET_UNDERFLOWS ||
 |-
-| 0xC99A020E || Inout || 2458 || TEGRA_DC_EXT_SET_CMU ||
+| 0xC99A020E || Inout || 2458 || NVDISP_SET_CMU ||
 |-
-| 0xC004020F || Inout || 4 || TEGRA_DC_EXT_DPMS ||
+| 0xC004020F || Inout || 4 || NVDISP_DPMS ||
 |-
-| 0x80600210 || Out || 96 || TEGRA_DC_EXT_GET_AVI_INFOFRAME ||
+| 0x80600210 || Out || 96 || NVDISP_GET_AVI_INFOFRAME ||
 |-
-| 0x40600211 || In || 96 || TEGRA_DC_EXT_SET_AVI_INFOFRAME ||
+| 0x40600211 || In || 96 || NVDISP_SET_AVI_INFOFRAME ||
 |-
-| 0xEBFC0215 || Inout || 11260 || TEGRA_DC_EXT_GET_MODE_DB ||
+| 0xEBFC0215 || Inout || 11260 || NVDISP_GET_MODE_DB ||
 |-
-| 0xC003021A || Inout || 3 || TEGRA_DC_EXT_PANEL_GET_VENDOR_ID ||
+| 0xC003021A || Inout || 3 || NVDISP_PANEL_GET_VENDOR_ID ||
 |-
-| 0x803C021B || Out || 60 || TEGRA_DC_EXT_GET_MODE2 ||
+| 0x803C021B || Out || 60 || NVDISP_GET_MODE2 ||
 |-
-| 0x403C021C || In || 60 || TEGRA_DC_EXT_SET_MODE2 ||
+| 0x403C021C || In || 60 || NVDISP_SET_MODE2 ||
 |-
-| 0xC03C021D || Inout || 60 || TEGRA_DC_EXT_VALIDATE_MODE2 ||
+| 0xC03C021D || Inout || 60 || NVDISP_VALIDATE_MODE2 ||
 |-
-| 0xEF20021E || Inout || 12064 || TEGRA_DC_EXT_GET_MODE_DB2 ||
+| 0xEF20021E || Inout || 12064 || NVDISP_GET_MODE_DB2 ||
 |-
-| 0xC004021F || Inout || 4 || TEGRA_DC_EXT_GET_WINMASK ||
-|-
+| 0xC004021F || Inout || 4 || NVDISP_GET_WINMASK ||
 |}
 
 == /dev/nvcec-ctrl ==
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
-|-
-| 0x40010300 || In || 1 || ||
 |-
 | 0x40010301 || In || 1 || NVCEC_CTRL_ENABLE ||
 |-
@@ -469,19 +466,21 @@ Returns an id for a nvmap object. Identical to Linux driver.
 | 0x804C0306 || Out || 76 || NVCEC_CTRL_GET_CONNECTION_STATUS ||
 |-
 | 0x804C0307 || Out || 76 || NVCEC_CTRL_GET_WRITE_STATUS ||
-|-
 |}
 
 == /dev/nvhdcp_up-ctrl ==
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description || Notes
 |-
-| 0xC4880401 || Inout || 1160 || TEGRAIO_NVHDCP_READ_M ||
+| 0xC4880401 || Inout || 1160 || NVHDCP_READ_M ||
 |-
-| 0xC4880402 || Inout || 1160 || TEGRAIO_NVHDCP_READ_S ||
+| 0xC4880402 || Inout || 1160 || NVHDCP_READ_S ||
 |-
-| 0x40010403 || In || 1 || TEGRAIO_NVHDCP_ON_OFF ||
+| 0x40010403 || In || 1 || NVHDCP_ON_OFF ||
 |-
+| 0xC0080404 || Inout || 8 || NVHDCP_READ_EVENT ||
+|-
+| 0xC0010405 || Inout || 1 || NVHDCP_EVENTS_ON_OFF ||
 |}
 
 == /dev/nvdcutil-disp0, /dev/nvdcutil-disp1 ==
@@ -498,6 +497,11 @@ Returns an id for a nvmap object. Identical to Linux driver.
 |-
 | 0x40010505 || In || 1 || NVDCUTIL_TELEMETRY_TEST_ON_OFF ||
 |-
+| 0x400C0506 || In || 12 || NVDCUTIL_DSI_PACKET_SHORT_WRITE ||
+|-
+| 0x40F80507 || In || 248 || NVDCUTIL_DSI_PACKET_LONG_WRITE ||
+|-
+| 0xC0F40508 || Inout || 244 || NVDCUTIL_DSI_PACKET_READ ||
 |}
 
 == /dev/nvsched-ctrl ==
@@ -542,6 +546,7 @@ The way this device is exposed and configured is exclusive to the Switch, since 
 |-
 | 0x40100611 || In || 16 || ||
 |-
+| 0x40010612 || In || 1 || ||
 |}
 
 === NVSCHED_CTRL_ENABLE ===
@@ -661,7 +666,6 @@ Added in firmware version 3.0.0.
 | 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA ||
 |-
 | 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DATA_EX ||
-|-
 |}
 
 == /dev/nvhost-as-gpu ==
@@ -682,13 +686,15 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | 0xC0084105 || Inout || 8 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
 |-
-| 0xC0284106 || Inout || 40 || [[#NVGPU_AS_IOCTL_MAP_BUFFER_EX]] ||
+| 0xC0284106 || Inout || 40 || [[#NVGPU_AS_IOCTL_MODIFY]] ||
 |-
 | 0x40104107 || In || 16 || [[#NVGPU_AS_IOCTL_INITIALIZE]] ||
 |-
 | 0xC0404108 || Inout || 64 || [[#NVGPU_AS_IOCTL_GET_VA_REGIONS]] ||
 |-
 | 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
+|-
+| 0xC038410A || Inout || 56 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
 |-
 | 0xC0??4114 || Inout || Variable || [[#NVGPU_AS_IOCTL_REMAP]] ||
 |}
@@ -739,8 +745,8 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
     };
   };
 
-=== NVGPU_AS_IOCTL_MAP_BUFFER_EX ===
-Map a memory region in the device address space. Identical to Linux driver pretty much.
+=== NVGPU_AS_IOCTL_MODIFY ===
+Modify a memory region in the device address space.
 
 Unaligned size will cause a [[#Panic]].
 
@@ -835,7 +841,7 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 | 0x40044405 || In || 4 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE ||
 |-
-| 0x40044406 || In || 4 || NVGPU_DBG_GPU_IOCTL_SUSPEND_RESUME_SM ||
+| 0x40044406 || In || 4 || NVGPU_DBG_GPU_IOCTL_SUSPEND_RESUME_ALL_SMS ||
 |-
 | 0xC0184407 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP ||
 |-
@@ -851,6 +857,29 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 | 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT || Uses Ioctl3.
 |-
+| 0xC018440F || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PDES ||
+|-
+| 0xC0104410 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES || Uses Ioctl3.
+|-
+| 0xC0184411 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PTES ||
+|-
+| 0xC0104412 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES || Uses Ioctl3.
+|-
+| 0xC0684413 || Inout || 104 || NVGPU_DBG_GPU_IOCTL_GET_COMPTAG_INFO ||
+|-
+| 0xC0184414 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS || Uses Ioctl3.
+|-
+| 0xC0184415 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS || Uses Ioctl2.
+|-
+| 0xC0104416 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_COMPTAGS ||
+|-
+| 0xC0104417 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_COMPTAGS ||
+|-
+| 0xC0104418 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_PA ||
+|-
+| 0xC0104419 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_PA ||
+|-
+| 0xC018441A || Inout || 24 || NVGPU_DBG_GPU_IOCTL_LAZY_ALLOC_RESERVED_PA ||
 |}
 
 == /dev/nvhost-prof-gpu ==
@@ -884,7 +913,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE ||
 |-
-| 0xC0084710 || Inout || 8 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
+| 0xC0304710 ([1.0.0-6.1.0] 0xC0084710) || Inout || 8 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
 |-
 | 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS ||
 |-
@@ -895,6 +924,14 @@ This device is for global (context independent) operations on the gpu.
 | 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK]] ||
 |-
 | 0x80044715 || Out || 4 || ||
+|-
+| 0x40084716 || In || 8 || NVGPU_GPU_IOCTL_SET_CG_CONTROLS ||
+|-
+| 0xC0084717 || Inout || 8 || NVGPU_GPU_IOCTL_GET_CG_CONTROLS ||
+|-
+| 0x40084718 || In || 8 || NVGPU_GPU_IOCTL_SET_PG_CONTROLS ||
+|-
+| 0xC0084719 || Inout || 8 || NVGPU_GPU_IOCTL_GET_PG_CONTROLS ||
 |-
 | 0x8018471A || Out || 24 || ||
 |-
@@ -1102,10 +1139,12 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC018481C || 24 ||  || Uses Ioctl2.
 |-
-|- style="border-top: double"
-| 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Sets an unknown user context address. Seen on 1.0.0.
+| 0xC004481D || 4 ||  ||
 |-
-| 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA || Gets an unknown user context address. Seen on 1.0.0.
+|- style="border-top: double"
+| 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Seen on 1.0.0.
+|-
+| 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA || Seen on 1.0.0.
 |}
 
 === NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ===
