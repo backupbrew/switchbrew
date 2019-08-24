@@ -241,10 +241,10 @@ This is a 0x80-byte struct.
 
 # GameMovieId
 
-| Offset | Size | Description                                                                                  |
-| ------ | ---- | -------------------------------------------------------------------------------------------- |
-| 0x0    | 0x18 | Same as the last 0x18-bytes of [AlbumEntry](Capture%20services.md "wikilink").               |
-| 0x18   | 0x28 | Ignored by Album. Album clears this to 0 for the [\#BeginTrim](#BeginTrim "wikilink") input. |
+| Offset | Size | Description                                                                    |
+| ------ | ---- | ------------------------------------------------------------------------------ |
+| 0x0    | 0x18 | Same as the last 0x18-bytes of [AlbumEntry](Capture%20services.md "wikilink"). |
+| 0x18   | 0x28 | Unused, always zero.                                                           |
 
 This is "nn::grcsrv::GameMovieId". This is a 0x40-byte struct.
 
