@@ -855,7 +855,7 @@ This device is for global (context independent) operations on the gpu.
 | 0x4008470D                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_INVAL\_ICACHE                                                                          |       |
 | 0x4008470E                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                                    |       |
 | 0x4010470F                                  | In        | 16   | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                                   |       |
-| 0xC0304710</br>(\[1.0.0-6.1.0\] 0xC0084710) | Inout     | 8    | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |       |
+| 0xC0304710</br>(\[1.0.0-6.1.0\] 0xC0084710) | Inout     | 48   | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |       |
 | 0x80084711                                  | Out       | 8    | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                                        |       |
 | 0x80084712                                  | Out       | 8    | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |       |
 | 0xC0044713                                  | Inout     | 4    | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |       |
