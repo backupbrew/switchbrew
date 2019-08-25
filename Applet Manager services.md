@@ -1304,8 +1304,14 @@ error is returned.
 
 #### CreateMovieMaker
 
-Takes an input u64 and handle, returns an
+Takes an input u64 size and a TransferMemory handle, returns an
 [\#IMovieMaker](#IMovieMaker "wikilink").
+
+Official sw retries using the cmd in a loop on error 0x8D4 with
+svcSleepThread(100000000) being used first.
+
+Official sw uses permissions=None for the TransferMemory, with an
+user-specified buffer.
 
 #### PrepareForJit
 
