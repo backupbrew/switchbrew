@@ -319,9 +319,14 @@ R0=result, R1=[[#ProcessState]]_lower32, R2=[[#ProcessState]]_upper32
 |-
 | 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
 |-
-| 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value || W0=result
+| 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value
+R0=reslimit_handle, R1=[[#LimitableResource], R2=value_lower32, R3=value_upper32
+|| W0=result
 |-
-| 0x7F || [[#svcCallSecureMonitor]] || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args || X0,X1,X2,X3,X4,X5,X6,X7=result
+| 0x7F || [[#svcCallSecureMonitor]] || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args
+R0=smc_sub_id, R1, R2, R3=smc_args
+|| X0,X1,X2,X3,X4,X5,X6,X7=result
+R0,R1,R2,R3=result
 |}
 
 == svcSetHeapSize ==
@@ -1631,15 +1636,15 @@ Returns an enum with value 0-7.
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) X0 || u64 || [[SMC#ID_0|Function ID]]
+| (In) X0 || R0 || u64 || [[SMC#ID_0|Function ID]]
 |-
-| (In) X1-X7 || u64 || SMC sub-arguments
+| (In) X1-X7 || R1-R3 || u64 || SMC sub-arguments
 |-
-| (Out) X0 || [[SMC#Errors|SMC Result]] || Result of SMC
+| (Out) X0 || R0 || [[SMC#Errors|SMC Result]] || Result of SMC
 |-
-| (Out) X1-X7 || u64 || SMC sub-output
+| (Out) X1-X7 || R1-R3 || u64 || SMC sub-output
 |}
 </div>
 

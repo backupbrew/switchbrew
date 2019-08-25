@@ -119,8 +119,8 @@
 | 0x7B | svcTerminateProcess                                                                | W0=process\_handle                                                                                                                                                                                                                                                                             | W0=result                                                                                                                                                                          |
 | 0x7C | [\#svcGetProcessInfo](#svcGetProcessInfo "wikilink")                               | W0=process\_handle, W1=[\#ProcessInfoType](#ProcessInfoType "wikilink") R1=process\_handle, R2=[\#ProcessInfoType](#ProcessInfoType "wikilink")                                                                                                                                                | W0=result, X1=[\#ProcessState](#ProcessState "wikilink") R0=result, R1=[\#ProcessState](#ProcessState "wikilink")\_lower32, R2=[\#ProcessState](#ProcessState "wikilink")\_upper32 |
 | 0x7D | svcCreateResourceLimit                                                             | None                                                                                                                                                                                                                                                                                           | W0=result, W1=reslimit\_handle                                                                                                                                                     |
-| 0x7E | svcSetResourceLimitLimitValue                                                      | W0=reslimit\_handle, W1=[\#LimitableResource](#LimitableResource "wikilink"), X2=value                                                                                                                                                                                                         | W0=result                                                                                                                                                                          |
-| 0x7F | [\#svcCallSecureMonitor](#svcCallSecureMonitor "wikilink")                         | X0=smc\_sub\_id, X1,X2,X3,X4,X5,X6,X7=smc\_args                                                                                                                                                                                                                                                | X0,X1,X2,X3,X4,X5,X6,X7=result                                                                                                                                                     |
+| 0x7E | svcSetResourceLimitLimitValue                                                      | W0=reslimit\_handle, W1=[\#LimitableResource](#LimitableResource "wikilink"), X2=value R0=reslimit\_handle, R1=\[\[\#LimitableResource\], R2=value\_lower32, R3=value\_upper32                                                                                                                 | W0=result                                                                                                                                                                          |
+| 0x7F | [\#svcCallSecureMonitor](#svcCallSecureMonitor "wikilink")                         | X0=smc\_sub\_id, X1,X2,X3,X4,X5,X6,X7=smc\_args R0=smc\_sub\_id, R1, R2, R3=smc\_args                                                                                                                                                                                                          | X0,X1,X2,X3,X4,X5,X6,X7=result R0,R1,R2,R3=result                                                                                                                                  |
 
 ## svcSetHeapSize
 
@@ -1339,12 +1339,12 @@ Returns an enum with value 0-7.
 
 <div style="display: inline-block;">
 
-| Argument    | Type                                           | Name                                          |
-| ----------- | ---------------------------------------------- | --------------------------------------------- |
-| (In) X0     | u64                                            | [Function ID](SMC#ID%200.md##ID_0 "wikilink") |
-| (In) X1-X7  | u64                                            | SMC sub-arguments                             |
-| (Out) X0    | [SMC Result](SMC#Errors.md##Errors "wikilink") | Result of SMC                                 |
-| (Out) X1-X7 | u64                                            | SMC sub-output                                |
+| Argument64  | Argument32 | Type                                           | Name                                          |
+| ----------- | ---------- | ---------------------------------------------- | --------------------------------------------- |
+| (In) X0     | R0         | u64                                            | [Function ID](SMC#ID%200.md##ID_0 "wikilink") |
+| (In) X1-X7  | R1-R3      | u64                                            | SMC sub-arguments                             |
+| (Out) X0    | R0         | [SMC Result](SMC#Errors.md##Errors "wikilink") | Result of SMC                                 |
+| (Out) X1-X7 | R1-R3      | u64                                            | SMC sub-output                                |
 
 </div>
 
