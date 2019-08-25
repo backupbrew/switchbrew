@@ -102,7 +102,7 @@
 | 0x69 | svcQueryDebugProcessMemory                                                         | X0=[\#MemoryInfo](#MemoryInfo "wikilink")\*, X2=debug\_handle, X3=addr                                                                                                                                                                                                                         | W0=result, W1=PageInfo                                                             |
 | 0x6A | svcReadDebugProcessMemory                                                          | X0=buffer\*, X1=debug\_handle, X2=src\_addr, X3=size                                                                                                                                                                                                                                           | W0=result                                                                          |
 | 0x6B | svcWriteDebugProcessMemory                                                         | X0=debug\_handle, X1=buffer\*, X2=dst\_addr, X3=size                                                                                                                                                                                                                                           | W0=result                                                                          |
-| 0x6C | [\#svcSetHardwareBreakPoint](#svcSetHardwareBreakPoint "wikilink")                 | W0=HardwareBreakpointId, X1=watchpoint\_flags/breakpoint\_flags, X2=watchpoint\_value/debug\_handle                                                                                                                                                                                            |                                                                                    |
+| 0x6C | [\#svcSetHardwareBreakPoint](#svcSetHardwareBreakPoint "wikilink")                 | W0=HardwareBreakpointId, X1=watchpoint\_flags/breakpoint\_flags, X2=watchpoint\_value/debug\_handle R0=HardwareBreakpointId, R1=value\_lower32, R2=flags\_lower32, R3=flags\_upper32, R4=value\_upper32                                                                                        | W0=result                                                                          |
 | 0x6D | svcGetDebugThreadParam                                                             | X2=debug\_handle, X3=thread\_id, W4=[\#DebugThreadParam](#DebugThreadParam "wikilink")                                                                                                                                                                                                         | W0=result, X1=out0, W2=out1                                                        |
 | 0x6F | \[5.0.0+\] [\#svcGetSystemInfo](#svcGetSystemInfo "wikilink")                      | X1=info\_id, X2=handle, X3=info\_sub\_id                                                                                                                                                                                                                                                       | W0=result, X1=out                                                                  |
 | 0x70 | svcCreatePort                                                                      | W2=max\_sessions, W3=is\_light, X4=name\_ptr                                                                                                                                                                                                                                                   | W0=result, W1=serverport\_handle, W2=clientport\_handle                            |
@@ -1384,12 +1384,12 @@ Closing the debug handle also results in execution being resumed.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name                     |
-| -------- | ------------------------------ | ------------------------ |
-| (In) W0  | u32                            | hardware\_breakpoint\_id |
-| (In) W1  | u64                            | flags                    |
-| (In) W2  | u64                            | value                    |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret                      |
+| Argument64 | Argument32 | Type                           | Name                     |
+| ---------- | ---------- | ------------------------------ | ------------------------ |
+| (In) W0    | R0         | u32                            | hardware\_breakpoint\_id |
+| (In) X1    | R2, R3     | u64                            | flags                    |
+| (In) X2    | R1, R4     | u64                            | value                    |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret                      |
 
 </div>
 

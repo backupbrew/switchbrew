@@ -258,7 +258,9 @@ R0=debug_handle, R1=ThreadContext*, R2=thread_id_lower32, R3=thread_id_upper32, 
 |-
 | 0x6B || svcWriteDebugProcessMemory || X0=debug_handle, X1=buffer*, X2=dst_addr, X3=size || W0=result
 |-
-| 0x6C || [[#svcSetHardwareBreakPoint]] || W0=HardwareBreakpointId, X1=watchpoint_flags/breakpoint_flags, X2=watchpoint_value/debug_handle || 
+| 0x6C || [[#svcSetHardwareBreakPoint]] || W0=HardwareBreakpointId, X1=watchpoint_flags/breakpoint_flags, X2=watchpoint_value/debug_handle
+R0=HardwareBreakpointId, R1=value_lower32, R2=flags_lower32, R3=flags_upper32, R4=value_upper32
+|| W0=result
 |-
 | 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
 |- style="border-top: double"
@@ -1638,15 +1640,15 @@ svcDebugActiveProcess stops execution of the target process, the normal method f
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || u32 || hardware_breakpoint_id
+| (In) W0 || R0 || u32 || hardware_breakpoint_id
 |-
-| (In) W1 || u64 || flags
+| (In) X1 || R2, R3 || u64 || flags
 |-
-| (In) W2 || u64 || value
+| (In) X2 || R1, R4 || u64 || value
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |}
 </div>
 
