@@ -214,11 +214,17 @@ R0=result, R1=mapped_size
 R0=dev_as_handle, R1=proc_handle, R2=dev_map_addr_lower32, R3=dev_map_addr_upper32, R4=dev_as_size, R5=dev_as_addr_lower32, R6=dev_as_addr_upper32
 || W0=result
 |-
-| 0x5D || svcInvalidateProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+| 0x5D || svcInvalidateProcessDataCache || W0=process_handle, X1=addr, X2=size
+R0=process_handle, R1=size_lower32, R2=addr_lower32, R3=addr_upper32, R4=size_upper32
+|| W0=size
 |-
-| 0x5E || svcStoreProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+| 0x5E || svcStoreProcessDataCache || W0=process_handle, X1=addr, X2=size
+R0=process_handle, R1=size_lower32, R2=addr_lower32, R3=addr_upper32, R4=size_upper32
+|| W0=size
 |-
-| 0x5F || svcFlushProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
+| 0x5F || svcFlushProcessDataCache || W0=process_handle, X1=addr, X2=size
+R0=process_handle, R1=size_lower32, R2=addr_lower32, R3=addr_upper32, R4=size_upper32
+|| W0=size
 |-
 | 0x60 || svcDebugActiveProcess || X1=pid || W0=result, W1=debug_handle
 |-
