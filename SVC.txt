@@ -347,11 +347,25 @@ R0,R1,R2,R3=result
 
 Size must be a multiple of 0x200000 (2MB).
 
-On success, the heap base-address (which is fixed by kernel, aslr'd) is written to OutAddr.
+On success, the heap base-address (which is fixed by kernel, aslr'd, and always in the Heap memory region) is written to OutAddr.
 
-Uses current process pool partition.
+Uses current process pool partition. The memory allocated counts towards the caller's process Memory ResourceLimit.
 
 [2.0.0+] Size must be less than or equal to 4GB.
+
+=== Result codes ===
+
+'''0x0:''' Success.
+
+'''0xCA01:''' Invalid size passed. It's either bigger than 4GB, or misaligned.
+
+'''0xD001:''' Size is bigger than the Heap Region size.
+
+'''0xCE01:''' KMemoryBlockAllocator slab allocator exhausted.
+
+'''0xD401:''' The memory region is in an invalid state. Likely because a mapping was made in the heap region.
+
+'''0x10801:''' Memory resource limit reached.
 
 == svcSetMemoryPermission ==
 
