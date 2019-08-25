@@ -250,6 +250,81 @@ The rest are are mapped to core-specific physaddrs, each one is
 | 0xFFFFFFF7FFDFF000 | 0x800XX000                                         |
 | 0xFFFFFFF7FFDF9000 | 0x800XX000                                         |
 
+## Notes
+
+### 2.0.0
+
+` Granule size for TTBR0*_EL1 is 4KB.`  
+` TTBR0_EL1 vmem starts at vaddr 0x0.`  
+` vmem end-addr for TTBR1_EL1 is 0xffffffffffffffff. vmem start-addr for TTBR1_EL1 is 0xFFFFFFF000000000.`  
+` T0SZ = 31. Hence, bit-size of the TTBR0*_EL1 vmem region is 33. (0x0000000200000000)`  
+` T1SZ = 28. Hence, bit-size of the TTBR1*_EL1 vmem region is 36. (0x0000001000000000)`  
+` `  
+` Note: ARM config for TTBR0 is presumably configured for userland later.`  
+` `  
+` See arm-doc for "Table D4-25 Translation table entry addresses when using the 4KB translation granule".`  
+` `  
+` See arm-doc for "Overview of VMSAv8-64 address translation using the 4KB translation granule".`  
+` `  
+` See arm-doc for "Table D4-11 TCR.TnSZ values and IA ranges, 4K granule with no concatenation of tables".`  
+` Both TTBR*_EL1 use "Initial lookup level" 1. Therefore, the TTBR*_EL1 tables are level1.`  
+` `  
+` Due to T*SZ, Stage1/Stage2 translation for the initial table(level1) are the same, except Stage2 uses hard-coded T0SZ.`  
+` Basically, the table is accessed as: ((u64*)tablebase)[<IA[y:30]>], where y = (37-T*SZ)+26. That is, starting at bit "y" ending(inclusive) at bit30. For TTBR0*_EL1, y = 32, while for TTBR1_EL1 y = 35.`  
+` Hence, for TTBR0, index=((vaddr>>30) & 0x7), and for TTBR1, index=((vaddr>>30) & 0x3f).`
+
+"Vector Base Address Register (EL1)" = 0xfffffff7ffc50800.
+
+The table for TTBR0 only contains the following:
+
+  - Vmem 0x80000000 is mapped to physmem 0x80000000, using a size loaded
+    from a register. This is only done when: "endaddr = 0x7fffffff +
+    size; if(endaddr \>= 0x80000001){...}"
+      - The size is loaded from: "(u32 \*0x70019050 & 0x3fff) \<\< 20;"
+      - The value written to the MMU-table descriptor is: "physaddr |
+        val | 0x709;". val is 1\<\<52 when "tmp\>\>34" is non-zero and
+        when "if((physaddr & 0x3c0000000) == 0)", otherwise val=0.
+        tmp=size at the start and increased by 0xffffffffc0000000 each
+        loop iteration. physaddr is increased by 0x40000000 each loop
+        iteration.
+
+TTBR1:
+
+  - vmem 0xFFFFFFF800000000 is mapped to physmem 0x80000000. Similar to
+    above, except tmp=0 due to wrap-around, etc. This also has
+    usermode/kernel XN enabled in the descriptor ORR-value. The
+    chunksize used when increasing addr is 0xfffffff840000000, with
+    another +=0x40000000 separate from the addr cmp for the loop.
+      - "endaddr = 0x3fffffff + (<size from above> |
+        0xfffffff800000000); enaddr = (endaddr & 0xffffffffc0000000)-1;
+        if(endaddr \>= 0xfffffff800000001){<map mem>}"
+
+<!-- end list -->
+
+  - Initializes level2 pagetable descriptor for vmem 0xFFFFFFF7C0000000.
+    descriptor = 0x3 | physaddr. physaddr is core-specific.
+  - Initializes level3 pagetable descriptor for vmem 0xFFFFFFF7FFC00000.
+    descriptor = 0x3 | physaddr. physaddr is core-specific.
+  - The content of the pagetable for the following level3 mmutables are
+    not initialized in the main mmutable-init func. descriptor =
+    0x8007c003(0x3 | <physaddr tablebase>). tablebase=0x8007c000.
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FEE00000. physaddr = tablebase + (0x1\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF000000. physaddr = tablebase + (0x2\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF200000. physaddr = tablebase + (0x3\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FFA00000. physaddr = tablebase + (0x7\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FEC00000. physaddr = tablebase.
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF400000. physaddr = tablebase + (0x4\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF600000. physaddr = tablebase + (0x5\<\<12).
+      - Initializes level3 pagetable descriptor for vmem
+        0xFFFFFFF7FF800000. physaddr = tablebase + (0x6\<\<12).
+
 # Secure Monitor
 
 Unless otherwise mentionned, block descriptors (in our case, the one
@@ -794,9 +869,9 @@ clients. Currently unused by the Switch.
 
 This carveout is controlled by the following MC registers:
 
-  - MC\_SECURITY\_CFG0
-  - MC\_SECURITY\_CFG1
-  - MC\_SECURITY\_CFG3
+    MC_SECURITY_CFG0
+    MC_SECURITY_CFG1
+    MC_SECURITY_CFG3
 
 ## VPR Carveout
 
@@ -806,11 +881,11 @@ NVDEC and HDA). Currently unused by the Switch.
 
 This carveout is controlled by the following MC registers:
 
-  - MC\_VIDEO\_PROTECT\_GPU\_OVERRIDE\_0
-  - MC\_VIDEO\_PROTECT\_GPU\_OVERRIDE\_1
-  - MC\_VIDEO\_PROTECT\_BOM
-  - MC\_VIDEO\_PROTECT\_SIZE\_MB
-  - MC\_VIDEO\_PROTECT\_REG\_CTRL
+    MC_VIDEO_PROTECT_GPU_OVERRIDE_0
+    MC_VIDEO_PROTECT_GPU_OVERRIDE_1
+    MC_VIDEO_PROTECT_BOM
+    MC_VIDEO_PROTECT_SIZE_MB
+    MC_VIDEO_PROTECT_REG_CTRL
 
 ## SEC Carveout
 
@@ -819,9 +894,9 @@ Defines a DRAM region that can only be accessed by the
 
 This carveout is controlled by the following MC registers:
 
-  - MC\_SEC\_CARVEOUT\_BOM
-  - MC\_SEC\_CARVEOUT\_SIZE\_MB
-  - MC\_SEC\_CARVEOUT\_REG\_CTRL
+    MC_SEC_CARVEOUT_BOM
+    MC_SEC_CARVEOUT_SIZE_MB
+    MC_SEC_CARVEOUT_REG_CTRL
 
 ## MTS Carveout
 
@@ -830,118 +905,146 @@ Switch.
 
 This carveout is controlled by the following MC registers:
 
-  - MC\_MTS\_CARVEOUT\_BOM
-  - MC\_MTS\_CARVEOUT\_SIZE\_MB
-  - MC\_MTS\_CARVEOUT\_ADR\_HI
-  - MC\_MTS\_CARVEOUT\_REG\_CTRL
+    MC_MTS_CARVEOUT_BOM
+    MC_MTS_CARVEOUT_SIZE_MB
+    MC_MTS_CARVEOUT_ADR_HI
+    MC_MTS_CARVEOUT_REG_CTRL
 
 ## Generalized Carveouts
 
 These carveouts can be freely configured for any client that supports
-them. By default, they are assigned as:
-
-  - GSC 1: NVDEC
-  - GSC 2: WPR1 (for GPU)
-  - GSC 3: WPR2 (for GPU)
-  - GSC 4: TSECA
-  - GSC 5: TSECB
-
-However, in the Switch's case they are currently assigned as:
-
-  - GSC 1: None
-  - GSC 2: GPU
-  - GSC 3: None
-  - GSC 4: Kernel (active)
-  - GSC 5: Kernel (unused)
+them.
 
 These carveouts are controlled by the following MC registers:
 
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_BOM
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_BOM\_HI
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_SIZE\_128KB
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS0
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS1
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS2
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS3
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_ACCESS4
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS0
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS1
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS2
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS3
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CLIENT\_FORCE\_INTERNAL\_ACCESS4
-  - MC\_SECURITY\_CARVEOUT1/2/3/4/5\_CFG0
+    MC_SECURITY_CARVEOUT1/2/3/4/5_BOM
+    MC_SECURITY_CARVEOUT1/2/3/4/5_BOM_HI
+    MC_SECURITY_CARVEOUT1/2/3/4/5_SIZE_128KB
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_ACCESS0
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_ACCESS1
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_ACCESS2
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_ACCESS3
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_ACCESS4
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS0
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS1
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS2
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS3
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS4
+    MC_SECURITY_CARVEOUT1/2/3/4/5_CFG0
 
-# Notes
+### GSC1
 
-## 2.0.0
+This carveout is, by default, for NVDEC. In the Switch's case, this
+carveout is not used.
 
-` Granule size for TTBR0*_EL1 is 4KB.`  
-` TTBR0_EL1 vmem starts at vaddr 0x0.`  
-` vmem end-addr for TTBR1_EL1 is 0xffffffffffffffff. vmem start-addr for TTBR1_EL1 is 0xFFFFFFF000000000.`  
-` T0SZ = 31. Hence, bit-size of the TTBR0*_EL1 vmem region is 33. (0x0000000200000000)`  
-` T1SZ = 28. Hence, bit-size of the TTBR1*_EL1 vmem region is 36. (0x0000001000000000)`  
-` `  
-` Note: ARM config for TTBR0 is presumably configured for userland later.`  
-` `  
-` See arm-doc for "Table D4-25 Translation table entry addresses when using the 4KB translation granule".`  
-` `  
-` See arm-doc for "Overview of VMSAv8-64 address translation using the 4KB translation granule".`  
-` `  
-` See arm-doc for "Table D4-11 TCR.TnSZ values and IA ranges, 4K granule with no concatenation of tables".`  
-` Both TTBR*_EL1 use "Initial lookup level" 1. Therefore, the TTBR*_EL1 tables are level1.`  
-` `  
-` Due to T*SZ, Stage1/Stage2 translation for the initial table(level1) are the same, except Stage2 uses hard-coded T0SZ.`  
-` Basically, the table is accessed as: ((u64*)tablebase)[<IA[y:30]>], where y = (37-T*SZ)+26. That is, starting at bit "y" ending(inclusive) at bit30. For TTBR0*_EL1, y = 32, while for TTBR1_EL1 y = 35.`  
-` Hence, for TTBR0, index=((vaddr>>30) & 0x7), and for TTBR1, index=((vaddr>>30) & 0x3f).`
+It is configured as follows:
 
-"Vector Base Address Register (EL1)" = 0xfffffff7ffc50800.
+    *(u32 *)MC_SECURITY_CARVEOUT1_BOM = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_BOM_HI = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_SIZE_128KB = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_FORCE_INTERNAL_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_FORCE_INTERNAL_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_FORCE_INTERNAL_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_FORCE_INTERNAL_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT1_CFG0 = 0x4000006;
 
-The table for TTBR0 only contains the following:
+### GSC2
 
-  - Vmem 0x80000000 is mapped to physmem 0x80000000, using a size loaded
-    from a register. This is only done when: "endaddr = 0x7fffffff +
-    size; if(endaddr \>= 0x80000001){...}"
-      - The size is loaded from: "(u32 \*0x70019050 & 0x3fff) \<\< 20;"
-      - The value written to the MMU-table descriptor is: "physaddr |
-        val | 0x709;". val is 1\<\<52 when "tmp\>\>34" is non-zero and
-        when "if((physaddr & 0x3c0000000) == 0)", otherwise val=0.
-        tmp=size at the start and increased by 0xffffffffc0000000 each
-        loop iteration. physaddr is increased by 0x40000000 each loop
-        iteration.
+This carveout is, by default and in the Switch's case, for the GPU
+(WPR1).
 
-TTBR1:
+It is configured as follows:
 
-  - vmem 0xFFFFFFF800000000 is mapped to physmem 0x80000000. Similar to
-    above, except tmp=0 due to wrap-around, etc. This also has
-    usermode/kernel XN enabled in the descriptor ORR-value. The
-    chunksize used when increasing addr is 0xfffffff840000000, with
-    another +=0x40000000 separate from the addr cmp for the loop.
-      - "endaddr = 0x3fffffff + (<size from above> |
-        0xfffffff800000000); enaddr = (endaddr & 0xffffffffc0000000)-1;
-        if(endaddr \>= 0xfffffff800000001){<map mem>}"
+    *(u32 *)MC_SECURITY_CARVEOUT2_BOM = 0x80020000;
+    *(u32 *)MC_SECURITY_CARVEOUT2_BOM_HI = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_SIZE_128KB = 2;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_ACCESS2 = 0x3000000;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_ACCESS4 = 0x300;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_FORCE_INTERNAL_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_FORCE_INTERNAL_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_FORCE_INTERNAL_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_FORCE_INTERNAL_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT2_CFG0 = 0x440167E;
 
-<!-- end list -->
+### GSC3
 
-  - Initializes level2 pagetable descriptor for vmem 0xFFFFFFF7C0000000.
-    descriptor = 0x3 | physaddr. physaddr is core-specific.
-  - Initializes level3 pagetable descriptor for vmem 0xFFFFFFF7FFC00000.
-    descriptor = 0x3 | physaddr. physaddr is core-specific.
-  - The content of the pagetable for the following level3 mmutables are
-    not initialized in the main mmutable-init func. descriptor =
-    0x8007c003(0x3 | <physaddr tablebase>). tablebase=0x8007c000.
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FEE00000. physaddr = tablebase + (0x1\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF000000. physaddr = tablebase + (0x2\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF200000. physaddr = tablebase + (0x3\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FFA00000. physaddr = tablebase + (0x7\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FEC00000. physaddr = tablebase.
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF400000. physaddr = tablebase + (0x4\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF600000. physaddr = tablebase + (0x5\<\<12).
-      - Initializes level3 pagetable descriptor for vmem
-        0xFFFFFFF7FF800000. physaddr = tablebase + (0x6\<\<12).
+This carveout is, by default, for the GPU (WPR2). In the Switch's case,
+this carveout is not used.
+
+It is configured as follows:
+
+    *(u32 *)MC_SECURITY_CARVEOUT3_BOM = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_BOM_HI = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_SIZE_128KB = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_ACCESS2 = 0x3000000;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_ACCESS4 = 0x300;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_FORCE_INTERNAL_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_FORCE_INTERNAL_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_FORCE_INTERNAL_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_FORCE_INTERNAL_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT3_CFG0 = 0x4401E7E;
+
+### GSC4
+
+This carveout is, by default, for TSECA. In the Switch's case, this
+carveout is used by the Kernel.
+
+It is initially configured as follows:
+
+    *(u32 *)MC_SECURITY_CARVEOUT4_BOM = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_BOM_HI = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_SIZE_128KB = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_FORCE_INTERNAL_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_FORCE_INTERNAL_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_FORCE_INTERNAL_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_FORCE_INTERNAL_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT4_CFG0 = 0x8F;
+
+Then further configured using
+[smcConfigureCarveout](SMC#ConfigureCarveout.md##ConfigureCarveout "wikilink").
+
+### GSC5
+
+This carveout is, by default, for TSECB. In the Switch's case, this
+carveout is reserved for the Kernel.
+
+It is initially configured as follows:
+
+    *(u32 *)MC_SECURITY_CARVEOUT5_BOM = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_BOM_HI = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_SIZE_128KB = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS0 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS1 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS2 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS3 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
+    *(u32 *)MC_SECURITY_CARVEOUT5_CFG0 = 0x8F;
+
+It can be further configured using
+[smcConfigureCarveout](SMC#ConfigureCarveout.md##ConfigureCarveout "wikilink"),
+but it's currently unused.
