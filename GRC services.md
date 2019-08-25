@@ -206,7 +206,7 @@ is used instead.
 
 ## CompleteOffscreenRecordingFinishEx0
 
-Takes two input u32s **width**/**height**, an input u64 **LayerHandle**
+Takes two input s32s **width**/**height**, an input u64 **LayerHandle**
 and 2 type-0x5 input buffers, no output.
 
 The input buffers are optional, addr=NULL and size=0 can be used for
@@ -221,8 +221,9 @@ except the second buffer is user-specified instead of addr=NULL/size=0.
 
 ## CompleteOffscreenRecordingFinishEx1
 
-Takes two input u32s **width**/**height**, an input u64 **LayerHandle**
-and two type-0x5 input buffers, returns a 0x20-byte output struct.
+Takes two input s32s **width**/**height**, an input u64 **LayerHandle**
+and two type-0x5 input buffers, returns an output
+[ApplicationAlbumEntry](Capture%20services.md "wikilink").
 
 Same as
 [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
