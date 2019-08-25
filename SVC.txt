@@ -211,7 +211,8 @@ R0=dev_map_addr_lower32, R1=dev_as_handle, R2=proc_handle, R3=dev_map_addr_upper
 R0=result, R1=mapped_size
 |-
 | 0x5C || [[#svcUnmapDeviceAddressSpace]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr
-R0=dev_as_handle, R1=proc_handle, R2=dev_map_addr_lower32, R3=dev_map_addr_upper32, R4=dev_as_size, R5=dev_as_addr_lower32, R6=dev_as_addr_upper32 || W0=result
+R0=dev_as_handle, R1=proc_handle, R2=dev_map_addr_lower32, R3=dev_map_addr_upper32, R4=dev_as_size, R5=dev_as_addr_lower32, R6=dev_as_addr_upper32
+|| W0=result
 |-
 | 0x5D || svcInvalidateProcessDataCache || W0=process_handle, X1=addr, X2=size || W0=size
 |-
