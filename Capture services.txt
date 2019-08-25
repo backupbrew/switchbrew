@@ -123,7 +123,7 @@ This is "nn::capsrv::sf::IAlbumControlService", previously "nn::capsrv::sf::ICap
 |-
 | [1.0.0] 2 || || 
 |-
-| 33 || [7.0.0+] || Takes a total of 0x10-bytes of input, no output.
+| 33 || [7.0.0+] || 
 |-
 | [1.0.0] 1001 || || 
 |-
@@ -157,6 +157,11 @@ This is "nn::capsrv::sf::IAlbumControlService", previously "nn::capsrv::sf::ICap
 |-
 | 60001 || [4.0.0+] || Takes a total of 8-bytes of input and a PID, returns an [[#IAlbumControlSession]].
 |}
+
+=== Cmd33 ===
+Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and a PID, no output.
+
+This is used by [[Applet_Manager_services|caps:su]] SetShimLibraryVersion.
 
 == IAlbumControlSession ==
 This is "nn::capsrv::sf::IAlbumControlSession".
@@ -253,7 +258,7 @@ This was added with [5.0.0+].
 |}
 
 == SetShimLibraryVersion ==
-Takes a total of 0x10-bytes of input and a PID, no output.
+Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and a PID, no output.
 
 == IAlbumAccessorApplicationSession ==
 This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
@@ -274,6 +279,11 @@ This was added with [5.0.0+].
 |-
 | 2005 || GetAlbumMovieReadStreamBrokenReason
 |}
+
+= ShimLibraryVersion =
+This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands.
+
+[7.0.0-8.1.0] This is value 1.
 
 = AlbumEntry =
 {| class="wikitable" border="1"

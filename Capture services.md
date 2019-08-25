@@ -77,7 +77,7 @@ This is "nn::capsrv::sf::IAlbumControlService", previously
 | -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
 | \[1.0.0\] 1          |            |                                                                                                                     |
 | \[1.0.0\] 2          |            |                                                                                                                     |
-| 33                   | \[7.0.0+\] | Takes a total of 0x10-bytes of input, no output.                                                                    |
+| 33                   | \[7.0.0+\] |                                                                                                                     |
 | \[1.0.0\] 1001       |            |                                                                                                                     |
 | \[1.0.0\] 1002       |            |                                                                                                                     |
 | \[1.0.0\] 1011       |            |                                                                                                                     |
@@ -94,6 +94,16 @@ This is "nn::capsrv::sf::IAlbumControlService", previously
 | 2301                 | \[2.0.0+\] |                                                                                                                     |
 | 2302                 | \[4.0.0+\] |                                                                                                                     |
 | 60001                | \[4.0.0+\] | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
+
+### Cmd33
+
+Takes an input u64
+[\#ShimLibraryVersion](#ShimLibraryVersion "wikilink"), an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and a PID, no output.
+
+This is used by [caps:su](Applet%20Manager%20services.md "wikilink")
+SetShimLibraryVersion.
 
 ## IAlbumControlSession
 
@@ -152,7 +162,10 @@ This was added with \[5.0.0+\].
 
 ## SetShimLibraryVersion
 
-Takes a total of 0x10-bytes of input and a PID, no output.
+Takes an input u64
+[\#ShimLibraryVersion](#ShimLibraryVersion "wikilink"), an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and a PID, no output.
 
 ## IAlbumAccessorApplicationSession
 
@@ -167,6 +180,14 @@ This was added with \[5.0.0+\].
 | 2003 | GetAlbumMovieReadStreamMovieDataSize  |
 | 2004 | ReadMovieDataFromAlbumMovieReadStream |
 | 2005 | GetAlbumMovieReadStreamBrokenReason   |
+
+# ShimLibraryVersion
+
+This is a version field. Official sw uses func
+`nn::capsrv::GetShimLibraryVersion()` to load this from a global var,
+which is then used with various commands.
+
+\[7.0.0-8.1.0\] This is value 1.
 
 # AlbumEntry
 
