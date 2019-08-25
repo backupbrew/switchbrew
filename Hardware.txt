@@ -50,6 +50,8 @@
 | PMIC || Maxim Integrated MAX77620AEWJ+T 
 |-
 | Audio || Realtek ALC5639
+|-
+| GC ASIC || B1633 GCBRG HAC STD T1001216
 |}
 
 == Nintendo Switch Mariko ==
@@ -70,6 +72,8 @@
 | PMIC || Maxim Integrated MAX77812
 |-
 | Audio || Realtek ALC5639
+|-
+| GC ASIC || B1834 GCBRG HAC STD T1439218
 |}
 
 == Nintendo Switch Lite ==
@@ -90,6 +94,8 @@
 | PMIC || Maxim Integrated MAX77812
 |-
 | Audio ||
+|-
+| GC ASIC ||
 |}
 
 = eMMC Pinout =

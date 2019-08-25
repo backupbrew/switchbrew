@@ -64,6 +64,10 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 <td><p>Audio</p></td>
 <td><p>Realtek ALC5639</p></td>
 </tr>
+<tr class="even">
+<td><p>GC ASIC</p></td>
+<td><p>B1633 GCBRG HAC STD T1001216</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -78,6 +82,7 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 | Wifi/BT   |                                                          |
 | PMIC      | Maxim Integrated MAX77812                                |
 | Audio     | Realtek ALC5639                                          |
+| GC ASIC   | B1834 GCBRG HAC STD T1439218                             |
 
 ## Nintendo Switch Lite
 
@@ -90,6 +95,7 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 | Wifi/BT   |                                                          |
 | PMIC      | Maxim Integrated MAX77812                                |
 | Audio     |                                                          |
+| GC ASIC   |                                                          |
 
 # eMMC Pinout
 
