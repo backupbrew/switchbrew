@@ -83,8 +83,8 @@
 | 0x56 | [\#svcCreateDeviceAddressSpace](#svcCreateDeviceAddressSpace "wikilink")           | X1=dev\_as\_start\_addr, X2=dev\_as\_end\_addr R0=dev\_as\_end\_addr\_lower32, R1=dev\_as\_end\_addr\_upper32, R2=dev\_as\_start\_addr\_lower32, R3=dev\_as\_start\_addr\_upper32                                                                                                              | W0=result, W1=dev\_as\_handle                                                      |
 | 0x57 | [\#svcAttachDeviceAddressSpace](#svcAttachDeviceAddressSpace "wikilink")           | W0=device, X1=dev\_as\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
 | 0x58 | [\#svcDetachDeviceAddressSpace](#svcDetachDeviceAddressSpace "wikilink")           | W0=device, X1=dev\_as\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                          |
-| 0x59 | [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm                                                                                                                                                                                            | W0=result                                                                          |
-| 0x5A | [\#svcMapDeviceAddressSpaceAligned](#svcMapDeviceAddressSpaceAligned "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm                                                                                                                                                                                            | W0=result                                                                          |
+| 0x59 | [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm R0=dev\_as\_handle, R1=proc\_handle, R2=dev\_map\_addr\_lower32, R3=dev\_map\_addr\_upper32, R4=rev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32, R7=perm               | W0=result                                                                          |
+| 0x5A | [\#svcMapDeviceAddressSpaceAligned](#svcMapDeviceAddressSpaceAligned "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm R0=dev\_as\_handle, R1=proc\_handle, R2=dev\_map\_addr\_lower32, R3=dev\_map\_addr\_upper32, R4=rev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32, R7=perm               | W0=result                                                                          |
 | 0x5B | svcMapDeviceAddressSpace                                                           |                                                                                                                                                                                                                                                                                                |                                                                                    |
 | 0x5C | [\#svcUnmapDeviceAddressSpace](#svcUnmapDeviceAddressSpace "wikilink")             | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr                                                                                                                                                                                                     | W0=result                                                                          |
 | 0x5D | svcInvalidateProcessDataCache                                                      | W0=process\_handle, X1=addr, X2=size                                                                                                                                                                                                                                                           | W0=size                                                                            |
@@ -1066,15 +1066,15 @@ normally set to 0xFFFFFFFF.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name           |
-| -------- | -------------------------------------- | -------------- |
-| (In) W0  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
-| (In) W1  | Handle<Process>                        | ProcessHandle  |
-| (In) X2  | void\*                                 | SrcAddr        |
-| (In) X3  | u64                                    | DeviceAsSize   |
-| (In) X4  | u64                                    | DeviceAsAddr   |
-| (In) W5  | [\#Permission](#Permission "wikilink") | Permissions    |
-| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
+| Argument64 | Argument32 | Type                                   | Name           |
+| ---------- | ---------- | -------------------------------------- | -------------- |
+| (In) W0    | R0         | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (In) W1    | R1         | Handle<Process>                        | ProcessHandle  |
+| (In) X2    | R2, R3     | void\*                                 | SrcAddr        |
+| (In) X3    | R4         | u64                                    | DeviceAsSize   |
+| (In) X4    | R5, R6     | u64                                    | DeviceAsAddr   |
+| (In) W5    | R7         | [\#Permission](#Permission "wikilink") | Permissions    |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 
@@ -1095,15 +1095,15 @@ will be set after mapping.
 
 <div style="display: inline-block;">
 
-| Argument | Type                                   | Name           |
-| -------- | -------------------------------------- | -------------- |
-| (In) W0  | Handle<DeviceAddressSpace>             | DeviceAsHandle |
-| (In) W1  | Handle<Process>                        | ProcessHandle  |
-| (In) X2  | void\*                                 | SrcAddr        |
-| (In) X3  | u64                                    | DeviceAsSize   |
-| (In) X4  | u64                                    | DeviceAsAddr   |
-| (In) W5  | [\#Permission](#Permission "wikilink") | Permissions    |
-| (Out) W0 | [\#Result](#Result "wikilink")         | Ret            |
+| Argument64 | Argument32 | Type                                   | Name           |
+| ---------- | ---------- | -------------------------------------- | -------------- |
+| (In) W0    | R0         | Handle<DeviceAddressSpace>             | DeviceAsHandle |
+| (In) W1    | R1         | Handle<Process>                        | ProcessHandle  |
+| (In) X2    | R2, R3     | void\*                                 | SrcAddr        |
+| (In) X3    | R4         | u64                                    | DeviceAsSize   |
+| (In) X4    | R5, R6     | u64                                    | DeviceAsAddr   |
+| (In) W5    | R7         | [\#Permission](#Permission "wikilink") | Permissions    |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink")         | Ret            |
 
 </div>
 

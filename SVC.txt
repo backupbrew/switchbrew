@@ -197,9 +197,13 @@ R0=dev_as_end_addr_lower32, R1=dev_as_end_addr_upper32, R2=dev_as_start_addr_low
 |-
 | 0x58 || [[#svcDetachDeviceAddressSpace]] || W0=device, X1=dev_as_handle || W0=result
 |-
-| 0x59 || [[#svcMapDeviceAddressSpaceByForce]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
+| 0x59 || [[#svcMapDeviceAddressSpaceByForce]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm
+R0=dev_as_handle, R1=proc_handle, R2=dev_map_addr_lower32, R3=dev_map_addr_upper32, R4=rev_as_size, R5=dev_as_addr_lower32, R6=dev_as_addr_upper32, R7=perm
+|| W0=result 
 |-
-| 0x5A || [[#svcMapDeviceAddressSpaceAligned]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm || W0=result 
+| 0x5A || [[#svcMapDeviceAddressSpaceAligned]] || W0=dev_as_handle, W1=proc_handle, X2=dev_map_addr, X3=dev_as_size, X4=dev_as_addr, W5=perm
+R0=dev_as_handle, R1=proc_handle, R2=dev_map_addr_lower32, R3=dev_map_addr_upper32, R4=rev_as_size, R5=dev_as_addr_lower32, R6=dev_as_addr_upper32, R7=perm
+|| W0=result 
 |-
 | 0x5B || svcMapDeviceAddressSpace || || 
 |-
@@ -1262,21 +1266,21 @@ dev_as_start_addr is normally set to 0 and dev_as_end_addr is normally set to 0x
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || Handle<DeviceAddressSpace> || DeviceAsHandle
+| (In) W0 || R0 || Handle<DeviceAddressSpace> || DeviceAsHandle
 |-
-| (In) W1 || Handle<Process> || ProcessHandle
+| (In) W1 || R1 || Handle<Process> || ProcessHandle
 |-
-| (In) X2 || void* || SrcAddr
+| (In) X2 || R2, R3 || void* || SrcAddr
 |-
-| (In) X3 || u64 || DeviceAsSize
+| (In) X3 || R4 || u64 || DeviceAsSize
 |-
-| (In) X4 || u64 || DeviceAsAddr
+| (In) X4 || R5, R6 || u64 || DeviceAsAddr
 |-
-| (In) W5 || [[#Permission]] || Permissions
+| (In) W5 || R7 || [[#Permission]] || Permissions
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |}
 </div>
 
@@ -1291,21 +1295,21 @@ The userspace destination address must have the [[SVC#MemoryState|MapDeviceAllow
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || Handle<DeviceAddressSpace> || DeviceAsHandle
+| (In) W0 || R0 || Handle<DeviceAddressSpace> || DeviceAsHandle
 |-
-| (In) W1 || Handle<Process> || ProcessHandle
+| (In) W1 || R1 || Handle<Process> || ProcessHandle
 |-
-| (In) X2 || void* || SrcAddr
+| (In) X2 || R2, R3 || void* || SrcAddr
 |-
-| (In) X3 || u64 || DeviceAsSize
+| (In) X3 || R4 || u64 || DeviceAsSize
 |-
-| (In) X4 || u64 || DeviceAsAddr
+| (In) X4 || R5, R6 || u64 || DeviceAsAddr
 |-
-| (In) W5 || [[#Permission]] || Permissions
+| (In) W5 || R7 || [[#Permission]] || Permissions
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |}
 </div>
 
