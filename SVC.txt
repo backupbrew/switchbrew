@@ -262,7 +262,10 @@ R0=debug_handle, R1=ThreadContext*, R2=thread_id_lower32, R3=thread_id_upper32, 
 R0=HardwareBreakpointId, R1=value_lower32, R2=flags_lower32, R3=flags_upper32, R4=value_upper32
 || W0=result
 |-
-| 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]] || W0=result, X1=out0, W2=out1
+| 0x6D || svcGetDebugThreadParam || X2=debug_handle, X3=thread_id, W4=[[#DebugThreadParam]]
+R0=thread_id_lower32, R1=thread_id_upper32, R2=debug_handle, R3=[[#DebugThreadParam]]
+|| W0=result, X1=out0, W2=out1
+R0=result, R1=out0_lower32, R2=out0_upper32, R3=out1
 |- style="border-top: double"
 | 0x6F || [5.0.0+] [[#svcGetSystemInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
 |-
