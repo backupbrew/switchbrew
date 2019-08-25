@@ -226,7 +226,9 @@ R0=process_handle, R1=size_lower32, R2=addr_lower32, R3=addr_upper32, R4=size_up
 R0=process_handle, R1=size_lower32, R2=addr_lower32, R3=addr_upper32, R4=size_upper32
 || W0=size
 |-
-| 0x60 || svcDebugActiveProcess || X1=pid || W0=result, W1=debug_handle
+| 0x60 || svcDebugActiveProcess || X1=pid
+R2=pid_lower32, R3=pid_upper32
+|| W0=result, W1=debug_handle
 |-
 | 0x61 || svcBreakDebugProcess || W0=debug_handle || W0=result
 |-
