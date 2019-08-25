@@ -296,9 +296,13 @@ R0=dstaddr, R1=process_handle, R2=srcaddr_lower32, R3=srcaddr_upper32, R4=size
 R0=meminfo_ptr, R1=addr_lower32, R2=process_handle, R3=addr_upper32
 || W0=result, W1=pageinfo
 |-
-| 0x77 || [[#svcMapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x77 || [[#svcMapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size
+R0=process_handle, R1=srcaddr_lower32, R2=dstaddr_lower32, R3=dstaddr_upper32, R4=srcaddr_lower32, R5=size_lower32, R6=size_upper32
+|| W0=result
 |-
-| 0x78 || [[#svcUnmapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size || W0=result
+| 0x78 || [[#svcUnmapProcessCodeMemory]] || W0=process_handle, X1=dstaddr, X2=srcaddr, X3=size
+R0=process_handle, R1=srcaddr_lower32, R2=dstaddr_lower32, R3=dstaddr_upper32, R4=srcaddr_lower32, R5=size_lower32, R6=size_upper32
+|| W0=result
 |-
 | 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
 |-
@@ -1522,17 +1526,17 @@ Equivalent to [[#svcQueryMemory]] except takes a process handle.
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || Handle<Process> || ProcessHandle
+| (In) W0 || R0 || Handle<Process> || ProcessHandle
 |-
-| (In) X1 || u64 || DstAddr
+| (In) X1 || R2, R3 || u64 || DstAddr
 |-
-| (In) X2 || u64 || SrcAddr
+| (In) X2 || R1, R4 || u64 || SrcAddr
 |-
-| (In) X3 || u64 || Size
+| (In) X3 || R5, R6 || u64 || Size
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |}
 </div>
 
@@ -1543,17 +1547,17 @@ Takes a process handle, and maps normal heap in that process as executable code 
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || Handle<Process> || ProcessHandle
+| (In) W0 || R0 || Handle<Process> || ProcessHandle
 |-
-| (In) X1 || u64 || DstAddr
+| (In) X1 || R2, R3 || u64 || DstAddr
 |-
-| (In) X2 || u64 || SrcAddr
+| (In) X2 || R1, R4 || u64 || SrcAddr
 |-
-| (In) X3 || u64 || Size
+| (In) X3 || R5, R6 || u64 || Size
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (Out) W0 || R0 || [[#Result]] || Ret
 |}
 </div>
 
