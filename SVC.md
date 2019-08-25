@@ -108,10 +108,10 @@
 | 0x70 | svcCreatePort                                                                      | W2=max\_sessions, W3=is\_light, X4=name\_ptr R0=name\_ptr, R2=max\_sessions, R3=is\_light                                                                                                                                                                                                      | W0=result, W1=serverport\_handle, W2=clientport\_handle                            |
 | 0x71 | svcManageNamedPort                                                                 | X1=name\_ptr, W2=max\_sessions                                                                                                                                                                                                                                                                 | W0=result, W1=serverport\_handle                                                   |
 | 0x72 | svcConnectToPort                                                                   | W1=clientport\_handle                                                                                                                                                                                                                                                                          | W0=result, W1=session\_handle                                                      |
-| 0x73 | [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink")       | W0=process\_handle, X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                                  | W0=result                                                                          |
-| 0x74 | [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           | X0=dstaddr, W1=process\_handle, X2=srcaddr, X3=size                                                                                                                                                                                                                                            | W0=result                                                                          |
-| 0x75 | [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       | X0=dstaddr, W1=process\_handle, X2=srcaddr, X3=size                                                                                                                                                                                                                                            | W0=result                                                                          |
-| 0x76 | [\#svcQueryProcessMemory](#svcQueryProcessMemory "wikilink")                       | X0=meminfo\_ptr, W2=process\_handle, X3=addr                                                                                                                                                                                                                                                   | W0=result, W1=pageinfo                                                             |
+| 0x73 | [\#svcSetProcessMemoryPermission](#svcSetProcessMemoryPermission "wikilink")       | W0=process\_handle, X1=addr, X2=size, W3=perm R0=process\_handle, R1=size\_lower32, R2=addr\_lower32, R3=addr\_upper32, R4=size\_upper32, R5=perm                                                                                                                                              | W0=result                                                                          |
+| 0x74 | [\#svcMapProcessMemory](#svcMapProcessMemory "wikilink")                           | X0=dstaddr, W1=process\_handle, X2=srcaddr, X3=size R0=dstaddr, R1=process\_handle, R2=srcaddr\_lower32, R3=srcaddr\_upper32, R4=size                                                                                                                                                          | W0=result                                                                          |
+| 0x75 | [\#svcUnmapProcessMemory](#svcUnmapProcessMemory "wikilink")                       | X0=dstaddr, W1=process\_handle, X2=srcaddr, X3=size R0=dstaddr, R1=process\_handle, R2=srcaddr\_lower32, R3=srcaddr\_upper32, R4=size                                                                                                                                                          | W0=result                                                                          |
+| 0x76 | [\#svcQueryProcessMemory](#svcQueryProcessMemory "wikilink")                       | X0=meminfo\_ptr, W2=process\_handle, X3=addr R0=meminfo\_ptr, R1=addr\_lower32, R2=process\_handle, R3=addr\_upper32                                                                                                                                                                           | W0=result, W1=pageinfo                                                             |
 | 0x77 | [\#svcMapProcessCodeMemory](#svcMapProcessCodeMemory "wikilink")                   | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                                                                                                                                                                                                            | W0=result                                                                          |
 | 0x78 | [\#svcUnmapProcessCodeMemory](#svcUnmapProcessCodeMemory "wikilink")               | W0=process\_handle, X1=dstaddr, X2=srcaddr, X3=size                                                                                                                                                                                                                                            | W0=result                                                                          |
 | 0x79 | [\#svcCreateProcess](#svcCreateProcess "wikilink")                                 | X1=procinfo\_ptr, X2=caps\_ptr, W3=cap\_num                                                                                                                                                                                                                                                    | W0=result, W1=process\_handle                                                      |
@@ -1176,13 +1176,13 @@ userspace address.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) W0  | Handle<Process>                | ProcessHandle |
-| (In) X1  | u64                            | Addr          |
-| (In) X2  | u64                            | Size          |
-| (In) W3  | void\*                         | Perm          |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
+| Argument64 | Argument32 | Type                           | Name          |
+| ---------- | ---------- | ------------------------------ | ------------- |
+| (In) W0    | R0         | Handle<Process>                | ProcessHandle |
+| (In) X1    | R2, R3     | u64                            | Addr          |
+| (In) X2    | R1, R4     | u64                            | Size          |
+| (In) W3    | R5         | void\*                         | Perm          |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -1196,13 +1196,13 @@ RWX are not allowed.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X0  | u64                            | DstAddr       |
-| (In) W1  | Handle<Process>                | ProcessHandle |
-| (In) X2  | void\*                         | SrcAddr       |
-| (In) X3  | u64                            | Size          |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
+| Argument64 | Argument32 | Type                           | Name          |
+| ---------- | ---------- | ------------------------------ | ------------- |
+| (In) X0    | R0         | u64                            | DstAddr       |
+| (In) W1    | R1         | Handle<Process>                | ProcessHandle |
+| (In) X2    | R2, R3     | void\*                         | SrcAddr       |
+| (In) X3    | R4         | u64                            | Size          |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -1215,13 +1215,13 @@ This allows mapping code and rodata with RW- permission.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name          |
-| -------- | ------------------------------ | ------------- |
-| (In) X0  | void\*                         | DstAddr       |
-| (In) W1  | Handle<Process>                | ProcessHandle |
-| (In) X2  | u64                            | SrcAddr       |
-| (In) X3  | u64                            | Size          |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret           |
+| Argument64 | Argument32 | Type                           | Name          |
+| ---------- | ---------- | ------------------------------ | ------------- |
+| (In) X0    | R0         | void\*                         | DstAddr       |
+| (In) W1    | R1         | Handle<Process>                | ProcessHandle |
+| (In) X2    | R2, R3     | u64                            | SrcAddr       |
+| (In) X3    | R4         | u64                            | Size          |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret           |
 
 </div>
 
@@ -1232,13 +1232,13 @@ Unmaps what was mapped by
 
 <div style="display: inline-block;">
 
-| Argument | Type                                     | Name          |
-| -------- | ---------------------------------------- | ------------- |
-| (In) X0  | [\#MemoryInfo](#MemoryInfo "wikilink")\* | MemInfoPtr    |
-| (In) W2  | Handle<Process>                          | ProcessHandle |
-| (In) X3  | u64                                      | Addr          |
-| (Out) W0 | [\#Result](#Result "wikilink")           | Ret           |
-| (Out) W1 | PageInfo                                 | PageInfo      |
+| Argument64 | Argument32 | Type                                     | Name          |
+| ---------- | ---------- | ---------------------------------------- | ------------- |
+| (In) X0    | R0         | [\#MemoryInfo](#MemoryInfo "wikilink")\* | MemInfoPtr    |
+| (In) W2    | R2         | Handle<Process>                          | ProcessHandle |
+| (In) X3    | R1, R3     | u64                                      | Addr          |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink")           | Ret           |
+| (Out) W1   | R1         | PageInfo                                 | PageInfo      |
 
 </div>
 
