@@ -100,15 +100,21 @@ Added with [6.0.0](6.0.0.md "wikilink").
 
 ## Cmd1
 
-Begins video stream. Can only be called once.
+Begins video stream. This must not be used more than once, even from a
+different service session: otherwise the sysmodule will assert.
 
 ## Cmd2
 
-Retrieves video data. Takes u32 "stream" (0: video, 1: audio), returns
-u32 (num\_frames?), u32 data\_size, u64 (start\_timestamp?). Video
-stream writes H.264 NAL units to the output buffer (try `ffplay -f
-h264`). Official code uses buffer size 0x32000 for video, 0x1000 for
-audio, and multiple threads to read out both streams at the same time.
+Retrieves stream data, from the video recording being done of the
+currently running game title. Takes u32 "stream" (0: video, 1: audio),
+returns u32 (num\_frames?), u32 data\_size, u64 (start\_timestamp?).
+Video stream writes H.264 NAL units to the output buffer (try `ffplay -f
+h264`). Audio stream is PCM16, 2 channels, and sample-rate = 48000Hz.
+Official code uses buffer size 0x32000 for video, 0x1000 for audio, and
+multiple threads to read out both streams at the same time.
+
+This will block until data is available. This will hang if there is no
+game title running which has video capture enabled.
 
 # IOffscreenRecorder
 
