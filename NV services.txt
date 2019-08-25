@@ -1058,7 +1058,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 {| class="wikitable" border="1"
 ! Path || Name
 |-
-| /dev/nvhost-gpu ||
+| /dev/nvhost-gpu || GPU
 |-
 | /dev/nvhost-vic || Video Image Compositor
 |-
@@ -1077,7 +1077,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0080003 || 8 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE || Seen on 1.0.0.
 |-
-| 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX || Seen on 1.0.0. Stubbed; does a debug print and returns 0.
+| 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_GET_MODMUTEX || Seen on 1.0.0. Stubbed; does a debug print and returns 0.
 |-
 | 0x40040007 || 4 || NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT || Seen on 1.0.0.
 |-
@@ -1087,9 +1087,17 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER || Seen on 1.0.0.
 |-
-| 0x00000013 || 0 || || Seen on 1.0.0. This one sets a u32, and bool based on input.
+| 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX || Seen on 1.0.0. This one sets a u32, and bool based on input.
 |-
-| 0xC0080014 || || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE || Seen on 1.0.0.
+| 0xC0080014 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE || Seen on 1.0.0.
+|-
+| 0xC0080023 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE_EX ||
+|-
+| 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX ||
+|-
+| 0xC0??0025 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX ||
+|-
+| 0xC0??0026 || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX ||
 |- style="border-top: double"
 | 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]] || Seen on 1.0.0.
 |-
@@ -1140,7 +1148,6 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 | 0xC018481C || 24 ||  || Uses Ioctl2.
 |-
 | 0xC004481D || 4 ||  ||
-|-
 |- style="border-top: double"
 | 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Seen on 1.0.0.
 |-

@@ -995,7 +995,7 @@ interface.
 
 | Path              | Name                   |
 | ----------------- | ---------------------- |
-| /dev/nvhost-gpu   |                        |
+| /dev/nvhost-gpu   | GPU                    |
 | /dev/nvhost-vic   | Video Image Compositor |
 | /dev/nvhost-nvdec | Video Decoder          |
 | /dev/nvhost-nvjpg | JPEG Decoder           |
@@ -1007,13 +1007,17 @@ interface.
 | 0xC0??0001 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT                                                                              | Seen on 1.0.0.                                               |
 | 0xC0080002 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT                                                                      | Seen on 1.0.0.                                               |
 | 0xC0080003 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE                                                                       | Seen on 1.0.0.                                               |
-| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    | Seen on 1.0.0. Stubbed; does a debug print and returns 0.    |
+| 0xC0080004 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_MODMUTEX                                                                       | Seen on 1.0.0. Stubbed; does a debug print and returns 0.    |
 | 0x40040007 | 4        | NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT                                                                | Seen on 1.0.0.                                               |
 | 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
 | 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER                                                                    | Seen on 1.0.0.                                               |
 | 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER                                                                  | Seen on 1.0.0.                                               |
-| 0x00000013 | 0        |                                                                                                             | Seen on 1.0.0. This one sets a u32, and bool based on input. |
-| 0xC0080014 |          | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
+| 0x00000013 | 0        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    | Seen on 1.0.0. This one sets a u32, and bool based on input. |
+| 0xC0080014 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE                                                                      | Seen on 1.0.0.                                               |
+| 0xC0080023 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE\_EX                                                                  |                                                              |
+| 0xC0??0024 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT\_EX                                                                          |                                                              |
+| 0xC0??0025 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER\_EX                                                                |                                                              |
+| 0xC0??0026 | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER\_EX                                                              |                                                              |
 | 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")                     | Seen on 1.0.0.                                               |
 | 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                         | Seen on 1.0.0.                                               |
 | 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")                      | Seen on 1.0.0.                                               |
@@ -1039,7 +1043,6 @@ interface.
 | 0xC018481B | 24       |                                                                                                             | Uses Ioctl2.                                                 |
 | 0xC018481C | 24       |                                                                                                             | Uses Ioctl2.                                                 |
 | 0xC004481D | 4        |                                                                                                             |                                                              |
-|            |          |                                                                                                             |                                                              |
 | 0x40084714 | 8        | NVGPU\_IOCTL\_CHANNEL\_SET\_USER\_DATA                                                                      | Seen on 1.0.0.                                               |
 | 0x80084715 | 8        | NVGPU\_IOCTL\_CHANNEL\_GET\_USER\_DATA                                                                      | Seen on 1.0.0.                                               |
 
