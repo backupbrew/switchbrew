@@ -151,7 +151,9 @@ No input, returns an [\#IHOSBinderDriver](#IHOSBinderDriver "wikilink").
 
 ## SetAlbumShimLibraryVersion
 
-Takes a total of 8-bytes of input, no output.
+Takes an input u64
+[ShimLibraryVersion](Capture%20services#ShimLibraryVersion.md##ShimLibraryVersion "wikilink"),
+no output.
 
 ## OpenOffscreenLayer
 

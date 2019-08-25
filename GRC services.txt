@@ -162,7 +162,7 @@ This was added with [5.0.0+].
 No input, returns an [[#IHOSBinderDriver]].
 
 == SetAlbumShimLibraryVersion ==
-Takes a total of 8-bytes of input, no output.
+Takes an input u64 [[Capture_services#ShimLibraryVersion|ShimLibraryVersion]], no output.
 
 == OpenOffscreenLayer ==
 Takes an input u64 '''LayerHandle''', returns an output u32.
