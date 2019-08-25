@@ -167,7 +167,9 @@ No input, returns an [[#IHOSBinderDriver]].
 Takes an input u64 [[Capture_services#ShimLibraryVersion|ShimLibraryVersion]], no output.
 
 == OpenOffscreenLayer ==
-Takes an input u64 '''LayerHandle''', returns an output u32.
+Takes an input u64 '''LayerHandle''', returns an output s32 '''ID'''.
+
+This gets the '''ID''' for the [[#IHOSBinderDriver]] returned by [[#CreateVideoProxy]].
 
 == CloseOffscreenLayer ==
 Takes an input u64 '''LayerHandle''', no output.

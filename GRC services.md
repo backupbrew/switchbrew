@@ -163,7 +163,11 @@ no output.
 
 ## OpenOffscreenLayer
 
-Takes an input u64 **LayerHandle**, returns an output u32.
+Takes an input u64 **LayerHandle**, returns an output s32 **ID**.
+
+This gets the **ID** for the
+[\#IHOSBinderDriver](#IHOSBinderDriver "wikilink") returned by
+[\#CreateVideoProxy](#CreateVideoProxy "wikilink").
 
 ## CloseOffscreenLayer
 
