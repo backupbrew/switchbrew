@@ -306,11 +306,16 @@ R0=process_handle, R1=srcaddr_lower32, R2=dstaddr_lower32, R3=dstaddr_upper32, R
 |-
 | 0x79 || [[#svcCreateProcess]] || X1=procinfo_ptr, X2=caps_ptr, W3=cap_num ||  W0=result, W1=process_handle
 |-
-| 0x7A || svcStartProcess || W0=process_handle, W1=main_thread_prio, W2=default_cpuid, W3=main_thread_stacksz || W0=result
+| 0x7A || svcStartProcess || W0=process_handle, W1=main_thread_prio, W2=default_cpuid, W3=main_thread_stacksz
+R0=process_handle, R1=main_thread_prio, R2=default_cpuid, R3=main_thread_stacksz_lower32, R4=main_thread_stacksz_upper32
+|| W0=result
 |-
 | 0x7B || svcTerminateProcess || W0=process_handle || W0=result
 |-
-| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle, W1=[[#ProcessInfoType]] || W0=result, X1=[[#ProcessState]]
+| 0x7C || [[#svcGetProcessInfo]] || W0=process_handle, W1=[[#ProcessInfoType]]
+R1=process_handle, R2=[[#ProcessInfoType]]
+|| W0=result, X1=[[#ProcessState]]
+R0=result, R1=[[#ProcessState]]_lower32, R2=[[#ProcessState]]_upper32
 |-
 | 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
 |-
@@ -1607,13 +1612,15 @@ CapabilitiesNum is a number of capabilities in the CapabilitiesPtr array (number
 <div style="display: inline-block;">
 {| class="wikitable" border="1"
 |-
-! Argument || Type || Name
+! Argument64 || Argument32 || Type || Name
 |-
-| (In) W0 || Handle<Process> || ProcessHandle
+| (In) W0 || R1 || Handle<Process> || ProcessHandle
 |-
-| (Out) W0 || [[#Result]] || Ret
+| (In) W1 || R2 || [[#ProcessInfoType]] || InfoType
 |-
-| (Out) W1 || [[#ProcessState]] || State
+| (Out) W0 || R0 || [[#Result]] || Ret
+|-
+| (Out) X1 || R1, R2 || [[#ProcessState]] || State
 |}
 </div>
 
