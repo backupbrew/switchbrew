@@ -267,7 +267,10 @@ R0=thread_id_lower32, R1=thread_id_upper32, R2=debug_handle, R3=[[#DebugThreadPa
 || W0=result, X1=out0, W2=out1
 R0=result, R1=out0_lower32, R2=out0_upper32, R3=out1
 |- style="border-top: double"
-| 0x6F || [5.0.0+] [[#svcGetSystemInfo]] || X1=info_id, X2=handle, X3=info_sub_id || W0=result, X1=out
+| 0x6F || [5.0.0+] [[#svcGetSystemInfo]] || X1=info_id, X2=handle, X3=info_sub_id
+R1=info_sub_id_lower32, R2=info_id, R3=handle, R4=info_sub_id_upper32
+|| W0=result, X1=out
+R0=result, R1=out_lower32, R2=out_upper32
 |-
 | 0x70 || svcCreatePort || W2=max_sessions, W3=is_light, X4=name_ptr || W0=result, W1=serverport_handle, W2=clientport_handle
 |-
