@@ -86,7 +86,7 @@
 | 0x59 | [\#svcMapDeviceAddressSpaceByForce](#svcMapDeviceAddressSpaceByForce "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm R0=dev\_as\_handle, R1=proc\_handle, R2=dev\_map\_addr\_lower32, R3=dev\_map\_addr\_upper32, R4=rev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32, R7=perm               | W0=result                                                                          |
 | 0x5A | [\#svcMapDeviceAddressSpaceAligned](#svcMapDeviceAddressSpaceAligned "wikilink")   | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr, W5=perm R0=dev\_as\_handle, R1=proc\_handle, R2=dev\_map\_addr\_lower32, R3=dev\_map\_addr\_upper32, R4=rev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32, R7=perm               | W0=result                                                                          |
 | 0x5B | svcMapDeviceAddressSpace                                                           | W1=dev\_as\_handle, W2=proc\_handle, X3=dev\_map\_addr, X4=dev\_as\_size, X5=dev\_as\_addr, W6=perm R0=dev\_map\_addr\_lower32, R1=dev\_as\_handle, R2=proc\_handle, R3=dev\_map\_addr\_upper32, R4=dev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32, R7=perm               | W0=result, X1=mapped\_size R0=result, R1=mapped\_size                              |
-| 0x5C | [\#svcUnmapDeviceAddressSpace](#svcUnmapDeviceAddressSpace "wikilink")             | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr                                                                                                                                                                                                     | W0=result                                                                          |
+| 0x5C | [\#svcUnmapDeviceAddressSpace](#svcUnmapDeviceAddressSpace "wikilink")             | W0=dev\_as\_handle, W1=proc\_handle, X2=dev\_map\_addr, X3=dev\_as\_size, X4=dev\_as\_addr R0=dev\_as\_handle, R1=proc\_handle, R2=dev\_map\_addr\_lower32, R3=dev\_map\_addr\_upper32, R4=dev\_as\_size, R5=dev\_as\_addr\_lower32, R6=dev\_as\_addr\_upper32                                 | W0=result                                                                          |
 | 0x5D | svcInvalidateProcessDataCache                                                      | W0=process\_handle, X1=addr, X2=size                                                                                                                                                                                                                                                           | W0=size                                                                            |
 | 0x5E | svcStoreProcessDataCache                                                           | W0=process\_handle, X1=addr, X2=size                                                                                                                                                                                                                                                           | W0=size                                                                            |
 | 0x5F | svcFlushProcessDataCache                                                           | W0=process\_handle, X1=addr, X2=size                                                                                                                                                                                                                                                           | W0=size                                                                            |
@@ -1120,14 +1120,14 @@ bit set instead.
 
 <div style="display: inline-block;">
 
-| Argument | Type                           | Name           |
-| -------- | ------------------------------ | -------------- |
-| (In) W0  | Handle<DeviceAddressSpace>     | DeviceAsHandle |
-| (In) W1  | Handle<Process>                | ProcessHandle  |
-| (In) X2  | void\*                         | SrcAddr        |
-| (In) X3  | u64                            | DeviceAsSize   |
-| (In) X4  | u64                            | DeviceAsAddr   |
-| (Out) W0 | [\#Result](#Result "wikilink") | Ret            |
+| Argument64 | Argument32 | Type                           | Name           |
+| ---------- | ---------- | ------------------------------ | -------------- |
+| (In) W0    | R0         | Handle<DeviceAddressSpace>     | DeviceAsHandle |
+| (In) W1    | R1         | Handle<Process>                | ProcessHandle  |
+| (In) X2    | R2, R3     | void\*                         | SrcAddr        |
+| (In) X3    | R4         | u64                            | DeviceAsSize   |
+| (In) X4    | R5, R6     | u64                            | DeviceAsAddr   |
+| (Out) W0   | R0         | [\#Result](#Result "wikilink") | Ret            |
 
 </div>
 
