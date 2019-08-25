@@ -320,7 +320,7 @@ R0=result, R1=[[#ProcessState]]_lower32, R2=[[#ProcessState]]_upper32
 | 0x7D || svcCreateResourceLimit || None || W0=result, W1=reslimit_handle 
 |-
 | 0x7E || svcSetResourceLimitLimitValue || W0=reslimit_handle, W1=[[#LimitableResource]], X2=value
-R0=reslimit_handle, R1=[[#LimitableResource], R2=value_lower32, R3=value_upper32
+R0=reslimit_handle, R1=[[#LimitableResource]], R2=value_lower32, R3=value_upper32
 || W0=result
 |-
 | 0x7F || [[#svcCallSecureMonitor]] || X0=smc_sub_id, X1,X2,X3,X4,X5,X6,X7=smc_args
