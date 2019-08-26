@@ -1286,6 +1286,7 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 == BIT ==
 During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preceding 0x100 bytes (IRAM memory range from 0x40000000 to 0x40000100) contain a structure called BIT (Boot Info Table) which encapsulates the BCT in IRAM and is initialized by the BootROM as follows:
 
+=== Erista ===
 {| class="wikitable" border="1"
 |-
 !  Offset
@@ -1329,24 +1330,31 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
 |  Set to 0x04 (SDMMC) on coldboot. 
 |-
 |  0x18
-|  0x04
-|  BootTimeLogInit
-|  Value from TIMERUS_CNTR_1US when the BootROM enters its main function.
-|-
-|  0x1C
-|  0x04
-|  BootTimeLogExit
-|  This is the value that gets written into SB_CSR before nvboot. (0x10)
-|-
-|  0x20
-|  0x04
-|  BootReadBctTickCnt
-|  Time spent reading the BCT.
-|-
-|  0x24
-|  0x04
-|  BootReadBLTickCnt
-|  Time spent parsing the bootloader info from the BCT.
+|  0x04*0x04
+|  BootTimeLog
+|  
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x04
+ |  BootTimeLogInit
+ |-
+ |  0x04
+ |  0x04
+ |  BootTimeLogExit
+ |-
+ |  0x08
+ |  0x04
+ |  BootReadBctTickCnt
+ |-
+ |  0x0C
+ |  0x04
+ |  BootReadBLTickCnt
+ |}
 |-
 |  0x28
 |  0x04
@@ -1423,7 +1431,7 @@ During boot, the BootROM saves the BCT in IRAM at address 0x40000100. The preced
 |  Pointer to the BCT in IRAM (0x40000100). 
 |-
 |  0x50
-|  0x18*4
+|  0x18*0x04
 |  BlState
 |  Contains the state of attempts to load each bootloader.
  {| class="wikitable" border="1"
@@ -1540,6 +1548,10 @@ For SDMMC, the following applies:
  |  0x01
  |  BootFromBootPartition
  |-
+ |  0x26
+ |  0x01
+ |  BootModeReadSuccessful
+ |-
  |  0x27
  |  0x15
  |  Reserved
@@ -1557,8 +1569,306 @@ For SDMMC, the following applies:
 |-
 |  0xF4
 |  0x0C
-|  Padding
+|  Reserved
 |  Must be empty.
+|}
+
+=== Mariko ===
+{| class="wikitable" border="1"
+|-
+!  Offset
+!  Size
+!  Field
+!  Description
+|-
+|  0x00
+|  0x04
+|  BootRomVersion
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
+|-
+|  0x04
+|  0x04
+|  DataVersion
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
+|-
+|  0x08
+|  0x04
+|  RcmVersion
+|  Set to 0x00210001 (BOOTDATA_VERSION_T210). 
+|-
+|  0x0C
+|  0x04
+|  BootType
+|
+ None = 0
+ Cold = 1
+ Recovery = 2
+ Uart = 3
+ ExitRcm = 4
+|-
+|  0x10
+|  0x04
+|  PrimaryDevice
+|  Set to 0x05 (IROM) on coldboot. 
+|-
+|  0x14
+|  0x04
+|  SecondaryDevice
+|  Set to 0x04 (SDMMC) on coldboot. 
+|-
+|  0x18
+|  0x04
+|  AuthenticationScheme
+|  
+|-
+|  0x1C
+|  0x01
+|  EncryptionEnabled
+|  
+|-
+|  0x1D
+|  0x03
+|  
+|  
+|-
+|  0x20
+|  0x04
+|  BootROMtracker
+|  
+|-
+|  0x24
+|  0x05*0x04
+|  BootTimeLog
+|  
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x04
+ |  BootTimeLogInit
+ |-
+ |  0x04
+ |  0x04
+ |  BootTimeLogExit
+ |-
+ |  0x08
+ |  0x04
+ |  BootSetupTickCnt
+ |-
+ |  0x0C
+ |  0x04
+ |  BootReadBctTickCnt
+ |-
+ |  0x10
+ |  0x04
+ |  BootReadBLTickCnt
+ |}
+|-
+|  0x38
+|  0x10*0x28
+|  BootFlowLog
+|  
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x04
+ |  BootFlowLogInit
+ |-
+ |  0x04
+ |  0x04
+ |  BootFlowLogExit
+ |-
+ |  0x08
+ |  0x04
+ |  BootFlowFuncId
+ |-
+ |  0x0C
+ |  0x04
+ |  BootFlowFuncStatus
+ |}
+|-
+|  0x2B8
+|  0x04
+|  OscFrequency
+|  Value from CLK_RST_CONTROLLER_OSC_CTRL. 
+|-
+|  0x2BC
+|  0x01
+|  DevInitialized
+|  Set to 1 after the boot device is initialized.
+|-
+|  0x2BD
+|  0x01
+|  SdramInitialized
+|  Set to 1 after the SDRAM parameters are parsed.
+|-
+|  0x2BE
+|  0x01
+|  ClearedForceRecovery
+|  Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.
+|-
+|  0x2BF
+|  0x01
+|  ClearedFailBack
+|  Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.
+|-
+|  0x2C0
+|  0x01
+|  InvokedFailBack
+|  Set to 1 if the bootloaders have different versions in the BCT.
+|-
+|  0x2C1
+|  0x01
+|  IRomPatchStatus
+|  
+|-
+|  0x2C2
+|  0x01
+|  BctSizeValid
+|  
+|-
+|  0x2C3
+|  0x09
+|  BctSizeStatus
+|  
+|-
+|  0x2CC
+|  0x04
+|  BctSizeLastJournalRead
+|  
+|-
+|  0x2D0
+|  0x04
+|  BctSizeBlock
+|  
+|-
+|  0x2D4
+|  0x04
+|  BctSizePage
+|  
+|-
+|  0x2D8
+|  0x01
+|  BctValid
+|  Set to 1 if the BCT was parsed successfully.
+|-
+|  0x2D9
+|  0x09
+|  BctStatus
+|  Each bit contains the status for BCT reads in a given block.
+|-
+|  0x2E2
+|  0x02
+|  
+|  
+|-
+|  0x2E4
+|  0x04
+|  BctLastJournalRead
+|  Contains the status of the last journal block read.
+ None = 0
+ Success = 1
+ ValidationFailure = 2
+ DeviceReadError = 3
+|-
+|  0x2E8
+|  0x04
+|  BctBlock
+|  Block number where the BCT was found.
+|-
+|  0x2EC
+|  0x04
+|  BctPage
+|  Page number where the BCT was found.
+|-
+|  0x2F0
+|  0x04
+|  BctSize
+|  Size of the BCT in IRAM. 
+|-
+|  0x2F4
+|  0x04
+|  BctPtr
+|  Pointer to the BCT in IRAM. 
+|-
+|  0x2F8
+|  0x18*0x04
+|  BlState
+|  Contains the state of attempts to load each bootloader.
+ {| class="wikitable" border="1"
+ |-
+ !  Offset
+ !  Size
+ !  Field
+ |-
+ |  0x00
+ |  0x04
+ |  Status
+ |-
+ |  0x04
+ |  0x04
+ |  FirstEccBlock
+ |-
+ |  0x08
+ |  0x04
+ |  FirstEccPage
+ |-
+ |  0x0C
+ |  0x04
+ |  FirstCorrectedEccBlock
+ |-
+ |  0x10
+ |  0x04
+ |  FirstCorrectedEccPage
+ |-
+ |  0x14
+ |  0x01
+ |  HadEccError
+ |-
+ |  0x15
+ |  0x01
+ |  HadCrcError
+ |-
+ |  0x16
+ |  0x01
+ |  HadCorrectedEccError
+ |-
+ |  0x17
+ |  0x01
+ |  UsedForEccRecovery 
+ |}
+|-
+|  0x358
+|  0x100
+|  SecondaryDevStatus
+|  Structure to hold secondary boot device status.
+|-
+|  0x458
+|  0x03
+|  
+|  
+|-
+|  0x45B
+|  0x04
+|  UsbChargingStatus
+|  
+|-
+|  0x45F
+|  0x01
+|  PmuBootSelReadError
+|  
+|-
+|  0x460
+|  0x04
+|  SafeStartAddr
+|  Pointer to the end of the BCT in IRAM.
 |}
 
 = Carveouts =

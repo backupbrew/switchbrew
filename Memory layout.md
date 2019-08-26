@@ -507,6 +507,8 @@ The preceding 0x100 bytes (IRAM memory range from 0x40000000 to
 encapsulates the BCT in IRAM and is initialized by the BootROM as
 follows:
 
+### Erista
+
 <table>
 <thead>
 <tr class="header">
@@ -559,83 +561,95 @@ follows:
 </tr>
 <tr class="odd">
 <td><p>0x18</p></td>
+<td><p>0x04*0x04</p></td>
+<td><p>BootTimeLog</p></td>
+<td><table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
 <td><p>0x04</p></td>
 <td><p>BootTimeLogInit</p></td>
-<td><p>Value from TIMERUS_CNTR_1US when the BootROM enters its main function.</p></td>
 </tr>
 <tr class="even">
-<td><p>0x1C</p></td>
+<td><p>0x04</p></td>
 <td><p>0x04</p></td>
 <td><p>BootTimeLogExit</p></td>
-<td><p>This is the value that gets written into SB_CSR before nvboot. (0x10)</p></td>
 </tr>
 <tr class="odd">
-<td><p>0x20</p></td>
+<td><p>0x08</p></td>
 <td><p>0x04</p></td>
 <td><p>BootReadBctTickCnt</p></td>
-<td><p>Time spent reading the BCT.</p></td>
 </tr>
 <tr class="even">
-<td><p>0x24</p></td>
+<td><p>0x0C</p></td>
 <td><p>0x04</p></td>
 <td><p>BootReadBLTickCnt</p></td>
-<td><p>Time spent parsing the bootloader info from the BCT.</p></td>
 </tr>
-<tr class="odd">
+</tbody>
+</table></td>
+</tr>
+<tr class="even">
 <td><p>0x28</p></td>
 <td><p>0x04</p></td>
 <td><p>OscFrequency</p></td>
 <td><p>Value from CLK_RST_CONTROLLER_OSC_CTRL.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x2C</p></td>
 <td><p>0x01</p></td>
 <td><p>DevInitialized</p></td>
 <td><p>Set to 1 after the boot device is initialized.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x2D</p></td>
 <td><p>0x01</p></td>
 <td><p>SdramInitialized</p></td>
 <td><p>Set to 1 after the SDRAM parameters are parsed.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x2E</p></td>
 <td><p>0x01</p></td>
 <td><p>ClearedForceRecovery</p></td>
 <td><p>Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x2F</p></td>
 <td><p>0x01</p></td>
 <td><p>ClearedFailBack</p></td>
 <td><p>Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x30</p></td>
 <td><p>0x01</p></td>
 <td><p>InvokedFailBack</p></td>
 <td><p>Set to 1 if the bootloaders have different versions in the BCT.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x31</p></td>
 <td><p>0x01</p></td>
 <td><p>IRomPatchStatus</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x32</p></td>
 <td><p>0x01</p></td>
 <td><p>BctValid</p></td>
 <td><p>Set to 1 if the BCT was parsed successfully.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x33</p></td>
 <td><p>0x09</p></td>
 <td><p>BctStatus</p></td>
 <td><p>Each bit contains the status for BCT reads in a given block.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x3C</p></td>
 <td><p>0x04</p></td>
 <td><p>BctLastJournalRead</p></td>
@@ -645,33 +659,33 @@ follows:
 <code>ValidationFailure = 2</code><br />
 <code>DeviceReadError = 3</code></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x40</p></td>
 <td><p>0x04</p></td>
 <td><p>BctBlock</p></td>
 <td><p>Block number where the BCT was found.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x44</p></td>
 <td><p>0x04</p></td>
 <td><p>BctPage</p></td>
 <td><p>Page number where the BCT was found.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x48</p></td>
 <td><p>0x04</p></td>
 <td><p>BctSize</p></td>
 <td><p>Size of the BCT in IRAM (0x2800).</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0x4C</p></td>
 <td><p>0x04</p></td>
 <td><p>BctPtr</p></td>
 <td><p>Pointer to the BCT in IRAM (0x40000100).</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0x50</p></td>
-<td><p>0x18*4</p></td>
+<td><p>0x18*0x04</p></td>
 <td><p>BlState</p></td>
 <td><p>Contains the state of attempts to load each bootloader.</p>
 <table>
@@ -731,7 +745,7 @@ follows:
 </tbody>
 </table></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0xB0</p></td>
 <td><p>0x3C</p></td>
 <td><p>SecondaryDevStatus</p></td>
@@ -821,6 +835,11 @@ follows:
 <td><p>BootFromBootPartition</p></td>
 </tr>
 <tr class="even">
+<td><p>0x26</p></td>
+<td><p>0x01</p></td>
+<td><p>BootModeReadSuccessful</p></td>
+</tr>
+<tr class="odd">
 <td><p>0x27</p></td>
 <td><p>0x15</p></td>
 <td><p>Reserved</p></td>
@@ -828,23 +847,395 @@ follows:
 </tbody>
 </table></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0xEC</p></td>
 <td><p>0x04</p></td>
 <td><p>UsbChargingStatus</p></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0xF0</p></td>
 <td><p>0x04</p></td>
 <td><p>SafeStartAddr</p></td>
 <td><p>Pointer to the end of the BCT in IRAM (0x40002900).</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0xF4</p></td>
 <td><p>0x0C</p></td>
-<td><p>Padding</p></td>
+<td><p>Reserved</p></td>
 <td><p>Must be empty.</p></td>
+</tr>
+</tbody>
+</table>
+
+### Mariko
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
+<td><p>0x04</p></td>
+<td><p>BootRomVersion</p></td>
+<td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
+</tr>
+<tr class="even">
+<td><p>0x04</p></td>
+<td><p>0x04</p></td>
+<td><p>DataVersion</p></td>
+<td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x08</p></td>
+<td><p>0x04</p></td>
+<td><p>RcmVersion</p></td>
+<td><p>Set to 0x00210001 (BOOTDATA_VERSION_T210).</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0C</p></td>
+<td><p>0x04</p></td>
+<td><p>BootType</p></td>
+<td><p><code>None = 0</code><br />
+<code>Cold = 1</code><br />
+<code>Recovery = 2</code><br />
+<code>Uart = 3</code><br />
+<code>ExitRcm = 4</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>0x04</p></td>
+<td><p>PrimaryDevice</p></td>
+<td><p>Set to 0x05 (IROM) on coldboot.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x14</p></td>
+<td><p>0x04</p></td>
+<td><p>SecondaryDevice</p></td>
+<td><p>Set to 0x04 (SDMMC) on coldboot.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x18</p></td>
+<td><p>0x04</p></td>
+<td><p>AuthenticationScheme</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x1C</p></td>
+<td><p>0x01</p></td>
+<td><p>EncryptionEnabled</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x1D</p></td>
+<td><p>0x03</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x20</p></td>
+<td><p>0x04</p></td>
+<td><p>BootROMtracker</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x24</p></td>
+<td><p>0x05*0x04</p></td>
+<td><p>BootTimeLog</p></td>
+<td><table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
+<td><p>0x04</p></td>
+<td><p>BootTimeLogInit</p></td>
+</tr>
+<tr class="even">
+<td><p>0x04</p></td>
+<td><p>0x04</p></td>
+<td><p>BootTimeLogExit</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x08</p></td>
+<td><p>0x04</p></td>
+<td><p>BootSetupTickCnt</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0C</p></td>
+<td><p>0x04</p></td>
+<td><p>BootReadBctTickCnt</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>0x04</p></td>
+<td><p>BootReadBLTickCnt</p></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="even">
+<td><p>0x38</p></td>
+<td><p>0x10*0x28</p></td>
+<td><p>BootFlowLog</p></td>
+<td><table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
+<td><p>0x04</p></td>
+<td><p>BootFlowLogInit</p></td>
+</tr>
+<tr class="even">
+<td><p>0x04</p></td>
+<td><p>0x04</p></td>
+<td><p>BootFlowLogExit</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x08</p></td>
+<td><p>0x04</p></td>
+<td><p>BootFlowFuncId</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0C</p></td>
+<td><p>0x04</p></td>
+<td><p>BootFlowFuncStatus</p></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="odd">
+<td><p>0x2B8</p></td>
+<td><p>0x04</p></td>
+<td><p>OscFrequency</p></td>
+<td><p>Value from CLK_RST_CONTROLLER_OSC_CTRL.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2BC</p></td>
+<td><p>0x01</p></td>
+<td><p>DevInitialized</p></td>
+<td><p>Set to 1 after the boot device is initialized.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2BD</p></td>
+<td><p>0x01</p></td>
+<td><p>SdramInitialized</p></td>
+<td><p>Set to 1 after the SDRAM parameters are parsed.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2BE</p></td>
+<td><p>0x01</p></td>
+<td><p>ClearedForceRecovery</p></td>
+<td><p>Set to 1 if bit 2 was set in APBDEV_PMC_SCRATCH0.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2BF</p></td>
+<td><p>0x01</p></td>
+<td><p>ClearedFailBack</p></td>
+<td><p>Set to 1 if bit 4 was set in APBDEV_PMC_SCRATCH0.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2C0</p></td>
+<td><p>0x01</p></td>
+<td><p>InvokedFailBack</p></td>
+<td><p>Set to 1 if the bootloaders have different versions in the BCT.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2C1</p></td>
+<td><p>0x01</p></td>
+<td><p>IRomPatchStatus</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x2C2</p></td>
+<td><p>0x01</p></td>
+<td><p>BctSizeValid</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x2C3</p></td>
+<td><p>0x09</p></td>
+<td><p>BctSizeStatus</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x2CC</p></td>
+<td><p>0x04</p></td>
+<td><p>BctSizeLastJournalRead</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x2D0</p></td>
+<td><p>0x04</p></td>
+<td><p>BctSizeBlock</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x2D4</p></td>
+<td><p>0x04</p></td>
+<td><p>BctSizePage</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x2D8</p></td>
+<td><p>0x01</p></td>
+<td><p>BctValid</p></td>
+<td><p>Set to 1 if the BCT was parsed successfully.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2D9</p></td>
+<td><p>0x09</p></td>
+<td><p>BctStatus</p></td>
+<td><p>Each bit contains the status for BCT reads in a given block.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2E2</p></td>
+<td><p>0x02</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x2E4</p></td>
+<td><p>0x04</p></td>
+<td><p>BctLastJournalRead</p></td>
+<td><p>Contains the status of the last journal block read.</p>
+<p><code>None = 0</code><br />
+<code>Success = 1</code><br />
+<code>ValidationFailure = 2</code><br />
+<code>DeviceReadError = 3</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2E8</p></td>
+<td><p>0x04</p></td>
+<td><p>BctBlock</p></td>
+<td><p>Block number where the BCT was found.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2EC</p></td>
+<td><p>0x04</p></td>
+<td><p>BctPage</p></td>
+<td><p>Page number where the BCT was found.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2F0</p></td>
+<td><p>0x04</p></td>
+<td><p>BctSize</p></td>
+<td><p>Size of the BCT in IRAM.</p></td>
+</tr>
+<tr class="even">
+<td><p>0x2F4</p></td>
+<td><p>0x04</p></td>
+<td><p>BctPtr</p></td>
+<td><p>Pointer to the BCT in IRAM.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x2F8</p></td>
+<td><p>0x18*0x04</p></td>
+<td><p>BlState</p></td>
+<td><p>Contains the state of attempts to load each bootloader.</p>
+<table>
+<thead>
+<tr class="header">
+<th><p>Offset</p></th>
+<th><p>Size</p></th>
+<th><p>Field</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0x00</p></td>
+<td><p>0x04</p></td>
+<td><p>Status</p></td>
+</tr>
+<tr class="even">
+<td><p>0x04</p></td>
+<td><p>0x04</p></td>
+<td><p>FirstEccBlock</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x08</p></td>
+<td><p>0x04</p></td>
+<td><p>FirstEccPage</p></td>
+</tr>
+<tr class="even">
+<td><p>0x0C</p></td>
+<td><p>0x04</p></td>
+<td><p>FirstCorrectedEccBlock</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x10</p></td>
+<td><p>0x04</p></td>
+<td><p>FirstCorrectedEccPage</p></td>
+</tr>
+<tr class="even">
+<td><p>0x14</p></td>
+<td><p>0x01</p></td>
+<td><p>HadEccError</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x15</p></td>
+<td><p>0x01</p></td>
+<td><p>HadCrcError</p></td>
+</tr>
+<tr class="even">
+<td><p>0x16</p></td>
+<td><p>0x01</p></td>
+<td><p>HadCorrectedEccError</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x17</p></td>
+<td><p>0x01</p></td>
+<td><p>UsedForEccRecovery</p></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="even">
+<td><p>0x358</p></td>
+<td><p>0x100</p></td>
+<td><p>SecondaryDevStatus</p></td>
+<td><p>Structure to hold secondary boot device status.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0x458</p></td>
+<td><p>0x03</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x45B</p></td>
+<td><p>0x04</p></td>
+<td><p>UsbChargingStatus</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>0x45F</p></td>
+<td><p>0x01</p></td>
+<td><p>PmuBootSelReadError</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>0x460</p></td>
+<td><p>0x04</p></td>
+<td><p>SafeStartAddr</p></td>
+<td><p>Pointer to the end of the BCT in IRAM.</p></td>
 </tr>
 </tbody>
 </table>
