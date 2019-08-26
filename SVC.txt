@@ -43,9 +43,9 @@ R0=thread_handle, R1=in, R2=in2_lower32, R3=in2_upper32
 |-
 | 0x10 || [[#svcGetCurrentProcessorNumber]] || None || W0/X0=cpuid
 |-
-| 0x11 || svcSignalEvent || W0=wevent_handle || W0=result
+| 0x11 || [[#svcSignalEvent]] || W0=wevent_handle || W0=result
 |-
-| 0x12 || svcClearEvent || W0=wevent_or_revent_handle || W0=result
+| 0x12 || [[#svcClearEvent]] || W0=wevent_or_revent_handle || W0=result
 |-
 | 0x13 || [[#svcMapSharedMemory]] || W0=shmem_handle, X1=addr, X2=size, W3=perm || W0=result
 |-
@@ -694,6 +694,54 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 '''Description:''' Get which cpu is executing the current thread.
 
 Cpu-id is an integer in the range 0-3.
+
+== svcSignalEvent ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<WritableEvent> || Event
+|-
+| (Out) X0 || [[#Result]] || Result
+|}
+</div>
+
+'''Description:''' Puts the given event in the signaled state.
+
+Will wake up any thread currently waiting on this event. Can potentially trigger a reschedule.
+
+Any calls to [[#svcWaitSynchronization]] on this handle will return immediately, until the event's signaled state is reset.
+
+=== Result codes ===
+
+'''0x0:''' Success. Event is now in signaled state.
+
+'''0xE401:''' Invalid handle. The handle either does not exist, or is not a WritableEvent.
+
+== svcClearEvent ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<WritableEvent or ReadableEvent> || Event
+|-
+| (Out) X0 || [[#Result]] || Result
+|}
+</div>
+
+'''Description:''' Takes the given event out of the signaled state.
+
+=== Result codes ===
+
+'''0x0:''' Success, the event is now in the not-signaled state.
+
+'''0xE401:''' Invalid handle. The handle either does not exist, or is not a ReadableEvent nor a WritableEvent.
+
+'''0xFA01:''' The handle was not in a signaled state.
 
 == svcMapSharedMemory ==
 

@@ -20,8 +20,8 @@
 | 0xE  | [\#svcGetThreadCoreMask](#svcGetThreadCoreMask "wikilink")                         | W2=thread\_handle                                                                                                                                                                                                                                                                              | W0=result, W1=out0, X2=out1 R0=result, R1=out0, R2=out1\_lower32, R3=out1\_upper32                                                                                                 |
 | 0xF  | [\#svcSetThreadCoreMask](#svcSetThreadCoreMask "wikilink")                         | W0=thread\_handle, W1=in, X2=in2 R0=thread\_handle, R1=in, R2=in2\_lower32, R3=in2\_upper32                                                                                                                                                                                                    | W0=result                                                                                                                                                                          |
 | 0x10 | [\#svcGetCurrentProcessorNumber](#svcGetCurrentProcessorNumber "wikilink")         | None                                                                                                                                                                                                                                                                                           | W0/X0=cpuid                                                                                                                                                                        |
-| 0x11 | svcSignalEvent                                                                     | W0=wevent\_handle                                                                                                                                                                                                                                                                              | W0=result                                                                                                                                                                          |
-| 0x12 | svcClearEvent                                                                      | W0=wevent\_or\_revent\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                                                                                                                          |
+| 0x11 | [\#svcSignalEvent](#svcSignalEvent "wikilink")                                     | W0=wevent\_handle                                                                                                                                                                                                                                                                              | W0=result                                                                                                                                                                          |
+| 0x12 | [\#svcClearEvent](#svcClearEvent "wikilink")                                       | W0=wevent\_or\_revent\_handle                                                                                                                                                                                                                                                                  | W0=result                                                                                                                                                                          |
 | 0x13 | [\#svcMapSharedMemory](#svcMapSharedMemory "wikilink")                             | W0=shmem\_handle, X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                                    | W0=result                                                                                                                                                                          |
 | 0x14 | svcUnmapSharedMemory                                                               | W0=shmem\_handle, X1=addr, X2=size                                                                                                                                                                                                                                                             | W0=result                                                                                                                                                                          |
 | 0x15 | [\#svcCreateTransferMemory](#svcCreateTransferMemory "wikilink")                   | X1=addr, X2=size, W3=perm                                                                                                                                                                                                                                                                      | W0=result, W1=tmem\_handle                                                                                                                                                         |
@@ -448,6 +448,56 @@ Priority is a number 0-0x3F. Lower value means higher priority.
 **Description:** Get which cpu is executing the current thread.
 
 Cpu-id is an integer in the range 0-3.
+
+## svcSignalEvent
+
+<div style="display: inline-block;">
+
+| Argument | Type                           | Name   |
+| -------- | ------------------------------ | ------ |
+| (In) W0  | Handle<WritableEvent>          | Event  |
+| (Out) X0 | [\#Result](#Result "wikilink") | Result |
+
+</div>
+
+**Description:** Puts the given event in the signaled state.
+
+Will wake up any thread currently waiting on this event. Can potentially
+trigger a reschedule.
+
+Any calls to
+[\#svcWaitSynchronization](#svcWaitSynchronization "wikilink") on this
+handle will return immediately, until the event's signaled state is
+reset.
+
+### Result codes
+
+**0x0:** Success. Event is now in signaled state.
+
+**0xE401:** Invalid handle. The handle either does not exist, or is not
+a WritableEvent.
+
+## svcClearEvent
+
+<div style="display: inline-block;">
+
+| Argument | Type                                   | Name   |
+| -------- | -------------------------------------- | ------ |
+| (In) W0  | Handle<WritableEvent or ReadableEvent> | Event  |
+| (Out) X0 | [\#Result](#Result "wikilink")         | Result |
+
+</div>
+
+**Description:** Takes the given event out of the signaled state.
+
+### Result codes
+
+**0x0:** Success, the event is now in the not-signaled state.
+
+**0xE401:** Invalid handle. The handle either does not exist, or is not
+a ReadableEvent nor a WritableEvent.
+
+**0xFA01:** The handle was not in a signaled state.
 
 ## svcMapSharedMemory
 
