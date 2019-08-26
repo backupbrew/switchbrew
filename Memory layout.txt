@@ -1739,4 +1739,4 @@ It is initially configured as follows:
 *(u32 *)MC_SECURITY_CARVEOUT5_CFG0 = 0x8F;
 </pre>
 
-It can be further configured using [[SMC#ConfigureCarveout|smcConfigureCarveout]], but it's currently unused.
+It can be further configured using [[SMC#ConfigureCarveout|smcConfigureCarveout]].
