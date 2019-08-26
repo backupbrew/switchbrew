@@ -402,7 +402,7 @@ This can be used to move back and forth between ---, r-- and rw-.
 
 '''0xD801:''' Invalid permission specified. Valid permissions are ---, r-- and rw-.
 
-'''0xD401:''' The provided memory region was in an invalid state. The region must have the PermissionChangeAllowed state, and must not be Borrowed or Uncached.
+'''0xD401:''' The provided memory region was in an invalid state. The region must have the PermissionChangeAllowed bit set in its [[#MemoryState]], and must not have the IsBorrowed or IsUncached [[#MemoryAttribute]].
 
 '''0xCE01:''' Kernel resource exhausted.
 

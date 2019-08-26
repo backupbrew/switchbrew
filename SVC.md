@@ -198,8 +198,10 @@ address space.
 and rw-.
 
 **0xD401:** The provided memory region was in an invalid state. The
-region must have the PermissionChangeAllowed state, and must not be
-Borrowed or Uncached.
+region must have the PermissionChangeAllowed bit set in its
+[\#MemoryState](#MemoryState "wikilink"), and must not have the
+IsBorrowed or IsUncached
+[\#MemoryAttribute](#MemoryAttribute "wikilink").
 
 **0xCE01:** Kernel resource exhausted.
 
