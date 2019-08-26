@@ -1046,7 +1046,6 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 | 0x1000
 | 0x40000000000300
 | TZRAM (L3 Page Table)
-|-
 |}
 
 == [[6.0.0]] ==
@@ -1281,7 +1280,6 @@ Because the same L3 page is shared for all mappings, this required modifying seg
 | 0x1000
 | 0x40000000000300
 | TZRAM (L3 Page Table)
-|-
 |}
 
 = IRAM =
@@ -1632,6 +1630,322 @@ MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS4
 MC_SECURITY_CARVEOUT1/2/3/4/5_CFG0
 </pre>
 
+The client access registers (CLIENT_ACCESS0/1/2/3/4) are used to whitelist accesses from MC clients as follows:
+{| class="wikitable" border="1"
+!  Bits
+!  ClientAccess0
+!  ClientAccess1
+!  ClientAccess2
+!  ClientAccess3
+!  ClientAccess4
+|-
+| 0
+| CSR_PTCR
+| Reserved 
+| CSW_VDEMBEW
+| CSR_SDMMCRA
+| CSR_SESRD
+|-
+| 1
+| CSR_DISPLAY0A
+| Reserved
+| CSW_VDETPMW
+| CSR_SDMMCRAA
+| CSW_SESWR
+|-
+| 2
+| CSR_DISPLAY0AB
+| CSR_VDEBSEVR
+| Reserved
+| CSR_SDMMCR
+| CSR_AXIAPR
+|-
+| 3
+| CSR_DISPLAY0B
+| CSR_VDEMBER
+| Reserved
+| CSR_SDMMCRAB
+| CSW_AXIAPW
+|-
+| 4
+| CSR_DISPLAY0BB
+| CSR_VDEMCER
+| CSR_ISPRA
+| CSW_SDMMCWA
+| CSR_ETRR
+|-
+| 5
+| CSR_DISPLAY0C
+| CSR_VDETPER
+| Reserved
+| CSW_SDMMCWAA
+| CSW_ETRW
+|-
+| 6
+| CSR_DISPLAY0CB
+| CSR_MPCORELPR
+| CSW_ISPWA
+| CSW_SDMMCW
+| CSR_TSECSRDB
+|-
+| 7
+| Reserved
+| CSR_MPCORER
+| CSW_ISPWB
+| CSW_SDMMCWAB
+| CSW_TSECSWRB
+|-
+| 8
+| Reserved
+| Reserved
+| Reserved
+| Reserved
+| CSR_GPUSRD2
+|-
+| 9
+| Reserved
+| Reserved
+| Reserved
+| Reserved
+| CSW_GPUSWR2
+|-
+| 10
+| Reserved
+| Reserved
+| CSR_XUSB_HOSTR
+| Reserved
+| Reserved
+|-
+| 11
+| Reserved
+| CSW_NVENCSWR
+| CSW_XUSB_HOSTW
+| Reserved
+| Reserved
+|-
+| 12
+| Reserved
+| Reserved
+| CSR_XUSB_DEVR
+| CSR_VICSRD
+| Reserved
+|-
+| 13
+| Reserved
+| Reserved
+| CSW_XUSB_DEVW
+| CSW_VICSWR
+| Reserved
+|-
+| 14
+| CSR_AFIR
+| Reserved
+| CSR_ISPRAB (Erista) or CSR_SE2SRD (Mariko)
+| Reserved
+| Reserved
+|-
+| 15
+| CSR_AVPCARM7R
+| Reserved
+| Reserved
+| Reserved
+| Reserved
+|-
+| 16
+| CSR_DISPLAYHC
+| Reserved
+| CSW_ISPWAB (Erista) or CSW_SE2SWR (Mariko)
+| Reserved
+| Reserved
+|-
+| 17
+| CSR_DISPLAYHCB
+| CSW_AFIW
+| CSW_ISPWBB (Erista) or Reserved (Mariko)
+| Reserved
+| Reserved
+|-
+| 18
+| Reserved
+| CSW_AVPCARM7W
+| Reserved
+| CSW_VIW
+| Reserved
+|-
+| 19
+| Reserved
+| Reserved
+| Reserved
+| CSR_DISPLAYD
+| Reserved
+|-
+| 20
+| Reserved
+| Reserved
+| CSR_TSECSRD
+| Reserved
+| Reserved
+|-
+| 21
+| CSR_HDAR
+| CSW_HDAW
+| CSW_TSECSWR
+| Reserved
+| Reserved
+|-
+| 22
+| CSR_HOST1XDMAR
+| CSW_HOST1XW
+| CSR_A9AVPSCR
+| Reserved
+| Reserved
+|-
+| 23
+| CSR_HOST1XR
+| Reserved
+| CSW_A9AVPSCW
+| Reserved
+| Reserved
+|-
+| 24
+| Reserved
+| CSW_MPCORELPW
+| CSR_GPUSRD
+| CSR_NVDECSRD
+| Reserved
+|-
+| 25
+| Reserved
+| CSW_MPCOREW
+| CSW_GPUSWR
+| CSW_NVDECSWR
+| Reserved
+|-
+| 26
+| Reserved
+| Reserved
+| CSR_DISPLAYT
+| CSR_APER
+| Reserved
+|-
+| 27
+| Reserved
+| CSW_PPCSAHBDMAW
+| Reserved
+| CSW_APEW
+| Reserved
+|-
+| 28
+| CSR_NVENCSRD
+| CSW_PPCSAHBSLVW
+| Reserved
+| Reserved
+| Reserved
+|-
+| 29
+| CSR_PPCSAHBDMAR
+| CSW_SATAW
+| Reserved
+| Reserved
+| Reserved
+|-
+| 30
+| CSR_PPCSAHBSLVR
+| CSW_VDEBSEVW
+| Reserved
+| CSR_NVJPGSRD
+| Reserved
+|-
+| 31
+| CSR_SATAR
+| CSW_VDEDBGW
+| Reserved
+| CSW_NVJPGSWR
+| Reserved
+|}
+
+The configuration register (CFG0) is used to control the carveout's properties as follows:
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| PROTECT_MODE
+ 0: LOCKBIT_SECURE (registers cannot be modified after lock down)
+ 1: TZ_SECURE (registers can be modified by TZ after lock down)
+|-
+| 1
+| LOCK_MODE
+ 0: UNLOCKED (registers can be modified at any time)
+ 1: LOCKED (registers cannot be modified until reset)
+|-
+| 2
+| ADDRESS_TYPE
+ 0: ANY_ADDRESS
+ 1: UNTRANSLATED_ONLY
+|-
+| 3-6
+| READ_ACCESS_LEVEL
+ Bit 0: Access level 0 (default for all clients)
+ Bit 1: Access level 1 (unknown)
+ Bit 2: Access level 2 (Falcon clients in LS mode)
+ Bit 3: Access level 3 (Falcon clients in HS mode)
+|-
+| 7-10
+| WRITE_ACCESS_LEVEL
+ Bit 0: Access level 0 (default for all clients)
+ Bit 1: Access level 1 (unknown)
+ Bit 2: Access level 2 (Falcon clients in LS mode)
+ Bit 3: Access level 3 (Falcon clients in HS mode)
+|-
+| 11-13
+| APERTURE_ID
+|-
+| 14-17
+| DISABLE_READ_CHECK_ACCESS_LEVEL
+ Bit 0: Disable read access level 0 check
+ Bit 1: Disable read access level 1 check
+ Bit 2: Disable read access level 2 check
+ Bit 3: Disable read access level 3 check
+|-
+| 18-21
+| DISABLE_WRITE_CHECK_ACCESS_LEVEL
+ Bit 0: Disable write access level 0 check
+ Bit 1: Disable write access level 1 check
+ Bit 2: Disable write access level 2 check
+ Bit 3: Disable write access level 3 check
+|-
+| 22
+| SEND_CFG_TO_GPU
+ 0: DISABLED
+ 1: ENABLED
+|-
+| 23
+| TZ_GLOBAL_WR_EN
+ 0: DISABLED
+ 1: BYPASS_CHECK
+|-
+| 24
+| TZ_GLOBAL_RD_EN
+ 0: DISABLED
+ 1: BYPASS_CHECK
+|-
+| 25
+| ALLOW_APERTURE_ID_MISMATCH
+ 0: DISABLED
+ 1: ENABLED
+|-
+| 26
+| FORCE_APERTURE_ID_MATCH
+ 0: DISABLED
+ 1: ENABLED
+|-
+| 27
+| IS_WPR
+ 0: DISABLED
+ 1: ENABLED
+|}
+
 === GSC1 ===
 This carveout is, by default, for NVDEC. In the Switch's case, this carveout is not used.
 
@@ -1719,7 +2033,7 @@ It is initially configured as follows:
 Then further configured using [[SMC#ConfigureCarveout|smcConfigureCarveout]].
 
 === GSC5 ===
-This carveout is, by default, for TSECB. In the Switch's case, this carveout is reserved for the Kernel.
+This carveout is, by default, for TSECB. In the Switch's case, this carveout is used by the Kernel.
 
 It is initially configured as follows:
 <pre>
@@ -1739,4 +2053,4 @@ It is initially configured as follows:
 *(u32 *)MC_SECURITY_CARVEOUT5_CFG0 = 0x8F;
 </pre>
 
-It can be further configured using [[SMC#ConfigureCarveout|smcConfigureCarveout]].
+Then further configured using [[SMC#ConfigureCarveout|smcConfigureCarveout]].

@@ -452,7 +452,6 @@ modifying segment layout significantly to prevent clashes.
 | 0x1F01FA000 | 0x7C01D000 | 0x1000  | 0x40000000000300     | TZRAM (stacks, warmboot crt0)                         |
 | 0x1F01FC000 | 0x7C01E000 | 0x1000  | 0x40000000000300     | TZRAM (L2 Page Table)                                 |
 | 0x1F01FE000 | 0x7C01F000 | 0x1000  | 0x40000000000300     | TZRAM (L3 Page Table)                                 |
-|             |            |         |                      |                                                       |
 
 ## [6.0.0](6.0.0.md "wikilink")
 
@@ -497,7 +496,6 @@ modifying segment layout significantly to prevent clashes.
 | 0x1F01FA000 | 0x7C01D000 | 0x1000  | 0x40000000000300     | TZRAM (stacks, warmboot crt0)                         |
 | 0x1F01FC000 | 0x7C01E000 | 0x1000  | 0x40000000000300     | TZRAM (L2 Page Table)                                 |
 | 0x1F01FE000 | 0x7C01F000 | 0x1000  | 0x40000000000300     | TZRAM (L3 Page Table)                                 |
-|             |            |         |                      |                                                       |
 
 # IRAM
 
@@ -932,6 +930,148 @@ These carveouts are controlled by the following MC registers:
     MC_SECURITY_CARVEOUT1/2/3/4/5_CLIENT_FORCE_INTERNAL_ACCESS4
     MC_SECURITY_CARVEOUT1/2/3/4/5_CFG0
 
+The client access registers (CLIENT\_ACCESS0/1/2/3/4) are used to
+whitelist accesses from MC clients as follows:
+
+| Bits | ClientAccess0    | ClientAccess1    | ClientAccess2                                | ClientAccess3 | ClientAccess4 |
+| ---- | ---------------- | ---------------- | -------------------------------------------- | ------------- | ------------- |
+| 0    | CSR\_PTCR        | Reserved         | CSW\_VDEMBEW                                 | CSR\_SDMMCRA  | CSR\_SESRD    |
+| 1    | CSR\_DISPLAY0A   | Reserved         | CSW\_VDETPMW                                 | CSR\_SDMMCRAA | CSW\_SESWR    |
+| 2    | CSR\_DISPLAY0AB  | CSR\_VDEBSEVR    | Reserved                                     | CSR\_SDMMCR   | CSR\_AXIAPR   |
+| 3    | CSR\_DISPLAY0B   | CSR\_VDEMBER     | Reserved                                     | CSR\_SDMMCRAB | CSW\_AXIAPW   |
+| 4    | CSR\_DISPLAY0BB  | CSR\_VDEMCER     | CSR\_ISPRA                                   | CSW\_SDMMCWA  | CSR\_ETRR     |
+| 5    | CSR\_DISPLAY0C   | CSR\_VDETPER     | Reserved                                     | CSW\_SDMMCWAA | CSW\_ETRW     |
+| 6    | CSR\_DISPLAY0CB  | CSR\_MPCORELPR   | CSW\_ISPWA                                   | CSW\_SDMMCW   | CSR\_TSECSRDB |
+| 7    | Reserved         | CSR\_MPCORER     | CSW\_ISPWB                                   | CSW\_SDMMCWAB | CSW\_TSECSWRB |
+| 8    | Reserved         | Reserved         | Reserved                                     | Reserved      | CSR\_GPUSRD2  |
+| 9    | Reserved         | Reserved         | Reserved                                     | Reserved      | CSW\_GPUSWR2  |
+| 10   | Reserved         | Reserved         | CSR\_XUSB\_HOSTR                             | Reserved      | Reserved      |
+| 11   | Reserved         | CSW\_NVENCSWR    | CSW\_XUSB\_HOSTW                             | Reserved      | Reserved      |
+| 12   | Reserved         | Reserved         | CSR\_XUSB\_DEVR                              | CSR\_VICSRD   | Reserved      |
+| 13   | Reserved         | Reserved         | CSW\_XUSB\_DEVW                              | CSW\_VICSWR   | Reserved      |
+| 14   | CSR\_AFIR        | Reserved         | CSR\_ISPRAB (Erista) or CSR\_SE2SRD (Mariko) | Reserved      | Reserved      |
+| 15   | CSR\_AVPCARM7R   | Reserved         | Reserved                                     | Reserved      | Reserved      |
+| 16   | CSR\_DISPLAYHC   | Reserved         | CSW\_ISPWAB (Erista) or CSW\_SE2SWR (Mariko) | Reserved      | Reserved      |
+| 17   | CSR\_DISPLAYHCB  | CSW\_AFIW        | CSW\_ISPWBB (Erista) or Reserved (Mariko)    | Reserved      | Reserved      |
+| 18   | Reserved         | CSW\_AVPCARM7W   | Reserved                                     | CSW\_VIW      | Reserved      |
+| 19   | Reserved         | Reserved         | Reserved                                     | CSR\_DISPLAYD | Reserved      |
+| 20   | Reserved         | Reserved         | CSR\_TSECSRD                                 | Reserved      | Reserved      |
+| 21   | CSR\_HDAR        | CSW\_HDAW        | CSW\_TSECSWR                                 | Reserved      | Reserved      |
+| 22   | CSR\_HOST1XDMAR  | CSW\_HOST1XW     | CSR\_A9AVPSCR                                | Reserved      | Reserved      |
+| 23   | CSR\_HOST1XR     | Reserved         | CSW\_A9AVPSCW                                | Reserved      | Reserved      |
+| 24   | Reserved         | CSW\_MPCORELPW   | CSR\_GPUSRD                                  | CSR\_NVDECSRD | Reserved      |
+| 25   | Reserved         | CSW\_MPCOREW     | CSW\_GPUSWR                                  | CSW\_NVDECSWR | Reserved      |
+| 26   | Reserved         | Reserved         | CSR\_DISPLAYT                                | CSR\_APER     | Reserved      |
+| 27   | Reserved         | CSW\_PPCSAHBDMAW | Reserved                                     | CSW\_APEW     | Reserved      |
+| 28   | CSR\_NVENCSRD    | CSW\_PPCSAHBSLVW | Reserved                                     | Reserved      | Reserved      |
+| 29   | CSR\_PPCSAHBDMAR | CSW\_SATAW       | Reserved                                     | Reserved      | Reserved      |
+| 30   | CSR\_PPCSAHBSLVR | CSW\_VDEBSEVW    | Reserved                                     | CSR\_NVJPGSRD | Reserved      |
+| 31   | CSR\_SATAR       | CSW\_VDEDBGW     | Reserved                                     | CSW\_NVJPGSWR | Reserved      |
+
+The configuration register (CFG0) is used to control the carveout's
+properties as follows:
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0</p></td>
+<td><p>PROTECT_MODE</p>
+<p><code>0: LOCKBIT_SECURE (registers cannot be modified after lock down)</code><br />
+<code>1: TZ_SECURE (registers can be modified by TZ after lock down)</code></p></td>
+</tr>
+<tr class="even">
+<td><p>1</p></td>
+<td><p>LOCK_MODE</p>
+<p><code>0: UNLOCKED (registers can be modified at any time)</code><br />
+<code>1: LOCKED (registers cannot be modified until reset)</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>2</p></td>
+<td><p>ADDRESS_TYPE</p>
+<p><code>0: ANY_ADDRESS</code><br />
+<code>1: UNTRANSLATED_ONLY</code></p></td>
+</tr>
+<tr class="even">
+<td><p>3-6</p></td>
+<td><p>READ_ACCESS_LEVEL</p>
+<p><code>Bit 0: Access level 0 (default for all clients)</code><br />
+<code>Bit 1: Access level 1 (unknown)</code><br />
+<code>Bit 2: Access level 2 (Falcon clients in LS mode)</code><br />
+<code>Bit 3: Access level 3 (Falcon clients in HS mode)</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>7-10</p></td>
+<td><p>WRITE_ACCESS_LEVEL</p>
+<p><code>Bit 0: Access level 0 (default for all clients)</code><br />
+<code>Bit 1: Access level 1 (unknown)</code><br />
+<code>Bit 2: Access level 2 (Falcon clients in LS mode)</code><br />
+<code>Bit 3: Access level 3 (Falcon clients in HS mode)</code></p></td>
+</tr>
+<tr class="even">
+<td><p>11-13</p></td>
+<td><p>APERTURE_ID</p></td>
+</tr>
+<tr class="odd">
+<td><p>14-17</p></td>
+<td><p>DISABLE_READ_CHECK_ACCESS_LEVEL</p>
+<p><code>Bit 0: Disable read access level 0 check</code><br />
+<code>Bit 1: Disable read access level 1 check</code><br />
+<code>Bit 2: Disable read access level 2 check</code><br />
+<code>Bit 3: Disable read access level 3 check</code></p></td>
+</tr>
+<tr class="even">
+<td><p>18-21</p></td>
+<td><p>DISABLE_WRITE_CHECK_ACCESS_LEVEL</p>
+<p><code>Bit 0: Disable write access level 0 check</code><br />
+<code>Bit 1: Disable write access level 1 check</code><br />
+<code>Bit 2: Disable write access level 2 check</code><br />
+<code>Bit 3: Disable write access level 3 check</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>22</p></td>
+<td><p>SEND_CFG_TO_GPU</p>
+<p><code>0: DISABLED</code><br />
+<code>1: ENABLED</code></p></td>
+</tr>
+<tr class="even">
+<td><p>23</p></td>
+<td><p>TZ_GLOBAL_WR_EN</p>
+<p><code>0: DISABLED</code><br />
+<code>1: BYPASS_CHECK</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>24</p></td>
+<td><p>TZ_GLOBAL_RD_EN</p>
+<p><code>0: DISABLED</code><br />
+<code>1: BYPASS_CHECK</code></p></td>
+</tr>
+<tr class="even">
+<td><p>25</p></td>
+<td><p>ALLOW_APERTURE_ID_MISMATCH</p>
+<p><code>0: DISABLED</code><br />
+<code>1: ENABLED</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>26</p></td>
+<td><p>FORCE_APERTURE_ID_MATCH</p>
+<p><code>0: DISABLED</code><br />
+<code>1: ENABLED</code></p></td>
+</tr>
+<tr class="even">
+<td><p>27</p></td>
+<td><p>IS_WPR</p>
+<p><code>0: DISABLED</code><br />
+<code>1: ENABLED</code></p></td>
+</tr>
+</tbody>
+</table>
+
 ### GSC1
 
 This carveout is, by default, for NVDEC. In the Switch's case, this
@@ -1026,7 +1166,7 @@ Then further configured using
 ### GSC5
 
 This carveout is, by default, for TSECB. In the Switch's case, this
-carveout is reserved for the Kernel.
+carveout is used by the Kernel.
 
 It is initially configured as follows:
 
@@ -1045,5 +1185,5 @@ It is initially configured as follows:
     *(u32 *)MC_SECURITY_CARVEOUT5_CLIENT_FORCE_INTERNAL_ACCESS4 = 0;
     *(u32 *)MC_SECURITY_CARVEOUT5_CFG0 = 0x8F;
 
-It can be further configured using
+Then further configured using
 [smcConfigureCarveout](SMC#ConfigureCarveout.md##ConfigureCarveout "wikilink").
