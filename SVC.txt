@@ -390,6 +390,22 @@ Bit2 of permission (exec) is not allowed. Setting write-only is not allowed eith
 
 This can be used to move back and forth between ---, r-- and rw-.
 
+=== Result codes ===
+
+'''0x0:''' Success. The memory region was reprotected.
+
+'''0xCC01:''' Unaligned address specified.
+
+'''0xCA01:''' Unaligned or zero size specified.
+
+'''0xD401:''' The provided memory region does not fall within the userland address space.
+
+'''0xD801:''' Invalid permission specified. Valid permissions are ---, r-- and rw-.
+
+'''0xD401:''' The provided memory region was in an invalid state. The region must have the PermissionChangeAllowed state, and must not be Borrowed or Uncached.
+
+'''0xCE01:''' Kernel resource exhausted.
+
 == svcSetMemoryAttribute ==
 
 <div style="display: inline-block;">
