@@ -250,7 +250,31 @@ autoclear disabled.
 
 # OffscreenRecordingParameter
 
-This is a 0x80-byte struct.
+| Offset | Size | Description                                          | Default value |
+| ------ | ---- | ---------------------------------------------------- | ------------- |
+| 0x0    | 0x10 | ?                                                    | 0             |
+| 0x10   | 0x4  | ?                                                    | 0x103         |
+| 0x14   | 0x4  | s32 VideoBitRate                                     | 8000000       |
+| 0x18   | 0x4  | s32 VideoWidth                                       | 1280          |
+| 0x1C   | 0x4  | s32 VideoHeight                                      | 720           |
+| 0x20   | 0x4  | s32 VideoFrameRate                                   | 30            |
+| 0x24   | 0x4  | s32 VideoKeyFrameInterval                            | 30            |
+| 0x28   | 0x4  | s32 AudioBitRate                                     | 128000        |
+| 0x2C   | 0x4  | s32 AudioSampleRate                                  | 48000         |
+| 0x30   | 0x4  | s32 AudioChannelCount                                | 2             |
+| 0x34   | 0x4  | "nn::audio::SampleFormat" AudioSampleFormat          | 2             |
+| 0x38   | 0x4  | "nn::album::ImageOrientation" VideoImageOrientation. | 0             |
+| 0x3C   | 0x44 | ?                                                    | 0             |
+
+This is "nn::grcsrv::OffscreenRecordingParameter". This is a 0x80-byte
+struct. "nn::grc::OffscreenRecordingParameter" and
+"nn::album::MovieMakerMovieParameter" are identical to this.
+
+The above default values are initialized by the official user-process
+via sdk-nso funcs
+"nn::album::MovieMakerMovieParameter::GetDefaultValue()" /
+"nn::album::MovieMakerMovieParameter::MovieMakerMovieParameter()" (both
+funcs are identical).
 
 # GameMovieId
 
