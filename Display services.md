@@ -7,27 +7,27 @@ layers/framebuffers.
 This is "nn::capsrv::sf::IScreenShotControlService". This is available
 with \[2.0.0+\].
 
-| Cmd                  | Name         | Notes                                                                                                                                  |
-| -------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 1                    |              |                                                                                                                                        |
-| 2                    |              |                                                                                                                                        |
-| 3                    | \[5.0.0+\] ? | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 5                    | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 210                  | \[6.0.0+\] ? | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
-| \[2.0.0-4.1.0\] 1001 |              | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| \[2.0.0-4.1.0\] 1002 |              | Takes a total of 0x18-bytes of input, no output.                                                                                       |
-| \[3.0.0-4.1.0\] 1003 |              | Takes a total of 0x58-bytes of input, no output.                                                                                       |
-| 1004                 | \[5.0.0+\] ? | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
-| 1009                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1010                 | \[5.0.0+\] ? | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1011                 |              | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 1012                 |              | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 1101                 | \[4.0.0+\] ? |                                                                                                                                        |
-| 1106                 | \[4.0.0+\] ? |                                                                                                                                        |
-| 1107                 | \[4.0.0+\] ? |                                                                                                                                        |
-| 1201                 | \[3.0.0+\] ? | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
-| 1202                 | \[3.0.0+\] ? | No input/output.                                                                                                                       |
-| 1203                 | \[3.0.0+\] ? | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
+| Cmd                  | Name                                             | Notes                                                                                                                                  |
+| -------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1                    | CaptureRawImage                                  |                                                                                                                                        |
+| 2                    | CaptureRawImageWithTimeout                       |                                                                                                                                        |
+| 3                    | \[5.0.0+\] AttachSharedBuffer                    | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 5                    | \[5.0.0+\] CaptureRawImageToAttachedSharedBuffer | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 210                  | \[6.0.0+\] ?                                     | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
+| \[2.0.0-4.1.0\] 1001 | RequestTakingScreenShot                          | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| \[2.0.0-4.1.0\] 1002 | RequestTakingScreenShotWithTimeout               | Takes a total of 0x18-bytes of input, no output.                                                                                       |
+| \[3.0.0-4.1.0\] 1003 | RequestTakingScreenShotEx                        | Takes a total of 0x58-bytes of input, no output.                                                                                       |
+| 1004                 | \[5.0.0+\] RequestTakingScreenShotEx1            | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
+| 1009                 | \[5.0.0+\] CancelTakingScreenShot                | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1010                 | \[5.0.0+\] SetTakingScreenShotCancelState        | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1011                 | NotifyTakingScreenShotRefused                    | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1012                 | NotifyTakingScreenShotFailed                     | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1101                 | \[4.0.0+\] SetupOverlayMovieThumbnail            |                                                                                                                                        |
+| 1106                 | \[4.0.0+\] ?                                     |                                                                                                                                        |
+| 1107                 | \[4.0.0+\] ?                                     |                                                                                                                                        |
+| 1201                 | \[3.0.0+\] OpenRawScreenShotReadStream           | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
+| 1202                 | \[3.0.0+\] CloseRawScreenShotReadStream          | No input/output.                                                                                                                       |
+| 1203                 | \[3.0.0+\] ReadRawScreenShotReadStream           | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
 
   - cmd210: User-processes use hard-coded size 0x88 for the type-0x15
     buffer.
@@ -115,13 +115,13 @@ be at least 0x7D000. The size of the type-0x45 buffer must be at least
 This is "nn::capsrv::sf::IScreenShotService". This is available with
 \[2.0.0+\].
 
-| Cmd | Name       |
-| --- | ---------- |
-| 201 |            |
-| 202 |            |
-| 203 | \[3.0.0+\] |
-| 204 | \[3.0.0+\] |
-| 208 | \[5.0.0+\] |
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 201 | SaveScreenShot                      |
+| 202 | SaveEditedScreenShot                |
+| 203 | \[3.0.0+\] SaveScreenShotEx0        |
+| 204 | \[3.0.0+\] SaveEditedScreenShotEx0  |
+| 208 | \[5.0.0+\] SaveScreenShotOfMovieEx1 |
 
 # caps:su
 
@@ -141,28 +141,30 @@ This is "nn::cec::ICecManager".
 
 | Cmd | Name                            |
 | --- | ------------------------------- |
-| 0   | Initialize                      |
-| 1   | Finalize                        |
-| 2   |                                 |
-| 3   | PerformOneTouchPlay             |
-| 4   |                                 |
-| 5   |                                 |
-| 6   | \[2.0.0+\]                      |
+| 0   | RegisterCallback                |
+| 1   | UnregisterCallback              |
+| 2   | TriggerSystemEvent              |
+| 3   | PerformAction                   |
+| 4   | QueryState                      |
+| 5   | OnSystemEvent                   |
+| 6   | \[2.0.0+\] CancelCurrentCall    |
 | 100 | \[4.0.0+\] GetHdcpServiceObject |
 
 GetHdcpServiceObject: No input, returns a
-[\#CecManagerSubinterface100](#CecManagerSubinterface100 "wikilink").
+[\#IHdcpController](#IHdcpController "wikilink").
 
-# CecManagerSubinterface100
+# IHdcpController
+
+This is "nn::hdcp::IHdcpController".
 
 Added with \[4.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | GetHdcpStateTransitionEvent |
+| 1   | GetHdcpAuthenticationState  |
+| 2   | SetCurrentHdcpMode          |
+| 3   | GetCurrentHdcpMode          |
 
 # mm:u
 
