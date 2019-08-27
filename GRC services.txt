@@ -238,7 +238,7 @@ Takes an input u64 '''LayerHandle''', returns an output event handle with autocl
 |-
 | 0x24 || 0x4 || s32 VideoKeyFrameInterval || 30
 |-
-| 0x28 || 0x4 || s32 AudioBitRate || 128000
+| 0x28 || 0x4 || s32 AudioBitRate || 128000 ([5.0.0-5.1.0] 1536000)
 |-
 | 0x2C || 0x4 || s32 AudioSampleRate || 48000
 |-
