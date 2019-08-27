@@ -1669,15 +1669,15 @@ Used for USB HID devices.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || Takes an input s32, no output.
+| 0 || AcquireDevice || Takes an input s32, no output.
 |-
-| 1 || || Takes an input s32, no output.
+| 1 || ReleaseDevice || Takes an input s32, no output.
 |-
-| 2 || || Takes an input u32, returns an [[#ICtrlSession]].
+| 2 || GetCtrlSession || Takes an input u32, returns an [[#ICtrlSession]].
 |-
-| 3 || || Takes an input u32, returns an [[#IReadSession]].
+| 3 || GetReadSession || Takes an input u32, returns an [[#IReadSession]].
 |-
-| [1.0.0-2.3.0] 4 || || Takes an input u32, returns an [[#IWriteSession]].
+| [1.0.0-2.3.0] 4 || GetWriteSession || Takes an input u32, returns an [[#IWriteSession]].
 |}
 
 == ICtrlSession ==
@@ -1687,31 +1687,31 @@ This is "nn::ahid::ICtrlSession".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || GetString || 
 |-
-| 1 || || 
+| 1 || GetCodeBook || 
 |-
-| 2 || || 
+| 2 || GetReport || 
 |-
-| 3 || || 
+| 3 || SetReport || 
 |-
-| 4 || || 
+| 4 || GetIdle || 
 |-
-| 5 || || 
+| 5 || SetIdle || 
 |-
-| 6 || || 
+| 6 || GetProtocol || 
 |-
-| 7 || || 
+| 7 || SetProtocol || 
 |-
-| 8 || || 
+| 8 || GetDescriptor || 
 |-
-| 9 || || 
+| 9 || SetDescriptor || 
 |-
-| 10 || || 
+| 10 || GetStateChangeEvent || 
 |-
-| 11 || || 
+| 11 || SignalStateChangeEvent || 
 |-
-| 12 || [3.0.0+] || 
+| 12 || [3.0.0+] Write || 
 |}
 
 All of these use USB [[USB_services|CtrlXfer]], except for cmd10-11 which are event(?) related, and cmd1 which copies 0x4000-bytes from state to output.
@@ -1723,7 +1723,7 @@ This is "nn::ahid::IReadSession".
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || 
+| 0 || Read || 
 |}
 
 Cmd0 uses [[USB_services|PostBufferAsync]] etc with the INPUT endpoint. The size must be <=0x1000. The actual transfer size is returned in an output u64. The data is copied from the tmpbuf to the output buffer using the actual-transfer-size.
@@ -1739,7 +1739,7 @@ This was removed with [3.0.0+].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || This is the inverse of [[#IReadSession]] cmd0. Uses the OUTPUT endpoint with an input buffer.
+| 0 || Write || This is the inverse of [[#IReadSession]] cmd0. Uses the OUTPUT endpoint with an input buffer.
 |}
 
 = ahid:hdr =

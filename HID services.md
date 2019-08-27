@@ -1264,33 +1264,33 @@ This is "nn::ahid::IServerSession".
 
 Used for USB HID devices.
 
-| Cmd               | Name | Notes                                                                        |
-| ----------------- | ---- | ---------------------------------------------------------------------------- |
-| 0                 |      | Takes an input s32, no output.                                               |
-| 1                 |      | Takes an input s32, no output.                                               |
-| 2                 |      | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
-| 3                 |      | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
-| \[1.0.0-2.3.0\] 4 |      | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
+| Cmd               | Name            | Notes                                                                        |
+| ----------------- | --------------- | ---------------------------------------------------------------------------- |
+| 0                 | AcquireDevice   | Takes an input s32, no output.                                               |
+| 1                 | ReleaseDevice   | Takes an input s32, no output.                                               |
+| 2                 | GetCtrlSession  | Takes an input u32, returns an [\#ICtrlSession](#ICtrlSession "wikilink").   |
+| 3                 | GetReadSession  | Takes an input u32, returns an [\#IReadSession](#IReadSession "wikilink").   |
+| \[1.0.0-2.3.0\] 4 | GetWriteSession | Takes an input u32, returns an [\#IWriteSession](#IWriteSession "wikilink"). |
 
 ## ICtrlSession
 
 This is "nn::ahid::ICtrlSession".
 
-| Cmd | Name       | Notes |
-| --- | ---------- | ----- |
-| 0   |            |       |
-| 1   |            |       |
-| 2   |            |       |
-| 3   |            |       |
-| 4   |            |       |
-| 5   |            |       |
-| 6   |            |       |
-| 7   |            |       |
-| 8   |            |       |
-| 9   |            |       |
-| 10  |            |       |
-| 11  |            |       |
-| 12  | \[3.0.0+\] |       |
+| Cmd | Name                   | Notes |
+| --- | ---------------------- | ----- |
+| 0   | GetString              |       |
+| 1   | GetCodeBook            |       |
+| 2   | GetReport              |       |
+| 3   | SetReport              |       |
+| 4   | GetIdle                |       |
+| 5   | SetIdle                |       |
+| 6   | GetProtocol            |       |
+| 7   | SetProtocol            |       |
+| 8   | GetDescriptor          |       |
+| 9   | SetDescriptor          |       |
+| 10  | GetStateChangeEvent    |       |
+| 11  | SignalStateChangeEvent |       |
+| 12  | \[3.0.0+\] Write       |       |
 
 All of these use USB [CtrlXfer](USB%20services.md "wikilink"), except
 for cmd10-11 which are event(?) related, and cmd1 which copies
@@ -1302,7 +1302,7 @@ This is "nn::ahid::IReadSession".
 
 | Cmd | Name | Notes |
 | --- | ---- | ----- |
-| 0   |      |       |
+| 0   | Read |       |
 
 Cmd0 uses [PostBufferAsync](USB%20services.md "wikilink") etc with the
 INPUT endpoint. The size must be \<=0x1000. The actual transfer size is
@@ -1317,9 +1317,9 @@ This is "nn::ahid::IWriteSession".
 
 This was removed with \[3.0.0+\].
 
-| Cmd | Name | Notes                                                                                                                  |
-| --- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0   |      | This is the inverse of [\#IReadSession](#IReadSession "wikilink") cmd0. Uses the OUTPUT endpoint with an input buffer. |
+| Cmd | Name  | Notes                                                                                                                  |
+| --- | ----- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   | Write | This is the inverse of [\#IReadSession](#IReadSession "wikilink") cmd0. Uses the OUTPUT endpoint with an input buffer. |
 
 # ahid:hdr
 
