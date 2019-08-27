@@ -2401,29 +2401,29 @@ This is "nn::spsm::detail::IPowerStateInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || GetState
+| 0 || GetCurrentState
 |-
-| 1 || SleepSystemAndWaitAwake
+| 1 || EnterSleep
 |-
-| 2 || 
+| 2 || GetLastWakeReason
 |-
-| 3 || 
+| 3 || Shutdown
 |-
 | 4 || GetNotificationMessageEventHandle
 |-
-| 5 || 
+| 5 || ReceiveNotificationMessage
 |-
-| 6 || 
+| 6 || AnalyzeLogForLastSleepWakeSequence
 |-
-| 7 || 
+| 7 || ResetEventLog
 |-
 | 8 || AnalyzePerformanceLogForLastSleepWakeSequence
 |-
 | 9 || ChangeHomeButtonLongPressingTime
 |-
-| 10 || 
+| 10 || PutErrorState
 |-
-| 11 || [1.0.0-3.0.2]
+| 11 || [1.0.0-3.0.2] InvalidateCurrentHomeButtonPressing
 |}
 
 [3.0.0+] Cmd11 now takes a total of 8-bytes of input.

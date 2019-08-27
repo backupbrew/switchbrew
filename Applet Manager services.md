@@ -2706,20 +2706,20 @@ This is used by
 
 This is "nn::spsm::detail::IPowerStateInterface".
 
-| Cmd | Name                                          |
-| --- | --------------------------------------------- |
-| 0   | GetState                                      |
-| 1   | SleepSystemAndWaitAwake                       |
-| 2   |                                               |
-| 3   |                                               |
-| 4   | GetNotificationMessageEventHandle             |
-| 5   |                                               |
-| 6   |                                               |
-| 7   |                                               |
-| 8   | AnalyzePerformanceLogForLastSleepWakeSequence |
-| 9   | ChangeHomeButtonLongPressingTime              |
-| 10  |                                               |
-| 11  | \[1.0.0-3.0.2\]                               |
+| Cmd | Name                                                |
+| --- | --------------------------------------------------- |
+| 0   | GetCurrentState                                     |
+| 1   | EnterSleep                                          |
+| 2   | GetLastWakeReason                                   |
+| 3   | Shutdown                                            |
+| 4   | GetNotificationMessageEventHandle                   |
+| 5   | ReceiveNotificationMessage                          |
+| 6   | AnalyzeLogForLastSleepWakeSequence                  |
+| 7   | ResetEventLog                                       |
+| 8   | AnalyzePerformanceLogForLastSleepWakeSequence       |
+| 9   | ChangeHomeButtonLongPressingTime                    |
+| 10  | PutErrorState                                       |
+| 11  | \[1.0.0-3.0.2\] InvalidateCurrentHomeButtonPressing |
 
 \[3.0.0+\] Cmd11 now takes a total of 8-bytes of input.
 
