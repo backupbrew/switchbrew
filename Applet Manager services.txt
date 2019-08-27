@@ -1141,7 +1141,7 @@ Takes an input u64 size and a TransferMemory handle, returns an [[#IMovieMaker]]
 
 Official sw retries using the cmd in a loop on error 0x8D4 with svcSleepThread(100000000) being used first.
 
-Official sw uses permissions=None for the TransferMemory, with an user-specified buffer.
+Official sw uses permissions=None for the TransferMemory, with an user-specified buffer. The size of the buffer used by official sw is 0x6000000.
 
 ==== PrepareForJit ====
 Takes no input. Launches title 010000000000003B (currently not present on retail systems) if some context variable is not set, with that context variable being initialized afterwards.

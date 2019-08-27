@@ -1311,7 +1311,8 @@ Official sw retries using the cmd in a loop on error 0x8D4 with
 svcSleepThread(100000000) being used first.
 
 Official sw uses permissions=None for the TransferMemory, with an
-user-specified buffer.
+user-specified buffer. The size of the buffer used by official sw is
+0x6000000.
 
 #### PrepareForJit
 
