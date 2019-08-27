@@ -190,15 +190,15 @@ On [1.0.0] these are <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>, see
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || || No input, returns an [[#INewsService]].
+| 0 || CreateNewsService || No input, returns an [[#INewsService]].
 |-
-| 1 || || No input, returns an [[#INewlyArrivedEventHolder]].
+| 1 || CreateNewlyArrivedEventHolder || No input, returns an [[#INewlyArrivedEventHolder]].
 |-
-| 2 || || No input, returns an [[#INewsDataService]].
+| 2 || CreateNewsDataService || No input, returns an [[#INewsDataService]].
 |-
-| 3 || || No input, returns an [[#INewsDatabaseService]].
+| 3 || CreateNewsDatabaseService || No input, returns an [[#INewsDatabaseService]].
 |-
-| 4 || || No input, returns an [[#IOverwriteEventHolder]].
+| 4 || CreateOverwriteEventHolder || No input, returns an [[#IOverwriteEventHolder]].
 |}
 
 == INewsService ==
@@ -208,23 +208,23 @@ This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
 |-
 ! Cmd || Name
 |-
-| 10100 || 
+| 10100 || PostLocalNews
 |-
-| 20100 || 
+| 20100 || SetPassphrase
 |-
-| 30100 || 
+| 30100 || GetSubscriptionStatus
 |-
-| 30101 || [3.0.0+]
+| 30101 || [3.0.0+] GetTopicList
 |-
 | 30110 || [6.0.0+]
 |-
-| 30200 || 
+| 30200 || IsSystemUpdateRequired
 |-
 | 30201 || [8.0.0+]
 |-
-| 30300 || 
+| 30300 || RequestImmediateReception
 |-
-| 30400 || [3.0.0+]
+| 30400 || [3.0.0+] DecodeArchiveFile
 |-
 | 30500 || [8.0.0+] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [[#IUnknown2]])
 |-
@@ -234,15 +234,15 @@ This is <nowiki>"nn::news::detail::ipc::INewsService"</nowiki>.
 |-
 | [1.0.0] 30902 || (No input, returns an [[#INewsDatabaseService]])
 |-
-| 40100 || 
+| 40100 || SetSubscriptionStatus
 |-
-| 40101 || [3.0.0+]
+| 40101 || [3.0.0+] RequestAutoSubscription
 |-
-| 40200 || 
+| 40200 || ClearStorage
 |-
-| 40201 || 
+| 40201 || ClearSubscriptionStatusAll
 |-
-| 90100 || 
+| 90100 || GetNewsDatabaseDump
 |}
 
 == INewlyArrivedEventHolder ==
@@ -252,7 +252,7 @@ This is <nowiki>"nn::news::detail::ipc::INewlyArrivedEventHolder"</nowiki>.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Get
 |}
 
 == INewsDataService ==
@@ -262,15 +262,15 @@ This is <nowiki>"nn::news::detail::ipc::INewsDataService"</nowiki>.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Open
 |-
-| 1 || 
+| 1 || OpenWithNewsRecordV1
 |-
-| 2 || 
+| 2 || Read
 |-
-| 3 || 
+| 3 || GetSize
 |-
-| 1001 || [6.0.0+]
+| 1001 || [6.0.0+] OpenWithNewsRecord
 |}
 
 == INewsDatabaseService ==
@@ -280,19 +280,19 @@ This is <nowiki>"nn::news::detail::ipc::INewsDatabaseService"</nowiki>.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || GetListV1
 |-
-| 1 || 
+| 1 || Count
 |-
-| 2 || 
+| 2 || CountWithKey
 |-
-| 3 || 
+| 3 || UpdateIntegerValue
 |-
-| 4 || 
+| 4 || UpdateIntegerValueWithAddition
 |-
-| 5 || 
+| 5 || UpdateStringValue
 |-
-| 1000 || [6.0.0+]
+| 1000 || [6.0.0+] GetList
 |}
 
 == IOverwriteEventHolder ==
@@ -302,7 +302,7 @@ This is <nowiki>"nn::news::detail::ipc::IOverwriteEventHolder"</nowiki>.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Get
 |}
 
 == IUnknown2 ==

@@ -155,13 +155,13 @@ These are "nn::news::detail::ipc::IServiceCreator".
 On \[1.0.0\] these are "nn::news::detail::ipc::INewsService", see
 [\#INewsService](#INewsService "wikilink").
 
-| Cmd | Name | Notes                                                                                    |
-| --- | ---- | ---------------------------------------------------------------------------------------- |
-| 0   |      | No input, returns an [\#INewsService](#INewsService "wikilink").                         |
-| 1   |      | No input, returns an [\#INewlyArrivedEventHolder](#INewlyArrivedEventHolder "wikilink"). |
-| 2   |      | No input, returns an [\#INewsDataService](#INewsDataService "wikilink").                 |
-| 3   |      | No input, returns an [\#INewsDatabaseService](#INewsDatabaseService "wikilink").         |
-| 4   |      | No input, returns an [\#IOverwriteEventHolder](#IOverwriteEventHolder "wikilink").       |
+| Cmd | Name                          | Notes                                                                                    |
+| --- | ----------------------------- | ---------------------------------------------------------------------------------------- |
+| 0   | CreateNewsService             | No input, returns an [\#INewsService](#INewsService "wikilink").                         |
+| 1   | CreateNewlyArrivedEventHolder | No input, returns an [\#INewlyArrivedEventHolder](#INewlyArrivedEventHolder "wikilink"). |
+| 2   | CreateNewsDataService         | No input, returns an [\#INewsDataService](#INewsDataService "wikilink").                 |
+| 3   | CreateNewsDatabaseService     | No input, returns an [\#INewsDatabaseService](#INewsDatabaseService "wikilink").         |
+| 4   | CreateOverwriteEventHolder    | No input, returns an [\#IOverwriteEventHolder](#IOverwriteEventHolder "wikilink").       |
 
 ## INewsService
 
@@ -169,24 +169,24 @@ This is "nn::news::detail::ipc::INewsService".
 
 | Cmd             | Name                                                                                                                                     |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| 10100           |                                                                                                                                          |
-| 20100           |                                                                                                                                          |
-| 30100           |                                                                                                                                          |
-| 30101           | \[3.0.0+\]                                                                                                                               |
+| 10100           | PostLocalNews                                                                                                                            |
+| 20100           | SetPassphrase                                                                                                                            |
+| 30100           | GetSubscriptionStatus                                                                                                                    |
+| 30101           | \[3.0.0+\] GetTopicList                                                                                                                  |
 | 30110           | \[6.0.0+\]                                                                                                                               |
-| 30200           |                                                                                                                                          |
+| 30200           | IsSystemUpdateRequired                                                                                                                   |
 | 30201           | \[8.0.0+\]                                                                                                                               |
-| 30300           |                                                                                                                                          |
-| 30400           | \[3.0.0+\]                                                                                                                               |
+| 30300           | RequestImmediateReception                                                                                                                |
+| 30400           | \[3.0.0+\] DecodeArchiveFile                                                                                                             |
 | 30500           | \[8.0.0+\] ? (Takes a total of 8-bytes of input, a handle, and a type-0x9 input buffer, returns an [\#IUnknown2](#IUnknown2 "wikilink")) |
 | \[1.0.0\] 30900 | (No input, returns an [\#INewlyArrivedEventHolder](#INewlyArrivedEventHolder "wikilink"))                                                |
 | \[1.0.0\] 30901 | (No input, returns an [\#INewsDataService](#INewsDataService "wikilink"))                                                                |
 | \[1.0.0\] 30902 | (No input, returns an [\#INewsDatabaseService](#INewsDatabaseService "wikilink"))                                                        |
-| 40100           |                                                                                                                                          |
-| 40101           | \[3.0.0+\]                                                                                                                               |
-| 40200           |                                                                                                                                          |
-| 40201           |                                                                                                                                          |
-| 90100           |                                                                                                                                          |
+| 40100           | SetSubscriptionStatus                                                                                                                    |
+| 40101           | \[3.0.0+\] RequestAutoSubscription                                                                                                       |
+| 40200           | ClearStorage                                                                                                                             |
+| 40201           | ClearSubscriptionStatusAll                                                                                                               |
+| 90100           | GetNewsDatabaseDump                                                                                                                      |
 
 ## INewlyArrivedEventHolder
 
@@ -194,33 +194,33 @@ This is "nn::news::detail::ipc::INewlyArrivedEventHolder".
 
 | Cmd | Name |
 | --- | ---- |
-| 0   |      |
+| 0   | Get  |
 
 ## INewsDataService
 
 This is "nn::news::detail::ipc::INewsDataService".
 
-| Cmd  | Name       |
-| ---- | ---------- |
-| 0    |            |
-| 1    |            |
-| 2    |            |
-| 3    |            |
-| 1001 | \[6.0.0+\] |
+| Cmd  | Name                          |
+| ---- | ----------------------------- |
+| 0    | Open                          |
+| 1    | OpenWithNewsRecordV1          |
+| 2    | Read                          |
+| 3    | GetSize                       |
+| 1001 | \[6.0.0+\] OpenWithNewsRecord |
 
 ## INewsDatabaseService
 
 This is "nn::news::detail::ipc::INewsDatabaseService".
 
-| Cmd  | Name       |
-| ---- | ---------- |
-| 0    |            |
-| 1    |            |
-| 2    |            |
-| 3    |            |
-| 4    |            |
-| 5    |            |
-| 1000 | \[6.0.0+\] |
+| Cmd  | Name                           |
+| ---- | ------------------------------ |
+| 0    | GetListV1                      |
+| 1    | Count                          |
+| 2    | CountWithKey                   |
+| 3    | UpdateIntegerValue             |
+| 4    | UpdateIntegerValueWithAddition |
+| 5    | UpdateStringValue              |
+| 1000 | \[6.0.0+\] GetList             |
 
 ## IOverwriteEventHolder
 
@@ -228,7 +228,7 @@ This is "nn::news::detail::ipc::IOverwriteEventHolder".
 
 | Cmd | Name |
 | --- | ---- |
-| 0   |      |
+| 0   | Get  |
 
 ## IUnknown2
 
