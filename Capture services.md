@@ -16,32 +16,32 @@ This is "nn::capsrv::sf::IAlbumAccessorService".
 | 9     | \[2.0.0+\] LoadAlbumScreenShotImage                    |
 | 10    | \[2.0.0+\] LoadAlbumScreenShotThumbnailImage           |
 | 11    | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntry      |
-| 12    | \[3.0.0+\]                                             |
-| 13    | \[3.0.0+\]                                             |
-| 14    | \[3.0.0+\]                                             |
-| 15    | \[4.0.0+\]                                             |
-| 16    | \[4.0.0+\]                                             |
-| 17    | \[4.0.0+\]                                             |
+| 12    | \[3.0.0+\] LoadAlbumScreenShotImageEx                  |
+| 13    | \[3.0.0+\] LoadAlbumScreenShotThumbnailImageEx         |
+| 14    | \[3.0.0+\] LoadAlbumScreenShotImageEx0                 |
+| 15    | \[4.0.0+\] GetAlbumUsage3                              |
+| 16    | \[4.0.0+\] GetAlbumMountResult                         |
+| 17    | \[4.0.0+\] GetAlbumUsage16                             |
 | 18    | \[6.0.0+\]                                             |
-| 100   | \[5.0.0+\]                                             |
-| 101   | \[5.0.0+\]                                             |
+| 100   | \[5.0.0+\] GetAlbumFileCountEx0                        |
+| 101   | \[5.0.0+\] GetAlbumFileListEx0                         |
 | 202   | \[1.0.0-2.3.0\] SaveEditedScreenShot                   |
-| 301   | GetLastThumbnail                                       |
-| 302   | \[4.0.0+\]                                             |
+| 301   | GetLastOverlayScreenShotThumbnail                      |
+| 302   | \[4.0.0+\] GetLastOverlayMovieThumbnail                |
 | 401   | GetAutoSavingStorage                                   |
 | 501   | GetRequiredStorageSpaceSizeToCopyAll                   |
-| 1001  | \[3.0.0+\]                                             |
-| 1002  | \[3.0.0+\]                                             |
-| 1003  | \[4.0.0+\]                                             |
+| 1001  | \[3.0.0+\] LoadAlbumScreenShotThumbnailImageEx0        |
+| 1002  | \[3.0.0+\] LoadAlbumScreenShotImageEx1                 |
+| 1003  | \[4.0.0+\] LoadAlbumScreenShotThumbnailImageEx1        |
 | 8001  | ForceAlbumUnmounted                                    |
 | 8002  | ResetAlbumMountStatus                                  |
 | 8011  | RefreshAlbumCache                                      |
 | 8012  | GetAlbumCache                                          |
-| 8013  | \[4.0.0+\]                                             |
+| 8013  | \[4.0.0+\] GetAlbumCacheEx                             |
 | 8021  | \[2.0.0+\] GetAlbumEntryFromApplicationAlbumEntryAruid |
 | 10011 | SetInternalErrorConversionEnabled                      |
-| 50000 | \[6.0.0+\]                                             |
-| 60002 | \[4.0.0+\]                                             |
+| 50000 | \[6.0.0+\] LoadMakerNoteInfoForDebug                   |
+| 60002 | \[4.0.0+\] OpenAccessorSession                         |
 
 Cmd1002: Takes a total of 0x38-bytes of input, two type-0x5 input
 buffers, and returns 0x20-bytes of output. \[4.0.0+\] No longer returns
@@ -57,43 +57,43 @@ This is "nn::capsrv::sf::IAlbumAccessorSession".
 
 This was added with \[4.0.0+\].
 
-| Cmd  | Name |
-| ---- | ---- |
-| 2001 |      |
-| 2002 |      |
-| 2003 |      |
-| 2004 |      |
-| 2005 |      |
-| 2006 |      |
-| 2007 |      |
-| 2008 |      |
+| Cmd  | Name                                      |
+| ---- | ----------------------------------------- |
+| 2001 | OpenAlbumMovieReadStream                  |
+| 2002 | CloseAlbumMovieReadStream                 |
+| 2003 | GetAlbumMovieReadStreamMovieDataSize      |
+| 2004 | ReadMovieDataFromAlbumMovieReadStream     |
+| 2005 | GetAlbumMovieReadStreamBrokenReason       |
+| 2006 | GetAlbumMovieReadStreamImageDataSize      |
+| 2007 | ReadImageDataFromAlbumMovieReadStream     |
+| 2008 | ReadFileAttributeFromAlbumMovieReadStream |
 
 # caps:c
 
 This is "nn::capsrv::sf::IAlbumControlService", previously
 "nn::capsrv::sf::ICaptureControllerService" with \[1.0.0\].
 
-| Cmd                  | Name       | Notes                                                                                                               |
-| -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| \[1.0.0\] 1          |            |                                                                                                                     |
-| \[1.0.0\] 2          |            |                                                                                                                     |
-| 33                   | \[7.0.0+\] |                                                                                                                     |
-| \[1.0.0\] 1001       |            |                                                                                                                     |
-| \[1.0.0\] 1002       |            |                                                                                                                     |
-| \[1.0.0\] 1011       |            |                                                                                                                     |
-| 2001                 |            |                                                                                                                     |
-| 2002                 |            |                                                                                                                     |
-| 2011                 | \[2.0.0+\] |                                                                                                                     |
-| 2012                 | \[2.0.0+\] |                                                                                                                     |
-| 2013                 | \[2.0.0+\] |                                                                                                                     |
-| 2014                 | \[2.0.0+\] |                                                                                                                     |
-| 2101                 | \[2.0.0+\] | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
-| 2102                 | \[2.0.0+\] |                                                                                                                     |
-| \[2.0.0-3.0.2\] 2201 |            |                                                                                                                     |
-| 2202                 | \[4.0.0+\] |                                                                                                                     |
-| 2301                 | \[2.0.0+\] |                                                                                                                     |
-| 2302                 | \[4.0.0+\] |                                                                                                                     |
-| 60001                | \[4.0.0+\] | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
+| Cmd                  | Name                                         | Notes                                                                                                               |
+| -------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| \[1.0.0\] 1          | CaptureRawImage                              |                                                                                                                     |
+| \[1.0.0\] 2          | CaptureRawImageWithTimeout                   |                                                                                                                     |
+| 33                   | \[7.0.0+\]                                   |                                                                                                                     |
+| \[1.0.0\] 1001       | RequestTakingScreenShot                      |                                                                                                                     |
+| \[1.0.0\] 1002       | RequestTakingScreenShotWithTimeout           |                                                                                                                     |
+| \[1.0.0\] 1011       | RequestTakingScreenShotEx                    |                                                                                                                     |
+| 2001                 | NotifyAlbumStorageIsAvailable                |                                                                                                                     |
+| 2002                 | NotifyAlbumStorageIsUnavailable              |                                                                                                                     |
+| 2011                 | \[2.0.0+\] RegisterAppletResourceUserId      |                                                                                                                     |
+| 2012                 | \[2.0.0+\] UnregisterAppletResourceUserId    |                                                                                                                     |
+| 2013                 | \[2.0.0+\] GetApplicationIdFromAruid         |                                                                                                                     |
+| 2014                 | \[2.0.0+\] CheckApplicationIdRegistered      |                                                                                                                     |
+| 2101                 | \[2.0.0+\] GenerateCurrentAlbumFileId        | Takes an input u8 and u64, returns a 0x18-byte struct.                                                              |
+| 2102                 | \[2.0.0+\] GenerateApplicationAlbumEnrty     |                                                                                                                     |
+| \[2.0.0-3.0.2\] 2201 | SaveAlbumScreenShotFile                      |                                                                                                                     |
+| 2202                 | \[4.0.0+\] SaveAlbumScreenShotFileEx         |                                                                                                                     |
+| 2301                 | \[2.0.0+\] SetOverlayScreenShotThumbnailData |                                                                                                                     |
+| 2302                 | \[4.0.0+\] SetOverlayMovieThumbnailData      |                                                                                                                     |
+| 60001                | \[4.0.0+\] OpenControlSession                | Takes a total of 8-bytes of input and a PID, returns an [\#IAlbumControlSession](#IAlbumControlSession "wikilink"). |
 
 ### Cmd33
 
@@ -111,32 +111,32 @@ This is "nn::capsrv::sf::IAlbumControlSession".
 
 This was added with \[4.0.0+\].
 
-| Cmd  | Name       | Notes |
-| ---- | ---------- | ----- |
-| 2001 |            |       |
-| 2002 |            |       |
-| 2003 |            |       |
-| 2004 |            |       |
-| 2005 |            |       |
-| 2006 |            |       |
-| 2007 |            |       |
-| 2008 |            |       |
-| 2401 |            |       |
-| 2402 |            |       |
-| 2403 |            |       |
-| 2404 |            |       |
-| 2405 |            |       |
-| 2406 | \[7.0.0+\] |       |
-| 2411 |            |       |
-| 2412 |            |       |
-| 2413 |            |       |
-| 2414 |            |       |
-| 2421 |            |       |
-| 2422 |            |       |
-| 2424 |            |       |
-| 2431 |            |       |
-| 2433 |            |       |
-| 2434 |            |       |
+| Cmd  | Name                                      | Notes |
+| ---- | ----------------------------------------- | ----- |
+| 2001 | OpenAlbumMovieReadStream                  |       |
+| 2002 | CloseAlbumMovieReadStream                 |       |
+| 2003 | GetAlbumMovieReadStreamMovieDataSize      |       |
+| 2004 | ReadMovieDataFromAlbumMovieReadStream     |       |
+| 2005 | GetAlbumMovieReadStreamBrokenReason       |       |
+| 2006 | GetAlbumMovieReadStreamImageDataSize      |       |
+| 2007 | ReadImageDataFromAlbumMovieReadStream     |       |
+| 2008 | ReadFileAttributeFromAlbumMovieReadStream |       |
+| 2401 | OpenAlbumMovieWriteStream                 |       |
+| 2402 | FinishAlbumMovieWriteStream               |       |
+| 2403 | CommitAlbumMovieWriteStream               |       |
+| 2404 | DiscardAlbumMovieWriteStream              |       |
+| 2405 | DiscardAlbumMovieWriteStreamNoDelete      |       |
+| 2406 | \[7.0.0+\]                                |       |
+| 2411 | StartAlbumMovieWriteStreamDataSection     |       |
+| 2412 | EndAlbumMovieWriteStreamDataSection       |       |
+| 2413 | StartAlbumMovieWriteStreamMetaSection     |       |
+| 2414 | EndAlbumMovieWriteStreamMetaSection       |       |
+| 2421 | ReadDataFromAlbumMovieWriteStream         |       |
+| 2422 | WriteDataToAlbumMovieWriteStream          |       |
+| 2424 | WriteMetaToAlbumMovieWriteStream          |       |
+| 2431 | GetAlbumMovieWriteStreamBrokenReason      |       |
+| 2433 | GetAlbumMovieWriteStreamDataSize          |       |
+| 2434 | SetAlbumMovieWriteStreamDataSize          |       |
 
 # caps:u
 
