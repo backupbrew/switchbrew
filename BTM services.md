@@ -2,70 +2,70 @@
 
 This is "nn::btm::IBtm".
 
-| Cmd | Name                                           |
-| --- | ---------------------------------------------- |
-| 0   |                                                |
-| 1   |                                                |
-| 2   | RegisterSystemEventForConnectedDeviceCondition |
-| 3   |                                                |
-| 4   |                                                |
-| 5   |                                                |
-| 6   |                                                |
-| 7   |                                                |
-| 8   | RegisterSystemEventForRegisteredDeviceInfo     |
-| 9   |                                                |
-| 10  |                                                |
-| 11  |                                                |
-| 12  |                                                |
-| 13  |                                                |
-| 14  | EnableRadio                                    |
-| 15  | DisableRadio                                   |
-| 16  |                                                |
-| 17  |                                                |
-| 18  | \[2.0.0+\]                                     |
-| 19  | \[4.0.0+\]                                     |
-| 20  | \[4.0.0+\]                                     |
-| 21  | \[4.0.0+\]                                     |
-| 22  | \[5.0.0+\]                                     |
-| 23  | \[5.0.0+\]                                     |
-| 24  | \[5.0.0+\]                                     |
-| 25  | \[5.0.0+\]                                     |
-| 26  | \[5.0.0+\]                                     |
-| 27  | \[5.0.0+\]                                     |
-| 28  | \[5.0.0+\]                                     |
-| 29  | \[5.0.0+\]                                     |
-| 30  | \[5.0.0+\]                                     |
-| 31  | \[5.0.0+\]                                     |
-| 32  | \[5.0.0+\]                                     |
-| 33  | \[5.0.0+\]                                     |
-| 34  | \[5.0.0+\]                                     |
-| 35  | \[5.0.0+\]                                     |
-| 36  | \[5.0.0+\]                                     |
-| 37  | \[5.0.0+\]                                     |
-| 38  | \[5.0.0+\]                                     |
-| 39  | \[5.0.0+\]                                     |
-| 40  | \[5.0.0+\]                                     |
-| 41  | \[5.0.0+\]                                     |
-| 42  | \[5.0.0+\]                                     |
-| 43  | \[5.1.0+\]                                     |
-| 44  | \[5.1.0+\]                                     |
-| 45  | \[5.1.0+\]                                     |
-| 46  | \[5.1.0+\]                                     |
-| 47  | \[5.1.0+\]                                     |
-| 48  | \[5.1.0+\]                                     |
-| 49  | \[5.1.0+\]                                     |
-| 50  | \[5.1.0+\]                                     |
-| 51  | \[5.1.0+\]                                     |
-| 52  | \[5.1.0+\]                                     |
-| 53  | \[5.1.0+\]                                     |
-| 54  | \[5.1.0+\]                                     |
-| 55  | \[5.1.0+\]                                     |
-| 56  | \[5.1.0+\]                                     |
-| 57  | \[5.1.0+\]                                     |
-| 58  | \[5.1.0+\]                                     |
-| 59  | \[5.1.0+\]                                     |
-| 60  | \[8.0.0+\]                                     |
-| 61  | \[8.0.0+\]                                     |
+| Cmd | Name                                       |
+| --- | ------------------------------------------ |
+| 0   | GetState                                   |
+| 1   | GetHostDeviceProperty                      |
+| 2   | AcquireDeviceConditionEvent                |
+| 3   | GetDeviceCondition                         |
+| 4   | SetBurstMode                               |
+| 5   | SetSlotMode                                |
+| 6   | SetBluetoothMode                           |
+| 7   | SetWlanMode                                |
+| 8   | AcquireDeviceInfoEvent                     |
+| 9   | GetDeviceInfo                              |
+| 10  | AddDeviceInfo                              |
+| 11  | RemoveDeviceInfo                           |
+| 12  | IncreaseDeviceInfoOrder                    |
+| 13  | LlrNotify                                  |
+| 14  | EnableRadio                                |
+| 15  | DisableRadio                               |
+| 16  | HidDisconnect                              |
+| 17  | HidSetRetransmissionMode                   |
+| 18  | \[2.0.0+\] AcquireAwakeReqEvent            |
+| 19  | \[4.0.0+\] AcquireLlrStateEvent            |
+| 20  | \[4.0.0+\] IsLlrStarted                    |
+| 21  | \[4.0.0+\] EnableSlotSaving                |
+| 22  | \[5.0.0+\] ProtectDeviceInfo               |
+| 23  | \[5.0.0+\] AcquireBleScanEvent             |
+| 24  | \[5.0.0+\] GetBleScanParameterGeneral      |
+| 25  | \[5.0.0+\] GetBleScanParameterSmartDevice  |
+| 26  | \[5.0.0+\] StartBleScanForGeneral          |
+| 27  | \[5.0.0+\] StopBleScanForGeneral           |
+| 28  | \[5.0.0+\] GetBleScanResultsForGeneral     |
+| 29  | \[5.0.0+\] StartBleScanForPairedDevice     |
+| 30  | \[5.0.0+\] StopBleScanForPairedDevice      |
+| 31  | \[5.0.0+\] StartBleScanForSmartDevice      |
+| 32  | \[5.0.0+\] StopBleScanForSmartDevice       |
+| 33  | \[5.0.0+\] GetBleScanResultsForSmartDevice |
+| 34  | \[5.0.0+\] AcquireBleConnectionEvent       |
+| 35  | \[5.0.0+\] BleConnect                      |
+| 36  | \[5.0.0+\] BleOverrideConnection           |
+| 37  | \[5.0.0+\] BleDisconnect                   |
+| 38  | \[5.0.0+\] BleGetConnectionState           |
+| 39  | \[5.0.0+\] BleGetGattClientConditionList   |
+| 40  | \[5.0.0+\] AcquireBlePairingEvent          |
+| 41  | \[5.0.0+\] BlePairDevice                   |
+| 42  | \[5.0.0+\] BleUnpairDeviceOnBoth           |
+| 43  | \[5.1.0+\] BleUnpairDevice                 |
+| 44  | \[5.1.0+\] BleGetPairedAddresses           |
+| 45  | \[5.1.0+\] AcquireBleServiceDiscoveryEvent |
+| 46  | \[5.1.0+\] GetGattServices                 |
+| 47  | \[5.1.0+\] GetGattService                  |
+| 48  | \[5.1.0+\] GetGattIncludedServices         |
+| 49  | \[5.1.0+\] GetBelongingService             |
+| 50  | \[5.1.0+\] GetGattCharacteristics          |
+| 51  | \[5.1.0+\] GetGattDescriptors              |
+| 52  | \[5.1.0+\] AcquireBleMtuConfigEvent        |
+| 53  | \[5.1.0+\] ConfigureBleMtu                 |
+| 54  | \[5.1.0+\] GetBleMtu                       |
+| 55  | \[5.1.0+\] RegisterBleGattDataPath         |
+| 56  | \[5.1.0+\] UnregisterBleGattDataPath       |
+| 57  | \[5.1.0+\] RegisterAppletResourceUserId    |
+| 58  | \[5.1.0+\] UnregisterAppletResourceUserId  |
+| 59  | \[5.1.0+\] SetAppletResourceUserId         |
+| 60  | \[8.0.0+\]                                 |
+| 61  | \[8.0.0+\]                                 |
 
 \[3.0.0+\] RegisterSystemEventForConnectedDeviceCondition,
 RegisterSystemEventForRegisteredDeviceInfo, and cmd18 now returns an
@@ -78,21 +78,21 @@ changed).
 
 This is "nn::btm::IBtmDebug".
 
-| Cmd | Name                            |
-| --- | ------------------------------- |
-| 0   | RegisterSystemEventForDiscovery |
-| 1   |                                 |
-| 2   |                                 |
-| 3   |                                 |
-| 4   |                                 |
-| 5   |                                 |
-| 6   |                                 |
-| 7   |                                 |
-| 8   |                                 |
-| 9   | \[5.0.0+\]                      |
-| 10  | \[5.1.0+\]                      |
-| 11  | \[5.1.0+\]                      |
-| 12  | \[5.1.0+\]                      |
+| Cmd | Name                                        |
+| --- | ------------------------------------------- |
+| 0   | AcquireDiscoveryEvent                       |
+| 1   | StartDiscovery                              |
+| 2   | CancelDiscovery                             |
+| 3   | GetDeviceProperty                           |
+| 4   | CreateBond                                  |
+| 5   | CancelBond                                  |
+| 6   | SetTsiMode                                  |
+| 7   | GeneralTest                                 |
+| 8   | HidConnect                                  |
+| 9   | \[5.0.0+\] GeneralGet                       |
+| 10  | \[5.1.0+\] GetGattClientDisconnectionReason |
+| 11  | \[5.1.0+\] GetBleConnectionParameter        |
+| 12  | \[5.1.0+\] GetBleConnectionParameterRequest |
 
 \[3.0.0+\] RegisterSystemEventForDiscovery now returns an output u8.
 
