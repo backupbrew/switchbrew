@@ -1327,14 +1327,14 @@ This is "nn::ahid::hdr::ISession".
 
 Used internally for USB HID devices.
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   |            |
-| 4   |            |
-| 5   | \[6.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | GetDeviceEntries           |
+| 1   | GetDeviceList              |
+| 2   | GetDeviceParameters        |
+| 3   | AttachDevice               |
+| 4   | DetachDevice               |
+| 5   | \[6.0.0+\] SetDeviceFilter |
 
 # xcd:sys
 

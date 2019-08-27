@@ -1751,17 +1751,17 @@ Used internally for USB HID devices.
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || GetDeviceEntries
 |-
-| 1 || 
+| 1 || GetDeviceList
 |-
-| 2 || 
+| 2 || GetDeviceParameters
 |-
-| 3 || 
+| 3 || AttachDevice
 |-
-| 4 ||
+| 4 || DetachDevice
 |-
-| 5 || [6.0.0+]
+| 5 || [6.0.0+] SetDeviceFilter
 |}
 
 = xcd:sys =
