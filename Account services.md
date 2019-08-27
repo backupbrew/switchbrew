@@ -440,10 +440,10 @@ This is "nn::dauth::detail::IService".
 | Cmd | Name                                                                   |
 | --- | ---------------------------------------------------------------------- |
 | 0   | EnsureAuthenticationTokenCacheAsync (\[5.0.0-5.1.0\] GeneratePostData) |
-| 1   | LoadAuthenticationTokenCache \[6.0.0+\]                                |
+| 1   | \[6.0.0+\] LoadAuthenticationTokenCache                                |
 | 2   | \[6.0.0+\]                                                             |
-| 10  | EnsureEdgeTokenCacheAsync \[6.0.0+\]                                   |
-| 11  | LoadEdgeTokenCache \[6.0.0+\]                                          |
+| 10  | \[6.0.0+\] EnsureEdgeTokenCacheAsync                                   |
+| 11  | \[6.0.0+\] LoadEdgeTokenCache                                          |
 | 12  | \[6.0.0+\]                                                             |
 
 ## IAsyncResult
