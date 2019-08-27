@@ -80,7 +80,7 @@ This is "nn::capsrv::sf::IAlbumControlService", previously
 | 33                   | \[7.0.0+\]                                   |                                                                                                                     |
 | \[1.0.0\] 1001       | RequestTakingScreenShot                      |                                                                                                                     |
 | \[1.0.0\] 1002       | RequestTakingScreenShotWithTimeout           |                                                                                                                     |
-| \[1.0.0\] 1011       | RequestTakingScreenShotEx                    |                                                                                                                     |
+| \[1.0.0\] 1011       | NotifyTakingScreenShotRefused                |                                                                                                                     |
 | 2001                 | NotifyAlbumStorageIsAvailable                |                                                                                                                     |
 | 2002                 | NotifyAlbumStorageIsUnavailable              |                                                                                                                     |
 | 2011                 | \[2.0.0+\] RegisterAppletResourceUserId      |                                                                                                                     |

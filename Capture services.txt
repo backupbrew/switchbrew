@@ -129,7 +129,7 @@ This is "nn::capsrv::sf::IAlbumControlService", previously "nn::capsrv::sf::ICap
 |-
 | [1.0.0] 1002 || RequestTakingScreenShotWithTimeout || 
 |-
-| [1.0.0] 1011 || RequestTakingScreenShotEx || 
+| [1.0.0] 1011 || NotifyTakingScreenShotRefused || 
 |-
 | 2001 || NotifyAlbumStorageIsAvailable || 
 |-
