@@ -51,7 +51,7 @@ This is "nn::psm::IPsmServer".
 | 15  | [\#GetBatteryAgePercentage](#GetBatteryAgePercentage "wikilink")                     |
 | 16  | [\#GetBatteryChargeInfoEvent](#GetBatteryChargeInfoEvent "wikilink")                 |
 | 17  | [\#GetBatteryChargeInfoFields](#GetBatteryChargeInfoFields "wikilink")               |
-| 18  | \[3.0.0+\]                                                                           |
+| 18  | \[3.0.0+\] GetBatteryChargeCalibratedEvent                                           |
 |     |                                                                                      |
 
 ## GetBatteryChargePercentage
