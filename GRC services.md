@@ -212,13 +212,21 @@ Seems to be unused by official user processes,
 [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
 is used instead.
 
+The input buffer contains the optional ApplicationData for the JPEG
+thumbnail, size must be \<=0x400.
+
+The recorded video will not be accessible via the Album-applet since
+it's stored separately from other Album data.
+
 ## CompleteOffscreenRecordingFinishEx0
 
 Takes two input s32s **width**/**height**, an input u64 **LayerHandle**
 and 2 type-0x5 input buffers, no output.
 
 The input buffers are optional, addr=NULL and size=0 can be used for
-these.
+these. The first buffer is for
+[ApplicationData](#CompleteOffscreenRecordingFinish "wikilink"), the
+second buffer buffer contains the RGBA8 image thumbnail.
 
 **width**/**height** must be 1280x720, these fields are unused
 afterwards.
@@ -235,7 +243,8 @@ and two type-0x5 input buffers, returns an output
 
 Same as
 [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
-except the output struct is returned in the cmdreply.
+except the output struct is returned in the cmdreply. Official sw copies
+the output struct into a "nn::album::AlbumFileEntry".
 
 ## GetOffscreenLayerError
 
