@@ -208,7 +208,13 @@ Takes two input s32s '''width'''/'''height''', an input u64 '''LayerHandle''' an
 Same as [[#CompleteOffscreenRecordingFinishEx0]] except the output struct is returned in the cmdreply.
 
 == EncodeOffscreenLayerAudioSample ==
-Takes an input u64 '''LayerHandle''' and a type-0x5 input buffer, returns an output u64.
+Takes an input u64 '''LayerHandle''' and a type-0x5 input buffer, returns an output u64 '''out_size'''.
+
+Official sw enters a loop for handling the user-specified buffer:
+* Waits on the Event originally loaded from [[#GetOffscreenLayerAudioEncodeReadyEvent]].
+* Uses the cmd with the current buffer_addr+pos and the remaining_size.
+* Updates the current pos and remaining_size with the '''out_size'''.
+* Repeats the loop until the remaining_size is 0.
 
 == GetOffscreenLayerError ==
 Takes an input u64 '''LayerHandle''', no output.

@@ -232,7 +232,16 @@ except the output struct is returned in the cmdreply.
 ## EncodeOffscreenLayerAudioSample
 
 Takes an input u64 **LayerHandle** and a type-0x5 input buffer, returns
-an output u64.
+an output u64 **out\_size**.
+
+Official sw enters a loop for handling the user-specified buffer:
+
+  - Waits on the Event originally loaded from
+    [\#GetOffscreenLayerAudioEncodeReadyEvent](#GetOffscreenLayerAudioEncodeReadyEvent "wikilink").
+  - Uses the cmd with the current buffer\_addr+pos and the
+    remaining\_size.
+  - Updates the current pos and remaining\_size with the **out\_size**.
+  - Repeats the loop until the remaining\_size is 0.
 
 ## GetOffscreenLayerError
 
