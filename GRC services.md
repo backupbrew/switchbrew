@@ -189,6 +189,14 @@ Takes an input u64 **LayerHandle**, no output.
 
 Takes an input u64 **LayerHandle**, no output.
 
+This is the first cmd used by official sw when finishing recording. Then
+it waits on the Event originally loaded from
+[\#GetOffscreenLayerRecordingFinishReadyEvent](#GetOffscreenLayerRecordingFinishReadyEvent "wikilink").
+Then CompleteOffscreenRecordingFinishEx\* is used, depending on the
+sdk-nso version. On any errors,
+[\#AbortOffscreenRecording](#AbortOffscreenRecording "wikilink") is
+used.
+
 ## StartOffscreenRecordingEx
 
 Takes an input u64 **LayerHandle** and an
@@ -229,6 +237,10 @@ Same as
 [\#CompleteOffscreenRecordingFinishEx0](#CompleteOffscreenRecordingFinishEx0 "wikilink")
 except the output struct is returned in the cmdreply.
 
+## GetOffscreenLayerError
+
+Takes an input u64 **LayerHandle**, no output.
+
 ## EncodeOffscreenLayerAudioSample
 
 Takes an input u64 **LayerHandle** and a type-0x5 input buffer, returns
@@ -242,10 +254,6 @@ Official sw enters a loop for handling the user-specified buffer:
     remaining\_size.
   - Updates the current pos and remaining\_size with the **out\_size**.
   - Repeats the loop until the remaining\_size is 0.
-
-## GetOffscreenLayerError
-
-Takes an input u64 **LayerHandle**, no output.
 
 ## GetOffscreenLayerRecordingFinishReadyEvent
 
