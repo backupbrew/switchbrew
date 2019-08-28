@@ -2058,43 +2058,43 @@ The PersonalMmHeap are allocated as follows:
 
 == MemoryState ==
 {| class=wikitable
-! Bits || Description
+! Bits || Description || Meaning
 |-
-| 7-0 || Type
+| 7-0 || Type || 
 |-
-| 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]]
+| 8 || [[#svcSetMemoryPermission|PermissionChangeAllowed]] ||
 |-
-| 9 || ForceReadWritableByDebugSyscalls
+| 9 || ForceReadWritableByDebugSyscalls || Allows using [[#svcWriteDebugProcessMemory]] on segments mapped read-only.
 |-
-| 10 || IpcSendAllowed
+| 10 || IpcSendAllowed || Allows sending this region as an IPC A/B/W buffer with flags=0.
 |-
-| 11 || NonDeviceIpcSendAllowed
+| 11 || NonDeviceIpcSendAllowed || Allows sending this region as an IPC A/B/W buffer with flags=1.
 |-
-| 12 || NonSecureIpcSendAllowed
+| 12 || NonSecureIpcSendAllowed || Allows sending this region as an IPC A/B/W buffer with flags=3.
 |-
-| 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangeAllowed]]
+| 14 || [[#svcSetProcessMemoryPermission|ProcessPermissionChangeAllowed]] ||
 |-
-| 15 || [[#svcMapMemory|MapAllowed]]
+| 15 || [[#svcMapMemory|MapAllowed]] ||
 |-
-| 16 || [[#svcUnmapProcessCodeMemory|UnmapProcessCodeMemoryAllowed]]
+| 16 || [[#svcUnmapProcessCodeMemory|UnmapProcessCodeMemoryAllowed]] ||
 |-
-| 17 || [[#svcCreateTransferMemory|TransferMemoryAllowed]]
+| 17 || [[#svcCreateTransferMemory|TransferMemoryAllowed]] ||
 |-
-| 18 || [[#svcQueryPhysicalAddress|QueryPhysicalAddressAllowed]]
+| 18 || [[#svcQueryPhysicalAddress|QueryPhysicalAddressAllowed]] ||
 |-
-| 19 || MapDeviceAllowed ([[#svcMapDeviceAddressSpace]] and [[#svcMapDeviceAddressSpaceByForce]])
+| 19 || MapDeviceAllowed ([[#svcMapDeviceAddressSpace]] and [[#svcMapDeviceAddressSpaceByForce]]) ||
 |-
-| 20 || [[#svcMapDeviceAddressSpaceAligned|MapDeviceAlignedAllowed]]
+| 20 || [[#svcMapDeviceAddressSpaceAligned|MapDeviceAlignedAllowed]] ||
 |-
-| 21 || [[#svcSendSyncRequestWithUserBuffer|IpcBufferAllowed]]
+| 21 || [[#svcSendSyncRequestWithUserBuffer|IpcBufferAllowed]] ||
 |-
-| 22 || IsPoolAllocated/IsReferenceCounted
+| 22 || IsPoolAllocated/IsReferenceCounted || The physical memory blocks backing this region are refcounted.
 |-
-| 23 || [[#svcMapProcessMemory|MapProcessAllowed]]
+| 23 || [[#svcMapProcessMemory|MapProcessAllowed]] ||
 |-
-| 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]]
+| 24 || [[#svcSetMemoryAttribute|AttributeChangeAllowed]] ||
 |-
-| 25 || [4.0.0+] CodeMemoryAllowed
+| 25 || [4.0.0+] [[#svcCreateCodeMemory|CodeMemoryAllowed]] ||
 |}
 
 {| class=wikitable
