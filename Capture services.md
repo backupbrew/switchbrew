@@ -211,6 +211,32 @@ This is "nn::capsrv::AlbumEntry". This is a 0x20-byte struct.
 The data at offset 0x10 size 0x8 corresponds to each field in the Album
 entry filename, prior to the "-".
 
+# AlbumFileEntry
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x20 | Unknown.    |
+
+This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct.
+
+# ApplicationAlbumEntry
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x20 | Unknown.    |
+
+This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct.
+
+With the output from
+[caps:su](Applet%20Manager%20services#caps:su.md##caps:su "wikilink")
+sdk-nso only uses this for the
+[Share-applet](Internet%20Browser.md "wikilink") (when the output is
+used at all), with everything else (which has a different struct format)
+it's used as an [\#AlbumFileEntry](#AlbumFileEntry "wikilink"). In those
+cases with the `nn::album` wrapper funcs, it's "converted" by just
+copying the struct (arrays are "converted" by just returning a ptr to
+the input array).
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
