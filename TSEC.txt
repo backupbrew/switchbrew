@@ -4,14 +4,15 @@ TSEC (Tegra Security Co-processor) is a dedicated unit powered by a NVIDIA Falco
 A host driver for communicating with the TSEC is mapped to physical address 0x54500000 with a total size of 0x40000 bytes and exposes several registers.
 
 == Registers ==
-Registers from 0x54500000 to 0x54501000 are used to configure the host interface (HOST1X).
-
-Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with the Falcon microprocessor. From this range, the subset of registers from 0x54501400 to 0x54501FE8 are specific to the TSEC and are subdivided into:
-* 0x54501400 to 0x54501500: SCP (Secure Co-Processor).
-* 0x54501500 to 0x54501600: TRNG (True Random Number Generator).
-* 0x54501600 to 0x54501700: TFBIF (Tegra Framebuffer Interface) and CG (Clock Gate).
-* 0x54501700 to 0x54501800: BAR0.
-* 0x54501800 to 0x54501900: TEGRA (miscellaneous interfaces). 
+The TSEC's MMIO space is divided as follows:
+* 0x54500000 to 0x54501000: THI (Tegra Host Interface)
+* 0x54501000 to 0x54501400: FALCON (Falcon microcontroller)
+* 0x54501400 to 0x54501500: SCP (Secure Co-processor)
+* 0x54501500 to 0x54501600: RND (Random Number Generator)
+* 0x54501600 to 0x54501680: TFBIF (Tegra Framebuffer Interface)
+* 0x54501680 to 0x54501700: CG (Clock Gate)
+* 0x54501700 to 0x54501800: BAR0 (HOST1X device DMA)
+* 0x54501800 to 0x54501900: TEGRA (Miscellaneous interfaces)
 
 {| class="wikitable" border="1"
 !  Name
@@ -654,11 +655,11 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x5450140C
 | 0x04
 |-
-| TSEC_SCP_UNK_10
+| TSEC_SCP_CFG
 | 0x54501410
 | 0x04
 |-
-| TSEC_SCP_UNK_14
+| TSEC_SCP_CTL_SCP
 | 0x54501414
 | 0x04
 |-
@@ -666,40 +667,44 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501418
 | 0x04
 |-
-| TSEC_SCP_UNK_1C
+| TSEC_SCP_CTL_DBG
 | 0x5450141C
 | 0x04
 |-
-| [[#TSEC_SCP_SEQ_CTL|TSEC_SCP_SEQ_CTL]]
+| [[#TSEC_SCP_DBG0|TSEC_SCP_DBG0]]
 | 0x54501420
 | 0x04
 |-
-| [[#TSEC_SCP_SEQ_VAL|TSEC_SCP_SEQ_VAL]]
+| [[#TSEC_SCP_DBG1|TSEC_SCP_DBG1]]
 | 0x54501424
 | 0x04
 |-
-| [[#TSEC_SCP_SEQ_STAT|TSEC_SCP_SEQ_STAT]]
+| [[#TSEC_SCP_DBG2|TSEC_SCP_DBG2]]
 | 0x54501428
 | 0x04
 |-
-| [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]]
+| [[#TSEC_SCP_CMD|TSEC_SCP_CMD]]
 | 0x54501430
 | 0x04
 |-
-| TSEC_SCP_UNK_50
+| TSEC_SCP_STAT0
 | 0x54501450
 | 0x04
 |-
-| [[#TSEC_SCP_AUTH_STAT|TSEC_SCP_AUTH_STAT]]
+| [[#TSEC_SCP_STAT1|TSEC_SCP_STAT1]]
 | 0x54501454
 | 0x04
 |-
-| [[#TSEC_SCP_AES_STAT|TSEC_SCP_AES_STAT]]
+| [[#TSEC_SCP_STAT2|TSEC_SCP_STAT2]]
 | 0x54501458
 | 0x04
 |-
-| TSEC_SCP_UNK_70
+| TSEC_SCP_RND_STAT0
 | 0x54501470
+| 0x04
+|-
+| TSEC_SCP_RND_STAT1
+| 0x54501474
 | 0x04
 |-
 | [[#TSEC_SCP_IRQSTAT|TSEC_SCP_IRQSTAT]]
@@ -714,59 +719,59 @@ Registers from 0x54501000 to 0x54502000 are a MMIO window for communicating with
 | 0x54501490
 | 0x04
 |-
-| TSEC_SCP_UNK_94
+| TSEC_SCP_SEC_ERR
 | 0x54501494
 | 0x04
 |-
-| [[#TSEC_SCP_INSN_ERR|TSEC_SCP_INSN_ERR]]
+| [[#TSEC_SCP_CMD_ERR|TSEC_SCP_CMD_ERR]]
 | 0x54501498
 | 0x04
 |-
-| TSEC_TRNG_CLK_LIMIT_LOW
+| TSEC_RND_CTL0
 | 0x54501500
 | 0x04
 |-
-| TSEC_TRNG_CLK_LIMIT_HIGH
+| TSEC_RND_CTL1
 | 0x54501504
 | 0x04
 |-
-| TSEC_TRNG_UNK_08
+| TSEC_RND_CTL2
 | 0x54501508
 | 0x04
 |-
-| TSEC_TRNG_TEST_CTL
+| TSEC_RND_CTL3
 | 0x5450150C
 | 0x04
 |-
-| TSEC_TRNG_TEST_CFG0
+| TSEC_RND_CTL4
 | 0x54501510
 | 0x04
 |-
-| TSEC_TRNG_TEST_SEED0
+| TSEC_RND_CTL5
 | 0x54501514
 | 0x04
 |-
-| TSEC_TRNG_TEST_CFG1
+| TSEC_RND_CTL6
 | 0x54501518
 | 0x04
 |-
-| TSEC_TRNG_TEST_SEED1
+| TSEC_RND_CTL7
 | 0x5450151C
 | 0x04
 |-
-| TSEC_TRNG_UNK_20
+| TSEC_RND_CTL8
 | 0x54501520
 | 0x04
 |-
-| TSEC_TRNG_UNK_24
+| TSEC_RND_CTL9
 | 0x54501524
 | 0x04
 |-
-| TSEC_TRNG_UNK_28
+| TSEC_RND_CTL10
 | 0x54501528
 | 0x04
 |-
-| TSEC_TRNG_CTL
+| TSEC_RND_CTL11
 | 0x5450152C
 | 0x04
 |-
@@ -2463,7 +2468,7 @@ Controls accesses to the following registers:
 !  Description
 |-
 | 20
-| Enable TSEC_SCP_INSN_STAT register
+| Enable the CMD interface
 |}
 
 === TSEC_SCP_CTL1 ===
@@ -2472,10 +2477,10 @@ Controls accesses to the following registers:
 !  Description
 |-
 | 11
-| Enable TRNG testing mode
+| Enable RND testing mode
 |-
 | 12
-| Enable the TRNG
+| Enable the RND interface
 |}
 
 === TSEC_SCP_CTL_STAT ===
@@ -2493,31 +2498,31 @@ Controls accesses to the following registers:
 !  Description
 |-
 | 0
-| Disable reads for the SCP and TRNG register blocks
+| Enable lockdown mode
 |-
 | 1
-| Disable reads for the TFBIF register block
+| 
 |-
 | 2
-| Disable reads for the DMA register block
+| 
 |-
 | 3
-| Disable reads for the TEGRA register block
+| 
 |-
 | 4
-| Disable writes for the SCP and TRNG register blocks
+| Lock the SCP and RND
 |-
 | 5
-| Disable writes for the TFBIF register block
+| 
 |-
 | 6
-| Disable writes for the DMA register block
+| 
 |-
 | 7
-| Disable writes for the TEGRA register block
+| 
 |}
 
-Locks accesses to sub-engines and can only be cleared in Heavy Secure mode.
+Controls lockdown mode and can only be cleared in Heavy Secure mode.
 
 === TSEC_SCP_CTL_PKEY ===
 {| class="wikitable" border="1"
@@ -2531,7 +2536,7 @@ Locks accesses to sub-engines and can only be cleared in Heavy Secure mode.
 | TSEC_SCP_CTL_PKEY_LOADED
 |}
 
-=== TSEC_SCP_SEQ_CTL ===
+=== TSEC_SCP_DBG0 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2548,7 +2553,7 @@ Locks accesses to sub-engines and can only be cleared in Heavy Secure mode.
 
 Controls the last crypto sequence (cs0 or cs1) created.
 
-=== TSEC_SCP_SEQ_VAL ===
+=== TSEC_SCP_DBG1 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2565,7 +2570,7 @@ Controls the last crypto sequence (cs0 or cs1) created.
 
 Contains information on the last crypto sequence (cs0 or cs1) created.
 
-=== TSEC_SCP_SEQ_STAT ===
+=== TSEC_SCP_DBG2 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2582,7 +2587,7 @@ Contains information on the last crypto sequence (cs0 or cs1) created.
 
 Contains information on the last crypto sequence (cs0 or cs1) executed.
 
-=== TSEC_SCP_INSN_STAT ===
+=== TSEC_SCP_CMD ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2622,15 +2627,15 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
  0x18: csigclr (fuc5 opcode 0xE0)
 |-
 | 28
-| Set if the instruction is valid
+| Set if the command is valid
 |-
 | 31
 | Set if running in HS mode
 |}
 
-Contains information on the last crypto instruction executed.
+Contains information on the last crypto command executed.
 
-=== TSEC_SCP_AUTH_STAT ===
+=== TSEC_SCP_STAT1 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2641,7 +2646,7 @@ Contains information on the last crypto instruction executed.
 
 Contains information on the last authentication attempt.
 
-=== TSEC_SCP_AES_STAT ===
+=== TSEC_SCP_STAT2 ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
@@ -2668,25 +2673,25 @@ Contains information on the last AES sequence executed.
 !  Description
 |-
 | 0
-| TSEC_SCP_IRQSTAT_TRNG
+| RND ready
 |-
 | 8
-| TSEC_SCP_IRQSTAT_ACL_ERROR
+| ACL error
 |-
 | 12
-| Unknown
+| SEC error
 |-
 | 16
-| TSEC_SCP_IRQSTAT_INSN_ERROR
+| CMD error
 |-
 | 20
-| TSEC_SCP_IRQSTAT_SINGLE_STEP
+| Single step
 |-
 | 24
-| Unknown
+| 
 |-
 | 28
-| Unknown
+| 
 |}
 
 Used for getting the status of crypto IRQs.
@@ -2697,25 +2702,25 @@ Used for getting the status of crypto IRQs.
 !  Description
 |-
 | 0
-| TSEC_SCP_IRQMASK_TRNG
+| RND ready
 |-
 | 8
-| TSEC_SCP_IRQMASK_ACL_ERROR
+| ACL error
 |-
 | 12
-| Unknown
+| SEC error
 |-
 | 16
-| TSEC_SCP_IRQMASK_INSN_ERROR
+| CMD error
 |-
 | 20
-| TSEC_SCP_IRQMASK_SINGLE_STEP
+| Single step
 |-
 | 24
-| Unknown
+| 
 |-
 | 28
-| Unknown
+| 
 |}
 
 Used for getting the value of the mask for crypto IRQs.
@@ -2738,15 +2743,15 @@ Used for getting the value of the mask for crypto IRQs.
 | An ACL error occurred
 |}
 
-Contains information on the status generated by the [[#TSEC_SCP_IRQSTAT|TSEC_SCP_IRQSTAT_ACL_ERROR]] IRQ.
+Contains information on the status generated by the [[#TSEC_SCP_IRQSTAT|ACL error]] IRQ.
 
-=== TSEC_SCP_INSN_ERR ===
+=== TSEC_SCP_CMD_ERR ===
 {| class="wikitable" border="1"
 !  Bits
 !  Description
 |-
 | 0
-| Invalid instruction
+| Invalid command
 |-
 | 4
 | Empty crypto sequence
@@ -2767,7 +2772,7 @@ Contains information on the status generated by the [[#TSEC_SCP_IRQSTAT|TSEC_SCP
 | Forbidden ACL change (cchmod in NS mode)
 |}
 
-Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|TSEC_SCP_IRQSTAT_INSN_ERROR]] IRQ.
+Contains information on crypto errors generated by the [[#TSEC_SCP_IRQSTAT|CMD error]] IRQ.
 
 === TSEC_TFBIF_CTL ===
 {| class="wikitable" border="1"
@@ -3139,9 +3144,9 @@ From non-secure mode, upon jumping to a page marked as secret, a secret fault oc
 The CPU automatically goes back to non-secure mode when returning back into non-secret pages. When this happens, the valid bit (bit0) in the TLB flags is cleared for all secret pages.
 
 ==== Implementation ====
-Under certain circumstances, it is possible to observe [[#csigauth|csigauth]] being briefly written to [[#TSEC_SCP_INSN_STAT|TSEC_SCP_INSN_STAT]] as "csigauth $c4 $c6" while the opcodes in [[#TSEC_SCP_AES_STAT|TSEC_SCP_AES_STAT]] are set to "cxsin" and "csigauth", respectively.
+Under certain circumstances, it is possible to observe [[#csigauth|csigauth]] being briefly written to [[#TSEC_SCP_CMD|TSEC_SCP_CMD]] as "csigauth $c4 $c6" while the opcodes in [[#TSEC_SCP_STAT2|TSEC_SCP_STAT2]] are set to "cxsin" and "csigauth", respectively.
 
-Via [[#TSEC_SCP_SEQ_CTL|TSEC_SCP_SEQ_CTL]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
+Via [[#TSEC_SCP_DBG0|TSEC_SCP_DBG0]] it can be observed that a 3-sized macro sequence is loaded into cs0 during a secure mode transition.
 
 === Operations ===
 {| class="wikitable" border="1"
@@ -3224,9 +3229,9 @@ This instruction takes a crypto register and a 5 bit immediate value which repre
 This instruction initializes a crypto register with random data.
 
 Executing this instruction only succeeds if the TRNG is enabled for the SCP, which requires taking the following steps:
-* Write 0x7FFF to TSEC_TRNG_CLK_LIMIT_LOW.
-* Write 0x3FF0000 to TSEC_TRNG_CLK_LIMIT_HIGH.
-* Write 0xFF00 to TSEC_TRNG_CTL.
+* Write 0x7FFF to TSEC_RND_CTL0.
+* Write 0x3FF0000 to TSEC_RND_CTL1.
+* Write 0xFF00 to TSEC_RND_CTL11.
 * Write 0x1000 to [[#TSEC_SCP_CTL1|TSEC_SCP_CTL1]].
 
 Otherwise it hangs forever.
