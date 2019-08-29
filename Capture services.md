@@ -217,7 +217,8 @@ entry filename, prior to the "-".
 | ------ | ---- | ----------- |
 | 0x0    | 0x20 | Unknown.    |
 
-This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct.
+This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct. On
+older versions, this was 0x30-bytes.
 
 # ApplicationAlbumEntry
 
@@ -226,6 +227,8 @@ This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct.
 | 0x0    | 0x20 | Unknown.    |
 
 This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct.
+On older versions, this was "nn::capsrv::ApplicationAlbumFileEntry" with
+size 0x30-bytes.
 
 With the output from
 [caps:su](Applet%20Manager%20services#caps:su.md##caps:su "wikilink")
