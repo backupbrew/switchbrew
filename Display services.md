@@ -7,27 +7,27 @@ layers/framebuffers.
 This is "nn::capsrv::sf::IScreenShotControlService". This is available
 with \[2.0.0+\].
 
-| Cmd                  | Name                                             | Notes                                                                                                                                  |
-| -------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 1                    | CaptureRawImage                                  |                                                                                                                                        |
-| 2                    | CaptureRawImageWithTimeout                       |                                                                                                                                        |
-| 3                    | \[5.0.0+\] AttachSharedBuffer                    | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 5                    | \[5.0.0+\] CaptureRawImageToAttachedSharedBuffer | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 210                  | \[6.0.0+\] ?                                     | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
-| \[2.0.0-4.1.0\] 1001 | RequestTakingScreenShot                          | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| \[2.0.0-4.1.0\] 1002 | RequestTakingScreenShotWithTimeout               | Takes a total of 0x18-bytes of input, no output.                                                                                       |
-| \[3.0.0-4.1.0\] 1003 | RequestTakingScreenShotEx                        | Takes a total of 0x58-bytes of input, no output.                                                                                       |
-| 1004                 | \[5.0.0+\] RequestTakingScreenShotEx1            | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
-| 1009                 | \[5.0.0+\] CancelTakingScreenShot                | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1010                 | \[5.0.0+\] SetTakingScreenShotCancelState        | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1011                 | NotifyTakingScreenShotRefused                    | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 1012                 | NotifyTakingScreenShotFailed                     | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 1101                 | \[4.0.0+\] SetupOverlayMovieThumbnail            |                                                                                                                                        |
-| 1106                 | \[4.0.0+\] ?                                     |                                                                                                                                        |
-| 1107                 | \[4.0.0+\] ?                                     |                                                                                                                                        |
-| 1201                 | \[3.0.0+\] OpenRawScreenShotReadStream           | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
-| 1202                 | \[3.0.0+\] CloseRawScreenShotReadStream          | No input/output.                                                                                                                       |
-| 1203                 | \[3.0.0+\] ReadRawScreenShotReadStream           | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
+| Cmd                  | Name                                                                              | Notes                                                                                                                                  |
+| -------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| 1                    | [\#CaptureRawImage](#CaptureRawImage "wikilink")                                  |                                                                                                                                        |
+| 2                    | [\#CaptureRawImageWithTimeout](#CaptureRawImageWithTimeout "wikilink")            |                                                                                                                                        |
+| 3                    | \[5.0.0+\] AttachSharedBuffer                                                     | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 5                    | \[5.0.0+\] CaptureRawImageToAttachedSharedBuffer                                  | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 210                  | \[6.0.0+\] ?                                                                      | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
+| \[2.0.0-4.1.0\] 1001 | RequestTakingScreenShot                                                           | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| \[2.0.0-4.1.0\] 1002 | RequestTakingScreenShotWithTimeout                                                | Takes a total of 0x18-bytes of input, no output.                                                                                       |
+| \[3.0.0-4.1.0\] 1003 | RequestTakingScreenShotEx                                                         | Takes a total of 0x58-bytes of input, no output.                                                                                       |
+| 1004                 | \[5.0.0+\] RequestTakingScreenShotEx1                                             | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
+| 1009                 | \[5.0.0+\] CancelTakingScreenShot                                                 | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1010                 | \[5.0.0+\] SetTakingScreenShotCancelState                                         | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1011                 | NotifyTakingScreenShotRefused                                                     | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1012                 | NotifyTakingScreenShotFailed                                                      | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1101                 | \[4.0.0+\] [\#SetupOverlayMovieThumbnail](#SetupOverlayMovieThumbnail "wikilink") |                                                                                                                                        |
+| 1106                 | \[4.0.0+\] ?                                                                      |                                                                                                                                        |
+| 1107                 | \[4.0.0+\] ?                                                                      |                                                                                                                                        |
+| 1201                 | \[3.0.0+\] OpenRawScreenShotReadStream                                            | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
+| 1202                 | \[3.0.0+\] CloseRawScreenShotReadStream                                           | No input/output.                                                                                                                       |
+| 1203                 | \[3.0.0+\] ReadRawScreenShotReadStream                                            | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
 
   - cmd210: User-processes use hard-coded size 0x88 for the type-0x15
     buffer.
@@ -43,7 +43,7 @@ are: 1101, 1106, and 1107.
 \[8.0.0+\] Cmd210 and cmd1004 now takes an additional type-0x15 input
 buffer.
 
-## Cmd1
+## CaptureRawImage
 
 Takes a type-0x46 output buffer, an input u32 **layer\_stack**, two
 input u64s **width**/**height**, an input s64 **buffer\_count**, and an
@@ -62,14 +62,15 @@ This takes a screenshot, the output buffer contains the RGBA8 image.
 
 Stubbed with \[5.0.0+\], where it now returns error 0x7FECE.
 
-## Cmd2
+## CaptureRawImageWithTimeout
 
-Calls the same internal func as cmd1, where the last param is an
-additional cmd input u64 instead of hard-coded value 0x5f5e100.
+Calls the same internal func as
+[\#CaptureRawImage](#CaptureRawImage "wikilink"), where the last param
+is an additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 Stubbed with \[5.0.0+\], where it now returns error 0x7FECE.
 
-## Cmd1101
+## SetupOverlayMovieThumbnail
 
 Takes two input u64s **width**/**height**, a 0x18-byte input struct, and
 two type-0x46 output buffers.
@@ -91,9 +92,10 @@ Takes a 0x40-byte input struct, two input u64s **width**/**height**, a
 buffer, and two type-0x46 output buffers, returns 3 output u64s.
 
 **width**/**height** have same requirements as
-[\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
-be at least 0x7D000. The requirements for the type-0x46 buffers are the
-same as [\#Cmd1101](#Cmd1101 "wikilink").
+[\#SetupOverlayMovieThumbnail](#SetupOverlayMovieThumbnail "wikilink").
+The size of the type-0x6 buffer must be at least 0x7D000. The
+requirements for the type-0x46 buffers are the same as
+[\#SetupOverlayMovieThumbnail](#SetupOverlayMovieThumbnail "wikilink").
 
 \[5.0.0+\] Now takes a total of 0x68-bytes of input instead of 0x30.
 
@@ -104,9 +106,9 @@ Takes a 0x40-byte input struct, two input u64s **width**/**height**, a
 buffer, and a type-0x45 input buffer, returns 3 output u64s.
 
 **width**/**height** have same requirements as
-[\#Cmd1101](#Cmd1101 "wikilink"). The size of the type-0x6 buffer must
-be at least 0x7D000. The size of the type-0x45 buffer must be at least
-0x384000.
+[\#SetupOverlayMovieThumbnail](#SetupOverlayMovieThumbnail "wikilink").
+The size of the type-0x6 buffer must be at least 0x7D000. The size of
+the type-0x45 buffer must be at least 0x384000.
 
 \[5.0.0+\] Now takes a total of 0x68-bytes of input instead of 0x30.
 

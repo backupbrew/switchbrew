@@ -7,9 +7,9 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 ! Cmd || Name || Notes
 |-
-| 1 || CaptureRawImage || 
+| 1 || [[#CaptureRawImage]] || 
 |-
-| 2 || CaptureRawImageWithTimeout || 
+| 2 || [[#CaptureRawImageWithTimeout]] || 
 |-
 | 3 || [5.0.0+] AttachSharedBuffer || Takes a total of 8-bytes of input, no output.
 |-
@@ -33,7 +33,7 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 1012 || NotifyTakingScreenShotFailed || Takes a total of 8-bytes of input, no output.
 |-
-| 1101 || [4.0.0+] SetupOverlayMovieThumbnail || 
+| 1101 || [4.0.0+] [[#SetupOverlayMovieThumbnail]] || 
 |-
 | 1106 || [4.0.0+] ? || 
 |-
@@ -54,7 +54,7 @@ The only caps:sc commands used by [[GRC_services|GRC]] are: 1101, 1106, and 1107
 
 [8.0.0+] Cmd210 and cmd1004 now takes an additional type-0x15 input buffer.
 
-== Cmd1 ==
+== CaptureRawImage ==
 Takes a type-0x46 output buffer, an input u32 '''layer_stack''', two input u64s '''width'''/'''height''', an input s64 '''buffer_count''', and an input s64 '''buffer_index'''.
 
 '''width'''/'''height''' must match 1280/720. '''buffer_index''' must be < '''buffer_count'''. '''buffer_index''' and '''buffer_count''' must not be negative.
@@ -67,12 +67,12 @@ This takes a screenshot, the output buffer contains the RGBA8 image.
 
 Stubbed with [5.0.0+], where it now returns error 0x7FECE.
 
-== Cmd2 ==
-Calls the same internal func as cmd1, where the last param is an additional cmd input u64 instead of hard-coded value 0x5f5e100.
+== CaptureRawImageWithTimeout ==
+Calls the same internal func as [[#CaptureRawImage]], where the last param is an additional cmd input u64 instead of hard-coded value 0x5f5e100.
 
 Stubbed with [5.0.0+], where it now returns error 0x7FECE.
 
-== Cmd1101 ==
+== SetupOverlayMovieThumbnail ==
 Takes two input u64s '''width'''/'''height''', a 0x18-byte input struct, and two type-0x46 output buffers.
 
 For the input struct, [[GRC_services|GRC]] uses the output from [[Capture_services|caps:c]] cmd2101.
@@ -84,14 +84,14 @@ The requirements for the second buffer address/size are the same as the first bu
 == Cmd1106 ==
 Takes a 0x40-byte input struct, two input u64s '''width'''/'''height''', a 0x18-byte input struct, two type-0x15 input buffers, a type-0x6 output buffer, and two type-0x46 output buffers, returns 3 output u64s.
 
-'''width'''/'''height''' have same requirements as [[#Cmd1101]]. The size of the type-0x6 buffer must be at least 0x7D000. The requirements for the type-0x46 buffers are the same as [[#Cmd1101]].
+'''width'''/'''height''' have same requirements as [[#SetupOverlayMovieThumbnail]]. The size of the type-0x6 buffer must be at least 0x7D000. The requirements for the type-0x46 buffers are the same as [[#SetupOverlayMovieThumbnail]].
 
 [5.0.0+] Now takes a total of 0x68-bytes of input instead of 0x30.
 
 == Cmd1107 ==
 Takes a 0x40-byte input struct, two input u64s '''width'''/'''height''', a 0x18-byte input struct, two type-0x15 input buffers, a type-0x6 output buffer, and a type-0x45 input buffer, returns 3 output u64s.
 
-'''width'''/'''height''' have same requirements as [[#Cmd1101]]. The size of the type-0x6 buffer must be at least 0x7D000. The size of the type-0x45 buffer must be at least 0x384000.
+'''width'''/'''height''' have same requirements as [[#SetupOverlayMovieThumbnail]]. The size of the type-0x6 buffer must be at least 0x7D000. The size of the type-0x45 buffer must be at least 0x384000.
 
 [5.0.0+] Now takes a total of 0x68-bytes of input instead of 0x30.
 
