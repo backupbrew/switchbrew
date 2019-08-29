@@ -281,9 +281,11 @@ This was added with [5.0.0+].
 |}
 
 = ShimLibraryVersion =
-This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands.
+This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands (the input for those cmds must match value 1).
 
 [7.0.0-8.1.0] This is value 1.
+
+Controls which struct version to use for [[#ApplicationAlbumEntry]] / [[#AlbumFileEntry]].
 
 = AlbumEntry =
 {| class="wikitable" border="1"
@@ -320,14 +322,7 @@ This is "nn::capsrv::AlbumEntry". This is a 0x20-byte struct.
 The data at offset 0x10 size 0x8 corresponds to each field in the Album entry filename, prior to the "-".
 
 = AlbumFileEntry =
-{| class="wikitable" border="1"
-|-
-! Offset || Size || Description
-|-
-| 0x0 || 0x20 || Unknown.
-|}
-
-This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct. On older versions, this was 0x30-bytes.
+This is "nn::album::AlbumFileEntry". This is identical to [[#ApplicationAlbumEntry]].
 
 = ApplicationAlbumEntry =
 {| class="wikitable" border="1"
@@ -337,9 +332,9 @@ This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct. On older versio
 | 0x0 || 0x20 || Unknown.
 |}
 
-This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct. On older versions, this was "nn::capsrv::ApplicationAlbumFileEntry" with size 0x30-bytes.
+This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct. On older versions where [[#ShimLibraryVersion]] is 0, this was "nn::capsrv::ApplicationAlbumFileEntry" with size 0x30-bytes, with a different format.
 
-With the output from [[Applet_Manager_services#caps:su|caps:su]] sdk-nso only uses this for the [[Internet_Browser|Share-applet]] (when the output is used at all), with everything else (which has a different struct format) it's used as an [[#AlbumFileEntry]]. In those cases with the <code>nn::album</code> wrapper funcs, it's "converted" by just copying the struct (arrays are "converted" by just returning a ptr to the input array).
+With the output from [[Applet_Manager_services#caps:su|caps:su]] sdk-nso only uses this for the [[Internet_Browser|Share-applet]] (when the output is used at all), with everything else it's used as an [[#AlbumFileEntry]]. In those cases with the <code>nn::album</code> wrapper funcs, it's "converted" by just copying the struct (arrays are "converted" by just returning a ptr to the input array).
 
 = Notes =
 capsrv is responsible for validating the MACs for screenshots stored on the SD card, if the setting capsrv!enable_album_screenshot_filedata_verification is non-zero. 

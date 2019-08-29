@@ -185,9 +185,14 @@ This was added with \[5.0.0+\].
 
 This is a version field. Official sw uses func
 `nn::capsrv::GetShimLibraryVersion()` to load this from a global var,
-which is then used with various commands.
+which is then used with various commands (the input for those cmds must
+match value 1).
 
 \[7.0.0-8.1.0\] This is value 1.
+
+Controls which struct version to use for
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink") /
+[\#AlbumFileEntry](#AlbumFileEntry "wikilink").
 
 # AlbumEntry
 
@@ -213,12 +218,8 @@ entry filename, prior to the "-".
 
 # AlbumFileEntry
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x20 | Unknown.    |
-
-This is "nn::album::AlbumFileEntry". This is a 0x20-byte struct. On
-older versions, this was 0x30-bytes.
+This is "nn::album::AlbumFileEntry". This is identical to
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink").
 
 # ApplicationAlbumEntry
 
@@ -227,18 +228,19 @@ older versions, this was 0x30-bytes.
 | 0x0    | 0x20 | Unknown.    |
 
 This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct.
-On older versions, this was "nn::capsrv::ApplicationAlbumFileEntry" with
-size 0x30-bytes.
+On older versions where
+[\#ShimLibraryVersion](#ShimLibraryVersion "wikilink") is 0, this was
+"nn::capsrv::ApplicationAlbumFileEntry" with size 0x30-bytes, with a
+different format.
 
 With the output from
 [caps:su](Applet%20Manager%20services#caps:su.md##caps:su "wikilink")
 sdk-nso only uses this for the
 [Share-applet](Internet%20Browser.md "wikilink") (when the output is
-used at all), with everything else (which has a different struct format)
-it's used as an [\#AlbumFileEntry](#AlbumFileEntry "wikilink"). In those
-cases with the `nn::album` wrapper funcs, it's "converted" by just
-copying the struct (arrays are "converted" by just returning a ptr to
-the input array).
+used at all), with everything else it's used as an
+[\#AlbumFileEntry](#AlbumFileEntry "wikilink"). In those cases with the
+`nn::album` wrapper funcs, it's "converted" by just copying the struct
+(arrays are "converted" by just returning a ptr to the input array).
 
 # Notes
 
