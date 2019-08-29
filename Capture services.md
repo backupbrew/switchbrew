@@ -192,7 +192,9 @@ match value 1).
 
 Controls which struct version to use for
 [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink") /
-[\#AlbumFileEntry](#AlbumFileEntry "wikilink").
+[\#AlbumFileEntry](#AlbumFileEntry "wikilink"). However, the struct size
+for the newer version is used regardless on \[7.0.0+\] for the actual
+cmds.
 
 # AlbumEntry
 

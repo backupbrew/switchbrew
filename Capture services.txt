@@ -285,7 +285,7 @@ This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryV
 
 [7.0.0-8.1.0] This is value 1.
 
-Controls which struct version to use for [[#ApplicationAlbumEntry]] / [[#AlbumFileEntry]].
+Controls which struct version to use for [[#ApplicationAlbumEntry]] / [[#AlbumFileEntry]]. However, the struct size for the newer version is used regardless on [7.0.0+] for the actual cmds.
 
 = AlbumEntry =
 {| class="wikitable" border="1"
