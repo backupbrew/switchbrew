@@ -221,7 +221,11 @@ entry filename, prior to the "-".
 # AlbumFileEntry
 
 This is "nn::album::AlbumFileEntry". This is identical to
-[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink").
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"). On older
+versions where official sw used to use cmds which use
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"),
+this struct matches
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink").
 
 # ApplicationAlbumEntry
 
@@ -231,8 +235,7 @@ This is "nn::album::AlbumFileEntry". This is identical to
 
 This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct.
 On older versions where
-[\#ShimLibraryVersion](#ShimLibraryVersion "wikilink") is 0, this was
-"nn::capsrv::ApplicationAlbumFileEntry" with size 0x30-bytes, with a
+[\#ShimLibraryVersion](#ShimLibraryVersion "wikilink") is 0, this has a
 different format.
 
 With the output from
@@ -243,6 +246,11 @@ used at all), with everything else it's used as an
 [\#AlbumFileEntry](#AlbumFileEntry "wikilink"). In those cases with the
 `nn::album` wrapper funcs, it's "converted" by just copying the struct
 (arrays are "converted" by just returning a ptr to the input array).
+
+# ApplicationAlbumFileEntry
+
+This is "nn::capsrv::ApplicationAlbumFileEntry". This is a 0x30-byte
+struct.
 
 # Notes
 
