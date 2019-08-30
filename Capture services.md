@@ -263,6 +263,23 @@ with:
     [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink")+0x10.
   - Last 8-bytes = 0.
 
+# ApplicationData
+
+| Offset | Size  | Description    |
+| ------ | ----- | -------------- |
+| 0x0    | 0x400 | UserData       |
+| 0x400  | 0x4   | UserData size. |
+
+This is "nn::capsrv::ApplicationData". This is a 0x404-byte struct.
+
+# UserIdList
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x88 | Unknown.    |
+
+This is "nn::capsrv::UserIdList". This is a 0x88-byte struct.
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
