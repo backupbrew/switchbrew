@@ -2765,6 +2765,9 @@ Official user-processes doesn't use this, instead
 [\#SaveScreenShotEx0](#SaveScreenShotEx0 "wikilink") is used:
 ScreenShotAttributeEx0 is all-zero except +0 is set to an input u32.
 
+This cmd internally uses an all-zero ScreenShotAttributeEx0, with u32 +0
+= input u32 and u32 +0x8 = 0x3.
+
 ## SaveScreenShotEx0
 
 Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
