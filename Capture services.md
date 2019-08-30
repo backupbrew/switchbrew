@@ -274,9 +274,11 @@ This is "nn::capsrv::ApplicationData". This is a 0x404-byte struct.
 
 # UserIdList
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x88 | Unknown.    |
+| Offset | Size | Description    |
+| ------ | ---- | -------------- |
+| 0x0    | 0x80 | u128 userIDs   |
+| 0x80   | 0x1  | Total userIDs. |
+| 0x81   | 0x7  | Padding.       |
 
 This is "nn::capsrv::UserIdList". This is a 0x88-byte struct.
 
