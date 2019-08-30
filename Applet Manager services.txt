@@ -2467,12 +2467,18 @@ This can be used by applications to save screenshots.
 '''SetShimLibraryVersion''' is a wrapper for [[Capture_services|caps:c]] cmd33. Commands '''SaveScreenShot''', '''SaveScreenShotEx0''', '''SaveScreenShotEx1''' and '''SaveScreenShotEx2''' are wrappers for [[Display_services|caps:sc]] cmd210.
 
 == SaveScreenShot ==
-Takes two input u32s, an u64 AppletResourceUserId, a PID, and a type-0x45 input buffer. Returns a 0x20-byte struct '''ApplicationAlbumEntry'''.
+Takes two input u32s, an u64 AppletResourceUserId, a PID, and a type-0x45 input buffer containing image data. Returns an [[Capture_services|ApplicationAlbumEntry]].
 
 Official user-processes doesn't use this, instead [[#SaveScreenShotEx0]] is used: ScreenShotAttributeEx0 is all-zero except +0 is set to an input u32.
 
 == SaveScreenShotEx0 ==
-Takes an input 0x40-byte struct '''ScreenShotAttributeEx0''', an input u32, an input u64 AppletResourceUserId, a PID, and a type-0x45 input buffer. Returns a 0x20-byte struct '''ApplicationAlbumEntry'''.
+Takes an input 0x40-byte struct '''ScreenShotAttributeEx0''', an input u32, an input u64 AppletResourceUserId, a PID, and a type-0x45 input buffer containing image data. Returns an [[Capture_services|ApplicationAlbumEntry]].
+
+== SaveScreenShotEx1 ==
+Takes an input 0x40-byte struct '''ScreenShotAttributeEx0''', an input u32, an input u64 AppletResourceUserId, a PID, a type-0x15 input buffer containing an [[Capture_services|ApplicationData]], and a type-0x45 input buffer containing image data. Returns an [[Capture_services|ApplicationAlbumEntry]].
+
+== SaveScreenShotEx2 ==
+Takes an input 0x40-byte struct '''ScreenShotAttributeEx0''', an input u32, an input u64 AppletResourceUserId, a type-0x15 input buffer containing an [[Capture_services|UserIdList]], and a type-0x45 input buffer containing image data. Returns an [[Capture_services|ApplicationAlbumEntry]].
 
 = Library Applets =
 This section documents library applet launching.

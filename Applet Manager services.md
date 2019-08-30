@@ -2758,8 +2758,8 @@ This can be used by applications to save screenshots.
 ## SaveScreenShot
 
 Takes two input u32s, an u64 AppletResourceUserId, a PID, and a
-type-0x45 input buffer. Returns a 0x20-byte struct
-**ApplicationAlbumEntry**.
+type-0x45 input buffer containing image data. Returns an
+[ApplicationAlbumEntry](Capture%20services.md "wikilink").
 
 Official user-processes doesn't use this, instead
 [\#SaveScreenShotEx0](#SaveScreenShotEx0 "wikilink") is used:
@@ -2769,7 +2769,24 @@ ScreenShotAttributeEx0 is all-zero except +0 is set to an input u32.
 
 Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
 u32, an input u64 AppletResourceUserId, a PID, and a type-0x45 input
-buffer. Returns a 0x20-byte struct **ApplicationAlbumEntry**.
+buffer containing image data. Returns an
+[ApplicationAlbumEntry](Capture%20services.md "wikilink").
+
+## SaveScreenShotEx1
+
+Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
+u32, an input u64 AppletResourceUserId, a PID, a type-0x15 input buffer
+containing an [ApplicationData](Capture%20services.md "wikilink"), and a
+type-0x45 input buffer containing image data. Returns an
+[ApplicationAlbumEntry](Capture%20services.md "wikilink").
+
+## SaveScreenShotEx2
+
+Takes an input 0x40-byte struct **ScreenShotAttributeEx0**, an input
+u32, an input u64 AppletResourceUserId, a type-0x15 input buffer
+containing an [UserIdList](Capture%20services.md "wikilink"), and a
+type-0x45 input buffer containing image data. Returns an
+[ApplicationAlbumEntry](Capture%20services.md "wikilink").
 
 # Library Applets
 
