@@ -12,8 +12,10 @@ several registers.
 The TSEC's MMIO space is divided as follows:
 
   - 0x54500000 to 0x54501000: THI (Tegra Host Interface)
-  - 0x54501000 to 0x54501400: FALCON (Falcon microcontroller)
-  - 0x54501400 to 0x54501500: SCP (Secure Co-processor)
+  - 0x54501000 to 0x54501400: [FALCON (Falcon
+    microcontroller)](#Falcon "wikilink")
+  - 0x54501400 to 0x54501500: [SCP (Secure
+    Co-processor)](#SCP "wikilink")
   - 0x54501500 to 0x54501600: RND (Random Number Generator)
   - 0x54501600 to 0x54501680: TFBIF (Tegra Framebuffer Interface)
   - 0x54501680 to 0x54501700: CG (Clock Gate)
@@ -181,7 +183,7 @@ The TSEC's MMIO space is divided as follows:
 | [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink")                                       | 0x54501404 | 0x04  |
 | [TSEC\_SCP\_CTL\_STAT](#TSEC_SCP_CTL_STAT "wikilink")                              | 0x54501408 | 0x04  |
 | [TSEC\_SCP\_CTL\_LOCK](#TSEC_SCP_CTL_LOCK "wikilink")                              | 0x5450140C | 0x04  |
-| TSEC\_SCP\_CFG                                                                     | 0x54501410 | 0x04  |
+| [TSEC\_SCP\_CFG](#TSEC_SCP_CFG "wikilink")                                         | 0x54501410 | 0x04  |
 | TSEC\_SCP\_CTL\_SCP                                                                | 0x54501414 | 0x04  |
 | [TSEC\_SCP\_CTL\_PKEY](#TSEC_SCP_CTL_PKEY "wikilink")                              | 0x54501418 | 0x04  |
 | TSEC\_SCP\_CTL\_DBG                                                                | 0x5450141C | 0x04  |
@@ -189,18 +191,18 @@ The TSEC's MMIO space is divided as follows:
 | [TSEC\_SCP\_DBG1](#TSEC_SCP_DBG1 "wikilink")                                       | 0x54501424 | 0x04  |
 | [TSEC\_SCP\_DBG2](#TSEC_SCP_DBG2 "wikilink")                                       | 0x54501428 | 0x04  |
 | [TSEC\_SCP\_CMD](#TSEC_SCP_CMD "wikilink")                                         | 0x54501430 | 0x04  |
-| TSEC\_SCP\_STAT0                                                                   | 0x54501450 | 0x04  |
+| [TSEC\_SCP\_STAT0](#TSEC_SCP_STAT0 "wikilink")                                     | 0x54501450 | 0x04  |
 | [TSEC\_SCP\_STAT1](#TSEC_SCP_STAT1 "wikilink")                                     | 0x54501454 | 0x04  |
 | [TSEC\_SCP\_STAT2](#TSEC_SCP_STAT2 "wikilink")                                     | 0x54501458 | 0x04  |
-| TSEC\_SCP\_RND\_STAT0                                                              | 0x54501470 | 0x04  |
+| [TSEC\_SCP\_RND\_STAT0](#TSEC_SCP_RND_STAT0 "wikilink")                            | 0x54501470 | 0x04  |
 | TSEC\_SCP\_RND\_STAT1                                                              | 0x54501474 | 0x04  |
 | [TSEC\_SCP\_IRQSTAT](#TSEC_SCP_IRQSTAT "wikilink")                                 | 0x54501480 | 0x04  |
 | [TSEC\_SCP\_IRQMASK](#TSEC_SCP_IRQMASK "wikilink")                                 | 0x54501484 | 0x04  |
 | [TSEC\_SCP\_ACL\_ERR](#TSEC_SCP_ACL_ERR "wikilink")                                | 0x54501490 | 0x04  |
 | TSEC\_SCP\_SEC\_ERR                                                                | 0x54501494 | 0x04  |
 | [TSEC\_SCP\_CMD\_ERR](#TSEC_SCP_CMD_ERR "wikilink")                                | 0x54501498 | 0x04  |
-| TSEC\_RND\_CTL0                                                                    | 0x54501500 | 0x04  |
-| TSEC\_RND\_CTL1                                                                    | 0x54501504 | 0x04  |
+| [TSEC\_RND\_CTL0](#TSEC_RND_CTL0 "wikilink")                                       | 0x54501500 | 0x04  |
+| [TSEC\_RND\_CTL1](#TSEC_RND_CTL1 "wikilink")                                       | 0x54501504 | 0x04  |
 | TSEC\_RND\_CTL2                                                                    | 0x54501508 | 0x04  |
 | TSEC\_RND\_CTL3                                                                    | 0x5450150C | 0x04  |
 | TSEC\_RND\_CTL4                                                                    | 0x54501510 | 0x04  |
@@ -1293,16 +1295,24 @@ Controls accesses to the following registers:
 
 ### TSEC\_SCP\_CTL0
 
-| Bits | Description              |
-| ---- | ------------------------ |
-| 20   | Enable the CMD interface |
+| Bits | Description                                                    |
+| ---- | -------------------------------------------------------------- |
+| 20   | Enable the [TSEC\_SCP\_CMD](#TSEC_SCP_CMD "wikilink") register |
+| 16   | Enable the SEQ interface                                       |
 
 ### TSEC\_SCP\_CTL1
 
 | Bits | Description              |
 | ---- | ------------------------ |
+| 0    | Flush SEQ interface      |
 | 11   | Enable RND testing mode  |
 | 12   | Enable the RND interface |
+
+### TSEC\_SCP\_CFG
+
+| Bits  | Description   |
+| ----- | ------------- |
+| 16-31 | Timeout value |
 
 ### TSEC\_SCP\_CTL\_STAT
 
@@ -1315,13 +1325,7 @@ Controls accesses to the following registers:
 | Bits | Description          |
 | ---- | -------------------- |
 | 0    | Enable lockdown mode |
-| 1    |                      |
-| 2    |                      |
-| 3    |                      |
 | 4    | Lock the SCP and RND |
-| 5    |                      |
-| 6    |                      |
-| 7    |                      |
 
 Controls lockdown mode and can only be cleared in Heavy Secure mode.
 
@@ -1334,33 +1338,79 @@ Controls lockdown mode and can only be cleared in Heavy Secure mode.
 
 ### TSEC\_SCP\_DBG0
 
-| Bits | Description                  |
-| ---- | ---------------------------- |
-| 0-3  | Sequence's instruction index |
-| 4-7  | Target and control flags     |
-| 8-11 | Sequence's size              |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-3</p></td>
+<td><p>Index</p></td>
+</tr>
+<tr class="even">
+<td><p>4</p></td>
+<td><p>Automatic increment</p></td>
+</tr>
+<tr class="odd">
+<td><p>5-6</p></td>
+<td><p>Target</p>
+<p><code>0: None</code><br />
+<code>1: Unknown</code><br />
+<code>2: Unknown</code><br />
+<code>3: SEQ</code></p></td>
+</tr>
+<tr class="even">
+<td><p>8-12</p></td>
+<td><p>SEQ size</p></td>
+</tr>
+</tbody>
+</table>
 
-Controls the last crypto sequence (cs0 or cs1) created.
+Used for debugging crypto interfaces such as the SEQ (crypto sequence).
 
 ### TSEC\_SCP\_DBG1
 
-| Bits  | Description                           |
-| ----- | ------------------------------------- |
-| 0-3   | Sequence instruction's first operand  |
-| 4-9   | Sequence instruction's second operand |
-| 10-14 | Sequence instruction's opcode         |
+| Bits  | Description                      |
+| ----- | -------------------------------- |
+| 0-3   | SEQ instruction's first operand  |
+| 4-9   | SEQ instruction's second operand |
+| 10-14 | SEQ instruction's opcode         |
 
-Contains information on the last crypto sequence (cs0 or cs1) created.
+Used for retrieving debug data. Contains information on the last crypto
+sequence created when debugging the SEQ interface.
 
 ### TSEC\_SCP\_DBG2
 
-| Bits  | Description                                                    |
-| ----- | -------------------------------------------------------------- |
-| 0     | Set if crypto sequence recording (cs0begin/cs1begin) is active |
-| 4-7   | Number of instructions left for the crypto sequence            |
-| 12-15 | Active crypto key register                                     |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-1</p></td>
+<td><p>SEQ state</p>
+<p><code>0: Idle</code><br />
+<code>1: Recording is active (cs0begin/cs1begin)</code></p></td>
+</tr>
+<tr class="even">
+<td><p>4-7</p></td>
+<td><p>Number of SEQ instructions left</p></td>
+</tr>
+<tr class="odd">
+<td><p>12-15</p></td>
+<td><p>Active crypto key register</p></td>
+</tr>
+</tbody>
+</table>
 
-Contains information on the last crypto sequence (cs0 or cs1) executed.
+Used for retrieving additional debug data associated with the SEQ
+interface.
 
 ### TSEC\_SCP\_CMD
 
@@ -1374,7 +1424,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 <tbody>
 <tr class="odd">
 <td><p>0-3</p></td>
-<td><p>Destination register or immediate value</p></td>
+<td><p>Destination register</p></td>
 </tr>
 <tr class="even">
 <td><p>8-13</p></td>
@@ -1382,7 +1432,7 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 </tr>
 <tr class="odd">
 <td><p>20-24</p></td>
-<td><p>Operation</p>
+<td><p>Command opcode</p>
 <p><code>0x0:  nop (fuc5 opcode 0x00) </code><br />
 <code>0x1:  cmov (fuc5 opcode 0x84)</code><br />
 <code>0x2:  cxsin (fuc5 opcode 0x88) or xdst (with cxset)</code><br />
@@ -1422,13 +1472,38 @@ Contains information on the last crypto sequence (cs0 or cs1) executed.
 
 Contains information on the last crypto command executed.
 
+### TSEC\_SCP\_STAT0
+
+| Bits | Description             |
+| ---- | ----------------------- |
+| 2    | CMD interface is active |
+| 6    | SEQ interface is active |
+| 16   | RND interface is active |
+
+Contains the status of the crypto interfaces.
+
 ### TSEC\_SCP\_STAT1
 
-| Bits | Description                                         |
-| ---- | --------------------------------------------------- |
-| 0-1  | Signature comparison result (3=succeeded, 2=failed) |
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-1</p></td>
+<td><p>Signature comparison result</p>
+<p><code>0: None</code><br />
+<code>1: Running</code><br />
+<code>2: Failed</code><br />
+<code>3: Succeeded</code></p></td>
+</tr>
+</tbody>
+</table>
 
-Contains information on the last authentication attempt.
+Contains the status of the last authentication attempt.
 
 ### TSEC\_SCP\_STAT2
 
@@ -1442,13 +1517,17 @@ Contains information on the last authentication attempt.
 <tbody>
 <tr class="odd">
 <td><p>0-4</p></td>
-<td><p>First opcode</p></td>
+<td><p>Current SEQ opcode</p></td>
 </tr>
 <tr class="even">
 <td><p>5-9</p></td>
-<td><p>Second opcode</p></td>
+<td><p>Unknown opcode</p></td>
 </tr>
 <tr class="odd">
+<td><p>10-14</p></td>
+<td><p>Pending CMD opcode</p></td>
+</tr>
+<tr class="even">
 <td><p>15-16</p></td>
 <td><p>AES operation</p>
 <p><code>0: Encryption</code><br />
@@ -1456,10 +1535,26 @@ Contains information on the last authentication attempt.
 <code>2: Key expansion</code><br />
 <code>3: Key reverse expansion</code></p></td>
 </tr>
+<tr class="odd">
+<td><p>27</p></td>
+<td><p>RND operation is stalled</p></td>
+</tr>
+<tr class="even">
+<td><p>29</p></td>
+<td><p>AES operation is stalled</p></td>
+</tr>
 </tbody>
 </table>
 
-Contains information on the last AES sequence executed.
+Contains the status of crypto operations.
+
+### TSEC\_SCP\_RND\_STAT0
+
+| Bits | Description  |
+| ---- | ------------ |
+| 0    | RND is ready |
+
+Contains the status of the RND interface.
 
 ### TSEC\_SCP\_IRQSTAT
 
@@ -1470,8 +1565,8 @@ Contains information on the last AES sequence executed.
 | 12   | SEC error   |
 | 16   | CMD error   |
 | 20   | Single step |
-| 24   |             |
-| 28   |             |
+| 24   | RND unknown |
+| 28   | Timeout     |
 
 Used for getting the status of crypto IRQs.
 
@@ -1484,21 +1579,21 @@ Used for getting the status of crypto IRQs.
 | 12   | SEC error   |
 | 16   | CMD error   |
 | 20   | Single step |
-| 24   |             |
-| 28   |             |
+| 24   | RND unknown |
+| 28   | Timeout     |
 
 Used for getting the value of the mask for crypto IRQs.
 
 ### TSEC\_SCP\_ACL\_ERR
 
-| Bits | Description                                                     |
-| ---- | --------------------------------------------------------------- |
-| 0    | Set when writing to a crypto register without the correct ACL   |
-| 4    | Set when reading from a crypto register without the correct ACL |
-| 8    | Set on an invalid ACL change (cchmod)                           |
-| 31   | An ACL error occurred                                           |
+| Bits | Description                                            |
+| ---- | ------------------------------------------------------ |
+| 0    | Writing to a crypto register without the correct ACL   |
+| 4    | Reading from a crypto register without the correct ACL |
+| 8    | Invalid ACL change (cchmod)                            |
+| 31   | ACL error occurred                                     |
 
-Contains information on the status generated by the [ACL
+Contains information on errors generated by the [ACL
 error](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
 
 ### TSEC\_SCP\_CMD\_ERR
@@ -1513,8 +1608,21 @@ error](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
 | 20   | Invalid signature (csigauth in HS mode)           |
 | 24   | Forbidden ACL change (cchmod in NS mode)          |
 
-Contains information on crypto errors generated by the [CMD
+Contains information on errors generated by the [CMD
 error](#TSEC_SCP_IRQSTAT "wikilink") IRQ.
+
+### TSEC\_RND\_CTL0
+
+| Bits | Description                   |
+| ---- | ----------------------------- |
+| 0-31 | RND clock trigger lower limit |
+
+### TSEC\_RND\_CTL1
+
+| Bits  | Description                   |
+| ----- | ----------------------------- |
+| 0-15  | RND clock trigger upper limit |
+| 16-31 | RND clock trigger mask        |
 
 ### TSEC\_TFBIF\_CTL
 
@@ -1737,6 +1845,205 @@ Takes the timeout value for DMA transfers between TSEC and HOST1X
 | 26   | TSEC\_TEGRA\_CTL\_TMPI\_RESTART\_FSM\_APB        |
 | 27   | TSEC\_TEGRA\_CTL\_TMPI\_DISABLE\_OUTPUT\_I2C     |
 
+## Falcon
+
+"Falcon" (FAst Logic CONtroller) is a proprietary general purpose CPU
+which can be found inside various hardware blocks that require some sort
+of logic processing such as TSEC (TSECA and TSECB), NVDEC, NVENC, NVJPG,
+VIC, GPU PMU and XUSB.
+
+### Processor Registers
+
+A total of 32 processor registers are available in the Falcon CPU.
+
+#### REG0-REG15
+
+These are 16 32-bit GPRs (general purpose registers).
+
+#### IV0
+
+This is a SPR (special purpose register) that holds the address for
+interrupt vector 0.
+
+#### IV1
+
+This is a SPR (special purpose register) that holds the address for
+interrupt vector 1.
+
+#### IV2
+
+This is a SPR (special purpose register) that holds the address for
+interrupt vector 2. This register is considered "UNDEFINED" and appears
+to be unused.
+
+#### EV
+
+This is a SPR (special purpose register) that holds the address for the
+exception vector.
+
+Alternative name (envytools): "tv".
+
+#### SP
+
+This is a SPR (special purpose register) that holds the current stack
+pointer.
+
+#### PC
+
+This is a SPR (special purpose register) that holds the current program
+counter.
+
+#### IMB
+
+This is a SPR (special purpose register) that holds the external base
+address for IMEM transfers.
+
+Alternative name (envytools): "xcbase".
+
+#### DMB
+
+This is a SPR (special purpose register) that holds the external base
+address for DMEM transfers.
+
+Alternative name (envytools): "xdbase".
+
+#### CSW
+
+This is a SPR (special purpose register) that holds various flag bits.
+
+| Bits  | Description                          |
+| ----- | ------------------------------------ |
+| 0-7   | General purpose predicates           |
+| 8     | ALU carry flag                       |
+| 9     | ALU signed overflow flag             |
+| 10    | ALU sign flag                        |
+| 11    | ALU zero flag                        |
+| 12-15 | Unused                               |
+| 16    | Interrupt 0 enable                   |
+| 17    | Interrupt 1 enable                   |
+| 18    | Interrupt 2 enable (undefined)       |
+| 19    | Unused                               |
+| 20    | Interrupt 0 saved enable             |
+| 21    | Interrupt 1 saved enable             |
+| 22    | Interrupt 2 saved enable (undefined) |
+| 23    | Unused                               |
+| 24    | Exception active                     |
+| 25    | Unused                               |
+| 26    | Unknown                              |
+| 27-28 | Unused                               |
+| 29    | Unknown                              |
+| 30-31 | Unused                               |
+
+Alternative name (envytools): "flags".
+
+#### CCR
+
+This is a SPR (special purpose register) that holds configuration bits
+for the SCP DMA override functionality. The value of this register is
+set using the "cxset" instruction which provides a way to change the
+behavior of a variable amount of successively executed DMA-related
+instructions ("xdwait", "xdst" and "xdld").
+
+<table>
+<thead>
+<tr class="header">
+<th><p>Bits</p></th>
+<th><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>0-4</p></td>
+<td><p>Number of instructions the override is valid for (0x1F means infinite)</p></td>
+</tr>
+<tr class="even">
+<td><p>5</p></td>
+<td><p>Crypto destination/source select</p>
+<p><code>0: Crypto register</code><br />
+<code>1: Crypto stream</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>6</p></td>
+<td><p>External memory override</p>
+<p><code>0: Disabled</code><br />
+<code>1: Enabled</code></p></td>
+</tr>
+<tr class="even">
+<td><p>7</p></td>
+<td><p>Internal memory select</p>
+<p><code>0: DMEM</code><br />
+<code>1: IMEM</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>8-31</p></td>
+<td><p>Unused</p></td>
+</tr>
+</tbody>
+</table>
+
+Alternative name (envytools): "cx".
+
+#### SEC
+
+This is a SPR (special purpose register) that holds configuration bits
+for the SCP authentication process.
+
+| Bits  | Description                                      |
+| ----- | ------------------------------------------------ |
+| 0-7   | Start of region to authenticate (in 0x100 pages) |
+| 8-15  | Unused                                           |
+| 16    | Mark all subsequent code transfers as secret     |
+| 17    | Region is encrypted                              |
+| 18    | Unknown (set in HS mode)                         |
+| 19    | Block traps and interrupts (set in HS mode)      |
+| 20-23 | Unused                                           |
+| 24-31 | Size of region to authenticate (in 0x100 pages)  |
+
+Alternative name (envytools): "cauth".
+
+#### CTX
+
+This is a SPR (special purpose register) that holds configuration bits
+for the CTXDMA ports.
+
+| Bits  | Description                           |
+| ----- | ------------------------------------- |
+| 0-2   | CTXDMA port for code loads (xcld)     |
+| 3     | Unused                                |
+| 4-6   | CTXDMA port for code stores (invalid) |
+| 7     | Unused                                |
+| 8-10  | CTXDMA port for data loads (xdld)     |
+| 11    | Unused                                |
+| 12-14 | CTXDMA port for data stores (xdst)    |
+| 15-31 | Unused                                |
+
+Alternative name (envytools): "xtargets".
+
+#### EXCI
+
+This is a SPR (special purpose register) that holds information on
+raised exceptions.
+
+| Bits  | Description     |
+| ----- | --------------- |
+| 0-19  | Exception PC    |
+| 20-23 | Exception cause |
+| 24-31 | Unused          |
+
+Alternative name (envytools): "tstatus".
+
+#### SEC1
+
+Unknown. Marked as "RESERVED".
+
+#### IMB1
+
+Unknown. Marked as "RESERVED".
+
+#### DMB1
+
+Unknown. Marked as "RESERVED".
+
 ## SCP
 
 Part of the information here (which hasn't made it into envytools
@@ -1744,7 +2051,7 @@ documentation yet) was shared by
 [mwk](https://wiki.0x04.net/wiki/Marcin_Ko%C5%9Bcielnicki) from reverse
 engineering falcon processors over the years.
 
-### Authenticated Mode
+### Heavy Secure Mode
 
 #### Entry
 
@@ -1764,7 +2071,7 @@ TLB flags is cleared for all secret pages.
 #### Implementation
 
 Under certain circumstances, it is possible to observe
-[csigauth](#csigauth "wikilink") being briefly written to
+[sigauth](#sigauth "wikilink") being briefly written to
 [TSEC\_SCP\_CMD](#TSEC_SCP_CMD "wikilink") as "csigauth $c4 $c6" while
 the opcodes in [TSEC\_SCP\_STAT2](#TSEC_SCP_STAT2 "wikilink") are set to
 "cxsin" and "csigauth", respectively.
@@ -1775,35 +2082,35 @@ transition.
 
 ### Operations
 
-| Opcode | Name      | Operand0 | Operand1 | Operation                                                                    | Condition                      |
-| ------ | --------- | -------- | -------- | ---------------------------------------------------------------------------- | ------------------------------ |
-| 0      | nop       | N/A      | N/A      |                                                                              |                                |
-| 1      | mov       | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                                                |                                |
-| 2      | sin       | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                                         |                                |
-| 3      | sout      | $cX      | N/A      | `write_stream($cX);`                                                         | ?                              |
-| 4      | rnd       | $cX      | N/A      | `$cX = read_trng(); ACL(X) = ???;`                                           |                                |
-| 5      | s0begin   | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                                  |                                |
-| 6      | s0exec    | immX     | N/A      | `execute_macro_N_times(0, immX);`                                            |                                |
-| 7      | s1begin   | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                                  |                                |
-| 8      | s1exec    | immX     | N/A      | `execute_macro_N_times(1, immX);`                                            |                                |
-| 9      | <invalid> |          |          |                                                                              |                                |
-| 0xA    | chmod     | $cX      | immY     | Complicated, see [ACL](#ACL "wikilink").                                     |                                |
-| 0xB    | xor       | $cX      | $cY      | `$cX ^= $cY;`                                                                | `(ACL(X) & 2) && (ACL(Y) & 2)` |
-| 0xC    | add       | $cX      | immY     | `$cX += immY;`                                                               | `(ACL(X) & 2)`                 |
-| 0xD    | and       | $cX      | $cY      | `$cX &= $cY;`                                                                | `(ACL(X) & 2) && (ACL(Y) & 2)` |
-| 0xE    | rev       | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                                |                                |
-| 0xF    | gfmul     | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                         | `(ACL(Y) & 2)`                 |
-| 0x10   | secret    | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`                   |                                |
-| 0x11   | keyreg    | immX     | N/A      | `active_key_idx = immX;`                                                     |                                |
-| 0x12   | kexp      | $cX      | $cY      | `$cX = aes_kexp($cY); ACL(X) = ACL(Y);`                                      |                                |
-| 0x13   | krexp     | $cX      | $cY      | `$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);`                              |                                |
-| 0x14   | enc       | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);` |                                |
-| 0x15   | dec       | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);` |                                |
-| 0x16   | csigauth  | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }`          | ?                              |
-| 0x17   | csigclr   | N/A      | N/A      | `has_sig = false;`                                                           |                                |
-| 0x18   | csigenc   | $cX      | $cY      | `if (has_sig) { $cX = aes_enc($cY, current_sig); ACL(X) = 0x13; }`           |                                |
+| Opcode | Name                           | Operand0 | Operand1 | Operation                                                                    | Condition                      |
+| ------ | ------------------------------ | -------- | -------- | ---------------------------------------------------------------------------- | ------------------------------ |
+| 0      | nop                            | N/A      | N/A      |                                                                              |                                |
+| 1      | mov                            | $cX      | $cY      | `$cX = $cY; ACL(X) = ACL(Y);`                                                |                                |
+| 2      | sin                            | $cX      | N/A      | `$cX = read_stream(); ACL(X) = ???;`                                         |                                |
+| 3      | sout                           | $cX      | N/A      | `write_stream($cX);`                                                         | ?                              |
+| 4      | [rnd](#rnd "wikilink")         | $cX      | N/A      | `$cX = read_rnd(); ACL(X) = ???;`                                            |                                |
+| 5      | s0begin                        | immX     | N/A      | `record_macro_for_N_instructions(0, immX);`                                  |                                |
+| 6      | s0exec                         | immX     | N/A      | `execute_macro_N_times(0, immX);`                                            |                                |
+| 7      | s1begin                        | immX     | N/A      | `record_macro_for_N_instructions(1, immX);`                                  |                                |
+| 8      | s1exec                         | immX     | N/A      | `execute_macro_N_times(1, immX);`                                            |                                |
+| 9      | <invalid>                      |          |          |                                                                              |                                |
+| 0xA    | [chmod](#chmod "wikilink")     | $cX      | immY     | Complicated, see [ACL](#ACL "wikilink").                                     |                                |
+| 0xB    | xor                            | $cX      | $cY      | `$cX ^= $cY;`                                                                | `(ACL(X) & 2) && (ACL(Y) & 2)` |
+| 0xC    | add                            | $cX      | immY     | `$cX += immY;`                                                               | `(ACL(X) & 2)`                 |
+| 0xD    | and                            | $cX      | $cY      | `$cX &= $cY;`                                                                | `(ACL(X) & 2) && (ACL(Y) & 2)` |
+| 0xE    | rev                            | $cX      | $cY      | `$cX = endian_swap128($cY); ACL(X) = ACL(Y);`                                |                                |
+| 0xF    | gfmul                          | $cX      | $cY      | `$cX = gfmul($cY); ACL(X) = ACL(Y);`                                         | `(ACL(Y) & 2)`                 |
+| 0x10   | secret                         | $cX      | immY     | `$cX = load_secret(immY); ACL(X) = load_secret_acl(immY);`                   |                                |
+| 0x11   | keyreg                         | immX     | N/A      | `active_key_idx = immX;`                                                     |                                |
+| 0x12   | kexp                           | $cX      | $cY      | `$cX = aes_kexp($cY); ACL(X) = ACL(Y);`                                      |                                |
+| 0x13   | krexp                          | $cX      | $cY      | `$cX = aes_kexp_reverse($cY); ACL(X) = ACL(Y);`                              |                                |
+| 0x14   | enc                            | $cX      | $cY      | `$cX = aes_enc(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);` |                                |
+| 0x15   | dec                            | $cX      | $cY      | `$cX = aes_dec(active_key_idx, $cY); ACL(X) = ACL(active_key_idx) & ACL(Y);` |                                |
+| 0x16   | [sigauth](#sigauth "wikilink") | $cX      | $cY      | `if (hash_verify($cX, $cY)) { has_sig = true; current_sig = $cX; }`          | ?                              |
+| 0x17   | [sigclr](#sigclr "wikilink")   | N/A      | N/A      | `has_sig = false;`                                                           |                                |
+| 0x18   | sigenc                         | $cX      | $cY      | `if (has_sig) { $cX = aes_enc($cY, current_sig); ACL(X) = 0x13; }`           |                                |
 
-#### csigauth
+#### sigauth
 
 `00000000: f5 3c XY d8 csigauth $cY $cX`
 
@@ -1811,14 +2118,14 @@ Takes 2 crypto registers as operands and is automatically executed when
 jumping to a code region previously uploaded as secret. This instruction
 does not work in secure mode.
 
-#### csigclr
+#### sigclr
 
 `00000000: f5 3c 00 e0 csigclr`
 
-This instruction takes no operands and appears to clear the saved cauth
-signature used by the csigenc instruction.
+This instruction takes no operands and clears the saved cauth signature
+used by the csigenc instruction.
 
-#### cchmod
+#### chmod
 
 `00000000: f5 3c XY a8 cchmod $cY 0X` or `00000000: f5 3c XY a9 cchmod
 $cY 1X`
@@ -1826,17 +2133,17 @@ $cY 1X`
 This instruction takes a crypto register and a 5 bit immediate value
 which represents the [ACL](#ACL "wikilink") mask to set.
 
-#### crnd
+#### rnd
 
 `00000000: f5 3c 0X 90 crnd $cX`
 
 This instruction initializes a crypto register with random data.
 
-Executing this instruction only succeeds if the TRNG is enabled for the
-SCP, which requires taking the following steps:
+Executing this instruction only succeeds if the RND interface is enabled
+for the SCP, which requires taking the following steps:
 
-  - Write 0x7FFF to TSEC\_RND\_CTL0.
-  - Write 0x3FF0000 to TSEC\_RND\_CTL1.
+  - Write 0x7FFF to [TSEC\_RND\_CTL0](#TSEC_RND_CTL0 "wikilink").
+  - Write 0x3FF0000 to [TSEC\_RND\_CTL1](#TSEC_RND_CTL1 "wikilink").
   - Write 0xFF00 to TSEC\_RND\_CTL11.
   - Write 0x1000 to [TSEC\_SCP\_CTL1](#TSEC_SCP_CTL1 "wikilink").
 
@@ -1864,53 +2171,10 @@ Spilling a $cX to DMEM using xdld instruction is allowed if (ACL($cX) &
 
 Loading a secret into $cX sets a per-secret ACL, unconditionally.
 
-### cauth
-
-$cauth is a special purpose register in the CPU.
-
-| Bits  | Description                                      |
-| ----- | ------------------------------------------------ |
-| 0-7   | Start of region to authenticate (in 0x100 pages) |
-| 8-15  | Unknown                                          |
-| 16    | Use secret xfers                                 |
-| 17    | Region is encrypted                              |
-| 18    | Unknown (set in HS mode)                         |
-| 19    | Block traps and interrupts (set in HS mode)      |
-| 20-23 | Unknown                                          |
-| 24-31 | Size of region to authenticate (in 0x100 pages)  |
-
-### cxset
-
-cxset instruction provides a way to change behavior of a variable amount
-of successively executed DMA-related instructions.
-
-for example: `000000de: f4 3c 02 cxset 0x2`
-
-can be read as: `dma_override(type=crypto_reg, count=2)`
-
-The argument to cxset specifies the type of behavior change in the top 3
-bits, and the number of DMA-related instructions the effect lasts for in
-the lower 5 bits.
-
-| Bits | Description                                                                                                                               |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| 0-4  | Number of instructions it is valid for (0x1f is a special value meaning infinitely many instructions -- until overriden by another cxset) |
-| 5    | Crypto destination/source select (0=crypto register, 1=crypto stream)                                                                     |
-| 6    | External memory override (0=Disabled, 1=Enabled)                                                                                          |
-| 7    | Internal memory select (0=DMEM, 1=IMEM)                                                                                                   |
-
-#### DMA-Related Instructions
-
-At least the following instructions may have changed behavior, and count
-against the cxset "count" argument: `xdwait`, `xdst`, `xdld`.
-
-For example, if override type=0b000, then the "length" argument to
-`xdst` is instead treated as the index of the target $cX register.
-
 ### Secrets
 
-Falcon's Authenticated Mode has access to 64 128-bit keys which are
-burned at factory. These keys can be loaded by using the $csecret
+Falcon's Heavy Secure Mode has access to 64 128-bit keys which are
+burned at factory. These keys can be loaded using the $csecret
 instruction which takes the target crypto register and the key index as
 arguments.
 
