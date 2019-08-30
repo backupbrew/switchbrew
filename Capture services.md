@@ -252,6 +252,17 @@ used at all), with everything else it's used as an
 This is "nn::capsrv::ApplicationAlbumFileEntry". This is a 0x30-byte
 struct.
 
+On newer versions where official sw uses
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"),
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink") is
+converted to ApplicationAlbumFileEntry when using cmds which need it
+with:
+
+  - First 0x20-bytes are the same.
+  - u64 ApplicationAlbumFileEntry+0x20 =
+    [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink")+0x10.
+  - Last 8-bytes = 0.
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on

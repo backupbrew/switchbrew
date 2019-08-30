@@ -339,6 +339,11 @@ With the output from [[Applet_Manager_services#caps:su|caps:su]] sdk-nso only us
 = ApplicationAlbumFileEntry =
 This is "nn::capsrv::ApplicationAlbumFileEntry". This is a 0x30-byte struct.
 
+On newer versions where official sw uses [[#ApplicationAlbumEntry]], [[#ApplicationAlbumEntry]] is converted to ApplicationAlbumFileEntry when using cmds which need it with:
+* First 0x20-bytes are the same.
+* u64 ApplicationAlbumFileEntry+0x20 = [[#ApplicationAlbumEntry]]+0x10.
+* Last 8-bytes = 0.
+
 = Notes =
 capsrv is responsible for validating the MACs for screenshots stored on the SD card, if the setting capsrv!enable_album_screenshot_filedata_verification is non-zero. 
 
