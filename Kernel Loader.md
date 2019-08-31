@@ -321,9 +321,9 @@ NOTE: This function is inferred (as it sets presumably private members).
 
 ## KInitialPageTable::Map
 
-Signature is like KInitialPageTable::Map(uintptr\_t virtual\_address,
-size\_t size, uintptr\_t physical\_address, const uint64\_t \*attribute,
-InitialPageAllocator \*allocator);
+Signature is like
+
+`   KInitialPageTable::Map(uintptr_t virtual_address, size_t size, uintptr_t physical_address, const uint64_t *attribute, InitialPageAllocator *allocator);`
 
 This is just standard aarch64 page table mapping code. New L2/L3 pages
 are allocated via allocator-\>Allocate() when needed.
