@@ -262,7 +262,14 @@ Next, this sets some system registers.
     }
 ```
 
-TODO: More stuff
+Next, the cache is flushed, to ensure that page tables will be
+successfully read once the MMU is enabled.
+
+``` 
+    KernelLdr_EnsureCacheFlushed();
+```
+
+// TODO: more stuff
 
 ## KernelLdr\_RelocateKernelPhysically
 
