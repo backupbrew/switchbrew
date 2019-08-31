@@ -473,6 +473,11 @@ Signature is like
 This is just standard aarch64 page table mapping code. New L2/L3 pages
 are allocated via allocator-\>Allocate() when needed.
 
+## KInitialPageTable::IsFree
+
+This is just standard aarch64 page table code. Walks the page table,
+verifying that all entries it would map for size + range are free.
+
 # Structures
 
 ## KernelMap
