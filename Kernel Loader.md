@@ -327,10 +327,9 @@ This frees a page (implemented as noop in KernelLoader)
 
 ## KInitialPageTable::KInitialPageTable
 
-NOTE: This constructor is inferred (as it sets presumably private
-members).
+NOTE: This constructor is inferred.
 
-    KInitialPageTable::KInitialPageTable (KInitialPageAllocator *allocator) {
+    KInitialPageTable::KInitialPageTable(KInitialPageAllocator *allocator) {
         this->l1_table_ptr = allocator->Allocate();
         memset(this->l1_table_ptr, 0, 0x1000);
         this->num_l1_table_entries = 0x200;
