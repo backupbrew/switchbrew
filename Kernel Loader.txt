@@ -134,7 +134,20 @@ Next, it generates a random KASLR slide for the Kernel.
 
 Then, it maps the kernel at the final virtual address.
 <pre>
-// TODO: Fill this out with pseudocode.
+    // Maps .text as R-X
+    attribute = 0x40000000000788;
+    ttbr1_page_table.Map(final_virtual_kernel_base + text_offset, text_end_offset - text_offset, kernel_base + text_offset, &attribute, &g_InitialPageAllocator);
+    
+    // Maps .rodata as R--
+    attribute = 0x60000000000788;
+    ttbr1_page_table.Map(final_virtual_kernel_base + ro_offset, ro_end_offset - ro_offset, kernel_base + ro_offset, &attribute, &g_InitialPageAllocator);
+
+    // Maps .rwdata and .bss as RW-
+    attribute = 0x60000000000708;
+    ttbr1_page_table.Map(final_virtual_kernel_base + rw_offset, rw_end_offset - rw_offset, kernel_base + rw_offset, &attribute, &g_InitialPageAllocator);
+
+    // Clears BSS.
+    memset(final_kernel_virtual_base + bss_offset, 0, rw_end_offset - bss_offset);
 </pre>
 
 Then, it applies the kernel's .dynamic relocations and calls the kernel's libc .init_array functions.
