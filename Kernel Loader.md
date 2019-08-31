@@ -362,11 +362,11 @@ own thing.
 
 ## KernelLdr\_InvalidateCacheLocal
 
-Standard ARM cache clean code, uses LoUIS from CLIDR\_EL1.
+Standard ARM cache clean code, uses LoUIS + LoC from CLIDR\_EL1.
 
 ## KernelLdr\_InvalidateCacheShared
 
-Standard ARM cache clean code, uses LoUIS + LoC from CLIDR\_EL1.
+Standard ARM cache clean code, uses LoUIS from CLIDR\_EL1.
 
 ## KInitialPageAllocator::KInitialPageAllocator
 

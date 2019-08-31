@@ -329,11 +329,11 @@ Note: this is inlined, however it uses instructions that no compiler has intrins
 
 == KernelLdr_InvalidateCacheLocal ==
 
-Standard ARM cache clean code, uses LoUIS from CLIDR_EL1.
+Standard ARM cache clean code, uses LoUIS + LoC from CLIDR_EL1.
 
 == KernelLdr_InvalidateCacheShared ==
 
-Standard ARM cache clean code, uses LoUIS  + LoC from CLIDR_EL1.
+Standard ARM cache clean code, uses LoUIS from CLIDR_EL1.
 
 == KInitialPageAllocator::KInitialPageAllocator ==
 This sets the allocator's next address to 0 (guessed, since this is done statically in KernelLoader).
