@@ -122,7 +122,30 @@ Next, it relocates the INI1 to its appropriate load address.
     }
 </pre>
 
-TODO: More stuff
+Next, it initializes the MMU with a basic identity mapping for Kernel + KernelLdr.
+<pre>
+// TODO: Fill this out with pseudocode.
+</pre>
+
+Next, it generates a random KASLR slide for the Kernel.
+<pre>
+// TODO: Fill this out with pseudocode.
+</pre>
+
+Then, it maps the kernel and applies its .dynamic's relocations.
+<pre>
+// TODO: Fill this out with pseudocode.
+</pre>
+
+Then, it calls the kernel's libc .init_array functions.
+<pre>
+// TODO: Fill this out with pseudocode.
+</pre>
+
+Finally, it returns the difference between the kernel's original physical base address and the relocated kaslr'd virtual base address.
+<pre>
+    return final_virtual_kernel_base - original_kernel_base;
+</pre>
 
 == KernelLdr_RelocateKernelPhysically ==
 
