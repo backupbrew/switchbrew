@@ -45,7 +45,30 @@ to the kernel entrypoint.
 
 ## KernelLdr\_ApplyRelocations
 
-TODO: Fill this out
+This does standard ELF relocation using .dynamic.
+
+First, it iterates over all entries in .dynamic, extracting .rel.dyn,
+.rela.dyn, relent, relatent, relcount, relacount from the relevant
+entries.
+
+Then it does the following two loops to apply R\_AARCH64\_RELATIVE
+relocations:
+
+``` 
+    for (size_t i = 0; i < rel_count; i++) {
+        const Elf64_Rel *rel = dyn_rel_start + rel_ent * i;
+        while (uint32_t(rel->r_info) != R_AARCH64_RELATIVE) { /* Invalid entry, infloops */ }
+        *((Elf64_Addr *)(base_address + rel->r_offset)) += base_address;
+    }
+```
+
+``` 
+    for (size_t i = 0; i < rela_count; i++) {
+        const Elf64_Rela *rela = dyn_rela_start + rela_ent * i;
+        while (uint32_t(rela->r_info) != R_AARCH64_RELATIVE) { /* Invalid entry, infloops */ }
+        *((Elf64_Addr *)(base_address + rela->r_offset)) = base_address + rela->r_addend;
+    }
+```
 
 ## KernelLdr\_lib\_init\_array()
 
