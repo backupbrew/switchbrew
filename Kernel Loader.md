@@ -11,9 +11,58 @@ signature:
 
 `   void KernelLoader_Main(uintptr_t kernel_base_address, KernelMap *kernel_map, uintptr_t ini1_base_address);`
 
-## KernelLoader\_Main
+## KernelLdr\_Main
 
-  - TODO: Fill in what KernelLdr does
+First, it clears BSS, and then sets SP = <BSS end>.
+
+``` 
+    for (uint64_t *i = __bss_start; i != __bss_end; i++) {
+        *i = 0;
+    }
+    SP = __bss_end;
+```
+
+Next, it applies relocations to itself and calls its init array.
+
+``` 
+    KernelLdr_ApplyRelocations(&KernelLdr_Main, __dynamic_start);
+    KernelLdr_libc_init_array();
+```
+
+Then, it calls the function which relocates the kernel, and jumps back
+to the kernel entrypoint.
+
+``` 
+    // KernelLdr_LoadKernel returns (relocated_kernel_base - original_kernel_base).
+    uintptr_t kernel_relocation_offset = KernelLdr_LoadKernel(kernel_base, kernel_map, ini_base);
+    
+    // dtor called for static page allocator.
+    g_InitialPageAllocator.~KInitialPageAllocator();
+    
+    // Jumps back to the kernel code that called KernelLdr_Main.
+    ((void (*)(void))(kernel_relocation_offset + LR))();
+```
+
+## KernelLdr\_ApplyRelocations
+
+TODO: Fill this out
+
+## KernelLdr\_lib\_init\_array()
+
+This is just standard libc init array code. .init\_array is empty in all
+available binaries.
+
+## KernelLdr\_LoadKernel
+
+TODO: Fill this out
+
+## KInitialPageAllocator::\~KInitialPageAllocator
+
+This just clears the allocator's next address.
+
+``` 
+    this->next_address = 0;
+```
 
 ## Structures
 
