@@ -155,7 +155,10 @@ Then, it maps the kernel and applies its .dynamic's relocations.
 
 Then, it calls the kernel's libc .init\_array functions.
 
-    // TODO: Fill this out with pseudocode.
+    // This is standard libc init_array code, but called for the kernel's binary instead of kernelldr's.
+    for (uintptr_t cur_func = final_virtual_kernel_base + init_array_offset; cur_func < final_virtual_kernel_base + init_array_end_offset; cur_func += 8) {
+        ((void (*)(void))(*(uint64_t *)cur_func)();
+    }
 
 Finally, it returns the difference between the kernel's original
 physical base address and the relocated kaslr'd virtual base address.
