@@ -176,6 +176,16 @@ Note: Panic (infloop) happens on any smc call error, this isn't depicted in pseu
     }
 </pre>
 
+== KernelLdr_ShouldReserveAdditionalKernelData ==
+
+This just gets a flag from the KernelConfiguration.
+
+Note: Panic (infloop) happens on any smc call error, this isn't depicted in pseudocode for brevity reasons.
+
+<pre>
+    return (smc_get_config(ConfigItem_KernelConfiguration) >> 3) & 1;
+</pre>
+
 == KInitialPageAllocator::KInitialPageAllocator ==
 This sets the allocator's next address to 0 (guessed, since this is done statically in KernelLoader).
 
@@ -265,7 +275,7 @@ This frees a page (implemented as noop in KernelLoader)
 |-
 | 0x20
 | 4
-| INI1 load offset
+| INI1 end offset
 |-
 | 0x24
 | 4
