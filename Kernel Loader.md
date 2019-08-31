@@ -27,7 +27,7 @@ signature:
 | 0xC    | 4    | .rodata end offset      |
 | 0x10   | 4    | .rwdata offset          |
 | 0x14   | 4    | .rwdata end offset      |
-| 0x18   | 4    | .bss end offset         |
+| 0x18   | 4    | .bss offset             |
 | 0x1C   | 4    | .bss end offset         |
 | 0x20   | 4    | INI1 load offset        |
 | 0x24   | 4    | .dynamic end offset     |
