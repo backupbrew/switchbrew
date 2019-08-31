@@ -361,37 +361,35 @@ Gets the Rights ID for the [[#NcaID]]'s registered path
 === IContentMetaDatabase ===
 This is "nn::ncm::IContentMetaDatabase".
 
-Note the official name for Meta Record is "ContentMetaKey".
-
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || Set || Takes a [[CNMT#Meta_records|Meta Record]], a type-5 [[CNMT#Content_records|Content Records]] buffer and a u64 size.
+| 0 || Set || Takes a [[#ContentMetaKey|Content Meta Key]], a type-5 [[CNMT#Content_records|Content Records]] buffer and a u64 size.
 |-
-| 1 || Get || Takes a [[CNMT#Meta_records|Meta Record]], a type-6 buffer to write [[CNMT#Content_records|Content Records]] to and a u64 size. Returns the actual number of bytes read into the buffer. First 8 bytes of the data is header (u16 numExtraDataBytes, numContentRecords, numMetaRecords, padding). After the header is numExtraDataBytes of additional data, after which follow content records and meta records. Set takes this same data as input.
+| 1 || Get || Takes a [[#ContentMetaKey|Content Meta Key]], a type-6 buffer to write [[CNMT#Content_records|Content Records]] to and a u64 size. Returns the actual number of bytes read into the buffer. First 8 bytes of the data is header (u16 numExtraDataBytes, numContentRecords, numMetaRecords, padding). After the header is numExtraDataBytes of additional data, after which follow content records and content meta keys. Set takes this same data as input.
 |-
-| 2 || Remove || Takes a [[CNMT#Meta_records|Meta Record]], and removes the associated record.
+| 2 || Remove || Takes a [[#ContentMetaKey|Content Meta Key]], and removes the associated record.
 |-
-| 3 || GetContentIdByType || Takes a [[CNMT#Meta_records|Meta Record]] and a u8 [[#Title_Types|Title Type]]. Returns a [[#NcaID]].
+| 3 || GetContentIdByType || Takes a [[#ContentMetaKey|Content Meta Key]] and a u8 [[#ContentMetaType|Content Meta Type]]. Returns a [[#NcaID]].
 |-
-| 4 || ListContentInfo || Takes a type-6 buffer to write [[CNMT#Content_records|Content Record]] entries to, a [[CNMT#Meta_records|Meta Record]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
+| 4 || ListContentInfo || Takes a type-6 buffer to write [[CNMT#Content_records|Content Record]] entries to, a [[#ContentMetaKey|Content Meta Key]], and a u32 index into the Content Record entries to start copying from. Returns a u32 entries_read.
 |-
-| 5 || List || Takes a type-6 buffer to write [[CNMT#Meta_records|Meta Record]]s to, a u32 [[#Title_Types|Title Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Meta Records with low <= record->title_id <= high, and record->type == type. Returns u32 numEntriesTotal, numEntriesWritten. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta, otherwise, you can pass 0 for type to ignore the type and list them all in the range.
+| 5 || List || Takes a type-6 buffer to write [[#ContentMetaKey|Content Meta Key]]s to, a u32 [[#ContentMetaType|Content Meta Type]], a u64 TID, a u64 TID_LOW, and u64 TID_HIGH. Writes into the buffer all Content Meta Keys with low <= record->title_id <= high, and record->type == type. Returns u32 numEntriesTotal, numEntriesWritten. Additionally requires record->title_id == TID, if record->type is Application, Patch, Add-On, or Delta, otherwise, you can pass 0 for type to ignore the type and list them all in the range.
 |-
-| 6 || GetLatestContentMetaKey || Takes a u64 title id, and returns the [[CNMT#Meta_records|Meta Record]] with the highest version field for that title id.
+| 6 || GetLatestContentMetaKey || Takes a u64 title id, and returns the [[#ContentMetaKey|Content Meta Key]] with the highest version field for that title id.
 |-
 | 7 || [[#ListApplication]] ||
 |-
-| 8 || Has || Takes a [[CNMT#Meta_records|Meta Record]] and returns whether that record is present in the database.
+| 8 || Has || Takes a [[#ContentMetaKey|Content Meta Key]] and returns whether that record is present in the database.
 |-
-| 9 || HasAll || Takes a type-5 buffer containing [[CNMT#Meta_records|Meta Records]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
+| 9 || HasAll || Takes a type-5 buffer containing [[#ContentMetaKey|Content Meta Key]] (code assumes there are size/sizeof(meta_record) records in the buffer), and returns whether all of those records are present in the database.
 |-
-| 10 || GetSize || Takes a [[CNMT#Meta_records|Meta Record]], and returns the size of the associated [[CNMT#Content_records|Content Records]].
+| 10 || GetSize || Takes a [[#ContentMetaKey|Content Meta Key]], and returns the size of the associated [[CNMT#Content_records|Content Records]].
 |-
-| 11 || GetRequiredSystemVersion || Takes a [[CNMT#Meta_records|Meta Record]], and returns u32 from ContentRecords + 16 (only if the Meta record has type Application or Patch).
+| 11 || GetRequiredSystemVersion || Takes a [[#ContentMetaKey|Content Meta Key]], and returns u32 from ContentRecords + 16 (only if the content meta key has type Application or Patch).
 |-
-| 12 || GetPatchId || Takes a [[CNMT#Meta_records|Meta Record]], and returns the update title id for that record.
+| 12 || GetPatchId || Takes a [[#ContentMetaKey|Content Meta Key]], and returns the update title id for that record.
 |-
 | 13 || DisableForcibly ||  Closes the meta database, and causes all future IPC commands to the current session to return error 0xDC05.
 |-
@@ -399,11 +397,11 @@ Note the official name for Meta Record is "ContentMetaKey".
 |-
 | 15 || Commit || Flushes the in-memory database to savedata.
 |-
-| 16 || HasContent || Takes a [[CNMT#Meta_records|Meta Record]] and an [[#NcaID]]. Returns whether the content records for that meta record contain the NcaID.
+| 16 || HasContent || Takes a [[#ContentMetaKey|Content Meta Key]] and an [[#NcaID]]. Returns whether the content records for that content meta key contain the NcaID.
 |-
-| 17 || ListContentMetaInfo || Takes a type-6 [[CNMT#Meta_records|Meta Record]] output buffer, a u32 offset into that buffer, and an input [[CNMT#Meta_records|Meta Record]].
+| 17 || ListContentMetaInfo || Takes a type-6 [[#ContentMetaKey|Content Meta Key]] output buffer, a u32 offset into that buffer, and an input [[#ContentMetaKey|Content Meta Key]].
 |-
-| 18 || GetAttributes || Takes a [[CNMT#Meta_records|Meta Record]], and returns u8 from ContentRecords + 6.
+| 18 || GetAttributes || Takes a [[#ContentMetaKey|Content Meta Key]], and returns u8 from ContentRecords + 6.
 |-
 | 19 || [2.0.0+] GetRequiredApplicationVersion || Does the same thing as GetEntryUnknownRecordSize, but for AddOnContents.
 |-
@@ -420,11 +418,11 @@ This function takes in a type 6 buffer to write entries to, and a u8 "filter" [[
 This func returns a u32 num_entries_total, and a u32 num_entries_written.
 
 ==== ReadEntryMetaRecords ====
-Takes a type-6 [[CNMT#Meta_records|Meta Record]] output buffer, a u32 offset into that buffer, and an input [[CNMT#Meta_records|Meta Record]] entry. Returns a u32 for total_read_entries.
+Takes a type-6 [[#ContentMetaKey|Content Meta Key]] output buffer, a u32 offset into that buffer, and an input [[#ContentMetaKey|Content Meta Key]] entry. Returns a u32 for total_read_entries.
 
-Reads the meta records stored in the entry's content records into the output buffer.
+Reads the content meta keys stored in the entry's content records into the output buffer.
 
-This is used, for example, with System Update title 0100000000000816, which contains Meta Records for all other systitles in its Content Records.
+This is used, for example, with System Update title 0100000000000816, which contains content meta keys for all other systitles in its Content Records.
 
 ==== LookupOrphanContent ====
 Takes a type-6 byte buffer, and a type-5 buffer containing [[#NcaID]]s.
@@ -447,13 +445,34 @@ This is a 0x10-byte entry. This is originally from the hex portion of "<hex>.nca
 
 The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, from hashing the entire output from [[#ReadContentIdFile]].
 
-=== Enums ===
-==== Title Types ====
+== ContentInstallType ==
+This is "nn::ncm::ContentInstallType"
 
 {| class="wikitable" border="1"
 |-
 ! Value
 ! Description
+|-
+| 0x0
+| Full
+|-
+| 0x1
+| FragmentOnly
+|-
+| 0x7
+| Unknown (Invalid Content Install Type)
+|}
+
+== ContentMetaType ==
+This is "nn::ncm::ContentMetaType"
+
+{| class="wikitable" border="1"
+|-
+! Value
+! Description
+|-
+| 0x00
+| Unknown (Invalid Content Meta Type)
 |-
 | 0x01
 | SystemProgram ([[Title_list#System_Modules|System Modules]] or [[Title_list#System_Applets|System Applets]])
@@ -481,6 +500,36 @@ The NcaID is the same as the first 0x10-bytes from the calculated SHA256 hash, f
 |-
 | 0x83
 | Delta
+|}
+
+== ContentMetaKey ==
+This is "nn::ncm::ContentMetaKey"
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 
+| 0x8 
+| Title id
+|-
+| 0x8 
+| 0x4 
+| Version
+|-
+| 0xC 
+| 0x1 
+| [[#ContentMetaType|Content Meta Type]]
+|-
+| 0xD 
+| 0x1 
+| [[#ContentInstallType|Content Install Type]]
+|-
+| 0xE 
+| 0x2 
+| Padding
 |}
 
 == ncm:v ==
