@@ -203,7 +203,8 @@ physical base address and the relocated kaslr'd virtual base address.
 
 Signature is like
 
-`   void KernelLdr_MapInitialIdentityMapping(KInitialPageTable *ttbr1_page_table, uintptr_t kernel_base, uintptr_t kernel_size, uintptr_t page_tables_base, uintptr_t page_tables_size, InitialPageAllocator *allocator);`
+`   void KernelLdr_MapInitialIdentityMapping(KInitialPageTable *ttbr1_page_table, uintptr_t kernel_base, uintptr_t kernel_size, `  
+`                                            uintptr_t page_tables_base, uintptr_t page_tables_size, InitialPageAllocator *allocator);`
 
     // TODO: Fill this out with pseudocode.
 
