@@ -74,6 +74,31 @@ First, it backs up the original kernel base, and then relocates the kernel physi
     KernelLdr_RelocateKernelPhysically(&kernel_base, &kernel_map);
 </pre>
 
+Then it checks all of the kernel map's offsets (and the kernel base) for page alignment.
+<pre>
+    // Read offsets from the kernel map, save on stack.
+    text_offset           = kernel_map->text_offset;
+    text_end_offset       = kernel_map->text_end_offset;
+    ro_offset             = kernel_map->ro_offset;
+    ro_end_offset         = kernel_map->ro_end_offset;
+    rw_offset             = kernel_map->rw_offset;
+    rw_end_offset         = kernel_map->rw_end_offset;
+    bss_offset            = kernel_map->bss_offset;
+    ini1_load_offset      = kernel_map->ini1_load_offset;
+    dynamic_offset        = kernel_map->dynamic_offset;
+    init_array_offset     = kernel_map->init_array_offset;
+    init_array_end_offset = kernel_map->init_array_end_offset;
+
+    // Check all offsets are appropriately aligned.
+    while (kernel_base & 0xFFF) { }
+    while (text_offset & 0xFFF) { }
+    while (text_end_offset & 0xFFF) { }
+    while (ro_offset & 0xFFF) { }
+    while (ro_end_offset & 0xFFF) { }
+    while (rw_offset & 0xFFF) { }
+    while (rw_end_offset & 0xFFF) { }
+</pre>
+
 TODO: More stuff
 
 == KernelLdr_RelocateKernelPhysically ==
