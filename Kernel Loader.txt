@@ -58,6 +58,38 @@ This just clears the allocator's next address.
     this->next_address = 0;
 </pre>
 
+== KInitialPageAllocator::Initialize ==
+This sets the allocator's next address (function inferred as it is (presumably) inlined and next_address is (presumably) private).
+
+<pre>
+    this->next_address = address;
+</pre>
+
+== KInitialPageAllocator::Allocate ==
+This linearly allocates a page.
+
+<pre>
+    virtual void *KInitialPageAllocator::Allocate() {
+        void *address = reinterpret_cast<void *>(this->next_address);
+        if (address == nullptr) {
+            // If called on uninitialized allocator, panic by infinite looping
+            while (true) {}
+        }
+        this->next_address += 0x1000;
+        memset(address, 0, 0x1000);
+        return address;
+    }
+</pre>
+
+== KInitialPageAllocator::Free ==
+This frees a page (implemented as noop in KernelLoader)
+
+<pre>
+    virtual void KInitialPageAllocator::Free(void *address) {
+        // Does Nothing
+    }
+</pre>
+
 == Structures ==
 
 === KernelMap ===
