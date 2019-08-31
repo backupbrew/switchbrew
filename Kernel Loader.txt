@@ -231,7 +231,7 @@ Next, this sets some system registers.
 <pre>
     // Set TTBR0/TTBR1 with initial page tables.
     TTBR0_EL1 = ttbr0_page_table.GetL1Table();
-    TTBR1_EL1 = ttbr1_page_table.GetL1Table();
+    TTBR1_EL1 = ttbr1_page_table->GetL1Table();
     
     // Configure MAIR, TCR. TODO: Document here what bits these are.
     MAIR_EL1 = 0x44FF0400;
