@@ -9,7 +9,7 @@ KernelLdr is called immediately by the Kernel's crt0 (after it
 deprivileges from EL2 to EL1, if required), with the following
 signature:
 
-`   void KernelLoader_Main(uintptr_t kernel_base_address, KernelMap *kernel_map, uintptr_t ini1_base_address);`
+`   void KernelLdr_Main(uintptr_t kernel_base_address, KernelMap *kernel_map, uintptr_t ini1_base_address);`
 
 ## KernelLdr\_Main
 
