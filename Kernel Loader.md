@@ -269,7 +269,7 @@ successfully read once the MMU is enabled.
     KernelLdr_EnsureCacheFlushed();
 ```
 
-// Finally, SCTLR is written to, enabling the MMU.
+Finally, SCTLR is written to, enabling the MMU.
 
 ``` 
     SCTLR_EL1 = 0x34D5D925;

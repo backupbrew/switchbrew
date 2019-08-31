@@ -241,7 +241,7 @@ Next, the cache is flushed, to ensure that page tables will be successfully read
     KernelLdr_EnsureCacheFlushed();
 </pre>
 
-// Finally, SCTLR is written to, enabling the MMU.
+Finally, SCTLR is written to, enabling the MMU.
 <pre>
     SCTLR_EL1 = 0x34D5D925;
     __dsb_sy();
