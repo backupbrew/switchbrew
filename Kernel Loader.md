@@ -3,7 +3,7 @@ The Kernel Loader ("KernelLdr"/"Kernelldr") was added in
 to the Kernel, and mapping the Kernel's .text/.rodata/.data/.bss at a
 random slide.
 
-# Kernel Loader
+# Functions
 
 KernelLdr is called immediately by the Kernel's crt0 (after it
 deprivileges from EL2 to EL1, if required), with the following
@@ -199,9 +199,9 @@ This frees a page (implemented as noop in KernelLoader)
     }
 ```
 
-## Structures
+# Structures
 
-### KernelMap
+## KernelMap
 
 | Offset | Size | Description             |
 | ------ | ---- | ----------------------- |
@@ -219,7 +219,7 @@ This frees a page (implemented as noop in KernelLoader)
 | 0x2C   | 4    | .init\_array end offset |
 |        |      |                         |
 
-### KInitialPageAllocator
+## KInitialPageAllocator
 
 KInitialPageAllocator is just a simple linear allocator.
 
@@ -229,7 +229,7 @@ KInitialPageAllocator is just a simple linear allocator.
 | 0x8    | 8    | Next Address; |
 |        |      |               |
 
-#### KInitialPageAllocator::vtable
+### KInitialPageAllocator::vtable
 
 | Offset | Size | Description                                                  |
 | ------ | ---- | ------------------------------------------------------------ |

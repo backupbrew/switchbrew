@@ -1,6 +1,6 @@
 The Kernel Loader ("KernelLdr"/"Kernelldr") was added in [[8.0.0]]. It is responsible for applying relocations to the Kernel, and mapping the Kernel's .text/.rodata/.data/.bss at a random slide.
 
-= Kernel Loader =
+= Functions =
 
 KernelLdr is called immediately by the Kernel's crt0 (after it deprivileges from EL2 to EL1, if required), with the following signature:
 
@@ -174,9 +174,9 @@ This frees a page (implemented as noop in KernelLoader)
     }
 </pre>
 
-== Structures ==
+= Structures =
 
-=== KernelMap ===
+== KernelMap ==
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -233,7 +233,7 @@ This frees a page (implemented as noop in KernelLoader)
 |-
 |}
 
-=== KInitialPageAllocator ===
+== KInitialPageAllocator ==
 KInitialPageAllocator is just a simple linear allocator.
 
 {| class="wikitable" border="1"
@@ -252,7 +252,7 @@ KInitialPageAllocator is just a simple linear allocator.
 |-
 |}
 
-==== KInitialPageAllocator::vtable ====
+=== KInitialPageAllocator::vtable ===
 
 {| class="wikitable" border="1"
 |-
