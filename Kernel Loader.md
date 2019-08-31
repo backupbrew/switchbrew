@@ -361,7 +361,7 @@ own thing.
     KernelLdr_InvalidateCacheLocal();
     __dsb_sy();
     
-    // asm { tlbi vmallelis; }
+    // asm { tlbi vmalle1is; }
     __dsb_sy();
     __isb();
 ```

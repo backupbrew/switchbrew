@@ -327,7 +327,7 @@ Note: this is inlined, however it uses instructions that no compiler has intrins
     KernelLdr_InvalidateCacheLocal();
     __dsb_sy();
     
-    // asm { tlbi vmallelis; }
+    // asm { tlbi vmalle1is; }
     __dsb_sy();
     __isb();
 </pre>
