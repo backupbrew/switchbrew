@@ -308,9 +308,6 @@ This frees a page (implemented as noop in KernelLoader)
 
 ## KInitialPageTable::Initialize
 
-Signature is like KInitialPageTable::Initialize(KInitialPageAllocator
-\*allocator);
-
 NOTE: This function is inferred (as it sets presumably private members).
 
     void KInitialPageTable::Initialize(KInitialPageAllocator *allocator) {
