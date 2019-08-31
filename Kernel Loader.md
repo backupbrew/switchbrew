@@ -70,7 +70,7 @@ relocations:
     }
 ```
 
-## KernelLdr\_lib\_init\_array()
+## KernelLdr\_libc\_init\_array()
 
 This is just standard libc init array code. .init\_array is empty in all
 available binaries.

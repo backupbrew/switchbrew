@@ -58,7 +58,7 @@ Then it does the following two loops to apply R_AARCH64_RELATIVE relocations:
     }
 </pre>
 
-== KernelLdr_lib_init_array() ==
+== KernelLdr_libc_init_array() ==
 This is just standard libc init array code. .init_array is empty in all available binaries.
 
 == KernelLdr_LoadKernel ==
