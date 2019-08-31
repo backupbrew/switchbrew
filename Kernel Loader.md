@@ -78,7 +78,8 @@ available binaries.
 ## KernelLdr\_LoadKernel
 
 First, it backs up the original kernel base, and then relocates the
-kernel for
+kernel physically to the upper half of DRAM if enough memory is
+available.
 
 ``` 
     // Backup kernel_base argument for use later
@@ -112,7 +113,38 @@ adjusts the kernel's physical location if necessary.
 
 ## KernelLdr\_GetAdjustedKernelPhysicalBase
 
-TODO: secmon calls here
+This sees how much more memory is available than expected, and relocates
+the kernel accordingly.
+
+Note: Panic (infloop) happens on any smc call error, this isn't depicted
+in pseudocode for brevity reasons.
+
+``` 
+    // Gets DRAM size information from Memory Controller
+    dram_size_from_mc = (smc_read_write_register(MC_EMEM_CFG, 0, 0) & 0x3FFF) << 20;
+    
+    // Gets DRAM size information from Secure Monitor KernelConfiguration
+    memory_type = (smc_get_config(ConfigItem_KernelConfiguration) >> 16) & 3;
+    switch (memory_type) {
+        case MemoryType_4GB: // 0
+            dram_size_from_kernel_cfg = 0x100000000;
+            break;
+        case MemoryType_6GB: // 1
+            dram_size_from_kernel_cfg = 0x180000000;
+            break;
+        case MemoryType_8GB: // 2
+        default:
+            dram_size_from_kernel_cfg = 0x200000000;
+            break;
+    }
+    
+    // On normal systems, these should be equal (and kernel will not be relocated).
+    if (dram_size_from_mc < 2 * dram_size_from_kernel_cfg) {
+        return kernel_base + (dram_size_from_mc - dram_size_from_kernel_cfg) / 2;
+    } else {
+        return kernel_base;
+    }
+```
 
 ## KInitialPageAllocator::KInitialPageAllocator
 
