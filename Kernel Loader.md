@@ -83,3 +83,21 @@ This just clears the allocator's next address.
 | 0x28   | 4    | .init\_array end offset |
 | 0x2C   | 4    | .init\_array end offset |
 |        |      |                         |
+
+### KInitialPageAllocator
+
+KInitialPageAllocator is just a simple linear allocator.
+
+| Offset | Size | Description   |
+| ------ | ---- | ------------- |
+| 0x0    | 8    | vtable;       |
+| 0x8    | 8    | Next Address; |
+|        |      |               |
+
+#### KInitialPageAllocator::vtable
+
+| Offset | Size | Description                                                  |
+| ------ | ---- | ------------------------------------------------------------ |
+| 0x0    | 8    | void \*(\*Allocate)(KInitialPageAllocator \*this);           |
+| 0x8    | 8    | void (\*Free)(KInitialPageAllocator \*this, void \*address); |
+|        |      |                                                              |
