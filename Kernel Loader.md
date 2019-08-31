@@ -343,3 +343,16 @@ KInitialPageAllocator is just a simple linear allocator.
 | 0x0    | 8    | void \*(\*Allocate)(KInitialPageAllocator \*this);           |
 | 0x8    | 8    | void (\*Free)(KInitialPageAllocator \*this, void \*address); |
 |        |      |                                                              |
+
+## KInitialPageTable
+
+KInitialPageTable is a very, very stripped-down KPageTable.
+
+Compared to pre-KernelLoader KInitialPageTable, it has slightly reduced
+memory footprint.
+
+| Offset | Size | Description                                  |
+| ------ | ---- | -------------------------------------------- |
+| 0x0    | 8    | Pointer to L1 Table;                         |
+| 0x8    | 8    | Number of L1 Table Entries (Normally 0x200); |
+|        |      |                                              |
