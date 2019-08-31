@@ -102,7 +102,7 @@ page alignment.
     rw_offset             = kernel_map->rw_offset;
     rw_end_offset         = kernel_map->rw_end_offset;
     bss_offset            = kernel_map->bss_offset;
-    ini1_load_offset      = kernel_map->ini1_load_offset;
+    ini1_end_offset       = kernel_map->ini1_end_offset;
     dynamic_offset        = kernel_map->dynamic_offset;
     init_array_offset     = kernel_map->init_array_offset;
     init_array_end_offset = kernel_map->init_array_end_offset;
@@ -115,6 +115,29 @@ page alignment.
     while (ro_end_offset & 0xFFF) { }
     while (rw_offset & 0xFFF) { }
     while (rw_end_offset & 0xFFF) { }
+```
+
+Next, it relocates the INI1 to its appropriate load address.
+
+``` 
+    // If configured to do so, an extra 0x68000 bytes will be reserved for kernel usage.
+    reserved_kernel_data_size = KernelLdr_ShouldReserveAdditionalKernelData() ? 0x1790000 : 0x1728000;
+
+    // Calculate address at which to place INI1.
+    ini1_end_address   = kernel_base + ini1_end_offset + reserved_kernel_data_size;
+    ini1_load_address = ini1_end_address - 0xC00000;
+
+    // Relocate INI1 if destination address isn't the input argument address
+    if (ini1_load_address != ini1_address) {
+        // Validate INI1 binary has correct magic and valid size.
+        INI1Header *ini = (INI1Header *)ini1_address;
+        if (ini->magic == MAGIC_INI1 && ini->size <= 0xC00000) {
+            memmove(ini1_load_address, ini1_address, ini->size); // NOTE: No ToCToU, ini1->size is cached on stack.
+        } else {
+            // Invalid INI, place invalid header at load address. This will cause Kernel Panic later.
+            memset(ini1_load_address, 0, sizeof(INI1Header));
+        }
+    }
 ```
 
 TODO: More stuff
