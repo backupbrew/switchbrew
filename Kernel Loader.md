@@ -490,6 +490,17 @@ are allocated via allocator-\>Allocate() when needed.
 This is just standard aarch64 page table code. Walks the page table,
 verifying that all entries it would map for size + range are free.
 
+## KInitialPageTable::GetL1Table
+
+This is an inferred getter for a (presumably) private member.
+
+``` 
+
+    void *KInitialPageTable::GetL1Table() const {
+        return this->l1_table_ptr;
+    }
+```
+
 # Structures
 
 ## KernelMap
