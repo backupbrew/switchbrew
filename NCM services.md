@@ -23,28 +23,28 @@ access but doesn't use it.
 
 This is "nn::lr::ILocationResolver".
 
-| Cmd | Name                                                                                                    |
-| --- | ------------------------------------------------------------------------------------------------------- |
-| 0   | [\#ResolveProgramPath](#ResolveProgramPath "wikilink")                                                  |
-| 1   | [\#RedirectProgramPath](#RedirectProgramPath "wikilink")                                                |
-| 2   | [\#ResolveApplicationControlPath](#ResolveApplicationControlPath "wikilink")                            |
-| 3   | [\#ResolveApplicationHtmlDocumentPath](#ResolveApplicationHtmlDocumentPath "wikilink")                  |
-| 4   | [\#ResolveDataPath](#ResolveDataPath "wikilink")                                                        |
-| 5   | [\#RedirectApplicationControlPath](#RedirectApplicationControlPath "wikilink")                          |
-| 6   | [\#RedirectApplicationHtmlDocumentPath](#RedirectApplicationHtmlDocumentPath "wikilink")                |
-| 7   | [\#ResolveApplicationLegalInformationPath](#ResolveApplicationLegalInformationPath "wikilink")          |
-| 8   | [\#RedirectApplicationLegalInformationPath](#RedirectApplicationLegalInformationPath "wikilink")        |
-| 9   | [\#Refresh](#Refresh "wikilink")                                                                        |
-| 10  | \[5.0.0+\] [\#RedirectProgramPath2](#RedirectProgramPath2 "wikilink")                                   |
-| 11  | \[5.0.0+\] [\#Refresh2](#Refresh2 "wikilink")                                                           |
-| 12  | \[5.0.0+\] [\#DeleteProgramPath](#DeleteProgramPath "wikilink")                                         |
-| 13  | \[5.0.0+\] [\#DeleteApplicationControlPath](#DeleteApplicationControlPath "wikilink")                   |
-| 14  | \[5.0.0+\] [\#DeleteApplicationHtmlDocumentPath](#DeleteApplicationHtmlDocumentPath "wikilink")         |
-| 15  | \[5.0.0+\] [\#DeleteApplicationLegalInformationPath](#DeleteApplicationLegalInformationPath "wikilink") |
-| 16  | \[7.0.0+\] [\#ResolveProgramPathForDebug](#ResolveProgramPathForDebug "wikilink")                       |
-| 17  | \[7.0.0+\] [\#RedirectProgramPathForDebug](#RedirectProgramPathForDebug "wikilink")                     |
-| 18  | \[7.0.0+\] [\#RedirectProgramPath2ForDebug](#RedirectProgramPath2ForDebug "wikilink")                   |
-| 19  | \[7.0.0+\] [\#DeleteProgramPathForDebug](#DeleteProgramPathForDebug "wikilink")                         |
+| Cmd | Name                                                                                                                | Notes           |
+| --- | ------------------------------------------------------------------------------------------------------------------- | --------------- |
+| 0   | [\#ResolveProgramPath](#ResolveProgramPath "wikilink")                                                              |                 |
+| 1   | [\#RedirectProgramPath](#RedirectProgramPath "wikilink")                                                            |                 |
+| 2   | [\#ResolveApplicationControlPath](#ResolveApplicationControlPath "wikilink")                                        |                 |
+| 3   | [\#ResolveApplicationHtmlDocumentPath](#ResolveApplicationHtmlDocumentPath "wikilink")                              |                 |
+| 4   | [\#ResolveDataPath](#ResolveDataPath "wikilink")                                                                    |                 |
+| 5   | [\#RedirectApplicationControlPath](#RedirectApplicationControlPath "wikilink")                                      |                 |
+| 6   | [\#RedirectApplicationHtmlDocumentPath](#RedirectApplicationHtmlDocumentPath "wikilink")                            |                 |
+| 7   | [\#ResolveApplicationLegalInformationPath](#ResolveApplicationLegalInformationPath "wikilink")                      |                 |
+| 8   | [\#RedirectApplicationLegalInformationPath](#RedirectApplicationLegalInformationPath "wikilink")                    |                 |
+| 9   | [\#Refresh](#Refresh "wikilink")                                                                                    |                 |
+| 10  | \[5.0.0+\] [\#RedirectApplicationProgramPath](#RedirectApplicationProgramPath "wikilink")                           |                 |
+| 11  | \[5.0.0+\] [\#ClearApplicationRedirection](#ClearApplicationRedirection "wikilink")                                 |                 |
+| 12  | \[5.0.0+\] [\#EraseProgramRedirection](#EraseProgramRedirection "wikilink")                                         |                 |
+| 13  | \[5.0.0+\] [\#EraseApplicationControlRedirection](#EraseApplicationControlRedirection "wikilink")                   |                 |
+| 14  | \[5.0.0+\] [\#EraseApplicationHtmlDocumentRedirection](#EraseApplicationHtmlDocumentRedirection "wikilink")         |                 |
+| 15  | \[5.0.0+\] [\#EraseApplicationLegalInformationRedirection](#EraseApplicationLegalInformationRedirection "wikilink") |                 |
+| 16  | \[7.0.0+\] [\#ResolveProgramPathForDebug](#ResolveProgramPathForDebug "wikilink")                                   | Unofficial name |
+| 17  | \[7.0.0+\] [\#RedirectProgramPathForDebug](#RedirectProgramPathForDebug "wikilink")                                 | Unofficial name |
+| 18  | \[7.0.0+\] [\#RedirectApplicationProgramPathForDebug](#RedirectApplicationProgramPathForDebug "wikilink")           | Unofficial name |
+| 19  | \[7.0.0+\] [\#EraseProgramRedirectionForDebug](#EraseProgramRedirectionForDebug "wikilink")                         | Unofficial name |
 
 If the supplied
 [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") is
@@ -132,18 +132,18 @@ to 1.
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 0.
 
-#### RedirectProgramPath2
+#### RedirectApplicationProgramPath
 
 Same as [RedirectProgramPath](#RedirectProgramPath "wikilink"), but
 inserts a new [entry](#Location_List_Entry "wikilink") with **flag** set
 to 1.
 
-#### Refresh2
+#### ClearApplicationRedirection
 
 Takes no input. Frees all linked-lists' entries that have **flag** set
 to 1.
 
-#### DeleteProgramPath
+#### EraseProgramRedirection
 
 Takes an u64 **TitleID**. Used for
 [NCA-type1](NCA%20Content%20FS#NCA-type1.md##NCA-type1 "wikilink").
@@ -151,7 +151,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteApplicationControlPath
+#### EraseApplicationControlRedirection
 
 Takes an u64 **TitleID**. Used for
 [NCA-type3](NCA%20Content%20FS#NCA-type3.md##NCA-type3 "wikilink").
@@ -159,7 +159,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteApplicationHtmlDocumentPath
+#### EraseApplicationHtmlDocumentRedirection
 
 Takes an u64 **TitleID**. Used for
 [NCA-type4](NCA%20Content%20FS#NCA-type4.md##NCA-type4 "wikilink").
@@ -167,7 +167,7 @@ Takes an u64 **TitleID**. Used for
 Removes the [entry](#Location_List_Entry "wikilink") that matches the
 input TitleID.
 
-#### DeleteApplicationLegalInformationPath
+#### EraseApplicationLegalInformationRedirection
 
 Takes an u64 **TitleID**. Used for
 [NCA-type5](NCA%20Content%20FS#NCA-type5.md##NCA-type5 "wikilink").
@@ -193,19 +193,20 @@ a redirection shim on top of the real program path.
 [ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
 is different than 0x00.
 
-#### RedirectProgramPath2ForDebug
+#### RedirectApplicationProgramPathForDebug
 
-Same as [RedirectProgramPath2](#RedirectProgramPath2 "wikilink"), but
-uses a redirection shim on top of the real program path.
+Same as [RedirectApplicationProgramPath
+](#RedirectApplicationProgramPath "wikilink"), but uses a redirection
+shim on top of the real program path.
 
 [NS](NS%20Services.md "wikilink") uses this command if
 [ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")
 is different than 0x00.
 
-#### DeleteProgramPathForDebug
+#### EraseProgramRedirectionForDebug
 
-Same as [DeleteProgramPath](#DeleteProgramPath "wikilink"), but uses a
-redirection shim on top of the real program path.
+Same as [EraseProgramRedirection ](#EraseProgramRedirection "wikilink"),
+but uses a redirection shim on top of the real program path.
 
 [NS](NS%20Services.md "wikilink") uses this command if
 [ns.application\!redirected\_rom\_storage\_id\_for\_debug](System%20Settings#ns.application.md##ns.application "wikilink")

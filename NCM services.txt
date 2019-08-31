@@ -24,47 +24,47 @@ This is "nn::lr::ILocationResolver".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name
+! Cmd || Name || Notes
 |-
-| 0 || [[#ResolveProgramPath]]
+| 0 || [[#ResolveProgramPath]] ||
 |-
-| 1 || [[#RedirectProgramPath]]
+| 1 || [[#RedirectProgramPath]] ||
 |-
-| 2 || [[#ResolveApplicationControlPath]]
+| 2 || [[#ResolveApplicationControlPath]] ||
 |-
-| 3 || [[#ResolveApplicationHtmlDocumentPath]]
+| 3 || [[#ResolveApplicationHtmlDocumentPath]] ||
 |-
-| 4 || [[#ResolveDataPath]]
+| 4 || [[#ResolveDataPath]] ||
 |-
-| 5 || [[#RedirectApplicationControlPath]]
+| 5 || [[#RedirectApplicationControlPath]] ||
 |-
-| 6 || [[#RedirectApplicationHtmlDocumentPath]]
+| 6 || [[#RedirectApplicationHtmlDocumentPath]] ||
 |-
-| 7 || [[#ResolveApplicationLegalInformationPath]]
+| 7 || [[#ResolveApplicationLegalInformationPath]] ||
 |-
-| 8 || [[#RedirectApplicationLegalInformationPath]]
+| 8 || [[#RedirectApplicationLegalInformationPath]] ||
 |-
-| 9 || [[#Refresh]]
+| 9 || [[#Refresh]] ||
 |-
-| 10 || [5.0.0+] [[#RedirectProgramPath2]]
+| 10 || [5.0.0+] [[#RedirectApplicationProgramPath]] ||
 |-
-| 11 || [5.0.0+] [[#Refresh2]]
+| 11 || [5.0.0+] [[#ClearApplicationRedirection]] ||
 |-
-| 12 || [5.0.0+] [[#DeleteProgramPath]]
+| 12 || [5.0.0+] [[#EraseProgramRedirection]] ||
 |-
-| 13 || [5.0.0+] [[#DeleteApplicationControlPath]]
+| 13 || [5.0.0+] [[#EraseApplicationControlRedirection]] ||
 |-
-| 14 || [5.0.0+] [[#DeleteApplicationHtmlDocumentPath]]
+| 14 || [5.0.0+] [[#EraseApplicationHtmlDocumentRedirection]] ||
 |-
-| 15 || [5.0.0+] [[#DeleteApplicationLegalInformationPath]]
+| 15 || [5.0.0+] [[#EraseApplicationLegalInformationRedirection]] ||
 |-
-| 16 || [7.0.0+] [[#ResolveProgramPathForDebug]]
+| 16 || [7.0.0+] [[#ResolveProgramPathForDebug]] || Unofficial name
 |-
-| 17 || [7.0.0+] [[#RedirectProgramPathForDebug]]
+| 17 || [7.0.0+] [[#RedirectProgramPathForDebug]] || Unofficial name
 |-
-| 18 || [7.0.0+] [[#RedirectProgramPath2ForDebug]]
+| 18 || [7.0.0+] [[#RedirectApplicationProgramPathForDebug]] || Unofficial name
 |-
-| 19 || [7.0.0+] [[#DeleteProgramPathForDebug]]
+| 19 || [7.0.0+] [[#EraseProgramRedirectionForDebug]] || Unofficial name
 |}
 
 If the supplied [[Filesystem_services#StorageId|StorageID]] is 1 (Host), a different set of internal functions is used to handle these commands. In this more restricted set of functions, GetControlNcaPath is stubbed and only returns error 0x608.
@@ -111,28 +111,28 @@ Inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 1.
 ==== Refresh ====
 Takes no input. Frees all linked-lists' entries that have '''flag''' set to 0.
 
-==== RedirectProgramPath2 ====
+==== RedirectApplicationProgramPath ====
 Same as [[#RedirectProgramPath|RedirectProgramPath]], but inserts a new [[#Location_List_Entry|entry]] with '''flag''' set to 1.
 
-==== Refresh2 ====
+==== ClearApplicationRedirection ====
 Takes no input. Frees all linked-lists' entries that have '''flag''' set to 1.
 
-==== DeleteProgramPath ====
+==== EraseProgramRedirection ====
 Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type1|NCA-type1]].
 
 Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
 
-==== DeleteApplicationControlPath ====
+==== EraseApplicationControlRedirection ====
 Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type3|NCA-type3]].
 
 Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
 
-==== DeleteApplicationHtmlDocumentPath ====
+==== EraseApplicationHtmlDocumentRedirection ====
 Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type4|NCA-type4]].
 
 Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
 
-==== DeleteApplicationLegalInformationPath ====
+==== EraseApplicationLegalInformationRedirection ====
 Takes an u64 '''TitleID'''. Used for [[NCA_Content_FS#NCA-type5|NCA-type5]].
 
 Removes the [[#Location_List_Entry|entry]] that matches the input TitleID.
@@ -147,13 +147,13 @@ Same as [[#RedirectProgramPath|RedirectProgramPath]], but uses a redirection shi
 
 [[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
 
-==== RedirectProgramPath2ForDebug ====
-Same as [[#RedirectProgramPath2|RedirectProgramPath2]], but uses a redirection shim on top of the real program path.
+==== RedirectApplicationProgramPathForDebug ====
+Same as [[#RedirectApplicationProgramPath |RedirectApplicationProgramPath ]], but uses a redirection shim on top of the real program path.
 
 [[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
 
-==== DeleteProgramPathForDebug ====
-Same as [[#DeleteProgramPath|DeleteProgramPath]], but uses a redirection shim on top of the real program path.
+==== EraseProgramRedirectionForDebug ====
+Same as [[#EraseProgramRedirection |EraseProgramRedirection ]], but uses a redirection shim on top of the real program path.
 
 [[NS_Services|NS]] uses this command if [[System_Settings#ns.application|ns.application!redirected_rom_storage_id_for_debug]] is different than 0x00.
 
