@@ -138,7 +138,32 @@ Next, it initializes the MMU with a basic identity mapping for Kernel + KernelLd
 
 Next, it generates a random KASLR slide for the Kernel.
 <pre>
-// TODO: Fill this out with pseudocode.
+    // Repeatedly try to generate a random slide
+    while (true) {
+        // Get random value from secure monitor in range
+        // This is "probably" KSystemControl::GenerateRandomRange, as in normal kernel
+        // However, it's unclear whether KSystemControl is actually included, or whether this is just copy/pasted?
+        random_kaslr_slide = KernelLdr_GenerateRandomRange(0xFFFFFF8000000000, 0xFFFFFFFFFFDFFFFF);
+        aligned_random_kaslr_slide = random_kaslr_slide & 0xFFFFFFFFFFE00000;
+        
+        // Calculate end address for kernel with this slide, rounding up.
+        random_kernel_end = aligned_random_kaslr_slide + (kernel_base & 0x1FFFFF) + rw_end_offset + 0x1FFFFF) & 0x1FFE00000;
+       
+        // Validate no overflow, and that the kernel will fit with the slide.
+        if (aligned_random_kaslr_slide >= random_kaslr_end || ((random_kaslr_end - 1) > 0xFFFFFFFFFFDFFFFF)) {
+            continue;
+        }
+
+        // Validate we can map this range without conflicts.
+        // NOTE: This is inlined, but code looks same as in older kernel binaries.
+        if (!ttbr1_page_table.IsFree(aligned_random_kaslr_slide, random_kernel_end - aligned_random_kaslr_slide)) {
+            continue;
+        }
+
+        // Valid kaslr slide, so we're done.
+        break;
+    }
+    final_virtual_kernel_base = aligned_random_kaslr_slide | (kernel_base & 0x1FFFFF);
 </pre>
 
 Then, it maps the kernel at the final virtual address.
