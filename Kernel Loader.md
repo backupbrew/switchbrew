@@ -339,13 +339,13 @@ in pseudocode for brevity reasons.
     memory_type = (smc_get_config(ConfigItem_KernelConfiguration) >> 16) & 3;
     switch (memory_type) {
         case MemoryType_4GB: // 0
+        default:
             dram_size_from_kernel_cfg = 0x100000000;
             break;
         case MemoryType_6GB: // 1
             dram_size_from_kernel_cfg = 0x180000000;
             break;
         case MemoryType_8GB: // 2
-        default:
             dram_size_from_kernel_cfg = 0x200000000;
             break;
     }
