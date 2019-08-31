@@ -206,7 +206,28 @@ Signature is like
 `   void KernelLdr_MapInitialIdentityMapping(KInitialPageTable *ttbr1_page_table, uintptr_t kernel_base, uintptr_t kernel_size, `  
 `                                            uintptr_t page_tables_base, uintptr_t page_tables_size, InitialPageAllocator *allocator);`
 
-    // TODO: Fill this out with pseudocode.
+First, this creates a new page table (eventually ends up in TTBR0\_EL1),
+and adds identity mappings for Kernel, KernelLdr, and the Page Table
+region to it.
+
+``` 
+    // Create new KInitialPageTable
+    KInitialPageTable ttbr0_page_table(allocator);
+
+    // Maps kernel with RWX identity mapping.
+    attribute = 0x40000000000708;
+    ttbr0_page_table.Map(kernel_base, kernel_size, kernel_base, &attribute, allocator);
+
+    // Maps kernel loader with RWX identity mapping.
+    attribute = 0x40000000000708;
+    ttbr0_page_table.Map(__start, __end - __start, __start, &attribute, allocator);
+
+    // Maps page table region with RW- identity mapping.
+    attribute = 0x60000000000708;
+    ttbr0_page_table.Map(page_tables_base, page_tables_size, page_tables_base, &attribute, allocator);
+```
+
+TODO: More stuff
 
 ## KernelLdr\_RelocateKernelPhysically
 
