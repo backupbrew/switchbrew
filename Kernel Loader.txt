@@ -335,6 +335,17 @@ Note: Panic (infloop) happens on any smc call error, this isn't depicted in pseu
     return (smc_get_config(ConfigItem_KernelConfiguration) >> 3) & 1;
 </pre>
 
+== KernelLdr_GenerateRandomRange ==
+
+This uses entropy from the secure monitor to generate a random value in a range (inclusive).
+
+<pre>
+    range_size   = (range_end + 1 - range_start);
+    random_value = smc_generate_random_bytes(8);
+    random_value -= random_value / range_size * range_size;
+    return range_start + random_value;
+</pre>
+
 == KernelLdr_EnsureCacheFlushed ==
 
 Note: this is inlined, however it uses instructions that no compiler has intrinsics for (and looks like hand-written asm), so it's presumably its own thing.

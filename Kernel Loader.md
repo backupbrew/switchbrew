@@ -369,6 +369,18 @@ in pseudocode for brevity reasons.
     return (smc_get_config(ConfigItem_KernelConfiguration) >> 3) & 1;
 ```
 
+## KernelLdr\_GenerateRandomRange
+
+This uses entropy from the secure monitor to generate a random value in
+a range (inclusive).
+
+``` 
+    range_size   = (range_end + 1 - range_start);
+    random_value = smc_generate_random_bytes(8);
+    random_value -= random_value / range_size * range_size;
+    return range_start + random_value;
+```
+
 ## KernelLdr\_EnsureCacheFlushed
 
 Note: this is inlined, however it uses instructions that no compiler has
