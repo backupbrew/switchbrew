@@ -77,7 +77,42 @@ available binaries.
 
 ## KernelLdr\_LoadKernel
 
-TODO: Fill this out
+First, it backs up the original kernel base, and then relocates the
+kernel for
+
+``` 
+    // Backup kernel_base argument for use later
+    original_kernel_base = kernel_base;
+    
+    // Move kernel elsewhere in DRAM if needed (unused in practice?)
+    // This is maybe to support reserving unused memory for a second OS/hypervisor?
+    KernelLdr_RelocateKernelPhysically(&kernel_base, &kernel_map);
+```
+
+TODO: More stuff
+
+## KernelLdr\_RelocateKernelPhysically
+
+This retrieves memory layout information from the secure monitor, and
+adjusts the kernel's physical location if necessary.
+
+``` 
+    adjusted_kernel_base = KernelLdr_GetAdjustedKernelPhysicalBase(*p_kernel_base);
+
+    if (adjusted_kernel_base != *p_kernel_base) {
+        // Copy data to adjusted destination
+        memmove(adjusted_kernel_base, *p_kernel_base, (*p_kernel_map)->data_end_offset);
+
+        // Adjust pointers.
+        kernel_base_diff = adjusted_kernel_base - *p_kernel_base;
+        *p_kernel_base = (uintptr_t)*p_kernel_base + kernel_base_diff;
+        *p_kernel_map  = (uintptr_t)*p_kernel_map  + kernel_base_diff;
+    }
+```
+
+## KernelLdr\_GetAdjustedKernelPhysicalBase
+
+TODO: secmon calls here
 
 ## KInitialPageAllocator::KInitialPageAllocator
 
