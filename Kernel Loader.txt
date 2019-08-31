@@ -305,6 +305,36 @@ Note: Panic (infloop) happens on any smc call error, this isn't depicted in pseu
     return (smc_get_config(ConfigItem_KernelConfiguration) >> 3) & 1;
 </pre>
 
+== KernelLdr_EnsureCacheFlushed ==
+
+Note: this is inlined, however it uses instructions that no compiler has intrinsics for (and looks like hand-written asm), so it's presumably its own thing.
+
+<pre>
+    // Invalidate Local Cache
+    KernelLdr_InvalidateCacheLocal();
+    __dsb_sy();
+
+    // Invalidate Share
+    KernelLdr_InvalidateCacheShared();
+    __dsb_sy();
+
+    // Invalidate Local Cache again
+    KernelLdr_InvalidateCacheLocal();
+    __dsb_sy();
+    
+    // asm { tlbi vmallelis; }
+    __dsb_sy();
+    __isb();
+</pre>
+
+== KernelLdr_InvalidateCacheLocal ==
+
+Standard ARM cache clean code, uses LoUIS from CLIDR_EL1.
+
+== KernelLdr_InvalidateCacheShared ==
+
+Standard ARM cache clean code, uses LoUIS  + LoC from CLIDR_EL1.
+
 == KInitialPageAllocator::KInitialPageAllocator ==
 This sets the allocator's next address to 0 (guessed, since this is done statically in KernelLoader).
 

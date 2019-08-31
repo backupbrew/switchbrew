@@ -336,6 +336,38 @@ in pseudocode for brevity reasons.
     return (smc_get_config(ConfigItem_KernelConfiguration) >> 3) & 1;
 ```
 
+## KernelLdr\_EnsureCacheFlushed
+
+Note: this is inlined, however it uses instructions that no compiler has
+intrinsics for (and looks like hand-written asm), so it's presumably its
+own thing.
+
+``` 
+    // Invalidate Local Cache
+    KernelLdr_InvalidateCacheLocal();
+    __dsb_sy();
+
+    // Invalidate Share
+    KernelLdr_InvalidateCacheShared();
+    __dsb_sy();
+
+    // Invalidate Local Cache again
+    KernelLdr_InvalidateCacheLocal();
+    __dsb_sy();
+    
+    // asm { tlbi vmallelis; }
+    __dsb_sy();
+    __isb();
+```
+
+## KernelLdr\_InvalidateCacheLocal
+
+Standard ARM cache clean code, uses LoUIS from CLIDR\_EL1.
+
+## KernelLdr\_InvalidateCacheShared
+
+Standard ARM cache clean code, uses LoUIS + LoC from CLIDR\_EL1.
+
 ## KInitialPageAllocator::KInitialPageAllocator
 
 This sets the allocator's next address to 0 (guessed, since this is done
