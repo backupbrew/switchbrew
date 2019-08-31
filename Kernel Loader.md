@@ -227,6 +227,41 @@ region to it.
     ttbr0_page_table.Map(page_tables_base, page_tables_size, page_tables_base, &attribute, allocator);
 ```
 
+Next, this sets some system registers.
+
+``` 
+    // Set TTBR0/TTBR1 with initial page tables.
+    TTBR0_EL1 = ttbr0_page_table.GetL1Table();
+    TTBR1_EL1 = ttbr1_page_table.GetL1Table();
+    
+    // Configure MAIR, TCR. TODO: Document here what bits these are.
+    MAIR_EL1 = 0x44FF0400;
+    TCR_EL1  = 0x11B5193519;
+
+    // Check what CPU we're running on to configure CPUECTLR, CPUACTLR appropriately.
+    manufacture_id = MIDR_EL1;
+    implemeter = manufacturer_id >> 24) & 0xFF;
+    if (implementer == 0x41) {
+        // Implementer ID is 0x41 (ARM Limited).
+        architecture = (manufacture_id >> 4)  & 0x0FFF;
+        hw_variant   = (manufacture_id >> 20) & 0xF;
+        hw_revision  = (manufacture_id >> 0)  & 0xF;
+        if (architecture == 0xD07) {
+            // Architecture is 0xD07 (Cortex-A57).
+            cpuactlr_value = 0x1000000;    // Non-cacheable load forwarding enabled
+            cpuectlr_value = 0x1B00000040; // TODO: What is this?
+            if (hw_variant == 0 || (hw_variant == 1 && hw_revision <= 1)) {
+                // If supported, disable load-pass DMB.
+                cpuactlr_value |= 0x800000000000000;
+            }
+            CPUACTLR_EL1 = cpuactlr_value;
+            if (CPUECTLR_EL1 != cpuectlr_value) {
+                CPUECTLR_EL1 = cpuectlr_value;
+            }
+        }
+    }
+```
+
 TODO: More stuff
 
 ## KernelLdr\_RelocateKernelPhysically
