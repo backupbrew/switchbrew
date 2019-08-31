@@ -44,6 +44,13 @@ This is just standard libc init array code. .init_array is empty in all availabl
 == KernelLdr_LoadKernel ==
 TODO: Fill this out
 
+== KInitialPageAllocator::KInitialPageAllocator ==
+This sets the allocator's next address to 0 (guessed, since this is done statically in KernelLoader).
+
+<pre>
+    constexpr KInitialPageAllocator::KInitialPageAllocator : next_address(0) {}
+</pre>
+
 == KInitialPageAllocator::~KInitialPageAllocator ==
 This just clears the allocator's next address.
 

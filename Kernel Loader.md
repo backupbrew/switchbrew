@@ -56,6 +56,15 @@ available binaries.
 
 TODO: Fill this out
 
+## KInitialPageAllocator::KInitialPageAllocator
+
+This sets the allocator's next address to 0 (guessed, since this is done
+statically in KernelLoader).
+
+``` 
+    constexpr KInitialPageAllocator::KInitialPageAllocator : next_address(0) {}
+```
+
 ## KInitialPageAllocator::\~KInitialPageAllocator
 
 This just clears the allocator's next address.
