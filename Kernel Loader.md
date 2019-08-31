@@ -36,8 +36,8 @@ to the kernel entrypoint.
     // KernelLdr_LoadKernel returns (relocated_kernel_base - original_kernel_base).
     uintptr_t kernel_relocation_offset = KernelLdr_LoadKernel(kernel_base, kernel_map, ini_base);
     
-    // dtor called for static page allocator.
-    g_InitialPageAllocator.~KInitialPageAllocator();
+    // finalize called for static page allocator.
+    g_InitialPageAllocator.Finalize();
     
     // Jumps back to the kernel code that called KernelLdr_Main.
     ((void (*)(void))(kernel_relocation_offset + LR))();
@@ -155,14 +155,6 @@ statically in KernelLoader).
     constexpr KInitialPageAllocator::KInitialPageAllocator : next_address(0) {}
 ```
 
-## KInitialPageAllocator::\~KInitialPageAllocator
-
-This just clears the allocator's next address.
-
-``` 
-    this->next_address = 0;
-```
-
 ## KInitialPageAllocator::Initialize
 
 This sets the allocator's next address (function inferred as it is
@@ -170,6 +162,14 @@ This sets the allocator's next address (function inferred as it is
 
 ``` 
     this->next_address = address;
+```
+
+## KInitialPageAllocator::Finalize
+
+This just clears the allocator's next address.
+
+``` 
+    this->next_address = 0;
 ```
 
 ## KInitialPageAllocator::Allocate

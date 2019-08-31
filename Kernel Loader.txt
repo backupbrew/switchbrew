@@ -28,8 +28,8 @@ Then, it calls the function which relocates the kernel, and jumps back to the ke
     // KernelLdr_LoadKernel returns (relocated_kernel_base - original_kernel_base).
     uintptr_t kernel_relocation_offset = KernelLdr_LoadKernel(kernel_base, kernel_map, ini_base);
     
-    // dtor called for static page allocator.
-    g_InitialPageAllocator.~KInitialPageAllocator();
+    // finalize called for static page allocator.
+    g_InitialPageAllocator.Finalize();
     
     // Jumps back to the kernel code that called KernelLdr_Main.
     ((void (*)(void))(kernel_relocation_offset + LR))();
@@ -135,18 +135,18 @@ This sets the allocator's next address to 0 (guessed, since this is done statica
     constexpr KInitialPageAllocator::KInitialPageAllocator : next_address(0) {}
 </pre>
 
-== KInitialPageAllocator::~KInitialPageAllocator ==
-This just clears the allocator's next address.
-
-<pre>
-    this->next_address = 0;
-</pre>
-
 == KInitialPageAllocator::Initialize ==
 This sets the allocator's next address (function inferred as it is (presumably) inlined and next_address is (presumably) private).
 
 <pre>
     this->next_address = address;
+</pre>
+
+== KInitialPageAllocator::Finalize ==
+This just clears the allocator's next address.
+
+<pre>
+    this->next_address = 0;
 </pre>
 
 == KInitialPageAllocator::Allocate ==
