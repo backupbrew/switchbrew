@@ -11,9 +11,18 @@ All files stored under the Contents sub-directories and save/ use the
 
 ## Album
 
-Contains the screenshots: "YYYY/MM/DD/<hex>.jpg". These are
-[MAC](Capture%20services#Notes.md##Notes "wikilink")'d, contents with an
-invalid MAC will display an error on view.
+Contains the screenshots:
+"YYYY/MM/DD/<DateTime string>-<title-specific hex ID string>.jpg". These
+are [MAC](Capture%20services#Notes.md##Notes "wikilink")'d, contents
+with an invalid MAC will display an error on view.
+
+When an Application recorded video via
+[MovieMaker](Applet%20Manager%20services#CreateMovieMaker.md##CreateMovieMaker "wikilink"),
+the "Extra" sub-directory contains the recorded Application videos:
+"/Extra/<title-specific hex ID string>/YYYY/MM/DD/<DateTime string>-<ID string>.mp4".
+
+"<title-specific hex ID string>" is the same for both screenshots and
+"Extra".
 
 ## save
 
