@@ -2763,7 +2763,8 @@ type-0x45 input buffer containing image data. Returns an
 
 Official user-processes doesn't use this, instead
 [\#SaveScreenShotEx0](#SaveScreenShotEx0 "wikilink") is used:
-ScreenShotAttributeEx0 is all-zero except +0 is set to an input u32.
+ScreenShotAttributeEx0 is all-zero, except +4 is set to an input u32 and
+u32 +0xC = 0x1.
 
 This cmd internally uses an all-zero ScreenShotAttributeEx0, with u32 +0
 = input u32 and u32 +0x8 = 0x3.
