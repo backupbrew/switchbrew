@@ -149,16 +149,22 @@ Next, it generates a random KASLR slide for the Kernel.
 
     // TODO: Fill this out with pseudocode.
 
-Then, it maps the kernel and applies its .dynamic's relocations.
+Then, it maps the kernel at the final virtual address.
 
     // TODO: Fill this out with pseudocode.
 
-Then, it calls the kernel's libc .init\_array functions.
+Then, it applies the kernel's .dynamic relocations and calls the
+kernel's libc .init\_array functions.
 
+``` 
+    // Applies all R_AARCH64_RELATIVE relocations.
+    KernelLdr_ApplyRelocations(final_kernel_virtual_base, final_kernel_virtual_base + dynamic_offset);
+    
     // This is standard libc init_array code, but called for the kernel's binary instead of kernelldr's.
     for (uintptr_t cur_func = final_virtual_kernel_base + init_array_offset; cur_func < final_virtual_kernel_base + init_array_end_offset; cur_func += 8) {
         ((void (*)(void))(*(uint64_t *)cur_func)();
     }
+```
 
 Finally, it returns the difference between the kernel's original
 physical base address and the relocated kaslr'd virtual base address.
