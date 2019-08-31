@@ -196,6 +196,30 @@ Controls which struct version to use for
 for the newer version is used regardless on \[7.0.0+\] for the actual
 cmds.
 
+# Enums
+
+### AlbumImageOrientation
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Unknown.    |
+| 1     | Unknown.    |
+| 2     | Unknown.    |
+| 3     | Unknown.    |
+
+This is "nn::album::ImageOrientation".
+
+### AlbumReportOption
+
+| Value | Description |
+| ----- | ----------- |
+| 0     | Unknown.    |
+| 1     | Unknown.    |
+| 2     | Unknown.    |
+| 3     | Unknown.    |
+
+This is "nn::album::AlbumReportOption".
+
 # AlbumEntry
 
 | Offset | Size | Description |
@@ -262,6 +286,19 @@ with:
   - u64 ApplicationAlbumFileEntry+0x20 =
     [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink")+0x10.
   - Last 8-bytes = 0.
+
+# ScreenShotAttribute
+
+| Offset | Size | Description                                                  |
+| ------ | ---- | ------------------------------------------------------------ |
+| 0x0    | 0x4  | Always set to 0 by official sw.                              |
+| 0x4    | 0x4  | [\#AlbumImageOrientation](#AlbumImageOrientation "wikilink") |
+| 0x8    | 0x4  | Always set to 0 by official sw.                              |
+| 0xC    | 0x4  | Always set to 1 by official sw.                              |
+| 0x10   | 0x30 | Always set to 0 by official sw.                              |
+
+This is "nn::capsrv::detail::ScreenShotAttributeEx0" /
+"nn::capsrv::ScreenShotAttribute". This is a 0x40-byte struct.
 
 # ApplicationData
 
