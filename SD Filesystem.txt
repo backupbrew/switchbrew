@@ -8,9 +8,9 @@
 All files stored under the Contents sub-directories and save/ use the [[NAX0]] format.
 
 == Album ==
-Contains the screenshots: "YYYY/MM/DD/<DateTime string>-<title-specific hex ID string>.jpg". These are [[Capture_services#Notes|MAC]]'d, contents with an invalid MAC will display an error on view.
+Contains the screenshots: "YYYY/MM/DD/<[[Capture_services#AlbumFileDateTime|DateTime string]]>-<title-specific hex ID string>.jpg". These are [[Capture_services#Notes|MAC]]'d, contents with an invalid MAC will display an error on view.
 
-When an Application recorded video via [[Applet_Manager_services#CreateMovieMaker|MovieMaker]], the "Extra" sub-directory contains the recorded Application videos: "/Extra/<title-specific hex ID string>/YYYY/MM/DD/<DateTime string>-<ID string>.mp4".
+When an Application recorded video via [[Applet_Manager_services#CreateMovieMaker|MovieMaker]], the "Extra" sub-directory contains the recorded Application videos: "/Extra/<title-specific hex ID string>/YYYY/MM/DD/<[[Capture_services#AlbumFileDateTime|DateTime string]]>-<ID string>.mp4".
 
 "<title-specific hex ID string>" is the same for both screenshots and "Extra".
 
