@@ -143,7 +143,18 @@ Next, it relocates the INI1 to its appropriate load address.
 Next, it initializes the MMU with a basic identity mapping for Kernel +
 KernelLdr.
 
-    // TODO: Fill this out with pseudocode.
+``` 
+    // Set page table region
+    page_table_region = ini1_end_address;
+    page_table_region_size = 0x200000;
+    g_InitialPageAllocator.Initialize(page_table_region);
+
+    // Initialize new page table, eventually ends up in TTBR1_EL1.
+    KInitialPageTable ttbr1_page_table(&g_InitialPageAllocator);
+
+    // Setup MMU with initial identity mapping.
+    KernelLdr_MapInitialIdentityMapping(&ttbr1_page_table, kernel_base, rw_end_offset, page_table_region, page_table_region_size, &g_InitialPageAllocator);
+```
 
 Next, it generates a random KASLR slide for the Kernel.
 
@@ -187,6 +198,14 @@ physical base address and the relocated kaslr'd virtual base address.
 ``` 
     return final_virtual_kernel_base - original_kernel_base;
 ```
+
+## KernelLdr\_MapInitialIdentityMapping
+
+Signature is like
+
+`   void KernelLdr_MapInitialIdentityMapping(KInitialPageTable *ttbr1_page_table, uintptr_t kernel_base, uintptr_t kernel_size, uintptr_t page_tables_base, uintptr_t page_tables_size, InitialPageAllocator *allocator);`
+
+    // TODO: Fill this out with pseudocode.
 
 ## KernelLdr\_RelocateKernelPhysically
 
