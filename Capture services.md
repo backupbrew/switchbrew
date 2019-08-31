@@ -220,27 +220,35 @@ This is "nn::album::ImageOrientation".
 
 This is "nn::album::AlbumReportOption".
 
+# AlbumFileDateTime
+
+| Offset | Size | Description                                                              |
+| ------ | ---- | ------------------------------------------------------------------------ |
+| 0x0    | 0x2  | Year                                                                     |
+| 0x2    | 0x1  | Month                                                                    |
+| 0x3    | 0x1  | Day                                                                      |
+| 0x4    | 0x1  | Hour                                                                     |
+| 0x5    | 0x1  | Minute                                                                   |
+| 0x6    | 0x1  | Second                                                                   |
+| 0x7    | 0x1  | Unique ID for when there's multiple Album files with the same timestamp. |
+
+This is "nn::capsrv::AlbumFileDateTime". This is a 0x8-byte struct.
+
+This corresponds to each field in the Album entry filename, prior to the
+"-": `YYYYMMDDHHMMSSII`.
+
 # AlbumEntry
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x8  | Unknown     |
-| 0x8    | 0x8  | titleID     |
-| 0x10   | 0x2  | Year        |
-| 0x12   | 0x1  | Month       |
-| 0x13   | 0x1  | Day         |
-| 0x14   | 0x1  | Hour        |
-| 0x15   | 0x1  | Minute      |
-| 0x16   | 0x1  | Second      |
-| 0x17   | 0x1  | Unknown     |
-| 0x18   | 0x1  | Unknown     |
-| 0x19   | 0x1  | Unknown     |
-| 0x1A   | 0x6  | Padding?    |
+| Offset | Size | Description                                          |
+| ------ | ---- | ---------------------------------------------------- |
+| 0x0    | 0x8  | Unknown                                              |
+| 0x8    | 0x8  | titleID                                              |
+| 0x10   | 0x8  | [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") |
+| 0x18   | 0x1  | Unknown                                              |
+| 0x19   | 0x1  | Unknown                                              |
+| 0x1A   | 0x6  | Padding?                                             |
 
 This is "nn::capsrv::AlbumEntry". This is a 0x20-byte struct.
-
-The data at offset 0x10 size 0x8 corresponds to each field in the Album
-entry filename, prior to the "-".
 
 # AlbumFileEntry
 
