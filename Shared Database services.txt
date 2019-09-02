@@ -311,11 +311,11 @@ This is "nn::pdm::detail::IQueryService".
 |-
 | 13 || [5.0.0+] [[#QueryApplicationPlayStatisticsForSystem]]
 |-
-| 14 || [6.0.0+]
+| 14 || [6.0.0+] QueryRecentlyPlayedApplication
 |-
-| 15 || [6.0.0+]
+| 15 || [6.0.0+] GetRecentlyPlayedApplicationUpdateEvent
 |-
-| 16 || [6.0.0+]
+| 16 || [6.0.0+] QueryApplicationPlayStatisticsByUserAccountIdForSystem
 |}
 
 == QueryApplicationEvent ==

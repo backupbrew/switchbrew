@@ -301,9 +301,9 @@ This is "nn::pdm::detail::IQueryService".
 | 11                | \[4.0.0+\] [\#QueryAccountPlayEvent](#QueryAccountPlayEvent "wikilink")                                                |
 | 12                | \[4.0.0+\] [\#GetAvailableAccountPlayEventRange](#GetAvailableAccountPlayEventRange "wikilink")                        |
 | 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink")            |
-| 14                | \[6.0.0+\]                                                                                                             |
-| 15                | \[6.0.0+\]                                                                                                             |
-| 16                | \[6.0.0+\]                                                                                                             |
+| 14                | \[6.0.0+\] QueryRecentlyPlayedApplication                                                                              |
+| 15                | \[6.0.0+\] GetRecentlyPlayedApplicationUpdateEvent                                                                     |
+| 16                | \[6.0.0+\] QueryApplicationPlayStatisticsByUserAccountIdForSystem                                                      |
 
 ## QueryApplicationEvent
 
