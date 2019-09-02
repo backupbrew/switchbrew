@@ -285,25 +285,25 @@ the u8 bool flag is set the input struct is used with this.
 
 This is "nn::pdm::detail::IQueryService".
 
-| Cmd               | Name                                                                                                                   |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0                 | [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink")                                                           |
-| \[1.0.0-6.2.0\] 1 | QueryPlayStatistics                                                                                                    |
-| \[1.0.0-6.2.0\] 2 | QueryPlayStatisticsByUserAccountId                                                                                     |
-| \[1.0.0-6.2.0\] 3 | QueryPlayStatisticsByNetworkServiceAccountId                                                                           |
-| 4                 | [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink")                                 |
-| 5                 | [\#QueryPlayStatisticsByApplicationIdAndUserAccountId](#QueryPlayStatisticsByApplicationIdAndUserAccountId "wikilink") |
-| \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId                                                           |
-| 7                 | [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink")                                                                   |
-| 8                 | [\#QueryPlayEvent](#QueryPlayEvent "wikilink")                                                                         |
-| 9                 | [\#GetAvailablePlayEventRange](#GetAvailablePlayEventRange "wikilink")                                                 |
-| 10                | [\#QueryAccountEvent](#QueryAccountEvent "wikilink")                                                                   |
-| 11                | \[4.0.0+\] [\#QueryAccountPlayEvent](#QueryAccountPlayEvent "wikilink")                                                |
-| 12                | \[4.0.0+\] [\#GetAvailableAccountPlayEventRange](#GetAvailableAccountPlayEventRange "wikilink")                        |
-| 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink")            |
-| 14                | \[6.0.0+\] QueryRecentlyPlayedApplication                                                                              |
-| 15                | \[6.0.0+\] GetRecentlyPlayedApplicationUpdateEvent                                                                     |
-| 16                | \[6.0.0+\] QueryApplicationPlayStatisticsByUserAccountIdForSystem                                                      |
+| Cmd               | Name                                                                                                                                      |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 0                 | [\#QueryApplicationEvent](#QueryApplicationEvent "wikilink")                                                                              |
+| \[1.0.0-6.2.0\] 1 | QueryPlayStatistics                                                                                                                       |
+| \[1.0.0-6.2.0\] 2 | QueryPlayStatisticsByUserAccountId                                                                                                        |
+| \[1.0.0-6.2.0\] 3 | QueryPlayStatisticsByNetworkServiceAccountId                                                                                              |
+| 4                 | [\#QueryPlayStatisticsByApplicationId](#QueryPlayStatisticsByApplicationId "wikilink")                                                    |
+| 5                 | [\#QueryPlayStatisticsByApplicationIdAndUserAccountId](#QueryPlayStatisticsByApplicationIdAndUserAccountId "wikilink")                    |
+| \[1.0.0-6.2.0\] 6 | QueryPlayStatisticsByApplicationIdAndNetworkServiceAccountId                                                                              |
+| 7                 | [\#QueryLastPlayTime](#QueryLastPlayTime "wikilink")                                                                                      |
+| 8                 | [\#QueryPlayEvent](#QueryPlayEvent "wikilink")                                                                                            |
+| 9                 | [\#GetAvailablePlayEventRange](#GetAvailablePlayEventRange "wikilink")                                                                    |
+| 10                | [\#QueryAccountEvent](#QueryAccountEvent "wikilink")                                                                                      |
+| 11                | \[4.0.0+\] [\#QueryAccountPlayEvent](#QueryAccountPlayEvent "wikilink")                                                                   |
+| 12                | \[4.0.0+\] [\#GetAvailableAccountPlayEventRange](#GetAvailableAccountPlayEventRange "wikilink")                                           |
+| 13                | \[5.0.0+\] [\#QueryApplicationPlayStatisticsForSystem](#QueryApplicationPlayStatisticsForSystem "wikilink")                               |
+| 14                | \[6.0.0+\] [\#QueryRecentlyPlayedApplication](#QueryRecentlyPlayedApplication "wikilink")                                                 |
+| 15                | \[6.0.0+\] [\#GetRecentlyPlayedApplicationUpdateEvent](#GetRecentlyPlayedApplicationUpdateEvent "wikilink")                               |
+| 16                | \[6.0.0+\] [\#QueryApplicationPlayStatisticsByUserAccountIdForSystem](#QueryApplicationPlayStatisticsByUserAccountIdForSystem "wikilink") |
 
 ## QueryApplicationEvent
 
@@ -366,7 +366,7 @@ output s32 for actual total output entries.
 
 The number of entries in each array is the same.
 
-## Cmd14
+## QueryRecentlyPlayedApplication
 
 Takes an input u128 userID, a type-0x6 output buffer containing an array
 of u64 titleIDs, and returns an output u32 for actual total output
@@ -374,7 +374,7 @@ entries.
 
 Returns a list of titles played by the specified user.
 
-## Cmd15
+## GetRecentlyPlayedApplicationUpdateEvent
 
 No input, returns an output Event handle with autoclear=false.
 
@@ -383,7 +383,7 @@ which would be available via
 [\#QueryAccountEvent](#QueryAccountEvent "wikilink"), where
 [\#PlayEvent](#PlayEvent "wikilink") +0x18 is 0.
 
-## Cmd16
+## QueryApplicationPlayStatisticsByUserAccountIdForSystem
 
 Takes a u128 userID, a type-0x6 output buffer containing an array of
 [\#ApplicationPlayStatistics](#ApplicationPlayStatistics "wikilink") and

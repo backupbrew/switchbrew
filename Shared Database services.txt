@@ -311,11 +311,11 @@ This is "nn::pdm::detail::IQueryService".
 |-
 | 13 || [5.0.0+] [[#QueryApplicationPlayStatisticsForSystem]]
 |-
-| 14 || [6.0.0+] QueryRecentlyPlayedApplication
+| 14 || [6.0.0+] [[#QueryRecentlyPlayedApplication]]
 |-
-| 15 || [6.0.0+] GetRecentlyPlayedApplicationUpdateEvent
+| 15 || [6.0.0+] [[#GetRecentlyPlayedApplicationUpdateEvent]]
 |-
-| 16 || [6.0.0+] QueryApplicationPlayStatisticsByUserAccountIdForSystem
+| 16 || [6.0.0+] [[#QueryApplicationPlayStatisticsByUserAccountIdForSystem]]
 |}
 
 == QueryApplicationEvent ==
@@ -350,17 +350,17 @@ Takes a type-0x6 output buffer containing an array of [[#ApplicationPlayStatisti
 
 The number of entries in each array is the same.
 
-== Cmd14 ==
+== QueryRecentlyPlayedApplication ==
 Takes an input u128 userID, a type-0x6 output buffer containing an array of u64 titleIDs, and returns an output u32 for actual total output entries.
 
 Returns a list of titles played by the specified user.
 
-== Cmd15 ==
+== GetRecentlyPlayedApplicationUpdateEvent ==
 No input, returns an output Event handle with autoclear=false.
 
 This is signaled when logging a new [[#PlayEvent]] which would be available via [[#QueryAccountEvent]], where [[#PlayEvent]] +0x18 is 0.
 
-== Cmd16 ==
+== QueryApplicationPlayStatisticsByUserAccountIdForSystem ==
 Takes a u128 userID, a type-0x6 output buffer containing an array of [[#ApplicationPlayStatistics]] and a type-0x5 input buffer containing an array of u64 titleIDs. Returns an output s32 for actual total output entries.
 
 Same as [[#QueryApplicationPlayStatisticsForSystem]] except this gets playstats specific to userIDs.
