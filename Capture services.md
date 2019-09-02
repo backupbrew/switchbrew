@@ -144,21 +144,21 @@ This is "nn::capsrv::sf::IAlbumApplicationService".
 
 This was added with \[5.0.0+\].
 
-| Cmd   | Name                                                                    |
-| ----- | ----------------------------------------------------------------------- |
-| 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink") |
-| 102   | GetAlbumFileList0AafeAruidDeprecated                                    |
-| 103   | DeleteAlbumFileByAruid                                                  |
-| 104   | GetAlbumFileSizeByAruid                                                 |
-| 105   | DeleteAlbumFileByAruidForDebug                                          |
-| 110   | LoadAlbumScreenShotImageByAruid                                         |
-| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                |
-| 130   | PrecheckToCreateContentsByAruid                                         |
-| 140   | \[6.0.0+\] GetAlbumFileList1AafeAruidDeprecated                         |
-| 141   | \[6.0.0+\] GetAlbumFileList2AafeUidAruidDeprecated                      |
-| 142   | \[7.0.0+\] GetAlbumFileList3AaeAruid                                    |
-| 143   | \[7.0.0+\] GetAlbumFileList4AaeUidAruid                                 |
-| 60002 | OpenAccessorSessionForApplication                                       |
+| Cmd   | Name                                                                                  |
+| ----- | ------------------------------------------------------------------------------------- |
+| 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink")               |
+| 102   | GetAlbumFileList0AafeAruidDeprecated                                                  |
+| 103   | DeleteAlbumFileByAruid                                                                |
+| 104   | GetAlbumFileSizeByAruid                                                               |
+| 105   | DeleteAlbumFileByAruidForDebug                                                        |
+| 110   | LoadAlbumScreenShotImageByAruid                                                       |
+| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                              |
+| 130   | PrecheckToCreateContentsByAruid                                                       |
+| 140   | \[6.0.0+\] GetAlbumFileList1AafeAruidDeprecated                                       |
+| 141   | \[6.0.0+\] GetAlbumFileList2AafeUidAruidDeprecated                                    |
+| 142   | \[7.0.0+\] [\#GetAlbumFileList3AaeAruid](#GetAlbumFileList3AaeAruid "wikilink")       |
+| 143   | \[7.0.0+\] [\#GetAlbumFileList4AaeUidAruid](#GetAlbumFileList4AaeUidAruid "wikilink") |
+| 60002 | OpenAccessorSessionForApplication                                                     |
 
 ## SetShimLibraryVersion
 
@@ -166,6 +166,33 @@ Takes an input u64
 [\#ShimLibraryVersion](#ShimLibraryVersion "wikilink"), an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and a PID, no output.
+
+## GetAlbumFileList3AaeAruid
+
+Takes a type-0x6 output buffer containing an array of
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"), a PID, an
+u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), and an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+Returns an output u64 for total output entries.
+
+The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+start DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
+DateTime.
+
+## GetAlbumFileList4AaeUidAruid
+
+Takes a type-0x6 output buffer containing an array of
+[\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"), a PID, an
+u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an u128
+userID, and an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+Returns an output u64 for total output entries.
+
+The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+start DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
+DateTime.
 
 ## IAlbumAccessorApplicationSession
 
