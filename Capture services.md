@@ -144,6 +144,10 @@ This is "nn::capsrv::sf::IAlbumApplicationService".
 
 This was added with \[5.0.0+\].
 
+Official sw via the `nn::album` wrappers uses start\_DateTime =
+YYYY-MM-DD 1970-01-01 with the rest set to all-zero, end\_DateTime is
+the same except year = 3000.
+
 | Cmd   | Name                                                                                  |
 | ----- | ------------------------------------------------------------------------------------- |
 | 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink")               |
@@ -176,9 +180,9 @@ u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), and an u64
 Returns an output u64 for total output entries.
 
 The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
-start DateTime, the second
-[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
-DateTime. In the IPC rawdata, these use 2-byte alignment.
+start\_DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 ## GetAlbumFileList4AaeUidAruid
 
@@ -190,9 +194,9 @@ userID, and an u64
 Returns an output u64 for total output entries.
 
 The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
-start DateTime, the second
-[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
-DateTime. In the IPC rawdata, these use 2-byte alignment.
+start\_DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 ## IAlbumAccessorApplicationSession
 

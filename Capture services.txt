@@ -226,6 +226,8 @@ This is "nn::capsrv::sf::IAlbumApplicationService".
 
 This was added with [5.0.0+].
 
+Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-MM-DD 1970-01-01 with the rest set to all-zero, end_DateTime is the same except year = 3000.
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -263,12 +265,12 @@ Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#App
 == GetAlbumFileList3AaeAruid ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumEntry]], a PID, an u8, two [[#AlbumFileDateTime]], and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
 
-The first [[#AlbumFileDateTime]] is the start DateTime, the second [[#AlbumFileDateTime]] is the end DateTime. In the IPC rawdata, these use 2-byte alignment.
+The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileDateTime]] is the end_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 == GetAlbumFileList4AaeUidAruid ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumEntry]], a PID, an u8, two [[#AlbumFileDateTime]], an u128 userID, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
 
-The first [[#AlbumFileDateTime]] is the start DateTime, the second [[#AlbumFileDateTime]] is the end DateTime. In the IPC rawdata, these use 2-byte alignment.
+The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileDateTime]] is the end_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 == IAlbumAccessorApplicationSession ==
 This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
