@@ -178,7 +178,7 @@ Returns an output u64 for total output entries.
 The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
 start DateTime, the second
 [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
-DateTime.
+DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 ## GetAlbumFileList4AaeUidAruid
 
@@ -192,7 +192,7 @@ Returns an output u64 for total output entries.
 The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
 start DateTime, the second
 [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the end
-DateTime.
+DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 ## IAlbumAccessorApplicationSession
 
