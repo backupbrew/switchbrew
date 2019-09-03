@@ -236,11 +236,11 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 |-
 | 102 || [[#GetAlbumFileList0AafeAruidDeprecated]]
 |-
-| 103 || DeleteAlbumFileByAruid
+| 103 || [[#DeleteAlbumFileByAruid]]
 |-
-| 104 || GetAlbumFileSizeByAruid
+| 104 || [[#GetAlbumFileSizeByAruid]]
 |-
-| 105 || DeleteAlbumFileByAruidForDebug
+| 105 || [[#DeleteAlbumFileByAruidForDebug]]
 |-
 | 110 || LoadAlbumScreenShotImageByAruid
 |-
@@ -264,6 +264,15 @@ Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#App
 
 == GetAlbumFileList0AafeAruidDeprecated ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two s64s, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
+
+== DeleteAlbumFileByAruid ==
+Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
+
+== GetAlbumFileSizeByAruid ==
+Takes a PID, an input [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and returns an output u64.
+
+== DeleteAlbumFileByAruidForDebug ==
+Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 
 == GetAlbumFileList1AafeAruidDeprecated ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two [[#AlbumFileDateTime]], and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.

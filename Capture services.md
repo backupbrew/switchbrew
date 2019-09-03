@@ -152,9 +152,9 @@ the same except year = 3000.
 | ----- | ----------------------------------------------------------------------------------------------------------- |
 | 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink")                                     |
 | 102   | [\#GetAlbumFileList0AafeAruidDeprecated](#GetAlbumFileList0AafeAruidDeprecated "wikilink")                  |
-| 103   | DeleteAlbumFileByAruid                                                                                      |
-| 104   | GetAlbumFileSizeByAruid                                                                                     |
-| 105   | DeleteAlbumFileByAruidForDebug                                                                              |
+| 103   | [\#DeleteAlbumFileByAruid](#DeleteAlbumFileByAruid "wikilink")                                              |
+| 104   | [\#GetAlbumFileSizeByAruid](#GetAlbumFileSizeByAruid "wikilink")                                            |
+| 105   | [\#DeleteAlbumFileByAruidForDebug](#DeleteAlbumFileByAruidForDebug "wikilink")                              |
 | 110   | LoadAlbumScreenShotImageByAruid                                                                             |
 | 120   | LoadAlbumScreenShotThumbnailImageByAruid                                                                    |
 | 130   | PrecheckToCreateContentsByAruid                                                                             |
@@ -178,6 +178,27 @@ Takes a type-0x6 output buffer containing an array of
 PID, an u8, two s64s, and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
+
+## DeleteAlbumFileByAruid
+
+Takes a PID, an input u8, an
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and no output.
+
+## GetAlbumFileSizeByAruid
+
+Takes a PID, an input
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and returns an output u64.
+
+## DeleteAlbumFileByAruidForDebug
+
+Takes a PID, an input u8, an
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and no output.
 
 ## GetAlbumFileList1AafeAruidDeprecated
 
