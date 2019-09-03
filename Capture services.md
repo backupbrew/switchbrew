@@ -162,7 +162,7 @@ the same except year = 3000.
 | 141   | \[6.0.0+\] [\#GetAlbumFileList2AafeUidAruidDeprecated](#GetAlbumFileList2AafeUidAruidDeprecated "wikilink") |
 | 142   | \[7.0.0+\] [\#GetAlbumFileList3AaeAruid](#GetAlbumFileList3AaeAruid "wikilink")                             |
 | 143   | \[7.0.0+\] [\#GetAlbumFileList4AaeUidAruid](#GetAlbumFileList4AaeUidAruid "wikilink")                       |
-| 60002 | OpenAccessorSessionForApplication                                                                           |
+| 60002 | [\#OpenAccessorSessionForApplication](#OpenAccessorSessionForApplication "wikilink")                        |
 
 ## SetShimLibraryVersion
 
@@ -278,6 +278,15 @@ The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
 start\_DateTime, the second
 [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
 end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
+
+## OpenAccessorSessionForApplication
+
+Takes a PID, an input
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and returns an output
+[\#IAlbumAccessorApplicationSession](#IAlbumAccessorApplicationSession "wikilink").
 
 ## IAlbumAccessorApplicationSession
 

@@ -256,7 +256,7 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 |-
 | 143 || [7.0.0+] [[#GetAlbumFileList4AaeUidAruid]]
 |-
-| 60002 || OpenAccessorSessionForApplication
+| 60002 || [[#OpenAccessorSessionForApplication]]
 |}
 
 == SetShimLibraryVersion ==
@@ -302,6 +302,9 @@ The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileD
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumEntry]], a PID, an u8, two [[#AlbumFileDateTime]], an u128 userID, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
 
 The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileDateTime]] is the end_DateTime. In the IPC rawdata, these use 2-byte alignment.
+
+== OpenAccessorSessionForApplication ==
+Takes a PID, an input [[#ApplicationAlbumFileEntry]], an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and returns an output [[#IAlbumAccessorApplicationSession]].
 
 == IAlbumAccessorApplicationSession ==
 This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
