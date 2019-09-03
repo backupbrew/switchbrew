@@ -234,7 +234,7 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 |-
 | 32 || [7.0.0+] [[#SetShimLibraryVersion]]
 |-
-| 102 || GetAlbumFileList0AafeAruidDeprecated
+| 102 || [[#GetAlbumFileList0AafeAruidDeprecated]]
 |-
 | 103 || DeleteAlbumFileByAruid
 |-
@@ -248,9 +248,9 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 |-
 | 130 || PrecheckToCreateContentsByAruid
 |-
-| 140 || [6.0.0+] GetAlbumFileList1AafeAruidDeprecated
+| 140 || [6.0.0+] [[#GetAlbumFileList1AafeAruidDeprecated]]
 |-
-| 141 || [6.0.0+] GetAlbumFileList2AafeUidAruidDeprecated
+| 141 || [6.0.0+] [[#GetAlbumFileList2AafeUidAruidDeprecated]]
 |-
 | 142 || [7.0.0+] [[#GetAlbumFileList3AaeAruid]]
 |-
@@ -261,6 +261,19 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 
 == SetShimLibraryVersion ==
 Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and a PID, no output.
+
+== GetAlbumFileList0AafeAruidDeprecated ==
+Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two s64s, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
+
+== GetAlbumFileList1AafeAruidDeprecated ==
+Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two [[#AlbumFileDateTime]], and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
+
+The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileDateTime]] is the end_DateTime. In the IPC rawdata, these use 2-byte alignment.
+
+== GetAlbumFileList2AafeUidAruidDeprecated ==
+Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two [[#AlbumFileDateTime]], an u128 userID, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
+
+The first [[#AlbumFileDateTime]] is the start_DateTime, the second [[#AlbumFileDateTime]] is the end_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 == GetAlbumFileList3AaeAruid ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumEntry]], a PID, an u8, two [[#AlbumFileDateTime]], and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.

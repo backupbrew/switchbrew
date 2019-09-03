@@ -148,21 +148,21 @@ Official sw via the `nn::album` wrappers uses start\_DateTime =
 YYYY-MM-DD 1970-01-01 with the rest set to all-zero, end\_DateTime is
 the same except year = 3000.
 
-| Cmd   | Name                                                                                  |
-| ----- | ------------------------------------------------------------------------------------- |
-| 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink")               |
-| 102   | GetAlbumFileList0AafeAruidDeprecated                                                  |
-| 103   | DeleteAlbumFileByAruid                                                                |
-| 104   | GetAlbumFileSizeByAruid                                                               |
-| 105   | DeleteAlbumFileByAruidForDebug                                                        |
-| 110   | LoadAlbumScreenShotImageByAruid                                                       |
-| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                              |
-| 130   | PrecheckToCreateContentsByAruid                                                       |
-| 140   | \[6.0.0+\] GetAlbumFileList1AafeAruidDeprecated                                       |
-| 141   | \[6.0.0+\] GetAlbumFileList2AafeUidAruidDeprecated                                    |
-| 142   | \[7.0.0+\] [\#GetAlbumFileList3AaeAruid](#GetAlbumFileList3AaeAruid "wikilink")       |
-| 143   | \[7.0.0+\] [\#GetAlbumFileList4AaeUidAruid](#GetAlbumFileList4AaeUidAruid "wikilink") |
-| 60002 | OpenAccessorSessionForApplication                                                     |
+| Cmd   | Name                                                                                                        |
+| ----- | ----------------------------------------------------------------------------------------------------------- |
+| 32    | \[7.0.0+\] [\#SetShimLibraryVersion](#SetShimLibraryVersion "wikilink")                                     |
+| 102   | [\#GetAlbumFileList0AafeAruidDeprecated](#GetAlbumFileList0AafeAruidDeprecated "wikilink")                  |
+| 103   | DeleteAlbumFileByAruid                                                                                      |
+| 104   | GetAlbumFileSizeByAruid                                                                                     |
+| 105   | DeleteAlbumFileByAruidForDebug                                                                              |
+| 110   | LoadAlbumScreenShotImageByAruid                                                                             |
+| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                                                    |
+| 130   | PrecheckToCreateContentsByAruid                                                                             |
+| 140   | \[6.0.0+\] [\#GetAlbumFileList1AafeAruidDeprecated](#GetAlbumFileList1AafeAruidDeprecated "wikilink")       |
+| 141   | \[6.0.0+\] [\#GetAlbumFileList2AafeUidAruidDeprecated](#GetAlbumFileList2AafeUidAruidDeprecated "wikilink") |
+| 142   | \[7.0.0+\] [\#GetAlbumFileList3AaeAruid](#GetAlbumFileList3AaeAruid "wikilink")                             |
+| 143   | \[7.0.0+\] [\#GetAlbumFileList4AaeUidAruid](#GetAlbumFileList4AaeUidAruid "wikilink")                       |
+| 60002 | OpenAccessorSessionForApplication                                                                           |
 
 ## SetShimLibraryVersion
 
@@ -170,6 +170,42 @@ Takes an input u64
 [\#ShimLibraryVersion](#ShimLibraryVersion "wikilink"), an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and a PID, no output.
+
+## GetAlbumFileList0AafeAruidDeprecated
+
+Takes a type-0x6 output buffer containing an array of
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
+PID, an u8, two s64s, and an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+Returns an output u64 for total output entries.
+
+## GetAlbumFileList1AafeAruidDeprecated
+
+Takes a type-0x6 output buffer containing an array of
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
+PID, an u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"),
+and an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+Returns an output u64 for total output entries.
+
+The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+start\_DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
+
+## GetAlbumFileList2AafeUidAruidDeprecated
+
+Takes a type-0x6 output buffer containing an array of
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
+PID, an u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an
+u128 userID, and an u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+Returns an output u64 for total output entries.
+
+The first [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+start\_DateTime, the second
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") is the
+end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 ## GetAlbumFileList3AaeAruid
 
