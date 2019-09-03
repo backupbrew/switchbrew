@@ -272,7 +272,7 @@ Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager
 Takes a PID, an input [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and returns an output u64.
 
 == DeleteAlbumFileByAruidForDebug ==
-Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
+Takes a PID, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 
 The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
 

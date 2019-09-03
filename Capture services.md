@@ -195,7 +195,7 @@ and returns an output u64.
 
 ## DeleteAlbumFileByAruidForDebug
 
-Takes a PID, an input u8, an
+Takes a PID, an
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
