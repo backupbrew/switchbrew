@@ -157,7 +157,7 @@ the same except year = 3000.
 | 105   | [\#DeleteAlbumFileByAruidForDebug](#DeleteAlbumFileByAruidForDebug "wikilink")                              |
 | 110   | LoadAlbumScreenShotImageByAruid                                                                             |
 | 120   | LoadAlbumScreenShotThumbnailImageByAruid                                                                    |
-| 130   | PrecheckToCreateContentsByAruid                                                                             |
+| 130   | [\#PrecheckToCreateContentsByAruid](#PrecheckToCreateContentsByAruid "wikilink")                            |
 | 140   | \[6.0.0+\] [\#GetAlbumFileList1AafeAruidDeprecated](#GetAlbumFileList1AafeAruidDeprecated "wikilink")       |
 | 141   | \[6.0.0+\] [\#GetAlbumFileList2AafeUidAruidDeprecated](#GetAlbumFileList2AafeUidAruidDeprecated "wikilink") |
 | 142   | \[7.0.0+\] [\#GetAlbumFileList3AaeAruid](#GetAlbumFileList3AaeAruid "wikilink")                             |
@@ -197,6 +197,12 @@ and returns an output u64.
 
 Takes a PID, an input u8, an
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and no output.
+
+## PrecheckToCreateContentsByAruid
+
+Takes a PID, an input u8, an u64, an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
 

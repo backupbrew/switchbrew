@@ -246,7 +246,7 @@ Official sw via the <code>nn::album</code> wrappers uses start_DateTime = YYYY-M
 |-
 | 120 || LoadAlbumScreenShotThumbnailImageByAruid
 |-
-| 130 || PrecheckToCreateContentsByAruid
+| 130 || [[#PrecheckToCreateContentsByAruid]]
 |-
 | 140 || [6.0.0+] [[#GetAlbumFileList1AafeAruidDeprecated]]
 |-
@@ -273,6 +273,9 @@ Takes a PID, an input [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_servic
 
 == DeleteAlbumFileByAruidForDebug ==
 Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
+
+== PrecheckToCreateContentsByAruid ==
+Takes a PID, an input u8, an u64, an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 
 == GetAlbumFileList1AafeAruidDeprecated ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two [[#AlbumFileDateTime]], and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
