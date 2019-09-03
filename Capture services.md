@@ -200,6 +200,10 @@ Takes a PID, an input u8, an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
 
+The cached value loaded from
+[Settings\_services\#GetDebugModeFlag](Settings%20services#GetDebugModeFlag.md##GetDebugModeFlag "wikilink")
+must be 1, otherwise an error is returned.
+
 ## LoadAlbumScreenShotImageByAruid
 
 Takes a PID, a type-0x16 output buffer containing a

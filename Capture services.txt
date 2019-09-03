@@ -274,6 +274,8 @@ Takes a PID, an input [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_servic
 == DeleteAlbumFileByAruidForDebug ==
 Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 
+The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, otherwise an error is returned.
+
 == LoadAlbumScreenShotImageByAruid ==
 Takes a PID, a type-0x16 output buffer containing a [[#LoadAlbumScreenShotImageOutputForApplication]], a type-0x46 output buffer, a type-0x6 output buffer, an [[#ApplicationAlbumFileEntry]], a [[#ScreenShotDecodeOption]], and no output.
 
