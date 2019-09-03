@@ -265,6 +265,8 @@ Takes an input u64 [[#ShimLibraryVersion]], an u64 [[Applet_Manager_services#App
 == GetAlbumFileList0AafeAruidDeprecated ==
 Takes a type-0x6 output buffer containing an array of [[#ApplicationAlbumFileEntry]], a PID, an u8, two s64s, and an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]. Returns an output u64 for total output entries.
 
+The two s64s are the start/end PosixTime.
+
 == DeleteAlbumFileByAruid ==
 Takes a PID, an input u8, an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 

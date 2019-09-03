@@ -179,6 +179,8 @@ PID, an u8, two s64s, and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
+The two s64s are the start/end PosixTime.
+
 ## DeleteAlbumFileByAruid
 
 Takes a PID, an input u8, an
