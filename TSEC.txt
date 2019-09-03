@@ -2471,7 +2471,16 @@ Controls accesses to the following registers:
 | Enable the [[#TSEC_SCP_CMD|TSEC_SCP_CMD]] register
 |-
 | 16
-| Enable the SEQ interface
+| Enable the SEQ controller
+|-
+| 14
+| Enable the CMD interface
+|-
+| 12
+| Enable the STORE interface
+|-
+| 10
+| Enable the LOAD interface
 |}
 
 === TSEC_SCP_CTL1 ===
@@ -2480,13 +2489,13 @@ Controls accesses to the following registers:
 !  Description
 |-
 | 0
-| Flush SEQ interface
+| Flush SEQ controller
 |-
 | 11
-| Enable RND testing mode
+| Enable RND test mode
 |-
 | 12
-| Enable the RND interface
+| Enable the RND controller
 |}
 
 === TSEC_SCP_CFG ===
@@ -2516,7 +2525,7 @@ Controls accesses to the following registers:
 | Enable lockdown mode
 |-
 | 4
-| Lock the SCP and RND
+| Lock SCP and RND
 |}
 
 Controls lockdown mode and can only be cleared in Heavy Secure mode.
@@ -2555,7 +2564,7 @@ Controls lockdown mode and can only be cleared in Heavy Secure mode.
 | SEQ size
 |}
 
-Used for debugging crypto interfaces such as the SEQ (crypto sequence).
+Used for debugging crypto controllers such as the SEQ (crypto sequence).
 
 === TSEC_SCP_DBG1 ===
 {| class="wikitable" border="1"
@@ -2572,7 +2581,7 @@ Used for debugging crypto interfaces such as the SEQ (crypto sequence).
 | SEQ instruction's opcode
 |}
 
-Used for retrieving debug data. Contains information on the last crypto sequence created when debugging the SEQ interface.
+Used for retrieving debug data. Contains information on the last crypto sequence created when debugging the SEQ controller.
 
 === TSEC_SCP_DBG2 ===
 {| class="wikitable" border="1"
@@ -2591,7 +2600,7 @@ Used for retrieving debug data. Contains information on the last crypto sequence
 | Active crypto key register
 |}
 
-Used for retrieving additional debug data associated with the SEQ interface.
+Used for retrieving additional debug data associated with the SEQ controller.
 
 === TSEC_SCP_CMD ===
 {| class="wikitable" border="1"
@@ -2646,17 +2655,23 @@ Contains information on the last crypto command executed.
 !  Bits
 !  Description
 |-
+| 0
+| SCP is active
+|-
 | 2
 | CMD interface is active
 |-
 | 6
-| SEQ interface is active
+| SEQ controller is active
+|-
+| 14
+| AES controller is active
 |-
 | 16
-| RND interface is active
+| RND controller is active
 |}
 
-Contains the status of the crypto interfaces.
+Contains the status of the crypto controllers and interfaces.
 
 === TSEC_SCP_STAT1 ===
 {| class="wikitable" border="1"
@@ -2682,7 +2697,7 @@ Contains the status of the last authentication attempt.
 | Current SEQ opcode
 |-
 | 5-9
-| Unknown opcode
+| Current CMD opcode
 |-
 | 10-14
 | Pending CMD opcode
@@ -2693,6 +2708,12 @@ Contains the status of the last authentication attempt.
  1: Decryption
  2: Key expansion
  3: Key reverse expansion
+|-
+| 25
+| STORE operation is stalled
+|-
+| 26
+| LOAD operation is stalled
 |-
 | 27
 | RND operation is stalled
@@ -2712,7 +2733,7 @@ Contains the status of crypto operations.
 | RND is ready
 |}
 
-Contains the status of the RND interface.
+Contains the status of the RND controller.
 
 === TSEC_SCP_IRQSTAT ===
 {| class="wikitable" border="1"
@@ -2735,7 +2756,7 @@ Contains the status of the RND interface.
 | Single step
 |-
 | 24
-| RND unknown
+| RND called
 |-
 | 28
 | Timeout
@@ -2764,7 +2785,7 @@ Used for getting the status of crypto IRQs.
 | Single step
 |-
 | 24
-| RND unknown
+| RND called
 |-
 | 28
 | Timeout

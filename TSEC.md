@@ -1298,15 +1298,18 @@ Controls accesses to the following registers:
 | Bits | Description                                                    |
 | ---- | -------------------------------------------------------------- |
 | 20   | Enable the [TSEC\_SCP\_CMD](#TSEC_SCP_CMD "wikilink") register |
-| 16   | Enable the SEQ interface                                       |
+| 16   | Enable the SEQ controller                                      |
+| 14   | Enable the CMD interface                                       |
+| 12   | Enable the STORE interface                                     |
+| 10   | Enable the LOAD interface                                      |
 
 ### TSEC\_SCP\_CTL1
 
-| Bits | Description              |
-| ---- | ------------------------ |
-| 0    | Flush SEQ interface      |
-| 11   | Enable RND testing mode  |
-| 12   | Enable the RND interface |
+| Bits | Description               |
+| ---- | ------------------------- |
+| 0    | Flush SEQ controller      |
+| 11   | Enable RND test mode      |
+| 12   | Enable the RND controller |
 
 ### TSEC\_SCP\_CFG
 
@@ -1325,7 +1328,7 @@ Controls accesses to the following registers:
 | Bits | Description          |
 | ---- | -------------------- |
 | 0    | Enable lockdown mode |
-| 4    | Lock the SCP and RND |
+| 4    | Lock SCP and RND     |
 
 Controls lockdown mode and can only be cleared in Heavy Secure mode.
 
@@ -1369,7 +1372,7 @@ Controls lockdown mode and can only be cleared in Heavy Secure mode.
 </tbody>
 </table>
 
-Used for debugging crypto interfaces such as the SEQ (crypto sequence).
+Used for debugging crypto controllers such as the SEQ (crypto sequence).
 
 ### TSEC\_SCP\_DBG1
 
@@ -1380,7 +1383,7 @@ Used for debugging crypto interfaces such as the SEQ (crypto sequence).
 | 10-14 | SEQ instruction's opcode         |
 
 Used for retrieving debug data. Contains information on the last crypto
-sequence created when debugging the SEQ interface.
+sequence created when debugging the SEQ controller.
 
 ### TSEC\_SCP\_DBG2
 
@@ -1410,7 +1413,7 @@ sequence created when debugging the SEQ interface.
 </table>
 
 Used for retrieving additional debug data associated with the SEQ
-interface.
+controller.
 
 ### TSEC\_SCP\_CMD
 
@@ -1474,13 +1477,15 @@ Contains information on the last crypto command executed.
 
 ### TSEC\_SCP\_STAT0
 
-| Bits | Description             |
-| ---- | ----------------------- |
-| 2    | CMD interface is active |
-| 6    | SEQ interface is active |
-| 16   | RND interface is active |
+| Bits | Description              |
+| ---- | ------------------------ |
+| 0    | SCP is active            |
+| 2    | CMD interface is active  |
+| 6    | SEQ controller is active |
+| 14   | AES controller is active |
+| 16   | RND controller is active |
 
-Contains the status of the crypto interfaces.
+Contains the status of the crypto controllers and interfaces.
 
 ### TSEC\_SCP\_STAT1
 
@@ -1521,7 +1526,7 @@ Contains the status of the last authentication attempt.
 </tr>
 <tr class="even">
 <td><p>5-9</p></td>
-<td><p>Unknown opcode</p></td>
+<td><p>Current CMD opcode</p></td>
 </tr>
 <tr class="odd">
 <td><p>10-14</p></td>
@@ -1534,6 +1539,14 @@ Contains the status of the last authentication attempt.
 <code>1: Decryption</code><br />
 <code>2: Key expansion</code><br />
 <code>3: Key reverse expansion</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>25</p></td>
+<td><p>STORE operation is stalled</p></td>
+</tr>
+<tr class="even">
+<td><p>26</p></td>
+<td><p>LOAD operation is stalled</p></td>
 </tr>
 <tr class="odd">
 <td><p>27</p></td>
@@ -1554,7 +1567,7 @@ Contains the status of crypto operations.
 | ---- | ------------ |
 | 0    | RND is ready |
 
-Contains the status of the RND interface.
+Contains the status of the RND controller.
 
 ### TSEC\_SCP\_IRQSTAT
 
@@ -1565,7 +1578,7 @@ Contains the status of the RND interface.
 | 12   | SEC error   |
 | 16   | CMD error   |
 | 20   | Single step |
-| 24   | RND unknown |
+| 24   | RND called  |
 | 28   | Timeout     |
 
 Used for getting the status of crypto IRQs.
@@ -1579,7 +1592,7 @@ Used for getting the status of crypto IRQs.
 | 12   | SEC error   |
 | 16   | CMD error   |
 | 20   | Single step |
-| 24   | RND unknown |
+| 24   | RND called  |
 | 28   | Timeout     |
 
 Used for getting the value of the mask for crypto IRQs.
