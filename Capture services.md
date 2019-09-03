@@ -155,8 +155,8 @@ the same except year = 3000.
 | 103   | [\#DeleteAlbumFileByAruid](#DeleteAlbumFileByAruid "wikilink")                                              |
 | 104   | [\#GetAlbumFileSizeByAruid](#GetAlbumFileSizeByAruid "wikilink")                                            |
 | 105   | [\#DeleteAlbumFileByAruidForDebug](#DeleteAlbumFileByAruidForDebug "wikilink")                              |
-| 110   | LoadAlbumScreenShotImageByAruid                                                                             |
-| 120   | LoadAlbumScreenShotThumbnailImageByAruid                                                                    |
+| 110   | [\#LoadAlbumScreenShotImageByAruid](#LoadAlbumScreenShotImageByAruid "wikilink")                            |
+| 120   | [\#LoadAlbumScreenShotThumbnailImageByAruid](#LoadAlbumScreenShotThumbnailImageByAruid "wikilink")          |
 | 130   | [\#PrecheckToCreateContentsByAruid](#PrecheckToCreateContentsByAruid "wikilink")                            |
 | 140   | \[6.0.0+\] [\#GetAlbumFileList1AafeAruidDeprecated](#GetAlbumFileList1AafeAruidDeprecated "wikilink")       |
 | 141   | \[6.0.0+\] [\#GetAlbumFileList2AafeUidAruidDeprecated](#GetAlbumFileList2AafeUidAruidDeprecated "wikilink") |
@@ -199,6 +199,24 @@ Takes a PID, an input u8, an
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
+
+## LoadAlbumScreenShotImageByAruid
+
+Takes a PID, a type-0x16 output buffer containing a
+[\#LoadAlbumScreenShotImageOutputForApplication](#LoadAlbumScreenShotImageOutputForApplication "wikilink"),
+a type-0x46 output buffer, a type-0x6 output buffer, an
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
+[\#ScreenShotDecodeOption](#ScreenShotDecodeOption "wikilink"), and no
+output.
+
+## LoadAlbumScreenShotThumbnailImageByAruid
+
+Takes a PID, a type-0x16 output buffer containing a
+[\#LoadAlbumScreenShotImageOutputForApplication](#LoadAlbumScreenShotImageOutputForApplication "wikilink"),
+a type-0x46 output buffer, a type-0x6 output buffer, an
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
+[\#ScreenShotDecodeOption](#ScreenShotDecodeOption "wikilink"), and no
+output.
 
 ## PrecheckToCreateContentsByAruid
 
