@@ -439,6 +439,16 @@ This is "nn::capsrv::ApplicationData". This is a 0x404-byte struct.
 
 This is "nn::capsrv::UserIdList". This is a 0x88-byte struct.
 
+# LoadAlbumScreenShotImageOutputForApplication
+
+This is "nn::capsrv::sf::LoadAlbumScreenShotImageOutputForApplication".
+This is a 0x500-byte struct.
+
+# ScreenShotDecodeOption
+
+This is "nn::capsrv::ScreenShotDecodeOption". This is a 0x20-byte
+struct.
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
