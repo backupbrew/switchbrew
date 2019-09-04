@@ -391,9 +391,12 @@ this struct matches
 
 # ApplicationAlbumEntry
 
-| Offset | Size | Description |
-| ------ | ---- | ----------- |
-| 0x0    | 0x20 | Unknown.    |
+| Offset | Size | Description                                          |
+| ------ | ---- | ---------------------------------------------------- |
+| 0x0    | 0x8  | Unknown.                                             |
+| 0x8    | 0x8  | Unknown.                                             |
+| 0x10   | 0x8  | [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink") |
+| 0x18   | 0x8  | Unknown.                                             |
 
 This is "nn::capsrv::ApplicationAlbumEntry". This is a 0x20-byte struct.
 On older versions where
