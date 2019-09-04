@@ -414,6 +414,12 @@ used at all), with everything else it's used as an
 
 # ApplicationAlbumFileEntry
 
+| Offset | Size | Description                                                  |
+| ------ | ---- | ------------------------------------------------------------ |
+| 0x0    | 0x20 | [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink") |
+| 0x20   | 0x8  | [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink")         |
+| 0x28   | 0x8  | Unknown.                                                     |
+
 This is "nn::capsrv::ApplicationAlbumFileEntry". This is a 0x30-byte
 struct.
 
