@@ -459,6 +459,14 @@ This is "nn::capsrv::UserIdList". This is a 0x88-byte struct.
 
 # LoadAlbumScreenShotImageOutputForApplication
 
+| Offset | Size  | Description                                                                          |
+| ------ | ----- | ------------------------------------------------------------------------------------ |
+| 0x0    | 0x8   | Width                                                                                |
+| 0x8    | 0x8   | Height                                                                               |
+| 0x10   | 0x40  | [\#ScreenShotAttributeForApplication](#ScreenShotAttributeForApplication "wikilink") |
+| 0x50   | 0x404 | [\#ApplicationData](#ApplicationData "wikilink")                                     |
+| 0x454  | 0xAC  | Unused                                                                               |
+
 This is "nn::capsrv::sf::LoadAlbumScreenShotImageOutputForApplication".
 This is a 0x500-byte struct.
 
@@ -466,6 +474,14 @@ This is a 0x500-byte struct.
 
 This is "nn::capsrv::ScreenShotDecodeOption". This is a 0x20-byte
 struct.
+
+Unused by official sw with the output from
+[\#LoadAlbumScreenShotImageByAruid](#LoadAlbumScreenShotImageByAruid "wikilink")/[\#LoadAlbumScreenShotThumbnailImageByAruid](#LoadAlbumScreenShotThumbnailImageByAruid "wikilink").
+
+# ScreenShotAttributeForApplication
+
+This is "nn::capsrv::ScreenShotAttributeForApplication". This is a
+0x40-byte struct.
 
 # Notes
 
