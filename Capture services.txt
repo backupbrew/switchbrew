@@ -508,7 +508,30 @@ This is "nn::capsrv::ScreenShotDecodeOption". This is a 0x20-byte struct.
 Unused by official sw with the output from [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]].
 
 = ScreenShotAttributeForApplication =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x4 || Unknown.
+|-
+| 0x4 || 0x3C || Unused by official sw.
+|}
+
 This is "nn::capsrv::ScreenShotAttributeForApplication". This is a 0x40-byte struct.
+
+Official sw only uses this in <code>nn::album</code> funcs which convert this to [[#AlbumFileAttribute]], with the output from [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]].
+
+= AlbumFileAttribute =
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || The <code>nn::album</code> funcs referenced by [[#ScreenShotAttributeForApplication]] set this to: <code>ScreenShotAttributeForApplication.first_u32 == 2</code>.
+|-
+| 0x8 || 0x8 || Set to zero by official sw.
+|}
+
+This is "nn::album::AlbumFileAttribute". This is a 0x10-byte struct. See also [[#ScreenShotAttributeForApplication]].
 
 = Notes =
 capsrv is responsible for validating the MACs for screenshots stored on the SD card, if the setting capsrv!enable_album_screenshot_filedata_verification is non-zero. 

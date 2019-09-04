@@ -480,8 +480,29 @@ Unused by official sw with the output from
 
 # ScreenShotAttributeForApplication
 
+| Offset | Size | Description            |
+| ------ | ---- | ---------------------- |
+| 0x0    | 0x4  | Unknown.               |
+| 0x4    | 0x3C | Unused by official sw. |
+
 This is "nn::capsrv::ScreenShotAttributeForApplication". This is a
 0x40-byte struct.
+
+Official sw only uses this in `nn::album` funcs which convert this to
+[\#AlbumFileAttribute](#AlbumFileAttribute "wikilink"), with the output
+from
+[\#LoadAlbumScreenShotImageByAruid](#LoadAlbumScreenShotImageByAruid "wikilink")/[\#LoadAlbumScreenShotThumbnailImageByAruid](#LoadAlbumScreenShotThumbnailImageByAruid "wikilink").
+
+# AlbumFileAttribute
+
+| Offset | Size | Description                                                                                                                                                                               |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | The `nn::album` funcs referenced by [\#ScreenShotAttributeForApplication](#ScreenShotAttributeForApplication "wikilink") set this to: `ScreenShotAttributeForApplication.first_u32 == 2`. |
+| 0x8    | 0x8  | Set to zero by official sw.                                                                                                                                                               |
+
+This is "nn::album::AlbumFileAttribute". This is a 0x10-byte struct. See
+also
+[\#ScreenShotAttributeForApplication](#ScreenShotAttributeForApplication "wikilink").
 
 # Notes
 
