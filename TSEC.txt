@@ -555,14 +555,6 @@ The TSEC's MMIO space is divided as follows:
 | 0x54501244
 | 0x04
 |-
-| FALCON_UNK_248
-| 0x54501248
-| 0x04
-|-
-| FALCON_UNK_24C
-| 0x5450124C
-| 0x04
-|-
 | FALCON_UNK_250
 | 0x54501250
 | 0x04
@@ -1936,7 +1928,7 @@ Returns or takes the value for a DMEM read/write operation.
 |-
 | 6-7
 | FALCON_ICD_CMD_SZ
- 0x00: B (byte
+ 0x00: B (byte)
  0x01: HW (half word)
  0x02: W (word)
 |-

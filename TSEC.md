@@ -158,8 +158,6 @@ The TSEC's MMIO space is divided as follows:
 | [FALCON\_ICD\_RDATA](#FALCON_ICD_RDATA "wikilink")                                 | 0x5450120C | 0x04  |
 | [FALCON\_SCTL](#FALCON_SCTL "wikilink")                                            | 0x54501240 | 0x04  |
 | [FALCON\_SSTAT](#FALCON_SSTAT "wikilink")                                          | 0x54501244 | 0x04  |
-| FALCON\_UNK\_248                                                                   | 0x54501248 | 0x04  |
-| FALCON\_UNK\_24C                                                                   | 0x5450124C | 0x04  |
 | FALCON\_UNK\_250                                                                   | 0x54501250 | 0x04  |
 | FALCON\_UNK\_260                                                                   | 0x54501260 | 0x04  |
 | [FALCON\_SPROT\_IMEM](#FALCON_SPROT_IMEM "wikilink")                               | 0x54501280 | 0x04  |
@@ -821,7 +819,7 @@ Returns or takes the value for a DMEM read/write operation.
 <tr class="even">
 <td><p>6-7</p></td>
 <td><p>FALCON_ICD_CMD_SZ</p>
-<p><code>0x00: B (byte</code><br />
+<p><code>0x00: B (byte)</code><br />
 <code>0x01: HW (half word)</code><br />
 <code>0x02: W (word)</code></p></td>
 </tr>
