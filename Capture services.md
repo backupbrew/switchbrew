@@ -178,7 +178,8 @@ and a PID, no output.
 
 Takes a type-0x6 output buffer containing an array of
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
-PID, an u8, two s64s, and an u64
+PID, an u8 [\#ContentType](#ContentType "wikilink"), two s64s, and an
+u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
@@ -186,7 +187,7 @@ The two s64s are the start/end PosixTime.
 
 ## DeleteAlbumFileByAruid
 
-Takes a PID, an input u8, an
+Takes a PID, an input u8 [\#ContentType](#ContentType "wikilink"), an
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
@@ -229,7 +230,8 @@ output.
 
 ## PrecheckToCreateContentsByAruid
 
-Takes a PID, an input u8, an u64, an
+Takes a PID, an input u8 [\#ContentType](#ContentType "wikilink"), an
+u64, an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
 
@@ -237,8 +239,8 @@ and no output.
 
 Takes a type-0x6 output buffer containing an array of
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
-PID, an u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"),
-and an u64
+PID, an u8 [\#ContentType](#ContentType "wikilink"), two
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
@@ -251,8 +253,9 @@ end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 Takes a type-0x6 output buffer containing an array of
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
-PID, an u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an
-u128 userID, and an u64
+PID, an u8 [\#ContentType](#ContentType "wikilink"), two
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an u128 userID,
+and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
@@ -265,7 +268,8 @@ end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 Takes a type-0x6 output buffer containing an array of
 [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"), a PID, an
-u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), and an u64
+u8 [\#ContentType](#ContentType "wikilink"), two
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
@@ -278,8 +282,9 @@ end\_DateTime. In the IPC rawdata, these use 2-byte alignment.
 
 Takes a type-0x6 output buffer containing an array of
 [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink"), a PID, an
-u8, two [\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an u128
-userID, and an u64
+u8 [\#ContentType](#ContentType "wikilink"), two
+[\#AlbumFileDateTime](#AlbumFileDateTime "wikilink"), an u128 userID,
+and an u64
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 Returns an output u64 for total output entries.
 
@@ -349,6 +354,14 @@ This is "nn::album::ImageOrientation".
 | 3     | Unknown.    |
 
 This is "nn::album::AlbumReportOption".
+
+### ContentType
+
+| Value | Description                                                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 0     | Screenshot. Album screenshots.                                                                                                            |
+| 1     | Movie. Album videos.                                                                                                                      |
+| 3     | ExtraMovie. Videos recorded by the current Application title via [GRC MovieMaker](GRC%20services#IMovieMaker.md##IMovieMaker "wikilink"). |
 
 # AlbumFileDateTime
 
