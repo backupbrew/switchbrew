@@ -148,8 +148,8 @@ Official sw via the `nn::album` wrappers uses start\_DateTime =
 YYYY-MM-DD 1970-01-01 with the rest set to all-zero, end\_DateTime is
 the same except year = 3000. With
 [\#GetAlbumFileList0AafeAruidDeprecated](#GetAlbumFileList0AafeAruidDeprecated "wikilink"),
-start\_PosixTime = UTC 1999-12-31 00:00, and end\_PosixTime = UTC
-2100-01-01 00:00.
+start\_PosixTime = UTC 1999-12-31 00:00 (0x386BF200), and end\_PosixTime
+= UTC 2100-01-01 00:00 (0xF4865700).
 
 | Cmd   | Name                                                                                                        |
 | ----- | ----------------------------------------------------------------------------------------------------------- |
