@@ -201,6 +201,8 @@ Takes a PID, an input
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and returns an output u64.
 
+This gets the filesize for the entire specified Album file.
+
 ## DeleteAlbumFileByAruidForDebug
 
 Takes a PID, an
