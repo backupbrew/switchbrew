@@ -522,7 +522,7 @@ This is "nn::capsrv::sf::LoadAlbumScreenShotImageOutputForApplication". This is 
 = ScreenShotDecodeOption =
 This is "nn::capsrv::ScreenShotDecodeOption". This is a 0x20-byte struct.
 
-Unused by official sw with the output from [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]].
+Official sw sets this to all-zero with the input for [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]].
 
 = ScreenShotAttributeForApplication =
 {| class="wikitable" border="1"

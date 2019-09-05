@@ -484,7 +484,7 @@ This is a 0x500-byte struct.
 This is "nn::capsrv::ScreenShotDecodeOption". This is a 0x20-byte
 struct.
 
-Unused by official sw with the output from
+Official sw sets this to all-zero with the input for
 [\#LoadAlbumScreenShotImageByAruid](#LoadAlbumScreenShotImageByAruid "wikilink")/[\#LoadAlbumScreenShotThumbnailImageByAruid](#LoadAlbumScreenShotThumbnailImageByAruid "wikilink").
 
 # ScreenShotAttributeForApplication
