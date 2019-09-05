@@ -537,13 +537,13 @@ This is "nn::pwm::IManager".
 == Known Channels ==
 {| class="wikitable sortable" border="1"
 |-
-! Name || Interface || Usage || Used by
+! Name || DeviceCode || Interface || Usage || Used by
 |-
-| 1 || PWM Channel 1 || Fan || [[PTM services]]
+| 1 || 0x3D000001 || PWM Channel 1 || Fan || [[PTM services]]
 |-
-| 2 || PWM Channel 0 || Backlight || [[Backlight services]], [[NV services]]
+| 2 || 0x3400003D || PWM Channel 0 || Backlight || [[Backlight services]], [[NV services]]
 |-
-| 3 || PMC Blinker || ||
+| 3 || 0x35000065 || PMC Blinker || ||
 |}
 
 == IChannelSession ==

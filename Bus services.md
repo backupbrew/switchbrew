@@ -362,11 +362,11 @@ This is "nn::pwm::IManager".
 
 ## Known Channels
 
-| Name | Interface     | Usage     | Used by                                                                                              |
-| ---- | ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| 1    | PWM Channel 1 | Fan       | [PTM services](PTM%20services.md "wikilink")                                                         |
-| 2    | PWM Channel 0 | Backlight | [Backlight services](Backlight%20services.md "wikilink"), [NV services](NV%20services.md "wikilink") |
-| 3    | PMC Blinker   |           |                                                                                                      |
+| Name | DeviceCode | Interface     | Usage     | Used by                                                                                              |
+| ---- | ---------- | ------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| 1    | 0x3D000001 | PWM Channel 1 | Fan       | [PTM services](PTM%20services.md "wikilink")                                                         |
+| 2    | 0x3400003D | PWM Channel 0 | Backlight | [Backlight services](Backlight%20services.md "wikilink"), [NV services](NV%20services.md "wikilink") |
+| 3    | 0x35000065 | PMC Blinker   |           |                                                                                                      |
 
 ## IChannelSession
 
