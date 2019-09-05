@@ -4,8 +4,14 @@ services](Capture%20services.md "wikilink").
 
 # caps:dc
 
-| Cmd  | Name | Notes                                                                                |
-| ---- | ---- | ------------------------------------------------------------------------------------ |
-| 3001 |      | Takes a total of 0x28-bytes of input, type-0x46 and type-0x5 buffers, and no output. |
+| Cmd  | Name |
+| ---- | ---- |
+| 3001 |      |
+
+## Cmd3001
+
+Takes an input u32 **width**, an input u32 **height**, an input
+[ScreenShotDecodeOption](Capture%20services#ScreenShotDecodeOption.md##ScreenShotDecodeOption "wikilink"),
+a type-0x46 output buffer, a type-0x5 input buffer, and no output.
 
 [Category:Services](Category:Services "wikilink")

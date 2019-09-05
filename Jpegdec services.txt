@@ -4,9 +4,12 @@ Jpegdec is a refactored sysmodule added with [4.0.0+] for handling all JPEG deco
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 3001 || || Takes a total of 0x28-bytes of input, type-0x46 and type-0x5 buffers, and no output.
+| 3001 || 
 |}
+
+== Cmd3001 ==
+Takes an input u32 '''width''', an input u32 '''height''', an input [[Capture_services#ScreenShotDecodeOption|ScreenShotDecodeOption]], a type-0x46 output buffer, a type-0x5 input buffer, and no output.
 
 [[Category:Services]]
