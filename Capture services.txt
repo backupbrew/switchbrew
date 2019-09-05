@@ -270,6 +270,8 @@ The two s64s are the start/end PosixTime.
 == DeleteAlbumFileByAruid ==
 Takes a PID, an input u8 [[#ContentType]], an [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
 
+The [[#ContentType]] must match 3.
+
 == GetAlbumFileSizeByAruid ==
 Takes a PID, an input [[#ApplicationAlbumFileEntry]], an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and returns an output u64.
 

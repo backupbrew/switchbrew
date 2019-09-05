@@ -192,6 +192,8 @@ Takes a PID, an input u8 [\#ContentType](#ContentType "wikilink"), an
 [AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
 and no output.
 
+The [\#ContentType](#ContentType "wikilink") must match 3.
+
 ## GetAlbumFileSizeByAruid
 
 Takes a PID, an input
