@@ -860,12 +860,12 @@ This device is for global (context independent) operations on the gpu.
 | 0x80084712                                  | Out       | 8    | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |       |
 | 0xC0044713                                  | Inout     | 4    | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |       |
 | 0x80084714                                  | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_ZBC\_GET\_ACTIVE\_SLOT\_MASK](#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK "wikilink") |       |
-| 0x80044715                                  | Out       | 4    |                                                                                                           |       |
+| 0x80044715                                  | Out       | 4    | NVGPU\_GPU\_IOCTL\_PMU\_GET\_GPU\_LOAD                                                                    |       |
 | 0x40084716                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_CG\_CONTROLS                                                                      |       |
 | 0xC0084717                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_CG\_CONTROLS                                                                      |       |
 | 0x40084718                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_PG\_CONTROLS                                                                      |       |
 | 0xC0084719                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_PG\_CONTROLS                                                                      |       |
-| 0x8018471A                                  | Out       | 24   |                                                                                                           |       |
+| 0x8018471A                                  | Out       | 24   | NVGPU\_GPU\_IOCTL\_PMU\_DUMP\_ELPG\_STATS                                                                 |       |
 | 0xC008471B                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |       |
 | 0xC010471C                                  | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |       |
 | 0xC108471D                                  | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |       |

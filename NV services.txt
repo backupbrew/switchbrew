@@ -923,7 +923,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK]] ||
 |-
-| 0x80044715 || Out || 4 || ||
+| 0x80044715 || Out || 4 || NVGPU_GPU_IOCTL_PMU_GET_GPU_LOAD ||
 |-
 | 0x40084716 || In || 8 || NVGPU_GPU_IOCTL_SET_CG_CONTROLS ||
 |-
@@ -933,7 +933,7 @@ This device is for global (context independent) operations on the gpu.
 |-
 | 0xC0084719 || Inout || 8 || NVGPU_GPU_IOCTL_GET_PG_CONTROLS ||
 |-
-| 0x8018471A || Out || 24 || ||
+| 0x8018471A || Out || 24 || NVGPU_GPU_IOCTL_PMU_DUMP_ELPG_STATS ||
 |-
 | 0xC008471B || Inout || 8 || NVGPU_GPU_IOCTL_GET_ERROR_CHANNEL_USER_DATA ||
 |-
