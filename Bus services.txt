@@ -531,7 +531,7 @@ This is "nn::pwm::IManager".
 |-
 | 1 || OpenSession
 |-
-| 2 || [6.0.0+]
+| 2 || [6.0.0+] OpenSession2
 |}
 
 == Known Channels ==

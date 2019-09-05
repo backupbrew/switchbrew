@@ -354,11 +354,11 @@ OpenSessionForTest takes the port index verbatim.
 
 This is "nn::pwm::IManager".
 
-| Cmd | Name              |
-| --- | ----------------- |
-| 0   | OpenSessionForDev |
-| 1   | OpenSession       |
-| 2   | \[6.0.0+\]        |
+| Cmd | Name                    |
+| --- | ----------------------- |
+| 0   | OpenSessionForDev       |
+| 1   | OpenSession             |
+| 2   | \[6.0.0+\] OpenSession2 |
 
 ## Known Channels
 
