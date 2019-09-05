@@ -478,13 +478,15 @@ Takes a u32 [[#UartPort]] and returns an [[#IPortSession]]
 == UartPort ==
 {| class="wikitable sortable" border="1"
 |-
-! Name || Port || Usage
+! Name || DeviceCode || Port || Usage
 |-
-| 1 || UART-D || Bluetooth
+| 1 || 0x37000001 || UART-D || Bluetooth
 |-
-| 2 || UART-B || Joy-Con(R)
+| 2 || 0x35000405 || UART-B || Joy-Con(R)
 |-
-| 3 || UART-C || Joy-Con(L)
+| 3 || 0x3500040F || UART-C || Joy-Con(L)
+|-
+| 4 || 0x35000419 || ||
 |}
 
 == IPortSession ==

@@ -318,11 +318,12 @@ Takes a u32 [\#UartPort](#UartPort "wikilink") and returns an
 
 ## UartPort
 
-| Name | Port   | Usage      |
-| ---- | ------ | ---------- |
-| 1    | UART-D | Bluetooth  |
-| 2    | UART-B | Joy-Con(R) |
-| 3    | UART-C | Joy-Con(L) |
+| Name | DeviceCode | Port   | Usage      |
+| ---- | ---------- | ------ | ---------- |
+| 1    | 0x37000001 | UART-D | Bluetooth  |
+| 2    | 0x35000405 | UART-B | Joy-Con(R) |
+| 3    | 0x3500040F | UART-C | Joy-Con(L) |
+| 4    | 0x35000419 |        |            |
 
 ## IPortSession
 
