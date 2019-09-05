@@ -185,7 +185,7 @@ This is "nn::nim::detail::IShopServiceManager".
 | 305 | \[4.0.0+\] RequestCreateVirtualAccount                                                                         |
 | 306 | \[4.0.0+\] RequestDeviceLinkStatus                                                                             |
 | 400 | GetAccountByVirtualAccount                                                                                     |
-| 401 | \[6.0.0+\]                                                                                                     |
+| 401 | \[6.0.0+\] GetVirtualAccount                                                                                   |
 | 500 | RequestSyncTicket                                                                                              |
 | 501 | RequestDownloadTicket                                                                                          |
 | 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents. \[6.0.0+\]: Now takes an additional 4-bytes of input. |
@@ -280,33 +280,33 @@ This is
 
 This is "nn::nim::detail::IAsyncValue".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   | \[4.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | GetSize                    |
+| 1   | Get                        |
+| 2   | Cancel                     |
+| 3   | \[4.0.0+\] GetErrorContext |
 
 # IAsyncResult
 
 This is "nn::nim::detail::IAsyncResult".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   | \[4.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | Get                        |
+| 1   | Cancel                     |
+| 2   | \[4.0.0+\] GetErrorContext |
 
 # IAsyncProgressResult
 
 This is "nn::nim::detail::IAsyncProgressResult".
 
-| Cmd | Name       |
-| --- | ---------- |
-| 0   |            |
-| 1   |            |
-| 2   |            |
-| 3   | \[4.0.0+\] |
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | Get                        |
+| 1   | Cancel                     |
+| 2   | GetProgress                |
+| 3   | \[4.0.0+\] GetErrorContext |
 
 # IAsyncData
 

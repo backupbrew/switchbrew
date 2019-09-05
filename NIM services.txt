@@ -281,7 +281,7 @@ This is "nn::nim::detail::IShopServiceManager".
 |-
 | 400 || GetAccountByVirtualAccount
 |-
-| 401 || [6.0.0+]
+| 401 || [6.0.0+] GetVirtualAccount
 |-
 | 500 || RequestSyncTicket
 |-
@@ -411,13 +411,13 @@ This is "nn::nim::detail::IAsyncValue".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || GetSize
 |-
-| 1 || 
+| 1 || Get
 |-
-| 2 || 
+| 2 || Cancel
 |-
-| 3 || [4.0.0+]
+| 3 || [4.0.0+] GetErrorContext
 |}
 
 = IAsyncResult =
@@ -427,11 +427,11 @@ This is "nn::nim::detail::IAsyncResult".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Get
 |-
-| 1 || 
+| 1 || Cancel
 |-
-| 2 || [4.0.0+]
+| 2 || [4.0.0+] GetErrorContext
 |}
 
 = IAsyncProgressResult =
@@ -441,13 +441,13 @@ This is "nn::nim::detail::IAsyncProgressResult".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Get
 |-
-| 1 || 
+| 1 || Cancel
 |-
-| 2 || 
+| 2 || GetProgress
 |-
-| 3 || [4.0.0+]
+| 3 || [4.0.0+] GetErrorContext
 |}
 
 = IAsyncData =
