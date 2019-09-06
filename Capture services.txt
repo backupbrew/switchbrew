@@ -285,12 +285,12 @@ The cached value loaded from [[Settings_services#GetDebugModeFlag]] must be 1, o
 == LoadAlbumScreenShotImageByAruid ==
 Takes a PID, a type-0x16 output buffer containing a [[#LoadAlbumScreenShotImageOutputForApplication]], a type-0x46 output buffer, a type-0x6 output buffer, an [[#ApplicationAlbumFileEntry]], a [[#ScreenShotDecodeOption]], and no output.
 
-The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer is a work buffer used for reading the entire AlbumFile, the buffer size must be at least the AlbumFile filesize.
+The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer is a work buffer used for reading the entire AlbumFile, the buffer size must be at least the AlbumFile filesize (cleared before the cmd returns).
 
 == LoadAlbumScreenShotThumbnailImageByAruid ==
 Takes a PID, a type-0x16 output buffer containing a [[#LoadAlbumScreenShotImageOutputForApplication]], a type-0x46 output buffer,  a type-0x6 output buffer, an [[#ApplicationAlbumFileEntry]], a [[#ScreenShotDecodeOption]], and no output.
 
-The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer is a work buffer used for reading the entire AlbumFile, the buffer size must be at least the AlbumFile filesize.
+The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer is a work buffer used for reading the entire AlbumFile, the buffer size must be at least the AlbumFile filesize (cleared before the cmd returns).
 
 == PrecheckToCreateContentsByAruid ==
 Takes a PID, an input u8 [[#ContentType]], an u64, an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and no output.
