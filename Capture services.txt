@@ -552,12 +552,40 @@ Official sw sets this to all-zero with the input for [[#LoadAlbumScreenShotImage
 |-
 | 0x0 || 0x4 || Unknown.
 |-
-| 0x4 || 0x3C || Unused by official sw.
+| 0x4 || 0x1 || Unknown.
+|-
+| 0x5 || 0x1 || Unknown.
+|-
+| 0x6 || 0x1 || Unknown.
+|-
+| 0x7 || 0x1 || Padding.
+|-
+| 0x8 || 0x4 || Unknown.
+|-
+| 0xC || 0x4 || Unknown.
+|-
+| 0x10 || 0x4 || Unknown.
+|-
+| 0x14 || 0x4 || Unknown.
+|-
+| 0x18 || 0x4 || Unknown.
+|-
+| 0x1C || 0x4 || Unknown.
+|-
+| 0x20 || 0x2 || Unknown.
+|-
+| 0x22 || 0x2 || Unknown.
+|-
+| 0x24 || 0x2 || Unknown.
+|-
+| 0x26 || 0x2 || Unknown.
+|-
+| 0x28 || 0x18 || Always zero.
 |}
 
 This is "nn::capsrv::ScreenShotAttributeForApplication". This is a 0x40-byte struct.
 
-Official sw only uses this in <code>nn::album</code> funcs which convert this to [[#AlbumFileAttribute]], with the output from [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]].
+Official sw only uses this in <code>nn::album</code> funcs which convert this to [[#AlbumFileAttribute]], with the output from [[#LoadAlbumScreenShotImageByAruid]]/[[#LoadAlbumScreenShotThumbnailImageByAruid]] (only the first u32 is used).
 
 = AlbumFileAttribute =
 {| class="wikitable" border="1"
