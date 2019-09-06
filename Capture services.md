@@ -345,6 +345,10 @@ u64
 and returns an output u64
 [\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink").
 
+Up to 4 streams can be open at the same time. Multiple streams can be
+open at the same time for the same
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink").
+
 ### CloseAlbumMovieReadStream
 
 Takes an input u64
@@ -357,11 +361,19 @@ Takes an input u64
 [\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
 returns an output u64.
 
+This gets the size of the actual MP4, without the JPEG at the end.
+
 ### ReadMovieDataFromAlbumMovieReadStream
 
 Takes a type-0x6 output buffer, an input u64
 [\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
-an input s64, and returns an output u64.
+an input s64 offset, and returns an output u64 actual\_size.
+
+offset(+size) must not be negative. offset and size must be aligned to
+0x40000-bytes. When offset(+size) goes beyond the size from
+[\#GetAlbumMovieReadStreamMovieDataSize](#GetAlbumMovieReadStreamMovieDataSize "wikilink"),
+the regions of the buffer which goes beyond that are cleared to 0, and
+actual\_size is still set to the input size.
 
 ### GetAlbumMovieReadStreamBrokenReason
 
