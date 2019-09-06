@@ -223,6 +223,10 @@ a type-0x46 output buffer, a type-0x6 output buffer, an
 [\#ScreenShotDecodeOption](#ScreenShotDecodeOption "wikilink"), and no
 output.
 
+The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer
+is a work buffer used for reading the entire AlbumFile, the buffer size
+must be at least the AlbumFile filesize.
+
 ## LoadAlbumScreenShotThumbnailImageByAruid
 
 Takes a PID, a type-0x16 output buffer containing a
@@ -231,6 +235,10 @@ a type-0x46 output buffer, a type-0x6 output buffer, an
 [\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), a
 [\#ScreenShotDecodeOption](#ScreenShotDecodeOption "wikilink"), and no
 output.
+
+The type-0x46 buffer contains the RGBA8 image data. The type-0x6 buffer
+is a work buffer used for reading the entire AlbumFile, the buffer size
+must be at least the AlbumFile filesize.
 
 ## PrecheckToCreateContentsByAruid
 
