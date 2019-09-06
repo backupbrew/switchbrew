@@ -84,10 +84,10 @@ Takes a copy-handle ('''transfer_memory''') and two input u32s ('''fd''' and '''
 Takes no input. Returns 0x10-bytes and an output u32 ('''error_code''').
 
 == SetAruid ==
-Takes an input u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
+Takes an input u64 which must [[IPC_Marshalling|match]] the user-process PID ([[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
 == SetAruidByPID ==
-Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID ([[AM_services|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
+Takes a PID-descriptor and an u64 which must [[IPC_Marshalling|match]] the user-process PID ([[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]]). Returns an output u32 ('''error_code''').
 
 == DumpGraphicsMemoryInfo ==
 No input or output. Does nothing.
@@ -119,35 +119,35 @@ The following table contains known ioctls.
 
 == /dev/nvhost-ctrl ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0xC0080014 || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ]] ||
+| 0xC0080014 || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ]]
 |-
-| 0x40040015 || In || 4 || [[#NVHOST_IOCTL_CTRL_SYNCPT_INCR]] ||
+| 0x40040015 || In || 4 || [[#NVHOST_IOCTL_CTRL_SYNCPT_INCR]]
 |-
-| 0xC00C0016 || Inout || 12 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAIT]] ||
+| 0xC00C0016 || Inout || 12 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAIT]]
 |-
-| 0x40080017 || In || 8 || [[#NVHOST_IOCTL_CTRL_MODULE_MUTEX]] ||
+| 0x40080017 || In || 8 || [[#NVHOST_IOCTL_CTRL_MODULE_MUTEX]]
 |-
-| 0xC0180018 || Inout || 24 || [[#NVHOST_IOCTL_CTRL_MODULE_REGRDWR]] ||
+| 0xC0180018 || Inout || 24 || [[#NVHOST_IOCTL_CTRL_MODULE_REGRDWR]]
 |-
-| 0xC0100019 || Inout || 16 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX]] ||
+| 0xC0100019 || Inout || 16 || [[#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX]]
 |-
-| 0xC008001A || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX]] ||
+| 0xC008001A || Inout || 8 || [[#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX]]
 |-
-| 0xC183001B || Inout || 387 || [[#NVHOST_IOCTL_CTRL_GET_CONFIG]] ||
+| 0xC183001B || Inout || 387 || [[#NVHOST_IOCTL_CTRL_GET_CONFIG]]
 |-
-| 0xC004001C || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_SIGNAL]] ||
+| 0xC004001C || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_SIGNAL]]
 |-
-| 0xC010001D || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT]] ||
+| 0xC010001D || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT]]
 |-
-| 0xC010001E || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC]] ||
+| 0xC010001E || Inout || 16 || [[#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC]]
 |-
-| 0xC004001F || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_REGISTER]] ||
+| 0xC004001F || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_REGISTER]]
 |-
-| 0xC0040020 || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER]] ||
+| 0xC0040020 || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER]]
 |-
-| 0x40080021 || In || 8 || [[#NVHOST_IOCTL_CTRL_EVENT_KILL]] ||
+| 0x40080021 || In || 8 || [[#NVHOST_IOCTL_CTRL_EVENT_KILL]]
 |}
 
 === NVHOST_IOCTL_CTRL_SYNCPT_READ ===
@@ -275,47 +275,47 @@ Kills user events. Exclusive to the Switch.
 
 == /dev/nvmap ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0xC0080101 || Inout || 8 || [[#NVMAP_IOC_CREATE]] ||
+| 0xC0080101 || Inout || 8 || [[#NVMAP_IOC_CREATE]]
 |-
-| 0x00000102 || - || 0 || NVMAP_IOC_CLAIM || Returns NotSupported
+| 0x00000102 || - || 0 || [[#NVMAP_IOC_CLAIM]]
 |-
-| 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]] ||
+| 0xC0080103 || Inout || 8 || [[#NVMAP_IOC_FROM_ID]]
 |-
-| 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]] ||
+| 0xC0200104 || Inout || 32 || [[#NVMAP_IOC_ALLOC]]
 |-
-| 0xC0180105 || Inout || 24 || [[#NVMAP_IOC_FREE]] ||
+| 0xC0180105 || Inout || 24 || [[#NVMAP_IOC_FREE]]
 |-
-| 0xC0280106 || Inout || 40 || NVMAP_IOC_MMAP || Returns NotSupported
+| 0xC0280106 || Inout || 40 || [[#NVMAP_IOC_MMAP]]
 |-
-| 0xC0280107 || Inout || 40 || NVMAP_IOC_WRITE || Returns NotSupported
+| 0xC0280107 || Inout || 40 || [[#NVMAP_IOC_WRITE]]
 |-
-| 0xC0280108 || Inout || 40 || NVMAP_IOC_READ || Returns NotSupported
+| 0xC0280108 || Inout || 40 || [[#NVMAP_IOC_READ]]
 |-
-| 0xC00C0109 || Inout || 12 || [[#NVMAP_IOC_PARAM]] ||
+| 0xC00C0109 || Inout || 12 || [[#NVMAP_IOC_PARAM]]
 |-
-| 0xC010010A || Inout || 16 || NVMAP_IOC_PIN_MULT || Returns NotSupported
+| 0xC010010A || Inout || 16 || [[#NVMAP_IOC_PIN_MULT]]
 |-
-| 0xC010010B || Inout || 16 || NVMAP_IOC_UNPIN_MULT || Returns NotSupported
+| 0xC010010B || Inout || 16 || [[#NVMAP_IOC_UNPIN_MULT]]
 |-
-| 0xC008010C || Inout || 8 || NVMAP_IOC_CACHE || Returns NotSupported
+| 0xC008010C || Inout || 8 || [[#NVMAP_IOC_CACHE]]
 |-
-| 0xC004010D || Inout || 4 || || Returns NotSupported
+| 0xC004010D || Inout || 4 || [[#NVMAP_IOC_GET_IVC_ID]]
 |-
-| 0xC008010E || Inout || 8 || [[#NVMAP_IOC_GET_ID]] ||
+| 0xC008010E || Inout || 8 || [[#NVMAP_IOC_GET_ID]]
 |-
-| 0xC004010F || Inout || 4 || || Returns NotSupported
+| 0xC004010F || Inout || 4 || [[#NVMAP_IOC_FROM_IVC_ID]]
 |-
-| 0x40040110 || In || 4 || || Returns NotSupported
+| 0x40040110 || In || 4 || [[#NVMAP_IOC_SET_ALLOCATION_TAG_LABEL]]
 |-
-| 0x00000111 || - || 0 || || Returns NotSupported
+| 0x00000111 || - || 0 || [[#NVMAP_IOC_RESERVE]]
 |-
-| 0x40100112 || In || 16 || NVMAP_IOC_EXPORT_FOR_ARUID ||
+| 0x40100112 || In || 16 || [[#NVMAP_IOC_EXPORT_FOR_ARUID]]
 |-
-| 0x40100113 || In || 16 || NVMAP_IOC_IS_OWNED_BY_ARUID ||
+| 0x40100113 || In || 16 || [[#NVMAP_IOC_IS_OWNED_BY_ARUID]]
 |-
-| 0x40100114 || In || 16 || NVMAP_IOC_REMOVE_EXPORT_FOR_ARUID ||
+| 0x40100114 || In || 16 || [[#NVMAP_IOC_REMOVE_EXPORT_FOR_ARUID]]
 |}
 
 === NVMAP_IOC_CREATE ===
@@ -325,6 +325,9 @@ Creates an nvmap object. Identical to Linux driver.
     __in  u32 size;
     __out u32 handle;
   };
+
+=== NVMAP_IOC_CLAIM ===
+Returns [[#Errors|NotSupported]].
 
 === NVMAP_IOC_FROM_ID ===
 Get handle to an existing nvmap object. Identical to Linux driver.
@@ -358,6 +361,15 @@ This one is completely custom. Partly because the Linux driver passed the handle
     __out u32 flags;    // 1=NOT_FREED_YET
   };
 
+=== NVMAP_IOC_MMAP ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_WRITE ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_READ ===
+Returns [[#Errors|NotSupported]].
+
 === NVMAP_IOC_PARAM ===
 Returns info about a nvmap object. Identical to Linux driver, but extended with further params.
 
@@ -367,6 +379,18 @@ Returns info about a nvmap object. Identical to Linux driver, but extended with 
     __out u32 result;
   };
 
+=== NVMAP_IOC_PIN_MULT ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_UNPIN_MULT ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_CACHE ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_GET_IVC_ID ===
+Returns [[#Errors|NotSupported]].
+
 === NVMAP_IOC_GET_ID ===
 Returns an id for a nvmap object. Identical to Linux driver.
 
@@ -375,133 +399,169 @@ Returns an id for a nvmap object. Identical to Linux driver.
     __in  u32 handle;
   };
 
+=== NVMAP_IOC_FROM_IVC_ID ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_SET_ALLOCATION_TAG_LABEL ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_RESERVE ===
+Returns [[#Errors|NotSupported]].
+
+=== NVMAP_IOC_EXPORT_FOR_ARUID ===
+Binds a nvmap object to an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]].
+
+  struct {
+    __in  u64 aruid;
+    __in  u32 handle;
+    u8        pad[4];
+  };
+
+=== NVMAP_IOC_IS_OWNED_BY_ARUID ===
+Checks if a nvmap object is bound to an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]].
+
+  struct {
+    __in  u64 aruid;
+    __in  u32 handle;
+    u8        pad[4];
+  };
+
+=== NVMAP_IOC_REMOVE_EXPORT_FOR_ARUID ===
+Unbinds a nvmap object from an [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]].
+
+  struct {
+    __in  u64 aruid;
+    __in  u32 handle;
+    u8        pad[4];
+  };
+
 == /dev/nvdisp-ctrl ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x80040212 || Out || 4 || NVDISP_CTRL_GET_NUM_OUTPUTS ||
+| 0x80040212 || Out || 4 || NVDISP_CTRL_GET_NUM_OUTPUTS
 |-
-| 0xC0140213 || Inout || 20 || NVDISP_CTRL_GET_OUTPUT_PROPERTIES ||
+| 0xC0140213 || Inout || 20 || NVDISP_CTRL_GET_OUTPUT_PROPERTIES
 |-
-| 0xC1100214 || Inout || 272 || NVDISP_CTRL_GET_OUTPUT_EDID ||
+| 0xC1100214 || Inout || 272 || NVDISP_CTRL_GET_OUTPUT_EDID
 |-
-| 0xC0040216 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_IN_EVENT ||
+| 0xC0040216 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_IN_EVENT
 |-
-| 0xC0040217 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_OUT_EVENT ||
+| 0xC0040217 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_OUT_EVENT
 |-
-| 0xC0100218 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD0_EVENT ||
+| 0xC0100218 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD0_EVENT
 |-
-| 0xC0100219 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD1_EVENT ||
+| 0xC0100219 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD1_EVENT
 |-
-| 0xC0040220 || Inout || 4 || NVDISP_CTRL_GET_HPD_IRQ ||
+| 0xC0040220 || Inout || 4 || NVDISP_CTRL_GET_HPD_IRQ
 |}
 
 == /dev/nvdisp-disp0, /dev/nvdisp-disp1 ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x40040201 || In || 4 || NVDISP_GET_WINDOW ||
+| 0x40040201 || In || 4 || NVDISP_GET_WINDOW
 |-
-| 0x40040202 || In || 4 || NVDISP_PUT_WINDOW ||
+| 0x40040202 || In || 4 || NVDISP_PUT_WINDOW
 |-
-| 0xC4C80203 || In || 1224 || NVDISP_FLIP ||
+| 0xC4C80203 || In || 1224 || NVDISP_FLIP
 |-
-| 0x80380204 || Out || 56 || NVDISP_GET_MODE ||
+| 0x80380204 || Out || 56 || NVDISP_GET_MODE
 |-
-| 0x40380205 || Out || 56 || NVDISP_SET_MODE ||
+| 0x40380205 || Out || 56 || NVDISP_SET_MODE
 |-
-| 0x430C0206 || In || 780 || NVDISP_SET_LUT ||
+| 0x430C0206 || In || 780 || NVDISP_SET_LUT
 |-
-| 0x40010207 || In || 1 || NVDISP_ENABLE_DISABLE_CRC ||
+| 0x40010207 || In || 1 || NVDISP_ENABLE_DISABLE_CRC
 |-
-| 0x80040208 || Out || 4 || NVDISP_GET_CRC ||
+| 0x80040208 || Out || 4 || NVDISP_GET_CRC
 |-
-| 0x80040209 || Out || 4 || NVDISP_GET_HEAD_STATUS ||
+| 0x80040209 || Out || 4 || NVDISP_GET_HEAD_STATUS
 |-
-| 0xC038020A || Inout || 56 || NVDISP_VALIDATE_MODE ||
+| 0xC038020A || Inout || 56 || NVDISP_VALIDATE_MODE
 |-
-| 0x4018020B || In || 24 || NVDISP_SET_CSC ||
+| 0x4018020B || In || 24 || NVDISP_SET_CSC
 |-
-| 0xC004020C || Inout || 4 || NVDISP_GET_VBLANK_SYNCPT ||
+| 0xC004020C || Inout || 4 || NVDISP_GET_VBLANK_SYNCPT
 |-
-| 0x8040020D || Out || 64 || NVDISP_GET_UNDERFLOWS ||
+| 0x8040020D || Out || 64 || NVDISP_GET_UNDERFLOWS
 |-
-| 0xC99A020E || Inout || 2458 || NVDISP_SET_CMU ||
+| 0xC99A020E || Inout || 2458 || NVDISP_SET_CMU
 |-
-| 0xC004020F || Inout || 4 || NVDISP_DPMS ||
+| 0xC004020F || Inout || 4 || NVDISP_DPMS
 |-
-| 0x80600210 || Out || 96 || NVDISP_GET_AVI_INFOFRAME ||
+| 0x80600210 || Out || 96 || NVDISP_GET_AVI_INFOFRAME
 |-
-| 0x40600211 || In || 96 || NVDISP_SET_AVI_INFOFRAME ||
+| 0x40600211 || In || 96 || NVDISP_SET_AVI_INFOFRAME
 |-
-| 0xEBFC0215 || Inout || 11260 || NVDISP_GET_MODE_DB ||
+| 0xEBFC0215 || Inout || 11260 || NVDISP_GET_MODE_DB
 |-
-| 0xC003021A || Inout || 3 || NVDISP_PANEL_GET_VENDOR_ID ||
+| 0xC003021A || Inout || 3 || NVDISP_PANEL_GET_VENDOR_ID
 |-
-| 0x803C021B || Out || 60 || NVDISP_GET_MODE2 ||
+| 0x803C021B || Out || 60 || NVDISP_GET_MODE2
 |-
-| 0x403C021C || In || 60 || NVDISP_SET_MODE2 ||
+| 0x403C021C || In || 60 || NVDISP_SET_MODE2
 |-
-| 0xC03C021D || Inout || 60 || NVDISP_VALIDATE_MODE2 ||
+| 0xC03C021D || Inout || 60 || NVDISP_VALIDATE_MODE2
 |-
-| 0xEF20021E || Inout || 12064 || NVDISP_GET_MODE_DB2 ||
+| 0xEF20021E || Inout || 12064 || NVDISP_GET_MODE_DB2
 |-
-| 0xC004021F || Inout || 4 || NVDISP_GET_WINMASK ||
+| 0xC004021F || Inout || 4 || NVDISP_GET_WINMASK
 |}
 
 == /dev/nvcec-ctrl ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x40010301 || In || 1 || NVCEC_CTRL_ENABLE ||
+| 0x40010301 || In || 1 || NVCEC_CTRL_ENABLE
 |-
-| 0x804C0302 || Out || 76 || NVCEC_CTRL_GET_PADDR ||
+| 0x804C0302 || Out || 76 || NVCEC_CTRL_GET_PADDR
 |-
-| 0x40040303 || In || 4 || NVCEC_CTRL_SET_LADDR ||
+| 0x40040303 || In || 4 || NVCEC_CTRL_SET_LADDR
 |-
-| 0xC04C0304 || Inout || 76 || NVCEC_CTRL_WRITE ||
+| 0xC04C0304 || Inout || 76 || NVCEC_CTRL_WRITE
 |-
-| 0xC04C0305 || Inout || 76 || NVCEC_CTRL_READ ||
+| 0xC04C0305 || Inout || 76 || NVCEC_CTRL_READ
 |-
-| 0x804C0306 || Out || 76 || NVCEC_CTRL_GET_CONNECTION_STATUS ||
+| 0x804C0306 || Out || 76 || NVCEC_CTRL_GET_CONNECTION_STATUS
 |-
-| 0x804C0307 || Out || 76 || NVCEC_CTRL_GET_WRITE_STATUS ||
+| 0x804C0307 || Out || 76 || NVCEC_CTRL_GET_WRITE_STATUS
 |}
 
 == /dev/nvhdcp_up-ctrl ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0xC4880401 || Inout || 1160 || NVHDCP_READ_M ||
+| 0xC4880401 || Inout || 1160 || NVHDCP_READ_M
 |-
-| 0xC4880402 || Inout || 1160 || NVHDCP_READ_S ||
+| 0xC4880402 || Inout || 1160 || NVHDCP_READ_S
 |-
-| 0x40010403 || In || 1 || NVHDCP_ON_OFF ||
+| 0x40010403 || In || 1 || NVHDCP_ON_OFF
 |-
-| 0xC0080404 || Inout || 8 || NVHDCP_READ_EVENT ||
+| 0xC0080404 || Inout || 8 || NVHDCP_READ_EVENT
 |-
-| 0xC0010405 || Inout || 1 || NVHDCP_EVENTS_ON_OFF ||
+| 0xC0010405 || Inout || 1 || NVHDCP_EVENTS_ON_OFF
 |}
 
 == /dev/nvdcutil-disp0, /dev/nvdcutil-disp1 ==
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x40010501 || In || 1 || NVDCUTIL_SW_HOTPLUG_IN_OUT ||
+| 0x40010501 || In || 1 || NVDCUTIL_SW_HOTPLUG_IN_OUT
 |-
-| 0x40010502 || In || 1 || NVDCUTIL_VIRTUAL_EDID_ON_OFF ||
+| 0x40010502 || In || 1 || NVDCUTIL_VIRTUAL_EDID_ON_OFF
 |-
-| 0x42040503 || In || 1056 || NVDCUTIL_VIRTUAL_EDID_SET_DATA ||
+| 0x42040503 || In || 1056 || NVDCUTIL_VIRTUAL_EDID_SET_DATA
 |-
-| 0x803C0504 || Out || 60 || NVDCUTIL_GET_MODE ||
+| 0x803C0504 || Out || 60 || NVDCUTIL_GET_MODE
 |-
-| 0x40010505 || In || 1 || NVDCUTIL_TELEMETRY_TEST_ON_OFF ||
+| 0x40010505 || In || 1 || NVDCUTIL_TELEMETRY_TEST_ON_OFF
 |-
-| 0x400C0506 || In || 12 || NVDCUTIL_DSI_PACKET_SHORT_WRITE ||
+| 0x400C0506 || In || 12 || NVDCUTIL_DSI_PACKET_SHORT_WRITE
 |-
-| 0x40F80507 || In || 248 || NVDCUTIL_DSI_PACKET_LONG_WRITE ||
+| 0x40F80507 || In || 248 || NVDCUTIL_DSI_PACKET_LONG_WRITE
 |-
-| 0xC0F40508 || Inout || 244 || NVDCUTIL_DSI_PACKET_READ ||
+| 0xC0F40508 || Inout || 244 || NVDCUTIL_DSI_PACKET_READ
 |}
 
 == /dev/nvsched-ctrl ==
@@ -510,43 +570,43 @@ This is a customized scheduler device.
 The way this device is exposed and configured is exclusive to the Switch, since other sources don't have an actual interface for the scheduler.
 
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x00000601 || - || 0 || [[#NVSCHED_CTRL_ENABLE]] ||
+| 0x00000601 || - || 0 || [[#NVSCHED_CTRL_ENABLE]]
 |-
-| 0x00000602 || - || 0 || [[#NVSCHED_CTRL_DISABLE]] ||
+| 0x00000602 || - || 0 || [[#NVSCHED_CTRL_DISABLE]]
 |-
-| 0x40180603 || In || 24 || [[#NVSCHED_CTRL_ADD_APPLICATION]] ||
+| 0x40180603 || In || 24 || [[#NVSCHED_CTRL_ADD_APPLICATION]]
 |-
-| 0x40180604 || In || 24 || [[#NVSCHED_CTRL_UPDATE_APPLICATION]] ||
+| 0x40180604 || In || 24 || [[#NVSCHED_CTRL_UPDATE_APPLICATION]]
 |-
-| 0x40080605 || In || 8 || [[#NVSCHED_CTRL_REMOVE_APPLICATION]] ||
+| 0x40080605 || In || 8 || [[#NVSCHED_CTRL_REMOVE_APPLICATION]]
 |-
-| 0x80080606 || Out || 8 || [[#NVSCHED_CTRL_GET_ID]] ||
+| 0x80080606 || Out || 8 || [[#NVSCHED_CTRL_GET_ID]]
 |-
-| 0x80080607 || Out || 8 || [[#NVSCHED_CTRL_ADD_RUNLIST]] ||
+| 0x80080607 || Out || 8 || [[#NVSCHED_CTRL_ADD_RUNLIST]]
 |-
-| 0x40180608 || In || 24 || [[#NVSCHED_CTRL_UPDATE_RUNLIST]] ||
+| 0x40180608 || In || 24 || [[#NVSCHED_CTRL_UPDATE_RUNLIST]]
 |-
-| 0x40100609 || In || 16 || [[#NVSCHED_CTRL_LINK_RUNLIST]] ||
+| 0x40100609 || In || 16 || [[#NVSCHED_CTRL_LINK_RUNLIST]]
 |-
-| 0x4010060A || In || 16 || [[#NVSCHED_CTRL_UNLINK_RUNLIST]] ||
+| 0x4010060A || In || 16 || [[#NVSCHED_CTRL_UNLINK_RUNLIST]]
 |-
-| 0x4008060B || In || 8 || [[#NVSCHED_CTRL_REMOVE_RUNLIST]] ||
+| 0x4008060B || In || 8 || [[#NVSCHED_CTRL_REMOVE_RUNLIST]]
 |-
-| 0x8001060C || Out || 1 || [[#NVSCHED_CTRL_HAS_OVERRUN_EVENT]] ||
+| 0x8001060C || Out || 1 || [[#NVSCHED_CTRL_HAS_OVERRUN_EVENT]]
 |-
-| 0x8010060D || Out || 16 || [[#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT]] ||
+| 0x8010060D || Out || 16 || [[#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT]]
 |-
-| 0x400C060E || In || 12 || [[#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE]] ||
+| 0x400C060E || In || 12 || [[#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE]]
 |-
-| 0x4008060F || In || 8 || [[#NVSCHED_CTRL_DETACH_APPLICATION]] ||
+| 0x4008060F || In || 8 || [[#NVSCHED_CTRL_DETACH_APPLICATION]]
 |-
-| 0x40100610 || In || 16 || ||
+| 0x40100610 || In || 16 ||
 |-
-| 0x40100611 || In || 16 || ||
+| 0x40100611 || In || 16 ||
 |-
-| 0x40010612 || In || 1 || ||
+| 0x40010612 || In || 1 ||
 |}
 
 === NVSCHED_CTRL_ENABLE ===
@@ -661,11 +721,11 @@ Places the given application in detached state.
 Added in firmware version 3.0.0.
 
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA ||
+| 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA
 |-
-| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DATA_EX ||
+| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DATA_EX
 |}
 
 == /dev/nvhost-as-gpu ==
@@ -674,29 +734,29 @@ Each fd opened to this device creates an address space. An address space is then
 Once a nvgpu channel has been bound to an address space it cannot be unbound. There is no support for allowing an nvgpu channel to change from one address space to another (or from one to none).
                                                                                                                               
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x40044101 || In || 4 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]] ||
+| 0x40044101 || In || 4 || [[#NVGPU_AS_IOCTL_BIND_CHANNEL]]
 |-
-| 0xC0184102 || Inout || 24 || [[#NVGPU_AS_IOCTL_ALLOC_SPACE]] ||
+| 0xC0184102 || Inout || 24 || [[#NVGPU_AS_IOCTL_ALLOC_SPACE]]
 |-
-| 0xC0104103 || Inout || 16 || [[#NVGPU_AS_IOCTL_FREE_SPACE]] ||
+| 0xC0104103 || Inout || 16 || [[#NVGPU_AS_IOCTL_FREE_SPACE]]
 |-
-| 0xC0184104 || Inout || 24 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]] ||
+| 0xC0184104 || Inout || 24 || [[#NVGPU_AS_IOCTL_MAP_BUFFER]]
 |-
-| 0xC0084105 || Inout || 8 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]] ||
+| 0xC0084105 || Inout || 8 || [[#NVGPU_AS_IOCTL_UNMAP_BUFFER]]
 |-
-| 0xC0284106 || Inout || 40 || [[#NVGPU_AS_IOCTL_MODIFY]] ||
+| 0xC0284106 || Inout || 40 || [[#NVGPU_AS_IOCTL_MODIFY]]
 |-
-| 0x40104107 || In || 16 || [[#NVGPU_AS_IOCTL_INITIALIZE]] ||
+| 0x40104107 || In || 16 || [[#NVGPU_AS_IOCTL_INITIALIZE]]
 |-
-| 0xC0404108 || Inout || 64 || [[#NVGPU_AS_IOCTL_GET_VA_REGIONS]] ||
+| 0xC0404108 || Inout || 64 || [[#NVGPU_AS_IOCTL_GET_VA_REGIONS]]
 |-
-| 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]] ||
+| 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]]
 |-
-| 0xC038410A || Inout || 56 || NVGPU_AS_IOCTL_MAP_BUFFER_EX ||
+| 0xC038410A || Inout || 56 || NVGPU_AS_IOCTL_MAP_BUFFER_EX
 |-
-| 0xC0??4114 || Inout || Variable || [[#NVGPU_AS_IOCTL_REMAP]] ||
+| 0xC0??4114 || Inout || Variable || [[#NVGPU_AS_IOCTL_REMAP]]
 |}
 
 === NVGPU_AS_IOCTL_BIND_CHANNEL ===
@@ -829,58 +889,73 @@ Nintendo's custom implementation of address space remapping.
 Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
 
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x40084401 || In || 8 || NVGPU_DBG_GPU_IOCTL_BIND_CHANNEL ||
+| 0x40084401 || In || 8 || NVGPU_DBG_GPU_IOCTL_BIND_CHANNEL
 |-
-| 0xC0??4402 || Inout || Variable || NVGPU_DBG_GPU_IOCTL_REG_OPS ||
+| 0xC0??4402 || Inout || Variable || NVGPU_DBG_GPU_IOCTL_REG_OPS
 |-
-| 0x40084403 || In || 8 || NVGPU_DBG_GPU_IOCTL_EVENTS_CTRL ||
+| 0x40084403 || In || 8 || NVGPU_DBG_GPU_IOCTL_EVENTS_CTRL
 |-
-| 0x40044404 || In || 4 || NVGPU_DBG_GPU_IOCTL_POWERGATE ||
+| 0x40044404 || In || 4 || NVGPU_DBG_GPU_IOCTL_POWERGATE
 |-
-| 0x40044405 || In || 4 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE ||
+| 0x40044405 || In || 4 || NVGPU_DBG_GPU_IOCTL_SMPC_CTXSW_MODE
 |-
-| 0x40044406 || In || 4 || NVGPU_DBG_GPU_IOCTL_SUSPEND_RESUME_ALL_SMS ||
+| 0x40044406 || In || 4 || NVGPU_DBG_GPU_IOCTL_SUSPEND_RESUME_ALL_SMS
 |-
-| 0xC0184407 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP ||
+| 0xC0184407 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_PERFBUF_MAP
 |-
-| 0x40084408 || In || 8 || NVGPU_DBG_GPU_IOCTL_PERFBUF_UNMAP ||
+| 0x40084408 || In || 8 || NVGPU_DBG_GPU_IOCTL_PERFBUF_UNMAP
 |-
-| 0x40084409 || In || 8 || NVGPU_DBG_GPU_IOCTL_PC_SAMPLING ||
+| 0x40084409 || In || 8 || NVGPU_DBG_GPU_IOCTL_PC_SAMPLING
 |-
-| 0x4008440A || In || 8 || NVGPU_DBG_GPU_IOCTL_TIMEOUT ||
+| 0x4008440A || In || 8 || NVGPU_DBG_GPU_IOCTL_TIMEOUT
 |-
-| 0x8008440B || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT ||
+| 0x8008440B || Out || 8 || NVGPU_DBG_GPU_IOCTL_GET_TIMEOUT
 |-
-| 0x8004440C || Out || 4 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT_SIZE ||
+| 0x8004440C || Out || 4 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT_SIZE
 |-
-| 0x0000440D || None || 0 || NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT || Uses Ioctl3.
+| 0x0000440D || None || 0 || [[#NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT]]
 |-
-| 0xC018440F || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PDES ||
+| 0xC018440F || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PDES
 |-
-| 0xC0104410 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES || Uses Ioctl3.
+| 0xC0104410 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES
 |-
-| 0xC0184411 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PTES ||
+| 0xC0184411 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PTES
 |-
-| 0xC0104412 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES || Uses Ioctl3.
+| 0xC0104412 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES
 |-
-| 0xC0684413 || Inout || 104 || NVGPU_DBG_GPU_IOCTL_GET_COMPTAG_INFO ||
+| 0xC0684413 || Inout || 104 || NVGPU_DBG_GPU_IOCTL_GET_COMPTAG_INFO
 |-
-| 0xC0184414 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS || Uses Ioctl3.
+| 0xC0184414 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS
 |-
-| 0xC0184415 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS || Uses Ioctl2.
+| 0xC0184415 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS
 |-
-| 0xC0104416 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_COMPTAGS ||
+| 0xC0104416 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_COMPTAGS
 |-
-| 0xC0104417 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_COMPTAGS ||
+| 0xC0104417 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_COMPTAGS
 |-
-| 0xC0104418 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_PA ||
+| 0xC0104418 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_PA
 |-
-| 0xC0104419 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_PA ||
+| 0xC0104419 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_FREE_RESERVED_PA
 |-
-| 0xC018441A || Inout || 24 || NVGPU_DBG_GPU_IOCTL_LAZY_ALLOC_RESERVED_PA ||
+| 0xC018441A || Inout || 24 || NVGPU_DBG_GPU_IOCTL_LAZY_ALLOC_RESERVED_PA
 |}
+
+=== NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT ===
+Uses [[#Ioctl3|Ioctl3]].
+
+=== NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES ===
+Uses [[#Ioctl3|Ioctl3]].
+
+=== NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES ===
+Uses [[#Ioctl3|Ioctl3]].
+
+=== NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS ===
+Uses [[#Ioctl3|Ioctl3]].
+
+=== NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS ===
+Uses [[#Ioctl2|Ioctl2]].
 
 == /dev/nvhost-prof-gpu ==
 Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugModeFlag is set.
@@ -891,55 +966,55 @@ This device is identical to [[#/dev/nvhost-dbg-gpu|/dev/nvhost-dbg-gpu]].
 This device is for global (context independent) operations on the gpu.  
                                                                                                                                                
 {| class="wikitable" border="1"
-! Value || Direction || Size || Description || Notes
+! Value || Direction || Size || Description
 |-
-| 0x80044701 || Out || 4 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE]] ||
+| 0x80044701 || Out || 4 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE]]
 |-
-| 0x80284702 || Out || 40 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_INFO]] ||
+| 0x80284702 || Out || 40 || [[#NVGPU_GPU_IOCTL_ZCULL_GET_INFO]]
 |-
-| 0x402C4703 || In || 44 || [[#NVGPU_GPU_IOCTL_ZBC_SET_TABLE]] ||
+| 0x402C4703 || In || 44 || [[#NVGPU_GPU_IOCTL_ZBC_SET_TABLE]]
 |-
-| 0xC0344704 || Inout || 52 || [[#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE]] ||
+| 0xC0344704 || Inout || 52 || [[#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE]]
 |-
-| 0xC0B04705 || Inout || 176 || [[#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS]] ||
+| 0xC0B04705 || Inout || 176 || [[#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS]]
 |-
-| 0xC0184706 || Inout || 24 || NVGPU_GPU_IOCTL_GET_TPC_MASKS ||
+| 0xC0184706 || Inout || 24 || NVGPU_GPU_IOCTL_GET_TPC_MASKS
 |-
-| 0x40084707 || In || 8 || [[#NVGPU_GPU_IOCTL_FLUSH_L2]] ||
+| 0x40084707 || In || 8 || [[#NVGPU_GPU_IOCTL_FLUSH_L2]]
 |-
-| 0x4008470D || In || 8 || NVGPU_GPU_IOCTL_INVAL_ICACHE ||
+| 0x4008470D || In || 8 || NVGPU_GPU_IOCTL_INVAL_ICACHE
 |-
-| 0x4008470E || In || 8 || NVGPU_GPU_IOCTL_SET_MMUDEBUG_MODE ||
+| 0x4008470E || In || 8 || NVGPU_GPU_IOCTL_SET_MMUDEBUG_MODE
 |-
-| 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE ||
+| 0x4010470F || In || 16 || NVGPU_GPU_IOCTL_SET_SM_DEBUG_MODE
 |-
-| 0xC0304710</br>([1.0.0-6.1.0] 0xC0084710) || Inout || 48 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE ||
+| 0xC0304710</br>([1.0.0-6.1.0] 0xC0084710) || Inout || 48 || NVGPU_GPU_IOCTL_WAIT_FOR_PAUSE
 |-
-| 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS ||
+| 0x80084711 || Out || 8 || NVGPU_GPU_IOCTL_GET_TPC_EXCEPTION_EN_STATUS
 |-
-| 0x80084712 || Out || 8 || NVGPU_GPU_IOCTL_NUM_VSMS ||
+| 0x80084712 || Out || 8 || NVGPU_GPU_IOCTL_NUM_VSMS
 |-
-| 0xC0044713 || Inout || 4 || NVGPU_GPU_IOCTL_VSMS_MAPPING ||
+| 0xC0044713 || Inout || 4 || NVGPU_GPU_IOCTL_VSMS_MAPPING
 |-
-| 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK]] ||
+| 0x80084714 || Out || 8 || [[#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK]]
 |-
-| 0x80044715 || Out || 4 || NVGPU_GPU_IOCTL_PMU_GET_GPU_LOAD ||
+| 0x80044715 || Out || 4 || NVGPU_GPU_IOCTL_PMU_GET_GPU_LOAD
 |-
-| 0x40084716 || In || 8 || NVGPU_GPU_IOCTL_SET_CG_CONTROLS ||
+| 0x40084716 || In || 8 || NVGPU_GPU_IOCTL_SET_CG_CONTROLS
 |-
-| 0xC0084717 || Inout || 8 || NVGPU_GPU_IOCTL_GET_CG_CONTROLS ||
+| 0xC0084717 || Inout || 8 || NVGPU_GPU_IOCTL_GET_CG_CONTROLS
 |-
-| 0x40084718 || In || 8 || NVGPU_GPU_IOCTL_SET_PG_CONTROLS ||
+| 0x40084718 || In || 8 || NVGPU_GPU_IOCTL_SET_PG_CONTROLS
 |-
-| 0xC0084719 || Inout || 8 || NVGPU_GPU_IOCTL_GET_PG_CONTROLS ||
+| 0xC0084719 || Inout || 8 || NVGPU_GPU_IOCTL_GET_PG_CONTROLS
 |-
-| 0x8018471A || Out || 24 || NVGPU_GPU_IOCTL_PMU_DUMP_ELPG_STATS ||
+| 0x8018471A || Out || 24 || NVGPU_GPU_IOCTL_PMU_DUMP_ELPG_STATS
 |-
-| 0xC008471B || Inout || 8 || NVGPU_GPU_IOCTL_GET_ERROR_CHANNEL_USER_DATA ||
+| 0xC008471B || Inout || 8 || NVGPU_GPU_IOCTL_GET_ERROR_CHANNEL_USER_DATA
 |-
-| 0xC010471C || Inout || 16 || NVGPU_GPU_IOCTL_GET_GPU_TIME ||
+| 0xC010471C || Inout || 16 || NVGPU_GPU_IOCTL_GET_GPU_TIME
 |-
-| 0xC108471D || Inout || 264 || NVGPU_GPU_IOCTL_GET_CPU_TIME_CORRELATION_INFO ||
+| 0xC108471D || Inout || 264 || NVGPU_GPU_IOCTL_GET_CPU_TIME_CORRELATION_INFO
 |}
 
 === NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE ===
@@ -1069,90 +1144,93 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 
 == Channel Ioctls ==
 {| class="wikitable" border="1"
-! Value || Size || Description || Notes
+! Value || Size || Description
 |-
-| 0xC0??0001 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT || Seen on 1.0.0.
+| 0xC0??0001 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT
 |-
-| 0xC0080002 || 8 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT || Seen on 1.0.0.
+| 0xC0080002 || 8 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT
 |-
-| 0xC0080003 || 8 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE || Seen on 1.0.0.
+| 0xC0080003 || 8 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE
 |-
-| 0xC0080004 || 8 || NVHOST_IOCTL_CHANNEL_GET_MODMUTEX || Seen on 1.0.0. Stubbed; does a debug print and returns 0.
+| 0xC0080004 || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_MODMUTEX]]
 |-
-| 0x40040007 || 4 || NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT || Seen on 1.0.0.
+| 0x40040007 || 4 || NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT
 |-
-| 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE || Seen on 1.0.0.
+| 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE
 |-
-| 0xC0??0009 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER || Seen on 1.0.0.
+| 0xC0??0009 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER
 |-
-| 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER || Seen on 1.0.0.
+| 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER
 |-
-| 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX || Seen on 1.0.0. This one sets a u32, and bool based on input.
+| 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX
 |-
-| 0xC0080014 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE || Seen on 1.0.0.
+| 0xC0080014 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE
 |-
-| 0xC0080023 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE_EX ||
+| 0xC0080023 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE_EX
 |-
-| 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX ||
+| 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX
 |-
-| 0xC0??0025 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX ||
+| 0xC0??0025 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX
 |-
-| 0xC0??0026 || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX ||
+| 0xC0??0026 || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX
 |- style="border-top: double"
-| 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]] || Seen on 1.0.0.
+| 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]]
 |-
-| 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_TIMEOUT || Seen on 1.0.0.
+| 0x40044803 || 4 || NVGPU_IOCTL_CHANNEL_SET_TIMEOUT
 |-
-| 0x40084805 || 8 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO]] || Seen on 1.0.0.
+| 0x40084805 || 8 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO]]
 |-
-| 0x40184806 || || NVGPU_IOCTL_CHANNEL_WAIT || Seen on 1.0.0.
+| 0x40184806 || || NVGPU_IOCTL_CHANNEL_WAIT
 |-
-| 0xC0044807 || 4 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS || Seen on 1.0.0.
+| 0xC0044807 || 4 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS
 |-
-| 0xC0??4808 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]] || Seen on 1.0.0.
+| 0xC0??4808 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]]
 |-
-| 0xC0104809 || 16 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX]] || Seen on 1.0.0.
+| 0xC0104809 || 16 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_OBJ_CTX]]
 |-
-| 0x4008480A || || NVHOST_IOCTL_CHANNEL_FREE_OBJ_CTX || Seen on 1.0.0.
+| 0x4008480A || || NVHOST_IOCTL_CHANNEL_FREE_OBJ_CTX
 |-
-| 0xC010480B || 16 || [[#NVGPU_IOCTL_CHANNEL_ZCULL_BIND]] || Seen on 1.0.0.
+| 0xC010480B || 16 || [[#NVGPU_IOCTL_CHANNEL_ZCULL_BIND]]
 |-
-| 0xC018480C || 24 || [[#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER]] || Seen on 1.0.0.
+| 0xC018480C || 24 || [[#NVGPU_IOCTL_CHANNEL_SET_ERROR_NOTIFIER]]
 |-
-| 0x4004480D || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_PRIORITY]] || Seen on 1.0.0.
+| 0x4004480D || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_PRIORITY]]
 |-
-| 0x0000480E || 0 || [[#NVGPU_IOCTL_CHANNEL_ENABLE]] || Seen on 1.0.0.
+| 0x0000480E || 0 || [[#NVGPU_IOCTL_CHANNEL_ENABLE]]
 |-
-| 0x0000480F || 0 || [[#NVGPU_IOCTL_CHANNEL_DISABLE]] || Seen on 1.0.0.
+| 0x0000480F || 0 || [[#NVGPU_IOCTL_CHANNEL_DISABLE]]
 |-
-| 0x00004810 || 0 || [[#NVGPU_IOCTL_CHANNEL_PREEMPT]] || Seen on 1.0.0.
+| 0x00004810 || 0 || [[#NVGPU_IOCTL_CHANNEL_PREEMPT]]
 |-
-| 0x00004811 || 0 || [[#NVGPU_IOCTL_CHANNEL_FORCE_RESET]] || Seen on 1.0.0.
+| 0x00004811 || 0 || [[#NVGPU_IOCTL_CHANNEL_FORCE_RESET]]
 |-
-| 0x40084812 || 8 || [[#NVGPU_IOCTL_CHANNEL_EVENT_ID_CONTROL]] || Seen on 1.0.0.
+| 0x40084812 || 8 || [[#NVGPU_IOCTL_CHANNEL_EVENT_ID_CONTROL]]
 |-
-| 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT || Seen on 1.0.0.
+| 0xC0104813 || 16 || NVGPU_IOCTL_CHANNEL_CYCLE_STATS_SNAPSHOT
 |-
-| 0x80804816 || 128 || NVGPU_IOCTL_CHANNEL_GET_ERROR_INFO || Seen on 1.0.0.
+| 0x80804816 || 128 || NVGPU_IOCTL_CHANNEL_GET_ERROR_INFO
 |-
-| 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR_NOTIFICATION]] || Seen on 1.0.0.
+| 0xC0104817 || 16 || [[#NVGPU_IOCTL_CHANNEL_GET_ERROR_NOTIFICATION]]
 |-
-| 0x40204818 || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX]] || Seen on 1.0.0.
+| 0x40204818 || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX]]
 |-
-| 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY]] || Seen on 1.0.0.
+| 0xC0??4819 || Variable || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY]]
 |-
-| 0xC020481A || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2]] || Seen on 1.0.0.
+| 0xC020481A || 32 || [[#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2]]
 |-
-| 0xC018481B || 24 ||  || Uses Ioctl2.
+| 0xC018481B || 24 || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX]]
 |-
-| 0xC018481C || 24 ||  || Uses Ioctl2.
+| 0xC018481C || 24 || [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX2]]
 |-
-| 0xC004481D || 4 ||  ||
+| 0xC004481D || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_TIMESLICE]]
 |- style="border-top: double"
-| 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA || Seen on 1.0.0.
+| 0x40084714 || 8 || NVGPU_IOCTL_CHANNEL_SET_USER_DATA
 |-
-| 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA || Seen on 1.0.0.
+| 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA
 |}
+
+=== NVHOST_IOCTL_CHANNEL_GET_MODMUTEX ===
+Stubbed. Does a debug print and returns 0.
 
 === NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ===
 Binds a nvmap object to this channel. Identical to Linux driver.
@@ -1296,6 +1374,19 @@ Allocates gpfifo entries with additional parameters and returns a fence. Exclusi
     u32 __unk1;                // in
     u32 __unk2;                // in
     u32 __unk3;                // in
+  };
+
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX ===
+Identical to [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO|NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]]. Uses [[#Ioctl2|Ioctl2]].
+
+=== NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX2 ===
+Identical to [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO|NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]]. Uses [[#Ioctl2|Ioctl2]].
+
+=== NVGPU_IOCTL_CHANNEL_SET_TIMESLICE ===
+Change channel's timeslice. Identical to Linux driver.
+
+  struct {
+    __in u32 timeslice;
   };
 
 = nvmemp =
