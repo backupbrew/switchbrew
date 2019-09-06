@@ -880,33 +880,33 @@ Nintendo's custom implementation of address space remapping.
 Returns [NotSupported](#Errors "wikilink") on Open unless
 nn::settings::detail::GetDebugModeFlag is set.
 
-| Value      | Direction | Size     | Description                                                                                  |
-| ---------- | --------- | -------- | -------------------------------------------------------------------------------------------- |
-| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL                                                        |
-| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS                                                             |
-| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL                                                         |
-| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE                                                            |
-| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE                                                    |
-| 0x40044406 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SUSPEND\_RESUME\_ALL\_SMS                                            |
-| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP                                                         |
-| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP                                                       |
-| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                                                         |
-| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                                                              |
-| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                                                         |
-| 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE                                               |
-| 0x0000440D | None      | 0        | [\#NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT](#NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT "wikilink") |
-| 0xC018440F | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PDES                                       |
-| 0xC0104410 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PDES                                            |
-| 0xC0184411 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PTES                                       |
-| 0xC0104412 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PTES                                            |
-| 0xC0684413 | Inout     | 104      | NVGPU\_DBG\_GPU\_IOCTL\_GET\_COMPTAG\_INFO                                                   |
-| 0xC0184414 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_READ\_COMPTAGS                                                       |
-| 0xC0184415 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_WRITE\_COMPTAGS                                                      |
-| 0xC0104416 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_COMPTAGS                                                    |
-| 0xC0104417 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_COMPTAGS                                             |
-| 0xC0104418 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_PA                                                          |
-| 0xC0104419 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_PA                                                   |
-| 0xC018441A | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_LAZY\_ALLOC\_RESERVED\_PA                                            |
+| Value      | Direction | Size     | Description                                                                                                  |
+| ---------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------ |
+| 0x40084401 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_BIND\_CHANNEL                                                                        |
+| 0xC0??4402 | Inout     | Variable | NVGPU\_DBG\_GPU\_IOCTL\_REG\_OPS                                                                             |
+| 0x40084403 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_EVENTS\_CTRL                                                                         |
+| 0x40044404 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_POWERGATE                                                                            |
+| 0x40044405 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SMPC\_CTXSW\_MODE                                                                    |
+| 0x40044406 | In        | 4        | NVGPU\_DBG\_GPU\_IOCTL\_SUSPEND\_RESUME\_ALL\_SMS                                                            |
+| 0xC0184407 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_MAP                                                                         |
+| 0x40084408 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PERFBUF\_UNMAP                                                                       |
+| 0x40084409 | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_PC\_SAMPLING                                                                         |
+| 0x4008440A | In        | 8        | NVGPU\_DBG\_GPU\_IOCTL\_TIMEOUT                                                                              |
+| 0x8008440B | Out       | 8        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_TIMEOUT                                                                         |
+| 0x8004440C | Out       | 4        | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT\_SIZE                                                               |
+| 0x0000440D | None      | 0        | [\#NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT](#NVGPU_DBG_GPU_IOCTL_GET_GR_CONTEXT "wikilink")                 |
+| 0xC018440F | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PDES                                                       |
+| 0xC0104410 | Inout     | 16       | [\#NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PDES](#NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES "wikilink") |
+| 0xC0184411 | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_NUM\_PTES                                                       |
+| 0xC0104412 | Inout     | 16       | [\#NVGPU\_DBG\_GPU\_IOCTL\_GET\_GPU\_VA\_RANGE\_PTES](#NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES "wikilink") |
+| 0xC0684413 | Inout     | 104      | NVGPU\_DBG\_GPU\_IOCTL\_GET\_COMPTAG\_INFO                                                                   |
+| 0xC0184414 | Inout     | 24       | [\#NVGPU\_DBG\_GPU\_IOCTL\_READ\_COMPTAGS](#NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS "wikilink")                    |
+| 0xC0184415 | Inout     | 24       | [\#NVGPU\_DBG\_GPU\_IOCTL\_WRITE\_COMPTAGS](#NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS "wikilink")                  |
+| 0xC0104416 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_COMPTAGS                                                                    |
+| 0xC0104417 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_COMPTAGS                                                             |
+| 0xC0104418 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_RESERVE\_PA                                                                          |
+| 0xC0104419 | Inout     | 16       | NVGPU\_DBG\_GPU\_IOCTL\_FREE\_RESERVED\_PA                                                                   |
+| 0xC018441A | Inout     | 24       | NVGPU\_DBG\_GPU\_IOCTL\_LAZY\_ALLOC\_RESERVED\_PA                                                            |
 
 ### NVGPU\_DBG\_GPU\_IOCTL\_GET\_GR\_CONTEXT
 
@@ -1227,7 +1227,7 @@ rather than using a shared memory buffer.
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
 
-Change channel's priority. Identical to Linux driver.
+Changes channel's priority. Identical to Linux driver.
 
 ` struct {`  
 `   __in u32 priority;    // 0x32 is low, 0x64 is medium and 0x96 is high`  
@@ -1329,7 +1329,7 @@ Uses [Ioctl2](#Ioctl2 "wikilink").
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_TIMESLICE
 
-Change channel's timeslice. Identical to Linux driver.
+Changes channel's timeslice. Identical to Linux driver.
 
 ` struct {`  
 `   __in u32 timeslice;`  

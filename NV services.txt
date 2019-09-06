@@ -919,17 +919,17 @@ Returns [[#Errors|NotSupported]] on Open unless nn::settings::detail::GetDebugMo
 |-
 | 0xC018440F || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PDES
 |-
-| 0xC0104410 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES
+| 0xC0104410 || Inout || 16 || [[#NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PDES]]
 |-
 | 0xC0184411 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_NUM_PTES
 |-
-| 0xC0104412 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES
+| 0xC0104412 || Inout || 16 || [[#NVGPU_DBG_GPU_IOCTL_GET_GPU_VA_RANGE_PTES]]
 |-
 | 0xC0684413 || Inout || 104 || NVGPU_DBG_GPU_IOCTL_GET_COMPTAG_INFO
 |-
-| 0xC0184414 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS
+| 0xC0184414 || Inout || 24 || [[#NVGPU_DBG_GPU_IOCTL_READ_COMPTAGS]]
 |-
-| 0xC0184415 || Inout || 24 || NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS
+| 0xC0184415 || Inout || 24 || [[#NVGPU_DBG_GPU_IOCTL_WRITE_COMPTAGS]]
 |-
 | 0xC0104416 || Inout || 16 || NVGPU_DBG_GPU_IOCTL_RESERVE_COMPTAGS
 |-
@@ -1300,7 +1300,7 @@ Initializes the error notifier for this channel. Unlike for the Linux kernel, th
   };
 
 === NVGPU_IOCTL_CHANNEL_SET_PRIORITY ===
-Change channel's priority. Identical to Linux driver.
+Changes channel's priority. Identical to Linux driver.
 
   struct {
     __in u32 priority;    // 0x32 is low, 0x64 is medium and 0x96 is high
@@ -1383,7 +1383,7 @@ Identical to [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO|NVGPU_IOCTL_CHANNEL_SUBMIT_GPF
 Identical to [[#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO|NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO]]. Uses [[#Ioctl2|Ioctl2]].
 
 === NVGPU_IOCTL_CHANNEL_SET_TIMESLICE ===
-Change channel's timeslice. Identical to Linux driver.
+Changes channel's timeslice. Identical to Linux driver.
 
   struct {
     __in u32 timeslice;
