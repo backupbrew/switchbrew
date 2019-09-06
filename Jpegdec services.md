@@ -14,4 +14,7 @@ Takes an input u32 **width**, an input u32 **height**, an input
 [ScreenShotDecodeOption](Capture%20services#ScreenShotDecodeOption.md##ScreenShotDecodeOption "wikilink"),
 a type-0x46 output buffer, a type-0x5 input buffer, and no output.
 
+The type-0x46 buffer contains the RGBA8 image data. The type-0x5 buffer
+contains the input JPEG data.
+
 [Category:Services](Category:Services "wikilink")
