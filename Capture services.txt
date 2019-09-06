@@ -616,6 +616,11 @@ Official sw only uses this in <code>nn::album</code> funcs which convert this to
 
 This is "nn::album::AlbumFileAttribute". This is a 0x10-byte struct. See also [[#ScreenShotAttributeForApplication]].
 
+= AlbumMovieReadStreamHandle =
+This is "nn::capsrv::AlbumMovieReadStreamHandle" / "nn::album::MovieStreamHandle".
+
+This is an u64 stream handle.
+
 = Notes =
 capsrv is responsible for validating the MACs for screenshots stored on the SD card, if the setting capsrv!enable_album_screenshot_filedata_verification is non-zero. 
 

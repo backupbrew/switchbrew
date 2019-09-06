@@ -594,6 +594,13 @@ This is "nn::album::AlbumFileAttribute". This is a 0x10-byte struct. See
 also
 [\#ScreenShotAttributeForApplication](#ScreenShotAttributeForApplication "wikilink").
 
+# AlbumMovieReadStreamHandle
+
+This is "nn::capsrv::AlbumMovieReadStreamHandle" /
+"nn::album::MovieStreamHandle".
+
+This is an u64 stream handle.
+
 # Notes
 
 capsrv is responsible for validating the MACs for screenshots stored on
