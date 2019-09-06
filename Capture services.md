@@ -369,6 +369,8 @@ Takes an input u64
 [\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
 no output.
 
+Unused by official sw.
+
 # ShimLibraryVersion
 
 This is a version field. Official sw uses func

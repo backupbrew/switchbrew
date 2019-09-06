@@ -355,6 +355,8 @@ Takes a type-0x6 output buffer, an input u64 [[#AlbumMovieReadStreamHandle]], an
 === GetAlbumMovieReadStreamBrokenReason ===
 Takes an input u64 [[#AlbumMovieReadStreamHandle]], no output.
 
+Unused by official sw.
+
 = ShimLibraryVersion =
 This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands (the input for those cmds must match value 1).
 
