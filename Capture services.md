@@ -322,13 +322,52 @@ This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
 
 This was added with \[5.0.0+\].
 
-| Cmd  | Name                                  |
-| ---- | ------------------------------------- |
-| 2001 | OpenAlbumMovieReadStream              |
-| 2002 | CloseAlbumMovieReadStream             |
-| 2003 | GetAlbumMovieReadStreamMovieDataSize  |
-| 2004 | ReadMovieDataFromAlbumMovieReadStream |
-| 2005 | GetAlbumMovieReadStreamBrokenReason   |
+This is opened prior to using
+[\#OpenAlbumMovieReadStream](#OpenAlbumMovieReadStream "wikilink"), when
+it previously wasn't opened. Official sw only closes this session when
+closing caps:u, not when using
+[\#CloseAlbumMovieReadStream](#CloseAlbumMovieReadStream "wikilink").
+
+| Cmd  | Name                                                                                         |
+| ---- | -------------------------------------------------------------------------------------------- |
+| 2001 | [\#OpenAlbumMovieReadStream](#OpenAlbumMovieReadStream "wikilink")                           |
+| 2002 | [\#CloseAlbumMovieReadStream](#CloseAlbumMovieReadStream "wikilink")                         |
+| 2003 | [\#GetAlbumMovieReadStreamMovieDataSize](#GetAlbumMovieReadStreamMovieDataSize "wikilink")   |
+| 2004 | [\#ReadMovieDataFromAlbumMovieReadStream](#ReadMovieDataFromAlbumMovieReadStream "wikilink") |
+| 2005 | [\#GetAlbumMovieReadStreamBrokenReason](#GetAlbumMovieReadStreamBrokenReason "wikilink")     |
+
+### OpenAlbumMovieReadStream
+
+Takes a PID, an input
+[\#ApplicationAlbumFileEntry](#ApplicationAlbumFileEntry "wikilink"), an
+u64
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink"),
+and returns an output u64
+[\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink").
+
+### CloseAlbumMovieReadStream
+
+Takes an input u64
+[\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
+no output.
+
+### GetAlbumMovieReadStreamMovieDataSize
+
+Takes an input u64
+[\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
+returns an output u64.
+
+### ReadMovieDataFromAlbumMovieReadStream
+
+Takes a type-0x6 output buffer, an input u64
+[\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
+an input s64, and returns an output u64.
+
+### GetAlbumMovieReadStreamBrokenReason
+
+Takes an input u64
+[\#AlbumMovieReadStreamHandle](#AlbumMovieReadStreamHandle "wikilink"),
+no output.
 
 # ShimLibraryVersion
 

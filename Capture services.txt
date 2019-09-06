@@ -323,20 +323,37 @@ This is "nn::capsrv::sf::IAlbumAccessorApplicationSession".
 
 This was added with [5.0.0+].
 
+This is opened prior to using [[#OpenAlbumMovieReadStream]], when it previously wasn't opened. Official sw only closes this session when closing caps:u, not when using [[#CloseAlbumMovieReadStream]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 2001 || OpenAlbumMovieReadStream
+| 2001 || [[#OpenAlbumMovieReadStream]]
 |-
-| 2002 || CloseAlbumMovieReadStream
+| 2002 || [[#CloseAlbumMovieReadStream]]
 |-
-| 2003 || GetAlbumMovieReadStreamMovieDataSize
+| 2003 || [[#GetAlbumMovieReadStreamMovieDataSize]]
 |-
-| 2004 || ReadMovieDataFromAlbumMovieReadStream
+| 2004 || [[#ReadMovieDataFromAlbumMovieReadStream]]
 |-
-| 2005 || GetAlbumMovieReadStreamBrokenReason
+| 2005 || [[#GetAlbumMovieReadStreamBrokenReason]]
 |}
+
+=== OpenAlbumMovieReadStream ===
+Takes a PID, an input [[#ApplicationAlbumFileEntry]], an u64 [[Applet_Manager_services#AppletResourceUserId|AppletResourceUserId]], and returns an output u64 [[#AlbumMovieReadStreamHandle]].
+
+=== CloseAlbumMovieReadStream ===
+Takes an input u64 [[#AlbumMovieReadStreamHandle]], no output.
+
+=== GetAlbumMovieReadStreamMovieDataSize ===
+Takes an input u64 [[#AlbumMovieReadStreamHandle]], returns an output u64.
+
+=== ReadMovieDataFromAlbumMovieReadStream ===
+Takes a type-0x6 output buffer, an input u64 [[#AlbumMovieReadStreamHandle]], an input s64, and returns an output u64.
+
+=== GetAlbumMovieReadStreamBrokenReason ===
+Takes an input u64 [[#AlbumMovieReadStreamHandle]], no output.
 
 = ShimLibraryVersion =
 This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands (the input for those cmds must match value 1).
