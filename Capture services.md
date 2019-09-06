@@ -497,8 +497,8 @@ This is "nn::capsrv::UserIdList". This is a 0x88-byte struct.
 
 | Offset | Size  | Description                                                                          |
 | ------ | ----- | ------------------------------------------------------------------------------------ |
-| 0x0    | 0x8   | Width                                                                                |
-| 0x8    | 0x8   | Height                                                                               |
+| 0x0    | 0x8   | s64 Width. Official sw copies this to a s32 output field.                            |
+| 0x8    | 0x8   | s64 Height. Official sw copies this to a s32 output field.                           |
 | 0x10   | 0x40  | [\#ScreenShotAttributeForApplication](#ScreenShotAttributeForApplication "wikilink") |
 | 0x50   | 0x404 | [\#ApplicationData](#ApplicationData "wikilink")                                     |
 | 0x454  | 0xAC  | Unused                                                                               |
