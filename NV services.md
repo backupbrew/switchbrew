@@ -573,9 +573,9 @@ scheduler.
 | 0x8010060D | Out       | 16   | [\#NVSCHED\_CTRL\_GET\_NEXT\_OVERRUN\_EVENT](#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT "wikilink")     |
 | 0x400C060E | In        | 12   | [\#NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE](#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE "wikilink") |
 | 0x4008060F | In        | 8    | [\#NVSCHED\_CTRL\_DETACH\_APPLICATION](#NVSCHED_CTRL_DETACH_APPLICATION "wikilink")               |
-| 0x40100610 | In        | 16   |                                                                                                   |
-| 0x40100611 | In        | 16   |                                                                                                   |
-| 0x40010612 | In        | 1    |                                                                                                   |
+| 0x40100610 | In        | 16   | NVSCHED\_CTRL\_LINK\_RUNLIST\_EX                                                                  |
+| 0x40100611 | In        | 16   | NVSCHED\_CTRL\_UNLINK\_RUNLIST\_EX                                                                |
+| 0x40010612 | In        | 1    | NVSCHED\_CTRL\_OVERRUN\_EVENTS\_ON\_OFF                                                           |
 
 ### NVSCHED\_CTRL\_ENABLE
 

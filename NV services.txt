@@ -602,11 +602,11 @@ The way this device is exposed and configured is exclusive to the Switch, since 
 |-
 | 0x4008060F || In || 8 || [[#NVSCHED_CTRL_DETACH_APPLICATION]]
 |-
-| 0x40100610 || In || 16 ||
+| 0x40100610 || In || 16 || NVSCHED_CTRL_LINK_RUNLIST_EX
 |-
-| 0x40100611 || In || 16 ||
+| 0x40100611 || In || 16 || NVSCHED_CTRL_UNLINK_RUNLIST_EX
 |-
-| 0x40010612 || In || 1 ||
+| 0x40010612 || In || 1 || NVSCHED_CTRL_OVERRUN_EVENTS_ON_OFF
 |}
 
 === NVSCHED_CTRL_ENABLE ===
