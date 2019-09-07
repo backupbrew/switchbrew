@@ -716,10 +716,10 @@ Places the given application in detached state.
 
 Added in firmware version 3.0.0.
 
-| Value      | Direction | Size | Description                         |
-| ---------- | --------- | ---- | ----------------------------------- |
-| 0xC1280701 | Inout     | 296  | NVERPT\_TELEMETRY\_SUBMIT\_DATA     |
-| 0xCF580702 | Inout     | 3928 | NVERPT\_TELEMETRY\_SUBMIT\_DATA\_EX |
+| Value      | Direction | Size | Description                              |
+| ---------- | --------- | ---- | ---------------------------------------- |
+| 0xC1280701 | Inout     | 296  | NVERPT\_TELEMETRY\_SUBMIT\_DATA          |
+| 0xCF580702 | Inout     | 3928 | NVERPT\_TELEMETRY\_SUBMIT\_DISPLAY\_DATA |
 
 ## /dev/nvhost-as-gpu
 

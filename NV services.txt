@@ -736,7 +736,7 @@ Added in firmware version 3.0.0.
 |-
 | 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA
 |-
-| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DATA_EX
+| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DISPLAY_DATA
 |}
 
 == /dev/nvhost-as-gpu ==
