@@ -690,8 +690,8 @@ Returns the overrun event's data from the scheduler.
 ` struct {`  
 `   __out u64 runlist_id;`  
 `   __out u64 debt;`  
-`   __out u64 unk_event1;    // 3.0.0+ only`  
-`   __out u64 unk_event2;    // 3.0.0+ only`  
+`   __out u64 unk0;           // 3.0.0+ only`  
+`   __out u64 unk1;           // 3.0.0+ only`  
 ` };`
 
 ### NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE
