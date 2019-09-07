@@ -483,16 +483,16 @@ Unbinds a nvmap object from an
 
 ## /dev/nvdisp-ctrl
 
-| Value      | Direction | Size | Description                             |
-| ---------- | --------- | ---- | --------------------------------------- |
-| 0x80040212 | Out       | 4    | NVDISP\_CTRL\_GET\_NUM\_OUTPUTS         |
-| 0xC0140213 | Inout     | 20   | NVDISP\_CTRL\_GET\_OUTPUT\_PROPERTIES   |
-| 0xC1100214 | Inout     | 272  | NVDISP\_CTRL\_GET\_OUTPUT\_EDID         |
-| 0xC0040216 | Inout     | 4    | NVDISP\_CTRL\_GET\_EXT\_HPD\_IN\_EVENT  |
-| 0xC0040217 | Inout     | 4    | NVDISP\_CTRL\_GET\_EXT\_HPD\_OUT\_EVENT |
-| 0xC0100218 | Inout     | 16   | NVDISP\_CTRL\_GET\_VBLANK\_HEAD0\_EVENT |
-| 0xC0100219 | Inout     | 16   | NVDISP\_CTRL\_GET\_VBLANK\_HEAD1\_EVENT |
-| 0xC0040220 | Inout     | 4    | NVDISP\_CTRL\_GET\_HPD\_IRQ             |
+| Value                                       | Direction               | Size                      | Description                                                                                               |
+| ------------------------------------------- | ----------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0x80040212                                  | Out                     | 4                         | NVDISP\_CTRL\_GET\_NUM\_OUTPUTS                                                                           |
+| 0xC0140213                                  | Inout                   | 20                        | NVDISP\_CTRL\_GET\_OUTPUT\_PROPERTIES                                                                     |
+| 0xC1100214                                  | Inout                   | 272                       | NVDISP\_CTRL\_GET\_OUTPUT\_EDID                                                                           |
+| 0xC0080216</br>(\[1.0.0-3.0.0\] 0xC0040216) | Inout                   | 8</br>(\[1.0.0-3.0.0\] 4) | NVDISP\_CTRL\_GET\_EXT\_HPD\_IN\_OUT\_EVENTS</br>(\[1.0.0-3.0.0\] NVDISP\_CTRL\_GET\_EXT\_HPD\_IN\_EVENT) |
+| (\[1.0.0-3.0.0\] 0xC0040217)                | (\[1.0.0-3.0.0\] Inout) | (\[1.0.0-3.0.0\] 4)       | (\[1.0.0-3.0.0\] NVDISP\_CTRL\_GET\_EXT\_HPD\_OUT\_EVENT)                                                 |
+| 0xC0100218                                  | Inout                   | 16                        | NVDISP\_CTRL\_GET\_VBLANK\_HEAD0\_EVENT                                                                   |
+| 0xC0100219                                  | Inout                   | 16                        | NVDISP\_CTRL\_GET\_VBLANK\_HEAD1\_EVENT                                                                   |
+| 0xC0040220                                  | Inout                   | 4                         | NVDISP\_CTRL\_GET\_HPD\_IRQ                                                                               |
 
 ## /dev/nvdisp-disp0, /dev/nvdisp-disp1
 

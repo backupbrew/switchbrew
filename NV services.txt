@@ -454,9 +454,9 @@ Unbinds a nvmap object from an [[Applet_Manager_services#AppletResourceUserId|Ap
 |-
 | 0xC1100214 || Inout || 272 || NVDISP_CTRL_GET_OUTPUT_EDID
 |-
-| 0xC0040216 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_IN_EVENT
+| 0xC0080216</br>([1.0.0-3.0.0] 0xC0040216) || Inout || 8</br>([1.0.0-3.0.0] 4) || NVDISP_CTRL_GET_EXT_HPD_IN_OUT_EVENTS</br>([1.0.0-3.0.0] NVDISP_CTRL_GET_EXT_HPD_IN_EVENT)
 |-
-| 0xC0040217 || Inout || 4 || NVDISP_CTRL_GET_EXT_HPD_OUT_EVENT
+| ([1.0.0-3.0.0] 0xC0040217) || ([1.0.0-3.0.0] Inout) || ([1.0.0-3.0.0] 4) || ([1.0.0-3.0.0] NVDISP_CTRL_GET_EXT_HPD_OUT_EVENT)
 |-
 | 0xC0100218 || Inout || 16 || NVDISP_CTRL_GET_VBLANK_HEAD0_EVENT
 |-
