@@ -741,7 +741,7 @@ from one address space to another (or from one to none).
 | 0x40104107 | In        | 16       | [\#NVGPU\_AS\_IOCTL\_INITIALIZE](#NVGPU_AS_IOCTL_INITIALIZE "wikilink")           |
 | 0xC0404108 | Inout     | 64       | [\#NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS](#NVGPU_AS_IOCTL_GET_VA_REGIONS "wikilink") |
 | 0x40284109 | In        | 40       | [\#NVGPU\_AS\_IOCTL\_INITIALIZE\_EX](#NVGPU_AS_IOCTL_INITIALIZE_EX "wikilink")    |
-| 0xC038410A | Inout     | 56       | NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX                                                 |
+| 0xC038410A | Inout     | 56       | [\#NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX](#NVGPU_AS_IOCTL_MAP_BUFFER_EX "wikilink")   |
 | 0xC0??4114 | Inout     | Variable | [\#NVGPU\_AS\_IOCTL\_REMAP](#NVGPU_AS_IOCTL_REMAP "wikilink")                     |
 
 ### NVGPU\_AS\_IOCTL\_BIND\_CHANNEL
@@ -754,7 +754,7 @@ Identical to Linux driver.
 
 ### NVGPU\_AS\_IOCTL\_ALLOC\_SPACE
 
-This one reserves pages in the device address space.
+Reserves pages in the device address space.
 
 ` struct {`  
 `   __in u32 pages;`  
@@ -769,7 +769,7 @@ This one reserves pages in the device address space.
 
 ### NVGPU\_AS\_IOCTL\_FREE\_SPACE
 
-This one frees pages from the device address space.
+Frees pages from the device address space.
 
 ` struct {`  
 `   __in u64 offset;`  
@@ -779,7 +779,7 @@ This one frees pages from the device address space.
 
 ### NVGPU\_AS\_IOCTL\_MAP\_BUFFER
 
-Map a memory region in the device address space. Identical to Linux
+Maps a memory region in the device address space. Identical to Linux
 driver pretty much.
 
 On success, the mapped memory region is locked by having
@@ -799,7 +799,7 @@ set.
 
 ### NVGPU\_AS\_IOCTL\_MODIFY
 
-Modify a memory region in the device address space.
+Modifies a memory region in the device address space.
 
 Unaligned size will cause a [\#Panic](#Panic "wikilink").
 
@@ -808,18 +808,18 @@ On success, the mapped memory region is locked by having
 set.
 
 ` struct {`  
-`   __in    u32 flags;          // bit0: fixed_offset, bit2: cacheable`  
-`   __in    u32 kind;           // -1 is default`  
-`   __in    u32 nvmap_handle;`  
-`   __inout u32 page_size;      // 0 means don't care`  
-`   __in    u64 buffer_offset;`  
-`   __in    u64 mapping_size;`  
+`   __in      u32 flags;          // bit0: fixed_offset, bit2: cacheable`  
+`   __in      u32 kind;           // -1 is default`  
+`   __in      u32 nvmap_handle;`  
+`   __inout   u32 page_size;      // 0 means don't care`  
+`   __in      u64 buffer_offset;`  
+`   __in      u64 mapping_size;`  
 `   __inout   u64 offset;`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_UNMAP\_BUFFER
 
-Unmap a memory region from the device address space.
+Unmaps a memory region from the device address space.
 
 `struct {`  
 `   __in u64 offset;`  
@@ -839,7 +839,7 @@ Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
 
-Nintendo modified to get rid of pointer in struct.
+Nintendo's custom implementation to get rid of pointer in struct.
 
 ` struct va_region {`  
 `   u64 offset;`  
@@ -849,10 +849,10 @@ Nintendo modified to get rid of pointer in struct.
 ` };`  
 ` `  
 ` struct {`  
-`   u64         not_used;   // (contained output user ptr on linux, ignored)`  
-`   __inout u32 bufsize;    // forced to 2*sizeof(struct va_region)`  
-`   u32         pad;`  
-`   __out struct va_region regions[2];`  
+`   u64           not_used;   // (contained output user ptr on linux, ignored)`  
+`   __inout u32   bufsize;    // forced to 2*sizeof(struct va_region)`  
+`   u32           pad;`  
+`   __out struct  va_region regions[2];`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
@@ -868,6 +868,23 @@ Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
 `   __in u64 unk0;`  
 `   __in u64 unk1;`  
 `   __in u64 unk2;`  
+` };`
+
+### NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX
+
+Maps a memory region in the device address space with extra params.
+
+`   struct {`  
+`   __in      u32 flags;          // bit0: fixed_offset, bit2: cacheable`  
+`   __in      u32 kind;           // -1 is default`  
+`   __in      u32 nvmap_handle;`  
+`   __inout   u32 page_size;      // 0 means don't care`  
+`   __in      u64 buffer_offset;`  
+`   __in      u64 mapping_size;`  
+`   __inout   u64 offset;`  
+`   __in      u64 unk0;`  
+`   __in      u32 unk1;`  
+`   u32            pad;`  
 ` };`
 
 ### NVGPU\_AS\_IOCTL\_REMAP

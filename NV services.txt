@@ -765,7 +765,7 @@ Once a nvgpu channel has been bound to an address space it cannot be unbound. Th
 |-
 | 0x40284109 || In || 40 || [[#NVGPU_AS_IOCTL_INITIALIZE_EX]]
 |-
-| 0xC038410A || Inout || 56 || NVGPU_AS_IOCTL_MAP_BUFFER_EX
+| 0xC038410A || Inout || 56 || [[#NVGPU_AS_IOCTL_MAP_BUFFER_EX]]
 |-
 | 0xC0??4114 || Inout || Variable || [[#NVGPU_AS_IOCTL_REMAP]]
 |}
@@ -778,7 +778,7 @@ Identical to Linux driver.
   };
 
 === NVGPU_AS_IOCTL_ALLOC_SPACE ===
-This one reserves pages in the device address space.
+Reserves pages in the device address space.
 
   struct {
     __in u32 pages;
@@ -792,7 +792,7 @@ This one reserves pages in the device address space.
   };
 
 === NVGPU_AS_IOCTL_FREE_SPACE ===
-This one frees pages from the device address space.
+Frees pages from the device address space.
 
   struct {
     __in u64 offset;
@@ -801,7 +801,7 @@ This one frees pages from the device address space.
   };
 
 === NVGPU_AS_IOCTL_MAP_BUFFER ===
-Map a memory region in the device address space. Identical to Linux driver pretty much.
+Maps a memory region in the device address space. Identical to Linux driver pretty much.
 
 On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit34 set.
 
@@ -817,24 +817,24 @@ On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit
   };
 
 === NVGPU_AS_IOCTL_MODIFY ===
-Modify a memory region in the device address space.
+Modifies a memory region in the device address space.
 
 Unaligned size will cause a [[#Panic]].
 
 On success, the mapped memory region is locked by having [[SVC#MemoryState]] bit34 set.
 
   struct {
-    __in    u32 flags;          // bit0: fixed_offset, bit2: cacheable
-    __in    u32 kind;           // -1 is default
-    __in    u32 nvmap_handle;
-    __inout u32 page_size;      // 0 means don't care
-    __in    u64 buffer_offset;
-    __in    u64 mapping_size;
+    __in      u32 flags;          // bit0: fixed_offset, bit2: cacheable
+    __in      u32 kind;           // -1 is default
+    __in      u32 nvmap_handle;
+    __inout   u32 page_size;      // 0 means don't care
+    __in      u64 buffer_offset;
+    __in      u64 mapping_size;
     __inout   u64 offset;
   };
 
 === NVGPU_AS_IOCTL_UNMAP_BUFFER ===
-Unmap a memory region from the device address space.
+Unmaps a memory region from the device address space.
 
  struct {
     __in u64 offset;
@@ -851,7 +851,7 @@ Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable).
   };
 
 === NVGPU_AS_IOCTL_GET_VA_REGIONS ===
-Nintendo modified to get rid of pointer in struct.
+Nintendo's custom implementation to get rid of pointer in struct.
 
   struct va_region {
     u64 offset;
@@ -861,10 +861,10 @@ Nintendo modified to get rid of pointer in struct.
   };
   
   struct {
-    u64         not_used;   // (contained output user ptr on linux, ignored)
-    __inout u32 bufsize;    // forced to 2*sizeof(struct va_region)
-    u32         pad;
-    __out struct va_region regions[2];
+    u64           not_used;   // (contained output user ptr on linux, ignored)
+    __inout u32   bufsize;    // forced to 2*sizeof(struct va_region)
+    u32           pad;
+    __out struct  va_region regions[2];
   };
 
 === NVGPU_AS_IOCTL_INITIALIZE_EX ===
@@ -878,6 +878,22 @@ Nintendo's custom implementation of NVGPU_GPU_IOCTL_ALLOC_AS (unavailable) with 
     __in u64 unk0;
     __in u64 unk1;
     __in u64 unk2;
+  };
+
+=== NVGPU_AS_IOCTL_MAP_BUFFER_EX ===
+Maps a memory region in the device address space with extra params.
+
+    struct {
+    __in      u32 flags;          // bit0: fixed_offset, bit2: cacheable
+    __in      u32 kind;           // -1 is default
+    __in      u32 nvmap_handle;
+    __inout   u32 page_size;      // 0 means don't care
+    __in      u64 buffer_offset;
+    __in      u64 mapping_size;
+    __inout   u64 offset;
+    __in      u64 unk0;
+    __in      u32 unk1;
+    u32            pad;
   };
 
 === NVGPU_AS_IOCTL_REMAP ===
