@@ -145,22 +145,23 @@ The following table contains known ioctls.
 
 ## /dev/nvhost-ctrl
 
-| Value      | Direction | Size | Description                                                                                 |
-| ---------- | --------- | ---- | ------------------------------------------------------------------------------------------- |
-| 0xC0080014 | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ](#NVHOST_IOCTL_CTRL_SYNCPT_READ "wikilink")            |
-| 0x40040015 | In        | 4    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR](#NVHOST_IOCTL_CTRL_SYNCPT_INCR "wikilink")            |
-| 0xC00C0016 | Inout     | 12   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT](#NVHOST_IOCTL_CTRL_SYNCPT_WAIT "wikilink")            |
-| 0x40080017 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX](#NVHOST_IOCTL_CTRL_MODULE_MUTEX "wikilink")          |
-| 0xC0180018 | Inout     | 24   | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_REGRDWR](#NVHOST_IOCTL_CTRL_MODULE_REGRDWR "wikilink")      |
-| 0xC0100019 | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX](#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX "wikilink")        |
-| 0xC008001A | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX](#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX "wikilink")   |
-| 0xC183001B | Inout     | 387  | [\#NVHOST\_IOCTL\_CTRL\_GET\_CONFIG](#NVHOST_IOCTL_CTRL_GET_CONFIG "wikilink")              |
-| 0xC004001C | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL](#NVHOST_IOCTL_CTRL_EVENT_SIGNAL "wikilink")          |
-| 0xC010001D | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT](#NVHOST_IOCTL_CTRL_EVENT_WAIT "wikilink")              |
-| 0xC010001E | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT\_ASYNC](#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC "wikilink") |
-| 0xC004001F | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_REGISTER](#NVHOST_IOCTL_CTRL_EVENT_REGISTER "wikilink")      |
-| 0xC0040020 | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_UNREGISTER](#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER "wikilink")  |
-| 0x40080021 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_KILL](#NVHOST_IOCTL_CTRL_EVENT_KILL "wikilink")              |
+| Value      | Direction | Size | Description                                                                                                       |
+| ---------- | --------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
+| 0xC0080014 | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ](#NVHOST_IOCTL_CTRL_SYNCPT_READ "wikilink")                                  |
+| 0x40040015 | In        | 4    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_INCR](#NVHOST_IOCTL_CTRL_SYNCPT_INCR "wikilink")                                  |
+| 0xC00C0016 | Inout     | 12   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAIT](#NVHOST_IOCTL_CTRL_SYNCPT_WAIT "wikilink")                                  |
+| 0x40080017 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_MUTEX](#NVHOST_IOCTL_CTRL_MODULE_MUTEX "wikilink")                                |
+| 0xC0180018 | Inout     | 24   | [\#NVHOST\_IOCTL\_CTRL\_MODULE\_REGRDWR](#NVHOST_IOCTL_CTRL_MODULE_REGRDWR "wikilink")                            |
+| 0xC0100019 | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_WAITEX](#NVHOST_IOCTL_CTRL_SYNCPT_WAITEX "wikilink")                              |
+| 0xC008001A | Inout     | 8    | [\#NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ\_MAX](#NVHOST_IOCTL_CTRL_SYNCPT_READ_MAX "wikilink")                         |
+| 0xC183001B | Inout     | 387  | [\#NVHOST\_IOCTL\_CTRL\_GET\_CONFIG](#NVHOST_IOCTL_CTRL_GET_CONFIG "wikilink")                                    |
+| 0xC004001C | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_SIGNAL](#NVHOST_IOCTL_CTRL_EVENT_SIGNAL "wikilink")                                |
+| 0xC010001D | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT](#NVHOST_IOCTL_CTRL_EVENT_WAIT "wikilink")                                    |
+| 0xC010001E | Inout     | 16   | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_WAIT\_ASYNC](#NVHOST_IOCTL_CTRL_EVENT_WAIT_ASYNC "wikilink")                       |
+| 0xC004001F | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_REGISTER](#NVHOST_IOCTL_CTRL_EVENT_REGISTER "wikilink")                            |
+| 0xC0040020 | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_UNREGISTER](#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER "wikilink")                        |
+| 0x40080021 | In        | 8    | [\#NVHOST\_IOCTL\_CTRL\_EVENT\_KILL](#NVHOST_IOCTL_CTRL_EVENT_KILL "wikilink")                                    |
+| 0xC0040022 | Inout     | 4    | [\#NVHOST\_IOCTL\_CTRL\_GET\_MAX\_EVENT\_FIFO\_CHANNEL](#NVHOST_IOCTL_CTRL_GET_MAX_EVENT_FIFO_CHANNEL "wikilink") |
 
 ### NVHOST\_IOCTL\_CTRL\_SYNCPT\_READ
 
@@ -301,6 +302,15 @@ Kills user events. Exclusive to the Switch.
 
 ` struct {`  
 `   __in u64 user_events;       // 64-bit bitfield where each bit represents one event`  
+` };`
+
+### NVHOST\_IOCTL\_CTRL\_GET\_MAX\_EVENT\_FIFO\_CHANNEL
+
+If event FIFO is enabled, returns the maximum channel number. Exclusive
+to the Switch.
+
+` struct {`  
+`   __out u32 max_channel;      // 0x00 (FIFO disabled) or 0x60 (FIFO enabled)`  
 ` };`
 
 ## /dev/nvmap

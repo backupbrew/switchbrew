@@ -148,6 +148,8 @@ The following table contains known ioctls.
 | 0xC0040020 || Inout || 4 || [[#NVHOST_IOCTL_CTRL_EVENT_UNREGISTER]]
 |-
 | 0x40080021 || In || 8 || [[#NVHOST_IOCTL_CTRL_EVENT_KILL]]
+|-
+| 0xC0040022 || Inout || 4 || [[#NVHOST_IOCTL_CTRL_GET_MAX_EVENT_FIFO_CHANNEL]]
 |}
 
 === NVHOST_IOCTL_CTRL_SYNCPT_READ ===
@@ -271,6 +273,13 @@ Kills user events. Exclusive to the Switch.
 
   struct {
     __in u64 user_events;       // 64-bit bitfield where each bit represents one event
+  };
+
+=== NVHOST_IOCTL_CTRL_GET_MAX_EVENT_FIFO_CHANNEL ===
+If event FIFO is enabled, returns the maximum channel number. Exclusive to the Switch.
+
+  struct {
+    __out u32 max_channel;      // 0x00 (FIFO disabled) or 0x60 (FIFO enabled)
   };
 
 == /dev/nvmap ==
