@@ -566,26 +566,26 @@ The way this device is exposed and configured is exclusive to the
 Switch, since other sources don't have an actual interface for the
 scheduler.
 
-| Value      | Direction | Size | Description                                                                                       |
-| ---------- | --------- | ---- | ------------------------------------------------------------------------------------------------- |
-| 0x00000601 | \-        | 0    | [\#NVSCHED\_CTRL\_ENABLE](#NVSCHED_CTRL_ENABLE "wikilink")                                        |
-| 0x00000602 | \-        | 0    | [\#NVSCHED\_CTRL\_DISABLE](#NVSCHED_CTRL_DISABLE "wikilink")                                      |
-| 0x40180603 | In        | 24   | [\#NVSCHED\_CTRL\_ADD\_APPLICATION](#NVSCHED_CTRL_ADD_APPLICATION "wikilink")                     |
-| 0x40180604 | In        | 24   | [\#NVSCHED\_CTRL\_UPDATE\_APPLICATION](#NVSCHED_CTRL_UPDATE_APPLICATION "wikilink")               |
-| 0x40080605 | In        | 8    | [\#NVSCHED\_CTRL\_REMOVE\_APPLICATION](#NVSCHED_CTRL_REMOVE_APPLICATION "wikilink")               |
-| 0x80080606 | Out       | 8    | [\#NVSCHED\_CTRL\_GET\_ID](#NVSCHED_CTRL_GET_ID "wikilink")                                       |
-| 0x80080607 | Out       | 8    | [\#NVSCHED\_CTRL\_ADD\_RUNLIST](#NVSCHED_CTRL_ADD_RUNLIST "wikilink")                             |
-| 0x40180608 | In        | 24   | [\#NVSCHED\_CTRL\_UPDATE\_RUNLIST](#NVSCHED_CTRL_UPDATE_RUNLIST "wikilink")                       |
-| 0x40100609 | In        | 16   | [\#NVSCHED\_CTRL\_LINK\_RUNLIST](#NVSCHED_CTRL_LINK_RUNLIST "wikilink")                           |
-| 0x4010060A | In        | 16   | [\#NVSCHED\_CTRL\_UNLINK\_RUNLIST](#NVSCHED_CTRL_UNLINK_RUNLIST "wikilink")                       |
-| 0x4008060B | In        | 8    | [\#NVSCHED\_CTRL\_REMOVE\_RUNLIST](#NVSCHED_CTRL_REMOVE_RUNLIST "wikilink")                       |
-| 0x8001060C | Out       | 1    | [\#NVSCHED\_CTRL\_HAS\_OVERRUN\_EVENT](#NVSCHED_CTRL_HAS_OVERRUN_EVENT "wikilink")                |
-| 0x8010060D | Out       | 16   | [\#NVSCHED\_CTRL\_GET\_NEXT\_OVERRUN\_EVENT](#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT "wikilink")     |
-| 0x400C060E | In        | 12   | [\#NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE](#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE "wikilink") |
-| 0x4008060F | In        | 8    | [\#NVSCHED\_CTRL\_DETACH\_APPLICATION](#NVSCHED_CTRL_DETACH_APPLICATION "wikilink")               |
-| 0x40100610 | In        | 16   | NVSCHED\_CTRL\_LINK\_RUNLIST\_EX                                                                  |
-| 0x40100611 | In        | 16   | NVSCHED\_CTRL\_UNLINK\_RUNLIST\_EX                                                                |
-| 0x40010612 | In        | 1    | NVSCHED\_CTRL\_OVERRUN\_EVENTS\_ON\_OFF                                                           |
+| Value                                       | Direction | Size                        | Description                                                                                       |
+| ------------------------------------------- | --------- | --------------------------- | ------------------------------------------------------------------------------------------------- |
+| 0x00000601                                  | \-        | 0                           | [\#NVSCHED\_CTRL\_ENABLE](#NVSCHED_CTRL_ENABLE "wikilink")                                        |
+| 0x00000602                                  | \-        | 0                           | [\#NVSCHED\_CTRL\_DISABLE](#NVSCHED_CTRL_DISABLE "wikilink")                                      |
+| 0x40180603                                  | In        | 24                          | [\#NVSCHED\_CTRL\_ADD\_APPLICATION](#NVSCHED_CTRL_ADD_APPLICATION "wikilink")                     |
+| 0x40180604                                  | In        | 24                          | [\#NVSCHED\_CTRL\_UPDATE\_APPLICATION](#NVSCHED_CTRL_UPDATE_APPLICATION "wikilink")               |
+| 0x40080605                                  | In        | 8                           | [\#NVSCHED\_CTRL\_REMOVE\_APPLICATION](#NVSCHED_CTRL_REMOVE_APPLICATION "wikilink")               |
+| 0x80080606                                  | Out       | 8                           | [\#NVSCHED\_CTRL\_GET\_ID](#NVSCHED_CTRL_GET_ID "wikilink")                                       |
+| 0x80080607                                  | Out       | 8                           | [\#NVSCHED\_CTRL\_ADD\_RUNLIST](#NVSCHED_CTRL_ADD_RUNLIST "wikilink")                             |
+| 0x40180608                                  | In        | 24                          | [\#NVSCHED\_CTRL\_UPDATE\_RUNLIST](#NVSCHED_CTRL_UPDATE_RUNLIST "wikilink")                       |
+| 0x40100609                                  | In        | 16                          | [\#NVSCHED\_CTRL\_LINK\_RUNLIST](#NVSCHED_CTRL_LINK_RUNLIST "wikilink")                           |
+| 0x4010060A                                  | In        | 16                          | [\#NVSCHED\_CTRL\_UNLINK\_RUNLIST](#NVSCHED_CTRL_UNLINK_RUNLIST "wikilink")                       |
+| 0x4008060B                                  | In        | 8                           | [\#NVSCHED\_CTRL\_REMOVE\_RUNLIST](#NVSCHED_CTRL_REMOVE_RUNLIST "wikilink")                       |
+| 0x8001060C                                  | Out       | 1                           | [\#NVSCHED\_CTRL\_HAS\_OVERRUN\_EVENT](#NVSCHED_CTRL_HAS_OVERRUN_EVENT "wikilink")                |
+| 0x8020060D</br>(\[1.0.0-3.0.0\] 0x8010060D) | Out       | 32</br>(\[1.0.0-3.0.0\] 16) | [\#NVSCHED\_CTRL\_GET\_NEXT\_OVERRUN\_EVENT](#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT "wikilink")     |
+| 0x400C060E                                  | In        | 12                          | [\#NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE](#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE "wikilink") |
+| 0x4008060F                                  | In        | 8                           | [\#NVSCHED\_CTRL\_DETACH\_APPLICATION](#NVSCHED_CTRL_DETACH_APPLICATION "wikilink")               |
+| 0x40100610                                  | In        | 16                          | NVSCHED\_CTRL\_LINK\_RUNLIST\_EX                                                                  |
+| 0x40100611                                  | In        | 16                          | NVSCHED\_CTRL\_UNLINK\_RUNLIST\_EX                                                                |
+| 0x40010612                                  | In        | 1                           | NVSCHED\_CTRL\_OVERRUN\_EVENTS\_ON\_OFF                                                           |
 
 ### NVSCHED\_CTRL\_ENABLE
 
@@ -690,6 +690,8 @@ Returns the overrun event's data from the scheduler.
 ` struct {`  
 `   __out u64 runlist_id;`  
 `   __out u64 debt;`  
+`   __out u64 unk_event1;    // 3.0.0+ only`  
+`   __out u64 unk_event2;    // 3.0.0+ only`  
 ` };`
 
 ### NVSCHED\_CTRL\_PUT\_CONDUCTOR\_FLIP\_FENCE

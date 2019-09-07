@@ -605,7 +605,7 @@ The way this device is exposed and configured is exclusive to the Switch, since 
 |-
 | 0x8001060C || Out || 1 || [[#NVSCHED_CTRL_HAS_OVERRUN_EVENT]]
 |-
-| 0x8010060D || Out || 16 || [[#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT]]
+| 0x8020060D</br>([1.0.0-3.0.0] 0x8010060D) || Out || 32</br>([1.0.0-3.0.0] 16) || [[#NVSCHED_CTRL_GET_NEXT_OVERRUN_EVENT]]
 |-
 | 0x400C060E || In || 12 || [[#NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE]]
 |-
@@ -708,6 +708,8 @@ Returns the overrun event's data from the scheduler.
   struct {
     __out u64 runlist_id;
     __out u64 debt;
+    __out u64 unk_event1;    // 3.0.0+ only
+    __out u64 unk_event2;    // 3.0.0+ only
   };
 
 === NVSCHED_CTRL_PUT_CONDUCTOR_FLIP_FENCE ===
