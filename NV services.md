@@ -969,32 +969,32 @@ This device is identical to
 
 This device is for global (context independent) operations on the gpu.
 
-| Value                                       | Direction | Size | Description                                                                                               |
-| ------------------------------------------- | --------- | ---- | --------------------------------------------------------------------------------------------------------- |
-| 0x80044701                                  | Out       | 4    | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE](#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE "wikilink")              |
-| 0x80284702                                  | Out       | 40   | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO](#NVGPU_GPU_IOCTL_ZCULL_GET_INFO "wikilink")                       |
-| 0x402C4703                                  | In        | 44   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE](#NVGPU_GPU_IOCTL_ZBC_SET_TABLE "wikilink")                         |
-| 0xC0344704                                  | Inout     | 52   | [\#NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE](#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE "wikilink")                     |
-| 0xC0B04705                                  | Inout     | 176  | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink")              |
-| 0xC0184706                                  | Inout     | 24   | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                                        |
-| 0x40084707                                  | In        | 8    | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                                    |
-| 0x4008470D                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_INVAL\_ICACHE                                                                          |
-| 0x4008470E                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                                    |
-| 0x4010470F                                  | In        | 16   | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                                   |
-| 0xC0304710</br>(\[1.0.0-6.1.0\] 0xC0084710) | Inout     | 48   | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |
-| 0x80084711                                  | Out       | 8    | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                                        |
-| 0x80084712                                  | Out       | 8    | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |
-| 0xC0044713                                  | Inout     | 4    | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |
-| 0x80084714                                  | Out       | 8    | [\#NVGPU\_GPU\_IOCTL\_ZBC\_GET\_ACTIVE\_SLOT\_MASK](#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK "wikilink") |
-| 0x80044715                                  | Out       | 4    | NVGPU\_GPU\_IOCTL\_PMU\_GET\_GPU\_LOAD                                                                    |
-| 0x40084716                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_CG\_CONTROLS                                                                      |
-| 0xC0084717                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_CG\_CONTROLS                                                                      |
-| 0x40084718                                  | In        | 8    | NVGPU\_GPU\_IOCTL\_SET\_PG\_CONTROLS                                                                      |
-| 0xC0084719                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_PG\_CONTROLS                                                                      |
-| 0x8018471A                                  | Out       | 24   | NVGPU\_GPU\_IOCTL\_PMU\_DUMP\_ELPG\_STATS                                                                 |
-| 0xC008471B                                  | Inout     | 8    | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |
-| 0xC010471C                                  | Inout     | 16   | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |
-| 0xC108471D                                  | Inout     | 264  | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |
+| Value                                       | Direction | Size                       | Description                                                                                               |
+| ------------------------------------------- | --------- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0x80044701                                  | Out       | 4                          | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE](#NVGPU_GPU_IOCTL_ZCULL_GET_CTX_SIZE "wikilink")              |
+| 0x80284702                                  | Out       | 40                         | [\#NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_INFO](#NVGPU_GPU_IOCTL_ZCULL_GET_INFO "wikilink")                       |
+| 0x402C4703                                  | In        | 44                         | [\#NVGPU\_GPU\_IOCTL\_ZBC\_SET\_TABLE](#NVGPU_GPU_IOCTL_ZBC_SET_TABLE "wikilink")                         |
+| 0xC0344704                                  | Inout     | 52                         | [\#NVGPU\_GPU\_IOCTL\_ZBC\_QUERY\_TABLE](#NVGPU_GPU_IOCTL_ZBC_QUERY_TABLE "wikilink")                     |
+| 0xC0B04705                                  | Inout     | 176                        | [\#NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS](#NVGPU_GPU_IOCTL_GET_CHARACTERISTICS "wikilink")              |
+| 0xC0184706                                  | Inout     | 24                         | NVGPU\_GPU\_IOCTL\_GET\_TPC\_MASKS                                                                        |
+| 0x40084707                                  | In        | 8                          | [\#NVGPU\_GPU\_IOCTL\_FLUSH\_L2](#NVGPU_GPU_IOCTL_FLUSH_L2 "wikilink")                                    |
+| 0x4008470D                                  | In        | 8                          | NVGPU\_GPU\_IOCTL\_INVAL\_ICACHE                                                                          |
+| 0x4008470E                                  | In        | 8                          | NVGPU\_GPU\_IOCTL\_SET\_MMUDEBUG\_MODE                                                                    |
+| 0x4010470F                                  | In        | 16                         | NVGPU\_GPU\_IOCTL\_SET\_SM\_DEBUG\_MODE                                                                   |
+| 0xC0304710</br>(\[1.0.0-6.1.0\] 0xC0084710) | Inout     | 48</br>(\[1.0.0-6.1.0\] 8) | NVGPU\_GPU\_IOCTL\_WAIT\_FOR\_PAUSE                                                                       |
+| 0x80084711                                  | Out       | 8                          | NVGPU\_GPU\_IOCTL\_GET\_TPC\_EXCEPTION\_EN\_STATUS                                                        |
+| 0x80084712                                  | Out       | 8                          | NVGPU\_GPU\_IOCTL\_NUM\_VSMS                                                                              |
+| 0xC0044713                                  | Inout     | 4                          | NVGPU\_GPU\_IOCTL\_VSMS\_MAPPING                                                                          |
+| 0x80084714                                  | Out       | 8                          | [\#NVGPU\_GPU\_IOCTL\_ZBC\_GET\_ACTIVE\_SLOT\_MASK](#NVGPU_GPU_IOCTL_ZBC_GET_ACTIVE_SLOT_MASK "wikilink") |
+| 0x80044715                                  | Out       | 4                          | NVGPU\_GPU\_IOCTL\_PMU\_GET\_GPU\_LOAD                                                                    |
+| 0x40084716                                  | In        | 8                          | NVGPU\_GPU\_IOCTL\_SET\_CG\_CONTROLS                                                                      |
+| 0xC0084717                                  | Inout     | 8                          | NVGPU\_GPU\_IOCTL\_GET\_CG\_CONTROLS                                                                      |
+| 0x40084718                                  | In        | 8                          | NVGPU\_GPU\_IOCTL\_SET\_PG\_CONTROLS                                                                      |
+| 0xC0084719                                  | Inout     | 8                          | NVGPU\_GPU\_IOCTL\_GET\_PG\_CONTROLS                                                                      |
+| 0x8018471A                                  | Out       | 24                         | NVGPU\_GPU\_IOCTL\_PMU\_DUMP\_ELPG\_STATS                                                                 |
+| 0xC008471B                                  | Inout     | 8                          | NVGPU\_GPU\_IOCTL\_GET\_ERROR\_CHANNEL\_USER\_DATA                                                        |
+| 0xC010471C                                  | Inout     | 16                         | NVGPU\_GPU\_IOCTL\_GET\_GPU\_TIME                                                                         |
+| 0xC108471D                                  | Inout     | 264                        | NVGPU\_GPU\_IOCTL\_GET\_CPU\_TIME\_CORRELATION\_INFO                                                      |
 
 ### NVGPU\_GPU\_IOCTL\_ZCULL\_GET\_CTX\_SIZE
 
