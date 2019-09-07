@@ -1035,7 +1035,7 @@ of using a pointer.
 
 ` struct gpu_characteristics {`  
 `   u32 arch;                           // 0x120 (NVGPU_GPU_ARCH_GM200)`  
-`   u32 impl;                           // 0xB (NVGPU_GPU_IMPL_GM20B)`  
+`   u32 impl;                           // 0xB (NVGPU_GPU_IMPL_GM20B) or 0xE (NVGPU_GPU_IMPL_GM20B_B)`  
 `   u32 rev;                            // 0xA1 (Revision A1)`  
 `   u32 num_gpc;                        // 0x1`  
 `   u64 l2_cache_size;                  // 0x40000`  
