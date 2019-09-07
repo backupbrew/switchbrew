@@ -1047,8 +1047,8 @@ of using a pointer.
 `   u32 pde_coverage_bit_count;         // 0x1B`  
 `   u32 available_big_page_sizes;       // 0x30000`  
 `   u32 gpc_mask;                       // 0x1`  
-`   u32 sm_arch_sm_version;             // 0x503 (Maxwell Generation 5.0.3?)`  
-`   u32 sm_arch_spa_version;            // 0x503 (Maxwell Generation 5.0.3?)`  
+`   u32 sm_arch_sm_version;             // 0x503 (Maxwell Generation 5.0.3)`  
+`   u32 sm_arch_spa_version;            // 0x503 (Maxwell Generation 5.0.3)`  
 `   u32 sm_arch_warp_count;             // 0x80`  
 `   u32 gpu_va_bit_count;               // 0x28`  
 `   u32 reserved;                       // NULL`  
