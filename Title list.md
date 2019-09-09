@@ -1802,7 +1802,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <a href="6.2.0.md" title="wikilink">v404750376</a> (6.2.0.40)<br />
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)</p></td>
-<td><p>myPage (LibraryAppletMyPage)</p></td>
+<td><p><a href="MyPage Applet.md" title="wikilink">myPage (LibraryAppletMyPage)</a></p></td>
 <td></td>
 </tr>
 <tr class="odd">
