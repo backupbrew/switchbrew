@@ -2606,7 +2606,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0x1A
 | 0100000000001013
-| "myPage"
+| [[MyPage_Applet|"myPage"]]
 |}
 
 === LibraryAppletMode ===

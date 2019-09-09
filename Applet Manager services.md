@@ -2860,7 +2860,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x17 | 010000000000100F | "LibAppletOff" [Offline](Internet%20Browser#Offline%20Applet.md##Offline_Applet "wikilink") applet               |
 | 0x18 | 0100000000001010 | "LibAppletLns" [Whitelisted](Internet%20Browser#Whitelisted%20Applets.md##Whitelisted_Applets "wikilink") applet |
 | 0x19 | 0100000000001011 | "LibAppletAuth" [WifiWebAuth](Internet%20Browser#WifiWebAuthApplet.md##WifiWebAuthApplet "wikilink") applet      |
-| 0x1A | 0100000000001013 | "myPage"                                                                                                         |
+| 0x1A | 0100000000001013 | ["myPage"](MyPage%20Applet.md "wikilink")                                                                        |
 
 ### LibraryAppletMode
 
