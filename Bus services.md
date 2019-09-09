@@ -413,11 +413,11 @@ This is "nn::sasbus::IManager".
 
 This is "nn::sasbus::ISession".
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
+| Cmd | Name                     |
+| --- | ------------------------ |
+| 0   | Write                    |
+| 1   | Read                     |
+| 2   | StartPeriodicReceiveMode |
+| 3   | StopPeriodicReceiveMode  |
 
 [Category:Services](Category:Services "wikilink")

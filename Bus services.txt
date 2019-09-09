@@ -611,13 +611,13 @@ This is "nn::sasbus::ISession".
 |-
 ! Cmd || Name
 |-
-| 0 || 
+| 0 || Write
 |-
-| 1 || 
+| 1 || Read
 |-
-| 2 || 
+| 2 || StartPeriodicReceiveMode
 |-
-| 3 || 
+| 3 || StopPeriodicReceiveMode
 |}
 
 [[Category:Services]]
