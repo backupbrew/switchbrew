@@ -114,4 +114,13 @@ This is "nn::friends::detail::ipc::IDaemonSuspendSessionService".
 
 # nd:sys
 
+# InAppScreenName
+
+| Offset | Size | Description                                       |
+| ------ | ---- | ------------------------------------------------- |
+| 0x0    | 0x40 | UTF-8 string, NUL-terminated.                     |
+| 0x40   | 0x8  | [LanguageCode](Settings%20services.md "wikilink") |
+
+This is "nn::friends::InAppScreenName". This is a 0x48-byte struct.
+
 [Category:Services](Category:Services "wikilink")
