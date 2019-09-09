@@ -165,7 +165,8 @@ This is "nn::ovln::ISender".
 | 0x0B | [Uart](Bus%20services.md "wikilink")                     |
 | 0x0C | [I2c](Bus%20services.md "wikilink")                      |
 | 0x0D | [I2c:Pcv](Bus%20services.md "wikilink")                  |
-| 0x0F | [Pwn](Bus%20services.md "wikilink")                      |
+| 0x0E | [Sasbus](Bus%20services.md "wikilink")                   |
+| 0x0F | [Pwm](Bus%20services.md "wikilink")                      |
 | 0x10 |                                                          |
 | 0x13 | [PCIe](PCIe%20services.md "wikilink")                    |
 | 0x14 | [Backlight](Backlight%20services.md "wikilink")          |

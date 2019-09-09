@@ -224,7 +224,9 @@ This is "nn::ovln::ISender".
 |-
 | 0x0D || [[Bus services|I2c:Pcv]]
 |-
-| 0x0F || [[Bus services|Pwn]]
+| 0x0E || [[Bus services|Sasbus]]
+|-
+| 0x0F || [[Bus services|Pwm]]
 |-
 | 0x10 ||
 |-
