@@ -51,9 +51,10 @@ fatal-errors, since the Description ends with bit21.
 | 103   | UART                                         |
 | 105   | Settings                                     |
 | 107   | WLAN                                         |
-| 108   | XCD                                          |
+| 108   | HID (xcd)                                    |
 | 110   | NIFM                                         |
 | 111   | Hwopus                                       |
+| 112   | HID (sasbus)                                 |
 | 113   | Bluetooth                                    |
 | 114   | VI                                           |
 | 115   | NFP                                          |
@@ -70,7 +71,7 @@ fatal-errors, since the Description ends with bit21.
 | 127   | NFC                                          |
 | 128   | AM                                           |
 | 129   | Play Report                                  |
-| 130   | AHID                                         |
+| 130   | HID (ahid)                                   |
 | 132   | Home Menu (Qlaunch)                          |
 | 133   | PCV                                          |
 | 134   | OMM                                          |
@@ -100,7 +101,7 @@ fatal-errors, since the Description ends with bit21.
 | 161   | NFC (Mifare)                                 |
 | 162   | Userland (assert)                            |
 | 163   | Fatal                                        |
-| 164   | NIM Shop                                     |
+| 164   | NIM (shop)                                   |
 | 165   | SPSM                                         |
 | 167   | BGTC                                         |
 | 168   | Userland (crash)                             |
@@ -115,7 +116,7 @@ fatal-errors, since the Description ends with bit21.
 | 197   | Clkrst                                       |
 | 202   | HID                                          |
 | 203   | LDN                                          |
-| 205   | Irsensor                                     |
+| 205   | HID (irsensor)                               |
 | 206   | Capture                                      |
 | 208   | Manu                                         |
 | 209   | ATK                                          |

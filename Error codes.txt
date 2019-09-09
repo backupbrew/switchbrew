@@ -76,11 +76,13 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 107 || WLAN
 |-
-| 108 || XCD
+| 108 || HID (xcd)
 |-
 | 110 || NIFM
 |-
 | 111 || Hwopus
+|-
+| 112 || HID (sasbus)
 |-
 | 113 || Bluetooth
 |-
@@ -114,7 +116,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 129 || Play Report
 |-
-| 130 || AHID
+| 130 || HID (ahid)
 |-
 | 132 || Home Menu (Qlaunch)
 |-
@@ -174,7 +176,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 163 || Fatal
 |-
-| 164 || NIM Shop
+| 164 || NIM (shop)
 |-
 | 165 || SPSM
 |-
@@ -204,7 +206,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 203 || LDN
 |-
-| 205 || Irsensor
+| 205 || HID (irsensor)
 |-
 | 206 || Capture
 |-
