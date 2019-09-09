@@ -2586,7 +2586,7 @@ See also [[:Category:Library Applets]].
 |-
 | 0x15
 | 010000000000100D
-| "photoViewer"
+| [[Album_Applet|"photoViewer"]]
 |-
 | 0x16
 | 010000000000100E

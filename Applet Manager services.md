@@ -2855,7 +2855,7 @@ Applets](:Category:Library%20Applets.md "wikilink").
 | 0x12 | 0100000000001009 | "miiEdit"                                                                                                        |
 | 0x13 | 010000000000100A | "LibAppletWeb" [WebApplet](Internet%20Browser#010000000000100A.md##010000000000100A "wikilink") applet           |
 | 0x14 | 010000000000100B | "LibAppletShop" [ShopN](Internet%20Browser#ShopN.md##ShopN "wikilink") applet                                    |
-| 0x15 | 010000000000100D | "photoViewer"                                                                                                    |
+| 0x15 | 010000000000100D | ["photoViewer"](Album%20Applet.md "wikilink")                                                                    |
 | 0x16 | 010000000000100E | "set"                                                                                                            |
 | 0x17 | 010000000000100F | "LibAppletOff" [Offline](Internet%20Browser#Offline%20Applet.md##Offline_Applet "wikilink") applet               |
 | 0x18 | 0100000000001010 | "LibAppletLns" [Whitelisted](Internet%20Browser#Whitelisted%20Applets.md##Whitelisted_Applets "wikilink") applet |
