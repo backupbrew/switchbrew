@@ -50,11 +50,11 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 19 || TSC
 |-
-| 20 || NCM Content
+| 20 || NCM (content)
 |-
 | 21 || SM
 |-
-| 22 || RO userland
+| 22 || RO (userland)
 |-
 | 24 || SDMMC
 |-
@@ -160,7 +160,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 154 || NPNS
 |-
-| 155 || NPNS XMPP Stream
+| 155 || NPNS (XMPP Stream)
 |-
 | 157 || ARP
 |-
@@ -168,9 +168,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 159 || SWKBD
 |-
-| 161 || NFC Mifare
+| 161 || NFC (Mifare)
 |-
-| 162 || Userland assert
+| 162 || Userland (assert)
 |-
 | 163 || Fatal
 |-
@@ -180,7 +180,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 167 || BGTC
 |-
-| 168 || Userland crash
+| 168 || Userland (crash)
+|-
+| 169 || Sasbus (Periodic Receive Mode)
 |-
 | 178 || PDM
 |-
@@ -189,6 +191,8 @@ When a fatal-error is received the error code is outputted using the following f
 | 180 || SREPO
 |-
 | 181 || Dauth
+|-
+| 187 || Sasbus
 |-
 | 191 || RTC
 |-
@@ -216,7 +220,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 216 || Migration
 |-
-| 217 || Migration Idc Server
+| 217 || Migration (Idc Server)
 |-
 | 345 || libnx
 |-

@@ -38,9 +38,9 @@ fatal-errors, since the Description ends with bit21.
 | 17    | Sockets                                      |
 | 18    | HTC                                          |
 | 19    | TSC                                          |
-| 20    | NCM Content                                  |
+| 20    | NCM (content)                                |
 | 21    | SM                                           |
-| 22    | RO userland                                  |
+| 22    | RO (userland)                                |
 | 24    | SDMMC                                        |
 | 25    | OVLN                                         |
 | 26    | SPL                                          |
@@ -93,21 +93,23 @@ fatal-errors, since the Description ends with bit21.
 | 151   | Error Upload                                 |
 | 153   | Audio                                        |
 | 154   | NPNS                                         |
-| 155   | NPNS XMPP Stream                             |
+| 155   | NPNS (XMPP Stream)                           |
 | 157   | ARP                                          |
 | 158   | Updater                                      |
 | 159   | SWKBD                                        |
-| 161   | NFC Mifare                                   |
-| 162   | Userland assert                              |
+| 161   | NFC (Mifare)                                 |
+| 162   | Userland (assert)                            |
 | 163   | Fatal                                        |
 | 164   | NIM Shop                                     |
 | 165   | SPSM                                         |
 | 167   | BGTC                                         |
-| 168   | Userland crash                               |
+| 168   | Userland (crash)                             |
+| 169   | Sasbus (Periodic Receive Mode)               |
 | 178   | PDM                                          |
 | 179   | OLSC                                         |
 | 180   | SREPO                                        |
 | 181   | Dauth                                        |
+| 187   | Sasbus                                       |
 | 191   | RTC                                          |
 | 192   | Regulator                                    |
 | 197   | Clkrst                                       |
@@ -121,7 +123,7 @@ fatal-errors, since the Description ends with bit21.
 | 211   | Unknown                                      |
 | 212   | GRC                                          |
 | 216   | Migration                                    |
-| 217   | Migration Idc Server                         |
+| 217   | Migration (Idc Server)                       |
 | 345   | libnx                                        |
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink") |
 | 347   | Homebrew Loader                              |
