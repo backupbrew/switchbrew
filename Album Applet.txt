@@ -1,0 +1,18 @@
+This is the Album (<code>PhotoViewer</code>) applet launched by Home Menu.
+See [[AM_services#Library_Applets]].
+
+== Usage ==
+User-processes should push a common arguments struct (version=0x10000) as well as <code>u8 type</code>. See below for the commonargs PlayStartupSound flag value. After starting the applet, official sw immediately closes it (no output storage is handled).
+
+{| class="wikitable" border="1"
+|-
+! Name || Type || PlayStartupSound
+|-
+| <code>ShowAlbumFiles</code> || 0 || false
+|-
+| <code>ShowAllAlbumFiles</code> || 1 || false
+|-
+| <code>ShowAllAlbumFilesForHomeMenu</code> || 2 || true
+|}
+
+[[Category:Library Applets]]
