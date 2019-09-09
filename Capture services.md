@@ -413,12 +413,10 @@ This is "nn::album::ImageOrientation".
 
 ### AlbumReportOption
 
-| Value | Description |
-| ----- | ----------- |
-| 0     | Unknown.    |
-| 1     | Unknown.    |
-| 2     | Unknown.    |
-| 3     | Unknown.    |
+| Value | Description                                                     |
+| ----- | --------------------------------------------------------------- |
+| 0     | Don't display the screenshot-taken Overlay-applet notification. |
+| 1     | Display the screenshot-taken Overlay notification.              |
 
 This is "nn::album::AlbumReportOption".
 
