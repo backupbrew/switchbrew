@@ -6,13 +6,13 @@ User-processes should push a common arguments struct (version=0x10000) as well a
 
 {| class="wikitable" border="1"
 |-
-! Name || Arg value || PlayStartupSound
+! Name || Arg value || PlayStartupSound || Description
 |-
-| <code>ShowAlbumFiles</code> || 0 || false
+| <code>ShowAlbumFiles</code> || 0 || false || Only displays AlbumFiles associated with the title which launched the Album applet, with the filter button disabled.
 |-
-| <code>ShowAllAlbumFiles</code> || 1 || false
+| <code>ShowAllAlbumFiles</code> || 1 || false || Displays all AlbumFiles, with filtering allowed.
 |-
-| <code>ShowAllAlbumFilesForHomeMenu</code> || 2 || true
+| <code>ShowAllAlbumFilesForHomeMenu</code> || 2 || true || Similar to ShowAllAlbumFiles.
 |}
 
 [[Category:Library Applets]]
