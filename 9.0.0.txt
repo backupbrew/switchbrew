@@ -129,11 +129,11 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 ** "/CNzhT" was added.
 ** "/revision.txt" was updated.
 * TimeZoneBinary: "/version.txt" and various files under "/zoneinfo/" were updated.
-* FirmwareDebugSettings: "/file" was updated.
 * FatalMessage: "/<dirname>/TerraMessage" was added, where <dirname> is all localization directories.
 * ControllerIcon: "/lyt/footer/800/controllerIcon.bntx" and "/lyt/footer/800/info.dat" were updated.
-* PlatformConfigIcosa, PlatformConfigCopper, and PlatformConfigHoag: "/file" was updated.
+* FirmwareDebugSettings, PlatformConfigIcosa, PlatformConfigCopper, PlatformConfigHoag, and PlatformConfigIcosaMariko: "/file" was updated.
 * ControllerFirmware: See [[HID_services#Firmware_update]].
+* NgWord2: "/ac_0_not_b_nx" and "/ac_common_not_b_nx" were updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
