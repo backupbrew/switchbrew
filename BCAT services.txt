@@ -344,6 +344,8 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 |-
 | 10300 || GetTransmissionStatus
 |-
+| 10400 || [9.0.0+] GetSystemSessionId
+|-
 | 20100 || SaveSystemReport
 |-
 | 20101 || SaveSystemReportWithUser
@@ -368,9 +370,9 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 |-
 | 90100 || [6.0.0+] ReadAllReportFiles ([1.0.0-5.1.0] GetStorageUsage)
 |-
-| [1.0.0] 90101 || 
+| 90101 || [1.0.0]
 |-
-| [1.0.0] 90102 || 
+| 90102 || [1.0.0] 
 |-
 | [5.0.0-5.1.0] 90200 || GetStatistics
 |-

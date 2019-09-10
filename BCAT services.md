@@ -255,6 +255,7 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 | 10103                 | \[6.0.0+\] SaveReportWithUser                                   |
 | 10200                 | RequestImmediateTransmission                                    |
 | 10300                 | GetTransmissionStatus                                           |
+| 10400                 | \[9.0.0+\] GetSystemSessionId                                   |
 | 20100                 | SaveSystemReport                                                |
 | 20101                 | SaveSystemReportWithUser                                        |
 | 20200                 | \[4.0.0+\] SetOperationMode                                     |
@@ -267,8 +268,8 @@ These are "nn::prepo::detail::ipc::IPrepoService".
 | 40100                 | \[2.0.0+\] IsUserAgreementCheckEnabled                          |
 | 40101                 | \[2.0.0+\] SetUserAgreementCheckEnabled                         |
 | 90100                 | \[6.0.0+\] ReadAllReportFiles (\[1.0.0-5.1.0\] GetStorageUsage) |
-| \[1.0.0\] 90101       |                                                                 |
-| \[1.0.0\] 90102       |                                                                 |
+| 90101                 | \[1.0.0\]                                                       |
+| 90102                 | \[1.0.0\]                                                       |
 | \[5.0.0-5.1.0\] 90200 | GetStatistics                                                   |
 | \[5.0.0-5.1.0\] 90201 | GetThroughputHistory                                            |
 | \[5.0.0-5.1.0\] 90300 | GetLastUploadError                                              |
