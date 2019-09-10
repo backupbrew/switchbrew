@@ -63,6 +63,11 @@ Secure Monitor was updated.
 * Code for initializing MMIO inside package2ldr now writes random values to a number of PMC secure scratch registers, and validates that the written values are read back successfully before locking the scratch.
 ** TODO: Check back later for information on what these scratch do.
 
+====KernelLdr====
+[[Kernel Loader|KernelLdr]] was updated.
+
+<check back later for diff>
+
 ====Kernel====
 Kernel was updated.
 
