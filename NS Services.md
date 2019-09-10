@@ -370,7 +370,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 96                   | \[6.0.0+\] AcquireApplicationLaunchInfo                                                            |
 | 97                   | \[6.0.0+\] GetMainApplicationProgramIndexByApplicationLaunchInfo                                   |
 | 98                   | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                   |
-| 99                   | \[8.0.0+\]                                                                                         |
+| 99                   | \[8.0.0+\] LaunchDevMenu                                                                           |
 | 100                  | ResetToFactorySettings                                                                             |
 | 101                  | ResetToFactorySettingsWithoutUserSaveData                                                          |
 | 102                  | ResetToFactorySettingsForRefurbishment                                                             |
@@ -395,8 +395,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 404                  | InvalidateApplicationControlCache                                                                  |
 | 405                  | ListApplicationControlCacheEntryInfo                                                               |
 | 406                  | \[6.0.0+\] GetApplicationControlProperty                                                           |
-| 407                  | \[8.0.0+\]                                                                                         |
-| 408                  | \[8.0.0+\]                                                                                         |
+| 407                  | \[8.0.0+\] ListApplicationTitle                                                                    |
+| 408                  | \[8.0.0+\] ListApplicationIcon                                                                     |
 | 502                  | RequestCheckGameCardRegistration                                                                   |
 | 503                  | RequestGameCardRegistrationGoldPoint                                                               |
 | 504                  | RequestRegisterGameCard                                                                            |
@@ -460,7 +460,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1701                 | \[3.0.0+\] GetApplicationView                                                                      |
 | 1702                 | \[3.0.0+\] GetApplicationDownloadTaskStatus                                                        |
 | 1703                 | \[4.0.0+\] GetApplicationViewDownloadErrorContext                                                  |
-| 1704                 | \[8.0.0+\]                                                                                         |
+| 1704                 | \[8.0.0+\] GetApplicationViewWithPromotionInfo                                                     |
 | 1800                 | IsNotificationSetupCompleted                                                                       |
 | 1801                 | GetLastNotificationInfoCount                                                                       |
 | 1802                 | ListLastNotificationInfo                                                                           |
@@ -509,13 +509,13 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2201                 | \[6.0.0+\] GetInstalledApplicationCopyIdentifier                                                   |
 | \[6.0.0-6.2.0\] 2250 | RequestReportActiveELicence                                                                        |
 | 2300                 | \[6.0.0+\] ListEventLog                                                                            |
-| 2350                 | \[7.0.0+\]                                                                                         |
-| 2400                 | \[8.0.0+\]                                                                                         |
-| 2401                 | \[8.0.0+\]                                                                                         |
-| 2402                 | \[8.0.0+\]                                                                                         |
-| 2403                 | \[8.0.0+\]                                                                                         |
-| 2404                 | \[8.0.0+\]                                                                                         |
-| 2500                 | \[8.0.0+\]                                                                                         |
+| 2350                 | \[7.0.0+\] PerformAutoUpdateByApplicationId                                                        |
+| 2400                 | \[8.0.0+\] GetPromotionInfo                                                                        |
+| 2401                 | \[8.0.0+\] CountPromotionInfo                                                                      |
+| 2402                 | \[8.0.0+\] ListPromotionInfo                                                                       |
+| 2403                 | \[8.0.0+\] ImportPromotionJsonForDebug                                                             |
+| 2404                 | \[8.0.0+\] ClearPromotionInfoForDebug                                                              |
+| 2500                 | \[8.0.0+\] ConfirmAvailableTime                                                                    |
 |                      |                                                                                                    |
 
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
@@ -634,21 +634,21 @@ This is "nn::ns::detail::IDynamicRightsInterface".
 
 This was added with \[6.0.0+\].
 
-| Cmd | Name       | Notes |
-| --- | ---------- | ----- |
-| 0   |            |       |
-| 1   |            |       |
-| 4   |            |       |
-| 5   |            |       |
-| 6   |            |       |
-| 7   |            |       |
-| 8   |            |       |
-| 9   | \[7.0.0+\] |       |
-| 10  | \[7.0.0+\] |       |
-| 11  | \[7.0.0+\] |       |
-| 12  | \[8.0.0+\] |       |
-| 13  | \[8.0.0+\] |       |
-|     |            |       |
+| Cmd | Name                                                | Notes |
+| --- | --------------------------------------------------- | ----- |
+| 0   | RequestApplicationRightsOnServer                    |       |
+| 1   | RequestAssignRights                                 |       |
+| 4   | DeprecatedRequestAssignRightsToResume               |       |
+| 5   | VerifyActivatedRightsOwners                         |       |
+| 6   | DeprecatedGetApplicationRightsStatus                |       |
+| 7   | RequestPrefetchForDynamicRights                     |       |
+| 8   | GetDynamicRightsState                               |       |
+| 9   | \[7.0.0+\] RequestApplicationRightsOnServerToResume |       |
+| 10  | \[7.0.0+\] RequestAssignRightsToResume              |       |
+| 11  | \[7.0.0+\] GetActivatedRightsUsers                  |       |
+| 12  | \[8.0.0+\] GetApplicationRightsStatus               |       |
+| 13  | \[8.0.0+\] GetRunningApplicationStatus              |       |
+|     |                                                     |       |
 
 ### IECommerceInterface
 
