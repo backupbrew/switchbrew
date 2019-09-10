@@ -211,7 +211,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>ldn:m, ldn:s, ldn:u, [5.0.0+] ndd</p></td>
+<td><p>ldn:m, ldn:s, ldn:u, [5.0.0+] ndd, [9.0.0+] lp2p:app, [9.0.0+] lp2p:sys</p></td>
 <td><p><a href="LDN services.md" title="wikilink">LDN services</a></p></td>
 <td></td>
 </tr>
