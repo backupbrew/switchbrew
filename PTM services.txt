@@ -6,7 +6,6 @@ This is "nn::fan::detail::IManager".
 ! Cmd || Name
 |-
 | 0 || OpenController
-|-
 |}
 
 == IController ==
@@ -26,12 +25,11 @@ This is "nn::fan::detail::IController".
 |-
 | 4 || GetRotationRate
 |-
-| [1.0.0-6.2.0] 5 || EnableFan
+| 5 || [1.0.0-6.2.0] EnableFan
 |-
-| [1.0.0-6.2.0] 6 || DisableFan
+| 6 || [1.0.0-6.2.0] DisableFan
 |-
-| [1.0.0-6.2.0] 7 || GetActualRotationSpeedLevel
-|-
+| 7 || [1.0.0-6.2.0] GetActualRotationSpeedLevel
 |}
 
 [7.0.0+] SetRotationSpeedLevelByDiff/SetRotationRate no longer takes any input. GetRotationRate no longer returns output. These were presumably replaced with new cmds?
@@ -80,7 +78,6 @@ This is "nn::psm::IPsmServer".
 | 17 || [[#GetBatteryChargeInfoFields]]
 |-
 | 18 || [3.0.0+] GetBatteryChargeCalibratedEvent
-|-
 |}
 
 == GetBatteryChargePercentage ==
@@ -196,7 +193,6 @@ This is "nn::tc::IManager".
 | 8 ||
 |-
 | 9 || [5.0.0+]
-|-
 |}
 
 = ts =
@@ -215,7 +211,6 @@ This is "nn::ts::server::IMeasurementServer".
 | 3 ||
 |-
 | 4 || [8.0.0+] ? (Takes a total of 4-bytes of input, returns an [[#IUnknown0]])
-|-
 |}
 
 == IUnknown0 ==
@@ -244,6 +239,232 @@ This is "nn::pcm::IManager".
 | 0 || IsSupported
 |-
 | 1 || ReadCurrentPower
+|}
+
+= apm:am =
+This is "nn::apm::IManager".
+
+This was added with [8.0.0+] and replaces the old [[PPC_services#apm|apm]] service.
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#OpenSession]]
+|-
+| 1 || GetPerformanceMode
+|-
+| 6 || [7.0.0+] [[#IsCpuOverclockEnabled]]
+|}
+
+== OpenSession ==
+Returns an [[#ISession]].
+
+== IsCpuOverclockEnabled ==
+No input, returns an output u8 bool.
+
+= apm:sys =
+This is "nn::apm::ISystemManager".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || RequestPerformanceMode
+|-
+| 1 || GetPerformanceEvent
+|-
+| 2 || GetThrottlingState
+|-
+| 3 || GetLastThrottlingState
+|-
+| 4 || ClearLastThrottlingState
+|-
+| 5 || [5.0.0+] LoadAndApplySettings
+|-
+| 6 || [7.0.0+] [[#SetCpuBoostMode]]
+|-
+| 7 || [7.0.0+] [[#GetCurrentPerformanceConfiguration]]
+|}
+
+== GetPerformanceEvent ==
+Returns an [[#ISession]].
+
+== SetCpuBoostMode ==
+Takes an u32 [[#CpuBoostMode]].
+
+=== CpuBoostMode ===
+{| class="wikitable" border="1"
+|-
+! Mode || Description
+|-
+| 0 || Disabled.
+|-
+| 1 || Use [[#PerformanceConfiguration|performance configurations]] 0x92220009 and 0x9222000A, or 0x9222000B and 0x9222000C.
+|-
+| 2 || Use [[#PerformanceConfiguration|performance configurations]] 0x9222000B and 0x9222000C.
+|}
+
+== GetCurrentPerformanceConfiguration ==
+Returns the currently active [[#PerformanceConfiguration]] (default value is 0x00020003).
+
+= ISession =
+This is "nn::apm::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || SetPerformanceConfiguration
+|-
+| 1 || GetPerformanceConfiguration
+|-
+| 2 || [8.0.0+] [[#SetCpuOverclockEnabled]]
+|}
+
+== SetPerformanceConfiguration ==
+Takes an u32 [[#PerformanceMode]] and an u32 [[#PerformanceConfiguration]].
+
+== GetPerformanceConfiguration ==
+Takes an u32 [[#PerformanceMode]] and returns an output u32 [[#PerformanceConfiguration]].
+
+== SetCpuOverclockEnabled ==
+Takes an input u8 bool, no output.
+
+== PerformanceMode ==
+{| class="wikitable" border="1"
+|-
+! Value || Name
+|-
+| 0 || Handheld
+|-
+| 1 || Docked
+|}
+
+== PerformanceConfiguration ==
+{| class="wikitable" border="1"
+|-
+! Value || CPU clock || GPU clock || Memory clock
+|-
+| 0x00010000 || 1020 || 384 || 1600
+|-
+| 0x00010001 || 1020 || 768 || 1600
+|-
+| 0x00010002 || 1224 || 691.2 || 1600
+|-
+| 0x00020000 || 1020 || 230.4 || 1600
+|-
+| 0x00020001 || 1020 || 307.2 || 1600
+|-
+| 0x00020002 || 1224 || 230.4 || 1600
+|-
+| 0x00020003 || 1020 || 307 || 1331.2
+|-
+| 0x00020004 || 1020 || 384 || 1331.2
+|-
+| 0x00020005 || 1020 || 307.2 || 1065.6
+|-
+| 0x00020006 || 1020 || 384 || 1065.6
+|-
+| 0x92220007 || 1020  || 460.8 || 1600
+|-
+| 0x92220008 || 1020 || 460.8 || 1331.2
+|-
+| [7.0.0+] 0x92220009 || 1785 || 768 || 1600
+|-
+| [7.0.0+] 0x9222000A || 1785 || 768 || 1331.2
+|-
+| [7.0.0+] 0x9222000B || 1020 || 768 || 1600
+|-
+| [7.0.0+] 0x9222000C || 1020 || 768 || 1331.2
+|}
+
+Clocks are all in MHz.
+
+Configurations 0x10001 and 0x20000 are only available while docked. Configurations 0x10002 and 0x20002 are only available for SDEV units.
+
+Some of these require apm:p.
+
+= fgm, fgm:0, fgm:9 =
+This is "nn::fgm::sf::ISession".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|}
+
+== IRequest ==
+This is "nn::fgm::sf::IRequest".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|-
+| 1 || Set
+|-
+| 2 || Get
+|-
+| 3 || Cancel
+|}
+
+= fgm:dbg =
+This is "nn::fgm::sf::IDebugger".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || Initialize
+|-
+| 1 || Read
+|-
+| 2 || Cancel
+|}
+
+= Settings =
+{| class="wikitable" border="1"
+|-
+! Key || Size || Notes
+|-
+| background_download_stress_testing_storage || strlen || "sdcard", "builtin", "system".
+|-
+| battery_draining_enabled || 1 || ?
+|-
+| fs_access_log_mode || strlen || "log", "sdcard", "log+sdcard", "off".
+|-
+| fs_speed_emulation_mode || strlen || "faster", "slower", "random", "off".
+|-
+| host_romfs_redirection_target || strlen || "builtin", "off".
+|-
+| idle_time_detect_mode || strlen || "on", "off".
+|-
+| initial_tick_value || strlen || "7days", "14days", "30days", "90days", "hex": ?.
+|-
+| memory_mode || strlen || "auto", "4GB", "6GB".
+|-
+| needs_update_vulnerability_policy || strlen || "default": ?, "force_true": ?, "force_false": ?.
+|-
+| operation_mode_policy || strlen || "auto": ?, "handheld", "console".
+|-
+| performance_mode_policy || strlen || "auto": use boost mode when docked. "normal": never use boost mode. "boost": always use boost mode (SDEV only).
+|-
+| screenshot_target || strlen || "screenshot": ?, "physical": ?.
+|-
+| sdev_cpu_overclock_enabled || 1 || SDEV only. Used to allow access to 1224MHz CPU mode.
+|-
+| sdev_throttling_additional_delay_us || 4 || SDEV only.
+|-
+| sdev_throttling_additional_delay_enabled || 1 || SDEV only.
+|-
+| sleep_mode || strlen || "default": ?, "pseudo": ?.
+|-
+| throttling_for_smpd_enabled || 1 || Not used as of 3.0.
+|-
+| throttling_for_undock_enabled || 1 || Not used as of 3.0.
 |}
 
 [[Category:Services]]
