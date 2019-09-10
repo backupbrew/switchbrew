@@ -68,6 +68,8 @@ This is "nn::bgtc::IStateControlService".
 
 These are "nn::timesrv::detail::<service::IStaticService>".
 
+These were added with \[9.0.0+\].
+
 | Cmd | Name                                                                 | Notes                                                          |
 | --- | -------------------------------------------------------------------- | -------------------------------------------------------------- |
 | 0   | GetStandardUserSystemClock                                           | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
