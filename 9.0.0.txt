@@ -89,6 +89,8 @@ Eula RomFS changes:
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
 
+The services which were previously hosted by this sysmodule were moved into [[PTM_services|ptm-sysmodule]].
+
 ==Keys==
 All updated non-FIRM titles use a new masterkey, except for Eula which still uses the keydata from [[1.0.0]].
 
