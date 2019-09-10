@@ -121,6 +121,9 @@ Additional data buffers are then read/written using standard MMC read/write comm
 |-
 | 0x13
 | [[#GetRmaInformation]]
+|-
+| 0x14
+| [9.0.0+] NewExchangeRandomValuesInSecureMode
 |}
 
 == SetUserAsicFirmware ==

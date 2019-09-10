@@ -73,6 +73,7 @@ read/write commands.
 | 0x11    | [\#EnableCardBus](#EnableCardBus "wikilink")                                       |
 | 0x12    | [\#ExchangeRandomValuesInSecureMode](#ExchangeRandomValuesInSecureMode "wikilink") |
 | 0x13    | [\#GetRmaInformation](#GetRmaInformation "wikilink")                               |
+| 0x14    | \[9.0.0+\] NewExchangeRandomValuesInSecureMode                                     |
 
 ## SetUserAsicFirmware
 
