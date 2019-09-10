@@ -121,6 +121,7 @@ RomFS changes:
 * SharedFont:
 ** "/Iwnn/KO/njubase1.a" and "/Iwnn/KO/njubase2.a" were updated.
 ** Various files were updated under "Iwnn/ZH/CN/", "/Iwnn/ZH/HK/", and "/Iwnn/ZH/TW/".
+* NgWord: "/0.txt", "/common.txt", and "/version.dat" were updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
