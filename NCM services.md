@@ -280,7 +280,7 @@ This is "nn::ncm::IContentManager".
 | 10  | \[2.0.0+\] InactivateContentStorage        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage. Note: Name is not official.                                                     |
 | 11  | \[2.0.0+\] ActivateContentMetaDatabase     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official. |
 | 12  | \[2.0.0+\] InactivateContentMetaDatabase   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase. Note: Name is not official.                                                |
-| 13  | \[9.0.0+\]                                 |                                                                                                                                                                                                           |
+| 13  | \[9.0.0+\] InvalidateRightsIdCache         |                                                                                                                                                                                                           |
 
 ### IContentStorage
 
