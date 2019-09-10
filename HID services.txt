@@ -1864,6 +1864,14 @@ The hid-sysmodule RomFS contains:
 
 These are firmware files for the touchscreen controller.
 
+[9.0.0+] The hid-sysmodule RomFS now contains:
+  ftmFwUpdate
+    ├── FTS_00120100.fts256
+    ├── FTS_32000001.fts256
+    ├── FTS_32000102.fts256
+    ├── FTS_32000302.fts256
+    └── FTS_32000402.fts256
+
 = Firmware update =
 HID-sysmodule mounts the contents of title [[Title_list|0100000000000822]] as "systemData" or the contents of title [[Title_list|010000000000B22B]] as "systemDataD". Both titles contain the same files, but [[Title_list|0100000000000822]] is used on retail units while [[Title_list|010000000000B22B]] is used for development.
 
