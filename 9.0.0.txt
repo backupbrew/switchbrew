@@ -89,6 +89,13 @@ FIRM sysmodules were updated. Specific diffs available below:
 =====[[Filesystem services|FS]]=====
 [[Gamecard_ASIC#User_firmware|Gamecard ASIC firmware]] was updated.
 
+
+=====[[Loader services|Loader]]=====
+The anti-downgrade code in CreateProcess was updated.
+* All system modules, and all web applets are now subject to anti-downgrade restrictions.
+* Instead of using 1 as the minimum value, the minimum value is looked up from an array in .rodata on a per-module basis.
+** All current entries use 0x24000000 (9.0.0) as the minimum version.
+
 ==System Titles==
 All titles were updated except for the following: Dictionary, UrlBlackList, and [[flog]].
 
