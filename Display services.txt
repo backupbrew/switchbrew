@@ -13,7 +13,7 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 3 || [5.0.0+] AttachSharedBuffer || Takes a total of 8-bytes of input, no output.
 |-
-| 5 || [5.0.0-8.1.0] CaptureRawImageToAttachedSharedBuffer || Takes a total of 0x10-bytes of input, no output.
+| 5 || [5.0.0+] CaptureRawImageToAttachedSharedBuffer || Takes a total of 0x10-bytes of input, no output.
 |-
 | 210 || [6.0.0+] ? || Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output.
 |-
@@ -25,13 +25,13 @@ This is "nn::capsrv::sf::IScreenShotControlService". This is available with [2.0
 |-
 | 1004 || [5.0.0+] RequestTakingScreenShotEx1 || Takes a total of 0x60-bytes of input, no output. [6.0.0+]: In addition, this also takes a type-0x15 input buffer.
 |-
-| 1009 || [5.0.0-8.1.0] CancelTakingScreenShot || Takes a total of 0x10-bytes of input, no output.
+| 1009 || [5.0.0+] CancelTakingScreenShot || Takes a total of 0x10-bytes of input, no output.
 |-
-| 1010 || [5.0.0-8.1.0] SetTakingScreenShotCancelState || Takes a total of 0x10-bytes of input, no output.
+| 1010 || [5.0.0+] SetTakingScreenShotCancelState || Takes a total of 0x10-bytes of input, no output.
 |-
-| 1011 || [2.0.0-8.1.0] NotifyTakingScreenShotRefused || Takes a total of 8-bytes of input, no output.
+| 1011 || NotifyTakingScreenShotRefused || Takes a total of 8-bytes of input, no output.
 |-
-| 1012 || [2.0.0-8.1.0] NotifyTakingScreenShotFailed || Takes a total of 8-bytes of input, no output.
+| 1012 || NotifyTakingScreenShotFailed || Takes a total of 8-bytes of input, no output.
 |-
 | 1101 || [4.0.0+] [[#SetupOverlayMovieThumbnail]] || 
 |-
