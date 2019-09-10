@@ -10,7 +10,7 @@ This is "nn::btm::IBtm".
 | 3   | GetDeviceCondition                         |
 | 4   | SetBurstMode                               |
 | 5   | SetSlotMode                                |
-| 6   | SetBluetoothMode                           |
+| 6   | \[1.0.0-8.1.0\] SetBluetoothMode           |
 | 7   | SetWlanMode                                |
 | 8   | AcquireDeviceInfoEvent                     |
 | 9   | GetDeviceInfo                              |
@@ -66,6 +66,8 @@ This is "nn::btm::IBtm".
 | 59  | \[5.1.0+\] SetAppletResourceUserId         |
 | 60  | \[8.0.0+\]                                 |
 | 61  | \[8.0.0+\]                                 |
+| 62  | \[9.0.0+\]                                 |
+| 63  | \[9.0.0+\]                                 |
 
 \[3.0.0+\] RegisterSystemEventForConnectedDeviceCondition,
 RegisterSystemEventForRegisteredDeviceInfo, and cmd18 now returns an
