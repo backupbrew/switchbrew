@@ -55,6 +55,9 @@ This is "nn::friends::detail::ipc::IFriendService".
 | 20801 | SyncUserSetting                                          |
 | 20900 | RequestListSummaryOverlayNotification                    |
 | 21000 | GetExternalApplicationCatalog                            |
+| 22000 | \[9.0.0+\] GetReceivedFriendInvitationList               |
+| 22001 | \[9.0.0+\] GetReceivedFriendInvitationDetailedInfo       |
+| 22010 | \[9.0.0+\] GetReceivedFriendInvitationCountCache         |
 | 30100 | DropFriendNewlyFlags                                     |
 | 30101 | DeleteFriend                                             |
 | 30110 | DropFriendNewlyFlag                                      |
@@ -86,6 +89,8 @@ This is "nn::friends::detail::ipc::IFriendService".
 | 30812 | ChangePlayLogPermission                                  |
 | 30820 | IssueFriendCode                                          |
 | 30830 | ClearPlayLog                                             |
+| 30900 | \[9.0.0+\] SendFriendInvitation                          |
+| 30910 | \[9.0.0+\] ReadFriendInvitation                          |
 | 49900 | DeleteNetworkServiceAccountCache                         |
 
 ## INotificationService
