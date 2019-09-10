@@ -92,6 +92,8 @@ This was added with \[9.0.0+\].
 
 These are "nn::srepo::detail::ipc::ISrepoService".
 
+These were added with \[5.0.0+\].
+
 | Cmd   | Name       |
 | ----- | ---------- |
 | 10100 |            |

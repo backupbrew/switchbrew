@@ -100,6 +100,8 @@ This was added with [9.0.0+].
 = srepo:u, srepo:a =
 These are "nn::srepo::detail::ipc::ISrepoService".
 
+These were added with [5.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
