@@ -58,6 +58,7 @@ This is "nn::nifm::detail::IGeneralService".
 | 40  | \[8.0.0+\] SetAcceptableNetworkTypeFlag                          |                                                              |
 | 41  | \[8.0.0+\] GetAcceptableNetworkTypeFlag                          |                                                              |
 | 42  | \[8.0.0+\] NotifyConnectionStateChanged                          |                                                              |
+| 43  | \[9.0.0+\] SetWowlDelayedWakeTime                                |                                                              |
 
 ### IScanRequest
 
