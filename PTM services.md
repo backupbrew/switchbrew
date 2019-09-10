@@ -320,8 +320,6 @@ Clocks are all in MHz.
 Configurations 0x10001 and 0x20000 are only available while docked.
 Configurations 0x10002 and 0x20002 are only available for SDEV units.
 
-Some of these require apm:p.
-
 # fgm, fgm:0, fgm:9
 
 This is "nn::fgm::sf::ISession".
