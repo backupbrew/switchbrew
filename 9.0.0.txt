@@ -49,7 +49,12 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 * 	
 
 ==System Titles==
-<fill this in (manually) later>
+All titles were updated except for the following: Dictionary, UrlBlackList, and [[flog]].
+
+New titles 0100000000000041 and 100000000000830 were added.
+
+==Keys==
+All updated non-FIRM titles use a new masterkey, except for Eula which still uses the keydata from [[1.0.0]].
 
 ==See Also==
 System update report(s):
