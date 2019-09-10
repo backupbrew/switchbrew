@@ -101,9 +101,11 @@ All titles were updated except for the following: Dictionary, UrlBlackList, and 
 
 New titles 0100000000000041 (ngct-sysmodule) and 100000000000830 were added.
 
-Eula RomFS changes:
-* "/CNzhT" was added.
-* "/revision.txt" was updated.
+RomFS changes:
+* See [[HID_services#RomFS]] for hid-sysmodule.
+* Eula:
+** "/CNzhT" was added.
+** "/revision.txt" was updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
