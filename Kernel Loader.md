@@ -548,6 +548,14 @@ are allocated via allocator-\>Allocate() when needed.
 This is just standard aarch64 page table code. Walks the page table,
 verifying that all entries it would map for size + range are free.
 
+## KInitialPageTable::ReprotectToReadOnly
+
+This is just standard aarch64 page table code. Walks the page table,
+reprotects the read-write pages in the specified region as read-only.
+
+This is probably a compiler-optimized version of a function that does an
+arbitrary reprotection.
+
 ## KInitialPageTable::GetL1Table
 
 This is an inferred getter for a (presumably) private member.
