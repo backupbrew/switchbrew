@@ -882,6 +882,11 @@ Decimal versions use the format:
 <td></td>
 <td><p>nd (currently not present on retail devices)</p></td>
 </tr>
+<tr class="even">
+<td><p>0100000000000041</p></td>
+<td><p><a href="9.0.0.md" title="wikilink">v603980216</a> (9.0.0.440)</p></td>
+<td><p>[9.0.0+] ngct</p></td>
+</tr>
 </tbody>
 </table>
 
@@ -1477,6 +1482,12 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td></td>
 <td><p>PlatformConfigCalcio</p></td>
 <td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000000830</p></td>
+<td><p><a href="9.0.0.md" title="wikilink">v603980216</a> (9.0.0.440)</p></td>
+<td><p>NgWordT</p></td>
+<td><p>Bad words for China region (Tencent).</p></td>
 </tr>
 </tbody>
 </table>

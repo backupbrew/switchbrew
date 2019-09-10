@@ -141,6 +141,8 @@ Decimal versions use the format:
 | 010000000000003F || || dt (currently not present on retail devices)
 |-
 | 0100000000000040 || || nd (currently not present on retail devices)
+|-
+| 0100000000000041 || [[9.0.0|v603980216]] (9.0.0.440) || [9.0.0+] ngct
 |}
 
 == System Data Archives ==
@@ -228,6 +230,8 @@ Decimal versions use the format:
 | 0100000000000828 || [[8.0.0|v536871442]] (8.0.0.530) || FunctionBlackList || Used for restricting specific features in applications.
 |-
 | 0100000000000829 || || PlatformConfigCalcio || Currently not present on retail devices.
+|-
+| 0100000000000830 || [[9.0.0|v603980216]] (9.0.0.440) || NgWordT || Bad words for China region (Tencent).
 |}
 
 == System Applets ==
