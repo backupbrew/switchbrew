@@ -183,6 +183,8 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 | 7 || [2.0.0+] RedirectHtmlDocumentPath || u64 TitleID + X descriptor [[Filesystem_services#ContentPath|ContentPath]] ||
 |-
 | 8 || [7.0.0+] Refresh || No input/output. || 
+|-
+| 9 || [9.0.0+] || ||
 |}
 
 === IAddOnContentLocationResolver ===
@@ -197,6 +199,10 @@ This is "nn::lr::IAddOnContentLocationResolver".
 | 1 || RegisterAddOnContentStorage || [[Filesystem_services#StorageId|StorageID]] + u64 TitleID || 
 |-
 | 2 || UnregisterAllAddOnContentPath || None || Clears all registered titles here.
+|-
+| 3 || [9.0.0+] || ||
+|-
+| 4 || [9.0.0+] || ||
 |}
 
 === Location List Entry ===
@@ -252,6 +258,8 @@ This is "nn::ncm::IContentManager".
 | 11 || [2.0.0+] ActivateContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official.
 |-
 | 12 || [2.0.0+] InactivateContentMetaDatabase || Takes a [[Filesystem_services#StorageId|StorageID]], and closes the associated IContentMetaDatabase. Note: Name is not official.
+|-
+| 13 || [9.0.0+] ||
 |}
 
 === IContentStorage ===

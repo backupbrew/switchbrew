@@ -232,6 +232,7 @@ time.
 | 6   | \[2.0.0+\] UnregisterHtmlDocumentPath | u64 TitleID                                                                                            | If the Type 1 fallback TID is == argument TID, unregisters the fallback path. Otherwise, noop. |
 | 7   | \[2.0.0+\] RedirectHtmlDocumentPath   | u64 TitleID + X descriptor [ContentPath](Filesystem%20services#ContentPath.md##ContentPath "wikilink") |                                                                                                |
 | 8   | \[7.0.0+\] Refresh                    | No input/output.                                                                                       |                                                                                                |
+| 9   | \[9.0.0+\]                            |                                                                                                        |                                                                                                |
 
 ### IAddOnContentLocationResolver
 
@@ -242,6 +243,8 @@ This is "nn::lr::IAddOnContentLocationResolver".
 | 0   | ResolveAddOnContentPath       | u64 TitleID + C descriptor                                                          |                                    |
 | 1   | RegisterAddOnContentStorage   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID |                                    |
 | 2   | UnregisterAllAddOnContentPath | None                                                                                | Clears all registered titles here. |
+| 3   | \[9.0.0+\]                    |                                                                                     |                                    |
+| 4   | \[9.0.0+\]                    |                                                                                     |                                    |
 
 ### Location List Entry
 
@@ -277,6 +280,7 @@ This is "nn::ncm::IContentManager".
 | 10  | \[2.0.0+\] InactivateContentStorage        | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentStorage. Note: Name is not official.                                                     |
 | 11  | \[2.0.0+\] ActivateContentMetaDatabase     | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and opens an IContentMetaDatabase for the StorageID to be gotten with GetIContentMetaDatabase. Note: Name is not official. |
 | 12  | \[2.0.0+\] InactivateContentMetaDatabase   | Takes a [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink"), and closes the associated IContentMetaDatabase. Note: Name is not official.                                                |
+| 13  | \[9.0.0+\]                                 |                                                                                                                                                                                                           |
 
 ### IContentStorage
 
