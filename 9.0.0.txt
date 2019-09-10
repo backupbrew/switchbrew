@@ -134,12 +134,21 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 * FirmwareDebugSettings, PlatformConfigIcosa, PlatformConfigCopper, PlatformConfigHoag, and PlatformConfigIcosaMariko: "/file" was updated.
 * ControllerFirmware: See [[HID_services#Firmware_update]].
 * NgWord2: "/ac_0_not_b_nx" and "/ac_common_not_b_nx" were updated.
-* [[qlaunch]]:
-** "/common/shader/VarietyOceanShader_Nx.arc.szs" was updated.
-** All files under "/lyt/" were updated.
+* Applets:
+** The shader file under "/common/shader/" was updated.
+** Various files under "/lyt/" were updated.
 ** Localization files under "/message/" were updated, directory "/message/CNzhT/" was also added.
+** "/sound/*.bksnd" and "/sound/*.bfsar" were updated.
+* [[qlaunch]] (in addition to the above):
 ** "/message/<dirname>/pshop.msbt.szs" was removed, where <dirname> is every directory where this file used to exist.
-** "/sound/qlaunch_action.bksnd" and "/sound/qlaunch.bfsar" were updated.
+* LibraryAppletCabinet (in addition to the above):
+** "/mii/NX-NXFP2-a64/shader/TextureShader.bnsh" and "/mii/NX-NXFP2-a64/shader/VariableIconBodyShader.bnsh" were updated.
+* LibraryAppletMiiEdit (in addition to the above):
+** Various files under "/archive/" were updated.
+* Web-applets: "/buildinfo/buildinfo.dat" and "/.nrr/netfront.nrr" were updated.
+** LibraryAppletShop: "/whitelist/WhitelistEc.txt" was updated.
+** LibraryAppletLoginShare: "/whitelist/WhitelistLns.txt" was updated.
+* OverlayApplet (in addition to the above): "/sound/infoAlarm.raw" was added.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
