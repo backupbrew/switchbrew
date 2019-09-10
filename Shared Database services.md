@@ -1,18 +1,20 @@
-# pl:u
+# pl:u, pl:s
 
-This is "nn::pl::detail::IPlatformServiceManager".
+These are "nn::pl::detail::IPlatformServiceManager".
 
-| Cmd | Name                                                                             |
-| --- | -------------------------------------------------------------------------------- |
-| 0   | [\#RequestSharedFontLoad](#RequestSharedFontLoad "wikilink")                     |
-| 1   | [\#GetSharedFontLoadState](#GetSharedFontLoadState "wikilink")                   |
-| 2   | [\#GetSharedFontSize](#GetSharedFontSize "wikilink")                             |
-| 3   | [\#GetSharedFontAddress](#GetSharedFontAddress "wikilink")                       |
-| 4   | [\#GetSharedFontSharedMemoryHandle](#GetSharedFontSharedMemoryHandle "wikilink") |
-| 5   | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink")   |
-| 6   | \[4.0.0+\] GetSharedFontInOrderOfPriorityForSystem                               |
-| 100 | \[8.0.0+\] RequestApplicationFunctionAuthorization                               |
-| 101 | \[8.0.0+\] RequestApplicationFunctionAuthorizationForSystem                      |
+| Cmd  | Name                                                                             |
+| ---- | -------------------------------------------------------------------------------- |
+| 0    | [\#RequestSharedFontLoad](#RequestSharedFontLoad "wikilink")                     |
+| 1    | [\#GetSharedFontLoadState](#GetSharedFontLoadState "wikilink")                   |
+| 2    | [\#GetSharedFontSize](#GetSharedFontSize "wikilink")                             |
+| 3    | [\#GetSharedFontAddress](#GetSharedFontAddress "wikilink")                       |
+| 4    | [\#GetSharedFontSharedMemoryHandle](#GetSharedFontSharedMemoryHandle "wikilink") |
+| 5    | [\#GetSharedFontInOrderOfPriority](#GetSharedFontInOrderOfPriority "wikilink")   |
+| 6    | \[4.0.0+\] GetSharedFontInOrderOfPriorityForSystem                               |
+| 100  | \[8.0.0+\] RequestApplicationFunctionAuthorization                               |
+| 101  | \[8.0.0+\] RequestApplicationFunctionAuthorizationForSystem                      |
+| 1000 | \[9.0.0+\] LoadNgWordDataForPlatformRegionChina                                  |
+| 1001 | \[9.0.0+\] GetNgWordDataSizeForPlatformRegionChina                               |
 
 ## RequestSharedFontLoad
 

@@ -1,5 +1,5 @@
-= pl:u =
-This is "nn::pl::detail::IPlatformServiceManager".
+= pl:u, pl:s =
+These are "nn::pl::detail::IPlatformServiceManager".
 
 {| class="wikitable" border="1"
 |-
@@ -22,6 +22,10 @@ This is "nn::pl::detail::IPlatformServiceManager".
 | 100 || [8.0.0+] RequestApplicationFunctionAuthorization
 |-
 | 101 || [8.0.0+] RequestApplicationFunctionAuthorizationForSystem
+|-
+| 1000 || [9.0.0+] LoadNgWordDataForPlatformRegionChina
+|-
+| 1001 || [9.0.0+] GetNgWordDataSizeForPlatformRegionChina
 |}
 
 == RequestSharedFontLoad ==
