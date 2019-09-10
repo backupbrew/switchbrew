@@ -555,11 +555,11 @@ LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
 #### Cmd2510
 
-Returns an \#NsSubinterface2510.
+Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
 
 #### Cmd2511
 
-Returns an \#NsSubinterface2510.
+Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
 
 ### IApplicationVersionInterface
 
@@ -975,6 +975,6 @@ Launches an application title which is registered with NS.
 
 ## Cmd13
 
-Returns an \#NsSubinterface2510.
+Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
 
 [Category:Services](Category:Services "wikilink")
