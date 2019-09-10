@@ -186,6 +186,7 @@ This is "nn::audio::detail::IFinalOutputRecorder".
 | 8   | \[3.0.0+\] AppendFinalOutputRecorderBufferAuto      |
 | 9   | \[3.0.0+\] GetReleasedFinalOutputRecorderBufferAuto |
 | 10  | \[6.0.0+\] FlushFinalOutputRecorderBuffers          |
+| 11  | \[9.0.0+\]                                          |
 
 # auddev
 
