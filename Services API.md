@@ -91,12 +91,12 @@ Takes a pid.
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
 <tr class="odd">
-<td><p>[?] apm:dbg, [1.0.0-8.1.0] apm:sys, [1.0.0-8.1.0] fgm, [1.0.0-8.1.0] fgm:0, [1.0.0-8.1.0] fgm:9, [?] fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0-8.1.0] apm:am</p></td>
+<td><p>[1.0.0-8.1.0] apm:dbg, [1.0.0-8.1.0] apm:sys, [1.0.0-8.1.0] fgm, [1.0.0-8.1.0] fgm:0, [1.0.0-8.1.0] fgm:9, [1.0.0-8.1.0] fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0-8.1.0] apm:am</p></td>
 <td><p><a href="PPC services.md" title="wikilink">PPC services</a></p></td>
 <td><p>fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.</p></td>
 </tr>
 <tr class="even">
-<td><p>arp:r, arp:w, [2.0.0+] bgtc:t, [2.0.0+] bgtc:sc</p></td>
+<td><p>arp:r, arp:w, [2.0.0+] bgtc:t, [2.0.0+] bgtc:sc, [9.0.0+] time:a, [9.0.0+] time:r, [9.0.0+] time:u, [9.0.0+] notif:a, [9.0.0+] notif:s</p></td>
 <td><p><a href="Glue services.md" title="wikilink">Glue services</a></p></td>
 <td></td>
 </tr>
@@ -116,7 +116,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>[1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s [2.0.0+] bpc, bpc:r, pcv, time:u, time:a, time:s, [1.0.0-7.0.1] pcv:arb, [1.0.0-7.0.1] pcv:imm, [8.0.0+] clkrst, [8.0.0+] clkrst:a, [8.0.0+] clkrst:i, [8.0.0+] rgltr, [8.0.0+] rtc</p></td>
+<td><p>[1.0.0] bpc:c, bpc:b, bpc:r, bpc:w, pcv, pcv:arb, pcv:imm, time:u, time:a, time:s [2.0.0+] bpc, bpc:r, pcv, [2.0.0-8.1.0] time:u, [2.0.0-8.1.0] time:a, [2.0.0-8.1.0] time:s, [1.0.0-7.0.1] pcv:arb, [1.0.0-7.0.1] pcv:imm, [8.0.0+] clkrst, [8.0.0+] clkrst:a, [8.0.0+] clkrst:i, [8.0.0+] rgltr, [8.0.0+] rtc</p></td>
 <td><p><a href="PCV services.md" title="wikilink">PCV services</a></p></td>
 <td></td>
 </tr>
@@ -171,7 +171,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>fan, psm, tc, ts, pcm, [9.0.0+] fgm, [9.0.0+] fgm:0, [9.0.0+] fgm:9, [9.0.0+] apm:am, [9.0.0+] apm:sys</p></td>
+<td><p>fan, psm, tc, ts, pcm, [9.0.0+] apm:sys, [9.0.0+] fgm, [9.0.0+] fgm:0, [9.0.0+] fgm:9, [9.0.0+] fgm:dbg, [9.0.0+] apm:am</p></td>
 <td><p><a href="PTM services.md" title="wikilink">PTM services</a></p></td>
 <td><p>pcm is not available on retail units.</p></td>
 </tr>
@@ -277,7 +277,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="even">
-<td><p>psc:c, psc:m, [5.0.0+] srepo:u, srepo:a, [8.0.0+] ovln:rcv, [8.0.0+] ovln:snd</p></td>
+<td><p>psc:c, psc:m, [5.0.0+] srepo:u, [5.0.0+] srepo:a, [8.0.0+] ovln:rcv, [8.0.0+] ovln:snd, [9.0.0+] psc:l, [9.0.0+] time:su, [9.0.0+] time:s, [9.0.0+] time:al, [9.0.0+] time:m, [9.0.0+] time:p, [9.0.0+] ins:r, [9.0.0+] ins:s</p></td>
 <td><p><a href="PSC services.md" title="wikilink">PSC services</a></p></td>
 <td></td>
 </tr>
@@ -292,7 +292,7 @@ Takes a pid.
 <td><p>cal: calibration, sys: System Settings</p></td>
 </tr>
 <tr class="odd">
-<td><p>[3.0.0+] mii:u, mii:e, pdm:ntfy, pdm:qry, pl:u, [5.0.0+] miiimg, [6.0.0+] avm</p></td>
+<td><p>[3.0.0+] mii:u, [3.0.0+] mii:e, [3.0.0+] pdm:ntfy, [3.0.0+] pdm:qry, [3.0.0+] pl:u, [5.0.0+] miiimg, [6.0.0+] avm, [9.0.0+] pl:s</p></td>
 <td><p><a href="Shared Database services.md" title="wikilink">Shared Database services</a></p></td>
 <td></td>
 </tr>
@@ -302,7 +302,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>csrng, spl:, [4.0.0+] spl:mig, spl:fs, spl:ssl, spl:es, [5.0.0+] spl:manu</p></td>
+<td><p>csrng, spl:, [4.0.0+] spl:mig, [4.0.0+] spl:fs, [4.0.0+] spl:ssl, [4.0.0+] spl:es, [5.0.0+] spl:manu</p></td>
 <td><p><a href="SPL services.md" title="wikilink">SPL services</a></p></td>
 <td></td>
 </tr>
