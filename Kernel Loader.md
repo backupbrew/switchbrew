@@ -275,7 +275,11 @@ Next, this sets some system registers.
 
     // Check what CPU we're running on to configure CPUECTLR, CPUACTLR appropriately.
     manufacture_id = MIDR_EL1;
-    implemeter = manufacturer_id >> 24) & 0xFF;
+    implementer = manufacturer_id >> 24) & 0xFF;
+    
+    // 9.0.0+: Save X19-X30 + SP, save context struct in TPIDR_EL1.
+    KernelLdr_SaveRegistersToTpidr();
+
     if (implementer == 0x41) {
         // Implementer ID is 0x41 (ARM Limited).
         architecture = (manufacture_id >> 4)  & 0x0FFF;
@@ -293,8 +297,24 @@ Next, this sets some system registers.
             if (CPUECTLR_EL1 != cpuectlr_value) {
                 CPUECTLR_EL1 = cpuectlr_value;
             }
+        } else if (architecture == 0xD03) { // 9.0.0+
+            // Architecture is 0xD03 (Cortex-A53).
+            cpuactlr_value = 0x90CA000; // TODO: What is this?
+            cpuectlr_value = 0x40;      // TODO: What is this?
+            if (hw_variant != 0 || (hw_variant == 0 && hw_revision > 2)) {
+                // TODO: What is this?
+                cpuactlr_value |= 0x100000000000;
+            }
+            CPUACTLR_EL1 = cpuactlr_value;
+            if (CPUECTLR_EL1 != cpuectlr_value) {
+                CPUECTLR_EL1 = cpuectlr_value;
+            }
         }
     }
+
+
+    // 9.0.0+: Verify that TPIDR_EL1 is still set.
+    KernelLdr_VerifyTpidrEl1();
 ```
 
 Next, the cache is flushed, to ensure that page tables will be
