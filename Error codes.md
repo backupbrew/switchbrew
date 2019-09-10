@@ -113,6 +113,7 @@ fatal-errors, since the Description ends with bit21.
 | 187   | Sasbus                                       |
 | 191   | RTC                                          |
 | 192   | Regulator                                    |
+| 193   | Led                                          |
 | 197   | Clkrst                                       |
 | 202   | HID                                          |
 | 203   | LDN                                          |

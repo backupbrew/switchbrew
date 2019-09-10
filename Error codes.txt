@@ -200,6 +200,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 192 || Regulator
 |-
+| 193 || Led
+|-
 | 197 || Clkrst
 |-
 | 202 || HID
