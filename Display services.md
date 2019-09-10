@@ -191,10 +191,10 @@ NVIDIA multimedia (NvMM) platform service.
 
 This is "nn::visrv::sf::IApplicationRootService".
 
-| Cmd | Name                                  |
-| --- | ------------------------------------- |
-| 0   | [GetDisplayService](#vi:u "wikilink") |
-| 1   | \[9.0.0+\]                            |
+| Cmd | Name                                                                  |
+| --- | --------------------------------------------------------------------- |
+| 0   | [GetDisplayService](#vi:u "wikilink")                                 |
+| 1   | \[9.0.0+\] [GetDisplayServiceWithProxyNameExchange](#vi:u "wikilink") |
 
 ## GetDisplayService
 
@@ -206,6 +206,11 @@ system/manager service (vi:s/vi:m). Returns an error when using value 1
 with vi:u(same error listed below for IApplicationDisplayService for
 unavailable commands), however passing 1 to vi:s/vi:m results in the
 IApplicationDisplayService having greater privileges.
+
+## GetDisplayServiceWithProxyNameExchange
+
+Returns an
+[\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 
 # vi:s
 
