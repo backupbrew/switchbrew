@@ -334,7 +334,7 @@ This is "nn::nsd::detail::IManager".
 |-
 | 14 || ImportSettings
 |-
-| 15 || [4.0.0+]
+| 15 || [4.0.0+] SetChangeEnvironmentIdentifierDisabled
 |-
 | 20 || Resolve
 |-

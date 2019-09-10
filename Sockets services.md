@@ -290,7 +290,7 @@ This is "nn::nsd::detail::IManager".
 | 12  | GetDeviceId                                                          |
 | 13  | DeleteSettings                                                       |
 | 14  | ImportSettings                                                       |
-| 15  | \[4.0.0+\]                                                           |
+| 15  | \[4.0.0+\] SetChangeEnvironmentIdentifierDisabled                    |
 | 20  | Resolve                                                              |
 | 21  | ResolveEx                                                            |
 | 30  | GetNasServiceSetting                                                 |
