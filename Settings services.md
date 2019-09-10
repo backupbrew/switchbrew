@@ -14,6 +14,7 @@ This is "nn::settings::ISettingsServer".
 | 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
 | 8   | \[5.0.0+\] GetQuestFlag                   | Identical to "set:sys" [GetQuestFlag](#set:sys "wikilink").                                                            |
 | 9   | \[6.0.0+\] GetKeyCodeMap2                 |                                                                                                                        |
+| 10  | \[9.0.0+\]                                |                                                                                                                        |
 
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
