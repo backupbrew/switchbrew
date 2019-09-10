@@ -544,7 +544,7 @@ This loads titleIDs from
 `ns.applet!devmenu_id` and `ns.applet!devoverlaydisp_id`, which only
 exists on devunits. An error is thrown if loading these fail.
 
-[NCM](NCM%20Services.md "wikilink") OpenContentMetaDatabase is used with
+[NCM](NCM%20services.md "wikilink") OpenContentMetaDatabase is used with
 StorageId = NandSystem, then IContentMetaDatabase
 GetLatestContentMetaKey is used with both of the above titleIDs to
 verify that the cmd is successful.

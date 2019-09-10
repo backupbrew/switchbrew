@@ -926,7 +926,7 @@ This is used by AM cmd [[Applet_Manager_services#LaunchDevMenu|LaunchDevMenu]].
 
 This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!devmenu_id</code> and <code>ns.applet!devoverlaydisp_id</code>, which only exists on devunits. An error is thrown if loading these fail.
 
-[[NCM_Services|NCM]] OpenContentMetaDatabase is used with StorageId = NandSystem, then IContentMetaDatabase GetLatestContentMetaKey is used with both of the above titleIDs to verify that the cmd is successful.
+[[NCM_services|NCM]] OpenContentMetaDatabase is used with StorageId = NandSystem, then IContentMetaDatabase GetLatestContentMetaKey is used with both of the above titleIDs to verify that the cmd is successful.
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
