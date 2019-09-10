@@ -250,7 +250,7 @@ Next, this sets some system registers.
     implementer = manufacturer_id >> 24) & 0xFF;
     
     // 9.0.0+: Save X19-X30 + SP, save context struct in TPIDR_EL1.
-    KernelLdr_SaveRegistersToTpidr();
+    KernelLdr_SaveRegistersToTpidrEl1();
 
     if (implementer == 0x41) {
         // Implementer ID is 0x41 (ARM Limited).
