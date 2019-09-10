@@ -111,17 +111,18 @@ returned with no output interface.
 
 ### IHomeMenuFunctions
 
-| Cmd | Name                                                                                                | Notes |
-| --- | --------------------------------------------------------------------------------------------------- | ----- |
-| 10  | [\#RequestToGetForeground](#RequestToGetForeground "wikilink")                                      |       |
-| 11  | [\#LockForeground](#LockForeground "wikilink")                                                      |       |
-| 12  | [\#UnlockForeground](#UnlockForeground "wikilink")                                                  |       |
-| 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                                        |       |
-| 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")                        |       |
-| 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink")                    |       |
-| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                         |       |
-| 100 | \[6.0.0+\] [\#PopRequestLaunchApplicationForDebug](#PopRequestLaunchApplicationForDebug "wikilink") |       |
-| 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                                             |       |
+| Cmd | Name                                                                                                | Notes                                          |
+| --- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 10  | [\#RequestToGetForeground](#RequestToGetForeground "wikilink")                                      |                                                |
+| 11  | [\#LockForeground](#LockForeground "wikilink")                                                      |                                                |
+| 12  | [\#UnlockForeground](#UnlockForeground "wikilink")                                                  |                                                |
+| 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                                        |                                                |
+| 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")                        |                                                |
+| 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink")                    |                                                |
+| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                         |                                                |
+| 100 | \[6.0.0+\] [\#PopRequestLaunchApplicationForDebug](#PopRequestLaunchApplicationForDebug "wikilink") |                                                |
+| 110 | \[9.0.0+\]                                                                                          | No input, returns a total of 1-byte of output. |
+| 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                                             |                                                |
 
 #### RequestToGetForeground
 

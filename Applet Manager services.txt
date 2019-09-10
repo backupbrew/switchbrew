@@ -114,6 +114,8 @@ The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!d
 |-
 | 100 || [6.0.0+] [[#PopRequestLaunchApplicationForDebug]] ||
 |-
+| 110 || [9.0.0+] || No input, returns a total of 1-byte of output.
+|-
 | 200 || [8.0.0+] [[#LaunchDevMenu]] ||
 |}
 
