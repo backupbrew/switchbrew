@@ -300,6 +300,8 @@ This is "nn::nsd::detail::IManager".
 | 42  | GetNasApiFqdn                                                        |
 | 43  | GetNasApiFqdnEx                                                      |
 | 50  | GetCurrentSetting                                                    |
+| 51  | \[9.0.0+\] WriteTestParameter                                        |
+| 52  | \[9.0.0+\] ReadTestParameter                                         |
 | 60  | [\#ReadSaveDataFromFsForTest](#ReadSaveDataFromFsForTest "wikilink") |
 | 61  | [\#WriteSaveDataToFsForTest](#WriteSaveDataToFsForTest "wikilink")   |
 | 62  | [\#DeleteSaveDataOfFsForTest](#DeleteSaveDataOfFsForTest "wikilink") |

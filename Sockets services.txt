@@ -354,6 +354,10 @@ This is "nn::nsd::detail::IManager".
 |-
 | 50 || GetCurrentSetting
 |-
+| 51 || [9.0.0+] WriteTestParameter
+|-
+| 52 || [9.0.0+] ReadTestParameter
+|-
 | 60 || [[#ReadSaveDataFromFsForTest]]
 |-
 | 61 || [[#WriteSaveDataToFsForTest]]
