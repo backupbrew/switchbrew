@@ -24,6 +24,8 @@ This is "nn::aocsrv::detail::IAddOnContentManager".
 | 8 || [4.0.0+] GetAddOnContentListChangedEvent
 |-
 | 100 || [7.0.0+] [[#IPurchaseEventManager|CreateEcPurchasedEventManager]]
+|-
+| 101 || [9.0.0+] [[#IPurchaseEventManager|CreatePermanentEcPurchasedEventManager]]
 |}
 
 == IPurchaseEventManager ==
@@ -40,6 +42,8 @@ This is "nn::ec::IPurchaseEventManager".
 | 2 || GetPurchasedEventReadableHandle
 |-
 | 3 || PopPurchasedProductInfo
+|-
+| 4 || [9.0.0+] PopPurchasedProductInfoWithUid
 |}
 
 = ns:am =
@@ -292,7 +296,6 @@ Takes a type-6 output buffer and an u32 entry_offset.
 Returns an array of title-info entries using the specified offset and size. No input titleID is passed to this.
 
 === Application Record Format ===
-
 {| class="wikitable" border="1"
 |-
 ! Offset
@@ -428,7 +431,6 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 | 7998 || [[#IContentManagementInterface|GetContentManagementInterface]]
 |-
 | 7999 || [[#IDocumentInterface|GetDocumentInterface]]
-|-
 |}
 
 === IAccountProxyInterface ===
@@ -439,7 +441,6 @@ This is "nn::ns::detail::IAccountProxyInterface".
 ! Cmd || Name
 |-
 | 0 || CreateUserAccount
-|-
 |}
 
 === IApplicationManagerInterface ===
@@ -489,7 +490,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 30 || RequestApplicationUpdateInfo
 |-
-| [1.0.0-3.0.2] 31 || 
+| 31 || [1.0.0-3.0.2] 
 |-
 | 32 || CancelApplicationDownload
 |-
@@ -503,7 +504,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 38 || CheckApplicationLaunchVersion
 |-
-| [1.0.0-6.2.0] 39 || CheckApplicationLaunchRights
+| 39 || [1.0.0-6.2.0] CheckApplicationLaunchRights
 |-
 | 40 || GetApplicationLogoData
 |-
@@ -571,7 +572,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 82 || [3.0.0+] DownloadApplication
 |-
-| [4.0.0-6.2.0] 83 || CheckApplicationResumeRights
+| 83 || [4.0.0-6.2.0] CheckApplicationResumeRights
 |-
 | 84 || [4.0.0+] GetDynamicCommitEvent
 |-
@@ -581,7 +582,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 87 || [4.0.0+] IsApplicationCrashReportEnabled
 |-
-| 90 || [4.0.0+] BoostSystemMemoryResourceLimit
+| 90 || [4.0.0-8.1.0] BoostSystemMemoryResourceLimit
 |-
 | 91 || [5.0.0+] DeprecatedLaunchApplication
 |-
@@ -669,6 +670,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 509 || [5.0.0+] ListApplicationIdOnGameCard
 |-
+| 510 || [9.0.0+]
+|-
 | 600 || CountApplicationContentMeta
 |-
 | 601 || [[#ListApplicationContentMetaStatus]]
@@ -729,6 +732,12 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 912 || [5.1.0+] ClearPreInstalledApplicationFlag
 |-
+| 913 || [9.0.0+]
+|-
+| 914 || [9.0.0+]
+|-
+| 915 || [9.0.0+]
+|-
 | 1000 || RequestVerifyApplicationDeprecated
 |-
 | 1001 || CorruptApplicationForDebug
@@ -766,6 +775,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1504 || [3.0.0+] InsertSdCard
 |-
 | 1505 || [3.0.0+] RemoveSdCard
+|-
+| 1506 || [9.0.0+]
 |-
 | 1600 || GetSystemSeedForPseudoDeviceId
 |-
@@ -835,6 +846,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2050 || [6.0.0+] GetApplicationRightsOnClient
 |-
+| 2051 || [9.0.0+]
+|-
 | 2100 || [6.0.0+] GetApplicationTerminateResult
 |-
 | 2101 || [6.0.0+] GetRawApplicationTerminateResult
@@ -850,6 +863,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2154 || [6.0.0+] ForceActivateRightsContextForExit
 |-
 | 2155 || [7.0.0+] UpdateRightsEnvironmentStatus
+|-
+| 2156 || [9.0.0+]
 |-
 | 2160 || [6.0.0+] AddTargetApplicationToRightsEnvironment
 |-
@@ -873,9 +888,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2201 || [6.0.0+] GetInstalledApplicationCopyIdentifier
 |-
-| [6.0.0-6.2.0] 2250 || RequestReportActiveELicence
+| 2250 || [6.0.0-6.2.0] RequestReportActiveELicence
 |-
-| 2300 || [6.0.0+] ListEventLog
+| 2300 || [6.0.0-8.1.0] ListEventLog
 |-
 | 2350 || [7.0.0+] PerformAutoUpdateByApplicationId
 |-
@@ -891,6 +906,15 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2500 || [8.0.0+] ConfirmAvailableTime
 |-
+| 2510 || [9.0.0+]
+|-
+| 2511 || [9.0.0+]
+|-
+| 2513 || [9.0.0+]
+|-
+| 2514 || [9.0.0+]
+|-
+| 2800 || [9.0.0+]
 |}
 
 [4.0.0+] RequestDownloadAddOnContent now takes an additional 8-bytes of input.
@@ -905,6 +929,12 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 [[NCM_Services|NCM]] OpenContentMetaDatabase is used with StorageId = NandSystem, then IContentMetaDatabase GetLatestContentMetaKey is used with both of the above titleIDs to verify that the cmd is successful.
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
+
+==== Cmd2510 ====
+Returns an #NsSubinterface2510.
+
+==== Cmd2511 ====
+Returns an #NsSubinterface2510.
 
 === IApplicationVersionInterface ===
 This is "nn::ns::detail::IApplicationVersionInterface".
@@ -932,7 +962,6 @@ This was added with [4.0.0+].
 | 802 || RequestVersionListData
 |-
 | 1000 || PerformAutoUpdate
-|-
 |}
 
 === IContentManagerInterface ===
@@ -957,7 +986,6 @@ This is "nn::ns::detail::IContentManagementInterface".
 | 605 || ListApplicationContentMetaStatusWithRightsCheck
 |-
 | 607 || IsAnyApplicationRunning
-|-
 |}
 
 === IDocumentInterface ===
@@ -972,7 +1000,6 @@ This is "nn::ns::detail::IDocumentInterface".
 | 23 || ResolveApplicationContentPath
 |-
 | 92 || [5.0.0+] GetRunningApplicationProgramId
-|-
 |}
 
 === IDownloadTaskInterface ===
@@ -999,7 +1026,6 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 | 708 || [4.0.0+] DisableAutoCommit
 |-
 | 709 || [4.0.0+] TriggerDynamicCommitEvent
-|-
 |}
 
 === IReadOnlyApplicationRecordInterface ===
@@ -1030,6 +1056,8 @@ This was added with [5.1.0+].
 | 2 || ConvertApplicationLanguageToLanguageCode || Same as [[#IApplicationManagerInterface]] cmd 59
 |-
 | 3 || [[#ConvertLanguageCodeToApplicationLanguage]] || Same as [[#IApplicationManagerInterface]] cmd 60
+|-
+| 4 || [9.0.0+] ||
 |}
 
 === IDynamicRightsInterface ===
@@ -1061,10 +1089,9 @@ This was added with [6.0.0+].
 |-
 | 11 || [7.0.0+] GetActivatedRightsUsers || 
 |-
-| 12 || [8.0.0+] GetApplicationRightsStatus
+| 12 || [8.0.0+] GetApplicationRightsStatus ||
 |-
-| 13 || [8.0.0+] GetRunningApplicationStatus
-|-
+| 13 || [8.0.0+] GetRunningApplicationStatus ||
 |}
 
 === IECommerceInterface===
@@ -1087,6 +1114,8 @@ This was added with [4.0.0+].
 | 4 || [6.0.0+] RequestUnlinkDevice || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |-
 | 5 || [6.1.0+] RequestRevokeAllELicense || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
+|-
+| 6 || [9.0.0+] ||
 |}
 
 === IFactoryResetInterface ===
@@ -1101,7 +1130,6 @@ This is "nn::ns::detail::IFactoryResetInterface".
 | 101 || ResetToFactorySettingsWithoutUserSaveData
 |-
 | 102 || ResetToFactorySettingsForRefurbishment
-|-
 |}
 
 = ns:vm =
@@ -1116,7 +1144,6 @@ This is "nn::ns::detail::IVulnerabilityManagerInterface".
 | 1201 || [4.0.0+] [[#UpdateSafeSystemVersionForDebug]]
 |-
 | 1202 || [4.0.0+] [[#GetSafeSystemVersion]]
-|-
 |}
 
 == NeedsUpdateVulnerability ==
@@ -1163,20 +1190,19 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 11 || [3.0.0+] PrepareShutdown
 |-
-| [3.0.0-3.0.2] 12 || 
+| 12 || [3.0.0-3.0.2]
 |-
-| [3.0.0-3.0.2] 13 || 
+| 13 || [3.0.0-3.0.2]
 |-
-| [3.0.0-3.0.2] 14 || 
+| 14 || [3.0.0-3.0.2]
 |-
-| [3.0.0-3.0.2] 15 || 
+| 15 || [3.0.0-3.0.2]
 |-
 | 16 || [4.0.0+] DestroySystemUpdateTask
 |-
 | 17 || [4.0.0+] RequestSendSystemUpdate
 |-
 | 18 || [4.0.0+] GetSendSystemUpdateProgress
-|-
 |}
 
 == ISystemUpdateControl ==
@@ -1333,6 +1359,10 @@ This is "nn::ns::detail::IDevelopInterface".
 | 11 || [6.0.0+] GetRunningApplicationProcessIdForDevelop
 |-
 | 12 || [6.0.0+] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop
+|-
+| 13 || [9.0.0+]
+|-
+| 14 || [9.0.0+]
 |}
 
 == LaunchProgram ==
@@ -1366,6 +1396,9 @@ Same as LaunchApplicationWithStorageId except the last two params passed to the 
 == LaunchApplicationWithStorageIdForDevelop ==
 Takes 2 input u8s, an u32 [[Process_Manager_services#LaunchFlags|LaunchFlags]], and an u64 titleID. Returns an output u64 PID.
 
-Launches an application title which is registered with NS. 
+Launches an application title which is registered with NS.
+
+== Cmd13 ==
+Returns an #NsSubinterface2510.
 
 [[Category:Services]]
