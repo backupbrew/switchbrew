@@ -788,6 +788,7 @@ Otherwise just return 0.
 | Process     | 20         | 0                     | \[5.0.0+\] UserExceptionContextAddr                                                                                                       |
 | Process     | 21         | 0                     | \[6.0.0+\] TotalMemoryAvailableWithoutMmHeap                                                                                              |
 | Process     | 22         | 0                     | \[6.0.0+\] TotalMemoryUsedWithoutMmHeap                                                                                                   |
+| Process     | 23         | 0                     | \[9.0.0+\]                                                                                                                                |
 | Thread      | 0xF0000002 | 0-3, -1               | Thread Ticks. When 0-3 are passed, gets specific core CPU ticks spent on thread. When -1 is passed, gets total CPU ticks spent on thread. |
 
 ## svcMapPhysicalMemory
