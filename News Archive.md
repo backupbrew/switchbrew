@@ -1,3 +1,5 @@
+  - **23 April 19** Nintendo released system update
+    [8.0.1](8.0.1.md "wikilink").
   - **15 April 19** Nintendo released system update
     [8.0.0](8.0.0.md "wikilink").
   - **29 March 19** [devkitA64
