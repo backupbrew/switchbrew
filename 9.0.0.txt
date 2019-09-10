@@ -118,6 +118,9 @@ RomFS changes:
 ** New directory "/safe.htdocs/html/CNzh/" was added.
 ** "/safe.htdocs/html/<dirname>/index.html", "/safe.htdocs/html/<dirname>/page_02.html", and "/safe.htdocs/html/<dirname>/page_04.html" were updated, where <dirname> is "JPja", "KRko", and "TWzh".
 ** New file "/safe.htdocs/js/chnscript.js" was added.
+* SharedFont:
+** "/Iwnn/KO/njubase1.a" and "/Iwnn/KO/njubase2.a" were updated.
+** Various files were updated under "Iwnn/ZH/CN/", "/Iwnn/ZH/HK/", and "/Iwnn/ZH/TW/".
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
