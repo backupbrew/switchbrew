@@ -453,6 +453,24 @@ synch\_spx\_exception does the following:
   - Restores X19-X30 + SP from the memory pointed to by TPIDR\_EL1.
   - Returns to the saved LR stored in the context save struct.
 
+## KernelLdr\_SaveRegistersToTpidrEl1
+
+This saves X19-X30 + SP to an input pointer, and moves the pointer into
+TPIDR\_EL1.
+
+## KernelLdr\_VerifyTpidrEl1
+
+This just verifies that TPIDR\_EL1 is equal to an input argument, and
+clears it.
+
+``` 
+    // 9.0.0+
+    if (TPIDR_EL1 != input_arg) {
+        while (1) { /* Infinite loop panic */ }
+    }
+    TPIDR_EL1 = 0
+```
+
 ## KInitialPageAllocator::KInitialPageAllocator
 
 This sets the allocator's next address to 0 (guessed, since this is done
