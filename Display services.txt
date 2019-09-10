@@ -112,9 +112,9 @@ This is "nn::capsrv::sf::IScreenShotService". This is available with [2.0.0+].
 |-
 | 204 || [3.0.0+] SaveEditedScreenShotEx0
 |-
-| 206 || [?-8.1.0]
+| 206 || [?+]
 |-
-| 208 || [5.0.0-8.1.0] SaveScreenShotOfMovieEx1
+| 208 || [5.0.0+] SaveScreenShotOfMovieEx1
 |}
 
 = caps:su =

@@ -118,14 +118,14 @@ the type-0x45 buffer must be at least 0x384000.
 This is "nn::capsrv::sf::IScreenShotService". This is available with
 \[2.0.0+\].
 
-| Cmd | Name                                     |
-| --- | ---------------------------------------- |
-| 201 | SaveScreenShot                           |
-| 202 | SaveEditedScreenShot                     |
-| 203 | \[3.0.0+\] SaveScreenShotEx0             |
-| 204 | \[3.0.0+\] SaveEditedScreenShotEx0       |
-| 206 | \[?-8.1.0\]                              |
-| 208 | \[5.0.0-8.1.0\] SaveScreenShotOfMovieEx1 |
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 201 | SaveScreenShot                      |
+| 202 | SaveEditedScreenShot                |
+| 203 | \[3.0.0+\] SaveScreenShotEx0        |
+| 204 | \[3.0.0+\] SaveEditedScreenShotEx0  |
+| 206 | \[?+\]                              |
+| 208 | \[5.0.0+\] SaveScreenShotOfMovieEx1 |
 
 # caps:su
 
