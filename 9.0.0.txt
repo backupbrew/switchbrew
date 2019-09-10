@@ -99,7 +99,7 @@ The anti-downgrade code in CreateProcess was updated.
 ==System Titles==
 All titles were updated except for the following: Dictionary, UrlBlackList, and [[flog]].
 
-New titles 0100000000000041 (ngct-sysmodule) and 100000000000830 were added.
+New titles [[NGCT_services|ngct-sysmodule]] and NgWordT were added.
 
 RomFS changes (see [[System_Version_Title]] for sysver title):
 * See [[HID_services#RomFS]] for hid-sysmodule.
