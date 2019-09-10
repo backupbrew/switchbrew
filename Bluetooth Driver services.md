@@ -81,7 +81,7 @@ match btdrv.
 | 63                      | \[5.0.0+\] UnregisterLeClient                                |
 | 64                      | \[5.0.0+\] UnregisterLeClientAll                             |
 | 65                      | \[5.0.0+\] LeClientConnect                                   |
-| 66                      | \[5.1.0+\] ?                                                 |
+| 66                      | \[5.1.0+\]                                                   |
 | 67 (\[5.0.0-5.0.2\] 66) | LeClientCancelConnection                                     |
 | 68 (\[5.0.0-5.0.2\] 67) | \[5.0.0+\] LeClientDisconnect                                |
 | 69 (\[5.0.0-5.0.2\] 68) | \[5.0.0+\] LeClientGetAttributes                             |
@@ -117,6 +117,7 @@ match btdrv.
 | 98                      | \[5.1.0+\] SetLeScanParameter                                |
 | 256                     | \[5.0.0+\] GetIsManufacturingMode                            |
 | 257                     | \[7.0.0+\] EmulateBluetoothCrash                             |
+| 258                     | \[9.0.0+\] GetBleChannelMap                                  |
 
 Various cmdids were moved with \[4.0.0+\] and \[5.0.0+\].
 
