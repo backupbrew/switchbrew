@@ -204,6 +204,13 @@ Then, it maps the kernel at the final virtual address.
     
     // Maps .rodata as R--
     attribute = 0x60000000000788;
+
+    // 9.0.0+
+    {
+        // On 9.0.0+, .rodata is initially RW- to facilitate .rel.ro.
+        attribute = 0x60000000000708;
+    }
+
     ttbr1_page_table.Map(final_virtual_kernel_base + ro_offset, ro_end_offset - ro_offset, kernel_base + ro_offset, &attribute, &g_InitialPageAllocator);
 
     // Maps .rwdata and .bss as RW-
@@ -220,6 +227,9 @@ kernel's libc .init\_array functions.
 ``` 
     // Applies all R_AARCH64_RELATIVE relocations.
     KernelLdr_ApplyRelocations(final_kernel_virtual_base, final_kernel_virtual_base + dynamic_offset);
+
+    // 9.0.0+: Reprotects .rodata as R--.
+    ttbr1_page_table.ReprotectToReadOnly(final_virtual_kernel_base + ro_offset, ro_end_offset - ro_offset);
     
     // This is standard libc init_array code, but called for the kernel's binary instead of kernelldr's.
     for (uintptr_t cur_func = final_virtual_kernel_base + init_array_offset; cur_func < final_virtual_kernel_base + init_array_end_offset; cur_func += 8) {
