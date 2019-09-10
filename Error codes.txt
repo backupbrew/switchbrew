@@ -226,6 +226,10 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 217 || Migration (Idc Server)
 |-
+| 229 || Glue (notification)
+|-
+| 230 || PSC (ins)
+|-
 | 345 || libnx
 |-
 | 346 || [[Homebrew ABI]]

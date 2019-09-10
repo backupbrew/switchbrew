@@ -126,6 +126,8 @@ fatal-errors, since the Description ends with bit21.
 | 212   | GRC                                          |
 | 216   | Migration                                    |
 | 217   | Migration (Idc Server)                       |
+| 229   | Glue (notification)                          |
+| 230   | PSC (ins)                                    |
 | 345   | libnx                                        |
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink") |
 | 347   | Homebrew Loader                              |
