@@ -59,7 +59,9 @@ NX bootloader was updated.
 ====Secure Monitor====
 Secure Monitor was updated.
 
-<check back later for diff>
+* CPU Suspend SMC code now explicitly initializes the state of I2C5 before communicating with the PMIC, instead of assuming that it is in a valid state.
+* Code for initializing MMIO inside package2ldr now writes random values to a number of PMC secure scratch registers, and validates that the written values are read back successfully before locking the scratch.
+** TODO: Check back later for information on what these scratch do.
 
 ====Kernel====
 Kernel was updated.
