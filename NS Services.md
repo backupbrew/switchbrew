@@ -555,11 +555,11 @@ LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
 #### CreateApplicationResource
 
-Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
+Returns an [\#IApplicationResource](#IApplicationResource "wikilink").
 
 #### GetApplicationResource
 
-Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
+Returns an [\#IApplicationResource](#IApplicationResource "wikilink").
 
 ### IApplicationVersionInterface
 
@@ -691,14 +691,16 @@ This is "nn::ns::detail::IFactoryResetInterface".
 | 101 | ResetToFactorySettingsWithoutUserSaveData |
 | 102 | ResetToFactorySettingsForRefurbishment    |
 
-### NsSubinterface2510
+### IApplicationResource
+
+This is "nn::ns::detail::IApplicationResource".
 
 This was added with \[9.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 0   | Attach                         |
+| 1   | BoostSystemMemoryResourceLimit |
 
 # ns:vm
 
@@ -975,6 +977,6 @@ Launches an application title which is registered with NS.
 
 ## Cmd13
 
-Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
+Returns an [\#IApplicationResource](#IApplicationResource "wikilink").
 
 [Category:Services](Category:Services "wikilink")

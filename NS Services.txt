@@ -931,10 +931,10 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
 ==== CreateApplicationResource ====
-Returns an [[#NsSubinterface2510]].
+Returns an [[#IApplicationResource]].
 
 ==== GetApplicationResource ====
-Returns an [[#NsSubinterface2510]].
+Returns an [[#IApplicationResource]].
 
 === IApplicationVersionInterface ===
 This is "nn::ns::detail::IApplicationVersionInterface".
@@ -1132,16 +1132,18 @@ This is "nn::ns::detail::IFactoryResetInterface".
 | 102 || ResetToFactorySettingsForRefurbishment
 |}
 
-=== NsSubinterface2510 ===
+=== IApplicationResource ===
+This is "nn::ns::detail::IApplicationResource".
+
 This was added with [9.0.0+].
 
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || Attach
 |-
-| 1 ||
+| 1 || BoostSystemMemoryResourceLimit
 |}
 
 = ns:vm =
@@ -1411,6 +1413,6 @@ Takes 2 input u8s, an u32 [[Process_Manager_services#LaunchFlags|LaunchFlags]], 
 Launches an application title which is registered with NS.
 
 == Cmd13 ==
-Returns an [[#NsSubinterface2510]].
+Returns an [[#IApplicationResource]].
 
 [[Category:Services]]
