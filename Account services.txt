@@ -607,6 +607,8 @@ This is "nn::account::IAccountServiceForSystemService".
 |-
 | 105 || [4.0.0+] CheckNetworkServiceAvailabilityAsync || Returns an [[#IAsyncContext]].
 |-
+| 106 || [9.0.0+] GetProfileSyncNotifier ||
+|-
 | 110 || StoreSaveDataThumbnail ||
 |-
 | 111 || ClearSaveDataThumbnail ||
