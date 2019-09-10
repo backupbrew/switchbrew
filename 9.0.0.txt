@@ -67,7 +67,7 @@ Secure Monitor was updated.
 [[Kernel Loader|KernelLdr]] was updated.
 
 * TPIDR_EL1 is now set to 0, and VBAR_EL1 is now set to a table that infinite loops on all exceptions other than synchronous from same exception level.
-** synch_spx_el1 now restores a number of registers from a context with pointer in TPIDR_EL1, and then clears TPIDR_EL1.
+** synch_spx_el1 now restores a number of registers from a context with pointer in TPIDR_EL1.
 * TPIDR_EL1 is now set to a context save struct before manufacturer-specific system registers are set.
 ** Support was added for Cortex-A53 specific CPU initialization.
 * Kernel .rodata is now initially mapped as RW- instead of R--, and then reprotected to R-- after relocations are completed.
