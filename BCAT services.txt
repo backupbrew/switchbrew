@@ -45,11 +45,15 @@ This was added with [2.0.0+].
 |-
 | 20301 || [8.0.0+] [[#RequestSuspendDeliveryTask]]
 |-
+| 20400 || [9.0.0+] RegisterSystemApplicationDeliveryTask
+|-
+| 20401 || [9.0.0+] UnregisterSystemApplicationDeliveryTask
+|-
 | 30100 || SetPassphrase
 |-
-| [2.0.0-2.3.0] 30101 || 
+| 30101 || [2.0.0-2.3.0] 
 |-
-| [2.0.0-2.3.0] 30102 || 
+| 30102 || [2.0.0-2.3.0] 
 |-
 | 30200 || [3.0.0+] RegisterDeliveryTask
 |-
