@@ -53,26 +53,30 @@ This is "nn::account::IAccountServiceForAdministrator".
 
 This is "nn::account::baas::IManagerForSystemService".
 
-| Cmd | Name                                                              | Notes                                                                        |
-| --- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| 0   | CheckAvailability                                                 |                                                                              |
-| 1   | GetAccountId                                                      |                                                                              |
-| 2   | EnsureIdTokenCacheAsync                                           | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
-| 3   | LoadIdTokenCache                                                  |                                                                              |
-| 100 | SetSystemProgramIdentification                                    |                                                                              |
-| 101 | \[7.0.0+\] RefreshNotificationTokenAsync                          |                                                                              |
-| 110 | \[4.0.0+\] GetServiceEntryRequirementCache                        |                                                                              |
-| 111 | \[4.0.0+\] InvalidateServiceEntryRequirementCache                 |                                                                              |
-| 112 | \[4.0.0-6.2.0\] InvalidateTokenCache                              |                                                                              |
-| 113 | \[6.1.0+\] GetServiceEntryRequirementCacheForOnlinePlay           | Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output. |
-| 120 | GetNintendoAccountId                                              |                                                                              |
-| 130 | GetNintendoAccountUserResourceCache                               |                                                                              |
-| 131 | RefreshNintendoAccountUserResourceCacheAsync                      | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
-| 132 | RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed      | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
-| 140 | \[5.0.0+\] GetNetworkServiceLicenseCache                          |                                                                              |
-| 141 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsync                 | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
-| 142 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
-| 150 | CreateAuthorizationRequest                                        | Returns an [\#IAuthorizationRequest](#IAuthorizationRequest "wikilink").     |
+| Cmd | Name                                                                       | Notes                                                                        |
+| --- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| 0   | CheckAvailability                                                          |                                                                              |
+| 1   | GetAccountId                                                               |                                                                              |
+| 2   | EnsureIdTokenCacheAsync                                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
+| 3   | LoadIdTokenCache                                                           |                                                                              |
+| 100 | SetSystemProgramIdentification                                             |                                                                              |
+| 101 | \[7.0.0+\] RefreshNotificationTokenAsync                                   |                                                                              |
+| 110 | \[4.0.0+\] GetServiceEntryRequirementCache                                 |                                                                              |
+| 111 | \[4.0.0+\] InvalidateServiceEntryRequirementCache                          |                                                                              |
+| 112 | \[4.0.0-6.2.0\] InvalidateTokenCache                                       |                                                                              |
+| 113 | \[6.1.0+\] GetServiceEntryRequirementCacheForOnlinePlay                    | Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output. |
+| 120 | GetNintendoAccountId                                                       |                                                                              |
+| 121 | \[9.0.0+\] CalculateNintendoAccountAuthenticationFingerprint               |                                                                              |
+| 130 | GetNintendoAccountUserResourceCache                                        |                                                                              |
+| 131 | RefreshNintendoAccountUserResourceCacheAsync                               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
+| 132 | RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
+| 133 | \[9.0.0+\] GetNintendoAccountVerificationUrlCache                          |                                                                              |
+| 134 | \[9.0.0+\] RefreshNintendoAccountVerificationUrlCacheAsync                 |                                                                              |
+| 135 | \[9.0.0+\] RefreshNintendoAccountVerificationUrlCacheAsyncIfSecondsElapsed |                                                                              |
+| 140 | \[5.0.0+\] GetNetworkServiceLicenseCache                                   |                                                                              |
+| 141 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsync                          | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
+| 142 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed          | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                     |
+| 150 | CreateAuthorizationRequest                                                 | Returns an [\#IAuthorizationRequest](#IAuthorizationRequest "wikilink").     |
 
 ## IFloatingRegistrationRequest
 
@@ -99,47 +103,53 @@ Added with \[3.0.0+\].
 
 This is "nn::account::baas::IAdministrator".
 
-| Cmd                 | Name                                                                  | Notes                                                                                                          |
-| ------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| 0                   | CheckAvailability                                                     |                                                                                                                |
-| 1                   | GetAccountId                                                          |                                                                                                                |
-| 2                   | EnsureIdTokenCacheAsync                                               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 3                   | LoadIdTokenCache                                                      |                                                                                                                |
-| 100                 | SetSystemProgramIdentification                                        |                                                                                                                |
-| 101                 | \[7.0.0+\] RefreshNotificationTokenAsync                              |                                                                                                                |
-| 110                 | \[4.0.0+\] GetServiceEntryRequirementCache                            |                                                                                                                |
-| 111                 | \[4.0.0+\] InvalidateServiceEntryRequirementCache                     |                                                                                                                |
-| \[4.0.0-6.2.0\] 112 | InvalidateTokenCache                                                  |                                                                                                                |
-| 113                 | \[6.1.0+\] GetServiceEntryRequirementCacheForOnlinePlay               | Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.                                   |
-| 120                 | GetNintendoAccountId                                                  |                                                                                                                |
-| 130                 | GetNintendoAccountUserResourceCache                                   |                                                                                                                |
-| 131                 | RefreshNintendoAccountUserResourceCacheAsync                          | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 132                 | RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed          | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 140                 | \[5.0.0+\] GetNetworkServiceLicenseCache                              |                                                                                                                |
-| 141                 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsync                     |                                                                                                                |
-| 142                 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed     |                                                                                                                |
-| 150                 | CreateAuthorizationRequest                                            | Returns an [\#IAuthorizationRequest](#IAuthorizationRequest "wikilink").                                       |
-| 200                 | IsRegistered                                                          |                                                                                                                |
-| 201                 | RegisterAsync                                                         | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 202                 | UnregisterAsync                                                       | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 203                 | DeleteRegistrationInfoLocally                                         |                                                                                                                |
-| 220                 | SynchronizeProfileAsync                                               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 221                 | UploadProfileAsync                                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 222                 | SynchronizeProfileAsyncIfSecondsElapsed                               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 250                 | IsLinkedWithNintendoAccount                                           |                                                                                                                |
-| 251                 | CreateProcedureToLinkWithNintendoAccount                              | Returns an [\#IOAuthProcedureForNintendoAccountLinkage](#IOAuthProcedureForNintendoAccountLinkage "wikilink"). |
-| 252                 | ResumeProcedureToLinkWithNintendoAccount                              | Returns an [\#IOAuthProcedureForNintendoAccountLinkage](#IOAuthProcedureForNintendoAccountLinkage "wikilink"). |
-| 255                 | CreateProcedureToUpdateLinkageStateOfNintendoAccount                  | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 256                 | ResumeProcedureToUpdateLinkageStateOfNintendoAccount                  | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 260                 | \[3.0.0+\] CreateProcedureToLinkNnidWithNintendoAccount               | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 261                 | \[3.0.0+\] ResumeProcedureToLinkNnidWithNintendoAccount               | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 280                 | ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount     | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
-| 290                 | \[8.0.0+\] GetRequestForNintendoAccountUserResourceView               |                                                                                                                |
-| 300                 | \[6.0.0+\] TryRecoverNintendoAccountUserStateAsync                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 400                 | \[6.1.0+\] IsServiceEntryRequirementCacheRefreshRequiredForOnlinePlay | Takes a total of 0x8-bytes of input, returns an output u8.                                                     |
-| 401                 | \[6.1.0+\] RefreshServiceEntryRequirementCacheForOnlinePlayAsync      | Takes a total of 0x8-bytes of input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                  |
-| 997                 | DebugUnlinkNintendoAccountAsync                                       | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
-| 998                 | DebugSetAvailabilityErrorDetail                                       |                                                                                                                |
+| Cmd                 | Name                                                                       | Notes                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| 0                   | CheckAvailability                                                          |                                                                                                                |
+| 1                   | GetAccountId                                                               |                                                                                                                |
+| 2                   | EnsureIdTokenCacheAsync                                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 3                   | LoadIdTokenCache                                                           |                                                                                                                |
+| 100                 | SetSystemProgramIdentification                                             |                                                                                                                |
+| 101                 | \[7.0.0+\] RefreshNotificationTokenAsync                                   |                                                                                                                |
+| 110                 | \[4.0.0+\] GetServiceEntryRequirementCache                                 |                                                                                                                |
+| 111                 | \[4.0.0+\] InvalidateServiceEntryRequirementCache                          |                                                                                                                |
+| \[4.0.0-6.2.0\] 112 | InvalidateTokenCache                                                       |                                                                                                                |
+| 113                 | \[6.1.0+\] GetServiceEntryRequirementCacheForOnlinePlay                    | Takes a total of 0x8-bytes of input, returns a total of 0x4-bytes of output.                                   |
+| 120                 | GetNintendoAccountId                                                       |                                                                                                                |
+| 121                 | \[9.0.0+\] CalculateNintendoAccountAuthenticationFingerprint               |                                                                                                                |
+| 130                 | GetNintendoAccountUserResourceCache                                        |                                                                                                                |
+| 131                 | RefreshNintendoAccountUserResourceCacheAsync                               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 132                 | RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed               | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 133                 | \[9.0.0+\] GetNintendoAccountVerificationUrlCache                          |                                                                                                                |
+| 134                 | \[9.0.0+\] RefreshNintendoAccountVerificationUrlCacheAsync                 |                                                                                                                |
+| 135                 | \[9.0.0+\] RefreshNintendoAccountVerificationUrlCacheAsyncIfSecondsElapsed |                                                                                                                |
+| 140                 | \[5.0.0+\] GetNetworkServiceLicenseCache                                   |                                                                                                                |
+| 141                 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsync                          |                                                                                                                |
+| 142                 | \[5.0.0+\] RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed          |                                                                                                                |
+| 150                 | CreateAuthorizationRequest                                                 | Returns an [\#IAuthorizationRequest](#IAuthorizationRequest "wikilink").                                       |
+| 200                 | IsRegistered                                                               |                                                                                                                |
+| 201                 | RegisterAsync                                                              | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 202                 | UnregisterAsync                                                            | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 203                 | DeleteRegistrationInfoLocally                                              |                                                                                                                |
+| 220                 | SynchronizeProfileAsync                                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 221                 | UploadProfileAsync                                                         | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 222                 | SynchronizeProfileAsyncIfSecondsElapsed                                    | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 250                 | IsLinkedWithNintendoAccount                                                |                                                                                                                |
+| 251                 | CreateProcedureToLinkWithNintendoAccount                                   | Returns an [\#IOAuthProcedureForNintendoAccountLinkage](#IOAuthProcedureForNintendoAccountLinkage "wikilink"). |
+| 252                 | ResumeProcedureToLinkWithNintendoAccount                                   | Returns an [\#IOAuthProcedureForNintendoAccountLinkage](#IOAuthProcedureForNintendoAccountLinkage "wikilink"). |
+| 255                 | CreateProcedureToUpdateLinkageStateOfNintendoAccount                       | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
+| 256                 | ResumeProcedureToUpdateLinkageStateOfNintendoAccount                       | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
+| 260                 | \[3.0.0+\] CreateProcedureToLinkNnidWithNintendoAccount                    | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
+| 261                 | \[3.0.0+\] ResumeProcedureToLinkNnidWithNintendoAccount                    | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
+| 280                 | ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount          | Returns an [\#IOAuthProcedure](#IOAuthProcedure "wikilink").                                                   |
+| 290                 | \[8.0.0+\] GetRequestForNintendoAccountUserResourceView                    |                                                                                                                |
+| 300                 | \[6.0.0+\] TryRecoverNintendoAccountUserStateAsync                         | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 400                 | \[6.1.0+\] IsServiceEntryRequirementCacheRefreshRequiredForOnlinePlay      | Takes a total of 0x8-bytes of input, returns an output u8.                                                     |
+| 401                 | \[6.1.0+\] RefreshServiceEntryRequirementCacheForOnlinePlayAsync           | Takes a total of 0x8-bytes of input, returns an [\#IAsyncContext](#IAsyncContext "wikilink").                  |
+| 900                 | \[9.0.0+\] GetAuthenticationInfoForWin                                     |                                                                                                                |
+| 901                 | \[9.0.0+\] ImportAsyncForWin                                               |                                                                                                                |
+| 997                 | DebugUnlinkNintendoAccountAsync                                            | Returns an [\#IAsyncContext](#IAsyncContext "wikilink").                                                       |
+| 998                 | DebugSetAvailabilityErrorDetail                                            |                                                                                                                |
 
 ## IAuthorizationRequest
 

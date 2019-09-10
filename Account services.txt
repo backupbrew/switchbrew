@@ -123,11 +123,19 @@ This is "nn::account::baas::IManagerForSystemService".
 |-
 | 120 || GetNintendoAccountId ||
 |-
+| 121 || [9.0.0+] CalculateNintendoAccountAuthenticationFingerprint ||
+|-
 | 130 || GetNintendoAccountUserResourceCache ||
 |-
 | 131 || RefreshNintendoAccountUserResourceCacheAsync || Returns an [[#IAsyncContext]].
 |-
 | 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 133 || [9.0.0+] GetNintendoAccountVerificationUrlCache ||
+|-
+| 134 || [9.0.0+] RefreshNintendoAccountVerificationUrlCacheAsync ||
+|-
+| 135 || [9.0.0+] RefreshNintendoAccountVerificationUrlCacheAsyncIfSecondsElapsed ||
 |-
 | 140 || [5.0.0+] GetNetworkServiceLicenseCache || 
 |-
@@ -201,11 +209,19 @@ This is "nn::account::baas::IAdministrator".
 |-
 | 120 || GetNintendoAccountId ||
 |-
+| 121 || [9.0.0+] CalculateNintendoAccountAuthenticationFingerprint ||
+|-
 | 130 || GetNintendoAccountUserResourceCache ||
 |-
 | 131 || RefreshNintendoAccountUserResourceCacheAsync || Returns an [[#IAsyncContext]].
 |-
 | 132 || RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed || Returns an [[#IAsyncContext]].
+|-
+| 133 || [9.0.0+] GetNintendoAccountVerificationUrlCache ||
+|-
+| 134 || [9.0.0+] RefreshNintendoAccountVerificationUrlCacheAsync ||
+|-
+| 135 || [9.0.0+] RefreshNintendoAccountVerificationUrlCacheAsyncIfSecondsElapsed ||
 |-
 | 140 || [5.0.0+] GetNetworkServiceLicenseCache ||
 |-
@@ -252,6 +268,10 @@ This is "nn::account::baas::IAdministrator".
 | 400 || [6.1.0+] IsServiceEntryRequirementCacheRefreshRequiredForOnlinePlay || Takes a total of 0x8-bytes of input, returns an output u8.
 |-
 | 401 || [6.1.0+] RefreshServiceEntryRequirementCacheForOnlinePlayAsync || Takes a total of 0x8-bytes of input, returns an [[#IAsyncContext]].
+|-
+| 900 || [9.0.0+] GetAuthenticationInfoForWin ||
+|-
+| 901 || [9.0.0+] ImportAsyncForWin ||
 |-
 | 997 || DebugUnlinkNintendoAccountAsync || Returns an [[#IAsyncContext]].
 |-
