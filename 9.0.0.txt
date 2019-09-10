@@ -53,6 +53,13 @@ All titles were updated except for the following: Dictionary, UrlBlackList, and 
 
 New titles 0100000000000041 and 100000000000830 were added.
 
+Eula RomFS changes:
+* "/CNzhT" was added.
+* "/revision.txt" was updated.
+
+===FIRM===
+All files in RomFS were updated.
+
 ==Keys==
 All updated non-FIRM titles use a new masterkey, except for Eula which still uses the keydata from [[1.0.0]].
 
