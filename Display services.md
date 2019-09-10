@@ -12,22 +12,23 @@ with \[2.0.0+\].
 | 1                    | [\#CaptureRawImage](#CaptureRawImage "wikilink")                                  |                                                                                                                                        |
 | 2                    | [\#CaptureRawImageWithTimeout](#CaptureRawImageWithTimeout "wikilink")            |                                                                                                                                        |
 | 3                    | \[5.0.0+\] AttachSharedBuffer                                                     | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 5                    | \[5.0.0+\] CaptureRawImageToAttachedSharedBuffer                                  | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 5                    | \[5.0.0-8.1.0\] CaptureRawImageToAttachedSharedBuffer                             | Takes a total of 0x10-bytes of input, no output.                                                                                       |
 | 210                  | \[6.0.0+\] ?                                                                      | Takes a total of 0x50-bytes of input, a type-0x15 input buffer, and a type-0x45 input buffer, returns a total of 0x20-bytes of output. |
 | \[2.0.0-4.1.0\] 1001 | RequestTakingScreenShot                                                           | Takes a total of 0x10-bytes of input, no output.                                                                                       |
 | \[2.0.0-4.1.0\] 1002 | RequestTakingScreenShotWithTimeout                                                | Takes a total of 0x18-bytes of input, no output.                                                                                       |
 | \[3.0.0-4.1.0\] 1003 | RequestTakingScreenShotEx                                                         | Takes a total of 0x58-bytes of input, no output.                                                                                       |
 | 1004                 | \[5.0.0+\] RequestTakingScreenShotEx1                                             | Takes a total of 0x60-bytes of input, no output. \[6.0.0+\]: In addition, this also takes a type-0x15 input buffer.                    |
-| 1009                 | \[5.0.0+\] CancelTakingScreenShot                                                 | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1010                 | \[5.0.0+\] SetTakingScreenShotCancelState                                         | Takes a total of 0x10-bytes of input, no output.                                                                                       |
-| 1011                 | NotifyTakingScreenShotRefused                                                     | Takes a total of 8-bytes of input, no output.                                                                                          |
-| 1012                 | NotifyTakingScreenShotFailed                                                      | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1009                 | \[5.0.0-8.1.0\] CancelTakingScreenShot                                            | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1010                 | \[5.0.0-8.1.0\] SetTakingScreenShotCancelState                                    | Takes a total of 0x10-bytes of input, no output.                                                                                       |
+| 1011                 | \[2.0.0-8.1.0\] NotifyTakingScreenShotRefused                                     | Takes a total of 8-bytes of input, no output.                                                                                          |
+| 1012                 | \[2.0.0-8.1.0\] NotifyTakingScreenShotFailed                                      | Takes a total of 8-bytes of input, no output.                                                                                          |
 | 1101                 | \[4.0.0+\] [\#SetupOverlayMovieThumbnail](#SetupOverlayMovieThumbnail "wikilink") |                                                                                                                                        |
 | 1106                 | \[4.0.0+\] ?                                                                      |                                                                                                                                        |
 | 1107                 | \[4.0.0+\] ?                                                                      |                                                                                                                                        |
 | 1201                 | \[3.0.0+\] OpenRawScreenShotReadStream                                            | Takes a total of 0x10-bytes of input, returns a total of 0x18-bytes of output.                                                         |
 | 1202                 | \[3.0.0+\] CloseRawScreenShotReadStream                                           | No input/output.                                                                                                                       |
 | 1203                 | \[3.0.0+\] ReadRawScreenShotReadStream                                            | Takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.                                  |
+| 1204                 | \[9.0.0+\]                                                                        | Takes a total of 0x10-bytes of input and a type-0x46 output buffer, returns a total of 8-bytes of output.                              |
 
   - cmd210: User-processes use hard-coded size 0x88 for the type-0x15
     buffer.
@@ -117,13 +118,14 @@ the type-0x45 buffer must be at least 0x384000.
 This is "nn::capsrv::sf::IScreenShotService". This is available with
 \[2.0.0+\].
 
-| Cmd | Name                                |
-| --- | ----------------------------------- |
-| 201 | SaveScreenShot                      |
-| 202 | SaveEditedScreenShot                |
-| 203 | \[3.0.0+\] SaveScreenShotEx0        |
-| 204 | \[3.0.0+\] SaveEditedScreenShotEx0  |
-| 208 | \[5.0.0+\] SaveScreenShotOfMovieEx1 |
+| Cmd | Name                                     |
+| --- | ---------------------------------------- |
+| 201 | SaveScreenShot                           |
+| 202 | SaveEditedScreenShot                     |
+| 203 | \[3.0.0+\] SaveScreenShotEx0             |
+| 204 | \[3.0.0+\] SaveEditedScreenShotEx0       |
+| 206 | \[?-8.1.0\]                              |
+| 208 | \[5.0.0-8.1.0\] SaveScreenShotOfMovieEx1 |
 
 # caps:su
 
@@ -192,7 +194,7 @@ This is "nn::visrv::sf::IApplicationRootService".
 | Cmd | Name                                  |
 | --- | ------------------------------------- |
 | 0   | [GetDisplayService](#vi:u "wikilink") |
-|     |                                       |
+| 1   | \[9.0.0+\]                            |
 
 ## GetDisplayService
 
