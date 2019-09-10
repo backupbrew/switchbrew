@@ -348,7 +348,7 @@ Takes a pid.
 </tr>
 <tr class="even">
 <td><p>[9.0.0+] ngct:s, [9.0.0+] ngct:u</p></td>
-<td><p>NGCT services</p></td>
+<td><p><a href="NGCT services.md" title="wikilink">NGCT services</a></p></td>
 <td></td>
 </tr>
 </tbody>
