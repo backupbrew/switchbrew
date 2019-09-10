@@ -73,7 +73,7 @@ Takes a pid.
 | [[NS Services]]
 | am: Application Manager, su: System Update
 |-
-| apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0+] apm:am
+| [?] apm:dbg, [1.0.0-8.1.0] apm:sys, [1.0.0-8.1.0] fgm, [1.0.0-8.1.0] fgm:0, [1.0.0-8.1.0] fgm:9, [?] fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0-8.1.0] apm:am
 | [[PPC services]]
 | fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.
 |-
@@ -138,7 +138,7 @@ Takes a pid.
 | [[ETicket services]]
 |
 |-
-| fan, psm, tc, ts, <nowiki>pcm</nowiki>
+| fan, psm, tc, ts, <nowiki>pcm</nowiki>, [9.0.0+] fgm, [9.0.0+] fgm:0, [9.0.0+] fgm:9, [9.0.0+] apm:am, [9.0.0+] apm:sys
 | [[PTM services]]
 | pcm is not available on retail units.
 |-

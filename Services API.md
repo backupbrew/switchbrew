@@ -91,7 +91,7 @@ Takes a pid.
 <td><p>am: Application Manager, su: System Update</p></td>
 </tr>
 <tr class="odd">
-<td><p>apm:dbg, apm:sys, fgm, fgm:0, fgm:9, fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0+] apm:am</p></td>
+<td><p>[?] apm:dbg, [1.0.0-8.1.0] apm:sys, [1.0.0-8.1.0] fgm, [1.0.0-8.1.0] fgm:0, [1.0.0-8.1.0] fgm:9, [?] fgm:dbg, [1.0.0-7.0.1] apm, [1.0.0-7.0.1] apm:p, [8.0.0-8.1.0] apm:am</p></td>
 <td><p><a href="PPC services.md" title="wikilink">PPC services</a></p></td>
 <td><p>fgm:1, fgm:2, fgm:3, fgm:4, fgm:5, fgm:6 and fgm:7 used to exist, but are now deprecated.</p></td>
 </tr>
@@ -171,7 +171,7 @@ Takes a pid.
 <td></td>
 </tr>
 <tr class="odd">
-<td><p>fan, psm, tc, ts, pcm</p></td>
+<td><p>fan, psm, tc, ts, pcm, [9.0.0+] fgm, [9.0.0+] fgm:0, [9.0.0+] fgm:9, [9.0.0+] apm:am, [9.0.0+] apm:sys</p></td>
 <td><p><a href="PTM services.md" title="wikilink">PTM services</a></p></td>
 <td><p>pcm is not available on retail units.</p></td>
 </tr>
