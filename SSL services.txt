@@ -150,6 +150,10 @@ This is "nn::ssl::sf::ISslConnection".
 | 24 || GetVerifyCertErrors
 |-
 | 25 || [4.0.0+] GetCipherInfo
+|-
+| 26 || [9.0.0+] SetNextAlpnProto
+|-
+| 27 || [9.0.0+] GetNextAlpnProto
 |}
 
 ==== SetVerifyOption ====
