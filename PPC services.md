@@ -1,6 +1,9 @@
 APM is utilized for setting system performance profiles including clocks
 for CPU, GPU, and memory.
 
+\[9.0.0+\] The PPC system module is now stubbed and all its services
+were moved into [PTM](PTM%20services.md "wikilink").
+
 # apm
 
 This is "nn::apm::IManager".
