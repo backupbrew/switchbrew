@@ -421,6 +421,18 @@ Standard ARM cache clean code, uses LoUIS + LoC from CLIDR\_EL1.
 
 Standard ARM cache clean code, uses LoUIS from CLIDR\_EL1.
 
+## KernelLdr\_ExceptionTable
+
+Standard aarch64 exception table, only function that doesn't infinite
+loop is synchronous exception from same EL (synch\_spx\_exception)
+
+synch\_spx\_exception does the following:
+
+  - Moves TPIDR\_EL1 into X0
+  - Infinite loops if it is 0/NULL.
+  - Restores X19-X30 + SP from the memory pointed to by TPIDR\_EL1.
+  - Returns to the saved LR stored in the context save struct.
+
 ## KInitialPageAllocator::KInitialPageAllocator
 
 This sets the allocator's next address to 0 (guessed, since this is done
