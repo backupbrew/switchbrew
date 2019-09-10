@@ -111,18 +111,18 @@ returned with no output interface.
 
 ### IHomeMenuFunctions
 
-| Cmd | Name                                                                                                | Notes                                          |
-| --- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 10  | [\#RequestToGetForeground](#RequestToGetForeground "wikilink")                                      |                                                |
-| 11  | [\#LockForeground](#LockForeground "wikilink")                                                      |                                                |
-| 12  | [\#UnlockForeground](#UnlockForeground "wikilink")                                                  |                                                |
-| 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                                        |                                                |
-| 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")                        |                                                |
-| 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink")                    |                                                |
-| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                         |                                                |
-| 100 | \[6.0.0+\] [\#PopRequestLaunchApplicationForDebug](#PopRequestLaunchApplicationForDebug "wikilink") |                                                |
-| 110 | \[9.0.0+\]                                                                                          | No input, returns a total of 1-byte of output. |
-| 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                                             |                                                |
+| Cmd | Name                                                                                                                | Notes |
+| --- | ------------------------------------------------------------------------------------------------------------------- | ----- |
+| 10  | [\#RequestToGetForeground](#RequestToGetForeground "wikilink")                                                      |       |
+| 11  | [\#LockForeground](#LockForeground "wikilink")                                                                      |       |
+| 12  | [\#UnlockForeground](#UnlockForeground "wikilink")                                                                  |       |
+| 20  | [\#PopFromGeneralChannel](#PopFromGeneralChannel "wikilink")                                                        |       |
+| 21  | [\#GetPopFromGeneralChannelEvent](#GetPopFromGeneralChannelEvent "wikilink")                                        |       |
+| 30  | [\#GetHomeButtonWriterLockAccessor](#GetHomeButtonWriterLockAccessor "wikilink")                                    |       |
+| 31  | \[2.0.0+\] [\#GetWriterLockAccessorEx](#GetWriterLockAccessorEx "wikilink")                                         |       |
+| 100 | \[6.0.0+\] [\#PopRequestLaunchApplicationForDebug](#PopRequestLaunchApplicationForDebug "wikilink")                 |       |
+| 110 | \[9.0.0+\] [\#IsForceTerminateApplicationDisabledForDebug](#IsForceTerminateApplicationDisabledForDebug "wikilink") |       |
+| 200 | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                                                             |       |
 
 #### RequestToGetForeground
 
@@ -168,6 +168,10 @@ s32 **total\_userIDs**.
 
 The total entries in the userID buffer must be \>= {total userIDs in
 state}.
+
+#### IsForceTerminateApplicationDisabledForDebug
+
+No input, returns a total of 1-byte of output.
 
 #### LaunchDevMenu
 
@@ -372,6 +376,8 @@ Should not be used if no FloatingApplication is available (svcBreak).
 | 150 | \[6.0.0+\] [\#ReportApplicationExitTimeout](#ReportApplicationExitTimeout "wikilink")       |       |
 | 160 | \[8.0.0+\] [\#SetApplicationAttribute](#SetApplicationAttribute "wikilink")                 |       |
 | 170 | \[8.0.0+\] [\#HasSaveDataAccessPermission](#HasSaveDataAccessPermission "wikilink")         |       |
+| 180 | \[9.0.0+\] PushToFriendInvitationStorageChannel                                             |       |
+| 190 | \[9.0.0+\] PushToNotificationStorageChannel                                                 |       |
 
 Commands \<=30 are inherited from
 [\#IAppletAccessor](#IAppletAccessor "wikilink").
@@ -517,6 +523,7 @@ Added with [7.0.0](7.0.0.md "wikilink").
 
 | Cmd | Name                                                                                        | Notes |
 | --- | ------------------------------------------------------------------------------------------- | ----- |
+| 0   | \[9.0.0+\] SetTerminateResult                                                               |       |
 | 10  | [\#ReadThemeStorage](#ReadThemeStorage "wikilink")                                          |       |
 | 11  | [\#WriteThemeStorage](#WriteThemeStorage "wikilink")                                        |       |
 | 40  | \[8.0.0+\] [\#GetDisplayLogicalResolution](#GetDisplayLogicalResolution "wikilink")         |       |
@@ -613,6 +620,8 @@ No input, returns an output u8 bool.
 | 101 | \[5.0.0+\] [\#ReserveResourceForMovieOperation](#ReserveResourceForMovieOperation "wikilink")                     |       |
 | 102 | \[5.0.0+\] [\#UnreserveResourceForMovieOperation](#UnreserveResourceForMovieOperation "wikilink")                 |       |
 | 110 | \[6.0.0+\] [\#GetMainAppletAvailableUsers](#GetMainAppletAvailableUsers "wikilink")                               |       |
+| 120 | \[9.0.0+\] GetLaunchStorageInfoForDebug                                                                           |       |
+| 130 | \[9.0.0+\] GetGpuErrorDetectedSystemEvent                                                                         |       |
 
 #### PopInData
 
@@ -824,6 +833,7 @@ available it's set to 1 with **total\_entries** = -1.
 | 10  | \[6.0.0+\] [\#StartShutdownSequenceForOverlay](#StartShutdownSequenceForOverlay "wikilink")                   |
 | 11  | \[6.0.0+\] [\#StartRebootSequenceForOverlay](#StartRebootSequenceForOverlay "wikilink")                       |
 | 20  | \[8.0.0+\] [\#SetHandlingHomeButtonShortPressedEnabled](#SetHandlingHomeButtonShortPressedEnabled "wikilink") |
+| 30  | \[9.0.0+\] SetHealthWarningShowingState                                                                       |
 | 90  | \[7.0.0+\] [\#SetRequiresGpuResourceUse](#SetRequiresGpuResourceUse "wikilink")                               |
 | 101 | \[5.0.0+\] [\#BeginToObserveHidInputForDevelop](#BeginToObserveHidInputForDevelop "wikilink")                 |
 
@@ -952,6 +962,12 @@ foreground applet.
 | 123  | \[5.0.0+\] [\#GetPreviousProgramIndex](#GetPreviousProgramIndex "wikilink")                                                                               |       |
 | 124  | \[6.0.0+\] [\#EnableApplicationAllThreadDumpOnCrash](#EnableApplicationAllThreadDumpOnCrash "wikilink")                                                   |       |
 | 130  | \[8.0.0+\] [\#GetGpuErrorDetectedSystemEvent](#GetGpuErrorDetectedSystemEvent "wikilink")                                                                 |       |
+| 140  | \[9.0.0+\] GetFriendInvitationStorageChannelEvent                                                                                                         |       |
+| 141  | \[9.0.0+\] TryPopFromFriendInvitationStorageChannel                                                                                                       |       |
+| 150  | \[9.0.0+\] GetNotificationStorageChannelEvent                                                                                                             |       |
+| 151  | \[9.0.0+\] TryPopFromNotificationStorageChannel                                                                                                           |       |
+| 160  | \[9.0.0+\] GetHealthWarningDisappearedSystemEvent                                                                                                         |       |
+| 170  | \[9.0.0+\]                                                                                                                                                |       |
 | 500  | \[5.0.0+\] [\#StartContinuousRecordingFlushForDebug](#StartContinuousRecordingFlushForDebug "wikilink")                                                   |       |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                                                   |       |
@@ -1533,6 +1549,7 @@ Official sw uses this during LibraryApplet creation when
 | 90  | \[7.0.0+\] [\#SetPerformanceConfigurationChangedNotification](#SetPerformanceConfigurationChangedNotification "wikilink") |       |
 | 91  | \[7.0.0+\] [\#GetCurrentPerformanceConfiguration](#GetCurrentPerformanceConfiguration "wikilink")                         |       |
 | 200 | \[7.0.0+\] [\#GetOperationModeSystemInfo](#GetOperationModeSystemInfo "wikilink")                                         |       |
+| 300 | \[9.0.0+\] GetSettingsPlatformRegion                                                                                      |       |
 
 Officially notification messages are handled by the application itself,
 not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically
@@ -1814,6 +1831,7 @@ This returns the output from omm [\#Cmd26](#Cmd26 "wikilink").
 | 69   | \[5.0.0+\] [\#IsAutoSleepDisabled](#IsAutoSleepDisabled "wikilink")                                                 |
 | 70   | \[4.0.0+\] [\#ReportMultimediaError](#ReportMultimediaError "wikilink")                                             |
 | 71   | \[5.0.0+\] [\#GetCurrentIlluminanceEx](#GetCurrentIlluminanceEx "wikilink")                                         |
+| 72   | \[9.0.0+\] SetInputDetectionPolicy                                                                                  |
 | 80   | \[4.0.0+\] [\#SetWirelessPriorityMode](#SetWirelessPriorityMode "wikilink")                                         |
 | 90   | \[6.0.0+\] [\#GetAccumulatedSuspendedTickValue](#GetAccumulatedSuspendedTickValue "wikilink")                       |
 | 91   | \[6.0.0+\] [\#GetAccumulatedSuspendedTickChangedEvent](#GetAccumulatedSuspendedTickChangedEvent "wikilink")         |
@@ -2530,6 +2548,14 @@ output.
 | 30  | \[6.0.0+\] [\#RequestLaunchApplicationWithUserAndArgumentForDebug](#RequestLaunchApplicationWithUserAndArgumentForDebug "wikilink") |       |
 | 40  | \[6.0.0+\] [\#GetAppletResourceUsageInfo](#GetAppletResourceUsageInfo "wikilink")                                                   |       |
 | 100 | \[7.0.0+\] [\#SetCpuBoostModeForApplet](#SetCpuBoostModeForApplet "wikilink")                                                       |       |
+| 110 | \[9.0.0+\] PushToAppletBoundChannelForDebug                                                                                         |       |
+| 111 | \[9.0.0+\] TryPopFromAppletBoundChannelForDebug                                                                                     |       |
+| 120 | \[9.0.0+\] AlarmSettingNotificationEnableAppEventReserve                                                                            |       |
+| 121 | \[9.0.0+\] AlarmSettingNotificationDisableAppEventReserve                                                                           |       |
+| 122 | \[9.0.0+\] AlarmSettingNotificationPushAppEventNotify                                                                               |       |
+| 130 | \[9.0.0+\] FriendInvitationSetApplicationParameter                                                                                  |       |
+| 131 | \[9.0.0+\] FriendInvitationClearApplicationParameter                                                                                |       |
+| 132 | \[9.0.0+\] FriendInvitationPushApplicationParameter                                                                                 |       |
 
 ### NotifyMessageToHomeMenuForDebug
 
@@ -2695,6 +2721,7 @@ that interacts with the [Dock](Dock.md "wikilink") through
 | 24  | \[5.0.0+\] ShowCardUpdateProcessing                    |       |
 | 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged   |       |
 | 26  | \[7.0.0+\]                                             |       |
+| 27  | \[9.0.0+\]                                             |       |
 
 ## Cmd26
 

@@ -114,7 +114,7 @@ The cached value loaded from [[System_Settings|system-setting]] <code>am.debug!d
 |-
 | 100 || [6.0.0+] [[#PopRequestLaunchApplicationForDebug]] ||
 |-
-| 110 || [9.0.0+] || No input, returns a total of 1-byte of output.
+| 110 || [9.0.0+] [[#IsForceTerminateApplicationDisabledForDebug]] ||
 |-
 | 200 || [8.0.0+] [[#LaunchDevMenu]] ||
 |}
@@ -148,6 +148,9 @@ The input value must be 0-3. 0 = HomeButton.
 Takes a type-0x6 output buffer containing an array of u128 userIDs, returns an output u64 titleID (<code>nn::ncm::ApplicationId</code>) and an output s32 '''total_userIDs'''.
 
 The total entries in the userID buffer must be >= {total userIDs in state}.
+
+==== IsForceTerminateApplicationDisabledForDebug ====
+No input, returns a total of 1-byte of output.
 
 ==== LaunchDevMenu ====
 No input/output.
@@ -347,6 +350,10 @@ Should not be used if no FloatingApplication is available (svcBreak).
 | 160 || [8.0.0+] [[#SetApplicationAttribute]] ||
 |-
 | 170 || [8.0.0+] [[#HasSaveDataAccessPermission]] ||
+|-
+| 180 || [9.0.0+] PushToFriendInvitationStorageChannel ||
+|-
+| 190 || [9.0.0+] PushToNotificationStorageChannel ||
 |}
 
 Commands <=30 are inherited from [[#IAppletAccessor]].
@@ -459,6 +466,8 @@ Added with [[7.0.0]].
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
+|-
+| 0 || [9.0.0+] SetTerminateResult || 
 |-
 | 10 || [[#ReadThemeStorage]] || 
 |-
@@ -589,6 +598,10 @@ No input, returns an output u8 bool.
 | 102 || [5.0.0+] [[#UnreserveResourceForMovieOperation]] ||
 |-
 | 110 || [6.0.0+] [[#GetMainAppletAvailableUsers]] ||
+|-
+| 120 || [9.0.0+] GetLaunchStorageInfoForDebug ||
+|-
+| 130 || [9.0.0+] GetGpuErrorDetectedSystemEvent ||
 |}
 
 ==== PopInData ====
@@ -765,6 +778,8 @@ Normally the output bool is set to 0, however when no users are available it's s
 |-
 | 20 || [8.0.0+] [[#SetHandlingHomeButtonShortPressedEnabled]]
 |-
+| 30 || [9.0.0+] SetHealthWarningShowingState
+|-
 | 90 || [7.0.0+] [[#SetRequiresGpuResourceUse]]
 |-
 | 101 || [5.0.0+] [[#BeginToObserveHidInputForDevelop]]
@@ -930,6 +945,18 @@ Enables HID input for the OverlayApplet, without disabling input for the foregro
 | 124 || [6.0.0+] [[#EnableApplicationAllThreadDumpOnCrash]] || 
 |-
 | 130 || [8.0.0+] [[#GetGpuErrorDetectedSystemEvent]] || 
+|-
+| 140 || [9.0.0+] GetFriendInvitationStorageChannelEvent || 
+|-
+| 141 || [9.0.0+] TryPopFromFriendInvitationStorageChannel || 
+|-
+| 150 || [9.0.0+] GetNotificationStorageChannelEvent || 
+|-
+| 151 || [9.0.0+] TryPopFromNotificationStorageChannel || 
+|-
+| 160 || [9.0.0+] GetHealthWarningDisappearedSystemEvent || 
+|-
+| 170 || [9.0.0+] || 
 |-
 | 500 || [5.0.0+] [[#StartContinuousRecordingFlushForDebug]] || 
 |-
@@ -1377,6 +1404,8 @@ Official sw uses this during LibraryApplet creation when [[#LibraryAppletMode]] 
 | 91 || [7.0.0+] [[#GetCurrentPerformanceConfiguration]] ||
 |-
 | 200 || [7.0.0+] [[#GetOperationModeSystemInfo]] ||
+|-
+| 300 || [9.0.0+] GetSettingsPlatformRegion ||
 |}
 
 Officially notification messages are handled by the application itself, not sdk-nso in ExeFS. Official apps call code in sdk-nso which basically uses svcWaitSynchronization with the event from [[#GetEventHandle]] to check whether a message is available, then if so it uses [[#ReceiveMessage]]. The actual handling for message IDs is done in the app itself(see [[#AppletMessage]]).
@@ -1608,6 +1637,8 @@ This returns the output from omm [[#Cmd26]].
 | 70 || [4.0.0+] [[#ReportMultimediaError]]
 |-
 | 71 || [5.0.0+] [[#GetCurrentIlluminanceEx]]
+|-
+| 72 || [9.0.0+] SetInputDetectionPolicy
 |-
 | 80 || [4.0.0+] [[#SetWirelessPriorityMode]]
 |-
@@ -2214,6 +2245,22 @@ Takes an input [[#ILibraryAppletAccessor]], no output.
 | 40 || [6.0.0+] [[#GetAppletResourceUsageInfo]] ||
 |-
 | 100 || [7.0.0+] [[#SetCpuBoostModeForApplet]] ||
+|-
+| 110 || [9.0.0+] PushToAppletBoundChannelForDebug ||
+|-
+| 111 || [9.0.0+] TryPopFromAppletBoundChannelForDebug ||
+|-
+| 120 || [9.0.0+] AlarmSettingNotificationEnableAppEventReserve ||
+|-
+| 121 || [9.0.0+] AlarmSettingNotificationDisableAppEventReserve ||
+|-
+| 122 || [9.0.0+] AlarmSettingNotificationPushAppEventNotify ||
+|-
+| 130 || [9.0.0+] FriendInvitationSetApplicationParameter ||
+|-
+| 131 || [9.0.0+] FriendInvitationClearApplicationParameter ||
+|-
+| 132 || [9.0.0+] FriendInvitationPushApplicationParameter ||
 |}
 
 === NotifyMessageToHomeMenuForDebug ===
@@ -2389,6 +2436,8 @@ Besides [[PTM_services]], this is the only service that interacts with the [[Doc
 | 25 || [5.0.0+] SetApplicationCecSettingsAndNotifyChanged || 
 |-
 | 26 || [7.0.0+] || 
+|-
+| 27 || [9.0.0+] || 
 |}
 
 == Cmd26 ==
