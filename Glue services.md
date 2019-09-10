@@ -64,18 +64,6 @@ This is "nn::bgtc::IStateControlService".
 | 4   | NotifyLeavingHalfAwake                       |
 | 5   | \[3.0.0+\] SetIsUsingSleepUnsupportedDevices |
 
-# ApplicationLaunchProperty
-
-Total size is 0x10-bytes.
-
-| Offset | Size | Description                                                                      |
-| ------ | ---- | -------------------------------------------------------------------------------- |
-| 0x00   | 0x08 | Title ID                                                                         |
-| 0x08   | 0x04 | Version                                                                          |
-| 0x0C   | 0x01 | Base Game [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink") |
-| 0x0D   | 0x01 | Update [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink")    |
-| 0x0E   | 0x02 | Padding                                                                          |
-
 # time:a, time:r, time:u
 
 These are "nn::timesrv::detail::<service::IStaticService>".
@@ -308,5 +296,17 @@ This was added with \[9.0.0+\].
 | 8000 |                          |
 | 8010 |                          |
 | 9000 |                          |
+
+# ApplicationLaunchProperty
+
+Total size is 0x10-bytes.
+
+| Offset | Size | Description                                                                      |
+| ------ | ---- | -------------------------------------------------------------------------------- |
+| 0x00   | 0x08 | Title ID                                                                         |
+| 0x08   | 0x04 | Version                                                                          |
+| 0x0C   | 0x01 | Base Game [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink") |
+| 0x0D   | 0x01 | Update [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink")    |
+| 0x0E   | 0x02 | Padding                                                                          |
 
 [Category:Services](Category:Services "wikilink")
