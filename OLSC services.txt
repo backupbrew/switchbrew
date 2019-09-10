@@ -35,7 +35,7 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 |-
 | 201 || ||
 |-
-| [6.0.0-7.0.1] 202 || || Returns an [[#IAsyncResult]]
+| 202 || [6.0.0-7.0.1] || Returns an [[#IAsyncResult]]
 |-
 | 203 || [7.0.0+] || Returns an [[#IAsyncResult]]
 |-
@@ -65,27 +65,49 @@ This is "nn::olsc::srv::IOlscServiceForSystemService".
 |-
 | 910 || [8.0.0+] || 
 |-
-| 1000 || [7.0.0+] || Returns an [[#IAsyncResult]]
+| 1000 || [7.0.0-8.1.0] || Returns an [[#IAsyncResult]]
 |-
-| 1010 || [7.0.0+] || 
+| 1010 || [7.0.0-8.1.0] || 
 |-
-| 1011 || [7.0.0+] || 
+| 1011 || [7.0.0-8.1.0] || 
 |-
-| 1012 || [7.0.0+] || 
+| 1012 || [7.0.0-8.1.0] || 
 |-
-| 1013 || [7.0.0+] || 
+| 1013 || [7.0.0-8.1.0] || 
 |-
-| 1014 || [7.0.0+] || 
+| 1014 || [7.0.0-8.1.0] || 
 |-
-| 1020 || [7.0.0+] || Returns an [[#IAsyncResult]]
+| 1020 || [7.0.0-8.1.0] || Returns an [[#IAsyncResult]]
 |-
-| 1021 || [7.0.0+] || Returns an [[#IAsyncResult]]
+| 1021 || [7.0.0-8.1.0] || Returns an [[#IAsyncResult]]
 |-
-| 1022 || [7.0.0+] || Returns an [[#IAsyncResult]]
+| 1022 || [7.0.0-8.1.0] || Returns an [[#IAsyncResult]]
 |-
-| 1023 || [7.0.0+] || Returns an [[#IAsyncResult]]
+| 1023 || [7.0.0-8.1.0] || Returns an [[#IAsyncResult]]
 |-
-| 1024 || [7.0.0+] || 
+| 1024 || [7.0.0-8.1.0] || 
+|-
+| 1100 || [9.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1110 || [9.0.0+] || 
+|-
+| 1111 || [9.0.0+] || 
+|-
+| 1112 || [9.0.0+] || 
+|-
+| 1113 || [9.0.0+] || 
+|-
+| 1114 || [9.0.0+] || 
+|-
+| 1120 || [9.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1121 || [9.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1122 || [9.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1123 || [9.0.0+] || Returns an [[#IAsyncResult]]
+|-
+| 1124 || [9.0.0+] || 
 |}
 
 == ITransferTaskListController ==
@@ -121,8 +143,12 @@ This is "nn::olsc::srv::ITransferTaskListController".
 |-
 | 12 || ||
 |-
+| 13 || [9.0.0+] ||
+|-
+| 14 || [9.0.0+] ||
+|-
+| 15 || [9.0.0+] ||
 |}
-
 
 == INativeHandleHolder ==
 This is "nn::olsc::srv::INativeHandleHolder".
@@ -132,7 +158,6 @@ This is "nn::olsc::srv::INativeHandleHolder".
 ! Cmd || Name || Notes
 |-
 | 0 || GetNativeHandle || 
-|-
 |}
 
 == IRemoteStorageController ==
@@ -146,11 +171,11 @@ This is "nn::olsc::srv::IRemoteStorageController".
 |-
 | 1 || ||
 |-
-| [6.0.0-7.0.1] 2 || ||
+| 2 || [6.0.0-7.0.1] ||
 |-
 | 3 || ||
 |-
-| [6.0.0-7.0.1] 4 || ||
+| 4 || [6.0.0-7.0.1] ||
 |-
 | 6 || ||
 |-
@@ -179,7 +204,6 @@ This is "nn::olsc::srv::IRemoteStorageController".
 | 18 || [7.0.0+] || 
 |-
 | 19 || [7.0.0+] || Returns an [[#INativeHandleHolder]].
-|-
 |}
 
 == IAsyncResult ==
@@ -196,7 +220,6 @@ This is "nn::olsc::srv::IAsyncResult".
 | 2 || IsAvailable || 
 |-
 | 3 || GetSystemEvent || 
-|-
 |}
 
 
@@ -226,7 +249,6 @@ This is "nn::olsc::srv::IDaemonController".
 | 11 || || Returns an [[#IStopperObject]]
 |-
 | 12 || ||
-|-
 |}
 
 == IForbiddenSaveDataIndication ==
@@ -237,7 +259,6 @@ This is "nn::olsc::srv::IForbiddenSaveDataIndication".
 ! Cmd || Name || Notes
 |-
 | 0 || Update || 
-|-
 |}
 
 
