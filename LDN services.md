@@ -7,7 +7,6 @@ This is "nn::ldn::detail::IMonitorServiceCreator".
 | Cmd | Name                                                       |
 | --- | ---------------------------------------------------------- |
 | 0   | [\#CreateMonitorService](#CreateMonitorService "wikilink") |
-|     |                                                            |
 
 ## CreateMonitorService
 
@@ -27,17 +26,14 @@ This is "nn::ldn::detail::IMonitorService".
 | 5   | GetNetworkConfigForMonitor     |
 | 100 | InitializeMonitor              |
 | 101 | FinalizeMonitor                |
-|     |                                |
 
 # ldn:s
 
-This is
-"nn::ldn::detail::ISystemServiceCreator".
+This is "nn::ldn::detail::ISystemServiceCreator".
 
 | Cmd | Name                                                                                         |
 | --- | -------------------------------------------------------------------------------------------- |
 | 0   | [\#CreateSystemLocalCommunicationService](#CreateSystemLocalCommunicationService "wikilink") |
-|     |                                                                                              |
 
 ## CreateSystemLocalCommunicationService
 
@@ -83,8 +79,7 @@ This is "nn::ldn::detail::ISystemLocalCommunicationService".
 
 # ldn:u
 
-This is
-"nn::ldn::detail::IUserServiceCreator".
+This is "nn::ldn::detail::IUserServiceCreator".
 
 | Cmd | Name                                                                                     |
 | --- | ---------------------------------------------------------------------------------------- |
@@ -130,5 +125,64 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 | 400 | Initialize                                  |
 | 401 | Finalize                                    |
 | 402 | \[7.0.0+\] Initialize2                      |
+
+# lp2p:app, lp2p:sys
+
+These are "nn::lp2p::detail::IServiceCreator".
+
+These were added with \[9.0.0+\].
+
+| Cmd | Name                        |
+| --- | --------------------------- |
+| 0   | CreateNetworkService        |
+| 8   | CreateNetworkServiceMonitor |
+
+## INetworkService
+
+This is "nn::lp2p::detail::INetworkService".
+
+| Cmd  | Name |
+| ---- | ---- |
+| 0    |      |
+| 256  |      |
+| 264  |      |
+| 272  |      |
+| 280  |      |
+| 288  |      |
+| 296  |      |
+| 304  |      |
+| 312  |      |
+| 320  |      |
+| 512  |      |
+| 768  |      |
+| 776  |      |
+| 784  |      |
+| 1536 |      |
+| 1544 |      |
+| 1552 |      |
+
+## INetworkServiceMonitor
+
+This is "nn::lp2p::detail::INetworkServiceMonitor".
+
+| Cmd  | Name |
+| ---- | ---- |
+| 0    |      |
+| 256  |      |
+| 264  |      |
+| 272  |      |
+| 280  |      |
+| 288  |      |
+| 296  |      |
+| 304  |      |
+| 312  |      |
+| 320  |      |
+| 512  |      |
+| 768  |      |
+| 776  |      |
+| 784  |      |
+| 1536 |      |
+| 1544 |      |
+| 1552 |      |
 
 [Category:Services](Category:Services "wikilink")
