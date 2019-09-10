@@ -106,6 +106,7 @@ RomFS changes:
 * Eula:
 ** "/CNzhT" was added.
 ** "/revision.txt" was updated.
+* ErrorMessage: Localization for "zh-HansT" was added. New errors were added. Localization for various errors were updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
