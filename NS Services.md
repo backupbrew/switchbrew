@@ -267,19 +267,19 @@ These services are all, at the top level,
 field for a command-specific bit and returns an error if not set, this
 is likely a permissions check for service+command.
 
-| Cmd  | Name                                                                                                                             |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------- |
-| 7988 | \[6.0.0+\] Returns an output [\#IDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
-| 7989 | \[5.1.0+\] Returns an output [\#IReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
-| 7991 | \[5.0.0+\] Returns an output [\#IReadOnlyApplicationRecordInterface](#IReadOnlyApplicationRecordInterface "wikilink").           |
-| 7992 | \[4.0.0+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                                              |
-| 7993 | \[4.0.0+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                                            |
-| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                                   |
-| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                                   |
-| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                                       |
-| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")                                                                   |
-| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")                                                         |
-| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                                                                           |
+| Cmd  | Name                                                                                                           |
+| ---- | -------------------------------------------------------------------------------------------------------------- |
+| 7988 | \[6.0.0+\] [GetDynamicRightsInterface](#IDynamicRightsInterface "wikilink").                                   |
+| 7989 | \[5.1.0+\] [GetReadOnlyApplicationControlDataInterface](#IReadOnlyApplicationControlDataInterface "wikilink"). |
+| 7991 | \[5.0.0+\] [GetReadOnlyApplicationRecordInterface](#IReadOnlyApplicationRecordInterface "wikilink").           |
+| 7992 | \[4.0.0+\] [GetECommerceInterface](#IECommerceInterface "wikilink")                                            |
+| 7993 | \[4.0.0+\] [GetApplicationVersionInterface](#IApplicationVersionInterface "wikilink")                          |
+| 7994 | [GetFactoryResetInterface](#IFactoryResetInterface "wikilink")                                                 |
+| 7995 | [GetAccountProxyInterface](#IAccountProxyInterface "wikilink")                                                 |
+| 7996 | [GetApplicationManagerInterface](#IApplicationManagerInterface "wikilink")                                     |
+| 7997 | [GetDownloadTaskInterface](#IDownloadTaskInterface "wikilink")                                                 |
+| 7998 | [GetContentManagementInterface](#IContentManagementInterface "wikilink")                                       |
+| 7999 | [GetDocumentInterface](#IDocumentInterface "wikilink")                                                         |
 
 ### IAccountProxyInterface
 

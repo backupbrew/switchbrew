@@ -410,11 +410,11 @@ These services are all, at the top level, "nn::ns::detail::IServiceGetterInterfa
 |-
 ! Cmd || Name
 |-
-| 7988 || [6.0.0+] Returns an output [[#IDynamicRightsInterface]].
+| 7988 || [6.0.0+] [[#IDynamicRightsInterface|GetDynamicRightsInterface]].
 |-
-| 7989 || [5.1.0+] Returns an output [[#IReadOnlyApplicationControlDataInterface]].
+| 7989 || [5.1.0+] [[#IReadOnlyApplicationControlDataInterface|GetReadOnlyApplicationControlDataInterface]].
 |-
-| 7991 || [5.0.0+] Returns an output [[#IReadOnlyApplicationRecordInterface]].
+| 7991 || [5.0.0+] [[#IReadOnlyApplicationRecordInterface|GetReadOnlyApplicationRecordInterface]].
 |-
 | 7992 || [4.0.0+] [[#IECommerceInterface|GetECommerceInterface]]
 |-
