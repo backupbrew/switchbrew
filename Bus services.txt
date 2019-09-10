@@ -464,16 +464,16 @@ This is "nn::uart::IManager".
 |}
 
 == DoesUartExist ==
-Takes a u32 [[#UartPort]] and returns boolean success value
+Takes a u32 [[#UartPort]] and returns boolean success value.
 
 == IsUartBaudrateValid ==
-Takes a u32 [[#UartPort]] and a u32 baudrate and returns boolean success value
+Takes a u32 [[#UartPort]] and a u32 baudrate and returns boolean success value.
 
 == IsSomethingUartValid ==
-Takes a u32 [[#UartPort]] and returns boolean success value
+Takes a u32 [[#UartPort]] and returns boolean success value.
 
 == GetSession ==
-Takes a u32 [[#UartPort]] and returns an [[#IPortSession]]
+Takes a u32 [[#UartPort]] and returns an [[#IPortSession]].
 
 == UartPort ==
 {| class="wikitable sortable" border="1"
@@ -597,6 +597,8 @@ This is "nn::pinmux::ISession".
 = sasbus =
 This is "nn::sasbus::IManager".
 
+This was added with [3.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -618,6 +620,70 @@ This is "nn::sasbus::ISession".
 | 2 || StartPeriodicReceiveMode
 |-
 | 3 || StopPeriodicReceiveMode
+|}
+
+= led =
+This is "nn::led::detail::IManager".
+
+This was added with [9.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || OpenController
+|}
+
+== IController ==
+This is "nn::led::detail::IController".
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|-
+| 1 || 
+|-
+| 2 || 
+|-
+| 3 || 
+|-
+| 4 ||
+|-
+| 5 ||
+|-
+| 6 ||
+|-
+| 7 ||
+|-
+| 8 ||
+|-
+| 9 ||
+|-
+| 10 ||
+|-
+| 11 ||
+|-
+| 12 ||
+|-
+| 13 ||
+|-
+| 14 ||
+|-
+| 15 ||
+|-
+| 16 ||
+|-
+| 17 ||
+|-
+| 18 ||
+|-
+| 19 ||
+|-
+| 20 ||
+|-
+| 21 ||
 |}
 
 [[Category:Services]]

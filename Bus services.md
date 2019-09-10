@@ -299,22 +299,22 @@ This is "nn::uart::IManager".
 ## DoesUartExist
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and returns boolean
-success value
+success value.
 
 ## IsUartBaudrateValid
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and a u32 baudrate and
-returns boolean success value
+returns boolean success value.
 
 ## IsSomethingUartValid
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and returns boolean
-success value
+success value.
 
 ## GetSession
 
 Takes a u32 [\#UartPort](#UartPort "wikilink") and returns an
-[\#IPortSession](#IPortSession "wikilink")
+[\#IPortSession](#IPortSession "wikilink").
 
 ## UartPort
 
@@ -405,6 +405,8 @@ This is "nn::pinmux::ISession".
 
 This is "nn::sasbus::IManager".
 
+This was added with \[3.0.0+\].
+
 | Cmd | Name        |
 | --- | ----------- |
 | 0   | OpenSession |
@@ -419,5 +421,44 @@ This is "nn::sasbus::ISession".
 | 1   | Read                     |
 | 2   | StartPeriodicReceiveMode |
 | 3   | StopPeriodicReceiveMode  |
+
+# led
+
+This is "nn::led::detail::IManager".
+
+This was added with \[9.0.0+\].
+
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | OpenController |
+
+## IController
+
+This is "nn::led::detail::IController".
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+| 2   |      |
+| 3   |      |
+| 4   |      |
+| 5   |      |
+| 6   |      |
+| 7   |      |
+| 8   |      |
+| 9   |      |
+| 10  |      |
+| 11  |      |
+| 12  |      |
+| 13  |      |
+| 14  |      |
+| 15  |      |
+| 16  |      |
+| 17  |      |
+| 18  |      |
+| 19  |      |
+| 20  |      |
+| 21  |      |
 
 [Category:Services](Category:Services "wikilink")
