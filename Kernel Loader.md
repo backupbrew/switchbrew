@@ -29,6 +29,14 @@ Next, it applies relocations to itself and calls its init array.
     KernelLdr_libc_init_array();
 ```
 
+\[9.0.0+\] Then it clears TPIDR\_EL1 to 0, and sets VBAR\_EL1.
+
+``` 
+    // 9.0.0+
+    TPIDR_EL1 = 0
+    VBAR_EL1 = KernelLdr_ExceptionTable
+```
+
 Then, it calls the function which relocates the kernel, and jumps back
 to the kernel entrypoint.
 
