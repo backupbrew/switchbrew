@@ -93,17 +93,17 @@ This is "nn::settings::IFirmwareDebugSettingsServer".
 \[4.0.0+\] Only exposed if in [debug
 mode](SPL%20services#IsDebugMode.md##IsDebugMode "wikilink").
 
-| Cmd | Name                              | Notes                                                                          |
-| --- | --------------------------------- | ------------------------------------------------------------------------------ |
-| 2   | SetSettingsItemValue              |                                                                                |
-| 3   | ResetSettingsItemValue            |                                                                                |
-| 4   | CreateSettingsItemKeyIterator     | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
-| 10  | \[4.0.0+\] ReadSettings           |                                                                                |
-| 11  | \[4.0.0+\] ResetSettings          |                                                                                |
-| 20  | \[4.0.0+\] SetWebInspectorFlag    |                                                                                |
-| 21  | \[4.0.0+\] SetAllowedSslHosts     |                                                                                |
-| 22  | \[4.0.0+\] SetHostFsMountPoint    |                                                                                |
-| 23  | \[9.0.0+\] SetMemoryUsageRateFlag |                                                                                |
+| Cmd | Name                                                                  |
+| --- | --------------------------------------------------------------------- |
+| 2   | SetSettingsItemValue                                                  |
+| 3   | ResetSettingsItemValue                                                |
+| 4   | [CreateSettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink") |
+| 10  | \[4.0.0+\] ReadSettings                                               |
+| 11  | \[4.0.0+\] ResetSettings                                              |
+| 20  | \[4.0.0+\] SetWebInspectorFlag                                        |
+| 21  | \[4.0.0+\] SetAllowedSslHosts                                         |
+| 22  | \[4.0.0+\] SetHostFsMountPoint                                        |
+| 23  | \[9.0.0+\] SetMemoryUsageRateFlag                                     |
 
 ## ISettingsItemKeyIterator
 

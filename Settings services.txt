@@ -116,25 +116,25 @@ This is "nn::settings::IFirmwareDebugSettingsServer".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 2 || SetSettingsItemValue ||
+| 2 || SetSettingsItemValue
 |-
-| 3 || ResetSettingsItemValue ||
+| 3 || ResetSettingsItemValue
 |-
-| 4 || CreateSettingsItemKeyIterator || Returns an [[#ISettingsItemKeyIterator]].
+| 4 || [[#ISettingsItemKeyIterator|CreateSettingsItemKeyIterator]]
 |-
-| 10 || [4.0.0+] ReadSettings ||
+| 10 || [4.0.0+] ReadSettings
 |-
-| 11 || [4.0.0+] ResetSettings ||
+| 11 || [4.0.0+] ResetSettings
 |-
-| 20 || [4.0.0+] SetWebInspectorFlag ||
+| 20 || [4.0.0+] SetWebInspectorFlag
 |-
-| 21 || [4.0.0+] SetAllowedSslHosts ||
+| 21 || [4.0.0+] SetAllowedSslHosts
 |-
-| 22 || [4.0.0+] SetHostFsMountPoint ||
+| 22 || [4.0.0+] SetHostFsMountPoint
 |-
-| 23 || [9.0.0+] SetMemoryUsageRateFlag ||
+| 23 || [9.0.0+] SetMemoryUsageRateFlag
 |}
 
 == ISettingsItemKeyIterator ==
