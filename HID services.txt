@@ -195,6 +195,10 @@ This is "nn::hid::IHidServer".
 |-
 | 406 || [4.0.0+] GetNpadLeftRightInterfaceType
 |-
+| 407 || [9.0.0+] 
+|-
+| 408 || [9.0.0+] 
+|-
 | 500 || [5.0.0+] GetPalmaConnectionHandle
 |-
 | 501 || [5.0.0+] InitializePalma
@@ -258,6 +262,10 @@ This is "nn::hid::IHidServer".
 | 1000 || SetNpadCommunicationMode
 |-
 | 1001 || GetNpadCommunicationMode
+|-
+| 1002 || [9.0.0+] SetTouchScreenConfiguration
+|-
+| 1003 || [9.0.0+] IsFirmwareUpdateNeededForNotification
 |}
 
 == CreateAppletResource ==
@@ -469,6 +477,8 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 12 || UnsetTouchScreenAutoPilotState
 |-
+| 13 || [9.0.0+] GetTouchScreenConfiguration
+|-
 | 20 || DeactivateMouse
 |-
 | 21 || SetMouseAutoPilotState
@@ -486,6 +496,8 @@ This is "nn::hid::IHidDebugServer".
 | 51 || SetXpadAutoPilotState
 |-
 | 52 || UnsetXpadAutoPilotState
+|-
+| 53 || [9.0.0+]
 |-
 | 60 || DeactivateJoyXpad
 |-
@@ -599,15 +611,37 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 235 || [7.0.0+] EnableAnalogStickPower
 |-
-| 301 || [5.0.0+] [[#GetAbstractedPadHandles]]
+| 236 || [9.0.0+] RequestKuinaUartClockCal
 |-
-| 302 || [5.0.0+] [[#GetAbstractedPadState]]
+| 237 || [9.0.0+] GetKuinaUartClockCal
 |-
-| 303 || [5.0.0+] [[#GetAbstractedPadsState]]
+| 238 || [9.0.0+] SetKuinaUartClockTrim
 |-
-| 321 || [5.0.0+] [[#SetAutoPilotVirtualPadState]]
+| 239 || [9.0.0+] KuinaLoopbackTest
 |-
-| 322 || [5.0.0+] [[#UnsetAutoPilotVirtualPadState]]
+| 240 || [9.0.0+] RequestBatteryVoltage
+|-
+| 241 || [9.0.0+] GetBatteryVoltage
+|-
+| 242 || [9.0.0+] GetUniquePadPowerInfo
+|-
+| 243 || [9.0.0+] RebootUniquePad
+|-
+| 244 || [9.0.0+] RequestKuinaFirmwareVersion
+|-
+| 245 || [9.0.0+] GetKuinaFirmwareVersion
+|-
+| 246 || [9.0.0+] GetVidPid
+|-
+| 301 || [5.0.0-8.1.0] [[#GetAbstractedPadHandles]]
+|-
+| 302 || [5.0.0-8.1.0] [[#GetAbstractedPadState]]
+|-
+| 303 || [5.0.0-8.1.0] [[#GetAbstractedPadsState]]
+|-
+| 321 || [5.0.0-8.1.0] [[#SetAutoPilotVirtualPadState]]
+|-
+| 322 || [5.0.0-8.1.0] [[#UnsetAutoPilotVirtualPadState]]
 |-
 | 323 || [5.0.0+] [[#UnsetAllAutoPilotVirtualPadState]]
 |-
@@ -638,6 +672,12 @@ This is "nn::hid::IHidDebugServer".
 | 500 || [8.0.0+] SetFactoryInt
 |-
 | 501 || [8.0.0+] IsFactoryBootEnabled
+|-
+| 550 || [9.0.0+] SetAnalogStickModelDataTemporarily
+|-
+| 551 || [9.0.0+] GetAnalogStickModelData
+|-
+| 552 || [9.0.0+] ResetAnalogStickModelData
 |}
 
 == StartFirmwareUpdate ==
@@ -1036,6 +1076,12 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 312 || [6.0.0+] SetSupportedNpadStyleSetAll
 |-
+| 313 || [9.0.0+] GetNpadCaptureButtonAssignment
+|-
+| 314 || [9.0.0+] GetAppletFooterUiType
+|-
+| 315 || [9.0.0+] GetAppletDetailedUiType
+|-
 | 321 || [3.0.0+] [[#GetUniquePadsFromNpad]]
 |-
 | 322 || GetIrSensorState
@@ -1065,6 +1111,10 @@ This is "nn::hid::IHidSystemServer".
 | 520 || EnableHandheldHids
 |-
 | 521 || DisableHandheldHids
+|-
+| 522 || [9.0.0+] SetJoyConRailEnabled
+|-
+| 523 || [9.0.0+] IsJoyConRailEnabled
 |-
 | 540 || AcquirePlayReportControllerUsageUpdateEvent
 |-
@@ -1140,6 +1190,10 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 830 || [7.0.0+] [[#SetNotificationLedPattern]]
 |-
+| 831 || [9.0.0+] SetNotificationLedPatternWithTimeout
+|-
+| 832 || [9.0.0+] PrepareHidsForNotificationWake
+|-
 | 850 || [3.0.0+] IsUsbFullKeyControllerEnabled
 |-
 | 851 || [3.0.0+] EnableUsbFullKeyController
@@ -1199,6 +1253,18 @@ This is "nn::hid::IHidSystemServer".
 | 1134 || [6.0.0+] GetUsbFirmwareUpdateState
 |-
 | 1150 || [8.0.0+] SetTouchScreenMagnification
+|-
+| 1151 || [9.0.0+] GetTouchScreenFirmwareVersion
+|-
+| 1152 || [9.0.0+] SetTouchScreenDefaultConfiguration
+|-
+| 1153 || [9.0.0+] GetTouchScreenDefaultConfiguration
+|-
+| 1154 || [9.0.0+] IsFirmwareAvailableForNotification
+|-
+| 1155 || [9.0.0+] SetForceHandheldStyleVibration
+|-
+| 1156 || [9.0.0+] 
 |}
 
 == GetMaskedSupportedNpadStyleSet ==
@@ -1663,7 +1729,9 @@ This is "nn::irsensor::IIrSensorSystemServer".
 = ahid:cd =
 This is "nn::ahid::IServerSession".
 
-Used for USB HID devices. 
+Used for USB HID devices.
+
+This service no longer exists in [9.0.0+].
 
 {| class="wikitable" border="1"
 |-
@@ -1746,6 +1814,8 @@ This was removed with [3.0.0+].
 This is "nn::ahid::hdr::ISession".
 
 Used internally for USB HID devices.
+
+This service no longer exists in [9.0.0+].
 
 {| class="wikitable" border="1"
 |-

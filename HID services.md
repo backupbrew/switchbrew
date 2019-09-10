@@ -101,6 +101,8 @@ This is "nn::hid::IHidServer".
 | 404  | \[4.0.0+\] HasLeftRightBattery                                                                      |
 | 405  | \[4.0.0+\] GetNpadInterfaceType                                                                     |
 | 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                            |
+| 407  | \[9.0.0+\]                                                                                          |
+| 408  | \[9.0.0+\]                                                                                          |
 | 500  | \[5.0.0+\] GetPalmaConnectionHandle                                                                 |
 | 501  | \[5.0.0+\] InitializePalma                                                                          |
 | 502  | \[5.0.0+\] AcquirePalmaOperationCompleteEvent                                                       |
@@ -133,6 +135,8 @@ This is "nn::hid::IHidServer".
 | 529  | \[8.0.0+\] SetDisallowedPalmaConnection                                                             |
 | 1000 | SetNpadCommunicationMode                                                                            |
 | 1001 | GetNpadCommunicationMode                                                                            |
+| 1002 | \[9.0.0+\] SetTouchScreenConfiguration                                                              |
+| 1003 | \[9.0.0+\] IsFirmwareUpdateNeededForNotification                                                    |
 
 ## CreateAppletResource
 
@@ -369,6 +373,7 @@ This is "nn::hid::IHidDebugServer".
 | 10  | DeactivateTouchScreen                                                                         |
 | 11  | SetTouchScreenAutoPilotState                                                                  |
 | 12  | UnsetTouchScreenAutoPilotState                                                                |
+| 13  | \[9.0.0+\] GetTouchScreenConfiguration                                                        |
 | 20  | DeactivateMouse                                                                               |
 | 21  | SetMouseAutoPilotState                                                                        |
 | 22  | UnsetMouseAutoPilotState                                                                      |
@@ -378,6 +383,7 @@ This is "nn::hid::IHidDebugServer".
 | 50  | DeactivateXpad                                                                                |
 | 51  | SetXpadAutoPilotState                                                                         |
 | 52  | UnsetXpadAutoPilotState                                                                       |
+| 53  | \[9.0.0+\]                                                                                    |
 | 60  | DeactivateJoyXpad                                                                             |
 | 91  | DeactivateGesture                                                                             |
 | 110 | DeactivateHomeButton                                                                          |
@@ -434,11 +440,22 @@ This is "nn::hid::IHidDebugServer".
 | 233 | \[6.0.0+\] ClearPairingInfo                                                                   |
 | 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal                                                  |
 | 235 | \[7.0.0+\] EnableAnalogStickPower                                                             |
-| 301 | \[5.0.0+\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")                   |
-| 302 | \[5.0.0+\] [\#GetAbstractedPadState](#GetAbstractedPadState "wikilink")                       |
-| 303 | \[5.0.0+\] [\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink")                     |
-| 321 | \[5.0.0+\] [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")           |
-| 322 | \[5.0.0+\] [\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink")       |
+| 236 | \[9.0.0+\] RequestKuinaUartClockCal                                                           |
+| 237 | \[9.0.0+\] GetKuinaUartClockCal                                                               |
+| 238 | \[9.0.0+\] SetKuinaUartClockTrim                                                              |
+| 239 | \[9.0.0+\] KuinaLoopbackTest                                                                  |
+| 240 | \[9.0.0+\] RequestBatteryVoltage                                                              |
+| 241 | \[9.0.0+\] GetBatteryVoltage                                                                  |
+| 242 | \[9.0.0+\] GetUniquePadPowerInfo                                                              |
+| 243 | \[9.0.0+\] RebootUniquePad                                                                    |
+| 244 | \[9.0.0+\] RequestKuinaFirmwareVersion                                                        |
+| 245 | \[9.0.0+\] GetKuinaFirmwareVersion                                                            |
+| 246 | \[9.0.0+\] GetVidPid                                                                          |
+| 301 | \[5.0.0-8.1.0\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")              |
+| 302 | \[5.0.0-8.1.0\] [\#GetAbstractedPadState](#GetAbstractedPadState "wikilink")                  |
+| 303 | \[5.0.0-8.1.0\] [\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink")                |
+| 321 | \[5.0.0-8.1.0\] [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")      |
+| 322 | \[5.0.0-8.1.0\] [\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink")  |
 | 323 | \[5.0.0+\] [\#UnsetAllAutoPilotVirtualPadState](#UnsetAllAutoPilotVirtualPadState "wikilink") |
 | 324 | \[7.0.0+\] [\#AttachHdlsWorkBuffer](#AttachHdlsWorkBuffer "wikilink")                         |
 | 325 | \[7.0.0+\] [\#ReleaseHdlsWorkBuffer](#ReleaseHdlsWorkBuffer "wikilink")                       |
@@ -454,6 +471,9 @@ This is "nn::hid::IHidDebugServer".
 | 401 | \[6.0.0+\] DisableRailDeviceFiltering                                                         |
 | 500 | \[8.0.0+\] SetFactoryInt                                                                      |
 | 501 | \[8.0.0+\] IsFactoryBootEnabled                                                               |
+| 550 | \[9.0.0+\] SetAnalogStickModelDataTemporarily                                                 |
+| 551 | \[9.0.0+\] GetAnalogStickModelData                                                            |
+| 552 | \[9.0.0+\] ResetAnalogStickModelData                                                          |
 
 ## StartFirmwareUpdate
 
@@ -794,6 +814,9 @@ This is "nn::hid::IHidSystemServer".
 | 310  | \[6.0.0+\] [\#GetMaskedSupportedNpadStyleSet](#GetMaskedSupportedNpadStyleSet "wikilink") |
 | 311  | SetNpadPlayerLedBlinkingDevice                                                            |
 | 312  | \[6.0.0+\] SetSupportedNpadStyleSetAll                                                    |
+| 313  | \[9.0.0+\] GetNpadCaptureButtonAssignment                                                 |
+| 314  | \[9.0.0+\] GetAppletFooterUiType                                                          |
+| 315  | \[9.0.0+\] GetAppletDetailedUiType                                                        |
 | 321  | \[3.0.0+\] [\#GetUniquePadsFromNpad](#GetUniquePadsFromNpad "wikilink")                   |
 | 322  | GetIrSensorState                                                                          |
 | 323  | GetXcdHandleForNpadWithIrSensor                                                           |
@@ -809,6 +832,8 @@ This is "nn::hid::IHidSystemServer".
 | 513  | \[3.0.0+\] EndPermitVibrationSession                                                      |
 | 520  | EnableHandheldHids                                                                        |
 | 521  | DisableHandheldHids                                                                       |
+| 522  | \[9.0.0+\] SetJoyConRailEnabled                                                           |
+| 523  | \[9.0.0+\] IsJoyConRailEnabled                                                            |
 | 540  | AcquirePlayReportControllerUsageUpdateEvent                                               |
 | 541  | GetPlayReportControllerUsages                                                             |
 | 542  | AcquirePlayReportRegisteredDeviceUpdateEvent                                              |
@@ -846,6 +871,8 @@ This is "nn::hid::IHidSystemServer".
 | 828  | \[5.0.0+\] IsAnalogStickInReleasePosition                                                 |
 | 829  | \[5.0.0+\] IsAnalogStickInCircumference                                                   |
 | 830  | \[7.0.0+\] [\#SetNotificationLedPattern](#SetNotificationLedPattern "wikilink")           |
+| 831  | \[9.0.0+\] SetNotificationLedPatternWithTimeout                                           |
+| 832  | \[9.0.0+\] PrepareHidsForNotificationWake                                                 |
 | 850  | \[3.0.0+\] IsUsbFullKeyControllerEnabled                                                  |
 | 851  | \[3.0.0+\] EnableUsbFullKeyController                                                     |
 | 852  | \[3.0.0+\] IsUsbConnected                                                                 |
@@ -876,6 +903,12 @@ This is "nn::hid::IHidSystemServer".
 | 1133 | \[6.0.0+\] StartUsbFirmwareUpdate                                                         |
 | 1134 | \[6.0.0+\] GetUsbFirmwareUpdateState                                                      |
 | 1150 | \[8.0.0+\] SetTouchScreenMagnification                                                    |
+| 1151 | \[9.0.0+\] GetTouchScreenFirmwareVersion                                                  |
+| 1152 | \[9.0.0+\] SetTouchScreenDefaultConfiguration                                             |
+| 1153 | \[9.0.0+\] GetTouchScreenDefaultConfiguration                                             |
+| 1154 | \[9.0.0+\] IsFirmwareAvailableForNotification                                             |
+| 1155 | \[9.0.0+\] SetForceHandheldStyleVibration                                                 |
+| 1156 | \[9.0.0+\]                                                                                |
 
 ## GetMaskedSupportedNpadStyleSet
 
@@ -1264,6 +1297,8 @@ This is "nn::ahid::IServerSession".
 
 Used for USB HID devices.
 
+This service no longer exists in \[9.0.0+\].
+
 | Cmd               | Name            | Notes                                                                        |
 | ----------------- | --------------- | ---------------------------------------------------------------------------- |
 | 0                 | AcquireDevice   | Takes an input s32, no output.                                               |
@@ -1326,6 +1361,8 @@ This was removed with \[3.0.0+\].
 This is "nn::ahid::hdr::ISession".
 
 Used internally for USB HID devices.
+
+This service no longer exists in \[9.0.0+\].
 
 | Cmd | Name                       |
 | --- | -------------------------- |
