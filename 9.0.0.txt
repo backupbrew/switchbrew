@@ -101,7 +101,7 @@ All titles were updated except for the following: Dictionary, UrlBlackList, and 
 
 New titles 0100000000000041 (ngct-sysmodule) and 100000000000830 were added.
 
-RomFS changes:
+RomFS changes (see [[System_Version_Title]] for sysver title):
 * See [[HID_services#RomFS]] for hid-sysmodule.
 * Eula:
 ** "/CNzhT" was added.
@@ -122,6 +122,7 @@ RomFS changes:
 ** "/Iwnn/KO/njubase1.a" and "/Iwnn/KO/njubase2.a" were updated.
 ** Various files were updated under "Iwnn/ZH/CN/", "/Iwnn/ZH/HK/", and "/Iwnn/ZH/TW/".
 * NgWord: "/0.txt", "/common.txt", and "/version.dat" were updated.
+* AvatarImage: "/DatabaseInfo.bin" was updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
