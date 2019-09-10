@@ -40,6 +40,8 @@ This is "nn::es::IETicketService".
 | 34   | \[5.0.0+\] GetEncryptedTicketSize                                                       |
 | 35   | \[5.0.0+\] GetEncryptedTicketData. \[6.0.0+\]: Now returns an additional 8-bytes.       |
 | 36   | \[6.0.0+\] DeleteAllInactiveELicenseRequiredPersonalizedTicket                          |
+| 37   | \[9.0.0+\]                                                                              |
+| 38   | \[9.0.0+\]                                                                              |
 | 501  | \[6.0.0+\]                                                                              |
 | 502  | \[6.0.0+\]                                                                              |
 | 503  | \[6.0.0+\] GetTitleKey                                                                  |
@@ -62,12 +64,18 @@ This is "nn::es::IETicketService".
 | 1014 | \[6.0.0+\]                                                                              |
 | 1015 | \[6.0.0+\]                                                                              |
 | 1016 | \[6.0.0+\]                                                                              |
+| 1017 | \[9.0.0+\]                                                                              |
+| 1018 | \[9.0.0+\]                                                                              |
+| 1019 | \[9.0.0+\]                                                                              |
+| 1020 | \[9.0.0+\]                                                                              |
+| 1021 | \[9.0.0+\]                                                                              |
 | 1501 | \[6.0.0+\]                                                                              |
 | 1502 | \[6.0.0+\]                                                                              |
 | 1503 | \[6.0.0+\]                                                                              |
 | 1504 | \[6.0.0+\]                                                                              |
 | 1505 | \[6.0.0+\]                                                                              |
 | 2000 | \[6.0.0+\] No input, returns an [\#EsSubinterface2000](#EsSubinterface2000 "wikilink"). |
+| 2001 | \[9.0.0+\] No input, returns an [\#EsSubinterface2000](#EsSubinterface2000 "wikilink"). |
 | 2100 | \[7.0.0+\]                                                                              |
 | 2501 | \[6.0.0+\]                                                                              |
 | 2502 | \[6.0.0+\]                                                                              |

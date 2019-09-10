@@ -77,6 +77,10 @@ This is "nn::es::IETicketService".
 |-
 | 36 || [6.0.0+] DeleteAllInactiveELicenseRequiredPersonalizedTicket
 |-
+| 37 || [9.0.0+] 
+|-
+| 38 || [9.0.0+] 
+|-
 | 501 || [6.0.0+]
 |-
 | 502 || [6.0.0+]
@@ -121,6 +125,16 @@ This is "nn::es::IETicketService".
 |-
 | 1016 || [6.0.0+]
 |-
+| 1017 || [9.0.0+] 
+|-
+| 1018 || [9.0.0+] 
+|-
+| 1019 || [9.0.0+] 
+|-
+| 1020 || [9.0.0+] 
+|-
+| 1021 || [9.0.0+] 
+|-
 | 1501 || [6.0.0+]
 |-
 | 1502 || [6.0.0+]
@@ -132,6 +146,8 @@ This is "nn::es::IETicketService".
 | 1505 || [6.0.0+]
 |-
 | 2000 || [6.0.0+] No input, returns an [[#EsSubinterface2000]].
+|-
+| 2001 || [9.0.0+] No input, returns an [[#EsSubinterface2000]].
 |-
 | 2100 || [7.0.0+]
 |-
