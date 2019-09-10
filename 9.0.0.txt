@@ -103,9 +103,6 @@ New titles 0100000000000041 (ngct-sysmodule) and 100000000000830 were added.
 
 RomFS changes (see [[System_Version_Title]] for sysver title):
 * See [[HID_services#RomFS]] for hid-sysmodule.
-* Eula:
-** "/CNzhT" was added.
-** "/revision.txt" was updated.
 * ErrorMessage: Localization for "zh-HansT" was added. New errors were added. Localization for various errors were updated.
 * BrowserDll:
 ** "/browser/RootCaEtc.pem", "/browser/UserCss.dat", and "/buildinfo/buildinfo.dat" were updated.
@@ -128,6 +125,12 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 ** "/image/LnSupIntro/main_Other.jpg" was updated.
 ** "/image/LnSupIntro/main_Terra.jpg" was updated.
 ** "/message/<dirname>/localNews.msbt.szs" was updated, where <dirname> is all localization directories. Directory "/message/CNzhT/" was added. "/message/revision.txt" was updated.
+* Eula:
+** "/CNzhT" was added.
+** "/revision.txt" was updated.
+* TimeZoneBinary: "/version.txt" and various files under "/zoneinfo/" were updated.
+* FirmwareDebugSettings: "/file" was updated.
+* FatalMessage: "/<dirname>/TerraMessage" was added, where <dirname> is all localization directories.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
