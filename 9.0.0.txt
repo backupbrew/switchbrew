@@ -146,8 +146,8 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 * LibraryAppletMiiEdit (in addition to the above):
 ** Various files under "/archive/" were updated.
 * Web-applets: "/buildinfo/buildinfo.dat" and "/.nrr/netfront.nrr" were updated.
-** LibraryAppletShop: "/whitelist/WhitelistEc.txt" was updated.
-** LibraryAppletLoginShare: "/whitelist/WhitelistLns.txt" was updated.
+** LibraryAppletShop: "/whitelist/WhitelistEc.txt" was updated. "|ch" was added to the main "nintendo" line, for allowing nintendo.ch. Two new lines were added: <nowiki>"^https://([0-9A-Za-z\-]+\.)*nintendoswitch\.cn(/|$)" and "^https://([0-9A-Za-z\-]+\.)*nintendoswitch\.com\.cn(/|$)"</nowiki>.
+** LibraryAppletLoginShare: "/whitelist/WhitelistLns.txt" was updated. A duplicate "ch|" was removed from the main "nintendo" line. The same new "nintendoswitch" lines from WhitelistEc.txt were added. The "... google(\.[A-Za-z]+)*/(search\?|translate" line had "|amp/)" added at the end. The following new line was added: "---- ^https?://([0-9A-Za-z\-]+\.)*(sites|mail|news)\.google(\.[A-Za-z]+)*/".
 * OverlayApplet (in addition to the above): "/sound/infoAlarm.raw" was added.
 
 ===[[PPC_services|ppc-sysmodule]]===
