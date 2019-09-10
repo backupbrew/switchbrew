@@ -75,7 +75,7 @@ Takes a pid.
 <td><p>u0: System, u1: User, su: Admin, aa: Baas</p></td>
 </tr>
 <tr class="even">
-<td><p>ahid:cd, ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys, [3.0.0-7.0.1] hid:tmp, [5.0.0+] hidbus</p></td>
+<td><p>[1.0.0-8.1.0] ahid:cd, [1.0.0-8.1.0] ahid:hdr, hid, hid:dbg, hid:sys, irs, irs:sys, xcd:sys, [3.0.0-7.0.1] hid:tmp, [5.0.0+] hidbus</p></td>
 <td><p><a href="HID services.md" title="wikilink">HID services</a></p></td>
 <td></td>
 </tr>
