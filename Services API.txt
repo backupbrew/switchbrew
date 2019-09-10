@@ -279,6 +279,10 @@ Takes a pid.
 | [6.0.0+] olsc:s
 | [[OLSC services]]
 | 
+|-
+| [9.0.0+] ngct:s, [9.0.0+] ngct:u
+| NGCT services
+| 
 |}
 
 [[Category:Services]]

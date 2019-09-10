@@ -346,6 +346,11 @@ Takes a pid.
 <td><p><a href="OLSC services.md" title="wikilink">OLSC services</a></p></td>
 <td></td>
 </tr>
+<tr class="even">
+<td><p>[9.0.0+] ngct:s, [9.0.0+] ngct:u</p></td>
+<td><p>NGCT services</p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
