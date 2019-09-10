@@ -107,6 +107,12 @@ RomFS changes:
 ** "/CNzhT" was added.
 ** "/revision.txt" was updated.
 * ErrorMessage: Localization for "zh-HansT" was added. New errors were added. Localization for various errors were updated.
+* BrowserDll:
+** "/browser/RootCaEtc.pem", "/browser/UserCss.dat", and "/buildinfo/buildinfo.dat" were updated.
+** The OSS NROs under "/dll_0/" were updated.
+** New directory "/dll_1/" was added, which also contains OSS NROs with the same filenames.
+** A number of files under "/lyt/" were updated.
+** "/message/<dirname>/Cruiser.msbt" was updated for every region/language. Directory "/message/CNzhT/" was added.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
