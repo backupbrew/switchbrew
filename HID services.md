@@ -1427,9 +1427,9 @@ These titles contain the following files:
 
   - **ExpectVersionInfo.csv** - List in the format
     "\[device\],\[type\],\[version\]" where "device" can be "JoyLeft",
-    "JoyRight", "FullKey" or "Palma", "type" can be "BT", "MCU" or "USB"
-    and "version" is the hexadecimal representation of the firmware
-    file's version.
+    "JoyRight", "FullKey", "Palma" or "Handheld", "type" can be "BT",
+    "MCU", "USB" or "SioH" and "version" is the hexadecimal
+    representation of the firmware file's version.
   - **FirmwareInfo.csv** - List in the format
     "\[device\],\[type\],\[version\],\[file\]" where "device", "type"
     and "version" should match the values from "ExpectVersionInfo" and
@@ -1443,5 +1443,12 @@ These titles contain the following files:
     firmware.
   - \[6.0.0+\] **ProController.dfu** - Pro Controller USB firmware.
   - \[6.1.0+\] **PalmaFw.bin** - Poké Ball Plus BT firmware.
+  - \[9.0.0+\] **ExpectVersionInfo-platform.hoag.csv** - Same as
+    "ExpectVersionInfo.csv" but for the Switch Lite platform.
+  - \[9.0.0+\] **FirmwareInfo-platform.hoag.csv** - Same as
+    "FirmwareInfo.csv" but for the Switch Lite platform.
+  - \[9.0.0+\] **sioh.bin** - Switch Lite Joy-Con firmware.
+  - \[9.0.0+\] **sioh\_iap.bin** - Switch Lite Joy-Con (IAP profile)
+    firmware.
 
 [Category:Services](Category:Services "wikilink")

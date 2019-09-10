@@ -1876,7 +1876,7 @@ These are firmware files for the touchscreen controller.
 HID-sysmodule mounts the contents of title [[Title_list|0100000000000822]] as "systemData" or the contents of title [[Title_list|010000000000B22B]] as "systemDataD". Both titles contain the same files, but [[Title_list|0100000000000822]] is used on retail units while [[Title_list|010000000000B22B]] is used for development.
 
 These titles contain the following files:
-* '''ExpectVersionInfo.csv''' - List in the format "[device],[type],[version]" where "device" can be "JoyLeft", "JoyRight", "FullKey" or "Palma", "type" can be "BT", "MCU" or "USB" and "version" is the hexadecimal representation of the firmware file's version.
+* '''ExpectVersionInfo.csv''' - List in the format "[device],[type],[version]" where "device" can be "JoyLeft", "JoyRight", "FullKey", "Palma" or "Handheld", "type" can be "BT", "MCU", "USB" or "SioH" and "version" is the hexadecimal representation of the firmware file's version.
 * '''FirmwareInfo.csv''' - List in the format "[device],[type],[version],[file]" where "device", "type" and "version" should match the values from "ExpectVersionInfo" and "file" is the name of the firmware file.
 * '''ukyosakyo_ep2_ota.bin''' - Left/Right Joy-Con BT firmware.
 * '''raizo_ep2_ota.bin''' - Pro Controller BT firmware.
@@ -1886,5 +1886,9 @@ These titles contain the following files:
 * '''tera_fullkey_ota_iap.bin''' - Pro Controller MCU (IAP profile) firmware.
 * [6.0.0+] '''ProController.dfu''' - Pro Controller USB firmware.
 * [6.1.0+] '''PalmaFw.bin''' - Poké Ball Plus BT firmware.
+* [9.0.0+] '''ExpectVersionInfo-platform.hoag.csv''' - Same as "ExpectVersionInfo.csv" but for the Switch Lite platform.
+* [9.0.0+] '''FirmwareInfo-platform.hoag.csv''' - Same as "FirmwareInfo.csv" but for the Switch Lite platform.
+* [9.0.0+] '''sioh.bin''' - Switch Lite Joy-Con firmware. 
+* [9.0.0+] '''sioh_iap.bin''' - Switch Lite Joy-Con (IAP profile) firmware.
 
 [[Category:Services]]
