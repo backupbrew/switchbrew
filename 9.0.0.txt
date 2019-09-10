@@ -107,7 +107,7 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 * BrowserDll:
 ** "/browser/RootCaEtc.pem", "/browser/UserCss.dat", and "/buildinfo/buildinfo.dat" were updated.
 ** The OSS NROs under "/dll_0/" were updated.
-** New directory "/dll_1/" was added, which also contains OSS NROs with the same filenames. Web-applets now use this instead of dll_0.
+** New directory "/dll_1/" was added, which also contains OSS NROs with the same filenames. All web-applets now use this instead of dll_0, except for Offline which still uses dll_0.
 ** dll_0 have binary names in the NRO "D:\for_cruiser\release_326\nx\applications\cruiser_sample\build\NX64\Develop_Dll\...", while dll_1 have "D:\for_cruiser_Safari606\release_31\nx\applications\cruiser_sample\build\NX64\Develop_Dll\...".
 ** A number of files under "/lyt/" were updated.
 ** "/message/<dirname>/Cruiser.msbt" was updated for every region/language. Directory "/message/CNzhT/" was added.
