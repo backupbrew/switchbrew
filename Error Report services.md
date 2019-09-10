@@ -694,5 +694,15 @@ This is "nn::erpt::sf::IAttachment".
 | 0x254   | \[7.0.0+\] RunningApplicationProgramIndex                           |         |                                                                       |
 | 0x255   | \[8.0.0+\] UsbTopology                                              |         |                                                                       |
 | 0x256   | \[8.0.0+\] AkamaiReferenceId                                        |         |                                                                       |
+| 0x257   | \[9.0.0+\] NvHostErrID                                              |         |                                                                       |
+| 0x258   | \[9.0.0+\] NvHostErrDataArrayU32                                    |         |                                                                       |
+| 0x259   | \[9.0.0+\] HasSyslogFlag                                            |         |                                                                       |
+| 0x25A   | \[9.0.0+\] AcpRuntimeParameterDelivery                              |         |                                                                       |
+| 0x25B   | \[9.0.0+\] PlatformRegion                                           |         |                                                                       |
+| 0x25C   | \[9.0.0+\] RunningUlaApplicationId                                  |         |                                                                       |
+| 0x25D   | \[9.0.0+\] RunningUlaAppletId                                       |         |                                                                       |
+| 0x25E   | \[9.0.0+\] RunningUlaVersion                                        |         |                                                                       |
+| 0x25F   | \[9.0.0+\] RunningUlaApplicationStorageLocation                     |         |                                                                       |
+| 0x260   | \[9.0.0+\] RunningUlaPatchStorageLocation                           |         |                                                                       |
 
 [Category:Services](Category:Services "wikilink")
