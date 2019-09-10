@@ -554,7 +554,7 @@ encrypted, signed and follows the format below.
 | 0x104  | 0x4    | Unknown (0xFF000000, 0xFFFF0000 or 0xFFFFFF00)                            |
 | 0x108  | 0x4    | Empty                                                                     |
 | 0x10C  | 0x4    | Empty                                                                     |
-| 0x110  | 0x4    | Version (0, 1 or 3)                                                       |
+| 0x110  | 0x4    | Version (0, 1, \[4.0.0+\] 3, \[9.0.0+\] 7)                                |
 | 0x114  | 0x4    | Unknown (0x80000000)                                                      |
 | 0x118  | 0x4    | Data size                                                                 |
 | 0x11C  | 0x4    | Empty                                                                     |
