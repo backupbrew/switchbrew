@@ -93,16 +93,17 @@ This is "nn::settings::IFirmwareDebugSettingsServer".
 \[4.0.0+\] Only exposed if in [debug
 mode](SPL%20services#IsDebugMode.md##IsDebugMode "wikilink").
 
-| Cmd | Name                           | Notes                                                                          |
-| --- | ------------------------------ | ------------------------------------------------------------------------------ |
-| 2   | SetSettingsItemValue           |                                                                                |
-| 3   | ResetSettingsItemValue         |                                                                                |
-| 4   | CreateSettingsItemKeyIterator  | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
-| 10  | \[4.0.0+\] ReadSettings        |                                                                                |
-| 11  | \[4.0.0+\] ResetSettings       |                                                                                |
-| 20  | \[4.0.0+\] SetWebInspectorFlag |                                                                                |
-| 21  | \[4.0.0+\] SetAllowedSslHosts  |                                                                                |
-| 22  | \[4.0.0+\] SetHostFsMountPoint |                                                                                |
+| Cmd | Name                              | Notes                                                                          |
+| --- | --------------------------------- | ------------------------------------------------------------------------------ |
+| 2   | SetSettingsItemValue              |                                                                                |
+| 3   | ResetSettingsItemValue            |                                                                                |
+| 4   | CreateSettingsItemKeyIterator     | Returns an [\#ISettingsItemKeyIterator](#ISettingsItemKeyIterator "wikilink"). |
+| 10  | \[4.0.0+\] ReadSettings           |                                                                                |
+| 11  | \[4.0.0+\] ResetSettings          |                                                                                |
+| 20  | \[4.0.0+\] SetWebInspectorFlag    |                                                                                |
+| 21  | \[4.0.0+\] SetAllowedSslHosts     |                                                                                |
+| 22  | \[4.0.0+\] SetHostFsMountPoint    |                                                                                |
+| 23  | \[9.0.0+\] SetMemoryUsageRateFlag |                                                                                |
 
 ## ISettingsItemKeyIterator
 
@@ -150,6 +151,14 @@ This is "nn::settings::IFactorySettingsServer".
 | 30  | \[5.0.0+\] GetAmiiboEcqvBlsCertificate                                        |
 | 31  | \[5.0.0+\] GetAmiiboEcqvBlsRootCertificate                                    |
 | 32  | \[5.0.0+\] GetUsbTypeCPowerSourceCircuitVersion                               |
+| 33  | \[9.0.0+\] GetAnalogStickModuleTypeL                                          |
+| 34  | \[9.0.0+\] GetAnalogStickModelParameterL                                      |
+| 35  | \[9.0.0+\] GetAnalogStickFactoryCalibrationL                                  |
+| 36  | \[9.0.0+\] GetAnalogStickModuleTypeR                                          |
+| 37  | \[9.0.0+\] GetAnalogStickModelParameterR                                      |
+| 38  | \[9.0.0+\] GetAnalogStickFactoryCalibrationR                                  |
+| 39  | \[9.0.0+\] GetConsoleSixAxisSensorModuleType                                  |
+| 40  | \[9.0.0+\] GetConsoleSixAxisSensorHorizontalOffset                            |
 | 41  | \[6.0.0+\] GetBatteryVersion                                                  |
 
 Used for accessing data calibrated at the factory.
@@ -402,6 +411,10 @@ This is "nn::settings::ISystemSettingsServer".
 | 155 | \[6.0.0+\] SetAccountOnlineStorageSettings                                                        |
 | 156 | \[6.0.0+\] GetPctlReadyFlag                                                                       |
 | 157 | \[6.0.0+\] SetPctlReadyFlag                                                                       |
+| 158 | \[9.0.0+\] GetAnalogStickUserCalibrationL                                                         |
+| 159 | \[9.0.0+\] SetAnalogStickUserCalibrationL                                                         |
+| 160 | \[9.0.0+\] GetAnalogStickUserCalibrationR                                                         |
+| 161 | \[9.0.0+\] SetAnalogStickUserCalibrationR                                                         |
 | 162 | \[6.0.0+\] GetPtmBatteryVersion                                                                   |
 | 163 | \[6.0.0+\] SetPtmBatteryVersion                                                                   |
 | 164 | \[6.0.0+\] GetUsb30HostEnableFlag                                                                 |
@@ -414,6 +427,7 @@ This is "nn::settings::ISystemSettingsServer".
 | 171 | \[7.0.0+\] SetChineseTraditionalInputMethod                                                       |
 | 172 | \[7.0.0+\] GetPtmCycleCountReliability                                                            |
 | 173 | \[7.0.0+\] SetPtmCycleCountReliability                                                            |
+| 174 | \[9.0.0+\] GetHomeMenuScheme                                                                      |
 | 175 | \[7.0.0+\] GetThemeSettings                                                                       |
 | 176 | \[7.0.0+\] SetThemeSettings                                                                       |
 | 177 | \[7.0.0+\] GetThemeKey                                                                            |
@@ -422,6 +436,12 @@ This is "nn::settings::ISystemSettingsServer".
 | 180 | \[8.0.0+\] SetZoomFlag                                                                            |
 | 181 | \[8.0.0+\] GetT                                                                                   |
 | 182 | \[8.0.0+\] SetT                                                                                   |
+| 183 | \[9.0.0+\] GetPlatformRegion                                                                      |
+| 184 | \[9.0.0+\] SetPlatformRegion                                                                      |
+| 185 | \[9.0.0+\] GetHomeMenuSchemeModel                                                                 |
+| 186 | \[9.0.0+\] GetMemoryUsageRateFlag                                                                 |
+| 187 | \[9.0.0+\] GetTouchScreenMode                                                                     |
+| 188 | \[9.0.0+\] SetTouchScreenMode                                                                     |
 
 Official user-processes get a new service session handle each time a
 set:sys cmd is used, with the session being closed aftewards.
