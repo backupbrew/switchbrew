@@ -406,7 +406,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#ReadId2Normal, ReadId2Secure, ReadId2Writer|#ReadId2Normal]]
 |-
 | 0x2E
-| [[#UnlockForceErase]]
+| [2.0.0+] [[#UnlockForceErase]]
 |-
 | 0x30
 | [[#ReadId3Normal, ReadId3Secure, ReadId3Writer|#ReadId3Secure]]

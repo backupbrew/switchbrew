@@ -257,7 +257,7 @@ read/write commands.
 | 0x20    | [\#WriteDevParam](#WriteDevParam "wikilink")                               |
 | 0x21    | [\#ReadPageSecure](#ReadPage,_ReadPageSecure "wikilink")                   |
 | 0x28    | [\#ReadId2Normal](#ReadId2Normal,_ReadId2Secure,_ReadId2Writer "wikilink") |
-| 0x2E    | [\#UnlockForceErase](#UnlockForceErase "wikilink")                         |
+| 0x2E    | \[2.0.0+\] [\#UnlockForceErase](#UnlockForceErase "wikilink")              |
 | 0x30    | [\#ReadId3Secure](#ReadId3Normal,_ReadId3Secure,_ReadId3Writer "wikilink") |
 | 0x39    | [\#UpdateKey](#UpdateKey "wikilink")                                       |
 | 0x56    | [\#ReadId1Normal](#ReadId1Normal,_ReadId1Secure,_ReadId1Writer "wikilink") |
