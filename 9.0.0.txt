@@ -67,7 +67,7 @@ Kernel was updated.
 <check back later for diff>
 
 ====Warmboot====
-Warmboot was updated.
+* The firmware revision magic was changed from 0x14A to 0x16B.
 
 <check back for more diffs later>
 
