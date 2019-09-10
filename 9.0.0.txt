@@ -48,6 +48,35 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 *     
 * 	
 
+===FIRM===
+All files in RomFS were updated.
+
+====NX_BOOTLOADER====
+NX bootloader was updated.
+
+<check back later for diff>
+
+====Secure Monitor====
+Secure Monitor was updated.
+
+<check back later for diff>
+
+====Kernel====
+Kernel was updated.
+
+<check back later for diff>
+
+====Warmboot====
+Warmboot was updated.
+
+<check back for more diffs later>
+
+====FIRM Sysmodules====
+FIRM sysmodules were updated. Specific diffs available below:
+
+=====[[Filesystem services|FS]]=====
+[[Gamecard_ASIC#User_firmware|Gamecard ASIC firmware]] was updated.
+
 ==System Titles==
 All titles were updated except for the following: Dictionary, UrlBlackList, and [[flog]].
 
@@ -56,9 +85,6 @@ New titles 0100000000000041 (ngct-sysmodule) and 100000000000830 were added.
 Eula RomFS changes:
 * "/CNzhT" was added.
 * "/revision.txt" was updated.
-
-===FIRM===
-All files in RomFS were updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
