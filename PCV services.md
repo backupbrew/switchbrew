@@ -29,6 +29,8 @@ returns a total of 0xC-bytes of output.
 
 This is "nn::bpc::IRtcManager".
 
+This service no longer exists in \[9.0.0+\].
+
 | Cmd | Name                               |
 | --- | ---------------------------------- |
 | 0   | GetRtcTime                         |
@@ -367,6 +369,10 @@ bool.
 
 This is "nn::timesrv::detail::<service::IStaticService>".
 
+\[9.0.0+\] These services were moved to
+[Glue](Glue%20services.md "wikilink") and
+[PSC](PSC%20services.md "wikilink").
+
 | Cmd | Name                                                                | Notes                                                          |
 | --- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
 | 0   | GetStandardUserSystemClock                                          | Returns an [\#ISystemClock](#ISystemClock "wikilink").         |
@@ -422,12 +428,13 @@ This is an u64.
 
 This is "nn::timesrv::detail::<service::ISystemClock>".
 
-| Cmd | Name                  | Notes                                                                     |
-| --- | --------------------- | ------------------------------------------------------------------------- |
-| 0   | GetCurrentTime        | Returns an output [\#PosixTime](#PosixTime "wikilink").                   |
-| 1   | SetCurrentTime        | Takes an input [\#PosixTime](#PosixTime "wikilink").                      |
-| 2   | GetSystemClockContext | Returns an output [\#SystemClockContext](#SystemClockContext "wikilink"). |
-| 3   | SetSystemClockContext | Takes an input [\#SystemClockContext](#SystemClockContext "wikilink").    |
+| Cmd | Name                                       | Notes                                                                     |
+| --- | ------------------------------------------ | ------------------------------------------------------------------------- |
+| 0   | GetCurrentTime                             | Returns an output [\#PosixTime](#PosixTime "wikilink").                   |
+| 1   | SetCurrentTime                             | Takes an input [\#PosixTime](#PosixTime "wikilink").                      |
+| 2   | GetSystemClockContext                      | Returns an output [\#SystemClockContext](#SystemClockContext "wikilink"). |
+| 3   | SetSystemClockContext                      | Takes an input [\#SystemClockContext](#SystemClockContext "wikilink").    |
+| 4   | \[9.0.0+\] GetOperationEventReadableHandle |                                                                           |
 
 ### PosixTime
 

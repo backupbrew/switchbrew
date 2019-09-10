@@ -42,6 +42,8 @@ No input, returns a total of 0x10-bytes of output. [3.0.0+] Now returns a total 
 = bpc:r =
 This is "nn::bpc::IRtcManager".
 
+This service no longer exists in [9.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -543,6 +545,8 @@ Command 2 takes a u8 bool and a u32 device code; it opens an i2c session to the 
 = time:u, time:a, time:s =
 This is "nn::timesrv::detail::service::IStaticService".
 
+[9.0.0+] These services were moved to [[Glue_services|Glue]] and [[PSC_services|PSC]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -640,7 +644,9 @@ This is "nn::timesrv::detail::service::ISystemClock".
 |-
 | 2 || GetSystemClockContext || Returns an output [[#SystemClockContext]].
 |-
-| 3 || SetSystemClockContext  || Takes an input [[#SystemClockContext]].
+| 3 || SetSystemClockContext || Takes an input [[#SystemClockContext]].
+|-
+| 4 || [9.0.0+] GetOperationEventReadableHandle ||
 |}
 
 === PosixTime ===
