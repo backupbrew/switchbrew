@@ -1132,6 +1132,18 @@ This is "nn::ns::detail::IFactoryResetInterface".
 | 102 || ResetToFactorySettingsForRefurbishment
 |}
 
+=== NsSubinterface2510 ===
+This was added with [9.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 ||
+|-
+| 1 ||
+|}
+
 = ns:vm =
 This is "nn::ns::detail::IVulnerabilityManagerInterface".
 

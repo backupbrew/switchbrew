@@ -691,6 +691,15 @@ This is "nn::ns::detail::IFactoryResetInterface".
 | 101 | ResetToFactorySettingsWithoutUserSaveData |
 | 102 | ResetToFactorySettingsForRefurbishment    |
 
+### NsSubinterface2510
+
+This was added with \[9.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+| 1   |      |
+
 # ns:vm
 
 This is "nn::ns::detail::IVulnerabilityManagerInterface".
