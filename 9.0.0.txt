@@ -69,3 +69,7 @@ All updated non-FIRM titles use a new masterkey, except for Eula which still use
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-09-19_08-05-10&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
