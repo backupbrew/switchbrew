@@ -370,7 +370,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 96   | \[6.0.0+\] AcquireApplicationLaunchInfo                                                            |
 | 97   | \[6.0.0+\] GetMainApplicationProgramIndexByApplicationLaunchInfo                                   |
 | 98   | \[6.0.0+\] EnableApplicationAllThreadDumpOnCrash                                                   |
-| 99   | \[8.0.0+\] LaunchDevMenu                                                                           |
+| 99   | \[8.0.0+\] [\#LaunchDevMenu](#LaunchDevMenu "wikilink")                                            |
 | 100  | ResetToFactorySettings                                                                             |
 | 101  | ResetToFactorySettingsWithoutUserSaveData                                                          |
 | 102  | ResetToFactorySettingsForRefurbishment                                                             |
@@ -436,9 +436,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 910  | \[5.0.0+\] HasApplicationRecord                                                                    |
 | 911  | \[5.1.0+\] SetPreInstalledApplication                                                              |
 | 912  | \[5.1.0+\] ClearPreInstalledApplicationFlag                                                        |
-| 913  | \[9.0.0+\]                                                                                         |
-| 914  | \[9.0.0+\]                                                                                         |
-| 915  | \[9.0.0+\]                                                                                         |
+| 913  | \[9.0.0+\] ListAllApplicationRecord                                                                |
+| 914  | \[9.0.0+\] HideApplicationRecord                                                                   |
+| 915  | \[9.0.0+\] ShowApplicationRecord                                                                   |
 | 1000 | RequestVerifyApplicationDeprecated                                                                 |
 | 1001 | CorruptApplicationForDebug                                                                         |
 | 1002 | \[3.0.0+\] RequestVerifyAddOnContentsRights                                                        |
@@ -458,7 +458,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 1502 | GetLastSdCardFormatUnexpectedResult                                                                |
 | 1504 | \[3.0.0+\] InsertSdCard                                                                            |
 | 1505 | \[3.0.0+\] RemoveSdCard                                                                            |
-| 1506 | \[9.0.0+\]                                                                                         |
+| 1506 | \[9.0.0+\] GetSdCardStartupStatus                                                                  |
 | 1600 | GetSystemSeedForPseudoDeviceId                                                                     |
 | 1601 | \[3.0.0+\] ResetSystemSeedForPseudoDeviceId                                                        |
 | 1700 | ListApplicationDownloadingContentMeta                                                              |
@@ -493,7 +493,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2017 | \[4.0.0+\] RecoverDownloadTask                                                                     |
 | 2018 | \[5.0.0+\] GetApplicationDeliveryInfoHash                                                          |
 | 2050 | \[6.0.0+\] GetApplicationRightsOnClient                                                            |
-| 2051 | \[9.0.0+\]                                                                                         |
+| 2051 | \[9.0.0+\] InvalidateRightsIdCache                                                                 |
 | 2100 | \[6.0.0+\] GetApplicationTerminateResult                                                           |
 | 2101 | \[6.0.0+\] GetRawApplicationTerminateResult                                                        |
 | 2150 | \[6.0.0+\] CreateRightsEnvironment                                                                 |
@@ -523,8 +523,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2403 | \[8.0.0+\] ImportPromotionJsonForDebug                                                             |
 | 2404 | \[8.0.0+\] ClearPromotionInfoForDebug                                                              |
 | 2500 | \[8.0.0+\] ConfirmAvailableTime                                                                    |
-| 2510 | \[9.0.0+\]                                                                                         |
-| 2511 | \[9.0.0+\]                                                                                         |
+| 2510 | \[9.0.0+\] [\#CreateApplicationResource](#CreateApplicationResource "wikilink")                    |
+| 2511 | \[9.0.0+\] [\#GetApplicationResource](#GetApplicationResource "wikilink")                          |
 | 2513 | \[9.0.0+\]                                                                                         |
 | 2514 | \[9.0.0+\]                                                                                         |
 | 2800 | \[9.0.0+\]                                                                                         |
@@ -532,7 +532,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
 of input.
 
-#### Cmd99
+#### LaunchDevMenu
 
 No input/output.
 
@@ -553,11 +553,11 @@ Then if the above succeeds, the above titles are launched with the above
 StorageId via [pmshell](Process%20Manager%20services.md "wikilink")
 LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
-#### Cmd2510
+#### CreateApplicationResource
 
 Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
 
-#### Cmd2511
+#### GetApplicationResource
 
 Returns an [\#NsSubinterface2510](#NsSubinterface2510 "wikilink").
 
