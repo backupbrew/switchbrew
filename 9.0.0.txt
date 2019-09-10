@@ -123,6 +123,11 @@ RomFS changes (see [[System_Version_Title]] for sysver title):
 ** Various files were updated under "Iwnn/ZH/CN/", "/Iwnn/ZH/HK/", and "/Iwnn/ZH/TW/".
 * NgWord: "/0.txt", "/common.txt", and "/version.dat" were updated.
 * AvatarImage: "/DatabaseInfo.bin" was updated.
+* LocalNews: 
+** New files "/image/LnMinIntro_Hoag", "/image/LnPvrIntro_Hoag", "/image/LnSdAdvice_Hoag", and "/image/LnShopIntro_Terra" were added.
+** "/image/LnSupIntro/main_Other.jpg" was updated.
+** "/image/LnSupIntro/main_Terra.jpg" was updated.
+** "/message/<dirname>/localNews.msbt.szs" was updated, where <dirname> is all localization directories. Directory "/message/CNzhT/" was added. "/message/revision.txt" was updated.
 
 ===[[PPC_services|ppc-sysmodule]]===
 This sysmodule was stubbed. This is now a SystemData title with an empty [[CNMT]] list.
