@@ -170,7 +170,7 @@ Takes a pid.
 | [[Backlight services]]
 | 
 |-
-| ldn:m, ldn:s, ldn:u, [5.0.0+] ndd, [9.0.0+] lp2p:app, [9.0.0+] lp2p:sys
+| ldn:m, ldn:s, ldn:u, [5.0.0-6.0.0] ndd, [9.0.0+] lp2p:app, [9.0.0+] lp2p:sys
 | [[LDN services]]
 |
 |-
