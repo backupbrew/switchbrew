@@ -954,9 +954,11 @@ This is a 0x40-byte struct.
 | 0xC || 0x1 || Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller.
 |-
 | 0xD || 0x3 || Padding
+|-
+| 0x10 || 0x4 || [9.0.0+] Unknown
 |}
 
-This is a 0x10-byte struct.
+This is a 0x10-byte struct. [9.0.0+] This is a 0x14-byte struct.
 
 Bits for the above type field:
 
