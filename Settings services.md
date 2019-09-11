@@ -2,19 +2,19 @@
 
 This is "nn::settings::ISettingsServer".
 
-| Cmd | Name                                      | Notes                                                                                                                  |
-| --- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 0   | GetLanguageCode                           | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink"). This is the current system language.           |
-| 1   | GetAvailableLanguageCodes                 | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
-| 2   | \[4.0.0+\] MakeLanguageCode               | Takes an input [\#Language](#Language "wikilink"), returns an output [\#LanguageCode](#LanguageCode "wikilink").       |
-| 3   | GetAvailableLanguageCodeCount             | No input, returns an output s32.                                                                                       |
-| 4   | GetRegionCode                             | No input, returns a [\#RegionCode](#RegionCode "wikilink").                                                            |
-| 5   | \[4.0.0+\] GetAvailableLanguageCodes2     | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
-| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2 | No input, returns an output s32.                                                                                       |
-| 7   | \[4.0.0+\] GetKeyCodeMap                  |                                                                                                                        |
-| 8   | \[5.0.0+\] GetQuestFlag                   | Identical to "set:sys" [GetQuestFlag](#set:sys "wikilink").                                                            |
-| 9   | \[6.0.0+\] GetKeyCodeMap2                 |                                                                                                                        |
-| 10  | \[9.0.0+\] GetFirmwareVersionForDebug     |                                                                                                                        |
+| Cmd | Name                                                                              | Notes                                                                                                                  |
+| --- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   | GetLanguageCode                                                                   | No input, returns an output [\#LanguageCode](#LanguageCode "wikilink"). This is the current system language.           |
+| 1   | GetAvailableLanguageCodes                                                         | Takes a type-0xA buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
+| 2   | \[4.0.0+\] MakeLanguageCode                                                       | Takes an input [\#Language](#Language "wikilink"), returns an output [\#LanguageCode](#LanguageCode "wikilink").       |
+| 3   | GetAvailableLanguageCodeCount                                                     | No input, returns an output s32.                                                                                       |
+| 4   | GetRegionCode                                                                     | No input, returns a [\#RegionCode](#RegionCode "wikilink").                                                            |
+| 5   | \[4.0.0+\] GetAvailableLanguageCodes2                                             | Takes a type-0x6 buffer containing the [\#LanguageCode](#LanguageCode "wikilink") output array, returns an output s32. |
+| 6   | \[4.0.0+\] GetAvailableLanguageCodeCount2                                         | No input, returns an output s32.                                                                                       |
+| 7   | \[4.0.0+\] [\#GetKeyCodeMap](#GetKeyCodeMap "wikilink")                           |                                                                                                                        |
+| 8   | \[5.0.0+\] GetQuestFlag                                                           | Identical to "set:sys" [GetQuestFlag](#set:sys "wikilink").                                                            |
+| 9   | \[6.0.0+\] GetKeyCodeMap2                                                         |                                                                                                                        |
+| 10  | \[9.0.0+\] [\#GetFirmwareVersionForDebug](#GetFirmwareVersionForDebug "wikilink") |                                                                                                                        |
 
 \[4.0.0+\] Official user-processes now use
 GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of
@@ -37,6 +37,11 @@ conversion function (MakeLanguageCode):
 
 Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses
 fixed size 0x1000. This is probably related to HID keyboard.
+
+## GetFirmwareVersionForDebug
+
+Takes a type-0x16 output buffer containing a 0x80-byte
+"nn::oe::FirmwareVersionForDebug".
 
 ## Language
 

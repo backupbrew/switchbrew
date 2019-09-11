@@ -19,13 +19,13 @@ This is "nn::settings::ISettingsServer".
 |-
 | 6 || [4.0.0+] GetAvailableLanguageCodeCount2 || No input, returns an output s32.
 |-
-| 7 || [4.0.0+] GetKeyCodeMap || 
+| 7 || [4.0.0+] [[#GetKeyCodeMap]] || 
 |-
 | 8 || [5.0.0+] GetQuestFlag || Identical to "set:sys" [[#set:sys|GetQuestFlag]].
 |-
 | 9 || [6.0.0+] GetKeyCodeMap2 || 
 |-
-| 10 || [9.0.0+] GetFirmwareVersionForDebug ||
+| 10 || [9.0.0+] [[#GetFirmwareVersionForDebug]] ||
 |}
 
 [4.0.0+] Official user-processes now use GetAvailableLanguageCodes2/GetAvailableLanguageCodeCount2 instead of {original commands}.
@@ -36,6 +36,9 @@ In official user-processes in the [[#Language]]->[[#LanguageCode]] conversion fu
 
 == GetKeyCodeMap ==
 Takes a type-0x16 output buffer containing KeyCodeMap, official sw uses fixed size 0x1000. This is probably related to HID keyboard.
+
+== GetFirmwareVersionForDebug ==
+Takes a type-0x16 output buffer containing a 0x80-byte "nn::oe::FirmwareVersionForDebug".
 
 == Language ==
 "nn::settings::Language" (s32) is basically array indices in the output array from GetAvailableLanguageCodes.
