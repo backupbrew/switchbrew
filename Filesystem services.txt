@@ -100,6 +100,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 35 || [6.0.0+] CreateSaveDataFileSystemByHashSalt (Unofficial name, takes a total of 0xB0-bytes of input, no output)
 |-
+| 36 || [9.0.0+] 
+|-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
 | 52 || [[#OpenSaveDataFileSystemBySystemSaveDataId]]
@@ -141,6 +143,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#ISaveDataTransferProhibiter]])
 |-
 | 84 || [6.0.0+] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
+|-
+| 85 || [9.0.0+] (No input, returns an output [[#IUnknown0]])
 |-
 | 100 || OpenImageDirectoryFileSystem
 |-
@@ -255,6 +259,10 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 1010 || [5.1.0-6.2.0] SetDataStorageRedirectTarget
 |-
 | 1011 || [7.0.0+] GetProgramIndexForAccessLog (No input, returns two 32-bit values "version" and "program_index")
+|-
+| 1012 || [9.0.0+]
+|-
+| 1013 || [9.0.0+]
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-
@@ -921,6 +929,8 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 219 || [8.0.0+] ChallengeCardExistence
 |-
+| 220 || [9.0.0+]
+|-
 | 300 || SetSpeedEmulationMode
 |-
 | 301 || GetSpeedEmulationMode
@@ -1130,9 +1140,9 @@ This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 |-
 | 48 || OpenSaveDataChunkExporter (Takes an input u32, returns an [[#ISaveDataChunkExporter]])
 |-
-| 64 || [6.0.0+] FinalizeFullExport (No input, returns two 0x10-byte output structs)
+| 64 || [6.0.0-8.1.0] FinalizeFullExport (No input, returns two 0x10-byte output structs)
 |-
-| 65 || [6.0.0+] FinalizeDiffExport (No input, returns an output 0x10-byte struct)
+| 65 || [6.0.0-8.1.0] FinalizeDiffExport (No input, returns an output 0x10-byte struct)
 |-
 | 66 || [6.0.0+] CancelExport (No input/output)
 |-
@@ -1143,6 +1153,8 @@ This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 | 71 || [6.0.0+] GetInitialDataMac (No input, returns an output 0x10-byte struct)
 |-
 | 72 || [6.0.0+] FinalizeExport (No input/output)
+|-
+| 73 || [9.0.0+]
 |-
 | 80 || [6.0.0+] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)
 |-
@@ -1242,6 +1254,30 @@ This doesn't seem to handle any commands (?).
 |}
 
 This was added with [[6.0.0]].
+
+= IUnknown0 =
+This was added with [9.0.0+].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name || Notes
+|-
+| 0 || || 
+|-
+| 16 || || 
+|-
+| 80 || || Takes a total of 0x10-bytes of input and a type-0x1A output buffer, returns an [[#ISaveDataDivisionExporter]].
+|-
+| 81 || || 
+|-
+| 90 || || Takes a total of 0x18-bytes of input and two type-0x5 input buffers, returns an [[#ISaveDataDivisionImporter]].
+|-
+| 91 || || Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+|-
+| 100 || || Takes a total of 0x20-bytes of input, returns an [[#ISaveDataDivisionExporter]].
+|-
+| 110 || || Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+|}
 
 = FileSystemType =
 {| class="wikitable" border="1"

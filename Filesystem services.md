@@ -77,6 +77,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 33   | \[5.0.0+\] DeleteCacheStorage                                                                                                                                     |
 | 34   | \[5.0.0+\] GetCacheStorageSize                                                                                                                                    |
 | 35   | \[6.0.0+\] CreateSaveDataFileSystemByHashSalt (Unofficial name, takes a total of 0xB0-bytes of input, no output)                                                  |
+| 36   | \[9.0.0+\]                                                                                                                                                        |
 | 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                    |
 | 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                |
 | 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                                                                                         |
@@ -98,6 +99,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
 | 83   | \[6.0.0+\] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [\#ISaveDataTransferProhibiter](#ISaveDataTransferProhibiter "wikilink")) |
 | 84   | \[6.0.0+\] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)               |
+| 85   | \[9.0.0+\] (No input, returns an output [\#IUnknown0](#IUnknown0 "wikilink"))                                                                                     |
 | 100  | OpenImageDirectoryFileSystem                                                                                                                                      |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                        |
 | 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                     |
@@ -155,6 +157,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
 | 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                                                      |
 | 1011 | \[7.0.0+\] GetProgramIndexForAccessLog (No input, returns two 32-bit values "version" and "program\_index")                                                       |
+| 1012 | \[9.0.0+\]                                                                                                                                                        |
+| 1013 | \[9.0.0+\]                                                                                                                                                        |
 | 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
 | 1110 | \[6.0.0+\] CorruptSaveDataFileSystemByOffset                                                                                                                      |
 | 1200 | \[6.0.0+\] OpenMultiCommitManager (No input, returns an output \#IMultiCommitManager)                                                                             |
@@ -1494,6 +1498,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 | 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                                                         |
 | 218 | \[3.0.0+\] GetGameCardDeviceId                                                                                |
 | 219 | \[8.0.0+\] ChallengeCardExistence                                                                             |
+| 220 | \[9.0.0+\]                                                                                                    |
 | 300 | SetSpeedEmulationMode                                                                                         |
 | 301 | GetSpeedEmulationMode                                                                                         |
 | 400 | \[5.0.0+\] SuspendSdmmcControl                                                                                |
@@ -1721,13 +1726,14 @@ This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 | 1   | \[6.0.0+\] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)                                              |
 | 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
 | 48  | OpenSaveDataChunkExporter (Takes an input u32, returns an [\#ISaveDataChunkExporter](#ISaveDataChunkExporter "wikilink")) |
-| 64  | \[6.0.0+\] FinalizeFullExport (No input, returns two 0x10-byte output structs)                                            |
-| 65  | \[6.0.0+\] FinalizeDiffExport (No input, returns an output 0x10-byte struct)                                              |
+| 64  | \[6.0.0-8.1.0\] FinalizeFullExport (No input, returns two 0x10-byte output structs)                                       |
+| 65  | \[6.0.0-8.1.0\] FinalizeDiffExport (No input, returns an output 0x10-byte struct)                                         |
 | 66  | \[6.0.0+\] CancelExport (No input/output)                                                                                 |
 | 67  | \[6.0.0+\] SuspendExport (No input/output, takes a type-0x6 output buffer)                                                |
 | 70  | \[6.0.0+\] GetKeySeed (No input, returns an output 0x10-byte struct)                                                      |
 | 71  | \[6.0.0+\] GetInitialDataMac (No input, returns an output 0x10-byte struct)                                               |
 | 72  | \[6.0.0+\] FinalizeExport (No input/output)                                                                               |
+| 73  | \[9.0.0+\]                                                                                                                |
 | 80  | \[6.0.0+\] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)                                         |
 | 81  | \[6.0.0+\] SetExportInitialDataAad (Takes an input 0x20-byte struct, no output)                                           |
 | 96  | \[6.0.0+\] GetReportInfo (No input, returns an output 0x20-byte struct)                                                   |
@@ -1801,6 +1807,21 @@ This doesn't seem to handle any commands (?).
 | 2   | Commit (No input/output)                                                 |
 
 This was added with [6.0.0](6.0.0.md "wikilink").
+
+# IUnknown0
+
+This was added with \[9.0.0+\].
+
+| Cmd | Name | Notes                                                                                                                                                 |
+| --- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   |      |                                                                                                                                                       |
+| 16  |      |                                                                                                                                                       |
+| 80  |      | Takes a total of 0x10-bytes of input and a type-0x1A output buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").  |
+| 81  |      |                                                                                                                                                       |
+| 90  |      | Takes a total of 0x18-bytes of input and two type-0x5 input buffers, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"). |
+| 91  |      | Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").    |
+| 100 |      | Takes a total of 0x20-bytes of input, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").                                |
+| 110 |      | Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").    |
 
 # FileSystemType
 
