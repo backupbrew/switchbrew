@@ -178,10 +178,10 @@ This is "nn::ts::server::IMeasurementServer".
 
 | Cmd | Name                                                                                              |
 | --- | ------------------------------------------------------------------------------------------------- |
-| 0   |                                                                                                   |
-| 1   |                                                                                                   |
-| 2   |                                                                                                   |
-| 3   |                                                                                                   |
+| 0   | GetTemperatureRange                                                                               |
+| 1   | GetTemperature                                                                                    |
+| 2   | SetMeasurementMode                                                                                |
+| 3   | GetTemperatureMilliC                                                                              |
 | 4   | \[8.0.0+\] ? (Takes a total of 4-bytes of input, returns an [\#IUnknown0](#IUnknown0 "wikilink")) |
 
 ## IUnknown0

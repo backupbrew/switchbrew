@@ -202,13 +202,13 @@ This is "nn::ts::server::IMeasurementServer".
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetTemperatureRange
 |-
-| 1 ||
+| 1 || GetTemperature
 |-
-| 2 ||
+| 2 || SetMeasurementMode
 |-
-| 3 ||
+| 3 || GetTemperatureMilliC
 |-
 | 4 || [8.0.0+] ? (Takes a total of 4-bytes of input, returns an [[#IUnknown0]])
 |}
