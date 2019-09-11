@@ -473,9 +473,9 @@ Added with [[7.0.0]].
 |-
 | 11 || [[#WriteThemeStorage]] || 
 |-
-| 20 || [9.0.0+] || No input, returns an output [[#IStorage]].
+| 20 || [9.0.0+] [[#PushToAppletBoundChannel]] || 
 |-
-| 21 || [9.0.0+] || No input, returns an output [[#IStorage]].
+| 21 || [9.0.0+] [[#TryPopFromAppletBoundChannel]] || 
 |-
 | 40 || [8.0.0+] [[#GetDisplayLogicalResolution]] || 
 |-
@@ -493,6 +493,12 @@ Takes an input u64 '''offset''' and a type-0x22 output buffer, returns an output
 
 === WriteThemeStorage ===
 Takes an input u64 '''offset''' and a type-0x21 input buffer, no output.
+
+=== PushToAppletBoundChannel ===
+Takes an input [[#IStorage]], no output.
+
+=== TryPopFromAppletBoundChannel ===
+No input, returns an output [[#IStorage]].
 
 === GetDisplayLogicalResolution ===
 No input, returns an output s32 '''width''' and s32 '''height'''.
