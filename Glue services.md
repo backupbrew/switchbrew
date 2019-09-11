@@ -8,8 +8,8 @@ This is "nn::arp::detail::IReader".
 | 1    | GetApplicationLaunchPropertyWithApplicationId  | Takes an input u64 TitleId, returns an [\#ApplicationLaunchProperty](#ApplicationLaunchProperty "wikilink")                      |
 | 2    | GetApplicationControlProperty                  | Takes an input u64 ProcessId, returns a type-0x16 buffer filled with the contents of [control.nacp](NACP%20Format.md "wikilink") |
 | 3    | GetApplicationControlPropertyWithApplicationId | Takes an input u64 TitleId, returns a type-0x16 buffer filled with the contents of [control.nacp](NACP%20Format.md "wikilink")   |
-| 9998 |                                                |                                                                                                                                  |
-| 9999 |                                                |                                                                                                                                  |
+| 9998 | \[9.0.0+\]                                     |                                                                                                                                  |
+| 9999 | \[9.0.0+\]                                     |                                                                                                                                  |
 
 # arp:w
 
@@ -298,6 +298,20 @@ This was added with \[9.0.0+\].
 | 8000 |                          |
 | 8010 |                          |
 | 9000 |                          |
+
+## Cmd1040
+
+No input, returns an output [\#IUnknown0](#IUnknown0 "wikilink").
+
+## IUnknown0
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
+This was added with \[9.0.0+\].
+
+Cmd0: no input, returns an output handle.
 
 # ApplicationLaunchProperty
 

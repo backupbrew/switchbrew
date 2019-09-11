@@ -13,9 +13,9 @@ This is "nn::arp::detail::IReader".
 |-
 | 3 || GetApplicationControlPropertyWithApplicationId || Takes an input u64 TitleId, returns a type-0x16 buffer filled with the contents of [[NACP_Format|control.nacp]]
 |-
-| 9998 || ||
+| 9998 || [9.0.0+] ||
 |-
-| 9999 || ||
+| 9999 || [9.0.0+] ||
 |}
 
 = arp:w =
@@ -439,6 +439,21 @@ This was added with [9.0.0+].
 |-
 | 9000 ||
 |}
+
+== Cmd1040 ==
+No input, returns an output [[#IUnknown0]].
+
+== IUnknown0 ==
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || 
+|}
+
+This was added with [9.0.0+].
+
+Cmd0: no input, returns an output handle.
 
 = ApplicationLaunchProperty =
 Total size is 0x10-bytes.
