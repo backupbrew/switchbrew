@@ -405,7 +405,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 507  | \[3.0.0+\] EnsureGameCardAccess                                                                               |
 | 508  | \[3.0.0+\] GetLastGameCardMountFailureResult                                                                  |
 | 509  | \[5.0.0+\] ListApplicationIdOnGameCard                                                                        |
-| 510  | \[9.0.0+\]                                                                                                    |
+| 510  | \[9.0.0+\] GetGameCardPlatformRegion                                                                          |
 | 600  | CountApplicationContentMeta                                                                                   |
 | 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                            |
 | 602  | \[2.0.0-5.1.0\] ListAvailableAddOnContent                                                                     |
@@ -502,7 +502,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2153 | \[6.0.0+\] DeactivateRightsEnvironment                                                                        |
 | 2154 | \[6.0.0+\] ForceActivateRightsContextForExit                                                                  |
 | 2155 | \[7.0.0+\] UpdateRightsEnvironmentStatus                                                                      |
-| 2156 | \[9.0.0+\]                                                                                                    |
+| 2156 | \[9.0.0+\] CreateRightsEnvironmentForPreomia                                                                  |
 | 2160 | \[6.0.0+\] AddTargetApplicationToRightsEnvironment                                                            |
 | 2161 | \[6.0.0+\] SetUsersToRightsEnvironment                                                                        |
 | 2170 | \[6.0.0+\] GetRightsEnvironmentStatus                                                                         |
@@ -517,8 +517,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2250 | \[6.0.0-6.2.0\] RequestReportActiveELicence                                                                   |
 | 2300 | \[6.0.0-8.1.0\] ListEventLog                                                                                  |
 | 2350 | \[7.0.0+\] PerformAutoUpdateByApplicationId                                                                   |
-| 2351 | \[9.0.0+\]                                                                                                    |
-| 2352 | \[9.0.0+\]                                                                                                    |
+| 2351 | \[9.0.0+\] RequestNoDownloadRightsErrorResolution                                                             |
+| 2352 | \[9.0.0+\] RequestResolveNoDownloadRightsError                                                                |
 | 2400 | \[8.0.0+\] GetPromotionInfo                                                                                   |
 | 2401 | \[8.0.0+\] CountPromotionInfo                                                                                 |
 | 2402 | \[8.0.0+\] ListPromotionInfo                                                                                  |
@@ -527,9 +527,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2500 | \[8.0.0+\] ConfirmAvailableTime                                                                               |
 | 2510 | \[9.0.0+\] [\#CreateApplicationResource](#CreateApplicationResource "wikilink")                               |
 | 2511 | \[9.0.0+\] [\#GetApplicationResource](#GetApplicationResource "wikilink")                                     |
-| 2513 | \[9.0.0+\]                                                                                                    |
+| 2513 | \[9.0.0+\] LaunchPreomia                                                                                      |
 | 2514 | \[9.0.0+\]                                                                                                    |
-| 2800 | \[9.0.0+\]                                                                                                    |
+| 2800 | \[9.0.0+\] GetApplicationIdOfPreomia                                                                          |
 
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
 of input.
@@ -651,7 +651,7 @@ This was added with \[5.1.0+\].
 | 1   | [\#GetApplicationDesiredLanguage](#GetApplicationDesiredLanguage "wikilink")                       | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 55  |
 | 2   | ConvertApplicationLanguageToLanguageCode                                                           | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 59  |
 | 3   | [\#ConvertLanguageCodeToApplicationLanguage](#ConvertLanguageCodeToApplicationLanguage "wikilink") | Same as [\#IApplicationManagerInterface](#IApplicationManagerInterface "wikilink") cmd 60  |
-| 4   | \[9.0.0+\]                                                                                         |                                                                                            |
+| 4   | \[9.0.0+\] SelectApplicationDesiredLanguage                                                        |                                                                                            |
 
 ### IDynamicRightsInterface
 
@@ -688,7 +688,7 @@ This was added with \[4.0.0+\].
 | 3   | \[6.0.0+\] RequestSyncRights                         | No input, returns an [\#IAsyncResult](#IAsyncResult "wikilink").                             |
 | 4   | \[6.0.0+\] RequestUnlinkDevice                       | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
 | 5   | \[6.1.0+\] RequestRevokeAllELicense                  | Takes a total of 0x10-bytes of input, returns an [\#IAsyncResult](#IAsyncResult "wikilink"). |
-| 6   | \[9.0.0+\]                                           |                                                                                              |
+| 6   | \[9.0.0+\] RequestSyncRightsBasedOnAssignedELicenses |                                                                                              |
 
 ### IFactoryResetInterface
 
@@ -907,22 +907,22 @@ Cmd2: No input/output, takes a type-0x16 output buffer.
 
 This is "nn::ns::detail::IDevelopInterface".
 
-| Cmd | Name                                                                                               |
-| --- | -------------------------------------------------------------------------------------------------- |
-| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                                       |
-| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                                                 |
-| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                                                 |
-| 4   | [\#GetShellEvent](#GetShellEvent "wikilink")                                                       |
-| 5   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                                               |
-| 6   | [\#TerminateApplication](#TerminateApplication "wikilink")                                         |
-| 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")                         |
-| 8   | [\#LaunchApplicationForDevelop](#LaunchApplicationForDevelop "wikilink")                           |
-| 9   | [\#LaunchApplicationWithStorageIdForDevelop](#LaunchApplicationWithStorageIdForDevelop "wikilink") |
-| 10  | \[6.0.0-8.1.0\] TerminateApplication2                                                              |
-| 11  | \[6.0.0+\] GetRunningApplicationProcessIdForDevelop                                                |
-| 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop                             |
-| 13  | \[9.0.0+\]                                                                                         |
-| 14  | \[9.0.0+\]                                                                                         |
+| Cmd | Name                                                                                                |
+| --- | --------------------------------------------------------------------------------------------------- |
+| 0   | [\#LaunchProgram](#LaunchProgram "wikilink")                                                        |
+| 1   | [\#TerminateProcess](#TerminateProcess "wikilink")                                                  |
+| 2   | [\#TerminateProgram](#TerminateProgram "wikilink")                                                  |
+| 4   | [\#GetShellEvent](#GetShellEvent "wikilink")                                                        |
+| 5   | [\#GetShellEventInfo](#GetShellEventInfo "wikilink")                                                |
+| 6   | [\#TerminateApplication](#TerminateApplication "wikilink")                                          |
+| 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")                          |
+| 8   | [\#LaunchApplicationForDevelop](#LaunchApplicationForDevelop "wikilink")                            |
+| 9   | [\#LaunchApplicationWithStorageIdForDevelop](#LaunchApplicationWithStorageIdForDevelop "wikilink")  |
+| 10  | \[6.0.0-8.1.0\] TerminateApplication2                                                               |
+| 11  | \[6.0.0+\] GetRunningApplicationProcessIdForDevelop                                                 |
+| 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop                              |
+| 13  | \[9.0.0+\] [\#CreateApplicationResourceForDevelop](#CreateApplicationResourceForDevelop "wikilink") |
+| 14  | \[9.0.0+\] [\#IsPreomiaForDevelop](#IsPreomiaForDevelop "wikilink")                                 |
 
 ## LaunchProgram
 
@@ -984,8 +984,13 @@ and an u64 titleID. Returns an output u64 PID.
 
 Launches an application title which is registered with NS.
 
-## Cmd13
+## CreateApplicationResourceForDevelop
 
-Returns an [\#IApplicationResource](#IApplicationResource "wikilink").
+Takes an input u32 (1 = Preomia). Returns an
+[\#IApplicationResource](#IApplicationResource "wikilink").
+
+## IsPreomiaForDevelop
+
+Takes an u64 titleID. Returns a bool.
 
 [Category:Services](Category:Services "wikilink")

@@ -670,7 +670,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 509 || [5.0.0+] ListApplicationIdOnGameCard
 |-
-| 510 || [9.0.0+]
+| 510 || [9.0.0+] GetGameCardPlatformRegion
 |-
 | 600 || CountApplicationContentMeta
 |-
@@ -864,7 +864,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2155 || [7.0.0+] UpdateRightsEnvironmentStatus
 |-
-| 2156 || [9.0.0+]
+| 2156 || [9.0.0+] CreateRightsEnvironmentForPreomia
 |-
 | 2160 || [6.0.0+] AddTargetApplicationToRightsEnvironment
 |-
@@ -894,9 +894,9 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2350 || [7.0.0+] PerformAutoUpdateByApplicationId
 |-
-| 2351 || [9.0.0+]
+| 2351 || [9.0.0+] RequestNoDownloadRightsErrorResolution
 |-
-| 2352 || [9.0.0+]
+| 2352 || [9.0.0+] RequestResolveNoDownloadRightsError
 |-
 | 2400 || [8.0.0+] GetPromotionInfo
 |-
@@ -914,11 +914,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2511 || [9.0.0+] [[#GetApplicationResource]]
 |-
-| 2513 || [9.0.0+]
+| 2513 || [9.0.0+] LaunchPreomia
 |-
-| 2514 || [9.0.0+]
+| 2514 || [9.0.0+] 
 |-
-| 2800 || [9.0.0+]
+| 2800 || [9.0.0+] GetApplicationIdOfPreomia
 |}
 
 [4.0.0+] RequestDownloadAddOnContent now takes an additional 8-bytes of input.
@@ -1066,7 +1066,7 @@ This was added with [5.1.0+].
 |-
 | 3 || [[#ConvertLanguageCodeToApplicationLanguage]] || Same as [[#IApplicationManagerInterface]] cmd 60
 |-
-| 4 || [9.0.0+] ||
+| 4 || [9.0.0+] SelectApplicationDesiredLanguage ||
 |}
 
 === IDynamicRightsInterface ===
@@ -1124,7 +1124,7 @@ This was added with [4.0.0+].
 |-
 | 5 || [6.1.0+] RequestRevokeAllELicense || Takes a total of 0x10-bytes of input, returns an [[#IAsyncResult]].
 |-
-| 6 || [9.0.0+] ||
+| 6 || [9.0.0+] RequestSyncRightsBasedOnAssignedELicenses ||
 |}
 
 === IFactoryResetInterface ===
@@ -1383,9 +1383,9 @@ This is "nn::ns::detail::IDevelopInterface".
 |-
 | 12 || [6.0.0+] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop
 |-
-| 13 || [9.0.0+]
+| 13 || [9.0.0+] [[#CreateApplicationResourceForDevelop]]
 |-
-| 14 || [9.0.0+]
+| 14 || [9.0.0+] [[#IsPreomiaForDevelop]]
 |}
 
 == LaunchProgram ==
@@ -1421,7 +1421,10 @@ Takes 2 input u8s, an u32 [[Process_Manager_services#LaunchFlags|LaunchFlags]], 
 
 Launches an application title which is registered with NS.
 
-== Cmd13 ==
-Returns an [[#IApplicationResource]].
+== CreateApplicationResourceForDevelop ==
+Takes an input u32 (1 = Preomia). Returns an [[#IApplicationResource]].
+
+== IsPreomiaForDevelop ==
+Takes an u64 titleID. Returns a bool.
 
 [[Category:Services]]
