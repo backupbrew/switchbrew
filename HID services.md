@@ -365,115 +365,115 @@ This is an u32. This is the controller index used in
 
 This is "nn::hid::IHidDebugServer".
 
-| Cmd | Name                                                                                          |
-| --- | --------------------------------------------------------------------------------------------- |
-| 0   | DeactivateDebugPad                                                                            |
-| 1   | SetDebugPadAutoPilotState                                                                     |
-| 2   | UnsetDebugPadAutoPilotState                                                                   |
-| 10  | DeactivateTouchScreen                                                                         |
-| 11  | SetTouchScreenAutoPilotState                                                                  |
-| 12  | UnsetTouchScreenAutoPilotState                                                                |
-| 13  | \[9.0.0+\] GetTouchScreenConfiguration                                                        |
-| 20  | DeactivateMouse                                                                               |
-| 21  | SetMouseAutoPilotState                                                                        |
-| 22  | UnsetMouseAutoPilotState                                                                      |
-| 30  | DeactivateKeyboard                                                                            |
-| 31  | SetKeyboardAutoPilotState                                                                     |
-| 32  | UnsetKeyboardAutoPilotState                                                                   |
-| 50  | DeactivateXpad                                                                                |
-| 51  | SetXpadAutoPilotState                                                                         |
-| 52  | UnsetXpadAutoPilotState                                                                       |
-| 53  | \[9.0.0+\]                                                                                    |
-| 60  | DeactivateJoyXpad                                                                             |
-| 91  | DeactivateGesture                                                                             |
-| 110 | DeactivateHomeButton                                                                          |
-| 111 | SetHomeButtonAutoPilotState                                                                   |
-| 112 | UnsetHomeButtonAutoPilotState                                                                 |
-| 120 | DeactivateSleepButton                                                                         |
-| 121 | SetSleepButtonAutoPilotState                                                                  |
-| 122 | UnsetSleepButtonAutoPilotState                                                                |
-| 123 | DeactivateInputDetector                                                                       |
-| 130 | DeactivateCaptureButton                                                                       |
-| 131 | SetCaptureButtonAutoPilotState                                                                |
-| 132 | UnsetCaptureButtonAutoPilotState                                                              |
-| 133 | \[3.0.0+\] SetShiftAccelerometerCalibrationValue                                              |
-| 134 | \[3.0.0+\] GetShiftAccelerometerCalibrationValue                                              |
-| 135 | \[3.0.0+\] SetShiftGyroscopeCalibrationValue                                                  |
-| 136 | \[3.0.0+\] GetShiftGyroscopeCalibrationValue                                                  |
-| 140 | \[3.0.0+\] DeactivateConsoleSixAxisSensor                                                     |
-| 141 | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency                                           |
-| 142 | \[5.0.0+\] DeactivateSevenSixAxisSensor                                                       |
-| 143 | \[5.0.0+\] GetConsoleSixAxisSensorCountStates                                                 |
-| 144 | \[8.0.0+\] GetAccelerometerFsr                                                                |
-| 145 | \[8.0.0+\] SetAccelerometerFsr                                                                |
-| 146 | \[8.0.0+\] GetAccelerometerOdr                                                                |
-| 147 | \[8.0.0+\] SetAccelerometerOdr                                                                |
-| 148 | \[8.0.0+\] GetGyroscopeFsr                                                                    |
-| 149 | \[8.0.0+\] SetGyroscopeFsr                                                                    |
-| 150 | \[8.0.0+\] GetGyroscopeOdr                                                                    |
-| 151 | \[8.0.0+\] SetGyroscopeOdr                                                                    |
-| 201 | ActivateFirmwareUpdate                                                                        |
-| 202 | DeactivateFirmwareUpdate                                                                      |
-| 203 | [\#StartFirmwareUpdate](#StartFirmwareUpdate "wikilink")                                      |
-| 204 | GetFirmwareUpdateStage                                                                        |
-| 205 | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                        |
-| 206 | [\#GetDestinationFirmwareVersion](#GetDestinationFirmwareVersion "wikilink")                  |
-| 207 | [\#DiscardFirmwareInfoCacheForRevert](#DiscardFirmwareInfoCacheForRevert "wikilink")          |
-| 208 | \[3.0.0+\] StartFirmwareUpdateForRevert                                                       |
-| 209 | \[3.0.0+\] GetAvailableFirmwareVersionForRevert                                               |
-| 210 | \[4.0.0+\] IsFirmwareUpdatingDevice                                                           |
-| 211 | \[6.0.0+\] StartFirmwareUpdateIndividual                                                      |
-| 215 | \[6.0.0+\] SetUsbFirmwareForceUpdateEnabled                                                   |
-| 216 | \[6.0.0+\] SetAllKuinaDevicesToFirmwareUpdateMode                                             |
-| 221 | \[3.0.0+\] [\#UpdateControllerColor](#UpdateControllerColor "wikilink")                       |
-| 222 | \[4.0.0+\] ConnectUsbPadsAsync                                                                |
-| 223 | \[4.0.0+\] DisconnectUsbPadsAsync                                                             |
-| 224 | \[5.0.0+\] [\#UpdateDesignInfo](#UpdateDesignInfo "wikilink")                                 |
-| 225 | \[5.0.0+\] GetUniquePadDriverState                                                            |
-| 226 | \[5.0.0+\] GetSixAxisSensorDriverStates                                                       |
-| 227 | \[5.0.0+\] GetRxPacketHistory                                                                 |
-| 228 | \[6.0.0+\] AcquireOperationEventHandle                                                        |
-| 229 | \[6.0.0+\] [\#ReadSerialFlash](#ReadSerialFlash "wikilink")                                   |
-| 230 | \[6.0.0+\] WriteSerialFlash                                                                   |
-| 231 | \[6.0.0+\] GetOperationResult                                                                 |
-| 232 | \[6.0.0+\] EnableShipmentMode                                                                 |
-| 233 | \[6.0.0+\] ClearPairingInfo                                                                   |
-| 234 | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal                                                  |
-| 235 | \[7.0.0+\] EnableAnalogStickPower                                                             |
-| 236 | \[9.0.0+\] RequestKuinaUartClockCal                                                           |
-| 237 | \[9.0.0+\] GetKuinaUartClockCal                                                               |
-| 238 | \[9.0.0+\] SetKuinaUartClockTrim                                                              |
-| 239 | \[9.0.0+\] KuinaLoopbackTest                                                                  |
-| 240 | \[9.0.0+\] RequestBatteryVoltage                                                              |
-| 241 | \[9.0.0+\] GetBatteryVoltage                                                                  |
-| 242 | \[9.0.0+\] GetUniquePadPowerInfo                                                              |
-| 243 | \[9.0.0+\] RebootUniquePad                                                                    |
-| 244 | \[9.0.0+\] RequestKuinaFirmwareVersion                                                        |
-| 245 | \[9.0.0+\] GetKuinaFirmwareVersion                                                            |
-| 246 | \[9.0.0+\] GetVidPid                                                                          |
-| 301 | \[5.0.0-8.1.0\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")              |
-| 302 | \[5.0.0-8.1.0\] [\#GetAbstractedPadState](#GetAbstractedPadState "wikilink")                  |
-| 303 | \[5.0.0-8.1.0\] [\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink")                |
-| 321 | \[5.0.0-8.1.0\] [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")      |
-| 322 | \[5.0.0-8.1.0\] [\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink")  |
-| 323 | \[5.0.0+\] [\#UnsetAllAutoPilotVirtualPadState](#UnsetAllAutoPilotVirtualPadState "wikilink") |
-| 324 | \[7.0.0+\] [\#AttachHdlsWorkBuffer](#AttachHdlsWorkBuffer "wikilink")                         |
-| 325 | \[7.0.0+\] [\#ReleaseHdlsWorkBuffer](#ReleaseHdlsWorkBuffer "wikilink")                       |
-| 326 | \[7.0.0+\] [\#DumpHdlsNpadAssignmentState](#DumpHdlsNpadAssignmentState "wikilink")           |
-| 327 | \[7.0.0+\] [\#DumpHdlsStates](#DumpHdlsStates "wikilink")                                     |
-| 328 | \[7.0.0+\] [\#ApplyHdlsNpadAssignmentState](#ApplyHdlsNpadAssignmentState "wikilink")         |
-| 329 | \[7.0.0+\] [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink")                             |
-| 330 | \[7.0.0+\] [\#AttachHdlsVirtualDevice](#AttachHdlsVirtualDevice "wikilink")                   |
-| 331 | \[7.0.0+\] [\#DetachHdlsVirtualDevice](#DetachHdlsVirtualDevice "wikilink")                   |
-| 332 | \[7.0.0+\] [\#SetHdlsState](#SetHdlsState "wikilink")                                         |
-| 350 | \[5.0.0+\] AddRegisteredDevice                                                                |
-| 400 | \[6.0.0+\] DisableExternalMcuOnNxDevice                                                       |
-| 401 | \[6.0.0+\] DisableRailDeviceFiltering                                                         |
-| 500 | \[8.0.0+\] SetFactoryInt                                                                      |
-| 501 | \[8.0.0+\] IsFactoryBootEnabled                                                               |
-| 550 | \[9.0.0+\] SetAnalogStickModelDataTemporarily                                                 |
-| 551 | \[9.0.0+\] GetAnalogStickModelData                                                            |
-| 552 | \[9.0.0+\] ResetAnalogStickModelData                                                          |
+| Cmd                     | Name                                                                                          |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| 0                       | DeactivateDebugPad                                                                            |
+| 1                       | SetDebugPadAutoPilotState                                                                     |
+| 2                       | UnsetDebugPadAutoPilotState                                                                   |
+| 10                      | DeactivateTouchScreen                                                                         |
+| 11                      | SetTouchScreenAutoPilotState                                                                  |
+| 12                      | UnsetTouchScreenAutoPilotState                                                                |
+| 13                      | \[9.0.0+\] GetTouchScreenConfiguration                                                        |
+| 20                      | DeactivateMouse                                                                               |
+| 21                      | SetMouseAutoPilotState                                                                        |
+| 22                      | UnsetMouseAutoPilotState                                                                      |
+| 30                      | DeactivateKeyboard                                                                            |
+| 31                      | SetKeyboardAutoPilotState                                                                     |
+| 32                      | UnsetKeyboardAutoPilotState                                                                   |
+| 50                      | DeactivateXpad                                                                                |
+| 51                      | SetXpadAutoPilotState                                                                         |
+| 52                      | UnsetXpadAutoPilotState                                                                       |
+| 53 (\[1.0.0-8.1.0\] 60) | [\#DeactivateJoyXpad](#DeactivateJoyXpad "wikilink")                                          |
+| 60                      | \[9.0.0+\] ClearNpadSystemCommonPolicy                                                        |
+| 91                      | DeactivateGesture                                                                             |
+| 110                     | DeactivateHomeButton                                                                          |
+| 111                     | SetHomeButtonAutoPilotState                                                                   |
+| 112                     | UnsetHomeButtonAutoPilotState                                                                 |
+| 120                     | DeactivateSleepButton                                                                         |
+| 121                     | SetSleepButtonAutoPilotState                                                                  |
+| 122                     | UnsetSleepButtonAutoPilotState                                                                |
+| 123                     | DeactivateInputDetector                                                                       |
+| 130                     | DeactivateCaptureButton                                                                       |
+| 131                     | SetCaptureButtonAutoPilotState                                                                |
+| 132                     | UnsetCaptureButtonAutoPilotState                                                              |
+| 133                     | \[3.0.0+\] SetShiftAccelerometerCalibrationValue                                              |
+| 134                     | \[3.0.0+\] GetShiftAccelerometerCalibrationValue                                              |
+| 135                     | \[3.0.0+\] SetShiftGyroscopeCalibrationValue                                                  |
+| 136                     | \[3.0.0+\] GetShiftGyroscopeCalibrationValue                                                  |
+| 140                     | \[3.0.0+\] DeactivateConsoleSixAxisSensor                                                     |
+| 141                     | \[5.0.0+\] GetConsoleSixAxisSensorSamplingFrequency                                           |
+| 142                     | \[5.0.0+\] DeactivateSevenSixAxisSensor                                                       |
+| 143                     | \[5.0.0+\] GetConsoleSixAxisSensorCountStates                                                 |
+| 144                     | \[8.0.0+\] GetAccelerometerFsr                                                                |
+| 145                     | \[8.0.0+\] SetAccelerometerFsr                                                                |
+| 146                     | \[8.0.0+\] GetAccelerometerOdr                                                                |
+| 147                     | \[8.0.0+\] SetAccelerometerOdr                                                                |
+| 148                     | \[8.0.0+\] GetGyroscopeFsr                                                                    |
+| 149                     | \[8.0.0+\] SetGyroscopeFsr                                                                    |
+| 150                     | \[8.0.0+\] GetGyroscopeOdr                                                                    |
+| 151                     | \[8.0.0+\] SetGyroscopeOdr                                                                    |
+| 201                     | ActivateFirmwareUpdate                                                                        |
+| 202                     | DeactivateFirmwareUpdate                                                                      |
+| 203                     | [\#StartFirmwareUpdate](#StartFirmwareUpdate "wikilink")                                      |
+| 204                     | GetFirmwareUpdateStage                                                                        |
+| 205                     | [\#GetFirmwareVersion](#GetFirmwareVersion "wikilink")                                        |
+| 206                     | [\#GetDestinationFirmwareVersion](#GetDestinationFirmwareVersion "wikilink")                  |
+| 207                     | [\#DiscardFirmwareInfoCacheForRevert](#DiscardFirmwareInfoCacheForRevert "wikilink")          |
+| 208                     | \[3.0.0+\] StartFirmwareUpdateForRevert                                                       |
+| 209                     | \[3.0.0+\] GetAvailableFirmwareVersionForRevert                                               |
+| 210                     | \[4.0.0+\] IsFirmwareUpdatingDevice                                                           |
+| 211                     | \[6.0.0+\] StartFirmwareUpdateIndividual                                                      |
+| 215                     | \[6.0.0+\] SetUsbFirmwareForceUpdateEnabled                                                   |
+| 216                     | \[6.0.0+\] SetAllKuinaDevicesToFirmwareUpdateMode                                             |
+| 221                     | \[3.0.0+\] [\#UpdateControllerColor](#UpdateControllerColor "wikilink")                       |
+| 222                     | \[4.0.0+\] ConnectUsbPadsAsync                                                                |
+| 223                     | \[4.0.0+\] DisconnectUsbPadsAsync                                                             |
+| 224                     | \[5.0.0+\] [\#UpdateDesignInfo](#UpdateDesignInfo "wikilink")                                 |
+| 225                     | \[5.0.0+\] [\#GetUniquePadDriverState](#GetUniquePadDriverState "wikilink")                   |
+| 226                     | \[5.0.0+\] GetSixAxisSensorDriverStates                                                       |
+| 227                     | \[5.0.0+\] GetRxPacketHistory                                                                 |
+| 228                     | \[6.0.0+\] AcquireOperationEventHandle                                                        |
+| 229                     | \[6.0.0+\] [\#ReadSerialFlash](#ReadSerialFlash "wikilink")                                   |
+| 230                     | \[6.0.0+\] WriteSerialFlash                                                                   |
+| 231                     | \[6.0.0+\] GetOperationResult                                                                 |
+| 232                     | \[6.0.0+\] EnableShipmentMode                                                                 |
+| 233                     | \[6.0.0+\] ClearPairingInfo                                                                   |
+| 234                     | \[6.0.0+\] GetUniquePadDeviceTypeSetInternal                                                  |
+| 235                     | \[7.0.0+\] EnableAnalogStickPower                                                             |
+| 236                     | \[9.0.0+\] RequestKuinaUartClockCal                                                           |
+| 237                     | \[9.0.0+\] GetKuinaUartClockCal                                                               |
+| 238                     | \[9.0.0+\] SetKuinaUartClockTrim                                                              |
+| 239                     | \[9.0.0+\] KuinaLoopbackTest                                                                  |
+| 240                     | \[9.0.0+\] RequestBatteryVoltage                                                              |
+| 241                     | \[9.0.0+\] GetBatteryVoltage                                                                  |
+| 242                     | \[9.0.0+\] GetUniquePadPowerInfo                                                              |
+| 243                     | \[9.0.0+\] RebootUniquePad                                                                    |
+| 244                     | \[9.0.0+\] RequestKuinaFirmwareVersion                                                        |
+| 245                     | \[9.0.0+\] GetKuinaFirmwareVersion                                                            |
+| 246                     | \[9.0.0+\] GetVidPid                                                                          |
+| 301                     | \[5.0.0-8.1.0\] [\#GetAbstractedPadHandles](#GetAbstractedPadHandles "wikilink")              |
+| 302                     | \[5.0.0-8.1.0\] [\#GetAbstractedPadState](#GetAbstractedPadState "wikilink")                  |
+| 303                     | \[5.0.0-8.1.0\] [\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink")                |
+| 321                     | \[5.0.0-8.1.0\] [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")      |
+| 322                     | \[5.0.0-8.1.0\] [\#UnsetAutoPilotVirtualPadState](#UnsetAutoPilotVirtualPadState "wikilink")  |
+| 323                     | \[5.0.0+\] [\#UnsetAllAutoPilotVirtualPadState](#UnsetAllAutoPilotVirtualPadState "wikilink") |
+| 324                     | \[7.0.0+\] [\#AttachHdlsWorkBuffer](#AttachHdlsWorkBuffer "wikilink")                         |
+| 325                     | \[7.0.0+\] [\#ReleaseHdlsWorkBuffer](#ReleaseHdlsWorkBuffer "wikilink")                       |
+| 326                     | \[7.0.0+\] [\#DumpHdlsNpadAssignmentState](#DumpHdlsNpadAssignmentState "wikilink")           |
+| 327                     | \[7.0.0+\] [\#DumpHdlsStates](#DumpHdlsStates "wikilink")                                     |
+| 328                     | \[7.0.0+\] [\#ApplyHdlsNpadAssignmentState](#ApplyHdlsNpadAssignmentState "wikilink")         |
+| 329                     | \[7.0.0+\] [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink")                             |
+| 330                     | \[7.0.0+\] [\#AttachHdlsVirtualDevice](#AttachHdlsVirtualDevice "wikilink")                   |
+| 331                     | \[7.0.0+\] [\#DetachHdlsVirtualDevice](#DetachHdlsVirtualDevice "wikilink")                   |
+| 332                     | \[7.0.0+\] [\#SetHdlsState](#SetHdlsState "wikilink")                                         |
+| 350                     | \[5.0.0+\] AddRegisteredDevice                                                                |
+| 400                     | \[6.0.0+\] DisableExternalMcuOnNxDevice                                                       |
+| 401                     | \[6.0.0+\] DisableRailDeviceFiltering                                                         |
+| 500                     | \[8.0.0+\] SetFactoryInt                                                                      |
+| 501                     | \[8.0.0+\] IsFactoryBootEnabled                                                               |
+| 550                     | \[9.0.0+\] SetAnalogStickModelDataTemporarily                                                 |
+| 551                     | \[9.0.0+\] GetAnalogStickModelData                                                            |
+| 552                     | \[9.0.0+\] ResetAnalogStickModelData                                                          |
 
 ## StartFirmwareUpdate
 
@@ -530,6 +530,14 @@ Sends the spi-write subcommand to the specified controller, for writing
 to offset 0x6050 size 0xD. The first 3-bytes from each u32 is used for
 the spi-write-data, with the u8 being copied immediately afterwards the
 color data.
+
+## GetUniquePadDriverState
+
+Takes a total of 8-bytes of input, returns a total of 0x20-bytes of
+output.
+
+\[9.0.0+\] Now takes a total of 8-bytes of input, returns a total of
+0x18-bytes of output.
 
 ## ReadSerialFlash
 

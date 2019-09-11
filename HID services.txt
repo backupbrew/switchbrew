@@ -497,9 +497,9 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 52 || UnsetXpadAutoPilotState
 |-
-| 53 || [9.0.0+]
+| 53 ([1.0.0-8.1.0] 60) || [[#DeactivateJoyXpad]]
 |-
-| 60 || DeactivateJoyXpad
+| 60 || [9.0.0+] ClearNpadSystemCommonPolicy
 |-
 | 91 || DeactivateGesture
 |-
@@ -589,7 +589,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 224 || [5.0.0+] [[#UpdateDesignInfo]]
 |-
-| 225 || [5.0.0+] GetUniquePadDriverState
+| 225 || [5.0.0+] [[#GetUniquePadDriverState]]
 |-
 | 226 || [5.0.0+] GetSixAxisSensorDriverStates
 |-
@@ -713,6 +713,11 @@ Takes 4 input u32s for the colors, an input u8, an input u64 '''UniquePadId''', 
 A state flag must be clear (same as [[#UpdateControllerColor]]), otherwise an error is thrown. Afterwards, this flag is set.
 
 Sends the spi-write subcommand to the specified controller, for writing to offset 0x6050 size 0xD. The first 3-bytes from each u32 is used for the spi-write-data, with the u8 being copied immediately afterwards the color data.
+
+== GetUniquePadDriverState ==
+Takes a total of 8-bytes of input, returns a total of 0x20-bytes of output.
+
+[9.0.0+] Now takes a total of 8-bytes of input, returns a total of 0x18-bytes of output.
 
 == ReadSerialFlash ==
 Takes an input TransferMemory handle, an input u32 offset, an input u64 size, and an u64 '''UniquePadId''', no output.
