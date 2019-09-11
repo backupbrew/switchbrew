@@ -880,7 +880,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 2182 || [6.0.0+] SetActiveRightsContextUsingStateToRightsEnvironment
 |-
-| 2190 || [6.0.0+] GetRightsEnvironmentHandleForApplication
+| 2190 || [6.0.0+] [[#GetRightsEnvironmentHandleForApplication]]
 |-
 | 2199 || [6.0.0+] GetRightsEnvironmentCountForDebug
 |-
@@ -893,6 +893,10 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2300 || [6.0.0-8.1.0] ListEventLog
 |-
 | 2350 || [7.0.0+] PerformAutoUpdateByApplicationId
+|-
+| 2351 || [9.0.0+]
+|-
+| 2352 || [9.0.0+]
 |-
 | 2400 || [8.0.0+] GetPromotionInfo
 |-
@@ -929,6 +933,11 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 [[NCM_services|NCM]] OpenContentMetaDatabase is used with StorageId = NandSystem, then IContentMetaDatabase GetLatestContentMetaKey is used with both of the above titleIDs to verify that the cmd is successful.
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
+
+==== GetRightsEnvironmentHandleForApplication ====
+No input, returns a total of 8-bytes of output.
+
+[9.0.0+] Now takes a total of 8-bytes of input, returns a total of 8-bytes of output.
 
 ==== CreateApplicationResource ====
 Returns an [[#IApplicationResource]].
