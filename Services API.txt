@@ -146,7 +146,7 @@ Takes a pid.
 | [[Fatal services]]
 | 
 |-
-| friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0+] nd:app, nd:sys
+| friend:u, friend:v, friend:m, friend:s, friend:a, [5.0.0-6.0.0] nd:app, [5.0.0-6.0.0] nd:sys
 | [[Friend services]]
 |
 |-
