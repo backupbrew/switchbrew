@@ -138,6 +138,8 @@ This is "nn::btm::IBtm".
 
 With [5.1.0+] cmds 24-42 were moved/replaced/etc (input/output changed).
 
+[9.0.0+] Cmd13 now takes 0xC-bytes of input and no output, instead of 0x6-bytes of input.
+
 = btm:dbg =
 This is "nn::btm::IBtmDebug".
 
