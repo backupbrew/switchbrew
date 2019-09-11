@@ -521,15 +521,17 @@ No input/output.
 
 Added with [7.0.0](7.0.0.md "wikilink").
 
-| Cmd | Name                                                                                        | Notes |
-| --- | ------------------------------------------------------------------------------------------- | ----- |
-| 0   | \[9.0.0+\] SetTerminateResult                                                               |       |
-| 10  | [\#ReadThemeStorage](#ReadThemeStorage "wikilink")                                          |       |
-| 11  | [\#WriteThemeStorage](#WriteThemeStorage "wikilink")                                        |       |
-| 40  | \[8.0.0+\] [\#GetDisplayLogicalResolution](#GetDisplayLogicalResolution "wikilink")         |       |
-| 42  | \[8.0.0+\] [\#SetDisplayMagnification](#SetDisplayMagnification "wikilink")                 |       |
-| 50  | \[8.0.0+\] [\#SetHomeButtonDoubleClickEnabled](#SetHomeButtonDoubleClickEnabled "wikilink") |       |
-| 51  | \[8.0.0+\] [\#GetHomeButtonDoubleClickEnabled](#GetHomeButtonDoubleClickEnabled "wikilink") |       |
+| Cmd | Name                                                                                        | Notes                                                           |
+| --- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| 0   | \[9.0.0+\] SetTerminateResult                                                               |                                                                 |
+| 10  | [\#ReadThemeStorage](#ReadThemeStorage "wikilink")                                          |                                                                 |
+| 11  | [\#WriteThemeStorage](#WriteThemeStorage "wikilink")                                        |                                                                 |
+| 20  | \[9.0.0+\]                                                                                  | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 21  | \[9.0.0+\]                                                                                  | No input, returns an output [\#IStorage](#IStorage "wikilink"). |
+| 40  | \[8.0.0+\] [\#GetDisplayLogicalResolution](#GetDisplayLogicalResolution "wikilink")         |                                                                 |
+| 42  | \[8.0.0+\] [\#SetDisplayMagnification](#SetDisplayMagnification "wikilink")                 |                                                                 |
+| 50  | \[8.0.0+\] [\#SetHomeButtonDoubleClickEnabled](#SetHomeButtonDoubleClickEnabled "wikilink") |                                                                 |
+| 51  | \[8.0.0+\] [\#GetHomeButtonDoubleClickEnabled](#GetHomeButtonDoubleClickEnabled "wikilink") |                                                                 |
 
 ReadThemeStorage/WriteThemeStorage: these commands copy data from/to a
 state buffer and the user specified buffer. The size of the state buffer

@@ -473,6 +473,10 @@ Added with [[7.0.0]].
 |-
 | 11 || [[#WriteThemeStorage]] || 
 |-
+| 20 || [9.0.0+] || No input, returns an output [[#IStorage]].
+|-
+| 21 || [9.0.0+] || No input, returns an output [[#IStorage]].
+|-
 | 40 || [8.0.0+] [[#GetDisplayLogicalResolution]] || 
 |-
 | 42 || [8.0.0+] [[#SetDisplayMagnification]] || 
