@@ -619,7 +619,7 @@ This was added with [9.0.0+].
 |}
 
 = ins:s =
-This is "nn::ins::IReceiverManager".
+This is "nn::ins::ISenderManager".
 
 This was added with [9.0.0+].
 
