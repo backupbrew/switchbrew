@@ -103,6 +103,13 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 97  | \[6.0.0+\]                                                               |
 | 98  | \[6.0.0+\]                                                               |
 | 99  | \[7.0.0+\]                                                               |
+| 100 | \[9.0.0+\]                                                               |
+| 101 | \[9.0.0+\]                                                               |
+| 102 | \[9.0.0+\]                                                               |
+| 103 | \[9.0.0+\]                                                               |
+| 104 | \[9.0.0+\]                                                               |
+| 105 | \[9.0.0+\]                                                               |
+| 106 | \[9.0.0+\]                                                               |
 
 \[3.0.0+\] GetSystemUpdateTaskInfo now returns an additional 0x10-bytes
 of output. GetNetworkInstallTaskInfo now returns an additional
@@ -189,6 +196,8 @@ This is "nn::nim::detail::IShopServiceManager".
 | 500 | RequestSyncTicket                                                                                              |
 | 501 | RequestDownloadTicket                                                                                          |
 | 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents. \[6.0.0+\]: Now takes an additional 4-bytes of input. |
+| 503 | \[9.0.0+\]                                                                                                     |
+| 504 | \[9.0.0+\]                                                                                                     |
 
 # nim:eca
 
