@@ -230,6 +230,8 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 230 || PSC (ins)
 |-
+| 231 || LDN (lp2p)
+|-
 | 345 || libnx
 |-
 | 346 || [[Homebrew ABI]]
