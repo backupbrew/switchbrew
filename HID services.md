@@ -740,25 +740,27 @@ This is a 0x20-byte struct.
 
 ## HdlsStateList
 
-| Offset | Size              | Description                                                      |
-| ------ | ----------------- | ---------------------------------------------------------------- |
-| 0x0    | 0x4               | s32 Total entries                                                |
-| 0x4    | 0x4               | Padding                                                          |
-| 0x8    | 0x400(0x40\*0x10) | Array of [\#HdlsStateListEntry](#HdlsStateListEntry "wikilink"). |
+| Offset | Size                                                                  | Description                                                      |
+| ------ | --------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 0x0    | 0x4                                                                   | s32 Total entries                                                |
+| 0x4    | 0x4                                                                   | Padding                                                          |
+| 0x8    | \<[\#HdlsStateListEntry](#HdlsStateListEntry "wikilink") size\>\*0x10 | Array of [\#HdlsStateListEntry](#HdlsStateListEntry "wikilink"). |
 
-This is a 0x408-byte struct.
+This is a 0x408-byte struct. \[9.0.0+\] This is a 0x488-byte struct.
+
+\[9.0.0+\] The max array entries is now 0x11?
 
 This contains a list of all controllers, including non-virtual
 controllers.
 
 ### HdlsStateListEntry
 
-| Offset | Size | Description                                                                                                                                              |
-| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x8  | HdlsHandle                                                                                                                                               |
-| 0x8    | 0x10 | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"). With [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink") this is only used when creating new devices. |
-| 0x18   | 0x24 | [\#HdlsState](#HdlsState "wikilink")                                                                                                                     |
-| 0x3C   | 0x4  | Padding                                                                                                                                                  |
+| Offset                                                    | Size                                                | Description                                                                                                                                              |
+| --------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0                                                       | 0x8                                                 | HdlsHandle                                                                                                                                               |
+| 0x8                                                       | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"). With [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink") this is only used when creating new devices. |
+| 0x8 + [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size | 0x24                                                | [\#HdlsState](#HdlsState "wikilink")                                                                                                                     |
+| 0x3C                                                      | 0x4                                                 | Padding (removed with \[9.0.0+\]?)                                                                                                                       |
 
 This is a 0x40-byte struct.
 
