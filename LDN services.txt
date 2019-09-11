@@ -197,6 +197,66 @@ This is "nn::ldn::detail::IUserLocalCommunicationService".
 | 402 || [7.0.0+] Initialize2
 |}
 
+= ndd =
+This is "nn::ndd::IService".
+
+This was added with [5.0.0] and removed with [6.0.0].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || EnableAutoCommunication
+|-
+| 1 || DisableAutoCommunication
+|-
+| 2 || IsAutoCommunicationEnabled
+|-
+| 3 || EnablePowerSave
+|-
+| 4 || DisablePowerSave
+|-
+| 5 || IsPowerSaveEnabled
+|-
+| 6 || IsNetworkActive
+|-
+| 7 || AcquireSendDataUpdateEvent
+|-
+| 8 || AddSendData
+|-
+| 9 || ClearSendData
+|-
+| 10 || GetSendData
+|-
+| 11 || AcquireReceiveDataEvent
+|-
+| 12 || GetCurrentReceiveDataCounter
+|-
+| 13 || GetOldestReceiveDataCounter
+|-
+| 14 || GetNextReceiveDataCounter
+|-
+| 15 || GetAvailableReceiveDataCount
+|-
+| 16 || GetRecentReceiveDataCounter
+|-
+| 17 || GetReceiveData
+|-
+| 18 || AddReceiveData
+|-
+| 19 || ClearReceiveData
+|-
+| 20 || ClearDataIdFilter
+|-
+| 21 || AcquireDeviceScanEvent
+|-
+| 22 || StartDeviceScan
+|-
+| 23 || CancelDeviceScan
+|-
+| 24 || GetDeviceScanResult
+|}
+
 = lp2p:app, lp2p:sys =
 These are "nn::lp2p::detail::IServiceCreator".
 
