@@ -178,21 +178,21 @@ This is "nn::tc::IManager".
 |-
 | 1 || GetThermalEvent
 |-
-| 2 ||
+| 2 || IsActionAllowed
 |-
-| 3 ||
+| 3 || EnableVirtualTemperature
 |-
-| 4 ||
+| 4 || DisableVirtualTemperature
 |-
-| 5 ||
+| 5 || SetVirtualTemperature
 |-
-| 6 ||
+| 6 || EnableFanControl
 |-
-| 7 ||
+| 7 || DisableFanControl
 |-
-| 8 ||
+| 8 || IsFanControlEnabled
 |-
-| 9 || [5.0.0+]
+| 9 || [5.0.0+] GetSkinTemperatureMilliC
 |}
 
 = ts =

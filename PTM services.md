@@ -159,18 +159,18 @@ Takes an input u8 bool, no output.
 
 This is "nn::tc::IManager".
 
-| Cmd | Name             |
-| --- | ---------------- |
-| 0   | SetOperatingMode |
-| 1   | GetThermalEvent  |
-| 2   |                  |
-| 3   |                  |
-| 4   |                  |
-| 5   |                  |
-| 6   |                  |
-| 7   |                  |
-| 8   |                  |
-| 9   | \[5.0.0+\]       |
+| Cmd | Name                                |
+| --- | ----------------------------------- |
+| 0   | SetOperatingMode                    |
+| 1   | GetThermalEvent                     |
+| 2   | IsActionAllowed                     |
+| 3   | EnableVirtualTemperature            |
+| 4   | DisableVirtualTemperature           |
+| 5   | SetVirtualTemperature               |
+| 6   | EnableFanControl                    |
+| 7   | DisableFanControl                   |
+| 8   | IsFanControlEnabled                 |
+| 9   | \[5.0.0+\] GetSkinTemperatureMilliC |
 
 # ts
 
