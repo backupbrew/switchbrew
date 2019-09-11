@@ -1311,6 +1311,8 @@ This service no longer exists in \[9.0.0+\].
 
 This is "nn::ahid::ICtrlSession".
 
+This no longer exists in \[9.0.0+\].
+
 | Cmd | Name                   | Notes |
 | --- | ---------------------- | ----- |
 | 0   | GetString              |       |
@@ -1334,6 +1336,8 @@ for cmd10-11 which are event(?) related, and cmd1 which copies
 ## IReadSession
 
 This is "nn::ahid::IReadSession".
+
+This no longer exists in \[9.0.0+\].
 
 | Cmd | Name | Notes |
 | --- | ---- | ----- |

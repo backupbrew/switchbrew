@@ -1751,6 +1751,8 @@ This service no longer exists in [9.0.0+].
 == ICtrlSession ==
 This is "nn::ahid::ICtrlSession".
 
+This no longer exists in [9.0.0+].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name || Notes
@@ -1786,6 +1788,8 @@ All of these use USB [[USB_services|CtrlXfer]], except for cmd10-11 which are ev
 
 == IReadSession ==
 This is "nn::ahid::IReadSession".
+
+This no longer exists in [9.0.0+].
 
 {| class="wikitable" border="1"
 |-
