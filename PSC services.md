@@ -130,6 +130,23 @@ These were added with \[5.0.0+\].
 | 20402 | \[7.0.0+\] |
 | 20500 | \[8.0.0+\] |
 
+## Cmd13000
+
+Takes a type-0x5 input buffer, no output.
+
+\[9.0.0+\] No input, returns a total of 0xC-bytes of output, an
+[\#IUnknown0](#IUnknown0 "wikilink"), and a handle.
+
+## IUnknown0
+
+Added with \[9.0.0+\].
+
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
+
+Cmd0: no input, returns a total of 8-bytes of output.
+
 # ovln:rcv
 
 This is "nn::ovln::IReceiverService".
