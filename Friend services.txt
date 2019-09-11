@@ -211,7 +211,7 @@ This is "nn::friends::detail::ipc::IDaemonSuspendSessionService".
 = nd:app =
 This is "nn::nd::detail::IServiceForApplication".
 
-This was added with [5.0.0+] and removed with [6.0.0+].
+This was added with [5.0.0] and removed with [6.0.0].
 
 {| class="wikitable" border="1"
 |-
@@ -225,7 +225,7 @@ This was added with [5.0.0+] and removed with [6.0.0+].
 = nd:sys =
 This is "nn::nd::detail::IServiceForSystem".
 
-This was added with [5.0.0+] and removed with [6.0.0+].
+This was added with [5.0.0] and removed with [6.0.0].
 
 {| class="wikitable" border="1"
 |-

@@ -119,7 +119,7 @@ This is "nn::friends::detail::ipc::IDaemonSuspendSessionService".
 
 This is "nn::nd::detail::IServiceForApplication".
 
-This was added with \[5.0.0+\] and removed with \[6.0.0+\].
+This was added with \[5.0.0\] and removed with \[6.0.0\].
 
 | Cmd | Name                              |
 | --- | --------------------------------- |
@@ -130,7 +130,7 @@ This was added with \[5.0.0+\] and removed with \[6.0.0+\].
 
 This is "nn::nd::detail::IServiceForSystem".
 
-This was added with \[5.0.0+\] and removed with \[6.0.0+\].
+This was added with \[5.0.0\] and removed with \[6.0.0\].
 
 | Cmd | Name                                        |
 | --- | ------------------------------------------- |
