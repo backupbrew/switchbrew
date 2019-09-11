@@ -591,7 +591,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 225 || [5.0.0+] [[#GetUniquePadDriverState]]
 |-
-| 226 || [5.0.0+] GetSixAxisSensorDriverStates
+| 226 || [5.0.0+] [[#GetSixAxisSensorDriverStates]]
 |-
 | 227 || [5.0.0+] GetRxPacketHistory
 |-
@@ -607,7 +607,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 233 || [6.0.0+] ClearPairingInfo
 |-
-| 234 || [6.0.0+] GetUniquePadDeviceTypeSetInternal
+| 234 || [6.0.0+] [[#GetUniquePadDeviceTypeSetInternal]]
 |-
 | 235 || [7.0.0+] EnableAnalogStickPower
 |-
@@ -719,12 +719,22 @@ Takes a total of 8-bytes of input, returns a total of 0x20-bytes of output.
 
 [9.0.0+] Now takes a total of 8-bytes of input, returns a total of 0x18-bytes of output.
 
+== GetSixAxisSensorDriverStates ==
+Takes a total of 8-bytes of input and a type-0xA output buffer, returns a total of 8-bytes of output.
+
+[9.0.0+] Now takes a total of 8-bytes of input and a type-0x6 output buffer, returns a total of 8-bytes of output.
+
 == ReadSerialFlash ==
 Takes an input TransferMemory handle, an input u32 offset, an input u64 size, and an u64 '''UniquePadId''', no output.
 
 Reads from the specified controller's spi-flash. The input size is the original size without page-alignment. The TransferMemory permissions is RW-.
 
 This doesn't seem to be usable?
+
+== GetUniquePadDeviceTypeSetInternal ==
+Takes a total of 8-bytes of input, returns a total of 4-bytes of output.
+
+[9.0.0+] Now takes a total of 8-bytes of input, returns a total of 1-byte of output.
 
 == GetAbstractedPadHandles ==
 Takes a type-0xA output buffer containing an array of u64 '''AbstractedPadHandle''' and returns an output s32 for total entries.
