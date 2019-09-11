@@ -165,24 +165,6 @@ This is "nn::lp2p::detail::INetworkService".
 
 This is "nn::lp2p::detail::INetworkServiceMonitor".
 
-| Cmd  | Name |
-| ---- | ---- |
-| 0    |      |
-| 256  |      |
-| 264  |      |
-| 272  |      |
-| 280  |      |
-| 288  |      |
-| 296  |      |
-| 304  |      |
-| 312  |      |
-| 320  |      |
-| 512  |      |
-| 768  |      |
-| 776  |      |
-| 784  |      |
-| 1536 |      |
-| 1544 |      |
-| 1552 |      |
+This interface has no commands.
 
 [Category:Services](Category:Services "wikilink")
