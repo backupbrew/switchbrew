@@ -918,7 +918,7 @@ This is "nn::ns::detail::IDevelopInterface".
 | 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")                         |
 | 8   | [\#LaunchApplicationForDevelop](#LaunchApplicationForDevelop "wikilink")                           |
 | 9   | [\#LaunchApplicationWithStorageIdForDevelop](#LaunchApplicationWithStorageIdForDevelop "wikilink") |
-| 10  | \[6.0.0+\] TerminateApplication2                                                                   |
+| 10  | \[6.0.0-8.1.0\] TerminateApplication2                                                              |
 | 11  | \[6.0.0+\] GetRunningApplicationProcessIdForDevelop                                                |
 | 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop                             |
 | 13  | \[9.0.0+\]                                                                                         |

@@ -1377,7 +1377,7 @@ This is "nn::ns::detail::IDevelopInterface".
 |-
 | 9 || [[#LaunchApplicationWithStorageIdForDevelop]]
 |-
-| 10 || [6.0.0+] TerminateApplication2
+| 10 || [6.0.0-8.1.0] TerminateApplication2
 |-
 | 11 || [6.0.0+] GetRunningApplicationProcessIdForDevelop
 |-
