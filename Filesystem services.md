@@ -2,22 +2,36 @@
 
 This is "nn::fssrv::sf::IFileSystemProxyForLoader".
 
-| Cmd | Name                         | Arguments                                                           | Notes                                                                                           |
-| --- | ---------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 0   | OpenCodeFileSystem           | u64 TitleId + X descriptor [\#ContentPath](#ContentPath "wikilink") | Returns an [\#IFileSystem](#IFileSystem "wikilink").                                            |
-| 1   | IsArchivedProgram            | u64 ProcessId                                                       | Returns a bool (1 if the process id's [\#ContentPath](#ContentPath "wikilink") ends in ".nca"). |
-| 2   | \[4.0.0+\] SetCurrentProcess | PID descriptor                                                      |                                                                                                 |
+| Cmd | Name                                                            |
+| --- | --------------------------------------------------------------- |
+| 0   | [\#OpenCodeFileSystem](#OpenCodeFileSystem "wikilink")          |
+| 1   | [\#IsArchivedProgram](#IsArchivedProgram "wikilink")            |
+| 2   | \[4.0.0+\] [\#SetCurrentProcess](#SetCurrentProcess "wikilink") |
+
+## OpenCodeFileSystem
+
+Takes an u64 TitleId and a [\#ContentPath](#ContentPath "wikilink").
+Returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+## IsArchivedProgram
+
+Takes an u64 ProcessId. Returns a bool (1 if the process id's
+[\#ContentPath](#ContentPath "wikilink") ends in ".nca").
+
+## SetCurrentProcess
+
+Takes a PID descriptor.
 
 # fsp-pr
 
 This is "nn::fssrv::sf::IProgramRegistry".
 
-| Cmd | Name                                                                         | Notes |
-| --- | ---------------------------------------------------------------------------- | ----- |
-| 0   | [\#RegisterProgram](#RegisterProgram "wikilink")                             |       |
-| 1   | [\#UnregisterProgram](#UnregisterProgram "wikilink")                         |       |
-| 2   | \[4.0.0+\] SetCurrentProcess                                                 |       |
-| 256 | [\#SetEnabledProgramVerification](#SetEnabledProgramVerification "wikilink") |       |
+| Cmd | Name                                                                         |
+| --- | ---------------------------------------------------------------------------- |
+| 0   | [\#RegisterProgram](#RegisterProgram "wikilink")                             |
+| 1   | [\#UnregisterProgram](#UnregisterProgram "wikilink")                         |
+| 2   | \[4.0.0+\] [\#SetCurrentProcess](#SetCurrentProcess "wikilink")              |
+| 256 | [\#SetEnabledProgramVerification](#SetEnabledProgramVerification "wikilink") |
 
 ## RegisterProgram
 
@@ -49,119 +63,119 @@ fails, it will throw an error and abort.
 
 This is "nn::fssrv::sf::IFileSystemProxy".
 
-| Cmd  | Name                                                                                                                                                              |
-| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0    | \[1.0.0\] [\#OpenFileSystem](#OpenFileSystem "wikilink")                                                                                                          |
-| 1    | [\#SetCurrentProcess](#SetCurrentProcess "wikilink")                                                                                                              |
-| 2    | OpenDataFileSystemByCurrentProcess                                                                                                                                |
-| 7    | \[2.0.0+\] [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink")                                                                                       |
-| 8    | \[2.0.0+\] [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                                                             |
-| 9    | \[3.0.0+\] OpenDataFileSystemByProgramId                                                                                                                          |
-| 11   | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                                                              |
-| 12   | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                                                    |
-| 13   | InvalidateBisCache                                                                                                                                                |
-| 17   | OpenHostFileSystem                                                                                                                                                |
-| 18   | OpenSdCardFileSystem                                                                                                                                              |
-| 19   | \[2.0.0+\] FormatSdCardFileSystem                                                                                                                                 |
-| 21   | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink")                                                                                                |
-| 22   | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink")                                                                                                |
-| 23   | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                                                            |
-| 24   | RegisterSaveDataFileSystemAtomicDeletion                                                                                                                          |
-| 25   | \[2.0.0+\] DeleteSaveDataFileSystemBySaveDataSpaceId                                                                                                              |
-| 26   | \[2.0.0+\] FormatSdCardDryRun                                                                                                                                     |
-| 27   | \[2.0.0+\] IsExFatSupported                                                                                                                                       |
-| 28   | \[4.0.0+\] DeleteSaveDataFileSystemBySaveDataAttribute                                                                                                            |
-| 30   | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink")                                                                                                          |
-| 31   | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                                                                                    |
-| 32   | \[3.0.0+\] ExtendSaveDataFileSystem                                                                                                                               |
-| 33   | \[5.0.0+\] DeleteCacheStorage                                                                                                                                     |
-| 34   | \[5.0.0+\] GetCacheStorageSize                                                                                                                                    |
-| 35   | \[6.0.0+\] CreateSaveDataFileSystemByHashSalt (Unofficial name, takes a total of 0xB0-bytes of input, no output)                                                  |
-| 36   | \[9.0.0+\]                                                                                                                                                        |
-| 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                                                    |
-| 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                                                                |
-| 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                                                                                         |
-| 57   | \[3.0.0+\] [\#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId](#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId "wikilink")                                     |
-| 58   | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                                                                  |
-| 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                                                                                       |
-| 60   | [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                                                                                                    |
-| 61   | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink")                                                                  |
-| 62   | \[5.0.0+\] OpenSaveDataInfoReaderOnlyCacheStorage                                                                                                                 |
-| 64   | \[5.0.0+\] OpenSaveDataInternalStorageFileSystem                                                                                                                  |
-| 65   | \[5.0.0+\] UpdateSaveDataMacForDebug                                                                                                                              |
-| 66   | \[5.0.0+\] WriteSaveDataFileSystemExtraDataWithMask                                                                                                               |
-| 67   | \[6.0.0+\] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)                                 |
-| 68   | \[6.0.0+\] OpenSaveDataInfoReaderWithFilter (Takes a total of 0x50-bytes of input, returns an \#ISaveDataInfoReader)                                              |
-| 69   | \[8.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataAttribute                                                                                                     |
-| 70   | \[8.0.0+\] WriteSaveDataFileSystemExtraDataBySaveDataAttribute                                                                                                    |
-| 80   | OpenSaveDataMetaFile                                                                                                                                              |
-| 81   | \[4.0.0+\] OpenSaveDataTransferManager (No input, returns an [\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink"))                                  |
-| 82   | \[5.0.0+\] OpenSaveDataTransferManagerVersion2 (No input, returns an [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink"))  |
-| 83   | \[6.0.0+\] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [\#ISaveDataTransferProhibiter](#ISaveDataTransferProhibiter "wikilink")) |
-| 84   | \[6.0.0+\] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)               |
-| 85   | \[9.0.0+\] (No input, returns an output [\#IUnknown0](#IUnknown0 "wikilink"))                                                                                     |
-| 100  | OpenImageDirectoryFileSystem                                                                                                                                      |
-| 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                                                        |
-| 120  | \[6.0.0+\] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                     |
-| 130  | \[7.0.0+\] [\#OpenCustomStorageFileSystem](#OpenCustomStorageFileSystem "wikilink") (Takes 4-bytes of input, returns an [\#IFileSystem](#IFileSystem "wikilink")) |
-| 200  | OpenDataStorageByCurrentProcess                                                                                                                                   |
-| 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                                                             |
-| 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                                                                  |
-| 203  | OpenPatchDataStorageByCurrentProcess                                                                                                                              |
-| 204  | \[7.0.0+\] OpenDataFileSystemWithProgramIndex (Takes an input u8, returns an [\#IFileSystem](#IFileSystem "wikilink"))                                            |
-| 205  | \[7.0.0+\] OpenDataStorageWithProgramIndex (Takes an input u8, returns an [\#IStorage](#IStorage "wikilink"))                                                     |
-| 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                                                                            |
-| 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                                                                                |
-| 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                                                                            |
-| 510  | \[5.0.0+\] OpenSystemDataUpdateEventNotifier                                                                                                                      |
-| 511  | \[5.0.0+\] NotifySystemDataUpdateEvent                                                                                                                            |
-| 520  | \[6.0.0+\] SimulateDeviceDetectionEvent (Takes a total of 0xC-bytes of input, no output)                                                                          |
-| 600  | \[1.0.0-3.0.2\] SetCurrentPosixTime                                                                                                                               |
-| 601  | QuerySaveDataTotalSize                                                                                                                                            |
-| 602  | [\#VerifySaveDataFileSystem](#VerifySaveDataFileSystem "wikilink")                                                                                                |
-| 603  | CorruptSaveDataFileSystem                                                                                                                                         |
-| 604  | CreatePaddingFile                                                                                                                                                 |
-| 605  | DeleteAllPaddingFiles                                                                                                                                             |
-| 606  | \[2.0.0+\] GetRightsId                                                                                                                                            |
-| 607  | \[2.0.0+\] RegisterExternalKey                                                                                                                                    |
-| 608  | \[2.0.0+\] UnregisterAllExternalKey                                                                                                                               |
-| 609  | \[2.0.0+\] GetRightsIdByPath                                                                                                                                      |
-| 610  | \[3.0.0+\] GetRightsIdAndKeyGenerationByPath                                                                                                                      |
-| 611  | \[4.0.0+\] SetCurrentPosixTimeWithTimeDifference                                                                                                                  |
-| 612  | \[4.0.0+\] GetFreeSpaceSizeForSaveData                                                                                                                            |
-| 613  | \[4.0.0+\] VerifySaveDataFileSystemBySaveDataSpaceId                                                                                                              |
-| 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                                                                             |
-| 615  | \[5.0.0+\] QuerySaveDataInternalStorageTotalSize                                                                                                                  |
-| 616  | \[6.0.0+\] [\#GetSaveDataCommitId](#GetSaveDataCommitId "wikilink")                                                                                               |
-| 617  | \[7.0.0+\] UnregisterExternalKey                                                                                                                                  |
-| 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                                                       |
-| 630  | \[4.0.0+\] SetSdCardAccessibility                                                                                                                                 |
-| 631  | \[4.0.0+\] IsSdCardAccessible                                                                                                                                     |
-| 640  | \[4.0.0-7.0.1\] IsSignedSystemPartitionOnSdCardValid                                                                                                              |
-| 700  | \[5.0.0+\] [\#OpenAccessFailureDetectionEventNotifier](#OpenAccessFailureDetectionEventNotifier "wikilink")                                                       |
-| 701  | \[5.0.0+\] GetAccessFailureDetectionEvent                                                                                                                         |
-| 702  | \[5.0.0+\] IsAccessFailureDetected                                                                                                                                |
-| 710  | \[5.0.0+\] ResolveAccessFailure                                                                                                                                   |
-| 720  | \[5.0.0+\] AbandonAccessFailure                                                                                                                                   |
-| 800  | \[2.0.0+\] GetAndClearErrorInfo                                                                                                                                   |
-| 810  | \[7.0.0+\] RegisterProgramIndexMapInfo                                                                                                                            |
-| 1000 | SetBisRootForHost                                                                                                                                                 |
-| 1001 | [\#SetSaveDataSize](#SetSaveDataSize "wikilink")                                                                                                                  |
-| 1002 | [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink")                                                                                                          |
-| 1003 | DisableAutoSaveDataCreation                                                                                                                                       |
-| 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                                                                                                    |
-| 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                                                                                                    |
-| 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                                                                                                  |
-| 1007 | \[4.0.0+\] RegisterUpdatePartition                                                                                                                                |
-| 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                                                                                          |
-| 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                                                            |
-| 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                                                      |
-| 1011 | \[7.0.0+\] GetProgramIndexForAccessLog (No input, returns two 32-bit values "version" and "program\_index")                                                       |
-| 1012 | \[9.0.0+\]                                                                                                                                                        |
-| 1013 | \[9.0.0+\]                                                                                                                                                        |
-| 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                                                       |
-| 1110 | \[6.0.0+\] CorruptSaveDataFileSystemByOffset                                                                                                                      |
-| 1200 | \[6.0.0+\] OpenMultiCommitManager (No input, returns an output \#IMultiCommitManager)                                                                             |
+| Cmd  | Name                                                                                                                          |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0    | \[1.0.0\] [\#OpenFileSystem](#OpenFileSystem "wikilink")                                                                      |
+| 1    | [\#SetCurrentProcess](#SetCurrentProcess "wikilink")                                                                          |
+| 2    | OpenDataFileSystemByCurrentProcess                                                                                            |
+| 7    | \[2.0.0+\] [\#OpenFileSystemWithPatch](#OpenFileSystemWithPatch "wikilink")                                                   |
+| 8    | \[2.0.0+\] [\#OpenFileSystemWithId](#OpenFileSystemWithId "wikilink")                                                         |
+| 9    | \[3.0.0+\] OpenDataFileSystemByProgramId                                                                                      |
+| 11   | [\#OpenBisFileSystem](#OpenBisFileSystem "wikilink")                                                                          |
+| 12   | [\#OpenBisStorage](#OpenBisStorage "wikilink")                                                                                |
+| 13   | InvalidateBisCache                                                                                                            |
+| 17   | OpenHostFileSystem                                                                                                            |
+| 18   | OpenSdCardFileSystem                                                                                                          |
+| 19   | \[2.0.0+\] FormatSdCardFileSystem                                                                                             |
+| 21   | [\#DeleteSaveDataFileSystem](#DeleteSaveDataFileSystem "wikilink")                                                            |
+| 22   | [\#CreateSaveDataFileSystem](#CreateSaveDataFileSystem "wikilink")                                                            |
+| 23   | [\#CreateSaveDataFileSystemBySystemSaveDataId](#CreateSaveDataFileSystemBySystemSaveDataId "wikilink")                        |
+| 24   | RegisterSaveDataFileSystemAtomicDeletion                                                                                      |
+| 25   | \[2.0.0+\] DeleteSaveDataFileSystemBySaveDataSpaceId                                                                          |
+| 26   | \[2.0.0+\] FormatSdCardDryRun                                                                                                 |
+| 27   | \[2.0.0+\] IsExFatSupported                                                                                                   |
+| 28   | \[4.0.0+\] DeleteSaveDataFileSystemBySaveDataAttribute                                                                        |
+| 30   | [\#OpenGameCardStorage](#OpenGameCardStorage "wikilink")                                                                      |
+| 31   | [\#OpenGameCardFileSystem](#OpenGameCardFileSystem "wikilink")                                                                |
+| 32   | \[3.0.0+\] ExtendSaveDataFileSystem                                                                                           |
+| 33   | \[5.0.0+\] DeleteCacheStorage                                                                                                 |
+| 34   | \[5.0.0+\] GetCacheStorageSize                                                                                                |
+| 35   | \[6.0.0+\] [\#OpenSaveDataFileSystemByHashSalt](#OpenSaveDataFileSystemByHashSalt "wikilink")                                 |
+| 36   | \[9.0.0+\] OpenHostFileSystemWithOption                                                                                       |
+| 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                |
+| 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                            |
+| 53   | \[2.0.0+\] OpenReadOnlySaveDataFileSystem                                                                                     |
+| 57   | \[3.0.0+\] [\#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId](#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId "wikilink") |
+| 58   | [\#ReadSaveDataFileSystemExtraData](#ReadSaveDataFileSystemExtraData "wikilink")                                              |
+| 59   | \[2.0.0+\] WriteSaveDataFileSystemExtraData                                                                                   |
+| 60   | [\#OpenSaveDataInfoReader](#OpenSaveDataInfoReader "wikilink")                                                                |
+| 61   | [\#OpenSaveDataInfoReaderBySaveDataSpaceId](#OpenSaveDataInfoReaderBySaveDataSpaceId "wikilink")                              |
+| 62   | \[5.0.0+\] OpenSaveDataInfoReaderOnlyCacheStorage                                                                             |
+| 64   | \[5.0.0+\] OpenSaveDataInternalStorageFileSystem                                                                              |
+| 65   | \[5.0.0+\] UpdateSaveDataMacForDebug                                                                                          |
+| 66   | \[5.0.0+\] WriteSaveDataFileSystemExtraDataWithMask                                                                           |
+| 67   | \[6.0.0+\] [\#FindSaveDataWithFilter](#FindSaveDataWithFilter "wikilink")                                                     |
+| 68   | \[6.0.0+\] [\#OpenSaveDataInfoReaderWithFilter](#OpenSaveDataInfoReaderWithFilter "wikilink")                                 |
+| 69   | \[8.0.0+\] ReadSaveDataFileSystemExtraDataBySaveDataAttribute                                                                 |
+| 70   | \[8.0.0+\] WriteSaveDataFileSystemExtraDataBySaveDataAttribute                                                                |
+| 80   | OpenSaveDataMetaFile                                                                                                          |
+| 81   | \[4.0.0+\] [\#OpenSaveDataTransferManager](#OpenSaveDataTransferManager "wikilink")                                           |
+| 82   | \[5.0.0+\] [\#OpenSaveDataTransferManagerVersion2](#OpenSaveDataTransferManagerVersion2 "wikilink")                           |
+| 83   | \[6.0.0+\] [\#OpenSaveDataTransferProhibiterForCloudBackUp](#OpenSaveDataTransferProhibiterForCloudBackUp "wikilink")         |
+| 84   | \[6.0.0+\] [\#ListApplicationAccessibleSaveDataOwnerId](#ListApplicationAccessibleSaveDataOwnerId "wikilink")                 |
+| 85   | \[9.0.0+\] [\#OpenSaveDataTransferManagerForSaveDataRepair](#OpenSaveDataTransferManagerForSaveDataRepair "wikilink")         |
+| 100  | OpenImageDirectoryFileSystem                                                                                                  |
+| 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                    |
+| 120  | \[6.0.0+\] [\#OpenCloudBackupWorkStorageFileSystem](#OpenCloudBackupWorkStorageFileSystem "wikilink")                         |
+| 130  | \[7.0.0+\] [\#OpenCustomStorageFileSystem](#OpenCustomStorageFileSystem "wikilink")                                           |
+| 200  | OpenDataStorageByCurrentProcess                                                                                               |
+| 201  | \[3.0.0+\] OpenDataStorageByProgramId                                                                                         |
+| 202  | [\#OpenDataStorageByDataId](#OpenDataStorageByDataId "wikilink")                                                              |
+| 203  | OpenPatchDataStorageByCurrentProcess                                                                                          |
+| 204  | \[7.0.0+\] [\#OpenDataFileSystemWithProgramIndex](#OpenDataFileSystemWithProgramIndex "wikilink")                             |
+| 205  | \[7.0.0+\] [\#OpenDataStorageWithProgramIndex](#OpenDataStorageWithProgramIndex "wikilink")                                   |
+| 400  | [\#OpenDeviceOperator](#OpenDeviceOperator "wikilink")                                                                        |
+| 500  | [\#OpenSdCardDetectionEventNotifier](#OpenSdCardDetectionEventNotifier "wikilink")                                            |
+| 501  | [\#OpenGameCardDetectionEventNotifier](#OpenGameCardDetectionEventNotifier "wikilink")                                        |
+| 510  | \[5.0.0+\] OpenSystemDataUpdateEventNotifier                                                                                  |
+| 511  | \[5.0.0+\] NotifySystemDataUpdateEvent                                                                                        |
+| 520  | \[6.0.0+\] [\#SimulateDeviceDetectionEvent](#SimulateDeviceDetectionEvent "wikilink")                                         |
+| 600  | \[1.0.0-3.0.2\] SetCurrentPosixTime                                                                                           |
+| 601  | QuerySaveDataTotalSize                                                                                                        |
+| 602  | [\#VerifySaveDataFileSystem](#VerifySaveDataFileSystem "wikilink")                                                            |
+| 603  | CorruptSaveDataFileSystem                                                                                                     |
+| 604  | CreatePaddingFile                                                                                                             |
+| 605  | DeleteAllPaddingFiles                                                                                                         |
+| 606  | \[2.0.0+\] GetRightsId                                                                                                        |
+| 607  | \[2.0.0+\] RegisterExternalKey                                                                                                |
+| 608  | \[2.0.0+\] UnregisterAllExternalKey                                                                                           |
+| 609  | \[2.0.0+\] GetRightsIdByPath                                                                                                  |
+| 610  | \[3.0.0+\] GetRightsIdAndKeyGenerationByPath                                                                                  |
+| 611  | \[4.0.0+\] SetCurrentPosixTimeWithTimeDifference                                                                              |
+| 612  | \[4.0.0+\] GetFreeSpaceSizeForSaveData                                                                                        |
+| 613  | \[4.0.0+\] VerifySaveDataFileSystemBySaveDataSpaceId                                                                          |
+| 614  | \[4.0.0+\] CorruptSaveDataFileSystemBySaveDataSpaceId                                                                         |
+| 615  | \[5.0.0+\] QuerySaveDataInternalStorageTotalSize                                                                              |
+| 616  | \[6.0.0+\] [\#GetSaveDataCommitId](#GetSaveDataCommitId "wikilink")                                                           |
+| 617  | \[7.0.0+\] UnregisterExternalKey                                                                                              |
+| 620  | \[2.0.0+\] [\#SetSdCardEncryptionSeed](#SetSdCardEncryptionSeed "wikilink")                                                   |
+| 630  | \[4.0.0+\] SetSdCardAccessibility                                                                                             |
+| 631  | \[4.0.0+\] IsSdCardAccessible                                                                                                 |
+| 640  | \[4.0.0-7.0.1\] IsSignedSystemPartitionOnSdCardValid                                                                          |
+| 700  | \[5.0.0+\] [\#OpenAccessFailureDetectionEventNotifier](#OpenAccessFailureDetectionEventNotifier "wikilink")                   |
+| 701  | \[5.0.0+\] GetAccessFailureDetectionEvent                                                                                     |
+| 702  | \[5.0.0+\] IsAccessFailureDetected                                                                                            |
+| 710  | \[5.0.0+\] ResolveAccessFailure                                                                                               |
+| 720  | \[5.0.0+\] AbandonAccessFailure                                                                                               |
+| 800  | \[2.0.0+\] GetAndClearErrorInfo                                                                                               |
+| 810  | \[7.0.0+\] RegisterProgramIndexMapInfo                                                                                        |
+| 1000 | SetBisRootForHost                                                                                                             |
+| 1001 | [\#SetSaveDataSize](#SetSaveDataSize "wikilink")                                                                              |
+| 1002 | [\#SetSaveDataRootPath](#SetSaveDataRootPath "wikilink")                                                                      |
+| 1003 | DisableAutoSaveDataCreation                                                                                                   |
+| 1004 | [\#SetGlobalAccessLogMode](#SetGlobalAccessLogMode "wikilink")                                                                |
+| 1005 | [\#GetGlobalAccessLogMode](#GetGlobalAccessLogMode "wikilink")                                                                |
+| 1006 | [\#OutputAccessLogToSdCard](#OutputAccessLogToSdCard "wikilink")                                                              |
+| 1007 | \[4.0.0+\] RegisterUpdatePartition                                                                                            |
+| 1008 | \[4.0.0+\] OpenRegisteredUpdatePartition                                                                                      |
+| 1009 | \[4.0.0+\] GetAndClearMemoryReportInfo                                                                                        |
+| 1010 | \[5.1.0-6.2.0\] SetDataStorageRedirectTarget                                                                                  |
+| 1011 | \[7.0.0+\] [\#GetProgramIndexForAccessLog](#GetProgramIndexForAccessLog "wikilink")                                           |
+| 1012 | \[9.0.0+\] GetFsStackUsage                                                                                                    |
+| 1013 | \[9.0.0+\] UnsetSaveDataRootPath                                                                                              |
+| 1100 | \[4.0.0+\] OverrideSaveDataTransferTokenSignVerificationKey                                                                   |
+| 1110 | \[6.0.0+\] CorruptSaveDataFileSystemByOffset                                                                                  |
+| 1200 | \[6.0.0+\] [\#OpenMultiCommitManager](#OpenMultiCommitManager "wikilink")                                                     |
 
 ## Permissions
 
@@ -1105,6 +1119,10 @@ the first u32. Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Mounts a [gamecard partition](Gamecard%20Partition.md "wikilink").
 
+## OpenSaveDataFileSystemByHashSalt
+
+Takes a total of 0xB0-bytes of input, no output.
+
 ## OpenSaveDataFileSystem
 
 Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
@@ -1153,6 +1171,41 @@ Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink"),
 returns an output
 [\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
 
+## FindSaveDataWithFilter
+
+Takes a total of 0x50-bytes of input, returns 8-bytes of output and a
+type-0x6 output buffer.
+
+## OpenSaveDataInfoReaderWithFilter
+
+Takes a total of 0x50-bytes of input, returns an
+[\#ISaveDataInfoReader](#ISaveDataInfoReader "wikilink").
+
+## OpenSaveDataTransferManager
+
+No input, returns an
+[\#ISaveDataTransferManager](#ISaveDataTransferManager "wikilink").
+
+## OpenSaveDataTransferManagerVersion2
+
+No input, returns an
+[\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink").
+
+## OpenSaveDataTransferProhibiterForCloudBackUp
+
+Takes an input u64, returns an
+[\#ISaveDataTransferProhibiter](#ISaveDataTransferProhibiter "wikilink").
+
+## ListApplicationAccessibleSaveDataOwnerId
+
+Takes a total of 0x10-bytes of input, returns 4-bytes of output and a
+type-0x6 output buffer.
+
+## OpenSaveDataTransferManagerForSaveDataRepair
+
+No input, returns an output
+[\#ISaveDataTransferManagerForSaveDataRepair](#ISaveDataTransferManagerForSaveDataRepair "wikilink").
+
 ## OpenContentStorageFileSystem
 
 Takes a [\#ContentStorageId](#ContentStorageId "wikilink"). Invalid
@@ -1161,6 +1214,11 @@ values return 0x2EE202.
 Returns an [\#IFileSystem](#IFileSystem "wikilink") with NCA files. The
 read data from these files is identical to the data read by
 [NCM\_services\#ReadContentIdFile](NCM%20services#ReadContentIdFile.md##ReadContentIdFile "wikilink").
+
+## OpenCloudBackupWorkStorageFileSystem
+
+Takes 4-bytes of input, returns an
+[\#IFileSystem](#IFileSystem "wikilink").
 
 ## OpenCustomStorageFileSystem
 
@@ -1181,6 +1239,14 @@ ID](IPC%20Marshalling#Domain%20message.md##Domain_message "wikilink")
 implementing the [\#IStorage](#IStorage "wikilink") interface for data
 archives.
 
+## OpenDataFileSystemWithProgramIndex
+
+Takes an input u8, returns an [\#IFileSystem](#IFileSystem "wikilink").
+
+## OpenDataStorageWithProgramIndex
+
+Takes an input u8, returns an [\#IStorage](#IStorage "wikilink").
+
 ## OpenDeviceOperator
 
 This command returns a session to a port implementing the
@@ -1195,6 +1261,10 @@ This command returns a session to a port implementing the
 
 This command returns a session to a port implementing the
 [\#IEventNotifier](#IEventNotifier "wikilink") interface.
+
+## SimulateDeviceDetectionEvent
+
+Takes a total of 0xC-bytes of input, no output.
 
 ## VerifySaveDataFileSystem
 
@@ -1282,20 +1352,49 @@ The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file,
 where "$FsAccessLog" is the SD-card mount-name. It's written to the
 current end of the file(appended).
 
+## GetProgramIndexForAccessLog
+
+No input, returns two 32-bit values "version" and "program\_index".
+
+## OpenMultiCommitManager
+
+No input, returns an output
+[\#IMultiCommitManager](#IMultiCommitManager "wikilink").
+
 # IStorage
 
 This is "nn::fssrv::sf::IStorage".
 
 This is the interface for a raw device, usually a block device.
 
-| Cmd | Name                    | Arguments                                      |
-| --- | ----------------------- | ---------------------------------------------- |
-| 0   | Read                    | Takes a type-0x46 buffer, an offset and length |
-| 1   | Write                   | Takes a type-0x45 buffer, an offset and length |
-| 2   | Flush                   | None                                           |
-| 3   | SetSize                 | Takes a size                                   |
-| 4   | GetSize                 | None                                           |
-| 5   | \[4.0.0+\] OperateRange |                                                |
+| Cmd | Name                             |
+| --- | -------------------------------- |
+| 0   | [\#Read](#Read "wikilink")       |
+| 1   | [\#Write](#Write "wikilink")     |
+| 2   | [\#Flush](#Flush "wikilink")     |
+| 3   | [\#SetSize](#SetSize "wikilink") |
+| 4   | [\#GetSize](#GetSize "wikilink") |
+| 5   | \[4.0.0+\] OperateRange          |
+
+## Read
+
+Takes a type-0x46 buffer, an offset and length.
+
+## Write
+
+Takes a type-0x45 buffer, an offset and length.
+
+## Flush
+
+No input.
+
+## SetSize
+
+Takes a size.
+
+## GetSize
+
+Returns a size.
 
 # IFileSystem
 
@@ -1461,51 +1560,51 @@ are available (in that case the out u64 is value 0).
 
 This is "nn::fssrv::sf::IDeviceOperator".
 
-| Cmd | Name                                                                                                          |
-| --- | ------------------------------------------------------------------------------------------------------------- |
-| 0   | IsSdCardInserted                                                                                              |
-| 1   | GetSdCardSpeedMode                                                                                            |
-| 2   | \[2.0.0+\] GetSdCardCid                                                                                       |
-| 3   | \[2.0.0+\] GetSdCardUserAreaSize                                                                              |
-| 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                                                         |
-| 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                                                         |
-| 100 | GetMmcCid                                                                                                     |
-| 101 | GetMmcSpeedMode                                                                                               |
-| 110 | EraseMmc                                                                                                      |
-| 111 | GetMmcPartitionSize                                                                                           |
-| 112 | \[2.0.0+\] GetMmcPatrolCount                                                                                  |
-| 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                                                            |
-| 114 | \[2.0.0+\] GetMmcExtendedCsd                                                                                  |
-| 115 | \[4.0.0+\] SuspendMmcPatrol                                                                                   |
-| 116 | \[4.0.0+\] ResumeMmcPatrol                                                                                    |
-| 200 | IsGameCardInserted                                                                                            |
-| 201 | EraseGameCard                                                                                                 |
-| 202 | GetGameCardHandle                                                                                             |
-| 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink")                                |
-| 204 | FinalizeGameCardDriver                                                                                        |
-| 205 | GetGameCardAttribute                                                                                          |
-| 206 | GetGameCardDeviceCertificate                                                                                  |
-| 207 | GetGameCardAsicInfo                                                                                           |
-| 208 | GetGameCardIdSet                                                                                              |
-| 209 | WriteToGameCardDirectly                                                                                       |
-| 210 | SetVerifyWriteEnalbleFlag                                                                                     |
-| 211 | GetGameCardImageHash                                                                                          |
-| 212 | \[2.0.0+\] GetGameCardDeviceIdForProdCard                                                                     |
-| 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                                                         |
-| 214 | \[2.0.0+\] ReadParamDirectly                                                                                  |
-| 215 | \[2.0.0+\] ForceEraseGameCard                                                                                 |
-| 216 | \[2.0.0+\] GetGameCardErrorInfo                                                                               |
-| 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                                                         |
-| 218 | \[3.0.0+\] GetGameCardDeviceId                                                                                |
-| 219 | \[8.0.0+\] ChallengeCardExistence                                                                             |
-| 220 | \[9.0.0+\]                                                                                                    |
-| 300 | SetSpeedEmulationMode                                                                                         |
-| 301 | GetSpeedEmulationMode                                                                                         |
-| 400 | \[5.0.0+\] SuspendSdmmcControl                                                                                |
-| 401 | \[5.0.0+\] ResumeSdmmcControl                                                                                 |
-| 402 | \[6.0.0+\] GetSdmmcConnectionStatus (Takes a total of 4-bytes of input, returns a total of 8-bytes of output) |
-| 500 | \[6.0.0+\] SetDeviceSimulationEvent (Takes a total of 0x14-bytes of input, no output)                         |
-| 501 | \[6.0.0+\] ClearDeviceSimulationEvent (Takes a total of 4-bytes of input, no output)                          |
+| Cmd | Name                                                                              |
+| --- | --------------------------------------------------------------------------------- |
+| 0   | IsSdCardInserted                                                                  |
+| 1   | GetSdCardSpeedMode                                                                |
+| 2   | \[2.0.0+\] GetSdCardCid                                                           |
+| 3   | \[2.0.0+\] GetSdCardUserAreaSize                                                  |
+| 4   | \[2.0.0+\] GetSdCardProtectedAreaSize                                             |
+| 5   | \[2.0.0+\] GetAndClearSdCardErrorInfo                                             |
+| 100 | GetMmcCid                                                                         |
+| 101 | GetMmcSpeedMode                                                                   |
+| 110 | EraseMmc                                                                          |
+| 111 | GetMmcPartitionSize                                                               |
+| 112 | \[2.0.0+\] GetMmcPatrolCount                                                      |
+| 113 | \[2.0.0+\] GetAndClearMmcErrorInfo                                                |
+| 114 | \[2.0.0+\] GetMmcExtendedCsd                                                      |
+| 115 | \[4.0.0+\] SuspendMmcPatrol                                                       |
+| 116 | \[4.0.0+\] ResumeMmcPatrol                                                        |
+| 200 | IsGameCardInserted                                                                |
+| 201 | EraseGameCard                                                                     |
+| 202 | GetGameCardHandle                                                                 |
+| 203 | [\#GetGameCardUpdatePartitionInfo](#GetGameCardUpdatePartitionInfo "wikilink")    |
+| 204 | FinalizeGameCardDriver                                                            |
+| 205 | GetGameCardAttribute                                                              |
+| 206 | GetGameCardDeviceCertificate                                                      |
+| 207 | GetGameCardAsicInfo                                                               |
+| 208 | GetGameCardIdSet                                                                  |
+| 209 | WriteToGameCardDirectly                                                           |
+| 210 | SetVerifyWriteEnalbleFlag                                                         |
+| 211 | GetGameCardImageHash                                                              |
+| 212 | \[2.0.0+\] GetGameCardDeviceIdForProdCard                                         |
+| 213 | \[2.0.0+\] EraseAndWriteParamDirectly                                             |
+| 214 | \[2.0.0+\] ReadParamDirectly                                                      |
+| 215 | \[2.0.0+\] ForceEraseGameCard                                                     |
+| 216 | \[2.0.0+\] GetGameCardErrorInfo                                                   |
+| 217 | \[2.1.0+\] GetGameCardErrorReportInfo                                             |
+| 218 | \[3.0.0+\] GetGameCardDeviceId                                                    |
+| 219 | \[8.0.0+\] ChallengeCardExistence                                                 |
+| 220 | \[9.0.0+\] GetGameCardCompatibilityType                                           |
+| 300 | SetSpeedEmulationMode                                                             |
+| 301 | GetSpeedEmulationMode                                                             |
+| 400 | \[5.0.0+\] SuspendSdmmcControl                                                    |
+| 401 | \[5.0.0+\] ResumeSdmmcControl                                                     |
+| 402 | \[6.0.0+\] [\#GetSdmmcConnectionStatus](#GetSdmmcConnectionStatus "wikilink")     |
+| 500 | \[6.0.0+\] [\#SetDeviceSimulationEvent](#SetDeviceSimulationEvent "wikilink")     |
+| 501 | \[6.0.0+\] [\#ClearDeviceSimulationEvent](#ClearDeviceSimulationEvent "wikilink") |
 
 ## GetGameCardUpdatePartitionInfo
 
@@ -1523,6 +1622,18 @@ and
 [Content\_Manager\_services\#GetUpdateTitleList](Content%20Manager%20services#GetUpdateTitleList.md##GetUpdateTitleList "wikilink")
 with storageid=nandsys, for checking whether a sysupdate is required.
 
+## GetSdmmcConnectionStatus
+
+Takes a total of 4-bytes of input, returns a total of 8-bytes of output.
+
+## SetDeviceSimulationEvent
+
+Takes a total of 0x14-bytes of input, no output.
+
+## ClearDeviceSimulationEvent
+
+Takes a total of 4-bytes of input, no output.
+
 # IEventNotifier
 
 This is "nn::fssrv::sf::IEventNotifier".
@@ -1535,14 +1646,14 @@ This is "nn::fssrv::sf::IEventNotifier".
 
 This is "nn::fssrv::sf::ISaveDataTransferManager".
 
+This was added with [4.0.0](4.0.0.md "wikilink").
+
 | Cmd | Name                                                       |
 | --- | ---------------------------------------------------------- |
 | 0   | [\#GetChallenge](#GetChallenge "wikilink")                 |
 | 16  | [\#SetToken](#SetToken "wikilink")                         |
 | 32  | [\#OpenSaveDataExporter](#OpenSaveDataExporter "wikilink") |
 | 64  | [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink") |
-
-This was added with [4.0.0](4.0.0.md "wikilink").
 
 ## GetChallenge
 
@@ -1563,9 +1674,65 @@ Takes an input u8 [\#SaveDataSpaceId](#SaveDataSpaceId "wikilink") and a
 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and
 an [\#ISaveDataImporter](#ISaveDataImporter "wikilink").
 
+# ISaveDataTransferManagerForSaveDataRepair
+
+This is "nn::fssrv::sf::ISaveDataTransferManagerForSaveDataRepair".
+
+This was added with [9.0.0](9.0.0.md "wikilink").
+
+| Cmd | Name                                                                                           |
+| --- | ---------------------------------------------------------------------------------------------- |
+| 0   | [\#GetChallenge](#GetChallenge "wikilink")                                                     |
+| 16  | [\#SetKeyPackage](#SetKeyPackage "wikilink")                                                   |
+| 80  | [\#OpenSaveDataExporterAndGetEncryptedKey](#OpenSaveDataExporterAndGetEncryptedKey "wikilink") |
+| 81  | [\#PrepareOpenSaveDataImporter](#PrepareOpenSaveDataImporter "wikilink")                       |
+| 90  | [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink")                                     |
+| 91  | [\#OpenSaveDataImporter2](#OpenSaveDataImporter2 "wikilink")                                   |
+| 100 | [\#OpenSaveDataExporterWithKey](#OpenSaveDataExporterWithKey "wikilink")                       |
+| 110 | [\#OpenSaveDataImporterWithKey](#OpenSaveDataImporterWithKey "wikilink")                       |
+
+## SetKeyPackage
+
+No input/output, takes a type-0x5 input buffer.
+
+## OpenSaveDataExporterAndGetEncryptedKey
+
+Takes a total of 0x10-bytes of input and a type-0x1A output buffer to
+receive a RsaEncryptedKey. Returns an
+[\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
+
+## PrepareOpenSaveDataImporter
+
+Takes a type-0x1A output buffer to receive a RsaEncryptedKey.
+
+## OpenSaveDataImporter
+
+Takes a total of 0x18-bytes of input and two type-0x5 input buffers,
+returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## OpenSaveDataImporter2
+
+Takes a total of 0x18-bytes of input and a type-0x5 input buffer,
+returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
+## OpenSaveDataExporterWithKey
+
+Takes a total of 0x20-bytes of input, returns an
+[\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").
+
+## OpenSaveDataImporterWithKey
+
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer,
+returns an
+[\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").
+
 # ISaveDataExporter
 
 This is "nn::fssrv::sf::ISaveDataExporter".
+
+This was added with [4.0.0](4.0.0.md "wikilink").
 
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
@@ -1573,8 +1740,6 @@ This is "nn::fssrv::sf::ISaveDataExporter".
 | 1   | [\#GetRestSize](#GetRestSize "wikilink")         |
 | 16  | [\#Pull](#Pull "wikilink")                       |
 | 17  | [\#PullInitialData](#PullInitialData "wikilink") |
-
-This was added with [4.0.0](4.0.0.md "wikilink").
 
 ## GetSaveDataInfo
 
@@ -1602,14 +1767,14 @@ No input/output, takes a type-0x6 output buffer.
 
 This is "nn::fssrv::sf::ISaveDataImporter".
 
+This was added with [4.0.0](4.0.0.md "wikilink").
+
 | Cmd | Name                                             |
 | --- | ------------------------------------------------ |
 | 0   | [\#GetSaveDataInfo](#GetSaveDataInfo "wikilink") |
 | 1   | [\#GetRestSize](#GetRestSize "wikilink")         |
 | 16  | [\#Push](#Push "wikilink")                       |
 | 17  | [\#Finalize](#Finalize "wikilink")               |
-
-This was added with [4.0.0](4.0.0.md "wikilink").
 
 ## GetSaveDataInfo
 
@@ -1637,6 +1802,8 @@ No input/output.
 
 This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
 
+This was added with [5.0.0](5.0.0.md "wikilink").
+
 | Cmd                                                                                       | Name                                                                                                              |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | 0                                                                                         | [\#GetChallenge](#GetChallenge "wikilink")                                                                        |
@@ -1651,8 +1818,6 @@ This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
 | 67                                                                                        | \[6.0.0+\] [\#OpenSaveDataImporter](#OpenSaveDataImporter "wikilink")                                             |
 | 68                                                                                        | \[6.0.0+\] [\#OpenSaveDataImporterByContext](#OpenSaveDataImporterByContext "wikilink")                           |
 | 69                                                                                        | \[6.0.0+\] [\#CancelSuspendingImport](#CancelSuspendingImport "wikilink")                                         |
-
-This was added with [5.0.0](5.0.0.md "wikilink").
 
 ## GetChallenge
 
@@ -1720,78 +1885,184 @@ Takes an input u64 and a 0x10-byte struct, no output.
 
 This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 
-| Cmd | Name                                                                                                                      |
-| --- | ------------------------------------------------------------------------------------------------------------------------- |
-| 0   | SetDivisionCount (Takes an input u32, no output)                                                                          |
-| 1   | \[6.0.0+\] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)                                              |
-| 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
-| 48  | OpenSaveDataChunkExporter (Takes an input u32, returns an [\#ISaveDataChunkExporter](#ISaveDataChunkExporter "wikilink")) |
-| 64  | \[6.0.0-8.1.0\] FinalizeFullExport (No input, returns two 0x10-byte output structs)                                       |
-| 65  | \[6.0.0-8.1.0\] FinalizeDiffExport (No input, returns an output 0x10-byte struct)                                         |
-| 66  | \[6.0.0+\] CancelExport (No input/output)                                                                                 |
-| 67  | \[6.0.0+\] SuspendExport (No input/output, takes a type-0x6 output buffer)                                                |
-| 70  | \[6.0.0+\] GetKeySeed (No input, returns an output 0x10-byte struct)                                                      |
-| 71  | \[6.0.0+\] GetInitialDataMac (No input, returns an output 0x10-byte struct)                                               |
-| 72  | \[6.0.0+\] FinalizeExport (No input/output)                                                                               |
-| 73  | \[9.0.0+\]                                                                                                                |
-| 80  | \[6.0.0+\] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)                                         |
-| 81  | \[6.0.0+\] SetExportInitialDataAad (Takes an input 0x20-byte struct, no output)                                           |
-| 96  | \[6.0.0+\] GetReportInfo (No input, returns an output 0x20-byte struct)                                                   |
-
 This was added with [5.0.0](5.0.0.md "wikilink").
+
+| Cmd | Name                                                                                      |
+| --- | ----------------------------------------------------------------------------------------- |
+| 0   | [\#SetDivisionCount](#SetDivisionCount "wikilink")                                        |
+| 1   | \[6.0.0+\] [\#GetSaveDataInfo](#GetSaveDataInfo "wikilink")                               |
+| 16  | [\#OpenSaveDataDiffChunkIterator](#OpenSaveDataDiffChunkIterator "wikilink")              |
+| 48  | [\#OpenSaveDataChunkExporter](#OpenSaveDataChunkExporter "wikilink")                      |
+| 64  | \[6.0.0-8.1.0\] [\#FinalizeFullExport](#FinalizeFullExport "wikilink")                    |
+| 65  | \[6.0.0-8.1.0\] [\#FinalizeDiffExport](#FinalizeDiffExport "wikilink")                    |
+| 66  | \[6.0.0+\] [\#CancelExport](#CancelExport "wikilink")                                     |
+| 67  | \[6.0.0+\] [\#SuspendExport](#SuspendExport "wikilink")                                   |
+| 70  | \[6.0.0+\] [\#GetKeySeed](#GetKeySeed "wikilink")                                         |
+| 71  | \[6.0.0+\] [\#GetInitialDataMac](#GetInitialDataMac "wikilink")                           |
+| 72  | \[6.0.0+\] [\#FinalizeExport](#FinalizeExport "wikilink")                                 |
+| 73  | \[9.0.0+\] [\#GetInitialDataMacKeyGeneration](#GetInitialDataMacKeyGeneration "wikilink") |
+| 80  | \[6.0.0+\] [\#GetImportInitialDataAad](#GetImportInitialDataAad "wikilink")               |
+| 81  | \[6.0.0+\] [\#SetExportInitialDataAad](#SetExportInitialDataAad "wikilink")               |
+| 96  | \[6.0.0+\] [\#GetReportInfo](#GetReportInfo "wikilink")                                   |
+
+## SetDivisionCount
+
+Takes an input u32, no output.
+
+## OpenSaveDataChunkExporter
+
+Takes an input u32, returns an
+[\#ISaveDataChunkExporter](#ISaveDataChunkExporter "wikilink").
+
+## FinalizeFullExport
+
+No input, returns two 0x10-byte output structs.
+
+## FinalizeDiffExport
+
+No input, returns an output 0x10-byte struct.
+
+## CancelExport
+
+No input/output.
+
+## SuspendExport
+
+No input/output, takes a type-0x6 output buffer.
+
+## GetKeySeed
+
+No input, returns an output 0x10-byte struct.
+
+## GetInitialDataMac
+
+No input, returns an output 0x10-byte struct.
+
+## FinalizeExport
+
+No input/output.
+
+## SetExportInitialDataAad
+
+Takes an input 0x20-byte struct, no output.
 
 # ISaveDataDivisionImporter
 
 This is "nn::fssrv::sf::ISaveDataDivisionImporter".
 
-| Cmd | Name                                                                                                                      |
-| --- | ------------------------------------------------------------------------------------------------------------------------- |
-| 0   | \[6.0.0+\] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)                                              |
-| 16  | OpenSaveDataDiffChunkIterator (No input, returns an [\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink"))       |
-| 32  | InitializeImport (No input, returns an output u64)                                                                        |
-| 33  | FinalizeImport (No input/output)                                                                                          |
-| 34  | \[6.0.0+\] CancelImport (No input/output)                                                                                 |
-| 35  | \[6.0.0+\] GetImportContext (No input/output, takes a type-0x6 output buffer)                                             |
-| 36  | \[6.0.0+\] SuspendImport (No input/output)                                                                                |
-| 48  | OpenSaveDataChunkImporter (Takes an input u32, returns an [\#ISaveDataChunkImporter](#ISaveDataChunkImporter "wikilink")) |
-| 64  | \[6.0.0+\] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)                                         |
-| 80  | \[6.0.0+\] GetReportInfo (No input, returns an output 0x20-byte struct)                                                   |
-
 This was added with [5.0.0](5.0.0.md "wikilink").
+
+| Cmd | Name                                                                         |
+| --- | ---------------------------------------------------------------------------- |
+| 0   | \[6.0.0+\] [\#GetSaveDataInfo](#GetSaveDataInfo "wikilink")                  |
+| 16  | [\#OpenSaveDataDiffChunkIterator](#OpenSaveDataDiffChunkIterator "wikilink") |
+| 32  | [\#InitializeImport](#InitializeImport "wikilink")                           |
+| 33  | [\#FinalizeImport](#FinalizeImport "wikilink")                               |
+| 34  | \[6.0.0+\] [\#CancelImport](#CancelImport "wikilink")                        |
+| 35  | \[6.0.0+\] [\#GetImportContext](#GetImportContext "wikilink")                |
+| 36  | \[6.0.0+\] [\#SuspendImport](#SuspendImport "wikilink")                      |
+| 48  | [\#OpenSaveDataChunkImporter](#OpenSaveDataChunkImporter "wikilink")         |
+| 64  | \[6.0.0+\] [\#GetImportInitialDataAad](#GetImportInitialDataAad "wikilink")  |
+| 80  | \[6.0.0+\] [\#GetReportInfo](#GetReportInfo "wikilink")                      |
+
+## GetSaveDataInfo
+
+No input/output, takes a type-0x6 output buffer.
+
+## OpenSaveDataDiffChunkIterator
+
+No input, returns an
+[\#ISaveDataChunkIterator](#ISaveDataChunkIterator "wikilink").
+
+## InitializeImport
+
+No input, returns an output u64.
+
+## FinalizeImport
+
+No input/output.
+
+## CancelImport
+
+No input/output.
+
+## GetImportContext
+
+No input/output, takes a type-0x6 output buffer.
+
+## SuspendImport
+
+No input/output.
+
+## OpenSaveDataChunkImporter
+
+Takes an input u32, returns an
+[\#ISaveDataChunkImporter](#ISaveDataChunkImporter "wikilink").
+
+## GetImportInitialDataAad
+
+No input, returns an output 0x20-byte struct.
+
+## GetReportInfo
+
+No input, returns an output 0x20-byte struct.
 
 # ISaveDataChunkIterator
 
 This is "nn::fssrv::sf::ISaveDataChunkIterator".
 
-| Cmd | Name                                    |
-| --- | --------------------------------------- |
-| 0   | Next (No input/output)                  |
-| 1   | IsEnd (No input, returns an output u8)  |
-| 16  | GetId (No input, returns an output u32) |
-
 This was added with [5.0.0](5.0.0.md "wikilink").
+
+| Cmd | Name                         |
+| --- | ---------------------------- |
+| 0   | [\#Next](#Next "wikilink")   |
+| 1   | [\#IsEnd](#IsEnd "wikilink") |
+| 16  | [\#GetId](#GetId "wikilink") |
+
+## Next
+
+No input/output.
+
+## IsEnd
+
+No input, returns an output u8.
+
+## GetId
+
+No input, returns an output u32.
 
 # ISaveDataChunkExporter
 
 This is "nn::fssrv::sf::ISaveDataChunkExporter".
 
-| Cmd | Name                                                                          |
-| --- | ----------------------------------------------------------------------------- |
-| 0   | Pull (Takes an input u64 and a type-0x6 output buffer, returns an output u64) |
-| 16  | \[6.0.0+\] GetRestRawDataSize (No input, returns an output u64)               |
-|     |                                                                               |
-
 This was added with [5.0.0](5.0.0.md "wikilink").
+
+| Cmd | Name                                                              |
+| --- | ----------------------------------------------------------------- |
+| 0   | [\#Pull](#Pull "wikilink")                                        |
+| 16  | \[6.0.0+\] [\#GetRestRawDataSize](#GetRestRawDataSize "wikilink") |
+
+## Pull
+
+Takes an input u64 and a type-0x6 output buffer, returns an output u64.
+
+## GetRestRawDataSize
+
+No input, returns an output u64.
 
 # ISaveDataChunkImporter
 
 This is "nn::fssrv::sf::ISaveDataChunkImporter".
 
-| Cmd | Name                                                             |
-| --- | ---------------------------------------------------------------- |
-| 0   | Push (Takes an input u64 and a type-0x5 input buffer, no output) |
-
 This was added with [5.0.0](5.0.0.md "wikilink").
+
+| Cmd | Name                       |
+| --- | -------------------------- |
+| 0   | [\#Push](#Push "wikilink") |
+
+## Push
+
+Takes an input u64 and a type-0x5 input buffer, no output.
 
 # ISaveDataTransferProhibiter
 
@@ -1801,27 +2072,20 @@ This doesn't seem to handle any commands (?).
 
 # IMultiCommitManager
 
-| Cmd | Name                                                                     |
-| --- | ------------------------------------------------------------------------ |
-| 1   | Add (Takes an input [\#IFilesystem](#IFilesystem "wikilink"), no output) |
-| 2   | Commit (No input/output)                                                 |
-
 This was added with [6.0.0](6.0.0.md "wikilink").
 
-# IUnknown0
+| Cmd | Name                           |
+| --- | ------------------------------ |
+| 1   | [\#Add](#Add "wikilink")       |
+| 2   | [\#Commit](#Commit "wikilink") |
 
-This was added with \[9.0.0+\].
+## Add
 
-| Cmd | Name | Notes                                                                                                                                                 |
-| --- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0   |      |                                                                                                                                                       |
-| 16  |      |                                                                                                                                                       |
-| 80  |      | Takes a total of 0x10-bytes of input and a type-0x1A output buffer, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").  |
-| 81  |      |                                                                                                                                                       |
-| 90  |      | Takes a total of 0x18-bytes of input and two type-0x5 input buffers, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink"). |
-| 91  |      | Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").    |
-| 100 |      | Takes a total of 0x20-bytes of input, returns an [\#ISaveDataDivisionExporter](#ISaveDataDivisionExporter "wikilink").                                |
-| 110 |      | Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an [\#ISaveDataDivisionImporter](#ISaveDataDivisionImporter "wikilink").    |
+Takes an input [\#IFilesystem](#IFilesystem "wikilink"), no output.
+
+## Commit
+
+No input/output.
 
 # FileSystemType
 

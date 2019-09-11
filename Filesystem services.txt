@@ -3,29 +3,38 @@ This is "nn::fssrv::sf::IFileSystemProxyForLoader".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Arguments || Notes
+! Cmd || Name
 |-
-| 0 || OpenCodeFileSystem || u64 TitleId + X descriptor [[#ContentPath]] || Returns an [[#IFileSystem]].
+| 0 || [[#OpenCodeFileSystem]]
 |-
-| 1 || IsArchivedProgram || u64 ProcessId || Returns a bool (1 if the process id's [[#ContentPath]] ends in ".nca").
+| 1 || [[#IsArchivedProgram]]
 |-
-| 2 || [4.0.0+] SetCurrentProcess || PID descriptor ||
+| 2 || [4.0.0+] [[#SetCurrentProcess]]
 |}
+
+== OpenCodeFileSystem ==
+Takes an u64 TitleId and a [[#ContentPath]]. Returns an [[#IFileSystem]].
+
+== IsArchivedProgram ==
+Takes an u64 ProcessId. Returns a bool (1 if the process id's [[#ContentPath]] ends in ".nca").
+
+== SetCurrentProcess ==
+Takes a PID descriptor.
 
 = fsp-pr =
 This is "nn::fssrv::sf::IProgramRegistry".
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Notes
+! Cmd || Name
 |-
-| 0 || [[#RegisterProgram]] ||
+| 0 || [[#RegisterProgram]]
 |-
-| 1 || [[#UnregisterProgram]] ||
+| 1 || [[#UnregisterProgram]]
 |-
-| 2 || [4.0.0+] SetCurrentProcess ||
+| 2 || [4.0.0+] [[#SetCurrentProcess]]
 |-
-| 256 || [[#SetEnabledProgramVerification]] ||
+| 256 || [[#SetEnabledProgramVerification]]
 |}
 
 == RegisterProgram ==
@@ -98,9 +107,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 34 || [5.0.0+] GetCacheStorageSize
 |-
-| 35 || [6.0.0+] CreateSaveDataFileSystemByHashSalt (Unofficial name, takes a total of 0xB0-bytes of input, no output)
+| 35 || [6.0.0+] [[#OpenSaveDataFileSystemByHashSalt]]
 |-
-| 36 || [9.0.0+] 
+| 36 || [9.0.0+] OpenHostFileSystemWithOption
 |-
 | 51 || [[#OpenSaveDataFileSystem]]
 |-
@@ -126,9 +135,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 66 || [5.0.0+] WriteSaveDataFileSystemExtraDataWithMask
 |-
-| 67 || [6.0.0+] FindSaveDataWithFilter (Takes a total of 0x50-bytes of input, returns 8-bytes of output, and a type-0x6 output buffer)
+| 67 || [6.0.0+] [[#FindSaveDataWithFilter]]
 |-
-| 68 || [6.0.0+] OpenSaveDataInfoReaderWithFilter (Takes a total of 0x50-bytes of input, returns an #ISaveDataInfoReader)
+| 68 || [6.0.0+] [[#OpenSaveDataInfoReaderWithFilter]]
 |-
 | 69 || [8.0.0+] ReadSaveDataFileSystemExtraDataBySaveDataAttribute
 |-
@@ -136,23 +145,23 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 80 || OpenSaveDataMetaFile
 |-
-| 81 || [4.0.0+] OpenSaveDataTransferManager (No input, returns an [[#ISaveDataTransferManager]])
+| 81 || [4.0.0+] [[#OpenSaveDataTransferManager]]
 |-
-| 82 || [5.0.0+] OpenSaveDataTransferManagerVersion2 (No input, returns an [[#ISaveDataTransferManagerWithDivision]])
+| 82 || [5.0.0+] [[#OpenSaveDataTransferManagerVersion2]]
 |-
-| 83 || [6.0.0+] OpenSaveDataTransferProhibiterForCloudBackUp (Takes an input u64, returns an [[#ISaveDataTransferProhibiter]])
+| 83 || [6.0.0+] [[#OpenSaveDataTransferProhibiterForCloudBackUp]]
 |-
-| 84 || [6.0.0+] ListApplicationAccessibleSaveDataOwnerId (Takes a total of 0x10-bytes of input, returns 4-bytes of output, and a type-0x6 output buffer)
+| 84 || [6.0.0+] [[#ListApplicationAccessibleSaveDataOwnerId]]
 |-
-| 85 || [9.0.0+] (No input, returns an output [[#IUnknown0]])
+| 85 || [9.0.0+] [[#OpenSaveDataTransferManagerForSaveDataRepair]]
 |-
 | 100 || OpenImageDirectoryFileSystem
 |-
 | 110 || [[#OpenContentStorageFileSystem]]
 |-
-| 120 || [6.0.0+] OpenCloudBackupWorkStorageFileSystem (Takes 4-bytes of input, returns an [[#IFileSystem]])
+| 120 || [6.0.0+] [[#OpenCloudBackupWorkStorageFileSystem]]
 |-
-| 130 || [7.0.0+] [[#OpenCustomStorageFileSystem]] (Takes 4-bytes of input, returns an [[#IFileSystem]])
+| 130 || [7.0.0+] [[#OpenCustomStorageFileSystem]]
 |-
 | 200 || OpenDataStorageByCurrentProcess
 |-
@@ -162,9 +171,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 203 || OpenPatchDataStorageByCurrentProcess
 |-
-| 204 || [7.0.0+] OpenDataFileSystemWithProgramIndex (Takes an input u8, returns an [[#IFileSystem]])
+| 204 || [7.0.0+] [[#OpenDataFileSystemWithProgramIndex]]
 |-
-| 205 || [7.0.0+] OpenDataStorageWithProgramIndex (Takes an input u8, returns an [[#IStorage]])
+| 205 || [7.0.0+] [[#OpenDataStorageWithProgramIndex]]
 |-
 | 400 || [[#OpenDeviceOperator]]
 |-
@@ -176,7 +185,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 511 || [5.0.0+] NotifySystemDataUpdateEvent
 |-
-| 520 || [6.0.0+] SimulateDeviceDetectionEvent (Takes a total of 0xC-bytes of input, no output)
+| 520 || [6.0.0+] [[#SimulateDeviceDetectionEvent]]
 |-
 | 600 || [1.0.0-3.0.2] SetCurrentPosixTime
 |-
@@ -258,17 +267,17 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 1010 || [5.1.0-6.2.0] SetDataStorageRedirectTarget
 |-
-| 1011 || [7.0.0+] GetProgramIndexForAccessLog (No input, returns two 32-bit values "version" and "program_index")
+| 1011 || [7.0.0+] [[#GetProgramIndexForAccessLog]]
 |-
-| 1012 || [9.0.0+]
+| 1012 || [9.0.0+] GetFsStackUsage
 |-
-| 1013 || [9.0.0+]
+| 1013 || [9.0.0+] UnsetSaveDataRootPath
 |-
 | 1100 || [4.0.0+] OverrideSaveDataTransferTokenSignVerificationKey
 |-
 | 1110 || [6.0.0+] CorruptSaveDataFileSystemByOffset
 |-
-| 1200 || [6.0.0+] OpenMultiCommitManager (No input, returns an output #IMultiCommitManager)
+| 1200 || [6.0.0+] [[#OpenMultiCommitManager]]
 |}
 
 == Permissions ==
@@ -564,6 +573,9 @@ Takes two input u32s, with the second u32 located at +4 in rawdata after the fir
 
 Mounts a [[Gamecard_Partition|gamecard partition]].
 
+== OpenSaveDataFileSystemByHashSalt ==
+Takes a total of 0xB0-bytes of input, no output.
+
 == OpenSaveDataFileSystem ==
 Takes an input u8 [[#SaveDataSpaceId]] and a 0x40-byte Save-struct entry. Official user-process code is only known to use value 1 for the u8.
 
@@ -592,10 +604,34 @@ No input, returns an output [[#ISaveDataInfoReader]].
 == OpenSaveDataInfoReaderBySaveDataSpaceId ==
 Takes an input u8 [[#SaveDataSpaceId]], returns an output [[#ISaveDataInfoReader]].
 
+== FindSaveDataWithFilter ==
+Takes a total of 0x50-bytes of input, returns 8-bytes of output and a type-0x6 output buffer.
+
+== OpenSaveDataInfoReaderWithFilter ==
+Takes a total of 0x50-bytes of input, returns an [[#ISaveDataInfoReader]].
+
+== OpenSaveDataTransferManager ==
+No input, returns an [[#ISaveDataTransferManager]].
+
+== OpenSaveDataTransferManagerVersion2 ==
+No input, returns an [[#ISaveDataTransferManagerWithDivision]].
+
+== OpenSaveDataTransferProhibiterForCloudBackUp ==
+Takes an input u64, returns an [[#ISaveDataTransferProhibiter]].
+
+== ListApplicationAccessibleSaveDataOwnerId ==
+Takes a total of 0x10-bytes of input, returns 4-bytes of output and a type-0x6 output buffer.
+
+== OpenSaveDataTransferManagerForSaveDataRepair ==
+No input, returns an output [[#ISaveDataTransferManagerForSaveDataRepair]].
+
 == OpenContentStorageFileSystem ==
 Takes a [[#ContentStorageId]]. Invalid values return 0x2EE202.
 
 Returns an [[#IFileSystem]] with NCA files. The read data from these files is identical to the data read by [[NCM_services#ReadContentIdFile]].
+
+== OpenCloudBackupWorkStorageFileSystem ==
+Takes 4-bytes of input, returns an [[#IFileSystem]].
 
 == OpenCustomStorageFileSystem ==
 Takes a [[#CustomStorageId]]. Invalid values return 0x2EE202.
@@ -607,6 +643,12 @@ Takes a [[#StorageId]] and a TitleID.
 
 Returns a [[IPC_Marshalling#Domain_message|domain object ID]] implementing the [[#IStorage]] interface for data archives.
 
+== OpenDataFileSystemWithProgramIndex ==
+Takes an input u8, returns an [[#IFileSystem]].
+
+== OpenDataStorageWithProgramIndex ==
+Takes an input u8, returns an [[#IStorage]].
+
 == OpenDeviceOperator ==
 This command returns a session to a port implementing the [[#IDeviceOperator]] interface.
 
@@ -615,6 +657,9 @@ This command returns a session to a port implementing the [[#IEventNotifier]] in
 
 == OpenGameCardDetectionEventNotifier ==
 This command returns a session to a port implementing the [[#IEventNotifier]] interface.
+
+== SimulateDeviceDetectionEvent ==
+Takes a total of 0xC-bytes of input, no output.
 
 == VerifySaveDataFileSystem ==
 Takes an unknown input u64 and a type-0x6 output buffer.
@@ -668,6 +713,12 @@ When bit1 in GlobalAccessLogMode is clear, FS-module will just return 0 for Outp
 
 The input buffer is written to the "$FsAccessLog:/FsAccessLog.txt" file, where "$FsAccessLog" is the SD-card mount-name. It's written to the current end of the file(appended).
 
+== GetProgramIndexForAccessLog ==
+No input, returns two 32-bit values "version" and "program_index".
+
+== OpenMultiCommitManager ==
+No input, returns an output [[#IMultiCommitManager]].
+
 = IStorage =
 This is "nn::fssrv::sf::IStorage".
 
@@ -675,20 +726,35 @@ This is the interface for a raw device, usually a block device.
 
 {| class="wikitable" border="1"
 |-
-! Cmd || Name || Arguments
+! Cmd || Name
 |-
-| 0 || Read || Takes a type-0x46 buffer, an offset and length 
+| 0 || [[#Read]]
 |-
-| 1 || Write || Takes a type-0x45 buffer, an offset and length 
+| 1 || [[#Write]]
 |-
-| 2 || Flush || None
+| 2 || [[#Flush]]
 |-
-| 3 || SetSize || Takes a size
+| 3 || [[#SetSize]]
 |-
-| 4 || GetSize || None
+| 4 || [[#GetSize]]
 |-
-| 5 || [4.0.0+] OperateRange ||
+| 5 || [4.0.0+] OperateRange
 |}
+
+== Read ==
+Takes a type-0x46 buffer, an offset and length.
+
+== Write ==
+Takes a type-0x45 buffer, an offset and length.
+
+== Flush ==
+No input.
+
+== SetSize ==
+Takes a size.
+
+== GetSize ==
+Returns a size.
 
 = IFileSystem =
 This is "nn::fssrv::sf::IFileSystem".
@@ -929,7 +995,7 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 219 || [8.0.0+] ChallengeCardExistence
 |-
-| 220 || [9.0.0+]
+| 220 || [9.0.0+] GetGameCardCompatibilityType
 |-
 | 300 || SetSpeedEmulationMode
 |-
@@ -939,11 +1005,11 @@ This is "nn::fssrv::sf::IDeviceOperator".
 |-
 | 401 || [5.0.0+] ResumeSdmmcControl
 |-
-| 402 || [6.0.0+] GetSdmmcConnectionStatus (Takes a total of 4-bytes of input, returns a total of 8-bytes of output)
+| 402 || [6.0.0+] [[#GetSdmmcConnectionStatus]]
 |-
-| 500 || [6.0.0+] SetDeviceSimulationEvent (Takes a total of 0x14-bytes of input, no output)
+| 500 || [6.0.0+] [[#SetDeviceSimulationEvent]]
 |-
-| 501 || [6.0.0+] ClearDeviceSimulationEvent (Takes a total of 4-bytes of input, no output)
+| 501 || [6.0.0+] [[#ClearDeviceSimulationEvent]]
 |}
 
 == GetGameCardUpdatePartitionInfo ==
@@ -953,6 +1019,15 @@ Returns a titleID and the title-version for it.
 * Output u64 with ARMS-gamecard: titleID 0100000000000816.
 
 [[NS_Services|NS]] appears to only use this with [[Content_Manager_services#GetTitleIdInfo]] and [[Content_Manager_services#GetUpdateTitleList]] with storageid=nandsys, for checking whether a sysupdate is required.
+
+== GetSdmmcConnectionStatus ==
+Takes a total of 4-bytes of input, returns a total of 8-bytes of output.
+
+== SetDeviceSimulationEvent == 
+Takes a total of 0x14-bytes of input, no output.
+
+== ClearDeviceSimulationEvent ==
+Takes a total of 4-bytes of input, no output.
 
 = IEventNotifier =
 This is "nn::fssrv::sf::IEventNotifier".
@@ -967,6 +1042,8 @@ This is "nn::fssrv::sf::IEventNotifier".
 = ISaveDataTransferManager =
 This is "nn::fssrv::sf::ISaveDataTransferManager".
 
+This was added with [[4.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -980,8 +1057,6 @@ This is "nn::fssrv::sf::ISaveDataTransferManager".
 | 64 || [[#OpenSaveDataImporter]]
 |}
 
-This was added with [[4.0.0]].
-
 == GetChallenge ==
 No input/output, takes a type-0x6 output buffer.
 
@@ -994,8 +1069,57 @@ Takes an input u8 [[#SaveDataSpaceId]] and u64, returns an [[#ISaveDataExporter]
 == OpenSaveDataImporter ==
 Takes an input u8 [[#SaveDataSpaceId]] and a 0x10-byte userID, and a type-0x5 input buffer. Returns an output u64 and an [[#ISaveDataImporter]].
 
+= ISaveDataTransferManagerForSaveDataRepair =
+This is "nn::fssrv::sf::ISaveDataTransferManagerForSaveDataRepair".
+
+This was added with [[9.0.0]].
+
+{| class="wikitable" border="1"
+|-
+! Cmd || Name
+|-
+| 0 || [[#GetChallenge]]
+|-
+| 16 || [[#SetKeyPackage]]
+|-
+| 80 || [[#OpenSaveDataExporterAndGetEncryptedKey]]
+|-
+| 81 || [[#PrepareOpenSaveDataImporter]]
+|-
+| 90 || [[#OpenSaveDataImporter]]
+|-
+| 91 || [[#OpenSaveDataImporter2]]
+|-
+| 100 || [[#OpenSaveDataExporterWithKey]]
+|-
+| 110 || [[#OpenSaveDataImporterWithKey]]
+|}
+
+== SetKeyPackage ==
+No input/output, takes a type-0x5 input buffer.
+
+== OpenSaveDataExporterAndGetEncryptedKey ==
+Takes a total of 0x10-bytes of input and a type-0x1A output buffer to receive a RsaEncryptedKey. Returns an [[#ISaveDataDivisionExporter]].
+
+== PrepareOpenSaveDataImporter ==
+Takes a type-0x1A output buffer to receive a RsaEncryptedKey.
+
+== OpenSaveDataImporter ==
+Takes a total of 0x18-bytes of input and two type-0x5 input buffers, returns an [[#ISaveDataDivisionImporter]].
+
+== OpenSaveDataImporter2 ==
+Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+
+== OpenSaveDataExporterWithKey ==
+Takes a total of 0x20-bytes of input, returns an [[#ISaveDataDivisionExporter]].
+
+== OpenSaveDataImporterWithKey ==
+Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
+
 = ISaveDataExporter =
 This is "nn::fssrv::sf::ISaveDataExporter".
+
+This was added with [[4.0.0]].
 
 {| class="wikitable" border="1"
 |-
@@ -1009,8 +1133,6 @@ This is "nn::fssrv::sf::ISaveDataExporter".
 |-
 | 17 || [[#PullInitialData]]
 |}
-
-This was added with [[4.0.0]].
 
 == GetSaveDataInfo ==
 No input/output, takes a type-0x1A [[#SaveDataInfo]] output buffer.
@@ -1029,6 +1151,8 @@ No input/output, takes a type-0x6 output buffer.
 = ISaveDataImporter =
 This is "nn::fssrv::sf::ISaveDataImporter".
 
+This was added with [[4.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
@@ -1041,8 +1165,6 @@ This is "nn::fssrv::sf::ISaveDataImporter".
 |-
 | 17 || [[#Finalize]]
 |}
-
-This was added with [[4.0.0]].
 
 == GetSaveDataInfo ==
 No input/output, takes a type-0x1A [[#GetSaveDataInfo]] output buffer.
@@ -1060,6 +1182,8 @@ No input/output.
 
 = ISaveDataTransferManagerWithDivision =
 This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
+
+This was added with [[5.0.0]].
 
 {| class="wikitable" border="1"
 |-
@@ -1089,8 +1213,6 @@ This is "nn::fssrv::sf::ISaveDataTransferManagerWithDivision".
 |-
 | 69 || [6.0.0+] [[#CancelSuspendingImport]]
 |}
-
-This was added with [[5.0.0]].
 
 == GetChallenge ==
 No input/output, takes a type-0x6 output buffer containing the '''Challenge'''.
@@ -1128,115 +1250,192 @@ Takes an input u64 and a 0x10-byte struct, no output.
 = ISaveDataDivisionExporter =
 This is "nn::fssrv::sf::ISaveDataDivisionExporter".
 
+This was added with [[5.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || SetDivisionCount (Takes an input u32, no output)
+| 0 || [[#SetDivisionCount]]
 |-
-| 1 || [6.0.0+] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)
+| 1 || [6.0.0+] [[#GetSaveDataInfo]]
 |-
-| 16 || OpenSaveDataDiffChunkIterator (No input, returns an [[#ISaveDataChunkIterator]])
+| 16 || [[#OpenSaveDataDiffChunkIterator]]
 |-
-| 48 || OpenSaveDataChunkExporter (Takes an input u32, returns an [[#ISaveDataChunkExporter]])
+| 48 || [[#OpenSaveDataChunkExporter]]
 |-
-| 64 || [6.0.0-8.1.0] FinalizeFullExport (No input, returns two 0x10-byte output structs)
+| 64 || [6.0.0-8.1.0] [[#FinalizeFullExport]]
 |-
-| 65 || [6.0.0-8.1.0] FinalizeDiffExport (No input, returns an output 0x10-byte struct)
+| 65 || [6.0.0-8.1.0] [[#FinalizeDiffExport]]
 |-
-| 66 || [6.0.0+] CancelExport (No input/output)
+| 66 || [6.0.0+] [[#CancelExport]]
 |-
-| 67 || [6.0.0+] SuspendExport (No input/output, takes a type-0x6 output buffer)
+| 67 || [6.0.0+] [[#SuspendExport]]
 |-
-| 70 || [6.0.0+] GetKeySeed (No input, returns an output 0x10-byte struct)
+| 70 || [6.0.0+] [[#GetKeySeed]]
 |-
-| 71 || [6.0.0+] GetInitialDataMac (No input, returns an output 0x10-byte struct)
+| 71 || [6.0.0+] [[#GetInitialDataMac]]
 |-
-| 72 || [6.0.0+] FinalizeExport (No input/output)
+| 72 || [6.0.0+] [[#FinalizeExport]]
 |-
-| 73 || [9.0.0+]
+| 73 || [9.0.0+] [[#GetInitialDataMacKeyGeneration]]
 |-
-| 80 || [6.0.0+] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)
+| 80 || [6.0.0+] [[#GetImportInitialDataAad]]
 |-
-| 81 || [6.0.0+] SetExportInitialDataAad (Takes an input 0x20-byte struct, no output)
+| 81 || [6.0.0+] [[#SetExportInitialDataAad]]
 |-
-| 96 || [6.0.0+] GetReportInfo (No input, returns an output 0x20-byte struct)
+| 96 || [6.0.0+] [[#GetReportInfo]]
 |}
 
-This was added with [[5.0.0]].
+== SetDivisionCount ==
+Takes an input u32, no output.
+
+== OpenSaveDataChunkExporter ==
+Takes an input u32, returns an [[#ISaveDataChunkExporter]].
+
+== FinalizeFullExport ==
+No input, returns two 0x10-byte output structs.
+
+== FinalizeDiffExport ==
+No input, returns an output 0x10-byte struct.
+
+== CancelExport ==
+No input/output.
+
+== SuspendExport ==
+No input/output, takes a type-0x6 output buffer.
+
+== GetKeySeed ==
+No input, returns an output 0x10-byte struct.
+
+== GetInitialDataMac ==
+No input, returns an output 0x10-byte struct.
+
+== FinalizeExport ==
+No input/output.
+
+== SetExportInitialDataAad ==
+Takes an input 0x20-byte struct, no output.
 
 = ISaveDataDivisionImporter =
 This is "nn::fssrv::sf::ISaveDataDivisionImporter".
 
+This was added with [[5.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || [6.0.0+] GetSaveDataInfo (No input/output, takes a type-0x6 output buffer)
+| 0 || [6.0.0+] [[#GetSaveDataInfo]]
 |-
-| 16 || OpenSaveDataDiffChunkIterator (No input, returns an [[#ISaveDataChunkIterator]])
+| 16 || [[#OpenSaveDataDiffChunkIterator]]
 |-
-| 32 || InitializeImport (No input, returns an output u64)
+| 32 || [[#InitializeImport]]
 |-
-| 33 || FinalizeImport (No input/output)
+| 33 || [[#FinalizeImport]]
 |-
-| 34 || [6.0.0+] CancelImport (No input/output)
+| 34 || [6.0.0+] [[#CancelImport]]
 |-
-| 35 || [6.0.0+] GetImportContext (No input/output, takes a type-0x6 output buffer)
+| 35 || [6.0.0+] [[#GetImportContext]]
 |-
-| 36 || [6.0.0+] SuspendImport (No input/output)
+| 36 || [6.0.0+] [[#SuspendImport]]
 |-
-| 48 || OpenSaveDataChunkImporter (Takes an input u32, returns an [[#ISaveDataChunkImporter]])
+| 48 || [[#OpenSaveDataChunkImporter]]
 |-
-| 64 || [6.0.0+] GetImportInitialDataAad (No input, returns an output 0x20-byte struct)
+| 64 || [6.0.0+] [[#GetImportInitialDataAad]]
 |-
-| 80 || [6.0.0+] GetReportInfo (No input, returns an output 0x20-byte struct)
+| 80 || [6.0.0+] [[#GetReportInfo]]
 |}
 
-This was added with [[5.0.0]].
+== GetSaveDataInfo ==
+No input/output, takes a type-0x6 output buffer.
+
+== OpenSaveDataDiffChunkIterator ==
+No input, returns an [[#ISaveDataChunkIterator]].
+
+== InitializeImport ==
+No input, returns an output u64.
+
+== FinalizeImport ==
+No input/output.
+
+== CancelImport ==
+No input/output.
+
+== GetImportContext ==
+No input/output, takes a type-0x6 output buffer.
+
+== SuspendImport ==
+No input/output.
+
+== OpenSaveDataChunkImporter ==
+Takes an input u32, returns an [[#ISaveDataChunkImporter]].
+
+== GetImportInitialDataAad == 
+No input, returns an output 0x20-byte struct.
+
+== GetReportInfo ==
+No input, returns an output 0x20-byte struct.
 
 = ISaveDataChunkIterator =
 This is "nn::fssrv::sf::ISaveDataChunkIterator".
 
+This was added with [[5.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || Next (No input/output)
+| 0 || [[#Next]]
 |-
-| 1 || IsEnd (No input, returns an output u8)
+| 1 || [[#IsEnd]] 
 |-
-| 16 || GetId (No input, returns an output u32)
+| 16 || [[#GetId]] 
 |}
 
-This was added with [[5.0.0]].
+== Next ==
+No input/output.
+
+== IsEnd ==
+No input, returns an output u8.
+
+== GetId ==
+No input, returns an output u32.
 
 = ISaveDataChunkExporter =
 This is "nn::fssrv::sf::ISaveDataChunkExporter".
 
+This was added with [[5.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || Pull (Takes an input u64 and a type-0x6 output buffer, returns an output u64)
+| 0 || [[#Pull]]
 |-
-| 16 || [6.0.0+] GetRestRawDataSize (No input, returns an output u64)
-|-
+| 16 || [6.0.0+] [[#GetRestRawDataSize]]
 |}
 
-This was added with [[5.0.0]].
+== Pull ==
+Takes an input u64 and a type-0x6 output buffer, returns an output u64.
+
+== GetRestRawDataSize ==
+No input, returns an output u64.
 
 = ISaveDataChunkImporter =
 This is "nn::fssrv::sf::ISaveDataChunkImporter".
 
+This was added with [[5.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 0 || Push (Takes an input u64 and a type-0x5 input buffer, no output)
+| 0 || [[#Push]]
 |}
 
-This was added with [[5.0.0]].
+== Push ==
+Takes an input u64 and a type-0x5 input buffer, no output.
 
 = ISaveDataTransferProhibiter =
 This was added with [[6.0.0]].
@@ -1244,40 +1443,22 @@ This was added with [[6.0.0]].
 This doesn't seem to handle any commands (?).
 
 = IMultiCommitManager =
+This was added with [[6.0.0]].
+
 {| class="wikitable" border="1"
 |-
 ! Cmd || Name
 |-
-| 1 || Add (Takes an input [[#IFilesystem]], no output)
+| 1 || [[#Add]]
 |-
-| 2 || Commit (No input/output)
+| 2 || [[#Commit]]
 |}
 
-This was added with [[6.0.0]].
+== Add ==
+Takes an input [[#IFilesystem]], no output.
 
-= IUnknown0 =
-This was added with [9.0.0+].
-
-{| class="wikitable" border="1"
-|-
-! Cmd || Name || Notes
-|-
-| 0 || || 
-|-
-| 16 || || 
-|-
-| 80 || || Takes a total of 0x10-bytes of input and a type-0x1A output buffer, returns an [[#ISaveDataDivisionExporter]].
-|-
-| 81 || || 
-|-
-| 90 || || Takes a total of 0x18-bytes of input and two type-0x5 input buffers, returns an [[#ISaveDataDivisionImporter]].
-|-
-| 91 || || Takes a total of 0x18-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
-|-
-| 100 || || Takes a total of 0x20-bytes of input, returns an [[#ISaveDataDivisionExporter]].
-|-
-| 110 || || Takes a total of 0x28-bytes of input and a type-0x5 input buffer, returns an [[#ISaveDataDivisionImporter]].
-|}
+== Commit ==
+No input/output.
 
 = FileSystemType =
 {| class="wikitable" border="1"
