@@ -171,33 +171,37 @@ This is a 0x28-byte struct.
 
 This is "nn::nim::detail::IShopServiceManager".
 
-| Cmd | Name                                                                                                           |
-| --- | -------------------------------------------------------------------------------------------------------------- |
-| 0   | RequestDeviceAuthenticationToken                                                                               |
-| 1   | \[3.0.0+\] RequestCachedDeviceAuthenticationToken                                                              |
-| 100 | RequestRegisterDeviceAccount                                                                                   |
-| 101 | RequestUnregisterDeviceAccount                                                                                 |
-| 102 | RequestDeviceAccountStatus                                                                                     |
-| 103 | GetDeviceAccountInfo                                                                                           |
-| 104 | RequestDeviceRegistrationInfo                                                                                  |
-| 105 | RequestTransferDeviceAccount                                                                                   |
-| 106 | \[3.0.0+\] RequestSyncRegistration                                                                             |
-| 107 | \[3.0.0+\] IsOwnDeviceId                                                                                       |
-| 200 | RequestRegisterNotificationToken                                                                               |
-| 300 | RequestUnlinkDevice                                                                                            |
-| 301 | RequestUnlinkDeviceIntegrated                                                                                  |
-| 302 | RequestLinkDevice                                                                                              |
-| 303 | HasDeviceLink                                                                                                  |
-| 304 | \[4.0.0+\] RequestUnlinkDeviceAll                                                                              |
-| 305 | \[4.0.0+\] RequestCreateVirtualAccount                                                                         |
-| 306 | \[4.0.0+\] RequestDeviceLinkStatus                                                                             |
-| 400 | GetAccountByVirtualAccount                                                                                     |
-| 401 | \[6.0.0+\] GetVirtualAccount                                                                                   |
-| 500 | RequestSyncTicket                                                                                              |
-| 501 | RequestDownloadTicket                                                                                          |
-| 502 | \[4.0.0+\] RequestDownloadTicketForPrepurchasedContents. \[6.0.0+\]: Now takes an additional 4-bytes of input. |
-| 503 | \[9.0.0+\]                                                                                                     |
-| 504 | \[9.0.0+\]                                                                                                     |
+| Cmd | Name                                                                                                                  |
+| --- | --------------------------------------------------------------------------------------------------------------------- |
+| 0   | RequestDeviceAuthenticationToken                                                                                      |
+| 1   | \[3.0.0+\] RequestCachedDeviceAuthenticationToken                                                                     |
+| 100 | RequestRegisterDeviceAccount                                                                                          |
+| 101 | RequestUnregisterDeviceAccount                                                                                        |
+| 102 | RequestDeviceAccountStatus                                                                                            |
+| 103 | GetDeviceAccountInfo                                                                                                  |
+| 104 | RequestDeviceRegistrationInfo                                                                                         |
+| 105 | RequestTransferDeviceAccount                                                                                          |
+| 106 | \[3.0.0+\] RequestSyncRegistration                                                                                    |
+| 107 | \[3.0.0+\] IsOwnDeviceId                                                                                              |
+| 200 | RequestRegisterNotificationToken                                                                                      |
+| 300 | RequestUnlinkDevice                                                                                                   |
+| 301 | RequestUnlinkDeviceIntegrated                                                                                         |
+| 302 | RequestLinkDevice                                                                                                     |
+| 303 | HasDeviceLink                                                                                                         |
+| 304 | \[4.0.0+\] RequestUnlinkDeviceAll                                                                                     |
+| 305 | \[4.0.0+\] RequestCreateVirtualAccount                                                                                |
+| 306 | \[4.0.0+\] RequestDeviceLinkStatus                                                                                    |
+| 400 | GetAccountByVirtualAccount                                                                                            |
+| 401 | \[6.0.0+\] GetVirtualAccount                                                                                          |
+| 500 | RequestSyncTicketLegacy (\[1.0.0-8.1.0\] RequestSyncTicket)                                                           |
+| 501 | RequestDownloadTicket                                                                                                 |
+| 502 | \[4.0.0+\] [\#RequestDownloadTicketForPrepurchasedContents](#RequestDownloadTicketForPrepurchasedContents "wikilink") |
+| 503 | \[9.0.0+\] RequestSyncTicket                                                                                          |
+| 504 | \[9.0.0+\] RequestDownloadTicketForPrepurchasedContents2                                                              |
+
+## RequestDownloadTicketForPrepurchasedContents
+
+\[6.0.0+\] Now takes an additional 4-bytes of input.
 
 # nim:eca
 
