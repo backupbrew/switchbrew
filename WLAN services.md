@@ -110,6 +110,9 @@ of input.
 \[5.0.0+\] GetAllowedChannels now returns a total of 4-bytes of output
 instead of 0x50, and now takes a type-0xA output buffer.
 
+\[9.0.0+\] Almost all cmds had input/output changed / cmds moved around
+(?).
+
 # wlan:lg
 
 This is "nn::wlan::detail::ILocalGetFrame".
