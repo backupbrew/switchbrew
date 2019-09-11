@@ -45,9 +45,9 @@ This was added with [2.0.0+].
 |-
 | 20301 || [8.0.0+] [[#RequestSuspendDeliveryTask]]
 |-
-| 20400 || [9.0.0+] RegisterSystemApplicationDeliveryTask
+| 20400 || [9.0.0+] [[#RegisterSystemApplicationDeliveryTask]]
 |-
-| 20401 || [9.0.0+] UnregisterSystemApplicationDeliveryTask
+| 20401 || [9.0.0+] [[#UnregisterSystemApplicationDeliveryTask]]
 |-
 | 30100 || SetPassphrase
 |-
@@ -91,6 +91,12 @@ Takes a total of 8-bytes of input, returns an [[#INotifierService]].
 
 === RequestSuspendDeliveryTask ===
 Takes a total of 8-bytes of input, returns an [[#IDeliveryTaskSuspensionService]].
+
+== RegisterSystemApplicationDeliveryTask ==
+Takes an input u64 <code>nn::ApplicationId</code>, no output.
+
+== UnregisterSystemApplicationDeliveryTask ==
+Takes an input u64 <code>nn::ApplicationId</code>, no output.
 
 === GetDeliveryList ===
 Takes a type-0x6 output buffer, returns a total of 4-bytes of output.

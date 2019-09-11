@@ -26,30 +26,30 @@ This is "nn::bcat::detail::ipc::IBcatService".
 
 This was added with \[2.0.0+\].
 
-| Cmd   | Name                                                                                                    |
-| ----- | ------------------------------------------------------------------------------------------------------- |
-| 10100 | [\#RequestSyncDeliveryCache](#RequestSyncDeliveryCache "wikilink")                                      |
-| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                                    |
-| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                               |
-| 20100 | [\#RequestSyncDeliveryCacheWithApplicationId](#RequestSyncDeliveryCacheWithApplicationId "wikilink")    |
-| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                                    |
-| 20300 | \[8.0.0+\] [\#GetDeliveryCacheStorageUpdateNotifier](#GetDeliveryCacheStorageUpdateNotifier "wikilink") |
-| 20301 | \[8.0.0+\] [\#RequestSuspendDeliveryTask](#RequestSuspendDeliveryTask "wikilink")                       |
-| 20400 | \[9.0.0+\] RegisterSystemApplicationDeliveryTask                                                        |
-| 20401 | \[9.0.0+\] UnregisterSystemApplicationDeliveryTask                                                      |
-| 30100 | SetPassphrase                                                                                           |
-| 30101 | \[2.0.0-2.3.0\]                                                                                         |
-| 30102 | \[2.0.0-2.3.0\]                                                                                         |
-| 30200 | \[3.0.0+\] RegisterDeliveryTask                                                                         |
-| 30201 | \[3.0.0+\] UnregisterDeliveryTask                                                                       |
-| 30202 | \[3.0.0+\] BlockDeliveryTask                                                                            |
-| 30203 | \[3.0.0+\] UnblockDeliveryTask                                                                          |
-| 30300 | \[8.0.0+\] RegisterSystemApplicationDeliveryTasks                                                       |
-| 90100 | GetDeliveryTaskList                                                                                     |
-| 90200 | [\#GetDeliveryList](#GetDeliveryList "wikilink")                                                        |
-| 90201 | \[3.0.0+\] ClearDeliveryCacheStorage                                                                    |
-| 90202 | \[8.0.0+\] ClearDeliveryTaskSubscriptionStatus                                                          |
-| 90300 | \[3.0.0+\] GetPushNotificationLog                                                                       |
+| Cmd   | Name                                                                                                        |
+| ----- | ----------------------------------------------------------------------------------------------------------- |
+| 10100 | [\#RequestSyncDeliveryCache](#RequestSyncDeliveryCache "wikilink")                                          |
+| 10101 | \[5.0.0+\] RequestSyncDeliveryCacheWithDirectoryName                                                        |
+| 10200 | \[5.0.0+\] CancelSyncDeliveryCacheRequest                                                                   |
+| 20100 | [\#RequestSyncDeliveryCacheWithApplicationId](#RequestSyncDeliveryCacheWithApplicationId "wikilink")        |
+| 20101 | \[5.0.0+\] RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName                                        |
+| 20300 | \[8.0.0+\] [\#GetDeliveryCacheStorageUpdateNotifier](#GetDeliveryCacheStorageUpdateNotifier "wikilink")     |
+| 20301 | \[8.0.0+\] [\#RequestSuspendDeliveryTask](#RequestSuspendDeliveryTask "wikilink")                           |
+| 20400 | \[9.0.0+\] [\#RegisterSystemApplicationDeliveryTask](#RegisterSystemApplicationDeliveryTask "wikilink")     |
+| 20401 | \[9.0.0+\] [\#UnregisterSystemApplicationDeliveryTask](#UnregisterSystemApplicationDeliveryTask "wikilink") |
+| 30100 | SetPassphrase                                                                                               |
+| 30101 | \[2.0.0-2.3.0\]                                                                                             |
+| 30102 | \[2.0.0-2.3.0\]                                                                                             |
+| 30200 | \[3.0.0+\] RegisterDeliveryTask                                                                             |
+| 30201 | \[3.0.0+\] UnregisterDeliveryTask                                                                           |
+| 30202 | \[3.0.0+\] BlockDeliveryTask                                                                                |
+| 30203 | \[3.0.0+\] UnblockDeliveryTask                                                                              |
+| 30300 | \[8.0.0+\] RegisterSystemApplicationDeliveryTasks                                                           |
+| 90100 | GetDeliveryTaskList                                                                                         |
+| 90200 | [\#GetDeliveryList](#GetDeliveryList "wikilink")                                                            |
+| 90201 | \[3.0.0+\] ClearDeliveryCacheStorage                                                                        |
+| 90202 | \[8.0.0+\] ClearDeliveryTaskSubscriptionStatus                                                              |
+| 90300 | \[3.0.0+\] GetPushNotificationLog                                                                           |
 
 ### RequestSyncDeliveryCache
 
@@ -74,6 +74,14 @@ Takes a total of 8-bytes of input, returns an
 
 Takes a total of 8-bytes of input, returns an
 [\#IDeliveryTaskSuspensionService](#IDeliveryTaskSuspensionService "wikilink").
+
+## RegisterSystemApplicationDeliveryTask
+
+Takes an input u64 `nn::ApplicationId`, no output.
+
+## UnregisterSystemApplicationDeliveryTask
+
+Takes an input u64 `nn::ApplicationId`, no output.
 
 ### GetDeliveryList
 
