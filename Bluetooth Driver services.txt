@@ -31,7 +31,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 9 || CancelDiscovery
 |-
-| 10 || CreateBond
+| 10 || [[#CreateBond]]
 |-
 | 11 || RemoveBond
 |-
@@ -57,7 +57,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 22 || HidGetReport
 |-
-| 23 || HidWakeController
+| 23 || [[#HidWakeController]]
 |-
 | 24 || HidAddPairedDevice
 |-
@@ -115,7 +115,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 51 || [5.0.0+] SetLeConnectionParameter
 |-
-| 52 || [5.0.0+] SetLeDefaultConnectionParameter
+| 52 || [5.0.0+] [[#SetLeDefaultConnectionParameter]]
 |-
 | 53 || [5.0.0+] SetLeAdvertiseData
 |-
@@ -147,7 +147,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 67 ([5.0.0-5.0.2] 66) || LeClientCancelConnection
 |-
-| 68 ([5.0.0-5.0.2] 67) || [5.0.0+] LeClientDisconnect
+| 68 ([5.0.0-5.0.2] 67) || [5.0.0+] [[#LeClientDisconnect]]
 |-
 | 69 ([5.0.0-5.0.2] 68) || [5.0.0+] LeClientGetAttributes
 |-
@@ -159,7 +159,7 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 |-
 | 73 ([5.0.0-5.0.2] 72) || [5.0.0+] UnregisterLeServer
 |-
-| 74 ([5.0.0-5.0.2] 73) || [5.0.0+] LeServerConnect
+| 74 ([5.0.0-5.0.2] 73) || [5.0.0+] [[#LeServerConnect]]
 |-
 | 75 || [5.0.0+] CreateLeService
 |-
@@ -220,10 +220,35 @@ The code seems to be derived from a broadcom stack. A good starting point for si
 
 Various cmdids were moved with [4.0.0+] and [5.0.0+].
 
+== CreateBond ==
+Takes a total of 0x6-bytes of input and a type-0x19 input buffer, no output.
+
+[9.0.0+] Now only takes a total of 0xC-bytes of input without a buffer, no output.
+
+== HidWakeController ==
+Takes a total of 0x6-bytes of input, no output.
+
+[9.0.0+] Now takes a total of 0x8-bytes of input, no output.
+
 == HidGetReportEventInfo ==
 No input, takes a type-0xA output buffer and returns 4-bytes of output.
 
 [7.0.0+] No longer takes a buffer or returns output, now returns an output handle.
+
+== SetLeDefaultConnectionParameter ==
+Takes a total of 0x14-bytes of input, no output.
+
+[9.0.0+] Now takes a total of 0xC-bytes of input, no output.
+
+== LeClientDisconnect ==
+Takes a total of 0xC-bytes of input, no output.
+
+[9.0.0+] Now takes a total of 0x4-bytes of input, no output.
+
+== LeServerConnect ==
+Takes a total of 0x7-bytes of input, no output.
+
+[9.0.0+] Now takes a total of 1-byte of input, no output.
 
 = bt =
 This is "nn::bluetooth::IBluetoothUser".
