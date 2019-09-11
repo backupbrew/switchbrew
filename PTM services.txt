@@ -202,13 +202,13 @@ This is "nn::ts::server::IMeasurementServer".
 |-
 ! Cmd || Name
 |-
-| 0 || GetTemperatureRange
+| 0 || [[#GetTemperatureRange]]
 |-
-| 1 || GetTemperature
+| 1 || [[#GetTemperature]]
 |-
-| 2 || SetMeasurementMode
+| 2 || [[#SetMeasurementMode]]
 |-
-| 3 || GetTemperatureMilliC
+| 3 || [[#GetTemperatureMilliC]]
 |-
 | 4 || [8.0.0+] ? (Takes a total of 4-bytes of input, returns an [[#IUnknown0]])
 |}
@@ -227,6 +227,28 @@ Added with [8.0.0+].
 | 2 || 
 |-
 | 3 || 
+|}
+
+== GetTemperatureRange ==
+Takes an u8 [[#Location]] and returns an s32 minimum temperature + s32 maximum temperature.
+
+== GetTemperature ==
+Takes an u8 [[#Location]] and returns an output s32.
+
+== SetMeasurementMode ==
+Takes an u8 [[#Location]] and an u8 MeasurementMode.
+
+== GetTemperatureMilliC ==
+Takes an u8 [[#Location]] and returns an output s32.
+
+== Location ==
+{| class="wikitable" border="1"
+|-
+! Value || Name
+|-
+| 0 || Internal
+|-
+| 1 || External
 |}
 
 = pcm =

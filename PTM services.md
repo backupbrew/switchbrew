@@ -178,10 +178,10 @@ This is "nn::ts::server::IMeasurementServer".
 
 | Cmd | Name                                                                                              |
 | --- | ------------------------------------------------------------------------------------------------- |
-| 0   | GetTemperatureRange                                                                               |
-| 1   | GetTemperature                                                                                    |
-| 2   | SetMeasurementMode                                                                                |
-| 3   | GetTemperatureMilliC                                                                              |
+| 0   | [\#GetTemperatureRange](#GetTemperatureRange "wikilink")                                          |
+| 1   | [\#GetTemperature](#GetTemperature "wikilink")                                                    |
+| 2   | [\#SetMeasurementMode](#SetMeasurementMode "wikilink")                                            |
+| 3   | [\#GetTemperatureMilliC](#GetTemperatureMilliC "wikilink")                                        |
 | 4   | \[8.0.0+\] ? (Takes a total of 4-bytes of input, returns an [\#IUnknown0](#IUnknown0 "wikilink")) |
 
 ## IUnknown0
@@ -194,6 +194,33 @@ Added with \[8.0.0+\].
 | 1   |      |
 | 2   |      |
 | 3   |      |
+
+## GetTemperatureRange
+
+Takes an u8 [\#Location](#Location "wikilink") and returns an s32
+minimum temperature + s32 maximum temperature.
+
+## GetTemperature
+
+Takes an u8 [\#Location](#Location "wikilink") and returns an output
+s32.
+
+## SetMeasurementMode
+
+Takes an u8 [\#Location](#Location "wikilink") and an u8
+MeasurementMode.
+
+## GetTemperatureMilliC
+
+Takes an u8 [\#Location](#Location "wikilink") and returns an output
+s32.
+
+## Location
+
+| Value | Name     |
+| ----- | -------- |
+| 0     | Internal |
+| 1     | External |
 
 # pcm
 
