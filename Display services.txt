@@ -217,7 +217,7 @@ This is "nn::visrv::sf::IApplicationRootService".
 Returns an [[#IApplicationDisplayService]]. Takes an input u32, user-processes use 0 or 1, with 0 for regular-applications normally. 0 = user-service(vi:u), 1 = system/manager service (vi:s/vi:m). Returns an error when using value 1 with vi:u(same error listed below for IApplicationDisplayService for unavailable commands), however passing 1 to vi:s/vi:m results in the IApplicationDisplayService having greater privileges.
 
 == GetDisplayServiceWithProxyNameExchange ==
-Returns an [[#IApplicationDisplayService]].
+Takes an input u32, and returns an [[#IApplicationDisplayService]].
 
 = vi:s =
 This is "nn::visrv::sf::ISystemRootService".

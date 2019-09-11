@@ -209,7 +209,7 @@ IApplicationDisplayService having greater privileges.
 
 ## GetDisplayServiceWithProxyNameExchange
 
-Returns an
+Takes an input u32, and returns an
 [\#IApplicationDisplayService](#IApplicationDisplayService "wikilink").
 
 # vi:s
