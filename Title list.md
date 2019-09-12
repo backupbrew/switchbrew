@@ -2083,6 +2083,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 0100000000002128 |          | HidInspectionToolProd                                                |                                                          |
 | 010000000000212C |          | ExhibitionMenu                                                       |                                                          |
 | 0100000000002130 |          | LuciaConverter                                                       |                                                          |
+| 0100000000002133 |          | CalDumper                                                            |                                                          |
+| 0100000000002134 |          | AnalogStickEvaluationTool                                            |                                                          |
 
 ## System Debug Modules
 
