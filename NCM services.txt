@@ -220,10 +220,8 @@ This is "nn::lr::IAddOnContentLocationResolver".
 ==== RefreshApplicationAddOnContent ====
 Takes an type-5 buffer containing application title ids. Unregisters entries with application ids absent from the input buffer.
 
-
 ==== UnregisterApplicationAddOnContent====
 Takes an u64 '''TitleID''' for the application to unregister add on content entries for.
-
 
 === Location List Entry ===
 Total size is 0x320 bytes. 
