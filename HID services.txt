@@ -961,9 +961,9 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x1 || Unknown
+| 0x0 || 0x1 || Type value, must match certain values (not used with the below table).
 |-
-| 0x1 || 0x1 || Unknown
+| 0x1 || 0x1 || Additional type field, similar to the one from the old struct.
 |-
 | 0x2 || 0x2 || Padding
 |-

@@ -774,15 +774,15 @@ This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 \[9.0.0+\]:
 
-| Offset | Size | Description                |
-| ------ | ---- | -------------------------- |
-| 0x0    | 0x1  | Unknown                    |
-| 0x1    | 0x1  | Unknown                    |
-| 0x2    | 0x2  | Padding                    |
-| 0x4    | 0x4  | RGBA Single Body Color     |
-| 0x8    | 0x4  | RGBA Single Buttons Color  |
-| 0xC    | 0x4  | RGBA Unknown Body Color    |
-| 0x10   | 0x4  | RGBA Unknown Buttons Color |
+| Offset | Size | Description                                                            |
+| ------ | ---- | ---------------------------------------------------------------------- |
+| 0x0    | 0x1  | Type value, must match certain values (not used with the below table). |
+| 0x1    | 0x1  | Additional type field, similar to the one from the old struct.         |
+| 0x2    | 0x2  | Padding                                                                |
+| 0x4    | 0x4  | RGBA Single Body Color                                                 |
+| 0x8    | 0x4  | RGBA Single Buttons Color                                              |
+| 0xC    | 0x4  | RGBA Unknown Body Color                                                |
+| 0x10   | 0x4  | RGBA Unknown Buttons Color                                             |
 
 This is a 0x10-byte struct. \[9.0.0+\] This is a 0x14-byte struct.
 
