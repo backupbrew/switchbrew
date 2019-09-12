@@ -2370,7 +2370,7 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 |-
 |rowspan="2"| 1 || [1.0.0-3.0.2]
 |-
-| [7.0.0+]
+| [7.0.0+] IsAutoPowerDownRequested
 |-
 | 2 || [1.0.0-3.0.2]
 |-
