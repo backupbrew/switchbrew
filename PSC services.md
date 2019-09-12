@@ -240,6 +240,11 @@ This was added with \[9.0.0+\].
 | 10  |      |
 | 11  |      |
 
+### Cmd10
+
+Opens a session for [psc:l](#psc:l "wikilink") and returns it's
+interface.
+
 # time:m
 
 This is "nn::timesrv::detail::<service::IPowerStateRequestHandler>".
