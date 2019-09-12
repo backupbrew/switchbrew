@@ -1967,7 +1967,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <tr class="odd">
 <td><p>010000000000101D</p></td>
 <td></td>
-<td><p>encounter (LibraryAppletEncounter)</p></td>
+<td><p>EncounterSys (LibraryAppletPreomiaSys)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
@@ -2249,6 +2249,18 @@ Note: No 01000000000020XX titles exist on retail systems.
 <td><p>01005C6001F98000</p></td>
 <td></td>
 <td><p>BcatTestApp16</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>010070000E3C0000</p></td>
+<td></td>
+<td><p>EncounterUsr (LibraryAppletPreomiaUsr)</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>010086000E49C000</p></td>
+<td></td>
+<td><p>EncounterUsrDummy (LibraryAppletPreomiaUsrDummy)</p></td>
 <td></td>
 </tr>
 <tr class="even">

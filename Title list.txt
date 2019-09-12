@@ -290,7 +290,7 @@ Decimal versions use the format:
 |-
 | 010000000000101C || || userMigration (LibraryAppletUserMigration) || Currently not present on retail devices.
 |-
-| 010000000000101D || || encounter (LibraryAppletEncounter) || Currently not present on retail devices.
+| 010000000000101D || || EncounterSys (LibraryAppletPreomiaSys) || Currently not present on retail devices.
 |-
 | 010000000000101E || || || This title is referenced by [5.0.0+] [[NIM_services|NIM]] when it accesses the [[Network#pearljam|pearljam]] server, but does not exist on retail systems currently.
 |-
@@ -582,6 +582,10 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 0100462001F96000 || || BcatTestApp15 ||
 |-
 | 01005C6001F98000 || || BcatTestApp16 ||
+|-
+| 010070000E3C0000 || || EncounterUsr (LibraryAppletPreomiaUsr) ||
+|-
+| 010086000E49C000 || || EncounterUsrDummy (LibraryAppletPreomiaUsrDummy) ||
 |-
 | 0100810002D5A000 || || ShopMonitaringTool ||
 |}
