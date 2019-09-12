@@ -317,7 +317,13 @@ This is extracted directly from
 | 13    | \[5.0.0+\] DramId\_MarikoHoagSamsung8gb                                |
 | 14    | \[7.0.0+\] DramId\_MarikoHoagHynix4gb (\[5.0.0-6.2.0\] Reserved)       |
 | 15    | \[7.0.0+\] DramId\_MarikoHoagMicron4gb (\[5.0.0-6.2.0\] Reserved)      |
-| 16    | \[8.0.0+\] DramId\_MarikoUnkSamsung4gb                                 |
+| 16    | \[8.0.0+\] DramId\_MarikoIowaSamsung4gbY                               |
+| 17    | \[9.0.0+\] DramId\_MarikoIowaSamsung1y4gbX                             |
+| 18    | \[9.0.0+\] DramId\_MarikoIowaSamsung1y8gbX                             |
+| 19    | \[9.0.0+\] DramId\_MarikoHoagSamsung1y4gbX                             |
+| 20    | \[9.0.0+\] DramId\_MarikoIowaSamsung1y4gbY                             |
+| 21    | \[9.0.0+\] DramId\_MarikoIowaSamsung1y8gbY                             |
+| 22    | \[9.0.0+\] DramId\_MarikoIowaSamsung1y4gbA                             |
 
 [PCV](PCV%20services.md "wikilink") selects memory training tables based
 on DramId.
@@ -493,11 +499,65 @@ on DramId.
 <tr class="odd">
 <td><p>T214</p></td>
 <td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
-<td><p>MarikoUnkSamsung4gb</p></td>
+<td><p>DramId_MarikoIowaSamsung4gbY</p></td>
 <td><p>0x03</p></td>
 <td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
 <code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoIowaSamsung1y4gbX</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoIowaSamsung1y8gbX</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoHoagSamsung1y4gbX</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoIowaSamsung1y4gbY</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="even">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoIowaSamsung1y8gbY</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.2_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.2_V2.0</code></p></td>
+</tr>
+<tr class="odd">
+<td><p>T214</p></td>
+<td><p>nx-abca2, nx-abcb, nx-abcc</p></td>
+<td><p>DramId_MarikoIowaSamsung1y4gbA</p></td>
+<td><p>0x03</p></td>
+<td><p><code>01_204000_NoCfgVersion_V0.4.5_V2.0</code><br />
+<code>01_1331200.0_NoCfgVersion_V0.4.5_V2.0</code><br />
+<code>01_1600000_NoCfgVersion_V0.4.5_V2.0</code></p></td>
 </tr>
 </tbody>
 </table>

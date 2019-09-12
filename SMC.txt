@@ -345,7 +345,25 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |  [7.0.0+] DramId_MarikoHoagMicron4gb ([5.0.0-6.2.0] Reserved)
 |-
 |  16
-|  [8.0.0+] DramId_MarikoUnkSamsung4gb
+|  [8.0.0+] DramId_MarikoIowaSamsung4gbY
+|-
+|  17
+|  [9.0.0+] DramId_MarikoIowaSamsung1y4gbX
+|-
+|  18
+|  [9.0.0+] DramId_MarikoIowaSamsung1y8gbX
+|-
+|  19
+|  [9.0.0+] DramId_MarikoHoagSamsung1y4gbX
+|-
+|  20
+|  [9.0.0+] DramId_MarikoIowaSamsung1y4gbY
+|-
+|  21
+|  [9.0.0+] DramId_MarikoIowaSamsung1y8gbY
+|-
+|  22
+|  [9.0.0+] DramId_MarikoIowaSamsung1y4gbA
 |}
 
 [[PCV_services|PCV]] selects memory training tables based on DramId.
@@ -516,12 +534,66 @@ This is extracted directly from [[Fuse_registers#FUSE_RESERVED_ODM4|FUSE_RESERVE
 |-
 |  T214
 |  nx-abca2, nx-abcb, nx-abcc
-|  MarikoUnkSamsung4gb
+|  DramId_MarikoIowaSamsung4gbY
 |  0x03
 |  
  01_204000_NoCfgVersion_V0.4.2_V2.0
  01_1331200.0_NoCfgVersion_V0.4.2_V2.0
  01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoIowaSamsung1y4gbX
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoIowaSamsung1y8gbX
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoHoagSamsung1y4gbX
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoIowaSamsung1y4gbY
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoIowaSamsung1y8gbY
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.2_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.2_V2.0
+ 01_1600000_NoCfgVersion_V0.4.2_V2.0
+|-
+|  T214
+|  nx-abca2, nx-abcb, nx-abcc
+|  DramId_MarikoIowaSamsung1y4gbA
+|  0x03
+|  
+ 01_204000_NoCfgVersion_V0.4.5_V2.0
+ 01_1331200.0_NoCfgVersion_V0.4.5_V2.0
+ 01_1600000_NoCfgVersion_V0.4.5_V2.0
 |}
 
 '''nx-abca2''' ('''Icosa''' or '''Hoag''' in '''Erista''', '''Iowa''' or '''Hoag''' in '''Mariko''') hardware types are variations of the retail and EDEV form factors.
