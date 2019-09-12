@@ -247,7 +247,7 @@ This is "nn::timesrv::detail::service::ITimeZoneService".
 |-
 | 7 || [9.0.0+] SetDeviceLocationNameWithTimeZoneRule || 
 |-
-| 8 || [9.0.0+] ParseTimeZoneBinary || 
+| 8 || [9.0.0+] ParseTimeZoneBinary || Stubbed, return 0x7BC74. 
 |-
 | 20 || [9.0.0+] GetDeviceLocationNameOperationEventReadableHandle || 
 |-
