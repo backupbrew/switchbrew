@@ -748,21 +748,19 @@ This is a 0x20-byte struct.
 
 This is a 0x408-byte struct. \[9.0.0+\] This is a 0x488-byte struct.
 
-\[9.0.0+\] The max array entries is now 0x11?
-
 This contains a list of all controllers, including non-virtual
 controllers.
 
 ### HdlsStateListEntry
 
-| Offset                                                    | Size                                                | Description                                                                                                                                              |
-| --------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0                                                       | 0x8                                                 | HdlsHandle                                                                                                                                               |
-| 0x8                                                       | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"). With [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink") this is only used when creating new devices. |
-| 0x8 + [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size | 0x24                                                | [\#HdlsState](#HdlsState "wikilink")                                                                                                                     |
-| 0x3C                                                      | 0x4                                                 | Padding (removed with \[9.0.0+\]?)                                                                                                                       |
+| Offset                                                                           | Size                                                | Description                                                                                                                                              |
+| -------------------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0                                                                              | 0x8                                                 | HdlsHandle                                                                                                                                               |
+| 0x8                                                                              | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size | [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink"). With [\#ApplyHdlsStateList](#ApplyHdlsStateList "wikilink") this is only used when creating new devices. |
+| 0x8 + [\#HdlsDeviceInfo](#HdlsDeviceInfo "wikilink") size, with 8-byte alignment | 0x24                                                | [\#HdlsState](#HdlsState "wikilink")                                                                                                                     |
+| <Immediately following the above>                                                | 0x4                                                 | Padding                                                                                                                                                  |
 
-This is a 0x40-byte struct.
+This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 ## HdlsDeviceInfo
 
@@ -773,7 +771,16 @@ This is a 0x40-byte struct.
 | 0x8    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                                                                                                                                          |
 | 0xC    | 0x1  | Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller. |
 | 0xD    | 0x3  | Padding                                                                                                                                                                                                                                                                                                                                                                                            |
-| 0x10   | 0x4  | \[9.0.0+\] Unknown                                                                                                                                                                                                                                                                                                                                                                                 |
+
+\[9.0.0+\]:
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x1  | Unknown     |
+| 0x1    | 0x1  | Unknown     |
+| 0x2    | 0x2  | Padding     |
+| 0x4    | 0x8  | Unknown     |
+| 0xC    | 0x8  | Unknown     |
 
 This is a 0x10-byte struct. \[9.0.0+\] This is a 0x14-byte struct.
 
