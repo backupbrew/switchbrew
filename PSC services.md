@@ -481,7 +481,7 @@ This was added with \[9.0.0+\].
 
 ## Cmd0
 
-Takes an input u32 SenderID and an input u64 (unused, official software
+Takes an input u32 **InsID** and an input u64 (unused, official software
 passes struct pointer). Returns an output Event handle with autoclear
 disabled.
 
