@@ -1571,7 +1571,7 @@ No input, returns the result of calling [[PPC_services#apm:sys|GetCurrentPerform
 === GetOperationModeSystemInfo ===
 No input, returns an output u32.
 
-This returns the output from omm [[#Cmd26]].
+This returns the output from [[#GetOperationModeSystemInfo_2|omm GetOperationModeSystemInfo]].
 
 == ISelfController ==
 {| class="wikitable" border="1"

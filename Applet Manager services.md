@@ -1800,7 +1800,8 @@ No input, returns the result of calling
 
 No input, returns an output u32.
 
-This returns the output from omm [\#Cmd26](#Cmd26 "wikilink").
+This returns the output from [omm
+GetOperationModeSystemInfo](#GetOperationModeSystemInfo_2 "wikilink").
 
 ## ISelfController
 
