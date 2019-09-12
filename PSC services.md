@@ -222,9 +222,14 @@ This was added with \[9.0.0+\].
 | 0   |      |
 | 1   |      |
 
+Cmd0/cmd1: no input, returns an
+[\#ISteadyClockAlarm](#ISteadyClockAlarm "wikilink").
+
 ## ISteadyClockAlarm
 
 This is "nn::timesrv::detail::<service::ISteadyClockAlarm>".
+
+This was added with \[9.0.0+\].
 
 | Cmd | Name |
 | --- | ---- |

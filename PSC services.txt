@@ -300,8 +300,12 @@ This was added with [9.0.0+].
 | 1 ||
 |}
 
+Cmd0/cmd1: no input, returns an [[#ISteadyClockAlarm]].
+
 == ISteadyClockAlarm ==
 This is "nn::timesrv::detail::service::ISteadyClockAlarm".
+
+This was added with [9.0.0+].
 
 {| class="wikitable" border="1"
 |-
