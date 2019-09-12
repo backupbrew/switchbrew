@@ -436,7 +436,7 @@ This is a bitfield describing which controller styles are supported.
 |-
 | 9
 | NpadLucia
-| Unknown.
+| SNES controller.
 |-
 | 10-28
 | Reserved

@@ -349,7 +349,7 @@ This is a bitfield describing which controller styles are supported.
 | 6     | NpadPalma        | Poké Ball Plus controller.               |
 | 7     | NpadLark         | NES/Famicom controller.                  |
 | 8     | NpadHandheldLark | NES/Famicom controller in handheld mode. |
-| 9     | NpadLucia        | Unknown.                                 |
+| 9     | NpadLucia        | SNES controller.                         |
 | 10-28 | Reserved         |                                          |
 | 29    | NpadSystemExt    | Generic external controller.             |
 | 30    | NpadSystem       | Generic controller.                      |
