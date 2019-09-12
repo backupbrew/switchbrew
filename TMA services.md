@@ -40,6 +40,7 @@ This is "nn::tma::IHtcManager".
 | 11  | \[6.0.0+\] GetWorkingDirectoryPath     |
 | 12  | \[6.0.0+\] GetWorkingDirectoryPathSize |
 | 13  | \[6.0.0+\] RunOnHost                   |
+| 14  | \[9.0.0+\]                             |
 
 # htcs
 
@@ -102,8 +103,7 @@ This is "nn::htc::tenv::IService".
 
 This is "nn::tma::IFileManager".
 
-This service is not normally present on retail
-units.
+This service is not normally present on retail units.
 
 | Cmd | Name                 | Notes                                                             |
 | --- | -------------------- | ----------------------------------------------------------------- |
