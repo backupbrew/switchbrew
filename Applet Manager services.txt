@@ -2374,14 +2374,15 @@ This is "nn::idle::detail::IPolicyManagerSystem"
 |-
 | 2 || [1.0.0-3.0.2]
 |-
-| 3 || SetHandlingContext
+| 3 || [[#SetHandlingContext]]
 |-
 | 4 || LoadAndApplySettings
 |-
 | 5 || ReportUserIsActive
 |}
 
-[3.0.0+] SetHandlingContext now takes an additional 0x10-bytes of input.
+== SetHandlingContext ==
+[3.0.0+] Now takes an additional 0x10-bytes of input.
 
 = omm =
 This is "nn::omm::detail::IOperationModeManager"
