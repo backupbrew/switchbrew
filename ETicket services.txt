@@ -61,7 +61,7 @@ This is "nn::es::IETicketService".
 |-
 | 28 || [6.0.0+] ListPrepurchaseRecordRightsIds ([4.0.0-5.1.0] ListPrepurchaseRecord)
 |-
-| 29 || [4.0.0+] ListPrepurchaseRecordInfo
+| 29 || [4.0.0+] [[#ListPrepurchaseRecordInfo]]
 |-
 | 30 || [5.0.0+] CountTicket
 |-
@@ -73,19 +73,19 @@ This is "nn::es::IETicketService".
 |-
 | 34 || [5.0.0+] GetEncryptedTicketSize
 |-
-| 35 || [5.0.0+] GetEncryptedTicketData. [6.0.0+]: Now returns an additional 8-bytes.
+| 35 || [5.0.0+] [[#GetEncryptedTicketData]]
 |-
 | 36 || [6.0.0+] DeleteAllInactiveELicenseRequiredPersonalizedTicket
 |-
-| 37 || [9.0.0+] 
+| 37 || [9.0.0+] OwnTicket2
 |-
-| 38 || [9.0.0+] 
+| 38 || [9.0.0+] OwnTicket3
 |-
 | 501 || [6.0.0+]
 |-
 | 502 || [6.0.0+]
 |-
-| 503 || [6.0.0+] GetTitleKey
+| 503 || [6.0.0+] [[#GetTitleKey]]
 |-
 | 504 || [6.0.0+]
 |-
@@ -162,9 +162,14 @@ This is "nn::es::IETicketService".
 | 3002 || [7.0.0+]
 |}
 
-[3.0.0+] GetTitleKey now takes an additional 4-bytes of input.
-
+== ListPrepurchaseRecordInfo ==
 [7.0.0+] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
+
+== GetEncryptedTicketData ==
+[6.0.0+] Now returns an additional 8-bytes.
+
+== GetTitleKey ==
+[3.0.0+] GetTitleKey now takes an additional 4-bytes of input.
 
 == EsAsyncValue ==
 This was added with [6.0.0+].

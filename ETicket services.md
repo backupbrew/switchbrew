@@ -32,19 +32,19 @@ This is "nn::es::IETicketService".
 | 26   | \[4.0.0+\] DeleteAllPrepurchaseRecord                                                   |
 | 27   | \[4.0.0+\] CountPrepurchaseRecord                                                       |
 | 28   | \[6.0.0+\] ListPrepurchaseRecordRightsIds (\[4.0.0-5.1.0\] ListPrepurchaseRecord)       |
-| 29   | \[4.0.0+\] ListPrepurchaseRecordInfo                                                    |
+| 29   | \[4.0.0+\] [\#ListPrepurchaseRecordInfo](#ListPrepurchaseRecordInfo "wikilink")         |
 | 30   | \[5.0.0+\] CountTicket                                                                  |
 | 31   | \[5.0.0+\] ListTicketRightsIds                                                          |
 | 32   | \[5.0.0+\] CountPrepurchaseRecordEx                                                     |
 | 33   | \[5.0.0-6.2.0\] ListPrepurchaseRecordRightsIdsEx                                        |
 | 34   | \[5.0.0+\] GetEncryptedTicketSize                                                       |
-| 35   | \[5.0.0+\] GetEncryptedTicketData. \[6.0.0+\]: Now returns an additional 8-bytes.       |
+| 35   | \[5.0.0+\] [\#GetEncryptedTicketData](#GetEncryptedTicketData "wikilink")               |
 | 36   | \[6.0.0+\] DeleteAllInactiveELicenseRequiredPersonalizedTicket                          |
-| 37   | \[9.0.0+\]                                                                              |
-| 38   | \[9.0.0+\]                                                                              |
+| 37   | \[9.0.0+\] OwnTicket2                                                                   |
+| 38   | \[9.0.0+\] OwnTicket3                                                                   |
 | 501  | \[6.0.0+\]                                                                              |
 | 502  | \[6.0.0+\]                                                                              |
-| 503  | \[6.0.0+\] GetTitleKey                                                                  |
+| 503  | \[6.0.0+\] [\#GetTitleKey](#GetTitleKey "wikilink")                                     |
 | 504  | \[6.0.0+\]                                                                              |
 | 508  | \[6.0.0+\]                                                                              |
 | 509  | \[6.0.0+\]                                                                              |
@@ -83,9 +83,17 @@ This is "nn::es::IETicketService".
 | 3001 | \[7.0.0+\]                                                                              |
 | 3002 | \[7.0.0+\]                                                                              |
 
-\[3.0.0+\] GetTitleKey now takes an additional 4-bytes of input.
+## ListPrepurchaseRecordInfo
 
 \[7.0.0+\] 0x8-bytes of input for ListPrepurchaseRecordInfo was removed.
+
+## GetEncryptedTicketData
+
+\[6.0.0+\] Now returns an additional 8-bytes.
+
+## GetTitleKey
+
+\[3.0.0+\] GetTitleKey now takes an additional 4-bytes of input.
 
 ## EsAsyncValue
 
