@@ -640,11 +640,11 @@ This was added with [9.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 || [[#Send]]
+| 0 ||
 |}
 
-== Send ==
-Takes an input u32 SenderID and an input u64 (unused, official software passes struct pointer). Returns an output Event handle autoclear disabled.
+== Cmd0 ==
+Takes an input u32 SenderID and an input u64 (unused, official software passes struct pointer). Returns an output Event handle with autoclear disabled.
 
 = PSC Module IDs =
 {| class="wikitable" border="1"

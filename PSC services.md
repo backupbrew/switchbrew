@@ -475,14 +475,14 @@ This is "nn::ins::ISenderManager".
 
 This was added with \[9.0.0+\].
 
-| Cmd | Name                       |
-| --- | -------------------------- |
-| 0   | [\#Send](#Send "wikilink") |
+| Cmd | Name |
+| --- | ---- |
+| 0   |      |
 
-## Send
+## Cmd0
 
 Takes an input u32 SenderID and an input u64 (unused, official software
-passes struct pointer). Returns an output Event handle autoclear
+passes struct pointer). Returns an output Event handle with autoclear
 disabled.
 
 # PSC Module IDs
