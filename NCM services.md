@@ -252,13 +252,23 @@ time.
 
 This is "nn::lr::IAddOnContentLocationResolver".
 
-| Cmd | Name                          | Arguments                                                                                                                                | Notes                              |
-| --- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| 0   | ResolveAddOnContentPath       | u64 TitleID + C descriptor                                                                                                               |                                    |
-| 1   | RegisterAddOnContentStorage   | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID \[9.0.0+\] Now takes an additional 8-bytes of input. |                                    |
-| 2   | UnregisterAllAddOnContentPath | None                                                                                                                                     | Clears all registered titles here. |
-| 3   | \[9.0.0+\]                    |                                                                                                                                          |                                    |
-| 4   | \[9.0.0+\]                    |                                                                                                                                          |                                    |
+| Cmd | Name                                                                                            | Arguments                                                                                                                                                     | Notes                              |
+| --- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| 0   | ResolveAddOnContentPath                                                                         | u64 TitleID + C descriptor                                                                                                                                    |                                    |
+| 1   | RegisterAddOnContentStorage                                                                     | [StorageID](Filesystem%20services#StorageId.md##StorageId "wikilink") + u64 TitleID \[9.0.0+\] Now takes an additional u64 TitleID for the owner application. |                                    |
+| 2   | UnregisterAllAddOnContentPath                                                                   | None                                                                                                                                                          | Clears all registered titles here. |
+| 3   | \[9.0.0+\] [\#RefreshApplicationAddOnContent](#RefreshApplicationAddOnContent "wikilink")       | Type-5 buffer                                                                                                                                                 | Unofficial name                    |
+| 4   | \[9.0.0+\] [\#UnregisterApplicationAddOnContent](#UnregisterApplicationAddOnContent "wikilink") | u64 TitleID                                                                                                                                                   | Unofficial name                    |
+
+#### RefreshApplicationAddOnContent
+
+Takes an type-5 buffer containing application title ids. Unregisters
+entries with application ids absent from the input buffer.
+
+#### UnregisterApplicationAddOnContent
+
+Takes an u64 **TitleID** for the application to unregister add on
+content entries for.
 
 ### Location List Entry
 
