@@ -302,7 +302,8 @@ Takes a PID and an u64
 
 Takes an input u32 NpadIdType, returns an output u8 NpadInterfaceType.
 
-The NpadInterfaceType must be 1-4, otherwise this will assert.
+The NpadInterfaceType must be 1 (Bluetooth), 2 (Rail), 3 (USB), or 4
+(?), otherwise this will assert.
 
 ## VibrationDeviceHandle
 
