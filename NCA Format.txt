@@ -36,7 +36,7 @@ For pre-1.0.0 "NCA2" NCAs, the first 0x400 byte are encrypted the same way as in
 |-
 | 0x206
 | 0x1
-| Old Key Generation (0x00 = Pre-1.0.0, 0x01 = [[1.0.0]], 0x02 = [[3.0.0]])
+| Old Key Generation (0x00 = [[1.0.0]], 0x01 = Unused, 0x02 = [[3.0.0]])
 |-
 | 0x207
 | 0x1
