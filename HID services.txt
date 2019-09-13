@@ -191,7 +191,7 @@ This is "nn::hid::IHidServer".
 |-
 | 404 || [4.0.0+] HasLeftRightBattery
 |-
-| 405 || [4.0.0+] GetNpadInterfaceType
+| 405 || [4.0.0+] [[#GetNpadInterfaceType]]
 |-
 | 406 || [4.0.0+] GetNpadLeftRightInterfaceType
 |-
@@ -355,6 +355,9 @@ Takes a PID and an u64 [[AM_services|AppletResourceUserId]], returns an output f
 
 == ResetSevenSixAxisSensorTimestamp ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.
+
+== GetNpadInterfaceType ==
+Takes an input u32 NpadIdType, returns an output u8.
 
 == VibrationDeviceHandle ==
 This is an u32.

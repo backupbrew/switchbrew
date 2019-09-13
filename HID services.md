@@ -99,7 +99,7 @@ This is "nn::hid::IHidServer".
 | 402  | \[3.0.0+\] IsUsbFullKeyControllerConnected                                                          |
 | 403  | \[4.0.0+\] HasBattery                                                                               |
 | 404  | \[4.0.0+\] HasLeftRightBattery                                                                      |
-| 405  | \[4.0.0+\] GetNpadInterfaceType                                                                     |
+| 405  | \[4.0.0+\] [\#GetNpadInterfaceType](#GetNpadInterfaceType "wikilink")                               |
 | 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                            |
 | 407  | \[9.0.0+\]                                                                                          |
 | 408  | \[9.0.0+\]                                                                                          |
@@ -297,6 +297,10 @@ float.
 
 Takes a PID and an u64
 [AppletResourceUserId](AM%20services.md "wikilink"), no output.
+
+## GetNpadInterfaceType
+
+Takes an input u32 NpadIdType, returns an output u8.
 
 ## VibrationDeviceHandle
 
