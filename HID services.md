@@ -823,6 +823,31 @@ Bits for the above type field:
 | 18-20 |             | Invalid                                                                                                                       |
 | 21-23 |             | Generic controller                                                                                                            |
 
+u8 for the above type field:
+
+| Value | Description                                                                                                  | Notes |
+| ----- | ------------------------------------------------------------------------------------------------------------ | ----- |
+| 1     | JoyRight                                                                                                     |       |
+| 2     | JoyLeft                                                                                                      |       |
+| 3     | FullKey                                                                                                      |       |
+| 4     | JoyLeft                                                                                                      |       |
+| 5     | JoyRight                                                                                                     |       |
+| 6     | FullKey                                                                                                      |       |
+| 7     | LarkLeft (HVC)                                                                                               |       |
+| 8     | LarkRight (HVC)                                                                                              |       |
+| 9     | LarkLeft (NES)                                                                                               |       |
+| 10    | LarkRight (NES)                                                                                              |       |
+| 11    | Invalid                                                                                                      |       |
+| 12    | Palma                                                                                                        |       |
+| 13    | FullKey                                                                                                      |       |
+| 14    | Invalid                                                                                                      |       |
+| 15    | FullKey                                                                                                      |       |
+| 16    | Controller is missing in sharedmem.                                                                          |       |
+| 17-18 | Invalid                                                                                                      |       |
+| 19    | [\#DeviceType](#DeviceType "wikilink") System with [\#NpadStyleTag](#NpadStyleTag "wikilink") |= NpadFullKey |       |
+| 20    | [\#DeviceType](#DeviceType "wikilink") System with [\#NpadStyleTag](#NpadStyleTag "wikilink") |= NpadJoyDual |       |
+| 21    | [\#DeviceType](#DeviceType "wikilink") System with [\#NpadStyleTag](#NpadStyleTag "wikilink") |= NpadJoyDual |       |
+
 ## HdlsState
 
 | Offset | Size          | Description                                                                                                                                |
