@@ -579,10 +579,10 @@ This doesn't seem to be usable?
 
 ## GetUniquePadDeviceTypeSetInternal
 
-Takes a total of 8-bytes of input, returns a total of 4-bytes of output.
+Takes an input u64 **UniquePadId**, returns a
+"nn::hidtypes::DeviceType".
 
-\[9.0.0+\] Now takes a total of 8-bytes of input, returns a total of
-1-byte of output.
+The output is an u32. \[9.0.0+\] The output is an u8.
 
 ## GetAbstractedPadHandles
 
