@@ -48,14 +48,14 @@ order for older-system-versions to install it.
 
 **Key Generation** 0x3 (with **Old Key Generation** set to 0x2) is used
 for all [3.0.1](3.0.1.md "wikilink") sysmodules and the
-[System\_Version\_Title](System%20Version%20Title.md "wikilink").
+[System\_Version\_Title](System%20Version%20Title.md "wikilink"). With
+[3.0.2](3.0.2.md "wikilink"), all updated titles use the crypto from
+[3.0.1](3.0.1.md "wikilink") for non-ncatype0, except for firm
+{data-content}. In some cases various game content uses the above newer
+crypto as well.
 
-With [3.0.2](3.0.2.md "wikilink"), all updated titles use the crypto
-from [3.0.1](3.0.1.md "wikilink") for non-ncatype0, except for firm
-{data-content}.
-
-Note: in some cases various game content uses the above newer crypto as
-well.
+**Key Generation** is always **Master Key Version** + 1, except for
+generations 0 and 1 which are both version 0.
 
 The keyindex passed to <key-generation-related code> is determined as
 follows:

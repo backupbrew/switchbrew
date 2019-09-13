@@ -83,11 +83,9 @@ The header is 0x400-bytes, at NCA+0.
 
 When the above '''Old Key Generation''' field is 0x2 on >= v3.0, different {crypto/keydata} is used for the sections' data. With system content, this is used with every ncatype except ncatype0. The only other exception is {data-content} for the firm titles: this is required in order for older-system-versions to install it.
 
-'''Key Generation''' 0x3 (with '''Old Key Generation''' set to 0x2) is used for all [[3.0.1]] sysmodules and the [[System_Version_Title]].
+'''Key Generation''' 0x3 (with '''Old Key Generation''' set to 0x2) is used for all [[3.0.1]] sysmodules and the [[System_Version_Title]]. With [[3.0.2]], all updated titles use the crypto from [[3.0.1]] for non-ncatype0, except for firm {data-content}. In some cases various game content uses the above newer crypto as well.
 
-With [[3.0.2]], all updated titles use the crypto from [[3.0.1]] for non-ncatype0, except for firm {data-content}.
-
-Note: in some cases various game content uses the above newer crypto as well.
+'''Key Generation''' is always '''Master Key Version''' + 1, except for generations 0 and 1 which are both version 0.
 
 The keyindex passed to <key-generation-related code> is determined as follows:
 * Pre-[[3.0.0]]: The '''Key Area Encryption Key Index''' field (0x207) is passed directly.
