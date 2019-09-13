@@ -579,11 +579,8 @@ This doesn't seem to be usable?
 
 ## GetUniquePadDeviceTypeSetInternal
 
-Takes an input u64 **UniquePadId**, returns a
-"nn::hid::detail::DeviceTypeInternal".
-
-The output is an u32. \[9.0.0+\] The output is an u8
-"nn::hidtypes::DeviceType".
+Takes an input u64 **UniquePadId**, returns an
+[\#DeviceTypeInternal](#DeviceTypeInternal "wikilink").
 
 ## GetAbstractedPadHandles
 
@@ -789,7 +786,7 @@ This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Only one bit can be set, see below.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 0x0    | 0x4  | [\#DeviceTypeInternal](#DeviceTypeInternal "wikilink")                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 0x4    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 0x8    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | 0xC    | 0x1  | [\#NpadInterfaceType](#NpadInterfaceType "wikilink"). Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller. |
@@ -799,7 +796,7 @@ This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 | Offset | Size | Description                                                                                     |
 | ------ | ---- | ----------------------------------------------------------------------------------------------- |
-| 0x0    | 0x1  | Type value, must match certain values (not used with the below table).                          |
+| 0x0    | 0x1  | [\#DeviceTypeInternal](#DeviceTypeInternal "wikilink")                                          |
 | 0x1    | 0x1  | [\#NpadInterfaceType](#NpadInterfaceType "wikilink"). Similar to the field from the old struct. |
 | 0x2    | 0x2  | Padding                                                                                         |
 | 0x4    | 0x4  | RGBA Single Body Color                                                                          |
@@ -809,7 +806,13 @@ This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 This is a 0x10-byte struct. \[9.0.0+\] This is a 0x14-byte struct.
 
-Bits for the above type field:
+## DeviceTypeInternal
+
+This is an u32 "nn::hid::detail::DeviceTypeInternal".
+
+\[9.0.0+\] This an u8 "nn::hidtypes::DeviceType".
+
+Bits for "nn::hid::detail::DeviceTypeInternal", only 1 bit can be set:
 
 | Bits  | Description | Notes                                                                                                                         |
 | ----- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -824,7 +827,8 @@ Bits for the above type field:
 | 18-20 |             | Invalid                                                                                                                       |
 | 21-23 |             | Generic controller                                                                                                            |
 
-u8 for the above type field:
+u8 values for "nn::hidtypes::DeviceType", must match one of the these
+values:
 
 | Value | Description                                                                                                  | Notes |
 | ----- | ------------------------------------------------------------------------------------------------------------ | ----- |

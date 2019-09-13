@@ -754,9 +754,7 @@ Reads from the specified controller's spi-flash. The input size is the original 
 This doesn't seem to be usable?
 
 == GetUniquePadDeviceTypeSetInternal ==
-Takes an input u64 '''UniquePadId''', returns a "nn::hid::detail::DeviceTypeInternal".
-
-The output is an u32. [9.0.0+] The output is an u8 "nn::hidtypes::DeviceType".
+Takes an input u64 '''UniquePadId''', returns an [[#DeviceTypeInternal]].
 
 == GetAbstractedPadHandles ==
 Takes a type-0xA output buffer containing an array of u64 '''AbstractedPadHandle''' and returns an output s32 for total entries.
@@ -969,7 +967,7 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x4 || Only one bit can be set, see below.
+| 0x0 || 0x4 || [[#DeviceTypeInternal]]
 |-
 | 0x4 || 0x4 || RGBA Single Body Color
 |-
@@ -985,7 +983,7 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x1 || Type value, must match certain values (not used with the below table).
+| 0x0 || 0x1 || [[#DeviceTypeInternal]]
 |-
 | 0x1 || 0x1 || [[#NpadInterfaceType]]. Similar to the field from the old struct.
 |-
@@ -1002,7 +1000,12 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 
 This is a 0x10-byte struct. [9.0.0+] This is a 0x14-byte struct.
 
-Bits for the above type field:
+== DeviceTypeInternal ==
+This is an u32 "nn::hid::detail::DeviceTypeInternal".
+
+[9.0.0+] This an u8 "nn::hidtypes::DeviceType".
+
+Bits for "nn::hid::detail::DeviceTypeInternal", only 1 bit can be set:
 
 {| class="wikitable" border="1"
 !  Bits
@@ -1050,7 +1053,7 @@ Bits for the above type field:
 | Generic controller
 |}
 
-u8 for the above type field:
+u8 values for "nn::hidtypes::DeviceType", must match one of the these values:
 
 {| class="wikitable" border="1"
 !  Value
