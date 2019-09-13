@@ -806,6 +806,8 @@ Takes an input 8-byte '''HdlsHandle''', no output.
 == SetHdlsState ==
 Takes an input [[#HdlsState]] and an input 8-byte '''HdlsHandle''', no output.
 
+[9.0.0+] Input order was swapped: now takes an input 8-byte '''HdlsHandle''' and a [[#HdlsState]], no output.
+
 == AbstractedPadState ==
 {| class="wikitable" border="1"
 |-

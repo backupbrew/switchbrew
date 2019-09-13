@@ -675,6 +675,9 @@ Takes an input 8-byte **HdlsHandle**, no output.
 Takes an input [\#HdlsState](#HdlsState "wikilink") and an input 8-byte
 **HdlsHandle**, no output.
 
+\[9.0.0+\] Input order was swapped: now takes an input 8-byte
+**HdlsHandle** and a [\#HdlsState](#HdlsState "wikilink"), no output.
+
 ## AbstractedPadState
 
 | Offset | Size | Description                                                                                                                                                                                                                                                                        |
