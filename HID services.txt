@@ -357,7 +357,9 @@ Takes a PID and an u64 [[AM_services|AppletResourceUserId]], returns an output f
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.
 
 == GetNpadInterfaceType ==
-Takes an input u32 NpadIdType, returns an output u8.
+Takes an input u32 NpadIdType, returns an output u8 NpadInterfaceType.
+
+The NpadInterfaceType must be 1-4, otherwise this will assert.
 
 == VibrationDeviceHandle ==
 This is an u32.

@@ -300,7 +300,9 @@ Takes a PID and an u64
 
 ## GetNpadInterfaceType
 
-Takes an input u32 NpadIdType, returns an output u8.
+Takes an input u32 NpadIdType, returns an output u8 NpadInterfaceType.
+
+The NpadInterfaceType must be 1-4, otherwise this will assert.
 
 ## VibrationDeviceHandle
 
