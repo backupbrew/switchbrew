@@ -3,50 +3,32 @@ The Switch 9.0.0 system update was released on September 9, 2019. This Switch up
 Security flaws fixed: <fill this in manually later, see the updatedetails page from the ninupdates-report page(s) once available for now>.
 
 ==Change-log==
-[https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 Official] ALL change-log:
-*  
-*  Added the following system functionality:
-* 	
-* 	Added a search feature for the News Channel.
-* 		
-* 		Channels can be searched using filters or free text.
-* 		
-* 	
-* 	Added “Display QR Code to Check In” to User Settings.
-* 		
-* 		You can display a QR Code on-screen to check in using your Nintendo Account.
-* 		
-* 	
-* 	Alarm Notifications have been added to System Settings &gt Notifications.
-* 		
-* 		You can check or delete pre-set alarms.
-* 		Alarms can be set up only within supported software (to be added at a later time).
-* 		A controller firmware update may be required to use this feature.
-* 		
-* 	
-* 	You can now configure touch screen sensitivity settings.
-* 		
-* 		Select between Standard and Stylus sensitivity (optimized for stylus input).
-* 		
-* 	
-* 	Added the option to turn on/off the system button input (Nintendo Switch Lite only).
-* 		
-* 		When this setting is turned off the system no longer receives input from the console buttons, with the exception of the Capture and HOME Buttons, and can only be operated from a wirelessly paired controller (sold separately).
-* 		This setting is on by default and can only be turned off if a compatible controller (sold separately) is wirelessly paired to the console.
-* 		The setting will automatically turn back on when the console is restarted or after returning from sleep mode.
-* 		
-* 	
-* 	Added “Online Play Invites” section to the User's page.
-* 		
-* 		Invites from friends to join online play in supported software will be displayed in this section.
-* 		
-* 	
-* 	General system stability improvements to enhance the user's experience.
-*         
-*         Resolved an issue where some users can’t start the Fire Emblem: Three Houses game, and get an error instead.
-*         
-*     
-* 	
+From [https://en-americas-support.nintendo.com/app/answers/detail/a_id/22525/p/897 official source]:
+
+<blockquote>
+Ver. 9.0.0 (Released September 9, 2019)
+
+Added the following system functionality:
+
+* '''Added a search feature for the News Channel.'''
+** Channels can be searched using filters or free text.
+* '''Added “Display QR Code to Check In” to User Settings.'''
+** You can display a QR Code on-screen to check in using your Nintendo Account.
+* '''Alarm Notifications have been added to System Settings > Notifications.'''
+** You can check or delete pre-set alarms.
+** Alarms can be set up only within supported software (to be added at a later time).
+** A controller firmware update may be required to use this feature.
+* '''You can now configure touch screen sensitivity settings.'''
+** Select between Standard and Stylus sensitivity (optimized for stylus input).
+* '''Added the option to turn on/off the system button input (Nintendo Switch Lite only).'''
+** When this setting is turned off the system no longer receives input from the console buttons, with the exception of the Capture and HOME Buttons, and can only be operated from a wirelessly paired controller (sold separately).
+** This setting is on by default and can only be turned off if a compatible controller (sold separately) is wirelessly paired to the console.
+** The setting will automatically turn back on when the console is restarted or after returning from sleep mode.
+* '''Added “Online Play Invites” section to the User's page.'''
+** Invites from friends to join online play in supported software will be displayed in this section.
+* '''General system stability improvements to enhance the user's experience.'''
+** Resolved an issue where some users can’t start the Fire Emblem: Three Houses game, and get an error instead.
+</blockquote>
 
 ===FIRM===
 All files in RomFS were updated.
