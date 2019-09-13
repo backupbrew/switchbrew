@@ -123,7 +123,7 @@ Additional data buffers are then read/written using standard MMC read/write comm
 | [[#GetRmaInformation]]
 |-
 | 0x14
-| [9.0.0+] NewExchangeRandomValuesInSecureMode
+| [9.0.0+] [[#ChallengeCardExistence]]
 |}
 
 == SetUserAsicFirmware ==
@@ -364,6 +364,28 @@ Signals the Gamecard ASIC to exchange random authentication values with the curr
 
 == GetRmaInformation ==
 Signals the Gamecard ASIC to send a 0x200 byte sized buffer containing information on the Gamecard ASIC. This is called by [[Filesystem_services#IDeviceOperator|GetGameCardAsicInfo]].
+
+== ChallengeCardExistence ==
+Signals the Gamecard ASIC to exchange random values with the current Gamecard. The Gamecard response values are returned in a 0x58 sized buffer while the host values are passed in the actual [[#OperationBuffer]] as follows.
+
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0
+| 0x1
+| Gamecard ASIC operation command (0x14)
+|-
+| 0x1
+| 0x1F
+| Random value from host
+|-
+| 0x20
+| 0x20
+| Command verification value
+|}
 
 = Gamecard commands =
 These commands are issued by the Gamecard ASIC to the actual Gamecard using the [[#OperationBuffer]] passed to [[#SendCardCommand]].

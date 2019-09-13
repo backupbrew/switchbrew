@@ -73,7 +73,7 @@ read/write commands.
 | 0x11    | [\#EnableCardBus](#EnableCardBus "wikilink")                                       |
 | 0x12    | [\#ExchangeRandomValuesInSecureMode](#ExchangeRandomValuesInSecureMode "wikilink") |
 | 0x13    | [\#GetRmaInformation](#GetRmaInformation "wikilink")                               |
-| 0x14    | \[9.0.0+\] NewExchangeRandomValuesInSecureMode                                     |
+| 0x14    | \[9.0.0+\] [\#ChallengeCardExistence](#ChallengeCardExistence "wikilink")          |
 
 ## SetUserAsicFirmware
 
@@ -235,6 +235,19 @@ the current Gamecard. The Gamecard response values are returned in a
 Signals the Gamecard ASIC to send a 0x200 byte sized buffer containing
 information on the Gamecard ASIC. This is called by
 [GetGameCardAsicInfo](Filesystem%20services#IDeviceOperator.md##IDeviceOperator "wikilink").
+
+## ChallengeCardExistence
+
+Signals the Gamecard ASIC to exchange random values with the current
+Gamecard. The Gamecard response values are returned in a 0x58 sized
+buffer while the host values are passed in the actual
+[\#OperationBuffer](#OperationBuffer "wikilink") as follows.
+
+| Offset | Size | Description                            |
+| ------ | ---- | -------------------------------------- |
+| 0x0    | 0x1  | Gamecard ASIC operation command (0x14) |
+| 0x1    | 0x1F | Random value from host                 |
+| 0x20   | 0x20 | Command verification value             |
 
 # Gamecard commands
 
