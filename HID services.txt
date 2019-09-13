@@ -357,9 +357,9 @@ Takes a PID and an u64 [[AM_services|AppletResourceUserId]], returns an output f
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.
 
 == GetNpadInterfaceType ==
-Takes an input u32 NpadIdType, returns an output u8 NpadInterfaceType.
+Takes an input u32 NpadIdType, returns an output u8 [[#NpadInterfaceType]].
 
-The NpadInterfaceType must be 1 (Bluetooth), 2 (Rail), 3 (USB), or 4 (?), otherwise this will assert.
+The NpadInterfaceType must be 1-4, otherwise this will assert.
 
 == VibrationDeviceHandle ==
 This is an u32.
@@ -462,6 +462,23 @@ This is a bitfield describing which controller styles are supported.
 
 == NpadIdType ==
 This is an u32. This is the controller index used in [[HID_Shared_Memory#Controllers|sharedmem]]. 0x20 is handheld.
+
+== NpadInterfaceType ==
+This is the output u8 returned by [[#GetNpadInterfaceType]].
+
+{| class="wikitable" border="1"
+!  Value
+!  Description
+!  Notes
+|-
+| 1 || Bluetooth || 
+|-
+| 2 || Rail || 
+|-
+| 3 || USB || 
+|-
+| 4 || Unknown || 
+|}
 
 = hid:dbg =
 This is "nn::hid::IHidDebugServer".
@@ -825,7 +842,7 @@ Takes an input [[#HdlsState]] and an input 8-byte '''HdlsHandle''', no output.
 |-
 | 0xC || 0x4 || RGBA Single Buttons Color
 |-
-| 0x10 || 0x1 || See [[#HiddbgHdlsDeviceInfo]]::[[#GetNpadInterfaceType|NpadInterfaceType]].
+| 0x10 || 0x1 || See [[#HiddbgHdlsDeviceInfo]]::[[#NpadInterfaceType]].
 |-
 | 0x11 || 0x3 || Padding
 |-
@@ -958,7 +975,7 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 |-
 | 0x8 || 0x4 || RGBA Single Buttons Color
 |-
-| 0xC || 0x1 || [[#GetNpadInterfaceType|NpadInterfaceType]]. Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller.
+| 0xC || 0x1 || [[#NpadInterfaceType]]. Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller.
 |-
 | 0xD || 0x3 || Padding
 |}
@@ -970,7 +987,7 @@ This is a 0x40-byte struct. [9.0.0+] This is a 0x48-byte struct.
 |-
 | 0x0 || 0x1 || Type value, must match certain values (not used with the below table).
 |-
-| 0x1 || 0x1 || [[#GetNpadInterfaceType|NpadInterfaceType]]. Similar to the field from the old struct.
+| 0x1 || 0x1 || [[#NpadInterfaceType]]. Similar to the field from the old struct.
 |-
 | 0x2 || 0x2 || Padding
 |-

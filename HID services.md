@@ -300,10 +300,10 @@ Takes a PID and an u64
 
 ## GetNpadInterfaceType
 
-Takes an input u32 NpadIdType, returns an output u8 NpadInterfaceType.
+Takes an input u32 NpadIdType, returns an output u8
+[\#NpadInterfaceType](#NpadInterfaceType "wikilink").
 
-The NpadInterfaceType must be 1 (Bluetooth), 2 (Rail), 3 (USB), or 4
-(?), otherwise this will assert.
+The NpadInterfaceType must be 1-4, otherwise this will assert.
 
 ## VibrationDeviceHandle
 
@@ -367,6 +367,18 @@ This is a bitfield describing which controller styles are supported.
 This is an u32. This is the controller index used in
 [sharedmem](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").
 0x20 is handheld.
+
+## NpadInterfaceType
+
+This is the output u8 returned by
+[\#GetNpadInterfaceType](#GetNpadInterfaceType "wikilink").
+
+| Value | Description | Notes |
+| ----- | ----------- | ----- |
+| 1     | Bluetooth   |       |
+| 2     | Rail        |       |
+| 3     | USB         |       |
+| 4     | Unknown     |       |
 
 # hid:dbg
 
@@ -690,7 +702,7 @@ Takes an input [\#HdlsState](#HdlsState "wikilink") and an input 8-byte
 | 0x5    | 0x3  | Padding                                                                                                                                                                                                                                                                            |
 | 0x8    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                                                             |
 | 0xC    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                          |
-| 0x10   | 0x1  | See [\#HiddbgHdlsDeviceInfo](#HiddbgHdlsDeviceInfo "wikilink")::[NpadInterfaceType](#GetNpadInterfaceType "wikilink").                                                                                                                                                             |
+| 0x10   | 0x1  | See [\#HiddbgHdlsDeviceInfo](#HiddbgHdlsDeviceInfo "wikilink")::[\#NpadInterfaceType](#NpadInterfaceType "wikilink").                                                                                                                                                              |
 | 0x11   | 0x3  | Padding                                                                                                                                                                                                                                                                            |
 | 0x14   | 0x24 | [\#HdlsState](#HdlsState "wikilink"). Unknown if the last 4-bytes are included in this struct, [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")/[\#hiddbgGetAbstractedPadsState](#hiddbgGetAbstractedPadsState "wikilink") only uses the first 0x20-bytes. |
 | 0x38   | 0x60 | Unused with [\#SetAutoPilotVirtualPadState](#SetAutoPilotVirtualPadState "wikilink")/[\#GetAbstractedPadsState](#GetAbstractedPadsState "wikilink").                                                                                                                               |
@@ -774,25 +786,25 @@ This is a 0x40-byte struct. \[9.0.0+\] This is a 0x48-byte struct.
 
 ## HdlsDeviceInfo
 
-| Offset | Size | Description                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------ | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4  | Only one bit can be set, see below.                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| 0x4    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| 0x8    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 0xC    | 0x1  | [NpadInterfaceType](#GetNpadInterfaceType "wikilink"). Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller. |
-| 0xD    | 0x3  | Padding                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Offset | Size | Description                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Only one bit can be set, see below.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 0x4    | 0x4  | RGBA Single Body Color                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 0x8    | 0x4  | RGBA Single Buttons Color                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| 0xC    | 0x1  | [\#NpadInterfaceType](#NpadInterfaceType "wikilink"). Additional type field used with the above type field, if the value doesn't match one of the following a default is used. Type Pro-Controller: value 0x3 indicates that the controller is connected via USB. Type bit21: value 0x3 = unknown. When value is 0x2, state is merged with an existing controller (when the type value is compatible with this). Otherwise, it's a dedicated controller. |
+| 0xD    | 0x3  | Padding                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 \[9.0.0+\]:
 
-| Offset | Size | Description                                                                                      |
-| ------ | ---- | ------------------------------------------------------------------------------------------------ |
-| 0x0    | 0x1  | Type value, must match certain values (not used with the below table).                           |
-| 0x1    | 0x1  | [NpadInterfaceType](#GetNpadInterfaceType "wikilink"). Similar to the field from the old struct. |
-| 0x2    | 0x2  | Padding                                                                                          |
-| 0x4    | 0x4  | RGBA Single Body Color                                                                           |
-| 0x8    | 0x4  | RGBA Single Buttons Color                                                                        |
-| 0xC    | 0x4  | RGBA Unknown Body Color                                                                          |
-| 0x10   | 0x4  | RGBA Unknown Buttons Color                                                                       |
+| Offset | Size | Description                                                                                     |
+| ------ | ---- | ----------------------------------------------------------------------------------------------- |
+| 0x0    | 0x1  | Type value, must match certain values (not used with the below table).                          |
+| 0x1    | 0x1  | [\#NpadInterfaceType](#NpadInterfaceType "wikilink"). Similar to the field from the old struct. |
+| 0x2    | 0x2  | Padding                                                                                         |
+| 0x4    | 0x4  | RGBA Single Body Color                                                                          |
+| 0x8    | 0x4  | RGBA Single Buttons Color                                                                       |
+| 0xC    | 0x4  | RGBA Unknown Body Color                                                                         |
+| 0x10   | 0x4  | RGBA Unknown Buttons Color                                                                      |
 
 This is a 0x10-byte struct. \[9.0.0+\] This is a 0x14-byte struct.
 
