@@ -28,19 +28,19 @@ For pre-1.0.0 "NCA2" NCAs, the first 0x400 byte are encrypted the same way as in
 |-
 | 0x204
 | 0x1
-| Distribution Type (0 = System NCA, 1 = Gamecard NCA)
+| Distribution Type (0x00 = System NCA, 0x01 = Gamecard NCA)
 |-
 | 0x205
 | 0x1
-| Content Type (0 = Program, 1 = Meta, 2 = Control, 3 = Manual, 4 = Data, 5 = PublicData)
+| Content Type (0x00 = Program, 0x01 = Meta, 0x02 = Control, 0x03 = Manual, 0x04 = Data, 0x05 = PublicData)
 |-
 | 0x206
 | 0x1
-| Old Key Generation (0 = [[1.0.0]], 2 = [[3.0.0]])
+| Old Key Generation (0x00 = Pre-1.0.0, 0x01 = [[1.0.0]], 0x02 = [[3.0.0]])
 |-
 | 0x207
 | 0x1
-| Key Area Encryption Key Index (0 = Application, 1 = Ocean, 2 = System)
+| Key Area Encryption Key Index (0x00 = Application, 0x01 = Ocean, 0x02 = System)
 |-
 | 0x208
 | 0x8
@@ -60,7 +60,7 @@ For pre-1.0.0 "NCA2" NCAs, the first 0x400 byte are encrypted the same way as in
 |-
 | 0x220
 | 0x1
-| Key Generation (3 = [[3.0.1]], 4 = [[4.0.0]], 5 = [[5.0.0]])
+| Key Generation (0x03 = [[3.0.1]], 0x04 = [[4.0.0]], 0x05 = [[5.0.0]], 0x06 = [[6.0.0]], 0x07 = [[6.2.0]], 0x08 = [[7.0.0]], 0x09 = [[8.1.0]], 0x0A = [[9.0.0]], 0xFF = Invalid)
 |-
 | 0x230
 | 0x10
