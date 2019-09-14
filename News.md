@@ -20,6 +20,8 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
 
 </noinclude>
 
+  - **14 September 19** [libnx v2.5.0 and switch-examples v20190914
+    released](https://devkitpro.org/viewtopic.php?f=13&t=8964).
   - **9 September 19** Nintendo released system update
     [9.0.0](9.0.0.md "wikilink").
   - **10 July 19** Nintendo
@@ -27,6 +29,3 @@ For older news, see the [news archive](:News%20Archive.md "wikilink").
     the Nintendo Switch Lite system.
   - **17 June 19** Nintendo released system update
     [8.1.0](8.1.0.md "wikilink").
-  - **1 May 19** [libnx v2.2.0 and switch-examples
-    v20190501](https://devkitpro.org/viewtopic.php?f=13&t=8908)
-    released.
