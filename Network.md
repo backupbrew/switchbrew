@@ -16,7 +16,7 @@ Where:
 
 `{server_name}: One of the registered server names.`  
 `{environment}: "dp1", "lp1", "sp1", "dd1", "jd1", "sd1", "td1" or "xd1".`  
-`{serverset}: "eshop" (online shop) or "d4c" (content delivery).`
+`{serverset}: "eshop" (online shop), "d4c" (content delivery) or "dragons" (online membership).`
 
 ### Servers
 
@@ -24,6 +24,7 @@ Where:
   - "[aqua.hac.%.d4c.nintendo.net](#aqua "wikilink")"
   - "[atum.hac.%.d4c.nintendo.net](#atum/atumn "wikilink")"
   - "[atumn.hac.%.d4c.nintendo.net](#atum/atumn "wikilink")"
+  - "atumn-dummy.hac.%.d4c.nintendo.net"
   - "[superfly.hac.%.d4c.nintendo.net](#superfly "wikilink")"
   - "bugyo.hac.%.eshop.nintendo.net"
   - "[beach.hac.%.eshop.nintendo.net](#beach "wikilink")"
@@ -31,6 +32,9 @@ Where:
   - "[tagaya.hac.%.eshop.nintendo.net](#tagaya "wikilink")"
   - \[5.0.0+\]
     "[pearljam.hac.%.eshop.nintendo.net](#pearljam "wikilink")"
+  - \[6.0.0+\] "dragons.hac.%.dragons.nintendo.net"
+  - \[6.0.0+\] "dragonst.hac.%.dragons.nintendo.net"
+  - \[6.0.0+\] "tigers.hac.%.dragons.nintendo.net"
 
 #### sun
 
@@ -182,6 +186,13 @@ Where:
   - "consumer.%.npns.srv.nintendo.net"
   - "receive-%.dg.srv.nintendo.net"
   - "receive-%.er.srv.nintendo.net"
+  - "g<game_server_id>-%.s.n.srv.nintendo.net"
+  - \[4.0.0+\]
+    "[migration.%.scsi.srv.nintendo.net](#migration "wikilink")"
+  - \[6.0.0+\] "[storage.%.scsi.srv.nintendo.net](#storage "wikilink")"
+  - \[9.0.0+\] "[storage.%.sata.srv.nintendo.net](#storage "wikilink")"
+  - \[9.0.0+\]
+    "[permission.%.sata.srv.nintendo.net](#permission "wikilink")"
 
 #### aauth
 
@@ -227,6 +238,19 @@ request:
 to="app-a04.lp1.npns.srv.nintendo.net" xml:lang="en" version="1.0"
 xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams">`
 
+#### migration
+
+[Migration](Migration%20services.md "wikilink") service storage.
+
+#### storage
+
+[OLSC](OLSC%20services.md "wikilink") service (.scsi) and repair service
+(.sata) storage.
+
+#### permission
+
+[OLSC](OLSC%20services.md "wikilink") repair service survey request.
+
 ## Others
 
 Miscellaneous domains for various APIs and tests.
@@ -236,23 +260,36 @@ Miscellaneous domains for various APIs and tests.
 Account metadata:
 
   - "e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com"
+  - "accounts.nintendo.com"
   - "api.accounts.nintendo.com"
+  - "c-%.accounts.nintendo.com"
+  - "capi.%.op2.nintendo.net"
 
-News and game content:
+News, friends and game content:
 
   - "bcat-topics-%.cdn.nintendo.net"
   - "bcat-list-%.cdn.nintendo.net"
-  - "service-status-%.cdn.nintendo.net"
-  - "g<game_server_id>-%.s.n.srv.nintendo.net"
+  - "app.%.five.nintendo.net"
+  - \[6.0.0+\] "scsi-policy-%.cdn.nintendo.net"
 
 Connection:
 
   - "ctest.cdn.nintendo.net" (replaces "conntest.nintendowifi.net")
   - "nasc.nintendowifi.net"
 
-[Error\_applet](Error%20applet.md "wikilink"):
+Error and status:
 
-  - "https://Service-status-%.cdn.nintendo.net/service\_status\_hac.json"
+  - "[service-status-%.cdn.nintendo.net](#service-status "wikilink")"
+  - "problems.dragons.nintendo.net"
+  - "moon.nintendo.com"
+
+#### service-status
+
+[Error applet](Error%20applet.md "wikilink") status.
+
+URLs:
+
+`"https://service-status-%.cdn.nintendo.net/service_status_hac.json"`
 
 # User-Agent
 

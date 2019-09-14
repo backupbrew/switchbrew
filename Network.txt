@@ -10,19 +10,23 @@ The URLs for content delivery network servers on the Switch usually follow this 
 Where:
  {server_name}: One of the registered server names.
  {environment}: "dp1", "lp1", "sp1", "dd1", "jd1", "sd1", "td1" or "xd1".
- {serverset}: "eshop" (online shop) or "d4c" (content delivery).
+ {serverset}: "eshop" (online shop), "d4c" (content delivery) or "dragons" (online membership).
 
 === Servers ===
 * "[[#sun|sun.hac.%.d4c.nintendo.net]]"
 * "[[#aqua|aqua.hac.%.d4c.nintendo.net]]"
 * "[[#atum/atumn|atum.hac.%.d4c.nintendo.net]]"
 * "[[#atum/atumn|atumn.hac.%.d4c.nintendo.net]]"
+* "atumn-dummy.hac.%.d4c.nintendo.net"
 * "[[#superfly|superfly.hac.%.d4c.nintendo.net]]"
 * "bugyo.hac.%.eshop.nintendo.net"
 * "[[#beach|beach.hac.%.eshop.nintendo.net]]"
 * "pushmo.hac.%.eshop.nintendo.net"
 * "[[#tagaya|tagaya.hac.%.eshop.nintendo.net]]"
 * [5.0.0+] "[[#pearljam|pearljam.hac.%.eshop.nintendo.net]]"
+* [6.0.0+] "dragons.hac.%.dragons.nintendo.net"
+* [6.0.0+] "dragonst.hac.%.dragons.nintendo.net"
+* [6.0.0+] "tigers.hac.%.dragons.nintendo.net"
 
 ==== sun ====
 Used for checking whether a sysupdate is available. Equivalent to NetUpdateSOAP from past systems.
@@ -137,6 +141,11 @@ Where:
 * "consumer.%.npns.srv.nintendo.net"
 * "receive-%.dg.srv.nintendo.net"
 * "receive-%.er.srv.nintendo.net"
+* "g<game_server_id>-%.s.n.srv.nintendo.net"
+* [4.0.0+] "[[#migration|migration.%.scsi.srv.nintendo.net]]"
+* [6.0.0+] "[[#storage|storage.%.scsi.srv.nintendo.net]]"
+* [9.0.0+] "[[#storage|storage.%.sata.srv.nintendo.net]]"
+* [9.0.0+] "[[#permission|permission.%.sata.srv.nintendo.net]]"
 
 ==== aauth ====
 Application authentication.
@@ -172,26 +181,46 @@ app-a04* uses XMPP with TLS over port 443, without HTTP. Sample request:
 
 <code><nowiki><?xml version="1.0"?><stream:stream to="app-a04.lp1.npns.srv.nintendo.net" xml:lang="en" version="1.0" xmlns="jabber:client" xmlns:stream="http://etherx.jabber.org/streams"></nowiki></code>
 
+==== migration ====
+[[Migration_services|Migration]] service storage.
+
+==== storage ====
+[[OLSC_services|OLSC]] service (.scsi) and repair service (.sata) storage.
+
+==== permission ====
+[[OLSC_services|OLSC]] repair service survey request.
+
 == Others ==
 Miscellaneous domains for various APIs and tests.
 
 === Servers ===
 Account metadata:
 * "e0d67c509fb203858ebcb2fe3f88c2aa.baas.nintendo.com"
+* "accounts.nintendo.com"
 * "api.accounts.nintendo.com"
+* "c-%.accounts.nintendo.com"
+* "capi.%.op2.nintendo.net"
 
-News and game content:
+News, friends and game content:
 * "bcat-topics-%.cdn.nintendo.net"
 * "bcat-list-%.cdn.nintendo.net"
-* "service-status-%.cdn.nintendo.net"
-* "g<game_server_id>-%.s.n.srv.nintendo.net"
+* "app.%.five.nintendo.net"
+* [6.0.0+] "scsi-policy-%.cdn.nintendo.net"
 
 Connection:
 * "ctest.cdn.nintendo.net" (replaces "conntest.nintendowifi.net")
 * "nasc.nintendowifi.net"
 
-[[Error_applet]]:
-* <nowiki>"https://Service-status-%.cdn.nintendo.net/service_status_hac.json"</nowiki>
+Error and status:
+* "[[#service-status|service-status-%.cdn.nintendo.net]]"
+* "problems.dragons.nintendo.net"
+* "moon.nintendo.com"
+
+==== service-status ====
+[[Error_applet|Error applet]] status.
+
+URLs:
+ "<nowiki>https://service-status-%.cdn.nintendo.net/service_status_hac.json</nowiki>"
 
 = User-Agent =
 [[NIM_services|NIM]] generates two User-Agent strings:
