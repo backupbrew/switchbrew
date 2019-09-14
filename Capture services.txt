@@ -366,7 +366,7 @@ Unused by official sw.
 = ShimLibraryVersion =
 This is a version field. Official sw uses func <code>nn::capsrv::GetShimLibraryVersion()</code> to load this from a global var, which is then used with various commands (the input for those cmds must match value 1).
 
-[7.0.0-8.1.0] This is value 1.
+[7.0.0-9.0.0] This is value 1.
 
 Controls which struct version to use for [[#ApplicationAlbumEntry]] / [[#AlbumFileEntry]]. However, the struct size for the newer version is used regardless on [7.0.0+] for the actual cmds.
 

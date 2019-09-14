@@ -390,7 +390,7 @@ This is a version field. Official sw uses func
 which is then used with various commands (the input for those cmds must
 match value 1).
 
-\[7.0.0-8.1.0\] This is value 1.
+\[7.0.0-9.0.0\] This is value 1.
 
 Controls which struct version to use for
 [\#ApplicationAlbumEntry](#ApplicationAlbumEntry "wikilink") /
