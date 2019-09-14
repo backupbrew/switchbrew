@@ -670,7 +670,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 509 || [5.0.0+] ListApplicationIdOnGameCard
 |-
-| 510 || [9.0.0+] GetGameCardPlatformRegion
+| 510 || [9.0.0+] [[#GetGameCardPlatformRegion]]
 |-
 | 600 || CountApplicationContentMeta
 |-
@@ -933,6 +933,11 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 [[NCM_services|NCM]] OpenContentMetaDatabase is used with StorageId = NandSystem, then IContentMetaDatabase GetLatestContentMetaKey is used with both of the above titleIDs to verify that the cmd is successful.
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
+
+=== GetGameCardPlatformRegion ===
+No input, returns an u8 '''PlatformRegion''' (0x00 = Default, 0x01 = China).
+
+This calls [[Filesystem_services#IDeviceOperator|fsp-srv IDeviceOperator]] GetGameCardCompatibilityType and returns the result.
 
 ==== GetRightsEnvironmentHandleForApplication ====
 No input, returns a total of 8-bytes of output.

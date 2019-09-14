@@ -405,7 +405,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 507  | \[3.0.0+\] EnsureGameCardAccess                                                                               |
 | 508  | \[3.0.0+\] GetLastGameCardMountFailureResult                                                                  |
 | 509  | \[5.0.0+\] ListApplicationIdOnGameCard                                                                        |
-| 510  | \[9.0.0+\] GetGameCardPlatformRegion                                                                          |
+| 510  | \[9.0.0+\] [\#GetGameCardPlatformRegion](#GetGameCardPlatformRegion "wikilink")                               |
 | 600  | CountApplicationContentMeta                                                                                   |
 | 601  | [\#ListApplicationContentMetaStatus](#ListApplicationContentMetaStatus "wikilink")                            |
 | 602  | \[2.0.0-5.1.0\] ListAvailableAddOnContent                                                                     |
@@ -554,6 +554,15 @@ verify that the cmd is successful.
 Then if the above succeeds, the above titles are launched with the above
 StorageId via [pmshell](Process%20Manager%20services.md "wikilink")
 LaunchProgram, with a 0.5s sleep-thread afterwards on success.
+
+### GetGameCardPlatformRegion
+
+No input, returns an u8 **PlatformRegion** (0x00 = Default, 0x01 =
+China).
+
+This calls [fsp-srv
+IDeviceOperator](Filesystem%20services#IDeviceOperator.md##IDeviceOperator "wikilink")
+GetGameCardCompatibilityType and returns the result.
 
 #### GetRightsEnvironmentHandleForApplication
 
