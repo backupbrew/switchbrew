@@ -1134,7 +1134,7 @@ Pre-9.0.0:
 |-
 | 0x4 || 0x4 || Unknown
 |-
-| 0x8 || 0x8 || [[HID_Shared_Memory#Button_State|Buttons]], masked with 0xfffffffff00fffff.
+| 0x8 || 0x8 || [[HID_Shared_Memory#Button_State|Buttons]], masked with 0xfffffffff00fffff. See above table regarding HOME/Capture buttons.
 |-
 | 0x10 || 0x10(4*2*2) || Joystick data, see [[HID_Shared_Memory#Controller_State]].
 |-

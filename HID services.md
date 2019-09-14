@@ -870,14 +870,14 @@ Pre-9.0.0:
 
 \[9.0.0+\]:
 
-| Offset | Size          | Description                                                                                                                            |
-| ------ | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 0x0    | 0x4           | batteryCharge for the main [PowerInfo](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").                                  |
-| 0x4    | 0x4           | Unknown                                                                                                                                |
-| 0x8    | 0x8           | [Buttons](HID%20Shared%20Memory#Button%20State.md##Button_State "wikilink"), masked with 0xfffffffff00fffff.                           |
-| 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink"). |
-| 0x20   | 0x1           | Unused for input. Set with output from [\#DumpHdlsStates](#DumpHdlsStates "wikilink") (zero in some cases).                            |
-| 0x21   | 0x3           | Padding                                                                                                                                |
+| Offset | Size          | Description                                                                                                                                                  |
+| ------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0x0    | 0x4           | batteryCharge for the main [PowerInfo](HID%20Shared%20Memory#Controllers.md##Controllers "wikilink").                                                        |
+| 0x4    | 0x4           | Unknown                                                                                                                                                      |
+| 0x8    | 0x8           | [Buttons](HID%20Shared%20Memory#Button%20State.md##Button_State "wikilink"), masked with 0xfffffffff00fffff. See above table regarding HOME/Capture buttons. |
+| 0x10   | 0x10(4\*2\*2) | Joystick data, see [HID\_Shared\_Memory\#Controller\_State](HID%20Shared%20Memory#Controller%20State.md##Controller_State "wikilink").                       |
+| 0x20   | 0x1           | Unused for input. Set with output from [\#DumpHdlsStates](#DumpHdlsStates "wikilink") (zero in some cases).                                                  |
+| 0x21   | 0x3           | Padding                                                                                                                                                      |
 
 This is a 0x24-byte struct.
 
