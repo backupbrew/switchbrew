@@ -1102,6 +1102,8 @@ u8 values for "nn::hidtypes::DeviceType", must match one of the these values:
 |}
 
 == HdlsState ==
+
+Pre-9.0.0:
 {| class="wikitable" border="1"
 |-
 ! Offset || Size || Description
@@ -1115,6 +1117,22 @@ u8 values for "nn::hidtypes::DeviceType", must match one of the these values:
 | 0x8 || 0x4 || batteryCharge for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
 |-
 | 0xC || 0x4 || [[HID_Shared_Memory#Button_State|Buttons]]. Bit18 = HOME and bit19 = Capture.
+|-
+| 0x10 || 0x10(4*2*2) || Joystick data, see [[HID_Shared_Memory#Controller_State]].
+|-
+| 0x20 || 0x1 || Unused for input. Set with output from [[#DumpHdlsStates]] (zero in some cases).
+|-
+| 0x21 || 0x3 || Padding
+|}
+
+[9.0.0+]:
+{| class="wikitable" border="1"
+|-
+! Offset || Size || Description
+|-
+| 0x0 || 0x8 || Unknown
+|-
+| 0x8 || 0x8 || [[HID_Shared_Memory#Button_State|Buttons]], masked with 0xfffffffff00fffff.
 |-
 | 0x10 || 0x10(4*2*2) || Joystick data, see [[HID_Shared_Memory#Controller_State]].
 |-
