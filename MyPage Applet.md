@@ -4,14 +4,14 @@ under `nn::friends`. See
 
 ## Arg
 
-| Offset | Size | Description                                                 |
-| ------ | ---- | ----------------------------------------------------------- |
-| 0x0    | 0x4  | [\#Type](#Type "wikilink")                                  |
-| 0x4    | 0x4  | Padding                                                     |
-| 0x8    | 0x10 | u128 userID                                                 |
-| 0x18   | 0x8  | [NetworkServiceAccountId](Account%20services.md "wikilink") |
-| 0x20   | 0x48 | [InAppScreenName](Friend%20services.md "wikilink")          |
-| 0x68   | 0x48 | [InAppScreenName](Friend%20services.md "wikilink")          |
+| Offset | Size | Description                                                                        |
+| ------ | ---- | ---------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | [\#Type](#Type "wikilink")                                                         |
+| 0x4    | 0x4  | Padding                                                                            |
+| 0x8    | 0x10 | u128 userID                                                                        |
+| 0x18   | 0x8  | [NetworkServiceAccountId](Account%20services.md "wikilink") for the other account. |
+| 0x20   | 0x48 | [InAppScreenName](Friend%20services.md "wikilink")                                 |
+| 0x68   | 0x48 | [InAppScreenName](Friend%20services.md "wikilink")                                 |
 
 The is the 0xB0-byte struct pushed for the input storage.
 
@@ -21,17 +21,17 @@ for everything else these are cleared.
 
 ## Type
 
-| Name                              | Type value | PlayStartupSound | Description                                             |
-| --------------------------------- | ---------- | ---------------- | ------------------------------------------------------- |
-| ShowFriendList                    | 0          | false            |                                                         |
-| ShowUserDetailInfo                | 1          | false            |                                                         |
-| StartSendingFriendRequest         | 2          | false            |                                                         |
-| ShowMethodsOfSendingFriendRequest | 3          | false            |                                                         |
-| StartFacedFriendRequest           | 4          | false            |                                                         |
-| ShowReceivedFriendRequestList     | 5          | false            |                                                         |
-| ShowBlockedUserList               | 6          | false            |                                                         |
-| ShowMyProfile                     | 7          | false            |                                                         |
-| ShowMyProfileForHomeMenu          | 7          | true             | Identical to ShowMyProfile except for PlayStartupSound. |
+| Name                              | Type value | PlayStartupSound | Description                                                                                                                      |
+| --------------------------------- | ---------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| ShowFriendList                    | 0          | false            | Launches the applet with the "Friend List" menu initially selected.                                                              |
+| ShowUserDetailInfo                | 1          | false            |                                                                                                                                  |
+| StartSendingFriendRequest         | 2          | false            |                                                                                                                                  |
+| ShowMethodsOfSendingFriendRequest | 3          | false            | Launches the applet with the "Add Friend" menu initially selected.                                                               |
+| StartFacedFriendRequest           | 4          | false            | Launches the applet where the "Search for Local Users" menu is initially shown. Returning from this menu will exit the applet.   |
+| ShowReceivedFriendRequestList     | 5          | false            | Launches the applet where the "Received Friend Requests" menu is initially shown. Returning from this menu will exit the applet. |
+| ShowBlockedUserList               | 6          | false            | Launches the applet where the "Blocked-User List" menu is initially shown. Returning from this menu will exit the applet.        |
+| ShowMyProfile                     | 7          | false            | Launches the applet with the "Profile" menu initially selected.                                                                  |
+| ShowMyProfileForHomeMenu          | 7          | true             | Identical to ShowMyProfile except for PlayStartupSound.                                                                          |
 
 ## Usage
 

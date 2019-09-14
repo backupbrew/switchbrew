@@ -14,7 +14,7 @@ See [[AM_services#Library_Applets]].
 |-
 | 0x8 || 0x10 || u128 userID
 |-
-| 0x18 || 0x8 || [[Account_services|NetworkServiceAccountId]]
+| 0x18 || 0x8 || [[Account_services|NetworkServiceAccountId]] for the other account.
 |-
 | 0x20 || 0x48 || [[Friend_services|InAppScreenName]]
 |-
@@ -30,21 +30,21 @@ The fields following the userID are only set for [[#Type]] ShowUserDetailInfo/St
 |-
 ! Name || Type value || PlayStartupSound || Description
 |-
-| ShowFriendList || 0 || false || 
+| ShowFriendList || 0 || false || Launches the applet with the "Friend List" menu initially selected.
 |-
 | ShowUserDetailInfo || 1 || false || 
 |-
 | StartSendingFriendRequest || 2 || false || 
 |-
-| ShowMethodsOfSendingFriendRequest || 3 || false || 
+| ShowMethodsOfSendingFriendRequest || 3 || false || Launches the applet with the "Add Friend" menu initially selected.
 |-
-| StartFacedFriendRequest || 4 || false || 
+| StartFacedFriendRequest || 4 || false || Launches the applet where the "Search for Local Users" menu is initially shown. Returning from this menu will exit the applet.
 |-
-| ShowReceivedFriendRequestList || 5 || false || 
+| ShowReceivedFriendRequestList || 5 || false || Launches the applet where the "Received Friend Requests" menu is initially shown. Returning from this menu will exit the applet.
 |-
-| ShowBlockedUserList || 6 || false || 
+| ShowBlockedUserList || 6 || false || Launches the applet where the "Blocked-User List" menu is initially shown. Returning from this menu will exit the applet.
 |-
-| ShowMyProfile || 7 || false || 
+| ShowMyProfile || 7 || false || Launches the applet with the "Profile" menu initially selected.
 |-
 | ShowMyProfileForHomeMenu || 7 || true || Identical to ShowMyProfile except for PlayStartupSound.
 |}
