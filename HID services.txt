@@ -1130,7 +1130,9 @@ Pre-9.0.0:
 |-
 ! Offset || Size || Description
 |-
-| 0x0 || 0x8 || Unknown
+| 0x0 || 0x4 || batteryCharge for the main [[HID_Shared_Memory#Controllers|PowerInfo]].
+|-
+| 0x4 || 0x4 || Unknown
 |-
 | 0x8 || 0x8 || [[HID_Shared_Memory#Button_State|Buttons]], masked with 0xfffffffff00fffff.
 |-
