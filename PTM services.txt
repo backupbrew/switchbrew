@@ -232,14 +232,20 @@ Added with [8.0.0+].
 == GetTemperatureRange ==
 Takes an u8 [[#Location]] and returns an s32 minimum temperature + s32 maximum temperature.
 
+The returned temperature values are in Celsius.
+
 == GetTemperature ==
 Takes an u8 [[#Location]] and returns an output s32.
 
+The output is the temperature in Celsius.
+
 == SetMeasurementMode ==
-Takes an u8 [[#Location]] and an u8 MeasurementMode.
+Takes an u8 [[#Location]] and an u8 MeasurementMode, no output.
 
 == GetTemperatureMilliC ==
 Takes an u8 [[#Location]] and returns an output s32.
+
+The output is the temperature in MilliC.
 
 == Location ==
 {| class="wikitable" border="1"

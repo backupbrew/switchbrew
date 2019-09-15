@@ -200,20 +200,26 @@ Added with \[8.0.0+\].
 Takes an u8 [\#Location](#Location "wikilink") and returns an s32
 minimum temperature + s32 maximum temperature.
 
+The returned temperature values are in Celsius.
+
 ## GetTemperature
 
 Takes an u8 [\#Location](#Location "wikilink") and returns an output
 s32.
 
+The output is the temperature in Celsius.
+
 ## SetMeasurementMode
 
 Takes an u8 [\#Location](#Location "wikilink") and an u8
-MeasurementMode.
+MeasurementMode, no output.
 
 ## GetTemperatureMilliC
 
 Takes an u8 [\#Location](#Location "wikilink") and returns an output
 s32.
+
+The output is the temperature in MilliC.
 
 ## Location
 
