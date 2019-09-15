@@ -304,6 +304,13 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/lantus/postal-nx Yes]
 | 2018-05-25
 |-
+| powder-nx
+| Physics sandbox game, which simulates air pressure and velocity, heat, gravity and a countless number of interactions between different substances.
+| VelocityRa
+| [https://github.com/VelocityRa/powder-nx/releases Here]
+| [https://github.com/VelocityRa/powder-nx Yes]
+| 2019-09-15
+|-
 | REminiscence
 | REminiscence is a re-implementation of the engine used in the game Flashback made by Delphine Software and released in 1992.
 | Cpasjuste
