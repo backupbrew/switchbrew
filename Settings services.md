@@ -46,6 +46,10 @@ Takes a type-0x16 output buffer containing a 0x80-byte
 This uses [\#GetDebugModeFlag](#GetDebugModeFlag "wikilink") internally,
 if the output flag is 0 an error is thrown.
 
+This runs the same code as GetFirmwareVersion2, with the last 0x80-bytes
+of the [output](System%20Version%20Title.md "wikilink") being copied to
+the output buffer.
+
 ## Language
 
 "nn::settings::Language" (s32) is basically array indices in the output
