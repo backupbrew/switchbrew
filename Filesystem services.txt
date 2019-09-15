@@ -107,7 +107,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 34 || [5.0.0+] GetCacheStorageSize
 |-
-| 35 || [6.0.0+] [[#OpenSaveDataFileSystemByHashSalt]]
+| 35 || [6.0.0+] [[#CreateSaveDataFileSystemWithHashSalt]]
 |-
 | 36 || [9.0.0+] OpenHostFileSystemWithOption
 |-
@@ -149,9 +149,9 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 |-
 | 82 || [5.0.0+] [[#OpenSaveDataTransferManagerVersion2]]
 |-
-| 83 || [6.0.0+] [[#OpenSaveDataTransferProhibiterForCloudBackUp]]
+| 83 || [6.0.0+] [[#OpenSaveDataTransferProhibiter]]
 |-
-| 84 || [6.0.0+] [[#ListApplicationAccessibleSaveDataOwnerId]]
+| 84 || [6.0.0+] [[#ListAccessibleSaveDataOwnerId]]
 |-
 | 85 || [9.0.0+] [[#OpenSaveDataTransferManagerForSaveDataRepair]]
 |-
@@ -450,11 +450,11 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [3.0.0+] 0x1C || 0x8000000000000800<br/>([5.0.0-5.1.0] 0x8000000000004020)<br/>([1.0.0-4.1.0] 0x8000000000000028) || CanSetEncryptionSeed || [[#SetSdCardEncryptionSeed]]
 |-
-| [4.0.0+] 0x1D || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000000)<br/>([1.0.0-4.1.0] 0x8000000020000000) || SaveDataExtraData_Write0 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
+| [4.0.0+] 0x1D || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000000)<br/>([1.0.0-4.1.0] 0x8000000020000000) || CanWriteSaveDataFileSystemExtraDataTimeStamp || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
 |-
 | [4.0.0+] 0x1E || 0x8000000000004020<br/>([5.0.0-5.1.0] 0x8000000000002020)<br/>([1.0.0-4.1.0] 0x8000000040000000) || CanWriteSaveDataFileSystemExtraDataFlags || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
 |-
-| [4.0.0+] 0x1F || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000028)<br/>([1.0.0-4.1.0] 0x8000000000000000) || SaveDataExtraData_Write1 || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
+| [4.0.0+] 0x1F || 0x8000000000000020<br/>([5.0.0-5.1.0] 0x8000000000000028)<br/>([1.0.0-4.1.0] 0x8000000000000000) || CanWriteSaveDataFileSystemExtraDataCommitId || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
 |-
 | [4.0.0+] 0x20 || 0x8000000000000000<br/>([5.0.0-5.1.0] 0x8000000020000000)<br/>([1.0.0-4.1.0] 0x8000000000000000) || CanWriteSaveDataFileSystemExtraDataAll || [[#WriteSaveDataFileSystemExtraData]], [[#WriteSaveDataFileSystemExtraDataWithMask]]
 |-
@@ -500,11 +500,11 @@ If the code were to request an invalid input type, panic. But this never happens
 |-
 | [6.0.0+] 0x35 || 0x8000000000200000 || CanSetSdCardAccessibility || [[#SetSdCardAccessibility]]
 |-
-| [6.0.0+] 0x36 || 0x4000000000000000 || CanSimulateGameCardDetectionEvent || SimulateDeviceDetectionEvent, SetSimulationEvent, ClearSimulationEvent
+| [6.0.0+] 0x36 || 0x4000000000000000 || CanSimulateDevice || SimulateDeviceDetectionEvent, SetSimulationEvent, ClearSimulationEvent
 |-
-| [6.0.0+] 0x37 || 0x8000000000000000<br/>([6.0.0-6.2.0] 0x8000000000080000) || CanSetDataStorageRedirectTarget || SetDataStorageRedirectTarget
+| [6.0.0+] 0x37 || 0x8000000000000000<br/>([6.0.0-6.2.0] 0x8000000000080000) || CanCreateSaveDataWithHashSalt || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemWithHashSalt
 |-
-| [6.0.0+] 0x38 || 0x8000000400000000<br/>([6.0.0-6.2.0] 0x8000000000000000) || || [[#CreateSaveDataFileSystem]], CreateSaveDataFileSystemByHashSalt
+| [6.0.0+] 0x38 || 0x8000000400000000<br/>([6.0.0-6.2.0] 0x8000000000000000) || CanRegisterProgramIndexMapInfo || RegisterProgramIndexMapInfo
 |-
 | [8.0.0+] 0x39 || 0x8000000000000010 || CanChallengeCardExistence || ChallengeCardExistence
 |}
@@ -573,7 +573,7 @@ Takes two input u32s, with the second u32 located at +4 in rawdata after the fir
 
 Mounts a [[Gamecard_Partition|gamecard partition]].
 
-== OpenSaveDataFileSystemByHashSalt ==
+== CreateSaveDataFileSystemWithHashSalt ==
 Takes a total of 0xB0-bytes of input, no output.
 
 == OpenSaveDataFileSystem ==
@@ -616,10 +616,10 @@ No input, returns an [[#ISaveDataTransferManager]].
 == OpenSaveDataTransferManagerVersion2 ==
 No input, returns an [[#ISaveDataTransferManagerWithDivision]].
 
-== OpenSaveDataTransferProhibiterForCloudBackUp ==
+== OpenSaveDataTransferProhibiter ==
 Takes an input u64, returns an [[#ISaveDataTransferProhibiter]].
 
-== ListApplicationAccessibleSaveDataOwnerId ==
+== ListAccessibleSaveDataOwnerId ==
 Takes a total of 0x10-bytes of input, returns 4-bytes of output and a type-0x6 output buffer.
 
 == OpenSaveDataTransferManagerForSaveDataRepair ==

@@ -90,7 +90,7 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 32   | \[3.0.0+\] ExtendSaveDataFileSystem                                                                                           |
 | 33   | \[5.0.0+\] DeleteCacheStorage                                                                                                 |
 | 34   | \[5.0.0+\] GetCacheStorageSize                                                                                                |
-| 35   | \[6.0.0+\] [\#OpenSaveDataFileSystemByHashSalt](#OpenSaveDataFileSystemByHashSalt "wikilink")                                 |
+| 35   | \[6.0.0+\] [\#CreateSaveDataFileSystemWithHashSalt](#CreateSaveDataFileSystemWithHashSalt "wikilink")                         |
 | 36   | \[9.0.0+\] OpenHostFileSystemWithOption                                                                                       |
 | 51   | [\#OpenSaveDataFileSystem](#OpenSaveDataFileSystem "wikilink")                                                                |
 | 52   | [\#OpenSaveDataFileSystemBySystemSaveDataId](#OpenSaveDataFileSystemBySystemSaveDataId "wikilink")                            |
@@ -111,8 +111,8 @@ This is "nn::fssrv::sf::IFileSystemProxy".
 | 80   | OpenSaveDataMetaFile                                                                                                          |
 | 81   | \[4.0.0+\] [\#OpenSaveDataTransferManager](#OpenSaveDataTransferManager "wikilink")                                           |
 | 82   | \[5.0.0+\] [\#OpenSaveDataTransferManagerVersion2](#OpenSaveDataTransferManagerVersion2 "wikilink")                           |
-| 83   | \[6.0.0+\] [\#OpenSaveDataTransferProhibiterForCloudBackUp](#OpenSaveDataTransferProhibiterForCloudBackUp "wikilink")         |
-| 84   | \[6.0.0+\] [\#ListApplicationAccessibleSaveDataOwnerId](#ListApplicationAccessibleSaveDataOwnerId "wikilink")                 |
+| 83   | \[6.0.0+\] [\#OpenSaveDataTransferProhibiter](#OpenSaveDataTransferProhibiter "wikilink")                                     |
+| 84   | \[6.0.0+\] [\#ListAccessibleSaveDataOwnerId](#ListAccessibleSaveDataOwnerId "wikilink")                                       |
 | 85   | \[9.0.0+\] [\#OpenSaveDataTransferManagerForSaveDataRepair](#OpenSaveDataTransferManagerForSaveDataRepair "wikilink")         |
 | 100  | OpenImageDirectoryFileSystem                                                                                                  |
 | 110  | [\#OpenContentStorageFileSystem](#OpenContentStorageFileSystem "wikilink")                                                    |
@@ -804,7 +804,7 @@ happens.
 <td><p>0x8000000000000020<br />
 ([5.0.0-5.1.0] 0x8000000000000000)<br />
 ([1.0.0-4.1.0] 0x8000000020000000)</p></td>
-<td><p>SaveDataExtraData_Write0</p></td>
+<td><p>CanWriteSaveDataFileSystemExtraDataTimeStamp</p></td>
 <td><p><a href="#WriteSaveDataFileSystemExtraData" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraDataWithMask" title="wikilink">#WriteSaveDataFileSystemExtraDataWithMask</a></p></td>
 </tr>
 <tr class="odd">
@@ -820,7 +820,7 @@ happens.
 <td><p>0x8000000000000020<br />
 ([5.0.0-5.1.0] 0x8000000000000028)<br />
 ([1.0.0-4.1.0] 0x8000000000000000)</p></td>
-<td><p>SaveDataExtraData_Write1</p></td>
+<td><p>CanWriteSaveDataFileSystemExtraDataCommitId</p></td>
 <td><p><a href="#WriteSaveDataFileSystemExtraData" title="wikilink">#WriteSaveDataFileSystemExtraData</a>, <a href="#WriteSaveDataFileSystemExtraDataWithMask" title="wikilink">#WriteSaveDataFileSystemExtraDataWithMask</a></p></td>
 </tr>
 <tr class="odd">
@@ -977,22 +977,22 @@ happens.
 <tr class="odd">
 <td><p>[6.0.0+] 0x36</p></td>
 <td><p>0x4000000000000000</p></td>
-<td><p>CanSimulateGameCardDetectionEvent</p></td>
+<td><p>CanSimulateDevice</p></td>
 <td><p>SimulateDeviceDetectionEvent, SetSimulationEvent, ClearSimulationEvent</p></td>
 </tr>
 <tr class="even">
 <td><p>[6.0.0+] 0x37</p></td>
 <td><p>0x8000000000000000<br />
 ([6.0.0-6.2.0] 0x8000000000080000)</p></td>
-<td><p>CanSetDataStorageRedirectTarget</p></td>
-<td><p>SetDataStorageRedirectTarget</p></td>
+<td><p>CanCreateSaveDataWithHashSalt</p></td>
+<td><p><a href="#CreateSaveDataFileSystem" title="wikilink">#CreateSaveDataFileSystem</a>, CreateSaveDataFileSystemWithHashSalt</p></td>
 </tr>
 <tr class="odd">
 <td><p>[6.0.0+] 0x38</p></td>
 <td><p>0x8000000400000000<br />
 ([6.0.0-6.2.0] 0x8000000000000000)</p></td>
-<td></td>
-<td><p><a href="#CreateSaveDataFileSystem" title="wikilink">#CreateSaveDataFileSystem</a>, CreateSaveDataFileSystemByHashSalt</p></td>
+<td><p>CanRegisterProgramIndexMapInfo</p></td>
+<td><p>RegisterProgramIndexMapInfo</p></td>
 </tr>
 <tr class="even">
 <td><p>[8.0.0+] 0x39</p></td>
@@ -1119,7 +1119,7 @@ the first u32. Returns an [\#IFileSystem](#IFileSystem "wikilink").
 
 Mounts a [gamecard partition](Gamecard%20Partition.md "wikilink").
 
-## OpenSaveDataFileSystemByHashSalt
+## CreateSaveDataFileSystemWithHashSalt
 
 Takes a total of 0xB0-bytes of input, no output.
 
@@ -1191,12 +1191,12 @@ No input, returns an
 No input, returns an
 [\#ISaveDataTransferManagerWithDivision](#ISaveDataTransferManagerWithDivision "wikilink").
 
-## OpenSaveDataTransferProhibiterForCloudBackUp
+## OpenSaveDataTransferProhibiter
 
 Takes an input u64, returns an
 [\#ISaveDataTransferProhibiter](#ISaveDataTransferProhibiter "wikilink").
 
-## ListApplicationAccessibleSaveDataOwnerId
+## ListAccessibleSaveDataOwnerId
 
 Takes a total of 0x10-bytes of input, returns 4-bytes of output and a
 type-0x6 output buffer.
