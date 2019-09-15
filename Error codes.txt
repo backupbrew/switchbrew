@@ -1178,7 +1178,11 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x59080 || 128 || 712 || Thread stack pool exhausted (out of memory)
 |-
-| 0x7A880 || 128 || 980 || <code>am.debug!dev_function</code> setting needs to be set
+| 0x79C80 || 128 || 974 || DebugMode not enabled
+|-
+| 0x7A880 || 128 || 980 || <code>am.debug!dev_function</code> setting needs to be set / DebugMode not enabled
+|-
+| 0x7CC80 || 128 || 998 || Not Implemented
 |-
 | 0xA83 || 131 || 5 || Unrecognized applet ID
 |-
