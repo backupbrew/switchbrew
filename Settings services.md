@@ -43,6 +43,9 @@ fixed size 0x1000. This is probably related to HID keyboard.
 Takes a type-0x16 output buffer containing a 0x80-byte
 "nn::oe::FirmwareVersionForDebug".
 
+This uses [\#GetDebugModeFlag](#GetDebugModeFlag "wikilink") internally,
+if the output flag is 0 an error is thrown.
+
 ## Language
 
 "nn::settings::Language" (s32) is basically array indices in the output
