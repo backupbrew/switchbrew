@@ -54,41 +54,41 @@ This is an u64, which is a NUL-terminated string.
 
 {| class="wikitable" border="1"
 |-
-! Array-index / [[#Language]] || [[#LanguageCode]] || Icon [[NCA_Content_FS#FS-type3|language]] filename
+! Array-index / [[#Language]] || [[#LanguageCode]] || Icon [[NCA_Content_FS#FS-type3|language]] filename || Name
 |-
-| 0 || ja || "Japanese"
+| 0 || ja || "Japanese" || Japanese
 |-
-| 1 || en-US || "AmericanEnglish"
+| 1 || en-US || "AmericanEnglish" || EnglishUs
 |-
-| 2 || fr || "French"
+| 2 || fr || "French" || French
 |-
-| 3 || de || "German"
+| 3 || de || "German" || German
 |-
-| 4 || it || "Italian"
+| 4 || it || "Italian" || Italian
 |-
-| 5 || es || "Spanish"
+| 5 || es || "Spanish" || Spanish
 |-
-| 6 || zh-CN || "Chinese"
+| 6 || zh-CN || "Chinese" || Chinese
 |-
-| 7 || ko || "Korean"
+| 7 || ko || "Korean" || Korean
 |-
-| 8 || nl || "Dutch"
+| 8 || nl || "Dutch" || Dutch
 |-
-| 9 || pt || "Portuguese"
+| 9 || pt || "Portuguese" || Portuguese
 |-
-| 10 || ru || "Russian"
+| 10 || ru || "Russian" || Russian
 |-
-| 11 || zh-TW || "Taiwanese"
+| 11 || zh-TW || "Taiwanese" || Taiwanese
 |-
-| 12 || en-GB || "BritishEnglish"
+| 12 || en-GB || "BritishEnglish" || EnglishUk
 |-
-| 13 || fr-CA || "CanadianFrench"
+| 13 || fr-CA || "CanadianFrench" || FrenchCa
 |-
-| 14 || es-419 || "LatinAmericanSpanish"
+| 14 || es-419 || "LatinAmericanSpanish" || SpanishLatin
 |-
-| [4.0.0+] 15 || zh-Hans || "SimplifiedChinese"
+| [4.0.0+] 15 || zh-Hans || "SimplifiedChinese" || ChineseSimplified
 |-
-| [4.0.0+] 16 || zh-Hant || "TraditionalChinese"
+| [4.0.0+] 16 || zh-Hant || "TraditionalChinese" || ChineseTraditional
 |}
 
 == RegionCode ==

@@ -61,25 +61,25 @@ This is "nn::settings::LanguageCode".
 
 This is an u64, which is a NUL-terminated string.
 
-| Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename |
-| ------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------- |
-| 0                                                | ja                                         | "Japanese"                                                                    |
-| 1                                                | en-US                                      | "AmericanEnglish"                                                             |
-| 2                                                | fr                                         | "French"                                                                      |
-| 3                                                | de                                         | "German"                                                                      |
-| 4                                                | it                                         | "Italian"                                                                     |
-| 5                                                | es                                         | "Spanish"                                                                     |
-| 6                                                | zh-CN                                      | "Chinese"                                                                     |
-| 7                                                | ko                                         | "Korean"                                                                      |
-| 8                                                | nl                                         | "Dutch"                                                                       |
-| 9                                                | pt                                         | "Portuguese"                                                                  |
-| 10                                               | ru                                         | "Russian"                                                                     |
-| 11                                               | zh-TW                                      | "Taiwanese"                                                                   |
-| 12                                               | en-GB                                      | "BritishEnglish"                                                              |
-| 13                                               | fr-CA                                      | "CanadianFrench"                                                              |
-| 14                                               | es-419                                     | "LatinAmericanSpanish"                                                        |
-| \[4.0.0+\] 15                                    | zh-Hans                                    | "SimplifiedChinese"                                                           |
-| \[4.0.0+\] 16                                    | zh-Hant                                    | "TraditionalChinese"                                                          |
+| Array-index / [\#Language](#Language "wikilink") | [\#LanguageCode](#LanguageCode "wikilink") | Icon [language](NCA%20Content%20FS#FS-type3.md##FS-type3 "wikilink") filename | Name               |
+| ------------------------------------------------ | ------------------------------------------ | ----------------------------------------------------------------------------- | ------------------ |
+| 0                                                | ja                                         | "Japanese"                                                                    | Japanese           |
+| 1                                                | en-US                                      | "AmericanEnglish"                                                             | EnglishUs          |
+| 2                                                | fr                                         | "French"                                                                      | French             |
+| 3                                                | de                                         | "German"                                                                      | German             |
+| 4                                                | it                                         | "Italian"                                                                     | Italian            |
+| 5                                                | es                                         | "Spanish"                                                                     | Spanish            |
+| 6                                                | zh-CN                                      | "Chinese"                                                                     | Chinese            |
+| 7                                                | ko                                         | "Korean"                                                                      | Korean             |
+| 8                                                | nl                                         | "Dutch"                                                                       | Dutch              |
+| 9                                                | pt                                         | "Portuguese"                                                                  | Portuguese         |
+| 10                                               | ru                                         | "Russian"                                                                     | Russian            |
+| 11                                               | zh-TW                                      | "Taiwanese"                                                                   | Taiwanese          |
+| 12                                               | en-GB                                      | "BritishEnglish"                                                              | EnglishUk          |
+| 13                                               | fr-CA                                      | "CanadianFrench"                                                              | FrenchCa           |
+| 14                                               | es-419                                     | "LatinAmericanSpanish"                                                        | SpanishLatin       |
+| \[4.0.0+\] 15                                    | zh-Hans                                    | "SimplifiedChinese"                                                           | ChineseSimplified  |
+| \[4.0.0+\] 16                                    | zh-Hant                                    | "TraditionalChinese"                                                          | ChineseTraditional |
 
 ## RegionCode
 
