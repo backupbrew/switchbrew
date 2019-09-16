@@ -687,7 +687,7 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 184 || [9.0.0+] SetPlatformRegion
 |-
-| 185 || [9.0.0+] GetHomeMenuSchemeModel
+| 185 || [9.0.0+] [[#GetHomeMenuSchemeModel]]
 |-
 | 186 || [9.0.0+] GetMemoryUsageRateFlag
 |-
@@ -748,6 +748,11 @@ No input, returns an output 0x14-byte struct "nn::settings::system::HomeMenuSche
 This struct contains 5 RGBA8 u32s for colors.
 
 The colors are loaded from [[Calibration]], with the set of fields to use selected by color_variation. When color_variation is invalid (must be 1-4), fixed color values are returned.
+
+== GetHomeMenuSchemeModel ==
+No input, returns an output u32.
+
+Loads the 0xB-byte setting <"settings_debug", "home_menu_scheme_model">. Depending on the content of the setting, the output u32 is either determined by the value of this setting, or loaded from [[Calibration]].
 
 = System Config =
 There's a common config title (*818), and a config title for each [[SPL_services|HardwareType]].

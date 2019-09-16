@@ -450,7 +450,7 @@ This is "nn::settings::ISystemSettingsServer".
 | 182 | \[8.0.0+\] SetT                                                                                   |
 | 183 | \[9.0.0+\] GetPlatformRegion                                                                      |
 | 184 | \[9.0.0+\] SetPlatformRegion                                                                      |
-| 185 | \[9.0.0+\] GetHomeMenuSchemeModel                                                                 |
+| 185 | \[9.0.0+\] [\#GetHomeMenuSchemeModel](#GetHomeMenuSchemeModel "wikilink")                         |
 | 186 | \[9.0.0+\] GetMemoryUsageRateFlag                                                                 |
 | 187 | \[9.0.0+\] GetTouchScreenMode                                                                     |
 | 188 | \[9.0.0+\] SetTouchScreenMode                                                                     |
@@ -536,6 +536,15 @@ The colors are loaded from [Calibration](Calibration.md "wikilink"),
 with the set of fields to use selected by color\_variation. When
 color\_variation is invalid (must be 1-4), fixed color values are
 returned.
+
+## GetHomeMenuSchemeModel
+
+No input, returns an output u32.
+
+Loads the 0xB-byte setting \<"settings\_debug",
+"home\_menu\_scheme\_model"\>. Depending on the content of the setting,
+the output u32 is either determined by the value of this setting, or
+loaded from [Calibration](Calibration.md "wikilink").
 
 # System Config
 
