@@ -144,7 +144,7 @@ This is the "nn::ssl::sf::SslVersion" enum.
 
 | Offset | Size | Description                                          |
 | ------ | ---- | ---------------------------------------------------- |
-| 0x0    | 0x4  | CaCertificateId                                      |
+| 0x0    | 0x4  | [\#CaCertificateId](#CaCertificateId "wikilink")     |
 | 0x4    | 0x4  | [\#BuiltinDataStatus](#BuiltinDataStatus "wikilink") |
 | 0x8    | 0x8  | Data size                                            |
 | 0x10   | 0x8  | Data offset                                          |
@@ -175,6 +175,37 @@ This is the "nn::ssl::CaCertificateId" enum.
 # VerifyOption
 
 This is the "nn::ssl::sf::VerifyOption" enum.
+
+# CertStore
+
+This is the CertStore title, which contains the following files in
+RomFS:
+
+  - "/ssl\_CaFingerprints.bdf"
+  - "/ssl\_Crl.bdf"
+  - "/ssl\_TrustedCerts.bdf"
+
+On old system-versions, this only contains "/ssl\_TrustedCerts.tcf",
+which seems to have the same format described below.
+
+These have the following structure:
+
+| Offset | Size                  | Description   |
+| ------ | --------------------- | ------------- |
+| 0x0    | 0x4                   | Magic "sslT"  |
+| 0x4    | 0x4                   | Total entries |
+| 0x8    | 0x10\*{total entries} | Array entries |
+
+Array entry structure:
+
+| Offset | Size | Description |
+| ------ | ---- | ----------- |
+| 0x0    | 0x4  | ID          |
+| 0x4    | 0x4  | ?           |
+| 0x8    | 0x8  | Data size   |
+| 0x10   | 0x8  | Data offset |
+
+Data offset is relative to absolute offset 0x8.
 
 # Client cert+privk
 
