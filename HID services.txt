@@ -621,7 +621,7 @@ This is "nn::hid::IHidDebugServer".
 |-
 | 229 || [6.0.0+] [[#ReadSerialFlash]]
 |-
-| 230 || [6.0.0+] WriteSerialFlash
+| 230 || [6.0.0+] [[#WriteSerialFlash]]
 |-
 | 231 || [6.0.0+] GetOperationResult
 |-
@@ -752,6 +752,11 @@ Takes an input TransferMemory handle, an input u32 offset, an input u64 size, an
 Reads from the specified controller's spi-flash. The input size is the original size without page-alignment. The TransferMemory permissions is RW-.
 
 This doesn't seem to be usable?
+
+== WriteSerialFlash ==
+Takes an input TransferMemory handle, an input u32 offset, an input u64 tmem_size, an input u64 size, and an u64 '''UniquePadId''', no output.
+
+Writes to the specified controller's spi-flash. The TransferMemory permissions is R--.
 
 == GetUniquePadDeviceTypeSetInternal ==
 Takes an input u64 '''UniquePadId''', returns an [[#DeviceTypeInternal]].

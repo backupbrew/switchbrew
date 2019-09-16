@@ -453,7 +453,7 @@ This is "nn::hid::IHidDebugServer".
 | 227                     | \[5.0.0+\] GetRxPacketHistory                                                                   |
 | 228                     | \[6.0.0+\] AcquireOperationEventHandle                                                          |
 | 229                     | \[6.0.0+\] [\#ReadSerialFlash](#ReadSerialFlash "wikilink")                                     |
-| 230                     | \[6.0.0+\] WriteSerialFlash                                                                     |
+| 230                     | \[6.0.0+\] [\#WriteSerialFlash](#WriteSerialFlash "wikilink")                                   |
 | 231                     | \[6.0.0+\] GetOperationResult                                                                   |
 | 232                     | \[6.0.0+\] EnableShipmentMode                                                                   |
 | 233                     | \[6.0.0+\] ClearPairingInfo                                                                     |
@@ -576,6 +576,14 @@ original size without page-alignment. The TransferMemory permissions is
 RW-.
 
 This doesn't seem to be usable?
+
+## WriteSerialFlash
+
+Takes an input TransferMemory handle, an input u32 offset, an input u64
+tmem\_size, an input u64 size, and an u64 **UniquePadId**, no output.
+
+Writes to the specified controller's spi-flash. The TransferMemory
+permissions is R--.
 
 ## GetUniquePadDeviceTypeSetInternal
 
