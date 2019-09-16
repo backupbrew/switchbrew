@@ -56,6 +56,11 @@ Data sourced from 0100000000000818 archive.
 | 8.0.0+
 | 457200 (0x6f9f0)
 |-
+| rowspan="1" |na_verification_url_retry_interval
+| 9.0.0+
+| 18000 (0x4650)
+| rowspan="1" |
+|-
 | rowspan="3" |profile_sync_interval
 | 2.0.0-5.0.0
 | 18000 (0x4650)
@@ -397,6 +402,64 @@ This class does not exist on retail firmware.
 | rowspan="1" |
 |}
 
+= btm =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |auto_pairing_device_name0
+| 9.0.0+
+| "NintendoGamepad"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name1
+| 9.0.0+
+| "Joy-Con"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name2
+| 9.0.0+
+| "Pro Controller"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name3
+| 9.0.0+
+| "Lic Pro Controller"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name4
+| 9.0.0+
+| "NES Controller"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name5
+| 9.0.0+
+| "HVC Controller"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name6
+| 9.0.0+
+| "SNES Controller"
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name7
+| 9.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name8
+| 9.0.0+
+| ""
+| rowspan="1" |
+|-
+| rowspan="1" |auto_pairing_device_name9
+| 9.0.0+
+| ""
+| rowspan="1" |
+|}
+
 = capsrv =
 {| class="wikitable" border="1"
 |-
@@ -473,9 +536,25 @@ This class does not exist on retail firmware.
 | 1 (0x1)
 | rowspan="1" |
 |-
-| rowspan="1" |updatable_firmware_group_string
-| 8.0.0+
+| rowspan="2" |updatable_firmware_group_string
+| 8.0.0-8.1.0
 | "1,3,4"
+| rowspan="2" |
+|-
+| 9.0.0+
+| "1,3,4,8,23"
+|}
+
+= creport =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |crash_screen_shot
+| 9.0.0+
+| false
 | rowspan="1" |
 |}
 
@@ -581,6 +660,11 @@ This class does not exist on retail firmware.
 |-
 | 8.0.0+
 | "auto"
+|-
+| rowspan="1" |unnecessary_prepurchase_record_margin_sec
+| 9.0.0+
+| 604800 (0x93a80)
+| rowspan="1" |
 |}
 
 = eupld =
@@ -635,6 +719,11 @@ This class does not exist on retail firmware.
 | 1.0.0+
 | false
 | rowspan="1" |
+|-
+| rowspan="1" |global_allocator_is_cache_enable
+| 9.0.0+
+| true
+| rowspan="1" |
 |}
 
 = hdcp =
@@ -663,6 +752,11 @@ This class does not exist on retail firmware.
 | false
 | rowspan="1" |
 |-
+| rowspan="1" |disabled_features_per_id
+| 9.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
 | rowspan="2" |dscale_disabled
 | 6.0.0-6.0.1
 | true
@@ -689,6 +783,11 @@ This class does not exist on retail firmware.
 | rowspan="1" |enables_debugpad
 | 1.0.0+
 | false
+| rowspan="1" |
+|-
+| rowspan="1" |enables_rail
+| 9.0.0+
+| true
 | rowspan="1" |
 |-
 | rowspan="1" |firmware_update_failure_emulation_mode
@@ -901,6 +1000,19 @@ This class does not exist on retail firmware.
 | 6 (0x6)
 |}
 
+= nfc =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |millau_h_compatibility_wait
+| 9.0.0+
+| true
+| rowspan="1" |
+|}
+
 = nfp =
 {| class="wikitable" border="1"
 |-
@@ -913,6 +1025,24 @@ This class does not exist on retail firmware.
 |-
 | rowspan="1" |play_report
 | 2.0.0+
+| false
+| rowspan="1" |
+|}
+
+= ngc.t =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |auto_reload_enabled
+| 9.0.0+
+| true
+| rowspan="1" |
+|-
+| rowspan="1" |functionality_override_enabled
+| 9.0.0+
 | false
 | rowspan="1" |
 |}
@@ -963,6 +1093,11 @@ This class does not exist on retail firmware.
 | 300 (0x12c)
 | rowspan="1" |
 |-
+| rowspan="1" |edge_token_expiration_margin_seconds
+| 9.0.0+
+| 600 (0x258)
+| rowspan="1" |
+|-
 | rowspan="1" |prefer_delta_evenif_inefficient
 | 2.0.0+
 | false
@@ -976,6 +1111,64 @@ This class does not exist on retail firmware.
 | rowspan="1" |simulate_eci_still_unavailable_response
 | 4.0.0+
 | false
+| rowspan="1" |
+|-
+| rowspan="1" |system_update_task_meta_version
+| 9.0.0+
+| 1 (0x1)
+| rowspan="1" |
+|}
+
+= notification.presenter =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |alarm_pattern_total_repeat_count
+| 9.0.0+
+| 15 (0xf)
+| rowspan="1" |
+|-
+| rowspan="1" |alarm_pattern_with_vibration_repeat_count
+| 9.0.0+
+| 5 (0x5)
+| rowspan="1" |
+|-
+| rowspan="1" |connection_retry_count
+| 9.0.0+
+| 5 (0x5)
+| rowspan="1" |
+|-
+| rowspan="1" |connection_timeout_in_milliseconds
+| 9.0.0+
+| 4000 (0xfa0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_presentation_delay_seconds
+| 9.0.0+
+| 5 (0x5)
+| rowspan="1" |
+|-
+| rowspan="1" |is_debug_presentation_enabled
+| 9.0.0+
+| false
+| rowspan="1" |
+|-
+| rowspan="1" |notification_led_timeout_in_seconds
+| 9.0.0+
+| 60 (0x3c)
+| rowspan="1" |
+|-
+| rowspan="1" |snooze_count
+| 9.0.0+
+| 2 (0x2)
+| rowspan="1" |
+|-
+| rowspan="1" |snooze_interval_in_seconds
+| 9.0.0+
+| 300 (0x12c)
 | rowspan="1" |
 |}
 
@@ -1099,6 +1292,11 @@ This class does not exist on retail firmware.
 | 90000 (0x15f90)
 | rowspan="1" |
 |-
+| rowspan="1" |preomia_application_id
+| 9.0.0+
+| "0x010070000E3C0000"
+| rowspan="1" |
+|-
 | rowspan="1" |redirected_rom_storage_id_for_debug
 | 7.0.0+
 | 0 (0x0)
@@ -1126,6 +1324,11 @@ This class does not exist on retail firmware.
 |-
 ! Name || Versions || Default Values || Description
 |-
+| rowspan="1" |check_erase_history_flag
+| 9.0.0+
+| true
+| rowspan="1" |
+|-
 | rowspan="1" |mount_gamecard_result_value
 | 3.0.0+
 | 0 (0x0)
@@ -1142,8 +1345,23 @@ This class does not exist on retail firmware.
 |-
 ! Name || Versions || Default Values || Description
 |-
+| rowspan="1" |debug_auto_update_waiting_limit
+| 9.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_system_update_waiting_limit
+| 9.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
+| rowspan="1" |debug_version_list_waiting_limit
+| 9.0.0+
+| 0 (0x0)
+| rowspan="1" |
+|-
 | rowspan="1" |debug_waiting_limit
-| 3.0.0+
+| 3.0.0-8.1.0
 | 0 (0x0)
 | rowspan="1" |
 |-
@@ -1188,7 +1406,7 @@ This class does not exist on retail firmware.
 | rowspan="1" |
 |-
 | rowspan="1" |result_value_to_register_nt_for_dynamic_rights
-| 6.0.0+
+| 6.0.0-8.1.0
 | 0 (0x0)
 | rowspan="1" |
 |-
@@ -9154,8 +9372,13 @@ This class does not exist on retail firmware.
 | ""
 | rowspan="2" |
 |-
-| 8.0.0+
+| 8.0.0-8.1.0
 | "1"
+|-
+| rowspan="1" |viccomposer.normalpriority
+| 9.0.0+
+| ""
+| rowspan="1" |
 |-
 | rowspan="1" |videostats-enable
 | 1.0.0+
@@ -9610,6 +9833,19 @@ This class does not exist on retail firmware.
 | rowspan="1" |is_hdmi_cec_suppression_enabled
 | 4.0.0+
 | false
+| rowspan="1" |
+|}
+
+= sio_hoag =
+This class does not exist before 9.0.0.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |mcu_reset_on_command_retry_enabled
+| 9.0.0+
+| true
 | rowspan="1" |
 |}
 

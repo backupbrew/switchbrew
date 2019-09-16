@@ -10,19 +10,20 @@
 
 # account.daemon
 
-| Name                              | Versions         | Default Values     | Description |
-| --------------------------------- | ---------------- | ------------------ | ----------- |
-| background\_awaking\_periodicity  | 2.0.0+           | 10800 (0x2a30)     |             |
-| initial\_schedule\_delay          | 7.0.0+           | 60 (0x3c)          |             |
-| long\_sleep\_detection\_threshold | 7.0.0+           | 1468800 (0x166980) |             |
-| na\_info\_refresh\_interval       | 2.0.0-5.0.0      | 46800 (0xb6d0)     |             |
-| 5.0.1-5.1.0                       | 72000 (0x11940)  |                    |             |
-| 6.0.0-7.0.1                       | 46800 (0xb6d0)   |                    |             |
-| 8.0.0+                            | 457200 (0x6f9f0) |                    |             |
-| profile\_sync\_interval           | 2.0.0-5.0.0      | 18000 (0x4650)     |             |
-| 5.0.1-5.1.0                       | 172800 (0x2a300) |                    |             |
-| 6.0.0+                            | 18000 (0x4650)   |                    |             |
-| schedule\_periodicity             | 2.0.0+           | 3600 (0xe10)       |             |
+| Name                                   | Versions         | Default Values     | Description |
+| -------------------------------------- | ---------------- | ------------------ | ----------- |
+| background\_awaking\_periodicity       | 2.0.0+           | 10800 (0x2a30)     |             |
+| initial\_schedule\_delay               | 7.0.0+           | 60 (0x3c)          |             |
+| long\_sleep\_detection\_threshold      | 7.0.0+           | 1468800 (0x166980) |             |
+| na\_info\_refresh\_interval            | 2.0.0-5.0.0      | 46800 (0xb6d0)     |             |
+| 5.0.1-5.1.0                            | 72000 (0x11940)  |                    |             |
+| 6.0.0-7.0.1                            | 46800 (0xb6d0)   |                    |             |
+| 8.0.0+                                 | 457200 (0x6f9f0) |                    |             |
+| na\_verification\_url\_retry\_interval | 9.0.0+           | 18000 (0x4650)     |             |
+| profile\_sync\_interval                | 2.0.0-5.0.0      | 18000 (0x4650)     |             |
+| 5.0.1-5.1.0                            | 172800 (0x2a300) |                    |             |
+| 6.0.0+                                 | 18000 (0x4650)   |                    |             |
+| schedule\_periodicity                  | 2.0.0+           | 3600 (0xe10)       |             |
 
 # am.debug
 
@@ -136,6 +137,23 @@ This class does not exist on retail firmware.
 | tm\_transport | 1.0.0+   | "USB"          |             |
 | usb           | 1.0.0+   | "UDS"          |             |
 
+# btm
+
+This class does not exist before 9.0.0.
+
+| Name                         | Versions | Default Values       | Description |
+| ---------------------------- | -------- | -------------------- | ----------- |
+| auto\_pairing\_device\_name0 | 9.0.0+   | "NintendoGamepad"    |             |
+| auto\_pairing\_device\_name1 | 9.0.0+   | "Joy-Con"            |             |
+| auto\_pairing\_device\_name2 | 9.0.0+   | "Pro Controller"     |             |
+| auto\_pairing\_device\_name3 | 9.0.0+   | "Lic Pro Controller" |             |
+| auto\_pairing\_device\_name4 | 9.0.0+   | "NES Controller"     |             |
+| auto\_pairing\_device\_name5 | 9.0.0+   | "HVC Controller"     |             |
+| auto\_pairing\_device\_name6 | 9.0.0+   | "SNES Controller"    |             |
+| auto\_pairing\_device\_name7 | 9.0.0+   | ""                   |             |
+| auto\_pairing\_device\_name8 | 9.0.0+   | ""                   |             |
+| auto\_pairing\_device\_name9 | 9.0.0+   | ""                   |             |
+
 # capsrv
 
 | Name                                              | Versions | Default Values | Description |
@@ -151,14 +169,23 @@ This class does not exist on retail firmware.
 
 # contents\_delivery
 
-| Name                                                 | Versions | Default Values | Description |
-| ---------------------------------------------------- | -------- | -------------- | ----------- |
-| acceptable\_application\_delivery\_protocol\_version | 5.0.0+   | 0 (0x0)        |             |
-| application\_delivery\_protocol\_version             | 4.0.0+   | 1 (0x1)        |             |
-| enable\_debug\_api                                   | 3.0.0+   | false          |             |
-| required\_system\_version\_to\_deliver\_application  | 4.0.0+   | 0 (0x0)        |             |
-| system\_delivery\_protocol\_version                  | 4.0.0+   | 1 (0x1)        |             |
-| updatable\_firmware\_group\_string                   | 8.0.0+   | "1,3,4"        |             |
+| Name                                                 | Versions     | Default Values | Description |
+| ---------------------------------------------------- | ------------ | -------------- | ----------- |
+| acceptable\_application\_delivery\_protocol\_version | 5.0.0+       | 0 (0x0)        |             |
+| application\_delivery\_protocol\_version             | 4.0.0+       | 1 (0x1)        |             |
+| enable\_debug\_api                                   | 3.0.0+       | false          |             |
+| required\_system\_version\_to\_deliver\_application  | 4.0.0+       | 0 (0x0)        |             |
+| system\_delivery\_protocol\_version                  | 4.0.0+       | 1 (0x1)        |             |
+| updatable\_firmware\_group\_string                   | 8.0.0-8.1.0  | "1,3,4"        |             |
+| 9.0.0+                                               | "1,3,4,8,23" |                |             |
+
+# creport
+
+This class does not exist before 9.0.0.
+
+| Name                | Versions | Default Values | Description |
+| ------------------- | -------- | -------------- | ----------- |
+| crash\_screen\_shot | 9.0.0+   | false          |             |
 
 # dauth
 
@@ -199,10 +226,11 @@ This class does not exist on retail firmware.
 
 # es
 
-| Name                       | Versions    | Default Values | Description |
-| -------------------------- | ----------- | -------------- | ----------- |
-| device\_registration\_type | 7.0.0-7.0.1 | "ecc"          |             |
-| 8.0.0+                     | "auto"      |                |             |
+| Name                                          | Versions    | Default Values   | Description |
+| --------------------------------------------- | ----------- | ---------------- | ----------- |
+| device\_registration\_type                    | 7.0.0-7.0.1 | "ecc"            |             |
+| 8.0.0+                                        | "auto"      |                  |             |
+| unnecessary\_prepurchase\_record\_margin\_sec | 9.0.0+      | 604800 (0x93a80) |             |
 
 # eupld
 
@@ -226,9 +254,10 @@ This class does not exist on retail firmware.
 
 # gpu\_core\_dump
 
-| Name       | Versions | Default Values | Description |
-| ---------- | -------- | -------------- | ----------- |
-| auto\_dump | 1.0.0+   | false          |             |
+| Name                                 | Versions | Default Values | Description |
+| ------------------------------------ | -------- | -------------- | ----------- |
+| auto\_dump                           | 1.0.0+   | false          |             |
+| global\_allocator\_is\_cache\_enable | 9.0.0+   | true           |             |
 
 # hdcp
 
@@ -242,12 +271,14 @@ This class does not exist on retail firmware.
 | Name                                       | Versions    | Default Values | Description |
 | ------------------------------------------ | ----------- | -------------- | ----------- |
 | ble\_disabled                              | 5.0.0+      | false          |             |
+| disabled\_features\_per\_id                | 9.0.0+      | 0 (0x0)        |             |
 | dscale\_disabled                           | 6.0.0-6.0.1 | true           |             |
 | 6.1.0+                                     | false       |                |             |
 | emulate\_firmware\_update\_failure         | 3.0.0+      | false          |             |
 | emulate\_future\_device                    | 3.0.0+      | false          |             |
 | emulate\_mcu\_hardware\_error              | 3.0.0+      | false          |             |
 | enables\_debugpad                          | 1.0.0+      | false          |             |
+| enables\_rail                              | 9.0.0+      | true           |             |
 | firmware\_update\_failure\_emulation\_mode | 3.0.0+      | 0 (0x0)        |             |
 | force\_handheld                            | 6.0.0+      | false          |             |
 | manages\_devices                           | 1.0.0+      | true           |             |
@@ -327,12 +358,29 @@ This class does not exist on retail firmware.
 | 6.0.0-7.0.1     | 5 (0x5)     |                |             |
 | 8.0.0+          | 6 (0x6)     |                |             |
 
+# nfc
+
+This class does not exist before 9.0.0.
+
+| Name                           | Versions | Default Values | Description |
+| ------------------------------ | -------- | -------------- | ----------- |
+| millau\_h\_compatibility\_wait | 9.0.0+   | true           |             |
+
 # nfp
 
 | Name             | Versions | Default Values | Description |
 | ---------------- | -------- | -------------- | ----------- |
 | not\_locked\_tag | 2.0.0+   | true           |             |
 | play\_report     | 2.0.0+   | false          |             |
+
+# ngc.t
+
+This class does not exist before 9.0.0.
+
+| Name                             | Versions | Default Values | Description |
+| -------------------------------- | -------- | -------------- | ----------- |
+| auto\_reload\_enabled            | 9.0.0+   | true           |             |
+| functionality\_override\_enabled | 9.0.0+   | false          |             |
 
 # nifm
 
@@ -350,9 +398,27 @@ This class does not exist on retail firmware.
 | apply\_delta\_stress\_storage               | 3.0.0+   | 0 (0x0)        |             |
 | debug\_come\_back\_after                    | 6.0.0+   | false          |             |
 | debug\_come\_back\_after\_second            | 6.0.0+   | 300 (0x12c)    |             |
+| edge\_token\_expiration\_margin\_seconds    | 9.0.0+   | 600 (0x258)    |             |
 | prefer\_delta\_evenif\_inefficient          | 2.0.0+   | false          |             |
 | simulate\_eci\_delay\_response              | 4.0.0+   | false          |             |
 | simulate\_eci\_still\_unavailable\_response | 4.0.0+   | false          |             |
+| system\_update\_task\_meta\_version         | 9.0.0+   | 1 (0x1)        |             |
+
+# notification.presenter
+
+This class does not exist before 9.0.0.
+
+| Name                                           | Versions | Default Values | Description |
+| ---------------------------------------------- | -------- | -------------- | ----------- |
+| alarm\_pattern\_total\_repeat\_count           | 9.0.0+   | 15 (0xf)       |             |
+| alarm\_pattern\_with\_vibration\_repeat\_count | 9.0.0+   | 5 (0x5)        |             |
+| connection\_retry\_count                       | 9.0.0+   | 5 (0x5)        |             |
+| connection\_timeout\_in\_milliseconds          | 9.0.0+   | 4000 (0xfa0)   |             |
+| debug\_presentation\_delay\_seconds            | 9.0.0+   | 5 (0x5)        |             |
+| is\_debug\_presentation\_enabled               | 9.0.0+   | false          |             |
+| notification\_led\_timeout\_in\_seconds        | 9.0.0+   | 60 (0x3c)      |             |
+| snooze\_count                                  | 9.0.0+   | 2 (0x2)        |             |
+| snooze\_interval\_in\_seconds                  | 9.0.0+   | 300 (0x12c)    |             |
 
 # npns
 
@@ -389,6 +455,7 @@ This class does not exist on retail firmware.
 | debug\_account\_restricted\_rights                            | 6.0.0+   | false                |             |
 | initial\_waiting\_time\_of\_assigning\_elicenses\_for\_device | 6.0.0+   | 900 (0x384)          |             |
 | max\_waiting\_time\_of\_assigning\_elicenses\_for\_device     | 6.0.0+   | 90000 (0x15f90)      |             |
+| preomia\_application\_id                                      | 9.0.0+   | "0x010070000E3C0000" |             |
 | redirected\_rom\_storage\_id\_for\_debug                      | 7.0.0+   | 0 (0x0)              |             |
 | wait\_time\_after\_signal\_for\_dynamic\_rights\_observer     | 6.0.0+   | 15 (0xf)             |             |
 
@@ -402,6 +469,7 @@ This class does not exist on retail firmware.
 
 | Name                                 | Versions | Default Values | Description |
 | ------------------------------------ | -------- | -------------- | ----------- |
+| check\_erase\_history\_flag          | 9.0.0+   | true           |             |
 | mount\_gamecard\_result\_value       | 3.0.0+   | 0 (0x0)        |             |
 | try\_gamecard\_access\_result\_value | 3.0.0+   | 0 (0x0)        |             |
 
@@ -409,7 +477,10 @@ This class does not exist on retail firmware.
 
 | Name                                                  | Versions    | Default Values | Description |
 | ----------------------------------------------------- | ----------- | -------------- | ----------- |
-| debug\_waiting\_limit                                 | 3.0.0+      | 0 (0x0)        |             |
+| debug\_auto\_update\_waiting\_limit                   | 9.0.0+      | 0 (0x0)        |             |
+| debug\_system\_update\_waiting\_limit                 | 9.0.0+      | 0 (0x0)        |             |
+| debug\_version\_list\_waiting\_limit                  | 9.0.0+      | 0 (0x0)        |             |
+| debug\_waiting\_limit                                 | 3.0.0-8.1.0 | 0 (0x0)        |             |
 | enable\_download\_task\_list                          | 2.0.0+      | true           |             |
 | enable\_download\_ticket                              | 4.0.0+      | true           |             |
 | enable\_network\_update                               | 2.0.0+      | true           |             |
@@ -418,7 +489,7 @@ This class does not exist on retail firmware.
 | enable\_send\_rights\_usage\_status\_request          | 6.0.0+      | true           |             |
 | enable\_sync\_elicense\_request                       | 6.0.0+      | true           |             |
 | enable\_version\_list                                 | 2.0.0+      | true           |             |
-| result\_value\_to\_register\_nt\_for\_dynamic\_rights | 6.0.0+      | 0 (0x0)        |             |
+| result\_value\_to\_register\_nt\_for\_dynamic\_rights | 6.0.0-8.1.0 | 0 (0x0)        |             |
 | retry\_interval                                       | 2.0.0-4.1.0 | 60 (0x3c)      |             |
 | retry\_interval\_max                                  | 5.0.0+      | 900 (0x384)    |             |
 | retry\_interval\_min                                  | 5.0.0+      | 60 (0x3c)      |             |
@@ -2040,7 +2111,8 @@ This class does not exist on retail firmware.
 | vertexlimit                                  | 1.0.0+      | ""             |             |
 | viccomposer.filter                           | 1.0.0+      | ""             |             |
 | viccomposer.highpriority                     | 7.0.0-7.0.1 | ""             |             |
-| 8.0.0+                                       | "1"         |                |             |
+| 8.0.0-8.1.0                                  | "1"         |                |             |
+| viccomposer.normalpriority                   | 9.0.0+      | ""             |             |
 | videostats-enable                            | 1.0.0+      | ""             |             |
 | vidheapreuseratio                            | 1.0.0+      | ""             |             |
 | vpipe                                        | 1.0.0+      | ""             |             |
@@ -2175,6 +2247,14 @@ This class does not exist on retail firmware.
 | ----------------------------------- | -------- | -------------- | ----------- |
 | is\_debug\_mode\_enabled            | 1.0.0+   | false          |             |
 | is\_hdmi\_cec\_suppression\_enabled | 4.0.0+   | false          |             |
+
+# sio\_hoag
+
+This class does not exist before 9.0.0.
+
+| Name                                    | Versions | Default Values | Description |
+| --------------------------------------- | -------- | -------------- | ----------- |
+| mcu\_reset\_on\_command\_retry\_enabled | 9.0.0+   | true           |             |
 
 # snap\_shot\_dump
 
