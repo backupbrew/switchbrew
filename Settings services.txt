@@ -665,7 +665,7 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 173 || [7.0.0+] SetPtmCycleCountReliability
 |-
-| 174 || [9.0.0+] GetHomeMenuScheme
+| 174 || [9.0.0+] [[#GetHomeMenuScheme]]
 |-
 | 175 || [7.0.0+] GetThemeSettings
 |-
@@ -741,6 +741,11 @@ Takes a type-0x6 output buffer, returns an output s32. This buffer contains an a
 
 == GetQuestFlag ==
 Gets a flag determining whether the console is a kiosk unit (codenamed "Quest"). Used by qlaunch to determine whether to launch Retail Interactive Display Menu.
+
+== GetHomeMenuScheme ==
+No input, returns an output 0x14-byte struct "nn::settings::system::HomeMenuScheme".
+
+This struct contains 5 RGBA8 u32s for colors.
 
 = System Config =
 There's a common config title (*818), and a config title for each [[SPL_services|HardwareType]].

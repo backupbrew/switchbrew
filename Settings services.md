@@ -439,7 +439,7 @@ This is "nn::settings::ISystemSettingsServer".
 | 171 | \[7.0.0+\] SetChineseTraditionalInputMethod                                                       |
 | 172 | \[7.0.0+\] GetPtmCycleCountReliability                                                            |
 | 173 | \[7.0.0+\] SetPtmCycleCountReliability                                                            |
-| 174 | \[9.0.0+\] GetHomeMenuScheme                                                                      |
+| 174 | \[9.0.0+\] [\#GetHomeMenuScheme](#GetHomeMenuScheme "wikilink")                                   |
 | 175 | \[7.0.0+\] GetThemeSettings                                                                       |
 | 176 | \[7.0.0+\] SetThemeSettings                                                                       |
 | 177 | \[7.0.0+\] GetThemeKey                                                                            |
@@ -524,6 +524,13 @@ entries.
 Gets a flag determining whether the console is a kiosk unit (codenamed
 "Quest"). Used by qlaunch to determine whether to launch Retail
 Interactive Display Menu.
+
+## GetHomeMenuScheme
+
+No input, returns an output 0x14-byte struct
+"nn::settings::system::HomeMenuScheme".
+
+This struct contains 5 RGBA8 u32s for colors.
 
 # System Config
 
