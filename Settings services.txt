@@ -679,13 +679,13 @@ This is "nn::settings::ISystemSettingsServer".
 |-
 | 180 || [8.0.0+] SetZoomFlag
 |-
-| 181 || [8.0.0+] GetT
+| 181 || [8.0.0+] [[#GetT]]
 |-
-| 182 || [8.0.0+] SetT
+| 182 || [8.0.0+] [[#SetT]]
 |-
-| 183 || [9.0.0+] GetPlatformRegion
+| 183 || [9.0.0+] [[#GetPlatformRegion]]
 |-
-| 184 || [9.0.0+] SetPlatformRegion
+| 184 || [9.0.0+] [[#SetPlatformRegion]]
 |-
 | 185 || [9.0.0+] [[#GetHomeMenuSchemeModel]]
 |-
@@ -748,6 +748,22 @@ No input, returns an output 0x14-byte struct "nn::settings::system::HomeMenuSche
 This struct contains 5 RGBA8 u32s for colors.
 
 The colors are loaded from [[Calibration]], with the set of fields to use selected by color_variation. When color_variation is invalid (must be 1-4), fixed color values are returned.
+
+== GetT ==
+No input, returns an output u8 bool flag.
+
+[9.0.0+] This is a wrapper for [[#GetPlatformRegion]]: <code>flag = PlatformRegion==2</code>.
+
+== SetT ==
+Takes an input u8 bool flag, no output.
+
+[9.0.0+] This is a wrapper for [[#SetPlatformRegion]]: <code>PlatformRegion = 1 + (flag & 1)</code>.
+
+== GetPlatformRegion ==
+No input, returns an output s32.
+
+== SetPlatformRegion ==
+Takes an input s32, no output.
 
 == GetHomeMenuSchemeModel ==
 No input, returns an output u32.

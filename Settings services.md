@@ -446,10 +446,10 @@ This is "nn::settings::ISystemSettingsServer".
 | 178 | \[7.0.0+\] SetThemeKey                                                                            |
 | 179 | \[8.0.0+\] GetZoomFlag                                                                            |
 | 180 | \[8.0.0+\] SetZoomFlag                                                                            |
-| 181 | \[8.0.0+\] GetT                                                                                   |
-| 182 | \[8.0.0+\] SetT                                                                                   |
-| 183 | \[9.0.0+\] GetPlatformRegion                                                                      |
-| 184 | \[9.0.0+\] SetPlatformRegion                                                                      |
+| 181 | \[8.0.0+\] [\#GetT](#GetT "wikilink")                                                             |
+| 182 | \[8.0.0+\] [\#SetT](#SetT "wikilink")                                                             |
+| 183 | \[9.0.0+\] [\#GetPlatformRegion](#GetPlatformRegion "wikilink")                                   |
+| 184 | \[9.0.0+\] [\#SetPlatformRegion](#SetPlatformRegion "wikilink")                                   |
 | 185 | \[9.0.0+\] [\#GetHomeMenuSchemeModel](#GetHomeMenuSchemeModel "wikilink")                         |
 | 186 | \[9.0.0+\] GetMemoryUsageRateFlag                                                                 |
 | 187 | \[9.0.0+\] GetTouchScreenMode                                                                     |
@@ -536,6 +536,30 @@ The colors are loaded from [Calibration](Calibration.md "wikilink"),
 with the set of fields to use selected by color\_variation. When
 color\_variation is invalid (must be 1-4), fixed color values are
 returned.
+
+## GetT
+
+No input, returns an output u8 bool flag.
+
+\[9.0.0+\] This is a wrapper for
+[\#GetPlatformRegion](#GetPlatformRegion "wikilink"): `flag =
+PlatformRegion==2`.
+
+## SetT
+
+Takes an input u8 bool flag, no output.
+
+\[9.0.0+\] This is a wrapper for
+[\#SetPlatformRegion](#SetPlatformRegion "wikilink"): `PlatformRegion
+= 1 + (flag & 1)`.
+
+## GetPlatformRegion
+
+No input, returns an output s32.
+
+## SetPlatformRegion
+
+Takes an input s32, no output.
 
 ## GetHomeMenuSchemeModel
 
