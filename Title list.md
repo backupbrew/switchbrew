@@ -962,7 +962,7 @@ Decimal versions use the format:
 <a href="7.0.0.md" title="wikilink">v469762248</a> (7.0.0.200)<br />
 <a href="8.0.0.md" title="wikilink">v536871442</a> (8.0.0.530)<br />
 <a href="9.0.0.md" title="wikilink">v603980216</a> (9.0.0.440)</p></td>
-<td><p>CertStore</p></td>
+<td><p><a href="SSL services#CertStore.md##CertStore" title="wikilink">CertStore</a></p></td>
 <td><p>SSL trusted certificates.</p></td>
 </tr>
 <tr class="even">
