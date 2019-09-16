@@ -39,8 +39,7 @@ This service no longer exists in \[9.0.0+\].
 | 3   | \[2.0.0+\] ClearRtcResetDetected   |
 | 4   | \[3.0.0+\] SetUpRtcResetOnShutdown |
 
-GetExternalRtcValue / SetExternalRtcValue directly accesses the
-max77620\_rtc0 device.
+GetRtcTime / SetRtcTime directly accesses the max77620\_rtc0 device.
 
 # pcv
 

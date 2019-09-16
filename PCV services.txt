@@ -59,7 +59,7 @@ This service no longer exists in [9.0.0+].
 | 4 || [3.0.0+] SetUpRtcResetOnShutdown
 |}
 
-GetExternalRtcValue / SetExternalRtcValue directly accesses the max77620_rtc0 device.
+GetRtcTime / SetRtcTime directly accesses the max77620_rtc0 device.
 
 = pcv =
 This is "nn::pcv::detail::IPcvService".
