@@ -298,6 +298,10 @@ Decimal versions use the format:
 |-
 | 0100000000001020 || || story (LibraryAppletStory) || Currently not present on retail devices.
 |-
+| 0100000000001025 || || || This title is referenced by [6.0.0+] [[Applet_Manager_services|AM]], but does not exist on retail systems currently.
+|-
+| 010000000000102A || || || This title is referenced by [6.0.0+] [[Applet_Manager_services|AM]], but does not exist on retail systems currently.
+|-
 | 0100000000001031 || || || This title is referenced by [8.0.0+] [[NS_Services|NS]], but does not exist on retail systems currently.
 |-
 | 0100000000001033 || || promotion || This title is referenced by [8.0.0+] [[NS_Services|NS]], but does not exist on retail systems currently.

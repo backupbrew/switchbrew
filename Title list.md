@@ -1989,6 +1989,18 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="odd">
+<td><p>0100000000001025</p></td>
+<td></td>
+<td></td>
+<td><p>This title is referenced by [6.0.0+] <a href="Applet Manager services.md" title="wikilink">AM</a>, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="even">
+<td><p>010000000000102A</p></td>
+<td></td>
+<td></td>
+<td><p>This title is referenced by [6.0.0+] <a href="Applet Manager services.md" title="wikilink">AM</a>, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="odd">
 <td><p>0100000000001031</p></td>
 <td></td>
 <td></td>
