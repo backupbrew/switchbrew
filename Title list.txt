@@ -598,6 +598,8 @@ Note: No 01000000000020XX titles exist on retail systems.
 | 010086000E49C000 || || EncounterUsrDummy (LibraryAppletPreomiaUsrDummy) ||
 |-
 | 0100810002D5A000 || || ShopMonitaringTool ||
+|-
+| 010023D002B98000 || || DeltaStress ||
 |}
 
 == eShop Games / Applications ==

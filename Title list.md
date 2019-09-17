@@ -2284,6 +2284,12 @@ Note: No 01000000000020XX titles exist on retail systems.
 <td><p>ShopMonitaringTool</p></td>
 <td></td>
 </tr>
+<tr class="odd">
+<td><p>010023D002B98000</p></td>
+<td></td>
+<td><p>DeltaStress</p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
