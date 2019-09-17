@@ -262,14 +262,42 @@ This is "nn::notification::server::INotificationServicesForApplication".
 
 This was added with \[9.0.0+\].
 
-| Cmd  | Name                     |
-| ---- | ------------------------ |
-| 500  | RegisterAlarmSetting     |
-| 510  | UpdateAlarmSetting       |
-| 520  | ListAlarmSettings        |
-| 530  | LoadApplicationParameter |
-| 540  | DeleteAlarmSetting       |
-| 1000 | Initialize               |
+| Cmd  | Name                                                               |
+| ---- | ------------------------------------------------------------------ |
+| 500  | [\#RegisterAlarmSetting](#RegisterAlarmSetting "wikilink")         |
+| 510  | [\#UpdateAlarmSetting](#UpdateAlarmSetting "wikilink")             |
+| 520  | [\#ListAlarmSettings](#ListAlarmSettings "wikilink")               |
+| 530  | [\#LoadApplicationParameter](#LoadApplicationParameter "wikilink") |
+| 540  | [\#DeleteAlarmSetting](#DeleteAlarmSetting "wikilink")             |
+| 1000 | [\#Initialize](#Initialize "wikilink")                             |
+
+## RegisterAlarmSetting
+
+Takes a type-0x15 input buffer **AlarmSetting** and a type type-0x5
+input buffer. Returns an u16 **AlarmSettingId**.
+
+## UpdateAlarmSetting
+
+Takes a type-0x15 input buffer **AlarmSetting** and a type type-0x5
+input buffer. No output.
+
+## ListAlarmSettings
+
+Takes a type-0x6 output buffer **AlarmSettings**. Returns an u32
+**AlarmSettingsCount**.
+
+## LoadApplicationParameter
+
+Takes an input u32 **AlarmSettingId** and a type-0x6 output buffer.
+Returns an u32.
+
+## DeleteAlarmSetting
+
+Takes an input u32 **AlarmSettingId**.
+
+## Initialize
+
+Takes a PID-descriptor and an input u64.
 
 # notif:s
 
@@ -277,27 +305,27 @@ This is "nn::notification::server::INotificationServicesForSystem".
 
 This was added with \[9.0.0+\].
 
-| Cmd  | Name                     |
-| ---- | ------------------------ |
-| 500  | RegisterAlarmSetting     |
-| 510  | UpdateAlarmSetting       |
-| 520  | ListAlarmSettings        |
-| 530  | LoadApplicationParameter |
-| 540  | DeleteAlarmSetting       |
-| 1000 | Initialize               |
-| 1010 |                          |
-| 1020 |                          |
-| 1030 |                          |
-| 1040 |                          |
-| 1500 |                          |
-| 1510 |                          |
-| 2000 |                          |
-| 2001 |                          |
-| 2010 |                          |
-| 2020 |                          |
-| 8000 |                          |
-| 8010 |                          |
-| 9000 |                          |
+| Cmd  | Name                                                               |
+| ---- | ------------------------------------------------------------------ |
+| 500  | [\#RegisterAlarmSetting](#RegisterAlarmSetting "wikilink")         |
+| 510  | [\#UpdateAlarmSetting](#UpdateAlarmSetting "wikilink")             |
+| 520  | [\#ListAlarmSettings](#ListAlarmSettings "wikilink")               |
+| 530  | [\#LoadApplicationParameter](#LoadApplicationParameter "wikilink") |
+| 540  | [\#DeleteAlarmSetting](#DeleteAlarmSetting "wikilink")             |
+| 1000 |                                                                    |
+| 1010 |                                                                    |
+| 1020 |                                                                    |
+| 1030 |                                                                    |
+| 1040 |                                                                    |
+| 1500 |                                                                    |
+| 1510 |                                                                    |
+| 2000 |                                                                    |
+| 2001 |                                                                    |
+| 2010 |                                                                    |
+| 2020 |                                                                    |
+| 8000 |                                                                    |
+| 8010 |                                                                    |
+| 9000 |                                                                    |
 
 ## Cmd1040
 

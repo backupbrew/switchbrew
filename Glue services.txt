@@ -379,18 +379,36 @@ This was added with [9.0.0+].
 |-
 ! Cmd || Name
 |-
-| 500 || RegisterAlarmSetting
+| 500 || [[#RegisterAlarmSetting]]
 |-
-| 510 || UpdateAlarmSetting
+| 510 || [[#UpdateAlarmSetting]]
 |-
-| 520 || ListAlarmSettings
+| 520 || [[#ListAlarmSettings]]
 |-
-| 530 || LoadApplicationParameter
+| 530 || [[#LoadApplicationParameter]]
 |-
-| 540 || DeleteAlarmSetting
+| 540 || [[#DeleteAlarmSetting]]
 |-
-| 1000 || Initialize
+| 1000 || [[#Initialize]]
 |}
+
+== RegisterAlarmSetting ==
+Takes a type-0x15 input buffer '''AlarmSetting''' and a type type-0x5 input buffer. Returns an u16 '''AlarmSettingId'''.
+
+== UpdateAlarmSetting ==
+Takes a type-0x15 input buffer '''AlarmSetting''' and a type type-0x5 input buffer. No output.
+
+== ListAlarmSettings ==
+Takes a type-0x6 output buffer '''AlarmSettings'''. Returns an u32 '''AlarmSettingsCount'''.
+
+== LoadApplicationParameter ==
+Takes an input u32 '''AlarmSettingId''' and a type-0x6 output buffer. Returns an u32.
+
+== DeleteAlarmSetting ==
+Takes an input u32 '''AlarmSettingId'''.
+
+== Initialize ==
+Takes a PID-descriptor and an input u64.
 
 = notif:s =
 This is "nn::notification::server::INotificationServicesForSystem".
@@ -401,17 +419,17 @@ This was added with [9.0.0+].
 |-
 ! Cmd || Name
 |-
-| 500 || RegisterAlarmSetting
+| 500 || [[#RegisterAlarmSetting]]
 |-
-| 510 || UpdateAlarmSetting
+| 510 || [[#UpdateAlarmSetting]]
 |-
-| 520 || ListAlarmSettings
+| 520 || [[#ListAlarmSettings]]
 |-
-| 530 || LoadApplicationParameter
+| 530 || [[#LoadApplicationParameter]]
 |-
-| 540 || DeleteAlarmSetting
+| 540 || [[#DeleteAlarmSetting]]
 |-
-| 1000 || Initialize
+| 1000 ||
 |-
 | 1010 ||
 |-
