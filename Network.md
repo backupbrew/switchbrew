@@ -186,6 +186,8 @@ Where:
   - "consumer.%.npns.srv.nintendo.net"
   - "receive-%.dg.srv.nintendo.net"
   - "receive-%.er.srv.nintendo.net"
+  - "nncs1-%.n.n.srv.nintendo.net"
+  - "nncs2-%.n.n.srv.nintendo.net"
   - "g<game_server_id>-%.s.n.srv.nintendo.net"
   - \[4.0.0+\]
     "[migration.%.scsi.srv.nintendo.net](#migration "wikilink")"
