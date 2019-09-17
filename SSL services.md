@@ -202,8 +202,8 @@ Array entry structure:
 | ------ | ---- | ----------- |
 | 0x0    | 0x4  | ID          |
 | 0x4    | 0x4  | ?           |
-| 0x8    | 0x8  | Data size   |
-| 0x10   | 0x8  | Data offset |
+| 0x8    | 0x4  | Data size   |
+| 0xC    | 0x4  | Data offset |
 
 Data offset is relative to absolute offset 0x8.
 

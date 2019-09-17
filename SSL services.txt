@@ -265,11 +265,11 @@ Array entry structure:
 | ?
 |-
 | 0x8
-| 0x8
+| 0x4
 | Data size
 |-
-| 0x10
-| 0x8
+| 0xC
+| 0x4
 | Data offset
 |}
 
