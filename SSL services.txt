@@ -275,6 +275,8 @@ Array entry structure:
 
 Data offset is relative to absolute offset 0x8.
 
+The ID is the same one used by service commands to access these entries. For ssl_TrustedCerts, ID is [[#CaCertificateId]].
+
 = Client cert+privk =
 SSL-sysmodule uses [[Settings_services|set:cal]] [[Settings_services#GetSslKey|GetSslKey]] and [[Settings_services#GetSslCert|GetSslCert]]. The rest of this section documents handling for the former, which can be decrypted with [[SPL_services|SPL]].
 

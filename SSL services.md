@@ -207,6 +207,10 @@ Array entry structure:
 
 Data offset is relative to absolute offset 0x8.
 
+The ID is the same one used by service commands to access these entries.
+For ssl\_TrustedCerts, ID is
+[\#CaCertificateId](#CaCertificateId "wikilink").
+
 # Client cert+privk
 
 SSL-sysmodule uses [set:cal](Settings%20services.md "wikilink")
