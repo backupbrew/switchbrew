@@ -927,7 +927,7 @@ This is "nn::ns::detail::IDevelopInterface".
 | 7   | [\#PrepareLaunchProgramFromHost](#PrepareLaunchProgramFromHost "wikilink")                          |
 | 8   | [\#LaunchApplicationForDevelop](#LaunchApplicationForDevelop "wikilink")                            |
 | 9   | [\#LaunchApplicationWithStorageIdForDevelop](#LaunchApplicationWithStorageIdForDevelop "wikilink")  |
-| 10  | \[6.0.0-8.1.0\] TerminateApplication2                                                               |
+| 10  | \[6.0.0-8.1.0\] IsSystemMemoryResourceLimitBoosted                                                  |
 | 11  | \[6.0.0+\] GetRunningApplicationProcessIdForDevelop                                                 |
 | 12  | \[6.0.0+\] SetCurrentApplicationRightsEnvironmentCanBeActiveForDevelop                              |
 | 13  | \[9.0.0+\] [\#CreateApplicationResourceForDevelop](#CreateApplicationResourceForDevelop "wikilink") |
@@ -936,34 +936,34 @@ This is "nn::ns::detail::IDevelopInterface".
 ## LaunchProgram
 
 Wrapper for "pm:shell"
-[LaunchProcess](Process%20Manager%20services#LaunchProcess.md##LaunchProcess "wikilink").
+[LaunchProcess](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## TerminateProcess
 
 Wrapper for "pm:shell"
-[TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
+[TerminateProcess](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## TerminateProgram
 
 Wrapper for "pm:shell"
-[TerminateTitleByTitleId](Process%20Manager%20services#TerminateTitleByTitleId.md##TerminateTitleByTitleId "wikilink").
+[TerminateProgram](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## GetShellEvent
 
 Wrapper for "pm:shell"
-[GetProcessEventWaiter](Process%20Manager%20services#GetProcessEventWaiter.md##GetProcessEventWaiter "wikilink").
+[GetProcessEventHandle](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## GetShellEventInfo
 
 Wrapper for "pm:shell"
-[GetProcessEventType](Process%20Manager%20services#GetProcessEventType.md##GetProcessEventType "wikilink").
+[GetProcessEventInfo](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## TerminateApplication
 
 Calls "pm:shell"
-[GetCrashingProcessPid](Process%20Manager%20services#GetCrashingProcessPid.md##GetCrashingProcessPid "wikilink")
+[GetApplicationProcessIdForShell](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink")
 and sends PID to
-[TerminateTitleByPid](Process%20Manager%20services#TerminateTitleByPid.md##TerminateTitleByPid "wikilink").
+[TerminateProcess](Process%20Manager%20services#pm:shell.md##pm:shell "wikilink").
 
 ## PrepareLaunchProgramFromHost
 

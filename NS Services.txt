@@ -1382,7 +1382,7 @@ This is "nn::ns::detail::IDevelopInterface".
 |-
 | 9 || [[#LaunchApplicationWithStorageIdForDevelop]]
 |-
-| 10 || [6.0.0-8.1.0] TerminateApplication2
+| 10 || [6.0.0-8.1.0] IsSystemMemoryResourceLimitBoosted
 |-
 | 11 || [6.0.0+] GetRunningApplicationProcessIdForDevelop
 |-
@@ -1394,22 +1394,22 @@ This is "nn::ns::detail::IDevelopInterface".
 |}
 
 == LaunchProgram ==
-Wrapper for "pm:shell" [[Process_Manager_services#LaunchProcess|LaunchProcess]].
+Wrapper for "pm:shell" [[Process_Manager_services#pm:shell|LaunchProcess]].
 
 == TerminateProcess ==
-Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
+Wrapper for "pm:shell" [[Process_Manager_services#pm:shell|TerminateProcess]].
 
 == TerminateProgram ==
-Wrapper for "pm:shell" [[Process_Manager_services#TerminateTitleByTitleId|TerminateTitleByTitleId]].
+Wrapper for "pm:shell" [[Process_Manager_services#pm:shell|TerminateProgram]].
 
 == GetShellEvent ==
-Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventWaiter|GetProcessEventWaiter]].
+Wrapper for "pm:shell" [[Process_Manager_services#pm:shell|GetProcessEventHandle]].
 
 == GetShellEventInfo ==
-Wrapper for "pm:shell" [[Process_Manager_services#GetProcessEventType|GetProcessEventType]].
+Wrapper for "pm:shell" [[Process_Manager_services#pm:shell|GetProcessEventInfo]].
 
 == TerminateApplication ==
-Calls "pm:shell" [[Process_Manager_services#GetCrashingProcessPid|GetCrashingProcessPid]] and sends PID to [[Process_Manager_services#TerminateTitleByPid|TerminateTitleByPid]].
+Calls "pm:shell" [[Process_Manager_services#pm:shell|GetApplicationProcessIdForShell]] and sends PID to [[Process_Manager_services#pm:shell|TerminateProcess]].
 
 == PrepareLaunchProgramFromHost ==
 Takes a type-0x5 input buffer containing the [[Filesystem_services|ContentPath]], returns an output 0x10-byte struct.
