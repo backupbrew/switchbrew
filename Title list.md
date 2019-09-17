@@ -1983,6 +1983,18 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
 <tr class="even">
+<td><p>0100000000001031</p></td>
+<td></td>
+<td></td>
+<td><p>This title is referenced by [8.0.0+] <a href="NS Services.md" title="wikilink">NS</a>, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="odd">
+<td><p>0100000000001033</p></td>
+<td></td>
+<td><p>promotion</p></td>
+<td><p>This title is referenced by [8.0.0+] <a href="NS Services.md" title="wikilink">NS</a>, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="even">
 <td><p>0100000000001FFF</p></td>
 <td></td>
 <td><p>EndOceanProgramId</p></td>
