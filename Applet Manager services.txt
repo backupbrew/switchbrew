@@ -2448,7 +2448,7 @@ Besides [[PTM_services|PTM]], this is the only service that interacts with the [
 |-
 | 26 || [7.0.0+] [[#GetOperationModeSystemInfo]]
 |-
-| 27 || [9.0.0+] 
+| 27 || [9.0.0+] GetAppletFullAwakingSystemEvent
 |}
 
 == GetOperationModeSystemInfo ==

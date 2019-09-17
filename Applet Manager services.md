@@ -2733,7 +2733,7 @@ interacts with the [Dock](Dock.md "wikilink") through
 | 24  | \[5.0.0+\] ShowCardUpdateProcessing                                               |
 | 25  | \[5.0.0+\] SetApplicationCecSettingsAndNotifyChanged                              |
 | 26  | \[7.0.0+\] [\#GetOperationModeSystemInfo](#GetOperationModeSystemInfo "wikilink") |
-| 27  | \[9.0.0+\]                                                                        |
+| 27  | \[9.0.0+\] GetAppletFullAwakingSystemEvent                                        |
 
 ## GetOperationModeSystemInfo
 
