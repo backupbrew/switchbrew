@@ -977,7 +977,7 @@ foreground applet.
 | 150  | \[9.0.0+\] GetNotificationStorageChannelEvent                                                                                                             |       |
 | 151  | \[9.0.0+\] TryPopFromNotificationStorageChannel                                                                                                           |       |
 | 160  | \[9.0.0+\] GetHealthWarningDisappearedSystemEvent                                                                                                         |       |
-| 170  | \[9.0.0+\]                                                                                                                                                |       |
+| 170  | \[9.0.0+\] SetHdcpAuthenticationActivated                                                                                                                 |       |
 | 500  | \[5.0.0+\] [\#StartContinuousRecordingFlushForDebug](#StartContinuousRecordingFlushForDebug "wikilink")                                                   |       |
 | 1000 | \[5.0.0+\] [\#CreateMovieMaker](#CreateMovieMaker "wikilink")                                                                                             |       |
 | 1001 | \[5.0.0+\] [\#PrepareForJit](#PrepareForJit "wikilink")                                                                                                   |       |

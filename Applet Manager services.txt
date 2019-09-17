@@ -966,7 +966,7 @@ Enables HID input for the OverlayApplet, without disabling input for the foregro
 |-
 | 160 || [9.0.0+] GetHealthWarningDisappearedSystemEvent || 
 |-
-| 170 || [9.0.0+] || 
+| 170 || [9.0.0+] SetHdcpAuthenticationActivated || 
 |-
 | 500 || [5.0.0+] [[#StartContinuousRecordingFlushForDebug]] || 
 |-
