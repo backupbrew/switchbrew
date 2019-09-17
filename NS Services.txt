@@ -934,7 +934,7 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
-=== GetGameCardPlatformRegion ===
+==== GetGameCardPlatformRegion ====
 No input, returns an u8 '''PlatformRegion''' (0x00 = Default, 0x01 = China).
 
 This calls [[Filesystem_services#IDeviceOperator|fsp-srv IDeviceOperator]] GetGameCardCompatibilityType and returns the result.

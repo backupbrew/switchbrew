@@ -555,7 +555,7 @@ Then if the above succeeds, the above titles are launched with the above
 StorageId via [pmshell](Process%20Manager%20services.md "wikilink")
 LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
-### GetGameCardPlatformRegion
+#### GetGameCardPlatformRegion
 
 No input, returns an u8 **PlatformRegion** (0x00 = Default, 0x01 =
 China).
