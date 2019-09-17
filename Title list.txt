@@ -294,6 +294,8 @@ Decimal versions use the format:
 |-
 | 010000000000101E || || || This title is referenced by [5.0.0+] [[NIM_services|NIM]] when it accesses the [[Network#pearljam|pearljam]] server, but does not exist on retail systems currently.
 |-
+| 010000000000101F || || || This title is referenced by [6.0.0+] [[NIM_services|NIM]], but does not exist on retail systems currently.
+|-
 | 0100000000001020 || || story (LibraryAppletStory) || Currently not present on retail devices.
 |-
 | 0100000000001031 || || || This title is referenced by [8.0.0+] [[NS_Services|NS]], but does not exist on retail systems currently.
