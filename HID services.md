@@ -101,8 +101,8 @@ This is "nn::hid::IHidServer".
 | 404  | \[4.0.0+\] HasLeftRightBattery                                                                      |
 | 405  | \[4.0.0+\] [\#GetNpadInterfaceType](#GetNpadInterfaceType "wikilink")                               |
 | 406  | \[4.0.0+\] GetNpadLeftRightInterfaceType                                                            |
-| 407  | \[9.0.0+\]                                                                                          |
-| 408  | \[9.0.0+\]                                                                                          |
+| 407  | \[9.0.0+\] GetNpadOfHighestBatteryLevelForJoyLeft                                                   |
+| 408  | \[9.0.0+\] GetNpadOfHighestBatteryLevelForJoyRight                                                  |
 | 500  | \[5.0.0+\] GetPalmaConnectionHandle                                                                 |
 | 501  | \[5.0.0+\] InitializePalma                                                                          |
 | 502  | \[5.0.0+\] AcquirePalmaOperationCompleteEvent                                                       |
