@@ -1399,7 +1399,7 @@ This is "nn::hid::IHidSystemServer".
 |-
 | 1155 || [9.0.0+] SetForceHandheldStyleVibration
 |-
-| 1156 || [9.0.0+] 
+| 1156 || [9.0.0+] SendConnectionTriggerWithoutTimeoutEvent
 |}
 
 == GetMaskedSupportedNpadStyleSet ==

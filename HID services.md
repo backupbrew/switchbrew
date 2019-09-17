@@ -1016,7 +1016,7 @@ This is "nn::hid::IHidSystemServer".
 | 1153 | \[9.0.0+\] GetTouchScreenDefaultConfiguration                                             |
 | 1154 | \[9.0.0+\] IsFirmwareAvailableForNotification                                             |
 | 1155 | \[9.0.0+\] SetForceHandheldStyleVibration                                                 |
-| 1156 | \[9.0.0+\]                                                                                |
+| 1156 | \[9.0.0+\] SendConnectionTriggerWithoutTimeoutEvent                                       |
 
 ## GetMaskedSupportedNpadStyleSet
 
