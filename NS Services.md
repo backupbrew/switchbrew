@@ -528,7 +528,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2510 | \[9.0.0+\] [\#CreateApplicationResource](#CreateApplicationResource "wikilink")                               |
 | 2511 | \[9.0.0+\] [\#GetApplicationResource](#GetApplicationResource "wikilink")                                     |
 | 2513 | \[9.0.0+\] LaunchPreomia                                                                                      |
-| 2514 | \[9.0.0+\]                                                                                                    |
+| 2514 | \[9.0.0+\] ClearTaskOfAsyncTaskManager                                                                        |
 | 2800 | \[9.0.0+\] GetApplicationIdOfPreomia                                                                          |
 
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
