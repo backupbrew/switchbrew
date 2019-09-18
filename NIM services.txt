@@ -5,7 +5,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 ! Cmd || Name
 |-
-| 0 || CreateSystemUpdateTask
+| 0 || [[#CreateSystemUpdateTask]]
 |-
 | 1 || [[#DestroySystemUpdateTask]]
 |-
@@ -221,6 +221,29 @@ This is "nn::nim::detail::INetworkInstallManager".
 [5.0.0+] RequestGameCardRegistrationStatus/RequestRegisterGameCard removed 8-bytes of input, and now takes an additional type-0x5 input buffer.
 
 [8.0.0+] Cmd76 now takes an additional 0x8-bytes of input.
+
+== CreateSystemUpdateTask ==
+Takes an input u32 firmware_variation, an u32 '''unk''', an input 0x10-byte struct, returns an output [[#SystemUpdateTask]].
+
+Official sw sets '''unk''' to: <code>unk = inflag & 1 ? 0xC : 0x4</code>.
+
+Structure of the input struct:
+{| class="wikitable" border="1"
+|-
+! Offset
+! Size
+! Description
+|-
+| 0x0 || 0x8 || Unknown
+|-
+| 0x8 || 0x4 || Unknown
+|-
+| 0x9 || 0x1 || Unknown
+|-
+| 0xA || 0x1 || Unknown
+|-
+| 0xB || 0x5 || Padding?
+|}
 
 == DestroySystemUpdateTask ==
 Takes an input [[#SystemUpdateTask]], no output.
