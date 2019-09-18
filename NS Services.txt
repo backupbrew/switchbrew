@@ -1240,9 +1240,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 0 || [[#HasDownloaded]]
 |-
-| 1 || RequestCheckLatestUpdate
+| 1 || [[#RequestCheckLatestUpdate]]
 |-
-| 2 || RequestDownloadLatestUpdate
+| 2 || [[#RequestDownloadLatestUpdate]]
 |-
 | 3 || [[#GetDownloadProgress]]
 |-
@@ -1287,6 +1287,12 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 === HasDownloaded ===
 No input, returns an output u8 bool flag.
+
+=== RequestCheckLatestUpdate ===
+No input, returns an output handle and an [[#IAsyncValue]].
+
+=== RequestDownloadLatestUpdate ===
+No input, returns an output handle and an [[#IAsyncResult]].
 
 Gets whether a network sysupdate was downloaded, with install pending.
 
