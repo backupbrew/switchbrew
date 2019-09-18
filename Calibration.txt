@@ -309,6 +309,31 @@ This is the raw data stored under the PRODINFO partition.
 |  [5.0.0+] UsbTypeCPowerSourceCircuitVersion
 |  
 |-
+|  0x4220
+|  0x04
+|  [9.0.0+] HomeMenuSchemeSubColor 
+|  
+|-
+|  0x4230
+|  0x04
+|  [9.0.0+] HomeMenuSchemeBezelColor
+|  
+|-
+|  0x4240
+|  0x04
+|  [9.0.0+] HomeMenuSchemeMainColor 
+|  
+|-
+|  0x4250
+|  0x04
+|  [9.0.0+] HomeMenuSchemeBackColor
+|  
+|-
+|  0x4260
+|  0x04
+|  [9.0.0+] HomeMenuSchemeExtraColor
+|  
+|-
 |  0x4270
 |  0x01
 |  [9.0.0+] AnalogStickModuleTypeL
@@ -354,6 +379,10 @@ This is the raw data stored under the PRODINFO partition.
 |  [6.0.0+] BatteryVersion
 |  
 |-
+|  0x4330
+|  0x04
+|  [9.0.0+] HomeMenuSchemeModel
+|  
 |}
 
 == Error detection ==

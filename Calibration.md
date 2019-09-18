@@ -75,6 +75,11 @@ This is the raw data stored under the PRODINFO partition.
 | 0x3D70 | 0x240  | \[5.0.0+\] ExtendedRsa2048DeviceKey             | Extended device key (RSA-2048 version; active).                                       |
 | 0x3FC0 | 0x240  | \[5.0.0+\] Rsa2048DeviceCertificate             | Device certificate (RSA-2048 version; active).                                        |
 | 0x4210 | 0x01   | \[5.0.0+\] UsbTypeCPowerSourceCircuitVersion    |                                                                                       |
+| 0x4220 | 0x04   | \[9.0.0+\] HomeMenuSchemeSubColor               |                                                                                       |
+| 0x4230 | 0x04   | \[9.0.0+\] HomeMenuSchemeBezelColor             |                                                                                       |
+| 0x4240 | 0x04   | \[9.0.0+\] HomeMenuSchemeMainColor              |                                                                                       |
+| 0x4250 | 0x04   | \[9.0.0+\] HomeMenuSchemeBackColor              |                                                                                       |
+| 0x4260 | 0x04   | \[9.0.0+\] HomeMenuSchemeExtraColor             |                                                                                       |
 | 0x4270 | 0x01   | \[9.0.0+\] AnalogStickModuleTypeL               |                                                                                       |
 | 0x4280 | 0x12   | \[9.0.0+\] AnalogStickModelParameterL           |                                                                                       |
 | 0x42A0 | 0x09   | \[9.0.0+\] AnalogStickFactoryCalibrationL       |                                                                                       |
@@ -84,7 +89,7 @@ This is the raw data stored under the PRODINFO partition.
 | 0x42F0 | 0x01   | \[9.0.0+\] ConsoleSixAxisSensorModuleType       |                                                                                       |
 | 0x4300 | 0x06   | \[9.0.0+\] ConsoleSixAxisSensorHorizontalOffset |                                                                                       |
 | 0x4310 | 0x01   | \[6.0.0+\] BatteryVersion                       |                                                                                       |
-|        |        |                                                 |                                                                                       |
+| 0x4330 | 0x04   | \[9.0.0+\] HomeMenuSchemeModel                  |                                                                                       |
 
 ## Error detection
 
