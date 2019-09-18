@@ -16,302 +16,342 @@ This is the raw data stored under the PRODINFO partition.
 |-
 |  0x0000
 |  0x04
-|  magic
+|  MagicNumber
 |  "CAL0" header magic.
 |-
 |  0x0004
 |  0x04
-|  version
-|  Always 0x07.
+|  Version
+|  
 |-
 |  0x0008
 |  0x04
-|  calib_data_size
-|  Total size of calibration data minus 0x40 bytes (header + calib_data_sha256).
+|  BodySize
+|  Total size of calibration data starting at offset 0x40.
 |-
 |  0x000C
 |  0x02
-|  model
-|  Always 0x01.
+|  Model
+|  
 |-
 |  0x000E
 |  0x02
-|  revision
+|  UpdateCount
 |  Increases each time calibration data is installed.
 |-
 |  0x0020
 |  0x20
-|  calib_data_sha256
+|  BodyHash
 |  SHA256 hash calculated over calibration data.
 |-
 |  0x0040
-|  0x1D
-|  config_id1
+|  0x1E
+|  ConfigurationId1
 |  Configuration ID string.
 |-
 |  0x0060
 |  0x20
-|  reserved
+|  Reserved
 |  Empty.
 |-
 |  0x0080
 |  0x04
-|  wlan_country_codes_num
-|  Number of elements in the wlan_country_codes array.
+|  WlanCountryCodesNum
+|  Number of elements in the WlanCountryCodes array.
 |-
 |  0x0084
 |  0x04
-|  wlan_country_codes_last_idx
-|  Index of the last element in the wlan_country_codes array.
+|  WlanCountryCodesLastIndex
+|  Index of the last element in the WlanCountryCodes array.
 |-
 |  0x0088
 |  0x180
-|  wlan_country_codes
+|  WlanCountryCodes
 |  Array of WLAN country code strings. Each element is 3 bytes (code + NULL terminator).
 |-
 |  0x0210
 |  0x06
-|  wlan_mac_addr
+|  WlanMacAddress
 |  
 |-
 |  0x0220
 |  0x06
-|  bd_addr
+|  BdAddress
 |  
 |-
 |  0x0230
 |  0x06
-|  accelerometer_offset
+|  AccelerometerOffset
 |  
 |-
 |  0x0238
 |  0x06
-|  accelerometer_scale
+|  AccelerometerScale
 |  
 |-
 |  0x0240
 |  0x06
-|  gyroscope_offset
+|  GyroscopeOffset
 |  
 |-
 |  0x0248
 |  0x06
-|  gyroscope_scale
+|  GyroscopeScale
 |  
 |-
 |  0x0250
 |  0x18
-|  serial_number
+|  SerialNumber
 |  
 |-
 |  0x0270
 |  0x30
-|  device_key_ecc_p256
+|  EccP256DeviceKey
 |  Device key (ECC-P256 version; empty and unused).
 |-
 |  0x02B0
 |  0x180
-|  device_cert_ecc_p256
+|  EccP256DeviceCertificate
 |  Device certificate (ECC-P256 version; empty and unused).
 |-
 |  0x0440
 |  0x30
-|  device_key_ecc_b233
+|  EccB233DeviceKey
 |  Device key (ECC-B233 version; empty and unused).
 |-
 |  0x0480
 |  0x180
-|  device_cert_ecc_b233
+|  EccB233DeviceCertificate
 |  Device certificate (ECC-B233 version; active).
 |-
 |  0x0610
 |  0x30
-|  eticket_key_ecc_p256
+|  EccP256ETicketKey
 |  ETicket key (ECC-P256 version; empty and unused).
 |-
 |  0x0650
 |  0x180
-|  eticket_cert_ecc_p256
+|  EccP256ETicketCertificate
 |  ETicket certificate (ECC-P256 version; empty and unused).
 |-
 |  0x07E0
 |  0x30
-|  eticket_key_ecc_b233
+|  EccB233ETicketKey
 |  ETicket key (ECC-B233 version; empty and unused).
 |-
 |  0x0820
 |  0x180
-|  eticket_cert_ecc_b233
+|  EccB233ETicketCertificate
 |  ETicket certificate (ECC-B233 version; empty and unused).
 |-
 |  0x09B0
 |  0x110
-|  ssl_key
+|  SslKey
 |  SSL key (empty and unused).
 |-
 |  0x0AD0
 |  0x04
-|  ssl_cert_size
+|  SslCertificateSize
 |  Total size of the SSL certificate.
 |-
 |  0x0AE0
 |  0x800
-|  ssl_cert
-|  SSL certificate. Only ssl_cert_size bytes are used.
+|  SslCertificate
+|  SSL certificate. Only SslCertificateSize bytes are used.
 |-
 |  0x12E0
 |  0x20
-|  ssl_cert_sha256
+|  SslCertificateHash
 |  SHA256 over the SSL certificate.
 |-
 |  0x1300
 |  0x1000
-|  random_number
+|  RandomNumber
 |  Random generated data.
 |-
 |  0x2300
 |  0x20
-|  random_number_sha256
+|  RandomNumberHash
 |  SHA256 over the random data block.
 |-
 |  0x2320
 |  0x110
-|  gamecard_key
-|  GameCard key (empty and unused).
+|  GameCardKey
+|  Gamecard key (empty and unused).
 |-
 |  0x2440
 |  0x400
-|  gamecard_cert
-|  GameCard certificate.
+|  GameCardCertificate
+|  Gamecard certificate.
 |-
 |  0x2840
 |  0x20
-|  gamecard_cert_sha256
-|  SHA256 over the GameCard certificate.
+|  GameCardCertificateHash
+|  SHA256 over the Gamecard certificate.
 |-
 |  0x2860
 |  0x220
-|  eticket_key_rsa
+|  Rsa2048ETicketKey
 |  ETicket key (RSA-2048 version; empty and unused).
 |-
 |  0x2A90
 |  0x240
-|  eticket_cert_rsa
+|  Rsa2048ETicketCertificate
 |  ETicket certificate (RSA-2048 version; active).
 |-
 |  0x2CE0
 |  0x18
-|  battery_lot
+|  BatteryLot
 |  Battery lot string ID.
 |-
 |  0x2D00
 |  0x800
-|  speaker_calib_value
+|  SpeakerCalibrationValue
 |  Speaker calibration values. Only 0x5A bytes are used.
 |-
 |  0x3510
 |  0x04
-|  region_code
+|  RegionCode
 |  
 |-
 |  0x3520
 |  0x50
-|  amiibo_key
+|  AmiiboKey
 |  Amiibo key (ECQV and ECDSA versions).
 |-
 |  0x3580
 |  0x14
-|  amiibo_cert_ecqv
+|  AmiiboEcqvCertificate
 |  Amiibo certificate (ECQV version).
 |-
 |  0x35A0
 |  0x70
-|  amiibo_cert_ecdsa
+|  AmiiboEcdsaCertificate
 |  Amiibo certificate (ECDSA version).
 |-
 |  0x3620
 |  0x40
-|  amiibo_key_ecqv_bls
+|  AmiiboEcqvBlsKey
 |  Amiibo key (ECQV-BLS version).
 |-
 |  0x3670
 |  0x20
-|  amiibo_cert_ecqv_bls
+|  AmiiboEcqvBlsCertificate
 |  Amiibo certificate (ECQV-BLS version).
 |-
 |  0x36A0
 |  0x90
-|  amiibo_root_cert_ecqv_bls
+|  AmiiboEcqvBlsRootCertificate
 |  Amiibo root certificate (ECQV-BLS version).
 |-
 |  0x3740
 |  0x04
-|  product_model
+|  ProductModel
 |  1 = Nx, 2 = Copper
 |-
 |  0x3750
 |  0x06
-|  color_variation
+|  ColorVariation
 |  
 |-
 |  0x3760
 |  0x0C
-|  lcd_backlight_brightness_mapping
+|  LcdBacklightBrightnessMapping
 |  
 |-
 |  0x3770
 |  0x50
-|  device_ext_key_ecc_b233
+|  ExtendedEccB233DeviceKey
 |  Extended device key (ECC-B233 version; active).
 |-
 |  0x37D0
 |  0x50
-|  eticket_ext_key_ecc_p256
+|  ExtendedEccP256ETicketKey
 |  Extended ETicket key (ECC-P256 version; empty and unused).
 |-
 |  0x3830
 |  0x50
-|  eticket_ext_key_ecc_b233
+|  ExtendedEccB233ETicketKey
 |  Extended ETicket key (ECC-B233 version; empty and unused).
 |-
 |  0x3890
 |  0x240
-|  eticket_ext_key_rsa
+|  ExtendedRsa2048ETicketKey
 |  Extended ETicket key (RSA-2048 version; active).
 |-
 |  0x3AE0
 |  0x130
-|  ssl_ext_key
+|  ExtendedSslKey
 |  Extended SSL key (active).
 |-
 |  0x3C20
 |  0x130
-|  gamecard_ext_key
-|  Extended GameCard key (active).
+|  ExtendedGameCardKey
+|  Extended Gamecard key (active).
 |-
 |  0x3D60
 |  0x04
-|  lcd_vendor_id
+|  LcdVendorId
 |  
 |-
 |  0x3D70
 |  0x240
-|  [5.0.0+] device_cert_rsa
-|  Device certificate (RSA-2048 version).
+|  [5.0.0+] ExtendedRsa2048DeviceKey
+|  Extended device key (RSA-2048 version; active).
 |-
 |  0x3FC0
 |  0x240
-|  [5.0.0+] device_ext_key_rsa
-|  Extended device key (RSA-2048 version).
+|  [5.0.0+] Rsa2048DeviceCertificate
+|  Device certificate (RSA-2048 version; active).
 |-
 |  0x4210
-|  0x04
-|  [5.0.0+] usb_type_c_power_source_circuit_version
+|  0x01
+|  [5.0.0+] UsbTypeCPowerSourceCircuitVersion
+|  
+|-
+|  0x4270
+|  0x01
+|  [9.0.0+] AnalogStickModuleTypeL
+|  
+|-
+|  0x4280
+|  0x12
+|  [9.0.0+] AnalogStickModelParameterL
+|  
+|-
+|  0x42A0
+|  0x09
+|  [9.0.0+] AnalogStickFactoryCalibrationL
+|  
+|-
+|  0x42B0
+|  0x01
+|  [9.0.0+] AnalogStickModuleTypeR
+|  
+|-
+|  0x42C0
+|  0x12
+|  [9.0.0+] AnalogStickModelParameterR
+|  
+|-
+|  0x42E0
+|  0x09
+|  [9.0.0+] AnalogStickFactoryCalibrationR
+|  
+|-
+|  0x42F0
+|  0x01
+|  [9.0.0+] ConsoleSixAxisSensorModuleType
+|  
+|-
+|  0x4300
+|  0x06
+|  [9.0.0+] ConsoleSixAxisSensorHorizontalOffset
 |  
 |-
 |  0x4310
-|  0x04
-|  [6.0.0+] battery_version
+|  0x01
+|  [6.0.0+] BatteryVersion
 |  
 |-
 |}
