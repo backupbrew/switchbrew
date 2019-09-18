@@ -273,27 +273,30 @@ This was added with \[9.0.0+\].
 
 ## RegisterAlarmSetting
 
-Takes a type-0x15 input buffer **AlarmSetting** and a type type-0x5
-input buffer. Returns an u16 **AlarmSettingId**.
+Takes a type-0x15 input buffer
+[\#AlarmSetting](#AlarmSetting "wikilink") and a type type-0x5 input
+buffer. Returns an u16 **AlarmSettingId**.
 
 ## UpdateAlarmSetting
 
-Takes a type-0x15 input buffer **AlarmSetting** and a type type-0x5
-input buffer. No output.
+Takes a type-0x15 input buffer
+[\#AlarmSetting](#AlarmSetting "wikilink") and a type type-0x5 input
+buffer. No output.
 
 ## ListAlarmSettings
 
-Takes a type-0x6 output buffer **AlarmSettings**. Returns an u32
+Takes a type-0x6 output buffer to receive an array of
+[\#AlarmSetting](#AlarmSetting "wikilink"). Returns an u32
 **AlarmSettingsCount**.
 
 ## LoadApplicationParameter
 
-Takes an input u32 **AlarmSettingId** and a type-0x6 output buffer.
+Takes an input u16 **AlarmSettingId** and a type-0x6 output buffer.
 Returns an u32.
 
 ## DeleteAlarmSetting
 
-Takes an input u32 **AlarmSettingId**.
+Takes an input u16 **AlarmSettingId**.
 
 ## Initialize
 
@@ -343,7 +346,7 @@ Cmd0: no input, returns an output handle.
 
 # ApplicationLaunchProperty
 
-Total size is 0x10-bytes.
+Total size is 0x10 bytes.
 
 | Offset | Size | Description                                                                      |
 | ------ | ---- | -------------------------------------------------------------------------------- |
@@ -352,5 +355,21 @@ Total size is 0x10-bytes.
 | 0x0C   | 0x01 | Base Game [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink") |
 | 0x0D   | 0x01 | Update [Storage Id](Filesystem%20services#StorageId.md##StorageId "wikilink")    |
 | 0x0E   | 0x02 | Padding                                                                          |
+
+# AlarmSetting
+
+Total size is 0x40 bytes.
+
+| Offset | Size | Description               |
+| ------ | ---- | ------------------------- |
+| 0x00   | 0x02 | Alarm ID                  |
+| 0x02   | 0x01 | Kind (0 = WeeklySchedule) |
+| 0x03   | 0x01 | Muted                     |
+| 0x08   | 0x08 | UID high                  |
+| 0x10   | 0x08 | UID low                   |
+| 0x18   | 0x08 | Application ID            |
+| 0x28   | 0x08 | Alarm schedule            |
+| 0x30   | 0x08 | Alarm schedule            |
+| 0x38   | 0x08 | Alarm schedule            |
 
 [Category:Services](Category:Services "wikilink")
