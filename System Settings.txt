@@ -1496,6 +1496,8 @@ This class does not exist before 9.0.0.
 |}
 
 = ns.systemupdate =
+The default fields for this class only exist in the PlatformConfig* titles.
+
 {| class="wikitable" border="1"
 |-
 ! Name || Versions || Default Values || Description
@@ -1520,8 +1522,6 @@ This class does not exist before 9.0.0.
 | 
 | rowspan="1" |
 |}
-
-The default fields for this class only exist in the PlatformConfig* titles.
 
 = nsd =
 {| class="wikitable" border="1"
@@ -9862,6 +9862,19 @@ The default fields for this class only exist in the PlatformConfig* titles.
 | 4.0.0+
 | false
 | rowspan="1" |
+|}
+
+= ssl.test =
+This class does not exist on retail firmware.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |initialize_for_test
+| 
+| 
+| rowspan="1" |Used by [[SSL_services|SSL]] when an input param is a certain value, however this func is never called with that value (on newer system-versions).
 |}
 
 = sio_hoag =

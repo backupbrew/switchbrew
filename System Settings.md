@@ -525,15 +525,15 @@ This class does not exist before 9.0.0.
 
 # ns.systemupdate
 
+The default fields for this class only exist in the PlatformConfig\*
+titles.
+
 | Name                              | Versions | Default Values | Description |
 | --------------------------------- | -------- | -------------- | ----------- |
 | firmware\_variation               | ?        |                |             |
 | t\_firmware\_variation            | ?        |                |             |
 | updatable\_firmware\_group\_id    | ?        |                |             |
 | t\_updatable\_firmware\_group\_id | ?        |                |             |
-
-The default fields for this class only exist in the PlatformConfig\*
-titles.
 
 # nsd
 
@@ -2259,6 +2259,14 @@ titles.
 | ----------------------------------- | -------- | -------------- | ----------- |
 | is\_debug\_mode\_enabled            | 1.0.0+   | false          |             |
 | is\_hdmi\_cec\_suppression\_enabled | 4.0.0+   | false          |             |
+
+# ssl.test
+
+This class does not exist on retail firmware.
+
+| Name                  | Versions | Default Values | Description                                                                                                                                                       |
+| --------------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| initialize\_for\_test |          |                | Used by [SSL](SSL%20services.md "wikilink") when an input param is a certain value, however this func is never called with that value (on newer system-versions). |
 
 # sio\_hoag
 
