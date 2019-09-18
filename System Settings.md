@@ -517,12 +517,6 @@ This class does not exist before 9.0.0.
 | compare\_sdcard                | 3.0.0+   | 0 (0x0)        |             |
 | mount\_sdcard                  | 2.0.0+   | true           |             |
 
-# ns.ticket
-
-| Name                                         | Versions | Default Values | Description |
-| -------------------------------------------- | -------- | -------------- | ----------- |
-| next\_available\_time\_of\_unexpected\_error | 4.0.0+   | 300 (0x12c)    |             |
-
 # ns.systemupdate
 
 The default fields for this class only exist in the PlatformConfig\*
@@ -534,6 +528,12 @@ titles.
 | t\_firmware\_variation            | ?        |                |             |
 | updatable\_firmware\_group\_id    | ?        |                |             |
 | t\_updatable\_firmware\_group\_id | ?        |                |             |
+
+# ns.ticket
+
+| Name                                         | Versions | Default Values | Description |
+| -------------------------------------------- | -------- | -------------- | ----------- |
+| next\_available\_time\_of\_unexpected\_error | 4.0.0+   | 300 (0x12c)    |             |
 
 # nsd
 
@@ -2291,6 +2291,19 @@ This class does not exist before 9.0.0.
 | -------------- | -------- | -------------- | ----------- |
 | exhivision     | 1.0.0+   | false          |             |
 | field\_testing | 1.0.0+   | false          |             |
+
+# systeminitializer
+
+The default fields for this class only exist in the PlatformConfig\*
+titles. bct\_eks\_offset/bct\_version\_offset only exist for
+PlatformConfigIcosa/PlatformConfigCopper.
+
+| Name                      | Versions | Default Values                        | Description                                                                                                       |
+| ------------------------- | -------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| bct\_eks\_offset          | 5.0.0+   |                                       | Offset within the [BCT](BCT.md "wikilink") where the [keyblob](Flash%20Filesystem.md "wikilink")/"EKS" is stored. |
+| bct\_version\_offset      | 5.0.0+   |                                       | Offset within the [BCT](BCT.md "wikilink") where the keyblob version is stored (bootloader0\_info.version).       |
+| boot\_image\_update\_type | 5.0.0+   | 0 for non-Mariko, 1 otherwise.        |                                                                                                                   |
+| eks\_enabled              | 5.0.0+   | true for non-Mariko, false otherwise. |                                                                                                                   |
 
 # systempowerstate
 

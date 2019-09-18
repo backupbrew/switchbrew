@@ -1484,17 +1484,6 @@ This class does not exist before 9.0.0.
 | rowspan="1" |
 |}
 
-= ns.ticket =
-{| class="wikitable" border="1"
-|-
-! Name || Versions || Default Values || Description
-|-
-| rowspan="1" |next_available_time_of_unexpected_error
-| 4.0.0+
-| 300 (0x12c)
-| rowspan="1" |
-|}
-
 = ns.systemupdate =
 The default fields for this class only exist in the PlatformConfig* titles.
 
@@ -1520,6 +1509,17 @@ The default fields for this class only exist in the PlatformConfig* titles.
 | rowspan="1" |t_updatable_firmware_group_id
 | ?
 | 
+| rowspan="1" |
+|}
+
+= ns.ticket =
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |next_available_time_of_unexpected_error
+| 4.0.0+
+| 300 (0x12c)
 | rowspan="1" |
 |}
 
@@ -9929,6 +9929,34 @@ This class does not exist before 9.0.0.
 | rowspan="1" |field_testing
 | 1.0.0+
 | false
+| rowspan="1" |
+|}
+
+= systeminitializer =
+The default fields for this class only exist in the PlatformConfig* titles. bct_eks_offset/bct_version_offset only exist for PlatformConfigIcosa/PlatformConfigCopper.
+
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |bct_eks_offset
+| 5.0.0+
+| 
+| rowspan="1" |Offset within the [[BCT]] where the [[Flash_Filesystem|keyblob]]/"EKS" is stored.
+|-
+| rowspan="1" |bct_version_offset
+| 5.0.0+
+| 
+| rowspan="1" |Offset within the [[BCT]] where the keyblob version is stored (bootloader0_info.version).
+|-
+| rowspan="1" |boot_image_update_type
+| 5.0.0+
+| 0 for non-Mariko, 1 otherwise.
+| rowspan="1" |
+|-
+| rowspan="1" |eks_enabled
+| 5.0.0+
+| true for non-Mariko, false otherwise.
 | rowspan="1" |
 |}
 
