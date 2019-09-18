@@ -1493,22 +1493,26 @@ The default fields for this class only exist in the PlatformConfig* titles.
 |-
 | rowspan="1" |firmware_variation
 | ?
-| 
+| PlatformConfigIcosa/PlatformConfigHoag/PlatformConfigIcosaMariko: 0x4
+PlatformConfigCopper: 0xff
 | rowspan="1" |
 |-
 | rowspan="1" |t_firmware_variation
 | ?
-| 
+| PlatformConfigIcosa/PlatformConfigIcosaMariko: 0x3
+PlatformConfigCopper/PlatformConfigHoag: 0xff
 | rowspan="1" |
 |-
 | rowspan="1" |updatable_firmware_group_id
 | ?
-| 
+| PlatformConfigIcosa/PlatformConfigHoag/PlatformConfigIcosaMariko: 0x4
+PlatformConfigCopper: 0xff
 | rowspan="1" |
 |-
 | rowspan="1" |t_updatable_firmware_group_id
 | ?
-| 
+| PlatformConfigIcosa/PlatformConfigIcosaMariko: 0x3
+PlatformConfigCopper/PlatformConfigHoag: 0xff
 | rowspan="1" |
 |}
 

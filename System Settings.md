@@ -522,12 +522,12 @@ This class does not exist before 9.0.0.
 The default fields for this class only exist in the PlatformConfig\*
 titles.
 
-| Name                              | Versions | Default Values | Description |
-| --------------------------------- | -------- | -------------- | ----------- |
-| firmware\_variation               | ?        |                |             |
-| t\_firmware\_variation            | ?        |                |             |
-| updatable\_firmware\_group\_id    | ?        |                |             |
-| t\_updatable\_firmware\_group\_id | ?        |                |             |
+| Name                              | Versions | Default Values                                                                                   | Description |
+| --------------------------------- | -------- | ------------------------------------------------------------------------------------------------ | ----------- |
+| firmware\_variation               | ?        | PlatformConfigIcosa/PlatformConfigHoag/PlatformConfigIcosaMariko: 0x4 PlatformConfigCopper: 0xff |             |
+| t\_firmware\_variation            | ?        | PlatformConfigIcosa/PlatformConfigIcosaMariko: 0x3 PlatformConfigCopper/PlatformConfigHoag: 0xff |             |
+| updatable\_firmware\_group\_id    | ?        | PlatformConfigIcosa/PlatformConfigHoag/PlatformConfigIcosaMariko: 0x4 PlatformConfigCopper: 0xff |             |
+| t\_updatable\_firmware\_group\_id | ?        | PlatformConfigIcosa/PlatformConfigIcosaMariko: 0x3 PlatformConfigCopper/PlatformConfigHoag: 0xff |             |
 
 # ns.ticket
 
