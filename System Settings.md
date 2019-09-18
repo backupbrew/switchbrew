@@ -523,6 +523,18 @@ This class does not exist before 9.0.0.
 | -------------------------------------------- | -------- | -------------- | ----------- |
 | next\_available\_time\_of\_unexpected\_error | 4.0.0+   | 300 (0x12c)    |             |
 
+# ns.systemupdate
+
+| Name                              | Versions | Default Values | Description |
+| --------------------------------- | -------- | -------------- | ----------- |
+| firmware\_variation               | ?        |                |             |
+| t\_firmware\_variation            | ?        |                |             |
+| updatable\_firmware\_group\_id    | ?        |                |             |
+| t\_updatable\_firmware\_group\_id | ?        |                |             |
+
+The default fields for this class only exist in the PlatformConfig\*
+titles.
+
 # nsd
 
 | Name                    | Versions | Default Values | Description |

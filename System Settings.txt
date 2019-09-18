@@ -1495,6 +1495,34 @@ This class does not exist before 9.0.0.
 | rowspan="1" |
 |}
 
+= ns.systemupdate =
+{| class="wikitable" border="1"
+|-
+! Name || Versions || Default Values || Description
+|-
+| rowspan="1" |firmware_variation
+| ?
+| 
+| rowspan="1" |
+|-
+| rowspan="1" |t_firmware_variation
+| ?
+| 
+| rowspan="1" |
+|-
+| rowspan="1" |updatable_firmware_group_id
+| ?
+| 
+| rowspan="1" |
+|-
+| rowspan="1" |t_updatable_firmware_group_id
+| ?
+| 
+| rowspan="1" |
+|}
+
+The default fields for this class only exist in the PlatformConfig* titles.
+
 = nsd =
 {| class="wikitable" border="1"
 |-
