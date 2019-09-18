@@ -14,7 +14,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 7   | DestroyNetworkInstallTask                                                |
 | 8   | ListNetworkInstallTask                                                   |
 | 9   | RequestNetworkInstallTaskRun                                             |
-| 10  | GetNetworkInstallTaskInfo                                                |
+| 10  | [\#GetNetworkInstallTaskInfo](#GetNetworkInstallTaskInfo "wikilink")     |
 | 11  | CommitNetworkInstallTask                                                 |
 | 12  | RequestLatestSystemUpdateMeta                                            |
 | 14  | ListApplicationNetworkInstallTask                                        |
@@ -38,7 +38,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 32  | \[2.0.0+\] DestroyApplyDeltaTask                                         |
 | 33  | \[2.0.0+\] ListApplicationApplyDeltaTask                                 |
 | 34  | \[2.0.0+\] RequestApplyDeltaTaskRun                                      |
-| 35  | \[2.0.0+\] GetApplyDeltaTaskInfo                                         |
+| 35  | \[2.0.0+\] [\#GetApplyDeltaTaskInfo](#GetApplyDeltaTaskInfo "wikilink")  |
 | 36  | \[2.0.0+\] ListApplyDeltaTask                                            |
 | 37  | \[2.0.0+\] CommitApplyDeltaTask                                          |
 | 38  | \[2.0.0+\] CalculateApplyDeltaTaskRequiredSize                           |
@@ -111,13 +111,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 105 | \[9.0.0+\]                                                               |
 | 106 | \[9.0.0+\]                                                               |
 
-\[3.0.0+\] GetSystemUpdateTaskInfo now returns an additional 0x10-bytes
-of output. GetNetworkInstallTaskInfo now returns an additional
-0x18-bytes of output. GetApplyDeltaTaskInfo now returns an additional
-0x10-bytes of output.
-
-\[5.0.0+\] GetSystemUpdateTaskInfo now returns an additional 8-bytes of
-output. RequestGameCardRegistrationStatus/RequestRegisterGameCard
+\[5.0.0+\] RequestGameCardRegistrationStatus/RequestRegisterGameCard
 removed 8-bytes of input, and now takes an additional type-0x5 input
 buffer.
 
@@ -145,6 +139,12 @@ returns an output
 Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"), no
 output.
 
+## GetNetworkInstallTaskInfo
+
+Takes an input [\#NetworkInstallTask](#NetworkInstallTask "wikilink"),
+returns an output
+[\#NetworkInstallTaskInfo](#NetworkInstallTaskInfo "wikilink").
+
 ## GetDownloadedSystemDataPath
 
 Takes an input u64 titleID, a
@@ -159,13 +159,35 @@ Gets the FS ContentPath for the specified task and title.
 Takes an input [\#SystemUpdateTask](#SystemUpdateTask "wikilink"),
 returns an output u8 bool flag.
 
+## GetApplyDeltaTaskInfo
+
+Takes an input [\#ApplyDeltaTask](#ApplyDeltaTask "wikilink"), returns
+an output [\#ApplyDeltaTaskInfo](#ApplyDeltaTaskInfo "wikilink").
+
 ## SystemUpdateTask
 
 This is a 0x10-byte struct.
 
 ## SystemUpdateTaskInfo
 
-This is a 0x28-byte struct.
+This is a 0x28-byte struct. \[3.0.0+\] This is a 0x38-byte struct.
+\[5.0.0+\] This is a 0x40-byte struct.
+
+## NetworkInstallTask
+
+This is a 0x10-byte struct.
+
+## NetworkInstallTaskInfo
+
+This is a 0x28-byte struct. \[3.0.0+\] This is a 0x40-byte struct.
+
+## ApplyDeltaTask
+
+This is a 0x10-byte struct.
+
+## ApplyDeltaTaskInfo
+
+This is a 0x20-byte struct. \[3.0.0+\] This is a 0x30-byte struct.
 
 # nim:shp
 

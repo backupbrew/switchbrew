@@ -25,7 +25,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 9 || RequestNetworkInstallTaskRun
 |-
-| 10 || GetNetworkInstallTaskInfo
+| 10 || [[#GetNetworkInstallTaskInfo]]
 |-
 | 11 || CommitNetworkInstallTask
 |-
@@ -73,7 +73,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 |-
 | 34 || [2.0.0+] RequestApplyDeltaTaskRun
 |-
-| 35 || [2.0.0+] GetApplyDeltaTaskInfo
+| 35 || [2.0.0+] [[#GetApplyDeltaTaskInfo]]
 |-
 | 36 || [2.0.0+] ListApplyDeltaTask
 |-
@@ -218,9 +218,7 @@ This is "nn::nim::detail::INetworkInstallManager".
 | 106 || [9.0.0+]
 |}
 
-[3.0.0+] GetSystemUpdateTaskInfo now returns an additional 0x10-bytes of output. GetNetworkInstallTaskInfo now returns an additional 0x18-bytes of output. GetApplyDeltaTaskInfo now returns an additional 0x10-bytes of output.
-
-[5.0.0+] GetSystemUpdateTaskInfo now returns an additional 8-bytes of output. RequestGameCardRegistrationStatus/RequestRegisterGameCard removed 8-bytes of input, and now takes an additional type-0x5 input buffer.
+[5.0.0+] RequestGameCardRegistrationStatus/RequestRegisterGameCard removed 8-bytes of input, and now takes an additional type-0x5 input buffer.
 
 [8.0.0+] Cmd76 now takes an additional 0x8-bytes of input.
 
@@ -236,6 +234,9 @@ Takes an input [[#SystemUpdateTask]], returns an output [[#SystemUpdateTaskInfo]
 == CommitSystemUpdateTask ==
 Takes an input [[#SystemUpdateTask]], no output.
 
+== GetNetworkInstallTaskInfo ==
+Takes an input [[#NetworkInstallTask]], returns an output [[#NetworkInstallTaskInfo]].
+
 == GetDownloadedSystemDataPath ==
 Takes an input u64 titleID, a [[#SystemUpdateTask]], and an type-0x16 output buffer containing the [[Filesystem_services|ContentPath]].
 
@@ -244,11 +245,26 @@ Gets the FS ContentPath for the specified task and title.
 == IsExFatDriverIncluded ==
 Takes an input [[#SystemUpdateTask]], returns an output u8 bool flag.
 
+== GetApplyDeltaTaskInfo ==
+Takes an input [[#ApplyDeltaTask]], returns an output [[#ApplyDeltaTaskInfo]].
+
 == SystemUpdateTask ==
 This is a 0x10-byte struct.
 
 == SystemUpdateTaskInfo ==
-This is a 0x28-byte struct.
+This is a 0x28-byte struct. [3.0.0+] This is a 0x38-byte struct. [5.0.0+] This is a 0x40-byte struct.
+
+== NetworkInstallTask ==
+This is a 0x10-byte struct.
+
+== NetworkInstallTaskInfo ==
+This is a 0x28-byte struct. [3.0.0+] This is a 0x40-byte struct.
+
+== ApplyDeltaTask ==
+This is a 0x10-byte struct.
+
+== ApplyDeltaTaskInfo ==
+This is a 0x20-byte struct. [3.0.0+] This is a 0x30-byte struct.
 
 = nim:shp =
 This is "nn::nim::detail::IShopServiceManager".
