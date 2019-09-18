@@ -173,7 +173,8 @@ This is a 0x10-byte struct.
 | Offset | Size | Description   |
 | ------ | ---- | ------------- |
 | 0x0    | 0x1  | Status        |
-| 0x1    | 0xF  | ?             |
+| 0x1    | 0x7  | ?             |
+| 0x8    | 0x8  | Unknown       |
 | 0x10   | 0x8  | DownloadSize  |
 | 0x18   | 0x8  | ContentMetaId |
 | 0x20   | 0x4  | Version       |
@@ -184,6 +185,9 @@ This is a 0x10-byte struct.
 
 This is a 0x28-byte struct. \[3.0.0+\] This is a 0x38-byte struct.
 \[5.0.0+\] This is a 0x40-byte struct.
+
+The 0x10-bytes at +0x8 are returned by
+[NS\_Services\#GetDownloadProgress](NS%20Services#GetDownloadProgress.md##GetDownloadProgress "wikilink").
 
 The two u64s at +0x28/+0x30 are used by
 [NS](NS%20Services.md "wikilink") to calculate "ThroughputKBps" for a
