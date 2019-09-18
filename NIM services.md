@@ -170,8 +170,22 @@ This is a 0x10-byte struct.
 
 ## SystemUpdateTaskInfo
 
+| Offset | Size | Description   |
+| ------ | ---- | ------------- |
+| 0x0    | 0x1  | Status        |
+| 0x1    | 0xF  | ?             |
+| 0x10   | 0x8  | DownloadSize  |
+| 0x18   | 0x8  | ContentMetaId |
+| 0x20   | 0x4  | Version       |
+| 0x24   | 0x4  | ?             |
+| 0x28   | 0x8  | Unknown       |
+| 0x30   | 0x8  | Unknown       |
+| 0x38   | 0x8  | ?             |
+
 This is a 0x28-byte struct. \[3.0.0+\] This is a 0x38-byte struct.
 \[5.0.0+\] This is a 0x40-byte struct.
+
+The two u64s at +0x28/+0x30 are used to calculate "ThroughputKBps".
 
 ## NetworkInstallTask
 
