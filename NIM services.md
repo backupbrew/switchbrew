@@ -185,7 +185,9 @@ This is a 0x10-byte struct.
 This is a 0x28-byte struct. \[3.0.0+\] This is a 0x38-byte struct.
 \[5.0.0+\] This is a 0x40-byte struct.
 
-The two u64s at +0x28/+0x30 are used to calculate "ThroughputKBps".
+The two u64s at +0x28/+0x30 are used by
+[NS](NS%20Services.md "wikilink") to calculate "ThroughputKBps" for a
+SystemPlayReport.
 
 ## NetworkInstallTask
 
