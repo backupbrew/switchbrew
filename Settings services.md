@@ -533,9 +533,10 @@ No input, returns an output 0x14-byte struct
 This struct contains 5 RGBA8 u32s for colors.
 
 The colors are loaded from [Calibration](Calibration.md "wikilink"),
-with the set of fields to use selected by color\_variation. When
-color\_variation is invalid (must be 1-4), fixed color values are
-returned.
+with the set of fields to use selected by ColorVariation. When
+ColorVariation is invalid (must be 1-4), the following fixed color
+values are returned: 0xFF323232, 0xFF323232, 0xFFFFFFFF, 0xFFFFFFFF,
+0xFF000000.
 
 ## GetT
 

@@ -747,7 +747,7 @@ No input, returns an output 0x14-byte struct "nn::settings::system::HomeMenuSche
 
 This struct contains 5 RGBA8 u32s for colors.
 
-The colors are loaded from [[Calibration]], with the set of fields to use selected by color_variation. When color_variation is invalid (must be 1-4), fixed color values are returned.
+The colors are loaded from [[Calibration]], with the set of fields to use selected by ColorVariation. When ColorVariation is invalid (must be 1-4), the following fixed color values are returned: 0xFF323232, 0xFF323232, 0xFFFFFFFF, 0xFFFFFFFF, 0xFF000000.
 
 == GetT ==
 No input, returns an output u8 bool flag.
