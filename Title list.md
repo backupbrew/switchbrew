@@ -1947,46 +1947,58 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>TitleID used by <a href="NS Services.md" title="wikilink">NS</a> when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.</p></td>
 </tr>
 <tr class="even">
+<td><p>0100000000001018</p></td>
+<td></td>
+<td></td>
+<td><p>On newer system-versions, <a href="NS services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_dl_throughput" where the ApplicationId is this titleID.</p></td>
+</tr>
+<tr class="odd">
 <td><p>010000000000101A</p></td>
 <td></td>
 <td><p>gift (LibraryAppletGift)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000101B</p></td>
 <td></td>
 <td><p>DummyECApplet (LibraryAppletDummyShop)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000101C</p></td>
 <td></td>
 <td><p>userMigration (LibraryAppletUserMigration)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000101D</p></td>
 <td></td>
 <td><p>EncounterSys (LibraryAppletPreomiaSys)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>010000000000101E</p></td>
 <td></td>
 <td></td>
 <td><p>This title is referenced by [5.0.0+] <a href="NIM services.md" title="wikilink">NIM</a> when it accesses the <a href="Network#pearljam.md##pearljam" title="wikilink">pearljam</a> server, but does not exist on retail systems currently.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>010000000000101F</p></td>
 <td></td>
 <td></td>
 <td><p>This title is referenced by [6.0.0+] <a href="NIM services.md" title="wikilink">NIM</a>, but does not exist on retail systems currently.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000001020</p></td>
 <td></td>
 <td><p>story (LibraryAppletStory)</p></td>
 <td><p>Currently not present on retail devices.</p></td>
+</tr>
+<tr class="even">
+<td><p>0100000000001021</p></td>
+<td></td>
+<td></td>
+<td><p>On newer system-versions, <a href="NS services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_pass" where the ApplicationId is this titleID.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001025</p></td>
