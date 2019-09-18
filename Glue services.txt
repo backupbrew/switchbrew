@@ -429,27 +429,27 @@ This was added with [9.0.0+].
 |-
 | 540 || [[#DeleteAlarmSetting]]
 |-
-| 1000 ||
+| 1000 || 
 |-
-| 1010 ||
+| 1010 || GetNotification
 |-
-| 1020 ||
+| 1020 || DeleteNotification
 |-
-| 1030 ||
+| 1030 || 
 |-
-| 1040 ||
+| 1040 || 
 |-
-| 1500 ||
+| 1500 || SetPresentationSetting
 |-
-| 1510 ||
+| 1510 || GetPresentationSetting
 |-
-| 2000 ||
+| 2000 || 
 |-
 | 2001 ||
 |-
-| 2010 ||
+| 2010 || MuteAlarm
 |-
-| 2020 ||
+| 2020 || IsAlarmMuted
 |-
 | 8000 ||
 |-

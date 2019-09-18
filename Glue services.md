@@ -316,16 +316,16 @@ This was added with \[9.0.0+\].
 | 530  | [\#LoadApplicationParameter](#LoadApplicationParameter "wikilink") |
 | 540  | [\#DeleteAlarmSetting](#DeleteAlarmSetting "wikilink")             |
 | 1000 |                                                                    |
-| 1010 |                                                                    |
-| 1020 |                                                                    |
+| 1010 | GetNotification                                                    |
+| 1020 | DeleteNotification                                                 |
 | 1030 |                                                                    |
 | 1040 |                                                                    |
-| 1500 |                                                                    |
-| 1510 |                                                                    |
+| 1500 | SetPresentationSetting                                             |
+| 1510 | GetPresentationSetting                                             |
 | 2000 |                                                                    |
 | 2001 |                                                                    |
-| 2010 |                                                                    |
-| 2020 |                                                                    |
+| 2010 | MuteAlarm                                                          |
+| 2020 | IsAlarmMuted                                                       |
 | 8000 |                                                                    |
 | 8010 |                                                                    |
 | 9000 |                                                                    |
