@@ -1305,9 +1305,24 @@ No input/output.
 Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install. Then the sysupdate is installed:
 
 * Uses ListSystemUpdateTask again, then [[NIM_services|nim]] IsExFatDriverIncluded. Runs ExFat handling when the output flag is set.
-* The two flags in [[Flash_Filesystem#System_Update_Control]] are set to 1.
+* On newer system-versions, this uses [[NIM_services|nim]] GetSystemUpdateTaskInfo then on success uses data from there to save a SystemPlayReport when a state flag is set.
+** The EventId is "systemupdate_dl_throughput" with ApplicationId 0100000000001018.
+** The following fields are added to the report, see [[NIM_services#SystemUpdateTaskInfo|nim SystemUpdateTaskInfo]]: "ContentMetaId", "Version", "DownloadSize", and "ThroughputKBps",
+* On newer system-versions, this saves another SystemPlayReport when a state flag is set.
+** The EventId is "systemupdate_pass" with ApplicationId 0100000000001021.
+** This report has the following fields:
+*** "Type"
+*** "SourceSystemUpdateMetaId"
+*** "SourceSystemUpdateMetaVersion"
+*** "SourceExFatStatus"
+*** "DestinationSystemUpdateMetaId"
+*** "DestinationSystemUpdateMetaVersion"
+*** "DestinationExFatStatus"
+*** "Rebootless"
+* Since FIRM will be installed later, the two flags in [[Flash_Filesystem#System_Update_Control]] are set to 1.
 * Uses [[NIM_services|nim]] CommitSystemUpdateTask and [[NIM_services|nim]] DestroySystemUpdateTask.
-* Installs FIRM.
+* Installs FIRM. After installing each FIRM, the associated flag in [[Flash_Filesystem#System_Update_Control]] is set to 0.
+* On newer system versions when an input flag is set, this uses [[Filesystem_services|NotifySystemDataUpdateEvent]], however this doesn't happen with ApplyDownloadedUpdate since that input flag is 0.
 
 === GetDownloadedEulaDataSize ===
 Takes a type-0x15 input buffer '''path''', returns an output u64 '''filesize'''.

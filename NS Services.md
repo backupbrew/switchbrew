@@ -854,12 +854,41 @@ the sysupdate is installed:
   - Uses ListSystemUpdateTask again, then
     [nim](NIM%20services.md "wikilink") IsExFatDriverIncluded. Runs
     ExFat handling when the output flag is set.
-  - The two flags in
+  - On newer system-versions, this uses
+    [nim](NIM%20services.md "wikilink") GetSystemUpdateTaskInfo then on
+    success uses data from there to save a SystemPlayReport when a state
+    flag is set.
+      - The EventId is "systemupdate\_dl\_throughput" with ApplicationId
+        0100000000001018.
+      - The following fields are added to the report, see [nim
+        SystemUpdateTaskInfo](NIM%20services#SystemUpdateTaskInfo.md##SystemUpdateTaskInfo "wikilink"):
+        "ContentMetaId", "Version", "DownloadSize", and
+        "ThroughputKBps",
+  - On newer system-versions, this saves another SystemPlayReport when a
+    state flag is set.
+      - The EventId is "systemupdate\_pass" with ApplicationId
+        0100000000001021.
+      - This report has the following fields:
+          - "Type"
+          - "SourceSystemUpdateMetaId"
+          - "SourceSystemUpdateMetaVersion"
+          - "SourceExFatStatus"
+          - "DestinationSystemUpdateMetaId"
+          - "DestinationSystemUpdateMetaVersion"
+          - "DestinationExFatStatus"
+          - "Rebootless"
+  - Since FIRM will be installed later, the two flags in
     [Flash\_Filesystem\#System\_Update\_Control](Flash%20Filesystem#System%20Update%20Control.md##System_Update_Control "wikilink")
     are set to 1.
   - Uses [nim](NIM%20services.md "wikilink") CommitSystemUpdateTask and
     [nim](NIM%20services.md "wikilink") DestroySystemUpdateTask.
-  - Installs FIRM.
+  - Installs FIRM. After installing each FIRM, the associated flag in
+    [Flash\_Filesystem\#System\_Update\_Control](Flash%20Filesystem#System%20Update%20Control.md##System_Update_Control "wikilink")
+    is set to 0.
+  - On newer system versions when an input flag is set, this uses
+    [NotifySystemDataUpdateEvent](Filesystem%20services.md "wikilink"),
+    however this doesn't happen with ApplyDownloadedUpdate since that
+    input flag is 0.
 
 ### GetDownloadedEulaDataSize
 
