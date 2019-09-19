@@ -1282,7 +1282,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 21 || [4.0.0+] [[#SetupToReceiveSystemUpdate]]
 |-
-| 22 || [6.0.0+] RequestCheckLatestUpdateIncludesRebootlessUpdate
+| 22 || [6.0.0+] [[#RequestCheckLatestUpdateIncludesRebootlessUpdate]]
 |}
 
 Only 1 ISystemUpdateControl can be open at a time.
@@ -1401,6 +1401,9 @@ Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, r
 No input/output.
 
 This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
+
+=== RequestCheckLatestUpdateIncludesRebootlessUpdate ===
+No input, returns an output handle and an [[#IAsyncValue]].
 
 == SystemUpdateProgress ==
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.

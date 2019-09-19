@@ -794,31 +794,31 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 ## ISystemUpdateControl
 
-| Cmd | Name                                                                                        |
-| --- | ------------------------------------------------------------------------------------------- |
-| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                                                |
-| 1   | [\#RequestCheckLatestUpdate](#RequestCheckLatestUpdate "wikilink")                          |
-| 2   | [\#RequestDownloadLatestUpdate](#RequestDownloadLatestUpdate "wikilink")                    |
-| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")                                    |
-| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")                                |
-| 5   | [\#RequestPrepareCardUpdate](#RequestPrepareCardUpdate "wikilink")                          |
-| 6   | [\#GetPrepareCardUpdateProgress](#GetPrepareCardUpdateProgress "wikilink")                  |
-| 7   | [\#HasPreparedCardUpdate](#HasPreparedCardUpdate "wikilink")                                |
-| 8   | [\#ApplyCardUpdate](#ApplyCardUpdate "wikilink")                                            |
-| 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                        |
-| 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                |
-| 11  | [\#SetupCardUpdate](#SetupCardUpdate "wikilink")                                            |
-| 12  | [\#GetPreparedCardUpdateEulaDataSize](#GetPreparedCardUpdateEulaDataSize "wikilink")        |
-| 13  | [\#GetPreparedCardUpdateEulaData](#GetPreparedCardUpdateEulaData "wikilink")                |
-| 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink") |
-| 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                         |
-| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                       |
-| 17  | \[4.0.0+\] [\#GetReceiveProgress](#GetReceiveProgress "wikilink")                           |
-| 18  | \[4.0.0+\] [\#ApplyReceivedUpdate](#ApplyReceivedUpdate "wikilink")                         |
-| 19  | \[4.0.0+\] [\#GetReceivedEulaDataSize](#GetReceivedEulaDataSize "wikilink")                 |
-| 20  | \[4.0.0+\] [\#GetReceivedEulaData](#GetReceivedEulaData "wikilink")                         |
-| 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")           |
-| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
+| Cmd | Name                                                                                                                          |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                                                                                  |
+| 1   | [\#RequestCheckLatestUpdate](#RequestCheckLatestUpdate "wikilink")                                                            |
+| 2   | [\#RequestDownloadLatestUpdate](#RequestDownloadLatestUpdate "wikilink")                                                      |
+| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")                                                                      |
+| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")                                                                  |
+| 5   | [\#RequestPrepareCardUpdate](#RequestPrepareCardUpdate "wikilink")                                                            |
+| 6   | [\#GetPrepareCardUpdateProgress](#GetPrepareCardUpdateProgress "wikilink")                                                    |
+| 7   | [\#HasPreparedCardUpdate](#HasPreparedCardUpdate "wikilink")                                                                  |
+| 8   | [\#ApplyCardUpdate](#ApplyCardUpdate "wikilink")                                                                              |
+| 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                                                          |
+| 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                                                  |
+| 11  | [\#SetupCardUpdate](#SetupCardUpdate "wikilink")                                                                              |
+| 12  | [\#GetPreparedCardUpdateEulaDataSize](#GetPreparedCardUpdateEulaDataSize "wikilink")                                          |
+| 13  | [\#GetPreparedCardUpdateEulaData](#GetPreparedCardUpdateEulaData "wikilink")                                                  |
+| 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")                                   |
+| 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                                                           |
+| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                                                         |
+| 17  | \[4.0.0+\] [\#GetReceiveProgress](#GetReceiveProgress "wikilink")                                                             |
+| 18  | \[4.0.0+\] [\#ApplyReceivedUpdate](#ApplyReceivedUpdate "wikilink")                                                           |
+| 19  | \[4.0.0+\] [\#GetReceivedEulaDataSize](#GetReceivedEulaDataSize "wikilink")                                                   |
+| 20  | \[4.0.0+\] [\#GetReceivedEulaData](#GetReceivedEulaData "wikilink")                                                           |
+| 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")                                             |
+| 22  | \[6.0.0+\] [\#RequestCheckLatestUpdateIncludesRebootlessUpdate](#RequestCheckLatestUpdateIncludesRebootlessUpdate "wikilink") |
 
 Only 1 ISystemUpdateControl can be open at a time.
 
@@ -1022,6 +1022,11 @@ No input/output.
 
 This just uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask,
 then when a task is returned uses it with DestroySystemUpdateTask.
+
+### RequestCheckLatestUpdateIncludesRebootlessUpdate
+
+No input, returns an output handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
 
 ## SystemUpdateProgress
 
