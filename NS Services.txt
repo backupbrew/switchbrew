@@ -1268,11 +1268,11 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 14 || [4.0.0+] [[#SetupCardUpdateViaSystemUpdater]]
 |-
-| 15 || [4.0.0+] HasReceived
+| 15 || [4.0.0+] [[#HasReceived]]
 |-
 | 16 || [4.0.0+] RequestReceiveSystemUpdate
 |-
-| 17 || [4.0.0+] GetReceiveProgress
+| 17 || [4.0.0+] [[#GetReceiveProgress]]
 |-
 | 18 || [4.0.0+] ApplyReceivedUpdate
 |-
@@ -1280,7 +1280,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 20 || [4.0.0+] GetReceivedEulaData
 |-
-| 21 || [4.0.0+] SetupToReceiveSystemUpdate
+| 21 || [4.0.0+] [[#SetupToReceiveSystemUpdate]]
 |-
 | 22 || [6.0.0+] RequestCheckLatestUpdateIncludesRebootlessUpdate
 |}
@@ -1355,6 +1355,21 @@ Takes an input u64 size and a TransferMemory handle, no output.
 The permissions for the TransferMemory is None.
 
 Same as SetupCardUpdate, except this doesn't have the code for [[Filesystem_services|GetGameCardHandle/GetGameCardUpdatePartitionInfo]], and uses [[Filesystem_services|OpenRegisteredUpdatePartition]] instead of [[Filesystem_services|OpenGameCardFileSystem]]. This also uses a different is_initialized bool state flag.
+
+=== HasReceived ===
+No input, returns an output u8 bool.
+
+Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
+
+=== GetReceiveProgress ===
+No input, returns a 0x10-byte output struct.
+
+Same as [[#GetDownloadProgress]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
+
+=== SetupToReceiveSystemUpdate ===
+No input/output.
+
+This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".

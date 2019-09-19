@@ -811,13 +811,13 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 12  | GetPreparedCardUpdateEulaDataSize                                                           |
 | 13  | GetPreparedCardUpdateEulaData                                                               |
 | 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink") |
-| 15  | \[4.0.0+\] HasReceived                                                                      |
+| 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                         |
 | 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                       |
-| 17  | \[4.0.0+\] GetReceiveProgress                                                               |
+| 17  | \[4.0.0+\] [\#GetReceiveProgress](#GetReceiveProgress "wikilink")                           |
 | 18  | \[4.0.0+\] ApplyReceivedUpdate                                                              |
 | 19  | \[4.0.0+\] GetReceivedEulaDataSize                                                          |
 | 20  | \[4.0.0+\] GetReceivedEulaData                                                              |
-| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                                                       |
+| 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")           |
 | 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
 
 ### HasDownloaded
@@ -945,6 +945,27 @@ and uses
 instead of
 [OpenGameCardFileSystem](Filesystem%20services.md "wikilink"). This also
 uses a different is\_initialized bool state flag.
+
+### HasReceived
+
+No input, returns an output u8 bool.
+
+Same as [\#HasDownloaded](#HasDownloaded "wikilink") except this uses
+[nim](NIM%20services.md "wikilink") cmd71 and cmd73.
+
+### GetReceiveProgress
+
+No input, returns a 0x10-byte output struct.
+
+Same as [\#GetDownloadProgress](#GetDownloadProgress "wikilink") except
+this uses [nim](NIM%20services.md "wikilink") cmd71 and cmd73.
+
+### SetupToReceiveSystemUpdate
+
+No input/output.
+
+This just uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask,
+then when a task is returned uses it with DestroySystemUpdateTask.
 
 # IAsyncValue
 
