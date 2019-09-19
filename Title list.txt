@@ -284,7 +284,7 @@ Decimal versions use the format:
 |-
 | 0100000000001016 || || || TitleID used by [[NS_Services|NS]] when a certain flag is non-zero, in multiple places including around code using string "application_install". This title doesn't seem to exist for retail.
 |-
-| 0100000000001018 || || || On newer system-versions, [[NS_services|NS]] can save a SystemPlayReport with EventId "systemupdate_dl_throughput" where the ApplicationId is this titleID.
+| 0100000000001018 || || || On newer system-versions, [[NS_Services|NS]] can save a SystemPlayReport with EventId "systemupdate_dl_throughput" where the ApplicationId is this titleID.
 |-
 | 010000000000101A || || gift (LibraryAppletGift) || Currently not present on retail devices.
 |-
@@ -300,9 +300,11 @@ Decimal versions use the format:
 |-
 | 0100000000001020 || || story (LibraryAppletStory) || Currently not present on retail devices.
 |-
-| 0100000000001021 || || || On newer system-versions, [[NS_services|NS]] can save a SystemPlayReport with EventId "systemupdate_pass" where the ApplicationId is this titleID.
+| 0100000000001021 || || || On newer system-versions, [[NS_Services|NS]] can save a SystemPlayReport with EventId "systemupdate_pass" where the ApplicationId is this titleID.
 |-
 | 0100000000001025 || || || This title is referenced by [6.0.0+] [[Applet_Manager_services|AM]], but does not exist on retail systems currently.
+|-
+| 0100000000001028 || || || This title is referenced by [8.0.0+] [[NS_Services|NS]], but does not exist on retail systems currently.
 |-
 | 010000000000102A || || || This title is referenced by [6.0.0+] [[Applet_Manager_services|AM]], but does not exist on retail systems currently.
 |-

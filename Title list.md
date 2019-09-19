@@ -1950,7 +1950,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>0100000000001018</p></td>
 <td></td>
 <td></td>
-<td><p>On newer system-versions, <a href="NS services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_dl_throughput" where the ApplicationId is this titleID.</p></td>
+<td><p>On newer system-versions, <a href="NS Services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_dl_throughput" where the ApplicationId is this titleID.</p></td>
 </tr>
 <tr class="odd">
 <td><p>010000000000101A</p></td>
@@ -1998,7 +1998,7 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>0100000000001021</p></td>
 <td></td>
 <td></td>
-<td><p>On newer system-versions, <a href="NS services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_pass" where the ApplicationId is this titleID.</p></td>
+<td><p>On newer system-versions, <a href="NS Services.md" title="wikilink">NS</a> can save a SystemPlayReport with EventId "systemupdate_pass" where the ApplicationId is this titleID.</p></td>
 </tr>
 <tr class="odd">
 <td><p>0100000000001025</p></td>
@@ -2007,24 +2007,30 @@ while the latter is at "/safe.htdocs/".</p></td>
 <td><p>This title is referenced by [6.0.0+] <a href="Applet Manager services.md" title="wikilink">AM</a>, but does not exist on retail systems currently.</p></td>
 </tr>
 <tr class="even">
+<td><p>0100000000001028</p></td>
+<td></td>
+<td></td>
+<td><p>This title is referenced by [8.0.0+] <a href="NS Services.md" title="wikilink">NS</a>, but does not exist on retail systems currently.</p></td>
+</tr>
+<tr class="odd">
 <td><p>010000000000102A</p></td>
 <td></td>
 <td></td>
 <td><p>This title is referenced by [6.0.0+] <a href="Applet Manager services.md" title="wikilink">AM</a>, but does not exist on retail systems currently.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000001031</p></td>
 <td></td>
 <td></td>
 <td><p>This title is referenced by [8.0.0+] <a href="NS Services.md" title="wikilink">NS</a>, but does not exist on retail systems currently.</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><p>0100000000001033</p></td>
 <td></td>
 <td><p>promotion</p></td>
 <td><p>This title is referenced by [8.0.0+] <a href="NS Services.md" title="wikilink">NS</a>, but does not exist on retail systems currently.</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><p>0100000000001FFF</p></td>
 <td></td>
 <td><p>EndOceanProgramId</p></td>
