@@ -807,7 +807,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 8   | ApplyCardUpdate                                                                             |
 | 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                        |
 | 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                |
-| 11  | SetupCardUpdate                                                                             |
+| 11  | [\#SetupCardUpdate](#SetupCardUpdate "wikilink")                                            |
 | 12  | GetPreparedCardUpdateEulaDataSize                                                           |
 | 13  | GetPreparedCardUpdateEulaData                                                               |
 | 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink") |
@@ -926,7 +926,17 @@ except this reads the file instead, using the specified output buffer
 with size=filesize. This will throw an error if the filesize is larger
 than the buffer size.
 
+### SetupCardUpdate
+
+Takes an input u64 size and a TransferMemory handle, no output.
+
+The permissions for the TransferMemory is None.
+
 ### SetupCardUpdateViaSystemUpdater
+
+Takes an input u64 size and a TransferMemory handle, no output.
+
+The permissions for the TransferMemory is None.
 
 Same as SetupCardUpdate, except this doesn't have the code for
 [GetGameCardHandle/GetGameCardUpdatePartitionInfo](Filesystem%20services.md "wikilink"),

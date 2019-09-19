@@ -1260,7 +1260,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 10 || [[#GetDownloadedEulaData]]
 |-
-| 11 || SetupCardUpdate
+| 11 || [[#SetupCardUpdate]]
 |-
 | 12 || GetPreparedCardUpdateEulaDataSize
 |-
@@ -1344,7 +1344,16 @@ Takes a type-0x15 input buffer '''path''' and a type-0x6 output buffer, returns 
 
 Similar to [[#GetDownloadedEulaDataSize]] except this reads the file instead, using the specified output buffer with size=filesize. This will throw an error if the filesize is larger than the buffer size.
 
+=== SetupCardUpdate ===
+Takes an input u64 size and a TransferMemory handle, no output.
+
+The permissions for the TransferMemory is None.
+
 === SetupCardUpdateViaSystemUpdater ===
+Takes an input u64 size and a TransferMemory handle, no output.
+
+The permissions for the TransferMemory is None.
+
 Same as SetupCardUpdate, except this doesn't have the code for [[Filesystem_services|GetGameCardHandle/GetGameCardUpdatePartitionInfo]], and uses [[Filesystem_services|OpenRegisteredUpdatePartition]] instead of [[Filesystem_services|OpenGameCardFileSystem]]. This also uses a different is_initialized bool state flag.
 
 = IAsyncValue =
