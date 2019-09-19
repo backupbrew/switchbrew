@@ -794,31 +794,31 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 
 ## ISystemUpdateControl
 
-| Cmd | Name                                                                     |
-| --- | ------------------------------------------------------------------------ |
-| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                             |
-| 1   | [\#RequestCheckLatestUpdate](#RequestCheckLatestUpdate "wikilink")       |
-| 2   | [\#RequestDownloadLatestUpdate](#RequestDownloadLatestUpdate "wikilink") |
-| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")                 |
-| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")             |
-| 5   | RequestPrepareCardUpdate                                                 |
-| 6   | GetPrepareCardUpdateProgress                                             |
-| 7   | HasPreparedCardUpdate                                                    |
-| 8   | ApplyCardUpdate                                                          |
-| 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")     |
-| 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")             |
-| 11  | SetupCardUpdate                                                          |
-| 12  | GetPreparedCardUpdateEulaDataSize                                        |
-| 13  | GetPreparedCardUpdateEulaData                                            |
-| 14  | \[4.0.0+\] SetupCardUpdateViaSystemUpdater                               |
-| 15  | \[4.0.0+\] HasReceived                                                   |
-| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                    |
-| 17  | \[4.0.0+\] GetReceiveProgress                                            |
-| 18  | \[4.0.0+\] ApplyReceivedUpdate                                           |
-| 19  | \[4.0.0+\] GetReceivedEulaDataSize                                       |
-| 20  | \[4.0.0+\] GetReceivedEulaData                                           |
-| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                                    |
-| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate              |
+| Cmd | Name                                                                                        |
+| --- | ------------------------------------------------------------------------------------------- |
+| 0   | [\#HasDownloaded](#HasDownloaded "wikilink")                                                |
+| 1   | [\#RequestCheckLatestUpdate](#RequestCheckLatestUpdate "wikilink")                          |
+| 2   | [\#RequestDownloadLatestUpdate](#RequestDownloadLatestUpdate "wikilink")                    |
+| 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")                                    |
+| 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")                                |
+| 5   | RequestPrepareCardUpdate                                                                    |
+| 6   | GetPrepareCardUpdateProgress                                                                |
+| 7   | HasPreparedCardUpdate                                                                       |
+| 8   | ApplyCardUpdate                                                                             |
+| 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                        |
+| 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                |
+| 11  | SetupCardUpdate                                                                             |
+| 12  | GetPreparedCardUpdateEulaDataSize                                                           |
+| 13  | GetPreparedCardUpdateEulaData                                                               |
+| 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink") |
+| 15  | \[4.0.0+\] HasReceived                                                                      |
+| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                       |
+| 17  | \[4.0.0+\] GetReceiveProgress                                                               |
+| 18  | \[4.0.0+\] ApplyReceivedUpdate                                                              |
+| 19  | \[4.0.0+\] GetReceivedEulaDataSize                                                          |
+| 20  | \[4.0.0+\] GetReceivedEulaData                                                              |
+| 21  | \[4.0.0+\] SetupToReceiveSystemUpdate                                                       |
+| 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
 
 ### HasDownloaded
 
@@ -925,6 +925,16 @@ Similar to
 except this reads the file instead, using the specified output buffer
 with size=filesize. This will throw an error if the filesize is larger
 than the buffer size.
+
+### SetupCardUpdateViaSystemUpdater
+
+Same as SetupCardUpdate, except this doesn't have the code for
+[GetGameCardHandle/GetGameCardUpdatePartitionInfo](Filesystem%20services.md "wikilink"),
+and uses
+[OpenRegisteredUpdatePartition](Filesystem%20services.md "wikilink")
+instead of
+[OpenGameCardFileSystem](Filesystem%20services.md "wikilink"). This also
+uses a different is\_initialized bool state flag.
 
 # IAsyncValue
 
