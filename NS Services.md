@@ -873,7 +873,7 @@ the sysupdate is installed:
   - On newer system-versions, this uses
     [nim](NIM%20services.md "wikilink") GetSystemUpdateTaskInfo then on
     success uses data from there to save a SystemPlayReport when a state
-    flag is set.
+    flag is set (by default it's not set).
       - The EventId is "systemupdate\_dl\_throughput" with ApplicationId
         0100000000001018.
       - The following fields are added to the report, see [nim
@@ -881,7 +881,7 @@ the sysupdate is installed:
         "ContentMetaId", "Version", "DownloadSize", and
         "ThroughputKBps",
   - On newer system-versions, this saves another SystemPlayReport when a
-    state flag is set.
+    state flag is set (same flag mentioned above).
       - The EventId is "systemupdate\_pass" with ApplicationId
         0100000000001021.
       - This report has the following fields:
