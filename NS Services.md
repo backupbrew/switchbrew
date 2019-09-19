@@ -814,9 +814,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                         |
 | 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                       |
 | 17  | \[4.0.0+\] [\#GetReceiveProgress](#GetReceiveProgress "wikilink")                           |
-| 18  | \[4.0.0+\] ApplyReceivedUpdate                                                              |
-| 19  | \[4.0.0+\] GetReceivedEulaDataSize                                                          |
-| 20  | \[4.0.0+\] GetReceivedEulaData                                                              |
+| 18  | \[4.0.0+\] [\#ApplyReceivedUpdate](#ApplyReceivedUpdate "wikilink")                         |
+| 19  | \[4.0.0+\] [\#GetReceivedEulaDataSize](#GetReceivedEulaDataSize "wikilink")                 |
+| 20  | \[4.0.0+\] [\#GetReceivedEulaData](#GetReceivedEulaData "wikilink")                         |
 | 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")           |
 | 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
 
@@ -999,6 +999,22 @@ No input, returns an output
 
 Same as [\#GetDownloadProgress](#GetDownloadProgress "wikilink") except
 this uses [nim](NIM%20services.md "wikilink") cmd71 and cmd73.
+
+### ApplyReceivedUpdate
+
+No input/output.
+
+### GetReceivedEulaDataSize
+
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink"), returns an output u64
+**filesize**.
+
+### GetReceivedEulaData
+
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink") and a type-0x6 output buffer,
+returns an output u64 **filesize**.
 
 ### SetupToReceiveSystemUpdate
 

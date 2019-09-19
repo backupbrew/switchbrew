@@ -1274,11 +1274,11 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 17 || [4.0.0+] [[#GetReceiveProgress]]
 |-
-| 18 || [4.0.0+] ApplyReceivedUpdate
+| 18 || [4.0.0+] [[#ApplyReceivedUpdate]]
 |-
-| 19 || [4.0.0+] GetReceivedEulaDataSize
+| 19 || [4.0.0+] [[#GetReceivedEulaDataSize]]
 |-
-| 20 || [4.0.0+] GetReceivedEulaData
+| 20 || [4.0.0+] [[#GetReceivedEulaData]]
 |-
 | 21 || [4.0.0+] [[#SetupToReceiveSystemUpdate]]
 |-
@@ -1387,6 +1387,15 @@ Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73
 No input, returns an output [[#SystemUpdateProgress]].
 
 Same as [[#GetDownloadProgress]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
+
+=== ApplyReceivedUpdate ===
+No input/output.
+
+=== GetReceivedEulaDataSize ===
+Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.
+
+=== GetReceivedEulaData ===
+Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, returns an output u64 '''filesize'''.
 
 === SetupToReceiveSystemUpdate ===
 No input/output.
