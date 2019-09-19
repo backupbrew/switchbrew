@@ -808,8 +808,8 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                        |
 | 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                |
 | 11  | [\#SetupCardUpdate](#SetupCardUpdate "wikilink")                                            |
-| 12  | GetPreparedCardUpdateEulaDataSize                                                           |
-| 13  | GetPreparedCardUpdateEulaData                                                               |
+| 12  | [\#GetPreparedCardUpdateEulaDataSize](#GetPreparedCardUpdateEulaDataSize "wikilink")        |
+| 13  | [\#GetPreparedCardUpdateEulaData](#GetPreparedCardUpdateEulaData "wikilink")                |
 | 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink") |
 | 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                         |
 | 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                       |
@@ -958,6 +958,18 @@ than the buffer size.
 Takes an input u64 size and a TransferMemory handle, no output.
 
 The permissions for the TransferMemory is None.
+
+### GetPreparedCardUpdateEulaDataSize
+
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink"), returns an output u64
+**filesize**.
+
+### GetPreparedCardUpdateEulaData
+
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink") and a type-0x6 output buffer,
+returns an output u64 **filesize**.
 
 ### SetupCardUpdateViaSystemUpdater
 

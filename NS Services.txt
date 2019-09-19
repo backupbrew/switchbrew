@@ -1262,9 +1262,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 11 || [[#SetupCardUpdate]]
 |-
-| 12 || GetPreparedCardUpdateEulaDataSize
+| 12 || [[#GetPreparedCardUpdateEulaDataSize]]
 |-
-| 13 || GetPreparedCardUpdateEulaData
+| 13 || [[#GetPreparedCardUpdateEulaData]]
 |-
 | 14 || [4.0.0+] [[#SetupCardUpdateViaSystemUpdater]]
 |-
@@ -1364,6 +1364,12 @@ Similar to [[#GetDownloadedEulaDataSize]] except this reads the file instead, us
 Takes an input u64 size and a TransferMemory handle, no output.
 
 The permissions for the TransferMemory is None.
+
+=== GetPreparedCardUpdateEulaDataSize ===
+Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.
+
+=== GetPreparedCardUpdateEulaData ===
+Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, returns an output u64 '''filesize'''.
 
 === SetupCardUpdateViaSystemUpdater ===
 Takes an input u64 size and a TransferMemory handle, no output.
