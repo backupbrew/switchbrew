@@ -1379,7 +1379,9 @@ This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is re
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
 
 == EulaDataPath ==
-This is "nn::ns::detail::EulaDataPath".
+This is "nn::ns::detail::EulaDataPath". This is a 0x100-byte struct.
+
+This contains a file path.
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".

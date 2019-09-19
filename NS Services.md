@@ -983,7 +983,9 @@ This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
 
 ## EulaDataPath
 
-This is "nn::ns::detail::EulaDataPath".
+This is "nn::ns::detail::EulaDataPath". This is a 0x100-byte struct.
+
+This contains a file path.
 
 # IAsyncValue
 
