@@ -820,6 +820,10 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")           |
 | 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
 
+On newer sysvers, all pre-4.0.0 Card cmds require
+[\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")
+to be used previously, except for RequestPrepareCardUpdate.
+
 ### HasDownloaded
 
 No input, returns an output u8 bool flag.
