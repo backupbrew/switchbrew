@@ -830,16 +830,6 @@ to be used previously, except for RequestPrepareCardUpdate.
 
 No input, returns an output u8 bool flag.
 
-### RequestCheckLatestUpdate
-
-No input, returns an output handle and an
-[\#IAsyncValue](#IAsyncValue "wikilink").
-
-### RequestDownloadLatestUpdate
-
-No input, returns an output handle and an
-[\#IAsyncResult](#IAsyncResult "wikilink").
-
 Gets whether a network sysupdate was downloaded, with install pending.
 
 Uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask and
@@ -851,9 +841,20 @@ GetSystemUpdateTaskInfo is successful, the output flag is set to:
 This always returns 0, however this will assert if
 GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 
+### RequestCheckLatestUpdate
+
+No input, returns an output handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
+
+### RequestDownloadLatestUpdate
+
+No input, returns an output handle and an
+[\#IAsyncResult](#IAsyncResult "wikilink").
+
 ### GetDownloadProgress
 
-No input, returns a 0x10-byte output struct.
+No input, returns an output
+[\#SystemUpdateProgress](#SystemUpdateProgress "wikilink").
 
 Similar to [\#HasDownloaded](#HasDownloaded "wikilink") except instead
 of a flag, this returns the 0x10-bytes from taskinfo+8. The output
@@ -908,7 +909,8 @@ the sysupdate is installed:
 
 ### GetDownloadedEulaDataSize
 
-Takes a type-0x15 input buffer **path**, returns an output u64
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink"), returns an output u64
 **filesize**.
 
 Runs code similar to [\#HasDownloaded](#HasDownloaded "wikilink"),
@@ -918,12 +920,13 @@ Uses ListSystemUpdateTask again. Then
 [nim](NIM%20services.md "wikilink") GetDownloadedSystemDataPath, with
 the output ContentPath being used to mount the EULA title with FS.
 
-Then "<mountname>:/\<**path**\>" is opened, gets the **filesize**, then
-runs cleanup.
+Then "<mountname>:/\<[\#EulaDataPath](#EulaDataPath "wikilink")\>" is
+opened, gets the **filesize**, then runs cleanup.
 
 ### GetDownloadedEulaData
 
-Takes a type-0x15 input buffer **path** and a type-0x6 output buffer,
+Takes a type-0x15 input buffer
+[\#EulaDataPath](#EulaDataPath "wikilink") and a type-0x6 output buffer,
 returns an output u64 **filesize**.
 
 Similar to
@@ -961,7 +964,8 @@ Same as [\#HasDownloaded](#HasDownloaded "wikilink") except this uses
 
 ### GetReceiveProgress
 
-No input, returns a 0x10-byte output struct.
+No input, returns an output
+[\#SystemUpdateProgress](#SystemUpdateProgress "wikilink").
 
 Same as [\#GetDownloadProgress](#GetDownloadProgress "wikilink") except
 this uses [nim](NIM%20services.md "wikilink") cmd71 and cmd73.
@@ -972,6 +976,14 @@ No input/output.
 
 This just uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask,
 then when a task is returned uses it with DestroySystemUpdateTask.
+
+## SystemUpdateProgress
+
+This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
+
+## EulaDataPath
+
+This is "nn::ns::detail::EulaDataPath".
 
 # IAsyncValue
 

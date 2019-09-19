@@ -1292,20 +1292,20 @@ On newer sysvers, all pre-4.0.0 Card cmds require [[#SetupCardUpdateViaSystemUpd
 === HasDownloaded ===
 No input, returns an output u8 bool flag.
 
-=== RequestCheckLatestUpdate ===
-No input, returns an output handle and an [[#IAsyncValue]].
-
-=== RequestDownloadLatestUpdate ===
-No input, returns an output handle and an [[#IAsyncResult]].
-
 Gets whether a network sysupdate was downloaded, with install pending.
 
 Uses [[NIM_services|nim]] ListSystemUpdateTask and [[NIM_services|nim]] GetSystemUpdateTaskInfo. When ListSystemUpdateTask successfully returns a task and GetSystemUpdateTaskInfo is successful, the output flag is set to: <code>*((u8*)(taskinfo+0) == 0x3</code>. Otherwise, flag=0.
 
 This always returns 0, however this will assert if GetSystemUpdateTaskInfo fails with ret!=0x3C89.
 
+=== RequestCheckLatestUpdate ===
+No input, returns an output handle and an [[#IAsyncValue]].
+
+=== RequestDownloadLatestUpdate ===
+No input, returns an output handle and an [[#IAsyncResult]].
+
 === GetDownloadProgress ===
-No input, returns a 0x10-byte output struct.
+No input, returns an output [[#SystemUpdateProgress]].
 
 Similar to [[#HasDownloaded]] except instead of a flag, this returns the 0x10-bytes from taskinfo+8. The output struct is cleared when the task(info) isn't available.
 
@@ -1335,16 +1335,16 @@ Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdat
 * On newer system versions when an input flag is set, this uses [[Filesystem_services|NotifySystemDataUpdateEvent]], however this doesn't happen with ApplyDownloadedUpdate since that input flag is 0.
 
 === GetDownloadedEulaDataSize ===
-Takes a type-0x15 input buffer '''path''', returns an output u64 '''filesize'''.
+Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.
 
 Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdate isn't ready for install.
 
 Uses ListSystemUpdateTask again. Then [[NIM_services|nim]] GetDownloadedSystemDataPath, with the output ContentPath being used to mount the EULA title with FS.
 
-Then "<mountname>:/<'''path'''>" is opened, gets the '''filesize''', then runs cleanup.
+Then "<mountname>:/<[[#EulaDataPath]]>" is opened, gets the '''filesize''', then runs cleanup.
 
 === GetDownloadedEulaData ===
-Takes a type-0x15 input buffer '''path''' and a type-0x6 output buffer, returns an output u64 '''filesize'''.
+Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, returns an output u64 '''filesize'''.
 
 Similar to [[#GetDownloadedEulaDataSize]] except this reads the file instead, using the specified output buffer with size=filesize. This will throw an error if the filesize is larger than the buffer size.
 
@@ -1366,7 +1366,7 @@ No input, returns an output u8 bool.
 Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
 
 === GetReceiveProgress ===
-No input, returns a 0x10-byte output struct.
+No input, returns an output [[#SystemUpdateProgress]].
 
 Same as [[#GetDownloadProgress]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
 
@@ -1374,6 +1374,12 @@ Same as [[#GetDownloadProgress]] except this uses [[NIM_services|nim]] cmd71 and
 No input/output.
 
 This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
+
+== SystemUpdateProgress ==
+This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
+
+== EulaDataPath ==
+This is "nn::ns::detail::EulaDataPath".
 
 = IAsyncValue =
 This is "nn::ns::detail::IAsyncValue".
