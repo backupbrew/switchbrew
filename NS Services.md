@@ -820,6 +820,8 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 21  | \[4.0.0+\] [\#SetupToReceiveSystemUpdate](#SetupToReceiveSystemUpdate "wikilink")           |
 | 22  | \[6.0.0+\] RequestCheckLatestUpdateIncludesRebootlessUpdate                                 |
 
+Only 1 ISystemUpdateControl can be open at a time.
+
 On newer sysvers, all pre-4.0.0 Card cmds require
 [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")
 to be used previously, except for RequestPrepareCardUpdate.
