@@ -1248,13 +1248,13 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 4 || [[#ApplyDownloadedUpdate]]
 |-
-| 5 || RequestPrepareCardUpdate
+| 5 || [[#RequestPrepareCardUpdate]]
 |-
-| 6 || GetPrepareCardUpdateProgress
+| 6 || [[#GetPrepareCardUpdateProgress]]
 |-
-| 7 || HasPreparedCardUpdate
+| 7 || [[#HasPreparedCardUpdate]]
 |-
-| 8 || ApplyCardUpdate
+| 8 || [[#ApplyCardUpdate]]
 |-
 | 9 || [[#GetDownloadedEulaDataSize]]
 |-
@@ -1333,6 +1333,18 @@ Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdat
 * Uses [[NIM_services|nim]] CommitSystemUpdateTask and [[NIM_services|nim]] DestroySystemUpdateTask.
 * Installs FIRM. After installing each FIRM, the associated flag in [[Flash_Filesystem#System_Update_Control]] is set to 0.
 * On newer system versions when an input flag is set, this uses [[Filesystem_services|NotifySystemDataUpdateEvent]], however this doesn't happen with ApplyDownloadedUpdate since that input flag is 0.
+
+=== RequestPrepareCardUpdate ===
+No input, returns an output handle and an [[#IAsyncResult]].
+
+=== GetPrepareCardUpdateProgress ===
+No input, returns an output [[#SystemUpdateProgress]].
+
+=== HasPreparedCardUpdate ===
+No input, returns an output u8 bool flag.
+
+=== ApplyCardUpdate ===
+No input/output.
 
 === GetDownloadedEulaDataSize ===
 Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.

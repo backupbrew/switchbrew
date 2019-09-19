@@ -801,10 +801,10 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 2   | [\#RequestDownloadLatestUpdate](#RequestDownloadLatestUpdate "wikilink")                    |
 | 3   | [\#GetDownloadProgress](#GetDownloadProgress "wikilink")                                    |
 | 4   | [\#ApplyDownloadedUpdate](#ApplyDownloadedUpdate "wikilink")                                |
-| 5   | RequestPrepareCardUpdate                                                                    |
-| 6   | GetPrepareCardUpdateProgress                                                                |
-| 7   | HasPreparedCardUpdate                                                                       |
-| 8   | ApplyCardUpdate                                                                             |
+| 5   | [\#RequestPrepareCardUpdate](#RequestPrepareCardUpdate "wikilink")                          |
+| 6   | [\#GetPrepareCardUpdateProgress](#GetPrepareCardUpdateProgress "wikilink")                  |
+| 7   | [\#HasPreparedCardUpdate](#HasPreparedCardUpdate "wikilink")                                |
+| 8   | [\#ApplyCardUpdate](#ApplyCardUpdate "wikilink")                                            |
 | 9   | [\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink")                        |
 | 10  | [\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink")                                |
 | 11  | [\#SetupCardUpdate](#SetupCardUpdate "wikilink")                                            |
@@ -906,6 +906,24 @@ the sysupdate is installed:
     [NotifySystemDataUpdateEvent](Filesystem%20services.md "wikilink"),
     however this doesn't happen with ApplyDownloadedUpdate since that
     input flag is 0.
+
+### RequestPrepareCardUpdate
+
+No input, returns an output handle and an
+[\#IAsyncResult](#IAsyncResult "wikilink").
+
+### GetPrepareCardUpdateProgress
+
+No input, returns an output
+[\#SystemUpdateProgress](#SystemUpdateProgress "wikilink").
+
+### HasPreparedCardUpdate
+
+No input, returns an output u8 bool flag.
+
+### ApplyCardUpdate
+
+No input/output.
 
 ### GetDownloadedEulaDataSize
 
