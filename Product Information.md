@@ -98,10 +98,10 @@ derived from the other digits.
 Observed prefixes are normally:
 
   - First letter represents the product line: "X" (NX).
-  - Second letter represents the product model: "A" (original/HAC-001),
-    "J" (Lite/HDH-001) or "K" (new/HAC-001-01).
+  - Second letter represents the product model: "A" (Old/HAC-001), "J"
+    (Lite/HDH-001) or "K" (New/HAC-001-01).
   - Third letter represents the product region: "W" (North America), "J"
-    (Japan and Europe) or "K" (Korea).
+    (Japan; and Europe on old models), "E" (Europe) or "K" (Korea).
   - Fourth letter is optional: "F" (factory).
 
 ### Check Digit
