@@ -355,7 +355,7 @@ The type of an IPC command is described by a bitfield as below:
 | 6    | HipcMapTransferAllowsNonSecure | Use [NonSecureIpc flag](#Flags "wikilink").                         |
 | 7    | HipcMapTransferAllowsNonDevice | Use [NonDeviceIpc flag](#Flags "wikilink").                         |
 
-C and X (Pointer and ReceiveList) descriptors are backed by the "pointer
+X and C (Pointer and ReceiveList) descriptors are backed by the "pointer
 buffer", a buffer in the service process. Its size is a u16, which is
 retrieved using the "QueryPointerBufferSize" control message. If the
 client code determines all buffers with flag 8 do not fit in the pointer

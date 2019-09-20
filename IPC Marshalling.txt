@@ -317,7 +317,7 @@ The type of an IPC command is described by a bitfield as below:
 | 7 || HipcMapTransferAllowsNonDevice || Use [[#Flags|NonDeviceIpc flag]].
 |}
 
-C and X (Pointer and ReceiveList) descriptors are backed by the "pointer buffer", a buffer in the service process. Its size is a u16, which is retrieved using the "QueryPointerBufferSize" control message. If the client code determines all buffers with flag 8 do not fit in the pointer buffer, it returns error 0x11A0B.
+X and C (Pointer and ReceiveList) descriptors are backed by the "pointer buffer", a buffer in the service process. Its size is a u16, which is retrieved using the "QueryPointerBufferSize" control message. If the client code determines all buffers with flag 8 do not fit in the pointer buffer, it returns error 0x11A0B.
 
 For buffers with flag 0x20 it creates two descriptors (A+X or B+C), but one descriptor is NULL (zero size and pointer), while the other holds the expected values. X/C descriptors are used as the non-NULL descriptor where possible, but if they don't fit in the pointer buffer, A/B descriptors are used instead. The code defers processing of type 0x20 buffers with sizes that fit in a u16 (and may therefore fit in the pointer buffer), which ensures all type 8 buffers get pointer-buffer space before any type 0x20. The order in which the deferred type 0x20 buffers are processed is determined by a convoluted loop.
 
