@@ -195,12 +195,12 @@ get all permissions: it suffices to set 0x8000000000000000.
 If the code were to request an invalid input type, panic. But this never
 happens.
 
-### RwPermissions
+### ReadWrite
 
 <table>
 <thead>
 <tr class="header">
-<th><p>Type(s)</p></th>
+<th><p>AccessibilityType</p></th>
 <th><p>Mask</p></th>
 <th><p>Name</p></th>
 <th><p>Value</p></th>
@@ -285,7 +285,7 @@ happens.
 ([7.0.0-7.0.1] 0x4000000000000000)<br />
 ([6.0.0-6.2.0] 0x8000000000000084)<br />
 ([1.0.0-5.1.0] 0x8000000000000080)</p></td>
-<td><p>CanMountCustomStorage</p></td>
+<td><p>CanMountCustomStorage0</p></td>
 <td><p>3</p></td>
 <td><p>OpenCustomStorageFileSystem</p></td>
 </tr>
@@ -533,7 +533,7 @@ happens.
 <td><p>[3.0.0+] 0x27</p></td>
 <td><p>0xC000000000200000<br />
 ([6.0.0-6.2.0] 0x8000000000000100)<br />
-([1.0.0-5.1.0] 0x8000000000100008)</p></td>
+([3.0.0-5.1.0] 0x8000000000100008)</p></td>
 <td><p>CanOpenSdCardStorage</p></td>
 <td></td>
 <td></td>
@@ -542,7 +542,7 @@ happens.
 <td><p>[3.0.0+] 0x28</p></td>
 <td><p>0x8000000000000100<br />
 ([6.0.0-6.2.0] 0x8000000000100008)<br />
-([1.0.0-5.1.0] 0xC000000000400000)</p></td>
+([3.0.0-5.1.0] 0xC000000000400000)</p></td>
 <td><p>CanOpenGameCardStorage</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenGameCardStorage" title="wikilink">#OpenGameCardStorage</a>, <a href="#EraseGameCard" title="wikilink">#EraseGameCard</a> (bit1), <a href="#WriteToGameCard" title="wikilink">#WriteToGameCard</a> (bit1), <a href="#GetGameCardErrorInfo" title="wikilink">#GetGameCardErrorInfo</a> (bit1), <a href="#EraseAndWriteParamDirectly" title="wikilink">#EraseAndWriteParamDirectly</a> (bit1), <a href="#ReadParamDirectly" title="wikilink">#ReadParamDirectly</a> (bit1), <a href="#ForceEraseGameCard" title="wikilink">#ForceEraseGameCard</a> (bit1)</p></td>
@@ -551,7 +551,7 @@ happens.
 <td><p>[4.0.0+] 0x29</p></td>
 <td><p>0x8000000000100008<br />
 ([6.0.0-6.2.0] 0xC000000000400000)<br />
-([1.0.0-5.1.0] 0x8000000000010000)</p></td>
+([4.0.0-5.1.0] 0x8000000000010000)</p></td>
 <td><p>CanMountSystemDataPrivate</p></td>
 <td><p>1</p></td>
 <td><p><a href="#OpenFileSystem" title="wikilink">#OpenFileSystem</a>, <a href="#OpenDataStorageByDataId" title="wikilink">#OpenDataStorageByDataId</a></p></td>
@@ -560,7 +560,7 @@ happens.
 <td><p>[5.0.0+] 0x2A</p></td>
 <td><p>0xC000000000400000<br />
 ([6.0.0-6.2.0] 0x8000000000010000)<br />
-([1.0.0-5.1.0] 0x8000000000000000)</p></td>
+([5.0.0-5.1.0] 0x8000000000000000)</p></td>
 <td><p>CanMountHost</p></td>
 <td><p>3</p></td>
 <td><p><a href="#OpenHostFileSystem" title="wikilink">#OpenHostFileSystem</a></p></td>
@@ -568,7 +568,7 @@ happens.
 <tr class="even">
 <td><p>[6.0.0+] 0x2B</p></td>
 <td><p>0x8000000000010000<br />
-([1.0.0-6.2.0]0x8000000000000000)</p></td>
+([6.0.0-6.2.0] 0x8000000000000000)</p></td>
 <td><p>CanMountRegisteredUpdatePartition</p></td>
 <td><p>1</p></td>
 <td><p><a href="#OpenRegisteredUpdatePartition" title="wikilink">#OpenRegisteredUpdatePartition</a></p></td>
@@ -590,12 +590,12 @@ happens.
 </tbody>
 </table>
 
-### BoolPermissions
+### Call
 
 <table>
 <thead>
 <tr class="header">
-<th><p>Type(s)</p></th>
+<th><p>OperationType</p></th>
 <th><p>Mask</p></th>
 <th><p>Name</p></th>
 <th><p>Used by</p></th>
@@ -871,7 +871,7 @@ happens.
 <td><p>0x8000000200000000<br />
 ([6.0.0-8.1.0] 0x8000000200002000)<br />
 ([5.0.0-5.1.0] 0x8000000080000110)</p></td>
-<td></td>
+<td><p>CanOpenSaveDataTransferManagerForSaveDataRepair</p></td>
 <td><p>OpenSaveDataTransferManagerForSaveDataRepair</p></td>
 </tr>
 <tr class="even">
@@ -880,7 +880,7 @@ happens.
 ([8.0.0-8.1.0] 0x8000000240002000)<br />
 ([6.0.0-7.0.1] 0x8000000200002000)<br />
 ([5.0.0-5.1.0] 0x8000000000100008)</p></td>
-<td></td>
+<td><p>CanOpenSaveDataTransferManagerForSaveDataRepairTool</p></td>
 <td><p>OpenSaveDataTransferManagerForSaveDataRepair</p></td>
 </tr>
 <tr class="odd">
@@ -1032,31 +1032,31 @@ happens.
 <tr class="odd">
 <td><p>[9.0.0+] 0x3C</p></td>
 <td><p>0x8000000800000000</p></td>
-<td></td>
+<td><p>CanCreateOwnSaveData</p></td>
 <td><p><a href="#CreateSaveDataFileSystem" title="wikilink">#CreateSaveDataFileSystem</a>, CreateSaveDataFileSystemWithHashSalt</p></td>
 </tr>
 <tr class="even">
 <td><p>[9.0.0+] 0x3D</p></td>
 <td><p>0x8000000800000000</p></td>
-<td></td>
+<td><p>CanReadOwnSaveDataFileSystemExtraData</p></td>
 <td><p><a href="#ReadSaveDataFileSystemExtraData" title="wikilink">#ReadSaveDataFileSystemExtraData</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[9.0.0+] 0x3E</p></td>
 <td><p>0x8000000800000000</p></td>
-<td></td>
+<td><p>CanExtendOwnSaveData</p></td>
 <td><p>ExtendSaveDataFileSystem</p></td>
 </tr>
 <tr class="even">
 <td><p>[9.0.0+] 0x3F</p></td>
 <td><p>0x8000000800000000</p></td>
-<td></td>
+<td><p>CanOpenOwnSaveDataTransferProhibiter</p></td>
 <td><p><a href="#OpenSaveDataTransferProhibiter" title="wikilink">#OpenSaveDataTransferProhibiter</a></p></td>
 </tr>
 <tr class="odd">
 <td><p>[9.0.0+] 0x40</p></td>
 <td><p>0x8000000800000000</p></td>
-<td></td>
+<td><p>CanFindOwnSaveDataWithFilter</p></td>
 <td><p><a href="#FindSaveDataWithFilter" title="wikilink">#FindSaveDataWithFilter</a></p></td>
 </tr>
 </tbody>
