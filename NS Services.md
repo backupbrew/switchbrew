@@ -779,7 +779,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 2   | [\#NotifyExFatDriverRequired](#NotifyExFatDriverRequired "wikilink")                       |
 | 3   | [\#ClearExFatDriverStatusForDebug](#ClearExFatDriverStatusForDebug "wikilink")             |
 | 4   | [\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink")             |
-| 5   | NotifyBackgroundNetworkUpdate                                                              |
+| 5   | [\#NotifyBackgroundNetworkUpdate](#NotifyBackgroundNetworkUpdate "wikilink")               |
 | 6   | [\#NotifyExFatDriverDownloadedForDebug](#NotifyExFatDriverDownloadedForDebug "wikilink")   |
 | 9   | GetSystemUpdateNotificationEventForContentDelivery                                         |
 | 10  | [\#NotifySystemUpdateForContentDelivery](#NotifySystemUpdateForContentDelivery "wikilink") |
@@ -813,6 +813,12 @@ No input/output.
 ## RequestBackgroundNetworkUpdate
 
 No input/output.
+
+## NotifyBackgroundNetworkUpdate
+
+Takes an input
+[ContentMetaKey](NCM%20services#ContentMetaKey.md##ContentMetaKey "wikilink"),
+no output.
 
 ## NotifyExFatDriverDownloadedForDebug
 

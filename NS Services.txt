@@ -1208,7 +1208,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 4 || [[#RequestBackgroundNetworkUpdate]]
 |-
-| 5 || NotifyBackgroundNetworkUpdate
+| 5 || [[#NotifyBackgroundNetworkUpdate]]
 |-
 | 6 || [[#NotifyExFatDriverDownloadedForDebug]]
 |-
@@ -1247,6 +1247,9 @@ No input/output.
 
 == RequestBackgroundNetworkUpdate ==
 No input/output.
+
+== NotifyBackgroundNetworkUpdate ==
+Takes an input [[NCM_services#ContentMetaKey|ContentMetaKey]], no output.
 
 == NotifyExFatDriverDownloadedForDebug ==
 No input/output.
