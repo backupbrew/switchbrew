@@ -807,6 +807,31 @@ Executable bit perm not allowed.
 
 Closing all handles automatically causes the bit0 in [[#MemoryAttribute]] to clear, and the permission to reset.
 
+== svcResetSignal ==
+
+<div style="display: inline-block;">
+{| class="wikitable" border="1"
+|-
+! Argument || Type || Name
+|-
+| (In) W0 || Handle<ReadableEvent> or Handle<Process> || Handle
+|-
+| (Out) W0 || [[#Result]] || Ret
+|}
+</div>
+
+Resets the signal on the given handle, ensuring future calls to [[#svcWaitSynchronization]] on this handle will sleep until the handle is signaled again. If the handle is a ReadableEvent, this is equivalent to calling svcClearEvent() on the handle.
+
+If the handle is a Process, it will clear the signaled state (which is set when the process changes [[#ProcessState]]. Once the process enters the Exited state, calling svcResetSignal on the process will no longer have an effect (the process is permanently signaled), and the syscall will return 0xFA01.
+
+=== Result codes ===
+
+'''0x0:''' Success. The signal was reset.
+
+'''0xE401:''' The handle is invalid or of the wrong type.
+
+'''0xFA01:''' The handle was not signaled, or the process is in exited state, causing it to be permanently signaled.
+
 == svcWaitSynchronization ==
 
 <div style="display: inline-block;">
