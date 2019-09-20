@@ -240,7 +240,7 @@ This is "nn::ovln::ISender".
 | 1 || GetUnreceivedMessageCount
 |}
 
-= time:su =
+= time:m =
 This is "nn::timesrv::detail::service::ITimeServiceManager".
 
 This was added with [9.0.0+].
@@ -327,7 +327,7 @@ This was added with [9.0.0+].
 === Cmd10 ===
 Opens a session for [[#psc:l|psc:l]] and returns it's interface.
 
-= time:m =
+= time:p =
 This is "nn::timesrv::detail::service::IPowerStateRequestHandler".
 
 This was added with [9.0.0+].
@@ -341,7 +341,7 @@ This was added with [9.0.0+].
 | 1 ||
 |}
 
-= time:s, time:p =
+= time:su, time:s =
 These are "nn::timesrv::detail::service::IStaticService".
 
 These were added with [9.0.0+].

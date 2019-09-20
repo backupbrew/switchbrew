@@ -184,7 +184,7 @@ This is "nn::ovln::ISender".
 | 0   | Send                      |
 | 1   | GetUnreceivedMessageCount |
 
-# time:su
+# time:m
 
 This is "nn::timesrv::detail::<service::ITimeServiceManager>".
 
@@ -245,7 +245,7 @@ This was added with \[9.0.0+\].
 Opens a session for [psc:l](#psc:l "wikilink") and returns it's
 interface.
 
-# time:m
+# time:p
 
 This is "nn::timesrv::detail::<service::IPowerStateRequestHandler>".
 
@@ -256,7 +256,7 @@ This was added with \[9.0.0+\].
 | 0   |      |
 | 1   |      |
 
-# time:s, time:p
+# time:su, time:s
 
 These are "nn::timesrv::detail::<service::IStaticService>".
 
