@@ -83,6 +83,7 @@ numbers, product models, etc...).
 | Product Code | Description                          |
 | ------------ | ------------------------------------ |
 | HDH-001      | Retail Nintendo Switch Lite console. |
+| HDH-002      | HDEV Nintendo Switch console.        |
 
 # Product Serial Numbers
 
