@@ -1212,7 +1212,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 6 || [[#NotifyExFatDriverDownloadedForDebug]]
 |-
-| 9 || GetSystemUpdateNotificationEventForContentDelivery
+| 9 || [[#GetSystemUpdateNotificationEventForContentDelivery]]
 |-
 | 10 || [[#NotifySystemUpdateForContentDelivery]]
 |-
@@ -1228,9 +1228,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 16 || [4.0.0+] [[#DestroySystemUpdateTask]]
 |-
-| 17 || [4.0.0+] RequestSendSystemUpdate
+| 17 || [4.0.0+] [[#RequestSendSystemUpdate]]
 |-
-| 18 || [4.0.0+] GetSendSystemUpdateProgress
+| 18 || [4.0.0+] [[#GetSendSystemUpdateProgress]]
 |}
 
 == GetBackgroundNetworkUpdateState ==
@@ -1254,6 +1254,9 @@ Takes an input [[NCM_services#ContentMetaKey|ContentMetaKey]], no output.
 == NotifyExFatDriverDownloadedForDebug ==
 No input/output.
 
+== GetSystemUpdateNotificationEventForContentDelivery ==
+No input, returns an output Event handle with EventClearMode=0.
+
 == NotifySystemUpdateForContentDelivery ==
 No input/output.
 
@@ -1262,6 +1265,12 @@ No input/output.
 
 == DestroySystemUpdateTask ==
 No input/output.
+
+== RequestSendSystemUpdate ==
+Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output handle and an [[#IAsyncResult]].
+
+== GetSendSystemUpdateProgress ==
+No input, returns an output [[#SystemUpdateProgress]].
 
 == ISystemUpdateControl ==
 {| class="wikitable" border="1"

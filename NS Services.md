@@ -772,25 +772,25 @@ No input, returns a 0x10 byte array with the cached contents of
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                                                                                       |
-| --- | ------------------------------------------------------------------------------------------ |
-| 0   | [\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink")           |
-| 1   | [\#OpenSystemUpdateControl](#OpenSystemUpdateControl "wikilink")                           |
-| 2   | [\#NotifyExFatDriverRequired](#NotifyExFatDriverRequired "wikilink")                       |
-| 3   | [\#ClearExFatDriverStatusForDebug](#ClearExFatDriverStatusForDebug "wikilink")             |
-| 4   | [\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink")             |
-| 5   | [\#NotifyBackgroundNetworkUpdate](#NotifyBackgroundNetworkUpdate "wikilink")               |
-| 6   | [\#NotifyExFatDriverDownloadedForDebug](#NotifyExFatDriverDownloadedForDebug "wikilink")   |
-| 9   | GetSystemUpdateNotificationEventForContentDelivery                                         |
-| 10  | [\#NotifySystemUpdateForContentDelivery](#NotifySystemUpdateForContentDelivery "wikilink") |
-| 11  | \[3.0.0+\] [\#PrepareShutdown](#PrepareShutdown "wikilink")                                |
-| 12  | \[3.0.0-3.0.2\]                                                                            |
-| 13  | \[3.0.0-3.0.2\]                                                                            |
-| 14  | \[3.0.0-3.0.2\]                                                                            |
-| 15  | \[3.0.0-3.0.2\]                                                                            |
-| 16  | \[4.0.0+\] [\#DestroySystemUpdateTask](#DestroySystemUpdateTask "wikilink")                |
-| 17  | \[4.0.0+\] RequestSendSystemUpdate                                                         |
-| 18  | \[4.0.0+\] GetSendSystemUpdateProgress                                                     |
+| Cmd | Name                                                                                                                   |
+| --- | ---------------------------------------------------------------------------------------------------------------------- |
+| 0   | [\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink")                                       |
+| 1   | [\#OpenSystemUpdateControl](#OpenSystemUpdateControl "wikilink")                                                       |
+| 2   | [\#NotifyExFatDriverRequired](#NotifyExFatDriverRequired "wikilink")                                                   |
+| 3   | [\#ClearExFatDriverStatusForDebug](#ClearExFatDriverStatusForDebug "wikilink")                                         |
+| 4   | [\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink")                                         |
+| 5   | [\#NotifyBackgroundNetworkUpdate](#NotifyBackgroundNetworkUpdate "wikilink")                                           |
+| 6   | [\#NotifyExFatDriverDownloadedForDebug](#NotifyExFatDriverDownloadedForDebug "wikilink")                               |
+| 9   | [\#GetSystemUpdateNotificationEventForContentDelivery](#GetSystemUpdateNotificationEventForContentDelivery "wikilink") |
+| 10  | [\#NotifySystemUpdateForContentDelivery](#NotifySystemUpdateForContentDelivery "wikilink")                             |
+| 11  | \[3.0.0+\] [\#PrepareShutdown](#PrepareShutdown "wikilink")                                                            |
+| 12  | \[3.0.0-3.0.2\]                                                                                                        |
+| 13  | \[3.0.0-3.0.2\]                                                                                                        |
+| 14  | \[3.0.0-3.0.2\]                                                                                                        |
+| 15  | \[3.0.0-3.0.2\]                                                                                                        |
+| 16  | \[4.0.0+\] [\#DestroySystemUpdateTask](#DestroySystemUpdateTask "wikilink")                                            |
+| 17  | \[4.0.0+\] [\#RequestSendSystemUpdate](#RequestSendSystemUpdate "wikilink")                                            |
+| 18  | \[4.0.0+\] [\#GetSendSystemUpdateProgress](#GetSendSystemUpdateProgress "wikilink")                                    |
 
 ## GetBackgroundNetworkUpdateState
 
@@ -824,6 +824,10 @@ no output.
 
 No input/output.
 
+## GetSystemUpdateNotificationEventForContentDelivery
+
+No input, returns an output Event handle with EventClearMode=0.
+
 ## NotifySystemUpdateForContentDelivery
 
 No input/output.
@@ -835,6 +839,18 @@ No input/output.
 ## DestroySystemUpdateTask
 
 No input/output.
+
+## RequestSendSystemUpdate
+
+Takes a type-0x15 input buffer containing a
+[\#SystemDeliveryInfo](#SystemDeliveryInfo "wikilink"), an u16, an u32,
+returns an output handle and an
+[\#IAsyncResult](#IAsyncResult "wikilink").
+
+## GetSendSystemUpdateProgress
+
+No input, returns an output
+[\#SystemUpdateProgress](#SystemUpdateProgress "wikilink").
 
 ## ISystemUpdateControl
 
