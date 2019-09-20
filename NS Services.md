@@ -812,7 +812,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 | 13  | [\#GetPreparedCardUpdateEulaData](#GetPreparedCardUpdateEulaData "wikilink")                                                  |
 | 14  | \[4.0.0+\] [\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")                                   |
 | 15  | \[4.0.0+\] [\#HasReceived](#HasReceived "wikilink")                                                                           |
-| 16  | \[4.0.0+\] RequestReceiveSystemUpdate                                                                                         |
+| 16  | \[4.0.0+\] [\#RequestReceiveSystemUpdate](#RequestReceiveSystemUpdate "wikilink")                                             |
 | 17  | \[4.0.0+\] [\#GetReceiveProgress](#GetReceiveProgress "wikilink")                                                             |
 | 18  | \[4.0.0+\] [\#ApplyReceivedUpdate](#ApplyReceivedUpdate "wikilink")                                                           |
 | 19  | \[4.0.0+\] [\#GetReceivedEulaDataSize](#GetReceivedEulaDataSize "wikilink")                                                   |
@@ -991,6 +991,13 @@ No input, returns an output u8 bool.
 
 Same as [\#HasDownloaded](#HasDownloaded "wikilink") except this uses
 [nim](NIM%20services.md "wikilink") cmd71 and cmd73.
+
+### RequestReceiveSystemUpdate
+
+Takes a type-0x15 input buffer containing a
+[\#SystemDeliveryInfo](#SystemDeliveryInfo "wikilink"), an u16, an u32,
+returns an output handle and an
+[\#IAsyncResult](#IAsyncResult "wikilink").
 
 ### GetReceiveProgress
 

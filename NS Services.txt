@@ -1270,7 +1270,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 15 || [4.0.0+] [[#HasReceived]]
 |-
-| 16 || [4.0.0+] RequestReceiveSystemUpdate
+| 16 || [4.0.0+] [[#RequestReceiveSystemUpdate]]
 |-
 | 17 || [4.0.0+] [[#GetReceiveProgress]]
 |-
@@ -1382,6 +1382,9 @@ Same as SetupCardUpdate, except this doesn't have the code for [[Filesystem_serv
 No input, returns an output u8 bool.
 
 Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
+
+=== RequestReceiveSystemUpdate ===
+Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output handle and an [[#IAsyncResult]].
 
 === GetReceiveProgress ===
 No input, returns an output [[#SystemUpdateProgress]].
