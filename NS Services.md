@@ -772,25 +772,35 @@ No input, returns a 0x10 byte array with the cached contents of
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                                                        |
-| --- | ----------------------------------------------------------- |
-| 0   | GetBackgroundNetworkUpdateState                             |
-| 1   | [OpenSystemUpdateControl](#ISystemUpdateControl "wikilink") |
-| 2   | NotifyExFatDriverRequired                                   |
-| 3   | ClearExFatDriverStatusForDebug                              |
-| 4   | RequestBackgroundNetworkUpdate                              |
-| 5   | NotifyBackgroundNetworkUpdate                               |
-| 6   | NotifyExFatDriverDownloadedForDebug                         |
-| 9   | GetSystemUpdateNotificationEventForContentDelivery          |
-| 10  | NotifySystemUpdateForContentDelivery                        |
-| 11  | \[3.0.0+\] PrepareShutdown                                  |
-| 12  | \[3.0.0-3.0.2\]                                             |
-| 13  | \[3.0.0-3.0.2\]                                             |
-| 14  | \[3.0.0-3.0.2\]                                             |
-| 15  | \[3.0.0-3.0.2\]                                             |
-| 16  | \[4.0.0+\] DestroySystemUpdateTask                          |
-| 17  | \[4.0.0+\] RequestSendSystemUpdate                          |
-| 18  | \[4.0.0+\] GetSendSystemUpdateProgress                      |
+| Cmd | Name                                                                             |
+| --- | -------------------------------------------------------------------------------- |
+| 0   | [\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink") |
+| 1   | [\#OpenSystemUpdateControl](#OpenSystemUpdateControl "wikilink")                 |
+| 2   | NotifyExFatDriverRequired                                                        |
+| 3   | ClearExFatDriverStatusForDebug                                                   |
+| 4   | RequestBackgroundNetworkUpdate                                                   |
+| 5   | NotifyBackgroundNetworkUpdate                                                    |
+| 6   | NotifyExFatDriverDownloadedForDebug                                              |
+| 9   | GetSystemUpdateNotificationEventForContentDelivery                               |
+| 10  | NotifySystemUpdateForContentDelivery                                             |
+| 11  | \[3.0.0+\] PrepareShutdown                                                       |
+| 12  | \[3.0.0-3.0.2\]                                                                  |
+| 13  | \[3.0.0-3.0.2\]                                                                  |
+| 14  | \[3.0.0-3.0.2\]                                                                  |
+| 15  | \[3.0.0-3.0.2\]                                                                  |
+| 16  | \[4.0.0+\] DestroySystemUpdateTask                                               |
+| 17  | \[4.0.0+\] RequestSendSystemUpdate                                               |
+| 18  | \[4.0.0+\] GetSendSystemUpdateProgress                                           |
+
+## GetBackgroundNetworkUpdateState
+
+No input, returns an output
+[\#BackgroundNetworkUpdateState](#BackgroundNetworkUpdateState "wikilink").
+
+## OpenSystemUpdateControl
+
+No input, returns an
+[\#ISystemUpdateControl](#ISystemUpdateControl "wikilink").
 
 ## ISystemUpdateControl
 
@@ -1034,6 +1044,16 @@ then when a task is returned uses it with DestroySystemUpdateTask.
 
 No input, returns an output handle and an
 [\#IAsyncValue](#IAsyncValue "wikilink").
+
+## BackgroundNetworkUpdateState
+
+| Value | Description                                                                           |
+| ----- | ------------------------------------------------------------------------------------- |
+| 0     | Unknown. Values \>2 are handled the same as this by [qlaunch](Qlaunch.md "wikilink"). |
+| 1     | Unknown.                                                                              |
+| 2     | Unknown.                                                                              |
+
+This is "nn::ns::BackgroundNetworkUpdateState". This is an u8.
 
 ## SystemUpdateProgress
 

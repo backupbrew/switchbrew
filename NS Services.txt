@@ -1198,9 +1198,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 ! Cmd || Name
 |-
-| 0 || GetBackgroundNetworkUpdateState
+| 0 || [[#GetBackgroundNetworkUpdateState]]
 |-
-| 1 || [[#ISystemUpdateControl|OpenSystemUpdateControl]]
+| 1 || [[#OpenSystemUpdateControl]]
 |-
 | 2 || NotifyExFatDriverRequired
 |-
@@ -1232,6 +1232,12 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 18 || [4.0.0+] GetSendSystemUpdateProgress
 |}
+
+== GetBackgroundNetworkUpdateState ==
+No input, returns an output [[#BackgroundNetworkUpdateState]].
+
+== OpenSystemUpdateControl ==
+No input, returns an [[#ISystemUpdateControl]].
 
 == ISystemUpdateControl ==
 {| class="wikitable" border="1"
@@ -1407,6 +1413,21 @@ This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is re
 
 === RequestCheckLatestUpdateIncludesRebootlessUpdate ===
 No input, returns an output handle and an [[#IAsyncValue]].
+
+== BackgroundNetworkUpdateState ==
+{| class="wikitable" border="1"
+|-
+!  Value
+!  Description
+|-
+| 0 || Unknown. Values >2 are handled the same as this by [[qlaunch]].
+|-
+| 1 || Unknown.
+|-
+| 2 || Unknown.
+|}
+
+This is "nn::ns::BackgroundNetworkUpdateState". This is an u8.
 
 == SystemUpdateProgress ==
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
