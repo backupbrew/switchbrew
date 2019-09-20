@@ -55,7 +55,7 @@ R0=thread_handle, R1=in, R2=in2_lower32, R3=in2_upper32
 |-
 | 0x16 || svcCloseHandle || W0=handle || W0=result
 |-
-| 0x17 || svcResetSignal || W0=revent_or_process_handle || W0=result
+| 0x17 || [[#svcResetSignal]] || W0=revent_or_process_handle || W0=result
 |-
 | 0x18 || [[#svcWaitSynchronization]] || X1=handles_ptr, W2=num_handles, X3=timeout
 R0=timeout_lower32, R1=handles_ptr, R2=num_handles, R3=timeout_upper32
