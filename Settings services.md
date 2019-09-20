@@ -530,7 +530,8 @@ Interactive Display Menu.
 No input, returns an output 0x14-byte struct
 "nn::settings::system::HomeMenuScheme".
 
-This struct contains 5 RGBA8 u32s for colors.
+This struct contains 5 RGBA8 u32s for colors: **Main**, **Back**,
+**Sub**, **Bezel** and **Extra**.
 
 The colors are loaded from [Calibration](Calibration.md "wikilink"),
 with the set of fields to use selected by ColorVariation. When
