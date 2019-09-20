@@ -772,25 +772,25 @@ No input, returns a 0x10 byte array with the cached contents of
 
 This is "nn::ns::detail::ISystemUpdateInterface".
 
-| Cmd | Name                                                                             |
-| --- | -------------------------------------------------------------------------------- |
-| 0   | [\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink") |
-| 1   | [\#OpenSystemUpdateControl](#OpenSystemUpdateControl "wikilink")                 |
-| 2   | NotifyExFatDriverRequired                                                        |
-| 3   | ClearExFatDriverStatusForDebug                                                   |
-| 4   | RequestBackgroundNetworkUpdate                                                   |
-| 5   | NotifyBackgroundNetworkUpdate                                                    |
-| 6   | NotifyExFatDriverDownloadedForDebug                                              |
-| 9   | GetSystemUpdateNotificationEventForContentDelivery                               |
-| 10  | NotifySystemUpdateForContentDelivery                                             |
-| 11  | \[3.0.0+\] PrepareShutdown                                                       |
-| 12  | \[3.0.0-3.0.2\]                                                                  |
-| 13  | \[3.0.0-3.0.2\]                                                                  |
-| 14  | \[3.0.0-3.0.2\]                                                                  |
-| 15  | \[3.0.0-3.0.2\]                                                                  |
-| 16  | \[4.0.0+\] DestroySystemUpdateTask                                               |
-| 17  | \[4.0.0+\] RequestSendSystemUpdate                                               |
-| 18  | \[4.0.0+\] GetSendSystemUpdateProgress                                           |
+| Cmd | Name                                                                                       |
+| --- | ------------------------------------------------------------------------------------------ |
+| 0   | [\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink")           |
+| 1   | [\#OpenSystemUpdateControl](#OpenSystemUpdateControl "wikilink")                           |
+| 2   | [\#NotifyExFatDriverRequired](#NotifyExFatDriverRequired "wikilink")                       |
+| 3   | [\#ClearExFatDriverStatusForDebug](#ClearExFatDriverStatusForDebug "wikilink")             |
+| 4   | [\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink")             |
+| 5   | NotifyBackgroundNetworkUpdate                                                              |
+| 6   | [\#NotifyExFatDriverDownloadedForDebug](#NotifyExFatDriverDownloadedForDebug "wikilink")   |
+| 9   | GetSystemUpdateNotificationEventForContentDelivery                                         |
+| 10  | [\#NotifySystemUpdateForContentDelivery](#NotifySystemUpdateForContentDelivery "wikilink") |
+| 11  | \[3.0.0+\] [\#PrepareShutdown](#PrepareShutdown "wikilink")                                |
+| 12  | \[3.0.0-3.0.2\]                                                                            |
+| 13  | \[3.0.0-3.0.2\]                                                                            |
+| 14  | \[3.0.0-3.0.2\]                                                                            |
+| 15  | \[3.0.0-3.0.2\]                                                                            |
+| 16  | \[4.0.0+\] [\#DestroySystemUpdateTask](#DestroySystemUpdateTask "wikilink")                |
+| 17  | \[4.0.0+\] RequestSendSystemUpdate                                                         |
+| 18  | \[4.0.0+\] GetSendSystemUpdateProgress                                                     |
 
 ## GetBackgroundNetworkUpdateState
 
@@ -801,6 +801,34 @@ No input, returns an output
 
 No input, returns an
 [\#ISystemUpdateControl](#ISystemUpdateControl "wikilink").
+
+## NotifyExFatDriverRequired
+
+No input/output.
+
+## ClearExFatDriverStatusForDebug
+
+No input/output.
+
+## RequestBackgroundNetworkUpdate
+
+No input/output.
+
+## NotifyExFatDriverDownloadedForDebug
+
+No input/output.
+
+## NotifySystemUpdateForContentDelivery
+
+No input/output.
+
+## PrepareShutdown
+
+No input/output.
+
+## DestroySystemUpdateTask
+
+No input/output.
 
 ## ISystemUpdateControl
 

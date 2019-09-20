@@ -1202,21 +1202,21 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 1 || [[#OpenSystemUpdateControl]]
 |-
-| 2 || NotifyExFatDriverRequired
+| 2 || [[#NotifyExFatDriverRequired]]
 |-
-| 3 || ClearExFatDriverStatusForDebug
+| 3 || [[#ClearExFatDriverStatusForDebug]]
 |-
-| 4 || RequestBackgroundNetworkUpdate
+| 4 || [[#RequestBackgroundNetworkUpdate]]
 |-
 | 5 || NotifyBackgroundNetworkUpdate
 |-
-| 6 || NotifyExFatDriverDownloadedForDebug
+| 6 || [[#NotifyExFatDriverDownloadedForDebug]]
 |-
 | 9 || GetSystemUpdateNotificationEventForContentDelivery
 |-
-| 10 || NotifySystemUpdateForContentDelivery
+| 10 || [[#NotifySystemUpdateForContentDelivery]]
 |-
-| 11 || [3.0.0+] PrepareShutdown
+| 11 || [3.0.0+] [[#PrepareShutdown]]
 |-
 | 12 || [3.0.0-3.0.2]
 |-
@@ -1226,7 +1226,7 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 |-
 | 15 || [3.0.0-3.0.2]
 |-
-| 16 || [4.0.0+] DestroySystemUpdateTask
+| 16 || [4.0.0+] [[#DestroySystemUpdateTask]]
 |-
 | 17 || [4.0.0+] RequestSendSystemUpdate
 |-
@@ -1238,6 +1238,27 @@ No input, returns an output [[#BackgroundNetworkUpdateState]].
 
 == OpenSystemUpdateControl ==
 No input, returns an [[#ISystemUpdateControl]].
+
+== NotifyExFatDriverRequired ==
+No input/output.
+
+== ClearExFatDriverStatusForDebug ==
+No input/output.
+
+== RequestBackgroundNetworkUpdate ==
+No input/output.
+
+== NotifyExFatDriverDownloadedForDebug ==
+No input/output.
+
+== NotifySystemUpdateForContentDelivery ==
+No input/output.
+
+== PrepareShutdown ==
+No input/output.
+
+== DestroySystemUpdateTask ==
+No input/output.
 
 == ISystemUpdateControl ==
 {| class="wikitable" border="1"
