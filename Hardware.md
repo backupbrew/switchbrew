@@ -96,7 +96,9 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 | Wifi/BT   |                                                          |
 | PMIC      | Maxim Integrated MAX77812                                |
 | Audio     | Realtek ALC5639                                          |
-| GC ASIC   |                                                          |
+| GC ASIC   | B1921 GCBRG HAC STD T1122919A2                           |
+| MCU       | STMicroelectronics STM32F038C6                           |
+| NFC       | STMicroelectronics NFCDDR A92089 19                      |
 
 # eMMC Pinout
 
