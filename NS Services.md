@@ -906,6 +906,10 @@ GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 No input, returns an output handle and an
 [\#IAsyncValue](#IAsyncValue "wikilink").
 
+The data that can be read from the
+[\#IAsyncValue](#IAsyncValue "wikilink") is
+[\#LatestSystemUpdate](#LatestSystemUpdate "wikilink").
+
 ### RequestDownloadLatestUpdate
 
 No input, returns an output handle and an
@@ -1118,6 +1122,16 @@ This contains a file path.
 ## SystemDeliveryInfo
 
 This is "nn::ns::SystemDeliveryInfo". This is a 0x100-byte struct.
+
+## LatestSystemUpdate
+
+| Value        | Description |
+| ------------ | ----------- |
+| 1            | Unknown.    |
+| 2            | Unknown.    |
+| Other values | Unknown.    |
+
+This is "nn::ns::LatestSystemUpdate". This is an u8.
 
 # IAsyncValue
 
