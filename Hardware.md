@@ -21,6 +21,7 @@
 | Product Code | Description                       |
 | ------------ | --------------------------------- |
 | VALI-CPU-X5  | Pre-release Nintendo Switch Lite. |
+| HDH-CPU-02   | Retail Nintendo Switch Lite.      |
 
 # Specifications
 
@@ -88,13 +89,13 @@ Toshiba THGBMHG8C2LBAIL 32 GB eMMC</p></td>
 
 | Component | Description                                              |
 | --------- | -------------------------------------------------------- |
-| SoC       |                                                          |
-| Screen    |                                                          |
-| Storage   |                                                          |
+| SoC       | NVIDIA ODNX10-A1                                         |
+| Screen    | InnoLux ZJ055IA-27A                                      |
+| Storage   | Samsung KLMBG2JETD-B041 32 GB eMMC                       |
 | Memory    | Samsung K4U6E3S4AM-MGCJ 2 GB LPDDR4x DRAM x2 (Total 4GB) |
 | Wifi/BT   |                                                          |
 | PMIC      | Maxim Integrated MAX77812                                |
-| Audio     |                                                          |
+| Audio     | Realtek ALC5639                                          |
 | GC ASIC   |                                                          |
 
 # eMMC Pinout
