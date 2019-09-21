@@ -1050,8 +1050,11 @@ This is "nn::fssrv::sf::IEventNotifier".
 |-
 ! Cmd || Name
 |-
-| 0 || GetEventHandle
+| 0 || [[#GetEventHandle]]
 |}
+
+== GetEventHandle ==
+No input, returns an output Event handle. With official sw the EventClearMode is user-specified.
 
 = ISaveDataTransferManager =
 This is "nn::fssrv::sf::ISaveDataTransferManager".

@@ -1697,9 +1697,14 @@ Takes a total of 4-bytes of input, no output.
 
 This is "nn::fssrv::sf::IEventNotifier".
 
-| Cmd | Name           |
-| --- | -------------- |
-| 0   | GetEventHandle |
+| Cmd | Name                                           |
+| --- | ---------------------------------------------- |
+| 0   | [\#GetEventHandle](#GetEventHandle "wikilink") |
+
+## GetEventHandle
+
+No input, returns an output Event handle. With official sw the
+EventClearMode is user-specified.
 
 # ISaveDataTransferManager
 
