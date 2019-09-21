@@ -1267,7 +1267,7 @@ No input/output.
 No input/output.
 
 == RequestSendSystemUpdate ==
-Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output handle and an [[#IAsyncResult]].
+Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output Event handle and an [[#IAsyncResult]].
 
 == GetSendSystemUpdateProgress ==
 No input, returns an output [[#SystemUpdateProgress]].
@@ -1338,12 +1338,12 @@ Uses [[NIM_services|nim]] ListSystemUpdateTask and [[NIM_services|nim]] GetSyste
 This always returns 0, however this will assert if GetSystemUpdateTaskInfo fails with ret!=0x3C89.
 
 === RequestCheckLatestUpdate ===
-No input, returns an output handle and an [[#IAsyncValue]].
+No input, returns an output Event handle and an [[#IAsyncValue]].
 
 The data that can be read from the [[#IAsyncValue]] is [[#LatestSystemUpdate]].
 
 === RequestDownloadLatestUpdate ===
-No input, returns an output handle and an [[#IAsyncResult]].
+No input, returns an output Event handle and an [[#IAsyncResult]].
 
 === GetDownloadProgress ===
 No input, returns an output [[#SystemUpdateProgress]].
@@ -1376,7 +1376,7 @@ Runs code similar to [[#HasDownloaded]], throwing an error if a network sysupdat
 * On newer system versions when an input flag is set, this uses [[Filesystem_services|NotifySystemDataUpdateEvent]], however this doesn't happen with ApplyDownloadedUpdate since that input flag is 0.
 
 === RequestPrepareCardUpdate ===
-No input, returns an output handle and an [[#IAsyncResult]].
+No input, returns an output Event handle and an [[#IAsyncResult]].
 
 === GetPrepareCardUpdateProgress ===
 No input, returns an output [[#SystemUpdateProgress]].
@@ -1425,7 +1425,7 @@ No input, returns an output u8 bool.
 Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73.
 
 === RequestReceiveSystemUpdate ===
-Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output handle and an [[#IAsyncResult]].
+Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output Event handle and an [[#IAsyncResult]].
 
 === GetReceiveProgress ===
 No input, returns an output [[#SystemUpdateProgress]].
@@ -1447,7 +1447,7 @@ No input/output.
 This just uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
 
 === RequestCheckLatestUpdateIncludesRebootlessUpdate ===
-No input, returns an output handle and an [[#IAsyncValue]].
+No input, returns an output Event handle and an [[#IAsyncValue]].
 
 == BackgroundNetworkUpdateState ==
 {| class="wikitable" border="1"

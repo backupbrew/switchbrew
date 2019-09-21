@@ -844,7 +844,7 @@ No input/output.
 
 Takes a type-0x15 input buffer containing a
 [\#SystemDeliveryInfo](#SystemDeliveryInfo "wikilink"), an u16, an u32,
-returns an output handle and an
+returns an output Event handle and an
 [\#IAsyncResult](#IAsyncResult "wikilink").
 
 ## GetSendSystemUpdateProgress
@@ -903,7 +903,7 @@ GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 
 ### RequestCheckLatestUpdate
 
-No input, returns an output handle and an
+No input, returns an output Event handle and an
 [\#IAsyncValue](#IAsyncValue "wikilink").
 
 The data that can be read from the
@@ -912,7 +912,7 @@ The data that can be read from the
 
 ### RequestDownloadLatestUpdate
 
-No input, returns an output handle and an
+No input, returns an output Event handle and an
 [\#IAsyncResult](#IAsyncResult "wikilink").
 
 ### GetDownloadProgress
@@ -973,7 +973,7 @@ the sysupdate is installed:
 
 ### RequestPrepareCardUpdate
 
-No input, returns an output handle and an
+No input, returns an output Event handle and an
 [\#IAsyncResult](#IAsyncResult "wikilink").
 
 ### GetPrepareCardUpdateProgress
@@ -1060,7 +1060,7 @@ Same as [\#HasDownloaded](#HasDownloaded "wikilink") except this uses
 
 Takes a type-0x15 input buffer containing a
 [\#SystemDeliveryInfo](#SystemDeliveryInfo "wikilink"), an u16, an u32,
-returns an output handle and an
+returns an output Event handle and an
 [\#IAsyncResult](#IAsyncResult "wikilink").
 
 ### GetReceiveProgress
@@ -1096,7 +1096,7 @@ then when a task is returned uses it with DestroySystemUpdateTask.
 
 ### RequestCheckLatestUpdateIncludesRebootlessUpdate
 
-No input, returns an output handle and an
+No input, returns an output Event handle and an
 [\#IAsyncValue](#IAsyncValue "wikilink").
 
 ## BackgroundNetworkUpdateState
