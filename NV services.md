@@ -1119,12 +1119,14 @@ Returns the mask value for a ZBC slot.
 Channels are a concept for NVIDIA hardware blocks that share a common
 interface.
 
-| Path              | Name                   |
-| ----------------- | ---------------------- |
-| /dev/nvhost-gpu   | GPU                    |
-| /dev/nvhost-vic   | Video Image Compositor |
-| /dev/nvhost-nvdec | Video Decoder          |
-| /dev/nvhost-nvjpg | JPEG Decoder           |
+| Path                | Name                   |
+| ------------------- | ---------------------- |
+| /dev/nvhost-gpu     | GPU                    |
+| /dev/nvhost-msenc   | Video Encoder          |
+| /dev/nvhost-nvdec   | Video Decoder          |
+| /dev/nvhost-nvjpg   | JPEG Decoder           |
+| /dev/nvhost-vic     | Video Image Compositor |
+| /dev/nvhost-display | Display                |
 
 ## Channel Ioctls
 
