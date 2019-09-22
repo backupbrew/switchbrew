@@ -1144,7 +1144,20 @@ This is "nn::ns::detail::IAsyncValue".
 | 2   | Cancel                     |
 | 3   | \[4.0.0+\] GetErrorContext |
 
-Cmd3: No input/output, takes a type-0x16 output buffer.
+Official sw creates a container object for this using the output from
+the service commands, which contains the IAsyncValue object, and the
+Event with EventClearMode=0.
+
+  - GetSize: No input, returns an output u64.
+  - Get: Takes a type-0x6 output buffer, no output. Official sw waits on
+    the Event prior to using this cmd.
+  - Cancel: No input/output. Used by official sw when closing the
+    object, when a global state flag is set (after using the cmd,
+    official sw will also wait on the Event). This cmd is also used in
+    other official sw funcs.
+  - GetErrorContext: No input/output, takes a type-0x16 output buffer
+    containing an
+    [ErrorContext](Error%20Applet#ErrorContext.md##ErrorContext "wikilink").
 
 # IAsyncResult
 
@@ -1156,7 +1169,19 @@ This is "nn::ns::detail::IAsyncResult".
 | 1   | Cancel                     |
 | 2   | \[4.0.0+\] GetErrorContext |
 
-Cmd2: No input/output, takes a type-0x16 output buffer.
+Official sw creates a container object for this using the output from
+the service commands, which contains the IAsyncResult object, and the
+Event with EventClearMode=0.
+
+  - Get: No input/output. Official sw waits on the Event prior to using
+    this cmd.
+  - Cancel: No input/output. Used by official sw when closing the
+    object, when a global state flag is set (after using the cmd,
+    official sw will also wait on the Event). This cmd is also used in
+    other official sw funcs.
+  - GetErrorContext: No input/output, takes a type-0x16 output buffer
+    containing an
+    [ErrorContext](Error%20Applet#ErrorContext.md##ErrorContext "wikilink").
 
 # ns:dev
 
