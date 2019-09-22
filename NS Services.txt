@@ -488,7 +488,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 27 || DeleteApplicationRecord
 |-
-| 30 || RequestApplicationUpdateInfo
+| 30 || [[#RequestApplicationUpdateInfo]]
 |-
 | 31 || [1.0.0-3.0.2] 
 |-
@@ -650,13 +650,13 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 406 || [6.0.0+] GetApplicationControlProperty
 |-
-| 407 || [8.0.0+] ListApplicationTitle
+| 407 || [8.0.0+] [[#ListApplicationTitle]]
 |-
-| 408 || [8.0.0+] ListApplicationIcon
+| 408 || [8.0.0+] [[#ListApplicationIcon]]
 |-
 | 502 || RequestCheckGameCardRegistration
 |-
-| 503 || RequestGameCardRegistrationGoldPoint
+| 503 || [[#RequestGameCardRegistrationGoldPoint]]
 |-
 | 504 || RequestRegisterGameCard
 |-
@@ -698,13 +698,13 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 |-
 | 704 || ListDownloadTaskStatus
 |-
-| 705 || RequestDownloadTaskListData
+| 705 || [[#RequestDownloadTaskListData]]
 |-
 | 800 || RequestVersionList
 |-
 | 801 || ListVersionList
 |-
-| 802 || [3.0.0+] RequestVersionListData
+| 802 || [3.0.0+] [[#RequestVersionListData]]
 |-
 | 900 || GetApplicationRecord
 |-
@@ -923,6 +923,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 
 [4.0.0+] RequestDownloadAddOnContent now takes an additional 8-bytes of input.
 
+==== RequestApplicationUpdateInfo ====
+Takes an input u64 titleID (<code>nn::ncm::ApplicationId</code>), returns an output Event handle and an [[#IAsyncValue]].
+
+The data that can be read from the [[#IAsyncValue]] is [[#ApplicationUpdateInfo]].
+
 ==== LaunchDevMenu ====
 No input/output.
 
@@ -934,10 +939,22 @@ This loads titleIDs from [[System_Settings|system-settings]] <code>ns.applet!dev
 
 Then if the above succeeds, the above titles are launched with the above StorageId via [[Process_Manager_services|pmshell]] LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
+==== ListApplicationTitle ====
+Takes a total of 0x10-bytes of input, a type-0x5 input buffer, an input handle, returns an output Event handle and an [[#IAsyncValue]].
+
+==== ListApplicationIcon ====
+Takes a total of 0x10-bytes of input, a type-0x5 input buffer, an input handle, returns an output Event handle and an [[#IAsyncValue]].
+
+==== RequestGameCardRegistrationGoldPoint ====
+Takes a total of 0x18-bytes of input, returns an output Event handle and an [[#IAsyncValue]].
+
 ==== GetGameCardPlatformRegion ====
 No input, returns an u8 '''PlatformRegion''' (0x00 = Default, 0x01 = China).
 
 This calls [[Filesystem_services#IDeviceOperator|fsp-srv IDeviceOperator]] GetGameCardCompatibilityType and returns the result.
+
+==== RequestDownloadTaskListData ====
+No input, returns an output Event handle and an [[#IAsyncValue]].
 
 ==== GetRightsEnvironmentHandleForApplication ====
 No input, returns a total of 8-bytes of output.
@@ -973,10 +990,15 @@ This was added with [4.0.0+].
 |-
 | 801 || ListVersionList
 |-
-| 802 || RequestVersionListData
+| 802 || [[#RequestVersionListData]]
 |-
 | 1000 || PerformAutoUpdate
 |}
+
+==== RequestVersionListData ====
+No input, returns an output Event handle and an [[#IAsyncValue]].
+
+The data that can be read from the [[#IAsyncValue]] is [[#VersionListData]].
 
 === IContentManagerInterface ===
 This is "nn::ns::detail::IContentManagementInterface".
@@ -1031,7 +1053,7 @@ This is "nn::ns::detail::IDownloadTaskInterface".
 |-
 | 704 || ListDownloadTaskStatus
 |-
-| 705 || RequestDownloadTaskListData
+| 705 || [[#RequestDownloadTaskListData]]
 |-
 | 706 || [4.0.0+] TryCommitCurrentApplicationDownloadTask
 |-
@@ -1083,7 +1105,7 @@ This was added with [6.0.0+].
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || RequestApplicationRightsOnServer || 
+| 0 || [[#RequestApplicationRightsOnServer]] || 
 |-
 | 1 || RequestAssignRights || 
 |-
@@ -1097,7 +1119,7 @@ This was added with [6.0.0+].
 |-
 | 8 || GetDynamicRightsState || 
 |-
-| 9 || [7.0.0+] RequestApplicationRightsOnServerToResume || 
+| 9 || [7.0.0+] [[#RequestApplicationRightsOnServerToResume]] || 
 |-
 | 10 || [7.0.0+] RequestAssignRightsToResume || 
 |-
@@ -1107,6 +1129,12 @@ This was added with [6.0.0+].
 |-
 | 13 || [8.0.0+] GetRunningApplicationStatus ||
 |}
+
+==== RequestApplicationRightsOnServer ====
+Takes a total of 0x20-bytes of input, returns an output Event handle and an [[#IAsyncValue]].
+
+==== RequestApplicationRightsOnServerToResume ====
+Takes a total of 8-bytes of input, returns an output Event handle and an [[#IAsyncValue]].
 
 === IECommerceInterface===
 This is "nn::ns::detail::IECommerceInterface".
@@ -1607,5 +1635,11 @@ Takes an input u32 (1 = Preomia). Returns an [[#IApplicationResource]].
 
 == IsPreomiaForDevelop ==
 Takes an u64 titleID. Returns a bool.
+
+= VersionListData =
+This is "nn::ns::VersionListData".
+
+= ApplicationUpdateInfo =
+This is "nn::ns::ApplicationUpdateInfo".
 
 [[Category:Services]]

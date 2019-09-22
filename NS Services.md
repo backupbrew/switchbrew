@@ -314,7 +314,7 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 23   | ResolveApplicationContentPath                                                                                 |
 | 26   | BeginInstallApplication                                                                                       |
 | 27   | DeleteApplicationRecord                                                                                       |
-| 30   | RequestApplicationUpdateInfo                                                                                  |
+| 30   | [\#RequestApplicationUpdateInfo](#RequestApplicationUpdateInfo "wikilink")                                    |
 | 31   | \[1.0.0-3.0.2\]                                                                                               |
 | 32   | CancelApplicationDownload                                                                                     |
 | 33   | ResumeApplicationDownload                                                                                     |
@@ -395,10 +395,10 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 404  | InvalidateApplicationControlCache                                                                             |
 | 405  | ListApplicationControlCacheEntryInfo                                                                          |
 | 406  | \[6.0.0+\] GetApplicationControlProperty                                                                      |
-| 407  | \[8.0.0+\] ListApplicationTitle                                                                               |
-| 408  | \[8.0.0+\] ListApplicationIcon                                                                                |
+| 407  | \[8.0.0+\] [\#ListApplicationTitle](#ListApplicationTitle "wikilink")                                         |
+| 408  | \[8.0.0+\] [\#ListApplicationIcon](#ListApplicationIcon "wikilink")                                           |
 | 502  | RequestCheckGameCardRegistration                                                                              |
-| 503  | RequestGameCardRegistrationGoldPoint                                                                          |
+| 503  | [\#RequestGameCardRegistrationGoldPoint](#RequestGameCardRegistrationGoldPoint "wikilink")                    |
 | 504  | RequestRegisterGameCard                                                                                       |
 | 505  | \[3.0.0+\] GetGameCardMountFailureEvent                                                                       |
 | 506  | \[3.0.0+\] IsGameCardInserted                                                                                 |
@@ -419,10 +419,10 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 702  | RequestDownloadTaskList                                                                                       |
 | 703  | RequestEnsureDownloadTask                                                                                     |
 | 704  | ListDownloadTaskStatus                                                                                        |
-| 705  | RequestDownloadTaskListData                                                                                   |
+| 705  | [\#RequestDownloadTaskListData](#RequestDownloadTaskListData "wikilink")                                      |
 | 800  | RequestVersionList                                                                                            |
 | 801  | ListVersionList                                                                                               |
-| 802  | \[3.0.0+\] RequestVersionListData                                                                             |
+| 802  | \[3.0.0+\] [\#RequestVersionListData](#RequestVersionListData "wikilink")                                     |
 | 900  | GetApplicationRecord                                                                                          |
 | 901  | GetApplicationRecordProperty                                                                                  |
 | 902  | EnableApplicationAutoUpdate                                                                                   |
@@ -534,6 +534,15 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 \[4.0.0+\] RequestDownloadAddOnContent now takes an additional 8-bytes
 of input.
 
+#### RequestApplicationUpdateInfo
+
+Takes an input u64 titleID (`nn::ncm::ApplicationId`), returns an output
+Event handle and an [\#IAsyncValue](#IAsyncValue "wikilink").
+
+The data that can be read from the
+[\#IAsyncValue](#IAsyncValue "wikilink") is
+[\#ApplicationUpdateInfo](#ApplicationUpdateInfo "wikilink").
+
 #### LaunchDevMenu
 
 No input/output.
@@ -555,6 +564,23 @@ Then if the above succeeds, the above titles are launched with the above
 StorageId via [pmshell](Process%20Manager%20services.md "wikilink")
 LaunchProgram, with a 0.5s sleep-thread afterwards on success.
 
+#### ListApplicationTitle
+
+Takes a total of 0x10-bytes of input, a type-0x5 input buffer, an input
+handle, returns an output Event handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
+
+#### ListApplicationIcon
+
+Takes a total of 0x10-bytes of input, a type-0x5 input buffer, an input
+handle, returns an output Event handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
+
+#### RequestGameCardRegistrationGoldPoint
+
+Takes a total of 0x18-bytes of input, returns an output Event handle and
+an [\#IAsyncValue](#IAsyncValue "wikilink").
+
 #### GetGameCardPlatformRegion
 
 No input, returns an u8 **PlatformRegion** (0x00 = Default, 0x01 =
@@ -563,6 +589,11 @@ China).
 This calls [fsp-srv
 IDeviceOperator](Filesystem%20services#IDeviceOperator.md##IDeviceOperator "wikilink")
 GetGameCardCompatibilityType and returns the result.
+
+#### RequestDownloadTaskListData
+
+No input, returns an output Event handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
 
 #### GetRightsEnvironmentHandleForApplication
 
@@ -585,17 +616,26 @@ This is "nn::ns::detail::IApplicationVersionInterface".
 
 This was added with \[4.0.0+\].
 
-| Cmd  | Name                         |
-| ---- | ---------------------------- |
-| 0    | GetLaunchRequiredVersion     |
-| 1    | UpgradeLaunchRequiredVersion |
-| 35   | UpdateVersionList            |
-| 36   | PushLaunchVersion            |
-| 37   | ListRequiredVersion          |
-| 800  | RequestVersionList           |
-| 801  | ListVersionList              |
-| 802  | RequestVersionListData       |
-| 1000 | PerformAutoUpdate            |
+| Cmd  | Name                                                           |
+| ---- | -------------------------------------------------------------- |
+| 0    | GetLaunchRequiredVersion                                       |
+| 1    | UpgradeLaunchRequiredVersion                                   |
+| 35   | UpdateVersionList                                              |
+| 36   | PushLaunchVersion                                              |
+| 37   | ListRequiredVersion                                            |
+| 800  | RequestVersionList                                             |
+| 801  | ListVersionList                                                |
+| 802  | [\#RequestVersionListData](#RequestVersionListData "wikilink") |
+| 1000 | PerformAutoUpdate                                              |
+
+#### RequestVersionListData
+
+No input, returns an output Event handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
+
+The data that can be read from the
+[\#IAsyncValue](#IAsyncValue "wikilink") is
+[\#VersionListData](#VersionListData "wikilink").
 
 ### IContentManagerInterface
 
@@ -626,17 +666,17 @@ This is "nn::ns::detail::IDocumentInterface".
 
 This is "nn::ns::detail::IDownloadTaskInterface".
 
-| Cmd | Name                                               |
-| --- | -------------------------------------------------- |
-| 701 | ClearTaskStatusList                                |
-| 702 | RequestDownloadTaskList                            |
-| 703 | RequestEnsureDownloadTask                          |
-| 704 | ListDownloadTaskStatus                             |
-| 705 | RequestDownloadTaskListData                        |
-| 706 | \[4.0.0+\] TryCommitCurrentApplicationDownloadTask |
-| 707 | \[4.0.0+\] EnableAutoCommit                        |
-| 708 | \[4.0.0+\] DisableAutoCommit                       |
-| 709 | \[4.0.0+\] TriggerDynamicCommitEvent               |
+| Cmd | Name                                                                     |
+| --- | ------------------------------------------------------------------------ |
+| 701 | ClearTaskStatusList                                                      |
+| 702 | RequestDownloadTaskList                                                  |
+| 703 | RequestEnsureDownloadTask                                                |
+| 704 | ListDownloadTaskStatus                                                   |
+| 705 | [\#RequestDownloadTaskListData](#RequestDownloadTaskListData "wikilink") |
+| 706 | \[4.0.0+\] TryCommitCurrentApplicationDownloadTask                       |
+| 707 | \[4.0.0+\] EnableAutoCommit                                              |
+| 708 | \[4.0.0+\] DisableAutoCommit                                             |
+| 709 | \[4.0.0+\] TriggerDynamicCommitEvent                                     |
 
 ### IReadOnlyApplicationRecordInterface
 
@@ -668,20 +708,30 @@ This is "nn::ns::detail::IDynamicRightsInterface".
 
 This was added with \[6.0.0+\].
 
-| Cmd | Name                                                | Notes |
-| --- | --------------------------------------------------- | ----- |
-| 0   | RequestApplicationRightsOnServer                    |       |
-| 1   | RequestAssignRights                                 |       |
-| 4   | DeprecatedRequestAssignRightsToResume               |       |
-| 5   | VerifyActivatedRightsOwners                         |       |
-| 6   | DeprecatedGetApplicationRightsStatus                |       |
-| 7   | RequestPrefetchForDynamicRights                     |       |
-| 8   | GetDynamicRightsState                               |       |
-| 9   | \[7.0.0+\] RequestApplicationRightsOnServerToResume |       |
-| 10  | \[7.0.0+\] RequestAssignRightsToResume              |       |
-| 11  | \[7.0.0+\] GetActivatedRightsUsers                  |       |
-| 12  | \[8.0.0+\] GetApplicationRightsStatus               |       |
-| 13  | \[8.0.0+\] GetRunningApplicationStatus              |       |
+| Cmd | Name                                                                                                          | Notes |
+| --- | ------------------------------------------------------------------------------------------------------------- | ----- |
+| 0   | [\#RequestApplicationRightsOnServer](#RequestApplicationRightsOnServer "wikilink")                            |       |
+| 1   | RequestAssignRights                                                                                           |       |
+| 4   | DeprecatedRequestAssignRightsToResume                                                                         |       |
+| 5   | VerifyActivatedRightsOwners                                                                                   |       |
+| 6   | DeprecatedGetApplicationRightsStatus                                                                          |       |
+| 7   | RequestPrefetchForDynamicRights                                                                               |       |
+| 8   | GetDynamicRightsState                                                                                         |       |
+| 9   | \[7.0.0+\] [\#RequestApplicationRightsOnServerToResume](#RequestApplicationRightsOnServerToResume "wikilink") |       |
+| 10  | \[7.0.0+\] RequestAssignRightsToResume                                                                        |       |
+| 11  | \[7.0.0+\] GetActivatedRightsUsers                                                                            |       |
+| 12  | \[8.0.0+\] GetApplicationRightsStatus                                                                         |       |
+| 13  | \[8.0.0+\] GetRunningApplicationStatus                                                                        |       |
+
+#### RequestApplicationRightsOnServer
+
+Takes a total of 0x20-bytes of input, returns an output Event handle and
+an [\#IAsyncValue](#IAsyncValue "wikilink").
+
+#### RequestApplicationRightsOnServerToResume
+
+Takes a total of 8-bytes of input, returns an output Event handle and an
+[\#IAsyncValue](#IAsyncValue "wikilink").
 
 ### IECommerceInterface
 
@@ -1272,5 +1322,13 @@ Takes an input u32 (1 = Preomia). Returns an
 ## IsPreomiaForDevelop
 
 Takes an u64 titleID. Returns a bool.
+
+# VersionListData
+
+This is "nn::ns::VersionListData".
+
+# ApplicationUpdateInfo
+
+This is "nn::ns::ApplicationUpdateInfo".
 
 [Category:Services](Category:Services "wikilink")
