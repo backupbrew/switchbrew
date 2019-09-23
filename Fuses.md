@@ -421,7 +421,7 @@ output.
 | 6    | Forced RCM two button mode (0 = Only VOLUME\_UP; 1 = VOLUME\_UP + HOME) |
 | 7    | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)                         |
 
-This caches the value of the sw\_reserved fuse from the hardware array.
+This caches the value of the reserved\_sw fuse from the hardware bitmap.
 
 Original launch units have the RCM USB controller mode set to USB 2.0,
 while the first batch of patched units have the RCM USB controller mode

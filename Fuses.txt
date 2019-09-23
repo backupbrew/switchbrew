@@ -788,9 +788,9 @@ Reads to these registers after the SBK is locked out produce all-FF output.
 | RCM USB controller mode (0 = USB 2.0; 1 = XUSB)
 |}
 
-This caches the value of the sw_reserved fuse from the hardware array.
+This caches the value of the reserved_sw fuse from the hardware bitmap.
 
-Original launch units have the RCM USB controller mode set to USB 2.0, while the first batch of patched units have the RCM USB controller mode set to XUSB. 
+Original launch units have the RCM USB controller mode set to USB 2.0, while the first batch of patched units have the RCM USB controller mode set to XUSB.
 
 ==== FUSE_PKC_DISABLE ====
 This caches the value of the pkc_disable fuse from the hardware array.
