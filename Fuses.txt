@@ -747,7 +747,7 @@ This stores an hardware ID in original launch units, but in patched units it's e
 This stores some device configuration parameters.
 
 ==== FUSE_RESERVED_ODM6 ====
-This register returns the value programmed into index 0x3A of the fuse array. 
+This register returns the value programmed into fuse [[#reserved_odm6|reserved_odm6]].
 
 ==== FUSE_RESERVED_ODM7 ====
 This register returns the value programmed into index 0x3C of the fuse array.

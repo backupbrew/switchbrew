@@ -384,8 +384,8 @@ This stores some device configuration parameters.
 
 #### FUSE\_RESERVED\_ODM6
 
-This register returns the value programmed into index 0x3A of the fuse
-array.
+This register returns the value programmed into fuse
+[reserved\_odm6](#reserved_odm6 "wikilink").
 
 #### FUSE\_RESERVED\_ODM7
 
