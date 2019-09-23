@@ -1,6 +1,6 @@
 The Nintendo Switch makes use of Tegra's fuse driver for a number of operations. This driver is mapped to physical address 0x7000F800 with a total size of 0x400 bytes and exposes several registers for fuse programming.
 
-Registers from 0x7000F800 to 0x7000F800 + 0xFF can be used to directly program the hardware fuse array, while registers from 0x7000F800 + 0x100 (FUSE_CHIP_REG_START_OFFSET) to 0x7000F800 + 0x3FC (FUSE_CHIP_REG_END_OFFSET) represent cached values read from certain fuses.
+Registers from 0x7000F800 to 0x7000F800 + 0xFF can be used to directly program the hardware fuse bitmap, while registers from 0x7000F800 + 0x100 (FUSE_CHIP_REG_START_OFFSET) to 0x7000F800 + 0x3FC (FUSE_CHIP_REG_END_OFFSET) represent cached values read from certain fuses.
 
 == Registers ==
 Below is a list of fuse driver registers used by the Switch's bootloaders.
@@ -793,7 +793,7 @@ This caches the value of the reserved_sw fuse from the hardware bitmap.
 Original launch units have the RCM USB controller mode set to USB 2.0, while the first batch of patched units have the RCM USB controller mode set to XUSB.
 
 ==== FUSE_PKC_DISABLE ====
-This caches the value of the pkc_disable fuse from the hardware array.
+This caches the value of the pkc_disable fuse from the hardware bitmap.
 
 ==== FUSE_SPARE_BIT_2 ====
 Stores part of the speedo fusing revision.

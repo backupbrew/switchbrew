@@ -4,8 +4,8 @@ total size of 0x400 bytes and exposes several registers for fuse
 programming.
 
 Registers from 0x7000F800 to 0x7000F800 + 0xFF can be used to directly
-program the hardware fuse array, while registers from 0x7000F800 + 0x100
-(FUSE\_CHIP\_REG\_START\_OFFSET) to 0x7000F800 + 0x3FC
+program the hardware fuse bitmap, while registers from 0x7000F800 +
+0x100 (FUSE\_CHIP\_REG\_START\_OFFSET) to 0x7000F800 + 0x3FC
 (FUSE\_CHIP\_REG\_END\_OFFSET) represent cached values read from certain
 fuses.
 
@@ -429,7 +429,7 @@ set to XUSB.
 
 #### FUSE\_PKC\_DISABLE
 
-This caches the value of the pkc\_disable fuse from the hardware array.
+This caches the value of the pkc\_disable fuse from the hardware bitmap.
 
 #### FUSE\_SPARE\_BIT\_2
 
