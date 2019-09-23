@@ -389,8 +389,8 @@ This register returns the value programmed into fuse
 
 #### FUSE\_RESERVED\_ODM7
 
-This register returns the value programmed into index 0x3C of the fuse
-array.
+This register returns the value programmed into fuse
+[reserved\_odm7](#reserved_odm7 "wikilink").
 
 #### FUSE\_PUBLIC\_KEY
 
