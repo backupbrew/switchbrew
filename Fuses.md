@@ -468,86 +468,86 @@ operation must always write the same value to **fuse\_bitmap +
 Below is a list of common fuses used by Tegra devices (and applicable to
 the Switch).
 
-| Name                                          | Number | Redundant number | Bits     |
-| --------------------------------------------- | ------ | ---------------- | -------- |
-| enable\_fuse\_program                         | 0      | 1                | 0        |
-| disable\_fuse\_program                        | 0      | 1                | 1        |
-| bypass\_fuses                                 | 0      | 1                | 2        |
-| jtag\_direct\_access\_disable                 | 0      | 1                | 3        |
-| production\_mode                              | 0      | 1                | 4        |
-| jtag\_secureid\_valid                         | 0      | 1                | 5        |
-| odm\_lock                                     | 0      | 1                | 6-9      |
-| fa\_mode                                      | 0      | 1                | 10       |
-| security\_mode                                | 0      | 1                | 11       |
-| arm\_debug\_dis                               | 0      | 1                | 12       |
-| obs\_dis                                      | 0      | 1                | 13       |
-| public\_key0                                  | 10     | 11               | 30-31    |
-| public\_key0                                  | 12     | 13               | 0-29     |
-| public\_key1                                  | 12     | 13               | 30-31    |
-| public\_key1                                  | 14     | 15               | 0-29     |
-| public\_key2                                  | 14     | 15               | 30-31    |
-| public\_key2                                  | 16     | 17               | 0-29     |
-| public\_key3                                  | 16     | 17               | 30-31    |
-| public\_key3                                  | 18     | 19               | 0-29     |
-| public\_key4                                  | 18     | 19               | 30-31    |
-| public\_key4                                  | 20     | 21               | 0-29     |
-| public\_key5                                  | 20     | 21               | 30-31    |
-| public\_key5                                  | 22     | 23               | 0-29     |
-| public\_key6                                  | 22     | 23               | 30-31    |
-| public\_key6                                  | 24     | 25               | 0-29     |
-| public\_key7                                  | 24     | 25               | 30-31    |
-| public\_key7                                  | 26     | 27               | 0-29     |
-| private\_key0                                 | 34     | 35               | 12-31    |
-| private\_key0                                 | 36     | 37               | 0-11     |
-| private\_key1                                 | 36     | 37               | 12-31    |
-| private\_key1                                 | 38     | 39               | 0-11     |
-| private\_key2                                 | 38     | 39               | 12-31    |
-| private\_key2                                 | 40     | 41               | 0-11     |
-| private\_key3                                 | 40     | 41               | 12-31    |
-| private\_key3                                 | 42     | 43               | 0-11     |
-| private\_key4                                 | 42     | 43               | 12-31    |
-| private\_key4                                 | 44     | 45               | 0-11     |
-| boot\_device\_info                            | 44     | 45               | 12-27    |
-| reserved\_sw                                  | 44     | 45               | 28-31    |
-| reserved\_sw                                  | 46     | 47               | 0-3      |
-| reserved\_odm0                                | 46     | 47               | 5-31     |
-| reserved\_odm0                                | 48     | 49               | 0-4      |
-| reserved\_odm1                                | 48     | 49               | 5-31     |
-| reserved\_odm1                                | 50     | 51               | 0-4      |
-| reserved\_odm2                                | 50     | 51               | 5-31     |
-| reserved\_odm2                                | 52     | 53               | 0-4      |
-| reserved\_odm3                                | 52     | 53               | 5-31     |
-| reserved\_odm3                                | 54     | 55               | 0-4      |
-| reserved\_odm4                                | 54     | 55               | 5-31     |
-| reserved\_odm4                                | 56     | 57               | 0-4      |
-| reserved\_odm5                                | 56     | 57               | 5-31     |
-| reserved\_odm5                                | 58     | 59               | 0-4      |
-| [reserved\_odm6](#reserved_odm6 "wikilink")   | 58     | 59               | 5-31     |
-| [reserved\_odm6](#reserved_odm6 "wikilink")   | 60     | 61               | 0-4      |
-| [reserved\_odm7](#reserved_odm7 "wikilink")   | 60     | 61               | 5-31     |
-| [reserved\_odm7](#reserved_odm7 "wikilink")   | 62     | 63               | 0-4      |
-| kfuse\_privkey\_ctrl                          | 64     | 65               | 13-14    |
-| package\_info                                 | 64     | 65               | 15-18    |
-| opt\_vendor\_code                             | 64     | 65               | 19-22    |
-| opt\_fab\_code                                | 64     | 65               | 23-28    |
-| opt\_lot\_code\_0                             | 64     | 65               | 29-31    |
-| opt\_lot\_code\_0                             | 66     | 67               | 0-28     |
-| opt\_lot\_code\_1                             | 66     | 67               | 29-31    |
-| opt\_lot\_code\_1                             | 68     | 69               | 0-24     |
-| opt\_wafer\_id                                | 68     | 69               | 25-30    |
-| opt\_x\_coordinate                            | 68     | 69               | 31       |
-| opt\_x\_coordinate                            | 70     | 71               | 0-7      |
-| opt\_y\_coordinate                            | 70     | 71               | 8-16     |
-| opt\_sec\_debug\_en                           | 70     | 71               | 17       |
-| opt\_ops\_reserved                            | 70     | 71               | 18-23    |
-| sata\_calib                                   | 70     | 71               | 24-25    |
-| opt\_priv\_sec\_en                            | 90     | 91               | 8        |
-| pkc\_disable                                  | 90     | 91               | 9        |
-| fuse2tsec\_debug\_disable                     | 90     | 91               | 10       |
-| secure\_provision\_index                      | 90     | 91               | 24-27    |
-| secure\_provision\_info                       | 90     | 91               | 28-29    |
-| aid                                           | 103    | None             | 0-31     |
-| [bootrom\_ipatch](#bootrom_ipatch "wikilink") | 114    | None             | Variable |
+| Name                                        | Number | Redundant number | Bits     |
+| ------------------------------------------- | ------ | ---------------- | -------- |
+| enable\_fuse\_program                       | 0      | 1                | 0        |
+| disable\_fuse\_program                      | 0      | 1                | 1        |
+| bypass\_fuses                               | 0      | 1                | 2        |
+| jtag\_direct\_access\_disable               | 0      | 1                | 3        |
+| production\_mode                            | 0      | 1                | 4        |
+| jtag\_secureid\_valid                       | 0      | 1                | 5        |
+| odm\_lock                                   | 0      | 1                | 6-9      |
+| fa\_mode                                    | 0      | 1                | 10       |
+| security\_mode                              | 0      | 1                | 11       |
+| arm\_debug\_dis                             | 0      | 1                | 12       |
+| obs\_dis                                    | 0      | 1                | 13       |
+| public\_key0                                | 10     | 11               | 30-31    |
+| public\_key0                                | 12     | 13               | 0-29     |
+| public\_key1                                | 12     | 13               | 30-31    |
+| public\_key1                                | 14     | 15               | 0-29     |
+| public\_key2                                | 14     | 15               | 30-31    |
+| public\_key2                                | 16     | 17               | 0-29     |
+| public\_key3                                | 16     | 17               | 30-31    |
+| public\_key3                                | 18     | 19               | 0-29     |
+| public\_key4                                | 18     | 19               | 30-31    |
+| public\_key4                                | 20     | 21               | 0-29     |
+| public\_key5                                | 20     | 21               | 30-31    |
+| public\_key5                                | 22     | 23               | 0-29     |
+| public\_key6                                | 22     | 23               | 30-31    |
+| public\_key6                                | 24     | 25               | 0-29     |
+| public\_key7                                | 24     | 25               | 30-31    |
+| public\_key7                                | 26     | 27               | 0-29     |
+| private\_key0                               | 34     | 35               | 12-31    |
+| private\_key0                               | 36     | 37               | 0-11     |
+| private\_key1                               | 36     | 37               | 12-31    |
+| private\_key1                               | 38     | 39               | 0-11     |
+| private\_key2                               | 38     | 39               | 12-31    |
+| private\_key2                               | 40     | 41               | 0-11     |
+| private\_key3                               | 40     | 41               | 12-31    |
+| private\_key3                               | 42     | 43               | 0-11     |
+| private\_key4                               | 42     | 43               | 12-31    |
+| private\_key4                               | 44     | 45               | 0-11     |
+| boot\_device\_info                          | 44     | 45               | 12-27    |
+| reserved\_sw                                | 44     | 45               | 28-31    |
+| reserved\_sw                                | 46     | 47               | 0-3      |
+| reserved\_odm0                              | 46     | 47               | 5-31     |
+| reserved\_odm0                              | 48     | 49               | 0-4      |
+| reserved\_odm1                              | 48     | 49               | 5-31     |
+| reserved\_odm1                              | 50     | 51               | 0-4      |
+| reserved\_odm2                              | 50     | 51               | 5-31     |
+| reserved\_odm2                              | 52     | 53               | 0-4      |
+| reserved\_odm3                              | 52     | 53               | 5-31     |
+| reserved\_odm3                              | 54     | 55               | 0-4      |
+| reserved\_odm4                              | 54     | 55               | 5-31     |
+| reserved\_odm4                              | 56     | 57               | 0-4      |
+| reserved\_odm5                              | 56     | 57               | 5-31     |
+| reserved\_odm5                              | 58     | 59               | 0-4      |
+| [reserved\_odm6](#reserved_odm6 "wikilink") | 58     | 59               | 5-31     |
+| [reserved\_odm6](#reserved_odm6 "wikilink") | 60     | 61               | 0-4      |
+| [reserved\_odm7](#reserved_odm7 "wikilink") | 60     | 61               | 5-31     |
+| [reserved\_odm7](#reserved_odm7 "wikilink") | 62     | 63               | 0-4      |
+| kfuse\_privkey\_ctrl                        | 64     | 65               | 13-14    |
+| package\_info                               | 64     | 65               | 15-18    |
+| opt\_vendor\_code                           | 64     | 65               | 19-22    |
+| opt\_fab\_code                              | 64     | 65               | 23-28    |
+| opt\_lot\_code\_0                           | 64     | 65               | 29-31    |
+| opt\_lot\_code\_0                           | 66     | 67               | 0-28     |
+| opt\_lot\_code\_1                           | 66     | 67               | 29-31    |
+| opt\_lot\_code\_1                           | 68     | 69               | 0-24     |
+| opt\_wafer\_id                              | 68     | 69               | 25-30    |
+| opt\_x\_coordinate                          | 68     | 69               | 31       |
+| opt\_x\_coordinate                          | 70     | 71               | 0-7      |
+| opt\_y\_coordinate                          | 70     | 71               | 8-16     |
+| opt\_sec\_debug\_en                         | 70     | 71               | 17       |
+| opt\_ops\_reserved                          | 70     | 71               | 18-23    |
+| sata\_calib                                 | 70     | 71               | 24-25    |
+| opt\_priv\_sec\_en                          | 90     | 91               | 8        |
+| pkc\_disable                                | 90     | 91               | 9        |
+| fuse2tsec\_debug\_disable                   | 90     | 91               | 10       |
+| secure\_provision\_index                    | 90     | 91               | 24-27    |
+| secure\_provision\_info                     | 90     | 91               | 28-29    |
+| aid                                         | 103    | None             | 0-31     |
+| [irom\_patch](#irom_patch "wikilink")       | 114    | None             | Variable |
 
 ### reserved\_odm6
 
@@ -557,7 +557,7 @@ Used for anti-downgrade control.
 
 Used for anti-downgrade control.
 
-### bootrom\_ipatch
+### irom\_patch
 
 Tegra210 based hardware such as the Switch provides support for bootrom
 patches. The patch data is burned to the hardware fuse bitmap using a

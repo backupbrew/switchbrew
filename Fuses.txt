@@ -1208,7 +1208,7 @@ Below is a list of common fuses used by Tegra devices (and applicable to the Swi
 | None
 | 0-31
 |-
-| [[#bootrom_ipatch|bootrom_ipatch]]
+| [[#irom_patch|irom_patch]]
 | 114
 | None
 | Variable
@@ -1220,7 +1220,7 @@ Used for anti-downgrade control.
 === reserved_odm7 ===
 Used for anti-downgrade control.
 
-=== bootrom_ipatch ===
+=== irom_patch ===
 Tegra210 based hardware such as the Switch provides support for bootrom patches. The patch data is burned to the hardware fuse bitmap using a specific format (see [https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af shuffle2's ipatch decoder]). The bootrom reads these fuses in order to initialize the IPATCH hardware, which allows overriding data returned for code and data fetches done by BPMP.
 
 The following represents the patch data dumped from a Switch console:
