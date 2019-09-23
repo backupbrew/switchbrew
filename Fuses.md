@@ -453,47 +453,114 @@ being the retail master key seed).
 
 \[4.0.0+\] This value is no longer used during boot.
 
-## eFuses
+## Bitmap
 
-The actual hardware fuses can be programmed through the fuse driver
-after enabling fuse programming.
+The actual hardware fuses are stored in a bitmap and may be programmed
+through the fuse driver after enabling fuse programming.
 
-Below is a list of common fuse indexes used by Tegra devices (and
-applicable to the Switch). Note that the indexes are relative to the
-start of the fuse array and each element is a 4 byte word. A single fuse
-write operation always writes the same word at both fuse\_array + 0
-(PRIMARY\_ALIAS) and fuse\_array + 1 (REDUNDANT\_ALIAS).
+Fuse numbers are relative to the start of the fuse bitmap where each
+element is a 4 byte word and has a redundant alias. A single fuse write
+operation must always write the same value to **fuse\_bitmap +
+((fuse\_number + 0) \<\< 2)** (PRIMARY\_ALIAS) and **fuse\_bitmap +
+((fuse\_number + 1) \<\< 2)** (REDUNDANT\_ALIAS). However, after offset
+0x180 in the fuse bitmap, fuses no longer have a redundant alias.
 
-| Name                                          | Index | Bits |
-| --------------------------------------------- | ----- | ---- |
-| jtag\_disable                                 | 0x00  | 1    |
-| odm\_production\_mode                         | 0x00  | 1    |
-| odm\_lock                                     | 0x00  | 4    |
-| public\_key                                   | 0x0C  | 256  |
-| secure\_boot\_key                             | 0x22  | 128  |
-| device\_key                                   | 0x2A  | 32   |
-| sec\_boot\_dev\_cfg                           | 0x2C  | 16   |
-| sec\_boot\_dev\_sel                           | 0x2C  | 3    |
-| sw\_reserved                                  | 0x2E  | 12   |
-| ignore\_dev\_sel\_straps                      | 0x2E  | 1    |
-| [odm\_reserved](#odm_reserved "wikilink")     | 0x2E  | 256  |
-| pkc\_disable                                  | 0x52  | 1    |
-| debug\_authentication                         | 0x5A  | 5    |
-| aid                                           | 0x67  | 32   |
-| [bootrom\_ipatch](#bootrom_ipatch "wikilink") | 0x72  | 624  |
+Below is a list of common fuses used by Tegra devices (and applicable to
+the Switch).
 
-### odm\_reserved
+| Name                                          | Number | Redundant number | Bits     |
+| --------------------------------------------- | ------ | ---------------- | -------- |
+| enable\_fuse\_program                         | 0      | 1                | 0        |
+| disable\_fuse\_program                        | 0      | 1                | 1        |
+| bypass\_fuses                                 | 0      | 1                | 2        |
+| jtag\_direct\_access\_disable                 | 0      | 1                | 3        |
+| production\_mode                              | 0      | 1                | 4        |
+| jtag\_secureid\_valid                         | 0      | 1                | 5        |
+| odm\_lock                                     | 0      | 1                | 6-9      |
+| fa\_mode                                      | 0      | 1                | 10       |
+| security\_mode                                | 0      | 1                | 11       |
+| arm\_debug\_dis                               | 0      | 1                | 12       |
+| obs\_dis                                      | 0      | 1                | 13       |
+| public\_key0                                  | 10     | 11               | 30-31    |
+| public\_key0                                  | 12     | 13               | 0-29     |
+| public\_key1                                  | 12     | 13               | 30-31    |
+| public\_key1                                  | 14     | 15               | 0-29     |
+| public\_key2                                  | 14     | 15               | 30-31    |
+| public\_key2                                  | 16     | 17               | 0-29     |
+| public\_key3                                  | 16     | 17               | 30-31    |
+| public\_key3                                  | 18     | 19               | 0-29     |
+| public\_key4                                  | 18     | 19               | 30-31    |
+| public\_key4                                  | 20     | 21               | 0-29     |
+| public\_key5                                  | 20     | 21               | 30-31    |
+| public\_key5                                  | 22     | 23               | 0-29     |
+| public\_key6                                  | 22     | 23               | 30-31    |
+| public\_key6                                  | 24     | 25               | 0-29     |
+| public\_key7                                  | 24     | 25               | 30-31    |
+| public\_key7                                  | 26     | 27               | 0-29     |
+| private\_key0                                 | 34     | 35               | 12-31    |
+| private\_key0                                 | 36     | 37               | 0-11     |
+| private\_key1                                 | 36     | 37               | 12-31    |
+| private\_key1                                 | 38     | 39               | 0-11     |
+| private\_key2                                 | 38     | 39               | 12-31    |
+| private\_key2                                 | 40     | 41               | 0-11     |
+| private\_key3                                 | 40     | 41               | 12-31    |
+| private\_key3                                 | 42     | 43               | 0-11     |
+| private\_key4                                 | 42     | 43               | 12-31    |
+| private\_key4                                 | 44     | 45               | 0-11     |
+| boot\_device\_info                            | 44     | 45               | 12-27    |
+| reserved\_sw                                  | 44     | 45               | 28-31    |
+| reserved\_sw                                  | 46     | 47               | 0-3      |
+| reserved\_odm0                                | 46     | 47               | 5-31     |
+| reserved\_odm0                                | 48     | 49               | 0-4      |
+| reserved\_odm1                                | 48     | 49               | 5-31     |
+| reserved\_odm1                                | 50     | 51               | 0-4      |
+| reserved\_odm2                                | 50     | 51               | 5-31     |
+| reserved\_odm2                                | 52     | 53               | 0-4      |
+| reserved\_odm3                                | 52     | 53               | 5-31     |
+| reserved\_odm3                                | 54     | 55               | 0-4      |
+| reserved\_odm4                                | 54     | 55               | 5-31     |
+| reserved\_odm4                                | 56     | 57               | 0-4      |
+| reserved\_odm5                                | 56     | 57               | 5-31     |
+| reserved\_odm5                                | 58     | 59               | 0-4      |
+| [reserved\_odm6](#reserved_odm6 "wikilink")   | 58     | 59               | 5-31     |
+| [reserved\_odm6](#reserved_odm6 "wikilink")   | 60     | 61               | 0-4      |
+| [reserved\_odm7](#reserved_odm7 "wikilink")   | 60     | 61               | 5-31     |
+| [reserved\_odm7](#reserved_odm7 "wikilink")   | 62     | 63               | 0-4      |
+| kfuse\_privkey\_ctrl                          | 64     | 65               | 13-14    |
+| package\_info                                 | 64     | 65               | 15-18    |
+| opt\_vendor\_code                             | 64     | 65               | 19-22    |
+| opt\_fab\_code                                | 64     | 65               | 23-28    |
+| opt\_lot\_code\_0                             | 64     | 65               | 29-31    |
+| opt\_lot\_code\_0                             | 66     | 67               | 0-28     |
+| opt\_lot\_code\_1                             | 66     | 67               | 29-31    |
+| opt\_lot\_code\_1                             | 68     | 69               | 0-24     |
+| opt\_wafer\_id                                | 68     | 69               | 25-30    |
+| opt\_x\_coordinate                            | 68     | 69               | 31       |
+| opt\_x\_coordinate                            | 70     | 71               | 0-7      |
+| opt\_y\_coordinate                            | 70     | 71               | 8-16     |
+| opt\_sec\_debug\_en                           | 70     | 71               | 17       |
+| opt\_ops\_reserved                            | 70     | 71               | 18-23    |
+| sata\_calib                                   | 70     | 71               | 24-25    |
+| opt\_priv\_sec\_en                            | 90     | 91               | 8        |
+| pkc\_disable                                  | 90     | 91               | 9        |
+| fuse2tsec\_debug\_disable                     | 90     | 91               | 10       |
+| secure\_provision\_index                      | 90     | 91               | 24-27    |
+| secure\_provision\_info                       | 90     | 91               | 28-29    |
+| aid                                           | 103    | None             | 0-31     |
+| [bootrom\_ipatch](#bootrom_ipatch "wikilink") | 114    | None             | Variable |
 
-The first bootloader only burns fuses in this region. Both fuse indexes
-0x3A (odm\_reserved + 0x0C) and 0x3C (odm\_reserved + 0x0E) are used for
-anti-downgrade control. These fuses will have their values cached into
-[FUSE\_RESERVED\_ODM6](#FUSE_RESERVED_ODM6 "wikilink") and
-[FUSE\_RESERVED\_ODM7](#FUSE_RESERVED_ODM7 "wikilink").
+### reserved\_odm6
+
+Used for anti-downgrade control.
+
+### reserved\_odm7
+
+Used for anti-downgrade control.
 
 ### bootrom\_ipatch
 
 Tegra210 based hardware such as the Switch provides support for bootrom
-patches. The patch data is burned to the hardware fuse array using a
+patches. The patch data is burned to the hardware fuse bitmap using a
 specific format (see [shuffle2's ipatch
 decoder](https://gist.github.com/shuffle2/f8728159da100e9df2606d43925de0af)).
 The bootrom reads these fuses in order to initialize the IPATCH
@@ -751,7 +818,7 @@ The following represents the patch data dumped from a Switch console:
 The last 4 patches are exclusive to the Switch, while the remaining ones
 are often included in most Tegra210 based devices.
 
-#### ipatch 0
+#### IROM patch 0
 
 This patch configures clock enables and clock gate overrides for new
 hardware.
@@ -802,7 +869,7 @@ hardware.
  return;
 ```
 
-#### ipatch 1
+#### IROM patch 1
 
 This patch is a bugfix.
 
@@ -816,7 +883,7 @@ but the bootrom didn't set it.
  return (pmc_scratch190_val | 0x01);
 ```
 
-#### ipatch 2
+#### IROM patch 2
 
 This patch adjusts USB configurations.
 
@@ -833,7 +900,7 @@ This patch adjusts USB configurations.
  return;
 ```
 
-#### ipatch 3
+#### IROM patch 3
 
 This patch ensures that waiting on PRC\_PENDING from the XUSB\_DEV
 register T\_XUSB\_DEV\_XHCI\_PORTSC never fails.
@@ -847,7 +914,7 @@ R1 to 0 at address 0x0010769A in the bootrom, the upper 16 bits of the
 USB control request's wLength field are cleared out, effectively
 limiting the request's size to a maximum of 255 bytes.
 
-#### ipatch 4
+#### IROM patch 4
 
 This patch allows backing up and restoring strapping options for
 warmboot.
@@ -879,7 +946,7 @@ warmboot.
  return *(u32 *)APBDEV_PMC_SCRATCH0_0;
 ```
 
-#### ipatch 5
+#### IROM patch 5
 
 This patch adjusts USB configurations.
 
@@ -897,7 +964,7 @@ This patch adjusts USB configurations.
  return;
 ```
 
-#### ipatch 6
+#### IROM patch 6
 
 This patch is a factory backdoor.
 
@@ -922,7 +989,7 @@ fuse.
  return;
 ```
 
-#### ipatch 7
+#### IROM patch 7
 
 This patch is a bugfix.
 
@@ -956,7 +1023,7 @@ binary from DRAM.
  return;
 ```
 
-#### ipatch 8
+#### IROM patch 8
 
 This patch is a bugfix.
 
@@ -979,12 +1046,12 @@ patch.
  return;
 ```
 
-#### ipatches 9 and 10
+#### IROM patches 9 and 10
 
 These patches modify the 256-bit Secure Provisioning AES key with index
 0x3A.
 
-#### ipatch 11
+#### IROM patch 11
 
 This patch forces the value of
 [SE\_TZRAM\_SECURITY](Security%20Engine.md "wikilink") to be 0x01
