@@ -1081,7 +1081,9 @@ device's unit type as below.
 If too many fuses are burnt the bootloader will panic immediately.
 
 If too few are burnt, the bootloader will enable fuse programming and
-write the expected value to fuse indexes 0x3A and 0x3C. Afterwards, fuse
+write the expected value to fuses
+[reserved\_odm6](#reserved_odm6 "wikilink") and
+[reserved\_odm7](#reserved_odm7 "wikilink"). Afterwards, fuse
 programming is disabled and the panic value 0x21 is written to
 PMC\_SCRATCH200 register (0x7000EC40). Finally, the watchdog timer is
 initialized and programmed to force a reset.
