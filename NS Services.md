@@ -157,10 +157,11 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 
 ## ListApplicationRecord
 
-Takes a type-6 output buffer and an u32 entry\_offset.
+Takes a type-0x6 output buffer containing an array of the below record
+and an s32 entry\_offset, returns an output s32 out\_entrycount.
 
-Returns an array of title-info entries using the specified offset and
-size. No input titleID is passed to this.
+Returns an array of entries with the below format using the specified
+offset and count.
 
 ### Application Record Format
 
@@ -244,10 +245,14 @@ cached icon to buf+0x4000. Returns an error if the buffer is too small.
 
 ## ListApplicationContentMetaStatus
 
+Takes a type-0x6 output buffer containing an array of the below entries,
+an input s32 index and u64 titleID, returns an output s32
+out\_entrycount.
+
 Returns 0x10-byte entries using the specified titleID starting at the
-specified u32 entryindex. Can only return game titles. The second entry
-if any is the update-title usually. When the input entryindex is \>=
-totalentries, this will return 0 with out\_entrycount=0.
+specified index. Can only return game titles. The second entry if any is
+the update-title usually. When the input entryindex is \>= totalentries,
+this will return 0 with out\_entrycount=0.
 
 Entry structure:
 
