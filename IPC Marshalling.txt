@@ -249,7 +249,7 @@ Format for the extra request header for domain message:
 |-
 | 2 || || Padding
 |-
-| 3 || || [1.0.0-4.1.0] Padding [5.0.0+] Token for (NewRequest only)
+| 3 || || [1.0.0-4.1.0] Padding [5.0.0+] Token (for NewRequest only)
 |-
 | 4... || || [[#Data payload|Data payload]]
 |-

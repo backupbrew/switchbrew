@@ -291,7 +291,7 @@ Format for the extra request header for domain message:
 | 0    | 31-16 | Length of [data payload](IPC%20Marshalling#Data%20payload.md##Data_payload "wikilink") in bytes. |
 | 1    |       | Object ID (from cmd 0 in [Control](IPC%20Marshalling#Control.md##Control "wikilink")).           |
 | 2    |       | Padding                                                                                          |
-| 3    |       | \[1.0.0-4.1.0\] Padding \[5.0.0+\] Token for (NewRequest only)                                   |
+| 3    |       | \[1.0.0-4.1.0\] Padding \[5.0.0+\] Token (for NewRequest only)                                   |
 | 4... |       | [Data payload](#Data_payload "wikilink")                                                         |
 | ...  |       | Input object IDs (u32s, not aligned)                                                             |
 
