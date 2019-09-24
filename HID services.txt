@@ -328,7 +328,7 @@ Takes an u64 [[AM_services|AppletResourceUserId]], and two type-0x9 input buffer
 Official sw uses the same entry-count for each array.
 
 == IsVibrationDeviceMounted ==
-Takes a total of 0x10-bytes of input and a PID, returns an output u8 bool.
+Takes a PID, an [[#VibrationDeviceHandle]], and an u64 [[AM_services|AppletResourceUserId]], returns an output u8 bool.
 
 == ActivateSevenSixAxisSensor ==
 Takes a PID and an u64 [[AM_services|AppletResourceUserId]], no output.

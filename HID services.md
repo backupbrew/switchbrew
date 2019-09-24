@@ -249,8 +249,10 @@ Official sw uses the same entry-count for each array.
 
 ## IsVibrationDeviceMounted
 
-Takes a total of 0x10-bytes of input and a PID, returns an output u8
-bool.
+Takes a PID, an
+[\#VibrationDeviceHandle](#VibrationDeviceHandle "wikilink"), and an u64
+[AppletResourceUserId](AM%20services.md "wikilink"), returns an output
+u8 bool.
 
 ## ActivateSevenSixAxisSensor
 
