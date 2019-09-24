@@ -1296,6 +1296,10 @@ No input/output.
 == DestroySystemUpdateTask ==
 No input/output.
 
+Only usable when an [[#ISystemUpdateControl]] isn't open.
+
+This uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
+
 == RequestSendSystemUpdate ==
 Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output Event handle and an [[#IAsyncResult]].
 

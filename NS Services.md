@@ -895,6 +895,12 @@ No input/output.
 
 No input/output.
 
+Only usable when an
+[\#ISystemUpdateControl](#ISystemUpdateControl "wikilink") isn't open.
+
+This uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask, then
+when a task is returned uses it with DestroySystemUpdateTask.
+
 ## RequestSendSystemUpdate
 
 Takes a type-0x15 input buffer containing a
