@@ -871,11 +871,21 @@ No input/output.
 
 No input/output.
 
+Only usable when an
+[\#ISystemUpdateControl](#ISystemUpdateControl "wikilink") isn't open.
+
+This sets a state flag to value 1.
+
 ## NotifyBackgroundNetworkUpdate
 
 Takes an input
 [ContentMetaKey](NCM%20services#ContentMetaKey.md##ContentMetaKey "wikilink"),
 no output.
+
+This checks whether a sysupdate is needed with the input ContentMetaKey
+using [NCM](NCM%20services.md "wikilink") commands, if not this will
+just return 0. Otherwise, this will then run code which is identical to
+[\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink").
 
 ## NotifyExFatDriverDownloadedForDebug
 
