@@ -1293,6 +1293,10 @@ No input/output.
 == PrepareShutdown ==
 No input/output.
 
+Just returns 0 when an [[#ISystemUpdateControl]] is open. 
+
+This does various cleanup / uses various service-cmds etc for shutdown preparation.
+
 == DestroySystemUpdateTask ==
 No input/output.
 

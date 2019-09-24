@@ -893,6 +893,12 @@ No input/output.
 
 No input/output.
 
+Just returns 0 when an
+[\#ISystemUpdateControl](#ISystemUpdateControl "wikilink") is open.
+
+This does various cleanup / uses various service-cmds etc for shutdown
+preparation.
+
 ## DestroySystemUpdateTask
 
 No input/output.
