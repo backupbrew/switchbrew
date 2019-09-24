@@ -854,6 +854,9 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 No input, returns an output
 [\#BackgroundNetworkUpdateState](#BackgroundNetworkUpdateState "wikilink").
 
+This is similar to [\#HasDownloaded](#HasDownloaded "wikilink"), see
+[\#BackgroundNetworkUpdateState](#BackgroundNetworkUpdateState "wikilink").
+
 ## OpenSystemUpdateControl
 
 No input, returns an
@@ -1186,13 +1189,25 @@ No input, returns an output Event handle and an
 
 ## BackgroundNetworkUpdateState
 
-| Value | Description                                                                           |
-| ----- | ------------------------------------------------------------------------------------- |
-| 0     | Unknown. Values \>2 are handled the same as this by [qlaunch](Qlaunch.md "wikilink"). |
-| 1     | Unknown.                                                                              |
-| 2     | Unknown.                                                                              |
+| Value | Description                       |
+| ----- | --------------------------------- |
+| 0     | No sysupdate task exists.         |
+| 1     | Sysupdate download in progress.   |
+| 2     | Sysupdate ready, pending install. |
 
 This is "nn::ns::BackgroundNetworkUpdateState". This is an u8.
+
+Similar to [\#HasDownloaded](#HasDownloaded "wikilink"),
+[\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink")
+uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask and
+[nim](NIM%20services.md "wikilink") GetSystemUpdateTaskInfo. When
+ListSystemUpdateTask successfully returns a task and
+GetSystemUpdateTaskInfo is successful, the output value is set to: `1 +
+*((u8*)(taskinfo+0) == 0x3`. Otherwise, value=0.
+
+[\#GetBackgroundNetworkUpdateState](#GetBackgroundNetworkUpdateState "wikilink")
+always returns Result 0, however this will assert if
+GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 
 ## SystemUpdateProgress
 

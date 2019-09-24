@@ -1266,6 +1266,8 @@ This is "nn::ns::detail::ISystemUpdateInterface".
 == GetBackgroundNetworkUpdateState ==
 No input, returns an output [[#BackgroundNetworkUpdateState]].
 
+This is similar to [[#HasDownloaded]], see [[#BackgroundNetworkUpdateState]].
+
 == OpenSystemUpdateControl ==
 No input, returns an [[#ISystemUpdateControl]].
 
@@ -1503,14 +1505,18 @@ No input, returns an output Event handle and an [[#IAsyncValue]].
 !  Value
 !  Description
 |-
-| 0 || Unknown. Values >2 are handled the same as this by [[qlaunch]].
+| 0 || No sysupdate task exists.
 |-
-| 1 || Unknown.
+| 1 || Sysupdate download in progress.
 |-
-| 2 || Unknown.
+| 2 || Sysupdate ready, pending install.
 |}
 
 This is "nn::ns::BackgroundNetworkUpdateState". This is an u8.
+
+Similar to [[#HasDownloaded]], [[#GetBackgroundNetworkUpdateState]] uses [[NIM_services|nim]] ListSystemUpdateTask and [[NIM_services|nim]] GetSystemUpdateTaskInfo. When ListSystemUpdateTask successfully returns a task and GetSystemUpdateTaskInfo is successful, the output value is set to: <code>1 + *((u8*)(taskinfo+0) == 0x3</code>. Otherwise, value=0.
+
+[[#GetBackgroundNetworkUpdateState]] always returns Result 0, however this will assert if GetSystemUpdateTaskInfo fails with ret!=0x3C89.
 
 == SystemUpdateProgress ==
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
