@@ -1309,6 +1309,8 @@ Signals the Event returned by [[#GetSystemUpdateNotificationEventForContentDeliv
 == PrepareShutdown ==
 No input/output.
 
+This is used by [[AM_services|AM]].
+
 Just returns 0 when an [[#ISystemUpdateControl]] is open. 
 
 This does various cleanup / uses various service-cmds etc for shutdown preparation.

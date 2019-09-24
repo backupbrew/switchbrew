@@ -919,6 +919,8 @@ Signals the Event returned by
 
 No input/output.
 
+This is used by [AM](AM%20services.md "wikilink").
+
 Just returns 0 when an
 [\#ISystemUpdateControl](#ISystemUpdateControl "wikilink") is open.
 
