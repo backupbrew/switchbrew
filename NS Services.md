@@ -889,6 +889,9 @@ No input, returns an output Event handle with EventClearMode=0.
 
 No input/output.
 
+Signals the Event returned by
+[\#GetSystemUpdateNotificationEventForContentDelivery](#GetSystemUpdateNotificationEventForContentDelivery "wikilink").
+
 ## PrepareShutdown
 
 No input/output.

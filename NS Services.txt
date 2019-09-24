@@ -1290,6 +1290,8 @@ No input, returns an output Event handle with EventClearMode=0.
 == NotifySystemUpdateForContentDelivery ==
 No input/output.
 
+Signals the Event returned by [[#GetSystemUpdateNotificationEventForContentDelivery]].
+
 == PrepareShutdown ==
 No input/output.
 
