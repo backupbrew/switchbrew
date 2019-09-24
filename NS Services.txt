@@ -1274,6 +1274,12 @@ No input, returns an [[#ISystemUpdateControl]].
 == NotifyExFatDriverRequired ==
 No input/output.
 
+Only usable when an [[#ISystemUpdateControl]] isn't open.
+
+This uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returned uses it with DestroySystemUpdateTask.
+
+Then this runs ExFat handling, updates state, and sets the same state flag as [[#RequestBackgroundNetworkUpdate]].
+
 == ClearExFatDriverStatusForDebug ==
 No input/output.
 

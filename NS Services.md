@@ -866,6 +866,16 @@ No input, returns an
 
 No input/output.
 
+Only usable when an
+[\#ISystemUpdateControl](#ISystemUpdateControl "wikilink") isn't open.
+
+This uses [nim](NIM%20services.md "wikilink") ListSystemUpdateTask, then
+when a task is returned uses it with DestroySystemUpdateTask.
+
+Then this runs ExFat handling, updates state, and sets the same state
+flag as
+[\#RequestBackgroundNetworkUpdate](#RequestBackgroundNetworkUpdate "wikilink").
+
 ## ClearExFatDriverStatusForDebug
 
 No input/output.
