@@ -913,6 +913,9 @@ returns an output Event handle and an
 No input, returns an output
 [\#SystemUpdateProgress](#SystemUpdateProgress "wikilink").
 
+Same as [\#GetReceiveProgress](#GetReceiveProgress "wikilink") except
+this uses nim cmd81 and cmd78.
+
 ## ISystemUpdateControl
 
 | Cmd | Name                                                                                                                          |

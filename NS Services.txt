@@ -1306,6 +1306,8 @@ Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an 
 == GetSendSystemUpdateProgress ==
 No input, returns an output [[#SystemUpdateProgress]].
 
+Same as [[#GetReceiveProgress]] except this uses nim cmd81 and cmd78.
+
 == ISystemUpdateControl ==
 {| class="wikitable" border="1"
 |-
