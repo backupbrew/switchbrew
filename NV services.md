@@ -1409,16 +1409,18 @@ Despite being marked as inout this is all output.
 Allocates gpfifo entries with additional parameters. Exclusive to the
 Switch.
 
-` struct {`  
-`   __in u32 num_entries;`  
-`   __in u32 flags;`  
-`   __in u32 unk0;`  
-`   __in u32 unk1;`  
-`   __in u32 unk2;`  
-`   __in u32 unk3;`  
-`   __in u32 unk4;`  
-`   __in u32 unk5;`  
-` };`
+`struct fence {`  
+`  u32 syncpt_id;`  
+`  u32 syncpt_value;`  
+`};`  
+  
+`struct {`  
+`  __in    u32 num_entries;`  
+`  __in    u32 num_jobs;`  
+`  __in    u32 flags;`  
+`  __out   struct fence fence_out;          // returned new fence object for others to wait on`  
+`  __in    u32 reserved[3];                 // ignored`  
+`};`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY
 
