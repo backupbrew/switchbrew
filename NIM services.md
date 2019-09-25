@@ -131,9 +131,9 @@ Structure of the input struct:
 | ------ | ---- | ----------- |
 | 0x0    | 0x8  | Unknown     |
 | 0x8    | 0x4  | Unknown     |
-| 0x9    | 0x1  | Unknown     |
-| 0xA    | 0x1  | Unknown     |
-| 0xB    | 0x5  | Padding?    |
+| 0xC    | 0x1  | Unknown     |
+| 0xD    | 0x1  | Unknown     |
+| 0xE    | 0x2  | Padding?    |
 
 ## DestroySystemUpdateTask
 
