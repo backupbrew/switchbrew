@@ -1136,11 +1136,11 @@ interface.
 | 0xC0080002                                  | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_GET\_SYNCPOINT](#NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT "wikilink")                  |
 | 0xC0080003                                  | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_GET\_WAITBASE](#NVHOST_IOCTL_CHANNEL_GET_WAITBASE "wikilink")                    |
 | 0xC0080004                                  | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_GET\_MODMUTEX](#NVHOST_IOCTL_CHANNEL_GET_MODMUTEX "wikilink")                    |
-| 0x40040007                                  | 4        | NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT                                                                |
-| 0x40080008                                  | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      |
+| 0x40040007                                  | 4        | [\#NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT](#NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT "wikilink")       |
+| 0x40080008                                  | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE](#NVHOST_IOCTL_CHANNEL_SET_CLK_RATE "wikilink")                   |
 | 0xC0??0009                                  | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER "wikilink")               |
 | 0xC0??000A                                  | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER "wikilink")           |
-| 0x00000013                                  | 0        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    |
+| 0x00000013                                  | 0        | [\#NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX](#NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX "wikilink")               |
 | 0xC0080023</br>(\[1.0.0-7.0.1\] 0xC0080014) | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE](#NVHOST_IOCTL_CHANNEL_GET_CLK_RATE "wikilink")                   |
 | 0xC0??0024                                  | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT\_EX                                                                          |
 | 0xC0??0025                                  | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER\_EX](#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX "wikilink")        |
@@ -1196,6 +1196,24 @@ Returns the current waitbase value for a given module. Always returns 0.
 
 Stubbed. Does a debug print and returns 0.
 
+### NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT
+
+Sets the submit timeout value for the channel. Identical to Linux
+driver.
+
+` struct {`  
+`   __in    u32 timeout;`  
+` };`
+
+### NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE
+
+Sets the clock rate value for a given module. Identical to Linux driver.
+
+` struct {`  
+`   __in    u32 clk_rate;`  
+`   __in    u32 module_id;`  
+` };`
+
 ### NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER
 
 Uses **nvmap\_pin** internally to pin a given number of nvmap handles to
@@ -1230,6 +1248,16 @@ handles from their device physical address.
 `   __in    u8  is_compr;             // memory to unmap is compressed`  
 `   __in    u8  padding[3];           // ignored`  
 `   __inout struct handle handles[];  // depends on num_handles`  
+` };`
+
+### NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX
+
+Sets the global timeout value for the channel. Identical to Linux
+driver.
+
+` struct {`  
+`   __in    u32 timeout;`  
+`   __in    u32 flags;`  
 ` };`
 
 ### NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE

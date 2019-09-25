@@ -1185,15 +1185,15 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0080004 || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_MODMUTEX]]
 |-
-| 0x40040007 || 4 || NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT
+| 0x40040007 || 4 || [[#NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT]]
 |-
-| 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE
+| 0x40080008 || 8 || [[#NVHOST_IOCTL_CHANNEL_SET_CLK_RATE]]
 |-
 | 0xC0??0009 || Variable || [[#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER]]
 |-
 | 0xC0??000A || Variable || [[#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER]]
 |-
-| 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX
+| 0x00000013 || 0 || [[#NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX]]
 |-
 | 0xC0080023</br>([1.0.0-7.0.1] 0xC0080014) || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_CLK_RATE]]
 |-
@@ -1277,6 +1277,21 @@ Returns the current waitbase value for a given module. Always returns 0.
 === NVHOST_IOCTL_CHANNEL_GET_MODMUTEX ===
 Stubbed. Does a debug print and returns 0.
 
+=== NVHOST_IOCTL_CHANNEL_SET_SUBMIT_TIMEOUT ===
+Sets the submit timeout value for the channel. Identical to Linux driver.
+
+  struct {
+    __in    u32 timeout;
+  };
+
+=== NVHOST_IOCTL_CHANNEL_SET_CLK_RATE ===
+Sets the clock rate value for a given module. Identical to Linux driver.
+
+  struct {
+    __in    u32 clk_rate;
+    __in    u32 module_id;
+  };
+
 === NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER ===
 Uses '''nvmap_pin''' internally to pin a given number of nvmap handles to an appropriate device physical address.
 
@@ -1307,6 +1322,14 @@ Uses '''nvmap_unpin''' internally to unpin a given number of nvmap handles from 
     __in    u8  is_compr;             // memory to unmap is compressed
     __in    u8  padding[3];           // ignored
     __inout struct handle handles[];  // depends on num_handles
+  };
+
+=== NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX ===
+Sets the global timeout value for the channel. Identical to Linux driver.
+
+  struct {
+    __in    u32 timeout;
+    __in    u32 flags;
   };
 
 === NVHOST_IOCTL_CHANNEL_GET_CLK_RATE ===
