@@ -1411,7 +1411,7 @@ Same as [[#GetReceiveProgress]] except this uses nim cmd81 and cmd78.
 
 Only 1 ISystemUpdateControl can be open at a time.
 
-All Card cmds except SetupCardUpdate* require [[#SetupCardUpdate]]/[[#SetupCardUpdateViaSystemUpdater]] to be used previously, except for RequestPrepareCardUpdate. [[#GetPreparedCardUpdateEulaDataSize]]/[[#GetPreparedCardUpdateEulaData]] checks a different state flag.
+All Card cmds except SetupCardUpdate* require [[#SetupCardUpdate]]/[[#SetupCardUpdateViaSystemUpdater]] to be used previously. [[#GetPreparedCardUpdateEulaDataSize]]/[[#GetPreparedCardUpdateEulaData]] checks a different state flag.
 
 === HasDownloaded ===
 No input, returns an output u8 bool flag.

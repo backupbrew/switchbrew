@@ -1013,7 +1013,7 @@ Only 1 ISystemUpdateControl can be open at a time.
 
 All Card cmds except SetupCardUpdate\* require
 [\#SetupCardUpdate](#SetupCardUpdate "wikilink")/[\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")
-to be used previously, except for RequestPrepareCardUpdate.
+to be used previously.
 [\#GetPreparedCardUpdateEulaDataSize](#GetPreparedCardUpdateEulaDataSize "wikilink")/[\#GetPreparedCardUpdateEulaData](#GetPreparedCardUpdateEulaData "wikilink")
 checks a different state flag.
 
