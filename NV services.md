@@ -895,7 +895,7 @@ Nintendo's custom implementation of address space remapping.
 `   __in u16 flags;        // 0 or 4`  
 `   __in u16 kind;           `  
 `   __in u32 nvmap_handle;`  
-`   __in u32 padding;`  
+`   __in u32 reserved;`  
 `   __in u32 offset;       // (alloc_space_offset >> 0x10)`  
 `   __in u32 pages;        // alloc_space_pages`  
 ` };`  
@@ -1226,7 +1226,7 @@ an appropriate device physical address.
   
 ` struct {`  
 `   __in    u32 num_handles;          // number of nvmap handles to map`  
-`   __in    u32 padding;              // ignored`  
+`   __in    u32 reserved;             // ignored`  
 `   __in    u8  is_compr;             // memory to map is compressed`  
 `   __in    u8  padding[3];           // ignored`  
 `   __inout struct handle handles[];  // depends on num_handles`  
@@ -1239,12 +1239,12 @@ handles from their device physical address.
 
 ` struct handle {`  
 `   u32 handle_id_in;                 // nvmap handle to unmap`  
-`   u32 padding;                      // ignored`  
+`   u32 reserved;                     // ignored`  
 ` };`  
   
 ` struct {`  
 `   __in    u32 num_handles;          // number of nvmap handles to unmap`  
-`   __in    u32 padding;              // ignored`  
+`   __in    u32 reserved;             // ignored`  
 `   __in    u8  is_compr;             // memory to unmap is compressed`  
 `   __in    u8  padding[3];           // ignored`  
 `   __inout struct handle handles[];  // depends on num_handles`  
@@ -1340,7 +1340,7 @@ Binds a ZCULL context to the channel. Identical to Linux driver.
 `struct {`  
 `   __in u64 gpu_va;`  
 `   __in u32 mode;         // 0=global, 1=no_ctxsw, 2=separate_buffer, 3=part_of_regular_buf`  
-`   __in u32 padding;`  
+`   __in u32 reserved;`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_ERROR\_NOTIFIER
@@ -1351,10 +1351,10 @@ Thus new ioctls have been introduced to fetch the error information
 rather than using a shared memory buffer.
 
 ` struct {`  
-`   __in u64 offset;  // ignored`  
-`   __in u64 size;    // ignored`  
-`   __in u32 mem;     // must be non-zero to initialize, zero to de-initialize`  
-`   __in u32 padding; // ignored`  
+`   __in u64 offset;   // ignored`  
+`   __in u64 size;     // ignored`  
+`   __in u32 mem;      // must be non-zero to initialize, zero to de-initialize`  
+`   __in u32 reserved; // ignored`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
