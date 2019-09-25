@@ -1445,23 +1445,8 @@ Submits a gpfifo object (async version). Exclusive to the Switch.
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2
 
-Allocates gpfifo entries with additional parameters and returns a fence.
-Exclusive to the Switch.
-
-` struct fence {`  
-`   u32 syncpt_id;`  
-`   u32 syncpt_value;`  
-` };`  
-` `  
-` struct {`  
-`   __in    u32 num_entries;`  
-`   __in    u32 flags;`  
-`   __in    u32 unk0;`  
-`   __inout struct fence fence_out;          // returned new fence object for others to wait on`  
-`   __in    u32 unk1;`  
-`   __in    u32 unk2;`  
-`   __in    u32 unk3;`  
-` };`
+Same as
+[NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX "wikilink").
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX
 
