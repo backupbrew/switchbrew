@@ -1000,8 +1000,8 @@ this uses nim cmd81 and cmd78.
 
 Only 1 ISystemUpdateControl can be open at a time.
 
-On newer sysvers, all pre-4.0.0 Card cmds require
-[\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")
+All Card cmds except SetupCardUpdate\* require
+[\#SetupCardUpdate](#SetupCardUpdate "wikilink")/[\#SetupCardUpdateViaSystemUpdater](#SetupCardUpdateViaSystemUpdater "wikilink")
 to be used previously, except for RequestPrepareCardUpdate.
 
 ### HasDownloaded
@@ -1139,7 +1139,8 @@ than the buffer size.
 
 Takes an input u64 size and a TransferMemory handle, no output.
 
-The permissions for the TransferMemory is None.
+Official sw creates the TransferMemory with an user-specified buffer,
+with permissions=None.
 
 [qlaunch](Qlaunch.md "wikilink") uses size 0x100000 for the
 TransferMemory buffer.
@@ -1168,13 +1169,14 @@ Takes an input u64 size and a TransferMemory handle, no output.
 
 The permissions for the TransferMemory is None.
 
-Same as SetupCardUpdate, except this doesn't have the code for
+Same as [\#SetupCardUpdate](#SetupCardUpdate "wikilink"), except this
+doesn't have the code for
 [GetGameCardHandle/GetGameCardUpdatePartitionInfo](Filesystem%20services.md "wikilink"),
 and uses
 [OpenRegisteredUpdatePartition](Filesystem%20services.md "wikilink")
 instead of
-[OpenGameCardFileSystem](Filesystem%20services.md "wikilink"). This also
-uses a different is\_initialized bool state flag.
+[OpenGameCardFileSystem](Filesystem%20services.md "wikilink"). This uses
+the same is\_initialized bool state flag.
 
 ### HasReceived
 
