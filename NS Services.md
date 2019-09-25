@@ -522,8 +522,8 @@ This is "nn::ns::detail::IApplicationManagerInterface".
 | 2250 | \[6.0.0-6.2.0\] RequestReportActiveELicence                                                                   |
 | 2300 | \[6.0.0-8.1.0\] ListEventLog                                                                                  |
 | 2350 | \[7.0.0+\] PerformAutoUpdateByApplicationId                                                                   |
-| 2351 | \[9.0.0+\] RequestNoDownloadRightsErrorResolution                                                             |
-| 2352 | \[9.0.0+\] RequestResolveNoDownloadRightsError                                                                |
+| 2351 | \[9.0.0+\] [\#RequestNoDownloadRightsErrorResolution](#RequestNoDownloadRightsErrorResolution "wikilink")     |
+| 2352 | \[9.0.0+\] [\#RequestResolveNoDownloadRightsError](#RequestResolveNoDownloadRightsError "wikilink")           |
 | 2400 | \[8.0.0+\] GetPromotionInfo                                                                                   |
 | 2401 | \[8.0.0+\] CountPromotionInfo                                                                                 |
 | 2402 | \[8.0.0+\] ListPromotionInfo                                                                                  |
@@ -606,6 +606,24 @@ No input, returns a total of 8-bytes of output.
 
 \[9.0.0+\] Now takes a total of 8-bytes of input, returns a total of
 8-bytes of output.
+
+#### RequestNoDownloadRightsErrorResolution
+
+Takes an input u64 titleID (`nn::ncm::ApplicationId`), returns an output
+Event handle and an [\#IAsyncValue](#IAsyncValue "wikilink").
+
+The data that can be read from the
+[\#IAsyncValue](#IAsyncValue "wikilink") is
+[\#NoDownloadRightsErrorResolution](#NoDownloadRightsErrorResolution "wikilink").
+
+#### RequestResolveNoDownloadRightsError
+
+Takes an input u64 titleID (`nn::ncm::ApplicationId`), returns an output
+Event handle and an [\#IAsyncValue](#IAsyncValue "wikilink").
+
+The data that can be read from the
+[\#IAsyncValue](#IAsyncValue "wikilink") is
+[\#NoDownloadRightsErrorResolution](#NoDownloadRightsErrorResolution "wikilink").
 
 #### CreateApplicationResource
 
