@@ -1195,7 +1195,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX
 |-
-| 0xC0080023</br>([1.0.0-7.0.1] 0xC0080014)] || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_CLK_RATE]]
+| 0xC0080023</br>([1.0.0-7.0.1] 0xC0080014) || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_CLK_RATE]]
 |-
 | 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX
 |-
