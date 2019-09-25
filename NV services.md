@@ -1450,9 +1450,9 @@ Same as
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX
 
-Identical to
-[NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink").
-Uses [Ioctl2](#Ioctl2 "wikilink").
+Same as
+[NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO](#NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO "wikilink"),
+but uses [Ioctl2](#Ioctl2 "wikilink").
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_RETRY\_EX
 
