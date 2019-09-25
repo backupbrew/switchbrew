@@ -1189,9 +1189,9 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x40080008 || 8 || NVHOST_IOCTL_CHANNEL_SET_CLK_RATE
 |-
-| 0xC0??0009 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER
+| 0xC0??0009 || Variable || [[#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER]]
 |-
-| 0xC0??000A || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER
+| 0xC0??000A || Variable || [[#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER]]
 |-
 | 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX
 |-
@@ -1201,9 +1201,9 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX
 |-
-| 0xC0??0025 || Variable || NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX
+| 0xC0??0025 || Variable || [[#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX]]
 |-
-| 0xC0??0026 || Variable || NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX
+| 0xC0??0026 || Variable || [[#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX]]
 |- style="border-top: double"
 | 0x40044801 || 4 || [[#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD]]
 |-
@@ -1263,10 +1263,46 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 === NVHOST_IOCTL_CHANNEL_GET_MODMUTEX ===
 Stubbed. Does a debug print and returns 0.
 
+=== NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER ===
+Uses '''nvmap_pin''' internally to pin a given number of nvmap handles to an appropriate device physical address.
+
+  struct handle {
+    u32 handle_id_in;                 // nvmap handle to map
+    u32 phys_addr_out;                // returned device physical address mapped to the handle
+  };
+ 
+  struct {
+    __in    u32 num_handles;          // number of nvmap handles to map
+    __in    u32 padding;              // ignored
+    __in    u8  is_compr;             // memory to map is compressed
+    __in    u8  padding[3];           // ignored
+    __inout struct handle handles[];  // depends on num_handles
+  };
+
+=== NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER ===
+Uses '''nvmap_unpin''' internally to unpin a given number of nvmap handles from their device physical address.
+
+  struct handle {
+    u32 handle_id_in;                 // nvmap handle to unmap
+    u32 padding;                      // ignored
+  };
+ 
+  struct {
+    __in    u32 num_handles;          // number of nvmap handles to unmap
+    __in    u32 padding;              // ignored
+    __in    u8  is_compr;             // memory to unmap is compressed
+    __in    u8  padding[3];           // ignored
+    __inout struct handle handles[];  // depends on num_handles
+  };
+
+=== NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX ===
+Same as [[#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER|NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER]], but calls '''nvmap_unpin''' internally in case of error.
+
+=== NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX ===
+Same as [[#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER|NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER]].
+
 === NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD ===
 Binds a nvmap object to this channel. Identical to Linux driver.
-
-This ioctl is a no-op in the Linux driver, not sure about Switch?
 
   struct {
     __in u32 nvmap_fd;
@@ -1375,7 +1411,7 @@ Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
   struct {
     __in u32 num_entries;
     __in u32 flags;
-    __in u32 unk0;            // 1 works
+    __in u32 unk0;
     __in u32 unk1;
     __in u32 unk2;
     __in u32 unk3;
@@ -1386,25 +1422,39 @@ Allocates gpfifo entries with additional parameters. Exclusive to the Switch.
 === NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_RETRY ===
 Submits a gpfifo object (async version). Exclusive to the Switch.
 
+  struct fence {
+    u32 syncpt_id;
+    u32 syncpt_value;
+  };
+  
+  struct gpfifo_entry {
+    u64 entry;                               // gpu_iova | (unk_2bits << 40) | (size << 42) | (unk_flag << 63)
+  };
+  
   struct {
-    u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)
-    u32 __num_entries;                // in (number of fence objects being submitted)
-    u32 __flags;                      // in
-    struct fence        __fence_out;  // out (returned new fence object for others to wait on)
-    struct gpfifo_entry __entries[];  // in (depends on __num_entries)
+    __in    u64 gpfifo;                      // (ignored) pointer to gpfifo fence structs
+    __in    u32 num_entries;                 // number of fence objects being submitted
+    __in    u32 flags;
+    __inout struct fence fence_out;          // returned new fence object for others to wait on
+    __in    struct gpfifo_entry entries[];   // depends on num_entries
   };
 
 === NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO_EX2 ===
 Allocates gpfifo entries with additional parameters and returns a fence. Exclusive to the Switch.
- 
+  
+  struct fence {
+    u32 syncpt_id;
+    u32 syncpt_value;
+  };
+  
   struct {
-    u32 __num_entries;         // in
-    u32 __flags;               // in
-    u32 __unk0;                // in (1 works)
-    struct fence __fence_out;  // out
-    u32 __unk1;                // in
-    u32 __unk2;                // in
-    u32 __unk3;                // in
+    __in    u32 num_entries;
+    __in    u32 flags;
+    __in    u32 unk0;
+    __inout struct fence fence_out;          // returned new fence object for others to wait on
+    __in    u32 unk1;
+    __in    u32 unk2;
+    __in    u32 unk3;
   };
 
 === NVGPU_IOCTL_CHANNEL_SUBMIT_GPFIFO_EX ===

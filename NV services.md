@@ -1138,14 +1138,14 @@ interface.
 | 0xC0080004 | 8        | [\#NVHOST\_IOCTL\_CHANNEL\_GET\_MODMUTEX](#NVHOST_IOCTL_CHANNEL_GET_MODMUTEX "wikilink")                    |
 | 0x40040007 | 4        | NVHOST\_IOCTL\_CHANNEL\_SET\_SUBMIT\_TIMEOUT                                                                |
 | 0x40080008 | 8        | NVHOST\_IOCTL\_CHANNEL\_SET\_CLK\_RATE                                                                      |
-| 0xC0??0009 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER                                                                    |
-| 0xC0??000A | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER                                                                  |
+| 0xC0??0009 | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER "wikilink")               |
+| 0xC0??000A | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER "wikilink")           |
 | 0x00000013 | 0        | NVHOST\_IOCTL\_CHANNEL\_SET\_TIMEOUT\_EX                                                                    |
 | 0xC0080014 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE                                                                      |
 | 0xC0080023 | 8        | NVHOST\_IOCTL\_CHANNEL\_GET\_CLK\_RATE\_EX                                                                  |
 | 0xC0??0024 | Variable | NVHOST\_IOCTL\_CHANNEL\_SUBMIT\_EX                                                                          |
-| 0xC0??0025 | Variable | NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER\_EX                                                                |
-| 0xC0??0026 | Variable | NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER\_EX                                                              |
+| 0xC0??0025 | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER\_EX](#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX "wikilink")        |
+| 0xC0??0026 | Variable | [\#NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER\_EX](#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER_EX "wikilink")    |
 | 0x40044801 | 4        | [\#NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD](#NVGPU_IOCTL_CHANNEL_SET_NVMAP_FD "wikilink")                     |
 | 0x40044803 | 4        | NVGPU\_IOCTL\_CHANNEL\_SET\_TIMEOUT                                                                         |
 | 0x40084805 | 8        | [\#NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO](#NVGPU_IOCTL_CHANNEL_ALLOC_GPFIFO "wikilink")                      |
@@ -1178,11 +1178,56 @@ interface.
 
 Stubbed. Does a debug print and returns 0.
 
+### NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER
+
+Uses **nvmap\_pin** internally to pin a given number of nvmap handles to
+an appropriate device physical address.
+
+` struct handle {`  
+`   u32 handle_id_in;                 // nvmap handle to map`  
+`   u32 phys_addr_out;                // returned device physical address mapped to the handle`  
+` };`  
+  
+` struct {`  
+`   __in    u32 num_handles;          // number of nvmap handles to map`  
+`   __in    u32 padding;              // ignored`  
+`   __in    u8  is_compr;             // memory to map is compressed`  
+`   __in    u8  padding[3];           // ignored`  
+`   __inout struct handle handles[];  // depends on num_handles`  
+` };`
+
+### NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER
+
+Uses **nvmap\_unpin** internally to unpin a given number of nvmap
+handles from their device physical address.
+
+` struct handle {`  
+`   u32 handle_id_in;                 // nvmap handle to unmap`  
+`   u32 padding;                      // ignored`  
+` };`  
+  
+` struct {`  
+`   __in    u32 num_handles;          // number of nvmap handles to unmap`  
+`   __in    u32 padding;              // ignored`  
+`   __in    u8  is_compr;             // memory to unmap is compressed`  
+`   __in    u8  padding[3];           // ignored`  
+`   __inout struct handle handles[];  // depends on num_handles`  
+` };`
+
+### NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER\_EX
+
+Same as
+[NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER "wikilink"),
+but calls **nvmap\_unpin** internally in case of error.
+
+### NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER\_EX
+
+Same as
+[NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER](#NVHOST_IOCTL_CHANNEL_UNMAP_CMD_BUFFER "wikilink").
+
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_NVMAP\_FD
 
 Binds a nvmap object to this channel. Identical to Linux driver.
-
-This ioctl is a no-op in the Linux driver, not sure about Switch?
 
 ` struct {`  
 `   __in u32 nvmap_fd;`  
@@ -1311,7 +1356,7 @@ Switch.
 ` struct {`  
 `   __in u32 num_entries;`  
 `   __in u32 flags;`  
-`   __in u32 unk0;            // 1 works`  
+`   __in u32 unk0;`  
 `   __in u32 unk1;`  
 `   __in u32 unk2;`  
 `   __in u32 unk3;`  
@@ -1323,12 +1368,21 @@ Switch.
 
 Submits a gpfifo object (async version). Exclusive to the Switch.
 
+` struct fence {`  
+`   u32 syncpt_id;`  
+`   u32 syncpt_value;`  
+` };`  
+` `  
+` struct gpfifo_entry {`  
+`   u64 entry;                               // gpu_iova | (unk_2bits << 40) | (size << 42) | (unk_flag << 63)`  
+` };`  
+` `  
 ` struct {`  
-`   u64 __gpfifo;                     // in (pointer to gpfifo fence structs; ignored)`  
-`   u32 __num_entries;                // in (number of fence objects being submitted)`  
-`   u32 __flags;                      // in`  
-`   struct fence        __fence_out;  // out (returned new fence object for others to wait on)`  
-`   struct gpfifo_entry __entries[];  // in (depends on __num_entries)`  
+`   __in    u64 gpfifo;                      // (ignored) pointer to gpfifo fence structs`  
+`   __in    u32 num_entries;                 // number of fence objects being submitted`  
+`   __in    u32 flags;`  
+`   __inout struct fence fence_out;          // returned new fence object for others to wait on`  
+`   __in    struct gpfifo_entry entries[];   // depends on num_entries`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_ALLOC\_GPFIFO\_EX2
@@ -1336,14 +1390,19 @@ Submits a gpfifo object (async version). Exclusive to the Switch.
 Allocates gpfifo entries with additional parameters and returns a fence.
 Exclusive to the Switch.
 
+` struct fence {`  
+`   u32 syncpt_id;`  
+`   u32 syncpt_value;`  
+` };`  
+` `  
 ` struct {`  
-`   u32 __num_entries;         // in`  
-`   u32 __flags;               // in`  
-`   u32 __unk0;                // in (1 works)`  
-`   struct fence __fence_out;  // out`  
-`   u32 __unk1;                // in`  
-`   u32 __unk2;                // in`  
-`   u32 __unk3;                // in`  
+`   __in    u32 num_entries;`  
+`   __in    u32 flags;`  
+`   __in    u32 unk0;`  
+`   __inout struct fence fence_out;          // returned new fence object for others to wait on`  
+`   __in    u32 unk1;`  
+`   __in    u32 unk2;`  
+`   __in    u32 unk3;`  
 ` };`
 
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO\_EX
