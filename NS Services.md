@@ -1426,4 +1426,8 @@ This is "nn::ns::VersionListData".
 
 This is "nn::ns::ApplicationUpdateInfo".
 
+# NoDownloadRightsErrorResolution
+
+This is "nn::ns::NoDownloadRightsErrorResolution".
+
 [Category:Services](Category:Services "wikilink")

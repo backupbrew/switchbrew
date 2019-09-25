@@ -1696,4 +1696,7 @@ This is "nn::ns::VersionListData".
 = ApplicationUpdateInfo =
 This is "nn::ns::ApplicationUpdateInfo".
 
+= NoDownloadRightsErrorResolution =
+This is "nn::ns::NoDownloadRightsErrorResolution".
+
 [[Category:Services]]
