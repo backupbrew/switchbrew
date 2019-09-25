@@ -1179,9 +1179,9 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0xC0??0001 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT
 |-
-| 0xC0080002 || 8 || NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT
+| 0xC0080002 || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT]]
 |-
-| 0xC0080003 || 8 || NVHOST_IOCTL_CHANNEL_GET_WAITBASE
+| 0xC0080003 || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_WAITBASE]]
 |-
 | 0xC0080004 || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_MODMUTEX]]
 |-
@@ -1195,9 +1195,7 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 |-
 | 0x00000013 || 0 || NVHOST_IOCTL_CHANNEL_SET_TIMEOUT_EX
 |-
-| 0xC0080014 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE
-|-
-| 0xC0080023 || 8 || NVHOST_IOCTL_CHANNEL_GET_CLK_RATE_EX
+| 0xC0080023</br>([1.0.0-7.0.1] 0xC0080014)] || 8 || [[#NVHOST_IOCTL_CHANNEL_GET_CLK_RATE]]
 |-
 | 0xC0??0024 || Variable || NVHOST_IOCTL_CHANNEL_SUBMIT_EX
 |-
@@ -1260,6 +1258,22 @@ Channels are a concept for  NVIDIA hardware blocks that share a common interface
 | 0x80084715 || 8 || NVGPU_IOCTL_CHANNEL_GET_USER_DATA
 |}
 
+=== NVHOST_IOCTL_CHANNEL_GET_SYNCPOINT ===
+Returns the current syncpoint value for a given module. Identical to Linux driver.
+
+  struct {
+    __in    u32 module_id;
+    __out   u32 syncpt_value;
+  };
+
+=== NVHOST_IOCTL_CHANNEL_GET_WAITBASE ===
+Returns the current waitbase value for a given module. Always returns 0.
+
+  struct {
+    __in    u32 module_id;
+    __out   u32 waitbase_value;
+  };
+
 === NVHOST_IOCTL_CHANNEL_GET_MODMUTEX ===
 Stubbed. Does a debug print and returns 0.
 
@@ -1293,6 +1307,14 @@ Uses '''nvmap_unpin''' internally to unpin a given number of nvmap handles from 
     __in    u8  is_compr;             // memory to unmap is compressed
     __in    u8  padding[3];           // ignored
     __inout struct handle handles[];  // depends on num_handles
+  };
+
+=== NVHOST_IOCTL_CHANNEL_GET_CLK_RATE ===
+Returns the clock rate value for a given module. Identical to Linux driver.
+
+  struct {
+    __out   u32 clk_rate;
+    __in    u32 module_id;
   };
 
 === NVHOST_IOCTL_CHANNEL_MAP_CMD_BUFFER_EX ===
