@@ -1123,6 +1123,9 @@ Takes an input u64 size and a TransferMemory handle, no output.
 
 The permissions for the TransferMemory is None.
 
+[qlaunch](Qlaunch.md "wikilink") uses size 0x100000 for the
+TransferMemory buffer.
+
 ### GetPreparedCardUpdateEulaDataSize
 
 Takes a type-0x15 input buffer
