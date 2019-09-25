@@ -1467,8 +1467,12 @@ The permissions for the TransferMemory is None.
 === GetPreparedCardUpdateEulaDataSize ===
 Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.
 
+This is similar to [[#GetDownloadedEulaDataSize]].
+
 === GetPreparedCardUpdateEulaData ===
 Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, returns an output u64 '''filesize'''.
+
+This is similar to [[#GetDownloadedEulaData]].
 
 === SetupCardUpdateViaSystemUpdater ===
 Takes an input u64 size and a TransferMemory handle, no output.
@@ -1496,8 +1500,12 @@ No input/output.
 === GetReceivedEulaDataSize ===
 Takes a type-0x15 input buffer [[#EulaDataPath]], returns an output u64 '''filesize'''.
 
+This is similar to [[#GetDownloadedEulaDataSize]].
+
 === GetReceivedEulaData ===
 Takes a type-0x15 input buffer [[#EulaDataPath]] and a type-0x6 output buffer, returns an output u64 '''filesize'''.
+
+This is similar to [[#GetDownloadedEulaData]].
 
 === SetupToReceiveSystemUpdate ===
 No input/output.

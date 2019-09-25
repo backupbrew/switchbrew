@@ -1129,11 +1129,17 @@ Takes a type-0x15 input buffer
 [\#EulaDataPath](#EulaDataPath "wikilink"), returns an output u64
 **filesize**.
 
+This is similar to
+[\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink").
+
 ### GetPreparedCardUpdateEulaData
 
 Takes a type-0x15 input buffer
 [\#EulaDataPath](#EulaDataPath "wikilink") and a type-0x6 output buffer,
 returns an output u64 **filesize**.
+
+This is similar to
+[\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink").
 
 ### SetupCardUpdateViaSystemUpdater
 
@@ -1181,11 +1187,17 @@ Takes a type-0x15 input buffer
 [\#EulaDataPath](#EulaDataPath "wikilink"), returns an output u64
 **filesize**.
 
+This is similar to
+[\#GetDownloadedEulaDataSize](#GetDownloadedEulaDataSize "wikilink").
+
 ### GetReceivedEulaData
 
 Takes a type-0x15 input buffer
 [\#EulaDataPath](#EulaDataPath "wikilink") and a type-0x6 output buffer,
 returns an output u64 **filesize**.
+
+This is similar to
+[\#GetDownloadedEulaData](#GetDownloadedEulaData "wikilink").
 
 ### SetupToReceiveSystemUpdate
 
