@@ -1352,6 +1352,8 @@ This uses [[NIM_services|nim]] ListSystemUpdateTask, then when a task is returne
 == RequestSendSystemUpdate ==
 Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output Event handle and an [[#IAsyncResult]].
 
+[[qlaunch]] uses value 0xD904 (55556) for the u16.
+
 == GetSendSystemUpdateProgress ==
 No input, returns an output [[#SystemUpdateProgress]].
 

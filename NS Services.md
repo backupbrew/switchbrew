@@ -973,6 +973,8 @@ Takes a type-0x15 input buffer containing a
 returns an output Event handle and an
 [\#IAsyncResult](#IAsyncResult "wikilink").
 
+[qlaunch](Qlaunch.md "wikilink") uses value 0xD904 (55556) for the u16.
+
 ## GetSendSystemUpdateProgress
 
 No input, returns an output
