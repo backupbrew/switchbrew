@@ -1312,7 +1312,7 @@ Event with EventClearMode=0.
   - Get: Takes a type-0x6 output buffer, no output. Official sw waits on
     the Event prior to using this cmd.
   - Cancel: No input/output. Used by official sw when closing the
-    object, when a global state flag is set (after using the cmd,
+    object, when the serv-obj is initialized (after using the cmd,
     official sw will also wait on the Event). This cmd is also used in
     other official sw funcs.
   - GetErrorContext: No input/output, takes a type-0x16 output buffer
@@ -1336,7 +1336,7 @@ Event with EventClearMode=0.
   - Get: No input/output. Official sw waits on the Event prior to using
     this cmd.
   - Cancel: No input/output. Used by official sw when closing the
-    object, when a global state flag is set (after using the cmd,
+    object, when the serv-obj is initialized (after using the cmd,
     official sw will also wait on the Event). This cmd is also used in
     other official sw funcs.
   - GetErrorContext: No input/output, takes a type-0x16 output buffer
