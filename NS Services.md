@@ -1286,14 +1286,14 @@ This contains a file path.
 
 ## SystemDeliveryInfo
 
-| Offset | Size | Description                               |
-| ------ | ---- | ----------------------------------------- |
-| 0x0    | 0x4  | ?                                         |
-| 0x4    | 0x8  | ?                                         |
-| 0xC    | 0x4  | ?                                         |
-| 0x10   | 0x4  | ?                                         |
-| 0x14   | 0xCC | ?                                         |
-| 0xE0   | 0x20 | HMAC-SHA256 over the previous 0xE0-bytes. |
+| Offset | Size | Description                                                                                                                                     |
+| ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x4  | Must be \<= to and match [system-setting](System%20Settings.md "wikilink") <code>contents\_delivery\!system\_delivery\_protocol\_version<code>. |
+| 0x4    | 0x8  | ?                                                                                                                                               |
+| 0xC    | 0x4  | ?                                                                                                                                               |
+| 0x10   | 0x8  | ?                                                                                                                                               |
+| 0x18   | 0xC8 | ?                                                                                                                                               |
+| 0xE0   | 0x20 | HMAC-SHA256 over the previous 0xE0-bytes.                                                                                                       |
 
 This is "nn::ns::SystemDeliveryInfo". This is a 0x100-byte struct.
 

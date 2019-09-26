@@ -1582,15 +1582,15 @@ This contains a file path.
 ! Size
 ! Description
 |-
-| 0x0 || 0x4 || ?
+| 0x0 || 0x4 || Must be <= to and match [[System_Settings|system-setting]] <code>contents_delivery!system_delivery_protocol_version<code>.
 |-
 | 0x4 || 0x8 || ?
 |-
 | 0xC || 0x4 || ?
 |-
-| 0x10 || 0x4 || ?
+| 0x10 || 0x8 || ?
 |-
-| 0x14 || 0xCC || ?
+| 0x18 || 0xC8 || ?
 |-
 | 0xE0 || 0x20 || HMAC-SHA256 over the previous 0xE0-bytes.
 |}
