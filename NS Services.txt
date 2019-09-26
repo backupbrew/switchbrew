@@ -1520,6 +1520,8 @@ Same as [[#HasDownloaded]] except this uses [[NIM_services|nim]] cmd71 and cmd73
 === RequestReceiveSystemUpdate ===
 Takes a type-0x15 input buffer containing a [[#SystemDeliveryInfo]], an u16, an u32, returns an output Event handle and an [[#IAsyncResult]].
 
+[[qlaunch]] uses the same value for the u16 as [[#RequestSendSystemUpdate]].
+
 === GetReceiveProgress ===
 No input, returns an output [[#SystemUpdateProgress]].
 
