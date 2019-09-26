@@ -1586,9 +1586,9 @@ This contains a file path.
 |-
 | 0x4 || 0x8 || Unused by NS, besides HMAC validation.
 |-
-| 0xC || 0x4 || ?
+| 0xC || 0x4 || SystemUpdate meta version.
 |-
-| 0x10 || 0x8 || ?
+| 0x10 || 0x8 || SystemUpdate meta titleID.
 |-
 | 0x18 || 0x1 || Copied into state by [[#RequestSendSystemUpdate]].
 |-
