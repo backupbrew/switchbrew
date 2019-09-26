@@ -1289,10 +1289,11 @@ This contains a file path.
 | Offset | Size | Description                                                                                                                                     |
 | ------ | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0x0    | 0x4  | Must be \<= to and match [system-setting](System%20Settings.md "wikilink") <code>contents\_delivery\!system\_delivery\_protocol\_version<code>. |
-| 0x4    | 0x8  | ?                                                                                                                                               |
+| 0x4    | 0x8  | Unused by NS, besides HMAC validation.                                                                                                          |
 | 0xC    | 0x4  | ?                                                                                                                                               |
 | 0x10   | 0x8  | ?                                                                                                                                               |
-| 0x18   | 0xC8 | ?                                                                                                                                               |
+| 0x18   | 0x1  | Copied into state by [\#RequestSendSystemUpdate](#RequestSendSystemUpdate "wikilink").                                                          |
+| 0x19   | 0xC7 | Unused by NS, besides HMAC validation.                                                                                                          |
 | 0xE0   | 0x20 | HMAC-SHA256 over the previous 0xE0-bytes.                                                                                                       |
 
 This is "nn::ns::SystemDeliveryInfo". This is a 0x100-byte struct.
