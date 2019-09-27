@@ -864,6 +864,36 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0xD81A || 26 || 108 || Invalid argument
 |-
+| 0x35B || 347 || 1 || Failed to init SM.
+|-
+| 0x55B || 347 || 2 || Failed to init FS.
+|-
+| 0x75B || 347 || 3 || Failed to open NRO file. May also happen when SD card isn't inserted / SD mounting failed earlier.
+|-
+| 0x95B || 347 || 4 || Failed to read NRO header.
+|-
+| 0xB5B || 347 || 5 || Invalid NRO magic.
+|-
+| 0xD5B || 347 || 6 || Invalid NRO segments.
+|-
+| 0xF5B || 347 || 7 || Failed to read NRO.
+|-
+| 0x135B || 347 || 9 || Failed to allocate heap.
+|-
+| 0x255B || 347 || 18 || Failed to map code-binary memory.
+|-
+| 0x275B || 347 || 19 || Failed to map code memory (.text).
+|-
+| 0x295B || 347 || 20 || Failed to map code memory (.rodata).
+|-
+| 0x2B5B || 347 || 21 || Failed to map code memory (.data+.bss).
+|-
+| 0x315B || 347 || 24 || Failed to unmap code memory (.text).
+|-
+| 0x335B || 347 || 25 || Failed to unmap code memory (.rodata).
+|-
+| 0x355B || 347 || 26 || Failed to unmap code memory (.data+.bss).
+|-
 | 0x19269 || 105 || 201 || Null settings name
 |-
 | 0x19469 || 105 || 202 || Null settings key
@@ -1182,7 +1212,53 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x7A880 || 128 || 980 || <code>am.debug!dev_function</code> setting needs to be set / DebugMode not enabled
 |-
-| 0x7CC80 || 128 || 998 || Not Implemented
+| 0x7CC80 || 128 || 998 || Not implemented
+|-
+| 0xCC81 || 129 || 102 || Transmission not agreed
+|-
+| 0xD281 || 129 || 105 || Network unavailable
+|-
+| 0x7DA81 || 129 || 1005 || HTTP error: Couldnt resolve proxy
+|-
+| 0x7DC81 || 129 || 1006 || HTTP error: Couldnt resolve host
+|-
+| 0x7DE81 || 129 || 1007 || HTTP error: Couldnt connect
+|-
+| 0x7FE81 || 129 || 1023 || HTTP error: Write error
+|-
+| 0x80481 || 129 || 1026 || HTTP error: Read error
+|-
+| 0x80681 || 129 || 1027 || HTTP error: Out of memory
+|-
+| 0x80881 || 129 || 1028 || HTTP error: Operation timedout
+|-
+| 0x81681 || 129 || 1035 || HTTP error: SSL connect error
+|-
+| 0x83681 || 129 || 1051 || HTTP error: Peer failed verification
+|-
+| 0x83881 || 129 || 1052 || HTTP error: Got nothing
+|-
+| 0x83E81 || 129 || 1055 || HTTP error: Send error
+|-
+| 0x84081 || 129 || 1056 || HTTP error: Recv error
+|-
+| 0x84481 || 129 || 1058 || HTTP error: SSL cert problem
+|-
+| 0x84681 || 129 || 1059 || HTTP error: SSL cipher
+|-
+| 0x84881 || 129 || 1060 || HTTP error: SSL CA cert
+|-
+| 0x12C081 || 129 || 2400 || Server error: Status 400
+|-
+| 0x12C281 || 129 || 2401 || Server error: Status 401
+|-
+| 0x12C681 || 129 || 2403 || Server error: Status 403
+|-
+| 0x138881 || 129 || 2500 || Server error: Status 500
+|-
+| 0x138E81 || 129 || 2503 || Server error: Status 503
+|-
+| 0x139081 || 129 || 2504 || Server error: Status 504
 |-
 | 0xA83 || 131 || 5 || Unrecognized applet ID
 |-
@@ -1248,6 +1324,14 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 0x190B2 || 178 || 200 || File storage failure
 |-
+| 0x1F4EB5 || 181 || 4007 || Device authentication error: System update required
+|-
+| 0x1F50B5 || 181 || 4008 || Device authentication error: Banned
+|-
+| 0x1F52B5 || 181 || 4009 || Device authentication error: Internal server error
+|-
+| 0x1F54B5 || 181 || 4007 || Device authentication error: Under maintenance
+|-
 | 0x58ACA || 202 || 709 || Npad ID is out of range.
 |-
 | 0xF0CD || 205 || 120 || IR image data not available/ready.
@@ -1255,36 +1339,6 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x1A8CD || 205 || 212 || IR camera handle pointer is null.
 |-
 | 0x198CD || 205 || 204 || IR camera invalid handle value.
-|-
-| 0x35B || 347 || 1 || Failed to init SM.
-|-
-| 0x55B || 347 || 2 || Failed to init FS.
-|-
-| 0x75B || 347 || 3 || Failed to open NRO file. May also happen when SD card isn't inserted / SD mounting failed earlier.
-|-
-| 0x95B || 347 || 4 || Failed to read NRO header.
-|-
-| 0xB5B || 347 || 5 || Invalid NRO magic.
-|-
-| 0xD5B || 347 || 6 || Invalid NRO segments.
-|-
-| 0xF5B || 347 || 7 || Failed to read NRO.
-|-
-| 0x135B || 347 || 9 || Failed to allocate heap.
-|-
-| 0x255B || 347 || 18 || Failed to map code-binary memory.
-|-
-| 0x275B || 347 || 19 || Failed to map code memory (.text).
-|-
-| 0x295B || 347 || 20 || Failed to map code memory (.rodata).
-|-
-| 0x2B5B || 347 || 21 || Failed to map code memory (.data+.bss).
-|-
-| 0x315B || 347 || 24 || Failed to unmap code memory (.text).
-|-
-| 0x335B || 347 || 25 || Failed to unmap code memory (.rodata).
-|-
-| 0x355B || 347 || 26 || Failed to unmap code memory (.data+.bss).
 |}
 
 == FS Error Codes ==
@@ -1293,9 +1347,9 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 {| class=wikitable
 ! Value || Description || Message
 |-
-| 0x7802 || 60 || nn::fs::ResultMountNameAlreadyExists: Error: Specified mount name already exists.
-|-
 | 0xD401 || 106 || nn::svc::ResultInvalidCurrentMemory: Error: Passed buffer is not usable for fs library. See a manual of fs library for more information.
+|-
+| 0x7802 || 60 || nn::fs::ResultMountNameAlreadyExists: Error: Specified mount name already exists.
 |-
 | 0x7D202 || 1001 || nn::fs::ResultPartitionNotFound: Error: Specified partition is not found.
 |-
