@@ -240,7 +240,7 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 348 || libnx NVIDIA errors
 |-
-| 520 || NVIDIA (nverpt)
+| 520 || NVIDIA (not valid, used for error reporting)
 |}
 
 = Error codes =
