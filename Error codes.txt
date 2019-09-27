@@ -231,14 +231,6 @@ When a fatal-error is received the error code is outputted using the following f
 | 230 || PSC (ins)
 |-
 | 231 || LDN (lp2p)
-|-
-| 345 || libnx
-|-
-| 346 || [[Homebrew ABI]]
-|-
-| 347 || Homebrew Loader
-|-
-| 348 || libnx NVIDIA errors
 |}
 
 = Error codes =
@@ -1457,7 +1449,7 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 = Support Errors =
 This section is for Support Errors displayed by the error-applet, separate from the normal Result errors.
 
-== Support Modules ==
+== Modules ==
 {| class=wikitable
 ! Value || Name
 |-
@@ -1474,9 +1466,9 @@ This section is for Support Errors displayed by the error-applet, separate from 
 
 8XX is for/includes system applets.
 
-== Errors ==
+== Error codes ==
 {| class=wikitable
-! Error || Module || Description || Notes
+! Value || Module || Description || Notes
 |-
 | 
 | {web-applets listed above}
@@ -1485,3 +1477,21 @@ This section is for Support Errors displayed by the error-applet, separate from 
 |}
 
 Normal error-codes displayed by the system also use the same format as fatal-errors.
+
+= Homebrew Errors =
+Custom errors used by homebrew libraries and applications.
+
+== Modules ==
+{| class=wikitable
+! Value || Name
+|-
+| 345 || libnx
+|-
+| 346 || [[Homebrew ABI]]
+|-
+| 347 || Homebrew Loader
+|-
+| 348 || libnx NVIDIA errors
+|-
+| 349 || libnx Binder errors
+|}
