@@ -1276,6 +1276,11 @@ GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 
 ## SystemUpdateProgress
 
+| Offset | Size | Description                      |
+| ------ | ---- | -------------------------------- |
+| 0x0    | 0x8  | s64 Current size.                |
+| 0x8    | 0x8  | s64 Total size, \<=0 is invalid. |
+
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
 
 ## EulaDataPath
