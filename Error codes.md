@@ -132,8 +132,8 @@ fatal-errors, since the Description ends with bit21.
 | 345   | libnx                                        |
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink") |
 | 347   | Homebrew Loader                              |
-| 348   | libnx Nvidia errors                          |
-|       |                                              |
+| 348   | libnx NVIDIA errors                          |
+| 520   | NVIDIA (nverpt)                              |
 
 # Error codes
 

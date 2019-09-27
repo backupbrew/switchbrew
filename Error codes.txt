@@ -238,8 +238,9 @@ When a fatal-error is received the error code is outputted using the following f
 |-
 | 347 || Homebrew Loader
 |-
-| 348 || libnx Nvidia errors
+| 348 || libnx NVIDIA errors
 |-
+| 520 || NVIDIA (nverpt)
 |}
 
 = Error codes =
