@@ -14,7 +14,10 @@ When a fatal-error is received the error code is outputted using the following f
 
 .. where the first code is <code>2000 + Module</code>, and the other being <code>Description</code>. Bits >=22 from the error-code are unused when displaying fatal-errors, since the Description ends with bit21.
 
-= Modules =
+= Result Errors =
+General errors used by system modules and applications.
+
+== Modules ==
 {| class=wikitable
 ! Value || Name
 |-
@@ -233,7 +236,7 @@ When a fatal-error is received the error code is outputted using the following f
 | 231 || LDN (lp2p)
 |}
 
-= Error codes =
+== Error codes ==
 {| class=wikitable
 ! Value || Module || Description || Notes
 |-
@@ -1332,7 +1335,7 @@ When a fatal-error is received the error code is outputted using the following f
 | 0x198CD || 205 || 204 || IR camera invalid handle value.
 |}
 
-== FS Error Codes ==
+=== FS Error codes ===
 The following are the error codes recognized by nn::fs::detail::LogErrorMessage found in some [[Factory Setup|factory]] titles:
 
 {| class=wikitable
@@ -1447,7 +1450,7 @@ The following are the error codes recognized by nn::fs::detail::LogErrorMessage 
 |}
 
 = Support Errors =
-This section is for Support Errors displayed by the error-applet, separate from the normal Result errors.
+This section is for Support Errors displayed by the error-applet, separate from the normal Result Errors.
 
 == Modules ==
 {| class=wikitable

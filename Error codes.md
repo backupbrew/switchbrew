@@ -18,7 +18,11 @@ following formatter:
 `Description`. Bits \>=22 from the error-code are unused when displaying
 fatal-errors, since the Description ends with bit21.
 
-# Modules
+# Result Errors
+
+General errors used by system modules and applications.
+
+## Modules
 
 | Value | Name                               |
 | ----- | ---------------------------------- |
@@ -130,7 +134,7 @@ fatal-errors, since the Description ends with bit21.
 | 230   | PSC (ins)                          |
 | 231   | LDN (lp2p)                         |
 
-# Error codes
+## Error codes
 
 | Value             | Module | Description | Notes                                                                                                                                                                                |
 | ----------------- | ------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -682,7 +686,7 @@ fatal-errors, since the Description ends with bit21.
 | 0x1A8CD           | 205    | 212         | IR camera handle pointer is null.                                                                                                                                                    |
 | 0x198CD           | 205    | 204         | IR camera invalid handle value.                                                                                                                                                      |
 
-## FS Error Codes
+### FS Error codes
 
 The following are the error codes recognized by
 nn::fs::detail::LogErrorMessage found in some
@@ -747,7 +751,7 @@ nn::fs::detail::LogErrorMessage found in some
 # Support Errors
 
 This section is for Support Errors displayed by the error-applet,
-separate from the normal Result errors.
+separate from the normal Result Errors.
 
 ## Modules
 
