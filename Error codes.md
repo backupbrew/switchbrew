@@ -133,7 +133,6 @@ fatal-errors, since the Description ends with bit21.
 | 346   | [Homebrew ABI](Homebrew%20ABI.md "wikilink") |
 | 347   | Homebrew Loader                              |
 | 348   | libnx NVIDIA errors                          |
-| 520   | NVIDIA (not valid, used for error reporting) |
 
 # Error codes
 
@@ -758,6 +757,7 @@ separate from the normal Result errors.
 
 | Value | Name                                                   |
 | ----- | ------------------------------------------------------ |
+| 520   | NVIDIA Error Report (nverpt)                           |
 | 800   | [General web-applet](Internet%20Browser.md "wikilink") |
 | 809   | [WifiWebAuthApplet](Internet%20Browser.md "wikilink")  |
 | 810   | [Whitelisted-applet](Internet%20Browser.md "wikilink") |

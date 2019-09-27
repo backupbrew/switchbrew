@@ -239,8 +239,6 @@ When a fatal-error is received the error code is outputted using the following f
 | 347 || Homebrew Loader
 |-
 | 348 || libnx NVIDIA errors
-|-
-| 520 || NVIDIA (not valid, used for error reporting)
 |}
 
 = Error codes =
@@ -1462,6 +1460,8 @@ This section is for Support Errors displayed by the error-applet, separate from 
 == Support Modules ==
 {| class=wikitable
 ! Value || Name
+|-
+| 520 || NVIDIA Error Report (nverpt)
 |-
 | 800 || [[Internet_Browser|General web-applet]]
 |-
