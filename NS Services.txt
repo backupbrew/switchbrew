@@ -1595,7 +1595,7 @@ This contains a file path.
 |-
 | 0x0 || 0x4 || Must be <= to and match [[System_Settings|system-setting]] <code>contents_delivery!system_delivery_protocol_version<code>.
 |-
-| 0x4 || 0x8 || Unused by NS, besides HMAC validation.
+| 0x4 || 0x8 || Unused by [[#RequestSendSystemUpdate]]/[[#RequestReceiveSystemUpdate]], besides HMAC validation.
 |-
 | 0xC || 0x4 || SystemUpdate meta version.
 |-
@@ -1603,7 +1603,7 @@ This contains a file path.
 |-
 | 0x18 || 0x1 || Copied into state by [[#RequestSendSystemUpdate]].
 |-
-| 0x19 || 0xC7 || Unused by NS, besides HMAC validation.
+| 0x19 || 0xC7 || Unused by [[#RequestSendSystemUpdate]]/[[#RequestReceiveSystemUpdate]], besides HMAC validation.
 |-
 | 0xE0 || 0x20 || HMAC-SHA256 over the previous 0xE0-bytes.
 |}
