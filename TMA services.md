@@ -34,13 +34,13 @@ This is "nn::tma::IHtcManager".
 | 5   | BindHostDisconnectionEventForSystem    |
 | 6   | \[3.0.0+\] GetBridgeIpAddress          |
 | 7   | \[3.0.0+\] GetBridgePort               |
-| 8   | \[3.0.0+\] SetUsbDetachedForDebug      |
+| 8   | \[3.0.0+\] SetCradleAttached           |
 | 9   | \[4.0.0+\] GetBridgeSubnetMask         |
 | 10  | \[4.0.0+\] GetBridgeMacAddress         |
 | 11  | \[6.0.0+\] GetWorkingDirectoryPath     |
 | 12  | \[6.0.0+\] GetWorkingDirectoryPathSize |
-| 13  | \[6.0.0+\] RunOnHost                   |
-| 14  | \[9.0.0+\]                             |
+| 13  | \[6.0.0+\] RunOnHostStart              |
+| 14  | \[9.0.0+\] RunOnHostResults            |
 
 # htcs
 
