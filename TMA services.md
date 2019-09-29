@@ -105,21 +105,75 @@ This is "nn::tma::IFileManager".
 
 This service is not normally present on retail units.
 
-| Cmd | Name                 | Notes                                                             |
-| --- | -------------------- | ----------------------------------------------------------------- |
-| 0   | OpenFile             | returns an [\#IFileAccessor](#IFileAccessor "wikilink")           |
-| 1   | FileExists           |                                                                   |
-| 2   | DeleteFile           |                                                                   |
-| 3   | RenameFile           |                                                                   |
-| 4   | GetIOType            |                                                                   |
-| 5   | OpenDirectory        | returns an [\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") |
-| 6   | DirectoryExists      |                                                                   |
-| 7   | CreateDirectory      |                                                                   |
-| 8   | DeleteDirectory      |                                                                   |
-| 9   | RenameDirectory      |                                                                   |
-| 10  | CreateFile           |                                                                   |
-| 11  | GetFileTimeStamp     |                                                                   |
-| 12  | GetCaseSensitivePath |                                                                   |
+| Cmd | Name                                               | Notes                                                             |
+| --- | -------------------------------------------------- | ----------------------------------------------------------------- |
+| 0   | [\#OpenFile](#OpenFile "wikilink")                 | returns an [\#IFileAccessor](#IFileAccessor "wikilink")           |
+| 1   | [\#FileExists](#FileExists "wikilink")             |                                                                   |
+| 2   | [\#DeleteFile](#DeleteFile "wikilink")             |                                                                   |
+| 3   | [\#RenameFile](#RenameFile "wikilink")             |                                                                   |
+| 4   | [\#GetIOType](#GetIOType "wikilink")               |                                                                   |
+| 5   | [\#OpenDirectory](#OpenDirectory "wikilink")       | returns an [\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") |
+| 6   | [\#DirectoryExists](#DirectoryExists "wikilink")   |                                                                   |
+| 7   | [\#CreateDirectory](#CreateDirectory "wikilink")   |                                                                   |
+| 8   | [\#DeleteDirectory](#DeleteDirectory "wikilink")   |                                                                   |
+| 9   | [\#RenameDirectory](#RenameDirectory "wikilink")   |                                                                   |
+| 10  | [\#CreateFile](#CreateFile "wikilink")             |                                                                   |
+| 11  | [\#GetFileTimeStamp](#GetFileTimeStamp "wikilink") |                                                                   |
+| 12  | GetCaseSensitivePath                               |                                                                   |
+
+### OpenFile
+
+Takes in an input X descriptor "Path" and a u32 "OpenMode", returns a
+[\#IFileAccessor](#IFileAccessor "wikilink") interface.
+
+### FileExists
+
+Takes in an input X descriptor "Path", and returns an output bool.
+
+### DeleteFile
+
+Takes in an input X descriptor "Path".
+
+### RenameFile
+
+Takes in an input X descriptor "SrcPath" and an input X descriptor
+"DstPath".
+
+### GetIOType
+
+Takes in an input X descriptor "Path", returns an output int
+"EntryType".
+
+### OpenDirectory
+
+Takes in an input X descriptor "Path" and a u32 "OpenMode", returns a
+[\#IDirectoryAccessor](#IDirectoryAccessor "wikilink") interface.
+
+### DirectoryExists
+
+Takes in an input X descriptor "Path", and returns an output bool.
+
+### CreateDirectory
+
+Takes in an input X descriptor "Path".
+
+### DeleteDirectory
+
+Takes in an input X descriptor "Path" and an input bool "IsRecursive".
+
+### RenameDirectory
+
+Takes in an input X descriptor "SrcPath" and an input X descriptor
+"DstPath".
+
+### CreateFile
+
+Takes in an input X descriptor "Path" and an input s64 "Size".
+
+### GetFileTimeStamp
+
+Takes in an input X descriptor "Path", and returns 3 output u64s
+("CreatedTime", "AccessedTime", "ModifiedTime").
 
 ## IFileAccessor
 
@@ -135,15 +189,62 @@ This is "nn::tma::IFileAccessor".
 | 5   | SetPriorityForFile |
 | 6   | GetPriorityForFile |
 
+### ReadFile
+
+Takes in an input s64 "Offset", an input ReadOption, and a NonSecure B
+descriptor "OutBuffer", and returns a s64 "BytesRead".
+
+### WriteFile
+
+Takes in an input s64 "Offset", an input WriteOption, and a NonSecure A
+descriptor "InBuffer".
+
+### GetFileSize
+
+Takes no input, and returns a s64 "FileSize".
+
+### SetFileSize
+
+Takes an s64 "FileSize".
+
+### FlushFile
+
+Takes no input, returns no output.
+
+### SetPriorityForFile
+
+Takes an input s32 "Priority".
+
+### GetPriorityForFile
+
+Takes no input, returns an s32 "Priority".
+
 ## IDirectoryAccessor
 
 This is "nn::tma::IDirectoryAccessor".
 
-| Cmd | Name                    |
-| --- | ----------------------- |
-| 0   | GetEntryCount           |
-| 1   | ReadDirectory           |
-| 2   | SetPriorityForDirectory |
-| 3   | GetPriorityForDirectory |
+| Cmd | Name                                                             |
+| --- | ---------------------------------------------------------------- |
+| 0   | [\#GetEntryCount](#GetEntryCount "wikilink")                     |
+| 1   | [\#ReadDirectory](#ReadDirectory "wikilink")                     |
+| 2   | [\#SetPriorityForDirectory](#SetPriorityForDirectory "wikilink") |
+| 3   | [\#GetPriorityForDirectory](#GetPriorityForDirectory "wikilink") |
+
+### GetEntryCount
+
+Takes no input, returns an s64 "EntryCount".
+
+### ReadDirectory
+
+Takes an input B descriptor "OutEntryBuffer", returns an s64
+"NumEntriesRead"
+
+### SetPriorityForDirectory
+
+Takes an input s32 "Priority".
+
+### GetPriorityForDirectory
+
+Takes no input, returns an s32 "Priority".
 
 [Category:Services](Category:Services "wikilink")

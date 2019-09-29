@@ -141,32 +141,68 @@ This service is not normally present on retail units.
 |-
 ! Cmd || Name || Notes
 |-
-| 0 || OpenFile || returns an [[#IFileAccessor]]
+| 0 || [[#OpenFile]] || returns an [[#IFileAccessor]]
 |-
-| 1 || FileExists || 
+| 1 || [[#FileExists]] || 
 |-
-| 2 || DeleteFile || 
+| 2 || [[#DeleteFile]] || 
 |-
-| 3 || RenameFile || 
+| 3 || [[#RenameFile]] || 
 |-
-| 4 || GetIOType || 
+| 4 || [[#GetIOType]] || 
 |-
-| 5 || OpenDirectory || returns an [[#IDirectoryAccessor]]
+| 5 || [[#OpenDirectory]] || returns an [[#IDirectoryAccessor]]
 |-
-| 6 || DirectoryExists || 
+| 6 || [[#DirectoryExists]] || 
 |-
-| 7 || CreateDirectory || 
+| 7 || [[#CreateDirectory]] || 
 |-
-| 8 || DeleteDirectory|| 
+| 8 || [[#DeleteDirectory]]|| 
 |-
-| 9 || RenameDirectory || 
+| 9 || [[#RenameDirectory]] || 
 |-
-| 10 || CreateFile  || 
+| 10 || [[#CreateFile]]  || 
 |-
-| 11 || GetFileTimeStamp || 
+| 11 || [[#GetFileTimeStamp]] || 
 |-
 | 12 || GetCaseSensitivePath || 
 |}
+
+=== OpenFile ===
+Takes in an input X descriptor "Path" and a u32 "OpenMode", returns a [[#IFileAccessor]] interface.
+
+=== FileExists ===
+Takes in an input X descriptor "Path", and returns an output bool.
+
+=== DeleteFile ===
+Takes in an input X descriptor "Path".
+
+=== RenameFile ===
+Takes in an input X descriptor "SrcPath" and an input X descriptor "DstPath".
+
+=== GetIOType ===
+Takes in an input X descriptor "Path", returns an output int "EntryType".
+
+=== OpenDirectory ===
+Takes in an input X descriptor "Path" and a u32 "OpenMode", returns a [[#IDirectoryAccessor]] interface.
+
+=== DirectoryExists ===
+Takes in an input X descriptor "Path", and returns an output bool.
+
+=== CreateDirectory ===
+Takes in an input X descriptor "Path".
+
+=== DeleteDirectory ===
+Takes in an input X descriptor "Path" and an input bool "IsRecursive".
+
+=== RenameDirectory ===
+Takes in an input X descriptor "SrcPath" and an input X descriptor "DstPath".
+
+=== CreateFile ===
+Takes in an input X descriptor "Path" and an input s64 "Size".
+
+=== GetFileTimeStamp ===
+Takes in an input X descriptor "Path", and returns 3 output u64s ("CreatedTime", "AccessedTime", "ModifiedTime").
 
 == IFileAccessor ==
 This is "nn::tma::IFileAccessor".
@@ -190,6 +226,27 @@ This is "nn::tma::IFileAccessor".
 | 6 || GetPriorityForFile
 |}
 
+=== ReadFile ===
+Takes in an input s64 "Offset", an input ReadOption, and a NonSecure B descriptor "OutBuffer", and returns a s64 "BytesRead".
+
+=== WriteFile ===
+Takes in an input s64 "Offset", an input WriteOption, and a NonSecure A descriptor "InBuffer".
+
+=== GetFileSize ===
+Takes no input, and returns a s64 "FileSize".
+
+=== SetFileSize ===
+Takes an s64 "FileSize".
+
+=== FlushFile ===
+Takes no input, returns no output.
+
+=== SetPriorityForFile ===
+Takes an input s32 "Priority".
+
+=== GetPriorityForFile ===
+Takes no input, returns an s32 "Priority".
+
 == IDirectoryAccessor ==
 This is "nn::tma::IDirectoryAccessor".
 
@@ -197,14 +254,26 @@ This is "nn::tma::IDirectoryAccessor".
 |-
 ! Cmd || Name
 |-
-| 0 || GetEntryCount
+| 0 || [[#GetEntryCount]]
 |-
-| 1 || ReadDirectory
+| 1 || [[#ReadDirectory]]
 |-
-| 2 || SetPriorityForDirectory
+| 2 || [[#SetPriorityForDirectory]]
 |-
-| 3 || GetPriorityForDirectory
+| 3 || [[#GetPriorityForDirectory]]
 |}
+
+=== GetEntryCount ===
+Takes no input, returns an s64 "EntryCount".
+
+=== ReadDirectory ===
+Takes an input B descriptor "OutEntryBuffer", returns an s64 "NumEntriesRead"
+
+=== SetPriorityForDirectory ===
+Takes an input s32 "Priority".
+
+=== GetPriorityForDirectory ===
+Takes no input, returns an s32 "Priority".
 
 
 [[Category:Services]]
