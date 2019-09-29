@@ -195,6 +195,11 @@ get all permissions: it suffices to set 0x8000000000000000.
 If the code were to request an invalid input type, panic. But this never
 happens.
 
+The output values for [\#ReadWrite](#ReadWrite "wikilink")
+CanMountRegisteredUpdatePartition and [\#Call](#Call "wikilink")
+CanRegisterUpdatePartition are masked with the cached value of
+[DebugMode](SMC#IsDebugMode.md##IsDebugMode "wikilink").
+
 ### ReadWrite
 
 <table>
