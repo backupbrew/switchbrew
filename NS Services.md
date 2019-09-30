@@ -1276,12 +1276,15 @@ GetSystemUpdateTaskInfo fails with ret\!=0x3C89.
 
 ## SystemUpdateProgress
 
-| Offset | Size | Description                      |
-| ------ | ---- | -------------------------------- |
-| 0x0    | 0x8  | s64 Current size.                |
-| 0x8    | 0x8  | s64 Total size, \<=0 is invalid. |
+| Offset | Size | Description                                                                                                                                                                                                                        |
+| ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0x0    | 0x8  | s64 Current size. This value can be larger than total\_size when the async operation is finishing. When total\_size is \<=0, this current\_size field may contain a progress value for when the total\_size is not yet determined. |
+| 0x8    | 0x8  | s64 Total size, this field is only valid when \>0.                                                                                                                                                                                 |
 
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
+
+Commands which have this as output will return 0 with the output
+cleared, when no task is available.
 
 ## EulaDataPath
 

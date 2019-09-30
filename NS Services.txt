@@ -1574,12 +1574,14 @@ Similar to [[#HasDownloaded]], [[#GetBackgroundNetworkUpdateState]] uses [[NIM_s
 ! Size
 ! Description
 |-
-| 0x0 || 0x8 || s64 Current size.
+| 0x0 || 0x8 || s64 Current size. This value can be larger than total_size when the async operation is finishing. When total_size is <=0, this current_size field may contain a progress value for when the total_size is not yet determined.
 |-
-| 0x8 || 0x8 || s64 Total size, <=0 is invalid.
+| 0x8 || 0x8 || s64 Total size, this field is only valid when >0.
 |}
 
 This is "nn::ns::SystemUpdateProgress". This is a 0x10-byte struct.
+
+Commands which have this as output will return 0 with the output cleared, when no task is available.
 
 == EulaDataPath ==
 This is "nn::ns::detail::EulaDataPath". This is a 0x100-byte struct.
