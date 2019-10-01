@@ -1,3 +1,5 @@
+  - **17 June 19** Nintendo released system update
+    [8.1.0](8.1.0.md "wikilink").
   - **1 May 19** [libnx v2.2.0 and switch-examples
     v20190501](https://devkitpro.org/viewtopic.php?f=13&t=8908)
     released.
