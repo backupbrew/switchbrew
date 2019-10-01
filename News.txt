@@ -9,7 +9,7 @@ For older news, see the [[:News/Archive|news archive]].
 
 === News ===
 <!-- Add news below --></noinclude>
+*'''30 September 19''' Nintendo released system update [[9.0.1]].
 *'''14 September 19''' [https://devkitpro.org/viewtopic.php?f=13&t=8964 libnx v2.5.0 and switch-examples v20190914 released]. nx-hbmenu v3.1.1 [https://github.com/switchbrew/nx-hbmenu/releases/tag/v3.1.1 released]. [https://github.com/Atmosphere-NX/Atmosphere/releases/tag/0.9.4 Atmosphère 0.9.4 released with support for 9.0.0].
 *'''9 September 19''' Nintendo released system update [[9.0.0]].
 *'''10 July 19''' Nintendo [https://twitter.com/NintendoAmerica/status/1148934589026455552 announced] the Nintendo Switch Lite system.
-*'''17 June 19''' Nintendo released system update [[8.1.0]].
