@@ -196,7 +196,7 @@ This works like [[#ILocationResolver]], but only two types of NCA paths can be g
 |-
 | 8 || [7.0.0+] Refresh || No input/output. || 
 |-
-| 9 || [9.0.0+] || ||
+| 9 || [9.0.0+] RefreshExcluding || Type-5 buffer || Unofficial name. Refreshes entries excluding those with application title ids contained in the buffer.
 |}
 
 === IAddOnContentLocationResolver ===
