@@ -13,6 +13,13 @@ Security flaws fixed: <fill this in manually later, see the updatedetails page f
 ==System Titles==
 <fill this in (manually) later>
 
+The following titles were updated (see [[System_Version_Title]] for sysver title), the following includes all RomFS changes:
+* Sysmodules [[HID_services|hid]], [[NS_Services|ns]], and [[creport]] were updated.
+* BrowserDll and all web-applets were updated. The OSS NROs under "/dll_1/" (for non-LibraryAppletOfflineWeb), "/buildinfo/buildinfo.dat", and "/.nrr/netfront.nrr" were updated.
+* starter applet was updated. "/message/TWzh/setting.msbt.szs" in RomFS was updated.
+
+There were no sysmodule IPC changes.
+
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-30-19_08-05-09&sys=hac]
