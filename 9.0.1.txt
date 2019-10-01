@@ -23,3 +23,7 @@ There were no sysmodule IPC changes.
 ==See Also==
 System update report(s):
 * [https://yls8.mtheall.com/ninupdates/reports.php?date=09-30-19_08-05-09&sys=hac]
+
+{{NavboxVersions}}
+
+[[Category:System versions]]
