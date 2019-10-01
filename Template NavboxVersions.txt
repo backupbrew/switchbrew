@@ -19,6 +19,6 @@
 |-
 | align="center" | [[8.0.0]] • [[8.0.1]] • [[8.1.0]]
 |-
-| align="center" | [[9.0.0]]
+| align="center" | [[9.0.0]] • [[9.0.1]]
 |-|}
 </center><includeonly>[[Category:System versions]]</includeonly>
