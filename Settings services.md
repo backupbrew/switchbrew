@@ -511,7 +511,8 @@ Returns the 0x18-byte SerialNumber string.
 
 ## GetServiceDiscoveryControlSettings
 
-Returns 0x01 if [safemode](Safemode.md "wikilink") needs to be launched.
+Returns an u32 bitfield
+[\#ServiceDiscoveryControlSettings](#ServiceDiscoveryControlSettings "wikilink").
 
 ## GetAllowedSslHosts
 
@@ -571,6 +572,12 @@ Loads the 0xB-byte setting \<"settings\_debug",
 "home\_menu\_scheme\_model"\>. Depending on the content of the setting,
 the output u32 is either determined by the value of this setting, or
 loaded from [Calibration](Calibration.md "wikilink").
+
+## ServiceDiscoveryControlSettings
+
+| Bits | Description                           |
+| ---- | ------------------------------------- |
+| 0    | IsChangeEnvironmentIdentifierDisabled |
 
 # System Config
 

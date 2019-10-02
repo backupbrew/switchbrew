@@ -734,7 +734,7 @@ Returned retval is always 0.
 Returns the 0x18-byte SerialNumber string.
 
 == GetServiceDiscoveryControlSettings ==
-Returns 0x01 if [[Safemode|safemode]] needs to be launched.
+Returns an u32 bitfield [[#ServiceDiscoveryControlSettings]].
 
 == GetAllowedSslHosts ==
 Takes a type-0x6 output buffer, returns an output s32. This buffer contains an array of 0x8-byte "nn::settings::system::AllowedSslHost" entries.
@@ -769,6 +769,15 @@ Takes an input s32, no output.
 No input, returns an output u32.
 
 Loads the 0xB-byte setting <"settings_debug", "home_menu_scheme_model">. Depending on the content of the setting, the output u32 is either determined by the value of this setting, or loaded from [[Calibration]].
+
+== ServiceDiscoveryControlSettings ==
+{| class="wikitable" border="1"
+!  Bits
+!  Description
+|-
+| 0
+| IsChangeEnvironmentIdentifierDisabled
+|}
 
 = System Config =
 There's a common config title (*818), and a config title for each [[SPL_services|HardwareType]].
