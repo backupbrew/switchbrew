@@ -7,17 +7,15 @@ performing any pending system updates.
 
 It calls
 [GetServiceDiscoveryControlSettings](Settings%20services#set:sys.md##set:sys "wikilink")
-to check whether updates need to be installed or not. If no updates need
-to be installed it calls
-[RebootSystem](PCV%20services#bpc.md##bpc "wikilink"), otherwise, the
-process continues.
+to check if **IsChangeEnvironmentIdentifierDisabled** is set. If not, it
+calls [RebootSystem](PCV%20services#bpc.md##bpc "wikilink"), otherwise
+the process continues.
 
 It creates and starts a new thread with the sole purpose of setting up
 the display and showing a progress bar using raw graphics data embedded
 in the sysmodule's binary.
 
-The display is configured as
-follows:
+The display is configured as follows:
 
 `*(u32 *)DC_CMD_DISPLAY_WINDOW_HEADER = 0x00000040;    // WINDOW_C_SELECT`  
 `*(u32 *)DC_WIN_WIN_OPTIONS = 0x00000000;              // NO_OPTIONS`  
@@ -85,16 +83,13 @@ point, [RebootSystem](PCV%20services#bpc.md##bpc "wikilink") is called.
 
 It calls
 [OpenSystemUpdateControl](NS%20Services#ns:su.md##ns:su "wikilink") and
-creates a system update event by
-    calling:
+creates a system update event by calling:
 
   - [GetClientId](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink")
-    to obtain the current client's
-    ID;
+    to obtain the current client's ID;
   - [IsAnyInternetRequestAccepted](Network%20Interface%20services#nifm:u.md##nifm:u "wikilink")
     with the returned client ID (if no request was accepted, error
-    0x2A810 is
-    returned);
+    0x2A810 is returned);
   - [RequestDownloadLatestUpdate](NS%20Services#ISystemUpdateControl.md##ISystemUpdateControl "wikilink").
 
 After this, an event object is created and safemode loops waiting on it
