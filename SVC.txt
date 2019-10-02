@@ -183,7 +183,7 @@ R0=rw_mask, R1=in_val, R2=reg_addr_lower32, R3=reg_addr_upper32
 |-
 | 0x53 || [[#svcCreateInterruptEvent]] || X1=irq_num, W2=flag || W0=result, W1=handle
 |-
-| 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=kerneladdr, X3=size
+| 0x54 || [[#svcQueryPhysicalAddress]] || X1=addr || W0=result, X1=physaddr, X2=baseaddr, X3=size
 |-
 | 0x55 || [[#svcQueryIoMapping]] || X1=physaddr, X2=size
 R0=size, R2=physaddr_lower32, R3=physaddr_upper32
@@ -1335,11 +1335,15 @@ Create an event handle for the given IRQ number. Waiting on this handle will wai
 |-
 | (Out) X1 || u64 || PhysAddr
 |-
-| (Out) X2 || u64 || KernelAddr
+| (Out) X2 || u64 || BaseAddr
 |-
 | (Out) X3 || u64 || Size
 |}
 </div>
+
+'''Description:''' Query the physical address of a virtual address. Will always fetch the lowest page-aligned mapping that contains the provided physical address.
+
+The returned BaseAddr is the virtual address of that page-aligned mapping, while PhysAddr is the physical address of that page. Size is the amount of continuous physical memory in that mapping.
 
 == svcQueryIoMapping ==
 
