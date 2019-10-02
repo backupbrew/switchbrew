@@ -511,8 +511,8 @@ Returns the 0x18-byte SerialNumber string.
 
 ## GetServiceDiscoveryControlSettings
 
-Returns an u32 bitfield
-[\#ServiceDiscoveryControlSettings](#ServiceDiscoveryControlSettings "wikilink").
+Returns an u32
+[ServiceDiscoveryControlSettings](#ServiceDiscoveryControlSettings "wikilink").
 
 ## GetAllowedSslHosts
 

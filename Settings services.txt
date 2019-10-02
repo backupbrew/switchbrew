@@ -734,7 +734,7 @@ Returned retval is always 0.
 Returns the 0x18-byte SerialNumber string.
 
 == GetServiceDiscoveryControlSettings ==
-Returns an u32 bitfield [[#ServiceDiscoveryControlSettings]].
+Returns an u32 [[#ServiceDiscoveryControlSettings|ServiceDiscoveryControlSettings]].
 
 == GetAllowedSslHosts ==
 Takes a type-0x6 output buffer, returns an output s32. This buffer contains an array of 0x8-byte "nn::settings::system::AllowedSslHost" entries.
