@@ -771,6 +771,8 @@ No input, returns an output u32.
 Loads the 0xB-byte setting <"settings_debug", "home_menu_scheme_model">. Depending on the content of the setting, the output u32 is either determined by the value of this setting, or loaded from [[Calibration]].
 
 == ServiceDiscoveryControlSettings ==
+This is a 32-bit bitfield.
+
 {| class="wikitable" border="1"
 !  Bits
 !  Description

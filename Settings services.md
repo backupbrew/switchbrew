@@ -575,6 +575,8 @@ loaded from [Calibration](Calibration.md "wikilink").
 
 ## ServiceDiscoveryControlSettings
 
+This is a 32-bit bitfield.
+
 | Bits | Description                           |
 | ---- | ------------------------------------- |
 | 0    | IsChangeEnvironmentIdentifierDisabled |
