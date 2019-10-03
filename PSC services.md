@@ -190,26 +190,91 @@ This is "nn::timesrv::detail::<service::ITimeServiceManager>".
 
 This was added with \[9.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 5   |      |
-| 6   |      |
-| 9   |      |
-| 10  |      |
-| 11  |      |
-| 12  |      |
-| 13  |      |
-| 14  |      |
-| 15  |      |
-| 50  |      |
-| 51  |      |
-| 52  |      |
-| 60  |      |
-| 100 |      |
-| 200 |      |
-| 201 |      |
-| 202 |      |
+| Cmd | Name                                                                               |
+| --- | ---------------------------------------------------------------------------------- |
+| 0   | [\#GetUserStaticService](#GetUserStaticService "wikilink")                         |
+| 5   | [\#GetAdminStaticService](#GetAdminStaticService "wikilink")                       |
+| 6   | [\#GetRepairStaticService](#GetRepairStaticService "wikilink")                     |
+| 9   | [\#GetManufactureStaticService](#GetManufactureStaticService "wikilink")           |
+| 10  | [\#SetupStandardSteadyClock](#SetupStandardSteadyClock "wikilink")                 |
+| 11  | [\#SetupStandardLocalSystemClock](#SetupStandardLocalSystemClock "wikilink")       |
+| 12  | [\#SetupStandardNetworkSystemClock](#SetupStandardNetworkSystemClock "wikilink")   |
+| 13  | [\#SetupStandardUserSystemClock](#SetupStandardUserSystemClock "wikilink")         |
+| 14  | [\#SetupTimeZoneManager](#SetupTimeZoneManager "wikilink")                         |
+| 15  | [\#SetupEphemeralNetworkSystemClock](#SetupEphemeralNetworkSystemClock "wikilink") |
+| 50  |                                                                                    |
+| 51  |                                                                                    |
+| 52  |                                                                                    |
+| 60  | GetStandardUserSystemClockAutomaticCorrectionEvent                                 |
+| 100 | [\#SetStandardSteadyClockRtcOffset](#SetStandardSteadyClockRtcOffset "wikilink")   |
+| 200 | GetAlarmRegistrationEvent                                                          |
+| 201 | [\#UpdateSteadyAlarms](#UpdateSteadyAlarms "wikilink")                             |
+| 202 |                                                                                    |
+
+## GetUserStaticService
+
+Returns an [\#IStaticService](#IStaticService "wikilink").
+
+This is used for the wrapped instance of "time:u" in glue.
+
+## GetAdminStaticService
+
+Returns an [\#IStaticService](#IStaticService "wikilink").
+
+This is used for the wrapped instance of "time:a" in glue.
+
+## GetRepairStaticService
+
+Returns an [\#IStaticService](#IStaticService "wikilink").
+
+This is used for the wrapped instance of "time:r" in glue.
+
+## GetManufactureStaticService
+
+Returns an [\#IStaticService](#IStaticService "wikilink").
+
+This seems unused.
+
+## SetupStandardSteadyClock
+
+Takes an input rtc\_clock\_source UUID, an input rtc\_offset s64, an
+input internal\_offset s64, an input test\_offset s64 and a
+is\_rtc\_reset\_detected bool. No output.
+
+## SetupStandardLocalSystemClock
+
+Takes an input [\#SystemClockContext](#SystemClockContext "wikilink")
+and an input [\#PosixTime](#PosixTime "wikilink"). No output.
+
+## SetupStandardNetworkSystemClock
+
+Takes an input [\#SystemClockContext](#SystemClockContext "wikilink")
+and an input sufficient\_accuracy\_minutes u64. No output.
+
+## SetupStandardUserSystemClock
+
+Takes an input automatic\_correction bool and an input
+[\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink"). No output.
+
+## SetupTimeZoneManager
+
+Takes an input [\#LocationName](#LocationName "wikilink"), an input
+[\#SteadyClockTimePoint](#SteadyClockTimePoint "wikilink"), an input
+total\_location\_name\_count u32, an input
+[\#TimeZoneRuleVersion](#TimeZoneRuleVersion "wikilink") and a type-0x21
+input buffer containing a TimeZoneBinary. No output.
+
+## SetupEphemeralNetworkSystemClock
+
+No input, no output.
+
+## SetStandardSteadyClockRtcOffset
+
+An input rtc\_offset s64, no output.
+
+## UpdateSteadyAlarms
+
+No input, no output.
 
 # time:al
 
@@ -231,19 +296,24 @@ This is "nn::timesrv::detail::<service::ISteadyClockAlarm>".
 
 This was added with \[9.0.0+\].
 
-| Cmd | Name |
-| --- | ---- |
-| 0   |      |
-| 1   |      |
-| 2   |      |
-| 3   |      |
-| 10  |      |
-| 11  |      |
+| Cmd | Name           |
+| --- | -------------- |
+| 0   | GetWakeUpEvent |
+| 1   | Enable         |
+| 2   | Disable        |
+| 3   | IsEnabled      |
+| 10  |                |
+| 11  |                |
 
 ### Cmd10
 
 Opens a session for [psc:l](#psc:l "wikilink") and returns it's
 interface.
+
+### Cmd11
+
+Close the session opened by [\#Cmd10](#Cmd10 "wikilink") when the alarm
+is disabled.
 
 # time:p
 

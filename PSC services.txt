@@ -249,25 +249,25 @@ This was added with [9.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || [[#GetUserStaticService]]
 |-
-| 5 ||
+| 5 || [[#GetAdminStaticService]]
 |-
-| 6 ||
+| 6 || [[#GetRepairStaticService]]
 |-
-| 9 ||
+| 9 || [[#GetManufactureStaticService]]
 |-
-| 10 ||
+| 10 || [[#SetupStandardSteadyClock]]
 |-
-| 11 ||
+| 11 || [[#SetupStandardLocalSystemClock]]
 |-
-| 12 ||
+| 12 || [[#SetupStandardNetworkSystemClock]]
 |-
-| 13 ||
+| 13 || [[#SetupStandardUserSystemClock]]
 |-
-| 14 ||
+| 14 || [[#SetupTimeZoneManager]]
 |-
-| 15 ||
+| 15 || [[#SetupEphemeralNetworkSystemClock]]
 |-
 | 50 ||
 |-
@@ -275,16 +275,60 @@ This was added with [9.0.0+].
 |-
 | 52 ||
 |-
-| 60 ||
+| 60 || GetStandardUserSystemClockAutomaticCorrectionEvent
 |-
-| 100 ||
+| 100 || [[#SetStandardSteadyClockRtcOffset]]
 |-
-| 200 ||
+| 200 || GetAlarmRegistrationEvent
 |-
-| 201 ||
+| 201 || [[#UpdateSteadyAlarms]]
 |-
 | 202 ||
 |}
+
+== GetUserStaticService ==
+Returns an [[#IStaticService]].
+
+This is used for the wrapped instance of "time:u" in glue.
+
+== GetAdminStaticService  ==
+Returns an [[#IStaticService]].
+
+This is used for the wrapped instance of "time:a" in glue.
+
+== GetRepairStaticService ==
+Returns an [[#IStaticService]].
+
+This is used for the wrapped instance of "time:r" in glue.
+
+== GetManufactureStaticService ==
+Returns an [[#IStaticService]].
+
+This seems unused.
+
+== SetupStandardSteadyClock ==
+Takes an input rtc_clock_source UUID, an input rtc_offset s64, an input internal_offset s64, an input test_offset s64 and a is_rtc_reset_detected bool. No output.
+
+== SetupStandardLocalSystemClock ==
+Takes an input [[#SystemClockContext]] and an input [[#PosixTime]]. No output.
+
+== SetupStandardNetworkSystemClock ==
+Takes an input [[#SystemClockContext]] and an input sufficient_accuracy_minutes u64. No output.
+
+== SetupStandardUserSystemClock ==
+Takes an input automatic_correction bool and an input [[#SteadyClockTimePoint]]. No output.
+
+== SetupTimeZoneManager ==
+Takes an input [[#LocationName]], an input [[#SteadyClockTimePoint]], an input total_location_name_count u32, an input [[#TimeZoneRuleVersion]] and a type-0x21 input buffer containing a TimeZoneBinary. No output.
+
+== SetupEphemeralNetworkSystemClock ==
+No input, no output.
+
+== SetStandardSteadyClockRtcOffset ==
+An input rtc_offset s64, no output.
+
+== UpdateSteadyAlarms ==
+No input, no output.
 
 = time:al =
 This is "nn::timesrv::detail::service::IAlarmService".
@@ -311,13 +355,13 @@ This was added with [9.0.0+].
 |-
 ! Cmd || Name
 |-
-| 0 ||
+| 0 || GetWakeUpEvent
 |-
-| 1 ||
+| 1 || Enable
 |-
-| 2 ||
+| 2 || Disable
 |-
-| 3 ||
+| 3 || IsEnabled
 |-
 | 10 ||
 |-
@@ -326,6 +370,9 @@ This was added with [9.0.0+].
 
 === Cmd10 ===
 Opens a session for [[#psc:l|psc:l]] and returns it's interface.
+
+=== Cmd11 ===
+Close the session opened by [[#Cmd10]] when the alarm is disabled.
 
 = time:p =
 This is "nn::timesrv::detail::service::IPowerStateRequestHandler".
