@@ -91,17 +91,17 @@ Takes no input. Returns 0x10-bytes and an output u32 (**error\_code**).
 
 ## SetAruid
 
-Takes an input u64 which must ![match](IPC%20Marshalling.md "wikilink")
+Takes an input u64 which must [match](IPC%20Marshalling.md "wikilink")
 the user-process PID
-(![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
-"wikilink")). Returns an output u32 (**error\_code**).
+([AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink")).
+Returns an output u32 (**error\_code**).
 
 ## SetAruidByPID
 
 Takes a PID-descriptor and an u64 which must
-![match](IPC%20Marshalling.md "wikilink") the user-process PID
-(![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
-"wikilink")). Returns an output u32 (**error\_code**).
+[match](IPC%20Marshalling.md "wikilink") the user-process PID
+([AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink")).
+Returns an output u32 (**error\_code**).
 
 ## DumpGraphicsMemoryInfo
 
@@ -458,8 +458,7 @@ Returns [NotSupported](#Errors "wikilink").
 ### NVMAP\_IOC\_EXPORT\_FOR\_ARUID
 
 Binds a nvmap object to an
-![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
-"wikilink").
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -470,8 +469,7 @@ Binds a nvmap object to an
 ### NVMAP\_IOC\_IS\_OWNED\_BY\_ARUID
 
 Checks if a nvmap object is bound to an
-![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
-"wikilink").
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -482,8 +480,7 @@ Checks if a nvmap object is bound to an
 ### NVMAP\_IOC\_REMOVE\_EXPORT\_FOR\_ARUID
 
 Unbinds a nvmap object from an
-![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
-"wikilink").
+[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -734,7 +731,7 @@ Added in firmware version
 
 ### NVERPT\_TELEMETRY\_SUBMIT\_DATA
 
-Sends test data for creating a new ![Error
+Sends test data for creating a new [Error
 Report](Error%20Report%20services.md "wikilink").
 
 ` struct {`  
@@ -763,9 +760,8 @@ Report](Error%20Report%20services.md "wikilink").
 
 ### NVERPT\_TELEMETRY\_SUBMIT\_DISPLAY\_DATA
 
-Sends display data for creating a new ![Error
-Report](Error%20Report%20services.md
-"wikilink").
+Sends display data for creating a new [Error
+Report](Error%20Report%20services.md "wikilink").
 
 ` struct {`  
 `   __in u32 CodecType;`  
@@ -854,7 +850,7 @@ Maps a memory region in the device address space. Identical to Linux
 driver pretty much.
 
 On success, the mapped memory region is locked by having
-![SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
 set.
 
 ` struct {`  
@@ -875,7 +871,7 @@ Modifies a memory region in the device address space.
 Unaligned size will cause a [\#Panic](#Panic "wikilink").
 
 On success, the mapped memory region is locked by having
-![SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
 set.
 
 ` struct {`  
