@@ -734,10 +734,64 @@ Added in firmware version 3.0.0.
 {| class="wikitable" border="1"
 ! Value || Direction || Size || Description
 |-
-| 0xC1280701 || Inout || 296 || NVERPT_TELEMETRY_SUBMIT_DATA
+| 0xC1280701 || Inout || 296 || [[#NVERPT_TELEMETRY_SUBMIT_DATA]]
 |-
-| 0xCF580702 || Inout || 3928 || NVERPT_TELEMETRY_SUBMIT_DISPLAY_DATA
+| 0xCF580702 || Inout || 3928 || [[#NVERPT_TELEMETRY_SUBMIT_DISPLAY_DATA]]
 |}
+
+=== NVERPT_TELEMETRY_SUBMIT_DATA ===
+Sends test data for creating a new [[Error_Report_services|Error Report]].
+
+  struct {
+    __in u64 TestU64;
+    __in u32 TestU32;
+    __in u8  padding0[4];
+    __in s64 TestI64;
+    __in s32 TestI32;
+    __in u8  TestString[32];
+    __in u8  TestU8Array[8];
+    __in u32 TestU8Array_size;
+    __in u32 TestU32Array[8];
+    __in u32 TestU32Array_size;
+    __in u64 TestU64Array[8];
+    __in u32 TestU64Array_size;
+    __in s32 TestI32Array[8];
+    __in u32 TestI32Array_size;
+    __in s64 TestI64Array[8];
+    __in u32 TestI64Array_size;
+    __in u16 TestU16;
+    __in u8  TestU8;
+    __in s16 TestI16;
+    __in s8  TestI8;
+    __in u8  padding1[5];
+  };
+
+=== NVERPT_TELEMETRY_SUBMIT_DISPLAY_DATA ===
+Sends display data for creating a new [[Error_Report_services|Error Report]].
+
+  struct {
+    __in u32 CodecType;
+    __in u32 DecodeBuffers;
+    __in u32 FrameWidth;
+    __in u32 FrameHeight;
+    __in u8  ColorPrimaries;
+    __in u8  TransferCharacteristics;
+    __in u8  MatrixCoefficients;
+    __in u8  padding;
+    __in u32 DisplayWidth;
+    __in u32 DisplayHeight;
+    __in u32 DARWidth;
+    __in u32 DARHeight;
+    __in u32 ColorFormat;
+    __in u32 ColorSpace[8];
+    __in u32 ColorSpace_size;
+    __in u32 SurfaceLayout[8];
+    __in u32 SurfaceLayout_size;
+    __in u8  ErrorString[64];       // must be "Error detected = 0x1000000"
+    __in u32 VideoDecState;
+    __in u8  VideoLog[3712];
+    __in u32 VideoLog_size;
+  };
 
 == /dev/nvhost-as-gpu ==
 Each fd opened to this device creates an address space. An address space is then later bound with a channel.

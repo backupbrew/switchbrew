@@ -11,7 +11,8 @@ Each service is used by:
   - "nvdrv": regular applications
   - "nvdrv:a": applets
   - "nvdrv:s": sysmodules
-  - "nvdrv:t": factory titles
+  - "nvdrv:t": factory
+titles
 
 | Cmd | Name                                                              |
 | --- | ----------------------------------------------------------------- |
@@ -90,17 +91,17 @@ Takes no input. Returns 0x10-bytes and an output u32 (**error\_code**).
 
 ## SetAruid
 
-Takes an input u64 which must [match](IPC%20Marshalling.md "wikilink")
+Takes an input u64 which must ![match](IPC%20Marshalling.md "wikilink")
 the user-process PID
-([AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink")).
-Returns an output u32 (**error\_code**).
+(![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
+"wikilink")). Returns an output u32 (**error\_code**).
 
 ## SetAruidByPID
 
 Takes a PID-descriptor and an u64 which must
-[match](IPC%20Marshalling.md "wikilink") the user-process PID
-([AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink")).
-Returns an output u32 (**error\_code**).
+![match](IPC%20Marshalling.md "wikilink") the user-process PID
+(![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
+"wikilink")). Returns an output u32 (**error\_code**).
 
 ## DumpGraphicsMemoryInfo
 
@@ -141,7 +142,8 @@ kernel):
 `#define _IOC(inout, group, num, len) \`  
 `   (inout | ((len & IOCPARM_MASK) << 16) | ((group) << 8) | (num))`
 
-The following table contains known ioctls.
+The following table contains known
+ioctls.
 
 ## /dev/nvhost-ctrl
 
@@ -256,7 +258,8 @@ Waits on an event. If waiting fails, returns error code 0x05 (Timeout)
 and sets **value** to ((**syncpt\_id** \<\< 0x10) | 0x10000000).
 
 Depending on **threshold**, an **user\_event\_id** may be returned for
-using with other event ioctls.
+using with other event
+ioctls.
 
 ` struct {`  
 `   __in    u32 syncpt_id;`  
@@ -271,7 +274,8 @@ Waits on an event (async version). If waiting fails, returns error code
 0x0B (BadValue).
 
 Depending on **threshold**, an **user\_event\_id** may be returned for
-using with other event ioctls.
+using with other event
+ioctls.
 
 ` struct {`  
 `   __in    u32 syncpt_id;`  
@@ -298,7 +302,8 @@ Unregisters an user event. Exclusive to the Switch.
 
 ### NVHOST\_IOCTL\_CTRL\_EVENT\_KILL
 
-Kills user events. Exclusive to the Switch.
+Kills user events. Exclusive to the
+Switch.
 
 ` struct {`  
 `   __in u64 user_events;       // 64-bit bitfield where each bit represents one event`  
@@ -307,7 +312,8 @@ Kills user events. Exclusive to the Switch.
 ### NVHOST\_IOCTL\_CTRL\_GET\_MAX\_EVENT\_FIFO\_CHANNEL
 
 If event FIFO is enabled, returns the maximum channel number. Exclusive
-to the Switch.
+to the
+Switch.
 
 ` struct {`  
 `   __out u32 max_channel;      // 0x00 (FIFO disabled) or 0x60 (FIFO enabled)`  
@@ -403,7 +409,8 @@ Returns [NotSupported](#Errors "wikilink").
 ### NVMAP\_IOC\_PARAM
 
 Returns info about a nvmap object. Identical to Linux driver, but
-extended with further params.
+extended with further
+params.
 
 ` struct {`  
 `   __in  u32 handle;`  
@@ -451,7 +458,8 @@ Returns [NotSupported](#Errors "wikilink").
 ### NVMAP\_IOC\_EXPORT\_FOR\_ARUID
 
 Binds a nvmap object to an
-[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
+"wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -462,7 +470,8 @@ Binds a nvmap object to an
 ### NVMAP\_IOC\_IS\_OWNED\_BY\_ARUID
 
 Checks if a nvmap object is bound to an
-[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
+"wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -473,7 +482,8 @@ Checks if a nvmap object is bound to an
 ### NVMAP\_IOC\_REMOVE\_EXPORT\_FOR\_ARUID
 
 Unbinds a nvmap object from an
-[AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId "wikilink").
+![AppletResourceUserId](Applet%20Manager%20services#AppletResourceUserId.md##AppletResourceUserId
+"wikilink").
 
 ` struct {`  
 `   __in  u64 aruid;`  
@@ -714,12 +724,72 @@ Places the given application in detached state.
 
 ## /dev/nverpt-ctrl
 
-Added in firmware version 3.0.0.
+Added in firmware version
+3.0.0.
 
-| Value      | Direction | Size | Description                              |
-| ---------- | --------- | ---- | ---------------------------------------- |
-| 0xC1280701 | Inout     | 296  | NVERPT\_TELEMETRY\_SUBMIT\_DATA          |
-| 0xCF580702 | Inout     | 3928 | NVERPT\_TELEMETRY\_SUBMIT\_DISPLAY\_DATA |
+| Value      | Direction | Size | Description                                                                                    |
+| ---------- | --------- | ---- | ---------------------------------------------------------------------------------------------- |
+| 0xC1280701 | Inout     | 296  | [\#NVERPT\_TELEMETRY\_SUBMIT\_DATA](#NVERPT_TELEMETRY_SUBMIT_DATA "wikilink")                  |
+| 0xCF580702 | Inout     | 3928 | [\#NVERPT\_TELEMETRY\_SUBMIT\_DISPLAY\_DATA](#NVERPT_TELEMETRY_SUBMIT_DISPLAY_DATA "wikilink") |
+
+### NVERPT\_TELEMETRY\_SUBMIT\_DATA
+
+Sends test data for creating a new ![Error
+Report](Error%20Report%20services.md "wikilink").
+
+` struct {`  
+`   __in u64 TestU64;`  
+`   __in u32 TestU32;`  
+`   __in u8  padding0[4];`  
+`   __in s64 TestI64;`  
+`   __in s32 TestI32;`  
+`   __in u8  TestString[32];`  
+`   __in u8  TestU8Array[8];`  
+`   __in u32 TestU8Array_size;`  
+`   __in u32 TestU32Array[8];`  
+`   __in u32 TestU32Array_size;`  
+`   __in u64 TestU64Array[8];`  
+`   __in u32 TestU64Array_size;`  
+`   __in s32 TestI32Array[8];`  
+`   __in u32 TestI32Array_size;`  
+`   __in s64 TestI64Array[8];`  
+`   __in u32 TestI64Array_size;`  
+`   __in u16 TestU16;`  
+`   __in u8  TestU8;`  
+`   __in s16 TestI16;`  
+`   __in s8  TestI8;`  
+`   __in u8  padding1[5];`  
+` };`
+
+### NVERPT\_TELEMETRY\_SUBMIT\_DISPLAY\_DATA
+
+Sends display data for creating a new ![Error
+Report](Error%20Report%20services.md
+"wikilink").
+
+` struct {`  
+`   __in u32 CodecType;`  
+`   __in u32 DecodeBuffers;`  
+`   __in u32 FrameWidth;`  
+`   __in u32 FrameHeight;`  
+`   __in u8  ColorPrimaries;`  
+`   __in u8  TransferCharacteristics;`  
+`   __in u8  MatrixCoefficients;`  
+`   __in u8  padding;`  
+`   __in u32 DisplayWidth;`  
+`   __in u32 DisplayHeight;`  
+`   __in u32 DARWidth;`  
+`   __in u32 DARHeight;`  
+`   __in u32 ColorFormat;`  
+`   __in u32 ColorSpace[8];`  
+`   __in u32 ColorSpace_size;`  
+`   __in u32 SurfaceLayout[8];`  
+`   __in u32 SurfaceLayout_size;`  
+`   __in u8  ErrorString[64];       // must be "Error detected = 0x1000000"`  
+`   __in u32 VideoDecState;`  
+`   __in u8  VideoLog[3712];`  
+`   __in u32 VideoLog_size;`  
+` };`
 
 ## /dev/nvhost-as-gpu
 
@@ -728,7 +798,8 @@ is then later bound with a channel.
 
 Once a nvgpu channel has been bound to an address space it cannot be
 unbound. There is no support for allowing an nvgpu channel to change
-from one address space to another (or from one to none).
+from one address space to another (or from one to
+none).
 
 | Value      | Direction | Size     | Description                                                                       |
 | ---------- | --------- | -------- | --------------------------------------------------------------------------------- |
@@ -783,7 +854,7 @@ Maps a memory region in the device address space. Identical to Linux
 driver pretty much.
 
 On success, the mapped memory region is locked by having
-[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+![SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
 set.
 
 ` struct {`  
@@ -804,7 +875,7 @@ Modifies a memory region in the device address space.
 Unaligned size will cause a [\#Panic](#Panic "wikilink").
 
 On success, the mapped memory region is locked by having
-[SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
+![SVC\#MemoryState](SVC#MemoryState.md##MemoryState "wikilink") bit34
 set.
 
 ` struct {`  
@@ -839,7 +910,8 @@ Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
 
 ### NVGPU\_AS\_IOCTL\_GET\_VA\_REGIONS
 
-Nintendo's custom implementation to get rid of pointer in struct.
+Nintendo's custom implementation to get rid of pointer in
+struct.
 
 ` struct va_region {`  
 `   u64 offset;`  
@@ -858,7 +930,8 @@ Nintendo's custom implementation to get rid of pointer in struct.
 ### NVGPU\_AS\_IOCTL\_INITIALIZE\_EX
 
 Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
-(unavailable) with extra params.
+(unavailable) with extra
+params.
 
 ` struct {`  
 `   __in u32 big_page_size;   // depends on GPU's available_big_page_sizes; 0=default`  
@@ -872,7 +945,8 @@ Nintendo's custom implementation of NVGPU\_GPU\_IOCTL\_ALLOC\_AS
 
 ### NVGPU\_AS\_IOCTL\_MAP\_BUFFER\_EX
 
-Maps a memory region in the device address space with extra params.
+Maps a memory region in the device address space with extra
+params.
 
 `   struct {`  
 `   __in      u32 flags;          // bit0: fixed_offset, bit2: cacheable`  
@@ -907,7 +981,8 @@ Nintendo's custom implementation of address space remapping.
 ## /dev/nvhost-dbg-gpu
 
 Returns [NotSupported](#Errors "wikilink") on Open unless
-nn::settings::detail::GetDebugModeFlag is set.
+nn::settings::detail::GetDebugModeFlag is
+set.
 
 | Value      | Direction | Size     | Description                                                                                                  |
 | ---------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------ |
@@ -967,7 +1042,8 @@ This device is identical to
 
 ## /dev/nvhost-ctrl-gpu
 
-This device is for global (context independent) operations on the gpu.
+This device is for global (context independent) operations on the
+gpu.
 
 | Value                                       | Direction | Size                       | Description                                                                                               |
 | ------------------------------------------- | --------- | -------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -1050,7 +1126,8 @@ Queries the active ZBC table. Identical to Linux driver.
 ### NVGPU\_GPU\_IOCTL\_GET\_CHARACTERISTICS
 
 Returns the GPU characteristics. Modified to return inline data instead
-of using a pointer.
+of using a
+pointer.
 
 ` struct gpu_characteristics {`  
 `   u32 arch;                       // 0x120 (NVGPU_GPU_ARCH_GM200)`  
@@ -1098,7 +1175,8 @@ of using a pointer.
 
 ### NVGPU\_GPU\_IOCTL\_FLUSH\_L2
 
-Flushes the GPU L2 cache.
+Flushes the GPU L2
+cache.
 
 ` struct {`  
 `   __in u32 flush;          // l2_flush | l2_invalidate << 1 | fb_flush << 2`  
@@ -1217,7 +1295,8 @@ Sets the clock rate value for a given module. Identical to Linux driver.
 ### NVHOST\_IOCTL\_CHANNEL\_MAP\_CMD\_BUFFER
 
 Uses **nvmap\_pin** internally to pin a given number of nvmap handles to
-an appropriate device physical address.
+an appropriate device physical
+address.
 
 ` struct handle {`  
 `   u32 handle_id_in;                 // nvmap handle to map`  
@@ -1235,7 +1314,8 @@ an appropriate device physical address.
 ### NVHOST\_IOCTL\_CHANNEL\_UNMAP\_CMD\_BUFFER
 
 Uses **nvmap\_unpin** internally to unpin a given number of nvmap
-handles from their device physical address.
+handles from their device physical
+address.
 
 ` struct handle {`  
 `   u32 handle_id_in;                 // nvmap handle to unmap`  
@@ -1301,7 +1381,8 @@ Allocates gpfifo entries. Identical to Linux driver.
 ### NVGPU\_IOCTL\_CHANNEL\_SUBMIT\_GPFIFO
 
 Submits a gpfifo object. Modified to take inline entry objects instead
-of a pointer.
+of a
+pointer.
 
 ` struct fence {`  
 `   u32 syncpt_id;`  
@@ -1325,7 +1406,8 @@ of a pointer.
 Allocates a graphics context object. Modified to ignore object's ID.
 
 You can only have one object context allocated at a time. You must have
-bound an address space before using this.
+bound an address space before using
+this.
 
 ` struct {`  
 `   __in  u32 class_num;    // 0x902D=2d, 0xB197=3d, 0xB1C0=compute, 0xA140=kepler, 0xB0B5=DMA, 0xB06F=channel_gpfifo`  
@@ -1335,7 +1417,8 @@ bound an address space before using this.
 
 ### NVGPU\_IOCTL\_CHANNEL\_ZCULL\_BIND
 
-Binds a ZCULL context to the channel. Identical to Linux driver.
+Binds a ZCULL context to the channel. Identical to Linux
+driver.
 
 `struct {`  
 `   __in u64 gpu_va;`  
@@ -1348,7 +1431,8 @@ Binds a ZCULL context to the channel. Identical to Linux driver.
 Initializes the error notifier for this channel. Unlike for the Linux
 kernel, the Switch driver cannot write to an arbitrary userspace buffer.
 Thus new ioctls have been introduced to fetch the error information
-rather than using a shared memory buffer.
+rather than using a shared memory
+buffer.
 
 ` struct {`  
 `   __in u64 offset;   // ignored`  
@@ -1359,7 +1443,8 @@ rather than using a shared memory buffer.
 
 ### NVGPU\_IOCTL\_CHANNEL\_SET\_PRIORITY
 
-Changes channel's priority. Identical to Linux driver.
+Changes channel's priority. Identical to Linux
+driver.
 
 ` struct {`  
 `   __in u32 priority;    // 0x32 is low, 0x64 is medium and 0x96 is high`  
@@ -1383,7 +1468,8 @@ Forces the channel to reset. Identical to Linux driver.
 
 ### NVGPU\_IOCTL\_CHANNEL\_EVENT\_ID\_CONTROL
 
-Controls event notifications.
+Controls event
+notifications.
 
 ` struct {`  
 `   __in u32 cmd;    // 0=disable, 1=enable, 2=clear`  
