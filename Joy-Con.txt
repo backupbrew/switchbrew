@@ -227,17 +227,17 @@ HEX codes for the colors shown in the "Controllers" menu of the Switch UI can be
 |-
 | Neon Yellow || #E6FF00 || #142800
 |-
-| Neon Green || #1EDC00 || #002800
-|-
 | Neon Pink || #FF3278 || #28001E
 |-
-| Neon Orange || ? || ?
+| Neon Green || #1EDC00 || #002800
 |-
-| Neon Purple || ? || ?
+| Neon Orange || #FAA005 || #0F0A00
 |-
-| Blue || ? || ?
+| Neon Purple || #B400E6 || #140014
 |-
 | Mario Red || #E10F00 || #280A0A
+|-
+| Royal Blue || #4655F5 || #00000A
 |-
 | Eevee Brown || #C88C32 || #281900
 |-
