@@ -9,10 +9,16 @@ nifm:u = User, nifm:s = System, and nifm:a = Admin.
 |-
 ! Cmd || Name || Notes
 |- 
-| 4 || CreateGeneralServiceOld ([1.0.0-2.3.0] CreateGeneralService) || Returns an [[#IGeneralService]].
+| 4 || [[#CreateGeneralServiceOld]] ([1.0.0-2.3.0] CreateGeneralService) || 
 |-
-| 5 || [3.0.0+] CreateGeneralService || Returns an [[#IGeneralService]].
+| 5 || [3.0.0+] [[#CreateGeneralService]] || 
 |}
+
+== CreateGeneralServiceOld ==
+No input, returns an [[#IGeneralService]].
+
+== CreateGeneralService ==
+Takes a PID and an input u64 reserved_pid, returns an [[#IGeneralService]].
 
 == IGeneralService ==
 This is "nn::nifm::detail::IGeneralService".

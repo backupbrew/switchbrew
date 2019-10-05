@@ -4,16 +4,27 @@ These are "nn::nifm::detail::IStaticService".
 
 Max sessions: nifm:a = 0x2, nifm:s = 0x10, nifm:u = 0x5.
 
-nifm:u = User, nifm:s = System, and nifm:a = Admin.
+nifm:u = User, nifm:s = System, and nifm:a =
+Admin.
 
-| Cmd | Name                                                           | Notes                                                        |
-| --- | -------------------------------------------------------------- | ------------------------------------------------------------ |
-| 4   | CreateGeneralServiceOld (\[1.0.0-2.3.0\] CreateGeneralService) | Returns an [\#IGeneralService](#IGeneralService "wikilink"). |
-| 5   | \[3.0.0+\] CreateGeneralService                                | Returns an [\#IGeneralService](#IGeneralService "wikilink"). |
+| Cmd | Name                                                                                                    | Notes |
+| --- | ------------------------------------------------------------------------------------------------------- | ----- |
+| 4   | [\#CreateGeneralServiceOld](#CreateGeneralServiceOld "wikilink") (\[1.0.0-2.3.0\] CreateGeneralService) |       |
+| 5   | \[3.0.0+\] [\#CreateGeneralService](#CreateGeneralService "wikilink")                                   |       |
+
+## CreateGeneralServiceOld
+
+No input, returns an [\#IGeneralService](#IGeneralService "wikilink").
+
+## CreateGeneralService
+
+Takes a PID and an input u64 reserved\_pid, returns an
+[\#IGeneralService](#IGeneralService "wikilink").
 
 ## IGeneralService
 
-This is "nn::nifm::detail::IGeneralService".
+This is
+"nn::nifm::detail::IGeneralService".
 
 | Cmd | Name                                                             | Notes                                                        |
 | --- | ---------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -75,7 +86,8 @@ This is "nn::nifm::detail::IScanRequest".
 ### IRequest
 
 This is "nn::nifm::detail::IRequest". This represents an application or
-sysmodule's request to bring a network up.
+sysmodule's request to bring a network
+up.
 
 | Cmd | Name                                                                             |
 | --- | -------------------------------------------------------------------------------- |
