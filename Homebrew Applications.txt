@@ -500,6 +500,26 @@ Icon/metadata for each application is loaded from data embedded in the NRO (cust
 | [https://github.com/mtheall/ftpd Yes]
 | 2018-09-24
 |-
+| sys-ftpd
+| A port of ftpd for 3DS that's running in the background.
+| mtheall, TuxSH, WinterMute, jakibaki
+| [https://github.com/jakibaki/sys-ftpd/releases/latest Here]
+| [https://github.com/jakibaki/sys-ftpd Yes]
+| 2018-09-24
+|-
+| mtp-server-nx
+| A port of [https://manpages.ubuntu.com/manpages/xenial/man1/mtp-server.1.html mtp-server] for Android.
+| Gillou68310
+| [https://github.com/retronx-team/mtp-server-nx/releases/latest Here]
+| [https://github.com/retronx-team/mtp-server-nx Yes]
+| 2019-09-19
+|-
+| nxmtp
+| A MTP implementation.
+| liuervehc
+| [https://github.com/liuervehc/nxmtp/releases/latest Here]
+| No
+| 2019-01-13
 |}
 
 === Demos ===

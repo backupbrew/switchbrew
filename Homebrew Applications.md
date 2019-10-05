@@ -16,7 +16,8 @@ described above. You can also freely navigate the filesystem to select
 an application.
 
 Icon/metadata for each application is loaded from data embedded in the
-NRO (custom assets section), if available.
+NRO (custom assets section), if
+available.
 
 ## Notes
 
@@ -26,10 +27,10 @@ NRO (custom assets section), if available.
 
 ### Launchers
 
-| Name                                           | Description                   | Author                                                                   | Download                                                 | Open-Source |
-| ---------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
-| [Homebrew Menu](Homebrew%20Menu.md "wikilink") | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [plutooo](User:plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
-|                                                |                               |                                                                          |                                                          |             |
+| Name                                            | Description                   | Author                                                                   | Download                                                 | Open-Source |
+| ----------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- | ----------- |
+| ![Homebrew Menu](Homebrew%20Menu.md "wikilink") | Run homebrew on your Switch\! | [Yellows8](User:Yellows8 "wikilink"), [plutooo](User:plutooo "wikilink") | [Here](https://github.com/switchbrew/nx-hbmenu/releases) | Yes         |
+|                                                 |                               |                                                                          |                                                          |             |
 
 ### Applications
 
@@ -101,7 +102,7 @@ NRO (custom assets section), if available.
 | pFBA            | A port of final burn alpha to multiple platforms                                                          | Cpasjuste | [Here](https://github.com/Cpasjuste/pfba/releases)         | [Yes](https://github.com/Cpasjuste/pfba)                | 2018-08-25   |
 | VBA Next Switch | A port of VBA Next, the retroarch version of [VBA-M](https://github.com/libretro/vba-next)                | RSDuck    | [Here](https://github.com/RSDuck/vba-next-switch/releases) | [Yes](https://github.com/RSDuck/vba-next-switch)        | 2018-07-14   |
 | CHIP8-NX        | CHIP8 emulator                                                                                            | Marice    | [Here](https://github.com/Marice/CHIP8-NX/releases)        | [Yes](https://github.com/Marice/CHIP8-NX)               | 2018-05-25   |
-| LaiNESwitch     | Compact, cycle-accurate NES emulator in \~1000 lines of C++.                                              | Kevoot    | [Here](https://github.com/Kevoot/LaiNESwitch/releases)     | [Yes](https://github.com/Kevoot/LaiNESwitch)            | 2018-07-26   |
+| LaiNESwitch     | Compact, cycle-accurate NES emulator in ~1000 lines of C++.                                               | Kevoot    | [Here](https://github.com/Kevoot/LaiNESwitch/releases)     | [Yes](https://github.com/Kevoot/LaiNESwitch)            | 2018-07-26   |
 | pSNES           | snes9x 1.56.2                                                                                             | Cpasjuste | [Here](https://github.com/Cpasjuste/psnes/releases)        | [Yes](https://github.com/Cpasjuste/psnes)               | 2018-08-24   |
 | RetroArch       | RetroArch has advanced features like shaders, netplay, rewinding, and next-frame response times.          |           | [Here](https://github.com/libretro/RetroArch/releases)     | [Yes](https://github.com/libretro/RetroArch)            | 2018-10-01   |
 |                 |                                                                                                           |           |                                                            |                                                         |              |
@@ -122,10 +123,12 @@ NRO (custom assets section), if available.
 
 ### File servers
 
-| Name | Description             | Author                     | Download                                                | Open-Source                            | Last Updated |
-| ---- | ----------------------- | -------------------------- | ------------------------------------------------------- | -------------------------------------- | ------------ |
-| Ftpd | A port of ftpd for 3DS. | mtheall, TuxSH, WinterMute | [Here](https://github.com/mtheall/ftpd/releases/latest) | [Yes](https://github.com/mtheall/ftpd) | 2018-09-24   |
-|      |                         |                            |                                                         |                                        |              |
+| Name          | Description                                                                                             | Author                               | Download                                                              | Open-Source                                          | Last Updated |
+| ------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------ | --------------------------------------------------------------------- | ---------------------------------------------------- | ------------ |
+| Ftpd          | A port of ftpd for 3DS.                                                                                 | mtheall, TuxSH, WinterMute           | [Here](https://github.com/mtheall/ftpd/releases/latest)               | [Yes](https://github.com/mtheall/ftpd)               | 2018-09-24   |
+| sys-ftpd      | A port of ftpd for 3DS that's running in the background.                                                | mtheall, TuxSH, WinterMute, jakibaki | [Here](https://github.com/jakibaki/sys-ftpd/releases/latest)          | [Yes](https://github.com/jakibaki/sys-ftpd)          | 2018-09-24   |
+| mtp-server-nx | A port of [mtp-server](https://manpages.ubuntu.com/manpages/xenial/man1/mtp-server.1.html) for Android. | Gillou68310                          | [Here](https://github.com/retronx-team/mtp-server-nx/releases/latest) | [Yes](https://github.com/retronx-team/mtp-server-nx) | 2019-09-19   |
+| nxmtp         | A MTP implementation.                                                                                   | liuervehc                            | [Here](https://github.com/liuervehc/nxmtp/releases/latest)            | No                                                   | 2019-01-13   |
 
 ### Demos
 
