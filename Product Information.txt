@@ -91,11 +91,11 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 | HAC-036 || Right Famicom controller.
 |-
-| HAC-037 || 
+| HAC-037 || Mario Kart Home Circuit Live Kart
 |-
-| HAC-038 ||
+| HAC-038 || Mario Kart Home Circuit Live Kart Battery
 |-
-| HAC-039 ||
+| HAC-039 || Mario Kart Home Circuit Live Gate
 |-
 | HAC-040 || Touch Pen.
 |-
@@ -105,7 +105,7 @@ This page details miscellaneous Switch product information (serial numbers, prod
 |-
 | HAC-043 ||
 |-
-| HAC-044 ||
+| HAC-044 || Mario Kart Home Circuit Live Arrow Sign
 |-
 | HAC-045 ||
 |-
